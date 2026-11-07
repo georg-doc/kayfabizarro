@@ -1,0 +1,298 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_VENETIAN_COURT_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "explicit_extraction_rects_required": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "VENETIAN_COURT_6_2026-11-05/sheet-r1.png",
+    "sha256": "708a22b3c8708a1328e0a5a94ae7fcc8a50c02a0e835c3d892e7eda903cdcf70"
+  },
+  "production_record": "VENETIAN_COURT_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "VENETIAN_COURT_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "VENETIAN_COURT_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "group_context": "Six standalone satirical Venetian Renaissance court and merchant costume archetypes. No historical likeness, canonical deck mapping or inferred pair/trio relations.",
+  "figuren": [
+    {
+      "id": "WSA_VENETIAN_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Donna Beifalla",
+      "bild": {
+        "datei": "VENETIAN_COURT_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "ausschnitt_px": [
+          0,
+          0,
+          496,
+          511
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "pearl hair comb",
+        "short clay curls",
+        "teal shoulder fold",
+        "ivory-red folding fan",
+        "large gold ring"
+      ],
+      "prompt_auszug": "FEMALE-READ ART PATRON / COURT GRAND DAME. Broad teardrop blob with two short rolled clay side curls, a tiny gold comb with three large ivory pearls tucked into one curl, muted teal shoulder fold. Exhilarated amused curiosity: one white eye huge and round, opposite lid half-closed, raised curved brow, shallow sideways toothy smile with only two small unequal teeth. Holds ONE short partially opened ivory-and-red folding FAN low across her own belly, other hand curls beside it showing one large oval gold ring. Fan never hides face or eyes. No crown, mask or human neckline.",
+      "prompt_quelle": "VENETIAN_COURT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_VENETIAN_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Doge Siegelruh",
+      "bild": {
+        "datei": "VENETIAN_COURT_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "ausschnitt_px": [
+          496,
+          0,
+          1039,
+          511
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "gold-red corno ducale cap",
+        "short ceremonial collar",
+        "large brass wax-seal stamp"
+      ],
+      "prompt_auszug": "MALE-READ DOGE / CEREMONIAL RULER. Very wide squat soft bean, enormous heavy lower lip, huge drooping modeled lids. GOLD CORNO DUCALE cap with rounded distinctive forward horn peak and short red cloth back flap, simple red-and-gold collar. Tired majestic offence: unequal half-lidded white eyes stare DOWN, closed deep crooked pout and one offset lower tooth. Both hands hold ONE absurdly fat brass WAX-SEAL STAMP upright against lower body, round wooden handle visibly gripped; no wax scene. He appears burdened by the weight of making things official.",
+      "prompt_quelle": "VENETIAN_COURT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_VENETIAN_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Signor Saldenangst",
+      "bild": {
+        "datei": "VENETIAN_COURT_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "ausschnitt_px": [
+          1039,
+          0,
+          1536,
+          511
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wine-red merchant cap",
+        "leather shoulder strap",
+        "three-row wooden abacus with large bronze beads"
+      ],
+      "prompt_auszug": "MALE-READ MERCHANT BANKER. Tall bent pear with an asymmetric side loop, small soft wine-red Renaissance merchant cap and little bronze clasp on brown shoulder strap. Anxious calculating concentration: very wide unequal white eyes point DOWN, inner brow corners lifted, upper lip pinched tight and single square tooth peeking. Holds ONE chunky small WOODEN ABACUS at his belly, clear rectangular frame and THREE SIMPLE ROWS with a few large bronze beads, obvious working rails, no impossible machinery or labels. No spectacles, coin spill or books.",
+      "prompt_quelle": "VENETIAN_COURT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_VENETIAN_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gondoliere Gegenwind",
+      "bild": {
+        "datei": "VENETIAN_COURT_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "ausschnitt_px": [
+          0,
+          511,
+          505,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "straw boater with faded red band",
+        "short striped sash",
+        "short broad wooden oar"
+      ],
+      "prompt_auszug": "MALE-READ GONDOLIER / CANAL STRONGMAN. Broad low near-square blob with two fat rounded crown nubs, small battered straw boater with faded red band, one short ivory-and-navy STRIPED SASH across lower side, not a whole shirt. Explosive wounded indignation: one white eye wide, other squinting in disbelief, one arched brow, skewed rectangular open mouth with three widely spaced unequal teeth and thick curled lower lip. Grips ONE very short broad-ended worn wooden OAR diagonally LOW across own body. No boat/water/floor. Entire oar fits own cell.",
+      "prompt_quelle": "VENETIAN_COURT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_VENETIAN_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Madonna Nebenrede",
+      "bild": {
+        "datei": "VENETIAN_COURT_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "ausschnitt_px": [
+          505,
+          511,
+          1011,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small purple hood with burgundy lining",
+        "sealed cream letter",
+        "small ivory half-mask dangling low on ribbon"
+      ],
+      "prompt_auszug": "FEMALE-READ COURT CONFIDANTE / SECRET COURIER. Tall slender hooked ink bean with wavy lower lobes, one loose black clay curl, subtle lashes. Small deep-purple hood draped only over crown/back with burgundy lining, face fully exposed. Cool controlled suspicion: narrowed white eyes glance SIDEWAYS, one much larger than other, gently angled brows, almost CLOSED crooked confident lip line, one tiny offset tooth. One hand holds ONE thick folded cream LETTER with a large red wax seal against belly. Other hand dangles ONE small ivory HALF-MASK by its short ribbon LOW beside her HIP, far from eyes/face. The half-mask is plain and modest, subordinate to her actual uncovered expressive face. No dagger, full cloak or invisible body.",
+      "prompt_quelle": "VENETIAN_COURT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_VENETIAN_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Custode Schlüsselzweifel",
+      "bild": {
+        "datei": "VENETIAN_COURT_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "ausschnitt_px": [
+          1011,
+          511,
+          1536,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "violet velvet cap",
+        "small ochre shoulder scrap",
+        "plain circle pendant",
+        "large bronze key with triangular bow"
+      ],
+      "prompt_auszug": "MALE-READ SECRET-LODGE KEY KEEPER. Top-heavy crooked ink splat, three little unequal crown drops, small faded violet velvet cap, one short ochre shoulder scrap and one simple bronze circle pendant. Absent-minded earnest confusion: white eyes looking UP in different directions, brows raised into uneven worried arches, large protruding lower lip and just one upper tooth. Holds ONE oversized antique bronze KEY with a simple TRIANGULAR BOW and short thick shaft against body, other hand touches own pendant as if trying to remember which is the credential. No secret symbols, lettering, compass logo, extra mask or robe.\n\nLayout: regular3x2 grid, six LARGE complete individual silhouettes, matching substantial body height across rows. Full actors target450-475px tall inside each512pxcell, generously separated, all hats/curls/props/droplets inside own cell. At least24px outer margins and32px transparent row gaps; no neighbors touching, crossing props or clipped silhouettes. Bottom row not miniature. Face and goo dominate over clothing/props. No gridlines, text, watermark, scene, background gradient, floor, cast-shadow disc, checkerboard or halos. True alpha-zero transparent surroundings, opaque character interiors, clean antialias. Soft upper-left studio light on characters only.",
+      "prompt_quelle": "VENETIAN_COURT_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending"
+  ],
+  "family_context": {
+    "name": "Gesellschaft der Nebenabreden",
+    "roles": [
+      "art patron",
+      "ceremonial ruler",
+      "merchant banker",
+      "gondolier",
+      "confidante/courier",
+      "lodge key keeper"
+    ],
+    "context_source": "Georg chat: Venetian/Renaissance Medici-like wealth, secret-society hints and subtle carnival",
+    "historical_fidelity": "fictional composite, no named historical person or exact reconstruction",
+    "visual_constraint": "Ink body and uncovered white/red/black cartoon eyes dominate; only one small low-held mask",
+    "standalone_actors": true
+  },
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: alle Pairs und können übernommen werden; acceptance of whole set, not a declaration of pairs."
+  }
+}

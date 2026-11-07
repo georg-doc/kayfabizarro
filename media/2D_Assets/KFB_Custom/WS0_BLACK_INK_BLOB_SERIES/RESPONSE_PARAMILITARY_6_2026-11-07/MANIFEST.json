@@ -1,0 +1,323 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESPONSE_PARAMILITARY_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESPONSE_PARAMILITARY_6_2026-11-07/sheet-r1.png",
+    "sha256": "e09cae652f9e5afae53cc8c962d484d885384fcd0ae11fe03024993437be931e"
+  },
+  "production_record": "RESPONSE_PARAMILITARY_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESPONSE_PARAMILITARY_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESPONSE_PARAMILITARY_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Provisional Brigade",
+    "theme": "Paramilitary Response",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "response encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vern Checkpoint",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PARAMILITARY_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "improbably official",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_02",
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "olive cap, small blank clipboard"
+      ],
+      "temperament": "Vern Checkpoint stays improbably official when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "wide scalloped blob, pompous small pout, raised hand",
+      "prompt_quelle": "RESPONSE_PARAMILITARY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Ember",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PARAMILITARY_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "wryly alert",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_01",
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "rounded olive helmet, compact signal lamp"
+      ],
+      "temperament": "Mara Ember stays wryly alert when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "tall bent blob, sly eyes and crooked smile",
+      "prompt_quelle": "RESPONSE_PARAMILITARY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cobb Sandbag",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PARAMILITARY_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "stolidly ready",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_01",
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small tan sandbag carried against body"
+      ],
+      "temperament": "Cobb Sandbag stays stolidly ready when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "broad squat shape, narrowed eyes and firm closed mouth",
+      "prompt_quelle": "RESPONSE_PARAMILITARY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gil Tether",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PARAMILITARY_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "eager to secure things",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_05",
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short coil of tan rope"
+      ],
+      "temperament": "Gil Tether stays eager to secure things when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "lean comma, round focused eyes and uneven two-tooth grin",
+      "prompt_quelle": "RESPONSE_PARAMILITARY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rue Marker",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PARAMILITARY_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "suspiciously methodical",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_04",
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "olive cap, small orange pennant without letters"
+      ],
+      "temperament": "Rue Marker stays suspiciously methodical when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "soft pear blob, fierce sideways glance and pursed mouth",
+      "prompt_quelle": "RESPONSE_PARAMILITARY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otis Supply",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PARAMILITARY_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "mildly overwhelmed",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_04",
+        "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small olive supply tin"
+      ],
+      "temperament": "Otis Supply stays mildly overwhelmed when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "round lobed blob, raised inner brows and tense smile",
+      "prompt_quelle": "RESPONSE_PARAMILITARY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "sequence": 4,
+    "team_kit": "dusty olive caps and helmets, rusty orange canvas armbands, brown rope and tan canvas pouches. Improvised retro-dieselpunk uniforms, generic invented markings only.",
+    "trios": [
+      {
+        "id": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_A",
+        "name": "Checkpoint Crew",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_01",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_02",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_B",
+        "name": "Field Crew",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_04",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_05",
+          "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_01",
+      "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_02",
+      "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_03",
+      "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_04",
+      "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_05",
+      "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_06"
+    ]
+  },
+  "georg_decision": {
+    "quote": "Die sind alle pass.",
+    "scope": "All seven response team sheets and 42 designs."
+  }
+}

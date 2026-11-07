@@ -1,0 +1,360 @@
+{
+  "schema": "kfb.slop-cards/1",
+  "status": "DESIGN",
+  "cards": [
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_01",
+      "name": "Verkäufer Handschlag",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Makes the guarantee sound personal enough to avoid putting it in writing.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TRUSTSYSTEMS_TRUST_20261106"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Makes the guarantee sound personal enough to avoid putting it in writing. His HyperNorm sample case offers a personal assurance where a guarantee should be. A dissonant card asks if the promise survives being read back tomorrow. The Men in Black demand a single answer; Hunky and Dory keep revising the form. A small exception is quietly kept for a tired neighbour.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Zusage gilt persönlich und daher ohne weitere Unterlagen.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_02",
+      "name": "Freund Hinterher",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Had hoped the harmless prop would make the intention less noticeable.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TRUSTSYSTEMS_TRUST_20261106"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Had hoped the harmless prop would make the intention less noticeable. His HyperNorm rubber knife bends more readily than his excuse. A dissonant card asks whether a harmless material can make a hurtful intention disappear. Hunky and Dory call doubt a packing error. The Men in Black request certainty; a spare place is quietly kept for a tired neighbour.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Das Requisit war weich. Die Absicht bleibt erklärungsbedürftig.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_03",
+      "name": "Pinky-Promina Verbindlich",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Remembers the promise exactly as it sounded before the exception arrived.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TRUSTSYSTEMS_TRUST_20261106"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Remembers the promise exactly as it sounded before the exception arrived. Her linked HyperNorm gloves preserve the shape of an agreement after its meaning changes. A dissonant card asks whether either party was allowed to hesitate. The Men in Black want a clean answer. Hunky and Dory keep revising the question; the unofficial pauses are left for anyone needing to breathe.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Das Versprechen wurde vor Eintreffen seiner Ausnahme gefasst.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_04",
+      "name": "Doppelagent Andersgemeint",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Means both versions sincerely enough to keep them in separate rooms.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TRUSTSYSTEMS_TRUST_20261106"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Means both versions sincerely enough to keep them in separate rooms. His reversible HyperNorm badge makes both allegiances look locally consistent. A dissonant card asks whether the two rooms could share one conversation. Hunky and Dory praise efficiency while the Men in Black count deviations. The small practical kindnesses remain off the official list.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Aufrichtigkeit wurde auf getrennte Zuständigkeiten verteilt.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_05",
+      "name": "Treuwart Immernoch",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Stays because leaving would make the waiting seem wasted.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TRUSTSYSTEMS_TRUST_20261106"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Stays because leaving would make the waiting seem wasted. His HyperNorm key waits for a door that used to mean home. A dissonant card sits beside him without asking him to prove his loyalty. The Men in Black enforce the binary rule; Hunky and Dory raise the quota. In private, a frightened resident still receives patient attention.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Das Bleiben bewahrt vorerst den bisherigen Sinn des Wartens.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_TRUST_ACTOR_20261106_06",
+      "name": "Freundin Wetterweise",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can be counted on whenever the forecast has already improved.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "trust_and_betrayal"
+              ]
+            }
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TRUSTSYSTEMS_TRUST_20261106"
+          },
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Can be counted on whenever the forecast has already improved. Her HyperNorm umbrella opens whenever friendship becomes easy to display. A dissonant card asks who stayed during the weather she has politely forgotten. Hunky and Dory insist that the figures balance. The Men in Black watch the ledger; one small kindness stays deliberately unrecorded.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Verlässlichkeit setzt eine geeignete Wetterlage voraus.",
+          "src": "TRUSTSYSTEMS_TRUST_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-92512c66-5bcb-4d14-95a2-abd18dc74361.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "e5b9b4b75280c8cdba823d2d5058b8cbce2fe9be71d1417809f2199eaa4bdc8e",
+  "git_blob_sha": "71d96fc378c65a61b226e0afb5b63d5f1a149dd3",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Make a NEW KFB claymation ink-blob character sheet using the attached images solely as style references. Precisely six entirely distinct complete footless ink blobs in three columns by two rows, landscape 1536x1024 transparent PNG. Patrol Police. Shared team palette and craft: faded navy cloth, short peaked patrol caps and small brass generic badges, powder-blue collar accents. No armor or combat helmets. Top row Street Detail, bottom row Neighbourhood Detail. They are separate characters posed independently, each contained in its own cell with broad transparent breathing room and comparable scale. No floor, text, marks of a real unit, gridlines, shadow discs or touching. Expressive sculpted organic charcoal-plum ink from the reference, modest dark satin highlights and fine tactile fingerprints. Rounded goo base and short goo hands. Gear is sparse, chunky handmade accessories fitted directly onto ink. No human torso, legs, boots, armor exoskeleton, face masks or concealed pupils. White ivory sclera, distinct red irises, black pupils, dark sculpted lids. Dark ink lips. Teeth only inside an open mouth. Asymmetric faces and silhouettes before equipment. Fictional stylized game art, no active combat. Two subtly female-read blobs, cells 2 and 5. Row-major character direction:\n1. Male-read, patiently skeptical. peaked cap, radio microphone. broad bell, sideways eyes, small closed smile, one palm asking for a pause.\n2. Female-read, briskly attentive. peaked cap, small two-tone traffic paddle with no text. tall pear, wide focus, crooked call, paddle beside body.\n3. Male-read, doubtful but thorough. peaked cap, tiny notebook and stubby pencil. narrow curved body, one lifted brow, pinched mouth.\n4. Male-read, offended by haste. peaked cap, stubby flashlight. squat wide blob, heavy lowered lids, pursed pout.\n5. Female-read, calm in the commotion. peaked cap, short whistle lanyard. round soft crest, bright sideways glance, restrained smile.\n6. Male-read, wearily helpful. peaked cap, small flashlight and thermos. drooping pear, weary eyes, open small sigh.\nReadable unit identity at thumbnail size. Keep all helmets, hands, gear, crest and droplets fully within the sheet. The input references supply material and anatomy. Create these six new characters in the designated team kit."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS",
+  "georg_design_status": "PASS"
+}

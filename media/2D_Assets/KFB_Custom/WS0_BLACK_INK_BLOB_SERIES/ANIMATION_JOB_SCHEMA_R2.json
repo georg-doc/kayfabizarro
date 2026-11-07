@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposed registered Slop motion execution record R2",
+  "type": "object",
+  "required": [
+    "schema",
+    "job_id",
+    "version",
+    "source",
+    "intent",
+    "actual_output",
+    "qa",
+    "georg_status",
+    "runtime_status",
+    "parent_asset_id"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.slop-motion/2"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "depiction_id",
+        "png_sha256",
+        "asset_registry_ref"
+      ],
+      "properties": {
+        "depiction_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "png_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "asset_registry_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "intent": {
+      "enum": [
+        "idle_blink",
+        "eye_roll",
+        "mouth_reaction"
+      ]
+    },
+    "actual_output": {
+      "type": "object",
+      "required": [
+        "generation_status",
+        "frame_count",
+        "frame_durations_ms",
+        "canvas",
+        "anchor",
+        "frame_hashes"
+      ],
+      "properties": {
+        "generation_status": {
+          "enum": [
+            "NOT_STARTED",
+            "GENERATING",
+            "UNKNOWN",
+            "GENERATED",
+            "FAILED"
+          ]
+        },
+        "frame_count": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "frame_durations_ms": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "canvas": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "anchor": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "frame_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "identity",
+        "alpha",
+        "edge_contact",
+        "loop_seam",
+        "protected_details"
+      ],
+      "properties": {
+        "identity": {
+          "type": "string"
+        },
+        "alpha": {
+          "type": "string"
+        },
+        "edge_contact": {
+          "type": "string"
+        },
+        "loop_seam": {
+          "type": "string"
+        },
+        "protected_details": {
+          "type": "string"
+        }
+      }
+    },
+    "georg_status": {
+      "enum": [
+        null,
+        "PASS",
+        "TUNE",
+        "FAIL"
+      ]
+    },
+    "runtime_status": {
+      "enum": [
+        "NOT_SUBMITTED",
+        "CANDIDATE",
+        "VERIFIED",
+        "REJECTED"
+      ]
+    },
+    "parent_asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime_identity_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

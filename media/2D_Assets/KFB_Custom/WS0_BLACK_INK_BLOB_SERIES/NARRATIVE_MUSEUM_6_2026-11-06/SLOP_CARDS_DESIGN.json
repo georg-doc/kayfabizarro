@@ -1,0 +1,360 @@
+{
+  "schema": "kfb.slop-cards/1",
+  "status": "DESIGN",
+  "cards": [
+    {
+      "id": "WSA_NARRATIVE_MUSEUM_ACTOR_20261106_01",
+      "name": "Künstlerin Begründungsreif",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Has completed the work and is still accepting explanations of why it matters.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "museum_of_modern_mess"
+              ]
+            }
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_NARRATIVE_MUSEUM_20261106"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Has completed the work and is still accepting explanations of why it matters. Her HyperNorm board offers an object already surrounded by explanations. A dissonant card asks whether looking first is still permitted. The Men in Black demand a single answer; Hunky and Dory keep revising the form. A small exception is quietly kept for a tired neighbour.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Das Werk ist fertig. Seine Begründung wird weiter entgegengenommen.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_NARRATIVE_MUSEUM_ACTOR_20261106_02",
+      "name": "Kritiker Kennerspur",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can recognize importance before the object has had a chance to interfere.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "museum_of_modern_mess"
+              ]
+            }
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_NARRATIVE_MUSEUM_20261106"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Can recognize importance before the object has had a chance to interfere. His HyperNorm monocle recognizes importance before the catalogue introduces the object. A dissonant card asks what he actually saw before knowing what to say. Hunky and Dory call doubt a packing error. The Men in Black request certainty; a spare place is quietly kept for a tired neighbour.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Bedeutung wurde vor dem Sichtkontakt fachgerecht erkannt.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_NARRATIVE_MUSEUM_ACTOR_20261106_03",
+      "name": "Wachwart Ruhebestand",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeps an eye on everything and would like permission to decide which eye.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "museum_of_modern_mess"
+              ]
+            }
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_NARRATIVE_MUSEUM_20261106"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Keeps an eye on everything and would like permission to decide which eye. His HyperNorm counter records the visitors passing through an approved silence. A dissonant card asks whether a tired guard is part of the collection too. The Men in Black want a clean answer. Hunky and Dory keep revising the question; the unofficial pauses are left for anyone needing to breathe.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Aufsicht erfolgt wechselweise mit dem verfügbaren Auge.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_NARRATIVE_MUSEUM_ACTOR_20261106_04",
+      "name": "Malerin Fleckwirkung",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Insists the accident was intentional once everybody has admired it.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "museum_of_modern_mess"
+              ]
+            }
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_NARRATIVE_MUSEUM_20261106"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Insists the accident was intentional once everybody has admired it. Her HyperNorm palette makes each accident available for retrospective intention. A dissonant card enjoys a mark she had planned to hide. Hunky and Dory praise efficiency while the Men in Black count deviations. The small practical kindnesses remain off the official list.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Absicht wird nach Würdigung des Flecks festgelegt.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_NARRATIVE_MUSEUM_ACTOR_20261106_05",
+      "name": "Skulptor Eigenform",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Has become the exhibit and still objects to the lighting.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "museum_of_modern_mess"
+              ]
+            }
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_NARRATIVE_MUSEUM_20261106"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Has become the exhibit and still objects to the lighting. His HyperNorm loop sculpture insists the room is framing him incorrectly. A dissonant card asks whether being unfinished might be a useful form. The Men in Black enforce the binary rule; Hunky and Dory raise the quota. In private, a frightened resident still receives patient attention.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Eigenform beanstandet weiterhin die äußeren Bedingungen.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_NARRATIVE_MUSEUM_ACTOR_20261106_06",
+      "name": "Shopwart Andenklich",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can offer a portable version of the experience nobody has yet agreed happened.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "museum_of_modern_mess"
+              ]
+            }
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_NARRATIVE_MUSEUM_20261106"
+          },
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Can offer a portable version of the experience nobody has yet agreed happened. His HyperNorm tote promises a portable version of an unsettled experience. A dissonant card asks whether a memory must fit the souvenir. Hunky and Dory insist that the figures balance. The Men in Black watch the ledger; one small kindness stays deliberately unrecorded.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Das Erlebnis ist in zwei handlichen Ausführungen erhältlich.",
+          "src": "NARRATIVE_MUSEUM_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

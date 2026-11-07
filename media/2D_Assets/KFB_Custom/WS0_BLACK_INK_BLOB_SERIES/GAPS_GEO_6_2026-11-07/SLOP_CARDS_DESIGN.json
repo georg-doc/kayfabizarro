@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_01",
+      "name": "Iris Dripcount",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Stalactite witness.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Another drop. Mark it down."
+          ],
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_GEO_20261107",
+            "trio": "WSA_GAPS_GEO_20261107_TRIO_A"
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Iris Dripcount joins Geological Complaints as stalactite witness. “Another drop. Mark it down.”",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short pointed calcite head ornament and chunky three-bead drip counter.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stalactite witness",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_02",
+      "name": "Gus Faultline",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Indignant fault keeper.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It was lined up yesterday."
+          ],
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_GEO_20261107",
+            "trio": "WSA_GAPS_GEO_20261107_TRIO_A"
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gus Faultline joins Geological Complaints as indignant fault keeper. “It was lined up yesterday.”",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two offset rock slabs held close with one stubby measuring rod.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "indignant fault keeper",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_03",
+      "name": "Bram Fossilwait",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Long-waiting fossil.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Take your time. I have."
+          ],
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_GEO_20261107",
+            "trio": "WSA_GAPS_GEO_20261107_TRIO_A"
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bram Fossilwait joins Geological Complaints as long-waiting fossil. “Take your time. I have.”",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small large-spiral fossil half exposed in a clay matrix held in both hands.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "long-waiting fossil",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_04",
+      "name": "Tess Corecheck",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Geology sample inspector.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The good layer is in the middle."
+          ],
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_GEO_20261107",
+            "trio": "WSA_GAPS_GEO_20261107_TRIO_B"
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Tess Corecheck joins Geological Complaints as geology sample inspector. “The good layer is in the middle.”",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short striped cylindrical drill core.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "geology sample inspector",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_05",
+      "name": "Alf Basalt",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeper of hexagonal columns.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "They grew that way."
+          ],
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_GEO_20261107",
+            "trio": "WSA_GAPS_GEO_20261107_TRIO_B"
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Alf Basalt joins Geological Complaints as keeper of hexagonal columns. “They grew that way.”",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one small group of three blunt hexagonal basalt prisms.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "keeper of hexagonal columns",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_06",
+      "name": "Perry Pebbleage",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Confused erosion clerk.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It used to be bigger."
+          ],
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_GEO_20261107",
+            "trio": "WSA_GAPS_GEO_20261107_TRIO_B"
+          },
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Perry Pebbleage joins Geological Complaints as confused erosion clerk. “It used to be bigger.”",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one smooth rounded pebble and a miniature plain balance pan.",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "confused erosion clerk",
+          "src": "GAPS_GEO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

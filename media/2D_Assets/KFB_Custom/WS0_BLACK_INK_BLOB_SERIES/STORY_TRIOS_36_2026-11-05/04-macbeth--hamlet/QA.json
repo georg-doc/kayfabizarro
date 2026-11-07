@@ -1,0 +1,46 @@
+{
+  "image": "sheet-r1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "70be546924394b8d229d7b682455ab733b9da61d154adae5d2d7cf241a6f6611",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "transparent_pixels": 873897,
+  "outer_edge_alpha_max": 1,
+  "cell_seam_alpha_max": {
+    "512": 1,
+    "1024": 1,
+    "horizontal": 1
+  },
+  "fixed_cell_crop_safe": true,
+  "georg_status": null,
+  "status": "DRAFT",
+  "runtime_tests": 0,
+  "visual_review": {
+    "complete_upright_footless_bodies": true,
+    "open_eye_rule": "white/ivory sclera, red iris, black pupil; intentional Cyclops, unplanned single visible eye on ghost-father",
+    "identities": "Six different actors; not tier/state variants.",
+    "review_sizes_px": [
+      64,
+      96,
+      160,
+      192
+    ],
+    "backgrounds": [
+      "light",
+      "dark",
+      "checker"
+    ],
+    "deviations": [
+      "Ghost-father shows only one eye under the helmet, an unplanned variation.",
+      "Witch is taller and less round than the planned silhouette."
+    ],
+    "design_acceptance": "PENDING_GEORG"
+  },
+  "alpha_note": "Native selected alpha max254/255, residual alpha1; final edge normalization deferred."
+}

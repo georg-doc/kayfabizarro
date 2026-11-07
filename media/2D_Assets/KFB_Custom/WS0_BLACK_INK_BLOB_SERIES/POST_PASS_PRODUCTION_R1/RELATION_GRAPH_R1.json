@@ -1,0 +1,5420 @@
+{
+  "schema": "kfb.slop-authoring-relations/1",
+  "source_head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+  "scope": "authoring projection; not a second asset registry",
+  "nodes": [
+    {
+      "identity_id": "SL_MECHANIKER_01",
+      "set_id": "WSA_MECHANICS_20261104",
+      "name": "Vera Ventil",
+      "depiction_id": "SL_MECHANIKER_01",
+      "image": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mechanics/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MECHANIKER_02",
+      "set_id": "WSA_MECHANICS_20261104",
+      "name": "Professor Rückstoß",
+      "depiction_id": "SL_MECHANIKER_02",
+      "image": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mechanics/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MECHANIKER_03",
+      "set_id": "WSA_MECHANICS_20261104",
+      "name": "Mona Profil",
+      "depiction_id": "SL_MECHANIKER_03",
+      "image": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mechanics/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MECHANIKER_04",
+      "set_id": "WSA_MECHANICS_20261104",
+      "name": "Herr Nahtlos",
+      "depiction_id": "SL_MECHANIKER_04",
+      "image": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mechanics/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MECHANIKER_05",
+      "set_id": "WSA_MECHANICS_20261104",
+      "name": "Rita Reserve",
+      "depiction_id": "SL_MECHANIKER_05",
+      "image": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mechanics/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MECHANIKER_06",
+      "set_id": "WSA_MECHANICS_20261104",
+      "name": "Otto Standgas",
+      "depiction_id": "SL_MECHANIKER_06",
+      "image": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mechanics/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MATROSE_01",
+      "set_id": "WSA_SAILORS_20261104",
+      "name": "Hein Heimathafen",
+      "depiction_id": "SL_MATROSE_01",
+      "image": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/sailors/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MATROSE_02",
+      "set_id": "WSA_SAILORS_20261104",
+      "name": "Madame Dienstwind",
+      "depiction_id": "SL_MATROSE_02",
+      "image": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/sailors/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MATROSE_03",
+      "set_id": "WSA_SAILORS_20261104",
+      "name": "Käptn Gegenwasser",
+      "depiction_id": "SL_MATROSE_03",
+      "image": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/sailors/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MATROSE_04",
+      "set_id": "WSA_SAILORS_20261104",
+      "name": "Ada Fernsicht",
+      "depiction_id": "SL_MATROSE_04",
+      "image": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/sailors/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MATROSE_05",
+      "set_id": "WSA_SAILORS_20261104",
+      "name": "Admiral Hätschel",
+      "depiction_id": "SL_MATROSE_05",
+      "image": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/sailors/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MATROSE_06",
+      "set_id": "WSA_SAILORS_20261104",
+      "name": "Frau Salzbestand",
+      "depiction_id": "SL_MATROSE_06",
+      "image": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/sailors/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PIRAT_01",
+      "set_id": "WSA_PIRATES_20261104",
+      "name": "Kapitän Restanspruch",
+      "depiction_id": "SL_PIRAT_01",
+      "image": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/pirates/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PIRAT_02",
+      "set_id": "WSA_PIRATES_20261104",
+      "name": "Cora Kaperbrief",
+      "depiction_id": "SL_PIRAT_02",
+      "image": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/pirates/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PIRAT_03",
+      "set_id": "WSA_PIRATES_20261104",
+      "name": "Herr Eigentümlich",
+      "depiction_id": "SL_PIRAT_03",
+      "image": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/pirates/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PIRAT_04",
+      "set_id": "WSA_PIRATES_20261104",
+      "name": "Bootsmann Nachschlag",
+      "depiction_id": "SL_PIRAT_04",
+      "image": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/pirates/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PIRAT_05",
+      "set_id": "WSA_PIRATES_20261104",
+      "name": "Vesta Vakuum",
+      "depiction_id": "SL_PIRAT_05",
+      "image": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/pirates/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PIRAT_06",
+      "set_id": "WSA_PIRATES_20261104",
+      "name": "Bruno Bergungsrecht",
+      "depiction_id": "SL_PIRAT_06",
+      "image": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/pirates/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ENTDECKER_01",
+      "set_id": "WSA_EXPLORERS_20261104",
+      "name": "Dr. Bereitsbekannt",
+      "depiction_id": "SL_ENTDECKER_01",
+      "image": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/explorers/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ENTDECKER_02",
+      "set_id": "WSA_EXPLORERS_20261104",
+      "name": "Dr. Ada Scherbenglück",
+      "depiction_id": "SL_ENTDECKER_02",
+      "image": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/explorers/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ENTDECKER_03",
+      "set_id": "WSA_EXPLORERS_20261104",
+      "name": "Professor Kartenknick",
+      "depiction_id": "SL_ENTDECKER_03",
+      "image": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/explorers/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ENTDECKER_04",
+      "set_id": "WSA_EXPLORERS_20261104",
+      "name": "Herr Erstkontakt",
+      "depiction_id": "SL_ENTDECKER_04",
+      "image": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/explorers/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ENTDECKER_05",
+      "set_id": "WSA_EXPLORERS_20261104",
+      "name": "Dr. Alma Gegenprobe",
+      "depiction_id": "SL_ENTDECKER_05",
+      "image": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/explorers/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ENTDECKER_06",
+      "set_id": "WSA_EXPLORERS_20261104",
+      "name": "Professor Kurbelweg",
+      "depiction_id": "SL_ENTDECKER_06",
+      "image": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/explorers/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_GANG_01",
+      "set_id": "WSA_HITMEN_20261104",
+      "name": "Herr Feierabend",
+      "depiction_id": "SL_GANG_01",
+      "image": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/hitmen/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_GANG_02",
+      "set_id": "WSA_HITMEN_20261104",
+      "name": "Violetta Schlussstrich",
+      "depiction_id": "SL_GANG_02",
+      "image": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/hitmen/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_GANG_03",
+      "set_id": "WSA_HITMEN_20261104",
+      "name": "Herr Letzter Takt",
+      "depiction_id": "SL_GANG_03",
+      "image": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/hitmen/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_GANG_04",
+      "set_id": "WSA_HITMEN_20261104",
+      "name": "Onkel Samthand",
+      "depiction_id": "SL_GANG_04",
+      "image": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/hitmen/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_GANG_05",
+      "set_id": "WSA_HITMEN_20261104",
+      "name": "Tante Duftnote",
+      "depiction_id": "SL_GANG_05",
+      "image": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/hitmen/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_GANG_06",
+      "set_id": "WSA_HITMEN_20261104",
+      "name": "Rex Restauftrag",
+      "depiction_id": "SL_GANG_06",
+      "image": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/hitmen/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MAFIA_01",
+      "set_id": "WSA_MAFIA_20261104",
+      "name": "Don Kleingedruckt",
+      "depiction_id": "SL_MAFIA_01",
+      "image": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mafia/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MAFIA_02",
+      "set_id": "WSA_MAFIA_20261104",
+      "name": "Madame Kassenruhe",
+      "depiction_id": "SL_MAFIA_02",
+      "image": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mafia/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MAFIA_03",
+      "set_id": "WSA_MAFIA_20261104",
+      "name": "Herr Glücksreserve",
+      "depiction_id": "SL_MAFIA_03",
+      "image": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mafia/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MAFIA_04",
+      "set_id": "WSA_MAFIA_20261104",
+      "name": "Onkel Altbestand",
+      "depiction_id": "SL_MAFIA_04",
+      "image": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mafia/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MAFIA_05",
+      "set_id": "WSA_MAFIA_20261104",
+      "name": "Doña Selbstverständlich",
+      "depiction_id": "SL_MAFIA_05",
+      "image": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mafia/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_MAFIA_06",
+      "set_id": "WSA_MAFIA_20261104",
+      "name": "Mr. Nebenquote",
+      "depiction_id": "SL_MAFIA_06",
+      "image": {
+        "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/mafia/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_01",
+      "set_id": "WSA_WORKERS1_20261104",
+      "name": "Erna Rohrrecht",
+      "depiction_id": "SL_ARBEITER_01",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers1/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_02",
+      "set_id": "WSA_WORKERS1_20261104",
+      "name": "Herr Gussmüde",
+      "depiction_id": "SL_ARBEITER_02",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers1/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_03",
+      "set_id": "WSA_WORKERS1_20261104",
+      "name": "Rudi Straßenlage",
+      "depiction_id": "SL_ARBEITER_03",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers1/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_04",
+      "set_id": "WSA_WORKERS1_20261104",
+      "name": "Herr Lastfall",
+      "depiction_id": "SL_ARBEITER_04",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers1/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_05",
+      "set_id": "WSA_WORKERS1_20261104",
+      "name": "Schorsch Rußruhe",
+      "depiction_id": "SL_ARBEITER_05",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers1/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_06",
+      "set_id": "WSA_WORKERS1_20261104",
+      "name": "Ella Kabelsalat",
+      "depiction_id": "SL_ARBEITER_06",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers1/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_07",
+      "set_id": "WSA_WORKERS2_20261104",
+      "name": "Herr Reststoff",
+      "depiction_id": "SL_ARBEITER_07",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers2/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_08",
+      "set_id": "WSA_WORKERS2_20261104",
+      "name": "Berta Mörtelherz",
+      "depiction_id": "SL_ARBEITER_08",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers2/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_09",
+      "set_id": "WSA_WORKERS2_20261104",
+      "name": "Nils Nietfrage",
+      "depiction_id": "SL_ARBEITER_09",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers2/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_10",
+      "set_id": "WSA_WORKERS2_20261104",
+      "name": "Frau Faltenlage",
+      "depiction_id": "SL_ARBEITER_10",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers2/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_11",
+      "set_id": "WSA_WORKERS2_20261104",
+      "name": "Herr Drehmoment",
+      "depiction_id": "SL_ARBEITER_11",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers2/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ARBEITER_12",
+      "set_id": "WSA_WORKERS2_20261104",
+      "name": "Herr Nachtabfuhr",
+      "depiction_id": "SL_ARBEITER_12",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/workers2/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_CEO_01",
+      "set_id": "WSA_CEOS_20261104",
+      "name": "Gründer Zündfunke",
+      "depiction_id": "SL_CEO_01",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/ceos/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_CEO_02",
+      "set_id": "WSA_CEOS_20261104",
+      "name": "Vorsitzender Sitzfleisch",
+      "depiction_id": "SL_CEO_02",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/ceos/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_CEO_03",
+      "set_id": "WSA_CEOS_20261104",
+      "name": "Dr. Wendehammer",
+      "depiction_id": "SL_CEO_03",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/ceos/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_CEO_04",
+      "set_id": "WSA_CEOS_20261104",
+      "name": "Madame Mehrwert",
+      "depiction_id": "SL_CEO_04",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/ceos/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_CEO_05",
+      "set_id": "WSA_CEOS_20261104",
+      "name": "Direktor Lieferengpass",
+      "depiction_id": "SL_CEO_05",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/ceos/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_CEO_06",
+      "set_id": "WSA_CEOS_20261104",
+      "name": "Herr Liquiditätsangst",
+      "depiction_id": "SL_CEO_06",
+      "image": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/ceos/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_ANALOG_01",
+      "set_id": "WSA_OFFICE_ANALOG_20261104",
+      "name": "Frau Abrechnung",
+      "depiction_id": "SL_BUERO_ANALOG_01",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-analog/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_ANALOG_02",
+      "set_id": "WSA_OFFICE_ANALOG_20261104",
+      "name": "Herr Ablagefreude",
+      "depiction_id": "SL_BUERO_ANALOG_02",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-analog/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_ANALOG_03",
+      "set_id": "WSA_OFFICE_ANALOG_20261104",
+      "name": "Rat Nochfehlend",
+      "depiction_id": "SL_BUERO_ANALOG_03",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-analog/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_ANALOG_04",
+      "set_id": "WSA_OFFICE_ANALOG_20261104",
+      "name": "Herr Stellvertretungsweise",
+      "depiction_id": "SL_BUERO_ANALOG_04",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-analog/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_ANALOG_05",
+      "set_id": "WSA_OFFICE_ANALOG_20261104",
+      "name": "Frau Protokollfest",
+      "depiction_id": "SL_BUERO_ANALOG_05",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-analog/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_ANALOG_06",
+      "set_id": "WSA_OFFICE_ANALOG_20261104",
+      "name": "Herr Beschaffungsruhe",
+      "depiction_id": "SL_BUERO_ANALOG_06",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-analog-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-analog/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_DIGITAL_01",
+      "set_id": "WSA_OFFICE_DIGITAL_20261104",
+      "name": "Herr Rückmeldung",
+      "depiction_id": "SL_BUERO_DIGITAL_01",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-digital/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_DIGITAL_02",
+      "set_id": "WSA_OFFICE_DIGITAL_20261104",
+      "name": "Herr Zielerreichbar",
+      "depiction_id": "SL_BUERO_DIGITAL_02",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-digital/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_DIGITAL_03",
+      "set_id": "WSA_OFFICE_DIGITAL_20261104",
+      "name": "Frau Terminlage",
+      "depiction_id": "SL_BUERO_DIGITAL_03",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-digital/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_DIGITAL_04",
+      "set_id": "WSA_OFFICE_DIGITAL_20261104",
+      "name": "Frau Zugewandt",
+      "depiction_id": "SL_BUERO_DIGITAL_04",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-digital/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_DIGITAL_05",
+      "set_id": "WSA_OFFICE_DIGITAL_20261104",
+      "name": "Herr Zugriffsschutz",
+      "depiction_id": "SL_BUERO_DIGITAL_05",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-digital/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_BUERO_DIGITAL_06",
+      "set_id": "WSA_OFFICE_DIGITAL_20261104",
+      "name": "Herr Anwesenheitsnachweis",
+      "depiction_id": "SL_BUERO_DIGITAL_06",
+      "image": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/office-digital/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_07",
+      "set_id": "WSA_DRIVERS_GROUND_20261104",
+      "name": "Der Anschlusspfleger",
+      "depiction_id": "SL_FAHRER_07",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-ground/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_08",
+      "set_id": "WSA_DRIVERS_GROUND_20261104",
+      "name": "Nora Nachttarif",
+      "depiction_id": "SL_FAHRER_08",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-ground/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_09",
+      "set_id": "WSA_DRIVERS_GROUND_20261104",
+      "name": "Herr Fünfpunktnull",
+      "depiction_id": "SL_FAHRER_09",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-ground/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_10",
+      "set_id": "WSA_DRIVERS_GROUND_20261104",
+      "name": "Herr Hebelwirkung",
+      "depiction_id": "SL_FAHRER_10",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-ground/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_11",
+      "set_id": "WSA_DRIVERS_GROUND_20261104",
+      "name": "Herr Fernbeziehung",
+      "depiction_id": "SL_FAHRER_11",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-ground/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_12",
+      "set_id": "WSA_DRIVERS_GROUND_20261104",
+      "name": "Pia Zustellversuch",
+      "depiction_id": "SL_FAHRER_12",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-ground/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_01",
+      "set_id": "WSA_DRIVERS_SPACE_20261104",
+      "name": "Kapitänin Zwischenlage",
+      "depiction_id": "SL_FAHRER_01",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-space/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_02",
+      "set_id": "WSA_DRIVERS_SPACE_20261104",
+      "name": "Käptn Maschinenmeinung",
+      "depiction_id": "SL_FAHRER_02",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-space/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_03",
+      "set_id": "WSA_DRIVERS_SPACE_20261104",
+      "name": "Herr Umlaufbahn",
+      "depiction_id": "SL_FAHRER_03",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-space/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_04",
+      "set_id": "WSA_DRIVERS_SPACE_20261104",
+      "name": "Herr Kosmometertarif",
+      "depiction_id": "SL_FAHRER_04",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-space/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_05",
+      "set_id": "WSA_DRIVERS_SPACE_20261104",
+      "name": "Rita Ladedruck",
+      "depiction_id": "SL_FAHRER_05",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-space/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_FAHRER_06",
+      "set_id": "WSA_DRIVERS_SPACE_20261104",
+      "name": "Herr Podestfrei",
+      "depiction_id": "SL_FAHRER_06",
+      "image": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/drivers-space/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_01",
+      "set_id": "WSA_LAW_CIVIC_20261104",
+      "name": "Sheriff Amtsgewicht",
+      "depiction_id": "SL_ORDNUNG_01",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-civic/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_02",
+      "set_id": "WSA_LAW_CIVIC_20261104",
+      "name": "Frau Vorrang",
+      "depiction_id": "SL_ORDNUNG_02",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-civic/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_03",
+      "set_id": "WSA_LAW_CIVIC_20261104",
+      "name": "Constable Randnotiz",
+      "depiction_id": "SL_ORDNUNG_03",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-civic/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_04",
+      "set_id": "WSA_LAW_CIVIC_20261104",
+      "name": "Gendarm Feierlichkeit",
+      "depiction_id": "SL_ORDNUNG_04",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-civic/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_05",
+      "set_id": "WSA_LAW_CIVIC_20261104",
+      "name": "Frau Knöllchenruhe",
+      "depiction_id": "SL_ORDNUNG_05",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-civic/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_06",
+      "set_id": "WSA_LAW_CIVIC_20261104",
+      "name": "Herr Revierblick",
+      "depiction_id": "SL_ORDNUNG_06",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-civic/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_07",
+      "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+      "name": "Frau Grenzfall",
+      "depiction_id": "SL_ORDNUNG_07",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-institutions/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_08",
+      "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+      "name": "Wachtmeister Auftrieb",
+      "depiction_id": "SL_ORDNUNG_08",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-institutions/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_09",
+      "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+      "name": "Gardist Übergröße",
+      "depiction_id": "SL_ORDNUNG_09",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-institutions/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_10",
+      "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+      "name": "Inspektor Krümelmaß",
+      "depiction_id": "SL_ORDNUNG_10",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-institutions/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_11",
+      "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+      "name": "Herr Durchgangslage",
+      "depiction_id": "SL_ORDNUNG_11",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-institutions/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_ORDNUNG_12",
+      "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+      "name": "Marschallin Eigenprüfung",
+      "depiction_id": "SL_ORDNUNG_12",
+      "image": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-institutions-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/law-institutions/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_01",
+      "set_id": "WSA_COUPLES_PILOT_20261104",
+      "name": "Herr Nachgeschenkt",
+      "depiction_id": "SL_PAAR_01",
+      "image": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/couples-pilot/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_02",
+      "set_id": "WSA_COUPLES_PILOT_20261104",
+      "name": "Frau Zuckervorbehalt",
+      "depiction_id": "SL_PAAR_02",
+      "image": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/couples-pilot/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_03",
+      "set_id": "WSA_COUPLES_PILOT_20261104",
+      "name": "Frau Rosenrecht",
+      "depiction_id": "SL_PAAR_03",
+      "image": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/couples-pilot/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_04",
+      "set_id": "WSA_COUPLES_PILOT_20261104",
+      "name": "Herr Nebenblüte",
+      "depiction_id": "SL_PAAR_04",
+      "image": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/couples-pilot/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_05",
+      "set_id": "WSA_COUPLES_PILOT_20261104",
+      "name": "Herr Richtungsgefühl",
+      "depiction_id": "SL_PAAR_05",
+      "image": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/couples-pilot/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_06",
+      "set_id": "WSA_COUPLES_PILOT_20261104",
+      "name": "Frau Reisegeduld",
+      "depiction_id": "SL_PAAR_06",
+      "image": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/couples-pilot/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_07",
+      "set_id": "WSA_COUPLES_A_20261104",
+      "name": "Herr Taktbestand",
+      "depiction_id": "SL_PAAR_07",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_08",
+      "set_id": "WSA_COUPLES_A_20261104",
+      "name": "Frau Festvorbehalt",
+      "depiction_id": "SL_PAAR_08",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_09",
+      "set_id": "WSA_COUPLES_A_20261104",
+      "name": "Frau Fächerweise",
+      "depiction_id": "SL_PAAR_09",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_10",
+      "set_id": "WSA_COUPLES_A_20261104",
+      "name": "Herr Werkstolz",
+      "depiction_id": "SL_PAAR_10",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_11",
+      "set_id": "WSA_COUPLES_A_20261104",
+      "name": "Herr Fadenführung",
+      "depiction_id": "SL_PAAR_11",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_12",
+      "set_id": "WSA_COUPLES_A_20261104",
+      "name": "Frau Musterhoheit",
+      "depiction_id": "SL_PAAR_12",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_13",
+      "set_id": "WSA_COUPLES_B_20261104",
+      "name": "Frau Gefäßtreue",
+      "depiction_id": "SL_PAAR_13",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_14",
+      "set_id": "WSA_COUPLES_B_20261104",
+      "name": "Herr Tassengrund",
+      "depiction_id": "SL_PAAR_14",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_15",
+      "set_id": "WSA_COUPLES_B_20261104",
+      "name": "Herr Trommelpflicht",
+      "depiction_id": "SL_PAAR_15",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_16",
+      "set_id": "WSA_COUPLES_B_20261104",
+      "name": "Frau Festgestimmt",
+      "depiction_id": "SL_PAAR_16",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_17",
+      "set_id": "WSA_COUPLES_B_20261104",
+      "name": "Herr Saitenlage",
+      "depiction_id": "SL_PAAR_17",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "SL_PAAR_18",
+      "set_id": "WSA_COUPLES_B_20261104",
+      "name": "Frau Feierbestand",
+      "depiction_id": "SL_PAAR_18",
+      "image": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "intake_eligible": false,
+      "manifest": "SETS/couples-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_01",
+      "set_id": "WSA_RESIDENTS_A_20261104",
+      "name": "Herr Lesefrieden",
+      "depiction_id": "WSA_RESIDENT_01_A",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_01",
+      "set_id": "WSA_RESIDENTS_A_20261104",
+      "name": "Herr Lesefrieden",
+      "depiction_id": "WSA_RESIDENT_01_B",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_02",
+      "set_id": "WSA_RESIDENTS_A_20261104",
+      "name": "Frau Badeordnung",
+      "depiction_id": "WSA_RESIDENT_02_A",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_02",
+      "set_id": "WSA_RESIDENTS_A_20261104",
+      "name": "Frau Badeordnung",
+      "depiction_id": "WSA_RESIDENT_02_B",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_03",
+      "set_id": "WSA_RESIDENTS_A_20261104",
+      "name": "Herr Hausverstand",
+      "depiction_id": "WSA_RESIDENT_03_A",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_03",
+      "set_id": "WSA_RESIDENTS_A_20261104",
+      "name": "Herr Hausverstand",
+      "depiction_id": "WSA_RESIDENT_03_B",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-a-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-a/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_04",
+      "set_id": "WSA_RESIDENTS_B_20261104",
+      "name": "Frau Wärmereserve",
+      "depiction_id": "WSA_RESIDENT_04_A",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_04",
+      "set_id": "WSA_RESIDENTS_B_20261104",
+      "name": "Frau Wärmereserve",
+      "depiction_id": "WSA_RESIDENT_04_B",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_05",
+      "set_id": "WSA_RESIDENTS_B_20261104",
+      "name": "Herr Senderecht",
+      "depiction_id": "WSA_RESIDENT_05_A",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_05",
+      "set_id": "WSA_RESIDENTS_B_20261104",
+      "name": "Herr Senderecht",
+      "depiction_id": "WSA_RESIDENT_05_B",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_06",
+      "set_id": "WSA_RESIDENTS_B_20261104",
+      "name": "Frau Teigruhe",
+      "depiction_id": "WSA_RESIDENT_06_A",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RESIDENT_06",
+      "set_id": "WSA_RESIDENTS_B_20261104",
+      "name": "Frau Teigruhe",
+      "depiction_id": "WSA_RESIDENT_06_B",
+      "image": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "SETS/residents-b/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CARE_CLINICAL_20261104_01",
+      "set_id": "WSA_CARE_CLINICAL_20261104",
+      "name": "Dr. Eigenbefund",
+      "depiction_id": "WSA_CARE_CLINICAL_20261104_01",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/care-clinical/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CARE_CLINICAL_20261104_02",
+      "set_id": "WSA_CARE_CLINICAL_20261104",
+      "name": "Pfleger Nachtschicht",
+      "depiction_id": "WSA_CARE_CLINICAL_20261104_02",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/care-clinical/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CARE_CLINICAL_20261104_03",
+      "set_id": "WSA_CARE_CLINICAL_20261104",
+      "name": "Herr Bissfest",
+      "depiction_id": "WSA_CARE_CLINICAL_20261104_03",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/care-clinical/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CARE_CLINICAL_20261104_04",
+      "set_id": "WSA_CARE_CLINICAL_20261104",
+      "name": "Professor Durchsicht",
+      "depiction_id": "WSA_CARE_CLINICAL_20261104_04",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/care-clinical/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CARE_CLINICAL_20261104_05",
+      "set_id": "WSA_CARE_CLINICAL_20261104",
+      "name": "Frau Dringlichkeitsgrad",
+      "depiction_id": "WSA_CARE_CLINICAL_20261104_05",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/care-clinical/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CARE_CLINICAL_20261104_06",
+      "set_id": "WSA_CARE_CLINICAL_20261104",
+      "name": "Herr Mörserruhe",
+      "depiction_id": "WSA_CARE_CLINICAL_20261104_06",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/care-clinical/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_HEALTH_SELFCARE_20261104_01",
+      "set_id": "WSA_HEALTH_SELFCARE_20261104",
+      "name": "Herr Kontrollpuls",
+      "depiction_id": "WSA_HEALTH_SELFCARE_20261104_01",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/health-selfcare/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_HEALTH_SELFCARE_20261104_02",
+      "set_id": "WSA_HEALTH_SELFCARE_20261104",
+      "name": "Madame Vitalitätsvorschuss",
+      "depiction_id": "WSA_HEALTH_SELFCARE_20261104_02",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/health-selfcare/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_HEALTH_SELFCARE_20261104_03",
+      "set_id": "WSA_HEALTH_SELFCARE_20261104",
+      "name": "Herr Fallpauschale",
+      "depiction_id": "WSA_HEALTH_SELFCARE_20261104_03",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/health-selfcare/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_HEALTH_SELFCARE_20261104_04",
+      "set_id": "WSA_HEALTH_SELFCARE_20261104",
+      "name": "Frau Dehnbar",
+      "depiction_id": "WSA_HEALTH_SELFCARE_20261104_04",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/health-selfcare/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_HEALTH_SELFCARE_20261104_05",
+      "set_id": "WSA_HEALTH_SELFCARE_20261104",
+      "name": "Herr Sollzustand",
+      "depiction_id": "WSA_HEALTH_SELFCARE_20261104_05",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/health-selfcare/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_HEALTH_SELFCARE_20261104_06",
+      "set_id": "WSA_HEALTH_SELFCARE_20261104",
+      "name": "Herr Wartebestand",
+      "depiction_id": "WSA_HEALTH_SELFCARE_20261104_06",
+      "image": {
+        "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "HEALTH_CARE_12_2026-11-04/health-selfcare/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DOMESTIC_EVERYDAY_20261104_01",
+      "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+      "name": "Herr Schlüsselgewalt",
+      "depiction_id": "WSA_DOMESTIC_EVERYDAY_20261104_01",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DOMESTIC_EVERYDAY_20261104_02",
+      "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+      "name": "Frau Blattgemeinschaft",
+      "depiction_id": "WSA_DOMESTIC_EVERYDAY_20261104_02",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DOMESTIC_EVERYDAY_20261104_03",
+      "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+      "name": "Herr Empfangsbereit",
+      "depiction_id": "WSA_DOMESTIC_EVERYDAY_20261104_03",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DOMESTIC_EVERYDAY_20261104_04",
+      "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+      "name": "Herr Schlafschuld",
+      "depiction_id": "WSA_DOMESTIC_EVERYDAY_20261104_04",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DOMESTIC_EVERYDAY_20261104_05",
+      "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+      "name": "Frau Vereinsbestand",
+      "depiction_id": "WSA_DOMESTIC_EVERYDAY_20261104_05",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DOMESTIC_EVERYDAY_20261104_06",
+      "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+      "name": "Herr Zustellglück",
+      "depiction_id": "WSA_DOMESTIC_EVERYDAY_20261104_06",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/everyday-domestic-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_SERVICES_CONSUMPTION_20261104_01",
+      "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+      "name": "Herr Rückgaberecht",
+      "depiction_id": "WSA_SERVICES_CONSUMPTION_20261104_01",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_SERVICES_CONSUMPTION_20261104_02",
+      "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+      "name": "Frau Ausschanklage",
+      "depiction_id": "WSA_SERVICES_CONSUMPTION_20261104_02",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_SERVICES_CONSUMPTION_20261104_03",
+      "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+      "name": "Herr Kassensturz",
+      "depiction_id": "WSA_SERVICES_CONSUMPTION_20261104_03",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_SERVICES_CONSUMPTION_20261104_04",
+      "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+      "name": "Frau Deckungssumme",
+      "depiction_id": "WSA_SERVICES_CONSUMPTION_20261104_04",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_SERVICES_CONSUMPTION_20261104_05",
+      "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+      "name": "Herr Brotgewissheit",
+      "depiction_id": "WSA_SERVICES_CONSUMPTION_20261104_05",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_SERVICES_CONSUMPTION_20261104_06",
+      "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+      "name": "Herr Letzter Schliff",
+      "depiction_id": "WSA_SERVICES_CONSUMPTION_20261104_06",
+      "image": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_01",
+      "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+      "name": "Herr Prüfungsreife",
+      "depiction_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_01",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_02",
+      "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+      "name": "Coach Lauterfolg",
+      "depiction_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_02",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_03",
+      "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+      "name": "Frau Nachbesserung",
+      "depiction_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_03",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_04",
+      "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+      "name": "Herr Weiterbildungsbedarf",
+      "depiction_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_04",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_05",
+      "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+      "name": "Bruder Minutentakt",
+      "depiction_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_05",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_06",
+      "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+      "name": "Frau Siegelglück",
+      "depiction_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_06",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CULTURE_INTERPRETATION_20261104_01",
+      "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+      "name": "Madame Rahmenbedingung",
+      "depiction_id": "WSA_CULTURE_INTERPRETATION_20261104_01",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CULTURE_INTERPRETATION_20261104_02",
+      "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+      "name": "Herr Letztlektüre",
+      "depiction_id": "WSA_CULTURE_INTERPRETATION_20261104_02",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CULTURE_INTERPRETATION_20261104_03",
+      "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+      "name": "Herr Ausdruckspflicht",
+      "depiction_id": "WSA_CULTURE_INTERPRETATION_20261104_03",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CULTURE_INTERPRETATION_20261104_04",
+      "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+      "name": "Frau Ursprungszustand",
+      "depiction_id": "WSA_CULTURE_INTERPRETATION_20261104_04",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CULTURE_INTERPRETATION_20261104_05",
+      "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+      "name": "Herr Geschmacksurteil",
+      "depiction_id": "WSA_CULTURE_INTERPRETATION_20261104_05",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CULTURE_INTERPRETATION_20261104_06",
+      "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+      "name": "Herr Zutrittszweifel",
+      "depiction_id": "WSA_CULTURE_INTERPRETATION_20261104_06",
+      "image": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_MEANING_WELLBEING_20261104_01",
+      "set_id": "WSA_MEANING_WELLBEING_20261104",
+      "name": "Meister Stilljetzt",
+      "depiction_id": "WSA_MEANING_WELLBEING_20261104_01",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/meaning-wellbeing-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_MEANING_WELLBEING_20261104_02",
+      "set_id": "WSA_MEANING_WELLBEING_20261104",
+      "name": "Frau Gelassenheitsnachweis",
+      "depiction_id": "WSA_MEANING_WELLBEING_20261104_02",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/meaning-wellbeing-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_MEANING_WELLBEING_20261104_03",
+      "set_id": "WSA_MEANING_WELLBEING_20261104",
+      "name": "Herr Karmensaldo",
+      "depiction_id": "WSA_MEANING_WELLBEING_20261104_03",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/meaning-wellbeing-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_MEANING_WELLBEING_20261104_04",
+      "set_id": "WSA_MEANING_WELLBEING_20261104",
+      "name": "Bruder Rückzugsleitung",
+      "depiction_id": "WSA_MEANING_WELLBEING_20261104_04",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/meaning-wellbeing-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_MEANING_WELLBEING_20261104_05",
+      "set_id": "WSA_MEANING_WELLBEING_20261104",
+      "name": "Madame Kartenlage",
+      "depiction_id": "WSA_MEANING_WELLBEING_20261104_05",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/meaning-wellbeing-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_MEANING_WELLBEING_20261104_06",
+      "set_id": "WSA_MEANING_WELLBEING_20261104",
+      "name": "Herr Reingewissen",
+      "depiction_id": "WSA_MEANING_WELLBEING_20261104_06",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/meaning-wellbeing-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_FUTURE_PROMISES_20261104_01",
+      "set_id": "WSA_FUTURE_PROMISES_20261104",
+      "name": "Frau Trendgewiss",
+      "depiction_id": "WSA_FUTURE_PROMISES_20261104_01",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_FUTURE_PROMISES_20261104_02",
+      "set_id": "WSA_FUTURE_PROMISES_20261104",
+      "name": "Herr Automatenvertrauen",
+      "depiction_id": "WSA_FUTURE_PROMISES_20261104_02",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_FUTURE_PROMISES_20261104_03",
+      "set_id": "WSA_FUTURE_PROMISES_20261104",
+      "name": "Herr Späterleben",
+      "depiction_id": "WSA_FUTURE_PROMISES_20261104_03",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_FUTURE_PROMISES_20261104_04",
+      "set_id": "WSA_FUTURE_PROMISES_20261104",
+      "name": "Architektin Endlichgut",
+      "depiction_id": "WSA_FUTURE_PROMISES_20261104_04",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_FUTURE_PROMISES_20261104_05",
+      "set_id": "WSA_FUTURE_PROMISES_20261104",
+      "name": "Herr Vorratszukunft",
+      "depiction_id": "WSA_FUTURE_PROMISES_20261104_05",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_FUTURE_PROMISES_20261104_06",
+      "set_id": "WSA_FUTURE_PROMISES_20261104",
+      "name": "Herr Aufstiegsweg",
+      "depiction_id": "WSA_FUTURE_PROMISES_20261104_06",
+      "image": {
+        "datei": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_KITCHEN_HOSPITALITY_20261104_01",
+      "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
+      "name": "Küchenchef Abschmeck",
+      "depiction_id": "WSA_KITCHEN_HOSPITALITY_20261104_01",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_KITCHEN_HOSPITALITY_20261104_02",
+      "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
+      "name": "Herr Blätterstolz",
+      "depiction_id": "WSA_KITCHEN_HOSPITALITY_20261104_02",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_KITCHEN_HOSPITALITY_20261104_03",
+      "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
+      "name": "Madame Schalenwert",
+      "depiction_id": "WSA_KITCHEN_HOSPITALITY_20261104_03",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_KITCHEN_HOSPITALITY_20261104_04",
+      "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
+      "name": "Herr Spülbestand",
+      "depiction_id": "WSA_KITCHEN_HOSPITALITY_20261104_04",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_KITCHEN_HOSPITALITY_20261104_05",
+      "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
+      "name": "Herr Ringwurst",
+      "depiction_id": "WSA_KITCHEN_HOSPITALITY_20261104_05",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_KITCHEN_HOSPITALITY_20261104_06",
+      "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
+      "name": "Frau Anrichtewürde",
+      "depiction_id": "WSA_KITCHEN_HOSPITALITY_20261104_06",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DINING_RITUALS_20261104_01",
+      "set_id": "WSA_DINING_RITUALS_20261104",
+      "name": "Herr Gaumenurteil",
+      "depiction_id": "WSA_DINING_RITUALS_20261104_01",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DINING_RITUALS_20261104_02",
+      "set_id": "WSA_DINING_RITUALS_20261104",
+      "name": "Frau Rezepttreue",
+      "depiction_id": "WSA_DINING_RITUALS_20261104_02",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DINING_RITUALS_20261104_03",
+      "set_id": "WSA_DINING_RITUALS_20261104",
+      "name": "Herr Koffeinvorbehalt",
+      "depiction_id": "WSA_DINING_RITUALS_20261104_03",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DINING_RITUALS_20261104_04",
+      "set_id": "WSA_DINING_RITUALS_20261104",
+      "name": "Frau Faltengebot",
+      "depiction_id": "WSA_DINING_RITUALS_20261104_04",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DINING_RITUALS_20261104_05",
+      "set_id": "WSA_DINING_RITUALS_20261104",
+      "name": "Herr Restevermögen",
+      "depiction_id": "WSA_DINING_RITUALS_20261104_05",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_DINING_RITUALS_20261104_06",
+      "set_id": "WSA_DINING_RITUALS_20261104",
+      "name": "Herr Vorverzehr",
+      "depiction_id": "WSA_DINING_RITUALS_20261104_06",
+      "image": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_PRIVATE_OBSESSIONS_20261104_01",
+      "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+      "name": "Frau Petri Geduld",
+      "depiction_id": "WSA_PRIVATE_OBSESSIONS_20261104_01",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_PRIVATE_OBSESSIONS_20261104_02",
+      "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+      "name": "Herr Zähnungsgrad",
+      "depiction_id": "WSA_PRIVATE_OBSESSIONS_20261104_02",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_PRIVATE_OBSESSIONS_20261104_03",
+      "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+      "name": "Herr Fernzuständig",
+      "depiction_id": "WSA_PRIVATE_OBSESSIONS_20261104_03",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_PRIVATE_OBSESSIONS_20261104_04",
+      "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+      "name": "Herr Zugzwang",
+      "depiction_id": "WSA_PRIVATE_OBSESSIONS_20261104_04",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_PRIVATE_OBSESSIONS_20261104_05",
+      "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+      "name": "Frau Maßstab",
+      "depiction_id": "WSA_PRIVATE_OBSESSIONS_20261104_05",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_PRIVATE_OBSESSIONS_20261104_06",
+      "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+      "name": "Herr Restpassung",
+      "depiction_id": "WSA_PRIVATE_OBSESSIONS_20261104_06",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/private-obsessions-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CLUB_RITUALS_20261104_01",
+      "set_id": "WSA_CLUB_RITUALS_20261104",
+      "name": "Herr Beschlussfähig",
+      "depiction_id": "WSA_CLUB_RITUALS_20261104_01",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/club-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CLUB_RITUALS_20261104_02",
+      "set_id": "WSA_CLUB_RITUALS_20261104",
+      "name": "Frau Einstimmig",
+      "depiction_id": "WSA_CLUB_RITUALS_20261104_02",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/club-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CLUB_RITUALS_20261104_03",
+      "set_id": "WSA_CLUB_RITUALS_20261104",
+      "name": "Herr Bahnbestand",
+      "depiction_id": "WSA_CLUB_RITUALS_20261104_03",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/club-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CLUB_RITUALS_20261104_04",
+      "set_id": "WSA_CLUB_RITUALS_20261104",
+      "name": "Herr Regelmoment",
+      "depiction_id": "WSA_CLUB_RITUALS_20261104_04",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/club-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CLUB_RITUALS_20261104_05",
+      "set_id": "WSA_CLUB_RITUALS_20261104",
+      "name": "Herr Zweckbindung",
+      "depiction_id": "WSA_CLUB_RITUALS_20261104_05",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/club-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CLUB_RITUALS_20261104_06",
+      "set_id": "WSA_CLUB_RITUALS_20261104",
+      "name": "Frau Knopfhoheit",
+      "depiction_id": "WSA_CLUB_RITUALS_20261104_06",
+      "image": {
+        "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/club-rituals/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_ROSTWART",
+      "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
+      "name": "Herr Rostwart",
+      "depiction_id": "WSA_ROSTWART_T1_20261104",
+      "image": {
+        "datei": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/rpg-tier-triplets-sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_ROSTWART",
+      "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
+      "name": "Herr Rostwart",
+      "depiction_id": "WSA_ROSTWART_T2_20261104",
+      "image": {
+        "datei": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/rpg-tier-triplets-sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_ROSTWART",
+      "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
+      "name": "Herr Rostwart",
+      "depiction_id": "WSA_ROSTWART_T3_20261104",
+      "image": {
+        "datei": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/rpg-tier-triplets-sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_LILA_LEHRGANG",
+      "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
+      "name": "Frau Lila Lehrgang",
+      "depiction_id": "WSA_LILA_LEHRGANG_T1_20261104",
+      "image": {
+        "datei": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/rpg-tier-triplets-sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_LILA_LEHRGANG",
+      "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
+      "name": "Frau Lila Lehrgang",
+      "depiction_id": "WSA_LILA_LEHRGANG_T2_20261104",
+      "image": {
+        "datei": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/rpg-tier-triplets-sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_LILA_LEHRGANG",
+      "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
+      "name": "Frau Lila Lehrgang",
+      "depiction_id": "WSA_LILA_LEHRGANG_T3_20261104",
+      "image": {
+        "datei": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/rpg-tier-triplets-sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_BARBAR_20261105",
+      "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+      "name": "Grunz Grundsatz",
+      "depiction_id": "WSA_RPG_BARBAR_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_BARBAR_20261105",
+      "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+      "name": "Grunz Grundsatz",
+      "depiction_id": "WSA_RPG_BARBAR_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_BARBAR_20261105",
+      "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+      "name": "Grunz Grundsatz",
+      "depiction_id": "WSA_RPG_BARBAR_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_KULTIST_20261105",
+      "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+      "name": "Schwester Restgewissheit",
+      "depiction_id": "WSA_RPG_KULTIST_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_KULTIST_20261105",
+      "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+      "name": "Schwester Restgewissheit",
+      "depiction_id": "WSA_RPG_KULTIST_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_KULTIST_20261105",
+      "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+      "name": "Schwester Restgewissheit",
+      "depiction_id": "WSA_RPG_KULTIST_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_KLERIKER_20261105",
+      "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+      "name": "Diakonin Nebenwirkung",
+      "depiction_id": "WSA_RPG_KLERIKER_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_KLERIKER_20261105",
+      "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+      "name": "Diakonin Nebenwirkung",
+      "depiction_id": "WSA_RPG_KLERIKER_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_KLERIKER_20261105",
+      "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+      "name": "Diakonin Nebenwirkung",
+      "depiction_id": "WSA_RPG_KLERIKER_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_DIEB_20261105",
+      "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+      "name": "Herr Mitnahme",
+      "depiction_id": "WSA_RPG_DIEB_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_DIEB_20261105",
+      "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+      "name": "Herr Mitnahme",
+      "depiction_id": "WSA_RPG_DIEB_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_DIEB_20261105",
+      "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+      "name": "Herr Mitnahme",
+      "depiction_id": "WSA_RPG_DIEB_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_MEUCHLER_20261105",
+      "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+      "name": "Frau Schlussstrich",
+      "depiction_id": "WSA_RPG_MEUCHLER_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_MEUCHLER_20261105",
+      "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+      "name": "Frau Schlussstrich",
+      "depiction_id": "WSA_RPG_MEUCHLER_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_MEUCHLER_20261105",
+      "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+      "name": "Frau Schlussstrich",
+      "depiction_id": "WSA_RPG_MEUCHLER_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_PALADIN_20261105",
+      "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+      "name": "Sir Unverhältnismäßig",
+      "depiction_id": "WSA_RPG_PALADIN_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_PALADIN_20261105",
+      "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+      "name": "Sir Unverhältnismäßig",
+      "depiction_id": "WSA_RPG_PALADIN_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_PALADIN_20261105",
+      "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+      "name": "Sir Unverhältnismäßig",
+      "depiction_id": "WSA_RPG_PALADIN_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_TODESRITTER_20261105",
+      "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+      "name": "Graf Endzustand",
+      "depiction_id": "WSA_RPG_TODESRITTER_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_TODESRITTER_20261105",
+      "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+      "name": "Graf Endzustand",
+      "depiction_id": "WSA_RPG_TODESRITTER_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_TODESRITTER_20261105",
+      "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+      "name": "Graf Endzustand",
+      "depiction_id": "WSA_RPG_TODESRITTER_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_BARDE_20261105",
+      "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+      "name": "Madame Zugabe",
+      "depiction_id": "WSA_RPG_BARDE_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_BARDE_20261105",
+      "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+      "name": "Madame Zugabe",
+      "depiction_id": "WSA_RPG_BARDE_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_BARDE_20261105",
+      "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+      "name": "Madame Zugabe",
+      "depiction_id": "WSA_RPG_BARDE_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_HOARDER_20261105",
+      "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+      "name": "Frau Eventuellnützlich",
+      "depiction_id": "WSA_RPG_HOARDER_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_HOARDER_20261105",
+      "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+      "name": "Frau Eventuellnützlich",
+      "depiction_id": "WSA_RPG_HOARDER_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_HOARDER_20261105",
+      "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+      "name": "Frau Eventuellnützlich",
+      "depiction_id": "WSA_RPG_HOARDER_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_DUNGEON_MASTER_20261105",
+      "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+      "name": "Herr Wirklichkeitsvorbehalt",
+      "depiction_id": "WSA_RPG_DUNGEON_MASTER_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_DUNGEON_MASTER_20261105",
+      "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+      "name": "Herr Wirklichkeitsvorbehalt",
+      "depiction_id": "WSA_RPG_DUNGEON_MASTER_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_DUNGEON_MASTER_20261105",
+      "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+      "name": "Herr Wirklichkeitsvorbehalt",
+      "depiction_id": "WSA_RPG_DUNGEON_MASTER_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_REGELNERD_20261105",
+      "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+      "name": "Dr. Eigentlich",
+      "depiction_id": "WSA_RPG_REGELNERD_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_REGELNERD_20261105",
+      "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+      "name": "Dr. Eigentlich",
+      "depiction_id": "WSA_RPG_REGELNERD_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_REGELNERD_20261105",
+      "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+      "name": "Dr. Eigentlich",
+      "depiction_id": "WSA_RPG_REGELNERD_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_SNACK_PROVIDER_20261105",
+      "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+      "name": "Frau Proviantvorsehung",
+      "depiction_id": "WSA_RPG_SNACK_PROVIDER_20261105_T1",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_SNACK_PROVIDER_20261105",
+      "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+      "name": "Frau Proviantvorsehung",
+      "depiction_id": "WSA_RPG_SNACK_PROVIDER_20261105_T2",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_RPG_SNACK_PROVIDER_20261105",
+      "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+      "name": "Frau Proviantvorsehung",
+      "depiction_id": "WSA_RPG_SNACK_PROVIDER_20261105_T3",
+      "image": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_MEDIZIN_20261105",
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "name": "Dr. Befundvorbehalt",
+      "depiction_id": "WSA_CAREER_MEDIZIN_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_MEDIZIN_20261105",
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "name": "Dr. Befundvorbehalt",
+      "depiction_id": "WSA_CAREER_MEDIZIN_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_MEDIZIN_20261105",
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "name": "Dr. Befundvorbehalt",
+      "depiction_id": "WSA_CAREER_MEDIZIN_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_PFLEGE_20261105",
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "name": "Herr Stationshaltung",
+      "depiction_id": "WSA_CAREER_PFLEGE_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_PFLEGE_20261105",
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "name": "Herr Stationshaltung",
+      "depiction_id": "WSA_CAREER_PFLEGE_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_PFLEGE_20261105",
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "name": "Herr Stationshaltung",
+      "depiction_id": "WSA_CAREER_PFLEGE_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_KUECHE_20261105",
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "name": "Monsieur Nachwürde",
+      "depiction_id": "WSA_CAREER_KUECHE_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_KUECHE_20261105",
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "name": "Monsieur Nachwürde",
+      "depiction_id": "WSA_CAREER_KUECHE_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_KUECHE_20261105",
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "name": "Monsieur Nachwürde",
+      "depiction_id": "WSA_CAREER_KUECHE_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_HANDWERK_20261105",
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "name": "Frau Sollpassung",
+      "depiction_id": "WSA_CAREER_HANDWERK_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_HANDWERK_20261105",
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "name": "Frau Sollpassung",
+      "depiction_id": "WSA_CAREER_HANDWERK_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_HANDWERK_20261105",
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "name": "Frau Sollpassung",
+      "depiction_id": "WSA_CAREER_HANDWERK_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_BILDUNG_20261105",
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "name": "Frau Lehrsatz",
+      "depiction_id": "WSA_CAREER_BILDUNG_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_BILDUNG_20261105",
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "name": "Frau Lehrsatz",
+      "depiction_id": "WSA_CAREER_BILDUNG_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_BILDUNG_20261105",
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "name": "Frau Lehrsatz",
+      "depiction_id": "WSA_CAREER_BILDUNG_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_WISSENSCHAFT_20261105",
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "name": "Professor Resthypothese",
+      "depiction_id": "WSA_CAREER_WISSENSCHAFT_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_WISSENSCHAFT_20261105",
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "name": "Professor Resthypothese",
+      "depiction_id": "WSA_CAREER_WISSENSCHAFT_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_WISSENSCHAFT_20261105",
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "name": "Professor Resthypothese",
+      "depiction_id": "WSA_CAREER_WISSENSCHAFT_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_BUERO_20261105",
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "name": "Herr Weiterleitung",
+      "depiction_id": "WSA_CAREER_BUERO_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_BUERO_20261105",
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "name": "Herr Weiterleitung",
+      "depiction_id": "WSA_CAREER_BUERO_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_BUERO_20261105",
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "name": "Herr Weiterleitung",
+      "depiction_id": "WSA_CAREER_BUERO_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_JUSTIZ_20261105",
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "name": "Frau Rechtsbehelf",
+      "depiction_id": "WSA_CAREER_JUSTIZ_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_JUSTIZ_20261105",
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "name": "Frau Rechtsbehelf",
+      "depiction_id": "WSA_CAREER_JUSTIZ_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_JUSTIZ_20261105",
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "name": "Frau Rechtsbehelf",
+      "depiction_id": "WSA_CAREER_JUSTIZ_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_TRANSPORT_20261105",
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "name": "Frau Anschlussverlust",
+      "depiction_id": "WSA_CAREER_TRANSPORT_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_TRANSPORT_20261105",
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "name": "Frau Anschlussverlust",
+      "depiction_id": "WSA_CAREER_TRANSPORT_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_TRANSPORT_20261105",
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "name": "Frau Anschlussverlust",
+      "depiction_id": "WSA_CAREER_TRANSPORT_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_HANDEL_20261105",
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "name": "Herr Warenwert",
+      "depiction_id": "WSA_CAREER_HANDEL_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_HANDEL_20261105",
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "name": "Herr Warenwert",
+      "depiction_id": "WSA_CAREER_HANDEL_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_HANDEL_20261105",
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "name": "Herr Warenwert",
+      "depiction_id": "WSA_CAREER_HANDEL_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/05-transport--handel/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_MEDIEN_20261105",
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "name": "Herr Schlagzeile",
+      "depiction_id": "WSA_CAREER_MEDIEN_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_MEDIEN_20261105",
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "name": "Herr Schlagzeile",
+      "depiction_id": "WSA_CAREER_MEDIEN_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_MEDIEN_20261105",
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "name": "Herr Schlagzeile",
+      "depiction_id": "WSA_CAREER_MEDIEN_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_VERWALTUNG_20261105",
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "name": "Frau Zuständigkeitsbereich",
+      "depiction_id": "WSA_CAREER_VERWALTUNG_20261105_L1",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_VERWALTUNG_20261105",
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "name": "Frau Zuständigkeitsbereich",
+      "depiction_id": "WSA_CAREER_VERWALTUNG_20261105_L2",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_CAREER_VERWALTUNG_20261105",
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "name": "Frau Zuständigkeitsbereich",
+      "depiction_id": "WSA_CAREER_VERWALTUNG_20261105_L3",
+      "image": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_AUSBRECHER_20261105_01",
+      "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+      "name": "Herr Fluchtweg",
+      "depiction_id": "WSA_TRIO_AUSBRECHER_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_AUSBRECHER_20261105_02",
+      "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+      "name": "Frau Löffelrecht",
+      "depiction_id": "WSA_TRIO_AUSBRECHER_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_AUSBRECHER_20261105_03",
+      "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+      "name": "Herr Bewährungsangst",
+      "depiction_id": "WSA_TRIO_AUSBRECHER_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+      "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+      "name": "Herr Schließzustand",
+      "depiction_id": "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_BRUCHKOLONNE_20261105_02",
+      "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+      "name": "Frau Fernverdacht",
+      "depiction_id": "WSA_TRIO_BRUCHKOLONNE_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_BRUCHKOLONNE_20261105_03",
+      "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+      "name": "Herr Leerlauf",
+      "depiction_id": "WSA_TRIO_BRUCHKOLONNE_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_NACHTJAZZ_20261105_01",
+      "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+      "name": "Frau Atemvorbehalt",
+      "depiction_id": "WSA_TRIO_NACHTJAZZ_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_NACHTJAZZ_20261105_02",
+      "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+      "name": "Herr Grundton",
+      "depiction_id": "WSA_TRIO_NACHTJAZZ_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_NACHTJAZZ_20261105_03",
+      "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+      "name": "Herr Nebenbeat",
+      "depiction_id": "WSA_TRIO_NACHTJAZZ_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_GARAGENKRACH_20261105_01",
+      "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+      "name": "Frau Lautantrag",
+      "depiction_id": "WSA_TRIO_GARAGENKRACH_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_GARAGENKRACH_20261105_02",
+      "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+      "name": "Herr Akkordresten",
+      "depiction_id": "WSA_TRIO_GARAGENKRACH_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_GARAGENKRACH_20261105_03",
+      "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+      "name": "Herr Eimermaß",
+      "depiction_id": "WSA_TRIO_GARAGENKRACH_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_SONNTAGSFAMILIE_20261105_01",
+      "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
+      "name": "Tante Letztentscheid",
+      "depiction_id": "WSA_TRIO_SONNTAGSFAMILIE_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_SONNTAGSFAMILIE_20261105_02",
+      "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
+      "name": "Herr Familiensonntag",
+      "depiction_id": "WSA_TRIO_SONNTAGSFAMILIE_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_SONNTAGSFAMILIE_20261105_03",
+      "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
+      "name": "Opa Zeitreserve",
+      "depiction_id": "WSA_TRIO_SONNTAGSFAMILIE_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_ROHRKOMMANDO_20261105_01",
+      "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
+      "name": "Frau Hauptabsperrung",
+      "depiction_id": "WSA_TRIO_ROHRKOMMANDO_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_ROHRKOMMANDO_20261105_02",
+      "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
+      "name": "Herr Dichtungslehre",
+      "depiction_id": "WSA_TRIO_ROHRKOMMANDO_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_ROHRKOMMANDO_20261105_03",
+      "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
+      "name": "Herr Abnahmetermin",
+      "depiction_id": "WSA_TRIO_ROHRKOMMANDO_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_MACBETH_20261105_01",
+      "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+      "name": "König Vielleichtmorgen",
+      "depiction_id": "WSA_TRIO_MACBETH_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_MACBETH_20261105_02",
+      "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+      "name": "Lady Fleckenfreiheit",
+      "depiction_id": "WSA_TRIO_MACBETH_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_MACBETH_20261105_03",
+      "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+      "name": "Frau Vorhersagbar",
+      "depiction_id": "WSA_TRIO_MACBETH_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_HAMLET_20261105_01",
+      "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+      "name": "Prinz Aufschub",
+      "depiction_id": "WSA_TRIO_HAMLET_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_HAMLET_20261105_02",
+      "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+      "name": "Herr Nachtrag",
+      "depiction_id": "WSA_TRIO_HAMLET_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_HAMLET_20261105_03",
+      "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+      "name": "Vater Unabgeschlossen",
+      "depiction_id": "WSA_TRIO_HAMLET_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_ODYSSEE_20261105_01",
+      "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+      "name": "Herr Heimwegabweichung",
+      "depiction_id": "WSA_TRIO_ODYSSEE_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_ODYSSEE_20261105_02",
+      "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+      "name": "Frau Zwischengewebe",
+      "depiction_id": "WSA_TRIO_ODYSSEE_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_ODYSSEE_20261105_03",
+      "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+      "name": "Herr Einblick",
+      "depiction_id": "WSA_TRIO_ODYSSEE_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_CASABLANCA_20261105_01",
+      "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+      "name": "Herr LetzterAusschank",
+      "depiction_id": "WSA_TRIO_CASABLANCA_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_CASABLANCA_20261105_02",
+      "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+      "name": "Frau Abschiedsvorbehalt",
+      "depiction_id": "WSA_TRIO_CASABLANCA_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_CASABLANCA_20261105_03",
+      "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+      "name": "Herr Prinzipienreise",
+      "depiction_id": "WSA_TRIO_CASABLANCA_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_MUSKETIERE_20261105_01",
+      "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
+      "name": "Herr Würdeverlust",
+      "depiction_id": "WSA_TRIO_MUSKETIERE_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_MUSKETIERE_20261105_02",
+      "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
+      "name": "Herr Umfangseid",
+      "depiction_id": "WSA_TRIO_MUSKETIERE_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_MUSKETIERE_20261105_03",
+      "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
+      "name": "Madame Hintergedanke",
+      "depiction_id": "WSA_TRIO_MUSKETIERE_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_QUIJOTE_20261105_01",
+      "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
+      "name": "Ritter Zustandsbild",
+      "depiction_id": "WSA_TRIO_QUIJOTE_20261105_01",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_QUIJOTE_20261105_02",
+      "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
+      "name": "Herr Bodenhaftung",
+      "depiction_id": "WSA_TRIO_QUIJOTE_20261105_02",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json"
+    },
+    {
+      "identity_id": "WSA_TRIO_QUIJOTE_20261105_03",
+      "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
+      "name": "Frau Eigenwirklichkeit",
+      "depiction_id": "WSA_TRIO_QUIJOTE_20261105_03",
+      "image": {
+        "datei": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "intake_eligible": true,
+      "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json"
+    }
+  ],
+  "groups": [
+    {
+      "id": "PAIR_SOURCE_01",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_01",
+        "SL_PAAR_02"
+      ],
+      "depictions": [
+        "SL_PAAR_01",
+        "SL_PAAR_02"
+      ],
+      "names": [
+        "Herr Nachgeschenkt",
+        "Frau Zuckervorbehalt"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_02",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_03",
+        "SL_PAAR_04"
+      ],
+      "depictions": [
+        "SL_PAAR_03",
+        "SL_PAAR_04"
+      ],
+      "names": [
+        "Frau Rosenrecht",
+        "Herr Nebenblüte"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_03",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_05",
+        "SL_PAAR_06"
+      ],
+      "depictions": [
+        "SL_PAAR_05",
+        "SL_PAAR_06"
+      ],
+      "names": [
+        "Herr Richtungsgefühl",
+        "Frau Reisegeduld"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_04",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_07",
+        "SL_PAAR_08"
+      ],
+      "depictions": [
+        "SL_PAAR_07",
+        "SL_PAAR_08"
+      ],
+      "names": [
+        "Herr Taktbestand",
+        "Frau Festvorbehalt"
+      ],
+      "intake_eligible": false,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_05",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_09",
+        "SL_PAAR_10"
+      ],
+      "depictions": [
+        "SL_PAAR_09",
+        "SL_PAAR_10"
+      ],
+      "names": [
+        "Frau Fächerweise",
+        "Herr Werkstolz"
+      ],
+      "intake_eligible": false,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_06",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_11",
+        "SL_PAAR_12"
+      ],
+      "depictions": [
+        "SL_PAAR_11",
+        "SL_PAAR_12"
+      ],
+      "names": [
+        "Herr Fadenführung",
+        "Frau Musterhoheit"
+      ],
+      "intake_eligible": false,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_07",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_13",
+        "SL_PAAR_14"
+      ],
+      "depictions": [
+        "SL_PAAR_13",
+        "SL_PAAR_14"
+      ],
+      "names": [
+        "Frau Gefäßtreue",
+        "Herr Tassengrund"
+      ],
+      "intake_eligible": false,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_08",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_15",
+        "SL_PAAR_16"
+      ],
+      "depictions": [
+        "SL_PAAR_15",
+        "SL_PAAR_16"
+      ],
+      "names": [
+        "Herr Trommelpflicht",
+        "Frau Festgestimmt"
+      ],
+      "intake_eligible": false,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_09",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_17",
+        "SL_PAAR_18"
+      ],
+      "depictions": [
+        "SL_PAAR_17",
+        "SL_PAAR_18"
+      ],
+      "names": [
+        "Herr Saitenlage",
+        "Frau Feierbestand"
+      ],
+      "intake_eligible": false,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "PAIR_SOURCE_10",
+      "kind": "pair",
+      "members": [
+        "SL_PIRAT_05",
+        "SL_PIRAT_06"
+      ],
+      "depictions": [
+        "SL_PIRAT_05",
+        "SL_PIRAT_06"
+      ],
+      "names": [
+        "Vesta Vakuum",
+        "Bruno Bergungsrecht"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned."
+    },
+    {
+      "id": "WSA_RESIDENT_01",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_01"
+      ],
+      "depictions": [
+        "WSA_RESIDENT_01_A",
+        "WSA_RESIDENT_01_B"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RESIDENT_02",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_02"
+      ],
+      "depictions": [
+        "WSA_RESIDENT_02_A",
+        "WSA_RESIDENT_02_B"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RESIDENT_03",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_03"
+      ],
+      "depictions": [
+        "WSA_RESIDENT_03_A",
+        "WSA_RESIDENT_03_B"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RESIDENT_04",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_04"
+      ],
+      "depictions": [
+        "WSA_RESIDENT_04_A",
+        "WSA_RESIDENT_04_B"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RESIDENT_05",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_05"
+      ],
+      "depictions": [
+        "WSA_RESIDENT_05_A",
+        "WSA_RESIDENT_05_B"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RESIDENT_06",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_06"
+      ],
+      "depictions": [
+        "WSA_RESIDENT_06_A",
+        "WSA_RESIDENT_06_B"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_ROSTWART",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_ROSTWART"
+      ],
+      "depictions": [
+        "WSA_ROSTWART_T1_20261104",
+        "WSA_ROSTWART_T2_20261104",
+        "WSA_ROSTWART_T3_20261104"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_LILA_LEHRGANG",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_LILA_LEHRGANG"
+      ],
+      "depictions": [
+        "WSA_LILA_LEHRGANG_T1_20261104",
+        "WSA_LILA_LEHRGANG_T2_20261104",
+        "WSA_LILA_LEHRGANG_T3_20261104"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_BARBAR_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_BARBAR_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_BARBAR_20261105_T1",
+        "WSA_RPG_BARBAR_20261105_T2",
+        "WSA_RPG_BARBAR_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_KULTIST_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_KULTIST_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_KULTIST_20261105_T1",
+        "WSA_RPG_KULTIST_20261105_T2",
+        "WSA_RPG_KULTIST_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_KLERIKER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_KLERIKER_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_KLERIKER_20261105_T1",
+        "WSA_RPG_KLERIKER_20261105_T2",
+        "WSA_RPG_KLERIKER_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_DIEB_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_DIEB_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_DIEB_20261105_T1",
+        "WSA_RPG_DIEB_20261105_T2",
+        "WSA_RPG_DIEB_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_MEUCHLER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_MEUCHLER_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_MEUCHLER_20261105_T1",
+        "WSA_RPG_MEUCHLER_20261105_T2",
+        "WSA_RPG_MEUCHLER_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_PALADIN_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_PALADIN_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_PALADIN_20261105_T1",
+        "WSA_RPG_PALADIN_20261105_T2",
+        "WSA_RPG_PALADIN_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_TODESRITTER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_TODESRITTER_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_TODESRITTER_20261105_T1",
+        "WSA_RPG_TODESRITTER_20261105_T2",
+        "WSA_RPG_TODESRITTER_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_BARDE_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_BARDE_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_BARDE_20261105_T1",
+        "WSA_RPG_BARDE_20261105_T2",
+        "WSA_RPG_BARDE_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_HOARDER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_HOARDER_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_HOARDER_20261105_T1",
+        "WSA_RPG_HOARDER_20261105_T2",
+        "WSA_RPG_HOARDER_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_DUNGEON_MASTER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_DUNGEON_MASTER_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_DUNGEON_MASTER_20261105_T1",
+        "WSA_RPG_DUNGEON_MASTER_20261105_T2",
+        "WSA_RPG_DUNGEON_MASTER_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_REGELNERD_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_REGELNERD_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_REGELNERD_20261105_T1",
+        "WSA_RPG_REGELNERD_20261105_T2",
+        "WSA_RPG_REGELNERD_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_RPG_SNACK_PROVIDER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_SNACK_PROVIDER_20261105"
+      ],
+      "depictions": [
+        "WSA_RPG_SNACK_PROVIDER_20261105_T1",
+        "WSA_RPG_SNACK_PROVIDER_20261105_T2",
+        "WSA_RPG_SNACK_PROVIDER_20261105_T3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_MEDIZIN_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_MEDIZIN_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_MEDIZIN_20261105_L1",
+        "WSA_CAREER_MEDIZIN_20261105_L2",
+        "WSA_CAREER_MEDIZIN_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_PFLEGE_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_PFLEGE_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_PFLEGE_20261105_L1",
+        "WSA_CAREER_PFLEGE_20261105_L2",
+        "WSA_CAREER_PFLEGE_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_KUECHE_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_KUECHE_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_KUECHE_20261105_L1",
+        "WSA_CAREER_KUECHE_20261105_L2",
+        "WSA_CAREER_KUECHE_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_HANDWERK_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_HANDWERK_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_HANDWERK_20261105_L1",
+        "WSA_CAREER_HANDWERK_20261105_L2",
+        "WSA_CAREER_HANDWERK_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_BILDUNG_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_BILDUNG_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_BILDUNG_20261105_L1",
+        "WSA_CAREER_BILDUNG_20261105_L2",
+        "WSA_CAREER_BILDUNG_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_WISSENSCHAFT_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_WISSENSCHAFT_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_WISSENSCHAFT_20261105_L1",
+        "WSA_CAREER_WISSENSCHAFT_20261105_L2",
+        "WSA_CAREER_WISSENSCHAFT_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_BUERO_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_BUERO_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_BUERO_20261105_L1",
+        "WSA_CAREER_BUERO_20261105_L2",
+        "WSA_CAREER_BUERO_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_JUSTIZ_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_JUSTIZ_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_JUSTIZ_20261105_L1",
+        "WSA_CAREER_JUSTIZ_20261105_L2",
+        "WSA_CAREER_JUSTIZ_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_TRANSPORT_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_TRANSPORT_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_TRANSPORT_20261105_L1",
+        "WSA_CAREER_TRANSPORT_20261105_L2",
+        "WSA_CAREER_TRANSPORT_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_HANDEL_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_HANDEL_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_HANDEL_20261105_L1",
+        "WSA_CAREER_HANDEL_20261105_L2",
+        "WSA_CAREER_HANDEL_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_MEDIEN_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_MEDIEN_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_MEDIEN_20261105_L1",
+        "WSA_CAREER_MEDIEN_20261105_L2",
+        "WSA_CAREER_MEDIEN_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_CAREER_VERWALTUNG_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_VERWALTUNG_20261105"
+      ],
+      "depictions": [
+        "WSA_CAREER_VERWALTUNG_20261105_L1",
+        "WSA_CAREER_VERWALTUNG_20261105_L2",
+        "WSA_CAREER_VERWALTUNG_20261105_L3"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit zustand_von in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_AUSBRECHER_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_AUSBRECHER_20261105_01",
+        "WSA_TRIO_AUSBRECHER_20261105_02",
+        "WSA_TRIO_AUSBRECHER_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_AUSBRECHER_20261105_01",
+        "WSA_TRIO_AUSBRECHER_20261105_02",
+        "WSA_TRIO_AUSBRECHER_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_BRUCHKOLONNE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_02",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_02",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_NACHTJAZZ_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_NACHTJAZZ_20261105_01",
+        "WSA_TRIO_NACHTJAZZ_20261105_02",
+        "WSA_TRIO_NACHTJAZZ_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_NACHTJAZZ_20261105_01",
+        "WSA_TRIO_NACHTJAZZ_20261105_02",
+        "WSA_TRIO_NACHTJAZZ_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_GARAGENKRACH_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_GARAGENKRACH_20261105_01",
+        "WSA_TRIO_GARAGENKRACH_20261105_02",
+        "WSA_TRIO_GARAGENKRACH_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_GARAGENKRACH_20261105_01",
+        "WSA_TRIO_GARAGENKRACH_20261105_02",
+        "WSA_TRIO_GARAGENKRACH_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_SONNTAGSFAMILIE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_01",
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_02",
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_01",
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_02",
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_ROHRKOMMANDO_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_ROHRKOMMANDO_20261105_01",
+        "WSA_TRIO_ROHRKOMMANDO_20261105_02",
+        "WSA_TRIO_ROHRKOMMANDO_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_ROHRKOMMANDO_20261105_01",
+        "WSA_TRIO_ROHRKOMMANDO_20261105_02",
+        "WSA_TRIO_ROHRKOMMANDO_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_MACBETH_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_MACBETH_20261105_01",
+        "WSA_TRIO_MACBETH_20261105_02",
+        "WSA_TRIO_MACBETH_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_MACBETH_20261105_01",
+        "WSA_TRIO_MACBETH_20261105_02",
+        "WSA_TRIO_MACBETH_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_HAMLET_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_HAMLET_20261105_01",
+        "WSA_TRIO_HAMLET_20261105_02",
+        "WSA_TRIO_HAMLET_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_HAMLET_20261105_01",
+        "WSA_TRIO_HAMLET_20261105_02",
+        "WSA_TRIO_HAMLET_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_ODYSSEE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_ODYSSEE_20261105_01",
+        "WSA_TRIO_ODYSSEE_20261105_02",
+        "WSA_TRIO_ODYSSEE_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_ODYSSEE_20261105_01",
+        "WSA_TRIO_ODYSSEE_20261105_02",
+        "WSA_TRIO_ODYSSEE_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_CASABLANCA_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_CASABLANCA_20261105_01",
+        "WSA_TRIO_CASABLANCA_20261105_02",
+        "WSA_TRIO_CASABLANCA_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_CASABLANCA_20261105_01",
+        "WSA_TRIO_CASABLANCA_20261105_02",
+        "WSA_TRIO_CASABLANCA_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_MUSKETIERE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_MUSKETIERE_20261105_01",
+        "WSA_TRIO_MUSKETIERE_20261105_02",
+        "WSA_TRIO_MUSKETIERE_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_MUSKETIERE_20261105_01",
+        "WSA_TRIO_MUSKETIERE_20261105_02",
+        "WSA_TRIO_MUSKETIERE_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    },
+    {
+      "id": "WSA_TRIO_QUIJOTE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_QUIJOTE_20261105_01",
+        "WSA_TRIO_QUIJOTE_20261105_02",
+        "WSA_TRIO_QUIJOTE_20261105_03"
+      ],
+      "depictions": [
+        "WSA_TRIO_QUIJOTE_20261105_01",
+        "WSA_TRIO_QUIJOTE_20261105_02",
+        "WSA_TRIO_QUIJOTE_20261105_03"
+      ],
+      "intake_eligible": true,
+      "relation_source": "Explicit trio/trio_mit in source manifests."
+    }
+  ],
+  "counts": {
+    "depictions": 306,
+    "identities": 248,
+    "pairs": 10,
+    "variant_groups": 32,
+    "trios": 12
+  }
+}

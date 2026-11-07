@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PSYCHE_ARCHETYPES_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
+    "sha256": "26515f10226bb2b291022fd5fd9a2585440ff691a8e8012742421e7b2a433e22"
+  },
+  "production_record": "PSYCHE_ARCHETYPES_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "PSYCHE_ARCHETYPES_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "PSYCHE_ARCHETYPES_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Inner Cast",
+    "theme": "Jung-inspired archetype figures",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "psychology vignette",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "The Persona",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "polished public face",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_02",
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small smiling ivory stage mask held beside the visible real face"
+      ],
+      "temperament": "Polished public face.",
+      "prompt_auszug": "upright elegant curl, doubtful sideways eyes, closed uncertain lips",
+      "prompt_quelle": "PSYCHE_ARCHETYPES_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "polished public face"
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "The Shadow",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "quiet keeper of disowned things",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_01",
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "rounded dark indigo mantle and a tiny discarded golden button"
+      ],
+      "temperament": "Quiet keeper of disowned things.",
+      "prompt_auszug": "low broad splat, upward apologetic eyes, subtle frown",
+      "prompt_quelle": "PSYCHE_ARCHETYPES_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "quiet keeper of disowned things"
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "The Trickster",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "playful rule bender",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_01",
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two mismatched dice tucked under one hand and crooked cap"
+      ],
+      "temperament": "Playful rule bender.",
+      "prompt_auszug": "bent tall splat, one cheek raised, uneven grin",
+      "prompt_quelle": "PSYCHE_ARCHETYPES_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "playful rule bender"
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "The Caregiver",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "sturdy nurturing figure",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05",
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small blanket folded around a clay seed, independent hand-held prop"
+      ],
+      "temperament": "Sturdy nurturing figure.",
+      "prompt_auszug": "soft round broad body, warm lids and calm smile",
+      "prompt_quelle": "PSYCHE_ARCHETYPES_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "sturdy nurturing figure"
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "The Old Guide",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "patient guide",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_04",
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short worn staff with a small amber lantern firmly attached"
+      ],
+      "temperament": "Patient guide.",
+      "prompt_auszug": "tall leaning blob, squint and creased closed lips",
+      "prompt_quelle": "PSYCHE_ARCHETYPES_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "patient guide"
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "The Self",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "relieved integrator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_04",
+        "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "four-color mandala medallion held at belly"
+      ],
+      "temperament": "Relieved integrator.",
+      "prompt_auszug": "large low almost circular blob, quietly delighted asymmetrical smile",
+      "prompt_quelle": "PSYCHE_ARCHETYPES_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "relieved integrator"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "psyche_family": "Jung-inspired archetype figures",
+    "team_kit": "Mask ivory, shadow indigo, terracotta, tarnished gold and moss",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+    "trios": [
+      {
+        "id": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_01",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_02",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_04",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_01",
+      "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_02",
+      "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_03",
+      "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_04",
+      "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05",
+      "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06"
+    ]
+  }
+}

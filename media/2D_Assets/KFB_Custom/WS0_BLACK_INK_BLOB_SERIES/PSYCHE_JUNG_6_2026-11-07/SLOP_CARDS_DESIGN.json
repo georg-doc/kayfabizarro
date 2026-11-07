@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_01",
+      "name": "Carl Gustav Jung",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Inquisitive historical analyst.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Draw the image first."
+          ],
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_JUNG_20261107",
+            "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Küsnacht Seminar, Carl Gustav Jung takes the role of inquisitive historical analyst. “Draw the image first.”",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: round wire spectacles, swept gray clay hair, compact tweed collar, red folio.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "inquisitive historical analyst",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_02",
+      "name": "Iris Redbook",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Meticulous image recorder.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The red page is still wet."
+          ],
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_JUNG_20261107",
+            "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Küsnacht Seminar, Iris Redbook takes the role of meticulous image recorder. “The red page is still wet.”",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small red folio open to one simple painted circle.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "meticulous image recorder",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_03",
+      "name": "Hugo Coincidence",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Startled coincidence collector.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Both stopped at once."
+          ],
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_JUNG_20261107",
+            "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Küsnacht Seminar, Hugo Coincidence takes the role of startled coincidence collector. “Both stopped at once.”",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two matching pocket watches in one hand, simple cases.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled coincidence collector",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_04",
+      "name": "Mina Towerstone",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Pensive stone carver.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The stone had another face."
+          ],
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_JUNG_20261107",
+            "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Küsnacht Seminar, Mina Towerstone takes the role of pensive stone carver. “The stone had another face.”",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: palm-sized blunt stone block and stubby chisel.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "pensive stone carver",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_05",
+      "name": "Otto Imagekeeper",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Curious active-imagination participant.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The bird can have a turn."
+          ],
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_JUNG_20261107",
+            "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Küsnacht Seminar, Otto Imagekeeper takes the role of curious active-imagination participant. “The bird can have a turn.”",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one tiny colorful clay bird figurine in cupped hands.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "curious active-imagination participant",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_06",
+      "name": "Perry Quaternity",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Overzealous pattern finder.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "There should be four."
+          ],
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_JUNG_20261107",
+            "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Küsnacht Seminar, Perry Quaternity takes the role of overzealous pattern finder. “There should be four.”",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: wood tray with four colored clay quadrants.",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "overzealous pattern finder",
+          "src": "PSYCHE_JUNG_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

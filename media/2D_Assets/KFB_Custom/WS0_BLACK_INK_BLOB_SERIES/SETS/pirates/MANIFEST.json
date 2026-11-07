@@ -1,0 +1,210 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PIRATES_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+    "sha256": "82de431cd80a51f560d3897da4147f1f8c9c902f1623905232cffe7ba167e33f"
+  },
+  "production_record": "PIRATES_SPACE_COUPLE_2026-11-04/PRODUCTION_RECORD.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/pirates/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      4
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_PIRAT_01",
+      "id_scope": "canonical_roster",
+      "name": "Kapitän Restanspruch",
+      "bild": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT: squat broad barrel-shaped veteran pirate captain, huge battered black tricorn with thick sculpted ivory skull ornament, ragged burgundy shoulder cape.",
+          "Thick goo hand grips a short curved cutlass with chunky shell-shaped brass guard, another cradles battered rum jug with cork; swaggering snarling old sea dog, not laughing."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT: squat broad barrel-shaped veteran pirate captain, huge battered black tricorn with thick sculpted ivory skull ornament, ragged burgundy shoulder cape. One eye covered by plain leather patch, other WHITE sclera red iris black pupil half-lidded suspiciously; mouth clenched lopsided underbite with THREE uneven gold/ivory teeth. Thick goo hand grips a short curved cutlass with chunky shell-shaped brass guard, another cradles battered rum jug with cork; swaggering snarling old sea dog, not laughing.",
+      "prompt_quelle": "PIRATES_SPACE_COUPLE_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PIRAT_02",
+      "id_scope": "canonical_roster",
+      "name": "Cora Kaperbrief",
+      "bild": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP CENTER: FEMALE-READ lithe tall privateer duelist, long curling goo crest and faded coral headscarf, small pearl earring, short sea-green brocade collar.",
+          "Holds a beautifully exaggerated brass-and-dark-wood flintlock pistol muzzle pointed upward away from people, other goo arm curls around a compact leather purse overflowing with three BIG gold coins."
+        ]
+      },
+      "prompt_auszug": "TOP CENTER: FEMALE-READ lithe tall privateer duelist, long curling goo crest and faded coral headscarf, small pearl earring, short sea-green brocade collar. Mischievous sidelong wide-eyed toothy grin, one lid cocked. Holds a beautifully exaggerated brass-and-dark-wood flintlock pistol muzzle pointed upward away from people, other goo arm curls around a compact leather purse overflowing with three BIG gold coins. Elastic angled lean, complete ink body.",
+      "prompt_quelle": "PIRATES_SPACE_COUPLE_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PIRAT_03",
+      "id_scope": "canonical_roster",
+      "name": "Herr Eigentümlich",
+      "bild": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Both goo hands clutch an open small treasure chest, just a few HUGE shiny sculpted gold coins and a ruby reflecting in his eyes."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT: compact pear-shaped secretive treasure raider, ragged indigo hood, thick brass hoop, big round WHITE eyes/red irises/black pupils gazing down greedily, pursed O-mouth and one fang. Both goo hands clutch an open small treasure chest, just a few HUGE shiny sculpted gold coins and a ruby reflecting in his eyes. His goo curls protectively around the treasure, no clutter or floating symbols.",
+      "prompt_quelle": "PIRATES_SPACE_COUPLE_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PIRAT_04",
+      "id_scope": "canonical_roster",
+      "name": "Bootsmann Nachschlag",
+      "bild": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT: very low broad puddle buccaneer cook, droopy red bandana, one tiny gold earring, one eye squints shut and other bulges, enormous raucous toothy laugh with thick pink tongue; hefts a large chunky wooden tankard with cream foam in one goo hand, other hand holds a thick cooked fish on a short skewer."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT: very low broad puddle buccaneer cook, droopy red bandana, one tiny gold earring, one eye squints shut and other bulges, enormous raucous toothy laugh with thick pink tongue; hefts a large chunky wooden tankard with cream foam in one goo hand, other hand holds a thick cooked fish on a short skewer. One curved goo lobe like an absurd proud moustache, still ink not hair. Rounded tactile props, debauched cartoony old seadog.",
+      "prompt_quelle": "PIRATES_SPACE_COUPLE_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PIRAT_05",
+      "id_scope": "canonical_roster",
+      "name": "Vesta Vakuum",
+      "bild": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PIRAT_06",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE: SPACE PIRATE COUPLE partner A, FEMALE-READ dieselpunk rocket corsair captain.",
+          "Tall asymmetric ink splat, weathered teal leather aviator cap, brass goggles pushed up, cropped crimson naval shoulder cape, TWO chunky riveted brass rocket cylinders on back with short orange clay flame puffs.",
+          "Holds a stubby art-deco brass ray pistol with broad round dish muzzle pointing down.",
+          "A small copper heart-shaped clasp on cape pairs with partner's matching clasp."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE: SPACE PIRATE COUPLE partner A, FEMALE-READ dieselpunk rocket corsair captain. Tall asymmetric ink splat, weathered teal leather aviator cap, brass goggles pushed up, cropped crimson naval shoulder cape, TWO chunky riveted brass rocket cylinders on back with short orange clay flame puffs. Confident knowing CLOSED smile with one gold fang, WHITE eyes red iris black pupil gazing RIGHT toward partner B. Holds a stubby art-deco brass ray pistol with broad round dish muzzle pointing down. A small copper heart-shaped clasp on cape pairs with partner's matching clasp. Elegant tough cartoon swagger, no human legs/torso.",
+      "prompt_quelle": "PIRATES_SPACE_COUPLE_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PIRAT_06",
+      "id_scope": "canonical_roster",
+      "name": "Bruno Bergungsrecht",
+      "bild": {
+        "datei": "PIRATES_SPACE_COUPLE_2026-11-04/pirates-space-couple-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PIRAT_05",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT: SPACE PIRATE COUPLE partner B, stocky round dieselpunk salvage buccaneer, rust-red patched aviator hood, half-open old-fashioned round brass helmet collar framing goo head, not enclosing or hiding face.",
+          "Huge delighted goofy uneven-tooth grin, one eye larger, WHITE sclera/red iris/black pupils gazing LEFT toward partner A affectionately.",
+          "Cradles one chunky salvaged rocket engine with a flared exhaust bell and three short rounded cooling fins, worn clay metal.",
+          "Small antenna on cap curved into a soft loop, very clearly a complete dark ink blob, no robot/humanoid suit."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT: SPACE PIRATE COUPLE partner B, stocky round dieselpunk salvage buccaneer, rust-red patched aviator hood, half-open old-fashioned round brass helmet collar framing goo head, not enclosing or hiding face. Same teal/crimson/brass palette and matching small copper heart clasp. Huge delighted goofy uneven-tooth grin, one eye larger, WHITE sclera/red iris/black pupils gazing LEFT toward partner A affectionately. Cradles one chunky salvaged rocket engine with a flared exhaust bell and three short rounded cooling fins, worn clay metal. Small antenna on cap curved into a soft loop, very clearly a complete dark ink blob, no robot/humanoid suit. Partners connected by palette, heart clasps and reciprocal gaze, but silhouettes NOT touching.",
+      "prompt_quelle": "PIRATES_SPACE_COUPLE_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

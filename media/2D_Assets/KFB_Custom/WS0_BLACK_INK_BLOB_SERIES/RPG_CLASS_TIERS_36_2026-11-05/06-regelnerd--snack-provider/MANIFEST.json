@@ -1,0 +1,249 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Tier format: one male and one female identity each repeated three times, not a normal independent six-character cast.",
+  "image": {
+    "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+    "sha256": "f966c54553ede6879b2a6538b39db635b79b3d15c461b01b432ad3d754c50a12"
+  },
+  "production_record": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
+  "cards": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
+  },
+  "figuren": [
+    {
+      "id": "WSA_RPG_REGELNERD_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Eigentlich",
+      "variant_title": "trash",
+      "klasse": "regelnerd",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_REGELNERD_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small tabbed book"
+      ],
+      "signature": "upright medium narrow egg-shaped ink splat with two asymmetric flat droopy crown lobes, squared thick dark spectacles, ONE uneven upper central tooth, tiny rusty-red knitted cap and short cream collar, small teal pencil tucked at cap.",
+      "prompt_auszug": "Insecure wide eyes, tilted shut mouth with single tooth peeking. Hugs ONE small plain battered clothbound RULEBOOK with TWO chunky paper tabs; no letters.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_REGELNERD_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Eigentlich",
+      "variant_title": "common",
+      "klasse": "regelnerd",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_REGELNERD_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "larger tabbed book, ruler"
+      ],
+      "signature": "upright medium narrow egg-shaped ink splat with two asymmetric flat droopy crown lobes, squared thick dark spectacles, ONE uneven upper central tooth, tiny rusty-red knitted cap and short cream collar, small teal pencil tucked at cap.",
+      "prompt_auszug": "Furious pinpoint gaze and clenched crooked teeth, blob pulls up taller without body size growth. SAME book now thick with FIVE broad colourful tabs, hand marks place with short wooden RULER.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_REGELNERD_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Eigentlich",
+      "variant_title": "elite",
+      "klasse": "regelnerd",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_REGELNERD_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass-clasped tabbed book, ruler"
+      ],
+      "signature": "upright medium narrow egg-shaped ink splat with two asymmetric flat droopy crown lobes, squared thick dark spectacles, ONE uneven upper central tooth, tiny rusty-red knitted cap and short cream collar, small teal pencil tucked at cap.",
+      "prompt_auszug": "Smug imperious half-lids, compressed pout, same tooth. SAME compact thick rulebook now brass-clasped, FIVE tabs and same ruler held like ceremonial authority, one small brass collar pin. No written text/numbers/symbol jokes.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_SNACK_PROVIDER_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Proviantvorsehung",
+      "variant_title": "trash",
+      "klasse": "snack-provider",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_SNACK_PROVIDER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "bowl of crisps, wooden tong"
+      ],
+      "signature": "broad soft upright dumpling ink splat, one high coiled goo quiff tied with tiny teal kerchief, lashes, TWO irregular big LOWER teeth, short coral apron collar only with small ivory button; not human apron torso.",
+      "prompt_auszug": "Timid solicitous wide eyes and crooked underbite. Holds ONE small ceramic BOWL with TWO fat triangular clay crisps, one little wooden serving tong.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_SNACK_PROVIDER_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Proviantvorsehung",
+      "variant_title": "common",
+      "klasse": "snack-provider",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_SNACK_PROVIDER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "fuller bowl of crisps, wooden tong"
+      ],
+      "signature": "broad soft upright dumpling ink splat, one high coiled goo quiff tied with tiny teal kerchief, lashes, TWO irregular big LOWER teeth, short coral apron collar only with small ivory button; not human apron torso.",
+      "prompt_auszug": "Fiercely hospitable eyebrows and clenched underbite, eyes sideward. SAME bowl now fuller with FIVE fat crisps, same short tong, kerchief/collar unchanged.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_SNACK_PROVIDER_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Proviantvorsehung",
+      "variant_title": "elite",
+      "klasse": "snack-provider",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_SNACK_PROVIDER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "copper-rimmed bowl, crisps, inset dip cup, wooden tong"
+      ],
+      "signature": "broad soft upright dumpling ink splat, one high coiled goo quiff tied with tiny teal kerchief, lashes, TWO irregular big LOWER teeth, short coral apron collar only with small ivory button; not human apron torso.",
+      "prompt_auszug": "Serene implacable half-lids and enormous proud lower lip. SAME bowl now beautiful copper-rimmed ceramic, FIVE crisps and one tiny plain lidded dip cup fitted INSIDE, tong like a sceptre. No table/food spread/floor.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
+}

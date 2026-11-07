@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_GAPS_LOST_ACTOR_20261107_01",
+      "name": "Otto Leftglove",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Lone glove seeking its partner.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I'm the one with the thumb."
+          ],
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_LOST_20261107",
+            "trio": "WSA_GAPS_LOST_20261107_TRIO_A"
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Otto Leftglove joins Lost and Unmissed as lone glove seeking its partner. “I'm the one with the thumb.”",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: oversized soft mitten used as an open cap with face wholly visible.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "lone glove seeking its partner",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_LOST_ACTOR_20261107_02",
+      "name": "Nora Keybrella",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeper of lost umbrellas.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The keys came with the rain."
+          ],
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_LOST_20261107",
+            "trio": "WSA_GAPS_LOST_20261107_TRIO_A"
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nora Keybrella joins Lost and Unmissed as keeper of lost umbrellas. “The keys came with the rain.”",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small closed umbrella with three keys tied neatly to its handle.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "keeper of lost umbrellas",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_LOST_ACTOR_20261107_03",
+      "name": "Bert Claimwell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Visitor inventing a loss at the counter.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It was about this size, probably."
+          ],
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_LOST_20261107",
+            "trio": "WSA_GAPS_LOST_20261107_TRIO_A"
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bert Claimwell joins Lost and Unmissed as visitor inventing a loss at the counter. “It was about this size, probably.”",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: blank claim slip and pencil poised to improvise.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "visitor inventing a loss at the counter",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_LOST_ACTOR_20261107_04",
+      "name": "Jade Tagloop",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Clerk matching lost-property tags.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I can match the parcel or the story."
+          ],
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_LOST_20261107",
+            "trio": "WSA_GAPS_LOST_20261107_TRIO_B"
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Jade Tagloop joins Lost and Unmissed as clerk matching lost-property tags. “I can match the parcel or the story.”",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two large plain color tags linked to a small cloth parcel.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "clerk matching lost-property tags",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_LOST_ACTOR_20261107_05",
+      "name": "Len Loosebutton",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Minor-object attendant.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The button is still on hold."
+          ],
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_LOST_20261107",
+            "trio": "WSA_GAPS_LOST_20261107_TRIO_B"
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Len Loosebutton joins Lost and Unmissed as minor-object attendant. “The button is still on hold.”",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small compartmented tray holding a button and a thimble.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "minor-object attendant",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_LOST_ACTOR_20261107_06",
+      "name": "Cobb Lastcase",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Forever-unclaimed suitcase custodian.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Someone will come on Thursday."
+          ],
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_LOST_20261107",
+            "trio": "WSA_GAPS_LOST_20261107_TRIO_B"
+          },
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cobb Lastcase joins Lost and Unmissed as forever-unclaimed suitcase custodian. “Someone will come on Thursday.”",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: tiny scuffed suitcase with one large paper tag.",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "forever-unclaimed suitcase custodian",
+          "src": "GAPS_LOST_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

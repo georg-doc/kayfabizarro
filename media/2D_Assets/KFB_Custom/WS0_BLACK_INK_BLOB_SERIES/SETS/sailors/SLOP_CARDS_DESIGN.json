@@ -1,0 +1,535 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_SAILORS_20261104",
+  "figuren": [
+    {
+      "id": "SL_MATROSE_01",
+      "name": {
+        "v": "Hein Heimathafen",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He embraces hard work whenever it resembles something he can coil up.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "forget_utopia",
+                "ignore_dystopia",
+                "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+              ],
+              "biome": [
+                "moos",
+                "schnee"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MATROSE_01",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Mitte",
+            "delivery": "measured dry pauses",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Er hält jede Verwicklung für eine Frage der richtigen Wickelrichtung.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_SAILORS_20261104",
+        "image_cell": {
+          "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "prompt_excerpt": "TOP LEFT: boisterous young deckhand, broad squat splat, worn striped sailor collar and soft white sailor cap tilted sideways, wide laughing mouth with mismatched teeth and exuberant sideways gaze; hugs a huge thick coil of tarred rope with a chunky anchor dangling at its end. Everything softly sculpted clay, rope tactile with bold strands. Complete goo base visible."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MATROSE_02",
+      "name": {
+        "v": "Madame Dienstwind",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She considers indignation the most reliable form of naval discipline.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "forget_utopia",
+                "ignore_dystopia",
+                "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+              ],
+              "biome": [
+                "moos",
+                "schnee"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MATROSE_02",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Oben",
+            "delivery": "brisk clipped precision",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Ihre Befehle sind windfest. Beim Inhalt laufen noch Versuche.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_SAILORS_20261104",
+        "image_cell": {
+          "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "prompt_excerpt": "TOP CENTER: FEMALE-READ tall lean historic marine grenadier, faded navy bicorne with small rusty red plume, just short navy shoulder cape and brass buttons over continuous goo; furiously indignant one-eye squint and crooked toothy shout, rounded old flintlock musket with wooden stock held upright beside her (not firing), other goo hand on a small black cannonball. Subtle clay lashes, no human body."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MATROSE_03",
+      "name": {
+        "v": "Käptn Gegenwasser",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He steers by accumulated resentment and the occasional useful current.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "forget_utopia",
+                "ignore_dystopia",
+                "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+              ],
+              "biome": [
+                "moos",
+                "schnee"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MATROSE_03",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Bass",
+            "delivery": "low weary drawl",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Die Richtung stimmt seit Jahren. Nur die Welt fährt dauernd vorbei.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_SAILORS_20261104",
+        "image_cell": {
+          "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "prompt_excerpt": "TOP RIGHT: ancient salty boatswain, very wide low saggy ink puddle, tiny battered navy knit cap, one heavy sleepy lid and one wide eye, enormous grumpy underbite with sparse teeth, curved ivory clay pipe unlit clamped in lip; both goo hands wrapped around a stubby salt-crusted wooden ship wheel nearly as broad as himself. An oversized barnacle on wheel rim, simple visual maritime weirdness."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MATROSE_04",
+      "name": {
+        "v": "Ada Fernsicht",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She sees trouble early and politely allows everyone else to discover it later.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "forget_utopia",
+                "ignore_dystopia",
+                "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+              ],
+              "biome": [
+                "moos",
+                "schnee"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MATROSE_04",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Mitte",
+            "delivery": "earnest rising urgency",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Sie meldet nichts Unbestätigtes. Deshalb ist der Untergang bei ihr zunächst eine Beobachtung.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_SAILORS_20261104",
+        "image_cell": {
+          "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "prompt_excerpt": "BOTTOM LEFT: FEMALE-READ weatherbeaten navigator/captain, compact asymmetric pear blob, burgundy headscarf under battered tricorn, one soft curling goo quiff, skeptical raised lid and knowing closed crooked smile with single fang; holds a long thick brass spyglass to one eye while the other eye looks toward viewer, a small curled chart tucked under other goo arm. Beautiful modeled brass and parchment, no map text."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MATROSE_05",
+      "name": {
+        "v": "Admiral Hätschel",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He loves his cannon with a tenderness unavailable to the chain of command.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "forget_utopia",
+                "ignore_dystopia",
+                "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+              ],
+              "biome": [
+                "moos",
+                "schnee"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MATROSE_05",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Oben",
+            "delivery": "warm conspiratorial aside",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Das Geschütz hört ausgezeichnet zu. Er hält das für Führungskompetenz.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_SAILORS_20261104",
+        "image_cell": {
+          "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "prompt_excerpt": "BOTTOM CENTER: ecstatic old naval gunner, round springy splat with upward goo lobes, small battered red historic naval cap, huge wild delighted toothy cackle, one eye larger than other; cradles a miniature chunky bronze ship cannon like a beloved pet, one hand stroking its rounded barrel, simple wooden carriage attached with two thick wheels, no firing/smoke. Visceral charming absurd cartoon silhouette, not a human torso."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MATROSE_06",
+      "name": {
+        "v": "Frau Salzbestand",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She has survived enough voyages to distrust anything described as fresh.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "forget_utopia",
+                "ignore_dystopia",
+                "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+              ],
+              "biome": [
+                "moos",
+                "schnee"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MATROSE_06",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Bass",
+            "delivery": "compressed indignant emphasis",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Der Fisch sei neu, sagt sie. Ihre Begeisterung ist aus bewährtem Altbestand.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_SAILORS_20261104",
+        "image_cell": {
+          "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "prompt_excerpt": "BOTTOM RIGHT: FEMALE-READ veteran dock sailor, broad lopsided goo body, faded mustard sou'wester folded brim, half-lidded utterly unimpressed side-eye, pursed crooked mouth with two protruding teeth; holds a big silver clay fish by its tail, fish bends softly like a wet sock; other hand casually rests on small battered sea chest tucked into her goo side. Minimal selective barnacles and salt wear, no dense detail. Subtle lashes, no breasts/legs."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    }
+  ]
+}

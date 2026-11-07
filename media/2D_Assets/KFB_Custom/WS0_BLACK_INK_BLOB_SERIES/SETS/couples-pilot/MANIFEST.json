@@ -1,0 +1,215 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_COUPLES_PILOT_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 2,
+    "rows": 3,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+    "sha256": "206119a612d1be01217ce0cf36de088e85f6759cdee683954be0ec9b878d158e"
+  },
+  "production_record": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/PRODUCTION_RECORD.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/couples-pilot/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      2,
+      5
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_PAAR_01",
+      "id_scope": "canonical_roster",
+      "name": "Herr Nachgeschenkt",
+      "bild": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_02",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW1 TOP: MARRIED RETIRED TEA TYRANTS, matching faded BURGUNDY/CREAM scarf motif and one thick small gold wedding band each.",
+          "LEFT husband is very wide low sagging splat with tiny burgundy soft cap, heavy half-lids gazing RIGHT and a martyred underbite with one giant ivory tooth.",
+          "He holds a squat brass teapot close protectively to his body, spout aimed gently right but no pouring stream, one hand hovering as if reluctantly offering."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP: MARRIED RETIRED TEA TYRANTS, matching faded BURGUNDY/CREAM scarf motif and one thick small gold wedding band each. LEFT husband is very wide low sagging splat with tiny burgundy soft cap, heavy half-lids gazing RIGHT and a martyred underbite with one giant ivory tooth. He holds a squat brass teapot close protectively to his body, spout aimed gently right but no pouring stream, one hand hovering as if reluctantly offering. ",
+      "prompt_quelle": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_02",
+      "id_scope": "canonical_roster",
+      "name": "Frau Zuckervorbehalt",
+      "bild": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_01",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW1 TOP: MARRIED RETIRED TEA TYRANTS, matching faded BURGUNDY/CREAM scarf motif and one thick small gold wedding band each.",
+          "RIGHT wife is taller pear-shaped with purple goo bun and little cream collar with burgundy bow, subtle lashes.",
+          "She extends a comically TINY cream teacup inward toward him, other hand hugs an enormous sugar cube like a treasure.",
+          "Mutually affectionate petty withholding, lived-in marriage, not violence."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP: MARRIED RETIRED TEA TYRANTS, matching faded BURGUNDY/CREAM scarf motif and one thick small gold wedding band each. RIGHT wife is taller pear-shaped with purple goo bun and little cream collar with burgundy bow, subtle lashes. Her body tilts slightly AWAY but WHITE/red/black pupils look LEFT at him; mouth a narrow tenderly malicious CLOSED fang smile. She extends a comically TINY cream teacup inward toward him, other hand hugs an enormous sugar cube like a treasure. Teapot/cup relationship clear across transparent gap, no touch. Mutually affectionate petty withholding, lived-in marriage, not violence.",
+      "prompt_quelle": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_03",
+      "id_scope": "canonical_roster",
+      "name": "Frau Rosenrecht",
+      "bild": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_04",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "LEFT wife compact round springy splat, short coral tied kerchief and tiny teal collar, one eye wide and one squeezed, jagged CLENCHED grin and red pupils looking RIGHT.",
+          "She holds a single absurdly opulent red clay rose close in one hand, other hand gently pinches its stem with big rounded pruning shears kept closed."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE: MARRIED OBSESSIVE GARDENERS, matching TEAL/FADED CORAL neckerchief trims and small worn gold wedding bands. LEFT wife compact round springy splat, short coral tied kerchief and tiny teal collar, one eye wide and one squeezed, jagged CLENCHED grin and red pupils looking RIGHT. She holds a single absurdly opulent red clay rose close in one hand, other hand gently pinches its stem with big rounded pruning shears kept closed. ",
+      "prompt_quelle": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_04",
+      "id_scope": "canonical_roster",
+      "name": "Herr Nebenblüte",
+      "bild": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_03",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "RIGHT husband tall narrow drooping bean splat, floppy faded teal gardening hat and coral collar.",
+          "His huge soft goo arms cradle a SINGLE sad bent flower in a tiny terracotta pot, drooping lower lip with THREE sparse teeth, pupils look LEFT at his spouse's triumphant rose with resentful admiration."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE: MARRIED OBSESSIVE GARDENERS, matching TEAL/FADED CORAL neckerchief trims and small worn gold wedding bands. RIGHT husband tall narrow drooping bean splat, floppy faded teal gardening hat and coral collar. His huge soft goo arms cradle a SINGLE sad bent flower in a tiny terracotta pot, drooping lower lip with THREE sparse teeth, pupils look LEFT at his spouse's triumphant rose with resentful admiration. Their inward shoulders lean toward one another despite competing pride. No actual garden, no sharp attack/shears aimed at person; strong beautiful clay plant/pot shapes, physical romantic rivalry.",
+      "prompt_quelle": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_05",
+      "id_scope": "canonical_roster",
+      "name": "Herr Richtungsgefühl",
+      "bild": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_06",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW3 BOTTOM: MARRIED RETRO-SPACE HOLIDAY NAVIGATORS, both matching MUSTARD/TEAL worn aviator collars, little matching copper heart brooches and thick wedding bands.",
+          "LEFT husband squat broad blob wearing rusty mustard pilot cap with brass goggles raised, one lid raised and other half closed, mouth a crooked CLOSED self-satisfied smile with one gold fang, pupils RIGHT toward spouse.",
+          "He proudly holds a beautifully chunky TEAL retro navigation sphere with ONE brass ring and big ivory winding key, pointing an integrated goo finger toward its blank dial while angling his body inward."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM: MARRIED RETRO-SPACE HOLIDAY NAVIGATORS, both matching MUSTARD/TEAL worn aviator collars, little matching copper heart brooches and thick wedding bands. LEFT husband squat broad blob wearing rusty mustard pilot cap with brass goggles raised, one lid raised and other half closed, mouth a crooked CLOSED self-satisfied smile with one gold fang, pupils RIGHT toward spouse. He proudly holds a beautifully chunky TEAL retro navigation sphere with ONE brass ring and big ivory winding key, pointing an integrated goo finger toward its blank dial while angling his body inward. ",
+      "prompt_quelle": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_06",
+      "id_scope": "canonical_roster",
+      "name": "Frau Reisegeduld",
+      "bild": {
+        "datei": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/couples-portrait-2x3-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_05",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW3 BOTTOM: MARRIED RETRO-SPACE HOLIDAY NAVIGATORS, both matching MUSTARD/TEAL worn aviator collars, little matching copper heart brooches and thick wedding bands.",
+          "RIGHT wife tall crooked asymmetrical splat, teal soft aviator hood with tiny mustard scarf and curling goo quiff.",
+          "Huge tired WHITE eyes RED iris BLACK pupil look LEFT at husband, mouth long flat offended frown with TWO bottom teeth, yet her other hand protectively polishes a tiny matching copper heart clasp.",
+          "Holds a small beaten coral suitcase against belly with blank cream luggage tag dangling in safe cell."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM: MARRIED RETRO-SPACE HOLIDAY NAVIGATORS, both matching MUSTARD/TEAL worn aviator collars, little matching copper heart brooches and thick wedding bands. RIGHT wife tall crooked asymmetrical splat, teal soft aviator hood with tiny mustard scarf and curling goo quiff. Huge tired WHITE eyes RED iris BLACK pupil look LEFT at husband, mouth long flat offended frown with TWO bottom teeth, yet her other hand protectively polishes a tiny matching copper heart clasp. Holds a small beaten coral suitcase against belly with blank cream luggage tag dangling in safe cell. Navigation pride vs exhausted travel partner, subtle remaining tenderness. No actual rocket, stars, background or futuristic UI.",
+      "prompt_quelle": "COUPLES_RELATIONSHIP_PILOT_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

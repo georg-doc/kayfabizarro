@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_01",
+      "name": "Dora Belllate",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Dazed boxer with swollen brow.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Was that our bell?"
+          ],
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_BOX_20261107",
+            "trio": "WSA_INJURY_BOX_20261107_TRIO_A"
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Dora Belllate is among the injured residents. The scene card identifies the character as dazed boxer with swollen brow and lists one drooping red glove and small white brow patch as the visual cue.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Was that our bell?",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dazed boxer with swollen brow",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_02",
+      "name": "Milo Jawdrop",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sore jaw boxer.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I'll explain after the ice."
+          ],
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_BOX_20261107",
+            "trio": "WSA_INJURY_BOX_20261107_TRIO_A"
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Milo Jawdrop is among the injured residents. The scene card identifies the character as sore jaw boxer and lists thin fabric jaw support and one folded towel as the visual cue.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I'll explain after the ice.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "sore jaw boxer",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_03",
+      "name": "Rafe Coldpack",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Exasperated boxer with cheek swelling.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "He said it was a warm-up."
+          ],
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_BOX_20261107",
+            "trio": "WSA_INJURY_BOX_20261107_TRIO_A"
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Rafe Coldpack is among the injured residents. The scene card identifies the character as exasperated boxer with cheek swelling and lists smooth blue gel cold pack pushed to one broad cheek as the visual cue.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: He said it was a warm-up.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "exasperated boxer with cheek swelling",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_04",
+      "name": "Hank Knucklewrap",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Embarrassed boxer with wrapped knuckles.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That was my defensive strategy."
+          ],
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_BOX_20261107",
+            "trio": "WSA_INJURY_BOX_20261107_TRIO_B"
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Hank Knucklewrap is among the injured residents. The scene card identifies the character as embarrassed boxer with wrapped knuckles and lists ivory hand wraps and one glove tucked against belly as the visual cue.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: That was my defensive strategy.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "embarrassed boxer with wrapped knuckles",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_05",
+      "name": "Nora Cornerseat",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Furious boxer with nose dressing.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Tell them I want a rematch."
+          ],
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_BOX_20261107",
+            "trio": "WSA_INJURY_BOX_20261107_TRIO_B"
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Nora Cornerseat is among the injured residents. The scene card identifies the character as furious boxer with nose dressing and lists two small crossed strips on the central face above mouth, red glove hanging from strap as the visual cue.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Tell them I want a rematch.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "furious boxer with nose dressing",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_BOX_ACTOR_20261107_06",
+      "name": "Vic Endbell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Exhausted boxer after a hard round.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Did anyone pack a second wind?"
+          ],
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_BOX_20261107",
+            "trio": "WSA_INJURY_BOX_20261107_TRIO_B"
+          },
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Vic Endbell is among the injured residents. The scene card identifies the character as exhausted boxer after a hard round and lists small water bottle with clear smooth liquid and a simple clean towel as the visual cue.",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Did anyone pack a second wind?",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "exhausted boxer after a hard round",
+          "src": "INJURY_BOX_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MILITARY_FRANCE_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "MILITARY_FRANCE_6_2026-11-05/sheet-r1.png",
+    "sha256": "4509d7e307f278e980c4212d41a1978c82f05f7f1acb8bfbbf281279fbd5be33"
+  },
+  "production_record": "MILITARY_FRANCE_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "MILITARY_FRANCE_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "MILITARY_FRANCE_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Französischer Trupp",
+    "visual_context": "French interwar/WWII-inspired muted horizon-blue and khaki, Adrian-style helmets, restrained leather",
+    "relationship_policy": "Shared visual military family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Military bureaucracy, certainty, hierarchy and human coping; not inherent national character"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_MILITARY_FRANCE_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Capitaine Nachtrag",
+      "bild": {
+        "datei": "MILITARY_FRANCE_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "kepi",
+        "rolled map"
+      ],
+      "temperament": "Considers a retreat provisional until correctly dated.",
+      "prompt_auszug": "Capitaine Nachtrag; maennlich-read; tall tapered ink blob with absurdly rigid goo posture, small dark kepi with plain gold braid, rolled map under arm; one lifted eyebrow, severe pursed toothless lips. Personality: Considers a retreat provisional until correctly dated.",
+      "prompt_quelle": "MILITARY_FRANCE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_FRANCE_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Poilu Unerschütterlich",
+      "bild": {
+        "datei": "MILITARY_FRANCE_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "Adrian-style helmet",
+        "wood-stock rifle",
+        "shoulder cape"
+      ],
+      "temperament": "Has survived enough plans to distrust the fresh ones.",
+      "prompt_auszug": "Poilu Unerschütterlich; maennlich-read; broad low splat, Adrian-style crested helmet and tiny khaki shoulder cape, wood-stock rifle held vertically to side; broad stubborn closed jaw with one clearly internal upper tooth, suspicious glance. Personality: Has survived enough plans to distrust the fresh ones.",
+      "prompt_quelle": "MILITARY_FRANCE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_FRANCE_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Estafette Vitevite",
+      "bild": {
+        "datei": "MILITARY_FRANCE_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "sidecap",
+        "dispatch satchel",
+        "route card"
+      ],
+      "temperament": "Always arrives before the destination has been agreed.",
+      "prompt_auszug": "Estafette Vitevite; weiblich-read; lean hooked blob, soft khaki sidecap, small dispatch satchel and folded route card; two lashes, wide startled eyes in different directions, tiny triangular open mouth with no teeth. Personality: Always arrives before the destination has been agreed.",
+      "prompt_quelle": "MILITARY_FRANCE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_FRANCE_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tankiste Pointmort",
+      "bild": {
+        "datei": "MILITARY_FRANCE_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "padded beret",
+        "forehead goggles",
+        "spanner"
+      ],
+      "temperament": "Knows exactly which engine noise means another meeting.",
+      "prompt_auszug": "Tankiste Pointmort; weiblich-read; round heavy ink splat, dark padded tank beret and goggles above forehead, chunky adjustable spanner; crooked fed-up toothless sneer with one upper lid raised, subtle lashes. Personality: Knows exactly which engine noise means another meeting.",
+      "prompt_quelle": "MILITARY_FRANCE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_FRANCE_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Chasseur Hochhinaus",
+      "bild": {
+        "datei": "MILITARY_FRANCE_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "alpine beret",
+        "short scarf",
+        "ice axe"
+      ],
+      "temperament": "Would rather climb an obstacle than explain it.",
+      "prompt_auszug": "Chasseur Hochhinaus; maennlich-read; tall curved pear blob in oversized dark alpine beret, short scarf, one short ice axe held upright; bright delighted open smile with three uneven upper teeth; no snow or mountain scene. Personality: Would rather climb an obstacle than explain it.",
+      "prompt_quelle": "MILITARY_FRANCE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_FRANCE_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Intendant Rationnel",
+      "bild": {
+        "datei": "MILITARY_FRANCE_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "khaki cap",
+        "mess tin",
+        "ration ledger"
+      ],
+      "temperament": "Can divide six portions fairly among seven requisitions.",
+      "prompt_auszug": "Intendant Rationnel; maennlich-read; squat round splat with enormous ivory eyes and little worried toothless downturn; plain khaki cap, metal mess tin and tiny ration ledger; no food-nationality gag. Personality: Can divide six portions fairly among seven requisitions.",
+      "prompt_quelle": "MILITARY_FRANCE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

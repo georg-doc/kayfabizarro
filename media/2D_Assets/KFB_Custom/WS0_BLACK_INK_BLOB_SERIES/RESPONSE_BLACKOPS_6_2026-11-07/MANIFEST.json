@@ -1,0 +1,323 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESPONSE_BLACKOPS_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESPONSE_BLACKOPS_6_2026-11-07/sheet-r1.png",
+    "sha256": "c5b4653024f76d162932c5087bd7b3dec3bde0d09fe106af7275e9f2bcf54aab"
+  },
+  "production_record": "RESPONSE_BLACKOPS_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESPONSE_BLACKOPS_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESPONSE_BLACKOPS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Unlisted Detail",
+    "theme": "Black Ops",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "response encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Voss Null",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_BLACKOPS_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "coldly attentive",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_02",
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short black open-face cowl, small radio with red indicator"
+      ],
+      "temperament": "Voss Null stays coldly attentive when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "tall narrow blob, hard side glance and closed slant mouth",
+      "prompt_quelle": "RESPONSE_BLACKOPS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nyx Nightglass",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_BLACKOPS_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "curiously guarded",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_01",
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "raised charcoal night lenses and tiny handheld sensor"
+      ],
+      "temperament": "Nyx Nightglass stays curiously guarded when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "round soft crest, sharp uneven gaze and pursed mouth",
+      "prompt_quelle": "RESPONSE_BLACKOPS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ike Redacted",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_BLACKOPS_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "irritated by attention",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_01",
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "black short collar and blank charcoal dossier"
+      ],
+      "temperament": "Ike Redacted stays irritated by attention when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "wide box-rounded body, deep frown and lopsided lids",
+      "prompt_quelle": "RESPONSE_BLACKOPS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hale Quietlock",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_BLACKOPS_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "serenely methodical",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_05",
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "charcoal helmet and small sealed latch box"
+      ],
+      "temperament": "Hale Quietlock stays serenely methodical when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "broad squat shape, half-lidded eyes and unsettling closed smile",
+      "prompt_quelle": "RESPONSE_BLACKOPS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Vanish",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_BLACKOPS_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "intently listening",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_04",
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small ear cup and short black signal wand pointing down"
+      ],
+      "temperament": "Mina Vanish stays intently listening when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "tall crescent blob, high uneven brow and narrow side call",
+      "prompt_quelle": "RESPONSE_BLACKOPS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cole Unlisted",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_BLACKOPS_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "uneasily composed",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_04",
+        "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short black cap and tiny gray flashlight"
+      ],
+      "temperament": "Cole Unlisted stays uneasily composed when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "pear-shaped blob, large wary eyes and forced crooked smile",
+      "prompt_quelle": "RESPONSE_BLACKOPS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "sequence": 7,
+    "team_kit": "coal charcoal gear with muted oxblood stitch accents and grey lenses clipped to temple or raised above forehead, never cover eyes. Small stealth equipment and retro spy silhouette, organic plum-charcoal goo dominates.",
+    "trios": [
+      {
+        "id": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_A",
+        "name": "Silent Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_01",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_02",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_B",
+        "name": "Containment Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_04",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_05",
+          "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_01",
+      "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_02",
+      "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_03",
+      "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_04",
+      "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_05",
+      "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_06"
+    ]
+  },
+  "georg_decision": {
+    "quote": "Die sind alle pass.",
+    "scope": "All seven response team sheets and 42 designs."
+  }
+}

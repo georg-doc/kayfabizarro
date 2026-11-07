@@ -1,0 +1,187 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "sha256": "9b8cf7918cdf0d4c6ebd3a4917faf0ff3b7144a5c537588876fcbdca56d976bb",
+  "git_blob_sha": "43bf8f385bddd5f128262e46a958ef7faf61f297",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "alpha0_pixels": 536342,
+  "background_samples": [
+    [
+      [
+        0,
+        0
+      ],
+      0
+    ],
+    [
+      [
+        512,
+        512
+      ],
+      0
+    ],
+    [
+      [
+        1024,
+        512
+      ],
+      0
+    ],
+    [
+      [
+        500,
+        10
+      ],
+      0
+    ],
+    [
+      [
+        1500,
+        1000
+      ],
+      0
+    ]
+  ],
+  "outer_edge_pixels_gt16": 0,
+  "seam_pixels_gt16": {
+    "512": 0,
+    "1024": 762,
+    "horizontal512": 87
+  },
+  "cells": [
+    {
+      "zelle": 0,
+      "alpha_gt16_bbox_in_cell": [
+        25,
+        28,
+        493,
+        511
+      ],
+      "nominal_cell_margins_px": [
+        25,
+        28,
+        19,
+        1
+      ],
+      "edge_pixels_gt16": 0
+    },
+    {
+      "zelle": 1,
+      "alpha_gt16_bbox_in_cell": [
+        2,
+        5,
+        512,
+        512
+      ],
+      "nominal_cell_margins_px": [
+        2,
+        5,
+        0,
+        0
+      ],
+      "edge_pixels_gt16": 166
+    },
+    {
+      "zelle": 2,
+      "alpha_gt16_bbox_in_cell": [
+        0,
+        23,
+        497,
+        512
+      ],
+      "nominal_cell_margins_px": [
+        0,
+        23,
+        15,
+        0
+      ],
+      "edge_pixels_gt16": 146
+    },
+    {
+      "zelle": 3,
+      "alpha_gt16_bbox_in_cell": [
+        17,
+        16,
+        485,
+        505
+      ],
+      "nominal_cell_margins_px": [
+        17,
+        16,
+        27,
+        7
+      ],
+      "edge_pixels_gt16": 0
+    },
+    {
+      "zelle": 4,
+      "alpha_gt16_bbox_in_cell": [
+        1,
+        0,
+        512,
+        505
+      ],
+      "nominal_cell_margins_px": [
+        1,
+        0,
+        0,
+        7
+      ],
+      "edge_pixels_gt16": 277
+    },
+    {
+      "zelle": 5,
+      "alpha_gt16_bbox_in_cell": [
+        0,
+        0,
+        480,
+        504
+      ],
+      "nominal_cell_margins_px": [
+        0,
+        0,
+        32,
+        8
+      ],
+      "edge_pixels_gt16": 260
+    }
+  ],
+  "mechanical_512_crops_safe": false,
+  "generated_jobs": 1,
+  "generated_sheets": 1,
+  "figures": 6,
+  "extracted_game_sprites": 0,
+  "female_read_intended_slots_1based": [
+    2,
+    4
+  ],
+  "georg_status": "PASS",
+  "design_status": "ALL_SIX_GEORG_DESIGN_PASS",
+  "builder_visual_review": {
+    "whole_sheet_count": 6,
+    "upright_ink_bodies": true,
+    "white_red_black_visible_eyes": true,
+    "original_material_family_retained": true,
+    "different_faces_props": true,
+    "notes": [
+      "Not a human design acceptance.",
+      "Source mask confirms transparency despite colored RGB preview.",
+      "Some costumes/held objects obscure lower goo contours; preserve for Georg review.",
+      "No prominent material or eye drift observed; individual isolation/edge QA remains unaccepted."
+    ]
+  },
+  "technical_holds": [
+    "NONEMPTY_NOMINAL_SEAMS: independent mechanical512px crops may contain neighboring fragments. Source preserved; no silent edge cleanup."
+  ],
+  "runtime_tests": 0,
+  "librarian_registered": false,
+  "intake_eligible": true,
+  "georg_decision": "Georg explicitly accepts all24; stethoscope detail accepted without repair."
+}

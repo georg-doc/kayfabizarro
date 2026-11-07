@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-26f4f191-1e65-42ae-b086-0828afb17abf.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "9b71720c995fe850abfcdd04ed0460366ef6c5ffc236337d780a84442956c197",
+  "git_blob_sha": "4611c7f94a0b124fdf6f8acf88cf14964628432a",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+    ],
+    "prompt": "Use case: stylized-concept. Produce ONE new KFB 3x2 landscape transparent PNG character sheet, EXACTLY SIX unique absurd-surreal weird claymation INK BLOB MONSTERS, a fictional retro HyperNorm Hail Marys sports team. Input images are STYLE REFERENCES ONLY, not edit targets: image1 rounded sculpted whole ink-body material; image2 handcrafted prop/material craft. Do not copy source costume, eyes or repeated grins. 1930s-inspired mustard-and-navy American football team, stitched leather helmets, no face masks. Warm offbeat physical cartoon acting with satirical vulnerable personalities, no glossy Pixar-human clichés.\nBODY LOCK: Every character is one complete continuous FOOTLESS charcoal-black ink splat with subtle dark violet sheen, softly rounded thick asymmetric lobes, a few droplets, huge face directly in goo and short goo hands. Upright facing camera, full silhouette. NO human torso, legs, feet, trouser anatomy, cropped bust, animal body, alternate material body. Sports are expressed through hands, facial acting and props. Costumes are SMALL collar/shoulder/front-bib accents, bare ink dominates. Premium handmade plasticine fingerprint texture, rounded rich volumes, softly lit upper left. Every visible eye has WHITE/IVORY sclera around RED iris around BLACK pupil; thick fully filled purple-black eyelids. Helmets/visors do not cover eyes. Female-read cues subtly sculpted lids/lashes/quiff, no breasts or human hips. Six different mouth actions and bodily shapes. Teeth ONLY descend from upper gum INSIDE open mouth; never on outside lower lip, closed mouths toothless. No human pink lipstick.\nTOP LEFT — Buck Rückversicherung; male-read. Long curved blob, anxious wide eyes looking sideways, clenched internal teeth; small old brown leather helmet OPEN FACE no bars, tiny mustard collar; both short goo hands carefully cradle one laced brown football.\nTOP MIDDLE — Mona Mauerwerk; female-read. Very wide low rectangular splat with thick round lobes, strong lashes, pursed toothless determined mouth; navy collar and two small mustard shoulder pads, ink belly dominant; hands spread like an immovable barrier.\nTOP RIGHT — Skip Luftpost; male-read. Upright thin tapering splat with uplifted crest, ecstatic asymmetrical open grin, upper teeth only; tiny mustard shoulder stripe, two giant leather receiving gloves raised one beside each cheek, empty hands.\nBOTTOM LEFT — Dora Durchbruch; female-read. Compact asymmetric diamond blob, side quiff, lashes and offended raised brow, closed compressed mouth; short mustard scarf, navy elbow patch; one football tucked securely under goo arm, other arm pointing inward to self.\nBOTTOM MIDDLE — Tank Zuständigkeit; male-read. Tall broad domed splat with tiny split ink crest, stern heavy white eyes, lopsided gaping bark and two upper teeth; old leather ear guards, navy knit collar, holds one small scratched oval blocking pad against his flank.\nBOTTOM RIGHT — Pip Extraversuch; male-read. Round small-bodied but equal overall-size splat with long upright ink curl; nervous eyes upward, trembling toothless smile; navy skullcap and mustard collar, holds one tall old-fashioned leather kicking boot with no human foot inside.\nCOMPOSITION: landscape 1536x1024, three equal columns by two equal rows, equal generously sized character scale in BOTH rows. Each silhouette and all props fit approximately 450x440px within its 512x512 logical cell with at least32px clean transparent gutters. Keep all6 substantial, no tiny bottom row, no automatic excessive padding, no overlap or clipping. No ground, floor, field, court, scenelet, shadows disc, labels, lettering, jersey numbers, logos, real brands, team names in pixels, grid lines, frame, scenery. True transparent background. Individual actors must also read alone. Restrained one/two bold coherent identity anchors; avoid extra clutter or inherited tongue gags."
+  },
+  "reference_roles": [
+    "veteran-original.png: body/material STYLE ONLY",
+    "rpg-props.png: accessory craft STYLE ONLY"
+  ],
+  "reference_checks": [
+    {
+      "file": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "verified": true
+    },
+    {
+      "file": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "verified": true
+    },
+    {
+      "file": "wut-family.png",
+      "sha256": "237641ae0ba4b39dfe3b1aec8725ceb6a4108e945b0241adb54a1bbdbf3fb30e",
+      "verified": true
+    },
+    {
+      "file": "construction-props.png",
+      "sha256": "e9c6c20d6bc984340b2458d00dda5dfadb948ee0c61c4065ef16d6b999072d24",
+      "verified": true
+    },
+    {
+      "file": "professions-props.png",
+      "sha256": "9fe95050d827919acb6f42c62f2a073169e4f5ee8e9309b89397428de49d6ce5",
+      "verified": true
+    },
+    {
+      "file": "rpg-props.png",
+      "sha256": "08bc11e8d49b3776b4e0c101c624affb9f54d682f9f4e9a16c4f64ed024082cf",
+      "verified": true
+    }
+  ],
+  "reference_checks_passed": 6
+}

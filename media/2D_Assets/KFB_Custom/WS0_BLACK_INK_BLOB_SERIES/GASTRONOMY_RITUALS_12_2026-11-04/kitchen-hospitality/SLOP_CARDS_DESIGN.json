@@ -1,0 +1,570 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
+  "figuren": [
+    {
+      "id": "WSA_KITCHEN_HOSPITALITY_20261104_01",
+      "name": {
+        "v": "Küchenchef Abschmeck",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He treats every disagreement as evidence that somebody has not tasted carefully enough.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "head cook",
+              "biome": [],
+              "decks": [
+                "what_work_was_for",
+                "bullshit_jobs_uncut",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "quiet clipped authority interrupted by doubt",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es fehlt noch etwas. Er hat beschlossen, dass es an den anderen liegt.",
+        "black_white_logic": "He treats every disagreement as evidence that somebody has not tasted carefully enough.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_KITCHEN_HOSPITALITY_20261104",
+        "image_cell": {
+          "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "prompt_excerpt": "TOP LEFT slot1 male HEAD COOK: very broad low heavy wavy ink splat, three thick asymmetric crown lobes, ONE small crumpled cream chef toque and tiny mustard neckerchief. Furious sideways jagged toothy UNDERBITE, one WHITE/red/black eye huge and other narrowed, no circular mouth or tongue. Both hands support ONE fat rounded worn COPPER SOUP POT against own belly, one thick wooden ladle rests across rim and is gripped at handle; inside just smooth dark green clay soup. No stove/fire/steam/furniture, no full apron torso, complete goo base visible."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_KITCHEN_HOSPITALITY_20261104_02",
+      "name": {
+        "v": "Herr Blätterstolz",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He handles pastry with a tenderness he considers wasted on people who eat too quickly.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "pastry perfectionist",
+              "biome": [],
+              "decks": [
+                "what_work_was_for",
+                "bullshit_jobs_uncut",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "expansive bright confidence, conspicuous pauses for agreement",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es ist mit Liebe gemacht. Beim Verzehr möchte er von dieser Zutat gern noch etwas wiederfinden.",
+        "black_white_logic": "He handles pastry with a tenderness he considers wasted on people who eat too quickly.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_KITCHEN_HOSPITALITY_20261104",
+        "image_cell": {
+          "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "prompt_excerpt": "TOP MIDDLE slot2 male PASTRY PERFECTIONIST: very tall narrow drooping pear ink blob with a long crooked top lobe, tiny faded plum soft cap and short gingham cream/coral collar. Heavy sleepy WHITE/red/black lids looking DOWN, CLOSED tenderly smug crooked smile with two uneven fangs. Holds ONE absurdly giant plump golden CROISSANT at own belly, delicately brushing its fat layered surface with ONE tiny rounded pastry brush, exaggerated large pastry/tiny tool. Hand-modeled clay flakes as broad soft folds, not crumbs/clutter, no scene."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_KITCHEN_HOSPITALITY_20261104_03",
+      "name": {
+        "v": "Madame Schalenwert",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She knows how valuable a little uncertainty becomes once it is served in a shell.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "oyster merchant",
+              "biome": [],
+              "decks": [
+                "what_work_was_for",
+                "bullshit_jobs_uncut",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "precise soft correction with an impatient last word",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es ist eine Besonderheit. Sie weist darauf hin, bevor jemand nach dem eigentlichen Inhalt fragt.",
+        "black_white_logic": "She knows how valuable a little uncertainty becomes once it is served in a shell.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_KITCHEN_HOSPITALITY_20261104",
+        "image_cell": {
+          "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "prompt_excerpt": "TOP RIGHT slot3 FEMALE-READ OYSTER MERCHANT: squat broad asymmetric ink splat, tiny teal tied headscarf over violet goo curl and short cream striped collar, one copper earstud. One lid raised and other half shut WHITE/red/black sideways gaze, narrow CLOSED knowing GOLD-fang smile, subtle lashes. Both hands cradle ONE enormous beautifully rounded OPEN OYSTER SHELL containing ONE oversized cream pearl, shell muted dusty blue/ivory ridges and plump smooth inner surface. Clearly an inanimate food/pearl prop, no animal face, no knife/water/backdrop."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_KITCHEN_HOSPITALITY_20261104_04",
+      "name": {
+        "v": "Herr Spülbestand",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He keeps things circulating while quietly wondering why clean is never a lasting condition.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "dishwashing worker",
+              "biome": [],
+              "decks": [
+                "what_work_was_for",
+                "bullshit_jobs_uncut",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "strained breath and a tentative rising finish",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Teller sind fertig. Die Aufgabe hat davon leider nichts mitbekommen.",
+        "black_white_logic": "He keeps things circulating while quietly wondering why clean is never a lasting condition.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_KITCHEN_HOSPITALITY_20261104",
+        "image_cell": {
+          "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "prompt_excerpt": "BOTTOM LEFT slot4 male DISHWASHING WORKER: towering bent bean ink blob with one short drooping upper lobe, tiny cream kerchief and faded indigo work collar. Huge anxious WHITE/red/black eyes upward, long crooked flat downward mouth with THREE small sparse teeth. Both goo arms struggle to hold ONE nested stack of exactly THREE very thick chipped ivory PLATES with broad teal rims at own belly. Just three bold ceramics, no cups/brush/soap/sink or floor, whole dark ink base clearly visible."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_KITCHEN_HOSPITALITY_20261104_05",
+      "name": {
+        "v": "Herr Ringwurst",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He believes good things ought to come in a form that is difficult to let go of.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "sausage seller",
+              "biome": [],
+              "decks": [
+                "what_work_was_for",
+                "bullshit_jobs_uncut",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "low contented judgement, slow rounded emphasis",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Das hat Hand und Fuß, sagt er. An der Wurst hat er beides vorsorglich weggelassen.",
+        "black_white_logic": "He believes good things ought to come in a form that is difficult to let go of.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_KITCHEN_HOSPITALITY_20261104",
+        "image_cell": {
+          "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "prompt_excerpt": "BOTTOM MIDDLE slot5 male SAUSAGE SELLER: compact nearly spherical springy ink blob with three short low side lobes, tiny battered rust-red cap and short cream collar. Ecstatic SIDEWAYS uneven-tooth LAUGH, one eye shut and other WHITE/red/black looking lovingly down, no tongue. Both arms hug ONE gigantic plump rounded pink/rust BOLOGNA SAUSAGE RING with a single small cream tie at joined ends, simple fat loop at own belly like a treasured cushion. Cartoon sculpted clay food, NO raw meat/blood/gore/cleaver or shop scene; goo body dominant."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_KITCHEN_HOSPITALITY_20261104_06",
+      "name": {
+        "v": "Frau Anrichtewürde",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She makes a tiny portion feel consequential by giving its arrival an enormous ceremony.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "head waiter",
+              "biome": [],
+              "decks": [
+                "what_work_was_for",
+                "bullshit_jobs_uncut",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "brisk official middle register with sudden anxious catches",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Der Auftritt ist großzügig. Beim Essen hält sie sich an eine strengere Definition.",
+        "black_white_logic": "She makes a tiny portion feel consequential by giving its arrival an enormous ceremony.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_KITCHEN_HOSPITALITY_20261104",
+        "image_cell": {
+          "datei": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "prompt_excerpt": "BOTTOM RIGHT slot6 FEMALE-READ HEAD WAITER: medium tall rounded triangular ink blob, elegant soft violet rolled crown curl with no hat, tiny navy lapel collar and one large copper stud. One WHITE/red/black eye very wide and other compressed into stern squint, broad CLOSED clenched irregular tooth grimace. Holds ONE absurdly huge softly rounded SILVER CLOCHE lifted just above ONE comically tiny cream plate bearing a SINGLE little green pea, all held securely within her own cell against belly. No tray/table/environment or extra diners, cloche/plate two simple props, full goo body below."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    }
+  ]
+}

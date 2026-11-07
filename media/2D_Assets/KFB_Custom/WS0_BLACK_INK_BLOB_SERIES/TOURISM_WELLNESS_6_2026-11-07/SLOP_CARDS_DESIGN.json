@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_TOURISM_WELLNESS_ACTOR_20261107_01",
+      "name": "Vera Calmnow",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Furious relaxation guest with a gift for holding up a group.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I am relaxing as fast as I can."
+          ],
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_WELLNESS_20261107",
+            "trio": "WSA_TOURISM_WELLNESS_20261107_TRIO_A"
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Vera Calmnow booked a place with The Compulsory Relaxation. I am relaxing as fast as I can. The incident report lists tiny hourglass and rolled yoga mat as the only personal effect accounted for.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I am relaxing as fast as I can.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "furious relaxation guest",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_WELLNESS_ACTOR_20261107_02",
+      "name": "Drew Cucumber",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Startled spa customer with a gift for holding up a group.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "They gave me the salad separately."
+          ],
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_WELLNESS_20261107",
+            "trio": "WSA_TOURISM_WELLNESS_20261107_TRIO_A"
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Drew Cucumber booked a place with The Compulsory Relaxation. They gave me the salad separately. The incident report lists two cucumber slices held away from face and facecloth as the only personal effect accounted for.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: They gave me the salad separately.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled spa customer",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_WELLNESS_ACTOR_20261107_03",
+      "name": "Ned Mudmask",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Pleased mud-bath tourist with a gift for holding up a group.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "My pores have opted out."
+          ],
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_WELLNESS_20261107",
+            "trio": "WSA_TOURISM_WELLNESS_20261107_TRIO_A"
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ned Mudmask booked a place with The Compulsory Relaxation. My pores have opted out. The incident report lists small terracotta bowl of clay mask with chunky brush as the only personal effect accounted for.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: My pores have opted out.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "pleased mud-bath tourist",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_WELLNESS_ACTOR_20261107_04",
+      "name": "Iris Towelwar",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Irritated robe critic with a gift for holding up a group.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "These towels are insufficiently neutral."
+          ],
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_WELLNESS_20261107",
+            "trio": "WSA_TOURISM_WELLNESS_20261107_TRIO_B"
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Iris Towelwar booked a place with The Compulsory Relaxation. These towels are insufficiently neutral. The incident report lists stack of neatly folded contrasting towels as the only personal effect accounted for.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: These towels are insufficiently neutral.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "irritated robe critic",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_WELLNESS_ACTOR_20261107_05",
+      "name": "Milo Detox",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ecstatic retreat guest with a gift for holding up a group.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I can taste the brochure."
+          ],
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_WELLNESS_20261107",
+            "trio": "WSA_TOURISM_WELLNESS_20261107_TRIO_B"
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Milo Detox booked a place with The Compulsory Relaxation. I can taste the brochure. The incident report lists giant smoothie with one sprig of garnish as the only personal effect accounted for.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I can taste the brochure.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "ecstatic retreat guest",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_WELLNESS_ACTOR_20261107_06",
+      "name": "Gus Zenphone",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Anxious digital detox participant with a gift for holding up a group.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Is the phone pouch supposed to lock?"
+          ],
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_WELLNESS_20261107",
+            "trio": "WSA_TOURISM_WELLNESS_20261107_TRIO_B"
+          },
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gus Zenphone booked a place with The Compulsory Relaxation. Is the phone pouch supposed to lock? The incident report lists small padlocked phone pouch clutched close as the only personal effect accounted for.",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Is the phone pouch supposed to lock?",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "anxious digital detox participant",
+          "src": "TOURISM_WELLNESS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

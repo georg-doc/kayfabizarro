@@ -1,0 +1,364 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_PSYCHE_FAMILIES_20261107",
+  "date": "2026-11-07",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "language": "en",
+  "design_status": "PASS",
+  "intake_eligible": true,
+  "sheets": 6,
+  "unique_identities": 36,
+  "depictions": 36,
+  "native_generation_jobs": 6,
+  "image_edits": 0,
+  "counts": {
+    "trios": 12,
+    "full_families": 6,
+    "female_read_casting_intents": 12
+  },
+  "sets": [
+    {
+      "set_id": "WSA_PSYCHE_FREUD_20261107",
+      "title": "The Couch Has Notes",
+      "manifest": "PSYCHE_FREUD_6_2026-11-07/MANIFEST.json",
+      "sheet": "PSYCHE_FREUD_6_2026-11-07/sheet-r1.png",
+      "sha256": "a949424bde9929d4fce6c7e46849ae838a2e82679fabd6f93157abc2301644d5",
+      "git_blob": "2aa33200ea628c33121b85aaa89d6369602d3298",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "psyche_family": "Freud and psychoanalysis",
+        "team_kit": "Burgundy, walnut, brass, muted cream and a small oriental-patterned textile accent",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+        "trios": [
+          {
+            "id": "WSA_PSYCHE_FREUD_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_PSYCHE_FREUD_ACTOR_20261107_01",
+              "WSA_PSYCHE_FREUD_ACTOR_20261107_02",
+              "WSA_PSYCHE_FREUD_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_PSYCHE_FREUD_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_PSYCHE_FREUD_ACTOR_20261107_04",
+              "WSA_PSYCHE_FREUD_ACTOR_20261107_05",
+              "WSA_PSYCHE_FREUD_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_01",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_02",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_03",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_04",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_05",
+          "WSA_PSYCHE_FREUD_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_PSYCHE_JUNG_20261107",
+      "title": "The Küsnacht Seminar",
+      "manifest": "PSYCHE_JUNG_6_2026-11-07/MANIFEST.json",
+      "sheet": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
+      "sha256": "eb1a1b7626d4b3c98c3d3baee3c5e651298dfed943509ccffaf370e335a3766e",
+      "git_blob": "ae6dccb1db6dccc554321c30157e3454af8f9130",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "psyche_family": "C. G. Jung and analytical psychology",
+        "team_kit": "Ink red, muted ochre, old leather, forest green and shallow engraved details",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+        "trios": [
+          {
+            "id": "WSA_PSYCHE_JUNG_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_PSYCHE_JUNG_ACTOR_20261107_01",
+              "WSA_PSYCHE_JUNG_ACTOR_20261107_02",
+              "WSA_PSYCHE_JUNG_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_PSYCHE_JUNG_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_PSYCHE_JUNG_ACTOR_20261107_04",
+              "WSA_PSYCHE_JUNG_ACTOR_20261107_05",
+              "WSA_PSYCHE_JUNG_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_01",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_02",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_03",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_04",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_05",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_PSYCHE_ARCHETYPES_20261107",
+      "title": "The Inner Cast",
+      "manifest": "PSYCHE_ARCHETYPES_6_2026-11-07/MANIFEST.json",
+      "sheet": "PSYCHE_ARCHETYPES_6_2026-11-07/sheet-r1.png",
+      "sha256": "26515f10226bb2b291022fd5fd9a2585440ff691a8e8012742421e7b2a433e22",
+      "git_blob": "db21f66f35b8d2954adcacf88ca807be7c1a84c6",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "psyche_family": "Jung-inspired archetype figures",
+        "team_kit": "Mask ivory, shadow indigo, terracotta, tarnished gold and moss",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+        "trios": [
+          {
+            "id": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_01",
+              "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_02",
+              "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_04",
+              "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05",
+              "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_01",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_02",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_03",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_04",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05",
+          "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_PSYCHE_SYMBOLS_20261107",
+      "title": "The Night Symbols",
+      "manifest": "PSYCHE_SYMBOLS_6_2026-11-07/MANIFEST.json",
+      "sheet": "PSYCHE_SYMBOLS_6_2026-11-07/sheet-r1.png",
+      "sha256": "fbdb5d998e35ca2bb9b0cb76518742f28748856b0eebeaf46d5fd82f3ff9ad5e",
+      "git_blob": "e414a460a263020778c0e9bd94d19d936cb297f4",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "psyche_family": "Surreal dream symbolism",
+        "team_kit": "Muted midnight blue with warm clay gold, smooth enamel and glass",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+        "trios": [
+          {
+            "id": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_01",
+              "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_02",
+              "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_PSYCHE_SYMBOLS_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_04",
+              "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_05",
+              "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_01",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_02",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_03",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_04",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_05",
+          "WSA_PSYCHE_SYMBOLS_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_PSYCHE_THERAPY_20261107",
+      "title": "The Circle With One Extra Chair",
+      "manifest": "PSYCHE_THERAPY_6_2026-11-07/MANIFEST.json",
+      "sheet": "PSYCHE_THERAPY_6_2026-11-07/sheet-r1.png",
+      "sha256": "edce8920dc9619630a7783eb61205e39a1afd6b78b6ae006c29e0e7297d11876",
+      "git_blob": "b0ab05e95fedfab4475687168eec13d042776f21",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "psyche_family": "Group therapy and psychiatric care",
+        "team_kit": "Warm teal, soft sage, quiet gray and ochre, plain comfortable wraps",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+        "trios": [
+          {
+            "id": "WSA_PSYCHE_THERAPY_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_PSYCHE_THERAPY_ACTOR_20261107_01",
+              "WSA_PSYCHE_THERAPY_ACTOR_20261107_02",
+              "WSA_PSYCHE_THERAPY_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_PSYCHE_THERAPY_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_PSYCHE_THERAPY_ACTOR_20261107_04",
+              "WSA_PSYCHE_THERAPY_ACTOR_20261107_05",
+              "WSA_PSYCHE_THERAPY_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_01",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_02",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_03",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_04",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_05",
+          "WSA_PSYCHE_THERAPY_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_PSYCHE_SOCIAL_20261107",
+      "title": "The Committee of Bad Habits",
+      "manifest": "PSYCHE_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "sheet": "PSYCHE_SOCIAL_6_2026-11-07/sheet-r1.png",
+      "sha256": "f051a9c4656c2022cf2b35ab26760f6b1b856196e30861112920acf798c704e8",
+      "git_blob": "bf0ec5daa3cf3c4d5705736db3acc980689d73d8",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "psyche_family": "Social dynamics and distress as visual metaphors",
+        "team_kit": "Rust, slate and amber on dark satin clay. Strong symbolic props",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+        "trios": [
+          {
+            "id": "WSA_PSYCHE_SOCIAL_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_PSYCHE_SOCIAL_ACTOR_20261107_01",
+              "WSA_PSYCHE_SOCIAL_ACTOR_20261107_02",
+              "WSA_PSYCHE_SOCIAL_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_PSYCHE_SOCIAL_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_PSYCHE_SOCIAL_ACTOR_20261107_04",
+              "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05",
+              "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_01",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_02",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_03",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_04",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05",
+          "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    }
+  ],
+  "accepted_authoring_snapshot": {
+    "sheets": 209,
+    "depictions": 1254,
+    "intake_eligible_sheets": 207,
+    "intake_eligible_depictions": 1242
+  },
+  "concept_references": [
+    {
+      "url": "https://www.yorku.ca/pclassic/Freud/Dreams/dreams2.htm",
+      "cue": "Freud's historical dream interpretation and association"
+    },
+    {
+      "url": "https://www.freud.org.uk/about-us/the-house/sigmund-freuds-famous-psychoanalytic-couch/",
+      "cue": "Couch and period furnishing"
+    },
+    {
+      "url": "https://www.loc.gov/exhibits/red-book-of-carl-jung/the-red-book-and-beyond.html",
+      "cue": "Red Book and Jung's carved mandala"
+    },
+    {
+      "url": "https://jungpage.org/learn/jung-lexicon",
+      "cue": "Historical concept excerpts for persona and shadow"
+    }
+  ],
+  "art_direction": "Invented symbolic figures, care participants with individual agency, gentle satire of habits and bureaucracy.",
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_zero_on_every_sheet": true,
+    "fully_transparent_pixels": {
+      "FREUD": 567722,
+      "JUNG": 596134,
+      "ARCHETYPES": 591380,
+      "SYMBOLS": 634582,
+      "THERAPY": 570378,
+      "SOCIAL": 582360
+    },
+    "nominal_cell_crossings": [
+      "FREUD",
+      "JUNG",
+      "SYMBOLS",
+      "THERAPY",
+      "SOCIAL"
+    ],
+    "extraction": "NOT_PERFORMED",
+    "runtime": "NOT_TESTED",
+    "next_gate": "Silhouette-aware isolation and receiving intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS"
+}

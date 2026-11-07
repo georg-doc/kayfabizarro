@@ -1,0 +1,261 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WORKERS_STRIKE1920_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "WORKERS_STRIKE1920_6_2026-11-05/sheet-r1.png",
+    "sha256": "337e7c0282f43ace054d8a7d73497ca3e7d75bd6094e687d226c56ad82d61009"
+  },
+  "production_record": "WORKERS_STRIKE1920_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "WORKERS_STRIKE1920_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "WORKERS_STRIKE1920_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "1920er – Ausschuss für die letzte Geduld",
+    "visual_context": "fictional1920s striking industrial workers, worn flatcaps, headscarves, tiny rolled-sleeve tabs, patched canvas, muted brick red/navy/cream, handmade union props without legible text; compassionate labour satire, not a riot or battle scene",
+    "relationship_policy": "Shared visual worker family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_WORKERS_STRIKE1920_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vertrauensfrau Lautgenug",
+      "bild": {
+        "datei": "WORKERS_STRIKE1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "red headscarf",
+        "speaking trumpet",
+        "rolled petition"
+      ],
+      "temperament": "Can turn a roomful of separate worries into one audible sentence.",
+      "prompt_auszug": "Vertrauensfrau Lautgenug, weiblich-read. round broad upright splat in dark red tied headscarf, subtle lashes, small old-fashioned speaking trumpet low beside cheek and a rolled petition; one eye wide other focused, giant open asymmetric rallying mouth with TWO upper teeth. Personality: Can turn a roomful of separate worries into one audible sentence.",
+      "prompt_quelle": "WORKERS_STRIKE1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_STRIKE1920_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Streikposten Nochimmer",
+      "bild": {
+        "datei": "WORKERS_STRIKE1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brown flatcap",
+        "blank picket paddle",
+        "neckerchief"
+      ],
+      "temperament": "Has perfected the difficult art of standing his ground without feet.",
+      "prompt_auszug": "Streikposten Nochimmer, maennlich-read. tall thin curved blob, battered brown flatcap and tiny neckerchief, short wooden picket paddle with EMPTY weathered cream board and no text; heavy lopsided lids, closed crooked toothless stubborn lips. Personality: Has perfected the difficult art of standing his ground without feet.",
+      "prompt_quelle": "WORKERS_STRIKE1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_STRIKE1920_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Flugblattwart Vervielfacht",
+      "bild": {
+        "datei": "WORKERS_STRIKE1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "indigo cap",
+        "stack of leaflets",
+        "loose leaflet"
+      ],
+      "temperament": "Has enough copies for everyone except the person who asked.",
+      "prompt_auszug": "Flugblattwart Vervielfacht, maennlich-read. squat top-heavy blob, soft indigo cap and simple cloth sleeve tabs, stack of small cream leaflets with only abstract printing marks, one loose leaflet in goo hand; bulging unequal eyes, little triangular open mouth without teeth. Personality: Has enough copies for everyone except the person who asked.",
+      "prompt_quelle": "WORKERS_STRIKE1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_STRIKE1920_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Delegierter Nochnefrage",
+      "bild": {
+        "datei": "WORKERS_STRIKE1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "dark flatcap",
+        "pocket watch",
+        "folded demand list"
+      ],
+      "temperament": "Arrives at negotiations with the time and none of the patience.",
+      "prompt_auszug": "Delegierter Nochnefrage, maennlich-read. tall broad-based pear splat, dark flatcap slightly tilted and little waistcoat panels, small pocket watch on short chain and folded demand list without legible words; sideways triumphant grin with THREE internal upper teeth, one cheek raised. Personality: Arrives at negotiations with the time and none of the patience.",
+      "prompt_quelle": "WORKERS_STRIKE1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_STRIKE1920_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kassenwartin Kleingeld",
+      "bild": {
+        "datei": "WORKERS_STRIKE1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "blue-grey headscarf",
+        "collection box",
+        "three coins"
+      ],
+      "temperament": "Makes solidarity last until Friday and occasionally beyond.",
+      "prompt_auszug": "Kassenwartin Kleingeld, weiblich-read. low wide square rounded blob, tied blue-grey headscarf and two lashes, small wooden collection box with visible coin slot and THREE large coins; skeptical one-brow lift, huge toothless downturned mouth. Personality: Makes solidarity last until Friday and occasionally beyond.",
+      "prompt_quelle": "WORKERS_STRIKE1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_STRIKE1920_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Suppenwart Weiterwarm",
+      "bild": {
+        "datei": "WORKERS_STRIKE1920_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cream cap",
+        "soup pot",
+        "ladle"
+      ],
+      "temperament": "Keeps the soup warm while everybody argues about the future.",
+      "prompt_auszug": "Suppenwart Weiterwarm, maennlich-read. round lopsided splat, old soft cream cap with patched brim, small lidded metal soup pot at flank and stout ladle; gently worried high brows, uneven closed toothless smile. Personality: Keeps the soup warm while everybody argues about the future.",
+      "prompt_quelle": "WORKERS_STRIKE1920_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

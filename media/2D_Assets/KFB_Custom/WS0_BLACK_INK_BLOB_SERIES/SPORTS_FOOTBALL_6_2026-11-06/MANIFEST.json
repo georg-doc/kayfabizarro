@@ -1,0 +1,263 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS_FOOTBALL_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS_FOOTBALL_6_2026-11-06/sheet-r1.png",
+    "sha256": "9b71720c995fe850abfcdd04ed0460366ef6c5ffc236337d780a84442956c197"
+  },
+  "production_record": "SPORTS_FOOTBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS_FOOTBALL_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS_FOOTBALL_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "HyperNorm Hail Marys",
+    "visual_context": "1930s-inspired mustard-and-navy American football team, stitched leather helmets, no face masks",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "FOOTBALL",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS_FOOTBALL_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Buck Rückversicherung",
+      "bild": {
+        "datei": "SPORTS_FOOTBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "open leather helmet",
+        "laced football"
+      ],
+      "temperament": "He calls a bold play and immediately asks for a second opinion.",
+      "prompt_auszug": "Buck Rückversicherung; male-read. Long curved blob, anxious wide eyes looking sideways, clenched internal teeth; small old brown leather helmet OPEN FACE no bars, tiny mustard collar; both short goo hands carefully cradle one laced brown football.",
+      "prompt_quelle": "SPORTS_FOOTBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "quarterback"
+    },
+    {
+      "id": "WSA_SPORTS_FOOTBALL_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mona Mauerwerk",
+      "bild": {
+        "datei": "SPORTS_FOOTBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small shoulder pads",
+        "navy collar"
+      ],
+      "temperament": "She provides protection with the patience of a locked filing cabinet.",
+      "prompt_auszug": "Mona Mauerwerk; female-read. Very wide low rectangular splat with thick round lobes, strong lashes, pursed toothless determined mouth; navy collar and two small mustard shoulder pads, ink belly dominant; hands spread like an immovable barrier.",
+      "prompt_quelle": "SPORTS_FOOTBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "offensive lineman"
+    },
+    {
+      "id": "WSA_SPORTS_FOOTBALL_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Skip Luftpost",
+      "bild": {
+        "datei": "SPORTS_FOOTBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "receiving gloves",
+        "shoulder stripe"
+      ],
+      "temperament": "He is certain the next pass will finally be addressed to him.",
+      "prompt_auszug": "Skip Luftpost; male-read. Upright thin tapering splat with uplifted crest, ecstatic asymmetrical open grin, upper teeth only; tiny mustard shoulder stripe, two giant leather receiving gloves raised one beside each cheek, empty hands.",
+      "prompt_quelle": "SPORTS_FOOTBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "wide receiver"
+    },
+    {
+      "id": "WSA_SPORTS_FOOTBALL_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dora Durchbruch",
+      "bild": {
+        "datei": "SPORTS_FOOTBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "tucked football",
+        "mustard scarf"
+      ],
+      "temperament": "She carries the entire offence and would like that noted.",
+      "prompt_auszug": "Dora Durchbruch; female-read. Compact asymmetric diamond blob, side quiff, lashes and offended raised brow, closed compressed mouth; short mustard scarf, navy elbow patch; one football tucked securely under goo arm, other arm pointing inward to self.",
+      "prompt_quelle": "SPORTS_FOOTBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "running back"
+    },
+    {
+      "id": "WSA_SPORTS_FOOTBALL_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tank Zuständigkeit",
+      "bild": {
+        "datei": "SPORTS_FOOTBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather ear guards",
+        "blocking pad"
+      ],
+      "temperament": "He tackles uncertainty even when it is standing perfectly still.",
+      "prompt_auszug": "Tank Zuständigkeit; male-read. Tall broad domed splat with tiny split ink crest, stern heavy white eyes, lopsided gaping bark and two upper teeth; old leather ear guards, navy knit collar, holds one small scratched oval blocking pad against his flank.",
+      "prompt_quelle": "SPORTS_FOOTBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "defensive lineman"
+    },
+    {
+      "id": "WSA_SPORTS_FOOTBALL_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Extraversuch",
+      "bild": {
+        "datei": "SPORTS_FOOTBALL_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "kicking boot",
+        "skullcap"
+      ],
+      "temperament": "He believes a specialist is someone allowed to be nervous in only one direction.",
+      "prompt_auszug": "Pip Extraversuch; male-read. Round small-bodied but equal overall-size splat with long upright ink curl; nervous eyes upward, trembling toothless smile; navy skullcap and mustard collar, holds one tall old-fashioned leather kicking boot with no human foot inside.",
+      "prompt_quelle": "SPORTS_FOOTBALL_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "kicking specialist"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

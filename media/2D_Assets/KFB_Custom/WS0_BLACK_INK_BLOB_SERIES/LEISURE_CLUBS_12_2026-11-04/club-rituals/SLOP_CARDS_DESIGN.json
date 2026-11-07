@@ -1,0 +1,570 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_CLUB_RITUALS_20261104",
+  "figuren": [
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_01",
+      "name": {
+        "v": "Herr Beschlussfähig",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He treasures participation provided it arrives in a form he can close afterwards.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "club chairman",
+              "biome": [],
+              "decks": [
+                "trust_and_betrayal",
+                "the_importance_of_being_kayfab_earnest",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "quiet clipped authority interrupted by doubt",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es steht jedem frei. Die Öffnung hat er vorsorglich recht schmal bemessen.",
+        "black_white_logic": "He treasures participation provided it arrives in a form he can close afterwards.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CLUB_RITUALS_20261104",
+        "image_cell": {
+          "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "prompt_excerpt": "TOP LEFT slot1 male CLUB CHAIRMAN: very low broad heavy wavy ink splat with three short side lobes, tiny indigo ceremonial cap and short burgundy velvet collar, one small brass rosette. CLOSED complacent crooked gold-fang smile, heavy WHITE/red/black half-lids down. Both arms possessively hug ONE fat rounded worn wooden BALLOT BOX against own belly, SINGLE narrow slot with just THREE thick blank ivory ballots peeking out. No text/labels/desk/coat torso, all goo base visible, simple wooden object."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_02",
+      "name": {
+        "v": "Frau Einstimmig",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She brings people together by hearing the disagreement before anybody has sung it.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "choir conductor",
+              "biome": [],
+              "decks": [
+                "trust_and_betrayal",
+                "the_importance_of_being_kayfab_earnest",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "expansive bright confidence, conspicuous pauses for agreement",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Sie sucht den gemeinsamen Ton. Bei einzelnen Stimmen ist sie bereits fündig geworden, was daran stört.",
+        "black_white_logic": "She brings people together by hearing the disagreement before anybody has sung it.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CLUB_RITUALS_20261104",
+        "image_cell": {
+          "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "prompt_excerpt": "TOP MIDDLE slot2 FEMALE-READ CHOIR CONDUCTOR: tall thin curved bean ink blob with one huge violet rolled crown curl, tiny teal collar and cream bow tie, subtle lashes. One WHITE/red/black eye wide and other squeezed, broad SIDEWAYS jagged toothy shout, NO tongue/O mouth. Both goo hands grip ONE enormous softly rounded SILVER TUNING FORK with TWO thick prongs at belly; ONE tiny short wooden conductor baton tucked securely against one palm. No sheet music, notes, choir/extra actors or stage."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_03",
+      "name": {
+        "v": "Herr Bahnbestand",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He cares for the equipment with the patient affection he has stopped expecting from the members.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "bowling club keeper",
+              "biome": [],
+              "decks": [
+                "trust_and_betrayal",
+                "the_importance_of_being_kayfab_earnest",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "precise soft correction with an impatient last word",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Der Kegel ist noch gut. Das lässt sich über den Abend bislang nicht mit gleicher Sicherheit sagen.",
+        "black_white_logic": "He cares for the equipment with the patient affection he has stopped expecting from the members.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CLUB_RITUALS_20261104",
+        "image_cell": {
+          "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "prompt_excerpt": "TOP RIGHT slot3 male BOWLING CLUB KEEPER: compact nearly spherical ink splat with two drooping crown lobes, tiny mustard soft cap and short faded moss knitted collar. Deep tired downward flat lower lip with TWO sparse ivory teeth, WHITE/red/black eyes half shut gazing sideways. Cradles ONE oversized beautifully rounded worn IVORY BOWLING PIN with a fat coral neck band like a cherished pet, both hands gently supporting it. No ball, lane, floor or extra equipment."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_04",
+      "name": {
+        "v": "Herr Regelmoment",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He knows exactly when enjoyment has become something he can interrupt officially.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "amateur referee",
+              "biome": [],
+              "decks": [
+                "trust_and_betrayal",
+                "the_importance_of_being_kayfab_earnest",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "strained breath and a tentative rising finish",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Freude war im Ansatz regelwidrig. Er ist erleichtert, es rechtzeitig bemerkt zu haben.",
+        "black_white_logic": "He knows exactly when enjoyment has become something he can interrupt officially.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CLUB_RITUALS_20261104",
+        "image_cell": {
+          "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "prompt_excerpt": "BOTTOM LEFT slot4 male AMATEUR REFEREE: towering leaning pear ink blob, three short uneven crown lobes, tiny cream/indigo striped collar and no full shirt/torso. Huge angry crooked UNDERBITE with THREE uneven teeth, one eye almost closed and other WHITE/red/black forward. Holds ONE enormous thick BLANK RED CARD upright at own side, opposite hand grips ONE tiny rounded brass whistle close to belly. Card physical clay/leather edges, no writing/icons, no arm reaching toward neighboring actor."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_05",
+      "name": {
+        "v": "Herr Zweckbindung",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He collects goodwill carefully because he has already decided what it ought to be worth.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "club fundraiser",
+              "biome": [],
+              "decks": [
+                "trust_and_betrayal",
+                "the_importance_of_being_kayfab_earnest",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "low contented judgement, slow rounded emphasis",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es ist für einen guten Zweck. Über die genaue Güte behält er sich die Verwaltung vor.",
+        "black_white_logic": "He collects goodwill carefully because he has already decided what it ought to be worth.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CLUB_RITUALS_20261104",
+        "image_cell": {
+          "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "prompt_excerpt": "BOTTOM MIDDLE slot5 male CLUB FUNDRAISER: medium tall narrow rounded triangular ink splat with one long drooping crown curl, little worn plum cap and short cream collar, single small copper medal. Huge anxious WHITE/red/black eyes looking UP, compressed crooked ZIGZAG mouth with single lower tooth, no smile/tongue. One goo arm hugs ONE plump faded burgundy velvet DONATION POUCH with broad cream cord, other hand delicately pinches ONE tiny plain copper coin above pouch mouth. Few strong fabric/metal volumes, no labels, cash pile or begging scene."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CLUB_RITUALS_20261104_06",
+      "name": {
+        "v": "Frau Knopfhoheit",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She makes every role fit by deciding which part of the person can be taken in.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "community theatre costume keeper",
+              "biome": [],
+              "decks": [
+                "trust_and_betrayal",
+                "the_importance_of_being_kayfab_earnest",
+                "human_nature_uncut_hilfe_ich_bin_ein_mensch"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "brisk official middle register with sudden anxious catches",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es passt fast. An den Menschen müsste nur eine Kleinigkeit geändert werden.",
+        "black_white_logic": "She makes every role fit by deciding which part of the person can be taken in.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CLUB_RITUALS_20261104",
+        "image_cell": {
+          "datei": "LEISURE_CLUBS_12_2026-11-04/club-rituals/club-rituals-sheet-r1.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "prompt_excerpt": "BOTTOM RIGHT slot6 FEMALE-READ THEATRE COSTUME KEEPER: broad squat asymmetric ink splat with soft violet goo bun under short teal work headband, tiny coral collar, subtle lashes. One eye CLOSED in focused effort and other WHITE/red/black looking DOWN, CLOSED narrow crooked ivory-fang smirk. Holds ONE absurdly giant thick round IVORY BUTTON with FOUR large smooth holes at own belly, opposite hand a tiny blunt brass needle threaded with a SHORT thick burgundy cord loop attached to button. Needle/thread wholly within her own cell, no cloth torso, mannequin, sewing machine or background."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    }
+  ]
+}

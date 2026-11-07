@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PSYCHE_JUNG_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
+    "sha256": "eb1a1b7626d4b3c98c3d3baee3c5e651298dfed943509ccffaf370e335a3766e"
+  },
+  "production_record": "PSYCHE_JUNG_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "PSYCHE_JUNG_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "PSYCHE_JUNG_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Küsnacht Seminar",
+    "theme": "C. G. Jung and analytical psychology",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "psychology vignette",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Carl Gustav Jung",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "inquisitive historical analyst",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_02",
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "round wire spectacles, swept gray clay hair, compact tweed collar, red folio"
+      ],
+      "temperament": "Inquisitive historical analyst.",
+      "prompt_auszug": "low squared blob, intent gaze and slight smile",
+      "prompt_quelle": "PSYCHE_JUNG_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "inquisitive historical analyst"
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Iris Redbook",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "meticulous image recorder",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_01",
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small red folio open to one simple painted circle"
+      ],
+      "temperament": "Meticulous image recorder.",
+      "prompt_auszug": "tall lean droplet, downturned focused eyes and compressed lips",
+      "prompt_quelle": "PSYCHE_JUNG_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "meticulous image recorder"
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hugo Coincidence",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled coincidence collector",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_01",
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two matching pocket watches in one hand, simple cases"
+      ],
+      "temperament": "Startled coincidence collector.",
+      "prompt_auszug": "round off-balance blob, enormous pupils and small gasp",
+      "prompt_quelle": "PSYCHE_JUNG_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "startled coincidence collector"
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Towerstone",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "pensive stone carver",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_05",
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "palm-sized blunt stone block and stubby chisel"
+      ],
+      "temperament": "Pensive stone carver.",
+      "prompt_auszug": "upright comma, downcast eyes, pursed lip",
+      "prompt_quelle": "PSYCHE_JUNG_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "pensive stone carver"
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Imagekeeper",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "curious active-imagination participant",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_04",
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny colorful clay bird figurine in cupped hands"
+      ],
+      "temperament": "Curious active-imagination participant.",
+      "prompt_auszug": "asymmetric low pear, lifted look, quiet open smile",
+      "prompt_quelle": "PSYCHE_JUNG_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "curious active-imagination participant"
+    },
+    {
+      "id": "WSA_PSYCHE_JUNG_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Quaternity",
+      "language": "en",
+      "bild": {
+        "datei": "PSYCHE_JUNG_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overzealous pattern finder",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_PSYCHE_JUNG_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_04",
+        "WSA_PSYCHE_JUNG_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "wood tray with four colored clay quadrants"
+      ],
+      "temperament": "Overzealous pattern finder.",
+      "prompt_auszug": "high scalloped blob, intent asymmetric gaze and narrow gritted smile",
+      "prompt_quelle": "PSYCHE_JUNG_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "overzealous pattern finder"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "psyche_family": "C. G. Jung and analytical psychology",
+    "team_kit": "Ink red, muted ochre, old leather, forest green and shallow engraved details",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Theory, social habits and bureaucracy. Care participants retain their own agency.",
+    "trios": [
+      {
+        "id": "WSA_PSYCHE_JUNG_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_01",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_02",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_PSYCHE_JUNG_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_04",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_05",
+          "WSA_PSYCHE_JUNG_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_PSYCHE_JUNG_ACTOR_20261107_01",
+      "WSA_PSYCHE_JUNG_ACTOR_20261107_02",
+      "WSA_PSYCHE_JUNG_ACTOR_20261107_03",
+      "WSA_PSYCHE_JUNG_ACTOR_20261107_04",
+      "WSA_PSYCHE_JUNG_ACTOR_20261107_05",
+      "WSA_PSYCHE_JUNG_ACTOR_20261107_06"
+    ]
+  }
+}

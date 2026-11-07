@@ -1,0 +1,265 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS2_ATHLETICS_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS2_ATHLETICS_6_2026-11-06/sheet-r1.png",
+    "sha256": "6821656868c2be1cd34698f55a37ee033e7e77211cf74e451847d29eecb11bc3"
+  },
+  "production_record": "SPORTS2_ATHLETICS_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS2_ATHLETICS_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS2_ATHLETICS_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "TSV Letzter Versuch",
+    "visual_context": "1920s-to-1960s track-and-field club, faded rust-orange and cream cotton collar/bib accents, simple leather and wooden training gear",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "ATHLETICS",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS2_ATHLETICS_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Susi Startsignal",
+      "bild": {
+        "datei": "SPORTS2_ATHLETICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "wooden starting blocks",
+        "cream sweatband"
+      ],
+      "temperament": "She is ready before the signal and suspicious immediately after it.",
+      "prompt_auszug": "Susi Startsignal, female-read. Narrow tapered ink blob fully upright, little swept crest, lashed huge alert eyes and tiny trembling CLOSED smile; cream sweatband and small rust bib; two small wooden starting-block wedges held together in hands like precious documents, no running legs.",
+      "prompt_quelle": "SPORTS2_ATHLETICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "sprinter"
+    },
+    {
+      "id": "WSA_SPORTS2_ATHLETICS_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hektor Hürde",
+      "bild": {
+        "datei": "SPORTS2_ATHLETICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "miniature wooden hurdle",
+        "rust headband"
+      ],
+      "temperament": "He regards each obstacle as a clerical repetition of the previous one.",
+      "prompt_auszug": "Hektor Hürde, male-read. Very tall bent bell ink blob, low annoyed side glance, long toothless closed grumble; rust headband and tiny cream collar; holds miniature single simple wooden hurdle frame beside flank fully inside cell, no track.",
+      "prompt_quelle": "SPORTS2_ATHLETICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "hurdler"
+    },
+    {
+      "id": "WSA_SPORTS2_ATHLETICS_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gitta Gewichtung",
+      "bild": {
+        "datei": "SPORTS2_ATHLETICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "iron shot sphere",
+        "cream wrist wrap",
+        "rust neckerchief"
+      ],
+      "temperament": "She prefers arguments that can be weighed in one hand.",
+      "prompt_auszug": "Gitta Gewichtung, female-read. Very broad round scalloped blob, strong modest lashes and fierce delighted grin with three upper teeth INSIDE mouth; small rust neckerchief and cream wrist wrap; holds ONE dark iron shot-put sphere close to shoulder in open palm, other palm at flank.",
+      "prompt_quelle": "SPORTS2_ATHLETICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "shot-putter"
+    },
+    {
+      "id": "WSA_SPORTS2_ATHLETICS_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lutz Luftlinie",
+      "bild": {
+        "datei": "SPORTS2_ATHLETICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blank-mark measuring tape",
+        "cream collar"
+      ],
+      "temperament": "He measures success from the most flattering available edge.",
+      "prompt_auszug": "Lutz Luftlinie, male-read. Tall upright reverse-comma splat with high sweeping ink crest, smug one-raised-eyelid stare and crooked toothless smirk; small cream collar with rust edge; holds short rolled measuring tape with only blank marks, one hand pinching the end proudly.",
+      "prompt_quelle": "SPORTS2_ATHLETICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "long jumper"
+    },
+    {
+      "id": "WSA_SPORTS2_ATHLETICS_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Viktor Vertikal",
+      "bild": {
+        "datei": "SPORTS2_ATHLETICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short bamboo pole",
+        "rust scarf"
+      ],
+      "temperament": "He has achieved ambition and would now like a reliable way down.",
+      "prompt_auszug": "Viktor Vertikal, male-read. Slender wavering upright blob, drooping curled crest, giant anxious eyes looking up, small gaping toothless mouth; tiny rust scarf; carries short thick bamboo pole upright at side, full pole inside cell, no jumping/scene.",
+      "prompt_quelle": "SPORTS2_ATHLETICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "pole vaulter"
+    },
+    {
+      "id": "WSA_SPORTS2_ATHLETICS_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Manni Morgennoch",
+      "bild": {
+        "datei": "SPORTS2_ATHLETICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "enamel flask",
+        "cloth cap",
+        "single laurel twig"
+      ],
+      "temperament": "He believes the final kilometre is a renewable resource.",
+      "prompt_auszug": "Manni Morgennoch, male-read. Wide asymmetrical pear blob, sunken weary lids and closed slack frown; faded cream cloth cap, tiny rust collar; dented enamel water flask in one hand, single little laurel twig tucked into cap, no floating sweat symbols.",
+      "prompt_quelle": "SPORTS2_ATHLETICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "marathon runner"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

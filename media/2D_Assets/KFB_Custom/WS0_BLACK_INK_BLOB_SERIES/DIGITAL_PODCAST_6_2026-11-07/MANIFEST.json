@@ -1,0 +1,278 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DIGITAL_PODCAST_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "DIGITAL_PODCAST_6_2026-11-07/sheet-r1.png",
+    "sha256": "18d5ac78ea30229ed8895142f759eae27b7f3f4a98199219937ec6e6d1413d54"
+  },
+  "production_record": "DIGITAL_PODCAST_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "DIGITAL_PODCAST_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "DIGITAL_PODCAST_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Everyone Has a Microphone",
+    "theme": "six distinct podcaster archetypes, minimal handheld recording props",
+    "backlog_neighbors": [
+      "G09"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "HyperNorm resident",
+      "digital satire cluster",
+      "NPC candidate",
+      "opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_DIGITAL_PODCAST_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Brock Longform",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_PODCAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "expansively explaining everything",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small side-held vintage microphone"
+      ],
+      "temperament": "He has nearly finished explaining why an introduction is necessary.",
+      "prompt_auszug": "Male-read widebellinkblob,twosoftdroopycrests. OnehandholdsONEsmallvintageribbedmicrophoneLOWatflankclearofface,otherpalmopensbroadlywithinowncell. Onehugeeyeandotherknowinglid,OPENwideangledfour-upper-toothstorymouth. Endlessconfidentexpansiveness,no studio/table.",
+      "prompt_quelle": "DIGITAL_PODCAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_PODCAST_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Connie Coldcase",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_PODCAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "suspiciously fascinated",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one little cassette recorder",
+        "small faded-green collar"
+      ],
+      "temperament": "She finds the missing explanation suspiciously compelling.",
+      "prompt_auszug": "Female-read leanpearblob,modestlashes,smallfadedgreencollar. BothhandsprotectONElittlecassette recorderatbelly,plainroundedbuttons,noletters. Whiteeyeslooksideways,onebrowsharplyraised,CLOSEDtinyhushedmouth. Tautdelightedmystery,notspyuniform,nomurderprop.",
+      "prompt_quelle": "DIGITAL_PODCAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_PODCAST_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hank Hottake",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_PODCAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "furiously certain about a small point",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small red chili-shaped handheld microphone"
+      ],
+      "temperament": "He has a strong position on a point nobody had raised.",
+      "prompt_auszug": "Male-read shortbroadboxsplat,threeunevencrests. OnehandgripsONEsmallredchili-shapedmicrophone withroundedmeshbulb,heldsideofmouthnotcoveringface;otherinkfistbunchedatchest. Onehugeeye,otherinspectingslit,OPENtiltedtwo-upper-toothrant. Darkinklip,notallredbody,noflamesorspeechlabels.",
+      "prompt_quelle": "DIGITAL_PODCAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_PODCAST_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Nodwell",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_PODCAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "agreeing without listening",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small handheld microphone",
+        "small retro headphones above eyes"
+      ],
+      "temperament": "He agrees at the intervals where another person might normally listen.",
+      "prompt_auszug": "Male-read broadroundlowcrestblob,smallroundedretroearphones framingbutNOTcoveringface. OnehandholdsONEcompactblackmicLOWbesidebelly,otherthumbsupclosebody. Eyeshalfliddedunequalwithclearwhites,CLOSEDtinyautomaticpleasantsmile. Slightupwardheadtiltlikefrozenmidnod. No text,table orsecondperson.",
+      "prompt_quelle": "DIGITAL_PODCAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_PODCAST_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Optimize",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_PODCAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "converting every pause into advice",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small clip-on microphone",
+        "one small kitchen timer"
+      ],
+      "temperament": "He turns a pause into an opportunity nobody asked to optimize.",
+      "prompt_auszug": "Male-read tallcrookedcommablob,onefoldedcrest,smallclip-onmic onbaregoobelowmouth. OnehandclutchesONElittleoldkitchentimer (blankdial),otherroundedfingerraisedinpreciseinstruction. Whiteeyesintenseunequal,onebrowhigh,CLOSEDsmallcompressedearnestpout. Nofullbusinesssuit,posterorcomputer.",
+      "prompt_quelle": "DIGITAL_PODCAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_PODCAST_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Isla Footnote",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_PODCAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "politely doubtful",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one little handheld mic",
+        "one small blank folded note"
+      ],
+      "temperament": "She would like a source before the conclusion becomes the next introduction.",
+      "prompt_auszug": "Female-read broadscallopedblob withsoftsidecurl,modestlashes,tinyivoryscarf. OnehandholdsONElittlemicbelowface,otherONEsmallblankfoldednote. Oneeyehuge,otherdoubtfullid,raiseduneveninnerbrows,OPENnarrowcrookedone-upper-toothquestionmouth. Patientfactchecking,nobigbook/glasses/print,no otherfigure.",
+      "prompt_quelle": "DIGITAL_PODCAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "georg_decision": {
+    "quote": "Wir sind auch alle Pass.",
+    "scope": "All six digital satire sheets and 36 designs."
+  }
+}

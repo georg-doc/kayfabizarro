@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_01",
+      "name": "Vern Trace",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Vern Trace is the crew's leak assessor.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Skeptical leak assessor.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Mark the boundary here."
+          ],
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CHEMICAL_20261107",
+            "trio": "WSA_CONTAINMENT_CHEMICAL_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Vern Trace serves with the Assessment Detail of The Spill Boundary. The kit includes a small capped detector puck with one mint inset. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Vern Trace treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "skeptical leak assessor",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_02",
+      "name": "Mara Plug",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Mara Plug is the crew's seal technician.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Decisive seal technician.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a moment to check this."
+          ],
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CHEMICAL_20261107",
+            "trio": "WSA_CONTAINMENT_CHEMICAL_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mara Plug serves with the Assessment Detail of The Spill Boundary. The kit includes a thick mint wedge-shaped plug held vertically. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Mara Plug treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "decisive seal technician",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_03",
+      "name": "Cobb Sorb",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cobb Sorb is the crew's absorbent carrier.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Wry absorbent carrier.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The case is secured."
+          ],
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CHEMICAL_20261107",
+            "trio": "WSA_CONTAINMENT_CHEMICAL_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cobb Sorb serves with the Assessment Detail of The Spill Boundary. The kit includes a small cloth sack with a plain cream clasp. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cobb Sorb treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "wry absorbent carrier",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_04",
+      "name": "Gil Catch",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Gil Catch is the crew's recovery lead.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Carefully prepared recovery lead.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay near your detail."
+          ],
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CHEMICAL_20261107",
+            "trio": "WSA_CONTAINMENT_CHEMICAL_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gil Catch serves with the Recovery Detail of The Spill Boundary. The kit includes a shallow sealed catch tray tilted low at belly. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Gil Catch treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "carefully prepared recovery lead",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_05",
+      "name": "Rue Boundary",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Rue Boundary is the crew's boundary specialist.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Strict boundary specialist.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have the panel."
+          ],
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CHEMICAL_20261107",
+            "trio": "WSA_CONTAINMENT_CHEMICAL_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Rue Boundary serves with the Recovery Detail of The Spill Boundary. The kit includes a compact petrol-blue Hypernormalization Screen with opaque slate glass and mint latch. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Rue Boundary treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "strict boundary specialist",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CHEMICAL_ACTOR_20261107_06",
+      "name": "Perry Label",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Perry Label is the crew's evidence courier.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Mildly anxious evidence courier.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CHEMICAL_20261107",
+            "trio": "WSA_CONTAINMENT_CHEMICAL_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Perry Label serves with the Recovery Detail of The Spill Boundary. The kit includes two small sealed capped vials bundled in one holder. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Perry Label treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "mildly anxious evidence courier",
+          "src": "CONTAINMENT_CHEMICAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

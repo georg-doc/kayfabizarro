@@ -1,0 +1,18 @@
+{
+  "schema": "kfb.catalogue-master-pilot/1",
+  "source_identity": "WSA_TRIO_AUSBRECHER_20261105_02",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_REVIEW_AND_GEORG_DESIGN_CHECK",
+  "tool": "image_gen.imagegen",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/output/slop-integrator-20261105/master-pilot/donor-isolation-qa.png"
+    ],
+    "transparent_background": true,
+    "prompt": "IDENTITY-PRESERVING HIGH-RESOLUTION CATALOGUE MASTER EDIT. Attached image is an EXACT pixel crop of an approved KFB clay ink character, Frau Löffelrecht (WSA_TRIO_AUSBRECHER_20261105_02). It is the SOLE edit target. Produce ONE standalone transparent1536x1536PNG, highest actual native resolution possible. SAME character, same body/face contours, same pose, same closed winking eye on viewer LEFT and open WHITE/ivory sclera RED iris BLACK pupil eye on viewer RIGHT, same heavy expressive lids/lashes, same four irregular upper ivory teeth, same crooked open tooth grin with NO protruding tongue. Preserve small striped cap and scarf, red square patches, charcoal-violet modeled plasticine ink body with continuous thick round lobes and complete FOOTLESS base, SAME broad bent steel SOUP SPOON held diagonally with shallow bowl viewer-right. Keep source steel wear and rich softly rounded handmade clay modeling. Do not redesign, beautify into Pixar baby, add scars/hair/extra props, change number of teeth or hands, straighten spoon, make humanoid torso/legs/feet, add accessories or invent gag details.\nUse most of square for this ONE character, not a tiny figure in lots of empty space: WHOLE figure+spoon about1250pixels WIDE within1536square and similar body height ratio as source; centre it with~100–140px generous transparent margin, no cropping. Preserve source aspect ratio and all own droplets. Reconstruct fine modeled material detail at actual output resolution without changing design. This is a larger catalogue cutout, not a sheet or new variation. Fully transparent alpha0 background and holes, opaque255 interiors, smoothly antialiased edges only. REMOVE original hidden RGB backdrop completely. No gradient, floor, shadow disc, checkerboard, border, labels/text/numbers. Single isolated approved spoon-prisoner character."
+  },
+  "output_hint": "Generated images are saved to /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21 as /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-44470314-15da-40f6-94ce-6a74f4e9e412.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_file": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-44470314-15da-40f6-94ce-6a74f4e9e412.png",
+  "note": "One native generative edit; not lossless enlargement. Does not replace approved sheet or grant master design PASS."
+}

@@ -1,0 +1,268 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS3_SKI_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS3_SKI_6_2026-11-06/sheet-r1.png",
+    "sha256": "93f224b1c76d721415ffbdd1b1c55dafcca9d317d3a15a3b1e84dde7d0fa544d"
+  },
+  "production_record": "SPORTS3_SKI_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS3_SKI_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS3_SKI_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "SC Hang zur Gewissheit",
+    "visual_context": "Vintage alpine ski club in faded mustard and petrol-blue knitted accents,worn wood skis,leather straps,no snow scenery",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "SKI",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS3_SKI_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sepp Schräglage",
+      "bild": {
+        "datei": "SPORTS3_SKI_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short wooden ski",
+        "mustard knit cap",
+        "petrol scarf"
+      ],
+      "temperament": "He considers a sharp turn the only honest answer to a straight question.",
+      "prompt_auszug": "Sepp Schräglage, male-read. Broad leaning-but-upright ink comma,sharp delighted eyes and asymmetrical two-upper-tooth shout;mustard knit cap and tiny petrol scarf;holds ONE short thick wooden ski vertically at side,curved tip fits cell,other hand grips short leather strap.",
+      "prompt_quelle": "SPORTS3_SKI_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "slalom specialist"
+    },
+    {
+      "id": "WSA_SPORTS3_SKI_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dina Direktabfahrt",
+      "bild": {
+        "datei": "SPORTS3_SKI_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "two short ski poles",
+        "raised goggles",
+        "petrol cap"
+      ],
+      "temperament": "She is annoyed whenever gravity requires additional explanation.",
+      "prompt_auszug": "Dina Direktabfahrt, female-read. Tall sleek teardrop ink blob,side crest and lashes,half-lidded daredevil stare with closed sly smirk;small petrol cap,goggles perched high on cap ABOVE eyes,cream collar;holds a pair of SMALL ski poles together at flank,baskets visible and fully in cell.",
+      "prompt_quelle": "SPORTS3_SKI_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "downhill racer"
+    },
+    {
+      "id": "WSA_SPORTS3_SKI_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Egon Absprung",
+      "bild": {
+        "datei": "SPORTS3_SKI_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wooden marker wedge",
+        "leather ski cap",
+        "mustard scarf"
+      ],
+      "temperament": "He committed to the jump before checking whether confidence was included.",
+      "prompt_auszug": "Egon Absprung, male-read. Tall bent pear ink blob with upward curled crest,huge fearful upward eyes and tiny toothless gasp;mustard scarf and leather aviator-like ski cap open face;clutches one compact wooden takeoff marker wedge,no skis under body.",
+      "prompt_quelle": "SPORTS3_SKI_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "ski jumper"
+    },
+    {
+      "id": "WSA_SPORTS3_SKI_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lola Langlauf",
+      "bild": {
+        "datei": "SPORTS3_SKI_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "enamel flask",
+        "rolled mittens",
+        "cream headband"
+      ],
+      "temperament": "She makes steady progress partly to spite the concept of a shortcut.",
+      "prompt_auszug": "Lola Langlauf, female-read. Narrow upright wavy ink column,modest lashes,weary resolute white eyes and tight toothless determined smile;cream headband and tiny mustard collar;holds vintage enamel flask in one hand,small rolled petrol wool mittens tucked at flank.",
+      "prompt_quelle": "SPORTS3_SKI_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "cross-country racer"
+    },
+    {
+      "id": "WSA_SPORTS3_SKI_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fritz Furchenamt",
+      "bild": {
+        "datei": "SPORTS3_SKI_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "held ski boot",
+        "petrol pompom cap"
+      ],
+      "temperament": "He treats every mogul as evidence of inadequate piste maintenance.",
+      "prompt_auszug": "Fritz Furchenamt, male-read. Squat wide scalloped ink blob with double drooping crest,offended low brow and long closed frown;petrol pompom cap,tiny cream collar;holds ONE worn leather ski boot as separate hand prop,no feet,other hand pointing to its buckle.",
+      "prompt_quelle": "SPORTS3_SKI_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "mogul skier"
+    },
+    {
+      "id": "WSA_SPORTS3_SKI_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Oskar Obenbleiben",
+      "bild": {
+        "datei": "SPORTS3_SKI_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rope coil",
+        "blank folded route map",
+        "cloth cap"
+      ],
+      "temperament": "He enjoys ski touring most when the destination remains negotiable.",
+      "prompt_auszug": "Oskar Obenbleiben, male-read. Round asymmetric star-lobed ink blob,one high eyebrow and worried sideways toothless smile;mustard cloth cap and small petrol neckerchief;holds coil of simple thick climbing rope and one compact folded map with blank panels,not complex climbing rig.",
+      "prompt_quelle": "SPORTS3_SKI_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "ski touring / endurance skier"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

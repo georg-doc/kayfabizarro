@@ -1,0 +1,46 @@
+{
+  "image": "sheet-r1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "5fdc3facff4d21eaef0425402a5b1c03045190750d5b9bb7bbbdb5d117f003ef",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "transparent_pixels": 873027,
+  "outer_edge_alpha_max": 1,
+  "cell_seam_alpha_max": {
+    "512": 0,
+    "1024": 0,
+    "horizontal": 0
+  },
+  "fixed_cell_crop_safe": true,
+  "georg_status": null,
+  "status": "DRAFT",
+  "runtime_tests": 0,
+  "visual_review": {
+    "whole_upright_footless_blobs": true,
+    "open_eye_rule": "white/ivory sclera, red iris, black pupil",
+    "row_continuity": "recognizable illustrated identity, not a matching rig or exact model",
+    "review_sizes_px": [
+      64,
+      96,
+      160,
+      192
+    ],
+    "backgrounds": [
+      "light",
+      "dark",
+      "checker"
+    ],
+    "deviations": [
+      "Teacher spectacles sit low on the face; teeth change more than specified.",
+      "Researcher and professor retain broadly open mouth shapes despite the planned subtler final expression."
+    ],
+    "design_acceptance": "PENDING_GEORG"
+  },
+  "alpha_note": "Selected native outputs peak254/255; residual alpha1–3 and final edge normalization remain deferred."
+}

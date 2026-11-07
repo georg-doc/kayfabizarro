@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_01",
+      "name": "Jade Ceilingdrop",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Irritated resident after falling plaster.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That ceiling had one job."
+          ],
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_DEBRIS_20261107",
+            "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_A"
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Jade Ceilingdrop is among the injured residents. The scene card identifies the character as irritated resident after falling plaster and lists clean bandage cap with one short folded tail and tiny chipped plaster slab held low as the visual cue.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: That ceiling had one job.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "irritated resident after falling plaster",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_02",
+      "name": "Sid Bracedown",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Worried resident with lower lobe supported.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Can someone move that step?"
+          ],
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_DEBRIS_20261107",
+            "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_A"
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Sid Bracedown is among the injured residents. The scene card identifies the character as worried resident with lower lobe supported and lists short smooth splint strapped to one base lobe, one broad crutch as the visual cue.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Can someone move that step?",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "worried resident with lower lobe supported",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_03",
+      "name": "Hal Doorjam",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Dazed resident after a doorframe hit.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I thought it was the front door."
+          ],
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_DEBRIS_20261107",
+            "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_A"
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Hal Doorjam is among the injured residents. The scene card identifies the character as dazed resident after a doorframe hit and lists clean side head pad and a small bent brass handle as the visual cue.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I thought it was the front door.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dazed resident after a doorframe hit",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_04",
+      "name": "Mina Windowdraft",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Startled resident with forearm dressing.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The curtain made it out."
+          ],
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_DEBRIS_20261107",
+            "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_B"
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Mina Windowdraft is among the injured residents. The scene card identifies the character as startled resident with forearm dressing and lists broad wrapped forearm held to belly and a torn curtain ribbon as the visual cue.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: The curtain made it out.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled resident with forearm dressing",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_05",
+      "name": "Cobb Dustcough",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Weary resident recovering after dusty debris.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I can still taste the hallway."
+          ],
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_DEBRIS_20261107",
+            "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_B"
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Cobb Dustcough is among the injured residents. The scene card identifies the character as weary resident recovering after dusty debris and lists small folded clean cloth lowered beneath face and shoulder wrap as the visual cue.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I can still taste the hallway.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "weary resident recovering after dusty debris",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_INJURY_DEBRIS_ACTOR_20261107_06",
+      "name": "Ollie Roofwatch",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Stunned resident with neck support.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive English delivery, with the timing of the indicated reaction.",
+            "audio": null
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That tile used to be upstairs."
+          ],
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_INJURY_DEBRIS_20261107",
+            "trio": "WSA_INJURY_DEBRIS_20261107_TRIO_B"
+          },
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "When the HyperNorm responders arrive, Ollie Roofwatch is among the injured residents. The scene card identifies the character as stunned resident with neck support and lists short soft neck brace and one miniature broken roof tile in hand as the visual cue.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: That tile used to be upstairs.",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stunned resident with neck support",
+          "src": "INJURY_DEBRIS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

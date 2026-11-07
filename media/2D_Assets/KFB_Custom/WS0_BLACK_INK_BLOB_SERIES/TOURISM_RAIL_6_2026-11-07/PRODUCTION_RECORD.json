@@ -1,0 +1,64 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 1,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r2.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-86638399-1ab5-4ef7-9f97-af7e2aa4b1be.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "eb2da8bff22f526f29b8b0059eaadda284900f14b0ff78a0fddc9f22103be69d",
+  "git_blob_sha": "b045ca9d815000b08ec150956fb81e30fcbdcede",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a new KFB ink blob monster character sheet, Platform Zero Again. Supplied original PNGs are style inputs for rounded ink anatomy, thick modeled lids, plasticine surface and handcrafted accessory scale. Create exactly SIX full individual upright actors in a 3-column by 2-row landscape 1536×1024 PNG with a true transparent alpha backdrop. Each actor at equal substantial scale inside their own logical cell, entire prop and all droplets inside generous transparent gutters and outer margin. No scenery, floor, labels, border, branding, joined figures or background color. Each is a dark charcoal continuous footless ink splat with subtle plum sheen and rich softly rounded clay, small goo hands, bare goo base and expressive asymmetrical organic lobes. Compact costume pieces wrap the blob. Thick filled dark lids with white sclera, red iris and black pupil. Teeth inside lips. Offbeat tourist satire, six different poses, looks and mouth shapes. Visible wear and miniature handcrafted volume. No copied eyepatches, wings, military insignia or outfits from references. Wardrobe family: unfashionable rail-tour clothing, cobalt rainwear, mustard scarves and scuffed luggage. Row-major cast:\n1. Female-read suspicious rail itinerary keeper: round wide scallops, narrowed gaze, compressed sideways mouth. Prop: fat accordion timetable with abstract blank blocks.\n2. Male-read self-satisfied window-seat passenger: tall comma, lids half down, crooked grin. Prop: tiny binoculars and a neck cushion.\n3. Male-read aghast rail passenger: upright ovoid, eyes raised in despair, open grimace. Prop: big wheeled bag and blank replacement shuttle icon paddle.\n4. Female-read thrilled train spotter: wide tilted blob, squinting focus, open lopsided chuckle. Prop: notebook and chunky telephoto camera.\n5. Male-read irritated compartment snacker: low broad lump, eyes averted, closed side pout. Prop: paper bag with a single comically big pretzel.\n6. Male-read confused sleeper passenger: drooping pear blob, mismatched gaze, small open mouth. Prop: striped travel pillow and large berth key fob.\nEmphasize eyes and acting. Keep every figure independently usable as a sightseeing bystander. Hold props close. Separate all six in clear alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "selection_history": [
+    {
+      "version": "r1",
+      "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-33e3458a-81aa-4c8c-8de7-b54edfab49e1.png",
+      "sha256": "29067772539e9a51d58099a74b877a7811417025558de3b5772b0702ed180edc",
+      "alpha_extrema": [
+        1,
+        254
+      ],
+      "fully_transparent_pixels": 0,
+      "status": "SUPERSEDED_BACKGROUND_HAZE"
+    },
+    {
+      "version": "r2",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-33e3458a-81aa-4c8c-8de7-b54edfab49e1.png"
+        ],
+        "prompt": "Edit the supplied 1536×1024 six-character claymation rail-tourist PNG. Preserve exactly the original six characters, blue and mustard clothing, expressions, props, clay material and 3×2 layout at the same scale. Remove all background matte and ghost haze from the spaces and gutters around the silhouettes and between detached droplets. Return a real transparent PNG with alpha exactly zero in the open background, outer margins and gutters. Keep the figures fully opaque inside with clean antialiased edges. No background gradient, paper texture, shadows, glow, text, edits to the characters or prop changes."
+      },
+      "sha256": "eb2da8bff22f526f29b8b0059eaadda284900f14b0ff78a0fddc9f22103be69d",
+      "status": "SELECTED_DRAFT"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS"
+}

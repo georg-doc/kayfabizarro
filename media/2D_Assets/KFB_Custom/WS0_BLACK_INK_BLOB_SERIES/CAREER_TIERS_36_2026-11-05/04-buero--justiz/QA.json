@@ -1,0 +1,46 @@
+{
+  "image": "sheet-r1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "ab4da673e6b5c478e0926b2fcf0dd4b3a20a6ae1e6312672afe5d8f5ee68f343",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "transparent_pixels": 716912,
+  "outer_edge_alpha_max": 1,
+  "cell_seam_alpha_max": {
+    "512": 0,
+    "1024": 1,
+    "horizontal": 1
+  },
+  "fixed_cell_crop_safe": true,
+  "georg_status": null,
+  "status": "DRAFT",
+  "runtime_tests": 0,
+  "visual_review": {
+    "whole_upright_footless_blobs": true,
+    "open_eye_rule": "white/ivory sclera, red iris, black pupil",
+    "row_continuity": "recognizable illustrated identity, not a matching rig or exact model",
+    "review_sizes_px": [
+      64,
+      96,
+      160,
+      192
+    ],
+    "backgrounds": [
+      "light",
+      "dark",
+      "checker"
+    ],
+    "deviations": [
+      "Office starter has a large full tooth grin instead of the requested restrained single-tooth smile.",
+      "Judicial middle stage has an open tooth smile instead of the requested closed lip."
+    ],
+    "design_acceptance": "PENDING_GEORG"
+  },
+  "alpha_note": "Selected native outputs peak254/255; residual alpha1–3 and final edge normalization remain deferred."
+}

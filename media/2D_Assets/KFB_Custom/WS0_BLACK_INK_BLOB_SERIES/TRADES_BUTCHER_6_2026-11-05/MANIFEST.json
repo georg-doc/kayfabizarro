@@ -1,0 +1,268 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRADES_BUTCHER_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TRADES_BUTCHER_6_2026-11-05/sheet-r1.png",
+    "sha256": "a594fb82f15aed4a5825111fc9dd45d25891e50aa4643e917a52efed00b1a739"
+  },
+  "production_record": "TRADES_BUTCHER_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "TRADES_BUTCHER_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "TRADES_BUTCHER_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Metzger & Fleischer – Zerlegung nach Zuständigkeit",
+    "visual_context": "historical market butchers and charcuterie,current craft meat trade,future cultured-protein butchers; cream/rust/navy,copper,wood; NO gore,blood,carcasses or violence",
+    "relationship_policy": "Six distinct standalone identities across historical/present/sci-fi contexts; shared trade family, not level/state/twin relations",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRADES_BUTCHER_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hackmeister Stückwerk",
+      "bild": {
+        "datei": "TRADES_BUTCHER_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cream cloth cap",
+        "apron patch",
+        "blunt cleaver",
+        "wooden board"
+      ],
+      "temperament": "Divides the world into suitable portions and other people's problems.",
+      "prompt_auszug": "Hackmeister Stückwerk, maennlich-read. HISTORICAL market butcher: broad square rounded ink splat, little cream cloth cap, short apron patch, thick blunt cartoon cleaver held downward safely at flank and small simple wooden board. One hooded eye, one high brow, giant closed toothless offended pout. No raw meat or blood. Personality: Divides the world into suitable portions and other people's problems.",
+      "prompt_quelle": "TRADES_BUTCHER_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "HISTORICAL"
+    },
+    {
+      "id": "WSA_TRADES_BUTCHER_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wurstmeisterin Ringfest",
+      "bild": {
+        "datei": "TRADES_BUTCHER_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "rust headscarf",
+        "finished sausage loop"
+      ],
+      "temperament": "Brings every loose end together and ties it too firmly.",
+      "prompt_auszug": "Wurstmeisterin Ringfest, weiblich-read. HISTORICAL charcuterie craftswoman: tall lopsided pear blob, rust tied headscarf with two lashes, holds ONE chunky loop of finished tied sausage with clearly sculpted string knots. Delighted huge crooked open grin with THREE irregular upper teeth. Personality: Brings every loose end together and ties it too firmly.",
+      "prompt_quelle": "TRADES_BUTCHER_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "HISTORICAL"
+    },
+    {
+      "id": "WSA_TRADES_BUTCHER_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fleischwart Grammgenau",
+      "bild": {
+        "datei": "TRADES_BUTCHER_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blue cap",
+        "small balance scale",
+        "wrapped parcel"
+      ],
+      "temperament": "Knows the exact weight of a decision before knowing what it is.",
+      "prompt_auszug": "Fleischwart Grammgenau, maennlich-read. CURRENT counter butcher: low round splat, tiny blue paper-style cap, compact old-fashioned brass balance scale with ONE wrapped parcel on one pan; eyes huge and crossed toward scales, tiny toothless open oval mouth. Personality: Knows the exact weight of a decision before knowing what it is.",
+      "prompt_quelle": "TRADES_BUTCHER_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "PRESENT_DAY"
+    },
+    {
+      "id": "WSA_TRADES_BUTCHER_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Metzgerin Schnittstelle",
+      "bild": {
+        "datei": "TRADES_BUTCHER_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "cream-blue cap",
+        "striped apron patch",
+        "short knife",
+        "honing steel"
+      ],
+      "temperament": "Keeps her edges sharper than the explanations from upstairs.",
+      "prompt_auszug": "Metzgerin Schnittstelle, weiblich-read. CURRENT craft butcher: tall hooked ink splat, short cream cap with small blue stripe, two lashes, small striped apron patch, ONE short boning knife pointed down beside body and honing steel held separate. Heavy dry side-eye, closed toothless asymmetric smirk. No meat cutting action. Personality: Keeps her edges sharper than the explanations from upstairs.",
+      "prompt_quelle": "TRADES_BUTCHER_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "PRESENT_DAY"
+    },
+    {
+      "id": "WSA_TRADES_BUTCHER_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Proteinwart Zellteilung",
+      "bild": {
+        "datei": "TRADES_BUTCHER_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "open teal cap",
+        "sealed protein cartridge"
+      ],
+      "temperament": "Is waiting for the product to decide what it would like to have been.",
+      "prompt_auszug": "Proteinwart Zellteilung, maennlich-read. SCI-FI cultured-protein butcher: round top-heavy ink blob, little translucent-teal cap OPEN FACE, cradles ONE sealed copper-framed protein cartridge containing pink clay marbled cube, no flesh/body parts. One giant eye one squint, small tilted open mouth with ONE upper tooth. Personality: Is waiting for the product to decide what it would like to have been.",
+      "prompt_quelle": "TRADES_BUTCHER_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "SCI_FI"
+    },
+    {
+      "id": "WSA_TRADES_BUTCHER_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Orbitalfleischer Reststück",
+      "bild": {
+        "datei": "TRADES_BUTCHER_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather workcap",
+        "forehead goggles",
+        "portion press",
+        "wrapped ration block"
+      ],
+      "temperament": "Makes six fair portions from a rule written for five.",
+      "prompt_auszug": "Orbitalfleischer Reststück, maennlich-read. SCI-FI asteroid ration butcher: broad squat asymmetrical splat, tiny leather workcap with goggles above eyes, compact chrome portion press with ONE smooth wrapped ration block, handheld not full machine. Confident wide crooked grin with TWO upper teeth, no robot suit. Personality: Makes six fair portions from a rule written for five.",
+      "prompt_quelle": "TRADES_BUTCHER_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "SCI_FI"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "sha256": "1a79aea9a1790d9cd487bae7bba9c2b7208103c9a13f1df32d8fe44d5da2a615",
+  "git_blob_sha": "71cac927869ebf0bfff615527586e2b16a9b212e",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "alpha0_pixels": 652160,
+  "seam_pixels_gt16": {
+    "512": 459,
+    "1024": 0,
+    "horizontal512": 0
+  },
+  "outer_edge_pixels_gt16": 0,
+  "cells": [
+    {
+      "zelle": 0,
+      "alpha_gt16_bbox_in_cell": [
+        35,
+        48,
+        512,
+        500
+      ],
+      "margins_px": [
+        35,
+        48,
+        0,
+        12
+      ]
+    },
+    {
+      "zelle": 1,
+      "alpha_gt16_bbox_in_cell": [
+        0,
+        4,
+        475,
+        511
+      ],
+      "margins_px": [
+        0,
+        4,
+        37,
+        1
+      ]
+    },
+    {
+      "zelle": 2,
+      "alpha_gt16_bbox_in_cell": [
+        37,
+        49,
+        452,
+        501
+      ],
+      "margins_px": [
+        37,
+        49,
+        60,
+        11
+      ]
+    },
+    {
+      "zelle": 3,
+      "alpha_gt16_bbox_in_cell": [
+        34,
+        4,
+        507,
+        496
+      ],
+      "margins_px": [
+        34,
+        4,
+        5,
+        16
+      ]
+    },
+    {
+      "zelle": 4,
+      "alpha_gt16_bbox_in_cell": [
+        59,
+        6,
+        445,
+        495
+      ],
+      "margins_px": [
+        59,
+        6,
+        67,
+        17
+      ]
+    },
+    {
+      "zelle": 5,
+      "alpha_gt16_bbox_in_cell": [
+        6,
+        4,
+        475,
+        495
+      ],
+      "margins_px": [
+        6,
+        4,
+        37,
+        17
+      ]
+    }
+  ],
+  "mechanical_seam_check_clear": false,
+  "background_samples": [
+    [
+      [
+        0,
+        0
+      ],
+      0
+    ],
+    [
+      [
+        512,
+        512
+      ],
+      0
+    ],
+    [
+      [
+        1024,
+        512
+      ],
+      0
+    ],
+    [
+      [
+        500,
+        10
+      ],
+      0
+    ],
+    [
+      [
+        1500,
+        1000
+      ],
+      0
+    ]
+  ],
+  "georg_status": "PASS",
+  "design_status": "ALL_SIX_GEORG_DESIGN_PASS",
+  "generated_jobs": 1,
+  "figures": 6,
+  "female_read_slots_1based": [
+    2,
+    6
+  ],
+  "builder_visual_observations": [
+    "Six upright footless ink figures, two female-read casting slots, original modeled clay family retained.",
+    "Visible eyes have ivory/white sclera, red iris and black pupil.",
+    "Hobby/model-builder workwear and large ballot box obscure some lower goo contours; preserve for Georg review. No automatic TUNE/PASS.",
+    "No automatic human design acceptance or individual sprite-edge acceptance."
+  ],
+  "technical_holds": [
+    "Independent per-actor isolation/edge review unaccepted.",
+    "Nonempty nominal seams; blind512px crops unsafe."
+  ],
+  "runtime_tests": 0,
+  "individual_game_exports": 0,
+  "librarian_registered": false,
+  "intake_eligible": true,
+  "georg_decision": "Georg accepts all12leisure/clubs."
+}

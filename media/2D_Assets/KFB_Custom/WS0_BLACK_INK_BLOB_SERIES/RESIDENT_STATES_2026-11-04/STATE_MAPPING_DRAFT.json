@@ -1,0 +1,152 @@
+{
+  "status": "AUTHORING_STATE_MAPPING_PROPOSAL_NOT_RUNTIME",
+  "counts": {
+    "identities": 6,
+    "depictions": 12,
+    "sheets": 2,
+    "columns": 2,
+    "rows": 3
+  },
+  "residents": [
+    {
+      "sheet": "a",
+      "row": 1,
+      "role": "night-reader",
+      "residentSourceKey": "209c3ff33a8bf5e661688e5503c8c05580069d47ff37c8ce74dea08255e5e11b:row-1",
+      "sourceSha256": "209c3ff33a8bf5e661688e5503c8c05580069d47ff37c8ce74dea08255e5e11b",
+      "variants": [
+        {
+          "cell": 1,
+          "state": "A_fear_confusion"
+        },
+        {
+          "cell": 2,
+          "state": "B_anger"
+        }
+      ],
+      "canonicalActorId": null,
+      "runtimeTransition": null,
+      "combatDisposition": null,
+      "identityVerdict": "GEORG_ACCEPTED_FLEXIBLE_ROW_MATCH_NOT_PIXEL_IDENTICAL",
+      "designStatus": "PASS",
+      "exportStatus": "UNREVIEWED_PER_ACTOR"
+    },
+    {
+      "sheet": "a",
+      "row": 2,
+      "role": "bath-time-neighbor",
+      "residentSourceKey": "209c3ff33a8bf5e661688e5503c8c05580069d47ff37c8ce74dea08255e5e11b:row-2",
+      "sourceSha256": "209c3ff33a8bf5e661688e5503c8c05580069d47ff37c8ce74dea08255e5e11b",
+      "variants": [
+        {
+          "cell": 3,
+          "state": "A_fear_confusion"
+        },
+        {
+          "cell": 4,
+          "state": "B_anger"
+        }
+      ],
+      "canonicalActorId": null,
+      "runtimeTransition": null,
+      "combatDisposition": null,
+      "identityVerdict": "GEORG_ACCEPTED_FLEXIBLE_ROW_MATCH_NOT_PIXEL_IDENTICAL",
+      "designStatus": "PASS",
+      "exportStatus": "UNREVIEWED_PER_ACTOR"
+    },
+    {
+      "sheet": "a",
+      "row": 3,
+      "role": "home-custodian",
+      "residentSourceKey": "209c3ff33a8bf5e661688e5503c8c05580069d47ff37c8ce74dea08255e5e11b:row-3",
+      "sourceSha256": "209c3ff33a8bf5e661688e5503c8c05580069d47ff37c8ce74dea08255e5e11b",
+      "variants": [
+        {
+          "cell": 5,
+          "state": "A_fear_confusion"
+        },
+        {
+          "cell": 6,
+          "state": "B_anger"
+        }
+      ],
+      "canonicalActorId": null,
+      "runtimeTransition": null,
+      "combatDisposition": null,
+      "identityVerdict": "GEORG_ACCEPTED_FLEXIBLE_ROW_MATCH_NOT_PIXEL_IDENTICAL",
+      "designStatus": "PASS",
+      "exportStatus": "UNREVIEWED_PER_ACTOR"
+    },
+    {
+      "sheet": "b",
+      "row": 1,
+      "role": "curlers-housecoat-neighbor",
+      "residentSourceKey": "d38b4ea9034666f98762efa6383f5fb45807bda9dad0dde037b98dcf24422cce:row-1",
+      "sourceSha256": "d38b4ea9034666f98762efa6383f5fb45807bda9dad0dde037b98dcf24422cce",
+      "variants": [
+        {
+          "cell": 1,
+          "state": "A_fear_confusion"
+        },
+        {
+          "cell": 2,
+          "state": "B_anger"
+        }
+      ],
+      "canonicalActorId": null,
+      "runtimeTransition": null,
+      "combatDisposition": null,
+      "identityVerdict": "GEORG_ACCEPTED_FLEXIBLE_ROW_MATCH_NOT_PIXEL_IDENTICAL",
+      "designStatus": "PASS",
+      "exportStatus": "UNREVIEWED_PER_ACTOR"
+    },
+    {
+      "sheet": "b",
+      "row": 2,
+      "role": "home-sports-fan",
+      "residentSourceKey": "d38b4ea9034666f98762efa6383f5fb45807bda9dad0dde037b98dcf24422cce:row-2",
+      "sourceSha256": "d38b4ea9034666f98762efa6383f5fb45807bda9dad0dde037b98dcf24422cce",
+      "variants": [
+        {
+          "cell": 3,
+          "state": "A_fear_confusion"
+        },
+        {
+          "cell": 4,
+          "state": "B_anger"
+        }
+      ],
+      "canonicalActorId": null,
+      "runtimeTransition": null,
+      "combatDisposition": null,
+      "identityVerdict": "GEORG_ACCEPTED_FLEXIBLE_ROW_MATCH_NOT_PIXEL_IDENTICAL",
+      "designStatus": "PASS",
+      "exportStatus": "UNREVIEWED_PER_ACTOR"
+    },
+    {
+      "sheet": "b",
+      "row": 3,
+      "role": "late-night-baker",
+      "residentSourceKey": "d38b4ea9034666f98762efa6383f5fb45807bda9dad0dde037b98dcf24422cce:row-3",
+      "sourceSha256": "d38b4ea9034666f98762efa6383f5fb45807bda9dad0dde037b98dcf24422cce",
+      "variants": [
+        {
+          "cell": 5,
+          "state": "A_fear_confusion"
+        },
+        {
+          "cell": 6,
+          "state": "B_anger"
+        }
+      ],
+      "canonicalActorId": null,
+      "runtimeTransition": null,
+      "combatDisposition": null,
+      "identityVerdict": "GEORG_ACCEPTED_FLEXIBLE_ROW_MATCH_NOT_PIXEL_IDENTICAL",
+      "designStatus": "PASS",
+      "exportStatus": "UNREVIEWED_PER_ACTOR"
+    }
+  ],
+  "image_design_status": "ALL_TWELVE_DEPICTIONS_GEORG_PASS",
+  "mapping_status": "AUTHORING_NOT_RUNTIME"
+}

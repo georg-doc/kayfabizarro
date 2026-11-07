@@ -1,0 +1,47 @@
+{
+  "image": "sheet-r2.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "0c3bfd1e1bf0094a1315bf632cea5b2bb20d0cf1813729dffc67ef0eaebc6dec",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "transparent_pixels": 1045547,
+  "outer_edge_alpha_max": 1,
+  "cell_seam_alpha_max": {
+    "512": 0,
+    "1024": 1,
+    "horizontal": 1
+  },
+  "fixed_cell_crop_safe": true,
+  "georg_status": null,
+  "status": "DRAFT",
+  "runtime_tests": 0,
+  "visual_review": {
+    "whole_upright_footless_blobs": true,
+    "open_eye_rule": "white/ivory sclera, red iris, black pupil",
+    "row_continuity": "recognizable illustrated identity, not a matching rig or exact model",
+    "review_sizes_px": [
+      64,
+      96,
+      160,
+      192
+    ],
+    "backgrounds": [
+      "light",
+      "dark",
+      "checker"
+    ],
+    "deviations": [
+      "R1 crossed the horizontal equal-cell seam; native spacing edit R2 selected and R1 retained.",
+      "Shop apprentice has a small tongue despite the no-protruding-tongue direction.",
+      "R2 keeps recognizable identities but changes sculpt details; not a lossless repack."
+    ],
+    "design_acceptance": "PENDING_GEORG"
+  },
+  "alpha_note": "Selected native outputs peak254/255; residual alpha1–3 and final edge normalization remain deferred."
+}

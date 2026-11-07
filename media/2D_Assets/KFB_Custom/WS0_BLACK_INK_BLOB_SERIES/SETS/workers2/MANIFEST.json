@@ -1,0 +1,208 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WORKERS2_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+    "sha256": "e7835628e4d7690629e6f3e9819f9b2ef3a3f91d49cd6a728ba4ecfd6a9188e5"
+  },
+  "production_record": "WORKERS_CEOS_DUO_2026-11-04/workers2-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/workers2/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      3
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_ARBEITER_07",
+      "id_scope": "canonical_roster",
+      "name": "Herr Reststoff",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot7 MUNICIPAL STREET CLEANER: tall bent bean-like blob with one dramatically drooping upper goo lobe, faded turquoise peaked work cap and a small orange reflective collar strip.",
+          "He grips thick wood-handled trash grabber pinching a SINGLE absurdly large pink discarded chewing-gum wad, other hand holds round galvanized pail."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot7 MUNICIPAL STREET CLEANER: tall bent bean-like blob with one dramatically drooping upper goo lobe, faded turquoise peaked work cap and a small orange reflective collar strip. One eye wide other sleepy, lopsided compressed mouth exposing THREE flat uneven teeth, pupils looking down. He grips thick wood-handled trash grabber pinching a SINGLE absurdly large pink discarded chewing-gum wad, other hand holds round galvanized pail. Tactile worn clay metal, no clutter/ground.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers2-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_08",
+      "id_scope": "canonical_roster",
+      "name": "Berta Mörtelherz",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP MIDDLE slot8 FEMALE-READ BRICKLAYER: compact low squashed splat, broad bottom lobes, small coral tied headscarf and short dusty cream collar.",
+          "Both strong goo hands tenderly press a beautifully chunky red brick onto a second brick held at belly level, fat cream mortar squeezing out like frosting; one rounded clay trowel tucked under arm."
+        ]
+      },
+      "prompt_auszug": "TOP MIDDLE slot8 FEMALE-READ BRICKLAYER: compact low squashed splat, broad bottom lobes, small coral tied headscarf and short dusty cream collar. Ecstatic SQUINTING smile with both eyes crescent lids but WHITE sclera RED iris BLACK pupil visible; one broad ivory tooth and tiny fang, no tongue. Both strong goo hands tenderly press a beautifully chunky red brick onto a second brick held at belly level, fat cream mortar squeezing out like frosting; one rounded clay trowel tucked under arm. Two bricks only, no wall/scenery.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers2-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_09",
+      "id_scope": "canonical_roster",
+      "name": "Nils Nietfrage",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT slot9 SHIPYARD RIVETER: towering narrow rounded triangular ink splat with little side droplets, old leather welding goggles raised and single large orange ear protector, short faded indigo work collar.",
+          "Other hand holds a chunky red pneumatic rivet gun, lowered."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot9 SHIPYARD RIVETER: towering narrow rounded triangular ink splat with little side droplets, old leather welding goggles raised and single large orange ear protector, short faded indigo work collar. Expression bewildered LEFTWARD tilted underbite with THREE widely spaced long ivory teeth, broad LOWER lip, WHITE eyes red iris black pupil gazing UP at one too-large rivet held at eye level. Other hand holds a chunky red pneumatic rivet gun, lowered. No round mouth, tongue, helmet or grin.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers2-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_10",
+      "id_scope": "canonical_roster",
+      "name": "Frau Faltenlage",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Hauls a soft basket full of TWO huge rolled ivory towels, one arm lifting a giant wooden clothes peg clipped onto corner of one towel."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot10 FEMALE-READ COMMERCIAL LAUNDRY WORKER: very broad low wavy ink puddle, teal work kerchief and little round brass spectacles on forehead, subtle lashes. One eye almost closed in a knowing wink and other looking RIGHT, CLOSED asymmetric smile with single ivory fang. Hauls a soft basket full of TWO huge rolled ivory towels, one arm lifting a giant wooden clothes peg clipped onto corner of one towel. Beautiful rounded wicker/cloth modeled clay, joyful exhausted strength, no human torso.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers2-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_11",
+      "id_scope": "canonical_roster",
+      "name": "Herr Drehmoment",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot11 RAILWAY TRACK MAINTAINER: spherical heavy compact splat with thick low side lobes, dented rusty-red hardhat, tiny mustard neckerchief.",
+          "Grips a big thick-handled railway wrench on a SINGLE short rusty rail clamp held against belly."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot11 RAILWAY TRACK MAINTAINER: spherical heavy compact splat with thick low side lobes, dented rusty-red hardhat, tiny mustard neckerchief. Furious concentration, enormous clenched jagged teeth pressing SIDEWAYS, one eye partly occluded by bulky lid, other WHITE/red/black facing tool. Grips a big thick-handled railway wrench on a SINGLE short rusty rail clamp held against belly. Strong very few broad forms, no track scene or ground, no small bolts clutter.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers2-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_12",
+      "id_scope": "canonical_roster",
+      "name": "Herr Nachtabfuhr",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT slot12 NIGHT-SHIFT REFUSE COLLECTOR: medium tall slumped pear blob with a long curling goo crest, faded green cap reversed and tiny orange high-vis collar.",
+          "Mouth deep downward weary CURVE with two small bottom teeth barely peeking, neither grin nor open/tongue; drooping lids with WHITE eyes RED iris BLACK pupils gazing LEFT.",
+          "One goo hand holds a soft tied black refuse sack from which a single large bent brass trumpet bell sticks out absurdly; other hand lifts lid of a small dented galvanized trash can at side."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot12 NIGHT-SHIFT REFUSE COLLECTOR: medium tall slumped pear blob with a long curling goo crest, faded green cap reversed and tiny orange high-vis collar. Mouth deep downward weary CURVE with two small bottom teeth barely peeking, neither grin nor open/tongue; drooping lids with WHITE eyes RED iris BLACK pupils gazing LEFT. One goo hand holds a soft tied black refuse sack from which a single large bent brass trumpet bell sticks out absurdly; other hand lifts lid of a small dented galvanized trash can at side. Simple tactile disposables, no labels or smell lines.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers2-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

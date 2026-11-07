@@ -1,0 +1,279 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DIGITAL_DOOM_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "DIGITAL_DOOM_6_2026-11-07/sheet-r1.png",
+    "sha256": "c7ff8d139beab7ea9f66b3b75c667d92dcae2d67751d143440b3b3c82449291d"
+  },
+  "production_record": "DIGITAL_DOOM_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "DIGITAL_DOOM_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "DIGITAL_DOOM_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "One More Terrible Thing",
+    "theme": "doomscrollers and brain-rot content fans",
+    "backlog_neighbors": [
+      "G09"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "HyperNorm resident",
+      "digital satire cluster",
+      "NPC candidate",
+      "opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dread Already",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_DOOM_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "compulsively alarmed",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one little chunky phone",
+        "faded blue night collar"
+      ],
+      "temperament": "He checks for bad news in case the good news was a misleading omission.",
+      "prompt_auszug": "Male-read tall bent pear blob, tiny blue night collar. One hand holds one small thick clay phone at belly, other grips own cheek. Huge white eyes drag downward to phone while brow arches with dread; tiny CLOSED corner grimace. Long crest sags forward like a tired question without forming punctuation. Upright bent blob, not human stooped torso.",
+      "prompt_quelle": "DIGITAL_DOOM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bella Replay",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_DOOM_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "entranced by nonsense",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small phone",
+        "tiny peach hair ribbon"
+      ],
+      "temperament": "She has watched it so often that meaning would now be an interruption.",
+      "prompt_auszug": "Female-read wide round scalloped blob, modest lashes and tiny peach ribbon. Both goo hands cradle one tiny phone, red irises fixate low, one eyelid dreamy and other hugely open. Ecstatic vacant OPEN two-upper-tooth half-laugh. Soft double crest tilts in opposite directions. Giddy trance, not horror, no literal brain or emoji.",
+      "prompt_quelle": "DIGITAL_DOOM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Next",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_DOOM_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "restless anticipation",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one squat phone"
+      ],
+      "temperament": "He is interested in what comes next rather than in anything that arrives.",
+      "prompt_auszug": "Male-read lean upright comma blob, three soft uneven crest nubs, bare goo. One hand holds one squat phone, other thumb poised high above it mid-swipe. Eyes wide with greedy expectation, eyebrows pointing in different directions, OPEN crooked side-grin with four widely spaced upper teeth. Whole body leans toward next swipe, not angry or hunched human.",
+      "prompt_quelle": "DIGITAL_DOOM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dot Deadpan",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_DOOM_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "laughing through disgust",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small phone",
+        "short dull-green neck scarf"
+      ],
+      "temperament": "She disapproves intensely enough to keep watching.",
+      "prompt_auszug": "Female-read square-rounded wide splat, subtle lashes, short dull-green scarf. Phone held out a LITTLE from body in one hand as if it smells; other hand palm-up. One wide eye and one heavy disgusted lid, crooked OPEN mouth caught between snort and grimace with one upper tooth. Dry horrified amusement, not terrified scream.",
+      "prompt_quelle": "DIGITAL_DOOM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Monty Deepfeed",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_DOOM_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "conspiratorial certainty",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small phone",
+        "single large clay earbud"
+      ],
+      "temperament": "He has seen a pattern and would prefer no further evidence to disturb it.",
+      "prompt_auszug": "Male-read narrow bell-shaped goo body with one tall drooping crest, one chunky earbud only. One hand hugs tiny phone to chest, other rounded ink finger hovers near own lips. White eyes dart sideways under lowered unequal lids, CLOSED tiny knowing smirk. He has watched too much and knows exactly enough. No literal tinfoil hat or magnifier.",
+      "prompt_quelle": "DIGITAL_DOOM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Lastpercent",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_DOOM_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "unable to stop despite exhaustion",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small phone",
+        "short cable to tiny battery pack"
+      ],
+      "temperament": "He has enough energy left to recharge the thing using the rest of it.",
+      "prompt_auszug": "Male-read broad low-crest blob, one hand holding phone close to belly, other hugging a tiny battery pack linked by ONE short thick cable confined to his silhouette. Both eyelids unevenly sag but red irises/white sclera remain clear, CLOSED long drooping pout. Upright goo body stretched downward with fatigue but same full cell scale. No sleeping pose.",
+      "prompt_quelle": "DIGITAL_DOOM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "georg_decision": {
+    "quote": "Wir sind auch alle Pass.",
+    "scope": "All six digital satire sheets and 36 designs."
+  }
+}

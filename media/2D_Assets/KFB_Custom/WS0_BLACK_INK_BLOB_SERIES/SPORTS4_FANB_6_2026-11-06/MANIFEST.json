@@ -1,0 +1,272 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS4_FANB_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS4_FANB_6_2026-11-06/sheet-r1.png",
+    "sha256": "f677081038f76f8efcddd66c92813fc57ece1f03e03c680c576755dc7111b4ad"
+  },
+  "production_record": "SPORTS4_FANB_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS4_FANB_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS4_FANB_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Die Rostroten haben recht",
+    "visual_context": "Sport-neutral rival retro supporters in oxidised red and cream striped accents,worn fabric and brass,no sport-specific equipment/no realclub symbols",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "domain": "FANB",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_CANONICAL_LINEUP",
+    "sport_scope": "ALL_SPORTS",
+    "fan_affiliation": {
+      "team": "B",
+      "sport_specific": false,
+      "opposing_family": "WSA_SPORTS4_FANA_20261106",
+      "status": "DESIGN_FAMILY_RELATION_NOT_ACTOR_PAIR_OR_COMBAT_BINDING"
+    }
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS4_FANB_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frida Fahnenlage",
+      "bild": {
+        "datei": "SPORTS4_FANB_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "red-cream pennant",
+        "headband"
+      ],
+      "temperament": "She can turn any breeze into evidence that the crowd agrees.",
+      "prompt_auszug": "Frida Fahnenlage, female-read. Tall curving comma ink blob,lashed confident eyes and wicked CLOSED smile;rust-red headband with small cream knot,cream wristwrap;holds ONE modest red-cream triangular pennant on short thick wooden stick,other hand at flank.",
+      "prompt_quelle": "SPORTS4_FANB_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "flag-waving organiser"
+    },
+    {
+      "id": "WSA_SPORTS4_FANB_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Opa OhneAbpfiff",
+      "bild": {
+        "datei": "SPORTS4_FANB_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short supporter scarf",
+        "red wool cap"
+      ],
+      "temperament": "He remembers when disappointment still had standards.",
+      "prompt_auszug": "Opa OhneAbpfiff, male-read. Very broad low scalloped ink blob,heavy weary lids and long toothless frown;red wool cap,small cream collar;both hands stretch a SHORT rolled red-cream scarf under chin,not over face,full scarfwithin cell.",
+      "prompt_quelle": "SPORTS4_FANB_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "long-suffering veteran supporter"
+    },
+    {
+      "id": "WSA_SPORTS4_FANB_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kalle Klapperrecht",
+      "bild": {
+        "datei": "SPORTS4_FANB_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wooden ratchet noisemaker",
+        "red collar"
+      ],
+      "temperament": "He considers volume a form of democratic procedure.",
+      "prompt_auszug": "Kalle Klapperrecht, male-read. Round star-lobed ink blob with high asymmetric crest,delighted manic white eyes and three-upper-tooth open shout;small red collar;holds ONE vintage wooden ratchet noise-maker clearly modeled as wheel-and-handle toy,free palm high.",
+      "prompt_quelle": "SPORTS4_FANB_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "noise-maker enthusiast"
+    },
+    {
+      "id": "WSA_SPORTS4_FANB_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Egon Ersatzauge",
+      "bild": {
+        "datei": "SPORTS4_FANB_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "chest-held binoculars",
+        "cream cap",
+        "red scarf"
+      ],
+      "temperament": "He can see the injustice clearly as soon as somebody points it out.",
+      "prompt_auszug": "Egon Ersatzauge, male-read. Narrow crooked pear ink blob,uneven brows,huge uncertain eyes and small CLOSED nervous mouth;cream flatcap with redband,tiny red scarf;holds squat brass binoculars at CHEST wellbelow eyes,one hand shading brow.",
+      "prompt_quelle": "SPORTS4_FANB_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "suspicious spectator"
+    },
+    {
+      "id": "WSA_SPORTS4_FANB_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Paul Platzbeleg",
+      "bild": {
+        "datei": "SPORTS4_FANB_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blank torn ticket",
+        "cream cuffbands"
+      ],
+      "temperament": "He has paid to belong and expects the universe to honour the receipt.",
+      "prompt_auszug": "Paul Platzbeleg, male-read. Wide tall domed ink blob with little split crest,half-lidded suspicious eyes and compressed toothless pout;small red collar and cream cuffbands;holds ONE giant blank torn ticket with simple edge perforations,other hand folded possessively on it.",
+      "prompt_quelle": "SPORTS4_FANB_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "possessive ticket-holder"
+    },
+    {
+      "id": "WSA_SPORTS4_FANB_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nina Nachschall",
+      "bild": {
+        "datei": "SPORTS4_FANB_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short brass horn",
+        "red bow",
+        "cream neckerchief"
+      ],
+      "temperament": "She brought enthusiasm and is alarmed by how loudly it came out.",
+      "prompt_auszug": "Nina Nachschall, female-read. Slim upright reverse-comma ink blob,sidequiff with small redbow,subtle lashes,huge startled white eyes and small toothless oval gasp;tiny cream neckerchief;holds ONE short crooked brass fan horn by side pointing downward,not at another actor.",
+      "prompt_quelle": "SPORTS4_FANB_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "overwhelmed first-time fan"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}
