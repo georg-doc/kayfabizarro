@@ -1,3 +1,9 @@
+## Full-suit containment crews
+
+Six transparent 3×2 sheets add 36 Slops in full protective coveralls with gloves and small exposed ink feet. Three crews use the supplied HUD skins for cyan electrical, acid-green slime and yellow industrial containment. Ivory-teal quarantine, brick-red heat and indigo card crews complete the series. The [batch record](SUITED_CONTAINMENT_BATCH_20261107.json) carries the twelve trios, six full team rosters, references and review notes. The artwork awaits Georg's design verdict.
+
+---
+
 ## Containment crew design acceptance
 
 Georg accepted all six containment sheets and their 36 designs. The authoring index contains 167 accepted sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions. Individual extraction remains pending.

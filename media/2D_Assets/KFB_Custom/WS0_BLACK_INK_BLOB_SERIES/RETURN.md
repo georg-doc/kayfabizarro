@@ -1,3 +1,15 @@
+# WSA Return · Six full-suit containment crews · 2026-11-07
+
+WSA/WS0 Slop authoring in georg-doc/kayfabizarro on assets/ws0-ink-miners-2026-11-04, draft PR #469. Georg accepted the previous 36 containment designs. That checkpoint is 6e53393e92088844834b258e0f52aa08bd187dbb and passed 31 text readbacks. The accepted authoring index contains 167 sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions.
+
+Six fresh native generations produced 36 suited figures. All used the two verified original clay ink benchmarks. The cyan, acid-green and yellow jobs used the supplied HUD attachment as a visual palette and equipment reference. Each selected image depicts six continuous full suits with small exposed ink feet, gloves and varied mouths. The [batch record](SUITED_CONTAINMENT_BATCH_20261107.json) indexes the source images, English cards, biographies and twelve trio assignments. All six sheets await Georg's design verdict.
+
+Checked six 1536×1024 RGBA PNGs, 36 unique IDs, matching card and biography records and 12 fixed trios. 27 of 30 sampled background pixels were alpha zero. The remaining samples were alpha one. Nominal grid lines intersect substantial alpha on CYAN, ACID, YELLOW, QUARANTINE, THERMAL, CARD. The green seal tool reads as a wrench and the quarantine sleeve as a swab-like prop. Individual extraction and runtime verification are pending.
+
+This phase writes 51 paths across the six packages, batch record, masterplan and Return. The branch head and intended paths are read back after writing. The next gate is Georg's per-sheet design verdict.
+
+---
+
 ## Containment crew design acceptance
 
 Georg accepted all six containment sheets and their 36 designs. The authoring index contains 167 accepted sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions. Individual extraction remains pending.

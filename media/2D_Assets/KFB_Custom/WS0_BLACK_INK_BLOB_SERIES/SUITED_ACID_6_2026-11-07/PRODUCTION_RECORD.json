@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-c15cb376-20ec-4bad-89ba-b85263a30653.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "19e18ca0781907cdf7322aa12628277cdd9f08b8b6f4979695c9ffb530873ab8",
+  "git_blob_sha": "ab209e6235486e30c69a9703007c81795611d8a1",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+      "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB Claymation Reference/KFB HUB Skins + UI/Dreifaches Gadget-Sticker-Set-2.png"
+    ],
+    "prompt": "Create a new KFB claymation sheet of six unique ink-blob characters. Use the first two original benchmarks for modeled dark charcoal-plum goo face, soft tactile clay and white sclera with separate red iris and black pupil. The third attachment is a material and color reference for the crew. Use exclusively the specified panel, and translate its bolts, pipes and housings into equipment. It is not a layout reference. Crew: Acid and Slime Containment. middle GREEN panel only. Acid-lime chemical rubber full-body suits, moss olive riveted seams, lime-fluid vial cores, sculpted slimy drips on tool edges, organic vents. Hazard is corrosive fictional living slime and spores. All six MUST wear a convincing full protective coverall that clearly encloses the whole round blob body from shoulders through belly to a broad low hem. Colorful fabric or rubber chest and belly are continuous with the suit sides, with an obvious long front seam, rounded shoulders, fitted sleeves and seam tape. Only the expressive dark-ink face in an open hood ring, plus two little dark ink nubs or tiny ink feet peeking from under the hem, show through. No long legs or human proportions. Thick suit gloves on at least four, including distinct articulated mitten forms. Full wrapped body suit, not bare purple bellies with a collar. Open clear visors raised above eyes when present. Carefully match six DIFFERENT mouth shapes, mostly CLOSED. Never repeat the stock giant open grin. Small asymmetric face poses, dark ink lips, no teeth glued outside. Two female-read designs in positions 2 and 5. Each figure carries its own simple prop and is usable by itself. Six separate full silhouettes in a landscape 1536x1024 transparent PNG, three columns by two rows, genuinely alpha-zero background. Generous gutters and outer margins. No text, floor, matte, shadow disc, overlap, or shared objects. Top row Spill Detail, bottom row Capture Detail. Row-major directions:\n1. Male-read spill assessor with sealed green droplet vial in an olive holder. broad rounded silhouette, gentle CLOSED crescent smile, relaxed lids.\n2. Female-read seal technician with small lime wedge with moss-green grip. tall tapered silhouette, small CLOSED pursed skeptical lips, one high eyebrow.\n3. Male-read sample carrier with sealed olive canister containing one tiny purple spore fleck. squat rounded silhouette, tiny worried open oval mouth with no visible teeth, wide uneven eyes.\n4. Male-read catch lead with shallow sealed lime catch tray. wide boxy silhouette, straight CLOSED deadpan mouth and heavy half-lids.\n5. Female-read screen operator with small olive Hypernormalization Screen with dark lime window. lean curved silhouette, asymmetric CLOSED determined smirk and sideways eyes.\n6. Male-read container keeper with olive specimen capsule with capped green core. scalloped pear silhouette, tight uneven grimace with dark lips and no exposed teeth.\nAll six distinct full-suit silhouettes and glove poses at thumbnail size. Keep suits unmistakably covering the entire bodies. Transparent background."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    },
+    {
+      "name": "Dreifaches Gadget-Sticker-Set-2.png",
+      "sha256": "95a9d8f05e1d93ed702e26c0cec568dbc0b219d0420bc69cac6552fbcf555188",
+      "role": "User-provided HUD equipment and color reference, acid green panel."
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": null
+}

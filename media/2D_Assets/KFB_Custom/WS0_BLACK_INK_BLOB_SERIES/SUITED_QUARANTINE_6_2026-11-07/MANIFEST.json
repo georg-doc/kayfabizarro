@@ -1,0 +1,331 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SUITED_QUARANTINE_20261107",
+  "date": "2026-11-07",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SUITED_QUARANTINE_6_2026-11-07/sheet-r1.png",
+    "sha256": "b7b9f388fdb4f28fc56cf561979813f9ca7f9eba848efba60a0e0ab4b79893f2"
+  },
+  "production_record": "SUITED_QUARANTINE_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "SUITED_QUARANTINE_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "SUITED_QUARANTINE_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Soft Seal Ward",
+    "theme": "Full-Suit Quarantine",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "containment encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SUITED_QUARANTINE_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hal Intake",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_QUARANTINE_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "intake lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_QUARANTINE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_02",
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small teal-cornered blank slate"
+      ],
+      "temperament": "Hal Intake serves as the intake lead in Intake Detail.",
+      "prompt_auszug": "broad rounded silhouette, gentle CLOSED crescent smile, relaxed lids",
+      "prompt_quelle": "SUITED_QUARANTINE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "intake lead"
+    },
+    {
+      "id": "WSA_SUITED_QUARANTINE_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Triage",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_QUARANTINE_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "triage specialist",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_QUARANTINE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_01",
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "pale blue handheld thermometer"
+      ],
+      "temperament": "Nell Triage serves as the triage specialist in Intake Detail.",
+      "prompt_auszug": "tall tapered silhouette, small CLOSED pursed skeptical lips, one high eyebrow",
+      "prompt_quelle": "SUITED_QUARANTINE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "triage specialist"
+    },
+    {
+      "id": "WSA_SUITED_QUARANTINE_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Toby Filter",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_QUARANTINE_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "air kit carrier",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_QUARANTINE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_01",
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "spare round teal filter pod"
+      ],
+      "temperament": "Toby Filter serves as the air kit carrier in Intake Detail.",
+      "prompt_auszug": "squat rounded silhouette, tiny worried open oval mouth with no visible teeth, wide uneven eyes",
+      "prompt_quelle": "SUITED_QUARANTINE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "air kit carrier"
+    },
+    {
+      "id": "WSA_SUITED_QUARANTINE_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Check",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_QUARANTINE_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "boundary lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_QUARANTINE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_05",
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short teal radio"
+      ],
+      "temperament": "Wes Check serves as the boundary lead in Isolation Detail.",
+      "prompt_auszug": "wide boxy silhouette, straight CLOSED deadpan mouth and heavy half-lids",
+      "prompt_quelle": "SUITED_QUARANTINE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "boundary lead"
+    },
+    {
+      "id": "WSA_SUITED_QUARANTINE_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ada Quiet",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_QUARANTINE_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "screen operator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_QUARANTINE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_04",
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "compact ivory Hypernormalization Screen with teal casing"
+      ],
+      "temperament": "Ada Quiet serves as the screen operator in Isolation Detail.",
+      "prompt_auszug": "lean curved silhouette, asymmetric CLOSED determined smirk and sideways eyes",
+      "prompt_quelle": "SUITED_QUARANTINE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "screen operator"
+    },
+    {
+      "id": "WSA_SUITED_QUARANTINE_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Moss Sleeve",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_QUARANTINE_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "sample custodian",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_QUARANTINE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_04",
+        "WSA_SUITED_QUARANTINE_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small sealed clear card sleeve"
+      ],
+      "temperament": "Moss Sleeve serves as the sample custodian in Isolation Detail.",
+      "prompt_auszug": "scalloped pear silhouette, tight uneven grimace with dark lips and no exposed teeth",
+      "prompt_quelle": "SUITED_QUARANTINE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "sample custodian"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "incident_type": "Full-Suit Quarantine",
+    "hud_skin_reference": null,
+    "suit_direction": "Full coverall with small exposed ink feet and protective gloves.",
+    "screen_operator_ids": [
+      "WSA_SUITED_QUARANTINE_ACTOR_20261107_05"
+    ],
+    "team_kit": "ivory pearl rubber full-body coveralls with deep teal taped seams, pale blue filter pods, soft teal gloves and rounded ivory face rims. Hazard is fictional airborne contamination.",
+    "trios": [
+      {
+        "id": "WSA_SUITED_QUARANTINE_20261107_TRIO_A",
+        "name": "Intake Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_01",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_02",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_SUITED_QUARANTINE_20261107_TRIO_B",
+        "name": "Isolation Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_04",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_05",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_SUITED_QUARANTINE_ACTOR_20261107_01",
+      "WSA_SUITED_QUARANTINE_ACTOR_20261107_02",
+      "WSA_SUITED_QUARANTINE_ACTOR_20261107_03",
+      "WSA_SUITED_QUARANTINE_ACTOR_20261107_04",
+      "WSA_SUITED_QUARANTINE_ACTOR_20261107_05",
+      "WSA_SUITED_QUARANTINE_ACTOR_20261107_06"
+    ]
+  }
+}
