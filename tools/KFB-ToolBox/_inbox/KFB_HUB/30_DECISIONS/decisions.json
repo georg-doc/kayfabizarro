@@ -22751,6 +22751,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1549",
+   "date": "08.11.2026",
+   "area": "Spiel",
+   "verdict": "DECISION",
+   "text": "Georg q551/q552: Intro-Modul durch WS0 (wie Dioramen/Szenen, WS1 nur Naht): abgenommener Puppentheater-Ladebildschirm R7 (q535) plus Logo-Slam (V-820) einmal zu Beginn, danach eingefaerbte Wortmarke still im Theater; Fortschritt nur ueber Rampenlichter und Tafel, kein Ladebalken; Ladetexte EN aus Daten (src/data/hud/ladetexte.r1.json: vorhandene acht Zeilen plus je Lade-Abschnitt, Muster fluff wird gesammelt, Welt wird geknetet, Soundtrack wird komponiert). Ersetzt den alten Vorhang mit Lade-Chip. Georg q553: NPC-Dichte erst im Spiel entscheiden. WHY: Abgenommene Teile lagen ungenutzt (R7 nie eingebaut).",
+   "values": {},
+   "owner": "WS0, WS1",
+   "check": "q535, q551-q553",
+   "source": "Georg 08.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
