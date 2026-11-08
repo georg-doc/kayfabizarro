@@ -1,3 +1,11 @@
+## School design acceptance · 2026-11-08
+
+Georg accepted all six selected school sheets and their 36 designs. The index records 229 accepted sheets and 1374 depictions.
+
+Next production covers six fictional political satire sheets using the accepted organic ink silhouettes.
+
+---
+
 ## School Slop families · 2026-11-08
 
 Six transparent 3×2 sheets introduce 36 school Slops. Four sheets cover languages, STEM, society and humanities, and arts and practice. Two sheets cover leadership, operations, care and learning support. English character records accompany the figures. Georg's design verdict is pending.

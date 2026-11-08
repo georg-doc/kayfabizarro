@@ -1,3 +1,11 @@
+## School design acceptance · 2026-11-08
+
+Georg accepted all six selected school sheets and their 36 designs. The index records 229 accepted sheets and 1374 depictions.
+
+Next production covers six fictional political satire sheets using the accepted organic ink silhouettes.
+
+---
+
 # WSA Return · School Slop families · 2026-11-08
 
 Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. The five youth sheets passed at ab7277afe7e2fc271d1df64aea7f51367eca10c9 with 25 file readbacks.

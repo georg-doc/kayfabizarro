@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 223,
-    "pass_depictions": 1338,
+    "selected_sheets": 229,
+    "pass_depictions": 1374,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 221,
-    "intake_eligible_depictions": 1326,
-    "other_authoring_depictions": 1218
+    "intake_eligible_sheets": 227,
+    "intake_eligible_depictions": 1362,
+    "other_authoring_depictions": 1254
   },
   "excluded_sources": [
     {
@@ -1476,56 +1476,49 @@
       "manifest": "YOUTH_RALLY_6_2026-11-08/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_SCHOOL_LANG_20261108",
       "manifest": "SCHOOL_LANG_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SCHOOL_STEM_20261108",
       "manifest": "SCHOOL_STEM_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SCHOOL_SOCIETY_20261108",
       "manifest": "SCHOOL_SOCIETY_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SCHOOL_ARTS_20261108",
       "manifest": "SCHOOL_ARTS_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SCHOOL_STAFF_20261108",
       "manifest": "SCHOOL_STAFF_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_SCHOOL_SUPPORT_20261108",
       "manifest": "SCHOOL_SUPPORT_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {

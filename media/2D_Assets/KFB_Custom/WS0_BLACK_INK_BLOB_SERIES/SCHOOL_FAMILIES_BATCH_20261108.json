@@ -7,8 +7,8 @@
   "branch": "assets/ws0-ink-miners-2026-11-04",
   "pull_request": 469,
   "language": "en",
-  "design_status": "DRAFT",
-  "intake_eligible": false,
+  "design_status": "PASS",
+  "intake_eligible": true,
   "sheets": 6,
   "unique_identities": 36,
   "depictions": 36,
@@ -27,8 +27,8 @@
       "sheet": "SCHOOL_LANG_6_2026-11-08/sheet-r1.png",
       "sha256": "8b916e272d5b023c484fcabbd82875d9d835822b6cbabef6818aef774cf968f7",
       "git_blob": "153e8b7ea1c6be670ddbb0739879c6753e3fb846",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "school_family": "The Language Wing",
@@ -65,7 +65,8 @@
           "WSA_SCHOOL_LANG_ACTOR_20261108_05",
           "WSA_SCHOOL_LANG_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SCHOOL_STEM_20261108",
@@ -74,8 +75,8 @@
       "sheet": "SCHOOL_STEM_6_2026-11-08/sheet-r1.png",
       "sha256": "aea71d14489f12378d57aa0f0dcba593dced37fc6e82c3bbb0f09d0d87111b97",
       "git_blob": "00084b5eacfc2b25125a8eb1315436731da24034",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "school_family": "The Unstable Lab",
@@ -112,7 +113,8 @@
           "WSA_SCHOOL_STEM_ACTOR_20261108_05",
           "WSA_SCHOOL_STEM_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SCHOOL_SOCIETY_20261108",
@@ -121,8 +123,8 @@
       "sheet": "SCHOOL_SOCIETY_6_2026-11-08/sheet-r1.png",
       "sha256": "40314c2ba39cfab5b3c3e30da59b0961fa8fa72ee307cc575083f7fd7bfd5051",
       "git_blob": "d481cdf4d03c1ec692136b3933e05a171b4b8bd2",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "school_family": "The Portable World",
@@ -159,7 +161,8 @@
           "WSA_SCHOOL_SOCIETY_ACTOR_20261108_05",
           "WSA_SCHOOL_SOCIETY_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SCHOOL_ARTS_20261108",
@@ -168,8 +171,8 @@
       "sheet": "SCHOOL_ARTS_6_2026-11-08/sheet-r1.png",
       "sha256": "0cba5ea8d7ee9c9ebe1db73ed7ae544e413d6f5acc927d21b830d943ca47fa9b",
       "git_blob": "2140d2cea18b3a4d634fa422dc16a28a105a5187",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "school_family": "The Practice Rooms",
@@ -206,7 +209,8 @@
           "WSA_SCHOOL_ARTS_ACTOR_20261108_05",
           "WSA_SCHOOL_ARTS_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SCHOOL_STAFF_20261108",
@@ -215,8 +219,8 @@
       "sheet": "SCHOOL_STAFF_6_2026-11-08/sheet-r1.png",
       "sha256": "62222bae1b089e543c2780f3849b9bc5f6fe9dd335c6bb3c10b395cb07104470",
       "git_blob": "2ebfef6a963e1a0b4d449b1b15da674edbda21ea",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "school_family": "The School Keeps Running",
@@ -253,7 +257,8 @@
           "WSA_SCHOOL_STAFF_ACTOR_20261108_05",
           "WSA_SCHOOL_STAFF_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_SCHOOL_SUPPORT_20261108",
@@ -262,8 +267,8 @@
       "sheet": "SCHOOL_SUPPORT_6_2026-11-08/sheet-r1.png",
       "sha256": "59d585966981381f298acd3167cfa0e9a0f63fd88e9d3a11cfb94c1751602d9d",
       "git_blob": "fef79074c445acd1b5fa48605945b9358dcf1b2d",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "school_family": "The Other School Bells",
@@ -300,7 +305,8 @@
           "WSA_SCHOOL_SUPPORT_ACTOR_20261108_05",
           "WSA_SCHOOL_SUPPORT_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     }
   ],
   "first_generation_attempts": {
@@ -394,6 +400,14 @@
     },
     "extraction": "NOT_PERFORMED",
     "runtime": "NOT_TESTED",
-    "next_gate": "Georg design verdict"
+    "next_gate": "Silhouette-aware isolation and receiving intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS",
+  "georg_pass_date": "2026-11-08",
+  "accepted_authoring_snapshot": {
+    "sheets": 229,
+    "depictions": 1374,
+    "intake_eligible_sheets": 227,
+    "intake_eligible_depictions": 1362
   }
 }
