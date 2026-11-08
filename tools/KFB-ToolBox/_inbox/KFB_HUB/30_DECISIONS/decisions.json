@@ -22736,6 +22736,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1548",
+   "date": "08.11.2026",
+   "area": "Spielwelt",
+   "verdict": "DECISION",
+   "text": "Georg 08.11. (setzt V-918 um): NPC-Mikro-Szenen als Zufallsbegegnungen in der Endlos-Welt wie bei den Dioramen: Verteiler nimmt Szenen als Katalog-Klasse szene auf (Figur, Taetigkeit/Choreografie, 2-5 Requisiten, Biome, Seltenheit, Tageszeit), WS0 baut ein Modul (nutzt vorhandene scenelets, sceneletAdapter, groupLife, encounterTables), WS1 setzt nur die Naht hinter szenen=r1. Start mit den sechs fertigen RA-Szenen (Goth Girl, Lorekeeper-Pult, drei Skelette, Spielzeugsoldat), Clown und Ork-Band; neue Taetigkeiten (Angler, Leser, Taenzer, Hexe am Kessel, Wanderer mit Zelt) kommen nach und nach als Daten. Befund vorher: NPC-Modul nur hinter npc, nicht im RC4, an festen Orten der alten Startwelt. WHY: Die Welt lebt, wenn Figuren unterwegs zufaellig etwas tun (V-918).",
+   "values": {},
+   "owner": "Verteiler, WS0, WS1",
+   "check": "V-918, b374",
+   "source": "Georg 08.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
