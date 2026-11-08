@@ -22826,6 +22826,36 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1554",
+   "date": "08.11.2026",
+   "area": "Video",
+   "verdict": "DECISION",
+   "text": "Georg 08.11. (q556): Feature-Clip R1 PASS (60_VIDEO/feature_clip_r1, 57 s, 9 Einstellungen, echte Spielaufnahmen, Big Bad Brain Wrestling). WHY: Georgs Abnahme.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q556, V-039",
+   "source": "Georg 08.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1555",
+   "date": "08.11.2026",
+   "area": "Steuerung",
+   "verdict": "STATUS",
+   "text": "WS1 pausiert (Q-148): Stamm integration-r2 @7e9fc71f, Stage 69 @34044c5c gehen an WS0. Uebergabe docs/UEBERGABE_WS1_INTEGRATION_R2.md, Werkzeuge scripts/ir2/werkzeuge/. Offen: Lichtinseln-Freigabe, #84 C, Himmelsinseln, #96, Geysire b376 mergen, Viertel-Generator, Szenen-Naht, #97/#98, K6-Medien, platzWahl-Export (Spiegel test/_dioPlaetze.mjs mitziehen). WHY: Georg 08.11., WS0 baut selbst.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Q-148, N-250",
+   "source": "Georg 08.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
