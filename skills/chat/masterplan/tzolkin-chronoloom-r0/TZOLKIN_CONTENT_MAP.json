@@ -1,0 +1,396 @@
+{
+  "version": "KFB_CHRONOLOOM_CONTENT_MAP_R0",
+  "date": "2026-11-08",
+  "owner": "KFB Fractal Almanac / Infinite Canvas (existing design lane)",
+  "status": "RESEARCH_AND_EDITORIAL_PRESETS_NOT_APPROVED_GAMEPLAY",
+  "sourceTranscript": {
+    "kind": "USER_SUPPLIED_AUTO_TRANSCRIPT",
+    "url": "https://www.youtube.com/watch?v=lXjNlJoGySQ",
+    "sha256": "1ca0629452b0a0720ef8d3a85cf803854f08da81302747904638feef7248df10",
+    "notVerifiedDirectVideo": true
+  },
+  "historicalCycle": {
+    "tones": 13,
+    "signs": 20,
+    "kinCount": 260,
+    "haabDays": 365,
+    "calendarRoundDays": 18980,
+    "longCountUnitsDays": [
+      1,
+      20,
+      360,
+      7200,
+      144000
+    ],
+    "absoluteGregorianEpochChosen": false
+  },
+  "modernInterpretations": {
+    "notice": "Labels, colors, manifestation model and nine waves describe modern video/Dreamspell/Calleman-like interpretations; not the historic Tzolkin day-name meanings.",
+    "tones": [
+      {
+        "tone": 1,
+        "id": "intent",
+        "videoParaphrase": "Absicht/Vision",
+        "kfbCandidateAction": "Setzen",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 2,
+        "id": "challenge",
+        "videoParaphrase": "Herausforderung/Preis",
+        "kfbCandidateAction": "Abwägen",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 3,
+        "id": "ignition",
+        "videoParaphrase": "Begeisterung/Antrieb",
+        "kfbCandidateAction": "Entzünden",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 4,
+        "id": "form",
+        "videoParaphrase": "Mentale Form/Struktur",
+        "kfbCandidateAction": "Modellieren",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 5,
+        "id": "action",
+        "videoParaphrase": "Handlung/Umsetzung",
+        "kfbCandidateAction": "Bauen",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 6,
+        "id": "balance",
+        "videoParaphrase": "Rhythmus/Ausgleich",
+        "kfbCandidateAction": "Stabilisieren",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 7,
+        "id": "review",
+        "videoParaphrase": "Überprüfung/Kurskorrektur",
+        "kfbCandidateAction": "Umdeuten",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 8,
+        "id": "intensify",
+        "videoParaphrase": "Wissen/Fähigkeiten verdichten",
+        "kfbCandidateAction": "Verknüpfen",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 9,
+        "id": "final_drive",
+        "videoParaphrase": "Endspurt/Kraftmobilisierung",
+        "kfbCandidateAction": "Aufladen",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 10,
+        "id": "manifest",
+        "videoParaphrase": "Manifestation/Resultat",
+        "kfbCandidateAction": "Auslösen",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 11,
+        "id": "release",
+        "videoParaphrase": "Loslassen/Essenz",
+        "kfbCandidateAction": "Reduzieren",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 12,
+        "id": "connect",
+        "videoParaphrase": "Gemeinschaft/Vernetzung",
+        "kfbCandidateAction": "Verbinden",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      },
+      {
+        "tone": 13,
+        "id": "synthesis",
+        "videoParaphrase": "Integration/Neubeginn",
+        "kfbCandidateAction": "Transformieren",
+        "sourceTier": "V_MODERN_INTERPRETATION"
+      }
+    ],
+    "solarSeals": [
+      {
+        "signIndex": 0,
+        "traditionalCoreId": "imix",
+        "modernLabel": "Roter Drache",
+        "modernColor": "red",
+        "videoParaphrase": "Ursprung/Nähren",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 1,
+        "traditionalCoreId": "ik",
+        "modernLabel": "Weißer Wind",
+        "modernColor": "white",
+        "videoParaphrase": "Atem/Botschaft",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 2,
+        "traditionalCoreId": "akbal",
+        "modernLabel": "Blaue Nacht",
+        "modernColor": "blue",
+        "videoParaphrase": "Traum/Potenzial",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 3,
+        "traditionalCoreId": "kan",
+        "modernLabel": "Gelber Samen",
+        "modernColor": "yellow",
+        "videoParaphrase": "Saat/Keimen",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 4,
+        "traditionalCoreId": "chikchan",
+        "modernLabel": "Rote Schlange",
+        "modernColor": "red",
+        "videoParaphrase": "Leben/Körper",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 5,
+        "traditionalCoreId": "kimi",
+        "modernLabel": "Weißer Weltenüberbrücker",
+        "modernColor": "white",
+        "videoParaphrase": "Tod/Übergang",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 6,
+        "traditionalCoreId": "manik",
+        "modernLabel": "Blaue Hand",
+        "modernColor": "blue",
+        "videoParaphrase": "Handeln/Erkenntnis",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 7,
+        "traditionalCoreId": "lamat",
+        "modernLabel": "Gelber Stern",
+        "modernColor": "yellow",
+        "videoParaphrase": "Schönheit/Harmonie",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 8,
+        "traditionalCoreId": "muluk",
+        "modernLabel": "Roter Mond",
+        "modernColor": "red",
+        "videoParaphrase": "Wasser/Erinnerung",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 9,
+        "traditionalCoreId": "ok",
+        "modernLabel": "Weißer Hund",
+        "modernColor": "white",
+        "videoParaphrase": "Emotion/Bindung",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 10,
+        "traditionalCoreId": "chuwen",
+        "modernLabel": "Blauer Affe",
+        "modernColor": "blue",
+        "videoParaphrase": "Spiel/Remix",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 11,
+        "traditionalCoreId": "eb",
+        "modernLabel": "Gelber Mensch",
+        "modernColor": "yellow",
+        "videoParaphrase": "Wille/Polarität",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 12,
+        "traditionalCoreId": "ben",
+        "modernLabel": "Roter Himmelswanderer",
+        "modernColor": "red",
+        "videoParaphrase": "Reise/Brücke",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 13,
+        "traditionalCoreId": "ix",
+        "modernLabel": "Weißer Magier",
+        "modernColor": "white",
+        "videoParaphrase": "Intuition/Transformation",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 14,
+        "traditionalCoreId": "men",
+        "modernLabel": "Blauer Adler",
+        "modernColor": "blue",
+        "videoParaphrase": "Überblick/Verantwortung",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 15,
+        "traditionalCoreId": "kib",
+        "modernLabel": "Gelber Krieger",
+        "modernColor": "yellow",
+        "videoParaphrase": "Mut/Entscheidung",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 16,
+        "traditionalCoreId": "kaban",
+        "modernLabel": "Rote Erde",
+        "modernColor": "red",
+        "videoParaphrase": "Welt/Netzwerk",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 17,
+        "traditionalCoreId": "etznab",
+        "modernLabel": "Weißer Spiegel",
+        "modernColor": "white",
+        "videoParaphrase": "Ursache/Reflexion",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 18,
+        "traditionalCoreId": "kawak",
+        "modernLabel": "Blauer Sturm",
+        "modernColor": "blue",
+        "videoParaphrase": "Umwälzung/Transformation",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      },
+      {
+        "signIndex": 19,
+        "traditionalCoreId": "ajaw",
+        "modernLabel": "Gelbe Sonne",
+        "modernColor": "yellow",
+        "videoParaphrase": "Licht/Synthese",
+        "sourceTier": "H_DAY_ORDER_PLUS_V_MODERN_NAME_MEANING"
+      }
+    ],
+    "narrativeZoomLenses": [
+      {
+        "index": 1,
+        "id": "cellular",
+        "videoNarrative": "Ursprung/Materie",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      },
+      {
+        "index": 2,
+        "id": "mammalian",
+        "videoNarrative": "Organismus",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      },
+      {
+        "index": 3,
+        "id": "familial",
+        "videoNarrative": "Familie",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      },
+      {
+        "index": 4,
+        "id": "tribal",
+        "videoNarrative": "Sippe",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      },
+      {
+        "index": 5,
+        "id": "regional",
+        "videoNarrative": "Region/Kultur",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      },
+      {
+        "index": 6,
+        "id": "national",
+        "videoNarrative": "Nation/Gesellschaft",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      },
+      {
+        "index": 7,
+        "id": "planetary",
+        "videoNarrative": "Planet/Vernetzung",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      },
+      {
+        "index": 8,
+        "id": "galactic",
+        "videoNarrative": "Kosmische/technische Verdichtung",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      },
+      {
+        "index": 9,
+        "id": "universal",
+        "videoNarrative": "Transformation/Rückbindung",
+        "sourceTier": "V_CALLEMAN_LIKE_NOT_HISTORIC_CALENDAR",
+        "runtime": false
+      }
+    ],
+    "modern13Moon": {
+      "months": 13,
+      "daysEach": 28,
+      "outOfTimeDays": 1,
+      "daysTotal": 365,
+      "notHaab": true
+    },
+    "colorCanon": "FOUR_MODERN_DREAMSPELL_COLORS_NOT_KFB_D6"
+  },
+  "gameDonor": {
+    "name": "Tzolk'in: The Mayan Calendar",
+    "publisher": "Czech Games Edition",
+    "year": 2012,
+    "designers": [
+      "Daniele Tascini",
+      "Simone Luciani"
+    ],
+    "mainGearTeeth": 26,
+    "connectedLocationGears": 5,
+    "donorMechanics": [
+      "place_intent",
+      "advance_visible_time",
+      "wait_mature",
+      "claim_result"
+    ],
+    "copiedGameplay": false,
+    "copiedArt": false,
+    "notEqualTo260DayCalendar": true,
+    "source": "BOARDGAME_GEAR_DONOR_2026-11-08.md"
+  },
+  "kfbIntegration": {
+    "scope": "CONTENT_ONLY",
+    "timeMoveRequests": "REQUEST_ONLY",
+    "fractalLevels": [
+      "world",
+      "diorama",
+      "card",
+      "memory"
+    ],
+    "worldStoreOwnedBy": "EXISTING_WORLD_OWNER",
+    "nextGate": "three isolated source-backed ChronoGlyph comparisons; KEEP/TUNE/REJECT"
+  },
+  "provenanceFiles": [
+    "TZOLKIN_RESEARCH_2026-11-08.md",
+    "VIDEO_TRANSCRIPT_ANALYSIS_2026-11-08.md",
+    "BOARDGAME_GEAR_DONOR_2026-11-08.md"
+  ]
+}
