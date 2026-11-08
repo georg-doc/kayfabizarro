@@ -1,0 +1,313 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_BUILDERS_R9_SERVICES_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 0,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "BUILDERS_R9_SERVICES_6_2026-11-08/sheet-r1.png",
+    "sha256": "3aee751a67a4a27d27d70f5398aee51dbbfed7707ae8147a2c10899fa323a003"
+  },
+  "production_record": "BUILDERS_R9_SERVICES_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "BUILDERS_R9_SERVICES_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "BUILDERS_R9_SERVICES_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Site Services Crew",
+    "theme": "Construction",
+    "relationship_policy": "Six-member work crew with independently usable identities.",
+    "usage_candidates": [
+      "construction crew",
+      "HyperNorm resident",
+      "standalone Slop"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sid Barricade",
+      "language": "en",
+      "bild": {
+        "datei": "BUILDERS_R9_SERVICES_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Site Marshal",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "red megaphone",
+        "striped barricade",
+        "amber lamp"
+      ],
+      "temperament": "Gives useful directions at a volume that makes them hard to follow.",
+      "prompt_auszug": "Hard lateral gaze and open shouted syllable.",
+      "prompt_quelle": "BUILDERS_R9_SERVICES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_BAU_EINWEISER"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Iris Tackspark",
+      "language": "en",
+      "bild": {
+        "datei": "BUILDERS_R9_SERVICES_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Welder",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "raised welding mask",
+        "yellow gauntlets",
+        "torch and hose"
+      ],
+      "temperament": "Patient with steel and impatient with management.",
+      "prompt_auszug": "Uneven eyes follow the spark, lower lip tense.",
+      "prompt_quelle": "BUILDERS_R9_SERVICES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_BAU_SCHWEISSER"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cal Valvegrip",
+      "language": "en",
+      "bild": {
+        "datei": "BUILDERS_R9_SERVICES_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Pipe Fitter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "red pipe wrench",
+        "grey pipe elbow",
+        "red valve",
+        "blue drips"
+      ],
+      "temperament": "Knows exactly which leak somebody will call condensation.",
+      "prompt_auszug": "Doubtful side-eye, puffed cheek and off-center frown.",
+      "prompt_quelle": "BUILDERS_R9_SERVICES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_BAU_ROHRINSTALLATEUR"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Bluecoat",
+      "language": "en",
+      "bild": {
+        "datei": "BUILDERS_R9_SERVICES_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Painter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "blue-loaded roller",
+        "paint bucket",
+        "paint-splattered hard hat"
+      ],
+      "temperament": "Finds an alarming number of applications for the same blue.",
+      "prompt_auszug": "Relaxed lids and a gleeful one-tooth grin.",
+      "prompt_quelle": "BUILDERS_R9_SERVICES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_BAU_MALER"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mira Leadloop",
+      "language": "en",
+      "bild": {
+        "datei": "BUILDERS_R9_SERVICES_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Site Electrician",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "fish-tape reel",
+        "voltage tester",
+        "kinked lead"
+      ],
+      "temperament": "Treats an unexpected live wire as a colleague who has spoken out of turn.",
+      "prompt_auszug": "Raised gaze and small pursed lips.",
+      "prompt_quelle": "BUILDERS_R9_SERVICES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Ridgehook",
+      "language": "en",
+      "bild": {
+        "datei": "BUILDERS_R9_SERVICES_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Roofer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "terracotta roof tiles",
+        "roofing hammer",
+        "safety harness"
+      ],
+      "temperament": "Prefers rooflines that stay where he last saw them.",
+      "prompt_auszug": "Worried downward gaze and small dry grimace.",
+      "prompt_quelle": "BUILDERS_R9_SERVICES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Convenient Positions",
+    "team_kit": "Muted ochre, ink red, cream and slate.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_03",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+    ]
+  }
+}

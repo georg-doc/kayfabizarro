@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 235,
-    "pass_depictions": 1410,
+    "selected_sheets": 237,
+    "pass_depictions": 1422,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 233,
-    "intake_eligible_depictions": 1398,
-    "other_authoring_depictions": 1290
+    "intake_eligible_sheets": 235,
+    "intake_eligible_depictions": 1410,
+    "other_authoring_depictions": 1302
   },
   "excluded_sources": [
     {
@@ -1546,6 +1546,18 @@
     {
       "set_id": "WSA_POLITICS_WATCH_20261108",
       "manifest": "POLITICS_WATCH_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_BUILDERS_R9_STRUCTURAL_20261108",
+      "manifest": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_BUILDERS_R9_SERVICES_20261108",
+      "manifest": "BUILDERS_R9_SERVICES_6_2026-11-08/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

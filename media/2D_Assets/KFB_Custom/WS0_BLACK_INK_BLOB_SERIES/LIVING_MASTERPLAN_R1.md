@@ -1,3 +1,11 @@
+## Builders r9 refresh design acceptance · 2026-11-08
+
+Georg approved all 12 figures across two transparent 3×2 sheets. The [batch record](BUILDERS_R9_REFRESH_BATCH_20261108.json) and selected-set index route them to the existing Game and Asset Librarian intake. Eight figures propose links to legacy canonical IDs and four introduce new roles. The index now records 237 selected sheets and 1422 depictions, of which 235 sheets and 1410 depictions are intake-eligible. Both 1536 × 1024 PNGs have verified alpha and clear nominal cell seams at alpha ≥ 16. Individual extraction and receiving readback are pending.
+
+Next gate is Georg's design verdict on the two RPG r7 refresh sheets.
+
+---
+
 ## Slop style drift addendum · 2026-11-08
 
 The [five-axis audit](SLOP_STYLE_DRIFT_ADDENDUM_20261108.md) adds the 72 legacy atlas source images and revises regeneration priorities. Legacy Builders r9 lead the queue because of repeated red eye fields and identical acting. Next gate is one pneumatic-drill worker comparison. The remaining 459 legacy IDs still need source-linked visual review.

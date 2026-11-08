@@ -1,0 +1,64 @@
+{
+  "schema": "kfb.slop-production/1",
+  "set_id": "WSA_BUILDERS_R9_STRUCTURAL_20261108",
+  "design_status": "PASS",
+  "source_archive": "kfb_bauarbeiter_ink_blobs_r9_draft.zip",
+  "file": "01-structural-crew.png",
+  "references": [
+    "KFB_BUILDERS_R9_01_polier.png",
+    "KFB_BUILDERS_R9_02_presslufthammer.png",
+    "KFB_BUILDERS_R9_03_maurer.png",
+    "KFB_BUILDERS_R9_06_baggerfahrer.png",
+    "exec-385bb82f-0098-47cb-910d-2c29eafff814.png"
+  ],
+  "prompt": "Render one transparent RGBA PNG in landscape 3:2 with EXACTLY six distinct whole KFB construction worker Ink Slop characters. Exactly 3 columns by 2 rows, equally sized cells and comfortable clear transparent gutters. Each cell contains one independently cuttable whole sprite with its prop and any motion bits wholly inside the cell. No panels, backdrop, checkers, ground shadow, text, lettering, dividers or shared objects. Big legible bodies, similar apparent character scale, no overlap. Camera front to mild three-quarter; posed at six different moments. Genuine handmade stop-motion plasticine miniatures, touchable broad modeling and selective wear. Ink body dark near-black charcoal with muted violet undertone, soft satin, gentle broad specular. Small projecting tips, elastic hooks or lobes, silhouettes vary, keep each as one complete ink creature. Yellow worn clay PPE, burnt orange safety accents, cohesive with the actual attached r9 figures. Original workers retain recognizable helmets, original tools and colors, and design identities as specified. Every visible sclera clearly warm ivory white, compact RED iris, BLACK pupil, distinct three-tone separation. No glowing red eyeball anywhere. Each expression has a unique mouth shape, lid action and gaze, no repeated V brows or same fanged roar. Very few teeth with sensible placement. Two feminine-read workers included through subtle acting, eyelids or posing. Real materials: painted equipment chips in a few broad patches, smooth clay paint and water, selective dull metal wear. Favor punchy handmade KFB black comedy.\nTOP LEFT, original Foreman, reference 1: crown-stamped yellow helmet, original rolled house blueprint in left hand, orange reflective vest, pointing blob arm. One eyebrow high and one low, doubtfully looking sideways at the indicated hazard, thin slightly open sideways mouth. TOP CENTER, original Jackhammer Operator, reference 2, use the corrected face in last reference: yellow helmet with orange earmuffs, orange vest, exact upright chunky yellow pneumatic jackhammer in two fists and a few grey chips below the bit. Eyes down, tiny crooked compressed mouth. TOP RIGHT, original Bricklayer, reference 3: speckled helmet, original triangular steel trowel and compact red brick stack with cream mortar. Feminine-read; pleased, one slightly lowered lid, small self-satisfied corner smile at an improbably straight joint.\nBOTTOM LEFT, original Excavator Operator, reference 4: retain miniature yellow tracked open-cab excavator with three roof lamps, two red levers and rocky bucket, scale so the whole machine fits and blob peeks out with full face. Big startled eyes aimed sideways at bucket, tight little O mouth. BOTTOM CENTER, new Surveyor: tall narrow female-read ink blob, scuffed ochre helmet and compact mustard survey transit on a little folding tripod held close, one eye aimed intently down the sight, other squeezed shut, deadpan angled lips. BOTTOM RIGHT, new Site Carpenter: squat uneven blob with short pointed ink horns, pencil under helmet and well-defined wood-handled hand saw and folded wooden ruler, three-quarter pose and an unabashed sideways laugh with one visible tooth. Hold each pose, eyes, gear and unique silhouette apart. Reference 5 only defines the finished acting of the jackhammer, keep other roles independently expressive.",
+  "selection": "initial generated PNG, verified alpha",
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "sha256": "fd5c3987471b439b5c0fb272dfaffe592665f4a952af790011597f0a5e2f6727",
+  "outer_edge_alpha_max": 2,
+  "grid_lines_visible_alpha_max": [
+    0,
+    0,
+    0
+  ],
+  "source_sha256": {
+    "KFB_BUILDERS_R9_01_polier.png": "5c64dafdec4048ca21402b5154974a120070e4ea4387cf1d500d4afe8e211bdc",
+    "KFB_BUILDERS_R9_02_presslufthammer.png": "fae7bc200cc7edb491de834d32429f17b404fde8df37adc422f614546e608f0d",
+    "KFB_BUILDERS_R9_03_maurer.png": "215be251c63dcaa586863710d109302a45ac441d2d30030b8021c85b85b8e1cb",
+    "KFB_BUILDERS_R9_06_baggerfahrer.png": "ccd1cf929ae5419663c94c1b23d18ff4497319ad4685778b05125f5c4aa27c41"
+  },
+  "pilot_prompt": "Edit this exact original KFB Builders r9 jackhammer operator sprite, one whole isolated cutout on true transparent alpha. Source-faithful localized acting correction. Keep its exact yellow beat-up helmet, orange ear protectors and vest, both dark ink fists, original yellow pneumatic jackhammer body with two handles and steel point, small bits of gray rubble, placement, scale, charcoal-violet soft worked plasticine, dark ink lobes and original silhouette. Rework face only: distinct warm ivory-white sclera around the red iris discs with black pupils in both open eyes. Both pupils clearly look down at the bit; lids tense but asymmetrical, no joined scowling V. Replace shouting mouth with a small tightly pursed crooked grimace, a single tiny tooth only if needed. Intense focused operator bracing for vibration. No full red eyeballs or glow. Keep image crisp and original material colors. Do not add text, stickers, floor, or environmental background.",
+  "pilot_sha256": "edc7de83ddfc6283ab1283412ca59549b58f043ff37bef04056eae7fa40f3465",
+  "original_candidate": "exec-3fed9a2d-0ec6-430d-8d91-b413089dffce.png",
+  "alternate_candidate": "exec-ffe3cbe4-4258-4c6e-9963-c3f3ee67008d.png",
+  "extraction_prompt": "BACKGROUND REMOVAL EDIT. Cut the six existing clay sprites out of the attached image onto a completely empty truly transparent canvas, encoded as real PNG ALPHA transparency (RGBA), zero alpha in corners, gutters, background, shadows and all empty gaps such as between tool handles, under the tripod and excavator window. Treat as a game sticker asset sheet background extraction. Keep the same EXACT six figures, original tools, eyes, poses, image crop and 3 columns by 2 rows. Preserve muted nearly black-violet bodies and the same yellows and oranges. Maintain warm ivory WHITE sclera, RED iris, BLACK pupil; slight warm lighting on the sculpture is fine but no orange or red in the sclera. Keep the existing detail, detach the colored stage lighting and remove all glow beyond props. Retain the solid yellow/orange clay impact marks and legitimate props, every tool and small chunk of rubble. Absolutely no brown/orange gradient, no checkered or solid color background, no environmental light bokeh, no floor plane. Output only the six carefully separated transparent cutouts in their original grid.",
+  "identity_lineage": [
+    {
+      "authoring_id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_01",
+      "variant_of": "SL_BAU_POLIER",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_02",
+      "variant_of": "SL_BAU_PRESSLUFTHAMMER",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_03",
+      "variant_of": "SL_BAU_MAUERER",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_04",
+      "variant_of": "SL_BAU_BAGGERFAHRER",
+      "replace_selected_runtime_asset": false
+    }
+  ]
+}

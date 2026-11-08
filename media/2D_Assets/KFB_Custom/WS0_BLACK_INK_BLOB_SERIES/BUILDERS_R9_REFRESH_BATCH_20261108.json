@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_BUILDERS_R9_REFRESH_20261108",
+  "date": "2026-11-08",
+  "georg_status": "PASS",
+  "language": "en",
+  "handoff": "WS0 Game and Asset Librarian intake through the established selected-set index. Existing canonical assets remain separately versioned. Authoring-to-canonical mappings are proposed for the receiver.",
+  "sets": [
+    {
+      "set_id": "WSA_BUILDERS_R9_STRUCTURAL_20261108",
+      "manifest": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/sheet-r1.png",
+      "sha256": "fd5c3987471b439b5c0fb272dfaffe592665f4a952af790011597f0a5e2f6727",
+      "roles": [
+        "Foreman",
+        "Jackhammer Operator",
+        "Bricklayer",
+        "Excavator Operator",
+        "Surveyor",
+        "Site Carpenter"
+      ]
+    },
+    {
+      "set_id": "WSA_BUILDERS_R9_SERVICES_20261108",
+      "manifest": "BUILDERS_R9_SERVICES_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "BUILDERS_R9_SERVICES_6_2026-11-08/sheet-r1.png",
+      "sha256": "3aee751a67a4a27d27d70f5398aee51dbbfed7707ae8147a2c10899fa323a003",
+      "roles": [
+        "Site Marshal",
+        "Welder",
+        "Pipe Fitter",
+        "Painter",
+        "Site Electrician",
+        "Roofer"
+      ]
+    }
+  ]
+}
