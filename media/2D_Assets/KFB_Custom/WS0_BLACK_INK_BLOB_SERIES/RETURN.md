@@ -1,3 +1,11 @@
+## Political satire design acceptance · 2026-11-08
+
+Georg accepted all six political satire sheets and their 36 designs. The index records 235 accepted sheets and 1410 depictions.
+
+Next work compares the selected catalog for style consistency, oldest series first.
+
+---
+
 # WSA Return · Political satire Slop families · 2026-11-08
 
 Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. The six school sheets passed at 1d3dcc6c931c1985575cd7e747b450ea9cce2bf9 with 28 file readbacks.

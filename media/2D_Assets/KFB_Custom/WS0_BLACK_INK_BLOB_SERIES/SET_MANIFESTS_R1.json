@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 229,
-    "pass_depictions": 1374,
+    "selected_sheets": 235,
+    "pass_depictions": 1410,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 227,
-    "intake_eligible_depictions": 1362,
-    "other_authoring_depictions": 1254
+    "intake_eligible_sheets": 233,
+    "intake_eligible_depictions": 1398,
+    "other_authoring_depictions": 1290
   },
   "excluded_sources": [
     {
@@ -1512,56 +1512,49 @@
       "manifest": "SCHOOL_SUPPORT_6_2026-11-08/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_POLITICS_TYPES_20261108",
       "manifest": "POLITICS_TYPES_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_POLITICS_CAMPAIGN_20261108",
       "manifest": "POLITICS_CAMPAIGN_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_POLITICS_GOV_20261108",
       "manifest": "POLITICS_GOV_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_POLITICS_MINISTRY_20261108",
       "manifest": "POLITICS_MINISTRY_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_POLITICS_STATE_20261108",
       "manifest": "POLITICS_STATE_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_POLITICS_WATCH_20261108",
       "manifest": "POLITICS_WATCH_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {
