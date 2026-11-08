@@ -1,0 +1,197 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_GAPS_BATCH_03_20261108",
+  "date": "2026-11-08",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "language": "en",
+  "design_status": "DRAFT",
+  "intake_eligible": false,
+  "sheets": 3,
+  "unique_identities": 18,
+  "depictions": 18,
+  "native_generation_jobs": 3,
+  "image_edits": 0,
+  "counts": {
+    "trios": 6,
+    "full_families": 3,
+    "female_read_casting_intents": 6
+  },
+  "backlog": "NEW_SLOP_GROUPS_BACKLOG_20261107.json",
+  "sets": [
+    {
+      "set_id": "WSA_GAPS_PRINT_20261108",
+      "title": "The Runaway Misprint Foundry",
+      "manifest": "GAPS_PRINT_6_2026-11-08/MANIFEST.json",
+      "sheet": "GAPS_PRINT_6_2026-11-08/sheet-r1.png",
+      "sha256": "58a9433c6f48fc2cd0329966bd7240a7c0ea9741a255e31d4db34aa85ec8eba0",
+      "git_blob": "8e7fb7ae52fb35575d677bd884cf0a1351aa0671",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "The Runaway Misprint Foundry",
+        "team_kit": "Ink-stained warm linen, terracotta and muted brass",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_PRINT_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_PRINT_ACTOR_20261108_01",
+              "WSA_GAPS_PRINT_ACTOR_20261108_02",
+              "WSA_GAPS_PRINT_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_PRINT_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_PRINT_ACTOR_20261108_04",
+              "WSA_GAPS_PRINT_ACTOR_20261108_05",
+              "WSA_GAPS_PRINT_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_PRINT_ACTOR_20261108_01",
+          "WSA_GAPS_PRINT_ACTOR_20261108_02",
+          "WSA_GAPS_PRINT_ACTOR_20261108_03",
+          "WSA_GAPS_PRINT_ACTOR_20261108_04",
+          "WSA_GAPS_PRINT_ACTOR_20261108_05",
+          "WSA_GAPS_PRINT_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_GAPS_HAUNT_20261108",
+      "title": "Small Domestic Hauntings",
+      "manifest": "GAPS_HAUNT_6_2026-11-08/MANIFEST.json",
+      "sheet": "GAPS_HAUNT_6_2026-11-08/sheet-r1.png",
+      "sha256": "2f4caa38c5213de793667375b90d6e9e4a42b256c8beb4a101df1c6fd368b0b9",
+      "git_blob": "448f0e49955cf2474ac431e25d10bab9e8c46f7b",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "Small Domestic Hauntings",
+        "team_kit": "Dusty sage, warm linen, ivory and subtle cool blue household accents",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_HAUNT_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_HAUNT_ACTOR_20261108_01",
+              "WSA_GAPS_HAUNT_ACTOR_20261108_02",
+              "WSA_GAPS_HAUNT_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_HAUNT_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_HAUNT_ACTOR_20261108_04",
+              "WSA_GAPS_HAUNT_ACTOR_20261108_05",
+              "WSA_GAPS_HAUNT_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_HAUNT_ACTOR_20261108_01",
+          "WSA_GAPS_HAUNT_ACTOR_20261108_02",
+          "WSA_GAPS_HAUNT_ACTOR_20261108_03",
+          "WSA_GAPS_HAUNT_ACTOR_20261108_04",
+          "WSA_GAPS_HAUNT_ACTOR_20261108_05",
+          "WSA_GAPS_HAUNT_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_GAPS_INTERPRET_20261108",
+      "title": "Interpreters for the Untranslatable",
+      "manifest": "GAPS_INTERPRET_6_2026-11-08/MANIFEST.json",
+      "sheet": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+      "sha256": "82115b3302e253fd07f78bd9d03d79eb3160ecc5539d6ee4b6faeda483f35aa3",
+      "git_blob": "30a426fad6fa68b17c501ead1a79da5f8a8d23b5",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "Interpreters for the Untranslatable",
+        "team_kit": "Charcoal with desaturated plum, mustard, mint and cream, sparse desk accessories",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_INTERPRET_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_INTERPRET_ACTOR_20261108_01",
+              "WSA_GAPS_INTERPRET_ACTOR_20261108_02",
+              "WSA_GAPS_INTERPRET_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_INTERPRET_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_INTERPRET_ACTOR_20261108_04",
+              "WSA_GAPS_INTERPRET_ACTOR_20261108_05",
+              "WSA_GAPS_INTERPRET_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_01",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_02",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_03",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_04",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_05",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_06"
+        ]
+      }
+    }
+  ],
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_zero_on_every_sheet": true,
+    "alpha_samples": {
+      "PRINT": {
+        "outer": 0,
+        "x512": 78,
+        "x1024": 0,
+        "y512": 0
+      },
+      "HAUNT": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 72
+      },
+      "INTERPRET": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 51
+      }
+    },
+    "extraction": "NOT_PERFORMED",
+    "runtime": "NOT_TESTED",
+    "next_gate": "Georg design verdict"
+  }
+}

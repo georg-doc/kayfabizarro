@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_GAPS_PRINT_ACTOR_20261108_01",
+      "name": "Ada Reverse",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Typesetter.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It reads correctly from inside the press."
+          ],
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_PRINT_20261108",
+            "trio": "WSA_GAPS_PRINT_20261108_TRIO_A"
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Runaway Misprint Foundry, Ada Reverse takes the role of typesetter. “It reads correctly from inside the press.”",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one square wooden type block with a clearly backward raised capital R.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "typesetter",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_PRINT_ACTOR_20261108_02",
+      "name": "Bert Comma",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Proofreader.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "A pause. A much bigger pause."
+          ],
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_PRINT_20261108",
+            "trio": "WSA_GAPS_PRINT_20261108_TRIO_A"
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Runaway Misprint Foundry, Bert Comma takes the role of proofreader. “A pause. A much bigger pause.”",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one giant curved burgundy comma with a small wooden grip.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "proofreader",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_PRINT_ACTOR_20261108_03",
+      "name": "Pip Misprint",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Escaped typo.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "If anybody asks, I'm in the second edition."
+          ],
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_PRINT_20261108",
+            "trio": "WSA_GAPS_PRINT_20261108_TRIO_A"
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Runaway Misprint Foundry, Pip Misprint takes the role of escaped typo. “If anybody asks, I'm in the second edition.”",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small folded cream proof sheet with one simple smudged letter, used as a little shield while face remains visible.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "escaped typo",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_PRINT_ACTOR_20261108_04",
+      "name": "Tess Inkroller",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Press operator.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One coat will do."
+          ],
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_PRINT_20261108",
+            "trio": "WSA_GAPS_PRINT_20261108_TRIO_B"
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Runaway Misprint Foundry, Tess Inkroller takes the role of press operator. “One coat will do.”",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small hand brayer with a smooth dark roller and brass handle.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "press operator",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_PRINT_ACTOR_20261108_05",
+      "name": "Ollie Bindery",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bookbinder.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The spine can still be saved."
+          ],
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_PRINT_20261108",
+            "trio": "WSA_GAPS_PRINT_20261108_TRIO_B"
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Runaway Misprint Foundry, Ollie Bindery takes the role of bookbinder. “The spine can still be saved.”",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: palm-sized half-bound book and one thick thread loop.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "bookbinder",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_PRINT_ACTOR_20261108_06",
+      "name": "Gus Margin",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Margin inspector.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "This margin is getting ideas."
+          ],
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_PRINT_20261108",
+            "trio": "WSA_GAPS_PRINT_20261108_TRIO_B"
+          },
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Runaway Misprint Foundry, Gus Margin takes the role of margin inspector. “This margin is getting ideas.”",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short wooden square ruler and one large blank cream page with a plain red border line.",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "margin inspector",
+          "src": "GAPS_PRINT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

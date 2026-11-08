@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_GAPS_INTERPRET_20261108",
+  "date": "2026-11-08",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+    "sha256": "82115b3302e253fd07f78bd9d03d79eb3160ecc5539d6ee4b6faeda483f35aa3"
+  },
+  "production_record": "GAPS_INTERPRET_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "GAPS_INTERPRET_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "GAPS_INTERPRET_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Interpreters for the Untranslatable",
+    "theme": "Interpreters for the Untranslatable",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_GAPS_INTERPRET_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Iris Creakword",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "door-creak interpreter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_INTERPRET_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_02",
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small old brass hinge attached to a short handheld wooden block"
+      ],
+      "temperament": "Door-creak interpreter.",
+      "prompt_auszug": "tall curved blob, intent side gaze and lifted listening eyebrow",
+      "prompt_quelle": "GAPS_INTERPRET_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "door-creak interpreter"
+    },
+    {
+      "id": "WSA_GAPS_INTERPRET_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Longpause",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "recorder of meaningful pauses",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_INTERPRET_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_01",
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small blank notebook and one pocket hourglass with clear glass"
+      ],
+      "temperament": "Recorder of meaningful pauses.",
+      "prompt_auszug": "broad low bean, half lids and quietly serious mouth",
+      "prompt_quelle": "GAPS_INTERPRET_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "recorder of meaningful pauses"
+    },
+    {
+      "id": "WSA_GAPS_INTERPRET_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Shrugfile",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "archivist of shrugs",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_INTERPRET_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_01",
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "stack of three chunky little unlettered binders held close below face"
+      ],
+      "temperament": "Archivist of shrugs.",
+      "prompt_auszug": "upright squared blob, shoulders raised, worried wide eyes",
+      "prompt_quelle": "GAPS_INTERPRET_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "archivist of shrugs"
+    },
+    {
+      "id": "WSA_GAPS_INTERPRET_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Sighmeter",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "translator of sighs",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_INTERPRET_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_05",
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small soft air bulb with a round simple dial, held at flank"
+      ],
+      "temperament": "Translator of sighs.",
+      "prompt_auszug": "low wide splat, tired drooping eyes and little open mouth",
+      "prompt_quelle": "GAPS_INTERPRET_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "translator of sighs"
+    },
+    {
+      "id": "WSA_GAPS_INTERPRET_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Teaclang",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "interpreter of porcelain sounds",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_INTERPRET_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_04",
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small saucer and a spoon held near the ear lobe"
+      ],
+      "temperament": "Interpreter of porcelain sounds.",
+      "prompt_auszug": "slim reverse comma, curious eyes and compact smile",
+      "prompt_quelle": "GAPS_INTERPRET_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "interpreter of porcelain sounds"
+    },
+    {
+      "id": "WSA_GAPS_INTERPRET_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Eyebrow",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "subtitler of raised eyebrows",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_INTERPRET_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_04",
+        "WSA_GAPS_INTERPRET_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one blank speech-shaped clay token and a tiny pencil"
+      ],
+      "temperament": "Subtitler of raised eyebrows.",
+      "prompt_auszug": "round scalloped blob, one visibly raised eyebrow and cautious grin",
+      "prompt_quelle": "GAPS_INTERPRET_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "subtitler of raised eyebrows"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "thematic_family": "Interpreters for the Untranslatable",
+    "team_kit": "Charcoal with desaturated plum, mustard, mint and cream, sparse desk accessories",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Everyday roles and absurd material encounters.",
+    "trios": [
+      {
+        "id": "WSA_GAPS_INTERPRET_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_01",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_02",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_GAPS_INTERPRET_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_04",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_05",
+          "WSA_GAPS_INTERPRET_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_GAPS_INTERPRET_ACTOR_20261108_01",
+      "WSA_GAPS_INTERPRET_ACTOR_20261108_02",
+      "WSA_GAPS_INTERPRET_ACTOR_20261108_03",
+      "WSA_GAPS_INTERPRET_ACTOR_20261108_04",
+      "WSA_GAPS_INTERPRET_ACTOR_20261108_05",
+      "WSA_GAPS_INTERPRET_ACTOR_20261108_06"
+    ]
+  }
+}

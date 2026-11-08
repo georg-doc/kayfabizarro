@@ -1,3 +1,11 @@
+## New theme backlog, batch 3 · 2026-11-08
+
+The final queued batch adds 18 Slops across the Runaway Misprint Foundry, Small Domestic Hauntings, and Interpreters for the Untranslatable. The three transparent 3×2 sheets have English character records and await Georg's design verdict. The nine-theme list records six accepted themes and three drafts.
+
+[Backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) · [Batch record](NEW_SLOP_GROUPS_BATCH_03_20261108.json)
+
+---
+
 ## Batches 1 and 2 design acceptance · 2026-11-08
 
 Georg accepted all six sheets and 36 designs. The index contains 215 accepted sheets and 1290 depictions. The [theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) now records six accepted entries and three queued entries for batch 3.

@@ -177,7 +177,10 @@
           "role": "Misprint hiding in its proof sheet"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_PRINT_20261108",
+      "manifest": "GAPS_PRINT_6_2026-11-08/MANIFEST.json",
+      "sheet": "GAPS_PRINT_6_2026-11-08/sheet-r1.png"
     },
     {
       "order": 8,
@@ -196,7 +199,10 @@
           "role": "Night fright carrying its own nightlight"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_HAUNT_20261108",
+      "manifest": "GAPS_HAUNT_6_2026-11-08/MANIFEST.json",
+      "sheet": "GAPS_HAUNT_6_2026-11-08/sheet-r1.png"
     },
     {
       "order": 9,
@@ -215,14 +221,17 @@
           "role": "Interpreter filing a shrug in three binders"
         }
       ],
-      "status": "QUEUED"
+      "status": "DRAFT_AWAITING_GEORG",
+      "set_id": "WSA_GAPS_INTERPRET_20261108",
+      "manifest": "GAPS_INTERPRET_6_2026-11-08/MANIFEST.json",
+      "sheet": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png"
     }
   ],
   "counts": {
-    "queued": 3,
-    "draft_awaiting_georg": 0,
+    "queued": 0,
+    "draft_awaiting_georg": 3,
     "pass": 6
   },
-  "next_queued_batch": 3,
+  "next_queued_batch": null,
   "updated": "2026-11-08"
 }

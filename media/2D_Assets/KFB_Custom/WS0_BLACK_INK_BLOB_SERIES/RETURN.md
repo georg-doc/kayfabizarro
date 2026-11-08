@@ -1,3 +1,17 @@
+# WSA Return · New theme batch 3 · 2026-11-08
+
+Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Batches 1 and 2 passed at 8c3312c919aa6ccd163301efdc1683186e50bdee with 29 file readbacks.
+
+The final queued batch adds 18 Slops across the Runaway Misprint Foundry, Small Domestic Hauntings, and Interpreters for the Untranslatable. The three transparent 3×2 sheets have English character records and await Georg's design verdict. The nine-theme list records six accepted themes and three drafts.
+
+Three native image jobs used both original style references. All sheets are 1536×1024 RGBA with clear background alpha. Each has some visible pixels crossing a nominal cell division. The shrug archivist has two raised gesture lobes plus the hands supporting the binders. Individual isolation and runtime checks remain pending.
+
+[Backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) · [Batch record](NEW_SLOP_GROUPS_BATCH_03_20261108.json)
+
+Next gate is Georg's design verdict on the three sheets.
+
+---
+
 ## Batches 1 and 2 design acceptance · 2026-11-08
 
 Georg accepted all six sheets and 36 designs. The index contains 215 accepted sheets and 1290 depictions. The [theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) now records six accepted entries and three queued entries for batch 3.
