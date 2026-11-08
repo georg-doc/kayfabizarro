@@ -1,3 +1,5 @@
+> The [five-axis addendum](SLOP_STYLE_DRIFT_ADDENDUM_20261108.md) extends the scope to the 72 legacy atlas sources and gives the revised regeneration order.
+
 # Slop catalog style audit · 2026-11-08
 
 Owner WSA. Source is the selected production catalog at `0c6fec08cdff7e2faacfe22680b37e546f9736e8` on `assets/ws0-ink-miners-2026-11-04`, draft PR #469. This is a design review and a proposed repair queue. Georg accepted all six political satire sheets, adding 36 depictions.

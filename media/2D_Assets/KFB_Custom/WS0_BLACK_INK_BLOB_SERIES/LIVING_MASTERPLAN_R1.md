@@ -1,3 +1,9 @@
+## Slop style drift addendum · 2026-11-08
+
+The [five-axis audit](SLOP_STYLE_DRIFT_ADDENDUM_20261108.md) adds the 72 legacy atlas source images and revises regeneration priorities. Legacy Builders r9 lead the queue because of repeated red eye fields and identical acting. Next gate is one pneumatic-drill worker comparison. The remaining 459 legacy IDs still need source-linked visual review.
+
+---
+
 ## Slop catalog style audit · 2026-11-08
 
 Reviewed all 235 selected source sheets in chronological order and verified each source against its manifest. The [report](SLOP_STYLE_AUDIT_20261108.md) and [sheet-level decisions](SLOP_STYLE_AUDIT_INDEX_20261108.csv) separate proposed design variants from crop and framing checks. Next gate is Georg's choice of one character pilot.
