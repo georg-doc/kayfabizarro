@@ -7,8 +7,8 @@
   "branch": "assets/ws0-ink-miners-2026-11-04",
   "pull_request": 469,
   "language": "en",
-  "design_status": "DRAFT",
-  "intake_eligible": false,
+  "design_status": "PASS",
+  "intake_eligible": true,
   "sheets": 3,
   "unique_identities": 18,
   "depictions": 18,
@@ -28,8 +28,8 @@
       "sheet": "GAPS_PRINT_6_2026-11-08/sheet-r1.png",
       "sha256": "58a9433c6f48fc2cd0329966bd7240a7c0ea9741a255e31d4db34aa85ec8eba0",
       "git_blob": "8e7fb7ae52fb35575d677bd884cf0a1351aa0671",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "The Runaway Misprint Foundry",
@@ -66,7 +66,8 @@
           "WSA_GAPS_PRINT_ACTOR_20261108_05",
           "WSA_GAPS_PRINT_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_GAPS_HAUNT_20261108",
@@ -75,8 +76,8 @@
       "sheet": "GAPS_HAUNT_6_2026-11-08/sheet-r1.png",
       "sha256": "2f4caa38c5213de793667375b90d6e9e4a42b256c8beb4a101df1c6fd368b0b9",
       "git_blob": "448f0e49955cf2474ac431e25d10bab9e8c46f7b",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "Small Domestic Hauntings",
@@ -113,7 +114,8 @@
           "WSA_GAPS_HAUNT_ACTOR_20261108_05",
           "WSA_GAPS_HAUNT_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_GAPS_INTERPRET_20261108",
@@ -122,8 +124,8 @@
       "sheet": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
       "sha256": "82115b3302e253fd07f78bd9d03d79eb3160ecc5539d6ee4b6faeda483f35aa3",
       "git_blob": "30a426fad6fa68b17c501ead1a79da5f8a8d23b5",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "Interpreters for the Untranslatable",
@@ -160,7 +162,8 @@
           "WSA_GAPS_INTERPRET_ACTOR_20261108_05",
           "WSA_GAPS_INTERPRET_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     }
   ],
   "qa": {
@@ -192,6 +195,14 @@
     },
     "extraction": "NOT_PERFORMED",
     "runtime": "NOT_TESTED",
-    "next_gate": "Georg design verdict"
+    "next_gate": "Silhouette-aware isolation and receiving intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS",
+  "georg_pass_date": "2026-11-08",
+  "accepted_authoring_snapshot": {
+    "sheets": 218,
+    "depictions": 1308,
+    "intake_eligible_sheets": 216,
+    "intake_eligible_depictions": 1296
   }
 }

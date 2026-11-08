@@ -177,10 +177,11 @@
           "role": "Misprint hiding in its proof sheet"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_PRINT_20261108",
       "manifest": "GAPS_PRINT_6_2026-11-08/MANIFEST.json",
-      "sheet": "GAPS_PRINT_6_2026-11-08/sheet-r1.png"
+      "sheet": "GAPS_PRINT_6_2026-11-08/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     },
     {
       "order": 8,
@@ -199,10 +200,11 @@
           "role": "Night fright carrying its own nightlight"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_HAUNT_20261108",
       "manifest": "GAPS_HAUNT_6_2026-11-08/MANIFEST.json",
-      "sheet": "GAPS_HAUNT_6_2026-11-08/sheet-r1.png"
+      "sheet": "GAPS_HAUNT_6_2026-11-08/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     },
     {
       "order": 9,
@@ -221,16 +223,17 @@
           "role": "Interpreter filing a shrug in three binders"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_INTERPRET_20261108",
       "manifest": "GAPS_INTERPRET_6_2026-11-08/MANIFEST.json",
-      "sheet": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png"
+      "sheet": "GAPS_INTERPRET_6_2026-11-08/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     }
   ],
   "counts": {
     "queued": 0,
-    "draft_awaiting_georg": 3,
-    "pass": 6
+    "draft_awaiting_georg": 0,
+    "pass": 9
   },
   "next_queued_batch": null,
   "updated": "2026-11-08"

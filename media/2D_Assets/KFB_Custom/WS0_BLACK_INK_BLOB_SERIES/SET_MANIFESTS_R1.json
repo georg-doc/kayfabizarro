@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 215,
-    "pass_depictions": 1290,
+    "selected_sheets": 218,
+    "pass_depictions": 1308,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 213,
-    "intake_eligible_depictions": 1278,
-    "other_authoring_depictions": 1170
+    "intake_eligible_sheets": 216,
+    "intake_eligible_depictions": 1296,
+    "other_authoring_depictions": 1188
   },
   "excluded_sources": [
     {
@@ -1428,35 +1428,31 @@
       "manifest": "GAPS_GEO_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_GAPS_PRINT_20261108",
       "manifest": "GAPS_PRINT_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_GAPS_HAUNT_20261108",
       "manifest": "GAPS_HAUNT_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_GAPS_INTERPRET_20261108",
       "manifest": "GAPS_INTERPRET_6_2026-11-08/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 3,
-    "depictions": 18,
-    "identities": 18,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {

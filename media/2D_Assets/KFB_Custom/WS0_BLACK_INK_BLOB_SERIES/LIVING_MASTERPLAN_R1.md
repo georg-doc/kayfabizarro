@@ -1,3 +1,11 @@
+## Batch 3 design acceptance · 2026-11-08
+
+Georg accepted all three sheets and their 18 designs. All nine entries in the [theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) have passed design review. The index records 218 accepted sheets and 1308 depictions.
+
+Next production covers babies and toddlers, schoolchildren, teens, scouts and a student demonstration.
+
+---
+
 ## New theme backlog, batch 3 · 2026-11-08
 
 The final queued batch adds 18 Slops across the Runaway Misprint Foundry, Small Domestic Hauntings, and Interpreters for the Untranslatable. The three transparent 3×2 sheets have English character records and await Georg's design verdict. The nine-theme list records six accepted themes and three drafts.

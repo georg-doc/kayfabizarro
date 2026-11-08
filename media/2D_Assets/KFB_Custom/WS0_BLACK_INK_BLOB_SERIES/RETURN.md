@@ -1,3 +1,11 @@
+## Batch 3 design acceptance · 2026-11-08
+
+Georg accepted all three sheets and their 18 designs. All nine entries in the [theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) have passed design review. The index records 218 accepted sheets and 1308 depictions.
+
+Next production covers babies and toddlers, schoolchildren, teens, scouts and a student demonstration.
+
+---
+
 # WSA Return · New theme batch 3 · 2026-11-08
 
 Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. Batches 1 and 2 passed at 8c3312c919aa6ccd163301efdc1683186e50bdee with 29 file readbacks.
