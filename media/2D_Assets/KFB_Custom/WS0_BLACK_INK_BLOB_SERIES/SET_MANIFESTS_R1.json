@@ -1,20 +1,20 @@
 {
   "schema": "kfb.slop-set-index/1",
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "source_owner": {
     "repo": "georg-doc/kayfabizarro",
     "branch": "assets/ws0-ink-miners-2026-11-04",
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 209,
-    "pass_depictions": 1254,
+    "selected_sheets": 215,
+    "pass_depictions": 1290,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 207,
-    "intake_eligible_depictions": 1242,
-    "other_authoring_depictions": 1134
+    "intake_eligible_sheets": 213,
+    "intake_eligible_depictions": 1278,
+    "other_authoring_depictions": 1170
   },
   "excluded_sources": [
     {
@@ -1392,56 +1392,49 @@
       "manifest": "PSYCHE_SOCIAL_6_2026-11-07/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
-    }
-  ],
-  "candidate_sets": [
+    },
     {
       "set_id": "WSA_GAPS_WEATHER_20261107",
       "manifest": "GAPS_WEATHER_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_GAPS_LOST_20261107",
       "manifest": "GAPS_LOST_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_GAPS_ESTATE_20261107",
       "manifest": "GAPS_ESTATE_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_GAPS_INSECT_20261107",
       "manifest": "GAPS_INSECT_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_GAPS_DEEP_20261107",
       "manifest": "GAPS_DEEP_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     },
     {
       "set_id": "WSA_GAPS_GEO_20261107",
       "manifest": "GAPS_GEO_6_2026-11-07/MANIFEST.json",
-      "georg_status": null,
-      "design_status": "DRAFT_AWAITING_GEORG",
-      "intake_eligible": false
+      "georg_status": "PASS",
+      "intake_eligible": true
     }
   ],
+  "candidate_sets": [],
   "candidate_counts": {
-    "sheets": 6,
-    "depictions": 36,
-    "identities": 36,
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
     "pass": 0
   },
   "production_supplement": {

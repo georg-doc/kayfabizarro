@@ -1,3 +1,9 @@
+## Batches 1 and 2 design acceptance · 2026-11-08
+
+Georg accepted all six sheets and 36 designs. The index contains 215 accepted sheets and 1290 depictions. The [theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) now records six accepted entries and three queued entries for batch 3.
+
+---
+
 # WSA Return · New theme batches 1 and 2 · 2026-11-07
 
 Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. The psychology PASS and nine-theme queue are recorded at c1b2edeb698a8d2b963ad24cf4697ae0f40f8796 with 29 file readbacks. The accepted index has 209 sheets and 1254 depictions, including 207 sheets and 1242 depictions eligible for intake.

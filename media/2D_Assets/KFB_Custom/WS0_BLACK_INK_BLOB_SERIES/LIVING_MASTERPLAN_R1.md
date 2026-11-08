@@ -1,3 +1,9 @@
+## Batches 1 and 2 design acceptance · 2026-11-08
+
+Georg accepted all six sheets and 36 designs. The index contains 215 accepted sheets and 1290 depictions. The [theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) now records six accepted entries and three queued entries for batch 3.
+
+---
+
 ## New theme backlog, batches 1 and 2 · 2026-11-07
 
 The first two batches introduce 36 Slops across weather maintenance, lost property, the estate committee, the insect hotel, deep sea after hours and geological complaints. Six transparent 3×2 sheets include English character records and two trio relations per sheet. Georg's design verdict is pending. Printing, domestic hauntings and interpreters remain queued in the nine-theme backlog.

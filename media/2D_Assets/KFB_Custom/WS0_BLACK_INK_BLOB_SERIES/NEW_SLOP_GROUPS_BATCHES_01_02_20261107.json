@@ -7,8 +7,8 @@
   "branch": "assets/ws0-ink-miners-2026-11-04",
   "pull_request": 469,
   "language": "en",
-  "design_status": "DRAFT",
-  "intake_eligible": false,
+  "design_status": "PASS",
+  "intake_eligible": true,
   "sheets": 6,
   "unique_identities": 36,
   "depictions": 36,
@@ -27,8 +27,8 @@
       "sheet": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
       "sha256": "29e2fde8b6e24ae4ac207625924075a0411a2a95690b39fd4d19121e927e33c2",
       "git_blob": "7f9ed7baf88f142a48a4418837fe1fc9e9391da2",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "The Weather Maintenance Office",
@@ -65,7 +65,8 @@
           "WSA_GAPS_WEATHER_ACTOR_20261107_05",
           "WSA_GAPS_WEATHER_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_GAPS_LOST_20261107",
@@ -74,8 +75,8 @@
       "sheet": "GAPS_LOST_6_2026-11-07/sheet-r1.png",
       "sha256": "15ad191844ce6fcc0b75fe4d021d3a9a233a0a9cfa2d663d331688adb43809cd",
       "git_blob": "af90965a265bc36349d10530267fb7551753442b",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "Lost and Unmissed",
@@ -112,7 +113,8 @@
           "WSA_GAPS_LOST_ACTOR_20261107_05",
           "WSA_GAPS_LOST_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_GAPS_ESTATE_20261107",
@@ -121,8 +123,8 @@
       "sheet": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
       "sha256": "42a0d1ba90ef32c23a2b32dff00f2ad355608644f2ad43d2b62be96caadbf738",
       "git_blob": "8fae89ec24640fce6c22e451c198214c79a12530",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "The Estate Committee",
@@ -159,7 +161,8 @@
           "WSA_GAPS_ESTATE_ACTOR_20261107_05",
           "WSA_GAPS_ESTATE_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_GAPS_INSECT_20261107",
@@ -168,8 +171,8 @@
       "sheet": "GAPS_INSECT_6_2026-11-07/sheet-r1.png",
       "sha256": "6989784ede28b98c78a61b7a43ae30d2ea57bf6b397f16a8243387ec219cfa86",
       "git_blob": "640b06ab4ef5d6cc0197a144a3d528490aca078a",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "The Insect Hotel",
@@ -206,7 +209,8 @@
           "WSA_GAPS_INSECT_ACTOR_20261107_05",
           "WSA_GAPS_INSECT_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_GAPS_DEEP_20261107",
@@ -215,8 +219,8 @@
       "sheet": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
       "sha256": "b3f5e36a14672b334379380ed0f9a873b60c781a7bc9af5dfd83b8f7f395f50c",
       "git_blob": "886b88f7081d184495ffa797efc7df0deadb7817",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "Deep Sea After Hours",
@@ -253,7 +257,8 @@
           "WSA_GAPS_DEEP_ACTOR_20261107_05",
           "WSA_GAPS_DEEP_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_GAPS_GEO_20261107",
@@ -262,8 +267,8 @@
       "sheet": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
       "sha256": "d399f394c27d93063aed9b78065b76d0637a9cb96f8f4536fc8b22057ff5e947",
       "git_blob": "d6815967d5e8264a04cbca83bf25987e0483bb1a",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "thematic_family": "Geological Complaints",
@@ -300,7 +305,8 @@
           "WSA_GAPS_GEO_ACTOR_20261107_05",
           "WSA_GAPS_GEO_ACTOR_20261107_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     }
   ],
   "backlog": "NEW_SLOP_GROUPS_BACKLOG_20261107.json",
@@ -323,10 +329,10 @@
     }
   ],
   "accepted_authoring_snapshot": {
-    "sheets": 209,
-    "depictions": 1254,
-    "intake_eligible_sheets": 207,
-    "intake_eligible_depictions": 1242
+    "sheets": 215,
+    "depictions": 1290,
+    "intake_eligible_sheets": 213,
+    "intake_eligible_depictions": 1278
   },
   "qa": {
     "dimensions": [
@@ -389,6 +395,8 @@
     },
     "extraction": "NOT_PERFORMED",
     "runtime": "NOT_TESTED",
-    "next_gate": "Georg design verdict"
-  }
+    "next_gate": "Silhouette-aware isolation and receiving intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS",
+  "georg_pass_date": "2026-11-08"
 }

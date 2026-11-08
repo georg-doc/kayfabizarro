@@ -24,10 +24,11 @@
           "prop": "short windsock bent the wrong way on a stubby pole"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_WEATHER_20261107",
       "manifest": "GAPS_WEATHER_6_2026-11-07/MANIFEST.json",
-      "sheet": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png"
+      "sheet": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     },
     {
       "order": 2,
@@ -49,10 +50,11 @@
           "prop": "blank claim slip and pencil poised to improvise"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_LOST_20261107",
       "manifest": "GAPS_LOST_6_2026-11-07/MANIFEST.json",
-      "sheet": "GAPS_LOST_6_2026-11-07/sheet-r1.png"
+      "sheet": "GAPS_LOST_6_2026-11-07/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     },
     {
       "order": 3,
@@ -74,10 +76,11 @@
           "prop": "three large cards with one edge curled upward"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_ESTATE_20261107",
       "manifest": "GAPS_ESTATE_6_2026-11-07/MANIFEST.json",
-      "sheet": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png"
+      "sheet": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     },
     {
       "order": 4,
@@ -99,10 +102,11 @@
           "prop": "small amber jar and oversized clean rubber stamp"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_INSECT_20261107",
       "manifest": "GAPS_INSECT_6_2026-11-07/MANIFEST.json",
-      "sheet": "GAPS_INSECT_6_2026-11-07/sheet-r1.png"
+      "sheet": "GAPS_INSECT_6_2026-11-07/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     },
     {
       "order": 5,
@@ -124,10 +128,11 @@
           "prop": "small pale rolled tube at flank and a short chunky thermometer with red tip"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_DEEP_20261107",
       "manifest": "GAPS_DEEP_6_2026-11-07/MANIFEST.json",
-      "sheet": "GAPS_DEEP_6_2026-11-07/sheet-r1.png"
+      "sheet": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     },
     {
       "order": 6,
@@ -149,10 +154,11 @@
           "prop": "small large-spiral fossil half exposed in a clay matrix held in both hands"
         }
       ],
-      "status": "DRAFT_AWAITING_GEORG",
+      "status": "PASS",
       "set_id": "WSA_GAPS_GEO_20261107",
       "manifest": "GAPS_GEO_6_2026-11-07/MANIFEST.json",
-      "sheet": "GAPS_GEO_6_2026-11-07/sheet-r1.png"
+      "sheet": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+      "georg_pass_date": "2026-11-08"
     },
     {
       "order": 7,
@@ -214,8 +220,9 @@
   ],
   "counts": {
     "queued": 3,
-    "draft_awaiting_georg": 6,
-    "pass": 0
+    "draft_awaiting_georg": 0,
+    "pass": 6
   },
-  "next_queued_batch": 3
+  "next_queued_batch": 3,
+  "updated": "2026-11-08"
 }
