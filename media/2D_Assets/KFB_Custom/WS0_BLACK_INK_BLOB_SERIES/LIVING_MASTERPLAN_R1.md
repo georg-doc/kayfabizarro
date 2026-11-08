@@ -1,3 +1,11 @@
+## Aliens r6 refresh design acceptance · 2026-11-08
+
+Georg approved all 12 figures in Contact Crew and Orbit Crew. The [batch record](ALIENS_R6_REFRESH_BATCH_20261108.json) queues both sheets for Game and Asset Librarian intake. Eight figures link to legacy IDs and four are new. The index records 241 selected sheets and 1446 depictions, including 239 intake-eligible sheets and 1434 intake-eligible depictions. Both PNGs are 1536 × 1024 RGBA, with checked offset crop guides. Individual receiving is pending.
+
+Next gate is Georg's design verdict on the six Alien and Sci-Fi expansion sheets.
+
+---
+
 ## RPG r7 refresh design acceptance · 2026-11-08
 
 Georg approved all 12 figures across two transparent 3×2 sheets. The [batch record](RPG_R7_REFRESH_BATCH_20261108.json) and selected-set index queue both crews for Game and Asset Librarian intake. Eight r7 figures carry explicit legacy-ID lineage and four new classes extend the party. The catalog now has 239 selected sheets and 1434 depictions, including 237 intake-eligible sheets and 1422 intake-eligible depictions. Both PNGs are 1536 × 1024 RGBA. Quest Party has recorded offset crop boundaries for its lower row. Individual isolation and receiving verification are pending.

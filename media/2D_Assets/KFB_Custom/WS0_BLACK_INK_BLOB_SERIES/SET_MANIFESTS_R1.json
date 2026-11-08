@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 239,
-    "pass_depictions": 1434,
+    "selected_sheets": 241,
+    "pass_depictions": 1446,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 237,
-    "intake_eligible_depictions": 1422,
-    "other_authoring_depictions": 1314
+    "intake_eligible_sheets": 239,
+    "intake_eligible_depictions": 1434,
+    "other_authoring_depictions": 1326
   },
   "excluded_sources": [
     {
@@ -1570,6 +1570,18 @@
     {
       "set_id": "WSA_RPG_R7_GUILD_20261108",
       "manifest": "RPG_R7_GUILD_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIENS_R6_CONTACT_20261108",
+      "manifest": "ALIENS_R6_CONTACT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIENS_R6_ORBIT_20261108",
+      "manifest": "ALIENS_R6_ORBIT_6_2026-11-08/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

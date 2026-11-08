@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_ALIENS_R6_REFRESH_20261108",
+  "date": "2026-11-08",
+  "georg_status": "PASS",
+  "language": "en",
+  "handoff": "Existing Game and Asset Librarian selected-set intake. Legacy IDs establish source lineage for eight variants. Individual receiving and version selection are pending.",
+  "sets": [
+    {
+      "set_id": "WSA_ALIENS_R6_CONTACT_20261108",
+      "manifest": "ALIENS_R6_CONTACT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "ALIENS_R6_CONTACT_6_2026-11-08/sheet-r1.png",
+      "sha256": "d64d51e6ae3338fed2759539c8913b0eb758bacf854171c869ea4be5c1d4ffc5",
+      "roles": [
+        "Eyestalk Tentacle",
+        "UFO Cyclops",
+        "Signal Antenna",
+        "Brain Dome",
+        "Gravity Collector",
+        "Wormhole Tinker"
+      ]
+    },
+    {
+      "set_id": "WSA_ALIENS_R6_ORBIT_20261108",
+      "manifest": "ALIENS_R6_ORBIT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "ALIENS_R6_ORBIT_6_2026-11-08/sheet-r1.png",
+      "sha256": "d0a4d4cb18ffbe36740714ab7378a6f3b7614fbc342ce8f885c3f166f503aff4",
+      "roles": [
+        "Octo Ink",
+        "Crystal Growth",
+        "Orbit Ring",
+        "Abduction Beam",
+        "Lunar Seedkeeper",
+        "Comet Ice Carrier"
+      ]
+    }
+  ]
+}
