@@ -1514,11 +1514,54 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_POLITICS_TYPES_20261108",
+      "manifest": "POLITICS_TYPES_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_POLITICS_CAMPAIGN_20261108",
+      "manifest": "POLITICS_CAMPAIGN_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_POLITICS_GOV_20261108",
+      "manifest": "POLITICS_GOV_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_POLITICS_MINISTRY_20261108",
+      "manifest": "POLITICS_MINISTRY_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_POLITICS_STATE_20261108",
+      "manifest": "POLITICS_STATE_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_POLITICS_WATCH_20261108",
+      "manifest": "POLITICS_WATCH_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
     "pass": 0
   },
   "production_supplement": {

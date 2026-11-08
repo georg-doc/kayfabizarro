@@ -1,0 +1,363 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_POLITICS_FAMILIES_20261108",
+  "date": "2026-11-08",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "language": "en",
+  "design_status": "DRAFT",
+  "intake_eligible": false,
+  "sheets": 6,
+  "unique_identities": 36,
+  "depictions": 36,
+  "native_generation_jobs": 6,
+  "image_edits": 0,
+  "counts": {
+    "trios": 12,
+    "full_families": 6,
+    "female_read_casting_intents": 12
+  },
+  "sets": [
+    {
+      "set_id": "WSA_POLITICS_TYPES_20261108",
+      "title": "The Convenient Positions",
+      "manifest": "POLITICS_TYPES_6_2026-11-08/MANIFEST.json",
+      "sheet": "POLITICS_TYPES_6_2026-11-08/sheet-r1.png",
+      "sha256": "3fea92ca9fdfd7a3bc858416d31b47e70facb2c3cb0e4116d3496cfeb3caf06a",
+      "git_blob": "ce6785be5ba055c45cb85aa7fac8ebb616f8b310",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "political_family": "The Convenient Positions",
+        "team_kit": "Muted ochre, ink red, cream and slate.",
+        "encounter_behavior": "Fictional political roles and institutions.",
+        "satirical_target": "Political satire and administrative procedures.",
+        "trios": [
+          {
+            "id": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+              "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+              "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+              "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+              "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_03",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_POLITICS_CAMPAIGN_20261108",
+      "title": "The Portable Campaign",
+      "manifest": "POLITICS_CAMPAIGN_6_2026-11-08/MANIFEST.json",
+      "sheet": "POLITICS_CAMPAIGN_6_2026-11-08/sheet-r1.png",
+      "sha256": "6a5590524d8ca269d446214c965d4354140f17448b4e4cb0092369b5f16e2558",
+      "git_blob": "434bc965b779591830dd8ad75416a9378b41f838",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "political_family": "The Portable Campaign",
+        "team_kit": "Faded coral, moss, mustard and navy. Imaginary geometric campaign marks only.",
+        "encounter_behavior": "Fictional political roles and institutions.",
+        "satirical_target": "Political satire and administrative procedures.",
+        "trios": [
+          {
+            "id": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_01",
+              "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_02",
+              "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_04",
+              "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_05",
+              "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_01",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_02",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_03",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_04",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_05",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_POLITICS_GOV_20261108",
+      "title": "The Executive Tangle",
+      "manifest": "POLITICS_GOV_6_2026-11-08/MANIFEST.json",
+      "sheet": "POLITICS_GOV_6_2026-11-08/sheet-r1.png",
+      "sha256": "1130d77a9130fb7bff2a00a56b922c506442717e2754caab1f27255fb9b4f1e7",
+      "git_blob": "ce5e9385c59eb646c9e6cc8e98d7c479b8a4ed02",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "political_family": "The Executive Tangle",
+        "team_kit": "Slate blue, subdued burgundy and old brass. Tiny pins and short sash accents.",
+        "encounter_behavior": "Fictional political roles and institutions.",
+        "satirical_target": "Political satire and administrative procedures.",
+        "trios": [
+          {
+            "id": "WSA_POLITICS_GOV_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_POLITICS_GOV_ACTOR_20261108_01",
+              "WSA_POLITICS_GOV_ACTOR_20261108_02",
+              "WSA_POLITICS_GOV_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_POLITICS_GOV_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_POLITICS_GOV_ACTOR_20261108_04",
+              "WSA_POLITICS_GOV_ACTOR_20261108_05",
+              "WSA_POLITICS_GOV_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_POLITICS_GOV_ACTOR_20261108_01",
+          "WSA_POLITICS_GOV_ACTOR_20261108_02",
+          "WSA_POLITICS_GOV_ACTOR_20261108_03",
+          "WSA_POLITICS_GOV_ACTOR_20261108_04",
+          "WSA_POLITICS_GOV_ACTOR_20261108_05",
+          "WSA_POLITICS_GOV_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_POLITICS_MINISTRY_20261108",
+      "title": "The Six Portfolios",
+      "manifest": "POLITICS_MINISTRY_6_2026-11-08/MANIFEST.json",
+      "sheet": "POLITICS_MINISTRY_6_2026-11-08/sheet-r1.png",
+      "sha256": "ee09240977fae6a5439417b84d3886f23fb59363d645c80c0bc4dc3e15eddbd4",
+      "git_blob": "2a885ccb7e57cd235fbc23bb91ae3c18ab03c0db",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "political_family": "The Six Portfolios",
+        "team_kit": "Warm slate, sage, amber and dusty rose. Each portfolio gets a distinctive compact prop.",
+        "encounter_behavior": "Fictional political roles and institutions.",
+        "satirical_target": "Political satire and administrative procedures.",
+        "trios": [
+          {
+            "id": "WSA_POLITICS_MINISTRY_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_POLITICS_MINISTRY_ACTOR_20261108_01",
+              "WSA_POLITICS_MINISTRY_ACTOR_20261108_02",
+              "WSA_POLITICS_MINISTRY_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_POLITICS_MINISTRY_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_POLITICS_MINISTRY_ACTOR_20261108_04",
+              "WSA_POLITICS_MINISTRY_ACTOR_20261108_05",
+              "WSA_POLITICS_MINISTRY_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_01",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_02",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_03",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_04",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_05",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_POLITICS_STATE_20261108",
+      "title": "The Long Order of Business",
+      "manifest": "POLITICS_STATE_6_2026-11-08/MANIFEST.json",
+      "sheet": "POLITICS_STATE_6_2026-11-08/sheet-r1.png",
+      "sha256": "efd1fad44fc3b7856ec35afac90fe32f56aa569a590c1ce086dee32f23a3bc7a",
+      "git_blob": "3db01a66f2f0d6a754d329bff5754ace54cdfa2e",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "political_family": "The Long Order of Business",
+        "team_kit": "Ink blue, sepia, muted red and cream with simple paper and brass props.",
+        "encounter_behavior": "Fictional political roles and institutions.",
+        "satirical_target": "Political satire and administrative procedures.",
+        "trios": [
+          {
+            "id": "WSA_POLITICS_STATE_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_POLITICS_STATE_ACTOR_20261108_01",
+              "WSA_POLITICS_STATE_ACTOR_20261108_02",
+              "WSA_POLITICS_STATE_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_POLITICS_STATE_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_POLITICS_STATE_ACTOR_20261108_04",
+              "WSA_POLITICS_STATE_ACTOR_20261108_05",
+              "WSA_POLITICS_STATE_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_POLITICS_STATE_ACTOR_20261108_01",
+          "WSA_POLITICS_STATE_ACTOR_20261108_02",
+          "WSA_POLITICS_STATE_ACTOR_20261108_03",
+          "WSA_POLITICS_STATE_ACTOR_20261108_04",
+          "WSA_POLITICS_STATE_ACTOR_20261108_05",
+          "WSA_POLITICS_STATE_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_POLITICS_WATCH_20261108",
+      "title": "The Domestic Watch Desk",
+      "manifest": "POLITICS_WATCH_6_2026-11-08/MANIFEST.json",
+      "sheet": "POLITICS_WATCH_6_2026-11-08/sheet-r1.png",
+      "sha256": "905f92b806472d106b4f2598c1ca194e5d4c30aa0fbf5dcce7290a94b3f98f7f",
+      "git_blob": "a1e9b9509cb4f72bb996b85659cdd3cb0712bbf4",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "political_family": "The Domestic Watch Desk",
+        "team_kit": "Graphite, muted moss and old amber. Compact analytical tools, fictional emblems and blank documents.",
+        "encounter_behavior": "Fictional political roles and institutions.",
+        "satirical_target": "Political satire and administrative procedures.",
+        "trios": [
+          {
+            "id": "WSA_POLITICS_WATCH_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_POLITICS_WATCH_ACTOR_20261108_01",
+              "WSA_POLITICS_WATCH_ACTOR_20261108_02",
+              "WSA_POLITICS_WATCH_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_POLITICS_WATCH_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_POLITICS_WATCH_ACTOR_20261108_04",
+              "WSA_POLITICS_WATCH_ACTOR_20261108_05",
+              "WSA_POLITICS_WATCH_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_POLITICS_WATCH_ACTOR_20261108_01",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_02",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_03",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_04",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_05",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_06"
+        ]
+      }
+    }
+  ],
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_zero_on_every_sheet": true,
+    "fully_transparent_pixels": {
+      "TYPES": 779926,
+      "CAMPAIGN": 674656,
+      "GOV": 657157,
+      "MINISTRY": 650785,
+      "STATE": 647583,
+      "WATCH": 604375
+    },
+    "alpha_samples": {
+      "TYPES": {
+        "outer": 0,
+        "x512": 159,
+        "x1024": 170,
+        "y512": 93
+      },
+      "CAMPAIGN": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 96
+      },
+      "GOV": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 77
+      },
+      "MINISTRY": {
+        "outer": 0,
+        "x512": 279,
+        "x1024": 208,
+        "y512": 161
+      },
+      "STATE": {
+        "outer": 0,
+        "x512": 64,
+        "x1024": 73,
+        "y512": 161
+      },
+      "WATCH": {
+        "outer": 0,
+        "x512": 101,
+        "x1024": 80,
+        "y512": 174
+      }
+    },
+    "extraction": "NOT_PERFORMED",
+    "runtime": "NOT_TESTED",
+    "next_gate": "Georg design verdict"
+  }
+}

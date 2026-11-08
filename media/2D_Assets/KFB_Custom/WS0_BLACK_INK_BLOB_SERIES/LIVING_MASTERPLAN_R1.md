@@ -1,3 +1,11 @@
+## Political satire Slop families · 2026-11-08
+
+Six transparent 3×2 sheets introduce 36 fictional political satire Slops. The themes cover politician archetypes, campaigning, executive leadership and opposition, six ministerial portfolios, cabinet and parliamentary procedure with civil service, and domestic intelligence with constitutional safeguards. English character records accompany the figures. Georg's design verdict is pending.
+
+[Batch record](POLITICS_FAMILIES_BATCH_20261108.json)
+
+---
+
 ## School design acceptance · 2026-11-08
 
 Georg accepted all six selected school sheets and their 36 designs. The index records 229 accepted sheets and 1374 depictions.

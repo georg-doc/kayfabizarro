@@ -1,3 +1,17 @@
+# WSA Return · Political satire Slop families · 2026-11-08
+
+Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. The six school sheets passed at 1d3dcc6c931c1985575cd7e747b450ea9cce2bf9 with 28 file readbacks.
+
+Six transparent 3×2 sheets introduce 36 fictional political satire Slops. The themes cover politician archetypes, campaigning, executive leadership and opposition, six ministerial portfolios, cabinet and parliamentary procedure with civil service, and domestic intelligence with constitutional safeguards. English character records accompany the figures. Georg's design verdict is pending.
+
+Six native image jobs used both original style references. All selected sheets are 1536×1024 RGBA with clear alpha and no visible pixels at the outermost edges. Some silhouettes and props cross nominal grid divisions. The intelligence pattern board partly resembles a three-button panel and some low folders obscure portions of lower ink contours. Individual isolation and runtime checks remain pending.
+
+[Batch record](POLITICS_FAMILIES_BATCH_20261108.json)
+
+Next gate is Georg's design verdict on the six selected sheets.
+
+---
+
 ## School design acceptance · 2026-11-08
 
 Georg accepted all six selected school sheets and their 36 designs. The index records 229 accepted sheets and 1374 depictions.

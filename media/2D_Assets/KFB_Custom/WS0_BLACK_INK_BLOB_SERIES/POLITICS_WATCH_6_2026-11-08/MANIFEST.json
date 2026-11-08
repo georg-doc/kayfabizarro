@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_POLITICS_WATCH_20261108",
+  "date": "2026-11-08",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "POLITICS_WATCH_6_2026-11-08/sheet-r1.png",
+    "sha256": "905f92b806472d106b4f2598c1ca194e5d4c30aa0fbf5dcce7290a94b3f98f7f"
+  },
+  "production_record": "POLITICS_WATCH_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "POLITICS_WATCH_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "POLITICS_WATCH_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Domestic Watch Desk",
+    "theme": "The Domestic Watch Desk",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_POLITICS_WATCH_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Iris Blackbar",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_WATCH_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "redaction analyst",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_WATCH_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_WATCH_ACTOR_20261108_02",
+        "WSA_POLITICS_WATCH_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one little black roller passing over a blank cream card with two broad bars"
+      ],
+      "temperament": "Redaction analyst.",
+      "prompt_auszug": "upright reverse comma, focused downturned eyes and tight lips",
+      "prompt_quelle": "POLITICS_WATCH_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "redaction analyst"
+    },
+    {
+      "id": "WSA_POLITICS_WATCH_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hal Patternpin",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_WATCH_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "domestic intelligence researcher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_WATCH_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_WATCH_ACTOR_20261108_01",
+        "WSA_POLITICS_WATCH_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "palm-sized board with three large removable dots and one thick connecting cord"
+      ],
+      "temperament": "Domestic intelligence researcher.",
+      "prompt_auszug": "broad low splat, puzzled angled eyes and small frown",
+      "prompt_quelle": "POLITICS_WATCH_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "domestic intelligence researcher"
+    },
+    {
+      "id": "WSA_POLITICS_WATCH_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Quietline",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_WATCH_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "observation desk officer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_WATCH_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_WATCH_ACTOR_20261108_01",
+        "WSA_POLITICS_WATCH_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small hand-held binoculars held away from the face"
+      ],
+      "temperament": "Observation desk officer.",
+      "prompt_auszug": "tall tapered body, alert sideways eyes and closed pout",
+      "prompt_quelle": "POLITICS_WATCH_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "observation desk officer"
+    },
+    {
+      "id": "WSA_POLITICS_WATCH_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cobb Accessclip",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_WATCH_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "secure records clerk",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_WATCH_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_WATCH_ACTOR_20261108_05",
+        "WSA_POLITICS_WATCH_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny smooth lock attached to a plain file case"
+      ],
+      "temperament": "Secure records clerk.",
+      "prompt_auszug": "round irregular bean, droopy eyelids and wary little smile",
+      "prompt_quelle": "POLITICS_WATCH_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "secure records clerk"
+    },
+    {
+      "id": "WSA_POLITICS_WATCH_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Ruleglass",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_WATCH_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "constitutional safeguards reviewer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_WATCH_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_WATCH_ACTOR_20261108_04",
+        "WSA_POLITICS_WATCH_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short magnifier over a small blank rulebook with one clear colored tab"
+      ],
+      "temperament": "Constitutional safeguards reviewer.",
+      "prompt_auszug": "wide asymmetric curled blob, steady serious eyes and slightly parted lips",
+      "prompt_quelle": "POLITICS_WATCH_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "constitutional safeguards reviewer"
+    },
+    {
+      "id": "WSA_POLITICS_WATCH_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Audittrail",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_WATCH_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "internal review officer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_WATCH_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_WATCH_ACTOR_20261108_04",
+        "WSA_POLITICS_WATCH_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small wooden stamp with a sculpted loop arrow and an unmarked card"
+      ],
+      "temperament": "Internal review officer.",
+      "prompt_auszug": "short soft diamond splat, suspicious raised eyebrow and tight crooked grin",
+      "prompt_quelle": "POLITICS_WATCH_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "internal review officer"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Domestic Watch Desk",
+    "team_kit": "Graphite, muted moss and old amber. Compact analytical tools, fictional emblems and blank documents.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_WATCH_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_WATCH_ACTOR_20261108_01",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_02",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_WATCH_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_WATCH_ACTOR_20261108_04",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_05",
+          "WSA_POLITICS_WATCH_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_WATCH_ACTOR_20261108_01",
+      "WSA_POLITICS_WATCH_ACTOR_20261108_02",
+      "WSA_POLITICS_WATCH_ACTOR_20261108_03",
+      "WSA_POLITICS_WATCH_ACTOR_20261108_04",
+      "WSA_POLITICS_WATCH_ACTOR_20261108_05",
+      "WSA_POLITICS_WATCH_ACTOR_20261108_06"
+    ]
+  }
+}
