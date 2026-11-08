@@ -1527,6 +1527,7 @@ Stand 2026-11-08 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur
 | V-1557 | 08.11.2026 |  | Licht | **TUNE** | Georg 08.11. (q558 TUNE): weisse Fensterrahmen stoeren, Markisenstreifen wirkten falsch. Umgesetzt Stand 71f @e03fe099: Rahmen und Markisen bleiben original, warme Scheiben hinter den Rahmen (aus Rahmen-Dreiecken gebuendelt, nur hohe Boxen = Fenster). Abnahme q561. WHY: Georgs Urteil. |  | WS0 | q558, q561, V-1556 | Georg 08.11. |
 | V-1558 | 08.11.2026 |  | Look | **DECISION** | Georg 08.11. (q559): Moebius-Look als A/B/C-Test im Spiel mit festen Kameras (A heute, B Knete nah und grafisch fern, C staerker Cel und Tusche); Spannung zu V-1171 (hyperrealer Hintergrund) im Test sichtbar machen, nichts vorher einbauen. WHY: Webchat-Slice Moebius x KFB. |  | WS0 | q559, V-1171 | Georg 08.11. |
 | V-1559 | 08.11.2026 |  | Konzept | **DECISION** | Georg 08.11. (q560): ChronoLoom jetzt als Konzept-Slice, Verbindungen Zeitreise/Timelines/Portale x Moebius-Logik x HyperNorm-Engine; Brief b377 an den ChronoLoom-Webchat (PR #473), nur Konzept auf den festen Anschluessen (Welt-Uhr, Portal-Pop-ups, HyperNorm-Kern). WHY: Georg findet die Verbindung spannend. |  | Web-Chat ChronoLoom | q560, b377, PR #473 | Georg 08.11. |
+| V-1560 | 08.11.2026 |  | Licht | **DECISION** | Georg 08.11. (q561 PASS): Lichtinseln mit warmen Scheiben hinter den KayKit-Rahmen abgenommen; lichtinseln=1 in Testfahrt und Release (Stamm Stand 71g). WHY: Georgs Abnahme. |  | WS0 | q561, V-1556, V-1557 | Georg 08.11. |
 
 ## B · Abnahmen aus Projektdateien (81)
 
