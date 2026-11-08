@@ -7,8 +7,8 @@
   "branch": "assets/ws0-ink-miners-2026-11-04",
   "pull_request": 469,
   "language": "en",
-  "design_status": "DRAFT",
-  "intake_eligible": false,
+  "design_status": "PASS",
+  "intake_eligible": true,
   "sheets": 5,
   "unique_identities": 30,
   "depictions": 30,
@@ -27,8 +27,8 @@
       "sheet": "YOUTH_TOTS_6_2026-11-08/sheet-r1.png",
       "sha256": "9739dd53f0ed4f047b9b9191f97b642d078cd8b23e926fa10492fe1e543fed97",
       "git_blob": "e6647e200cb0c9b391390d80d59fd42805869962",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "youth_family": "The Tiny Splats",
@@ -65,7 +65,8 @@
           "WSA_YOUTH_TOTS_ACTOR_20261108_05",
           "WSA_YOUTH_TOTS_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_YOUTH_SCHOOL_20261108",
@@ -74,8 +75,8 @@
       "sheet": "YOUTH_SCHOOL_6_2026-11-08/sheet-r1.png",
       "sha256": "c538022736931a4cd81467ddd09ba6acdbc47f22bdfb5634469e70cc337ae6b2",
       "git_blob": "a851bcc127f19a92d9ab8ad715e15f2d67b99215",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "youth_family": "The Small Desk Society",
@@ -112,7 +113,8 @@
           "WSA_YOUTH_SCHOOL_ACTOR_20261108_05",
           "WSA_YOUTH_SCHOOL_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_YOUTH_TEEN_20261108",
@@ -121,8 +123,8 @@
       "sheet": "YOUTH_TEEN_6_2026-11-08/sheet-r1.png",
       "sha256": "b260a15847ed1ae496595b9e3b33b6c4893dc0c2f99d9d65b58e9d5392d77ba5",
       "git_blob": "e12f77a8df1be55454230947c613d1f200d4aa27",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "youth_family": "The After-School Static",
@@ -159,7 +161,8 @@
           "WSA_YOUTH_TEEN_ACTOR_20261108_05",
           "WSA_YOUTH_TEEN_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_YOUTH_SCOUT_20261108",
@@ -168,8 +171,8 @@
       "sheet": "YOUTH_SCOUT_6_2026-11-08/sheet-r1.png",
       "sha256": "1d5d82c5105c0a85e7030e4d257492ce3621bfe394dfa735065b0cd3477fcf2b",
       "git_blob": "d287ecf78a5e1547996c44077dc5fa6886709fc8",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "youth_family": "The Slightly Lost Patrol",
@@ -206,7 +209,8 @@
           "WSA_YOUTH_SCOUT_ACTOR_20261108_05",
           "WSA_YOUTH_SCOUT_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     },
     {
       "set_id": "WSA_YOUTH_RALLY_20261108",
@@ -215,8 +219,8 @@
       "sheet": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
       "sha256": "75a22ba8359e9b1390e943d405c12005036dea9cf309b6427aacdf5ff7bfab3d",
       "git_blob": "e3c4be1ea64380545f59c29443be36759d441e97",
-      "design_status": "DRAFT",
-      "intake_eligible": false,
+      "design_status": "PASS",
+      "intake_eligible": true,
       "encounter_proposal": {
         "status": "DESIGN",
         "youth_family": "The Recess Petition",
@@ -253,7 +257,8 @@
           "WSA_YOUTH_RALLY_ACTOR_20261108_05",
           "WSA_YOUTH_RALLY_ACTOR_20261108_06"
         ]
-      }
+      },
+      "georg_status": "PASS"
     }
   ],
   "qa": {
@@ -304,6 +309,15 @@
     },
     "extraction": "NOT_PERFORMED",
     "runtime": "NOT_TESTED",
-    "next_gate": "Georg design verdict"
+    "next_gate": "Silhouette-aware isolation and receiving intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS",
+  "georg_pass_date": "2026-11-08",
+  "georg_feedback": "All five sheets pass. Some teen garments read as cropped torsos. Emphasize full ink bodies with visible lower waves or foot-like attached lobes in future sheets.",
+  "accepted_authoring_snapshot": {
+    "sheets": 223,
+    "depictions": 1338,
+    "intake_eligible_sheets": 221,
+    "intake_eligible_depictions": 1326
   }
 }

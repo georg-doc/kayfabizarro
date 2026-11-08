@@ -1,3 +1,11 @@
+## Youth design acceptance · 2026-11-08
+
+Georg accepted all five sheets and their 30 designs. The index records 223 accepted sheets and 1338 depictions.
+
+The teen screenshot steers the next batch toward a full, visible lower ink body. School production covers four teaching sheets and two staff sheets.
+
+---
+
 ## Youth Slop families · 2026-11-08
 
 Five transparent 3×2 sheets introduce 30 youth Slops in babies and toddlers, schoolchildren, teenagers, scouts and a peaceful school demonstration. English character records accompany every figure. Georg's design verdict is pending.

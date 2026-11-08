@@ -1,3 +1,11 @@
+## Youth design acceptance · 2026-11-08
+
+Georg accepted all five sheets and their 30 designs. The index records 223 accepted sheets and 1338 depictions.
+
+The teen screenshot steers the next batch toward a full, visible lower ink body. School production covers four teaching sheets and two staff sheets.
+
+---
+
 # WSA Return · Youth Slop families · 2026-11-08
 
 Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. The final three backlog themes passed at a1d4b84402dc3713c0a73802cb8307986dad75c6 with 17 file readbacks. All nine backlog themes are accepted.

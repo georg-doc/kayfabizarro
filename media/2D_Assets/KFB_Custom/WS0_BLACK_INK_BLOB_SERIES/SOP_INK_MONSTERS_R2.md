@@ -1,3 +1,9 @@
+## Georg PASS and silhouette steering · 2026-11-08
+
+Keep each figure a complete continuous ink blob with a thick, bare, undulating lower edge. Short rounded foot-like lobes grow directly from the blob. Keep props at the side or upper belly. Favor small collars, pins and sashes so the lower body remains visible. Check the small preview for a full ink silhouette, especially on figures with clothing. The youth sheets passed and the teen screenshot informs this forward correction.
+
+---
+
 ## Georg PASS and surface steering · 2026-11-07
 
 Keep soft satin charcoal-plum plasticine with larger, sparse modeled marks and broad fabric folds. Reduce fine stipple across bodies, bandages and accessories. Render clear liquid as a smooth homogeneous volume. Use clean smooth finishes for plastic, glass, and glazed surfaces. The hitchhiking sheet's empty bottle shows an unwanted sand-like texture and informs this forward correction.
