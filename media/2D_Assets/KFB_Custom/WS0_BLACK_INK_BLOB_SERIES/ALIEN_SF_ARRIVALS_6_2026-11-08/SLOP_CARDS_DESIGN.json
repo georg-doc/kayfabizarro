@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_01",
+      "name": "Tuck Entryfold",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Treats a long document as proof that the border exists.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Passport Examiner"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Measured English delivery.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Next page, please."
+          ],
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_ARRIVALS_20261108"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The passport was valid until he unfolded the final page. It had arrived ahead of its owner.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The passport was valid until he unfolded the final page. It had arrived ahead of its owner.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Looks down with a flat mouth.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_02",
+      "name": "Mara Tagwise",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Predicts which suitcase will miss its owner.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Baggage Claim Oracle"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, with a slight upward inflection.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Have you lost this yet?"
+          ],
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_ARRIVALS_20261108"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mara found my luggage before the flight landed. She advised against opening it in this timeline.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "Mara found my luggage before the flight landed. She advised against opening it in this timeline.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Side-eye and pinched O.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_03",
+      "name": "Otto Ringcoin",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Insists that a coin is worth what goes around it.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Exchange Counter Blob"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Low and unhurried.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Mind the exchange radius."
+          ],
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_ARRIVALS_20261108"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He offered change in three smaller orbits. I am still waiting for one to come back.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He offered change in three smaller orbits. I am still waiting for one to come back.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Crossed gaze and puffed cheek.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_04",
+      "name": "Edwin Jarhush",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Declares an item only after it declares itself.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Customs Confessor"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quick, slightly breathless.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It was quiet when I packed it."
+          ],
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_ARRIVALS_20261108"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He had nothing to declare except the weather inside his jar. The lid disagreed audibly.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He had nothing to declare except the weather inside his jar. The lid disagreed audibly.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Raised eyes and a trembling squiggle mouth.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_05",
+      "name": "Nell Starwelcome",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can welcome a visitor through clenched hospitality.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Welcome Ambassador"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Soft and precise.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We are almost delighted."
+          ],
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_ARRIVALS_20261108"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The stars indicate a very warm welcome. She removed a fourth after I asked for directions.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The stars indicate a very warm welcome. She removed a fourth after I asked for directions.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Upward side-glance and a pointed smile.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_06",
+      "name": "Pip Tonguetune",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Believes his interpreter is making personal remarks.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Translation Failure"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Clipped comic timing.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That isn't what I said here."
+          ],
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_ARRIVALS_20261108"
+          },
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The funnel translated his apology into a further incident. He has asked for a quieter language.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The funnel translated his apology into a further incident. He has asked for a quieter language.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Wide look away from the funnel and oblique shout.",
+          "src": "ALIEN_SF_ARRIVALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

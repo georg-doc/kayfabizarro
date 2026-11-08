@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 241,
-    "pass_depictions": 1446,
+    "selected_sheets": 247,
+    "pass_depictions": 1482,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 239,
-    "intake_eligible_depictions": 1434,
-    "other_authoring_depictions": 1326
+    "intake_eligible_sheets": 245,
+    "intake_eligible_depictions": 1470,
+    "other_authoring_depictions": 1362
   },
   "excluded_sources": [
     {
@@ -1582,6 +1582,42 @@
     {
       "set_id": "WSA_ALIENS_R6_ORBIT_20261108",
       "manifest": "ALIENS_R6_ORBIT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_ARRIVALS_20261108",
+      "manifest": "ALIEN_SF_ARRIVALS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_VACUUM_20261108",
+      "manifest": "ALIEN_SF_VACUUM_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_SIGNALS_20261108",
+      "manifest": "ALIEN_SF_SIGNALS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_WORLDS_20261108",
+      "manifest": "ALIEN_SF_WORLDS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_SYMBIONTS_20261108",
+      "manifest": "ALIEN_SF_SYMBIONTS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_NEIGHBORS_20261108",
+      "manifest": "ALIEN_SF_NEIGHBORS_6_2026-11-08/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

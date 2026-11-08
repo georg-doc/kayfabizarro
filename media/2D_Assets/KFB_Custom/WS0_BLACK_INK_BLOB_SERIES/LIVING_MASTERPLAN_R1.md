@@ -1,3 +1,11 @@
+## Alien and Sci-Fi expansion design acceptance · 2026-11-08
+
+Georg approved all 36 designs across six transparent PNGs. The [batch record](ALIEN_SF_SIX_CREWS_BATCH_20261108.json) queues the sheets for the existing Game and Asset Librarian intake. The index records 247 selected sheets and 1482 depictions, including 245 intake-eligible sheets and 1470 intake-eligible depictions. Three 3×2 sheets have offset crop guides. Individual extraction and receiving are pending.
+
+Next gate is Georg's design verdict on the six defeated-Slop ground-remnant sheets. These are candidate post-impact variants, separate from the standing character roster.
+
+---
+
 ## Aliens r6 refresh design acceptance · 2026-11-08
 
 Georg approved all 12 figures in Contact Crew and Orbit Crew. The [batch record](ALIENS_R6_REFRESH_BATCH_20261108.json) queues both sheets for Game and Asset Librarian intake. Eight figures link to legacy IDs and four are new. The index records 241 selected sheets and 1446 depictions, including 239 intake-eligible sheets and 1434 intake-eligible depictions. Both PNGs are 1536 × 1024 RGBA, with checked offset crop guides. Individual receiving is pending.

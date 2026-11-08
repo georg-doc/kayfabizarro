@@ -1,0 +1,294 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_ALIEN_SF_WORLDS_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 0,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "ALIEN_SF_WORLDS_6_2026-11-08/sheet-r1.png",
+    "sha256": "ef0f1f6fea82763e01ace9f9836c501f3172ada9051be4a412b1b37208c75a0e"
+  },
+  "production_record": "ALIEN_SF_WORLDS_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "ALIEN_SF_WORLDS_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "ALIEN_SF_WORLDS_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Living Worlds",
+    "theme": "Alien and science fiction",
+    "relationship_policy": "Six-member thematic group with independently usable identities.",
+    "usage_candidates": [
+      "sci-fi encounter",
+      "HyperNorm resident",
+      "standalone Slop"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_ALIEN_SF_WORLDS_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tidewell Slump",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_WORLDS_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Tidal Moon",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "blue tide band",
+        "two crest waves"
+      ],
+      "temperament": "Endures his own tides with minimal enthusiasm.",
+      "prompt_auszug": "Half-lidded forward gaze and off-center frown.",
+      "prompt_quelle": "ALIEN_SF_WORLDS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_WORLDS_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ada Ashpuff",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_WORLDS_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Micro Volcano",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "peach crater rim",
+        "coral puff"
+      ],
+      "temperament": "Apologizes before erupting and for some time afterward.",
+      "prompt_auszug": "Bashful downcast eyes and a tiny tooth.",
+      "prompt_quelle": "ALIEN_SF_WORLDS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_WORLDS_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pim Noonshade",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_WORLDS_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Eclipse Twin",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "ochre eclipse disc"
+      ],
+      "temperament": "Likes to have something official to hide behind.",
+      "prompt_auszug": "Single startled eye and a tiny O.",
+      "prompt_quelle": "ALIEN_SF_WORLDS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_WORLDS_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Sheerair",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_WORLDS_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Atmosphere Shedder",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "peeling translucent cyan shell"
+      ],
+      "temperament": "Gets irritable when the air fits too tightly.",
+      "prompt_auszug": "One eye shut, other on the peel, with a relieved smile.",
+      "prompt_quelle": "ALIEN_SF_WORLDS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_WORLDS_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Stoneear",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_WORLDS_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Geode Listener",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "split rock with teal inner seam"
+      ],
+      "temperament": "Takes rocks more seriously once they start talking.",
+      "prompt_auszug": "Eyes up and jaw tightly braced.",
+      "prompt_quelle": "ALIEN_SF_WORLDS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_WORLDS_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wally Northgone",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_WORLDS_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Runaway Pole",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "loose brass compass"
+      ],
+      "temperament": "Has trouble keeping his bearings on speaking terms.",
+      "prompt_auszug": "Eyes toward the compass and a wide shout.",
+      "prompt_quelle": "ALIEN_SF_WORLDS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Convenient Positions",
+    "team_kit": "Muted ochre, ink red, cream and slate.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_03",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+    ]
+  }
+}
