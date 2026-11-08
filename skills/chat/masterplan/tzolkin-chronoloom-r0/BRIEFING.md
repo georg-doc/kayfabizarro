@@ -50,3 +50,22 @@ Canonical address: `[worldStep, dioramaStep, cardStep, memoryStep]`, each an int
 
 ## Single next gate
 WS0/WSA: open the isolated current `isolation-preview.html` against the real source SVGs, compare **three** visibly different motifs to an already-approved KFB clay/ink style donor (first show original source objects separately); return three screenshots and KEEP / TUNE / REJECT for a compact ChronoGlyph family. Then hand any accepted look to the actual Fractal Almanac owner. No unapproved world-runtime branching.
+
+
+---
+
+## ADDITIVE SOURCE UPDATE · 2026-11-08 · supplied transcript + CGE board game
+
+The earlier R0 statement that the video transcript was unavailable describes the **earlier research checkpoint** and is superseded by this dated update. Georg subsequently uploaded `Eingefügter Text(6).txt` (SHA256 `1ca0629452b0a0720ef8d3a85cf803854f08da81302747904638feef7248df10`), analyzed in full as supplied text; actual video audio/video was not independently verified.
+
+**Read-first additions for WS0/WSA:**
+
+1. `TZOLKIN_RESEARCH_2026-11-08.md` — source-tiered historical Tzolk’in, traditional day-name order, Haab/Calendar Round/Long Count, modern Dreamspell/13-Moon/Calleman separation, KFB adaptation.
+2. `VIDEO_TRANSCRIPT_ANALYSIS_2026-11-08.md` — approximate timecodes and detailed 13 manifestation phases, 20 modern solar seals, nine narrative waves, sun/magnetic resonances and claim audit.
+3. `BOARDGAME_GEAR_DONOR_2026-11-08.md` — official CGE boardgame donor: central 26-tooth gear and five location gears, place/wait/retrieve action choices, original KFB ChronoSocket adaptation and rights boundaries.
+4. `TZOLKIN_CONTENT_MAP.json` — machine-readable 13 video-tone meanings, 20 label-to-existing-sign-ID mappings, nine explicitly non-runtime narrative lenses, boardgame references and source tier labels.
+5. `RESEARCH_TEST_REPORT_2026-11-08.md` — **19/19 extra data/content checks PASS** against files retrieved from this branch and existing calculator; separate from the earlier 19 V8 functional tests.
+
+**Owner boundary unchanged:** This is still a design/content addendum, not an acceptance of nine worlds, a real-world calendar epoch, a second time system, a CGE game clone or runtime changes. Historical Day Signs are distinct from the video’s Dreamspell color and metaphysical connotations. The existing UI glyphs are provisional, not user-accepted KFB clay assets.
+
+**One next gate unchanged:** isolate and visually compare three original ChronoGlyph motifs against real approved KFB clay/ink source objects; show source objects separately, record screenshots and KEEP/TUNE/REJECT. The boardgame kinetic mechanism is a downstream optional proposal after this gate.
