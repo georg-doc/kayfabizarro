@@ -22796,6 +22796,36 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1552",
+   "date": "08.11.2026",
+   "area": "Combat",
+   "verdict": "DECISION",
+   "text": "Georg 08.11. (q555): Zielen mit freiem Mauszeiger (B). Ueber einem Ziel wird der Zeiger zum Fadenkreuz, vier skin-gefaerbte Ecken ziehen sich zusammen; Kamera folgt FB, die Maus dreht sie nicht. LMB primaer, RMB sekundaer, Tab durch die Ziele. Modus A (fest in der Mitte) nicht weiter ausbauen. WHY: Georgs Wahl nach V-1550.",
+   "values": {},
+   "owner": "WSA Combat",
+   "check": "q555, V-1550, PR #74",
+   "source": "Georg 08.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1553",
+   "date": "08.11.2026",
+   "area": "Steuerung",
+   "verdict": "STATUS",
+   "text": "WSV abgeschlossen (V-042): Uebergabe engine/hypernorm/UEBERGABE_WSV_2026-11-08.md auf engine/hypernorm-kern-r1 @c840adb1, Pruefungen gruen; OpenDemo als Aufnahme-Werkzeug ja, Marketing nur mit Nachbearbeitung (Electron-Export braucht npm ci, nicht freigegeben); WSA-Rezepte als Absichten im Kern; offene Reihe W-016 bis W-023 geht an WS0. Feature-Clip R1 als q556 im Hub. WHY: Georg 08.11., Arbeit wandert zu WS0.",
+   "values": {},
+   "owner": "WS0",
+   "check": "V-039..V-042, W-024, q556",
+   "source": "Georg 08.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
