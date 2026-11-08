@@ -1,3 +1,11 @@
+## School Slop families · 2026-11-08
+
+Six transparent 3×2 sheets introduce 36 school Slops. Four sheets cover languages, STEM, society and humanities, and arts and practice. Two sheets cover leadership, operations, care and learning support. English character records accompany the figures. Georg's design verdict is pending.
+
+[Batch record](SCHOOL_FAMILIES_BATCH_20261108.json)
+
+---
+
 ## Youth design acceptance · 2026-11-08
 
 Georg accepted all five sheets and their 30 designs. The index records 223 accepted sheets and 1338 depictions.

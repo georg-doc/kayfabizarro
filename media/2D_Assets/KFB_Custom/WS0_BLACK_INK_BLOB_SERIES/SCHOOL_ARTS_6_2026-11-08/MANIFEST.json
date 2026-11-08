@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SCHOOL_ARTS_20261108",
+  "date": "2026-11-08",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SCHOOL_ARTS_6_2026-11-08/sheet-r1.png",
+    "sha256": "0cba5ea8d7ee9c9ebe1db73ed7ae544e413d6f5acc927d21b830d943ca47fa9b"
+  },
+  "production_record": "SCHOOL_ARTS_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "SCHOOL_ARTS_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "SCHOOL_ARTS_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Practice Rooms",
+    "theme": "The Practice Rooms",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Palette",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_ARTS_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "art teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_02",
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small paint palette with three smooth color dabs and stubby brush"
+      ],
+      "temperament": "Art teacher.",
+      "prompt_auszug": "wide undulating splat, elated uneven smile",
+      "prompt_quelle": "SCHOOL_ARTS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "art teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Offbeat",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_ARTS_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "music teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_01",
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small metronome with a chunky swinging arm"
+      ],
+      "temperament": "Music teacher.",
+      "prompt_auszug": "tall soft pear, eyebrow raised, rhythmic closed smile",
+      "prompt_quelle": "SCHOOL_ARTS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "music teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Stagewink",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_ARTS_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "drama teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_01",
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "single hand-held half mask with a raised eyebrow, real face visible"
+      ],
+      "temperament": "Drama teacher.",
+      "prompt_auszug": "curved asymmetrical blob, cheeky side-eye",
+      "prompt_quelle": "SCHOOL_ARTS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "drama teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Relay",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_ARTS_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "physical education teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_05",
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short relay baton and one small stopwatch"
+      ],
+      "temperament": "Physical education teacher.",
+      "prompt_auszug": "compact broad blob, lively direct eyes and determined grin",
+      "prompt_quelle": "SCHOOL_ARTS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "physical education teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Doughrise",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_ARTS_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "home economics teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_04",
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small mixing bowl with a rising lump and blunt wooden spoon"
+      ],
+      "temperament": "Home economics teacher.",
+      "prompt_auszug": "rounded low square, proud quiet smile",
+      "prompt_quelle": "SCHOOL_ARTS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "home economics teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ollie Jointfit",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_ARTS_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "craft teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_04",
+        "WSA_SCHOOL_ARTS_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one pair of oversized wooden dovetail pieces fitted partway together"
+      ],
+      "temperament": "Craft teacher.",
+      "prompt_auszug": "upright bent oval, focused downcast eyes",
+      "prompt_quelle": "SCHOOL_ARTS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "craft teacher"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "school_family": "The Practice Rooms",
+    "team_kit": "Terracotta, ultramarine, muted yellow and apricot. Tiny removable outfit accents.",
+    "encounter_behavior": "Fictional teachers and school staff.",
+    "satirical_target": "Teaching subjects and school operations.",
+    "trios": [
+      {
+        "id": "WSA_SCHOOL_ARTS_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_SCHOOL_ARTS_ACTOR_20261108_01",
+          "WSA_SCHOOL_ARTS_ACTOR_20261108_02",
+          "WSA_SCHOOL_ARTS_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_SCHOOL_ARTS_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_SCHOOL_ARTS_ACTOR_20261108_04",
+          "WSA_SCHOOL_ARTS_ACTOR_20261108_05",
+          "WSA_SCHOOL_ARTS_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_SCHOOL_ARTS_ACTOR_20261108_01",
+      "WSA_SCHOOL_ARTS_ACTOR_20261108_02",
+      "WSA_SCHOOL_ARTS_ACTOR_20261108_03",
+      "WSA_SCHOOL_ARTS_ACTOR_20261108_04",
+      "WSA_SCHOOL_ARTS_ACTOR_20261108_05",
+      "WSA_SCHOOL_ARTS_ACTOR_20261108_06"
+    ]
+  }
+}

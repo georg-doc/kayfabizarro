@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_01",
+      "name": "Bert Palette",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Art teacher.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That gray has a lot to say."
+          ],
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_ARTS_20261108",
+            "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Practice Rooms, Bert Palette takes the role of art teacher. “That gray has a lot to say.”",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small paint palette with three smooth color dabs and stubby brush.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "art teacher",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_02",
+      "name": "Nora Offbeat",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Music teacher.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The pause counts too."
+          ],
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_ARTS_20261108",
+            "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Practice Rooms, Nora Offbeat takes the role of music teacher. “The pause counts too.”",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small metronome with a chunky swinging arm.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "music teacher",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_03",
+      "name": "Ned Stagewink",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Drama teacher.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give the silence a bigger entrance."
+          ],
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_ARTS_20261108",
+            "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Practice Rooms, Ned Stagewink takes the role of drama teacher. “Give the silence a bigger entrance.”",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: single hand-held half mask with a raised eyebrow, real face visible.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "drama teacher",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_04",
+      "name": "Tess Relay",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Physical education teacher.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The baton is the easy part."
+          ],
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_ARTS_20261108",
+            "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Practice Rooms, Tess Relay takes the role of physical education teacher. “The baton is the easy part.”",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short relay baton and one small stopwatch.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "physical education teacher",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_05",
+      "name": "Gus Doughrise",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Home economics teacher.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The dough did its homework."
+          ],
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_ARTS_20261108",
+            "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Practice Rooms, Gus Doughrise takes the role of home economics teacher. “The dough did its homework.”",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small mixing bowl with a rising lump and blunt wooden spoon.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "home economics teacher",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_ARTS_ACTOR_20261108_06",
+      "name": "Ollie Jointfit",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Craft teacher.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Let the corners meet first."
+          ],
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_ARTS_20261108",
+            "trio": "WSA_SCHOOL_ARTS_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Practice Rooms, Ollie Jointfit takes the role of craft teacher. “Let the corners meet first.”",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one pair of oversized wooden dovetail pieces fitted partway together.",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "craft teacher",
+          "src": "SCHOOL_ARTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

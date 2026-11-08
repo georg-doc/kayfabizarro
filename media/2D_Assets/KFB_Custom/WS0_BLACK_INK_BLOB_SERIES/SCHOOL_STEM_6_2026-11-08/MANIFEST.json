@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SCHOOL_STEM_20261108",
+  "date": "2026-11-08",
+  "status": "DRAFT",
+  "georg_status": null,
+  "design_status": "AWAITING_GEORG",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SCHOOL_STEM_6_2026-11-08/sheet-r1.png",
+    "sha256": "aea71d14489f12378d57aa0f0dcba593dced37fc6e82c3bbb0f09d0d87111b97"
+  },
+  "production_record": "SCHOOL_STEM_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "SCHOOL_STEM_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "SCHOOL_STEM_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Unstable Lab",
+    "theme": "The Unstable Lab",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": false,
+    "status": "AWAITING_GEORG_DESIGN_VERDICT",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SCHOOL_STEM_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Theo Fraction",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_STEM_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "mathematics teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_STEM_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_SCHOOL_STEM_ACTOR_20261108_02",
+        "WSA_SCHOOL_STEM_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "wooden circle divided into three visible fraction wedges"
+      ],
+      "temperament": "Mathematics teacher.",
+      "prompt_auszug": "low rounded diamond, intent narrow eyes",
+      "prompt_quelle": "SCHOOL_STEM_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "mathematics teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_STEM_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Pendulum",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_STEM_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "physics teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_STEM_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_SCHOOL_STEM_ACTOR_20261108_01",
+        "WSA_SCHOOL_STEM_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short little tabletop pendulum with one solid swinging bob"
+      ],
+      "temperament": "Physics teacher.",
+      "prompt_auszug": "tall bent drop, astonished upturned gaze",
+      "prompt_quelle": "SCHOOL_STEM_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "physics teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_STEM_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Flask",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_STEM_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "chemistry teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_STEM_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_SCHOOL_STEM_ACTOR_20261108_01",
+        "WSA_SCHOOL_STEM_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small clean conical glass flask half full of smooth mint liquid"
+      ],
+      "temperament": "Chemistry teacher.",
+      "prompt_auszug": "round uneven blob, alert eyes, quiet grin",
+      "prompt_quelle": "SCHOOL_STEM_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "chemistry teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_STEM_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Leafcell",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_STEM_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "biology teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_STEM_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_SCHOOL_STEM_ACTOR_20261108_05",
+        "WSA_SCHOOL_STEM_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "large leaf and one compact magnifier held against its vein"
+      ],
+      "temperament": "Biology teacher.",
+      "prompt_auszug": "low fan shaped blob, open curious expression",
+      "prompt_quelle": "SCHOOL_STEM_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "biology teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_STEM_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Jade Loop",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_STEM_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "computer science teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_STEM_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_SCHOOL_STEM_ACTOR_20261108_04",
+        "WSA_SCHOOL_STEM_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "palm-sized board with a chunky closed circuit loop and button"
+      ],
+      "temperament": "Computer science teacher.",
+      "prompt_auszug": "upright squared splat, stubborn side-eye",
+      "prompt_quelle": "SCHOOL_STEM_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "computer science teacher"
+    },
+    {
+      "id": "WSA_SCHOOL_STEM_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Gearmesh",
+      "language": "en",
+      "bild": {
+        "datei": "SCHOOL_STEM_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "technology teacher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SCHOOL_STEM_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_SCHOOL_STEM_ACTOR_20261108_04",
+        "WSA_SCHOOL_STEM_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two thick wood gears meshed on a tiny handle"
+      ],
+      "temperament": "Technology teacher.",
+      "prompt_auszug": "wide drooping bean, skeptical brow and lopsided mouth",
+      "prompt_quelle": "SCHOOL_STEM_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": null,
+      "design_status": "DRAFT",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "technology teacher"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "school_family": "The Unstable Lab",
+    "team_kit": "Cobalt, pale yellow and moss with tiny lab and workshop accents.",
+    "encounter_behavior": "Fictional teachers and school staff.",
+    "satirical_target": "Teaching subjects and school operations.",
+    "trios": [
+      {
+        "id": "WSA_SCHOOL_STEM_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_SCHOOL_STEM_ACTOR_20261108_01",
+          "WSA_SCHOOL_STEM_ACTOR_20261108_02",
+          "WSA_SCHOOL_STEM_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_SCHOOL_STEM_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_SCHOOL_STEM_ACTOR_20261108_04",
+          "WSA_SCHOOL_STEM_ACTOR_20261108_05",
+          "WSA_SCHOOL_STEM_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_SCHOOL_STEM_ACTOR_20261108_01",
+      "WSA_SCHOOL_STEM_ACTOR_20261108_02",
+      "WSA_SCHOOL_STEM_ACTOR_20261108_03",
+      "WSA_SCHOOL_STEM_ACTOR_20261108_04",
+      "WSA_SCHOOL_STEM_ACTOR_20261108_05",
+      "WSA_SCHOOL_STEM_ACTOR_20261108_06"
+    ]
+  }
+}

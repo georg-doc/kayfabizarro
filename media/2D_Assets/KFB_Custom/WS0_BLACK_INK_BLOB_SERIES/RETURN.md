@@ -1,3 +1,17 @@
+# WSA Return · School Slop families · 2026-11-08
+
+Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. The five youth sheets passed at ab7277afe7e2fc271d1df64aea7f51367eca10c9 with 25 file readbacks.
+
+Six transparent 3×2 sheets introduce 36 school Slops. Four sheets cover languages, STEM, society and humanities, and arts and practice. Two sheets cover leadership, operations, care and learning support. English character records accompany the figures. Georg's design verdict is pending.
+
+Nine native image jobs used both original style references. Three superseded attempts had uniform broad bases. The six selected outputs return to varied organic full-body contours. All selected sheets are 1536×1024 RGBA with clear alpha and no visible clipped outer edge pixels. Some props or silhouettes cross nominal 512px grid boundaries. Individual isolation and runtime checks remain pending.
+
+[Batch record](SCHOOL_FAMILIES_BATCH_20261108.json)
+
+Next gate is Georg's design verdict on the six selected sheets.
+
+---
+
 ## Youth design acceptance · 2026-11-08
 
 Georg accepted all five sheets and their 30 designs. The index records 223 accepted sheets and 1338 depictions.

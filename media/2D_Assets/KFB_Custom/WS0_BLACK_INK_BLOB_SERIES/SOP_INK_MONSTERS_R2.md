@@ -1,6 +1,6 @@
 ## Georg PASS and silhouette steering · 2026-11-08
 
-Keep each figure a complete continuous ink blob with a thick, bare, undulating lower edge. Short rounded foot-like lobes grow directly from the blob. Keep props at the side or upper belly. Favor small collars, pins and sashes so the lower body remains visible. Check the small preview for a full ink silhouette, especially on figures with clothing. The youth sheets passed and the teen screenshot informs this forward correction.
+Keep each figure a complete organic ink blob. Use varied round, tapered, curled and scalloped contours as in the original references. Let small waves or foot-like lobes grow naturally from the shape where they suit the figure. Preserve varied widths and lower edges. Hold props at the side or belly and use small collars, pins or sashes to show the complete ink body. Check the full outline in the small preview. The youth sheets passed. The first school attempts leaned too far toward a shared flared base and were superseded.
 
 ---
 

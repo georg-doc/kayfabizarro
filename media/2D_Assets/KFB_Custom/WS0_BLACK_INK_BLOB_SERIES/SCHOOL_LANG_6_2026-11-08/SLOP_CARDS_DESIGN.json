@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_SCHOOL_LANG_ACTOR_20261108_01",
+      "name": "Mara Satzbau",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "German teacher.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The verb has escaped again."
+          ],
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_LANG_20261108",
+            "trio": "WSA_SCHOOL_LANG_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Language Wing, Mara Satzbau takes the role of German teacher. “The verb has escaped again.”",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: three chunky sentence tiles fitted like a tiny bridge.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "German teacher",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_LANG_ACTOR_20261108_02",
+      "name": "Ned Homophone",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "English teacher.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Those sound suspiciously alike."
+          ],
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_LANG_20261108",
+            "trio": "WSA_SCHOOL_LANG_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Language Wing, Ned Homophone takes the role of English teacher. “Those sound suspiciously alike.”",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two small clay speech tokens with pictograms of a bee and a capital B.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "English teacher",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_LANG_ACTOR_20261108_03",
+      "name": "Iris Accentgrave",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "French teacher.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The accent has a direction."
+          ],
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_LANG_20261108",
+            "trio": "WSA_SCHOOL_LANG_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Language Wing, Iris Accentgrave takes the role of French teacher. “The accent has a direction.”",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small slate with a single sculpted è and a chalk nub.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "French teacher",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_LANG_ACTOR_20261108_04",
+      "name": "Bram Tilde",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Spanish teacher.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "There. It has its hat."
+          ],
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_LANG_20261108",
+            "trio": "WSA_SCHOOL_LANG_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Language Wing, Bram Tilde takes the role of Spanish teacher. “There. It has its hat.”",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small tilde-shaped clay piece held just above a miniature lowercase n block.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Spanish teacher",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_LANG_ACTOR_20261108_05",
+      "name": "Ollie Declension",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Latin teacher.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That ending has been here before."
+          ],
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_LANG_20261108",
+            "trio": "WSA_SCHOOL_LANG_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Language Wing, Ollie Declension takes the role of Latin teacher. “That ending has been here before.”",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: miniature wax tablet with a short rounded stylus.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Latin teacher",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_LANG_ACTOR_20261108_06",
+      "name": "Gus Wordbridge",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "German as a second language teacher.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Start with the word you have."
+          ],
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_LANG_20261108",
+            "trio": "WSA_SCHOOL_LANG_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Language Wing, Gus Wordbridge takes the role of German as a second language teacher. “Start with the word you have.”",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: little key and two large picture cards with a door and an apple.",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "German as a second language teacher",
+          "src": "SCHOOL_LANG_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}
