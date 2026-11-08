@@ -7,14 +7,14 @@
     "pr": 469
   },
   "counts": {
-    "selected_sheets": 237,
-    "pass_depictions": 1422,
+    "selected_sheets": 239,
+    "pass_depictions": 1434,
     "canonical_ids_matched": 108,
     "resident_authoring_depictions": 12,
     "resident_identities": 6,
-    "intake_eligible_sheets": 235,
-    "intake_eligible_depictions": 1410,
-    "other_authoring_depictions": 1302
+    "intake_eligible_sheets": 237,
+    "intake_eligible_depictions": 1422,
+    "other_authoring_depictions": 1314
   },
   "excluded_sources": [
     {
@@ -1558,6 +1558,18 @@
     {
       "set_id": "WSA_BUILDERS_R9_SERVICES_20261108",
       "manifest": "BUILDERS_R9_SERVICES_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_R7_QUEST_20261108",
+      "manifest": "RPG_R7_QUEST_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_R7_GUILD_20261108",
+      "manifest": "RPG_R7_GUILD_6_2026-11-08/MANIFEST.json",
       "georg_status": "PASS",
       "intake_eligible": true
     }

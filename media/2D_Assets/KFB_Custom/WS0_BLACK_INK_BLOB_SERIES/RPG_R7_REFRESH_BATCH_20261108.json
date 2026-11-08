@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_RPG_R7_REFRESH_20261108",
+  "date": "2026-11-08",
+  "georg_status": "PASS",
+  "language": "en",
+  "handoff": "WS0 Game and Asset Librarian intake through the selected-set index. Legacy IDs are source lineage for eight proposed variants. Existing selected runtime assets have separate version decisions.",
+  "sets": [
+    {
+      "set_id": "WSA_RPG_R7_QUEST_20261108",
+      "manifest": "RPG_R7_QUEST_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "RPG_R7_QUEST_6_2026-11-08/sheet-r1.png",
+      "sha256": "8fe10b125f8ae09cdd36e352cc7f9a12452613e580a748902a174c00b41984a1",
+      "roles": [
+        "Knight",
+        "Wizard",
+        "Rogue",
+        "Ranger",
+        "Monk",
+        "Beastmaster"
+      ]
+    },
+    {
+      "set_id": "WSA_RPG_R7_GUILD_20261108",
+      "manifest": "RPG_R7_GUILD_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+      "sha256": "4d82caacc45a3929b7a5510477c20d1e48223d866fab42d6aae027d5f4480ea7",
+      "roles": [
+        "Cleric",
+        "Barbarian",
+        "Bard",
+        "Alchemist",
+        "Necromancer",
+        "Artificer"
+      ]
+    }
+  ]
+}

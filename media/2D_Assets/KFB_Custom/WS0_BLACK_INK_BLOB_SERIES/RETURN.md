@@ -1,3 +1,11 @@
+## RPG r7 refresh design acceptance · 2026-11-08
+
+Georg approved all 12 figures across two transparent 3×2 sheets. The [batch record](RPG_R7_REFRESH_BATCH_20261108.json) and selected-set index queue both crews for Game and Asset Librarian intake. Eight r7 figures carry explicit legacy-ID lineage and four new classes extend the party. The catalog now has 239 selected sheets and 1434 depictions, including 237 intake-eligible sheets and 1422 intake-eligible depictions. Both PNGs are 1536 × 1024 RGBA. Quest Party has recorded offset crop boundaries for its lower row. Individual isolation and receiving verification are pending.
+
+Next gate is Georg's design verdict on two Alien r6 refresh sheets.
+
+---
+
 ## Builders r9 refresh design acceptance · 2026-11-08
 
 Georg approved all 12 figures across two transparent 3×2 sheets. The [batch record](BUILDERS_R9_REFRESH_BATCH_20261108.json) and selected-set index route them to the existing Game and Asset Librarian intake. Eight figures propose links to legacy canonical IDs and four introduce new roles. The index now records 237 selected sheets and 1422 depictions, of which 235 sheets and 1410 depictions are intake-eligible. Both 1536 × 1024 PNGs have verified alpha and clear nominal cell seams at alpha ≥ 16. Individual extraction and receiving readback are pending.
