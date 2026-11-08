@@ -1,6 +1,6 @@
 # KFB Entscheidungen (PASS / TUNE / FAIL / RULE / TBD)
 
-Stand 2026-11-08 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.
+Stand 2026-11-09 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.
 
 ## A · Entscheidungen und Vorgaben
 
@@ -1528,6 +1528,7 @@ Stand 2026-11-08 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur
 | V-1558 | 08.11.2026 |  | Look | **DECISION** | Georg 08.11. (q559): Moebius-Look als A/B/C-Test im Spiel mit festen Kameras (A heute, B Knete nah und grafisch fern, C staerker Cel und Tusche); Spannung zu V-1171 (hyperrealer Hintergrund) im Test sichtbar machen, nichts vorher einbauen. WHY: Webchat-Slice Moebius x KFB. |  | WS0 | q559, V-1171 | Georg 08.11. |
 | V-1559 | 08.11.2026 |  | Konzept | **DECISION** | Georg 08.11. (q560): ChronoLoom jetzt als Konzept-Slice, Verbindungen Zeitreise/Timelines/Portale x Moebius-Logik x HyperNorm-Engine; Brief b377 an den ChronoLoom-Webchat (PR #473), nur Konzept auf den festen Anschluessen (Welt-Uhr, Portal-Pop-ups, HyperNorm-Kern). WHY: Georg findet die Verbindung spannend. |  | Web-Chat ChronoLoom | q560, b377, PR #473 | Georg 08.11. |
 | V-1560 | 08.11.2026 |  | Licht | **DECISION** | Georg 08.11. (q561 PASS): Lichtinseln mit warmen Scheiben hinter den KayKit-Rahmen abgenommen; lichtinseln=1 in Testfahrt und Release (Stamm Stand 71g). WHY: Georgs Abnahme. |  | WS0 | q561, V-1556, V-1557 | Georg 08.11. |
+| V-1561 | 09.11.2026 |  | NPC | **STATUS** | Szenen-Naht szenen=r1 gebaut (Stamm Stand 72 @39e6c0ea): SzenenHost plant ueber das Szenen-Modul (V-1548), vorhandene Lader bauen am festen Platz (Probe m1-m8 und RA-Vignetten mit Option fixed, Scenelets, Clown, Band, Disco); Bewuchs haelt Plaetze frei; test/szenen-naht PASS (4 Szenen gezeigt, 0 Fehler). Abnahme q562. Briefings: b378 WSA Combat Sammelauftrag, b377 ChronoLoom, b371/b372/b367/b369/b374 erledigt. WHY: WS1 pausiert, WS0 baut. |  | WS0 | q562, V-1548 | WS0 09.11. |
 
 ## B · Abnahmen aus Projektdateien (81)
 
