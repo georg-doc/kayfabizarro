@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "entries": [
   {
    "id": "V-001",
@@ -22657,6 +22657,21 @@
    "owner": "WSV, WS1",
    "check": "W-017, N-229",
    "source": "Georg 07.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1543",
+   "date": "08.11.2026",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Georg 08.11.: ALLE Meshy-Dioramen kommen als WFC-Elemente in die Welt, mit Farbanpassung und Uebergaengen. Befund: Spiel lud nur das Amphitheater als Original-Meshy mit Shader-Toenung; Farbrollen-Runden B9 (V-806 bis V-837) und Einbettung (V-341, V-403, V-753, N36) waren nie angeschlossen, B9 lag nur in Dropbox. Fassungen: r824 fertig (Theater, Utopia-Buehne, Comic-Sender, Alien-Werkstatt, Mesa, Schnee, Utopia-Bibliothek, Gefaengnis dunkel), Amphitheater r832, Kayfabrick r829, uebrige wie geliefert mit sanfter Toenung. Verteiler: Katalog-Klasse diorama (b369); WS1: ein Diorama-Loader (Farbe, Einbettung, Platzierung ueber den einen Loeser) hinter diorama=r2; Amphitheater r832 vor RC4-Tag, Rest nach RC4. WHY: Dioramen sollen ins Terrain passen und aus ihm wachsen (V-341); fertige Arbeit lag ungenutzt.",
+   "values": {},
+   "owner": "Verteiler, WS1",
+   "check": "N-235, N-236, b369",
+   "source": "Georg 08.11.",
    "supersedes": null,
    "superseded_by": [],
    "why": "",
