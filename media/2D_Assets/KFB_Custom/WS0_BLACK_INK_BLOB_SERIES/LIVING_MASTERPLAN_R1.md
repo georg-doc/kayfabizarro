@@ -1,3 +1,9 @@
+## Slop catalog style audit · 2026-11-08
+
+Reviewed all 235 selected source sheets in chronological order and verified each source against its manifest. The [report](SLOP_STYLE_AUDIT_20261108.md) and [sheet-level decisions](SLOP_STYLE_AUDIT_INDEX_20261108.csv) separate proposed design variants from crop and framing checks. Next gate is Georg's choice of one character pilot.
+
+---
+
 ## Political satire design acceptance · 2026-11-08
 
 Georg accepted all six political satire sheets and their 36 designs. The index records 235 accepted sheets and 1410 depictions.
