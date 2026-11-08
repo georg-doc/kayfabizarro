@@ -1,3 +1,17 @@
+# WSA Return · Youth Slop families · 2026-11-08
+
+Repository georg-doc/kayfabizarro, branch assets/ws0-ink-miners-2026-11-04, draft PR #469. The final three backlog themes passed at a1d4b84402dc3713c0a73802cb8307986dad75c6 with 17 file readbacks. All nine backlog themes are accepted.
+
+Five transparent 3×2 sheets introduce 30 youth Slops in babies and toddlers, schoolchildren, teenagers, scouts and a peaceful school demonstration. English character records accompany every figure. Georg's design verdict is pending.
+
+Five native image jobs used both original style references. All sheets are 1536×1024 RGBA with clear background alpha. Three sheets have visible pixels across nominal cell divisions. The toddler romper introduces two foot-like goo lobes and the demonstration uses cream hands. Individual isolation and runtime checks remain pending.
+
+[Batch record](YOUTH_FAMILIES_BATCH_20261108.json)
+
+Next gate is Georg's design verdict on the five sheets.
+
+---
+
 ## Batch 3 design acceptance · 2026-11-08
 
 Georg accepted all three sheets and their 18 designs. All nine entries in the [theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) have passed design review. The index records 218 accepted sheets and 1308 depictions.

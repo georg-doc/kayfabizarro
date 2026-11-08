@@ -1448,11 +1448,47 @@
       "intake_eligible": true
     }
   ],
-  "candidate_sets": [],
+  "candidate_sets": [
+    {
+      "set_id": "WSA_YOUTH_TOTS_20261108",
+      "manifest": "YOUTH_TOTS_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_YOUTH_SCHOOL_20261108",
+      "manifest": "YOUTH_SCHOOL_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_YOUTH_TEEN_20261108",
+      "manifest": "YOUTH_TEEN_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_YOUTH_SCOUT_20261108",
+      "manifest": "YOUTH_SCOUT_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_YOUTH_RALLY_20261108",
+      "manifest": "YOUTH_RALLY_6_2026-11-08/MANIFEST.json",
+      "georg_status": null,
+      "design_status": "DRAFT_AWAITING_GEORG",
+      "intake_eligible": false
+    }
+  ],
   "candidate_counts": {
-    "sheets": 0,
-    "depictions": 0,
-    "identities": 0,
+    "sheets": 5,
+    "depictions": 30,
+    "identities": 30,
     "pass": 0
   },
   "production_supplement": {

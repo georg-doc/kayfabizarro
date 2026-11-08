@@ -1,0 +1,309 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_YOUTH_FAMILIES_20261108",
+  "date": "2026-11-08",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "language": "en",
+  "design_status": "DRAFT",
+  "intake_eligible": false,
+  "sheets": 5,
+  "unique_identities": 30,
+  "depictions": 30,
+  "native_generation_jobs": 5,
+  "image_edits": 0,
+  "counts": {
+    "trios": 10,
+    "full_families": 5,
+    "female_read_casting_intents": 10
+  },
+  "sets": [
+    {
+      "set_id": "WSA_YOUTH_TOTS_20261108",
+      "title": "The Tiny Splats",
+      "manifest": "YOUTH_TOTS_6_2026-11-08/MANIFEST.json",
+      "sheet": "YOUTH_TOTS_6_2026-11-08/sheet-r1.png",
+      "sha256": "9739dd53f0ed4f047b9b9191f97b642d078cd8b23e926fa10492fe1e543fed97",
+      "git_blob": "e6647e200cb0c9b391390d80d59fd42805869962",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "youth_family": "The Tiny Splats",
+        "team_kit": "Soft mint, dusty peach and butter yellow. Simple cozy bibs, onesies and small accessories.",
+        "encounter_behavior": "Fictional youth residents and peer groups.",
+        "satirical_target": "Everyday youth roles and absurd props.",
+        "trios": [
+          {
+            "id": "WSA_YOUTH_TOTS_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_YOUTH_TOTS_ACTOR_20261108_01",
+              "WSA_YOUTH_TOTS_ACTOR_20261108_02",
+              "WSA_YOUTH_TOTS_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_YOUTH_TOTS_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_YOUTH_TOTS_ACTOR_20261108_04",
+              "WSA_YOUTH_TOTS_ACTOR_20261108_05",
+              "WSA_YOUTH_TOTS_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_YOUTH_TOTS_ACTOR_20261108_01",
+          "WSA_YOUTH_TOTS_ACTOR_20261108_02",
+          "WSA_YOUTH_TOTS_ACTOR_20261108_03",
+          "WSA_YOUTH_TOTS_ACTOR_20261108_04",
+          "WSA_YOUTH_TOTS_ACTOR_20261108_05",
+          "WSA_YOUTH_TOTS_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_YOUTH_SCHOOL_20261108",
+      "title": "The Small Desk Society",
+      "manifest": "YOUTH_SCHOOL_6_2026-11-08/MANIFEST.json",
+      "sheet": "YOUTH_SCHOOL_6_2026-11-08/sheet-r1.png",
+      "sha256": "c538022736931a4cd81467ddd09ba6acdbc47f22bdfb5634469e70cc337ae6b2",
+      "git_blob": "a851bcc127f19a92d9ab8ad715e15f2d67b99215",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "youth_family": "The Small Desk Society",
+        "team_kit": "Bright muted cobalt, ochre, brick and pale green. Casual school clothes with one large school prop per blob.",
+        "encounter_behavior": "Fictional youth residents and peer groups.",
+        "satirical_target": "Everyday youth roles and absurd props.",
+        "trios": [
+          {
+            "id": "WSA_YOUTH_SCHOOL_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_YOUTH_SCHOOL_ACTOR_20261108_01",
+              "WSA_YOUTH_SCHOOL_ACTOR_20261108_02",
+              "WSA_YOUTH_SCHOOL_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_YOUTH_SCHOOL_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_YOUTH_SCHOOL_ACTOR_20261108_04",
+              "WSA_YOUTH_SCHOOL_ACTOR_20261108_05",
+              "WSA_YOUTH_SCHOOL_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_YOUTH_SCHOOL_ACTOR_20261108_01",
+          "WSA_YOUTH_SCHOOL_ACTOR_20261108_02",
+          "WSA_YOUTH_SCHOOL_ACTOR_20261108_03",
+          "WSA_YOUTH_SCHOOL_ACTOR_20261108_04",
+          "WSA_YOUTH_SCHOOL_ACTOR_20261108_05",
+          "WSA_YOUTH_SCHOOL_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_YOUTH_TEEN_20261108",
+      "title": "The After-School Static",
+      "manifest": "YOUTH_TEEN_6_2026-11-08/MANIFEST.json",
+      "sheet": "YOUTH_TEEN_6_2026-11-08/sheet-r1.png",
+      "sha256": "b260a15847ed1ae496595b9e3b33b6c4893dc0c2f99d9d65b58e9d5392d77ba5",
+      "git_blob": "e12f77a8df1be55454230947c613d1f200d4aa27",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "youth_family": "The After-School Static",
+        "team_kit": "Washed charcoal hoodie, brick red, muted lilac, moss and denim blue. Ordinary layered clothing and short fitted accessories.",
+        "encounter_behavior": "Fictional youth residents and peer groups.",
+        "satirical_target": "Everyday youth roles and absurd props.",
+        "trios": [
+          {
+            "id": "WSA_YOUTH_TEEN_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_YOUTH_TEEN_ACTOR_20261108_01",
+              "WSA_YOUTH_TEEN_ACTOR_20261108_02",
+              "WSA_YOUTH_TEEN_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_YOUTH_TEEN_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_YOUTH_TEEN_ACTOR_20261108_04",
+              "WSA_YOUTH_TEEN_ACTOR_20261108_05",
+              "WSA_YOUTH_TEEN_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_YOUTH_TEEN_ACTOR_20261108_01",
+          "WSA_YOUTH_TEEN_ACTOR_20261108_02",
+          "WSA_YOUTH_TEEN_ACTOR_20261108_03",
+          "WSA_YOUTH_TEEN_ACTOR_20261108_04",
+          "WSA_YOUTH_TEEN_ACTOR_20261108_05",
+          "WSA_YOUTH_TEEN_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_YOUTH_SCOUT_20261108",
+      "title": "The Slightly Lost Patrol",
+      "manifest": "YOUTH_SCOUT_6_2026-11-08/MANIFEST.json",
+      "sheet": "YOUTH_SCOUT_6_2026-11-08/sheet-r1.png",
+      "sha256": "1d5d82c5105c0a85e7030e4d257492ce3621bfe394dfa735065b0cd3477fcf2b",
+      "git_blob": "d287ecf78a5e1547996c44077dc5fa6886709fc8",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "youth_family": "The Slightly Lost Patrol",
+        "team_kit": "Muted moss, ochre, cream and burnt orange. Compact matching neckerchiefs with blank stitched patches.",
+        "encounter_behavior": "Fictional youth residents and peer groups.",
+        "satirical_target": "Everyday youth roles and absurd props.",
+        "trios": [
+          {
+            "id": "WSA_YOUTH_SCOUT_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_YOUTH_SCOUT_ACTOR_20261108_01",
+              "WSA_YOUTH_SCOUT_ACTOR_20261108_02",
+              "WSA_YOUTH_SCOUT_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_YOUTH_SCOUT_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_YOUTH_SCOUT_ACTOR_20261108_04",
+              "WSA_YOUTH_SCOUT_ACTOR_20261108_05",
+              "WSA_YOUTH_SCOUT_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_YOUTH_SCOUT_ACTOR_20261108_01",
+          "WSA_YOUTH_SCOUT_ACTOR_20261108_02",
+          "WSA_YOUTH_SCOUT_ACTOR_20261108_03",
+          "WSA_YOUTH_SCOUT_ACTOR_20261108_04",
+          "WSA_YOUTH_SCOUT_ACTOR_20261108_05",
+          "WSA_YOUTH_SCOUT_ACTOR_20261108_06"
+        ]
+      }
+    },
+    {
+      "set_id": "WSA_YOUTH_RALLY_20261108",
+      "title": "The Recess Petition",
+      "manifest": "YOUTH_RALLY_6_2026-11-08/MANIFEST.json",
+      "sheet": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
+      "sha256": "75a22ba8359e9b1390e943d405c12005036dea9cf309b6427aacdf5ff7bfab3d",
+      "git_blob": "e3c4be1ea64380545f59c29443be36759d441e97",
+      "design_status": "DRAFT",
+      "intake_eligible": false,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "youth_family": "The Recess Petition",
+        "team_kit": "Warm brick, sunflower, mint and navy. Casual pupil clothes, compact peaceable school-issue placards with wordless pictograms.",
+        "encounter_behavior": "Fictional youth residents and peer groups.",
+        "satirical_target": "Everyday youth roles and absurd props.",
+        "trios": [
+          {
+            "id": "WSA_YOUTH_RALLY_20261108_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_YOUTH_RALLY_ACTOR_20261108_01",
+              "WSA_YOUTH_RALLY_ACTOR_20261108_02",
+              "WSA_YOUTH_RALLY_ACTOR_20261108_03"
+            ]
+          },
+          {
+            "id": "WSA_YOUTH_RALLY_20261108_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_YOUTH_RALLY_ACTOR_20261108_04",
+              "WSA_YOUTH_RALLY_ACTOR_20261108_05",
+              "WSA_YOUTH_RALLY_ACTOR_20261108_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_YOUTH_RALLY_ACTOR_20261108_01",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_02",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_03",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_04",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_05",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_06"
+        ]
+      }
+    }
+  ],
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_zero_on_every_sheet": true,
+    "fully_transparent_pixels": {
+      "TOTS": 550044,
+      "SCHOOL": 610506,
+      "TEEN": 603650,
+      "SCOUT": 542838,
+      "RALLY": 574581
+    },
+    "alpha_samples": {
+      "TOTS": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 0
+      },
+      "SCHOOL": {
+        "outer": 0,
+        "x512": 182,
+        "x1024": 57,
+        "y512": 0
+      },
+      "TEEN": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 982
+      },
+      "SCOUT": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 0
+      },
+      "RALLY": {
+        "outer": 0,
+        "x512": 28,
+        "x1024": 52,
+        "y512": 0
+      }
+    },
+    "extraction": "NOT_PERFORMED",
+    "runtime": "NOT_TESTED",
+    "next_gate": "Georg design verdict"
+  }
+}

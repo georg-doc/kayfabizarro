@@ -1,3 +1,11 @@
+## Youth Slop families · 2026-11-08
+
+Five transparent 3×2 sheets introduce 30 youth Slops in babies and toddlers, schoolchildren, teenagers, scouts and a peaceful school demonstration. English character records accompany every figure. Georg's design verdict is pending.
+
+[Batch record](YOUTH_FAMILIES_BATCH_20261108.json)
+
+---
+
 ## Batch 3 design acceptance · 2026-11-08
 
 Georg accepted all three sheets and their 18 designs. All nine entries in the [theme backlog](NEW_SLOP_GROUPS_BACKLOG_20261107.json) have passed design review. The index records 218 accepted sheets and 1308 depictions.
