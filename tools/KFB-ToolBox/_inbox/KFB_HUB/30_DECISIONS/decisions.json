@@ -23066,6 +23066,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1570",
+   "date": "09.11.2026",
+   "area": "Steuerung",
+   "verdict": "REVIEW",
+   "text": "Steuerungs-Test R1 im Release (test/controls-matrix.mjs, Bericht replies/STEUERUNG_TEST_R1): Bewegung in Gehen/Fliegen/Fahren passt; Kampf nicht: beide Robo-Arm-Slots tragen nur den Fluff-Trichter, Handwaffen 1-6 feuern nie (nur Granate), im Flug jeder Schuss AIRBORNE abgelehnt, im Wagen feuert die Maus nicht (aber alte Taste B), Extra-Tasten B/C/V/N/T loesen Waffen aus, C/M/V kollidieren im Wagen. Umbau-Plan nach HUD_BELEGUNG_R1 in q577, Q-Konflikt q578, Startbelegung q579.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q577, q578, q579",
+   "source": "Georg 09.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
