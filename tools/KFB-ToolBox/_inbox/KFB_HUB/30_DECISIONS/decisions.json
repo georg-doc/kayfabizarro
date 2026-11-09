@@ -23021,6 +23021,51 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1567",
+   "date": "09.11.2026",
+   "area": "Kampf",
+   "verdict": "STATUS",
+   "text": "WS0 uebernimmt auf Georgs Wunsch die WSA-Combat-Jobs #105/#106/#109/#110 (Kommentare in den PRs). Energieboegen, Prop-Treffer, Handblitz im Stamm hinter Schaltern (energiebogen=r2, proptreffer=r1, handblitz=r1); Energieboegen p95 mit 61 Paaren 0,025 ms (WSA-Wert 0,625 ms war Rauschen), Tangente im Bogen-Shader gekuerzt. Prop-Test stabilisiert (Ton-Vorladung, Pose ueber alle Bilder). Prop-Treffer-Clips von der Seite, Frage q576.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q576, #106, #109, #110",
+   "source": "WS0 09.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1568",
+   "date": "09.11.2026",
+   "area": "Kampf",
+   "verdict": "STATUS",
+   "text": "Nachbrand #105 im Stamm (Stand 77, wandbrand=r1): nach Georgs Hinweis nur Nachbrennen am Bruchrand: kurze niedrige Flammen aus dem CC0-Nyrthos-Flipbook (~0,45 m, ~2,5 s), danach Glutsaum an der Kante (~6 s) und Russ; ca. 0,06 ms. Frage q575.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q575, #105",
+   "source": "Georg 09.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1569",
+   "date": "09.11.2026",
+   "area": "HUD",
+   "verdict": "STATUS",
+   "text": "Blinde Kritik R1, eindeutiger Teil: Waffennamen und Rucksack-Zeilen im Spiel englisch (Pistol, Rifle, Laser beam, Weapon, Single shot ...). Dunkle Slop-Raender = gewollte Tuschkontur; Pickups, Waffen-Slots, Kartenviertel bleiben bei q569/q572. Offen: kampf-rc2 meldet seit Zielen (schon @625a1064), dass B ohne gewaehltes Ziel Pistole/Blaster/Gatling/Rakete nicht abfeuert.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q569, q572",
+   "source": "WS0 09.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
