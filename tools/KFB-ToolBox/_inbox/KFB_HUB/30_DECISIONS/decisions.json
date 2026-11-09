@@ -22991,6 +22991,36 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1565",
+   "date": "09.11.2026",
+   "area": "Intro",
+   "verdict": "STATUS",
+   "text": "Intro Teil 1 gebaut (Stamm Stand 75 @58fe9d54, intro=r1): Puppentheater R7 im Spiel, Kits theater_kit_r1 + theater_kit2_r1 (assets/private @b2884a96), Rampenlichter aus echtem Ladefortschritt, Tafel mit ladetexte.r1.json, drei Klopfzeichen, Zugvorhang, Kulissen, Prospekt, Kamerafahrt mit camIntro; test/intro-theater PASS. Abnahme q570. Logo-Slam (Claude Design kfb-logo-slam.v1) braucht opentype.js (Download, q571).",
+   "values": {},
+   "owner": "WS0",
+   "check": "q570, q571, V-1549",
+   "source": "WS0 09.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1566",
+   "date": "09.11.2026",
+   "area": "Look",
+   "verdict": "STATUS",
+   "text": "Moebius-Test gebaut (Stand 76 @625a1064, moebius=b|c, nur Gelaende): b ab 40 m Farbflaechen/Indigo-Schatten/Schraffur, c ueberall; Wahl q573. Viertel-Rand mit 5 festen Kameras (test/viertel-rand.mjs): harte Kante der Strassenplatte, gestreckte Bodenbilder, grosse laute Collage-Flaeche; Auswahl q572. Handblitz #109 in q574; #110 Belege angefordert.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q572, q573, q574",
+   "source": "WS0 09.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
