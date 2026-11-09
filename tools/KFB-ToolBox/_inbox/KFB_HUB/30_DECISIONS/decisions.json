@@ -22976,6 +22976,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1564",
+   "date": "09.11.2026",
+   "area": "Steuerung",
+   "verdict": "STATUS",
+   "text": "Stand 73/74 im Stamm (WS0): WSA Zielen R1 #108 und Box C #84 gemergt (q565/q566 PASS, WSA-Pruefseiten gruen), zielen=r1 und szenen=r1 (q567 PASS) in Testfahrt und Release; Schattenrand R1 hinter schattenrand=1 (q568). Hub: Masterplan neu (13 Schritte, alte 83 in KFB_HUB_ARCHIV/hub_steps), Arbeitsorte 08.11. Blinde Kritik R1 (Art Director + Gameplay) in replies/KRITIK_BLIND_R1, Auswahl q569.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q565-q569",
+   "source": "Georg 09.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
