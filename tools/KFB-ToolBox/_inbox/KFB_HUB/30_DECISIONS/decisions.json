@@ -23336,6 +23336,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1588",
+   "date": "10.11.2026",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Georg q582: Boden kraeftiger -> bodenton=r3 (Saettigung 1,5-fach, Helligkeit wie r2) in Testfahrt/Release, Stamm @730cac61. PR #112 im Stamm (Merge @03ae387f, Verteiler bb3c1d57; privat @6fb5d35d): 6 Industrie-Geysire GE_GEYSIR_13-18 (thema geysir_industrie), 6 Gelaende-Figuren GL_GELAENDE_01-06 (neue Klasse gelaende, 5,5 m, einzeln), Violet Flux zurueckgestellt. Platte 12 GB frei: Loeschen alter Verteiler-Beleg-Builds (~12 GB) als Hub q583. Naechster Verteiler-Punkt: Welt-Kompositionen (SkillDB Procedural Generation). Flug: Schuss im Flug gebaut (fx/schuss-im-flug-r1 @29428e51), Belege laufen.",
+   "values": {},
+   "owner": "WS0 · Verteiler · Flug",
+   "check": "q582, q583, PR #112",
+   "source": "Georg 10.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
