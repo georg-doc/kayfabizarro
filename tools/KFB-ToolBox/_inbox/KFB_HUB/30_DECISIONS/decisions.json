@@ -23591,6 +23591,36 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1605",
+   "date": "11.11.2026",
+   "area": "Kampf",
+   "verdict": "BUILD",
+   "text": "Georgs Ja zu drei CC0-Downloads (Flug-Recherche): Kenney Particle Pack (15 MB, 80 Bilder), Unity Labs WispySmoke01 (4,6 MB) und DiscSmoke01 (8,5 MB) flipbooks; ausgepackt mit SOURCE.md nach kayfabizarro@main media/3D_Assets/FX_Visual/{kenney_particle-pack, unity_labs_WispySmoke01, unity_labs_DiscSmoke01} @a9143605 (Georg: dort ablegen). Flug prueft den ganzen Bestand (FX_Visual + 2D_Assets-Effekte), nicht nur Brackeys. Georgs ChatGPT-Blaetter: Trefferblitz 4x2 (Kandidat C Faust-Kontakt), gruene Sphaere einmalig + Orb-Schleife (Kandidaten fuer Erscheinen/Verschwinden, Beam; VFX-Best-of je Spielereignis, Nachtrag 3).",
+   "values": {},
+   "owner": "WS0 · Flug",
+   "check": "V-1602, V-1603",
+   "source": "Georg 11.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1606",
+   "date": "11.11.2026",
+   "area": "Welt",
+   "verdict": "DECISION",
+   "text": "Georg 11.11.: KayKit-Haeuser im Kartenviertel wirken als Fremdkoerper (geheilte Gebaeude daneben, zu meta) → durchgaengiges Design der Kartenviertel-Gebaeude mit HyperNorm-Shader; Anatomie-Varianz (Wohnhaus, Buerohaus, Fabrik, Suburban) statt repetitiver Kloetze, nicht nur Farbe/Inhalt; ausgeschnittene oder nachgebaute Fenster/Tueren auf die Fassade, cartoonig versetzt (eine Tuer und wenige Fenster reichen; Verteilungslogik WB-D1 detailSpecs/protectedDetails), Materialcodes je Gebaeudeart im HN-Shader; keine Aufsaetze wie Schornsteine. Ersetzt den KayKit-Teil von V-1551. Verteiler uebernimmt Viertel-Generator: Teil 1 q572-Fehler (weicher Rand, Boden ohne Streckung, ruhigere Flaeche), Teil 2 Stilblatt 4 Gebaeudearten zuerst als Bildfrage, Einbau erst nach PASS.",
+   "values": {},
+   "owner": "WS0 · Verteiler",
+   "check": "V-1551, V-1473, q572",
+   "source": "Georg 11.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [

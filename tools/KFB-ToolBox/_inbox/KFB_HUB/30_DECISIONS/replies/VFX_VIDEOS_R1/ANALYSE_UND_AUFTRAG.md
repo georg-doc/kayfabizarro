@@ -107,3 +107,16 @@ WS0-Abgleich mit dem Stamm: Hitstop ist **aktiv**, anders als der Web-Chat vermu
 - Die Dauer kommt je Waffe aus den Reference-JSONs.
 
 Folge für den Neustart: zuerst die vorhandenen Bausteine (Kontaktposition, Hitstop, shotBurst/combatCascade) auf einer Zeitachse abstimmen, die 2D-Satzzeichen genau ins Kontaktbild legen. Der Kontakt-Blitz bleibt 1–2 Bilder bei 60 Hz; das ist Testannahme, Prüfung im Spieltempo.
+
+## Nachtrag 3 · VFX-Best-of statt Einzelfall (Georg 11.11.)
+
+Georg: Die grüne Sphäre ist so gut, dass sie nicht nur fürs UFO taugt. KFB ist ein Kayfabe-Wrestling-Spiel, das sich in übertriebenen Cartoon-Effekten ausdrücken darf. Alles muss aber innerhalb der Cartoon-Logik plausibel sein; die Sphäre ist z. B. nicht der Faust-Treffer.
+
+Vorgehen:
+1. **Ereignisliste aus dem Spiel:** nur Ereignisse, die es schon gibt (Kampf, Waffen, Pickups, Karten, Reise/Wagen-Rufen, UFO/MiB, Slops). Keine neuen Ereignisse erfinden.
+2. **Best-of je Ereignis:**
+   - bestes Stück aus dem ganzen Bestand oder aus Georgs ChatGPT-Blättern;
+   - dazu Farbe und Kontext.
+   - Die Sphäre ist Kandidat für mehrere Ereignisse.
+3. **Lücken:** Georg erzeugt neue Blätter per ChatGPT, nach seinem Muster (Vorbild-Bild + Look beschreiben). Fertige Pakete und generierte Blätter vor Eigenbau.
+4. **Ergebnis:** Top 10 als Bildfrage an Georg, je Ereignis Effekt im Spiel neben dem Vorbild.
