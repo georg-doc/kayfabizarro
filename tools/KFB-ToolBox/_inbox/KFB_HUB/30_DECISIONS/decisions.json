@@ -23141,6 +23141,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1575",
+   "date": "10.11.2026",
+   "area": "HUD",
+   "verdict": "BUILD",
+   "text": "Kopfradio (Georg 10.11.): Radio oben rechts im Header aus Georgs kompakten Radio-Gehaeusen (KFB HUD Radios/KFB_Radios_Original_Exakt_Transparent_2x, freigestellt -> assets/private 70_HUD/radios_r2 @543f4b87), darin die freigegebenen Glyphen (radio_glyphs_fixed_r2, V-1539) in vier Feldern Play/Pause, Weiter, Ton, Liste; keine dicken Knoepfe, keine Lampe. Stamm @3ca4ac97. Motion Library Aktionsclips privat unter motion_lib_r1 (@543f4b87) fuer den Faustkampf-/Schuss-Vergleich (V-1574).",
+   "values": {},
+   "owner": "WS0",
+   "check": "V-1539, V-1574",
+   "source": "Georg 10.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
