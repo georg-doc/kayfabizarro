@@ -23276,6 +23276,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1584",
+   "date": "10.11.2026",
+   "area": "Welt",
+   "verdict": "BUILD",
+   "text": "Aufsitzen abgeschlossen (Merge @cdad0b77, Verteiler 730b5c3f): Hangschwelle 0,05 nur fuer kleine runde Basen (pflanze, geysir, statue, figur, ding, baumgeist), grosse Klassen und Eingaenge 0,1 (Props ohne Eingaenge im 4-km-Feld 724 statt 1045; 0,05 fuer alle haette 385 gelassen); Schatten nach Figurenoptik (Auslauf 1,5x/0,45, Kern 0,8x/0,65, 15 % zur Kamera); kein Kontaktband bei aufsitzenden Props. Schuss-Vergleich: Hub q581 (heute Einhand-Schuss gegen Atlas-Zweihand-Anschlag; shooting_gun_a und Ranged_2H_Shoot verworfen). Blaster nutzt keine Zauber-Bewegung (nur der Zauberstab, q576). Naechster Verteiler-Punkt: Librarian PR #112 (6 Industrie-Geysire, 6 Terrain Props).",
+   "values": {},
+   "owner": "WS0 · Verteiler",
+   "check": "V-1578, V-1581, q581, PR #112",
+   "source": "Georg 10.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
