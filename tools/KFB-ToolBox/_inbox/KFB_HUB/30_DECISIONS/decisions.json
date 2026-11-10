@@ -23486,6 +23486,51 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1598",
+   "date": "11.11.2026",
+   "area": "Kampf",
+   "verdict": "FAIL",
+   "text": "q585 Treffer-Ring FAIL (Georg: schlampig gebauter AI-Slop-VFX, keine Recherche, wie VFX aussehen). Eigenbau-Shader-Ring verstoesst gegen V-1508 (keine Claude-Eigenbau-VFX ausser Stuetzebene) – WS0 haette ihn nicht vorlegen duerfen. kontaktimpuls=0 status aus (Stamm @a4e76512). Kein Neubau ohne Recherche: Vorbilder aus echten Action-Spielen je Ereignis, fertige freie Profi-Flipbooks/Sprites, 2–3 Kandidaten nebeneinander, erst dann Bildfrage, erst nach PASS einbauen. Recherche und Auswahl macht das Team, nicht Georg.",
+   "values": {},
+   "owner": "WS0 · Flug",
+   "check": "V-1593, V-1508, q585",
+   "source": "Georg 11.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1599",
+   "date": "11.11.2026",
+   "area": "Kampf",
+   "verdict": "BUILD",
+   "text": "q586: Pistolen-Treffer dreimal so gross (Georg). Hauptmoment pistol.hit ×3 als Standard in pistolReferenceFx (PISTOLE_TREFFER_K), trefferblitz=<Faktor> ueberschreibt nur zum Vergleich. Stamm @a4e76512.",
+   "values": {},
+   "owner": "WS0",
+   "check": "V-1597, q586",
+   "source": "Georg 11.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1600",
+   "date": "11.11.2026",
+   "area": "Welt",
+   "verdict": "TUNE",
+   "text": "q584 Pop-up-Gruppen TUNE (Georg): Terrains und Geysire schweben zu hoch – alle sitzen mit Rundung/Basis auf, ohne im Terrain zu stecken (wie V-1578); Skalierungen sehr unterschiedlich, das funktioniert wegen der Details nicht → einheitlicher Massstab. Zurueck an Verteiler, neue Bildfrage, gebaut erst nach PASS.",
+   "values": {},
+   "owner": "WS0 · WS-Verteiler",
+   "check": "V-1591, V-1578, q584",
+   "source": "Georg 11.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
