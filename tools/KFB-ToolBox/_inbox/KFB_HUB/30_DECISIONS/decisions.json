@@ -23246,6 +23246,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1582",
+   "date": "10.11.2026",
+   "area": "Kampf",
+   "verdict": "REVIEW",
+   "text": "Faustkampf-Vergleich (test/fist-compare.mjs, Stamm @669c837f): 14 Kandidaten auf FB im Spiel-Look, feste Kamera seitlich-vorn. Lesbar: KayKit-Faustschlag, Kopfstoss A/B, Uppercut, Tritt; Box-Clips (Jab, Jab-Cross, Haken, Vierfach) bei FBs kurzen Armen kaum lesbar und drehen ihn seitlich weg. Primaer bleibt der Faustschlag; Hub q580: Sekundaer Kopfstoss, Uppercut oder Tritt. Befund: Robo-Arm ist im Faust-Modus sichtbar (Trichter am Arm) -> nur zeigen, wenn gewaehlt. VFX-Fachprompts Atmosphere und Pyro abgelegt (replies/VFX_FACHPROMPTS_R1), Start als eigene Sitzungen nach der VFX-Konsolidierung, Pyro zuerst.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q580, V-1571, V-1574",
+   "source": "Georg 10.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
