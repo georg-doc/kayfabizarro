@@ -23306,6 +23306,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1586",
+   "date": "10.11.2026",
+   "area": "Animation",
+   "verdict": "BUILD",
+   "text": "Ruckel-Pruefung ueber alle Bewegungsarten (Georg 10.11.): Spiel misst Bildzeit richtig am Bildschirmtakt; auf 60 Hz war die Pose gleichmaessig, auf 120 Hz (MacBook) rueckte sie nur jedes zweite Bild vor. animtakt nutzt jetzt M1CLOCK.frameDt (rAF), auch im Prueftakt; nachgestellt mit replay=120: Stehen und Fliegen deutlich ruhiger, Gehen/Laufen unveraendert gut (Stamm @5d5bba4b ff.). Zweite Ursache des Eindrucks: Belegvideos selbst (MediaRecorder griff Bilder unregelmaessig) -> fist-compare SMOOTH=1: Prueftakt + Bild-fuer-Bild-Aufnahme, Video mit festen 60 fps. Offen: frei berechnete Nebenbewegungen (Ohren, Cape, Bauch) und NPC/Slop-Mixer laufen weiter im Schritttakt -> mit Motion-Block-Slice pruefen.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q581, V-1585",
+   "source": "Georg 10.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
