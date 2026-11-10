@@ -1,0 +1,6151 @@
+{
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Arcade_01.prefab": [
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Arcade_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 5,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.064,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffd000"
+     ],
+     [
+      1.0,
+      "#ff6a00"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactPixel.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactValoPixel.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Arcade_01",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.17,
+      0.851
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffe29e"
+     ],
+     [
+      0.4,
+      "#ffb400"
+     ],
+     [
+      1.0,
+      "#ff2900"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactPixel 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactValoPixel2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_Arcade_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.064,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffbb00"
+     ],
+     [
+      1.0,
+      "#ff6a00"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactPixel 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactValoPixel2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Arcade_02.prefab": [
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_Arcade_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 0.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#00ff04",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 10,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "LiquidPixel.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/LiquidPixel.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Arcade_02",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 1,
+   "groesseY": 1,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#00ff20",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.17,
+      0.851
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "LiquidPixel.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/LiquidPixel.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Arcade_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#00ff1c",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "LiquidPixel.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/LiquidPixel.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Arcade_03.prefab": [
+  {
+   "name": "VFX_Arcade_03",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0.785,
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.17,
+      0.851
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactAdd 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/VFX_Impactv2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_Arcade_03",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.4,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": -0.785,
+   "farbe": "#ff9900",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.064,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 5,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactAdd 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/VFX_Impactv2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Blood_01.prefab": [
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Blood_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "BLOOD.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Blood.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Blood_01",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 1,
+   "groesseY": 1,
+   "drehung": [
+    0.524,
+    -0.524
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.17,
+      0.851
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffe29e"
+     ],
+     [
+      0.4,
+      "#ffb400"
+     ],
+     [
+      1.0,
+      "#ff2900"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "BLOOD.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Blood.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Blood_02.prefab": [
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Blood_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0.785
+   ],
+   "farbe": "#ff0000",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.506,
+      0.575
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Muzzle1 10.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/SlashV4.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Blood_02",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 1,
+   "groesseY": 2,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#000000",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.17,
+      0.851
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "BLOOD.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Blood.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Blood_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#000000",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "BLOOD.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Blood.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "Particle System (4)",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    1.571,
+    2.531
+   ],
+   "farbe": "#ff0000",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Muzzle1 10.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/SlashV4.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Classic_01.prefab": [
+  {
+   "name": "VFX_Classic_01",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffbb00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 2,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.157,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 2.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactCircle.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (2)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 6,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffbb00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 4.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Flare2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (1)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.6,
+   "tempo": 0,
+   "groesse": 3,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffbb00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 2,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.257,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 2.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactCircle.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (3)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.1,
+   "tempo": 0,
+   "groesse": 6,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffbb00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 7.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Zbam2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Classic_02.prefab": [
+  {
+   "name": "Particle System (1)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9100",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 2,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.257,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/A_ImpactCircle.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (3)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 3,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9100",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     2,
+     2
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Muzzle1 2.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Muzzle2p2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Classic_02",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9100",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.157,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/A_ImpactCircle.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (2)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 1,
+   "tempo": 0,
+   "groesse": 3,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9100",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 2,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 2.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactCircle.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Classic_03.prefab": [
+  {
+   "name": "VFX_Classic_03",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.6,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9600",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.095,
+      0.838
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.49,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 10.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Zbam3.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_03",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#000000",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.197,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactALPHA.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Zbam2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (3)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_03",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 5,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 7.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Zbam2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (2)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_03",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffbd00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.197,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 7.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Zbam2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Classic_04.prefab": [
+  {
+   "name": "VFX_Classic_04",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.6,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9600",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 3,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.095,
+      0.838
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.49,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 6.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/NoiseHack8_Paint.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_04",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#000000",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactALPHA.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Zbam2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (3)",
+   "aktiv": 1,
+   "eltern": "VFX_Classic_04",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 10,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.317,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 2.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactCircle.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Poison_01.prefab": [
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Poison_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#00ff1c",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Liquid.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Liquid.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Poison_01",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 1,
+   "groesseY": 1,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#00ff20",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.17,
+      0.851
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Liquid.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/Liquid.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/0_Classic/VFX_Poison_02.prefab": [
+  {
+   "name": "VFX_Poison_02",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#23ff00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.272,
+      0.772
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     4,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Flam_Alpha 4.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/MuzzleV3.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Poison_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.4,
+   "tempo": 0,
+   "groesse": 1.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#04ff00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.182,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Flam_Alpha 8.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/MuzzleV7.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_Poison_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.4,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#20ff00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.153,
+      0.733
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact 3.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactShotValo2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/1_Critical/VFX_Critical_01.prefab": [
+  {
+   "name": "VFX_Critical_01",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 1.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 3,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.247,
+      0.789
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.49,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactValo.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactValo.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_Critical_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.4,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 1,
+   "groesseY": 2,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ff9c00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 5,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactValo.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactValo.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Critical_01",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ff9c00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 5,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactValo 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactValo4.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/1_Critical/VFX_Critical_02.prefab": [
+  {
+   "name": "VFX_Critical_02",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 3,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.247,
+      0.789
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffb400"
+     ],
+     [
+      1.0,
+      "#ffb400"
+     ]
+    ],
+    "alpha": [
+     [
+      0.49,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactValo 2.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactValo3.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (4)",
+   "aktiv": 1,
+   "eltern": "VFX_Critical_02",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 1,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ff9c00",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 5,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "ImpactValo 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/ImpactValo4.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/2_Impact_1.1.0/VFX_ImpactClassic01_1.1.0.prefab": [
+  {
+   "name": "Particle System (7)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactClassic01_1.1.0",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 3,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.064,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ff9900"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact01_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact01.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_ImpactClassic01_1.1.0",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    0.6
+   ],
+   "tempo": 0,
+   "groesse": [
+    3,
+    3
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffa300",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 0,
+   "material": [
+    {
+     "mat": "Muzzle1 12Alpha 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/FP_BwImpact.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactClassic01_1.1.0",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.4,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9900",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.62,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact05_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact05.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (6)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactClassic01_1.1.0",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.6,
+   "tempo": 0,
+   "groesse": 3,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.289,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact04_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact04.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/2_Impact_1.1.0/VFX_ImpactCritical_1.1.0_Pink.prefab": [
+  {
+   "name": "Particle System (7)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactCritical_1.1.0_Pink",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.5,
+   "tempo": 0,
+   "groesse": 3,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff00a1",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.064,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact08_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact08.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (6)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactCritical_1.1.0_Pink",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 3,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#7c00ff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Muzzle1 5.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/SllashV2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_ImpactCritical_1.1.0_Pink",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.2,
+    0.3
+   ],
+   "tempo": 0,
+   "groesse": 4,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 2,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 5,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact08_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact08.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactCritical_1.1.0_Pink",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0.1,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 4,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff0074",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact07_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact07.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/2_Impact_1.1.0/VFX_ImpactCross_1.1.0.prefab": [
+  {
+   "name": "VFX_ImpactCross_1.1.0",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    0.6
+   ],
+   "tempo": 0,
+   "groesse": [
+    3,
+    3
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffa300",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 0,
+   "material": [
+    {
+     "mat": "Muzzle1 12Alpha 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/FP_BwImpact.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (7)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactCross_1.1.0",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.064,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ff9900"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact03_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact03.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactCross_1.1.0",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.6,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ff9900",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.62,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     2
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       0.323,
+       0.462
+      ],
+      [
+       0.641,
+       0.524
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact06_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact06.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (6)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactCross_1.1.0",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.3,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     2
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact06_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact06.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/00_Prefab/2_Impact_1.1.0/VFX_ImpactToon_1.1.0.prefab": [
+  {
+   "name": "VFX_ImpactToon_1.1.0",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    0.6
+   ],
+   "tempo": 0,
+   "groesse": [
+    3,
+    3
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffa300",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 0,
+   "material": [
+    {
+     "mat": "Muzzle1 12Alpha 1.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/FP_BwImpact.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (6)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactToon_1.1.0",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.2,
+   "tempo": 0,
+   "groesse": 3,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9900",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Muzzle1 5.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/SllashV2.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Particle System (5)",
+   "aktiv": 1,
+   "eltern": "VFX_ImpactToon_1.1.0",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 0,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 0.4,
+   "tempo": 0,
+   "groesse": 2,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9900",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "Impact09_1.1.0.mat",
+     "tex": "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/03_Texture/impact_1.1.0/Impact09.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_IMPACT_WALLCOEUR_FreeVersion/04_Model/ImpactPlane.prefab": []
+}

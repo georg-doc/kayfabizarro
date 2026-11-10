@@ -1,0 +1,81 @@
+
+### VFX_BlackSmoke.prefab
+- VFX_BlackSmoke · ab 0 s · Leben 1–1 · Größe 0.4–0.6 · Rate 10/s · A_Smoke_2.png 3x3 alpha · Farbe #000000 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:0@0→1@0.49 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.3–-0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1
+
+### VFX_Fire 1.prefab
+- VFX_Fire 1 · ab 0 s · Leben 0.8–1 · Größe 0.2–0.5 · Rate 10/s · A_Smoke.png 3x3 additiv · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×1@0.374→0@1 · Farbe/Zeit F:#ffea99@0→#ffc000@0.74 A:1@0→1@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.2 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Ordnung 2/0
+- VFX_Fire 1 · ab 0 s · Leben 0.8–1 · Größe 0.4–0.6 · Rate 10/s · A_Smoke.png 3x3 alpha · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×1@0.374→0@1 · Farbe/Zeit F:#ffea99@0→#ffc000@0.24→#ff0000@0.56→#000000@1 A:1@0→1@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Ordnung 1/0
+
+### VFX_Fire.prefab
+- VFX_Fire · ab 0 s · Leben 0.8–1 · Größe 0.4–0.6 · Rate 10/s · a_VFX_flame.png 3x3 additiv · Farbe #ff9f00 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:1@0.4→0@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.3–-0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Ordnung 1/0
+- VFX_Fire · ab 0 s · Leben 0.5–0.7 · Größe 0.4–0.6 · Rate 10/s · A_Smoke.png 3x3 additiv · Farbe #ff9f00 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:1@0.4→0@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.3–-0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Ordnung 1/0
+
+### VFX_Fire_Green.prefab
+- VFX_Fire_Green · ab 0 s · Leben 0.8–1 · Größe 0.4–0.6 · Rate 10/s · A_Smoke.png 3x3 additiv · Farbe #00ff69 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:1@0.4→0@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.3–-0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Ordnung 1/0
+
+### VFX_GreenSmoke.prefab
+- VFX_GreenSmoke · ab 0 s · Leben 1–1 · Größe 0.4–0.6 · Rate 10/s · A_Smoke_2.png 3x3 alpha · Farbe #00ff69/a0.78 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:0@0→1@0.49→0@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.3–-0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1
+
+### VFX_GreenTorchLight.prefab
+- VFX_Fire 1 · ab 0 s · Leben 0.8–1 · Größe 0.2–0.5 · Rate 10/s · A_Smoke.png 3x3 additiv · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×1@0.374→0@1 · Farbe/Zeit F:#99ffb0@0→#00ff38@0.74 A:1@0→1@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.2 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Ordnung 2/0
+- VFX_GreenTorchLight · ab 0 s · Leben 0.8–1 · Größe 0.4–0.6 · Rate 10/s · A_Smoke.png 3x3 alpha · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×1@0.374→0@1 · Farbe/Zeit F:#afff99@0→#00ff74@0.26→#000000@1 A:1@0→1@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Pos [0, 0.8, 0] · Ordnung 1/0
+
+### VFX_GroundFire_Circle.prefab
+- VFX_GroundFire_Circle · ab 0 s · Leben 1 · Größe 2–2 · Rate 5/s · A_Smoke.png 3x3 additiv · Farbe #ff6d00 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0 Form Kreis 25° r0.5 · Schwere 0–0 · Drehung 0–6.283 · waagrecht · SCHLEIFE Dauer 1 · Pos [0, 0.1, 0] · Rot [-90, 0, 0] · Ordnung 1/0
+- VFX_Ground_Fire · ab 0 s · Leben 0.5–1 · Größe 0.8–1 · Rate 15/s · a_VFX_flame.png 3x3 additiv · Farbe #ff6d00 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0 Form Kreis 25° r1 · Schwere 0–-0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 1 · Rot [-90, 0, 0] · Ordnung 2/0
+- VFX_Ground_Smoke · ab 0 s · Leben 0.5–1 · Größe 1–1 · Rate 10/s · A_Smoke_2.png 3x3 alpha · Farbe #898989 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#000000@1 A:0@0→1@0.51→0@1 · Tempo 0–0 Form Kreis 25° r1 · Schwere -0.2–-0.5 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 1 · Rot [-90, 0, 0]
+
+### VFX_GroundFire_Circle_Green.prefab
+- VFX_GroundFire_Circle_Green · ab 0 s · Leben 1 · Größe 2–2 · Rate 5/s · A_Smoke.png 3x3 additiv · Farbe #00ff69 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0 Form Kreis 25° r0.5 · Schwere 0–0 · Drehung 0–6.283 · waagrecht · SCHLEIFE Dauer 1 · Pos [0, 0.1, 0] · Rot [-90, 0, 0] · Ordnung 1/0
+- VFX_Ground_Smoke · ab 0 s · Leben 0.5–1 · Größe 1–1 · Rate 10/s · A_Smoke_2.png 3x3 alpha · Farbe #898989 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#000000@1 A:0@0→1@0.51→0@1 · Tempo 0–0 Form Kreis 25° r1 · Schwere -0.2–-0.5 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 1 · Rot [-90, 0, 0]
+- VFX_Ground_Fire · ab 0 s · Leben 0.5–1 · Größe 0.8–1 · Rate 15/s · a_VFX_flame.png 3x3 additiv · Farbe #00ff69 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0 Form Kreis 25° r1 · Schwere 0–-0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 1 · Rot [-90, 0, 0] · Ordnung 2/0
+
+### VFX_GroundFire_Line.prefab
+- VFX_GroundFire_Line · ab 0 s · Leben 0.5–1 · Größe 1–2 · Rate 10/s · A_Smoke.png 3x3 additiv · Farbe #ff6d00 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0 Form Kante 25° r1 · Schwere 0–0 · Drehung 0–6.283 · waagrecht · SCHLEIFE Dauer 1 · Pos [0, 0.1, 0] · Rot [-90, 0, 0] · Ordnung 1/0
+- VFX_Ground_Smoke · ab 0 s · Leben 0.5–1 · Größe 1–1 · Rate 10/s · A_Smoke_2.png 3x3 alpha · Farbe #898989 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#000000@1 A:0@0→1@0.51→0@1 · Tempo 0–0 Form Kante 25° r1 · Schwere -0.2–-0.5 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 1 · Rot [-90, 0, 0]
+- VFX_Ground_Fire · ab 0 s · Leben 0.5–1 · Größe 0.8–1 · Rate 15/s · a_VFX_flame.png 3x3 additiv · Farbe #ff6d00 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0 Form Kante 25° r1 · Schwere 0–-0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 1 · Rot [-90, 0, 0] · Ordnung 2/0
+
+### VFX_GroundFire_Line_Green.prefab
+- VFX_GroundFire_Line_Green · ab 0 s · Leben 0.5–1 · Größe 1–2 · Rate 10/s · A_Smoke.png 3x3 additiv · Farbe #00ff69 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0 Form Kante 25° r1 · Schwere 0–0 · Drehung 0–6.283 · waagrecht · SCHLEIFE Dauer 1 · Pos [0, 0.1, 0] · Rot [-90, 0, 0] · Ordnung 1/0
+- VFX_Ground_Smoke · ab 0 s · Leben 0.5–1 · Größe 1–1 · Rate 10/s · A_Smoke_2.png 3x3 alpha · Farbe #898989 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#000000@1 A:0@0→1@0.51→0@1 · Tempo 0–0 Form Kante 25° r1 · Schwere -0.2–-0.5 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 1 · Rot [-90, 0, 0]
+- VFX_Ground_Fire · ab 0 s · Leben 0.5–1 · Größe 0.8–1 · Rate 15/s · a_VFX_flame.png 3x3 additiv · Farbe #00ff69 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0 Form Kante 25° r1 · Schwere 0–-0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 1 · Rot [-90, 0, 0] · Ordnung 2/0
+
+### VFX_Smoke.prefab
+- VFX_Smoke · ab 0 s · Leben 1–1 · Größe 0.4–0.6 · Rate 10/s · A_Smoke_2.png 3x3 alpha · Farbe #878787 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:0@0→1@0.49 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.3–-0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1
+
+### VFX_Smoke_Green.prefab
+- VFX_Smoke_Green · ab 0 s · Leben 1–1 · Größe 0.4–0.6 · Rate 10/s · A_Smoke_2.png 3x3 alpha · Farbe #00ff69 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.1–-0.3 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1
+
+### VFX_TorchLight.prefab
+- VFX_BlackSmoke (1) · ab 0 s · Leben 0.5–1 · Größe 0.2–0.8 · Rate 5/s · a_VFX_flame.png 3x3 additiv · Farbe #ff9700 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0@0→1@0.159 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.5 · Drehung 0–6.283 · Netz · SCHLEIFE Dauer 1 · Pos [0, 0.23, 0]
+- VFX_TorchLight · ab 0 s · Leben 1–0.5 · Größe 0.4–0.6 · Rate 10/s · A_Smoke.png 3x3 additiv · Farbe #ff9700 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0@0→1@0.159 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:1@0→0@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.3–-0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Ordnung 1/0
+- VFX_BlackSmoke · ab 0 s · Leben 0.5–0.7 · Größe 0.2–0.6 · Rate 5/s · A_Smoke_2.png 3x3 alpha · Farbe #000000 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0@0→1@0.159 · Farbe/Zeit F:#000000@0→#000000@1 A:0@0→1@0.61 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.5 · Drehung 0–6.283 · Netz · SCHLEIFE Dauer 1 · Pos [0, 0.23, 0]
+
+### VFX_TorchLight_Green.prefab
+- VFX_BlackSmoke · ab 0 s · Leben 0.5–1 · Größe 0.2–0.6 · Rate 5/s · A_Smoke_2.png 3x3 alpha · Farbe #000000 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0@0→1@0.159 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.5 · Drehung 0–6.283 · Netz · SCHLEIFE Dauer 1 · Pos [0, 0.23, 0]
+- VFX_TorchLight_Green · ab 0 s · Leben 1–1 · Größe 0.4–0.6 · Rate 10/s · A_Smoke.png 3x3 additiv · Farbe #00ff69 · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0@0→1@0.159 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:1@0→0@1 · Tempo 0–0.5 Form Kugel 25° r0.0001 · Schwere -0.3–-0.5 · Drehung 6.283–0 · Netz · SCHLEIFE Dauer 1 · Ordnung 1/0
+
+### Fire Effects Blue.prefab
+- glow · ab 0 s · Leben 2.5 · Größe 5 · Burst 1@0s · glow_v1.psd alpha · Farbe #ffffff · Größe/Zeit 1×0.883@0→1@1 · Farbe/Zeit F:#7efffb@0→#0017ff@0.99 A:0@0→0.95@0.34→0@1 · Billboard · SCHLEIFE Dauer 2.5 · Pos [0, 0.44, 0]
+- dust · ab 0 s · Leben 0.5–2.5 · Größe 0.2–0.05 · Burst 0@0s Rate 20/s · magic_line.png alpha · Farbe ['#0071ff', '#000a7d'] · Größe/Zeit 1×0@0→0.821@0.468→0.058@0.982 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:0@0→1@0.22→1@0.75→0@1 · Tempo 2–10 Form Kegel 32.52° r0.47 · Schwere -0.1 · Drehung 0–6.283 · Dreh/Zeit 1.745–-1.745 · Bremse {"daempfung": 0.1, "drag": 0, "limit": 0} · Rauschen {"staerke": 0.7, "frequenz": 0.96} · Billboard · SCHLEIFE Dauer 5 · Rot [-90, 0, 0] · Ordnung 1/0
+- Fire Effects Blue · ab 0 s · Leben 0.8–1.6 · Größe 2.5 · Rate 6/s · fire_6x6.psd 6x6 additiv · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0.716@0→0.999@0.443→0.582@1 · Farbe/Zeit F:#c9edff@0.28→#1c40ff@0.49→#5900ff@0.73 A:0@0→1@0.38→1@0.75→0@1 · Schwere -0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 2 · Ordnung 1/0
+
+### Fire Effects Green.prefab
+- Fire Effects Green · ab 0 s · Leben 0.8–1.6 · Größe 2.5 · Rate 6/s · fire_6x6.psd 6x6 additiv · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0.716@0→0.999@0.443→0.582@1 · Farbe/Zeit F:#c9ffcc@0.28→#3aff0a@0.51→#b9ff00@0.74 A:0@0→1@0.38→1@0.75→0@1 · Schwere -0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 2 · Ordnung 1/0
+- glow · ab 0 s · Leben 2.5 · Größe 5 · Burst 1@0s · glow_v1.psd alpha · Farbe #ffffff · Größe/Zeit 1×0.883@0→1@1 · Farbe/Zeit F:#7eff89@0→#86ff00@1 A:0@0→0.95@0.34→0@1 · Billboard · SCHLEIFE Dauer 2.5 · Pos [0, 0.44, 0]
+- dust · ab 0 s · Leben 0.5–2.5 · Größe 0.2–0.05 · Burst 0@0s Rate 20/s · magic_line.png alpha · Farbe ['#16ff00', '#4e7d00'] · Größe/Zeit 1×0@0→0.821@0.468→0.058@0.982 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:0@0→1@0.22→1@0.75→0@1 · Tempo 2–10 Form Kegel 32.52° r0.47 · Schwere -0.1 · Drehung 0–6.283 · Dreh/Zeit 1.745–-1.745 · Bremse {"daempfung": 0.1, "drag": 0, "limit": 0} · Rauschen {"staerke": 0.7, "frequenz": 0.96} · Billboard · SCHLEIFE Dauer 5 · Rot [-90, 0, 0] · Ordnung 1/0
+
+### Fire Effects Purple.prefab
+- glow · ab 0 s · Leben 2.5 · Größe 5 · Burst 1@0s · glow_v1.psd alpha · Farbe #ffffff · Größe/Zeit 1×0.883@0→1@1 · Farbe/Zeit F:#f17eff@0→#ff00a4@1 A:0@0→0.95@0.34→0@1 · Billboard · SCHLEIFE Dauer 2.5 · Pos [0, 0.44, 0]
+- dust · ab 0 s · Leben 0.5–2.5 · Größe 0.2–0.05 · Burst 0@0s Rate 20/s · magic_line.png alpha · Farbe ['#e900ff', '#7d004e'] · Größe/Zeit 1×0@0→0.821@0.468→0.058@0.982 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:0@0→1@0.22→1@0.75→0@1 · Tempo 2–10 Form Kegel 32.52° r0.47 · Schwere -0.1 · Drehung 0–6.283 · Dreh/Zeit 1.745–-1.745 · Bremse {"daempfung": 0.1, "drag": 0, "limit": 0} · Rauschen {"staerke": 0.7, "frequenz": 0.96} · Billboard · SCHLEIFE Dauer 5 · Rot [-90, 0, 0] · Ordnung 1/0
+- Fire Effects Purple · ab 0 s · Leben 0.8–1.6 · Größe 2.5 · Rate 6/s · fire_6x6.psd 6x6 additiv · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0.716@0→0.999@0.443→0.582@1 · Farbe/Zeit F:#ffc9fc@0.28→#ff45c8@0.51→#ff0047@0.73 A:0@0→1@0.38→1@0.75→0@1 · Schwere -0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 2 · Ordnung 1/0
+
+### Fire Effects Red.prefab
+- glow · ab 0 s · Leben 2.5 · Größe 5 · Burst 1@0s · glow_v1.psd alpha · Farbe #ffffff · Größe/Zeit 1×0.883@0→1@1 · Farbe/Zeit F:#ffb97e@0→#ff6e00@1 A:0@0→0.95@0.34→0@1 · Billboard · SCHLEIFE Dauer 2.5 · Pos [0, 0.44, 0]
+- Fire Effects Red · ab 0 s · Leben 0.8–1.6 · Größe 2.5 · Rate 6/s · fire_6x6.psd 6x6 additiv · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0.716@0→0.999@0.443→0.582@1 · Farbe/Zeit F:#ffcfa7@0.28→#ffb50b@0.49→#ff6800@0.73 A:0@0→1@0.38→1@0.75→0@1 · Schwere -0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 2 · Ordnung 1/0
+- dust · ab 0 s · Leben 0.5–2.5 · Größe 0.2–0.05 · Burst 0@0s Rate 20/s · magic_line.png alpha · Farbe ['#ff7900', '#7d3d00'] · Größe/Zeit 1×0@0→0.821@0.468→0.058@0.982 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:0@0→1@0.22→1@0.75→0@1 · Tempo 2–10 Form Kegel 32.52° r0.47 · Schwere -0.1 · Drehung 0–6.283 · Dreh/Zeit 1.745–-1.745 · Bremse {"daempfung": 0.1, "drag": 0, "limit": 0} · Rauschen {"staerke": 0.7, "frequenz": 0.96} · Billboard · SCHLEIFE Dauer 5 · Rot [-90, 0, 0] · Ordnung 1/0
+
+### Fire Effects White.prefab
+- Fire Effects White · ab 0 s · Leben 0.8–1.6 · Größe 2.5 · Rate 6/s · fire_6x6.psd 6x6 additiv · Farbe #ffffff · Flipbook Bild 1.0×0@0→1@1 Zyklen 1 · Größe/Zeit 1×0.716@0→0.999@0.443→0.582@1 · Farbe/Zeit F:#ffffff@0.28→#716161@0.51→#3a3030@0.73 A:0@0→1@0.38→1@0.75→0@1 · Schwere -0.3 · Drehung 0–6.283 · Billboard · SCHLEIFE Dauer 2 · Ordnung 1/0
+- dust · ab 0 s · Leben 0.5–2.5 · Größe 0.2–0.05 · Burst 0@0s Rate 20/s · magic_line.png alpha · Farbe ['#303030', '#a48989'] · Größe/Zeit 1×0@0→0.821@0.468→0.058@0.982 · Farbe/Zeit F:#ffffff@0→#ffffff@1 A:0@0→1@0.22→1@0.75→0@1 · Tempo 2–10 Form Kegel 32.52° r0.47 · Schwere -0.1 · Drehung 0–6.283 · Dreh/Zeit 1.745–-1.745 · Bremse {"daempfung": 0.1, "drag": 0, "limit": 0} · Rauschen {"staerke": 0.7, "frequenz": 0.96} · Billboard · SCHLEIFE Dauer 5 · Rot [-90, 0, 0] · Ordnung 1/0
+- glow · ab 0 s · Leben 2.5 · Größe 5 · Burst 1@0s · glow_v1.psd alpha · Farbe #ffffff · Größe/Zeit 1×0.883@0→1@1 · Farbe/Zeit F:#f8f8f8@0→#5e4f4f@1 A:0@0→0.95@0.34→0@1 · Billboard · SCHLEIFE Dauer 2.5 · Pos [0, 0.44, 0]

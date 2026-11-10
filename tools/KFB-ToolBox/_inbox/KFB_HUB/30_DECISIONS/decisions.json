@@ -23651,6 +23651,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1609",
+   "date": "11.11.2026",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg 11.11.: feste Aufnahme-Standards fuer Abnahmen und Hero-Shots statt falscher Kameraeinstellungen und stiller Nachlaeufe. Beleg-Standard R1 (replies/BELEG_STANDARD_R1.md) mit Pflichtwerkzeug test/lib/beleg.mjs (Stamm @6da7909e): Ansichten gesicht, figur_vorn, figur_dreiviertel, figur_seite, aktion, boden, uebersicht; immer vor der Figur (Augenlinie), Abstand aus Figurenhoehe, FB-Waechter, HUD aus, Uhr halten; Bewegung replay=30, Bildfolge Kontakt/+1/+2/+4, GIF feste Palette. Weitere Antworten 11.11.: q589 Viertel-Rand PASS; q591 Nahkampf R2 PASS → gemergt, nahkampffx=r1 in Testfahrt+Release (@19ce01c8), Georgs Blaetter in assets/private @99f9374c; Georg-Notiz Oberlider halb geschlossen → q592 (heute / etwas offener / weit offen, Schalter fblidu). Treffer-Grammatik R1 (Flug) angenommen, Go Lieferung 2 (Faust, Uppercut, Boden, Pistole, Blaster).",
+   "values": {},
+   "owner": "WS0",
+   "check": "V-1608, q589, q591, q592",
+   "source": "Georg 11.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [

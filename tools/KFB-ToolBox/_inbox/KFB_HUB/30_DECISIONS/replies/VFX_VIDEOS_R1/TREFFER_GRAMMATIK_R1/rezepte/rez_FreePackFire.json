@@ -1,0 +1,2047 @@
+{
+ "Assets/PolyOne/Fire Effects/Prefabs/Fire Effects Blue.prefab": [
+  {
+   "name": "glow",
+   "aktiv": 1,
+   "eltern": "Fire Effects Blue",
+   "pos": {
+    "x": 0,
+    "y": 0.44,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2.5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 2.5,
+   "tempo": 0,
+   "groesse": 5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.883
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#7efffb"
+     ],
+     [
+      0.99,
+      "#0017ff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.34,
+      0.95
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "glow_v1.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/glow_v1.psd",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "dust",
+   "aktiv": 1,
+   "eltern": "Fire Effects Blue",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    2.5
+   ],
+   "tempo": [
+    2,
+    10
+   ],
+   "groesse": [
+    0.2,
+    0.05
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": [
+    "#0071ff",
+    "#000a7d"
+   ],
+   "schwere": -0.1,
+   "max": 1000,
+   "rate": 20,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 0,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": {
+    "art": "Kegel",
+    "winkel": 32.52,
+    "radius": 0.47
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.468,
+      0.821
+     ],
+     [
+      0.982,
+      0.058
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.22,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": [
+    1.745,
+    -1.745
+   ],
+   "bremse": {
+    "daempfung": 0.1,
+    "drag": 0,
+    "limit": 0
+   },
+   "kraft": null,
+   "rauschen": {
+    "staerke": 0.7,
+    "frequenz": 0.96
+   },
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "magic_line.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/magic_line.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Fire Effects Blue",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.8,
+    1.6
+   ],
+   "tempo": 0,
+   "groesse": 2.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.3,
+   "max": 1000,
+   "rate": 6,
+   "bursts": [],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.716
+     ],
+     [
+      0.443,
+      0.999
+     ],
+     [
+      1,
+      0.582
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.28,
+      "#c9edff"
+     ],
+     [
+      0.49,
+      "#1c40ff"
+     ],
+     [
+      0.73,
+      "#5900ff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.38,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     6,
+     6
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "fire_6x6.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/fire_6x6.psd",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/PolyOne/Fire Effects/Prefabs/Fire Effects Green.prefab": [
+  {
+   "name": "Fire Effects Green",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.8,
+    1.6
+   ],
+   "tempo": 0,
+   "groesse": 2.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.3,
+   "max": 1000,
+   "rate": 6,
+   "bursts": [],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.716
+     ],
+     [
+      0.443,
+      0.999
+     ],
+     [
+      1,
+      0.582
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.28,
+      "#c9ffcc"
+     ],
+     [
+      0.51,
+      "#3aff0a"
+     ],
+     [
+      0.74,
+      "#b9ff00"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.38,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     6,
+     6
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "fire_6x6.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/fire_6x6.psd",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "glow",
+   "aktiv": 1,
+   "eltern": "Fire Effects Green",
+   "pos": {
+    "x": 0,
+    "y": 0.44,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2.5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 2.5,
+   "tempo": 0,
+   "groesse": 5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.883
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#7eff89"
+     ],
+     [
+      1.0,
+      "#86ff00"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.34,
+      0.95
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "glow_v1.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/glow_v1.psd",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "dust",
+   "aktiv": 1,
+   "eltern": "Fire Effects Green",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    2.5
+   ],
+   "tempo": [
+    2,
+    10
+   ],
+   "groesse": [
+    0.2,
+    0.05
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": [
+    "#16ff00",
+    "#4e7d00"
+   ],
+   "schwere": -0.1,
+   "max": 1000,
+   "rate": 20,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 0,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": {
+    "art": "Kegel",
+    "winkel": 32.52,
+    "radius": 0.47
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.468,
+      0.821
+     ],
+     [
+      0.982,
+      0.058
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.22,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": [
+    1.745,
+    -1.745
+   ],
+   "bremse": {
+    "daempfung": 0.1,
+    "drag": 0,
+    "limit": 0
+   },
+   "kraft": null,
+   "rauschen": {
+    "staerke": 0.7,
+    "frequenz": 0.96
+   },
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "magic_line.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/magic_line.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/PolyOne/Fire Effects/Prefabs/Fire Effects Purple.prefab": [
+  {
+   "name": "glow",
+   "aktiv": 1,
+   "eltern": "Fire Effects Purple",
+   "pos": {
+    "x": 0,
+    "y": 0.44,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2.5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 2.5,
+   "tempo": 0,
+   "groesse": 5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.883
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#f17eff"
+     ],
+     [
+      1.0,
+      "#ff00a4"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.34,
+      0.95
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "glow_v1.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/glow_v1.psd",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "dust",
+   "aktiv": 1,
+   "eltern": "Fire Effects Purple",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    2.5
+   ],
+   "tempo": [
+    2,
+    10
+   ],
+   "groesse": [
+    0.2,
+    0.05
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": [
+    "#e900ff",
+    "#7d004e"
+   ],
+   "schwere": -0.1,
+   "max": 1000,
+   "rate": 20,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 0,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": {
+    "art": "Kegel",
+    "winkel": 32.52,
+    "radius": 0.47
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.468,
+      0.821
+     ],
+     [
+      0.982,
+      0.058
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.22,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": [
+    1.745,
+    -1.745
+   ],
+   "bremse": {
+    "daempfung": 0.1,
+    "drag": 0,
+    "limit": 0
+   },
+   "kraft": null,
+   "rauschen": {
+    "staerke": 0.7,
+    "frequenz": 0.96
+   },
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "magic_line.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/magic_line.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Fire Effects Purple",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.8,
+    1.6
+   ],
+   "tempo": 0,
+   "groesse": 2.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.3,
+   "max": 1000,
+   "rate": 6,
+   "bursts": [],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.716
+     ],
+     [
+      0.443,
+      0.999
+     ],
+     [
+      1,
+      0.582
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.28,
+      "#ffc9fc"
+     ],
+     [
+      0.51,
+      "#ff45c8"
+     ],
+     [
+      0.73,
+      "#ff0047"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.38,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     6,
+     6
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "fire_6x6.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/fire_6x6.psd",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/PolyOne/Fire Effects/Prefabs/Fire Effects Red.prefab": [
+  {
+   "name": "glow",
+   "aktiv": 1,
+   "eltern": "Fire Effects Red",
+   "pos": {
+    "x": 0,
+    "y": 0.44,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2.5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 2.5,
+   "tempo": 0,
+   "groesse": 5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.883
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffb97e"
+     ],
+     [
+      1.0,
+      "#ff6e00"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.34,
+      0.95
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "glow_v1.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/glow_v1.psd",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "Fire Effects Red",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.8,
+    1.6
+   ],
+   "tempo": 0,
+   "groesse": 2.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.3,
+   "max": 1000,
+   "rate": 6,
+   "bursts": [],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.716
+     ],
+     [
+      0.443,
+      0.999
+     ],
+     [
+      1,
+      0.582
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.28,
+      "#ffcfa7"
+     ],
+     [
+      0.49,
+      "#ffb50b"
+     ],
+     [
+      0.73,
+      "#ff6800"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.38,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     6,
+     6
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "fire_6x6.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/fire_6x6.psd",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "dust",
+   "aktiv": 1,
+   "eltern": "Fire Effects Red",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    2.5
+   ],
+   "tempo": [
+    2,
+    10
+   ],
+   "groesse": [
+    0.2,
+    0.05
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": [
+    "#ff7900",
+    "#7d3d00"
+   ],
+   "schwere": -0.1,
+   "max": 1000,
+   "rate": 20,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 0,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": {
+    "art": "Kegel",
+    "winkel": 32.52,
+    "radius": 0.47
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.468,
+      0.821
+     ],
+     [
+      0.982,
+      0.058
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.22,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": [
+    1.745,
+    -1.745
+   ],
+   "bremse": {
+    "daempfung": 0.1,
+    "drag": 0,
+    "limit": 0
+   },
+   "kraft": null,
+   "rauschen": {
+    "staerke": 0.7,
+    "frequenz": 0.96
+   },
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "magic_line.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/magic_line.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/PolyOne/Fire Effects/Prefabs/Fire Effects White.prefab": [
+  {
+   "name": "Fire Effects White",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.8,
+    1.6
+   ],
+   "tempo": 0,
+   "groesse": 2.5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.3,
+   "max": 1000,
+   "rate": 6,
+   "bursts": [],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.716
+     ],
+     [
+      0.443,
+      0.999
+     ],
+     [
+      1,
+      0.582
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.28,
+      "#ffffff"
+     ],
+     [
+      0.51,
+      "#716161"
+     ],
+     [
+      0.73,
+      "#3a3030"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.38,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     6,
+     6
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "fire_6x6.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/fire_6x6.psd",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "dust",
+   "aktiv": 1,
+   "eltern": "Fire Effects White",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    2.5
+   ],
+   "tempo": [
+    2,
+    10
+   ],
+   "groesse": [
+    0.2,
+    0.05
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": [
+    "#303030",
+    "#a48989"
+   ],
+   "schwere": -0.1,
+   "max": 1000,
+   "rate": 20,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 0,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": {
+    "art": "Kegel",
+    "winkel": 32.52,
+    "radius": 0.47
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.468,
+      0.821
+     ],
+     [
+      0.982,
+      0.058
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.22,
+      1
+     ],
+     [
+      0.75,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": [
+    1.745,
+    -1.745
+   ],
+   "bremse": {
+    "daempfung": 0.1,
+    "drag": 0,
+    "limit": 0
+   },
+   "kraft": null,
+   "rauschen": {
+    "staerke": 0.7,
+    "frequenz": 0.96
+   },
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "magic_line.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/magic_line.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "glow",
+   "aktiv": 1,
+   "eltern": "Fire Effects White",
+   "pos": {
+    "x": 0,
+    "y": 0.44,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 2.5,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 2.5,
+   "tempo": 0,
+   "groesse": 5,
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": 0,
+   "farbe": "#ffffff",
+   "schwere": 0,
+   "max": 1000,
+   "rate": 0,
+   "bursts": [
+    {
+     "t": 0,
+     "n": 1,
+     "zyklen": 1,
+     "abstand": 0.01
+    }
+   ],
+   "form": null,
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0.883
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#f8f8f8"
+     ],
+     [
+      1.0,
+      "#5e4f4f"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.34,
+      0.95
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": null,
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "glow_v1.mat",
+     "tex": "Assets/PolyOne/Fire Effects/Texture/glow_v1.psd",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ]
+}

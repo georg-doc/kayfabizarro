@@ -1,0 +1,3580 @@
+{
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_BlackSmoke.prefab": [
+  {
+   "name": "VFX_BlackSmoke",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    1,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#000000",
+   "schwere": [
+    -0.3,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.49,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_Fire 1.prefab": [
+  {
+   "name": "VFX_Fire 1",
+   "aktiv": 1,
+   "eltern": "VFX_Fire 1",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.8,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.2,
+    0.5
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.2,
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0.374,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffea99"
+     ],
+     [
+      0.74,
+      "#ffc000"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Fire 1",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.8,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.5,
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0.374,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffea99"
+     ],
+     [
+      0.24,
+      "#ffc000"
+     ],
+     [
+      0.56,
+      "#ff0000"
+     ],
+     [
+      1.0,
+      "#000000"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_2.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_Fire.prefab": [
+  {
+   "name": "VFX_Fire",
+   "aktiv": 1,
+   "eltern": "VFX_Fire",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.8,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#ff9f00",
+   "schwere": [
+    -0.3,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.4,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_FlameAdd 1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/a_VFX_flame.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Fire",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.5,
+    0.7
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#ff9f00",
+   "schwere": [
+    -0.3,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.4,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_Fire_Green.prefab": [
+  {
+   "name": "VFX_Fire_Green",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.8,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#00ff69",
+   "schwere": [
+    -0.3,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.4,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_GreenSmoke.prefab": [
+  {
+   "name": "VFX_GreenSmoke",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    1,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#00ff69/a0.78",
+   "schwere": [
+    -0.3,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.49,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_GreenTorchLight.prefab": [
+  {
+   "name": "VFX_Fire 1",
+   "aktiv": 1,
+   "eltern": "VFX_GreenTorchLight",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.8,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.2,
+    0.5
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.2,
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0.374,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#99ffb0"
+     ],
+     [
+      0.74,
+      "#00ff38"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_GreenTorchLight",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0.8,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.8,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#ffffff",
+   "schwere": -0.5,
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0.374,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#afff99"
+     ],
+     [
+      0.26,
+      "#00ff74"
+     ],
+     [
+      1.0,
+      "#000000"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_2.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_GroundFire_Circle.prefab": [
+  {
+   "name": "VFX_GroundFire_Circle",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0.1,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 1,
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    2,
+    2
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff6d00",
+   "schwere": [
+    0,
+    0
+   ],
+   "max": 20,
+   "rate": 5,
+   "bursts": [],
+   "form": {
+    "art": "Kreis",
+    "winkel": 25,
+    "radius": 0.5
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "waagrecht",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Ground_Fire",
+   "aktiv": 1,
+   "eltern": "VFX_GroundFire_Circle",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    0.8,
+    1
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff6d00",
+   "schwere": [
+    0,
+    -0.3
+   ],
+   "max": 20,
+   "rate": 15,
+   "bursts": [],
+   "form": {
+    "art": "Kreis",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_FlameAdd 1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/a_VFX_flame.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Ground_Smoke",
+   "aktiv": 1,
+   "eltern": "VFX_GroundFire_Circle",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    1,
+    1
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#898989",
+   "schwere": [
+    -0.2,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kreis",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#000000"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.51,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_GroundFire_Circle_Green.prefab": [
+  {
+   "name": "VFX_GroundFire_Circle_Green",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0.1,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": 1,
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    2,
+    2
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#00ff69",
+   "schwere": [
+    0,
+    0
+   ],
+   "max": 20,
+   "rate": 5,
+   "bursts": [],
+   "form": {
+    "art": "Kreis",
+    "winkel": 25,
+    "radius": 0.5
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "waagrecht",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Ground_Smoke",
+   "aktiv": 1,
+   "eltern": "VFX_GroundFire_Circle_Green",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    1,
+    1
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#898989",
+   "schwere": [
+    -0.2,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kreis",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#000000"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.51,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Ground_Fire",
+   "aktiv": 1,
+   "eltern": "VFX_GroundFire_Circle_Green",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    0.8,
+    1
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#00ff69",
+   "schwere": [
+    0,
+    -0.3
+   ],
+   "max": 20,
+   "rate": 15,
+   "bursts": [],
+   "form": {
+    "art": "Kreis",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_FlameAdd 1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/a_VFX_flame.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_GroundFire_Line.prefab": [
+  {
+   "name": "VFX_GroundFire_Line",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0.1,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    1,
+    2
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff6d00",
+   "schwere": [
+    0,
+    0
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kante",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "waagrecht",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Ground_Smoke",
+   "aktiv": 1,
+   "eltern": "VFX_GroundFire_Line",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    1,
+    1
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#898989",
+   "schwere": [
+    -0.2,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kante",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#000000"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.51,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Ground_Fire",
+   "aktiv": 1,
+   "eltern": "VFX_GroundFire_Line",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    0.8,
+    1
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff6d00",
+   "schwere": [
+    0,
+    -0.3
+   ],
+   "max": 20,
+   "rate": 15,
+   "bursts": [],
+   "form": {
+    "art": "Kante",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_FlameAdd 1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/a_VFX_flame.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_GroundFire_Line_Green.prefab": [
+  {
+   "name": "VFX_GroundFire_Line_Green",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0.1,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    1,
+    2
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#00ff69",
+   "schwere": [
+    0,
+    0
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kante",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "waagrecht",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Ground_Smoke",
+   "aktiv": 1,
+   "eltern": "VFX_GroundFire_Line_Green",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    1,
+    1
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#898989",
+   "schwere": [
+    -0.2,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kante",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#000000"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.51,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_Ground_Fire",
+   "aktiv": 1,
+   "eltern": "VFX_GroundFire_Line_Green",
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": -90,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "lokal",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0
+   ],
+   "groesse": [
+    0.8,
+    1
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#00ff69",
+   "schwere": [
+    0,
+    -0.3
+   ],
+   "max": 20,
+   "rate": 15,
+   "bursts": [],
+   "form": {
+    "art": "Kante",
+    "winkel": 25,
+    "radius": 1
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Billboard",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 2,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_FlameAdd 1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/a_VFX_flame.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_Smoke.prefab": [
+  {
+   "name": "VFX_Smoke",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    1,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#878787",
+   "schwere": [
+    -0.3,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.49,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_Smoke_Green.prefab": [
+  {
+   "name": "VFX_Smoke_Green",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    1,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#00ff69",
+   "schwere": [
+    -0.1,
+    -0.3
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": null,
+   "groesseZeitGetrennt": null,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_TorchLight.prefab": [
+  {
+   "name": "VFX_BlackSmoke (1)",
+   "aktiv": 1,
+   "eltern": "VFX_TorchLight",
+   "pos": {
+    "x": 0,
+    "y": 0.229,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.2,
+    0.8
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#ff9700",
+   "schwere": -0.5,
+   "max": 20,
+   "rate": 5,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.159,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_FlameAdd 1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/a_VFX_flame.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_TorchLight",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    1,
+    0.5
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#ff9700",
+   "schwere": [
+    -0.3,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.159,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_BlackSmoke",
+   "aktiv": 1,
+   "eltern": "VFX_TorchLight",
+   "pos": {
+    "x": 0,
+    "y": 0.229,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.5,
+    0.7
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.2,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#000000",
+   "schwere": -0.5,
+   "max": 20,
+   "rate": 5,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.159,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#000000"
+     ],
+     [
+      1.0,
+      "#000000"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      0
+     ],
+     [
+      0.61,
+      1
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ],
+ "Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_TorchLight_Green.prefab": [
+  {
+   "name": "VFX_BlackSmoke",
+   "aktiv": 1,
+   "eltern": "VFX_TorchLight_Green",
+   "pos": {
+    "x": 0,
+    "y": 0.229,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    0.5,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.2,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    0,
+    6.283
+   ],
+   "farbe": "#000000",
+   "schwere": -0.5,
+   "max": 20,
+   "rate": 5,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.159,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": null,
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 0,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAlpha_1.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke_2.png",
+     "misch": "alpha",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  },
+  {
+   "name": "VFX_TorchLight_Green",
+   "aktiv": 1,
+   "eltern": null,
+   "pos": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "rot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "skala": {
+    "x": 1,
+    "y": 1,
+    "z": 1
+   },
+   "dauer": 1,
+   "schleife": 1,
+   "verzoegerung": 0,
+   "simTempo": 1,
+   "raum": "Welt",
+   "leben": [
+    1,
+    1
+   ],
+   "tempo": [
+    0,
+    0.5
+   ],
+   "groesse": [
+    0.4,
+    0.6
+   ],
+   "groesse3D": 0,
+   "groesseY": null,
+   "drehung": [
+    6.283,
+    0
+   ],
+   "farbe": "#00ff69",
+   "schwere": [
+    -0.3,
+    -0.5
+   ],
+   "max": 20,
+   "rate": 10,
+   "bursts": [],
+   "form": {
+    "art": "Kugel",
+    "winkel": 25,
+    "radius": 0.0001
+   },
+   "groesseZeit": {
+    "x": 1,
+    "kurve": [
+     [
+      0,
+      0
+     ],
+     [
+      0.159,
+      1
+     ]
+    ]
+   },
+   "groesseZeitGetrennt": false,
+   "farbeZeit": {
+    "farbe": [
+     [
+      0.0,
+      "#ffffff"
+     ],
+     [
+      1.0,
+      "#ffffff"
+     ]
+    ],
+    "alpha": [
+     [
+      0.0,
+      1
+     ],
+     [
+      1.0,
+      0
+     ]
+    ]
+   },
+   "flipbook": {
+    "raster": [
+     3,
+     3
+    ],
+    "bild": {
+     "x": 1.0,
+     "kurve": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    },
+    "start": 0,
+    "zyklen": 1,
+    "art": 0,
+    "zeitmodus": 0,
+    "fps": 30
+   },
+   "geschwZeit": null,
+   "drehZeit": null,
+   "bremse": null,
+   "kraft": null,
+   "rauschen": null,
+   "spur": false,
+   "licht": false,
+   "render": "Netz",
+   "streck": null,
+   "ausrichtung": "Sicht",
+   "sortierung": 0,
+   "ordnung": 1,
+   "pivot": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "renderAn": 1,
+   "material": [
+    {
+     "mat": "A_SmokeAdd.mat",
+     "tex": "Assets/VFXPACK_FIRE_WALLCOEUR/Texture/A_Smoke.png",
+     "misch": "additiv",
+     "shader": "0000000000000000f000000000000000",
+     "farbe": "#ffffff"
+    }
+   ]
+  }
+ ]
+}
