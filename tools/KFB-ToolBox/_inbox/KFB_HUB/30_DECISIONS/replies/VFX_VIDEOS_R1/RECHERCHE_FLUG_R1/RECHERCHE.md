@@ -6,7 +6,10 @@ Ordner **BESTAND_UEBERSICHT/** enthält je Bestandsordner ein Blatt; Folgen steh
 - O4 explosions_smoke: alle 14 GIF als Bildfolgen.
 - O5 kenney_smoke-particles, O6 Beams_BinbunVFX (Textur), O7 pipo.
 - O8 Craftpix-Rauch, O9 kenney_splat, O10 Tiny Swords Particle FX, O11 Craftpix Wasser/Feuer.
-- Fehlen noch: kenney_particle-pack, unity_labs_WispySmoke01, unity_labs_DiscSmoke01 (kommen nach WS0s Push).
+- O12 kenney_particle-pack, O13 unity_labs_WispySmoke01, O14 unity_labs_DiscSmoke01 (kayfabizarro@a9143605, nachgetragen 11.11.).
+  - O12: dieselbe Teilchen-Reihe wie Brackeys (O1), dazu Herz- und Sternsymbol. Nichts Neues für den Nahkampf.
+  - O13: echter Houdini-Rauchbausch, 8×8 = 64 Bilder, grau, realistisch. Kandidat für den Staubbausch der 3D-Ebene (V3 Astro Bot), nicht für die flache 2D-Ebene.
+  - O14: aufsteigende Rauchsäule, 16×4 = 64 Bilder, realistisch. Trotz des Namens kein flacher Bodenring; für Nahkampf zu hoch und zu lang.
 
 Bestes Stück je Trefferfamilie aus dem **gesamten** Bestand (ohne die drei neuen Ordner):
 
