@@ -23681,6 +23681,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1611",
+   "date": "11.11.2026",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Georg 11.11.: fuer jeden Character, NPC, Slop, Frankensteining und kuenftige 2D-Figuren (KFB-Eye-Rig, Brauen, 6+ Muender) eine SSOT zentral verwalten, abrufen, fuers Spiel editierbar. Charakter-SSOT R2 (replies/CHARACTER_SSOT_R2.md): data/characters/<id>.character.json im Spiel-Repo, Schema kfb.character/2, Abschnitte identity, story, personality, dialogue (Stimme, Chatterbox, Triplets), cards (Decks), preferences, memory, appearance (Koerper, Augen, Lider, Brauen, Mund, Nase, Ohren, Farben, Addons, ein Format fuer 3D und 2D), performance, game (Slops: Stufen); jedes Feld {v,src,status}. Ein Lader im Spiel, Code-Konstanten wandern in die Datei, FB-Waechter prueft dagegen. Reihenfolge: FB (WS0) → Migration 132 Register-Figuren + Figurenkarten + Slop-Roster (WS0) → Dramatis Personae/Hub lesen (WSA) → Werkstatt schreibt via Vorschlags-Zweig (PR #416) → Luecken per Georg-Diktat. Status-Befund 11.11.: Register 132 Figuren, gefuellt Helden ~8/14, KayKit ~5,6, eigene Rigs ~3, Tiere ~1; Slops nicht im Register; Spiel liest Register nicht; V-1105/V-1106 nie gestartet.",
+   "values": {},
+   "owner": "WS0 · WSA work",
+   "check": "V-391, V-394, V-682, V-1105, V-1106",
+   "source": "Georg 11.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
