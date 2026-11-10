@@ -23291,6 +23291,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1585",
+   "date": "10.11.2026",
+   "area": "Animation",
+   "verdict": "BUILD",
+   "text": "Georg q581: Pistolenschuss heute behalten; Frage ruckelig -> Ursache gemessen: Clips sauber (KayKit 30 Keys/s, linear), aber die Figuren-Pose rueckte je Bild starr 1/60 s vor (Bildabstaende 9-24 ms, auf 120-Hz-Schirmen nur jedes zweite Bild) -> animtakt=1: Animation im Bildtakt mit echter Bildzeit, Fehler p95 16 ms -> 0,5 ms (test/anim-takt.mjs), Logik/Physik/Replay unveraendert, Testfahrt+Release (Stamm @3de484d2). Georg-Frage NVIDIA/Pose-to-Pose: MotionBricks nur NVIDIA-GPU (spaeter, V-1388); Cartoon-Schluesselposen V-891 gestoppt (V-944); Motion-Block-Phasen (V-915) im Kampf noch nicht umgesetzt -> eigener Slice mit SkillDB Timing & Spacing. SkillDB-Top-5 (Procedural Generation, Game VFX, LOD, Game UI UX, Timing & Spacing) als Wissensbausteine abgelegt in replies/VFX_FACHPROMPTS_R1.",
+   "values": {},
+   "owner": "WS0",
+   "check": "q581, V-915, V-1388",
+   "source": "Georg 10.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
