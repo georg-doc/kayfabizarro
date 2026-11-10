@@ -1,3 +1,13 @@
+## Arena and Knights production · 2026-11-10
+
+Georg deferred the six defeated-Slop ground-remnant sheets because they did not read in 3D. Status is DEFERRED_3D_READABILITY. The review sources remain local and outside the selected intake index.
+
+Four new upright 3×2 candidate sheets cover Arena Regulars, Arena Attractions, Tournament Knights and Campaign Knights. The 24 designs are awaiting Georg's design verdict. All four PNGs passed RGBA and 1536 × 1024 checks. Clear cuts are documented in the local production record, including three small horizontal offsets.
+
+Next gate is Georg's design verdict on the four Arena and Knights sheets.
+
+---
+
 ## Alien and Sci-Fi expansion design acceptance · 2026-11-08
 
 Georg approved all 36 designs across six transparent PNGs. The [batch record](ALIEN_SF_SIX_CREWS_BATCH_20261108.json) queues the sheets for the existing Game and Asset Librarian intake. The index records 247 selected sheets and 1482 depictions, including 245 intake-eligible sheets and 1470 intake-eligible depictions. Three 3×2 sheets have offset crop guides. Individual extraction and receiving are pending.
