@@ -51,3 +51,41 @@ Das Briefing in PR #113 verlangte sogar ausdrücklich „einfache Test-Geometrie
    - gegen PROMPT_PYRO §9 und gegen die Frage aus Video 1: „Fühlen sich die Kanten richtig an?“.
    - Sieht es selbstgebaut aus, geht es nicht in den Hub.
 6. Georg bekommt nur fertige Kandidaten (2–3) als Bildfrage. Die Recherche macht das Team.
+
+## Nachtrag · 2D-Cartoon-Ebene über den Blender-Effekten (Georg 11.11.)
+
+Vorbild: https://www.youtube.com/watch?v=Ac06QlbcAyM (Absolum, gezeichneter Beat-'em-up). WS0 hat die Treffermomente über Blitzbild-Suche gezielt angehalten:
+
+| Moment | Was man sieht |
+|---|---|
+| 1:59 | **Wisch-Bogen (Smear):** breite weiße Sichel entlang des Schlags, harte Kante, dunkler Rand, verjüngt sich zu den Enden |
+| 2:05 | **Treffer-Stern:** gezackter weiß-gelber Stern am Kontaktpunkt, 3–4 lange Zacken in Schlagrichtung |
+| 2:23 | **Schlag-Explosion beim schweren Treffer:** große gelbe Blitzzacken radial vom Boden, mit Tusche-Umriss |
+| 2:29 | **Blitz-Scheibe:** flache gelbe Scheibe mit hellem Rand, nur 1–2 Bilder lang |
+
+Gemeinsam:
+- flache Farben (2–3 Töne), keine Verläufe, kein Glühen;
+- harte, gezeichnete Kanten;
+- große Formen, sehr kurz (2–6 Bilder), Bildfolgen auf Zweiern;
+- liegen über dem Geschehen und zeigen den Moment, nicht das Volumen.
+
+Aufteilung für KFB:
+- **3D-/Blender-Ebene:** Volumen im Raum, also Hieb-Band entlang der Bewegung, Staub, Rauch, Trümmer (siehe oben).
+- **2D-Ebene obendrauf:** die Satzzeichen des Treffers.
+  - Wisch-Bogen am Schlag.
+  - Treffer-Stern im Kontaktbild.
+  - Zacken-Explosion bei Uppercut, Landung und schweren Treffern.
+  - Blitz-Scheibe 1–2 Bilder.
+  - Dazu Tempolinien.
+
+Technik:
+- Gezeichnete Bildfolgen als Sprite zur Kamera gedreht, über das gemeinsame 2D-Modul (q495).
+- Abspielen auf Zweiern; vor den 3D-Effekten sortiert.
+- Lebensdauer 2–6 Bilder, Größe aus der Schlagrichtung.
+- Umriss wie im Vorbild nur dort, wo er zum Effekt gehört.
+
+Quellen in dieser Reihenfolge:
+1. Freie, gezeichnete 2D-Effekt-Pakete (Anime- bzw. Cartoon-Hit-FX als Spritesheets).
+2. Sonst Einzelbilder per Bild-Briefing, je Familie ein Blatt.
+
+Keine Formen aus Code. Prüfung wie oben: neben dem Vorbild-Clip in Spielgeschwindigkeit.
