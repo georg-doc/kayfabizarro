@@ -1,10 +1,10 @@
 {
   "counts": {
     "DECK_PATH_NORMALIZED": 2,
-    "DUPLICATE_NAME": 716,
-    "MISSING_REFERENCED_FILE": 339,
+    "DUPLICATE_NAME": 812,
+    "MISSING_REFERENCED_FILE": 338,
     "UNRESOLVED_FBX_DEPENDENCY": 511,
-    "UNRESOLVED_MODEL_DEPENDENCY": 242
+    "UNRESOLVED_MODEL_DEPENDENCY": 286
   },
   "problems": [
     {
@@ -1676,6 +1676,1254 @@
         "media/2D_Assets/free-rpg-monster-sprites-pixel-art/vol2/lizard/Walk5.png"
       ],
       "problemId": "DUPLICATE_NAME:free-rpg-monster-sprites-pixel-art:vol2:image-2d:png:walk5",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "circle_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/circle_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/circle_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:circle_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "circle_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/circle_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/circle_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:circle_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "circle_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/circle_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/circle_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:circle_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "circle_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/circle_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/circle_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:circle_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "circle_05",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/circle_05.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/circle_05.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:circle_05",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "dirt_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/dirt_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/dirt_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:dirt_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "dirt_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/dirt_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/dirt_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:dirt_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "dirt_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/dirt_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/dirt_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:dirt_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "fire_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/fire_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/fire_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:fire_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "fire_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/fire_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/fire_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:fire_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flame_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/flame_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/flame_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flame_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flame_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/flame_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/flame_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flame_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flame_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/flame_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/flame_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flame_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flame_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/flame_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/flame_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flame_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flame_05",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/flame_05.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/flame_05.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flame_05",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flame_05_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/flame_05_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/flame_05_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flame_05_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flame_06",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/flame_06.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/flame_06.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flame_06",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flame_06_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/flame_06_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/flame_06_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flame_06_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "flare_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/flare_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/flare_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:flare_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "light_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/light_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/light_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:light_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "light_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/light_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/light_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:light_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "light_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/light_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/light_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:light_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "magic_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/magic_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/magic_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:magic_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "magic_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/magic_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/magic_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:magic_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "magic_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/magic_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/magic_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:magic_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "magic_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/magic_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/magic_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:magic_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "magic_05",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/magic_05.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/magic_05.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:magic_05",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/muzzle_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/muzzle_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_01_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/muzzle_01_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/muzzle_01_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_01_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/muzzle_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/muzzle_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_02_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/muzzle_02_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/muzzle_02_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_02_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/muzzle_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/muzzle_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_03_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/muzzle_03_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/muzzle_03_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_03_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/muzzle_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/muzzle_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_04_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/muzzle_04_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/muzzle_04_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_04_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_05",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/muzzle_05.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/muzzle_05.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_05",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "muzzle_05_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/muzzle_05_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/muzzle_05_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:muzzle_05_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "scorch_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/scorch_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/scorch_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:scorch_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "scorch_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/scorch_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/scorch_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:scorch_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "scorch_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/scorch_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/scorch_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:scorch_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "scratch_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/scratch_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/scratch_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:scratch_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "slash_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/slash_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/slash_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:slash_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "slash_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/slash_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/slash_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:slash_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "slash_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/slash_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/slash_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:slash_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "slash_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/slash_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/slash_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:slash_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_05",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_05.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_05.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_05",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_06",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_06.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_06.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_06",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_07",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_07.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_07.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_07",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_08",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_08.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_08.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_08",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_09",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_09.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_09.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_09",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "smoke_10",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/smoke_10.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/smoke_10.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:smoke_10",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/spark_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/spark_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/spark_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/spark_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/spark_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/spark_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/spark_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/spark_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_05",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/spark_05.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/spark_05.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_05",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_05_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/spark_05_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/spark_05_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_05_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_06",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/spark_06.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/spark_06.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_06",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_06_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/spark_06_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/spark_06_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_06_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "spark_07",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/spark_07.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/spark_07.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:spark_07",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_05",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_05.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_05.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_05",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_06",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_06.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_06.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_06",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_07",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_07.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_07.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_07",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_08",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_08.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_08.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_08",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "star_09",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/star_09.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/star_09.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:star_09",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "symbol_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/symbol_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/symbol_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:symbol_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "symbol_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/symbol_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/symbol_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:symbol_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/trace_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/trace_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_01_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/trace_01_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/trace_01_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_01_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/trace_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/trace_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_02_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/trace_02_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/trace_02_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_02_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/trace_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/trace_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_03_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/trace_03_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/trace_03_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_03_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/trace_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/trace_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_04",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_04_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/trace_04_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/trace_04_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_04_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_05",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/trace_05.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/trace_05.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_05",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_05_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/trace_05_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/trace_05_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_05_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_06",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/trace_06.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/trace_06.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_06",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_06_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/trace_06_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/trace_06_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_06_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_07",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/trace_07.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/trace_07.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_07",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "trace_07_rotated",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/Rotated/trace_07_rotated.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/Rotated/trace_07_rotated.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:trace_07_rotated",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "twirl_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/twirl_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/twirl_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:twirl_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "twirl_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/twirl_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/twirl_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:twirl_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "twirl_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/twirl_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/twirl_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:twirl_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "window_01",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/window_01.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/window_01.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:window_01",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "window_02",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/window_02.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/window_02.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:window_02",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "window_03",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/window_03.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/window_03.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:window_03",
+      "type": "DUPLICATE_NAME"
+    },
+    {
+      "collectionPath": "kenney_particle-pack",
+      "format": "png",
+      "kind": "image-2d",
+      "name": "window_04",
+      "packId": "fx-visual",
+      "paths": [
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Black background)/window_04.png",
+        "media/3D_Assets/FX_Visual/kenney_particle-pack/PNG (Transparent)/window_04.png"
+      ],
+      "problemId": "DUPLICATE_NAME:fx-visual:kenney_particle-pack:image-2d:png:window_04",
       "type": "DUPLICATE_NAME"
     },
     {
@@ -11018,12 +12266,6 @@
       "type": "DUPLICATE_NAME"
     },
     {
-      "assetPath": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf:media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
-      "target": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
       "assetPath": "media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/balcony-wall-fence.glb",
       "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/balcony-wall-fence.glb:media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/Textures/colormap.png",
       "target": "media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/Textures/colormap.png",
@@ -16664,6 +17906,12 @@
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/LowPolyRockPack./LowPolyRockPack.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/LowPolyRockPack./LowPolyRockPack.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/Textures/Metal022_1K-JPG/Metal022_1K-JPG.blend",
       "detail": "dependency parsing not implemented for .blend",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Textures/Metal022_1K-JPG/Metal022_1K-JPG.blend:dependency parsing not implemented for .blend",
@@ -17568,8 +18816,266 @@
       "detail": "dependency parsing not implemented for .blend",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/Blends/WoodLog_Snow.blend:dependency parsing not implemented for .blend",
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Fence Type2 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Demo/Models/Fence Type2 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Rock Type2 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Demo/Models/Rock Type2 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type1 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type1 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type3 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type3 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/LowPolyTreePack.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/LowPolyTreePack.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 06.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 06.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+  "sourceCommit": "a9143605b1463df36c0e57d7092d5253d7e7b721"
 }
