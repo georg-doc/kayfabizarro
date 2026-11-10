@@ -23576,6 +23576,21 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1604",
+   "date": "11.11.2026",
+   "area": "Kampf",
+   "verdict": "RESEARCH",
+   "text": "Web-Chat-Recherche Absolum-Produktion (GitHub #115, Maxime Mary Vortrag ab 01:02:00): Effekte entstehen mit Animation und Kampfdesign zusammen, wenige starke Schluesselposen, Smears machen Tempo lesbar, erst grob im Spiel testen, Zeichnungen ca. 25 B/s bei 60 Hz Spiel. Prueffolge Ankuendigung → Smear → Kontakt-Blitz → Hitstop → Nachlauf → Erholung. WS0-Abgleich: Hitstop im Stamm aktiv (combatPlayer.r2 createHitStop V-567, uhr.js), entgegen Web-Chat-Vermutung. Nachtrag 2 in replies/VFX_VIDEOS_R1/ANALYSE_UND_AUFTRAG.md, an Flug.",
+   "values": {},
+   "owner": "WS0 · Flug",
+   "check": "V-1603, V-567, #115",
+   "source": "Georg 11.11.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [

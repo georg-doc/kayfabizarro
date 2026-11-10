@@ -89,3 +89,21 @@ Quellen in dieser Reihenfolge:
 2. Sonst Einzelbilder per Bild-Briefing, je Familie ein Blatt.
 
 Keine Formen aus Code. Prüfung wie oben: neben dem Vorbild-Clip in Spielgeschwindigkeit.
+
+## Nachtrag 2 · Absolum-Produktion (Web-Chat-Recherche, GitHub #115; WS0-Abgleich 11.11.)
+
+Belegt durch Art Director Maxime Mary (Vortrag Forum des images, Dailymotion xa0sgv6, ab 01:02:00):
+- Effekte entstehen zusammen mit Animation und Kampfdesign, nicht als Dekoration hinterher.
+- Wenige, starke Schlüsselposen statt flüssiger Zwischenbilder, damit Angriffe sofort reagieren.
+- Wisch-Spuren und überzeichnete Silhouetten machen schnelle Aktionen lesbar.
+- Erst grob im Spiel testen, dann ausarbeiten.
+- Zeichnungen laufen mit etwa 25 Bildern pro Sekunde, das Spiel mit 60; Zeichnungen werden mehrfach gezeigt.
+
+Trefferfolge als Prüfraster (aus Quellen rekonstruiert, keine veröffentlichten Bildzahlen): Ankündigung → Wisch/Smear → Kontakt-Blitz → Hitstop → Nachlauf (Funken, Teilchen) → Erholung (Hauptform weg, bevor der nächste Angriff kommt).
+
+WS0-Abgleich mit dem Stamm: Hitstop ist **aktiv**, anders als der Web-Chat vermutet. Belege:
+- `combatPlayer.r2.js` hat eine `createHitStop`-Instanz (V-567) und löst sie bei Nahkampf und Treffern aus.
+- `core/uhr.js` hält dafür die Gruppen an.
+- Die Dauer kommt je Waffe aus den Reference-JSONs.
+
+Folge für den Neustart: zuerst die vorhandenen Bausteine (Kontaktposition, Hitstop, shotBurst/combatCascade) auf einer Zeitachse abstimmen, die 2D-Satzzeichen genau ins Kontaktbild legen. Der Kontakt-Blitz bleibt 1–2 Bilder bei 60 Hz; das ist Testannahme, Prüfung im Spieltempo.
