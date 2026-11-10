@@ -23441,6 +23441,36 @@
    "superseded_by": [],
    "why": "",
    "applies": ""
+  },
+  {
+   "id": "V-1595",
+   "date": "10.11.2026",
+   "area": "Kampf",
+   "verdict": "BUILD",
+   "text": "Pistole/Blaster-Treffer sichtbar (PR #111 Gate, Flug @7c6d5ed2, treffersicht=r1 in Testfahrt und Release): Ursache (a) Material-Plan Knete ersetzte die ganze pistol.hit-Folge durch eine Staub-Ebene, (c) Treffpunkt auf der Zielachse im Mesh, (b) Vorruecken rechnete mit der Spielkamera statt der zeichnenden. Jetzt Blitz als Hauptmoment + Staub im Materialton + Russ, Teilchen 0,2 m vor dem Ziel, Vorruecken im Vertex-Shader. Belege hell/dunkel beide Waffen selbst angesehen; Pistole aus 8 m klein (Kritikrunde). Werkzeug test/schuss-kette.mjs (WS0).",
+   "values": {},
+   "owner": "WS0 · Flug",
+   "check": "PR #111, V-1589",
+   "source": "Nachtplan",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1596",
+   "date": "10.11.2026",
+   "area": "Kampf",
+   "verdict": "BUILD",
+   "text": "Reise-Knopf-Fahrt mit FB als Dachfahrer (Flug @47626f10, reisedach=r1 in Testfahrt und Release): definiert in HUD_BELEGUNG (Figur schiesst vom Dach) und V-1038; vorher fuhr FB unsichtbar im Wagen. Pistole/Blaster als Oberkoerper-Clip, Fahr-Clip bleibt, Gatling/Rakete vom Dach, Faust auf dem Dach gesperrt. Nachzug an Flug: Lenkrad verschwindet bei gewaehlter Waffe, sitzbrechende Waffen auf dem Dach sperren.",
+   "values": {},
+   "owner": "WS0 · Flug",
+   "check": "V-1038, V-994, HUD_BELEGUNG_R1",
+   "source": "Nachtplan",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
   }
  ],
  "imported_acceptance": [
