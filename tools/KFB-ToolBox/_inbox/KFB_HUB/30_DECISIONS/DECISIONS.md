@@ -1,6 +1,6 @@
 # KFB Entscheidungen (PASS / TUNE / FAIL / RULE / TBD)
 
-Stand 2026-11-09 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.
+Stand 2026-11-10 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.
 
 ## A · Entscheidungen und Vorgaben
 
@@ -1539,6 +1539,7 @@ Stand 2026-11-09 · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur
 | V-1569 | 09.11.2026 |  | HUD | **STATUS** | Blinde Kritik R1, eindeutiger Teil: Waffennamen und Rucksack-Zeilen im Spiel englisch (Pistol, Rifle, Laser beam, Weapon, Single shot ...). Dunkle Slop-Raender = gewollte Tuschkontur; Pickups, Waffen-Slots, Kartenviertel bleiben bei q569/q572. Offen: kampf-rc2 meldet seit Zielen (schon @625a1064), dass B ohne gewaehltes Ziel Pistole/Blaster/Gatling/Rakete nicht abfeuert. |  | WS0 | q569, q572 | WS0 09.11. |
 | V-1570 | 09.11.2026 |  | Steuerung | **REVIEW** | Steuerungs-Test R1 im Release (test/controls-matrix.mjs, Bericht replies/STEUERUNG_TEST_R1): Bewegung in Gehen/Fliegen/Fahren passt; Kampf nicht: beide Robo-Arm-Slots tragen nur den Fluff-Trichter, Handwaffen 1-6 feuern nie (nur Granate), im Flug jeder Schuss AIRBORNE abgelehnt, im Wagen feuert die Maus nicht (aber alte Taste B), Extra-Tasten B/C/V/N/T loesen Waffen aus, C/M/V kollidieren im Wagen. Umbau-Plan nach HUD_BELEGUNG_R1 in q577, Q-Konflikt q578, Startbelegung q579. |  | WS0 | q577, q578, q579 | Georg 09.11. |
 | V-1571 | 09.11.2026 |  | Steuerung | **ENTSCHIEDEN** | Startbelegung (q579, Georg im Chat): Am Anfang ist der Faust-Modus aktiv. Primaer = Faustschlag, Sekundaer = ein Wrestling- oder Faustkampf-Move ohne Waffe. Gilt bis Blaster, Granaten, Robo-Arm oder andere Waffen gesammelt sind. Bestand: Faustschlag (Punch_A) und Tritt (Kick) liegen im Medium-Kit; ein echter Wrestling-Griff fehlt noch als Clip. |  | q579, V-1570, HUD_BELEGUNG_R1 | ungeprüft | Chat Steuer-Sitzung |
+| V-1572 | 10.11.2026 |  | Hub | **ENTSCHIEDEN** | Georg 10.11.: q568 Schattenrand PASS (Bilder zeigten keinen sichtbaren Unterschied), q569 Kritik-Liste und q572 Viertel-Rand nicht entscheidbar (Kontext fehlt), Karten insgesamt zu schwer. WS0 zieht q569/q572/q577/q578 zurueck und entscheidet selbst: Steuerungs-Umbau nach Georgs Beschreibung (zwei Slots, Knoepfe + Links/Rechtsklick in allen Modi, Extra-Tasten weg, Start Faust-Modus V-1571); Q bleibt Seitschritt (spaetere Freigabe 04.11. gilt); Viertel-Rand: weicher Rand, Boden ohne Streckung, ruhigere Flaeche, Abnahme als ein Vorher/Nachher; Kritik: Eindeutiges baut WS0, Gestaltungsideen nur einzeln als Bildfrage. Offene Karten q570/q573-q576 auf Frage + 1-2 Saetze gekuerzt. |  | q568, q569, q572, q577, q578 | ungeprüft | Chat Steuer-Sitzung |
 
 ## B · Abnahmen aus Projektdateien (81)
 

@@ -21,4 +21,5 @@ Maßstab: HUD_BELEGUNG_R1 (freigegeben 29.10.) und V-1474 (I = Interaktion, Q/E 
 7. **Kleinigkeiten.** X (sinken) wirkte im Flug nicht, Mausrad zoomt im Flug nicht.
 
 ## Offen für Georg
-- Plan zum Umbau (q577), Q-Taste Seitschritt oder Reise-Fächer (q578), Startbelegung der Slots (q579).
+- Plan zum Umbau (q577), Q-Taste Seitschritt oder Reise-Fächer (q578).
+- Startbelegung entschieden (q579, V-1571): Faust-Modus. Primär Faustschlag, Sekundär Wrestling- oder Faustkampf-Move ohne Waffe, bis die erste Waffe gesammelt ist. Im Kit liegen Faustschlag und Tritt; ein Wrestling-Griff fehlt als Clip.

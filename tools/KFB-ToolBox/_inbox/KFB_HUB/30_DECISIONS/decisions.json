@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "entries": [
   {
    "id": "V-001",
@@ -23090,6 +23090,21 @@
    "text": "Startbelegung (q579, Georg im Chat): Am Anfang ist der Faust-Modus aktiv. Primaer = Faustschlag, Sekundaer = ein Wrestling- oder Faustkampf-Move ohne Waffe. Gilt bis Blaster, Granaten, Robo-Arm oder andere Waffen gesammelt sind. Bestand: Faustschlag (Punch_A) und Tritt (Kick) liegen im Medium-Kit; ein echter Wrestling-Griff fehlt noch als Clip.",
    "values": {},
    "owner": "q579, V-1570, HUD_BELEGUNG_R1",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "",
+   "applies": ""
+  },
+  {
+   "id": "V-1572",
+   "date": "10.11.2026",
+   "area": "Hub",
+   "verdict": "ENTSCHIEDEN",
+   "text": "Georg 10.11.: q568 Schattenrand PASS (Bilder zeigten keinen sichtbaren Unterschied), q569 Kritik-Liste und q572 Viertel-Rand nicht entscheidbar (Kontext fehlt), Karten insgesamt zu schwer. WS0 zieht q569/q572/q577/q578 zurueck und entscheidet selbst: Steuerungs-Umbau nach Georgs Beschreibung (zwei Slots, Knoepfe + Links/Rechtsklick in allen Modi, Extra-Tasten weg, Start Faust-Modus V-1571); Q bleibt Seitschritt (spaetere Freigabe 04.11. gilt); Viertel-Rand: weicher Rand, Boden ohne Streckung, ruhigere Flaeche, Abnahme als ein Vorher/Nachher; Kritik: Eindeutiges baut WS0, Gestaltungsideen nur einzeln als Bildfrage. Offene Karten q570/q573-q576 auf Frage + 1-2 Saetze gekuerzt.",
+   "values": {},
+   "owner": "q568, q569, q572, q577, q578",
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
