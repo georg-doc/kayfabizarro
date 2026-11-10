@@ -1,0 +1,104 @@
+{
+ "id": "kfb_fb_motion_blocks_kampf.mb1",
+ "job": "MOTION_BLOCKS_KAMPF_R1 (Georg 10.11. über WS0, V-915/V-1583): vorhandene Clips nachtimen, Phasen Ausholen–Treffer (Halt)–Nachschwingen–Auslaufen, keine neuen Posen, 30 fps je Bild abgetastet",
+ "datei": "KFB_FB_MotionBlocks_Kampf.mb1.glb (Skelett Rig_Medium, nur Knoten, drei Clips)",
+ "fps": 30,
+ "clips": {
+  "Melee_Unarmed_Attack_Punch_A_mb1": {
+   "quelle_clip": "Melee_Unarmed_Attack_Punch_A",
+   "quelle_datei": "Rig_Medium_CombatMelee.glb",
+   "dauer_s": 1.1667,
+   "bilder": 36,
+   "kontakt_s": 0.4667,
+   "kontakt_hinweis": "Faust ganz vorn (Quelle 0,50 s), Halt 0,467–0,533",
+   "phasen_s": {
+    "ausholen": [
+     0,
+     0.3667
+    ],
+    "schlag": [
+     0.3667,
+     0.4667
+    ],
+    "treffer": [
+     0.4667,
+     0.5333
+    ],
+    "nachschwingen": [
+     0.5333,
+     0.6667
+    ],
+    "auslaufen": [
+     0.6667,
+     1.1667
+    ]
+   },
+   "kanaele": 69,
+   "fehlende_knoten": [],
+   "hinweis_spiel": "boxingReference: Hand-Rumpf-Überschneidung der Quelle 0,87–0,97 s liegt jetzt bei 0,87–0,94 s; Treffer-Halt 0,467–0,533 s ersetzt ggf. den Laufzeit-Hitstop (48 ms)"
+  },
+  "kfb_action_surprise_uppercut_a_mb1": {
+   "quelle_clip": "kfb_action_surprise_uppercut_a",
+   "quelle_datei": "KFB_Motion_action_i06.Rig_Medium.glb",
+   "dauer_s": 1.2333,
+   "bilder": 38,
+   "kontakt_s": 0.5667,
+   "kontakt_hinweis": "Faust vorn oben auf Kinnhöhe (Quelle 1,167 s), Halt 0,567–0,633; Ausschnitt Quelle 0,55–1,55 s",
+   "phasen_s": {
+    "ausholen": [
+     0,
+     0.4667
+    ],
+    "schlag": [
+     0.4667,
+     0.5667
+    ],
+    "treffer": [
+     0.5667,
+     0.6333
+    ],
+    "nachschwingen": [
+     0.6333,
+     0.7667
+    ],
+    "auslaufen": [
+     0.7667,
+     1.2333
+    ]
+   },
+   "kanaele": 69,
+   "fehlende_knoten": [],
+   "hinweis_spiel": "Clip beginnt bei Quelle 0,55 s und endet bei 1,55 s: im Spiel ganz abspielen, kein Ausschnitt mehr. Die Hüfte dreht im Clip selbst von −84° auf +75° (Quelle), unverändert"
+  },
+  "Ranged_1H_Shoot_mb1": {
+   "quelle_clip": "Ranged_1H_Shoot",
+   "quelle_datei": "KFB_FB_ClipLuecken.r1.fb.glb",
+   "dauer_s": 0.9667,
+   "bilder": 30,
+   "kontakt_s": 0.3,
+   "kontakt_hinweis": "Abgang = Mündungsfeuer (Quelle 0,267 s); danach Körperruck 2 Bilder, Lauf steigt sofort (Quelle 0,33–0,70 gerafft), Halt oben, ruhiges Absenken",
+   "phasen_s": {
+    "ausholen": [
+     0,
+     0.3
+    ],
+    "treffer": [
+     0.3,
+     0.3667
+    ],
+    "nachschwingen": [
+     0.3667,
+     0.5333
+    ],
+    "auslaufen": [
+     0.5333,
+     0.9667
+    ]
+   },
+   "kanaele": 67,
+   "fehlende_knoten": [],
+   "hinweis_spiel": "Mündungsfeuer bei 0,300 s; Körperruck 0,300–0,367, Lauf steigt bis 0,467, Halt oben bis 0,533, Absenken bis 0,967 (Quelle: Ruck 0,267–0,333, Lauf steigt erst 0,53–0,73)"
+  }
+ },
+ "verfahren": "Zeitverzerrung je Clip über Phasen-Schlüssel (mb1_phasen.json), alle Kanäle neu abgetastet (Rotation Slerp); Wurzel- und Hüftspuren nur umgetimt, Lage unverändert"
+}
