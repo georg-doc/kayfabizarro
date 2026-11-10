@@ -1,0 +1,43 @@
+# Kritik Kampf, Animation, VFX R1 (10.11.2026)
+
+Bildpositionen: Z = Zeile, S = Spalte, von oben links, 1-basiert (z.B. Z1S4).
+
+## 1A. Klare Mängel (Beleg, kleinste Korrektur)
+
+1. **Kamerasprung mitten im Schlag.** faust_slot_primary Z1S4 und faust_slot_secondary Z1S5: ein Bild aus völlig anderer Kamera (Amphitheater von weitem, Figur klein). Das ist ein Capture- oder Kamera-Cut-Fehler. Korrektur: Kamera-Reset beim Slot-Start unterdrücken, sonst taugt die Folge nicht als Beleg.
+2. **Primärschlag nicht lesbar.** faust_slot_primary Z1S1 bis Z1S3 (Ausholen), danach Z2 bis Z4: Figur von hinten, Arm und Faust von Körper und Kopf verdeckt, der Schlag wird nie sichtbar. Ab Z2S3 steht die Figur fast starr (nur Ohren wippen), keine Faust-Extension, kein Durchzug, keine Rückkehr. Korrektur: Spielkamera bei Faust-Slot leicht seitlich versetzen (oder Schulter-Offset) und Arm-Extension auf mindestens 1,5-fache Armlänge mit 2 bis 3 Bildern Peak-Hold.
+3. **Keine Antizipation vor dem Hauptmoment.** Primär Z1S1 bis S3: die Ausholbewegung dauert 3 Aufnahmebilder (9 Spielbilder) und geht dann übergangslos in Ruhehaltung. Sekundär Z1S1 bis Z1S4 ähnlich. Korrektur: Ausholen 6 bis 8 Spielbilder halten, dann Schlag in höchstens 3 Bildern, danach 4 bis 6 Bilder Overshoot und Settle.
+4. **Sekundärschlag: Pose-Sprung statt Bogen.** faust_slot_secondary Z2S5 zu Z2S6 (Kopf dreht frontal zur Kamera, Nase und Augen groß) und Z3S1: Drehung der ganzen Figur in 1 bis 2 Aufnahmebildern, Rotation wirkt wie Snap. Danach Z3S4 bis Z4S6 ein langer, nahezu statischer Ausklang (ca. 12 Aufnahmebilder = 36 Spielbilder), Figur zeigt mit offenen Armen, Ohren verdreht. Korrektur: Drehung über Bogen mit Ease-in/out verteilen, Ausklang auf 6 bis 8 Aufnahmebilder kürzen, Rückkehr in Idle gezielt animieren.
+5. **Fußrutschen/Gleiten beim Gehen und Sprint.** bewegung_move_spielkamera Z1S2 bis Z3S6: Hase von hinten, Beine kaum erkennbar, Boden scrollt, Körperhöhe fast konstant. Kein sichtbares Kontakt-Passing-Muster aus dieser Kamera, Schatten gleitet gleichmäßig. Korrektur: Körper-Bob und Neigung nach vorn mit Tempo skalieren (Joggen +20 %, Sprint +40 % Neigung), Schatten leicht mitpulsen.
+6. **Stopp ohne Gewicht.** bewegung_move Z4S1 bis Z4S6: Tempoabbau über mehrere Bilder, Figur bleibt aufrecht, kein Rückneigen, kein Fuß-Nachsetzen. Korrektur: 4 bis 6 Bilder Rückneigung plus Squash am Stopp.
+7. **Flug: Waffenhaltung und Abschuss nicht erkennbar.** bewegung_fly_spielkamera Z1S2 bis Z4S6: Figur sehr klein, Waffe unsichtbar, die zwei Schüsse sind in den Bildern nicht auffindbar (kein Mündungsfeuer, kein Rückstoß-Nicken). Nur der Düsenrauch trägt. Korrektur: Kamera im Flug näher oder Mündungsfeuer/Rückstoßkick am Körper deutlich anheben (Hauptmoment fehlt).
+8. **Pistole Abschuss: Hierarchie kippt.** pistole_abschuss_nah Z1S1 bis Z1S3: Mündungsfeuer plus Leuchtspur plus warmer Bodenschein sind gleich stark, dazu Z1S4 bis Z2S2 die Leuchtspur als langer weißer Strich. Danach Z2S3 bis Z4S5: dünner Rauch hängt ca. 30 Aufnahmebilder (90 Spielbilder) an derselben Stelle, Waffe zeigt kaum Rückstoß (Z1S4 bis Z1S6 leichtes Hochkippen, dann sofort Ruhe). Korrektur: Rückstoß 2 bis 3 Bilder stärker und mit Rückfederung, Rauch auf ein Drittel der Dauer, Bodenschein nur 2 Bilder.
+9. **Pistolentreffer: Ausklang bleibt, Hauptmoment ist klein.** pistole_treffer_nah_hell Z2S4 bis Z2S6: Funkenstern am Pfosten gut lesbar, aber nur 3 Aufnahmebilder. Z3S3 bis Z4S5: Brockenwolke steht ca. 15 Aufnahmebilder (45 Spielbilder) fast bewegungslos auf Pfosten und Grund (hell: braune Punktwolke ohne Fall). Es gibt keine Reaktion des Pfostens (kein Wippen, keine Kerbe). Dazu Z2S1 bis Z2S3: weißer Fleck auf dem gelben Streifen ist der Einschlag-Vorläufer oder das Geschoss? Unklar lesbar, wirkt wie Fehler. Korrektur: Pfosten 3 Bilder wippen, Brocken fallen und verschwinden in der Hälfte der Zeit, Geschossfleck als Spur ausziehen.
+10. **Blaster Treffer: Hauptmoment lesbar, aber Ausklang schwach.** blaster_treffer_nah_dunkel Z3S3 bis Z3S6: violette Kugel mit Kranz, sehr gut lesbar, 4 Bilder, ausgezeichnete Silhouette. Z4S3 bis Z4S6: Ring bleibt als leere Hülle, dann Rauchfleck (Z4S4 bis Z4S6), Pfosten reagiert nicht. Z2S1 bis Z3S2: kleiner weißer Ball, Flug zeigt kaum Schweif, dadurch fehlt das Verbindungsstück Abschuss zu Treffer. Korrektur: Schweif um Faktor 3 länger, Kugel beim Aufprall 2 Bilder stärker, Pfostenreaktion wie oben.
+11. **Blaster aus 8 m: Hauptmoment unlesbar.** blaster_seite_8m Z1S1 bis Z1S3 (violettes Mündungsleuchten klein), Flugpunkt Z2S1 bis Z3S2 (weißer Punkt, ca. 5 Pixel), Treffer Z3S3 bis Z4S2 (Ring ca. 14 Pixel). Aus Spielabstand ist der Treffer kaum zu sehen, das Treffer-Ereignis ist ein kleiner Ring am Pfosten. Die Reaktion (Z4S4 bis Z4S6) verschwindet. Korrektur: VFX-Größe mit Distanz skalieren (mindestens 2,5-fach bei 8 m) und Treffer-Blitz auf Bildschirmgröße mindestens 40 Pixel.
+12. **Pistole aus 8 m: Einschlag fehlt.** pistole_seite_8m Z1S1 bis Z1S3 (kleines Mündungsfeuer, gut), Z1S4 bis Z2S3 (Spur als kurze weiße Striche, nur noch 2 bis 3 Pixel dick), Treffer am Pfosten Z2S4 (ein weißer Punkt), Z3S1 bis Z4S5: kein erkennbarer Einschlag, Pfosten bleibt unverändert. Kette bricht nach dem Flug ab. Korrektur: Distanzskalierung wie 11, Mindest-Treffer-Burst am Ziel.
+13. **Kontaktring zu schwach und nicht zeitgerecht.** kontaktring Z1S1 bis Z1S3 (Faust hell): Ring ist ein dünner Dotted-Kreis, bei +1 Glut, bei +4 Ring, bei +9 Ring fast gleich groß, kein Schock-Expansion. Uppercut (Z2): Ring identisch klein und bleibt am Pfosten statt an der Kontaktstelle bewegter Faust; im +9-Bild (Z2S3) ist der Ring leer und die Faust schon weg. Korrektur: Ring expandiert von 0,5 auf 2-fach Faustgröße in 4 Bildern mit Ausblenden, dicker (3 bis 4 px bei Spielgröße), plus 1 Bild Weiß-Blitz im Kontakt.
+14. **Dachfahrer: Mehrere VFX-Ebenen konkurrieren.** dachfahrer_schuss Q1 (Pistole): Mündungsfeuer plus Leuchtspur plus Funkenband plus gelbe und blaue Fluff-Kugelwolken plus Rauch gleichzeitig. Q2 (Gatling): Bubbles, Lichtblitze, Slop-Figur davor. Q4 (Rakete): Rakete und Mündungsblitz lesbar, ansonsten Dunst. Ablesen: Der Hauptmoment geht in Partikelrauschen unter, Regel "Hauptmoment plus höchstens zwei Nebenebenen" verletzt. Fahrzeug und Figur sind dagegen gut (starke Silhouetten). Korrektur: Fluff-Kugelwolken beim Schießen auf 30 % reduzieren oder erst nach 0,3 s starten, Mündungsblitz Gatling nur 1 Bild groß.
+
+## 1B. Gestaltungsfragen an den Spielautor
+
+1. **Schlag-Kamera:** (a) Faust-Slot lässt die Spielkamera hinter der Figur und schiebt sie 0,5 m nach rechts, (b) kurzer Treffer-Zoom von 100 auf 85 % FOV für 8 Bilder. Beide im Bild vergleichbar mit faust_slot_primary.
+2. **Treffer-Ausklang:** (a) Funke plus Brockenwolke fällt in ca. 15 Bildern ab (kurz, comic), (b) Brocken bleiben als Knete-Krümel am Boden liegen und verschwinden langsam (diorama-haptisch). Vergleich an pistole_treffer_nah_hell.
+3. **Distanz-VFX:** (a) alle VFX wachsen mit Entfernung (immer lesbar, Comic-Logik), (b) nur der Treffer wächst, Flug bleibt realistisch dünn (viszeral im Hintergrund). Vergleich an blaster_seite_8m.
+
+## 2. Die 14 Ideen der früheren Kritik
+
+- Kulissen-Ring (fotografischer Horizont): **KERN**, Horizont in den Spielbildern ist durchgehend Marmormuster, Hintergrund-Realismus ist Kernabsicht und billig.
+- Boden nah ruhiger, Figuren voll gesättigt: **KERN**, Figur und Boden trennen sich in allen Streifen kaum, schon die Lesbarkeit der Schläge leidet.
+- Kartenviertel: Collage nur in gerahmten Fassadenfeldern: **SPÄTER**, hängt am Kartenviertel, kommt in diesem Material nicht vor.
+- Pickups mit Glanz, Schatten und Magnet: **KERN**, Pickups schweben in bewegung_move ohne Schatten und kleben am Boden, Schatten ist sofort billig.
+- Waffenwahl als HUD-Slots (gebaut): **KERN** (erledigt), nur noch Funktionsprüfung.
+- Wrestling-Einmarsch der Slops: **SPÄTER**, Spektakel erst nach stabilem Kampf.
+- Knete auf Zweiern (12 fps): **KERN**, billig, sofort gestempelter Look, und verdeckt zugleich Animationsmängel wie Pose-Snaps.
+- Sende-Grading im Kartenviertel: **SPÄTER**, Postprocess ohne Kampfbezug.
+- Schwärzungszonen: **SPÄTER**, Systemidee, braucht eigene Spielregel.
+- Pop-Meter mit Taunt und Finisher: **SPÄTER**, erst Grundschlag muss lesbar sein.
+- Knet-Dellen statt Lebensbalken: **KERN**, Kampf-Feedback und Look in einem, Treffer-Reaktion fehlt aktuell sichtbar (1A.9, 1A.10).
+- BNWN-Kommentatoren reagieren auf Spieler: **SPÄTER**, Ton-Schicht, nicht Look oder Animation.
+- Bizarro-Spiegel im Wasser: **STREICHEN** für jetzt, teuer, im Material kein Wasser sichtbar, später neu bewerten.
+- Erste 20 Minuten takten: **KERN**, trägt den Spielfluss, kostet nur Parameter.
