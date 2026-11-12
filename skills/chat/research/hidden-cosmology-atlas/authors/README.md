@@ -131,3 +131,8 @@ Six source-led profiles added; total dedicated author masters: **24**, not 24 co
 
 
 [Daniele Ganser — comparative Gladio research, dissertation and German source audit](daniele-ganser.md)
+
+
+## Quellenbasierte Ergänzung · 2026-11-13
+
+- [Jacques Vallée](jacques-vallee.md): Originaltexte, Werk- und Interviewinventur, Trinity-Gegenprobe und typisierte Verbindungen. [Recherchepaket und Prüfgrenzen](../packages/jacques-vallee/RETURN.md). Keine automatische Übernahme als Spielkanon.

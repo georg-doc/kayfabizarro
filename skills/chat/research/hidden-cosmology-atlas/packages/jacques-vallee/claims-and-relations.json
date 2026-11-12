@@ -1,0 +1,278 @@
+{
+  "schema": "kfb.atlas.claims-relations.v1",
+  "date": "2026-11-13",
+  "owner": "jacques-vallee",
+  "identityWarnings": [
+    {
+      "distinctEntities": [
+        "sizun-jiang",
+        "jiang-xueqin"
+      ],
+      "reason": "Different people; do not merge by surname."
+    }
+  ],
+  "rules": [
+    "Conceptual edges are not historical contact evidence.",
+    "A source family is not independent corroboration.",
+    "No numerical truth score inferred from citation count.",
+    "Event date, publication date and later recollection must remain distinct."
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Vallées Kontrollsystem-Diskussion1990 lässt mehrere Ursprungsarten offen.",
+      "status": "author_position",
+      "sourceIds": [
+        "V04"
+      ],
+      "locator": "printed115 / PDF13",
+      "limit": "Keine Herkunftsbestätigung."
+    },
+    {
+      "id": "C02",
+      "statement": "Das Papier2003 unterscheidet sechs Beobachtungs-/Deutungsebenen.",
+      "status": "published_model",
+      "sourceIds": [
+        "V05"
+      ],
+      "locator": "pp7–10",
+      "limit": "Modell, nicht bestätigte Physik."
+    },
+    {
+      "id": "C03",
+      "statement": "Dolan und Vallée stehen auf derselben Preprint-Autorenliste2025.",
+      "status": "bibliographically_verified",
+      "sourceIds": [
+        "V10"
+      ],
+      "locator": "author list",
+      "limit": "Keine Ableitung gemeinsamer Breakaway-These."
+    },
+    {
+      "id": "C04",
+      "statement": "Jorjani berichtet ein Treffen mit Vallée zu einem Technikvorschlag.",
+      "status": "one_party_testimony",
+      "sourceIds": [
+        "V14"
+      ],
+      "locator": "45:30–46:44",
+      "limit": "Kein Audioabgleich oder unabhängiger Kontakt-/Finanzierungsbeleg."
+    },
+    {
+      "id": "C05",
+      "statement": "Vallée schildert2018 Zusammenarbeit mit Swann und weiteren PSI-Forschern.",
+      "status": "retrospective_testimony",
+      "sourceIds": [
+        "V09"
+      ],
+      "locator": "slides21,24–27",
+      "limit": "Zeitgenössische Unterlagen noch nicht separat geprüft."
+    },
+    {
+      "id": "C06",
+      "statement": "Das Polizeidokument1953 nennt Apodacas abgeschlossene zweijährige Probezeit.",
+      "status": "document_reproduction_read",
+      "sourceIds": [
+        "V19"
+      ],
+      "locator": "memo11August1953",
+      "limit": "Archivbeschaffung unabhängig vom Kritiker fehlt."
+    },
+    {
+      "id": "C07",
+      "statement": "Das Militärdokument nennt Apodacas Rückkehr in die USA am9November1945.",
+      "status": "document_reproduction_read",
+      "sourceIds": [
+        "V20"
+      ],
+      "locator": "box36",
+      "limit": "Identitätsbezug und Überlieferungsweg nicht durch Archivbestellung nachgeprüft."
+    },
+    {
+      "id": "C08",
+      "statement": "Baca nennt im veröffentlichten Interviewtranskript1946.",
+      "status": "transcript_statement",
+      "sourceIds": [
+        "V22"
+      ],
+      "locator": "11:08",
+      "limit": "Aufnahme und Datierung noch nicht unabhängig geprüft."
+    },
+    {
+      "id": "C09",
+      "statement": "Vallées Antwort2023 behandelt das Metallteil nicht als gesichertes außerirdisches Artefakt.",
+      "status": "author_response",
+      "sourceIds": [
+        "V21"
+      ],
+      "locator": "PDF6",
+      "limit": "Keine Aussage über die materielle Natur sonstiger UFO-Proben."
+    },
+    {
+      "id": "C10",
+      "statement": "Rice MS0672 hat nach Serien unterschiedliche Sperrfristen.",
+      "status": "finding_aid_verified",
+      "sourceIds": [
+        "V15"
+      ],
+      "locator": "access restrictions",
+      "limit": "Findbuchkenntnis, keine Akteneinsicht."
+    },
+    {
+      "id": "C11",
+      "statement": "NASA beschreibt geplante75MillionenDollar und frühes Ende von Red Planet Capital.",
+      "status": "institutional_report",
+      "sourceIds": [
+        "V13"
+      ],
+      "locator": "AppendixB printed26",
+      "limit": "Geplantes Volumen ist keine tatsächlich verausgabte Summe."
+    },
+    {
+      "id": "C12",
+      "statement": "Das Galloway-Papier diskutiert Modellunsicherheit und fehlende Eingangsgrößen.",
+      "status": "original_text_selected",
+      "sourceIds": [
+        "V12"
+      ],
+      "locator": "sections4–7",
+      "limit": "Keine unabhängige Energie- oder Herkunftsmessung daraus abgeleitet."
+    },
+    {
+      "id": "C13",
+      "statement": "Der Verlagskatalog führt Forbidden Science7 mit Tagebuchzeitraum2020–2025.",
+      "status": "publisher_metadata",
+      "sourceIds": [
+        "V27"
+      ],
+      "locator": "catalog",
+      "limit": "Band nicht vollständig gelesen."
+    }
+  ],
+  "relations": [
+    {
+      "id": "R01",
+      "from": "jacques-vallee",
+      "to": "j-allen-hynek",
+      "type": "coauthored_book",
+      "sourceIds": [
+        "V02"
+      ],
+      "status": "bibliographic",
+      "causalClaim": false
+    },
+    {
+      "id": "R02",
+      "from": "jacques-vallee",
+      "to": "chris-aubeck",
+      "type": "coauthored_book",
+      "sourceIds": [
+        "V02"
+      ],
+      "status": "bibliographic",
+      "causalClaim": false
+    },
+    {
+      "id": "R03",
+      "from": "jacques-vallee",
+      "to": "eric-w-davis",
+      "type": "coauthored_paper",
+      "sourceIds": [
+        "V05"
+      ],
+      "status": "documented",
+      "causalClaim": false
+    },
+    {
+      "id": "R04",
+      "from": "jacques-vallee",
+      "to": "richard-dolan",
+      "type": "coauthor_list_2025",
+      "sourceIds": [
+        "V10"
+      ],
+      "status": "documented",
+      "causalClaim": false
+    },
+    {
+      "id": "R05",
+      "from": "jacques-vallee",
+      "to": "ingo-swann",
+      "type": "retrospectively_reported_collaboration",
+      "sourceIds": [
+        "V09"
+      ],
+      "status": "one_author_account",
+      "causalClaim": false
+    },
+    {
+      "id": "R06",
+      "from": "jason-reza-jorjani",
+      "to": "jacques-vallee",
+      "type": "reports_meeting",
+      "sourceIds": [
+        "V14"
+      ],
+      "status": "one_party_testimony",
+      "causalClaim": false
+    },
+    {
+      "id": "R07",
+      "from": "jason-reza-jorjani",
+      "to": "messengers-of-deception",
+      "type": "explicit_reference",
+      "sourceIds": [
+        "V14"
+      ],
+      "status": "transcript_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R08",
+      "from": "jacques-vallee",
+      "to": "rice-ms0672",
+      "type": "archival_collection",
+      "sourceIds": [
+        "V15"
+      ],
+      "status": "finding_aid_only",
+      "causalClaim": false
+    },
+    {
+      "id": "R09",
+      "from": "jacques-vallee",
+      "to": "joseph-farrell",
+      "type": "conceptual_comparison",
+      "sourceIds": [],
+      "status": "research_question",
+      "causalClaim": false
+    },
+    {
+      "id": "R10",
+      "from": "jacques-vallee",
+      "to": "daniel-liszt",
+      "type": "conceptual_comparison",
+      "sourceIds": [],
+      "status": "research_question",
+      "causalClaim": false
+    },
+    {
+      "id": "R11",
+      "from": "jacques-vallee",
+      "to": "catherine-austin-fitts",
+      "type": "finance_research_comparison",
+      "sourceIds": [],
+      "status": "research_question",
+      "causalClaim": false
+    },
+    {
+      "id": "R12",
+      "from": "jacques-vallee",
+      "to": "andrija-puharich",
+      "type": "psi_context_comparison",
+      "sourceIds": [],
+      "status": "research_question",
+      "causalClaim": false
+    }
+  ]
+}

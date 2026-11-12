@@ -1,3 +1,7 @@
+## 2026-11-13 · Jacques Vallée — Quellenbasierter Deep Dive
+
+[Autorenprofil](authors/jacques-vallee.md) · [Recherchepaket und Beleggrenzen](packages/jacques-vallee/RETURN.md). Werk-/Interviewinventur, Kontrollsystem-Modell, Trinity-Gegenprobe, materielle Prüfpfade und typisierte Verbindungen zu bestehenden Dossiers. 31 Quellenregistrierungen,13 Aussagen,12 Verbindungen; keine Behauptung vollständiger Buch- oder Audiosichtung. Keine Site-Veröffentlichung und kein Spielcode. Nächster Prüfpunkt: Baca–Carey-Audio gegen den vorhandenen Transkriptausschnitt.
+
 ## 2026-11-03 · WS0 check-in on the first workshop deck
 
 [Privacy Kayfabe review and proposed signature workflow](packages/ws0-dossier-pilot/WS0_CHECKIN_PRIVACY_KAYFABE_2026-11-03.md). V-1258 stays paused until after MVP. No PDF batch run. Decision deferred: edition-level signature or signature on cut cards.
