@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChronoLoom R0 – Glyph isolation and 260-state inspector</title>
+<style>
+:root{color-scheme:light;--ink:#34251e;--paper:#f6e9ce;--muted:#70614e;--accent:#d5a74f}
+*{box-sizing:border-box}
+body{margin:0;background:#dbc99e;color:var(--ink);font:16px/1.4 system-ui, sans-serif}
+main{max-width:1010px;margin:auto;padding:22px}
+h1{font:750 clamp(22px,4vw,40px)/1.08 Georgia,serif;letter-spacing:-.03em;margin:0 0 6px}
+h2{font:750 18px/1.2 Georgia,serif;margin:0 0 12px}
+p{margin:6px 0 14px}
+small{color:var(--muted)}
+.board{background:var(--paper);border:3px solid var(--ink);border-radius:16px;padding:clamp(12px,2.8vw,24px);margin-top:15px}
+.inspector{display:grid;grid-template-columns: minmax(150px,220px) 1fr;gap:20px;align-items:center}
+.hero{width:100%;max-width:220px;display:grid;place-items:center;background:#ecd8a9;border-radius:50%;border:2px solid #bb9e6d;aspect-ratio:1}
+.hero svg{width:95%;height:95%}
+#step-slider{width:100%;accent-color:#865227}
+.buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+button{font:inherit;cursor:pointer;border-radius:11px;border:2px solid var(--ink);background:#fcecc7;color:var(--ink);padding:7px 11px;font-weight:700}
+button:hover,button:focus-visible{background:#ffd97e;outline:2px solid #93672a;outline-offset:2px}
+#grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.glyph{min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 2px;background:#eddbb5;border:2px solid transparent;border-radius:10px}
+.glyph svg{display:block;width:100%;height:auto;max-width:110px;aspect-ratio:1}
+.glyph span{font-size:12px;white-space:nowrap}
+.glyph.active{border-color:#b76c2d;background:#ffdf97}
+#kin-status{font-size:clamp(20px,3vw,28px);font-weight:800;margin:2px 0}
+#source{font-size:13px;color:var(--muted)}
+@media(max-width:600px){.inspector{grid-template-columns:1fr}.hero{margin:auto;max-width:150px}#grid{grid-template-columns:repeat(4,minmax(0,1fr))}main{padding:10px}.glyph span{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <h1>ChronoLoom <small>R0</small></h1>
+  <p>Quellenisolation der 20 originalen KFB-Symbolentwürfe und Prüfung des 13×20-Zyklus. Keine Game-UI, keine originalen Maya-Glyphen, kein aktiver Zeitsprung.</p>
+  <section class="board inspector" aria-label="Kalendarischer Zustand">
+    <div class="hero" id="hero"></div>
+    <div>
+      <h2>Weltzeit als Kompositionsparameter</h2>
+      <div id="kin-status" aria-live="polite"></div>
+      <p id="meaning"></p>
+      <label for="step-slider">Zyklus-Position (1–260)</label>
+      <input id="step-slider" type="range" min="0" max="259" step="1" value="0">
+      <div class="buttons">
+        <button data-delta="-1">−1</button>
+        <button data-delta="1">+1</button>
+        <button data-delta="13">+13 · gleiche Phase</button>
+        <button data-delta="20">+20 · gleiches Zeichen</button>
+        <button data-delta="260">+260 · neue Runde</button>
+      </div>
+      <p id="source">Ein reiner Dateninspektor. Keine Kalender-Datumsumrechnung, kein Save-/World-/Portal-Eingriff.</p>
+    </div>
+  </section>
+  <section class="board" aria-label="Zwanzig originale Zeichenentwürfe">
+    <h2>20 Zeichen – Originalform in Isolation</h2>
+    <div id="grid"></div>
+  </section>
+</main>
+<script type="module">
+import { kinAt, DAY_SIGNS, mod } from "./chronoloom-core.mjs";
+import { chronoglyphSvg } from "./chronoglyphs.mjs";
+const grid=document.getElementById("grid");
+let step=0;
+for(let signIndex=0;signIndex<20;signIndex++){
+  const button=document.createElement("button");
+  button.type="button"; button.className="glyph";
+  button.dataset.sign=String(signIndex);
+  button.setAttribute("aria-label","Zeichen auswählen: "+DAY_SIGNS[signIndex].name);
+  button.innerHTML=chronoglyphSvg(signIndex,1)+"<span>"+DAY_SIGNS[signIndex].name+"</span>";
+  button.addEventListener("click",()=>{step=signIndex;render();});
+  grid.appendChild(button);
+}
+function render(){
+ const k=kinAt(step);
+ document.getElementById("kin-status").textContent="Kin "+k.kin+" · "+k.tone+" "+k.signName+" · Runde "+k.cycle;
+ document.getElementById("meaning").textContent="KFB-Aktion: "+k.kfbVerb+" · Zeichen "+(k.signIndex+1)+" von 20 · Phase "+k.tone+" von 13";
+ document.getElementById("hero").innerHTML=chronoglyphSvg(k.signIndex,k.tone);
+ document.getElementById("step-slider").value=String(mod(step,260));
+ for(const el of grid.children)el.classList.toggle("active",Number(el.dataset.sign)===k.signIndex);
+}
+document.getElementById("step-slider").addEventListener("input",e=>{step=Number(e.target.value);render();});
+for(const button of document.querySelectorAll("[data-delta]")){
+ button.addEventListener("click",()=>{step+=Number(button.dataset.delta);render();});
+}
+render();
+</script>
+</body>
+</html>
