@@ -1,3 +1,7 @@
+## 2026-11-13 · Vallée-Themenlandkarte veröffentlicht
+
+[Research Atlas: Jacques Vallée](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html) · [Publikationsbeleg](packages/jacques-vallee/SITE_PUBLICATION_2026-11-13.json). 20 Themenfelder, verlinkte Werke/Interviews/Quellen und Downloads. Bestehende private Site aktualisiert, GitHub-Inhalte exakt zurückgelesen. Lokale Bedienprüfung bestanden; veröffentlichte Browseransicht erfordert Anmeldung. **Aktueller Auftrag: Breite zuerst; neue Rabbit-Holes geparkt.**
+
 ## 2026-11-13 · Scope korrigiert: Breite zuerst
 
 Georg priorisiert die vollständige thematische Erschließung von Aussagen, Theorien, Werken, Interviews und Verbindungen. Neue Einzelprüfungen sind vorerst außerhalb des Auftrags. [Verbindlicher Arbeitsmodus](RESEARCH_SCOPE_BREADTH_FIRST.md) · [Vallée:20 Themenfelder](packages/jacques-vallee/THEMES.md). GitHub und die bestehende Atlas-Site werden als Master und Lesefassung gemeinsam gepflegt; eine reine GitHub-Speicherung reicht nicht als Site-Update.

@@ -31,3 +31,9 @@ Rice MS0672: Korrespondenz Januar2028; Hintergrund Dezember2029; Fallakten1.Janu
 Breite und möglichst vollständige Erfassung der Themen, Aussagen, Theorien und Verbindungen haben Vorrang. [20 Themenfelder](THEMES.md) sind registriert. Audioabgleiche, Trinity-Einzelprüfung und Archivbeschaffung bleiben geparkt. [Scope](../../RESEARCH_SCOPE_BREADTH_FIRST.md).
 
 Nächster inhaltlicher Schritt: weitere Publikationen und Interviews den Themenfeldern zuordnen und noch nicht abgedeckte Positionen ergänzen. Kein automatischer Rabbit-Hole-Auftrag.
+
+## Veröffentlichung der Themenlandkarte
+
+[Im Research Atlas öffnen](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html). Bestehende private Site erfolgreich aktualisiert; Zugang unverändert. GitHub-Themenstand: `ea4ebc3ae2d368c0f4bc4c6f21f4f660f1551305`; Site-Quellcommit: `a0ea0b3c793deaeda0dad06ea325c3d2fa7fc38c`. [Publikationsbeleg und tatsächliche Prüfungen](SITE_PUBLICATION_2026-11-13.json).
+
+20 Themenfelder; Filter und Quellenweg lokal im Browser geprüft. Alle28 gespeicherten GitHub-Dateien exakt zurückgelesen. Die veröffentlichte Seite verlangt im Prüf-Browser eine Anmeldung; authentifizierte Sichtprüfung daher offen. Keine neue Einzelfallrecherche gestartet.
