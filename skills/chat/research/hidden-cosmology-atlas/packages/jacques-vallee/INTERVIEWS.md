@@ -11,7 +11,7 @@
 | Skeptiko584, Jorjani über Vallée | Publisher-Transkript44:08–49:22 | Kontaktbehauptung; Jorjani spricht, nicht Vallée [V14](SOURCES.md#v14) |
 | JRE2288,12.März2025 | Offizieller Upload/Metadaten | Aktueller Einstieg; keine inhaltlichen Claims aus ungesehenem Video [V30](SOURCES.md#v30) |
 
-## Hörprüfung mit präzisem Auftrag
+## Geparkte Hörprüfungen — aktuell außerhalb des Auftrags
 
 **Skeptiko584:** 44:08 Ursprung des Vorschlags;45:30 behauptete Bekanntschaft;46:12–46:44 angebliches Treffen und Bitte um Betrugsprüfung. Prüfen, ob Transkript, Sprecherzuordnung und Zeitmarken stimmen. Keine Funktionsfähigkeit oder Finanzierung aus dem bloßen Gespräch ableiten.
 

@@ -58,6 +58,6 @@ Die [berufliche Bibliografie](https://www.jacquesvallee.net/professionalwork/) e
 
 Das ist ein eigener Werkstrang. Eine Finanzpublikation oder eine technische Berufslaufbahn ist weder Beweis noch Widerlegung der späteren Anomalie-Deutungen. Einzeltexte dieses Strangs wurden hier nicht vollständig gelesen.
 
-## Empfohlene Reihenfolge der weiteren Prüfung
+## Aktuelle Reihenfolge
 
-Zuerst ein kontrollierbares Originalpapier und seine Gegenlesart; dann ein Buchkapitel und die darin tatsächlich zitierten historischen Quellen; anschließend ein Interview, um Unterschiede zwischen publizierter Argumentation und mündlicher Zuspitzung zu erfassen. Erst danach Konvergenzen mit Farrell, Liszt oder Jorjani als konkrete Zitationsbeziehungen registrieren.
+Zuerst Themen, Aussagen, Theoriefamilien und Verbindungen aller erfassten Werkstränge in der [Themenlandkarte](THEMES.md) erschließen. Kapitelgenaue Gegenproben und einzelne Archivfälle bleiben für später geparkt.

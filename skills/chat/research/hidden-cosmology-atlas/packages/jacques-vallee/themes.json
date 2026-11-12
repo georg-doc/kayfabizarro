@@ -1,0 +1,331 @@
+{
+  "schema": "kfb.atlas.thematic-coverage.v1",
+  "authorId": "jacques-vallee",
+  "updated": "2026-11-13",
+  "mode": "BREADTH_FIRST",
+  "completeness": "Broad thematic map from registered corpus; not an assertion that every statement in every publication has been captured.",
+  "outOfScope": [
+    "New single-case forensic investigations",
+    "Archive retrieval rabbit holes",
+    "Audio-to-transcript micro-audits"
+  ],
+  "themes": [
+    {
+      "id": "observation",
+      "title": "Beobachtung, Zeugen und Fallklassifikation",
+      "summary": "Wie werden ungewöhnliche Beobachtungen gesammelt, vergleichbar beschrieben und nach Qualität eingeordnet?",
+      "kind": "Methodik / Datenorganisation",
+      "sourceIds": [
+        "V02",
+        "V08"
+      ],
+      "neighbors": [
+        "Hynek",
+        "Dolan"
+      ],
+      "nextCoverage": "Frühe Bücher, Klassifikationssystem und Capella als zusammengehörigen Werkstrang erschließen."
+    },
+    {
+      "id": "eth",
+      "title": "Kritik am einfachen extraterrestrischen Besuchermodell",
+      "summary": "Vallée argumentiert, dass ein schlichtes Modell physischer Besucher bestimmte Berichtsmuster unzureichend erklärt.",
+      "kind": "Autorenthese",
+      "sourceIds": [
+        "V04"
+      ],
+      "neighbors": [
+        "Dolan",
+        "Farrell",
+        "Liszt"
+      ],
+      "nextCoverage": "Die abweichenden Erklärungen der Autoren nebeneinander kartieren."
+    },
+    {
+      "id": "magonia",
+      "title": "Folklore, Feen und historische Begegnungsmotive",
+      "summary": "Historische und moderne Begegnungserzählungen werden als vergleichbarer Motivbestand untersucht.",
+      "kind": "Vergleichender Ansatz",
+      "sourceIds": [
+        "V02",
+        "V07"
+      ],
+      "neighbors": [
+        "Aubeck",
+        "Keel",
+        "Warburg / Motivvergleich"
+      ],
+      "nextCoverage": "Motive und Epochen erfassen; Ähnlichkeit und behauptete Kontinuität unterscheiden."
+    },
+    {
+      "id": "religion",
+      "title": "Religion, Mythos und kulturelle Deutung",
+      "summary": "Welche kulturellen Kategorien bestimmen, als was eine ungewöhnliche Erfahrung verstanden wird?",
+      "kind": "Thematische Lesefrage",
+      "sourceIds": [
+        "V02",
+        "V07"
+      ],
+      "neighbors": [
+        "Kripal",
+        "Jorjani",
+        "Bramley",
+        "Icke"
+      ],
+      "nextCoverage": "Religiöse, mythologische und esoterische Lesarten mit ihrer jeweiligen Zuschreibung aufnehmen."
+    },
+    {
+      "id": "control",
+      "title": "Kontrollsystem und gesellschaftliches Lernen",
+      "summary": "Wiederkehrende Erfahrungen könnten auf Überzeugungen und kulturelle Entwicklung wirken; ein bestimmter Urheber bleibt offen.",
+      "kind": "Hypothesenfamilie",
+      "sourceIds": [
+        "V04",
+        "V07"
+      ],
+      "neighbors": [
+        "Farrell",
+        "Jorjani",
+        "Liszt"
+      ],
+      "nextCoverage": "Wirkung, Absicht und angenommener Akteur als getrennte Felder erfassen."
+    },
+    {
+      "id": "reinforcement",
+      "title": "Verstärkung, Sichtungswellen und Verhaltensmuster",
+      "summary": "Der Vergleich mit Verstärkungsmechanismen ist ein vorgeschlagener Zugang zu zeitlichen Mustern.",
+      "kind": "Autoranalogie",
+      "sourceIds": [
+        "V07"
+      ],
+      "neighbors": [
+        "Wann",
+        "Systemtheorie"
+      ],
+      "nextCoverage": "Zeitliche Muster als Themenfeld aufnehmen, ohne jetzt eine statistische Einzelprüfung zu starten."
+    },
+    {
+      "id": "dimensions",
+      "title": "Raum, Zeit und alternative Wirklichkeitsmodelle",
+      "summary": "Alternative Deutungen reichen über das einfache Raumschiffmodell hinaus und berühren ungewöhnliche Raum-Zeit-Berichte.",
+      "kind": "Spekulative Modellfamilie",
+      "sourceIds": [
+        "V04",
+        "V05"
+      ],
+      "neighbors": [
+        "Jorjani",
+        "Farrell"
+      ],
+      "nextCoverage": "Begriffe sauber erfassen; interdimensional ist keine universell bewiesene Erklärung."
+    },
+    {
+      "id": "sixlayers",
+      "title": "Sechs Ebenen ungewöhnlicher Erfahrung",
+      "summary": "Physische, anti-physische, psychologische, physiologische, psychische und kulturelle Beschreibungen werden getrennt betrachtet.",
+      "kind": "Modell mit Eric Davis",
+      "sourceIds": [
+        "V05"
+      ],
+      "neighbors": [
+        "Davis",
+        "Kripal"
+      ],
+      "nextCoverage": "Die sechs Ebenen als unterschiedliche Vergleichsansichten anbieten."
+    },
+    {
+      "id": "consciousness",
+      "title": "Bewusstsein und Wahrnehmung",
+      "summary": "Subjektive Erfahrung und physischer Bericht sollen gemeinsam untersucht werden, ohne sie gleichzusetzen.",
+      "kind": "Forschungsfeld",
+      "sourceIds": [
+        "V05",
+        "V09"
+      ],
+      "neighbors": [
+        "Swann",
+        "Puharich",
+        "Jorjani"
+      ],
+      "nextCoverage": "Autorenmodelle von Bewusstsein und ihre Erfahrungsbegriffe gegenüberstellen."
+    },
+    {
+      "id": "psi",
+      "title": "PSI, Remote Viewing und SRI-Umfeld",
+      "summary": "Vallées Rückblicke verbinden Kommunikationsforschung mit experimentellen PSI-Kontexten.",
+      "kind": "Retrospektiv berichtete Forschung",
+      "sourceIds": [
+        "V09"
+      ],
+      "neighbors": [
+        "Swann",
+        "Puthoff",
+        "Targ"
+      ],
+      "nextCoverage": "Personen, Experimente, Institutionen und Publikationen breit erfassen."
+    },
+    {
+      "id": "deception",
+      "title": "Täuschung, Desinformation und Deutungshoheit",
+      "summary": "Manipulation, fehlerhafte Daten und mögliche reale Restphänomene werden nebeneinander behandelt.",
+      "kind": "Autorposition / Untersuchungsfeld",
+      "sourceIds": [
+        "V06",
+        "V02"
+      ],
+      "neighbors": [
+        "Farrell",
+        "Liszt",
+        "Webb",
+        "Corbett"
+      ],
+      "nextCoverage": "Staatliche, mediale und gruppeninterne Erklärungsmodelle sammeln."
+    },
+    {
+      "id": "groups",
+      "title": "Kontaktgruppen, Überzeugung und soziale Dynamik",
+      "summary": "Wie entstehen aus Erfahrungen organisierte Überzeugungen und soziale Bewegungen?",
+      "kind": "Werkbezogener Themenpfad",
+      "sourceIds": [
+        "V02",
+        "V06"
+      ],
+      "neighbors": [
+        "Bramley",
+        "Icke",
+        "Jorjani"
+      ],
+      "nextCoverage": "Gruppenmodelle und narrative Mechanismen erschließen; einzelne Gruppenfälle später."
+    },
+    {
+      "id": "materials",
+      "title": "Materialspuren, Isotope und Forensik",
+      "summary": "Physische Proben bilden einen eigenen Forschungsstrang neben Erzählungen und Modellen.",
+      "kind": "Analytischer Forschungsansatz",
+      "sourceIds": [
+        "V11",
+        "V12"
+      ],
+      "neighbors": [
+        "Nolan",
+        "Lemke"
+      ],
+      "nextCoverage": "Probenarten, Verfahren und Publikationen inventarisieren; Labor-Rabbit-Holes vertagt."
+    },
+    {
+      "id": "computing",
+      "title": "Informatik, Informationssysteme und vernetzte Zusammenarbeit",
+      "summary": "Vallées technische Publikationen behandeln Kommunikation und Wissensorganisation.",
+      "kind": "Beruflicher Werkstrang",
+      "sourceIds": [
+        "V03"
+      ],
+      "neighbors": [
+        "Engelbart",
+        "Feinler"
+      ],
+      "nextCoverage": "Technische Arbeiten neben UFO-Werken sichtbar machen."
+    },
+    {
+      "id": "databases",
+      "title": "Datenbanken, Ontologie und internationale Vergleichbarkeit",
+      "summary": "Heterogene Fallbestände benötigen gemeinsame Begriffe und nachvollziehbare Datenqualität.",
+      "kind": "Methodischer Werkstrang",
+      "sourceIds": [
+        "V08"
+      ],
+      "neighbors": [
+        "Hynek",
+        "Dolan",
+        "Atlas-Methoden"
+      ],
+      "nextCoverage": "Korpora, Kategorien und Lücken der Erfassung kartieren."
+    },
+    {
+      "id": "institutions",
+      "title": "Forschungsinstitutionen und private Forschungsnetzwerke",
+      "summary": "Archive, Vortragsorte, gemeinsame Publikationen und Organisationen bilden verschiedene institutionelle Kontexte.",
+      "kind": "Dokumentarische Landkarte",
+      "sourceIds": [
+        "V08",
+        "V09",
+        "V10",
+        "V15",
+        "V16"
+      ],
+      "neighbors": [
+        "GEIPAN",
+        "Rice",
+        "NIDS / BAASS: Findbuchspur"
+      ],
+      "nextCoverage": "Institutionstyp und tatsächliche Rolle pro Verbindung sichtbar halten."
+    },
+    {
+      "id": "capital",
+      "title": "Unternehmertum, Risikokapital und Raumfahrt",
+      "summary": "Die berufliche Laufbahn und Raumfahrtfinanzierung eröffnen einen wirtschaftlichen Werkstrang.",
+      "kind": "Beruflicher / institutioneller Kontext",
+      "sourceIds": [
+        "V01",
+        "V03",
+        "V13"
+      ],
+      "neighbors": [
+        "Fitts",
+        "Webb / Goodwin"
+      ],
+      "nextCoverage": "Öffentliche Programme, Selbstaussagen und analytische Nachbarschaften getrennt aufnehmen."
+    },
+    {
+      "id": "diaries",
+      "title": "Forschungstagebücher und Entwicklung der eigenen Position",
+      "summary": "Forbidden Science dokumentiert den über Jahrzehnte entstandenen persönlichen Forschungs- und Kontaktkontext.",
+      "kind": "Tagebuchkorpus",
+      "sourceIds": [
+        "V25",
+        "V26",
+        "V27"
+      ],
+      "neighbors": [
+        "Hynek",
+        "Kripal",
+        "weitere Personen nach Band"
+      ],
+      "nextCoverage": "Sieben Bände nach Zeitraum, Themen und Personen erschließen."
+    },
+    {
+      "id": "geography",
+      "title": "Internationale und historische Berichtskulturen",
+      "summary": "Historische Quellen und das Werk über die Sowjetunion eröffnen Vergleiche jenseits einer rein US-amerikanischen Perspektive.",
+      "kind": "Werkbezogener Themenpfad",
+      "sourceIds": [
+        "V02"
+      ],
+      "neighbors": [
+        "Aubeck",
+        "Dolan"
+      ],
+      "nextCoverage": "Regionen, Epochen und Übersetzungstraditionen im Korpus erfassen."
+    },
+    {
+      "id": "media",
+      "title": "Interviews, populäre Vermittlung und Rezeption",
+      "summary": "Interviews und spätere Bezugnahmen zeigen, wie Vallées Modelle weitergegeben und verändert werden.",
+      "kind": "Publikations- und Rezeptionsfeld",
+      "sourceIds": [
+        "V06",
+        "V07",
+        "V14",
+        "V28",
+        "V29",
+        "V30",
+        "V31"
+      ],
+      "neighbors": [
+        "Jorjani",
+        "Grimerica",
+        "Joe Rogan"
+      ],
+      "nextCoverage": "Auftritte nach Themen indexieren; exakte Zeitmarken nur bei Bedarf vertiefen."
+    }
+  ]
+}

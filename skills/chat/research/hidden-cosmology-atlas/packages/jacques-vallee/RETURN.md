@@ -26,6 +26,8 @@ Trinity-Dokumente wurden als vom Kritiker veröffentlichte Reproduktionen gelese
 
 Rice MS0672: Korrespondenz Januar2028; Hintergrund Dezember2029; Fallakten1.Januar2031. Kein Archivkontakt ausgelöst.
 
-## Ein nächster Prüfpunkt
+## Aktueller Auftrag nach Georgs Korrektur
 
-Das Originalaudio des Baca–Carey-Interviews an05:47–11:10 gegen den vorhandenen Text prüfen. Danach kann die Chronologie-Gegenprobe genauer bewertet werden, ohne neue Netzwerkkanten zu erfinden. Parallel mögliche spätere Arbeit ist im Dossier gelistet, kein automatischer Massenlauf gestartet.
+Breite und möglichst vollständige Erfassung der Themen, Aussagen, Theorien und Verbindungen haben Vorrang. [20 Themenfelder](THEMES.md) sind registriert. Audioabgleiche, Trinity-Einzelprüfung und Archivbeschaffung bleiben geparkt. [Scope](../../RESEARCH_SCOPE_BREADTH_FIRST.md).
+
+Nächster inhaltlicher Schritt: weitere Publikationen und Interviews den Themenfeldern zuordnen und noch nicht abgedeckte Positionen ergänzen. Kein automatischer Rabbit-Hole-Auftrag.

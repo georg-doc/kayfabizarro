@@ -4,7 +4,7 @@ Stand: 13. November 2026 · Owner: KFB Research Atlas · Quellenbasierte Aufnahm
 
 **Vallées besonderer Beitrag ist eine Methodik des offenen Vergleichs:** technische Beobachtungen, Zeugenerleben, historische Motive und gesellschaftliche Wirkung zusammen untersuchen, ohne eine einzige Ursprungserklärung vorauszusetzen. Das macht ihn für den Atlas anschlussfähig; es macht die verschiedenen Erklärungen nicht gleichermaßen belegt.
 
-[Vertiefung und Gegenproben](../packages/jacques-vallee/README.md) · [Publikationen](../packages/jacques-vallee/BIBLIOGRAPHY.md) · [Interviews](../packages/jacques-vallee/INTERVIEWS.md) · [Quellenregister](../packages/jacques-vallee/SOURCES.md) · [Aussagen und Verbindungen](../packages/jacques-vallee/claims-and-relations.json) · [Zur Autorenübersicht](README.md)
+[Themenlandkarte](../packages/jacques-vallee/THEMES.md) · [Bisherige Vertiefung und Gegenproben](../packages/jacques-vallee/README.md) · [Publikationen](../packages/jacques-vallee/BIBLIOGRAPHY.md) · [Interviews](../packages/jacques-vallee/INTERVIEWS.md) · [Quellenregister](../packages/jacques-vallee/SOURCES.md) · [Aussagen und Verbindungen](../packages/jacques-vallee/claims-and-relations.json) · [Zur Autorenübersicht](README.md)
 
 ## Arbeitsfelder und Entwicklung
 
@@ -41,7 +41,7 @@ Quellen: [V02,V05,V09,V10,V14](../packages/jacques-vallee/SOURCES.md). Weitere A
 
 Stark sind der Wechsel zwischen Beobachtung und Deutung, der historische Vergleich und die Forderung nach besseren Daten. Prüfen müssen wir jeweils: Auswahl der Fälle; Übersetzungen; Erinnerungslücken; alternative Erklärungen; Überlieferungsabhängigkeit; Probenherkunft; und ob eine auffällige Wirkung vorschnell als Absicht verstanden wird.
 
-**Trinity ist dafür die notwendige Gegenprobe.** Kritik an Zeugengeschichte und Dokumentenlage darf nicht ausgeblendet werden, während die Antwort des Autors ebenfalls korrekt wiederzugeben ist. [Fallprüfung](../packages/jacques-vallee/README.md#trinity--eine-gegenprobe-am-eigenen-verfahren)
+**Trinity liegt als bereits erarbeitete Gegenprobe vor; weitere Einzelprüfungen sind vorerst geparkt.** Kritik an Zeugengeschichte und Dokumentenlage darf nicht ausgeblendet werden, während die Antwort des Autors ebenfalls korrekt wiederzugeben ist. [Fallprüfung](../packages/jacques-vallee/README.md#trinity--eine-gegenprobe-am-eigenen-verfahren)
 
 ## Zugang und offene Arbeit
 

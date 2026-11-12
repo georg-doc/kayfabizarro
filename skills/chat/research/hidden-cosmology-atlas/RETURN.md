@@ -1,6 +1,10 @@
+## 2026-11-13 · Scope korrigiert: Breite zuerst
+
+Georg priorisiert die vollständige thematische Erschließung von Aussagen, Theorien, Werken, Interviews und Verbindungen. Neue Einzelprüfungen sind vorerst außerhalb des Auftrags. [Verbindlicher Arbeitsmodus](RESEARCH_SCOPE_BREADTH_FIRST.md) · [Vallée:20 Themenfelder](packages/jacques-vallee/THEMES.md). GitHub und die bestehende Atlas-Site werden als Master und Lesefassung gemeinsam gepflegt; eine reine GitHub-Speicherung reicht nicht als Site-Update.
+
 ## 2026-11-13 · Jacques Vallée — Quellenbasierter Deep Dive
 
-[Autorenprofil](authors/jacques-vallee.md) · [Recherchepaket und Beleggrenzen](packages/jacques-vallee/RETURN.md). Werk-/Interviewinventur, Kontrollsystem-Modell, Trinity-Gegenprobe, materielle Prüfpfade und typisierte Verbindungen zu bestehenden Dossiers. 31 Quellenregistrierungen,13 Aussagen,12 Verbindungen; keine Behauptung vollständiger Buch- oder Audiosichtung. Keine Site-Veröffentlichung und kein Spielcode. Nächster Prüfpunkt: Baca–Carey-Audio gegen den vorhandenen Transkriptausschnitt.
+[Autorenprofil](authors/jacques-vallee.md) · [Recherchepaket und Beleggrenzen](packages/jacques-vallee/RETURN.md). Werk-/Interviewinventur, Kontrollsystem-Modell, Trinity-Gegenprobe, materielle Prüfpfade und typisierte Verbindungen zu bestehenden Dossiers. 31 Quellenregistrierungen,13 Aussagen,12 Verbindungen; keine Behauptung vollständiger Buch- oder Audiosichtung. Keine Site-Veröffentlichung und kein Spielcode. Der damalige Audio-Prüfpunkt ist nach Georgs Scope-Korrektur geparkt.
 
 ## 2026-11-03 · WS0 check-in on the first workshop deck
 

@@ -2,6 +2,10 @@
 
 [Autorenprofil](../../authors/jacques-vallee.md) · [Bibliografie](BIBLIOGRAPHY.md) · [Interviews](INTERVIEWS.md) · [Quellen](SOURCES.md) · [Strukturierte Aussagen](claims-and-relations.json) · [Return](RETURN.md)
 
+## Aktueller Fokus: thematische Breite
+
+[Die Themenlandkarte](THEMES.md) ist der primäre Einstieg. Neue Einzelfallprüfungen und Archiv-Rabbit-Holes sind vorerst außerhalb des Auftrags. Die unten erhaltenen Fallprüfungen dokumentieren den bisherigen Stand, sie sind keine aktive Aufgabenliste.
+
 ## Einordnung
 
 Vallée ist im Atlas besonders als methodischer Vergleichspartner wertvoll: Welche Beobachtung liegt vor, wie wird sie beschrieben, welche Geschichte entsteht daraus, und welche Wirkung bekommt diese Geschichte? Diese vier Fragen sollten auch dann getrennt bleiben, wenn ein Autor eine umfassende Erklärung anbietet.
@@ -83,7 +87,7 @@ Prüfpfad: Entnahme → Verwahrung → Weitergabe → Labor → Kontrollprobe �
 
 Damit entsteht eine prüfbare Nachbarschaft zu Fitts oder Webb/Goodwin, aber noch keine gemeinsame verdeckte Finanzierungsstruktur.
 
-## Forschungslücken nach Nutzen
+## Geparkte Vertiefungen — derzeit außerhalb des Auftrags
 
 1. **Materialpaper2022:** zugänglichen autorisierten Volltext beschaffen und genau einen Probenfall mit Kontrollen prüfen.
 2. **Jorjani und Baca:** vorhandene Zeitmarken gegen die Originalaufnahmen verifizieren.
@@ -91,4 +95,4 @@ Damit entsteht eine prüfbare Nachbarschaft zu Fitts oder Webb/Goodwin, aber noc
 4. **Bücher:** gezielte Kapitelprüfung von *Magonia*, *Messengers*, *Revelations* und jüngsten Tagebüchern; keine Volltextlektüre behaupten.
 5. **Archive:** Rice-Sperrfristen beachten; Findbuchkenntnis nicht als Akteneinsicht ausgeben.
 
-Die öffentliche Atlas-Seite wurde in diesem Lauf nicht aktualisiert. Dieses Paket ist ein GitHub-Recherchebestand.
+Die Website zeigt eine Lesefassung; GitHub bleibt der persistierte Master. Veröffentlichungsstand und Prüfungen stehen im Return.
