@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-13",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "draft_pr": 394,
+  "content_commit": "0edcba85b8defb97aaa973a9f9097800e37d40ce",
+  "files": [
+    "authors/george-knapp.md",
+    "packages/uap-knowledge-networks/george-knapp.md",
+    "authors/james-lacatski.md",
+    "packages/uap-knowledge-networks/james-lacatski.md",
+    "packages/uap-knowledge-networks/KNAPP_LACATSKI.md",
+    "packages/uap-knowledge-networks/COMPARISONS.md",
+    "packages/uap-knowledge-networks/sources.json",
+    "packages/uap-knowledge-networks/claims-and-relations.json",
+    "packages/uap-knowledge-networks/SOURCES.md",
+    "packages/uap-knowledge-networks/README.md",
+    "authors/README.md",
+    "site/authors.json",
+    "site/uap-networks.html",
+    "site/index.html",
+    "site/vallee.html",
+    "site/data/uap-networks/george-knapp.md",
+    "site/data/uap-networks/james-lacatski.md",
+    "site/data/uap-networks/KNAPP_LACATSKI.md",
+    "site/data/uap-networks/COMPARISONS.md",
+    "site/data/uap-networks/sources.json",
+    "site/data/uap-networks/claims-and-relations.json",
+    "site/data/uap-networks/SOURCES.md",
+    "site/data/uap-networks/README.md",
+    "packages/uap-knowledge-networks/RETURN.md",
+    "site/data/uap-networks/RETURN.md",
+    "RETURN.md"
+  ],
+  "readback": {
+    "exact_matches": 26,
+    "total": 26,
+    "branch_head": "0edcba85b8defb97aaa973a9f9097800e37d40ce"
+  },
+  "tests": {
+    "html_anchors": "PASS",
+    "source_references": "PASS",
+    "relationship_endpoints": "PASS",
+    "comparison_author_destinations": 52,
+    "unique_nonempty_author_records": 36,
+    "local_browser": "Lacatski source link opens UKN-S78; backlink returns to #james-lacatski"
+  },
+  "site": {
+    "project_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc",
+    "url": "https://kfb-research-atlas.frizzlebob.chatgpt.site",
+    "existing_version": 25,
+    "status": "NOT_PUBLISHED",
+    "blocker": "sites_git_client_upgrade_required",
+    "response": "Sites Git is not yet enabled for this client. Use a hosted Work session, or try again with the latest Codex and Sites plugin after rollout.",
+    "audience": "owner-private, unchanged"
+  },
+  "next_action": "Use a supported Sites client to open the existing Site source, apply only the owner site/ files from this content commit, validate and publish on the same Site. No new research, redesign, site or permission expansion."
+}

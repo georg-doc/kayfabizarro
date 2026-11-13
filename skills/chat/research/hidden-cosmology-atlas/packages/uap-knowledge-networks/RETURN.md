@@ -13,3 +13,5 @@ Site-Publikation BLOCKED: create_source_repository_write_credential meldet sites
 Nächster Schritt: vorhandenes Site-Paket in einem unterstützten Sites/Work-Client auf derselben Site veröffentlichen, ohne Neurecherche oder Redesign. Georg muss die Inhalte nicht erneut liefern. Kein Spielcode, kein Merge, keine neue Site, kein Hub-Eintrag.
 
 Prüfungen: eindeutige HTML-Anker, auflösbare Quellen-IDs und Beziehungsknoten; alle52 Vergleichsziele im Autorenregister vorhanden,36 eindeutige nichtleere Autoreneinträge. Lokaler Browser: Lacatski → aufgeklappte DOPSR-Quelle UKN-S78 mit PDF-Fundstelle → Lacatski. Keine Prüfung einer neu veröffentlichten Site, da Veröffentlichung blockiert.
+
+Inhaltcommit: 0edcba85b8defb97aaa973a9f9097800e37d40ce;26/26 Dateien exakt zurückgelesen, Remote-Head bestätigt. [Speicher- und Prüfbeleg](KNAPP_LACATSKI_SAVE_STATUS_2026-11-13.json).

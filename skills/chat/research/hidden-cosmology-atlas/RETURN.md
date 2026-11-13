@@ -1,6 +1,6 @@
 ## 2026-11-13 · George Knapp und James Lacatski
 
-[Profile, Vergleiche und Quellenketten](packages/uap-knowledge-networks/KNAPP_LACATSKI.md).16 Themen,10 Vergleiche,12 Beziehungen,12 Quellenaufnahmen. GitHub und Site-ready Lesefassung ergänzt; **Site-Veröffentlichung offen** wegen sites_git_client_upgrade_required. Bestehende Site bleibt Version25. [Return](packages/uap-knowledge-networks/RETURN.md). Nächster Schritt: dasselbe Paket über unterstützten Sites-Client veröffentlichen.
+[Profile, Vergleiche und Quellenketten](packages/uap-knowledge-networks/KNAPP_LACATSKI.md).16 Themen,10 Vergleiche,12 Beziehungen,12 Quellenaufnahmen. Inhaltcommit 0edcba85b8defb97aaa973a9f9097800e37d40ce,26/26 Dateien exakt zurückgelesen. GitHub und Site-ready Lesefassung ergänzt; **Site-Veröffentlichung offen** wegen sites_git_client_upgrade_required. Bestehende Site bleibt Version25. [Return](packages/uap-knowledge-networks/RETURN.md). Nächster Schritt: dasselbe Paket über unterstützten Sites-Client veröffentlichen.
 
 ## 2026-11-13 · Bigelow und Kelleher
 
