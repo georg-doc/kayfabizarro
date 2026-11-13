@@ -1,3 +1,9 @@
+# UAP-Wissensnetzwerke — zwölf Perspektiven
+
+Aktueller Stand13.11.2026: [George Knapp und James Lacatski](KNAPP_LACATSKI.md) ergänzt. Gesamt:92 Themen,78 Quellenaufnahmen,52 Vergleiche,64 typisierte Beziehungen. Site-Lesefassung vorbereitet; Publikation wegen Sites-Clientzugang offen. Frühere Umfangsangaben unten dokumentieren die damaligen Zwischenstände.
+
+---
+
 # UAP-Wissensnetzwerke — sechs Perspektiven
 
 Erweiterung13.11.2026: [Diana Walsh Pasulka](diana-walsh-pasulka.md) und [Garry Nolan](garry-nolan.md), mit [Verbindungen und acht neuen Vergleichen](PASULKA_NOLAN.md). Gesamt:44 Themen,44 Quellen,20 Vergleiche,26 typisierte Beziehungen. Sichtungsgrenzen gelten pro Quelle; keine vollständige Werksichtung.

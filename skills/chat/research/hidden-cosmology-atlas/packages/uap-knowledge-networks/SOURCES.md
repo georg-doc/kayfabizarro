@@ -643,3 +643,150 @@ James Lacatski; Colm Kelleher; George Knapp. Bookseller record; original book202
 Gesichtet: Metadata only; attempted standalone extract unavailable. Grenze: Book not read; shares source family with UKN-S60.
 
 Quellenfamilie: kelleher-skinwalkers. Geprüft: 2026-11-13.
+
+
+## Knapp und Lacatski · neue Quellen
+
+### UKN-S67 · George Knapp — Verlagsprofil
+
+[Quelle](https://www.simonandschuster.com/authors/George-Knapp/28236643) · Simon & Schuster · Publisher biography
+
+Fundstelle: About the Author; Books.
+
+Sichtung: Biografie und Buchzuordnung gelesen.
+
+Grenze: Undatiertes Marketingprofil; keine aktuellen Auszeichnungszahlen übernommen.
+
+Quellenfamilie: knapp-publisher. Geprüft: 2026-11-13.
+
+### UKN-S68 · George Knapp — schriftliche Aussage, 9. September 2025
+
+[Quelle](https://oversight.house.gov/wp-content/uploads/2025/09/George-Knapp-Written-Testimony.pdf) · George Knapp / House Oversight · First-person submitted testimony
+
+Fundstelle: PDF pp.1–2,4–5: Selbstverständnis; Lazar; AAWSAP; behauptete Materialverhandlungen.
+
+Sichtung: Ausgewählte Textpassagen gelesen, keine Bildprüfung.
+
+Grenze: Aussage eines beteiligten Reporters; Ausschussveröffentlichung bestätigt nicht den Inhalt.
+
+Quellenfamilie: knapp-hearing-2025. Geprüft: 2026-11-13.
+
+### UKN-S69 · UAP-Anhörung 9. September 2025 — amtliches Wortprotokoll
+
+[Quelle](https://www.govinfo.gov/content/pkg/CHRG-119hhrg61718/pdf/CHRG-119hhrg61718.pdf) · U.S. Government Publishing Office · Official hearing transcript
+
+Fundstelle: Printed p.34 / PDF p.38: Luna fragt Knapp nach russischen Unterlagen.
+
+Sichtung: Gezielte Passage gelesen; keine vollständige Sichtung der 54 PDF-Seiten.
+
+Grenze: Dokumentiert Knapps Antwort, keine unabhängige Authentifizierung der russischen Akten.
+
+Quellenfamilie: knapp-hearing-2025. Geprüft: 2026-11-13.
+
+### UKN-S70 · WEAPONIZED 38 — Lacatski und Kelleher, 17. Oktober 2023
+
+[Quelle](https://podscripts.co/podcasts/weaponized-with-jeremy-corbell-george-knapp/inside-the-dias-secretive-ufo-investigation-guests-dr-james-lacatski-dr-colm-kelleher) · James Lacatski; Colm Kelleher; George Knapp; Jeremy Corbell · Third-party transcript of participant interview
+
+Fundstelle: Transcript anchors ~02:36–10:11,13:23–15:03,1:17:52–1:18:48,1:48:25–1:50:41.
+
+Sichtung: Ausgewählte Transkriptabschnitte gelesen; keine Tonspurprüfung.
+
+Grenze: Zeitmarken nur Transkript-Navigation; dynamische Werbung und ASR-Fehler. Sprecherzuordnung nicht durch Audio verifiziert.
+
+Quellenfamilie: lacatski-kelleher-knapp-books. Geprüft: 2026-11-13.
+
+### UKN-S71 · Pentagon UFO Study / Fallen Angels — 28. Januar 2018
+
+[Quelle](https://www.coasttocoastam.com/show/2018-01-28-show/) · Coast to Coast AM · Original broadcaster episode description
+
+Fundstelle: Host, guests; first two hours.
+
+Sichtung: Originale Episodenbeschreibung gelesen.
+
+Grenze: Redaktionelle Zusammenfassung, kein Wortprotokoll und keine Audiosichtung.
+
+Quellenfamilie: c2c-knapp-davis-puthoff-2018. Geprüft: 2026-11-13.
+
+### UKN-S72 · WEAPONIZED 96 — Lacatski, Teil 1
+
+[Quelle](https://www.weaponizedpodcast.com/episodes-4/episode-96) · WEAPONIZED / Corbell & Knapp · Original podcast episode description
+
+Fundstelle: 5 November 2025, episode description.
+
+Sichtung: Episodentext gelesen.
+
+Grenze: Werbliche Rahmung und Interviewankündigung; keine vollständige Transkription oder Audioanalyse.
+
+Quellenfamilie: weaponized-lacatski-2025. Geprüft: 2026-11-13.
+
+### UKN-S73 · WEAPONIZED 97 — Lacatski, Teil 2
+
+[Quelle](https://www.weaponizedpodcast.com/episodes-4/episode-97) · WEAPONIZED / Corbell & Knapp · Original podcast episode description
+
+Fundstelle: 11 November 2025; description and New Insights link.
+
+Sichtung: Episodentext gelesen.
+
+Grenze: Themeninventar, kein Beleg einzelner berichteter Ereignisse; Buch nicht gelesen.
+
+Quellenfamilie: weaponized-lacatski-2025. Geprüft: 2026-11-13.
+
+### UKN-S74 · UFO Investigations / Dangers of Disclosure — 24. Mai 2026
+
+[Quelle](https://www.coasttocoastam.com/show/2026-05-24-show/) · Coast to Coast AM · Original broadcaster episode description
+
+Fundstelle: First half; Lacatski with host Knapp; Relevant Books.
+
+Sichtung: Sendungsbeschreibung gelesen.
+
+Grenze: Nicht als wörtliche Aussage oder vollständige Audiosichtung behandeln. Future Visions nur als dort verlinkter Buchtitel aufgenommen.
+
+Quellenfamilie: c2c-lacatski-2026. Geprüft: 2026-11-13.
+
+### UKN-S75 · James T. Lacatski — Gastbiografie
+
+[Quelle](https://www.coasttocoastam.com/guest/james-t-lacatski/) · Coast to Coast AM · Broadcaster guest biography
+
+Fundstelle: Biography.
+
+Sichtung: Kurze Biografie gelesen.
+
+Grenze: Rollen und Abschlüsse laut Gastbiografie, keine unabhängig geprüfte Personalakte.
+
+Quellenfamilie: lacatski-bio. Geprüft: 2026-11-13.
+
+### UKN-S76 · History and Origin of KONA BLUE — AARO-Text in Überlieferung
+
+[Quelle](https://www.secretmilitarytechnology.com/research/konablue-release1) · AARO; HTML transcription hosted by Secret Military Technology · Agency account via secondary host
+
+Fundstelle: Page 1 transcription, PSAP / SAP distinction.
+
+Sichtung: HTML-Überlieferung gelesen; offizieller AARO-PDF-Aufruf403.
+
+Grenze: Keine Scanprüfung; Behördenposition, keine vollständige Gegenprüfung aller Akten. Original: https://www.aaro.mil/Portals/136/PDFs/UAP_RECORDS_RESEARCH/History_and_Origin_of_KONA_BLUE_FINAL_508.pdf
+
+Quellenfamilie: aaro-kona-history. Geprüft: 2026-11-13.
+
+### UKN-S77 · DOPSR 22-SB-0151 — Freigabeschreiben vom 24. April 2023
+
+[Quelle](https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/UFOsandUAPs/24-F-0088_DOPSR_Case_22-SB-0151_2023.pdf) · Department of Defense / DOPSR · Official indexed document, direct access blocked
+
+Fundstelle: Indexed first letter; manuscript title and disclaimer.
+
+Sichtung: Nur Suchindextext; direkter Aufruf403.
+
+Grenze: INDEX_ONLY; nicht als eingesehenes PDF behandeln. Grundsätzliche Freigabegrenze zusätzlich direkt im älteren Fall UKN-S78 geprüft.
+
+Quellenfamilie: dopsr-22-sb-0151. Geprüft: 2026-11-13.
+
+### UKN-S78 · Skinwalkers — DOPSR-Freigabe und Korrespondenz, FOIA22-F-0035
+
+[Quelle](https://documents2.theblackvault.com/documents/osd/22-F-0035.pdf) · DoD / DOPSR; FOIA copy via The Black Vault · Original administrative record in release copy
+
+Fundstelle: PDF p.5:11 May2020 email; pp.19–20:11 May2021 determination; p.21 draft title.
+
+Sichtung: Ausgewählte extrahierte Textpassagen gelesen; PDF109 Seiten, kein Vollscanreview.
+
+Grenze: Freigabe ausdrücklich keine Bestätigung der Fakten. Keine private Personenidentifikation aus geschwärzten/abweichenden Fassungen übernommen.
+
+Quellenfamilie: dopsr-skinwalkers. Geprüft: 2026-11-13.

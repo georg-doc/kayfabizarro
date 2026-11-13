@@ -386,3 +386,86 @@ Typ: EDITORIAL_PARALLEL. [Remote Viewing at Stanford Research Institute](https:/
 **Unterschied:** DIA-Auftrag und BEAM sind konkrete, verschiedenartige Organisations- beziehungsweise Technikbelege. Die weitergehenden historischen Synthesen der bestehenden Dossiers sind damit nicht automatisch bestätigt.
 
 Typ: EDITORIAL_PARALLEL. [Bigelow Expandable Activity Module (BEAM)](https://www.nasa.gov/international-space-station/bigelow-expandable-activity-module-beam/) · [Advanced Aerospace Weapon System Applications Contract Status](https://documents2.theblackvault.com/documents/dia/AAWSAP/DI_Brief_2009.pdf) · [Bestehendes Autorendossier](../../authors/joseph-farrell.md)
+
+
+## Knapp und Lacatski · 13.11.2026
+
+### Knapp ↔ Bigelow
+
+Gemeinsames Thema: Dokumentenzugang und Forschungsförderung.
+
+Knapp nennt Bigelow als Empfänger seiner russischen Unterlagen. Das dokumentiert eine berichtete Übergabe, nicht deren Inhalt oder Authentizität.
+
+Beziehung: REPORTED_DOCUMENT_TRANSFER. [UAP-Anhörung 9. September 2025 — amtliches Wortprotokoll](https://www.govinfo.gov/content/pkg/CHRG-119hhrg61718/pdf/CHRG-119hhrg61718.pdf) (UKN-S69).
+
+### Knapp ↔ Kelleher
+
+Gemeinsames Thema: Skinwalker und öffentliche Vermittlung.
+
+Gemeinsame Bücher verbinden Feldforschung und journalistische Darstellung. Diese Rollen ergänzen sich; Mitautorschaft ist keine unabhängige Gegenprüfung.
+
+Beziehung: COAUTHORSHIP. [Hunt for the Skinwalker](https://www.simonandschuster.com/books/Hunt-for-the-Skinwalker/Colm-A-Kelleher/9781416505211) (UKN-S61) · [Skinwalkers at the Pentagon](https://www.barnesandnoble.com/w/skinwalkers-at-the-pentagon-james-t-lacatski-deng/1142912835) (UKN-S66) · [Skinwalkers — DOPSR-Freigabe und Korrespondenz, FOIA22-F-0035](https://documents2.theblackvault.com/documents/osd/22-F-0035.pdf) (UKN-S78).
+
+### Knapp ↔ Puthoff
+
+Gemeinsames Thema: Technische Deutungen und Öffentlichkeit.
+
+Die Sendungsseite2018 belegt einen Interviewkontakt. Knapp vermittelt; Puthoff erläutert eigene Forschungsansätze. Der Auftritt beweist kein gemeinsames Experiment.
+
+Beziehung: INTERVIEW. [Pentagon UFO Study / Fallen Angels — 28. Januar 2018](https://www.coasttocoastam.com/show/2018-01-28-show/) (UKN-S71).
+
+### Knapp ↔ Davis
+
+Gemeinsames Thema: UAP-Erklärung und Beweismaßstab.
+
+Der Sender fasst Davis’ Ausschlussargument zusammen. Knapps Moderation ist ein Verbreitungsweg, keine zusätzliche physikalische Bestätigung.
+
+Beziehung: INTERVIEW. [Pentagon UFO Study / Fallen Angels — 28. Januar 2018](https://www.coasttocoastam.com/show/2018-01-28-show/) (UKN-S71).
+
+### Knapp ↔ Lacatski
+
+Gemeinsames Thema: Insiderwissen und Veröffentlichung.
+
+Reporter, Mitautor und Interviewer stehen einem sicherheitsgebundenen Programmteilnehmer gegenüber. Fragen des Moderators und bestätigte Aussagen des Gastes müssen getrennt bleiben.
+
+Beziehung: COAUTHORSHIP_AND_INTERVIEW. [WEAPONIZED 38 — Lacatski und Kelleher, 17. Oktober 2023](https://podscripts.co/podcasts/weaponized-with-jeremy-corbell-george-knapp/inside-the-dias-secretive-ufo-investigation-guests-dr-james-lacatski-dr-colm-kelleher) (UKN-S70) · [Skinwalkers — DOPSR-Freigabe und Korrespondenz, FOIA22-F-0035](https://documents2.theblackvault.com/documents/osd/22-F-0035.pdf) (UKN-S78).
+
+### Lacatski ↔ Bigelow
+
+Gemeinsames Thema: Staatlicher Auftrag und private Umsetzung.
+
+DIA/BAASS lassen sich als institutionelle Rollen verbinden. Die Existenz des Vertrags belegt nicht sämtliche später erzählten Ergebnisse.
+
+Beziehung: PROGRAM_CONTRACT_CONTEXT. [Advanced Aerospace Weapon System Applications Contract Status](https://documents2.theblackvault.com/documents/dia/AAWSAP/DI_Brief_2009.pdf) (UKN-S63) · [WEAPONIZED 38 — Lacatski und Kelleher, 17. Oktober 2023](https://podscripts.co/podcasts/weaponized-with-jeremy-corbell-george-knapp/inside-the-dias-secretive-ufo-investigation-guests-dr-james-lacatski-dr-colm-kelleher) (UKN-S70).
+
+### Lacatski ↔ Kelleher
+
+Gemeinsames Thema: Programmsteuerung und Fallarbeit.
+
+Gemeinsame Autorenschaft ist direkt belegt. Ihre unterschiedlichen Arbeitsrollen erklären Perspektiven, erzeugen aber keine zwei unabhängigen Quellen für denselben Bericht.
+
+Beziehung: COAUTHORSHIP_AND_ROLE_COMPARISON. [Skinwalkers — DOPSR-Freigabe und Korrespondenz, FOIA22-F-0035](https://documents2.theblackvault.com/documents/osd/22-F-0035.pdf) (UKN-S78) · [WEAPONIZED 38 — Lacatski und Kelleher, 17. Oktober 2023](https://podscripts.co/podcasts/weaponized-with-jeremy-corbell-george-knapp/inside-the-dias-secretive-ufo-investigation-guests-dr-james-lacatski-dr-colm-kelleher) (UKN-S70).
+
+### Lacatski ↔ Puthoff
+
+Gemeinsames Thema: Technische Studien im AAWSAP-Umfeld.
+
+Der Anschluss läuft über DIA/BAASS und Kellehers Benennung Puthoffs als Berater. Eine direkte persönliche Weisung Lacatskis an Puthoff wird damit nicht belegt.
+
+Beziehung: INSTITUTIONAL_PATH_NOT_DIRECT_EDGE. [Advanced Aerospace Weapon System Applications Contract Status](https://documents2.theblackvault.com/documents/dia/AAWSAP/DI_Brief_2009.pdf) (UKN-S63) · [The Pentagon’s Secret UFO Program, the Hitchhiker Effect, and Models of Contagion](https://www.theblackvault.com/casefiles/wp-content/uploads/2022/06/colmkelleher-edgescience.pdf) (UKN-S60).
+
+### Lacatski ↔ Davis
+
+Gemeinsames Thema: Klassifikation und technische Modelle.
+
+Das Interview erwähnt das Vallée-Davis-Schema; deren eigene Veröffentlichung beschreibt den Ansatz. Methodenzitat, Vertragsrolle und persönliche Zusammenarbeit sind verschiedene Beziehungen.
+
+Beziehung: REPORTED_METHOD_REUSE. [WEAPONIZED 38 — Lacatski und Kelleher, 17. Oktober 2023](https://podscripts.co/podcasts/weaponized-with-jeremy-corbell-george-knapp/inside-the-dias-secretive-ufo-investigation-guests-dr-james-lacatski-dr-colm-kelleher) (UKN-S70) · [Incommensurability, Orthodoxy and the Physics of High Strangeness](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf) (UKN-S54).
+
+### Lacatski ↔ Vallée
+
+Gemeinsames Thema: Strukturierte Fallvergleiche.
+
+Die berichtete Datenbankklassifikation ist anschlussfähig an Vallées vergleichende Methodik. Der Verweis bestätigt keine bestimmte ontologische Erklärung der Fälle.
+
+Beziehung: REPORTED_METHOD_REUSE. [WEAPONIZED 38 — Lacatski und Kelleher, 17. Oktober 2023](https://podscripts.co/podcasts/weaponized-with-jeremy-corbell-george-knapp/inside-the-dias-secretive-ufo-investigation-guests-dr-james-lacatski-dr-colm-kelleher) (UKN-S70) · [Incommensurability, Orthodoxy and the Physics of High Strangeness](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf) (UKN-S54).

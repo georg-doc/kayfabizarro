@@ -162,3 +162,10 @@ Six source-led profiles added; total dedicated author masters: **24**, not 24 co
 
 - [Robert Bigelow](robert-bigelow.md) — Raumfahrt, Forschungsförderung, BICS.
 - [Colm Kelleher](colm-kelleher.md) — Biochemie, NIDS/BAASS, Human Effects, BICS.
+
+
+## 13.11.2026 · Breitenaufnahme
+
+- [George Knapp](george-knapp.md)
+- [James T. Lacatski](james-lacatski.md)
+- [Vergleiche und Quellenketten](../packages/uap-knowledge-networks/KNAPP_LACATSKI.md)

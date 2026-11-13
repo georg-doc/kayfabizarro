@@ -1,3 +1,7 @@
+## 2026-11-13 · George Knapp und James Lacatski
+
+[Profile, Vergleiche und Quellenketten](packages/uap-knowledge-networks/KNAPP_LACATSKI.md).16 Themen,10 Vergleiche,12 Beziehungen,12 Quellenaufnahmen. GitHub und Site-ready Lesefassung ergänzt; **Site-Veröffentlichung offen** wegen sites_git_client_upgrade_required. Bestehende Site bleibt Version25. [Return](packages/uap-knowledge-networks/RETURN.md). Nächster Schritt: dasselbe Paket über unterstützten Sites-Client veröffentlichen.
+
 ## 2026-11-13 · Bigelow und Kelleher
 
 [Zwei Dossiers und Vergleiche](packages/uap-knowledge-networks/BIGELOW_KELLEHER.md).16 neue Themen,10 Vergleiche,15 Beziehungen,10 Quellenaufnahmen. Breite ohne Rabbit Holes. [Return](packages/uap-knowledge-networks/RETURN.md). [Atlas-Version25](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html#robert-bigelow) veröffentlicht; Inhaltcommit 8f98515543920c8ec1249d4b2b65fbabe3e412d8,26/26 Dateien exakt zurückgelesen. [Publikationsbeleg](packages/uap-knowledge-networks/SITE_PUBLICATION_BIGELOW_KELLEHER_R4_2026-11-13.json). Nächstes Gate: Georgs Sicht auf die breite Gegenüberstellung.
