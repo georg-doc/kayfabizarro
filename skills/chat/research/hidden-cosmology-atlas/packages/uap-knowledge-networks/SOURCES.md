@@ -415,3 +415,126 @@ Prüfdatum:2026-11-13. Mehrere Quellen derselben Familie zählen nicht automatis
 - Gesichtet: Search-indexed listing only
 - Grenze: Discovery record; title is editorial framing, not Vatican institutional disclosure.
 - Quellenfamilie: american-alchemy-pasulka-vatican
+
+
+## Puthoff und Davis · neue Quellen
+
+### UKN-S45 · Remote Viewing at Stanford Research Institute
+
+Harold E. Puthoff. Original retrospective, JSE 10(1), 1996.
+
+[Quelle](https://waves.lima-city.de/cms/pdf/jse_10_1_puthoff.pdf) · Fundstelle: pp.63–65.
+
+Gesichtet: Selected original text. Grenze: Participant retrospective; not independent validation.
+
+Quellenfamilie: puthoff-rv-1996. Geprüft: 2026-11-13.
+
+### UKN-S46 · Information transmission under conditions of sensory shielding
+
+Russell Targ; Harold Puthoff. Journal article, 1974.
+
+[Quelle](https://www.nature.com/articles/251602a0) · Fundstelle: Nature251,602–607.
+
+Gesichtet: Bibliographic metadata only; direct open unavailable. Grenze: No full-text assessment.
+
+Quellenfamilie: targ-puthoff-1974. Geprüft: 2026-11-13.
+
+### UKN-S47 · An Evaluation of Remote Viewing: Research and Applications
+
+Michael Mumford; Andrew Rose; David Goslin / AIR. Original evaluation,29 September1995.
+
+[Quelle](https://www.alice.id.tue.nl/references/mumford-rose-goslin-1995.pdf) · Fundstelle: Executive Summary E-1–E-5 (PDF2–6).
+
+Gesichtet: Executive summary read. Grenze: Evaluation scope is the reviewed program, not every possible paranormal claim.
+
+Quellenfamilie: air-rv-1995. Geprüft: 2026-11-13.
+
+### UKN-S48 · Advances in the proposed electromagnetic zero-point field theory of inertia
+
+Bernhard Haisch; Alfonso Rueda; H. E. Puthoff. Conference paper,1998.
+
+[Quelle](https://arxiv.org/abs/physics/9807023) · Fundstelle: AIAA98-3143; arXiv abstract.
+
+Gesichtet: Metadata and abstract read. Grenze: Proposed theory; no engineering demonstration.
+
+Quellenfamilie: hrp-inertia. Geprüft: 2026-11-13.
+
+### UKN-S49 · Inertia as a zero-point-field force: Critical analysis
+
+Yefim S. Levin. Physical Review A79,012114 (2009).
+
+[Quelle](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.79.012114) · Fundstelle: Abstract.
+
+Gesichtet: Abstract read; full text not consulted. Grenze: Critique addresses the HRP1994 derivation; not all vacuum physics.
+
+Quellenfamilie: levin-hrp-2009. Geprüft: 2026-11-13.
+
+### UKN-S50 · Advanced Space Propulsion Based on Vacuum (Spacetime Metric) Engineering
+
+Harold E. Puthoff. JBIS63,82–89 (2010); arXiv deposit2012.
+
+[Quelle](https://arxiv.org/abs/1204.2184) · Fundstelle: Abstract and publication metadata.
+
+Gesichtet: Abstract read. Grenze: Concept review, not a working propulsion device.
+
+Quellenfamilie: puthoff-metric. Geprüft: 2026-11-13.
+
+### UKN-S51 · Levi-Civita Effect in the polarizable vacuum (PV) representation of general relativity
+
+H. E. Puthoff; Claudio Maccone; Eric W. Davis. Original theoretical paper,2004.
+
+[Quelle](https://arxiv.org/abs/physics/0403064) · Fundstelle: Author list and abstract.
+
+Gesichtet: Metadata and abstract read. Grenze: Mathematical derivation, not experimental demonstration.
+
+Quellenfamilie: puthoff-maccone-davis. Geprüft: 2026-11-13.
+
+### UKN-S52 · Ultraterrestrial Models
+
+Harold E. Puthoff. Journal of Cosmology29(1),20001–20016.
+
+[Quelle](https://thejournalofcosmology.com/Puthoff.pdf) · Fundstelle: pp.20002–20006; Dolan citation[5].
+
+Gesichtet: Selected original text. Grenze: Conditional hypotheses and proposed tests; no verification of hidden civilization.
+
+Quellenfamilie: puthoff-ultraterrestrial. Geprüft: 2026-11-13.
+
+### UKN-S53 · Teleportation Physics Study
+
+Eric W. Davis / Warp Drive Metrics. AFRL-PR-ED-TR-2003-0034.
+
+[Quelle](https://www.coscienza.org/wp-content/uploads/Teleportation-Physics-Study.pdf) · Fundstelle: Cover August2004; form25 Nov2003; foreword; executive summary; §1.2; selected ch.5.
+
+Gesichtet: Selected original text, not complete88-page review. Grenze: Government sponsorship is not endorsement; no independent replication checked.
+
+Quellenfamilie: davis-teleportation. Geprüft: 2026-11-13.
+
+### UKN-S54 · Incommensurability, Orthodoxy and the Physics of High Strangeness
+
+Jacques Vallée; Eric W. Davis. Conference paper, Porto24 October2003.
+
+[Quelle](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf) · Fundstelle: p.2 author footnote; pp.6–10 six-layer model.
+
+Gesichtet: Selected original text; same source as Vallée V05. Grenze: Analytical model, not proof of its proposed ontology.
+
+Quellenfamilie: vallee-davis-2003. Geprüft: 2026-11-13.
+
+### UKN-S55 · Eric Davis · Sol Foundation
+
+Sol Foundation. Organizational biography.
+
+[Quelle](https://thesolfoundation.org/people/eric-davis/) · Fundstelle: Advisory Board; education and program roles.
+
+Gesichtet: Biography read. Grenze: Self-description of classified-program advisory roles, not personnel records.
+
+Quellenfamilie: sol-davis. Geprüft: 2026-11-13.
+
+### UKN-S56 · The Physics of UFOs: Eric Weinstein + Hal Puthoff
+
+Jesse Michels / American Alchemy. Interview discovery record.
+
+[Quelle](https://www.youtube.com/watch?v=iQOibpIDx-4) · Fundstelle: Episode URL; also linked in Curt Jaimungal episode notes19 October2023.
+
+Gesichtet: Original video fetch failed; link confirmed by publisher episode notes. Grenze: No audio, transcript, timestamps or interview claims verified.
+
+Quellenfamilie: michels-puthoff-weinstein. Geprüft: 2026-11-13.

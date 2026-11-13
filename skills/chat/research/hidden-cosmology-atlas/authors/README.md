@@ -154,3 +154,7 @@ Six source-led profiles added; total dedicated author masters: **24**, not 24 co
 - [Garry Nolan](garry-nolan.md) — Biomedizin, Materialien und Forschungsorganisation
 
 [Verbindungen zu Taylor, Vallée und Jesse Michels](../packages/uap-knowledge-networks/PASULKA_NOLAN.md)
+
+
+- [Hal Puthoff](hal-puthoff.md) — SRI, Swann, Vakuumphysik, UAP-Modelle.
+- [Eric W. Davis](eric-davis.md) — Vallée-Modell, Teleportationsstudie, theoretische Physik, Sol.

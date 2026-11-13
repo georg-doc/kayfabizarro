@@ -1,23 +1,11 @@
-# Return · Pasulka / Nolan ·13.11.2026
+# Return · Puthoff & Davis · 2026-11-13
 
-Owner:KFB Research Atlas. Repo:georg-doc/kayfabizarro. Branch:research/hidden-cosmology-atlas-2026-10-13. Bestehende PR:#394. Ausgangshead:16f698ee75ae2e75beabf7fa34a70357cd277f0b.
+Owner: skills/chat/research/hidden-cosmology-atlas · Repo georg-doc/kayfabizarro · Branch research/hidden-cosmology-atlas-2026-10-13 · Draft PR394.
 
-Zwei Dossiers;16 Themen;8 Vergleiche;10 neue Beziehungen;13 zusätzliche Quellenregistereinträge. Bestehendes Paket additiv erweitert, kein Spielcode.
+Ausgangshead: b978e05dc70c26c0fff7ab4ffd9bff4efdfd9a67.
 
-## Ergebnis
+Zwei Dossiers,16 neue Themen,12 Vergleiche,11 Beziehungen und12 Quellenaufnahmen. Bestehende Inhalte additiv erhalten. Originale, Abstracts, Teilnehmerberichte, Organisationsangaben und Findmittel einzeln gekennzeichnet. Keine Spieländerung.
 
-- Nolan–Vallée: Original-Koautorschaft und begrenzter Materialbefund; Originalartikel S.1–2,11–12 gelesen.
-- Pasulka: historische, ethnografische, mediale und persönliche Deutungsebenen nebeneinander.
-- Taylor: Anschluss an vorhandene Quellenketten, Identitätszuschreibungen weiter separat.
-- Michels: Interviewer/Moderator, nicht mit allen Gastbehauptungen gleichgesetzt.
-- Sol: Nolan Mitgründer; Pasulka/Vallée im gegenwärtigen Beirat. Zeitgebundene Selbstbeschreibung.
+Grenzen: keine Volllektüre, keine Audioverifikation. Michels-Video als Findmittel; Nature1974 als Metadaten. Keine Wilson-Davis-/Bergungs-Einzelprüfung. EarthTech-Zugriff nicht zuverlässig. Publikation und Prüfbeleg werden nach Abschluss ergänzt.
 
-## Grenzen
-
-Keine Audio-Vollsichtung. Zwei Dritttranskripte nur selektiv erschlossen. Encounters/The Others nicht vollständig gelesen. Originalartikel über AFU-Kopie zugänglich; direkter Verlagszugriff403. Keine privaten Patientendaten oder Archivkontakte.
-
-## Nächstes Gate
-
-Georgs Blick auf die breite Gegenüberstellung. Neue Tiefenrecherchen erst nach Themenwahl.
-
-Publikations- und Rücklesebeleg folgen nach Site-Veröffentlichung im additiven Receipt.
+Nächstes Gate: Georgs Sicht auf diese breite Gegenüberstellung; keine automatische Vertiefung.

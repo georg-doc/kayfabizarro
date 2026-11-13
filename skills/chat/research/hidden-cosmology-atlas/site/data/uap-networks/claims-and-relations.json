@@ -126,6 +126,36 @@
       "id": "uncw",
       "name": "University of North Carolina Wilmington",
       "type": "organization"
+    },
+    {
+      "id": "eric-davis",
+      "name": "Eric W. Davis",
+      "type": "person"
+    },
+    {
+      "id": "ingo-swann",
+      "name": "Ingo Swann",
+      "type": "person"
+    },
+    {
+      "id": "russell-targ",
+      "name": "Russell Targ",
+      "type": "person"
+    },
+    {
+      "id": "richard-dolan",
+      "name": "Richard Dolan",
+      "type": "person"
+    },
+    {
+      "id": "nids",
+      "name": "National Institute for Discovery Science",
+      "type": "organization"
+    },
+    {
+      "id": "afrl",
+      "name": "Air Force Research Laboratory",
+      "type": "organization"
     }
   ],
   "claims": [
@@ -626,6 +656,187 @@
       ],
       "status": "ORGANIZATIONAL_SELF_RECORD",
       "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-1",
+      "subject": "hal-puthoff",
+      "theme": "SRI und Ingo Swann",
+      "attributable_paraphrase": "Puthoff beschreibt den Beginn seiner Zusammenarbeit mit Swann1972 und seine Leitung des SRI-Programms bis1985. Seine Darstellung des Magnetometerversuchs ist ein Teilnehmerbericht; sie belegt den Forschungszusammenhang, nicht unabhängig den behaupteten Effekt.",
+      "source_ids": [
+        "UKN-S45"
+      ],
+      "status": "Teilnehmerbericht",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-2",
+      "subject": "hal-puthoff",
+      "theme": "Targ, Sinnesabschirmung und Bewertung",
+      "attributable_paraphrase": "Mit Russell Targ publizierte er1974 in Nature. Die AIR-Evaluation1995 unterschied statistische Laborabweichungen von ungeklärter paranormaler Ursache und fehlendem nachgewiesenem operativem Nutzen. Diese Ebenen dürfen weder zu einem pauschalen Erfolg noch zu einer Nichtexistenzbehauptung verkürzt werden.",
+      "source_ids": [
+        "UKN-S46",
+        "UKN-S47"
+      ],
+      "status": "Publikation & Gegenlesart",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-3",
+      "subject": "hal-puthoff",
+      "theme": "Trägheit aus dem Nullpunktfeld",
+      "attributable_paraphrase": "Haisch, Rueda und Puthoff schlagen elektromagnetische Wechselwirkung mit dem Nullpunktfeld als Erklärung von Trägheit vor. Levin kritisiert2009 zentrale mathematische und physikalische Annahmen der HRP1994-Ableitung. Hier stehen ein Theorieansatz und eine konkrete Fachkritik nebeneinander.",
+      "source_ids": [
+        "UKN-S48",
+        "UKN-S49"
+      ],
+      "status": "Theorie & Fachkritik",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-4",
+      "subject": "hal-puthoff",
+      "theme": "Raumzeit als technische Fragestellung",
+      "attributable_paraphrase": "Der JBIS-Beitrag2010,2012 auf arXiv eingestellt, diskutiert Antrieb durch Veränderung von Vakuum beziehungsweise Raumzeitmetrik. Das erschließt ein theoretisches Forschungsprogramm; ein funktionierendes Triebwerk ist damit nicht dokumentiert.",
+      "source_ids": [
+        "UKN-S50"
+      ],
+      "status": "Theoretischer Ansatz",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-5",
+      "subject": "hal-puthoff",
+      "theme": "Gemeinsame Physik mit Davis",
+      "attributable_paraphrase": "Puthoff, Maccone und Davis behandeln2004 den Levi-Civita-Effekt in einer polarisierbaren Vakuumdarstellung. Die Koautorschaft ist direkt belegt. Eine gemeinsame Veröffentlichung ist präziser als das pauschale Etikett eines geheimen Netzwerks.",
+      "source_ids": [
+        "UKN-S51"
+      ],
+      "status": "Koautorschaft",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-6",
+      "subject": "hal-puthoff",
+      "theme": "Ultraterrestrische Alternativen",
+      "attributable_paraphrase": "Puthoff stellt neben außerirdischen auch verborgene irdische, zeitbezogene und weitere Erklärungsmodelle zur Diskussion. Er schlägt vor, Hypothesen versuchsweise anzunehmen und nach Spuren zu suchen. In diesem Kontext zitiert er ausdrücklich Dolans Breakaway-Civilization-These.",
+      "source_ids": [
+        "UKN-S52"
+      ],
+      "status": "Hypothesen & Zitation",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-7",
+      "subject": "hal-puthoff",
+      "theme": "To The Stars und DeLonge",
+      "attributable_paraphrase": "Das bereits erschlossene SEC-Dokument führt Puthoff als Mitgründer von To The Stars. Damit ist eine organisatorische Verbindung zu DeLonge belegt; die Unternehmensrolle bestätigt keine Behauptung über geborgene Technologie.",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "status": "Organisationsdokument",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-8",
+      "subject": "hal-puthoff",
+      "theme": "Nolan und öffentliche Vermittlung",
+      "attributable_paraphrase": "Nolan nennt Puthoff im erschlossenen Michels-Dritttranskript unter seinen Kontakten. Das Interview mit Weinstein und Michels ist zusätzlich als Sichtungsweg registriert, ohne daraus ungeprüfte Aussagen oder Zeitmarken zu übernehmen.",
+      "source_ids": [
+        "UKN-S38",
+        "UKN-S56"
+      ],
+      "status": "Kontaktbericht & Interview-Findmittel",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-1",
+      "subject": "eric-davis",
+      "theme": "Vallée: sechs Analyseebenen",
+      "attributable_paraphrase": "Das gemeinsame Papier2003 unterscheidet physische, antiphysische, biologische beziehungsweise physiologische, psychologische, psychische und kulturelle Aspekte von UAP-Berichten. Diese Ebenen sind Kategorien der Analyse, keine sechs nachgewiesenen Welten.",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "status": "Koautorschaft & Modell",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-2",
+      "subject": "eric-davis",
+      "theme": "Inkommensurabilität",
+      "attributable_paraphrase": "Vallée und Davis problematisieren menschliche Voraussetzungen sowohl in SETI als auch in der UFO-Deutung. Unverständlichkeit wird als Herausforderung an Modelle behandelt; sie ist für sich kein Nachweis nichtmenschlicher Intelligenz.",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "status": "Methodische These",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-3",
+      "subject": "eric-davis",
+      "theme": "NIDS als konkreter Zusammenhang",
+      "attributable_paraphrase": "Die Autorenfußnote2003 bezeichnet beide als beratende Mitglieder des National Institute for Discovery Science. Sie belegt diese damalige Selbstzuordnung, nicht jede später behauptete Verbindung zu Bigelow-Projekten.",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "status": "Zeitgebundene Autorenangabe",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-4",
+      "subject": "eric-davis",
+      "theme": "Physik mit Puthoff und Maccone",
+      "attributable_paraphrase": "Der Beitrag2004 liefert einen direkten Publikationspfad zur Vakuumdarstellung der Relativitätstheorie. Er gehört zur theoretischen Physik und dokumentiert keine geheime oder außerirdische Hardware.",
+      "source_ids": [
+        "UKN-S51"
+      ],
+      "status": "Koautorschaft",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-5",
+      "subject": "eric-davis",
+      "theme": "Teleportation: mehrere Bedeutungen",
+      "attributable_paraphrase": "Die AFRL-Studie trennt Quantenzustandsübertragung, Raumzeit-/Vakuumkonzepte und psychische Teleportation. Diese verschiedenen Kategorien dürfen nicht als ein experimentell einheitlich bestätigtes Phänomen gelesen werden.",
+      "source_ids": [
+        "UKN-S53"
+      ],
+      "status": "Literaturstudie",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-6",
+      "subject": "eric-davis",
+      "theme": "Psychokinetische Teleportation",
+      "attributable_paraphrase": "Davis bewertet im Executive Summary die von ihm ausgewerteten Berichte positiv und hält psychokinetische Teleportation für realisierbar beziehungsweise kontrollierbar. Das ist seine Schlussfolgerung aus Literatur, keine hier unabhängig geprüfte Replikation. Das Vorwort verneint eine staatliche Billigung der Ergebnisse.",
+      "source_ids": [
+        "UKN-S53"
+      ],
+      "status": "Außergewöhnliche Autorenbehauptung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-7",
+      "subject": "eric-davis",
+      "theme": "Sol und Programmberatung",
+      "attributable_paraphrase": "Sol führt Davis im Beirat und beschreibt ihn als Berater von AAWSAP, AATIP und UAP Task Force. Das ist eine konkrete institutionelle Selbstdarstellung; Umfang und Inhalt dieser Rollen wurden hier nicht anhand von Vertrags- oder Personalakten geprüft.",
+      "source_ids": [
+        "UKN-S55",
+        "UKN-S36"
+      ],
+      "status": "Organisatorische Selbstdarstellung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-8",
+      "subject": "eric-davis",
+      "theme": "Nolans Netzwerk und die Aussagegrenze",
+      "attributable_paraphrase": "Nolan nennt Davis im Michels-Dritttranskript als Kontakt. Zusammen mit Sol entsteht ein nachvollziehbarer Vermittlungsweg. Behauptungen über geborgene Fluggeräte oder Wilson-Davis-Unterlagen werden hier nicht durch diese Kontakte mitbestätigt; ihre Einzelprüfung bleibt außerhalb des Breitenslices.",
+      "source_ids": [
+        "UKN-S38",
+        "UKN-S55"
+      ],
+      "status": "Kontaktbericht & Scope",
+      "checked": "2026-11-13"
     }
   ],
   "relations": [
@@ -916,6 +1127,127 @@
         "UKN-S32"
       ],
       "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R27",
+      "from": "hal-puthoff",
+      "to": "ingo-swann",
+      "type": "PARTICIPANT_ACCOUNT",
+      "scope": "SRI1972; Puthoff retrospective1996",
+      "source_ids": [
+        "UKN-S45"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R28",
+      "from": "hal-puthoff",
+      "to": "russell-targ",
+      "type": "COAUTHORSHIP",
+      "scope": "Nature1974 bibliographic record",
+      "source_ids": [
+        "UKN-S46"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R29",
+      "from": "hal-puthoff",
+      "to": "eric-davis",
+      "type": "COAUTHORSHIP",
+      "scope": "Levi-Civita paper2004, with Maccone",
+      "source_ids": [
+        "UKN-S51"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R30",
+      "from": "eric-davis",
+      "to": "jacques-vallee",
+      "type": "COAUTHORSHIP",
+      "scope": "Porto2003 six-layer paper",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R31",
+      "from": "eric-davis",
+      "to": "nids",
+      "type": "AUTHOR_AFFILIATION",
+      "scope": "2003 author footnote: consulting member",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R32",
+      "from": "jacques-vallee",
+      "to": "nids",
+      "type": "AUTHOR_AFFILIATION",
+      "scope": "2003 author footnote: consulting member",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R33",
+      "from": "eric-davis",
+      "to": "sol-foundation",
+      "type": "ORGANIZATIONAL_SELF_RECORD",
+      "scope": "Advisory Board roster13.11.2026",
+      "source_ids": [
+        "UKN-S55"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R34",
+      "from": "garry-nolan",
+      "to": "eric-davis",
+      "type": "REPORTED_CONTACT",
+      "scope": "Nolan in selected Michels third-party transcript",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R35",
+      "from": "garry-nolan",
+      "to": "hal-puthoff",
+      "type": "REPORTED_CONTACT",
+      "scope": "Nolan in selected Michels third-party transcript",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R36",
+      "from": "hal-puthoff",
+      "to": "richard-dolan",
+      "type": "CITES",
+      "scope": "Ultraterrestrial Models, reference5",
+      "source_ids": [
+        "UKN-S52"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R37",
+      "from": "eric-davis",
+      "to": "afrl",
+      "type": "CONTRACT_REPORT_AUTHOR",
+      "scope": "Teleportation Physics Study; not endorsement",
+      "source_ids": [
+        "UKN-S53"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
     }
   ],
   "comparisons": [
@@ -1146,6 +1478,168 @@
         "UKN-S37"
       ],
       "atlas_author": "garry-nolan"
+    },
+    {
+      "id": "UKN-X21",
+      "pair": "Puthoff ↔ Swann",
+      "shared_topic": "Remote Viewing und anomale Wahrnehmung",
+      "difference": "Puthoff organisiert und beschreibt Versuche; Swann ist beteiligter Wahrnehmender und eigenständiger Autor. Seine weiteren kosmologischen Erzählungen folgen nicht aus dem SRI-Kontakt.",
+      "relation_type": "DOCUMENTED_RESEARCH_CONTACT",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S47"
+      ],
+      "atlas_author": "ingo-swann",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X22",
+      "pair": "Davis ↔ Swann",
+      "shared_topic": "Psi und Grenzen physischer Erklärung",
+      "difference": "Davis diskutiert psychokinetischen Transport in einer Literaturstudie; Swanns Remote Viewing betrifft Wahrnehmung. Thematische Nachbarschaft belegt weder dieselbe Fähigkeit noch gemeinsame Versuche.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S53"
+      ],
+      "atlas_author": "ingo-swann",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X23",
+      "pair": "Davis ↔ Vallée",
+      "shared_topic": "High Strangeness und nichtanthropozentrische Modelle",
+      "difference": "Direkte Koautorschaft und damalige NIDS-Angabe; das Modell verbindet Erleben, Physik und Kultur. Es bleibt eine Interpretation berichteter Ereignisse.",
+      "relation_type": "COAUTHORSHIP",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "atlas_author": "jacques-vallee",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X24",
+      "pair": "Puthoff ↔ Vallée",
+      "shared_topic": "Alternativen zur einfachen Raumschiffhypothese",
+      "difference": "Puthoff entwickelt bedingte Ursprungsszenarien; Vallée/Davis gliedern die Berichtsphänomene. Nolans Kontaktbericht ersetzt keine gemeinsame Veröffentlichung zu diesen beiden Ansätzen.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S52",
+        "UKN-S54",
+        "UKN-S38"
+      ],
+      "atlas_author": "jacques-vallee",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X25",
+      "pair": "Puthoff / Davis ↔ Nolan",
+      "shared_topic": "Messbarkeit, Expertise und Forschungszugang",
+      "difference": "Nolan arbeitet an Materialcharakterisierung; Puthoff/Davis an theoretischen Modellen und anomalen Berichten. Nolan berichtet Kontakte; Davis und Nolan sind außerdem über Sol institutionell verbunden.",
+      "relation_type": "MIXED_TYPED_EVIDENCE",
+      "source_ids": [
+        "UKN-S34",
+        "UKN-S38",
+        "UKN-S55",
+        "UKN-S36"
+      ],
+      "atlas_author": "garry-nolan",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X26",
+      "pair": "Puthoff / Davis ↔ Pasulka",
+      "shared_topic": "Wissenschaftliche Autorität und außergewöhnliche Erfahrung",
+      "difference": "Pasulkas ethnografische Perspektive fragt, wie Wissen und Überzeugung entstehen. Puthoff/Davis formulieren auch eigene Erklärungsansprüche. Davis und Pasulka erscheinen bei Sol; daraus folgt keine gemeinsame Ontologie.",
+      "relation_type": "EDITORIAL_PARALLEL_AND_ORGANIZATION",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S36",
+        "UKN-S53",
+        "UKN-S54"
+      ],
+      "atlas_author": "diana-walsh-pasulka",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X27",
+      "pair": "Puthoff ↔ DeLonge",
+      "shared_topic": "Technologie, Forschung und Öffentlichkeit",
+      "difference": "SEC-Unterlagen belegen die gemeinsame Organisation. Physikalische Hypothesen, Unternehmensziele und narrative Vermittlung sind verschiedene Tätigkeiten.",
+      "relation_type": "ORGANIZATIONAL_RELATION",
+      "source_ids": [
+        "UKN-S20",
+        "UKN-S50"
+      ],
+      "atlas_author": "tom-delonge",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X28",
+      "pair": "Puthoff / Davis ↔ Heim",
+      "shared_topic": "Gravitation und alternative Antriebe",
+      "difference": "Die behandelten PV-/Metrikansätze und Heims Strukturtheorie sind unterschiedliche theoretische Systeme. Ähnliche Antriebsziele begründen keine gemeinsame Theorie oder Kooperation.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S13",
+        "UKN-S50",
+        "UKN-S51"
+      ],
+      "atlas_author": "burkhard-heim",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X29",
+      "pair": "Puthoff ↔ Farrell / Dolan",
+      "shared_topic": "Verborgene Technologie und Breakaway Civilization",
+      "difference": "Puthoff nennt Dolan ausdrücklich. Farrells im Atlas erschlossene historische Synthese ist eine andere Deutungsebene. Die Zitation belegt Rezeption, nicht die Existenz einer abgespaltenen Zivilisation.",
+      "relation_type": "CITATION_AND_EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S52"
+      ],
+      "atlas_author": "joseph-farrell",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X30",
+      "pair": "Puthoff / Davis ↔ Jorjani",
+      "shared_topic": "Bewusstsein, Ontologie und technologische Möglichkeiten",
+      "difference": "Im vorhandenen Jorjani-Dossier stehen philosophische und kulturpolitische Deutungen; hier stehen Versuche, Literaturstudien und Physikmodelle. Gemeinsame Begriffe sind keine Identität der Methoden.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S53",
+        "UKN-S54"
+      ],
+      "atlas_author": "jason-reza-jorjani",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X31",
+      "pair": "Puthoff / Davis ↔ Dark Journalist",
+      "shared_topic": "Geheime Programme und ungewöhnliche Phänomene",
+      "difference": "Liszt erschließt diese Themen journalistisch und narrativ. Im neuen Slice werden Autorentext, Auftrag und Organisationsrolle getrennt; keine persönliche Kooperation mit Liszt wird daraus abgeleitet.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S53",
+        "UKN-S55"
+      ],
+      "atlas_author": "daniel-liszt",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X32",
+      "pair": "Puthoff / Davis ↔ Puharich",
+      "shared_topic": "Psi als Forschungsgegenstand",
+      "difference": "Das bestehende Puharich-Dossier eröffnet eine historische Vergleichsachse. Thematische Nähe ersetzt weder eine konkrete Kontaktquelle noch eine unabhängige Bestätigung paranormaler Effekte.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S47",
+        "UKN-S53"
+      ],
+      "atlas_author": "andrija-puharich",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
     }
   ]
 }
