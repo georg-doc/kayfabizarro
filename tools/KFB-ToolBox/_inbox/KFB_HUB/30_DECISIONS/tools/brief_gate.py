@@ -35,8 +35,8 @@ def main():
     reg = json.loads(load('decisions.json'))['entries']
     by_id = {e['id']: e for e in reg}
     # Einträge ab V-1612 stehen nur in DECISIONS.md (build_decisions.py kennt sie nicht): Zeilen aus der Tabelle ergänzen
-    for m in re.finditer(r'^\| (V-\d{3,4}) \|[^|]*\|[^|]*\|[^|]*\| \*\*([A-Z]+)\*\* \| ([^|]*)', load('DECISIONS.md'), re.M):
-        by_id.setdefault(m.group(1), {'id': m.group(1), 'verdict': m.group(2), 'text': m.group(3)})
+    for m in re.finditer(r'^\| (V-\d{3,4}) \|[^|]*\|[^|]*\|[^|]*\| (?:\*\*([A-Z]+)\*\*)?[^|]*\| ([^|]*)', load('DECISIONS.md'), re.M):   # Status auch „**DONE**/offen“ oder nur „offen“
+        by_id.setdefault(m.group(1), {'id': m.group(1), 'verdict': m.group(2) or 'OFFEN', 'text': m.group(3)})
     domains = json.loads(load('tools/brief_domains.json'))['domains']
 
     hits = {d: sum(len(re.findall(r'(?<![\wäöüß])' + re.escape(k.strip()) + r'(?![\wäöüß])', low)) for k in cfg['keywords'])
