@@ -418,6 +418,56 @@
       ],
       "themeId": "fiction",
       "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C38",
+      "statement": "Farrell erklärt im Vorwort, Dolan und Vallée durch eine mögliche Nazi-Komponente ergänzen zu wollen.",
+      "sourceIds": [
+        "V43"
+      ],
+      "locator": "Vorwort, Schlussabsätze",
+      "status": "author_programmatic_statement",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C39",
+      "statement": "Farrell zitiert Revelations mit Seitenangabe 96.",
+      "sourceIds": [
+        "V43"
+      ],
+      "locator": "Auftakt Teil I",
+      "status": "citation_in_preview",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C40",
+      "statement": "Jorjani nennt Wonders in the Sky als Quelle einer historischen Erzählung.",
+      "sourceIds": [
+        "V44"
+      ],
+      "locator": "1:48:40–1:49:09",
+      "status": "publisher_transcript_statement",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C41",
+      "statement": "Jorjani beschreibt philosophische Begriffsbildung als Zweck seiner Nutzung empirischer Forschungssammlungen.",
+      "sourceIds": [
+        "V44"
+      ],
+      "locator": "1:49:36–1:50:07",
+      "status": "method_self_description",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C42",
+      "statement": "Liszt kündigt Farrell als Gast der Orphic-Circle-Sendung an.",
+      "sourceIds": [
+        "V46"
+      ],
+      "locator": "Titel und Beschreibung",
+      "status": "publication_relationship",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
     }
   ],
   "relations": [
@@ -651,6 +701,45 @@
       "status": "editorial_comparison",
       "causalClaim": false,
       "comparisonId": "motifs"
+    },
+    {
+      "id": "R21",
+      "from": "joseph-farrell",
+      "to": "jacques-vallee",
+      "type": "explicit_programmatic_reception",
+      "sourceIds": [
+        "V43"
+      ],
+      "rationale": "Farrell erklärt Ergänzungsabsicht und zitiert Revelations.",
+      "whatWouldChange": "Editionsabgleich könnte die genaue Zitierform präzisieren; keine Einflussrichtung über diesen Text hinaus abgeleitet.",
+      "status": "source_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R22",
+      "from": "jason-reza-jorjani",
+      "to": "wonders-in-the-sky",
+      "type": "explicit_source_acknowledgement",
+      "sourceIds": [
+        "V44"
+      ],
+      "rationale": "Jorjani benennt Vallée/Aubeck als Quelle.",
+      "whatWouldChange": "Audioabgleich könnte Transkriptfehler korrigieren; die historische Erzählung ist damit nicht verifiziert.",
+      "status": "source_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R23",
+      "from": "daniel-liszt",
+      "to": "joseph-farrell",
+      "type": "announced_interview",
+      "sourceIds": [
+        "V46"
+      ],
+      "rationale": "Offizielle Episodenseite benennt Gast.",
+      "whatWouldChange": "Aufnahme würde tatsächliche Beiträge zuordnen; Ankündigung allein genügt dafür nicht.",
+      "status": "source_read",
+      "causalClaim": false
     }
   ]
 }

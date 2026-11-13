@@ -421,3 +421,56 @@ Catherine Austin Fitts. Datum siehe Quelle.
 Fundstelle: Öffentliche Rezension, ausgewählte Textpassagen; besprochenes Buch nicht vollständig gelesen.
 
 Lesetiefe: Öffentliche Rezension, ausgewählte Textpassagen; besprochenes Buch nicht vollständig gelesen.
+
+
+## Ergänzung: Autorenvergleich · 13.11.2026
+
+### V43 — Saucers, Swastikas and Psyops — öffentliche Buchvorschau
+
+https://www.everand.com/book/257720669/Saucers-Swastikas-and-Psyops-A-History-of-a-Breakaway-Civilization-Hidden-Aerospace-Technologies-and-Psychological-Operations
+
+Joseph P. Farrell
+
+Fundstelle: Vorwort, signiert 2011; Beginn Teil I und Kapitel 1
+
+Lesetiefe: Originaltext in lizenzierter Handelsvorschau gelesen. Plattformdatum 2020 ist nicht Erstveröffentlichung. Keine Druckseiten-Sichtung; Revelations S. 96 ist Farrells Zitatnachweis, hier nicht separat in Vallées Buch geprüft.
+
+### V44 — Jason Jorjani, Does AI = PSI? (589)
+
+https://skeptiko.com/jason-jorjani-does-ai-psi-589/
+
+Jason Reza Jorjani / Skeptiko
+
+Fundstelle: Transkript 00:00; 02:33–03:04; 11:11–13:58; 1:20:19–1:22:41; 1:48:40–1:50:07
+
+Lesetiefe: Ausgewählte Sprecherpassagen gelesen; keine Audiosichtung. Zeitangaben vom Herausgeber übernommen, Transkript enthält Erkennungsfehler.
+
+### V45 — The Spinner
+
+https://jasonrezajorjani.substack.com/p/the-spinner
+
+Jason Reza Jorjani
+
+Fundstelle: 17. Mai 2025; Einleitung und Abschnitt The Causal Agent of Synchronicities
+
+Lesetiefe: Öffentlich zugänglicher Originalessay, ausgewählte Passagen. Beschriebene Einzelfälle nicht nachrecherchiert.
+
+### V46 — Orphic Circle X Steganography and the UFO File
+
+https://www.darkjournalist.com/s-farrell23.php
+
+Daniel Liszt / Dark Journalist
+
+Fundstelle: Eigene Sendungsbeschreibung; Datumszeile 26. April 2018
+
+Lesetiefe: Publikations- und Themenankündigung gelesen. Belegt angekündigte Zusammenarbeit mit Farrell; keine Wortzuschreibung aus ungehörtem Gespräch.
+
+### V47 — Dark Journalist — Interview- und Reportübersicht
+
+https://darkjournalist.com/
+
+Daniel Liszt / Dark Journalist
+
+Fundstelle: Abschnitte zu Disclosure, Bedrohungsszenario und Space Defense Funding
+
+Lesetiefe: Eigene Sendungsbeschreibungen gelesen, keine Videosichtung. Behauptungen der Beschreibungen sind keine unabhängige Bestätigung.

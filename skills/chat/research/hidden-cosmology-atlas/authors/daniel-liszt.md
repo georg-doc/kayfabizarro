@@ -119,3 +119,8 @@ SOL-S07 identifies Liszt interviewing Fitts in Empire Endgame (April 27, 2017). 
 
 
 [Gemeinsame und getrennte Publikationsspuren: Gold, Paperclip, 9/11 und Mystery Schools](../breadth/farrell-liszt-quellenketten.md).
+
+
+## Quellenbasierter Vergleich mit Jacques Vallée · 13.11.2026
+
+[Gemeinsame Themen, unterschiedliche Aussagen und Methoden](../packages/jacques-vallee/COMPARISON_MATRIX.md). Ergänzt Originalbuchvorschau, ausgewählte Herausgebertranskripte und eigene Sendungsbeschreibungen; ersetzt keine vollständige Prüfung des älteren Dossier-Intakes.

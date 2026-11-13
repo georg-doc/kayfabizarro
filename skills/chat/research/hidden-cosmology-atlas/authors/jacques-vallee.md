@@ -53,3 +53,6 @@ Diese erste breite Aufnahme enthält ausgewählte Originaltexte, eine dokumentie
 ## Ausgearbeitete Themen und Autorenvergleiche
 
 [24 Themenfelder mit Aussagen und Werkbezug](../packages/jacques-vallee/THEMES.md) · [Acht Vergleichskarten](../packages/jacques-vallee/COMPARISONS.md). Stand 13.11.2026; 42 registrierte Quellen mit Lesetiefe.
+
+
+[Vertiefter Direktvergleich mit Farrell, Jorjani und Dark Journalist](../packages/jacques-vallee/COMPARISON_MATRIX.md).

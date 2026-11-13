@@ -40,3 +40,8 @@ The Gemini comparisons do not prove direct citations, mutual agreement or influe
 The connected Gemini author dossier has **no original-source URLs or precise citations in its body**. The previous KFB `SIX_AUTHOR_SOURCE_SEEDS_R1_2026-10-13.md` already inventories actual Jorjani-authored publications. Future source packet: `source_id, author, actual_work, URL, date, exact passage, author_expressed_qualification, source_relations`.
 
 **Status:** `DERIVED_INTRODUCTION` · `COMPLETE_GEMINI_DOC_MIGRATION_PENDING` · `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_UNVERIFIED`.
+
+
+## Quellenbasierter Vergleich mit Jacques Vallée · 13.11.2026
+
+[Gemeinsame Themen, unterschiedliche Aussagen und Methoden](../packages/jacques-vallee/COMPARISON_MATRIX.md). Ergänzt Originalbuchvorschau, ausgewählte Herausgebertranskripte und eigene Sendungsbeschreibungen; ersetzt keine vollständige Prüfung des älteren Dossier-Intakes.

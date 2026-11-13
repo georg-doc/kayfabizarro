@@ -58,3 +58,8 @@ Die [Interviewseite](https://projectcamelot.org/joseph_farrell.html) kennzeichne
 [Gemeinsame und getrennte Publikationsspuren: Gold, Paperclip, 9/11 und Mystery Schools](../breadth/farrell-liszt-quellenketten.md).
 
 [Vertiefung der Goldfolge mit zehn Hörstellen und den beiden archivierten RT-Originalseiten](../breadth/farrell-gold-2013.md).
+
+
+## Quellenbasierter Vergleich mit Jacques Vallée · 13.11.2026
+
+[Gemeinsame Themen, unterschiedliche Aussagen und Methoden](../packages/jacques-vallee/COMPARISON_MATRIX.md). Ergänzt Originalbuchvorschau, ausgewählte Herausgebertranskripte und eigene Sendungsbeschreibungen; ersetzt keine vollständige Prüfung des älteren Dossier-Intakes.

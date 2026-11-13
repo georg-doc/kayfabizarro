@@ -44,3 +44,15 @@ Nächster inhaltlicher Schritt: weitere Publikationen und Interviews den Themenf
 24 Themenfelder jetzt mit Aussage/Modell, Werkstrang und Vergleich ausgearbeitet. 42 Quellen registriert; acht Vergleichskarten ergänzen die bestehenden Koautoren- und Kontaktkanten. Neue Schwerpunkte: Information, SETI/nichtbiologische Intelligenz, Erkenntnisgrenzen und Fiktion. Farrells ausdrückliche Vallée-Nennung ist bislang in einer indexierten Passage gelesen; kein Vollseitenzugriff. Verlags-ToCs und Vortragsmetadaten werden nicht als Volllektüre ausgewiesen. Keine neue Trinity-/Archiv-Einzelfallprüfung und kein Spielcode.
 
 [Themen](THEMES.md) · [Autorenvergleich](COMPARISONS.md)
+
+
+### Veröffentlichung der Breiten-Ausarbeitung
+
+Inhalt: 9d265298f9dade03cb9526660c05fab74c32e127. Site-Quelle: 410892383665357c6d1a71cf15e3955b1997f2d9. Deployment appgdep_6af6541047f081919372f249c35b4691: succeeded, 2026-11-13T00:04:44.955879+00:00. [Vallée im bestehenden Atlas](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html). Lokal Filter → Mehr erfahren → Originalquellenfundstelle geprüft. Gehostete visuelle Sichtung weiterhin an Anmeldung gebunden; kein solcher Sichtnachweis behauptet. Nächster Schritt: Georgs Blick auf Themenbreite und Autorenvergleiche.
+
+
+## Vergleichsausarbeitung · 13.11.2026
+
+Farrell, Jorjani und Dark Journalist gegenüber Vallée entlang von sechs Achsen: Gegenstand, Urheber, Mythos/Täuschung, Methode, Disclosure und eigene Einschränkungen. Fünf Quellen ergänzt (47 insgesamt); fünf Aussagebelege und drei dokumentarische Rezeptions-/Publikationskanten ergänzt. [Vergleich lesen](COMPARISON_MATRIX.md). Keine neuen Einzelfall-, Archiv- oder Audio-Recherchen. Öffentliches Farrell-Buchpreview ersetzt für die konkrete Rezeptionsfrage die Abhängigkeit vom nicht abrufbaren Blogessay. Weiterhin kein Vollwerk-Audit.
+
+Nächster Gate: Georg prüft, ob die sechs Vergleichsachsen seine beabsichtigten Lesarten abdecken.
