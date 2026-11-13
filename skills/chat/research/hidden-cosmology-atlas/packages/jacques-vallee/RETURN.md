@@ -56,3 +56,12 @@ Inhalt: 9d265298f9dade03cb9526660c05fab74c32e127. Site-Quelle: 410892383665357c6
 Farrell, Jorjani und Dark Journalist gegenüber Vallée entlang von sechs Achsen: Gegenstand, Urheber, Mythos/Täuschung, Methode, Disclosure und eigene Einschränkungen. Fünf Quellen ergänzt (47 insgesamt); fünf Aussagebelege und drei dokumentarische Rezeptions-/Publikationskanten ergänzt. [Vergleich lesen](COMPARISON_MATRIX.md). Keine neuen Einzelfall-, Archiv- oder Audio-Recherchen. Öffentliches Farrell-Buchpreview ersetzt für die konkrete Rezeptionsfrage die Abhängigkeit vom nicht abrufbaren Blogessay. Weiterhin kein Vollwerk-Audit.
 
 Nächster Gate: Georg prüft, ob die sechs Vergleichsachsen seine beabsichtigten Lesarten abdecken.
+
+
+### Veröffentlichung Vergleich R3
+
+GitHub-Inhalt: c8a366587865689cd5219443eb12b2076666790d; Site-Quelle: 3319d00f18aae1a9fbd7bcb3eb5b833e7516fdd9. Deployment appgdep_6af657d1d28881918c974f3122d69470: succeeded, 2026-11-13T00:20:46.988782+00:00. [Direktvergleich im Atlas](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html#methodenvergleich).
+
+Prüfungen: alle 25 geänderten GitHub-Dateien exakt zurückgelesen, Remote-Head bestätigt; eindeutige HTML-Anker, interne Links und alle 24 Tabellenzellen/Quellenverweise geprüft. Lokaler Browser zeigt sechs Vergleichszeilen und öffnet die Farrell-Buchquelle direkt. Private Live-Ansicht nicht authentifiziert visuell geprüft; Deployment bestätigt. Erstes Publikationsresultat war lokal nicht auswertbar; Versionsliste vor Wiederholung geprüft, Zielrevision dort noch nicht vorhanden. Kein doppeltes Deployment behauptet.
+
+Nächster Gate: Georgs inhaltlicher Blick auf den Direktvergleich; keine automatischen Rabbit Holes.
