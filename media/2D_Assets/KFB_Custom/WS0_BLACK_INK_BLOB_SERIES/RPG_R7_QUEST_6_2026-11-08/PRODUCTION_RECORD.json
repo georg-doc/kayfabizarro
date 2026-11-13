@@ -1,0 +1,73 @@
+{
+  "schema": "kfb.slop-production/1",
+  "set_id": "WSA_RPG_R7_QUEST_20261108",
+  "source_archive": "kfb_rpg_ink_blobs_r7_draft.zip",
+  "name": "01-quest-party",
+  "prompt": "A game sprite sheet with SIX separately isolated alpha cutouts, real PNG transparency. WIDE 1536x1024 landscape, even 3 columns and 2 rows, no scene and no background at all. No backdrop, floor, gradient or shadows. Empty transparent gutters horizontally and vertically, all props, weapons and small particles contained inside their own cell with a clear margin. Six full original KFB Slops as dark charcoal ink with a hint of violet, tangible handmade stop-motion clay, broad soft volume, subtle finish, each a whole elastic ink creature with a distinct lower edge and one or two organic curled or pointed splash tips. No humanoid legs, no busts, no universal foot base. Apply new acting and eyes while faithfully retaining iconic physical props, costume silhouettes and original palette from the corresponding four actual RPG r7 sprite references. For every visible eye use bright warm WHITE sclera, clearly bounded RED iris and BLACK pupil. Give each character its own deliberately distinct gaze, eyelids, mouth and posture. Two feminine-read figures, subtly through styling/acting. No joined scowl eyebrows or repeated mouths. No labels, letters, scene objects or frame borders. The fifth attachment is an alpha layout example only, ignore all construction gear, color palettes and identities in it.\nTop left original KNIGHT. Same silver slotted helmet with red plume, large steel sword with gold guard, and red/cream quartered shield. Eyes glance nervously to left at sword tip. Mouth pressed into crooked closed line, raised worried eyebrows. Top center original WIZARD. Same purple pointed hat with yellow stars, purple cape clasp and wood staff with bright chartreuse spiral orb. One heavy lid, other arched, looking up at orb with small round O of scandalized discovery. Top right original ROGUE. Same green cowl, dagger and little tan purse belt, feminine read. Look directly at viewer from low asymmetric lids, sly tight half-smile with one small tooth, squat and triangular blob.\nBottom left original RANGER. Same green hat with scarlet feather, gold-buckled brown belt, curved wooden bow and red-fletched arrow and quiver. Feminine read; aim to the right with one eye squeezed shut, other white and red eye focused along arrow, lips braced flat. Bottom center new MONK. Rolled ochre sash and corded wrist wraps, one squat bronze meditation bell in his palm with a tiny wooden striker; both eyes nearly closed in serene bliss, soft shut smile, rounded stout silhouette with a curled crest. Bottom right new BEASTMASTER. Bronze whistle in lifted hand, his other hand braces a tiny offbeat clay fantasy creature with two horns and a daft pug face tucked close against his shoulder, the tiny beast is a prop. Ink master looks down at it in proud noisy laugh, one or two teeth only, wide lumpy curved silhouette. Not a seventh grid figure.",
+  "references": [
+    "KFB_RPG_INK_R7_01_knight_sword_shield.png",
+    "KFB_RPG_INK_R7_02_wizard_staff.png",
+    "KFB_RPG_INK_R7_03_rogue_dagger.png",
+    "KFB_RPG_INK_R7_04_ranger_bow.png",
+    "01-structural-crew.png"
+  ],
+  "sha256": "8fe10b125f8ae09cdd36e352cc7f9a12452613e580a748902a174c00b41984a1",
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "outer_edge_alpha_max": 4,
+  "grid_line_alpha_max": [
+    251,
+    252,
+    1
+  ],
+  "design_status": "PASS",
+  "candidate_crop_boundaries_px": {
+    "horizontal": 512,
+    "vertical_by_row": [
+      [
+        512,
+        1024
+      ],
+      [
+        526,
+        1013
+      ]
+    ],
+    "validation": "Alpha below 16 on each tested line. Individual extraction and visual checks pending."
+  },
+  "source_sha256": {
+    "KFB_RPG_INK_R7_04_ranger_bow.png": "cc0f3ef5405fa52c8b57c0660ba63657a242ae6c531c63a0cf21b533166c120a",
+    "KFB_RPG_INK_R7_01_knight_sword_shield.png": "4d072b2d46af75964e9fa066e457cd4eb6d3918bdaaa581cd2429eed3a8b8ecf",
+    "KFB_RPG_INK_R7_02_wizard_staff.png": "7f7346da651849744b26b4f055d66265e553d153fe23514907c93f80ad94e093",
+    "KFB_RPG_INK_R7_03_rogue_dagger.png": "cbd5feca5ee40887b2ef90719ddb1b6077a3a1c7bac77b77e038a2b632b42c64"
+  },
+  "layout_reference": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/sheet-r1.png",
+  "identity_lineage": [
+    {
+      "authoring_id": "WSA_RPG_R7_QUEST_20261108_01",
+      "variant_of": "SL_RPG_KNIGHT_SWORD_SHIELD",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_RPG_R7_QUEST_20261108_02",
+      "variant_of": "SL_RPG_WIZARD_STAFF",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_RPG_R7_QUEST_20261108_03",
+      "variant_of": "SL_RPG_ROGUE_DAGGER",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_RPG_R7_QUEST_20261108_04",
+      "variant_of": "SL_RPG_RANGER_BOW",
+      "replace_selected_runtime_asset": false
+    }
+  ]
+}

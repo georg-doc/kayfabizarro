@@ -1,0 +1,569 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+  "figuren": [
+    {
+      "id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_01",
+      "name": {
+        "v": "Herr Prüfungsreife",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He measures readiness by how frightened everybody becomes while waiting.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "exam custodian",
+              "biome": [],
+              "decks": [
+                "academic_anarchy_intellectual",
+                "programming_the_whole_child",
+                "frizzlebob_s_ego_mania_narcissist"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "quiet clipped authority interrupted by doubt",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Zeit läuft. Er kontrolliert sehr genau, ob sie dabei etwas gelernt hat.",
+        "black_white_logic": "He measures readiness by how frightened everybody becomes while waiting.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "prompt_excerpt": "TOP LEFT slot1 male EXAM CUSTODIAN: tall pear-shaped ink blob with ONE crooked high crown lobe, tiny battered indigo academic cap and short mustard collar. Huge anxious WHITE eyes RED iris BLACK pupil staring downward, lower lip pulled into a crooked jagged underbite with TWO broad bottom teeth. Both goo arms hug ONE oversized beautifully rounded wooden HOURGLASS at belly, two fat glass bulbs and very little rust-colored clay sand inside; no clock numbers or floor. Hands squeeze wooden frame, timekeeper visibly more frightened than his candidates."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_02",
+      "name": {
+        "v": "Coach Lauterfolg",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He mistakes being heard for having made a useful difference.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "success coach",
+              "biome": [],
+              "decks": [
+                "academic_anarchy_intellectual",
+                "programming_the_whole_child",
+                "frizzlebob_s_ego_mania_narcissist"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "expansive bright confidence, conspicuous pauses for agreement",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er hat alle erreicht. Was dort angekommen ist, fällt nicht in seine Auswertung.",
+        "black_white_logic": "He mistakes being heard for having made a useful difference.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "prompt_excerpt": "TOP MIDDLE slot2 male SUCCESS COACH: very broad low wavy ink splat, THREE short curling side lobes, tiny coral rolled work collar and absurdly small burgundy necktie. Explosive SIDEWAYS jagged tooth LAUGH, one eye tightly shut and other wide WHITE/red/black gazing outward, NO tongue. Both hands confidently cradle ONE chunky tarnished brass MEGAPHONE against own belly, big rounded flared bell pointed diagonally upward within cell. Mouth visible above prop, not speaking into it; human torso absent."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_03",
+      "name": {
+        "v": "Frau Nachbesserung",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She believes understanding begins when the last inconvenient mark has disappeared.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "adult-education instructor",
+              "biome": [],
+              "decks": [
+                "academic_anarchy_intellectual",
+                "programming_the_whole_child",
+                "frizzlebob_s_ego_mania_narcissist"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "precise soft correction with an impatient last word",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es ist fast richtig. Sie hat bereits das passende Werkzeug gegen den Rest.",
+        "black_white_logic": "She believes understanding begins when the last inconvenient mark has disappeared.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "prompt_excerpt": "TOP RIGHT slot3 FEMALE-READ ADULT-EDUCATION INSTRUCTOR: compact rounded triangular ink splat, sculpted purple crown quiff under little teal kerchief, tiny cream collar and subtle lashes. One lid lifted almost vertically, other compressed in suspicious squint, CLOSED narrow crooked fang smile. Holds a very TINY blank slate in one palm, and delicately rubs it with ONE comically HUGE fat coral felt eraser clutched in other hand. Immediate disproportionate correction, beautifully rounded felt/slate/wood, no handwriting/letters or equations."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_04",
+      "name": {
+        "v": "Herr Weiterbildungsbedarf",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He carries every qualification as evidence that he is almost allowed to begin.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "overburdened adult learner",
+              "biome": [],
+              "decks": [
+                "academic_anarchy_intellectual",
+                "programming_the_whole_child",
+                "frizzlebob_s_ego_mania_narcissist"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "strained breath and a tentative rising finish",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er ist bestens vorbereitet. Es fehlt lediglich die Freigabe für den Anfang.",
+        "black_white_logic": "He carries every qualification as evidence that he is almost allowed to begin.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "prompt_excerpt": "BOTTOM LEFT slot4 male OVERBURDENED ADULT LEARNER: squat heavy nearly circular ink blob, small soft mustard cap and short faded plum sweater collar. Eyes WHITE/red/black unevenly wide peering UP, compressed ZIGZAG mouth with three sparse crooked ivory teeth; hopeless concentration, NO grin. Arms squeeze THREE thick plump leather-bound books stacked precariously at belly, cream page edges, worn teal/rust/ivory spines completely blank. Small enough stack that whole wide goo base remains visible; no academic cap, desk or room."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_05",
+      "name": {
+        "v": "Bruder Minutentakt",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He treats every unmeasured moment as an opportunity somebody has failed to exploit.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "productivity ascetic",
+              "biome": [],
+              "decks": [
+                "academic_anarchy_intellectual",
+                "programming_the_whole_child",
+                "frizzlebob_s_ego_mania_narcissist"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "low contented judgement, slow rounded emphasis",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er hat eine Pause eingeplant. Sie darf keinesfalls länger dauern, als nötig ist, um sie nachzuweisen.",
+        "black_white_logic": "He treats every unmeasured moment as an opportunity somebody has failed to exploit.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "prompt_excerpt": "BOTTOM MIDDLE slot5 male PRODUCTIVITY ASCETIC: very tall narrow curved bean ink blob, one long drooping upper lobe, tiny worn cream knitted collar and short indigo wrist cuffs. Flat severe lips CLENCH uneven teeth sideways, one eye squeezed and other WHITE/red/black focused on tool, furious effort at being efficient. Cradles ONE huge rounded old-fashioned coral tomato-shaped mechanical kitchen timer with small moss leaf cap and brass winding knob, blank dial no markings; one hand turns knob with exhausting precision. No electronics/icons/scene."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104_06",
+      "name": {
+        "v": "Frau Siegelglück",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She recognises achievement most clearly when it has become difficult to unroll.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "certification official",
+              "biome": [],
+              "decks": [
+                "academic_anarchy_intellectual",
+                "programming_the_whole_child",
+                "frizzlebob_s_ego_mania_narcissist"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "brisk official middle register with sudden anxious catches",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Das Können ist bestätigt. Vom Papier lässt es sich nun kaum noch trennen.",
+        "black_white_logic": "She recognises achievement most clearly when it has become difficult to unroll.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/education-selfimprovement-sheet-r1.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "prompt_excerpt": "BOTTOM RIGHT slot6 FEMALE-READ CERTIFICATION OFFICIAL: medium tall broad-bottom asymmetric pear ink splat, soft purple rolled goo crest, little plum cap and short teal scarf collar. Smug dreamy half-lids WHITE/red/black upward, CLOSED lopsided gold-fang smile, subtle lashes. Both hands hold ONE fat tightly rolled ivory diploma with a comically HUGE warm red wax seal; ONE goo fingertip visibly stuck in the soft seal, drawing a tiny short sticky bridge back to her own hand. Keep diploma/seal one readable chunky prop, no ribbon clutter, heraldry, symbols or writing."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    }
+  ]
+}

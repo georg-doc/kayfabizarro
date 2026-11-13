@@ -1,0 +1,575 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_CARE_CLINICAL_20261104",
+  "figuren": [
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_01",
+      "name": {
+        "v": "Dr. Eigenbefund",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She hears every symptom clearly until it contradicts her first impression.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "Chefärztin / clinical certainty",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "measured low certainty with a late doubtful pause",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Diagnose steht. Der Befund darf sich noch dazu äußern.",
+        "black_white_logic": "She hears every symptom clearly until it contradicts her first impression.",
+        "druckbezug": "pflichtbewusst unter Druck der Men in Black",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_CARE_CLINICAL_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "role": "Chefärztin / clinical certainty",
+        "prompt_excerpt": "TOP LEFT slot1 FEMALE-READ chief physician: tall broad-bottom pear ink blob, swept violet goo quiff, tiny cream medical collar and small copper earstud. Frozen grand self-assurance, one raised lid and one almost closed, CLOSED crooked two-fang smirk, eyes sideways. Presses the comically HUGE round brass diaphragm of a thick burgundy stethoscope to her OWN goo body, listening intently. One simple beautiful prop, not human anatomy, no red cross."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_02",
+      "name": {
+        "v": "Pfleger Nachtschicht",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He keeps everyone warm while quietly running out of his own reserves.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "night nurse / care labour",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "warm tired middle register, breath between clauses",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er ist noch im Dienst. Der nächste Morgen hat sich deshalb vorsorglich verspätet.",
+        "black_white_logic": "He keeps everyone warm while quietly running out of his own reserves.",
+        "druckbezug": "motiviert durch Hunky & Dorys Anerkennung",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_CARE_CLINICAL_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "role": "night nurse / care labour",
+        "prompt_excerpt": "TOP MIDDLE slot2 male exhausted NIGHT NURSE: very low broad soft ink splat, two small drooping crown lobes, tiny teal scrub collar. Deep flat sagging lower lip, single broad bottom tooth, heavy white-eyed lids looking down, utterly spent but tender. Both goo hands cradle one plump faded coral rubber hot-water bottle wrapped in a single ivory folded towel like precious treasure. Whole ink base visible."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_03",
+      "name": {
+        "v": "Herr Bissfest",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He polishes the evidence until the result resembles a reassuring smile.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "dental technician",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "clipped precise upper register",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Das Lächeln sitzt. Der Anlass wird bei Gelegenheit ergänzt.",
+        "black_white_logic": "He polishes the evidence until the result resembles a reassuring smile.",
+        "druckbezug": "übererfüllend aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_CARE_CLINICAL_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "role": "dental technician",
+        "prompt_excerpt": "TOP RIGHT slot3 male proud DENTAL TECHNICIAN: compact almost spherical ink blob, cream small cap tilted, one brass monocle above eye. Eccentric enormous sideways CLENCHED irregular tooth smile, one eye squeezed and other wide. One hand delicately holds one absurdly enormous sculpted ivory molar MODEL, other holds a tiny round brass dental mirror reflecting nothing readable. No patient or surgery."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_04",
+      "name": {
+        "v": "Professor Durchsicht",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He believes an enlarged uncertainty is almost a diagnosis.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "diagnostic examiner",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "low sudden indignant emphasis",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er sieht es jetzt größer. Das wertet er als Fortschritt bei der Klärung.",
+        "black_white_logic": "He believes an enlarged uncertainty is almost a diagnosis.",
+        "druckbezug": "pflichtbewusst unter Druck der Men in Black",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_CARE_CLINICAL_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "role": "diagnostic examiner",
+        "prompt_excerpt": "BOTTOM LEFT slot4 male baffled DIAGNOSTIC EXAMINER: tall thin crooked bean splat, soft indigo cap and tiny worn ivory shoulder collar. Huge unequal white/red/black eyes looking inward, long offended crooked UNDERBITE with three widely spaced teeth. Holds enormous thick brass magnifying glass in front of one eye, which is visibly enlarged; opposite palm displays a TINY harmless ivory bone teaching model. Just two simple rounded props."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_05",
+      "name": {
+        "v": "Frau Dringlichkeitsgrad",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She turns every emergency into a queue she can finally understand.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "triage administrator",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "bright rehearsed reassurance under strain",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es ist dringend. Sie bittet darum, diese Eigenschaft in der richtigen Reihenfolge vorzutragen.",
+        "black_white_logic": "She turns every emergency into a queue she can finally understand.",
+        "druckbezug": "motiviert durch Hunky & Dorys Anerkennung",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_CARE_CLINICAL_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "role": "triage administrator",
+        "prompt_excerpt": "BOTTOM MIDDLE slot5 FEMALE-READ TRIAGE ADMINISTRATOR: squat broad springy splat with coral curled goo bun and tiny teal collar. Strained wide CLENCHED grin, one white eye wide upward and one skeptical squint, lip pushed sideways. Holds a fat cream roll of blank tickets at belly and presses one big red rubber stamp into the roll end with frustrated certainty. Ticket remains short and inside her cell; no text/cross."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_06",
+      "name": {
+        "v": "Herr Mörserruhe",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He finds comfort in things that become uniform if worked on long enough.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "pharmacist",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "dry slow middle register with an exhausted finish",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Was sich nicht auflöst, wird zunächst sorgfältig verrieben.",
+        "black_white_logic": "He finds comfort in things that become uniform if worked on long enough.",
+        "druckbezug": "übererfüllend aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_CARE_CLINICAL_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "role": "pharmacist",
+        "prompt_excerpt": "BOTTOM RIGHT slot6 male old PHARMACIST: medium tall drooping asymmetric triangular-rounded ink splat, soft moss cap, tiny burgundy collar and brass pince-nez. Completely FLAT tight mouth with two little teeth peeking, heavy half-lids downward. Two broad goo hands tenderly grind a single rounded wooden mortar and thick short ivory pestle against own belly, patient concentration. Beautiful worn clay wood, no bottles/recipe/medicine labels."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    }
+  ]
+}

@@ -1,3 +1,59 @@
+## Full-suit containment design acceptance
+
+Georg accepted all six full-suit containment sheets and their 36 designs. The authoring index contains 173 accepted sheets and 1038 depictions. Intake eligibility covers 171 sheets and 1026 depictions. Individual extraction remains pending.
+
+---
+
+## Containment crew design acceptance
+
+Georg accepted all six containment sheets and their 36 designs. The authoring index contains 167 accepted sheets and 1002 depictions. Intake eligibility covers 165 sheets and 990 depictions. Individual extraction remains pending.
+
+---
+
+## Response team design acceptance
+
+Georg accepted all seven response team sheets and their 42 designs. The authoring index now contains 161 accepted sheets with 966 depictions. Existing intake eligibility covers 159 sheets and 954 depictions. The team and trio memberships are available for receiving review after individual extraction.
+
+---
+
+## Digital satire design acceptance
+
+Georg accepted all six digital satire sheets and their 36 designs. The authoring index now contains 154 accepted sheets with 924 depictions. Existing intake eligibility covers 152 sheets and 912 depictions. Individual extraction remains a separate step.
+
+---
+
+## 2026-11-07 · Latest accepted authoring count
+
+148DesignPASS sheets/888depictions;146eligible/876. All18new English reaction residents accepted. Current[Return](RETURN.md),[index](SET_MANIFESTS_R1.json),[SOP](SOP_INK_MONSTERS_R2.md). Six digital-satire sheets authorized,inproduction,not yet counted as accepted.
+
+---
+
+## 2026-11-07 · Latest acceptance and language rule
+
+145DesignPASS sheets/870depictions;143eligible/858. Certainty six accepted. Game-facing text strictly English for new production;latest18authoring records localized,stableIDs/pixels unchanged. Current[SOP](SOP_INK_MONSTERS_R2.md),[Return](RETURN.md),[set index](SET_MANIFESTS_R1.json). Three new reaction sheets in production,not yet accepted.
+
+---
+
+## 07.11.2026 · Latest Georg PASS
+
+144DesignPASS sheets/864depictions;142/852eligible for existing intake. All six neighbourhood residents accepted. [Current Return](RETURN.md) and [set index](SET_MANIFESTS_R1.json) govern continuation. Next ideological-habits sheet not yet counted as accepted.
+
+---
+
+## 07.11.2026 · Latest accepted count
+
+143DesignPASS sheets/858depictions,141/846eligible for existing intake. Emotions/Ambivalence six and gentle material correction accepted. See current [Return](RETURN.md) and [set index](SET_MANIFESTS_R1.json). New neighbourhood sheet in production,not counted until Georg PASS.
+
+---
+
+## Aktueller Einstieg · Slop-Linie · 06.11.2026
+
+Die fortgesetzte Serie ist von Georg freigegeben: **142 Sheets / 852 Darstellungen**, davon140/840 für den bestehenden Intake. Aktueller Einstieg ist der [Living Masterplan R1](LIVING_MASTERPLAN_R1.md), ergänzt durch [Formatrezepte](FORMAT_RECIPES_R1.md), [Coverage](COVERAGE_R1.md), [Lücken-Vorschläge](GAP_BACKLOG_R1.json) und [Animations-Pilot](ANIMATION_PILOT_R1.md). Quellen bleiben Setmanifeste/Index; Asset Librarian und WS1 bleiben die Receiving-/Runtime-Owner.
+
+Die historische TOTAL-FAIL-Sperre unten betrifft den damals abgelehnten Veteranenlauf. Sie ist keine Sperre der später ausdrücklich beauftragten und akzeptierten Sheet-Serie. Neue riskante Methoden erhalten weiter einen Pilot; keine automatischen Wiederholungsjobs oder rückwirkenden Reparaturen akzeptierter Bilder. Animation ist aktuell auditiert/geplant, nicht neu erzeugt oder im Spiel verifiziert. [WS0-Handoff](WS0_HANDOFF_R1.md).
+
+---
+
 ## CURRENT R2 OVERRIDE · 2026-11-04 · TOTAL FAIL RECOVERY
 
 Read SOP_INK_MONSTERS_R2.md and POSTMORTEM_2026-11-04.md FIRST. White sclera / red iris / black pupil is now default. User-selected original pixels must actually be provided as STYLE references for new subjects. The rejected veteran batch is TOTAL FAIL and stopped. On a newly authorized image request use ONE pilot before six-image expansion; accepted pilot counts as slot 1 of the requested six unless Georg requests a separate style study. Six singles are experimental, not proven superior to explicit 3x2 sheet production. Old examples below remain historical recipes and must be adapted to R2, never copied blindly.

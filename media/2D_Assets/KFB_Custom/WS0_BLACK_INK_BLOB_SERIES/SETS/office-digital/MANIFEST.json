@@ -1,0 +1,208 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_OFFICE_DIGITAL_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+    "sha256": "a4baad6907685ca18e60f55e608fd379271d49b7233450fc2d7d0dba5aba6c74"
+  },
+  "production_record": "OFFICE_WORKFORCE_12_2026-11-04/digital-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/office-digital/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      2,
+      3
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_BUERO_DIGITAL_01",
+      "id_scope": "canonical_roster",
+      "name": "Herr Rückmeldung",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot7 exhausted HELPDESK DISPATCHER: extremely low wide slumped puddle, worn beige headset with fat round ear cups and tiny mic, short faded indigo work collar, heavy nearly shut WHITE eyes/red iris/black pupil gazing at lap.",
+          "Clutches a chunky obsolete CRT handheld service terminal with round convex black-green glass screen showing ONLY one dim blank horizontal bar; the fat coiled phone cable loops around handle once and returns into device."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot7 exhausted HELPDESK DISPATCHER: extremely low wide slumped puddle, worn beige headset with fat round ear cups and tiny mic, short faded indigo work collar, heavy nearly shut WHITE eyes/red iris/black pupil gazing at lap. Deep drooping flat lower lip with two widely separated teeth, no smile. Clutches a chunky obsolete CRT handheld service terminal with round convex black-green glass screen showing ONLY one dim blank horizontal bar; the fat coiled phone cable loops around handle once and returns into device. Small device fits body, no desk. Waiting-for-system ritual, mechanical resignation, no letters/numbers/icons.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/digital-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_02",
+      "id_scope": "canonical_roster",
+      "name": "Herr Zielerreichbar",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP MIDDLE slot8 eager PERFORMANCE COORDINATOR: tall tapering bent splat with THREE soft upper lobes, short mustard sweater-vest collar and absurdly tiny burgundy tie.",
+          "Hugs a fat round mechanical dial gauge with pointer pegged far right (blank face no markings), other hand squeezes a black rubber bulb wired into gauge by one short thick hose."
+        ]
+      },
+      "prompt_auszug": "TOP MIDDLE slot8 eager PERFORMANCE COORDINATOR: tall tapering bent splat with THREE soft upper lobes, short mustard sweater-vest collar and absurdly tiny burgundy tie. A broad tightly CLENCHED crooked smile, BOTH eyes wide red-pupilled and looking upward for approval. Hugs a fat round mechanical dial gauge with pointer pegged far right (blank face no markings), other hand squeezes a black rubber bulb wired into gauge by one short thick hose. Handmade office pseudoscience, very simple legible prop, nervous aspirational body acting.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/digital-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_03",
+      "id_scope": "canonical_roster",
+      "name": "Frau Terminlage",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT slot9 FEMALE-READ CALENDAR/PROJECT MANAGER: squat almost spherical blob with short outward goo lobes, plum rolled goo coiffure and one little teal collar.",
+          "One hand holds a chunky disc-shaped brass chronometer, other tries to insert a huge mismatched square ivory key into its round socket, already visibly misaligned but not complex."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot9 FEMALE-READ CALENDAR/PROJECT MANAGER: squat almost spherical blob with short outward goo lobes, plum rolled goo coiffure and one little teal collar. One eye squeezed in irritated wink and other WHITE/red/black looking LEFT, CLOSED sharp asymmetric fang smile, no O mouth. One hand holds a chunky disc-shaped brass chronometer, other tries to insert a huge mismatched square ivory key into its round socket, already visibly misaligned but not complex. Minimal shapes make schedule impossibility tactile, no actual clock numbers, calendar text or floating symbols.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/digital-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_04",
+      "id_scope": "canonical_roster",
+      "name": "Frau Zugewandt",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT slot10 FEMALE-READ HR PROCESS PARTNER: tall stretched pear-shaped ink splat with swooping purple goo quiff, tiny pearl earstud, short dusty rose blazer collar.",
+          "Hugs a soft cream hand-puppet shaped like a bland smiling oval office mask on one goo hand; other hand gently holds its own tiny blank employee badge on a thick cord."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot10 FEMALE-READ HR PROCESS PARTNER: tall stretched pear-shaped ink splat with swooping purple goo quiff, tiny pearl earstud, short dusty rose blazer collar. Drooping dispassionate half lids, pupils looking RIGHT, mouth long sideways grimace showing single flat ivory tooth at one corner, not grin. Hugs a soft cream hand-puppet shaped like a bland smiling oval office mask on one goo hand; other hand gently holds its own tiny blank employee badge on a thick cord. Performance of compulsory reassurance conveyed by tired face vs puppet, no readable text, no other faces with full bodies, no human anatomy.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/digital-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_05",
+      "id_scope": "canonical_roster",
+      "name": "Herr Zugriffsschutz",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot11 CYBER-COMPLIANCE INSPECTOR: huge broad ink splat with three heavy lower lobes, worn charcoal short collar with little brass security clasp, one thick round monocle over a LARGE WHITE eye, RED iris BLACK pupil, other lid narrowed.",
+          "Both hands protect a small riveted teal filing drawer equipped with an absurdly large round brass padlock; only one short blank ivory punch card peeks out through narrow gap."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot11 CYBER-COMPLIANCE INSPECTOR: huge broad ink splat with three heavy lower lobes, worn charcoal short collar with little brass security clasp, one thick round monocle over a LARGE WHITE eye, RED iris BLACK pupil, other lid narrowed. Massive indignant jagged UNDERBITE with three uneven ivory teeth, pupils suspiciously DOWN. Both hands protect a small riveted teal filing drawer equipped with an absurdly large round brass padlock; only one short blank ivory punch card peeks out through narrow gap. Beautiful chunky safe/drawer, satirical access friction, no shield icons/national insignia, no threatening weapon.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/digital-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_06",
+      "id_scope": "canonical_roster",
+      "name": "Herr Anwesenheitsnachweis",
+      "bild": {
+        "datei": "OFFICE_WORKFORCE_12_2026-11-04/office-digital-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT slot12 middle-manager REMOTE-PRESENCE FACILITATOR: narrow crooked bean-shaped ink splat leaning sideways, tiny teal synthetic scarf and orange headset earcup, soft single crown curl.",
+          "Holds a compact retro-futurist copper video-call mirror with thick oval dark screen showing only a sculpted simple eye-shaped clay lens; other hand props up device with a fat coffee-stained ceramic mug."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot12 middle-manager REMOTE-PRESENCE FACILITATOR: narrow crooked bean-shaped ink splat leaning sideways, tiny teal synthetic scarf and orange headset earcup, soft single crown curl. One eye CLOSED and other wide WHITE/red/black, mouth shallow CLOSED W-shaped stressed smile with two uneven small fangs, NO tongue. Holds a compact retro-futurist copper video-call mirror with thick oval dark screen showing only a sculpted simple eye-shaped clay lens; other hand props up device with a fat coffee-stained ceramic mug. Perpetual presence through posture, chunky worn sci-fi craft, no actual UI/text/icons or glow background.",
+      "prompt_quelle": "OFFICE_WORKFORCE_12_2026-11-04/digital-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

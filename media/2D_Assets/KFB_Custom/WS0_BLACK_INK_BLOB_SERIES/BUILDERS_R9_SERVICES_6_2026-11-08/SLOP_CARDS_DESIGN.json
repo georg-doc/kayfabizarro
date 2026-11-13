@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_01",
+      "name": "Sid Barricade",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Gives useful directions at a volume that makes them hard to follow.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Site Marshal"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Booming, brisk site call.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "This way. The other this way."
+          ],
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_SERVICES_20261108"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Sid reroutes foot traffic whenever a HyperNorm scene acquires an inconvenient view.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He pointed me toward the authorized exit. It was behind the authorized entrance.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Hard lateral gaze and open shouted syllable.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_02",
+      "name": "Iris Tackspark",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Patient with steel and impatient with management.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Welder"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Low, steady impatience.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Let me see the seam."
+          ],
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_SERVICES_20261108"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Iris welds up loose seams in the HyperNorm perimeter. She leaves the bad ones visible until someone initials them.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "Her weld held. The initials cracked immediately.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Uneven eyes follow the spark, lower lip tense.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_03",
+      "name": "Cal Valvegrip",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Knows exactly which leak somebody will call condensation.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Pipe Fitter"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, skeptical mutter.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That drip has seniority."
+          ],
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_SERVICES_20261108"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cal services the pipes that feed reassurance into the HyperNorm estate. He has yet to find the return line.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "I reported a drip. He asked whether I meant the pipe or the committee.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Doubtful side-eye, puffed cheek and off-center frown.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_04",
+      "name": "Bert Bluecoat",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Finds an alarming number of applications for the same blue.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Painter"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Easy, cheerful baritone.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It looks different wet."
+          ],
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_SERVICES_20261108"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bert repaints the parts of town the Men in Black prefer to describe as undisturbed.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The first coat covered the damage. The second covered the date.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Relaxed lids and a gleeful one-tooth grin.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_05",
+      "name": "Mira Leadloop",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Treats an unexpected live wire as a colleague who has spoken out of turn.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Site Electrician"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Bright, incredulous precision.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Who said this was dead?"
+          ],
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_SERVICES_20261108"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mira found the emergency sign wired to the circuit it was supposed to warn about. She left a note with a very neat diagram.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The sign came back on before anyone read the note.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Raised gaze and small pursed lips.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_SERVICES_20261108_06",
+      "name": "Pip Ridgehook",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Prefers rooflines that stay where he last saw them.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Roofer"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Tight, quietly anxious tenor.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Don't tell me the height."
+          ],
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_SERVICES_20261108"
+          },
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pip tiles the HyperNorm façades that appear overnight after a cleanup. He secures the lowest roof tile first.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He told me the view was fine. He hadn't looked at it.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Worried downward gaze and small dry grimace.",
+          "src": "BUILDERS_R9_SERVICES_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

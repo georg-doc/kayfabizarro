@@ -1,0 +1,283 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PHILOSOPHY_PHILOSOPHY_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/sheet-r1.png",
+    "sha256": "d1d42c30185c8c56afb8fddb8a73bac0e43e024cebdf40af2a42390252520c87"
+  },
+  "production_record": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Philosophical Kayfabe Theories",
+    "visual_context": "Fictional philosophical/academic fantasy archetypes; free thematic inspiration,not exact historical/scientific or canonical-card depiction",
+    "relationship_policy": "Shared thematic deck ensemble; distinct standalone identities,no pair/state/trio/tier binding",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Fictional academic authority,certainty,philosophical doubt and fantasy class archetypes;not factual claims about real thinkers"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sokrates Nochnefrage",
+      "bild": {
+        "datei": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "toga collar",
+        "laurel twig",
+        "small wings",
+        "handbell"
+      ],
+      "temperament": "Asks one harmless question and politely waits for the building to reconsider.",
+      "prompt_auszug": "Sokrates Nochnefrage, maennlich-read. Socrates Question Fly: tall lean crooked ink blob,small ivory toga collar and tiny laurel twig,PAIR of tiny translucent clay fly-like wings on shoulder lobes but no insect legs,ONE simple brass handbell held at flank. Unequal bulging eyes,small puzzled toothless open oval mouth,politely persistent. Personality: Asks one harmless question and politely waits for the building to reconsider.",
+      "prompt_quelle": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarro_philosophy",
+      "user_concept": "Socrates Question Fly"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nietzsch Nocheinmal",
+      "bild": {
+        "datei": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large clay moustache",
+        "plum shoulder cape",
+        "sun brooch"
+      ],
+      "temperament": "Has overcome everything except the need to announce it.",
+      "prompt_auszug": "Nietzsch Nocheinmal, maennlich-read. Nietzsche Moustache Superman free archetype: broad square rounded splat,huge soft dark-violet clay moustache BELOW unobscured eyes and ABOVE mouth,tiny plum cape shoulder tabs and small plain golden sun brooch,no superhero logo. Fierce delighted crooked open grin with TWO upper teeth,one brow lifted,goo body not human muscle. Personality: Has overcome everything except the need to announce it.",
+      "prompt_quelle": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarro_philosophy",
+      "user_concept": "Nietzsche Moustache Superman"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Madame Vielleicht",
+      "bild": {
+        "datei": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "dark scholar bonnet",
+        "hand mirror"
+      ],
+      "temperament": "Finds the reflection convincing enough to demand another opinion.",
+      "prompt_auszug": "Madame Vielleicht, weiblich-read. Descartes Doubting Mirror feminine-read creative counterpart: round top-heavy lopsided ink blob,small dark scholar bonnet,subtle lashes,ONE hand mirror with dull silver reflection no extra face,other goo hand taps own cheek. Skeptical unequal lids,closed toothless crooked side-smirk. Personality: Finds the reflection convincing enough to demand another opinion.",
+      "prompt_quelle": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarro_philosophy",
+      "user_concept": "Descartes Doubting Mirror"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Diogenes Weniggenug",
+      "bild": {
+        "datei": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "ragged shoulder cloth",
+        "small barrel",
+        "lantern"
+      ],
+      "temperament": "Owns almost nothing and has strong views about the maintenance bill.",
+      "prompt_auszug": "Diogenes Weniggenug, maennlich-read. Diogenes in a Barrel freely interpreted standalone: low wide ink splat,tiny ragged cream shoulder cloth,ONE small open wooden barrel tucked at flank and little brass lantern held separately,not sitting inside barrel,whole bottom lobes visible. Heavy weary eyes,huge crooked closed toothless frown. Personality: Owns almost nothing and has strong views about the maintenance bill.",
+      "prompt_quelle": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarro_philosophy",
+      "user_concept": "Diogenes in a Barrel"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kant Punktgenau",
+      "bild": {
+        "datei": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cream scholar cap",
+        "pocket clock",
+        "wind-up key"
+      ],
+      "temperament": "Would prefer the unforeseen to submit its timetable in advance.",
+      "prompt_auszug": "Kant Punktgenau, maennlich-read. Kant Clockwork Walker adapted upright footless: tall upright pear-shaped ink blob,small old-fashioned cream scholar cap,tiny dark collar,ONE brass pocket clock on SHORT chain and little wind-up key held separately,no legs or clockwork body. Intense uneven eyes,asymmetric open grin with ONE big upper tooth. Personality: Would prefer the unforeseen to submit its timetable in advance.",
+      "prompt_quelle": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarro_philosophy",
+      "user_concept": "Kant Clockwork Walker"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Schröda Ungeöffnet",
+      "bild": {
+        "datei": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "teal cat-ear cap",
+        "small partly closed box",
+        "two-tone lid tile"
+      ],
+      "temperament": "Keeps her options open by keeping the lid almost closed.",
+      "prompt_auszug": "Schröda Ungeöffnet, weiblich-read. Schrödinger Box Cat free conceptual feminine counterpart: broad round asymmetrical ink blob,small teal cap with TWO tiny cat-ear points,two subtle lashes,ONE compact wooden box cradled at flank with slightly cracked lid and plain half-dark half-cream lid tile,no cat visible,no seventh actor. One huge eye one squint,small nervous toothless triangular mouth. Personality: Keeps her options open by keeping the lid almost closed.",
+      "prompt_quelle": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarro_philosophy",
+      "user_concept": "Schrödinger Box Cat"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "deck_binding": {
+    "deck_id": "kayfabizarro_philosophy",
+    "user_family_title": "Philosophical Kayfabe Theories",
+    "registry_title": "The Kraziest Philosophical Kayfabe-Theories Expansion",
+    "source_repo": "georg-doc/kayfabizarro",
+    "source_path": "registry/assets/v1/decks/kayfabizarro_philosophy.json",
+    "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+    "status": "THEMATIC_DESIGN_PROPOSAL",
+    "exact_card_mapping": null
+  }
+}

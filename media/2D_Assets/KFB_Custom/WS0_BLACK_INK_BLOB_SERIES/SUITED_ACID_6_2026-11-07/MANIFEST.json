@@ -1,0 +1,335 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SUITED_ACID_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SUITED_ACID_6_2026-11-07/sheet-r1.png",
+    "sha256": "19e18ca0781907cdf7322aa12628277cdd9f08b8b6f4979695c9ffb530873ab8"
+  },
+  "production_record": "SUITED_ACID_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "SUITED_ACID_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "SUITED_ACID_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Lime Boundary",
+    "theme": "Acid and Slime Containment",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "containment encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SUITED_ACID_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Sorb",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_ACID_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "spill assessor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_ACID_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_SUITED_ACID_ACTOR_20261107_02",
+        "WSA_SUITED_ACID_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "sealed green droplet vial in an olive holder"
+      ],
+      "temperament": "Gus Sorb serves as the spill assessor in Spill Detail.",
+      "prompt_auszug": "broad rounded silhouette, gentle CLOSED crescent smile, relaxed lids",
+      "prompt_quelle": "SUITED_ACID_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "spill assessor"
+    },
+    {
+      "id": "WSA_SUITED_ACID_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Faye Plug",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_ACID_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "seal technician",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_ACID_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_SUITED_ACID_ACTOR_20261107_01",
+        "WSA_SUITED_ACID_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small lime wedge with moss-green grip"
+      ],
+      "temperament": "Faye Plug serves as the seal technician in Spill Detail.",
+      "prompt_auszug": "tall tapered silhouette, small CLOSED pursed skeptical lips, one high eyebrow",
+      "prompt_quelle": "SUITED_ACID_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "seal technician"
+    },
+    {
+      "id": "WSA_SUITED_ACID_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Spore",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_ACID_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "sample carrier",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_ACID_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_SUITED_ACID_ACTOR_20261107_01",
+        "WSA_SUITED_ACID_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "sealed olive canister containing one tiny purple spore fleck"
+      ],
+      "temperament": "Ned Spore serves as the sample carrier in Spill Detail.",
+      "prompt_auszug": "squat rounded silhouette, tiny worried open oval mouth with no visible teeth, wide uneven eyes",
+      "prompt_quelle": "SUITED_ACID_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "sample carrier"
+    },
+    {
+      "id": "WSA_SUITED_ACID_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bo Tray",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_ACID_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "catch lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_ACID_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_SUITED_ACID_ACTOR_20261107_05",
+        "WSA_SUITED_ACID_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "shallow sealed lime catch tray"
+      ],
+      "temperament": "Bo Tray serves as the catch lead in Capture Detail.",
+      "prompt_auszug": "wide boxy silhouette, straight CLOSED deadpan mouth and heavy half-lids",
+      "prompt_quelle": "SUITED_ACID_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "catch lead"
+    },
+    {
+      "id": "WSA_SUITED_ACID_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rue Slime",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_ACID_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "screen operator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_ACID_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_SUITED_ACID_ACTOR_20261107_04",
+        "WSA_SUITED_ACID_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small olive Hypernormalization Screen with dark lime window"
+      ],
+      "temperament": "Rue Slime serves as the screen operator in Capture Detail.",
+      "prompt_auszug": "lean curved silhouette, asymmetric CLOSED determined smirk and sideways eyes",
+      "prompt_quelle": "SUITED_ACID_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "screen operator"
+    },
+    {
+      "id": "WSA_SUITED_ACID_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ike Cap",
+      "language": "en",
+      "bild": {
+        "datei": "SUITED_ACID_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "container keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_SUITED_ACID_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_SUITED_ACID_ACTOR_20261107_04",
+        "WSA_SUITED_ACID_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "olive specimen capsule with capped green core"
+      ],
+      "temperament": "Ike Cap serves as the container keeper in Capture Detail.",
+      "prompt_auszug": "scalloped pear silhouette, tight uneven grimace with dark lips and no exposed teeth",
+      "prompt_quelle": "SUITED_ACID_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "container keeper"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "incident_type": "Acid and Slime Containment",
+    "hud_skin_reference": "acid green",
+    "suit_direction": "Full coverall with small exposed ink feet and protective gloves.",
+    "screen_operator_ids": [
+      "WSA_SUITED_ACID_ACTOR_20261107_05"
+    ],
+    "team_kit": "middle GREEN panel only. Acid-lime chemical rubber full-body suits, moss olive riveted seams, lime-fluid vial cores, sculpted slimy drips on tool edges, organic vents. Hazard is corrosive fictional living slime and spores.",
+    "trios": [
+      {
+        "id": "WSA_SUITED_ACID_20261107_TRIO_A",
+        "name": "Spill Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_SUITED_ACID_ACTOR_20261107_01",
+          "WSA_SUITED_ACID_ACTOR_20261107_02",
+          "WSA_SUITED_ACID_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_SUITED_ACID_20261107_TRIO_B",
+        "name": "Capture Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_SUITED_ACID_ACTOR_20261107_04",
+          "WSA_SUITED_ACID_ACTOR_20261107_05",
+          "WSA_SUITED_ACID_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_SUITED_ACID_ACTOR_20261107_01",
+      "WSA_SUITED_ACID_ACTOR_20261107_02",
+      "WSA_SUITED_ACID_ACTOR_20261107_03",
+      "WSA_SUITED_ACID_ACTOR_20261107_04",
+      "WSA_SUITED_ACID_ACTOR_20261107_05",
+      "WSA_SUITED_ACID_ACTOR_20261107_06"
+    ]
+  },
+  "georg_decision": {
+    "quote": "Die sind alle Pass.",
+    "scope": "All six suited containment sheets and 36 designs."
+  }
+}

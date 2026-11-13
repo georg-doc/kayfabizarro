@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_YOUTH_RALLY_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
+    "sha256": "75a22ba8359e9b1390e943d405c12005036dea9cf309b6427aacdf5ff7bfab3d"
+  },
+  "production_record": "YOUTH_RALLY_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "YOUTH_RALLY_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "YOUTH_RALLY_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Recess Petition",
+    "theme": "The Recess Petition",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_YOUTH_RALLY_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Theo Recessmore",
+      "language": "en",
+      "bild": {
+        "datei": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "recess advocate",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_YOUTH_RALLY_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_YOUTH_RALLY_ACTOR_20261108_02",
+        "WSA_YOUTH_RALLY_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small handheld placard with a bold clock pictogram"
+      ],
+      "temperament": "Recess advocate.",
+      "prompt_auszug": "wide determined splat, forward gaze, open calling mouth",
+      "prompt_quelle": "YOUTH_RALLY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "recess advocate"
+    },
+    {
+      "id": "WSA_YOUTH_RALLY_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ivy Crosswalk",
+      "language": "en",
+      "bild": {
+        "datei": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "crossing safety petitioner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_YOUTH_RALLY_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_YOUTH_RALLY_ACTOR_20261108_01",
+        "WSA_YOUTH_RALLY_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short sign with a simple zebra crossing pictogram"
+      ],
+      "temperament": "Crossing safety petitioner.",
+      "prompt_auszug": "tall upright curl, steady direct eyes and firm closed lips",
+      "prompt_quelle": "YOUTH_RALLY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "crossing safety petitioner"
+    },
+    {
+      "id": "WSA_YOUTH_RALLY_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Lunchplease",
+      "language": "en",
+      "bild": {
+        "datei": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "school lunch campaigner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_YOUTH_RALLY_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_YOUTH_RALLY_ACTOR_20261108_01",
+        "WSA_YOUTH_RALLY_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "miniature placard showing a plain bowl and spoon"
+      ],
+      "temperament": "School lunch campaigner.",
+      "prompt_auszug": "plump uneven pear, plaintive raised eyebrows and small pout",
+      "prompt_quelle": "YOUTH_RALLY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "school lunch campaigner"
+    },
+    {
+      "id": "WSA_YOUTH_RALLY_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ollie Clipcount",
+      "language": "en",
+      "bild": {
+        "datei": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "petition clipboard keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_YOUTH_RALLY_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_YOUTH_RALLY_ACTOR_20261108_05",
+        "WSA_YOUTH_RALLY_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small clipboard with large blank boxes and pencil"
+      ],
+      "temperament": "Petition clipboard keeper.",
+      "prompt_auszug": "square low blob, focused eyes and tight frown",
+      "prompt_quelle": "YOUTH_RALLY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "petition clipboard keeper"
+    },
+    {
+      "id": "WSA_YOUTH_RALLY_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Chalkbanner",
+      "language": "en",
+      "bild": {
+        "datei": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "peaceful sign maker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_YOUTH_RALLY_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_YOUTH_RALLY_ACTOR_20261108_04",
+        "WSA_YOUTH_RALLY_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one compact board with a large chalk nub and a simple schoolyard tree picture"
+      ],
+      "temperament": "Peaceful sign maker.",
+      "prompt_auszug": "upright soft droplet, sharp side glance and confident smile",
+      "prompt_quelle": "YOUTH_RALLY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "peaceful sign maker"
+    },
+    {
+      "id": "WSA_YOUTH_RALLY_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Megaphone",
+      "language": "en",
+      "bild": {
+        "datei": "YOUTH_RALLY_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "nervous spokesperson",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_YOUTH_RALLY_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_YOUTH_RALLY_ACTOR_20261108_04",
+        "WSA_YOUTH_RALLY_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one little cone-shaped megaphone with rounded edge held at chest"
+      ],
+      "temperament": "Nervous spokesperson.",
+      "prompt_auszug": "lean crooked blob, worried raised eyelids and hesitant small O mouth",
+      "prompt_quelle": "YOUTH_RALLY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "nervous spokesperson"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "youth_family": "The Recess Petition",
+    "team_kit": "Warm brick, sunflower, mint and navy. Casual pupil clothes, compact peaceable school-issue placards with wordless pictograms.",
+    "encounter_behavior": "Fictional youth residents and peer groups.",
+    "satirical_target": "Everyday youth roles and absurd props.",
+    "trios": [
+      {
+        "id": "WSA_YOUTH_RALLY_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_YOUTH_RALLY_ACTOR_20261108_01",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_02",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_YOUTH_RALLY_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_YOUTH_RALLY_ACTOR_20261108_04",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_05",
+          "WSA_YOUTH_RALLY_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_YOUTH_RALLY_ACTOR_20261108_01",
+      "WSA_YOUTH_RALLY_ACTOR_20261108_02",
+      "WSA_YOUTH_RALLY_ACTOR_20261108_03",
+      "WSA_YOUTH_RALLY_ACTOR_20261108_04",
+      "WSA_YOUTH_RALLY_ACTOR_20261108_05",
+      "WSA_YOUTH_RALLY_ACTOR_20261108_06"
+    ]
+  }
+}

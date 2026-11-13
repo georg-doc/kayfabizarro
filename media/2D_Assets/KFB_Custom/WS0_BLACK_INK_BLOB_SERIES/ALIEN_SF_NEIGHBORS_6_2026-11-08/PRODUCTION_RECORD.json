@@ -1,0 +1,48 @@
+{
+  "schema": "kfb.slop-production/1",
+  "set_id": "WSA_ALIEN_SF_NEIGHBORS_20261108",
+  "name": "06-orbital-neighbors",
+  "title": "Orbital Neighbors",
+  "prompt": "Create exactly SIX new KFB alien/sci-fi Slop collectible sprite designs on one 1536×1024 landscape PNG, 3 columns × 2 rows. The attached approved KFB Alien sheets define the ink character species, handmade tactile stop-motion plasticine, size and alpha layout. Invent fresh characters. Match their complete organic charcoal-black ink bodies with quiet muted violet shadows, mostly smooth matte-satin sculpted forms and selectively worn props. Each has a whole distinct silhouette with its own elastic lobe, curling taper or broad base, not a humanoid bust, legs, or a universal scalloped bottom. White sclera, clear small RED iris, BLACK pupil in every visible eye. Two feminine-read characters as indicated; their visual acting is as strong as the others. Each has a distinct gaze target and eye-lid rhythm, and a different mouth shape. Upright front or subtle three-quarter sprite. Six isolated independent cutouts on TRUE RGBA alpha, no opaque backdrop, no backdrop lighting, no scene, floor, surface shadow, text, captions, frames, checkerboard or dividers. Keep every element inside its cell and leave at least 22 px empty on every side of the cell, especially at x=512 and x=1024 and y=512. Never fill the grid gutters. Use roughly comparable sprite size. Main props should be simple, bold, clay crafted, and meaningful to the character gag. Limit micrograin, especially glass and liquid. No shared objects, no duplicate expressions, no imported spaceship uniform from the references. Positions exactly as follows.\nTop left Vacuum Laundry Tenant, female-read dark ink cone silhouette with a soft side curl, pinches a single tiny floating clay sock with a short spring peg, looks up with a clenched impatient mouth and one raised brow. Top center Meal Tube Enthusiast, squat dark bean with an offset fork-shaped crest, bends a smooth retro aluminium squeeze tube that dispenses one neat teal spiral onto a spoon, eager gaze down and big asymmetric one-tooth smile. Top right Porthole Watcher, quiet dark tall thin tip, holds a small portable thick brass porthole frame with a crescent peeking through, gazes out sideways in tender reverie with small barely parted smile.\nBottom left Thermostat Obsessive, female-read broad scallop on one side and taper on the other, rotates a tiny ribbed retro heat dial with one frost glyph molded in teal, looks directly outward, stern pursed lips. Bottom center Gravity-Defying Sleeper, narrow dark leaning blob with eye mask pushed up onto forehead, clutches a small pillow with one buckle attached to his ink curl, looks toward the viewer with heavy sagging eyes and a little tired yawn. Bottom right Borrowed Oxygen Neighbor, pear-shaped ink blob with a crooked peak, holding a hand-sized cylindrical mint oxygen canister with a simple brass valve and one short folded hose, awkward sidelong glance and guilty wavy mouth.",
+  "references": [
+    "01-contact-crew.png",
+    "02-orbit-crew.png"
+  ],
+  "sha256": "036541c25878637fedec0f0e6e70404a235b9dc63d51092456dfcea28bd2ce9f",
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "outer_edge_alpha_max": 1,
+  "grid_line_alpha_max": [
+    1,
+    0,
+    1
+  ],
+  "candidate_crop_boundaries_px": {
+    "horizontal": 512,
+    "vertical_by_row": [
+      [
+        512,
+        1024
+      ],
+      [
+        512,
+        1024
+      ]
+    ]
+  },
+  "design_status": "PASS",
+  "reference_sha256": {
+    "01-contact-crew.png": "d64d51e6ae3338fed2759539c8913b0eb758bacf854171c869ea4be5c1d4ffc5",
+    "02-orbit-crew.png": "d0a4d4cb18ffbe36740714ab7378a6f3b7614fbc342ce8f885c3f166f503aff4"
+  },
+  "reference_paths": [
+    "ALIENS_R6_CONTACT_6_2026-11-08/sheet-r1.png",
+    "ALIENS_R6_ORBIT_6_2026-11-08/sheet-r1.png"
+  ]
+}

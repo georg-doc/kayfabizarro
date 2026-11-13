@@ -1,0 +1,185 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "owner": "WSA",
+  "date": "2026-11-06",
+  "status": "GEORG_DESIGN_PASS",
+  "counts": {
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
+    "female_read_identities": 12,
+    "generation_jobs": 6,
+    "layout_edit_jobs": 0
+  },
+  "sets": [
+    {
+      "code": "AGE",
+      "set_id": "WSA_NARRATIVE_AGE_20261106",
+      "manifest": "NARRATIVE_AGE_6_2026-11-06/MANIFEST.json",
+      "sha256": "27118ff54d96c03552f1b505f74529a7c013d715a0a50c8f0c80805fdfb1a203",
+      "git_blob_sha": "02d470c2a2a781f579a341bdaf0e6f82825b2f0b",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "the_kayfabe_crucible_coming_of_age",
+        "user_family_title": "Koming-of-Age",
+        "registry_title": "Kayfabe Koming-of-Age Wrestling All-Stars",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/the_kayfabe_crucible_coming_of_age.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Prom Night Pair",
+        "First Job Nervous Teen",
+        "Locker Bully",
+        "Diary Secret Keeper",
+        "Graduation Cap Thrower",
+        "Driving Test Panicker"
+      ]
+    },
+    {
+      "code": "NIBELUNGEN",
+      "set_id": "WSA_NARRATIVE_NIBELUNGEN_20261106",
+      "manifest": "NARRATIVE_NIBELUNGEN_6_2026-11-06/MANIFEST.json",
+      "sha256": "9a667297cf5b94b165731b773ec720557ab588e194b48a55d49960cb8975b5c5",
+      "git_blob_sha": "eee58462a1fb59b72b46f37c388e43c7fa6b7de2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "nibelungen_booster_pack_design",
+        "user_family_title": "Nibelungen",
+        "registry_title": "Nibelungen Booster Pack",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/nibelungen_booster_pack_design.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Siegfried Dragon Slayer",
+        "Brunhild Shieldmaiden",
+        "Hagen with Spear",
+        "Kriemhild Revenge Queen",
+        "Fafnir Dragon Goo",
+        "Rhine Gold Hoarder Dwarf"
+      ]
+    },
+    {
+      "code": "KOSMIK",
+      "set_id": "WSA_NARRATIVE_KOSMIK_20261106",
+      "manifest": "NARRATIVE_KOSMIK_6_2026-11-06/MANIFEST.json",
+      "sha256": "7ff10b2216758b026288c87c5784ce57d0aff3471ffbb3d31904ba02a5dbacb8",
+      "git_blob_sha": "533891f5a3e03143323416686bd4ee4855012238",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "kosmik_kayfabizarro_sci_fi_space_opera",
+        "user_family_title": "Kosmik Kollektive",
+        "registry_title": "Kosmik Kayfabizarro Kollektive (Vol II)",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/kosmik_kayfabizarro_sci_fi_space_opera.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Space Opera Emperor",
+        "Robot Sidekick",
+        "Laser Duelist",
+        "Alien Ambassador",
+        "Starship Captain",
+        "Black Hole Eater"
+      ]
+    },
+    {
+      "code": "EGO",
+      "set_id": "WSA_NARRATIVE_EGO_20261106",
+      "manifest": "NARRATIVE_EGO_6_2026-11-06/MANIFEST.json",
+      "sha256": "c086777bdec9947fd22720c26d108fa7577c98fbc088f40489b97ad9d0ef3cfa",
+      "git_blob_sha": "35a5604d45db9aa03f047ec67956a426b8731610",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "frizzlebob_s_ego_mania_narcissist",
+        "user_family_title": "It's All About Me",
+        "registry_title": "It’s All About Me! (And Also FrizzleBob)",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/frizzlebob_s_ego_mania_narcissist.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Selfie Mirror Diva",
+        "Ego Balloon Head",
+        "Applause Collector",
+        "Trophy Shelf Polisher",
+        "Me-Me-Me Megaphone",
+        "Compliment Fisher"
+      ]
+    },
+    {
+      "code": "FLAWS",
+      "set_id": "WSA_NARRATIVE_FLAWS_20261106",
+      "manifest": "NARRATIVE_FLAWS_6_2026-11-06/MANIFEST.json",
+      "sha256": "803b4aff260f8a875f89d72afbdcd106cf71744bee0ac9c7dfd23b484b0da5b6",
+      "git_blob_sha": "b290c0744f1033da77840cfa596474b5d6909aff",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "uncle_frizzlebob_s_tragic_flaws_id",
+        "user_family_title": "Tragic Flaws",
+        "registry_title": "Uncle FrizzleBob's Tragic Flaws",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/uncle_frizzlebob_s_tragic_flaws_id.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Hubris Tower Climber",
+        "Procrastination Sloth",
+        "Jealousy Green Goo",
+        "Greed Coin Swallower",
+        "Stubborn Mule",
+        "Pride Peacock"
+      ]
+    },
+    {
+      "code": "MUSEUM",
+      "set_id": "WSA_NARRATIVE_MUSEUM_20261106",
+      "manifest": "NARRATIVE_MUSEUM_6_2026-11-06/MANIFEST.json",
+      "sha256": "99e003a24cafbd59ec51c497a582d764757ad06c379e6ebd2b7a949e5ecfe68f",
+      "git_blob_sha": "a93964d58421d30a899ef935f7176d4ae96e078f",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "museum_of_modern_mess",
+        "user_family_title": "Museum of Modern Mess",
+        "registry_title": "Museum of Modern Mess",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/museum_of_modern_mess.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Banana Taped to Wall Artist",
+        "Art Critic with Monocle",
+        "Museum Guard Sleeping",
+        "Splatter Painter",
+        "Modern Sculpture Blob",
+        "Gift Shop Hawker"
+      ]
+    }
+  ],
+  "notes": [
+    "Source1536x1024 alpha sheets,not individual catalogue masters",
+    "Exact actual prompts/style-reference roles recorded",
+    "Prom pair1actor2corsages;myth/robot/animal/wall cues keep upright ink anatomy",
+    "All text lore/cards DESIGN"
+  ],
+  "georg_status": "PASS"
+}

@@ -1,0 +1,261 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MILITARY_SPAIN_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "MILITARY_SPAIN_6_2026-11-05/sheet-r1.png",
+    "sha256": "7a95cece03c0746a55a628b55d1cbc230308b09b2af801772e2727576ad987f0"
+  },
+  "production_record": "MILITARY_SPAIN_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "MILITARY_SPAIN_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "MILITARY_SPAIN_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Spanisch inspirierter Trupp",
+    "visual_context": "Spanish Civil War/interwar-era inspired army archetype mixture in dusty khaki and olive, not a WWII combatant faction or one documented historical unit; blank uniforms and headgear",
+    "relationship_policy": "Shared visual military family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Military bureaucracy, certainty, hierarchy and human coping; not inherent national character"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_MILITARY_SPAIN_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sargento Nochunterwegs",
+      "bild": {
+        "datei": "MILITARY_SPAIN_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "tasseled khaki sidecap",
+        "whistle",
+        "map"
+      ],
+      "temperament": "Can rally a whole corridor without finding the correct exit.",
+      "prompt_auszug": "Sargento Nochunterwegs; maennlich-read; broad stout ink splat, dusty khaki sidecap with plain short tassel, whistle and folded map; indignant huge asymmetrical open bellow with two upper teeth. Personality: Can rally a whole corridor without finding the correct exit.",
+      "prompt_quelle": "MILITARY_SPAIN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_SPAIN_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Enlace Umweg",
+      "bild": {
+        "datei": "MILITARY_SPAIN_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "olive beret",
+        "dispatch satchel",
+        "message roll"
+      ],
+      "temperament": "Carries urgent news that changes while she is carrying it.",
+      "prompt_auszug": "Enlace Umweg; weiblich-read; tall twisting comma blob, soft olive beret, tiny dispatch satchel and compact rolled message; lashes, alarmed huge unequal eyes, tiny toothless sideways mouth. Personality: Carries urgent news that changes while she is carrying it.",
+      "prompt_quelle": "MILITARY_SPAIN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_SPAIN_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Infante Nochhier",
+      "bild": {
+        "datei": "MILITARY_SPAIN_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "steel helmet",
+        "blanket roll",
+        "wood-stock rifle"
+      ],
+      "temperament": "Holds his position until someone explains which position they mean.",
+      "prompt_auszug": "Infante Nochhier; maennlich-read; low pear splat, plain rounded steel helmet, canvas blanket roll and short wood-stock rifle safely vertical; one heavy lid, one suspicious raised brow, deep toothless pout. Personality: Holds his position until someone explains which position they mean.",
+      "prompt_quelle": "MILITARY_SPAIN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_SPAIN_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mecánica Buenarueda",
+      "bild": {
+        "datei": "MILITARY_SPAIN_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "work cap",
+        "forehead goggles",
+        "spanner"
+      ],
+      "temperament": "Fixes the transport and refuses to fix the official explanation.",
+      "prompt_auszug": "Mecánica Buenarueda; weiblich-read; round wide lopsided blob, plain work cap, goggles above eyes, short canvas bib patch and thick spanner; subtle lashes, delighted crooked grin with one upper tooth. Personality: Fixes the transport and refuses to fix the official explanation.",
+      "prompt_quelle": "MILITARY_SPAIN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_SPAIN_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Oficial Vielleichtdoch",
+      "bild": {
+        "datei": "MILITARY_SPAIN_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "peaked cap",
+        "binoculars",
+        "map case"
+      ],
+      "temperament": "Has a clear view of everything except his next decision.",
+      "prompt_auszug": "Oficial Vielleichtdoch; maennlich-read; tall top-heavy blob with plain khaki peaked cap, compact binoculars and little map case; baffled cross-eyed scrutiny and small open oval mouth without teeth. Personality: Has a clear view of everything except his next decision.",
+      "prompt_quelle": "MILITARY_SPAIN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_SPAIN_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Camillero Sachtjetzt",
+      "bild": {
+        "datei": "MILITARY_SPAIN_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "medical cap",
+        "medical satchel",
+        "bandage roll"
+      ],
+      "temperament": "Believes recovery starts when everybody stops giving advice.",
+      "prompt_auszug": "Camillero Sachtjetzt; maennlich-read; round drooping blob, khaki cloth cap with small ivory medical plus, medical satchel and bandage roll; concerned heavy eyelids and closed wavy toothless lips. Personality: Believes recovery starts when everybody stops giving advice.",
+      "prompt_quelle": "MILITARY_SPAIN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

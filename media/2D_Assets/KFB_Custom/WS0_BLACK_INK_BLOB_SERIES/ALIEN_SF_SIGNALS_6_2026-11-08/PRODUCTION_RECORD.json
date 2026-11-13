@@ -1,0 +1,48 @@
+{
+  "schema": "kfb.slop-production/1",
+  "set_id": "WSA_ALIEN_SF_SIGNALS_20261108",
+  "name": "03-impossible-signals",
+  "title": "Impossible Signals",
+  "prompt": "Create exactly SIX new KFB alien/sci-fi Slop collectible sprite designs on one 1536×1024 landscape PNG, 3 columns × 2 rows. The attached approved KFB Alien sheets define the ink character species, handmade tactile stop-motion plasticine, size and alpha layout. Invent fresh characters. Match their complete organic charcoal-black ink bodies with quiet muted violet shadows, mostly smooth matte-satin sculpted forms and selectively worn props. Each has a whole distinct silhouette with its own elastic lobe, curling taper or broad base, not a humanoid bust, legs, or a universal scalloped bottom. White sclera, clear small RED iris, BLACK pupil in every visible eye. Two feminine-read characters as indicated; their visual acting is as strong as the others. Each has a distinct gaze target and eye-lid rhythm, and a different mouth shape. Upright front or subtle three-quarter sprite. Six isolated independent cutouts on TRUE RGBA alpha, no opaque backdrop, no backdrop lighting, no scene, floor, surface shadow, text, captions, frames, checkerboard or dividers. Keep every element inside its cell and leave at least 22 px empty on every side of the cell, especially at x=512 and x=1024 and y=512. Never fill the grid gutters. Use roughly comparable sprite size. Main props should be simple, bold, clay crafted, and meaningful to the character gag. Limit micrograin, especially glass and liquid. No shared objects, no duplicate expressions, no imported spaceship uniform from the references. Positions exactly as follows.\nTop left Beacon Keeper, compact broad ink bell with tiny shoulders and a teal spring clip, cups a miniature amber lighthouse lamp with a swing-open metal shutter. Eyes fixed down on it and tiny smile of relief. Top center Echo Catcher, female-read tall forward curling ink silhouette, trying to catch one cream crescent sound token with a little dull brass acoustic scoop. Head tilted, one eye looking back, mouth a wry oblique line. Top right Dead Frequency Announcer, one-eyed dark ink spire with short lobes, speaks into a ribbed radio microphone holding one fingerlike lobe close, big cyclops eye looks up, pursed lips.\nBottom left Static Tamer, blob with a zigzag elastic edge, grips a spool holding one unruly blue bolt of static like a loose thread, jaw braced in tightly bared square teeth, gaze to lower left. Bottom center Alien Code Clerk, female-read broad puddled silhouette with one side taper, holds a perforated peach clay data strip and a chunky hand punch, looks directly at camera with flat low lids and a blunt closed frown. Bottom right Signal Eavesdropper, squat asymmetrical leaning blob holding a cracked enamel cup against a tiny vibrating cable, eyes widened at the cup, mouth a small horrified O.",
+  "references": [
+    "01-contact-crew.png",
+    "02-orbit-crew.png"
+  ],
+  "sha256": "01d2a34d54b84cf509e94589f4e8f4e7567ab89fff1ebb390ad1a776a4923652",
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "outer_edge_alpha_max": 2,
+  "grid_line_alpha_max": [
+    252,
+    0,
+    1
+  ],
+  "candidate_crop_boundaries_px": {
+    "horizontal": 512,
+    "vertical_by_row": [
+      [
+        505,
+        1024
+      ],
+      [
+        496,
+        1024
+      ]
+    ]
+  },
+  "design_status": "PASS",
+  "reference_sha256": {
+    "01-contact-crew.png": "d64d51e6ae3338fed2759539c8913b0eb758bacf854171c869ea4be5c1d4ffc5",
+    "02-orbit-crew.png": "d0a4d4cb18ffbe36740714ab7378a6f3b7614fbc342ce8f885c3f166f503aff4"
+  },
+  "reference_paths": [
+    "ALIENS_R6_CONTACT_6_2026-11-08/sheet-r1.png",
+    "ALIENS_R6_ORBIT_6_2026-11-08/sheet-r1.png"
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS4_MOUNTAIN_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS4_MOUNTAIN_6_2026-11-06/sheet-r1.png",
+    "sha256": "bb98bca051ab4721c19b3e1d9c257285e96c0b5fd600ec10c17a28a6b6b8ddb1"
+  },
+  "production_record": "SPORTS4_MOUNTAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS4_MOUNTAIN_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS4_MOUNTAIN_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Seilschaft Letzte Zuständigkeit",
+    "visual_context": "1920s-to-1960s alpine expedition gear,worn mustard/forest-green wool and leather,simple iron climbing tools;no mountainscene",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "domain": "MOUNTAIN",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_CANONICAL_LINEUP",
+    "sport_scope": "MOUNTAIN"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS4_MOUNTAIN_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sepp Seilschluss",
+      "bild": {
+        "datei": "SPORTS4_MOUNTAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rope coil",
+        "felt climbing hat"
+      ],
+      "temperament": "He leads the rope team by considering every alternative a loose end.",
+      "prompt_auszug": "Sepp Seilschluss, male-read. Broad tall domed ink blob,heavy exacting brows and small CLOSED firm side-mouth;old forest felt climbing hat,tiny mustard collar;holds ONE simple thick ropecoil over short goo hand,other palm raised stop.",
+      "prompt_quelle": "SPORTS4_MOUNTAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "rope-team leader / guide"
+    },
+    {
+      "id": "WSA_SPORTS4_MOUNTAIN_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ida Eisvorbehalt",
+      "bild": {
+        "datei": "SPORTS4_MOUNTAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short iceaxe",
+        "mustard cap",
+        "forest neckerchief"
+      ],
+      "temperament": "She trusts a good edge more than an encouraging speech.",
+      "prompt_auszug": "Ida Eisvorbehalt, female-read. Slim upright ink comma,sidequiff and subtle lashes,sharp delighted eyes and three-upper-tooth asymmetric grin;small mustard woolcap,forest neckerchief;holds ONE SHORT rounded iron iceaxe upright at flank,fulltool fitscell,no weaponscene.",
+      "prompt_quelle": "SPORTS4_MOUNTAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "ice climber"
+    },
+    {
+      "id": "WSA_SPORTS4_MOUNTAIN_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bodo Boulderamt",
+      "bild": {
+        "datei": "SPORTS4_MOUNTAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "chalk bag",
+        "chalk-dusted fingertips",
+        "forest headband"
+      ],
+      "temperament": "He loves a short climb provided it does not involve falling from one.",
+      "prompt_auszug": "Bodo Boulderamt, male-read. Very wide low scalloped upright ink blob,huge worried downcast eyes,tiny toothless wavering smile;forest headband and small cream collar;holds ONE small drawstring chalkbag in palm,other goo hand chalkdusted at fingertips,no rocks or climbing scene.",
+      "prompt_quelle": "SPORTS4_MOUNTAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "boulderer"
+    },
+    {
+      "id": "WSA_SPORTS4_MOUNTAIN_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Markierung",
+      "bild": {
+        "datei": "SPORTS4_MOUNTAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "three-arc route map",
+        "cloth cap"
+      ],
+      "temperament": "She knows the route and is increasingly doubtful about the destination.",
+      "prompt_auszug": "Mara Markierung, female-read. Tall curved pear ink blob,modest lashes,one raised skeptical eyelid and CLOSED crooked smirk;cream clothcap with mustard band,small forest collar;holds folded route map with THREE simple dotted arcs,other hand points to an absent destination withinowncell.",
+      "prompt_quelle": "SPORTS4_MOUNTAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "route finder / expedition navigator"
+    },
+    {
+      "id": "WSA_SPORTS4_MOUNTAIN_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Oskar Obenluft",
+      "bild": {
+        "datei": "SPORTS4_MOUNTAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass altimeter",
+        "enamel cup",
+        "open-face knit hood"
+      ],
+      "temperament": "He has reached impressive heights and would like the air to acknowledge it.",
+      "prompt_auszug": "Oskar Obenluft, male-read. Narrow wavy ink column with drooping loopcrest,giant exhausted eyes upwards and tiny toothless gasp;old mustard knitbalaclava framing FACE completelyopen,no coveredmouth,forest tiny collar;holds one squat brass altimeter with blank dial and one small enamel cup.",
+      "prompt_quelle": "SPORTS4_MOUNTAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "high-altitude climber"
+    },
+    {
+      "id": "WSA_SPORTS4_MOUNTAIN_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Toni Tragweite",
+      "bild": {
+        "datei": "SPORTS4_MOUNTAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "compact bedroll",
+        "tin lunchbox",
+        "forest cap"
+      ],
+      "temperament": "He carries what the expedition calls essentials and what the leader calls not much.",
+      "prompt_auszug": "Toni Tragweite, male-read. Round star-lobed ink splat with upward sweeping curl,determined cheerful white eyes and open two-upper-tooth laugh;forest knitcap,tiny mustard scarf;ONE compact rolled bedroll strapped to shoulder with leatherloop,one small tin lunchbox held at flank,bodyvisible.",
+      "prompt_quelle": "SPORTS4_MOUNTAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "expedition support climber / load carrier"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

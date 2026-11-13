@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_POLITICS_GOV_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "POLITICS_GOV_6_2026-11-08/sheet-r1.png",
+    "sha256": "1130d77a9130fb7bff2a00a56b922c506442717e2754caab1f27255fb9b4f1e7"
+  },
+  "production_record": "POLITICS_GOV_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "POLITICS_GOV_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "POLITICS_GOV_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Executive Tangle",
+    "theme": "The Executive Tangle",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Alf Agenda",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_GOV_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "chancellor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_GOV_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_GOV_ACTOR_20261108_02",
+        "WSA_POLITICS_GOV_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short agenda stack with six visible unmarked color tabs"
+      ],
+      "temperament": "Chancellor.",
+      "prompt_auszug": "broad round splat, composed heavy lids, slight smile",
+      "prompt_quelle": "POLITICS_GOV_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "chancellor"
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Seal",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_GOV_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "president",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_GOV_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_GOV_ACTOR_20261108_01",
+        "WSA_POLITICS_GOV_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "single oversized blank state seal with an abstract star, held by a small handle"
+      ],
+      "temperament": "President.",
+      "prompt_auszug": "tall tapered drop, raised formal brow and serene closed mouth",
+      "prompt_quelle": "POLITICS_GOV_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "president"
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Quoteclip",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_GOV_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "government spokesperson",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_GOV_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_GOV_ACTOR_20261108_01",
+        "WSA_POLITICS_GOV_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny cluster of two microphones and a short blank quote card"
+      ],
+      "temperament": "Government spokesperson.",
+      "prompt_auszug": "compact narrow curl, tense eyebrows and crooked half-smile",
+      "prompt_quelle": "POLITICS_GOV_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "government spokesperson"
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Faye Whipcount",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_GOV_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "party leader",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_GOV_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_GOV_ACTOR_20261108_05",
+        "WSA_POLITICS_GOV_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small wooden tally frame with big sliding beads"
+      ],
+      "temperament": "Party leader.",
+      "prompt_auszug": "low wavy bean, hard sideways stare, compressed lips",
+      "prompt_quelle": "POLITICS_GOV_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "party leader"
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cobb Backup",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_GOV_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "vice chancellor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_GOV_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_GOV_ACTOR_20261108_04",
+        "WSA_POLITICS_GOV_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two stacked blank folders with one much smaller spare pencil"
+      ],
+      "temperament": "Vice chancellor.",
+      "prompt_auszug": "wide heartlike blob, watchful gaze and uncertain smile",
+      "prompt_quelle": "POLITICS_GOV_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "vice chancellor"
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Amendment",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_GOV_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "opposition leader",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_GOV_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_GOV_ACTOR_20261108_04",
+        "WSA_POLITICS_GOV_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short oversized pencil and a plain paper marked with one orange zigzag"
+      ],
+      "temperament": "Opposition leader.",
+      "prompt_auszug": "upright asymmetrical splat, arched skeptical brow and open retort",
+      "prompt_quelle": "POLITICS_GOV_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "opposition leader"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Executive Tangle",
+    "team_kit": "Slate blue, subdued burgundy and old brass. Tiny pins and short sash accents.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_GOV_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_GOV_ACTOR_20261108_01",
+          "WSA_POLITICS_GOV_ACTOR_20261108_02",
+          "WSA_POLITICS_GOV_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_GOV_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_GOV_ACTOR_20261108_04",
+          "WSA_POLITICS_GOV_ACTOR_20261108_05",
+          "WSA_POLITICS_GOV_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_GOV_ACTOR_20261108_01",
+      "WSA_POLITICS_GOV_ACTOR_20261108_02",
+      "WSA_POLITICS_GOV_ACTOR_20261108_03",
+      "WSA_POLITICS_GOV_ACTOR_20261108_04",
+      "WSA_POLITICS_GOV_ACTOR_20261108_05",
+      "WSA_POLITICS_GOV_ACTOR_20261108_06"
+    ]
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_01",
+      "name": "Gus Meter",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Gus Meter is the crew's radiation surveyor.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Somber radiation surveyor.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Mark the boundary here."
+          ],
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_REACTOR_20261107",
+            "trio": "WSA_CONTAINMENT_REACTOR_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gus Meter serves with the Survey Detail of The Cooling Detail. The kit includes a small analog survey meter with blank dial ticks. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Gus Meter treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "somber radiation surveyor",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_02",
+      "name": "Rhea Gauge",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Rhea Gauge is the crew's instrument reader.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Sharply alert instrument reader.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a moment to check this."
+          ],
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_REACTOR_20261107",
+            "trio": "WSA_CONTAINMENT_REACTOR_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Rhea Gauge serves with the Survey Detail of The Cooling Detail. The kit includes a short tethered probe held down along the flank. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Rhea Gauge treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "sharply alert instrument reader",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_03",
+      "name": "Bram Marker",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bram Marker is the crew's perimeter marker.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Nervously thorough perimeter marker.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The case is secured."
+          ],
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_REACTOR_20261107",
+            "trio": "WSA_CONTAINMENT_REACTOR_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bram Marker serves with the Survey Detail of The Cooling Detail. The kit includes a tiny amber warning beacon with broad base, unlit. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Bram Marker treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "nervously thorough perimeter marker",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_04",
+      "name": "Oren Valve",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Oren Valve is the crew's firmly patient equipment custodian.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Firmly patient equipment custodian.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay near your detail."
+          ],
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_REACTOR_20261107",
+            "trio": "WSA_CONTAINMENT_REACTOR_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Oren Valve serves with the Control Detail of The Cooling Detail. The kit includes a compact round valve wheel carried at belly. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Oren Valve treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "firmly patient equipment custodian",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_05",
+      "name": "Ivy Panel",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ivy Panel is the crew's screen technician.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Intently focused screen technician.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have the panel."
+          ],
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_REACTOR_20261107",
+            "trio": "WSA_CONTAINMENT_REACTOR_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ivy Panel serves with the Control Detail of The Cooling Detail. The kit includes a small orange-framed Hypernormalization Screen with dark graphite glass and one dull amber lamp. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ivy Panel treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "intently focused screen technician",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_REACTOR_ACTOR_20261107_06",
+      "name": "Dean Relay",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Dean Relay is the crew's incident liaison.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Quietly determined incident liaison.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_REACTOR_20261107",
+            "trio": "WSA_CONTAINMENT_REACTOR_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Dean Relay serves with the Control Detail of The Cooling Detail. The kit includes a short graphite radio with ceramic knob. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Dean Relay treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "quietly determined incident liaison",
+          "src": "CONTAINMENT_REACTOR_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

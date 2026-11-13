@@ -1,0 +1,133 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "owner": "WSA",
+  "date": "2026-11-06",
+  "status": "GEORG_DESIGN_PASS",
+  "counts": {
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
+    "female_read_identities": 12,
+    "generation_jobs": 6,
+    "layout_edit_jobs": 0
+  },
+  "sets": [
+    {
+      "code": "FANA",
+      "set_id": "WSA_SPORTS4_FANA_20261106",
+      "manifest": "SPORTS4_FANA_6_2026-11-06/MANIFEST.json",
+      "sha256": "1caf290d0f09982522a65313e27b8bcbe3457d000e110f3a23c700cec9845476",
+      "git_blob_sha": "37366f628665df4594ed0f8bca2ba28260694815",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Die Blauen vom richtigen Ausgang",
+      "family_roles": [
+        "fanatical loyalist",
+        "chant leader",
+        "supporter drummer",
+        "armchair tactician",
+        "lifelong season-ticket supporter",
+        "superstitious lucky-charm keeper"
+      ]
+    },
+    {
+      "code": "FANB",
+      "set_id": "WSA_SPORTS4_FANB_20261106",
+      "manifest": "SPORTS4_FANB_6_2026-11-06/MANIFEST.json",
+      "sha256": "f677081038f76f8efcddd66c92813fc57ece1f03e03c680c576755dc7111b4ad",
+      "git_blob_sha": "6eaa0b9d45b852264f7b5d18490b5ab00d195a1d",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Die Rostroten haben recht",
+      "family_roles": [
+        "flag-waving organiser",
+        "long-suffering veteran supporter",
+        "noise-maker enthusiast",
+        "suspicious spectator",
+        "possessive ticket-holder",
+        "overwhelmed first-time fan"
+      ]
+    },
+    {
+      "code": "REPORTERS",
+      "set_id": "WSA_SPORTS4_REPORTERS_20261106",
+      "manifest": "SPORTS4_REPORTERS_6_2026-11-06/MANIFEST.json",
+      "sha256": "b00559870040d69a96a1ea53285a80576dde7e895f4fe13258ecd6e0ad540662",
+      "git_blob_sha": "240db3672f97a0ed75759b815bf8131a3c7b450c",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Die Sendung steht noch",
+      "family_roles": [
+        "play-by-play commentator",
+        "sports photographer",
+        "statistics reporter",
+        "sideline interviewer",
+        "radio field reporter / sound recordist",
+        "sports editor / columnist"
+      ]
+    },
+    {
+      "code": "VOLLEYBALL",
+      "set_id": "WSA_SPORTS4_VOLLEYBALL_20261106",
+      "manifest": "SPORTS4_VOLLEYBALL_6_2026-11-06/MANIFEST.json",
+      "sha256": "b0d64b4d5da04bc13edd03b85cc9bbe3372cf195d08ad63739e153aaf3a4c619",
+      "git_blob_sha": "095f75919b614a65922fbfaaf7795e9a1095234a",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "VC Sand im Verfahren",
+      "family_roles": [
+        "setter / play organiser",
+        "middle blocker",
+        "defensive dig specialist",
+        "serve / attacking specialist",
+        "net specialist / veteran",
+        "recreational all-rounder / substitute"
+      ]
+    },
+    {
+      "code": "MOUNTAIN",
+      "set_id": "WSA_SPORTS4_MOUNTAIN_20261106",
+      "manifest": "SPORTS4_MOUNTAIN_6_2026-11-06/MANIFEST.json",
+      "sha256": "bb98bca051ab4721c19b3e1d9c257285e96c0b5fd600ec10c17a28a6b6b8ddb1",
+      "git_blob_sha": "6ff93857544a43ae35aa7fa224df8960b26d2486",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Seilschaft Letzte Zuständigkeit",
+      "family_roles": [
+        "rope-team leader / guide",
+        "ice climber",
+        "boulderer",
+        "route finder / expedition navigator",
+        "high-altitude climber",
+        "expedition support climber / load carrier"
+      ]
+    },
+    {
+      "code": "DEEPSEA",
+      "set_id": "WSA_SPORTS4_DEEPSEA_20261106",
+      "manifest": "SPORTS4_DEEPSEA_6_2026-11-06/MANIFEST.json",
+      "sha256": "a6a58db4818c0b1ec65d5781f07f9832a7fdc97811ee702ead09d7b4e944edf8",
+      "git_blob_sha": "39fd991e0c66d6eb7595b12b8a2248383c072811",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Expedition Unter Vorbehalt",
+      "family_roles": [
+        "helmet diver / expedition chief",
+        "salvage and wreck diver",
+        "deepsea specimen researcher",
+        "ROV operator / expedition diver",
+        "underwater photographer",
+        "saturation diver / pressure specialist"
+      ]
+    }
+  ],
+  "notes": [
+    "Six independent native original-reference-conditioned3x2 sheets;no generated parent chain",
+    "FanA blue/cream andFanB rustred/cream sport-neutral fictional affiliates;shared rival-family relation DESIGN,not actor pairs or runtime bindings",
+    "Selected1536x1024 originals unchanged;true alpha0..254",
+    "All36 cards/biographies DESIGN;no canonical deck/tier/hits invented",
+    "Source logicalcells not certified crops;independent catalogue masters pending",
+    "Volleyball setterball tight upper margin recorded;Deepsea horizontal crop seam not certified"
+  ],
+  "georg_status": "PASS"
+}

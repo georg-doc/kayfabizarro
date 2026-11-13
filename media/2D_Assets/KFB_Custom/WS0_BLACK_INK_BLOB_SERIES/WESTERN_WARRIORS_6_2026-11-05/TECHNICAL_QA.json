@@ -1,0 +1,174 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "03181e11da4d41242ab3a7d6da5daa7600093ef5fb4fbebbc664e6d75a8c5440",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 781181,
+  "alpha_240_plus_pixels": 919480,
+  "reference_hash_checks": 6,
+  "generation_jobs": 1,
+  "extracted_game_assets": 0,
+  "technical_holds": [
+    "Interior alpha maximum254; not certified opaque master",
+    "Per-actor catalogue masters and game extraction pending",
+    "One source sheet; not six native individual masters"
+  ],
+  "design_observations": [
+    "Six upright complete footless blobs, varied acting, two female-read",
+    "White sclera/red iris/black pupil evident",
+    "Veteran gained a Western hat not specified; preserved as visible deviation",
+    "Stone hatchet blade/grip broader than requested; keep for Georg review"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "r1_cells": [
+    {
+      "cell": 0,
+      "alpha_gt16_bounds": [
+        18,
+        10,
+        512,
+        505
+      ],
+      "visible_height": 495,
+      "visible_width": 494
+    },
+    {
+      "cell": 1,
+      "alpha_gt16_bounds": [
+        25,
+        12,
+        463,
+        505
+      ],
+      "visible_height": 493,
+      "visible_width": 438
+    },
+    {
+      "cell": 2,
+      "alpha_gt16_bounds": [
+        16,
+        9,
+        481,
+        505
+      ],
+      "visible_height": 496,
+      "visible_width": 465
+    },
+    {
+      "cell": 3,
+      "alpha_gt16_bounds": [
+        19,
+        8,
+        512,
+        502
+      ],
+      "visible_height": 494,
+      "visible_width": 493
+    },
+    {
+      "cell": 4,
+      "alpha_gt16_bounds": [
+        0,
+        8,
+        512,
+        501
+      ],
+      "visible_height": 493,
+      "visible_width": 512
+    },
+    {
+      "cell": 5,
+      "alpha_gt16_bounds": [
+        0,
+        7,
+        490,
+        501
+      ],
+      "visible_height": 494,
+      "visible_width": 490
+    }
+  ],
+  "selected_image": "sheet-r2.png",
+  "cells": [
+    {
+      "cell": 0,
+      "visible_bounds": [
+        49,
+        32,
+        481,
+        461
+      ],
+      "visible_height": 429,
+      "visible_width": 432
+    },
+    {
+      "cell": 1,
+      "visible_bounds": [
+        55,
+        32,
+        440,
+        462
+      ],
+      "visible_height": 430,
+      "visible_width": 385
+    },
+    {
+      "cell": 2,
+      "visible_bounds": [
+        43,
+        32,
+        446,
+        463
+      ],
+      "visible_height": 431,
+      "visible_width": 403
+    },
+    {
+      "cell": 3,
+      "visible_bounds": [
+        57,
+        24,
+        476,
+        451
+      ],
+      "visible_height": 427,
+      "visible_width": 419
+    },
+    {
+      "cell": 4,
+      "visible_bounds": [
+        58,
+        25,
+        440,
+        448
+      ],
+      "visible_height": 423,
+      "visible_width": 382
+    },
+    {
+      "cell": 5,
+      "visible_bounds": [
+        28,
+        28,
+        454,
+        449
+      ],
+      "visible_height": 421,
+      "visible_width": 426
+    }
+  ],
+  "layout_edit_jobs": 1,
+  "boundary_alpha_gt16_max": {
+    "512": 1,
+    "1024": 1
+  },
+  "row_seam_alpha_gt16_max": 1
+}

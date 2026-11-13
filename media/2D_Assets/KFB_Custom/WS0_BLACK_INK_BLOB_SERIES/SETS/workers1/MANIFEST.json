@@ -1,0 +1,208 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WORKERS1_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+    "sha256": "3a4eeaee7b9705c507b984870885f1a263b49ff57b94d7bd7e5767e525e42cd1"
+  },
+  "production_record": "WORKERS_CEOS_DUO_2026-11-04/workers-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/workers1/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      0,
+      5
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_ARBEITER_01",
+      "id_scope": "canonical_roster",
+      "name": "Erna Rohrrecht",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot1 FEMALE-READ MUNICIPAL PLUMBER: very wide low pancake splat, mustard tied kerchief and tiny teal work collar, broad uneven clenched tooth smile, pupils looking DOWN at work, one raised lid.",
+          "Both hands wrench a thick curved cast-iron pipe elbow with oversized red pipe wrench; one chunky blue water drop clings to pipe lip."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot1 FEMALE-READ MUNICIPAL PLUMBER: very wide low pancake splat, mustard tied kerchief and tiny teal work collar, broad uneven clenched tooth smile, pupils looking DOWN at work, one raised lid. Both hands wrench a thick curved cast-iron pipe elbow with oversized red pipe wrench; one chunky blue water drop clings to pipe lip. Thick tactile clay metal, playful physical force, no floor/scenery.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_02",
+      "id_scope": "canonical_roster",
+      "name": "Herr Gussmüde",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP MIDDLE slot2 exhausted FOUNDRY WORKER: tall narrow drooping ink blob with two melting upper lobes, dented leather cap, round orange ear defenders around thick goo head.",
+          "Heavy half-closed lids, huge sagging lower lip with single ivory tooth showing, NO smile/tongue.",
+          "Cradles a heavy rounded metal casting ladle with warm copper-colored clay metal inside, a short pair of stout tongs in opposite hand."
+        ]
+      },
+      "prompt_auszug": "TOP MIDDLE slot2 exhausted FOUNDRY WORKER: tall narrow drooping ink blob with two melting upper lobes, dented leather cap, round orange ear defenders around thick goo head. Heavy half-closed lids, huge sagging lower lip with single ivory tooth showing, NO smile/tongue. Cradles a heavy rounded metal casting ladle with warm copper-colored clay metal inside, a short pair of stout tongs in opposite hand. Slumped worn veteran physique, thick strong props.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_03",
+      "id_scope": "canonical_roster",
+      "name": "Rudi Straßenlage",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Huge jagged SIDEWAYS LAUGH, several irregular ivory teeth, eyes unevenly squeezed with delight.",
+          "Hugs a chunky miniature jackhammer whose fat bit is sheathed in a single giant chewing-gum-pink sticky clay blob."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot3 delighted ROAD REPAIRER: compact almost spherical ink splat, battered yellow helmet askew, strip of orange work vest leaving goo dominant. Huge jagged SIDEWAYS LAUGH, several irregular ivory teeth, eyes unevenly squeezed with delight. Hugs a chunky miniature jackhammer whose fat bit is sheathed in a single giant chewing-gum-pink sticky clay blob. Large readable shapes, no round mouth, NO tongue, no rubble/floor.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_04",
+      "id_scope": "canonical_roster",
+      "name": "Herr Lastfall",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Crushed cap, tiny red neckerchief, wide alarmed eyes looking UP and compressed ZIGZAG underbite with two teeth."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot4 indignant WAREHOUSE PORTER: towering pear-shaped ink splat leaning BACK under weight of a squat wooden crate held at chest height, one big worn brass padlock on crate. Crushed cap, tiny red neckerchief, wide alarmed eyes looking UP and compressed ZIGZAG underbite with two teeth. One fat goo arm hooks crate handle, another props up underside. Clearly whole goo body under crate, no human torso, no labels.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_05",
+      "id_scope": "canonical_roster",
+      "name": "Schorsch Rußruhe",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot5 smug CHIMNEY SWEEP: short crooked bean-shaped splat, floppy patched charcoal cap, one thick upper lobe curled sideways, white eyes red iris black pupil in lazy sidelong gaze, CLOSED narrow asymmetric grin with two little fangs.",
+          "Holds one long thick wooden-handled round brush with bristles shaped as big soft clay spikes and a small copper soot bucket, coal-dust marks selective."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot5 smug CHIMNEY SWEEP: short crooked bean-shaped splat, floppy patched charcoal cap, one thick upper lobe curled sideways, white eyes red iris black pupil in lazy sidelong gaze, CLOSED narrow asymmetric grin with two little fangs. Holds one long thick wooden-handled round brush with bristles shaped as big soft clay spikes and a small copper soot bucket, coal-dust marks selective. Leaning on brush casually, complete full length fits margin.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ARBEITER_06",
+      "id_scope": "canonical_roster",
+      "name": "Ella Kabelsalat",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT slot6 FEMALE-READ ELECTRICIAN: medium tall triangular rounded splat, teal short work scarf and subtle lashes, one soft curling goo quiff under plain cream hardhat.",
+          "One hand cradles a chunky red reel of thick coiled cable, other grips big blue-handled pliers on the loose end."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot6 FEMALE-READ ELECTRICIAN: medium tall triangular rounded splat, teal short work scarf and subtle lashes, one soft curling goo quiff under plain cream hardhat. Deep concentrated squint, tightly pressed crooked lips with one TOOTH biting upper lip, NO tongue. One hand cradles a chunky red reel of thick coiled cable, other grips big blue-handled pliers on the loose end. Electrical work just represented, no spark gag or icons. Bold rounded tactile tools, broad readable posture.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/workers-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

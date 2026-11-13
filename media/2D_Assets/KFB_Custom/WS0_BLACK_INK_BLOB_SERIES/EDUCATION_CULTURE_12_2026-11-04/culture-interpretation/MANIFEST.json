@@ -1,0 +1,188 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+    "sha256": "9755411ba238df35640aef043e28918e878205e0467d4852c6112f7a528a6411"
+  },
+  "production_record": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
+  "cards": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source intake allowed; original QA/crop observations retained."
+  },
+  "figuren": [
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Madame Rahmenbedingung",
+      "bild": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ornate empty picture frame"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 FEMALE-READ MUSEUM CURATOR: very low broad soft wavy ink splat with two elegant curled crown lobes, small faded plum beret and tiny cream scarf collar, one copper stud. Heavy disapproving half-lids WHITE sclera RED iris BLACK pupil looking sideways; long FLAT closed crooked lip with one small gold fang. Holds ONE beautifully worn thick ornate gold EMPTY picture frame slightly out at her OWN side, peering suspiciously at its opening. Frame at belly/side, not surrounding whole body or covering face, full goo base dominant, no painting/scenery/words.",
+      "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Letztlektüre",
+      "bild": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "single thick book"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 male LITERARY CRITIC: towering thin drooping pear ink blob, small moss soft cap and short rust scarf, brass pince-nez resting below one eye. Deep crooked offended UNDERBITE with THREE sparse irregular teeth, one eye wide and the other almost shut, WHITE/red/black gaze DOWN. Both hands embrace ONE absurdly FAT leather book whose massive rounded indigo spine contrasts with a single tiny ivory page sticking out. Closed plain cover, no text/marks, no pile or desk.",
+      "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Ausdruckspflicht",
+      "bild": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "theatrical mask",
+        "polishing cloth"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male THEATRE DRAMATURGE: compact almost spherical springy ink splat with THREE short irregular upper lobes, tiny faded teal collar and coral bow tie. Face nervously stretched into broad CLENCHED jagged tooth smile, one white/red/black eye bulging and other squinting toward object. One hand holds ONE small smooth cream clay theatrical tragedy mask with softly modeled drooping brows and tiny mouth opening, other buffs it with ONE plump burgundy polishing cloth. Mask below his face at own belly, no puppet body, stage, extra people or floating expressions.",
+      "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Ursprungszustand",
+      "bild": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "tiny chipped cup",
+        "large soft brush"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 FEMALE-READ MUSEUM RESTORER: tall narrow curved bean ink blob, one violet curled goo bun held under tiny teal headscarf, short dusty rose collar. One eye fully CLOSED in concentrated effort, other WHITE/red/black looking down, narrow crooked lip with single ivory tooth biting upper lip, NO tongue. Carefully holds a very TINY chipped cream teacup in one palm and ONE comically huge soft rounded ivory-bristle restoration brush with copper handle in opposite hand, brush barely touches cup rim. Two clear tactile props, no table or human torso.",
+      "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Geschmacksurteil",
+      "bild": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "oversized wooden gavel"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 male ARBITER OF TASTE: very broad heavy rounded triangular UPRIGHT ink splat with low hanging side lobes, tiny cream bow tie and short charcoal collar, no hat. Profound complacent CLOSED asymmetric smile with two little uneven fangs, heavy lids and WHITE/red/black gaze calmly down. Cradles ONE gigantic beautifully worn rounded wooden judge's gavel tenderly like a pet, both goo hands supporting broad smooth barrel. Gavel stays at own belly, no block/table/action strike or legal writing; full ink body visible.",
+      "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Zutrittszweifel",
+      "bild": {
+        "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "velvet rope with brass ends"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 male CULTURAL ACCESS GATEKEEPER: medium tall lopsided pear ink splat with one tall bent crown lobe, small faded navy uniform cap and short mustard collar. Huge wide WHITE/red/black eyes looking outward in alarm, long downward flat lip with two broad sparse bottom teeth, NO smile/tongue/O mouth. Both hands clutch the TWO large brass rounded ends of ONE short fat burgundy velvet barrier rope forming a shallow U across own belly. No posts/stanchions/door/scene, rope attaches only to his own hands, no crossing neighbor cells. Tragically determined guard of a portable boundary.",
+      "prompt_quelle": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ],
+  "georg_decision": {
+    "source": "Georg chat2026-11-04",
+    "verdict": "all12education/culturePASS"
+  }
+}

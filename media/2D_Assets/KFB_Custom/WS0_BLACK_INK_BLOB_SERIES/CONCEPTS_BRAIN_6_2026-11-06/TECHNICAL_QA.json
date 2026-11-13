@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "2896964cefb7bcc8585df94173bb04e145907f8fea95b2c4d33e5395feffb699",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 522744,
+  "low_alpha_pixels_1_16": 72872,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha": {
+      "(0, 1536)": 2,
+      "(0, 525)": 0,
+      "(525, 1020)": 0,
+      "(1020, 1536)": 1
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "design_observations": [
+    "Six whole upright footless ink actors; white/red/black eye rule visually reviewed at native scale",
+    "Two female-read planned and visible; no cross-family identity/state bindings",
+    "Two female-read top-middle/bottom-middle",
+    "Inverted landscape readable;cap is upright rather than requested upside-down,PROP_DETAIL_REVIEW",
+    "Spinner nativewink means one clearly open white/red/black eye",
+    "Animator3simple ball drawings;mindmap3pegs and thick thread,no spiderlegs",
+    "Aha bulb glows as native cap prop,body remains ink",
+    "Sphinx headcloth/box not animal anatomy"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "review_previews": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "actual_reviews": {
+    "native_scale": true,
+    "checker": true,
+    "light_64_96_192": true,
+    "dark_160": true,
+    "method": "Each native output and QA boards visually reviewed;selected images unchanged"
+  }
+}

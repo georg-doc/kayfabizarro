@@ -1,0 +1,209 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DRIVERS_SPACE_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+    "sha256": "6de62e041c991b094e757ad2000bc26bafe20a7534a7520f2e6616bbda5891be"
+  },
+  "production_record": "DRIVERS_12_2026-11-04/space-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/drivers-space/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      0,
+      4
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_FAHRER_01",
+      "id_scope": "canonical_roster",
+      "name": "Kapitänin Zwischenlage",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot7 FEMALE-READ AIRLINE PILOT: tall asymmetric pear blob, battered cream pilot cap with simple brass wing ornament, short indigo collar and tiny coral neck scarf.",
+          "Holds one chunky rounded black aircraft yoke with thick handles and a tiny cream checklist folded around central bar, other hand grips a worn copper coffee flask."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot7 FEMALE-READ AIRLINE PILOT: tall asymmetric pear blob, battered cream pilot cap with simple brass wing ornament, short indigo collar and tiny coral neck scarf. One lid raised, other sleepy, WHITE/red/black eyes looking RIGHT, narrow CLOSED crooked smile with two uneven fangs. Holds one chunky rounded black aircraft yoke with thick handles and a tiny cream checklist folded around central bar, other hand grips a worn copper coffee flask. Calm forced professional poise, no text/numbers/cockpit.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/space-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_02",
+      "id_scope": "canonical_roster",
+      "name": "Käptn Maschinenmeinung",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP MIDDLE slot8 SHIP CAPTAIN: very broad low sagging ink puddle, worn navy captain cap with single plain gold rope band, tiny faded teal scarf.",
+          "Arms cradle a fat brass engine-order telegraph with TWO thick handles and blank round face, leaning awkwardly into own soft body."
+        ]
+      },
+      "prompt_auszug": "TOP MIDDLE slot8 SHIP CAPTAIN: very broad low sagging ink puddle, worn navy captain cap with single plain gold rope band, tiny faded teal scarf. Deep heavy underbite with THREE crooked long ivory teeth, one eye squeezed and other wide RED pupil aimed DOWN. Arms cradle a fat brass engine-order telegraph with TWO thick handles and blank round face, leaning awkwardly into own soft body. Strong one-piece handheld prop, no nautical backdrop or wheel repeat, no writing.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/space-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_03",
+      "id_scope": "canonical_roster",
+      "name": "Herr Umlaufbahn",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT slot9 SPACESHIP FREIGHT PILOT: compact spherical blob with one long curling top goo lobe, rusty copper open helmet collar framing face and soft maroon aviator hood, no enclosed face.",
+          "Eyes huge WHITE/red/black with mismatched sizes, mouth a stretched nervous CLENCHED tooth grin, gaze UP.",
+          "Both hands hold a worn teal bulbous retro navigation sphere with three thick brass orbital rings and one enormous ivory manual crank."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot9 SPACESHIP FREIGHT PILOT: compact spherical blob with one long curling top goo lobe, rusty copper open helmet collar framing face and soft maroon aviator hood, no enclosed face. Eyes huge WHITE/red/black with mismatched sizes, mouth a stretched nervous CLENCHED tooth grin, gaze UP. Both hands hold a worn teal bulbous retro navigation sphere with three thick brass orbital rings and one enormous ivory manual crank. Weird old future tactile clay device, no floating planets or environment, no mouth O.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/space-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_04",
+      "id_scope": "canonical_roster",
+      "name": "Herr Kosmometertarif",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT slot10 SPACE TAXI DRIVER: medium tall slumped bean-shaped ink blob, mustard peaked cap with a crooked tiny antenna, single orange headset cup and short teal work collar.",
+          "Half-closed bored red pupils looking LEFT, deep FLAT drooping mouth with a single huge gold tooth.",
+          "Holds a squat copper fare meter with a blank convex dark screen and one clunky red lever; other hand offers a tiny model ringed-planet key fob dangling from one thick chain."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot10 SPACE TAXI DRIVER: medium tall slumped bean-shaped ink blob, mustard peaked cap with a crooked tiny antenna, single orange headset cup and short teal work collar. Half-closed bored red pupils looking LEFT, deep FLAT drooping mouth with a single huge gold tooth. Holds a squat copper fare meter with a blank convex dark screen and one clunky red lever; other hand offers a tiny model ringed-planet key fob dangling from one thick chain. Dry cosmic cab-driver attitude, no star icons/text or full vehicle.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/space-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_05",
+      "id_scope": "canonical_roster",
+      "name": "Rita Ladedruck",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot11 FEMALE-READ DIESELPUNK RACING DRIVER: compact wide dynamic ink splat with lobe sweeping upward on ONE side, soft scarlet leather racing cap and brass goggles raised, short cream silk scarf trailing only within cell.",
+          "Cradles a beautifully rounded worn iron supercharger turbine with single ribbed intake trumpet at belly, one goo hand grips a thick black three-spoke steering wheel held low at side."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot11 FEMALE-READ DIESELPUNK RACING DRIVER: compact wide dynamic ink splat with lobe sweeping upward on ONE side, soft scarlet leather racing cap and brass goggles raised, short cream silk scarf trailing only within cell. Ferocious lopsided open-tooth laugh, eyes one squint and one wide WHITE/red/black, NO tongue. Cradles a beautifully rounded worn iron supercharger turbine with single ribbed intake trumpet at belly, one goo hand grips a thick black three-spoke steering wheel held low at side. Simple1-2bold racing props, no car/body torso or floor, no real logos.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/space-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_06",
+      "id_scope": "canonical_roster",
+      "name": "Herr Podestfrei",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-air-space-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Both hands grip two short curved brass pod control handles linked by ONE thick flexible cable draped in a shallow U between them, small fat pressure dial on one grip."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot12 veteran POD RACER: tall tapering ink splat with two short drooping side lobes, faded olive leather flight hood and chunky brass ear protectors, small mustard shoulder strap, full goo base visible. One eye fully closed and other WHITE/red/black glancing down, narrow CLOSED satisfied smile with one flat ivory tooth, NO tongue/O mouth. Both hands grip two short curved brass pod control handles linked by ONE thick flexible cable draped in a shallow U between them, small fat pressure dial on one grip. Greasy knuckle tension and relaxed veteran face, handmade clay retro-engineering, no pod/engine scenery or floating effects.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/space-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

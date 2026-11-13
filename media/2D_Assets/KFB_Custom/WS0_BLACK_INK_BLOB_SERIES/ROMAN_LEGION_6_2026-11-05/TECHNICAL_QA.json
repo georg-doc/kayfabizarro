@@ -1,0 +1,159 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "requested_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "a6b2d61d8bd2c2c3716b3d65deb848ca944ef653d69892f6358ce68dfc47aed0",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 513643,
+  "cells": [
+    {
+      "cell": 0,
+      "extraction_rect": [
+        0,
+        0,
+        551,
+        503
+      ],
+      "alpha_gt16_bounds": [
+        33,
+        16,
+        540,
+        502
+      ],
+      "visible_size": [
+        507,
+        486
+      ]
+    },
+    {
+      "cell": 1,
+      "extraction_rect": [
+        551,
+        0,
+        978,
+        503
+      ],
+      "alpha_gt16_bounds": [
+        12,
+        9,
+        405,
+        502
+      ],
+      "visible_size": [
+        393,
+        493
+      ]
+    },
+    {
+      "cell": 2,
+      "extraction_rect": [
+        978,
+        0,
+        1536,
+        503
+      ],
+      "alpha_gt16_bounds": [
+        22,
+        10,
+        542,
+        499
+      ],
+      "visible_size": [
+        520,
+        489
+      ]
+    },
+    {
+      "cell": 3,
+      "extraction_rect": [
+        0,
+        503,
+        502,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        14,
+        12,
+        494,
+        506
+      ],
+      "visible_size": [
+        480,
+        494
+      ]
+    },
+    {
+      "cell": 4,
+      "extraction_rect": [
+        502,
+        503,
+        1013,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        9,
+        22,
+        489,
+        506
+      ],
+      "visible_size": [
+        480,
+        484
+      ]
+    },
+    {
+      "cell": 5,
+      "extraction_rect": [
+        1013,
+        503,
+        1536,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        23,
+        1,
+        499,
+        507
+      ],
+      "visible_size": [
+        476,
+        506
+      ]
+    }
+  ],
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "safe_vertical_seam_max_alpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "safe_horizontal_seam_max_alpha": 172,
+  "technical_holds": [
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending",
+    "Row gutter only2px atalpha<=16; use explicit extraction rectangles, no fixed512cuts or automatic padded crops"
+  ],
+  "design_observations": [
+    "Six complete upright footless blobs; two female-read; white/red/black eyes",
+    "Centurion crest and open-mouth silhouette differ from narrow prompt specifics",
+    "Horn is compact circular rather than a large G-shaped Roman cornu; preserved for design review",
+    "No source resizing or layout edit performed"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "horizontal_cut_line_max_alpha": 5
+}

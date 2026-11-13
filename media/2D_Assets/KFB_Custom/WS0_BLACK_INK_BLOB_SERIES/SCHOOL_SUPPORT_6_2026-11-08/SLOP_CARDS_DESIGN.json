@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_SCHOOL_SUPPORT_ACTOR_20261108_01",
+      "name": "Iris Bookhold",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School librarian.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It was only due yesterday."
+          ],
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_SUPPORT_20261108",
+            "trio": "WSA_SCHOOL_SUPPORT_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Other School Bells, Iris Bookhold takes the role of school librarian. “It was only due yesterday.”",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small stack of two books and a short bookmark with a tassel.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school librarian",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_SUPPORT_ACTOR_20261108_02",
+      "name": "Wes Listenwell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School social worker.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Tell it in your own order."
+          ],
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_SUPPORT_20261108",
+            "trio": "WSA_SCHOOL_SUPPORT_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Other School Bells, Wes Listenwell takes the role of school social worker. “Tell it in your own order.”",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one smooth listening pebble and a tiny open notebook.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school social worker",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_SUPPORT_ACTOR_20261108_03",
+      "name": "Pip Bandage",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School first-aid helper.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Here. A small patch."
+          ],
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_SUPPORT_20261108",
+            "trio": "WSA_SCHOOL_SUPPORT_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Other School Bells, Pip Bandage takes the role of school first-aid helper. “Here. A small patch.”",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small plain first-aid pouch with a simple plus and one folded bandage.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school first-aid helper",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_SUPPORT_ACTOR_20261108_04",
+      "name": "Bram Cablefix",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School IT technician.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Try the end that fits."
+          ],
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_SUPPORT_20261108",
+            "trio": "WSA_SCHOOL_SUPPORT_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Other School Bells, Bram Cablefix takes the role of school IT technician. “Try the end that fits.”",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one oversized detachable plug and little cable coil.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school IT technician",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_SUPPORT_ACTOR_20261108_05",
+      "name": "Jade Homeworkclub",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "After-school supervisor.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "You can finish it here."
+          ],
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_SUPPORT_20261108",
+            "trio": "WSA_SCHOOL_SUPPORT_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Other School Bells, Jade Homeworkclub takes the role of after-school supervisor. “You can finish it here.”",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small tray of colored puzzle pieces and one short pencil.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "after-school supervisor",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_SUPPORT_ACTOR_20261108_06",
+      "name": "Gus Quietstep",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Learning support assistant.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One step at a time."
+          ],
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_SUPPORT_20261108",
+            "trio": "WSA_SCHOOL_SUPPORT_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Other School Bells, Gus Quietstep takes the role of learning support assistant. “One step at a time.”",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: three rounded stair-shaped counting blocks.",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "learning support assistant",
+          "src": "SCHOOL_SUPPORT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

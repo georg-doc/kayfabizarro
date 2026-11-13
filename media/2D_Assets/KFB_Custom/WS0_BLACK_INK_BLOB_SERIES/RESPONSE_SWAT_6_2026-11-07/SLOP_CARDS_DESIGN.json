@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_01",
+      "name": "Hank Threshold",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Hank Threshold stays decisively focused when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Decisively focused. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold the line here."
+          ],
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SWAT_20261107",
+            "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hank Threshold serves with Entry Detail, a swat detail assigned to HyperNorm disturbances. The small door ram held vertically beside body is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Hank Threshold looks decisively focused even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "decisively focused",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_02",
+      "name": "Ivy Hush",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ivy Hush stays intently listening when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Intently listening. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give us a little room."
+          ],
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SWAT_20261107",
+            "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ivy Hush serves with Entry Detail, a swat detail assigned to HyperNorm disturbances. The small radio and slim ear cup is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ivy Hush looks intently listening even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "intently listening",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_03",
+      "name": "Miles Lookfirst",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Miles Lookfirst stays startled but curious when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Startled but curious. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I need a closer look."
+          ],
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SWAT_20261107",
+            "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Miles Lookfirst serves with Entry Detail, a swat detail assigned to HyperNorm disturbances. The short inspection mirror on stubby handle is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Miles Lookfirst looks startled but curious even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled but curious",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_04",
+      "name": "Bert Barrier",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bert Barrier stays firmly protective when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Firmly protective. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay with your detail."
+          ],
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SWAT_20261107",
+            "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bert Barrier serves with Support Detail, a swat detail assigned to HyperNorm disturbances. The short opaque navy shield with cobalt stripe is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Bert Barrier looks firmly protective even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "firmly protective",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_05",
+      "name": "Ada Patch",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ada Patch stays kindly urgent when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Kindly urgent. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We have someone to check on."
+          ],
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SWAT_20261107",
+            "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ada Patch serves with Support Detail, a swat detail assigned to HyperNorm disturbances. The compact navy medical pouch with plain pale square is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ada Patch looks kindly urgent even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "kindly urgent",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SWAT_ACTOR_20261107_06",
+      "name": "Walt Wedge",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Walt Wedge stays dryly prepared when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Dryly prepared. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have this covered."
+          ],
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SWAT_20261107",
+            "trio": "WSA_RESPONSE_SWAT_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Walt Wedge serves with Support Detail, a swat detail assigned to HyperNorm disturbances. The stubby door wedge and flashlight is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Walt Wedge looks dryly prepared even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dryly prepared",
+          "src": "RESPONSE_SWAT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_01",
+      "name": "Alf Agenda",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Chancellor.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We'll start with item zero."
+          ],
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_GOV_20261108",
+            "trio": "WSA_POLITICS_GOV_20261108_TRIO_A"
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Executive Tangle, Alf Agenda takes the role of chancellor. “We'll start with item zero.”",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short agenda stack with six visible unmarked color tabs.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "chancellor",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_02",
+      "name": "Nora Seal",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "President.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It is now official enough."
+          ],
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_GOV_20261108",
+            "trio": "WSA_POLITICS_GOV_20261108_TRIO_A"
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Executive Tangle, Nora Seal takes the role of president. “It is now official enough.”",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: single oversized blank state seal with an abstract star, held by a small handle.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "president",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_03",
+      "name": "Wes Quoteclip",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Government spokesperson.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That sentence ends here."
+          ],
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_GOV_20261108",
+            "trio": "WSA_POLITICS_GOV_20261108_TRIO_A"
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Executive Tangle, Wes Quoteclip takes the role of government spokesperson. “That sentence ends here.”",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: tiny cluster of two microphones and a short blank quote card.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "government spokesperson",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_04",
+      "name": "Faye Whipcount",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Party leader.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One bead has reservations."
+          ],
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_GOV_20261108",
+            "trio": "WSA_POLITICS_GOV_20261108_TRIO_B"
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Executive Tangle, Faye Whipcount takes the role of party leader. “One bead has reservations.”",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small wooden tally frame with big sliding beads.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "party leader",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_05",
+      "name": "Cobb Backup",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Vice chancellor.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I'm ready if the first plan sits down."
+          ],
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_GOV_20261108",
+            "trio": "WSA_POLITICS_GOV_20261108_TRIO_B"
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Executive Tangle, Cobb Backup takes the role of vice chancellor. “I'm ready if the first plan sits down.”",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two stacked blank folders with one much smaller spare pencil.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "vice chancellor",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_GOV_ACTOR_20261108_06",
+      "name": "Ned Amendment",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Opposition leader.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have a small amendment."
+          ],
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_GOV_20261108",
+            "trio": "WSA_POLITICS_GOV_20261108_TRIO_B"
+          },
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Executive Tangle, Ned Amendment takes the role of opposition leader. “I have a small amendment.”",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short oversized pencil and a plain paper marked with one orange zigzag.",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "opposition leader",
+          "src": "POLITICS_GOV_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

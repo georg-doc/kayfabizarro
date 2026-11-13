@@ -1,0 +1,21 @@
+{
+  "schema": "kfb.image-production-record/1",
+  "tool": "image_gen.imagegen",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "status": "DRAFT_PENDING_GEORG",
+  "sheet": "transport--handel-r2",
+  "args": {
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/output/slop-career-batch-20261105/05-transport--handel.png"
+    ],
+    "transparent_background": true,
+    "prompt": "Precise LAYOUT / CUTOUT edit, preserve these EXACT SIX KFB clay ink blob creatures, facial acting, eyes, hats, neckwear, tools/coins and order. ONE1536x1024 TRUE TRANSPARENT PNG. THREE columns by TWO rows,512x512 cells. Top row female learner driver / bus driver / fleet manager, bottom row male shop apprentice / shopkeeper / branch director. UNIFORMLY SHRINK each WHOLE standalone figure including its steering wheel, hat, droplets and props to MAX384x384, center each in its own equal512x512 cell with at least64 clear pixels on EVERY side. Especially clear horizontal boundary y512: NO wheel, goo or cap may cross between rows. No content crossing x512/x1024 either. Keep comparable body size and complete footless upright ink blobs. Retain reference tooth quirks/props/expressions, don't redesign, don't add anything. Clear background/holes alpha0, figures opaque alpha255, edge antialias only. No floor, gradient, backdrop, shadow discs, checkerboard, text, numbers or labels. This is a spacing correction, not new characters. All open eyes white sclera/red iris/black pupil."
+  },
+  "output_hint": "Generated images are saved to /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21 as /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-fbe3cf05-1fa7-4dc7-b52a-d101884b5d35.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_file": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-fbe3cf05-1fa7-4dc7-b52a-d101884b5d35.png",
+  "reference_roles": [
+    "R1 edit target, not new style parent"
+  ],
+  "note": "One spacing repair, R1 retained; native edit not a lossless repack."
+}

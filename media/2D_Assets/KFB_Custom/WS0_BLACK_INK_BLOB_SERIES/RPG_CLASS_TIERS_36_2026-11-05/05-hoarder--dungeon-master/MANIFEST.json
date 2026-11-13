@@ -1,0 +1,249 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Tier format: one male and one female identity each repeated three times, not a normal independent six-character cast.",
+  "image": {
+    "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+    "sha256": "e412bcd1ffdd47124268e2d72f39d483f62ae28737cf88eff1fdb23f7e8b1422"
+  },
+  "production_record": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
+  "cards": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
+  },
+  "figuren": [
+    {
+      "id": "WSA_RPG_HOARDER_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Eventuellnützlich",
+      "variant_title": "trash",
+      "klasse": "hoarder",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_HOARDER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "wood box, spoon"
+      ],
+      "signature": "very wide upright rounded trapezoid ink splat with THREE tiny crown nubs and a low plum rolled fringe, lashes, one square lower tooth and short gold upper fang, tiny faded ochre explorer cap with teal stitch, short indigo collar.",
+      "prompt_auszug": "Anxious asymmetrical huge eyes, defensive crooked lower lip. Hugs ONE very small battered wooden treasure BOX containing ONE visibly worthless bent spoon.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_HOARDER_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Eventuellnützlich",
+      "variant_title": "common",
+      "klasse": "hoarder",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_HOARDER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "iron-banded box, spoon and buttons"
+      ],
+      "signature": "very wide upright rounded trapezoid ink splat with THREE tiny crown nubs and a low plum rolled fringe, lashes, one square lower tooth and short gold upper fang, tiny faded ochre explorer cap with teal stitch, short indigo collar.",
+      "prompt_auszug": "Suspicious narrowed sideways eyes, clenched uneven teeth. SAME box now iron-banded with spoon plus TWO big smooth odd buttons, lid tilts but all contained.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_HOARDER_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Eventuellnützlich",
+      "variant_title": "elite",
+      "klasse": "hoarder",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_HOARDER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "brass-banded box, spoon, crystal and small bottle"
+      ],
+      "signature": "very wide upright rounded trapezoid ink splat with THREE tiny crown nubs and a low plum rolled fringe, lashes, one square lower tooth and short gold upper fang, tiny faded ochre explorer cap with teal stitch, short indigo collar.",
+      "prompt_auszug": "Blissful possessive squint and stubborn closed-lip smile, body wraps protectively around SAME compact brass-banded box with spoon and THREE chunky trinkets. Same cap/collar, no huge pile/coins scattered.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_DUNGEON_MASTER_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Wirklichkeitsvorbehalt",
+      "variant_title": "trash",
+      "klasse": "dungeon-master",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_DUNGEON_MASTER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cardboard two-panel screen"
+      ],
+      "signature": "upright lanky tall hooked ink bean, one long floppy crown lobe, uneven WHITE/red/black eyes behind thick round brass spectacles, big solitary LOWER tooth, little moss-green cap and plum collar.",
+      "prompt_auszug": "Overwhelmed wide gaze, worried stretched lower lip. Holds ONE folded blank cardboard GM SCREEN with TWO short panels low at own belly, no desk.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_DUNGEON_MASTER_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Wirklichkeitsvorbehalt",
+      "variant_title": "common",
+      "klasse": "dungeon-master",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_DUNGEON_MASTER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather two-panel screen, faceted die"
+      ],
+      "signature": "upright lanky tall hooked ink bean, one long floppy crown lobe, uneven WHITE/red/black eyes behind thick round brass spectacles, big solitary LOWER tooth, little moss-green cap and plum collar.",
+      "prompt_auszug": "Delighted conspiratorial raised brow, crooked underbite. Same two-panel screen now worn leather with ONE plain abstract embossed spiral, other hand holds ONE large blank faceted clay DIE.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_DUNGEON_MASTER_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Wirklichkeitsvorbehalt",
+      "variant_title": "elite",
+      "klasse": "dungeon-master",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_DUNGEON_MASTER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "copper-cornered screen, dotted faceted die"
+      ],
+      "signature": "upright lanky tall hooked ink bean, one long floppy crown lobe, uneven WHITE/red/black eyes behind thick round brass spectacles, big solitary LOWER tooth, little moss-green cap and plum collar.",
+      "prompt_auszug": "Dry authoritarian half-lids and pursed crooked lip. Same little screen with modest copper corners, same faceted die now polished bone/brass dots only. Screen stays LOW so ink face/body remain dominant, no table or extra players.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_ALIEN_SF_ARRIVALS_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 0,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "ALIEN_SF_ARRIVALS_6_2026-11-08/sheet-r1.png",
+    "sha256": "bd28b4c0875f3c5dda868f9281ef64b498f114a9bef743c2b9db1f7dea35085e"
+  },
+  "production_record": "ALIEN_SF_ARRIVALS_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "ALIEN_SF_ARRIVALS_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "ALIEN_SF_ARRIVALS_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Interstellar Arrivals",
+    "theme": "Alien and science fiction",
+    "relationship_policy": "Six-member thematic group with independently usable identities.",
+    "usage_candidates": [
+      "sci-fi encounter",
+      "HyperNorm resident",
+      "standalone Slop"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tuck Entryfold",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_ARRIVALS_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Passport Examiner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "brass stamp",
+        "accordion passport"
+      ],
+      "temperament": "Treats a long document as proof that the border exists.",
+      "prompt_auszug": "Looks down with a flat mouth.",
+      "prompt_quelle": "ALIEN_SF_ARRIVALS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Tagwise",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_ARRIVALS_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Baggage Claim Oracle",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "copper claim tag",
+        "domed suitcase"
+      ],
+      "temperament": "Predicts which suitcase will miss its owner.",
+      "prompt_auszug": "Side-eye and pinched O.",
+      "prompt_quelle": "ALIEN_SF_ARRIVALS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Ringcoin",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_ARRIVALS_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Exchange Counter Blob",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "ringed coin"
+      ],
+      "temperament": "Insists that a coin is worth what goes around it.",
+      "prompt_auszug": "Crossed gaze and puffed cheek.",
+      "prompt_quelle": "ALIEN_SF_ARRIVALS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Edwin Jarhush",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_ARRIVALS_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Customs Confessor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "sealed lightning jar"
+      ],
+      "temperament": "Declares an item only after it declares itself.",
+      "prompt_auszug": "Raised eyes and a trembling squiggle mouth.",
+      "prompt_quelle": "ALIEN_SF_ARRIVALS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Starwelcome",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_ARRIVALS_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Welcome Ambassador",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "star-stamped clamshell badge"
+      ],
+      "temperament": "Can welcome a visitor through clenched hospitality.",
+      "prompt_auszug": "Upward side-glance and a pointed smile.",
+      "prompt_quelle": "ALIEN_SF_ARRIVALS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_ALIEN_SF_ARRIVALS_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Tonguetune",
+      "language": "en",
+      "bild": {
+        "datei": "ALIEN_SF_ARRIVALS_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout; crop guide in production record",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Translation Failure",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "brass funnel",
+        "two tuning tabs"
+      ],
+      "temperament": "Believes his interpreter is making personal remarks.",
+      "prompt_auszug": "Wide look away from the funnel and oblique shout.",
+      "prompt_quelle": "ALIEN_SF_ARRIVALS_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Convenient Positions",
+    "team_kit": "Muted ochre, ink red, cream and slate.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_03",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+    ]
+  }
+}

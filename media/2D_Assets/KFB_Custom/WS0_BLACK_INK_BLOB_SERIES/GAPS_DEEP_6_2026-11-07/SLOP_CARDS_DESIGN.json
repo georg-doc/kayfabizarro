@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_01",
+      "name": "Len Sparebulb",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Lanternfish maintenance worker.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I brought a spare."
+          ],
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_DEEP_20261107",
+            "trio": "WSA_GAPS_DEEP_20261107_TRIO_A"
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Len Sparebulb joins Deep Sea After Hours as lanternfish maintenance worker. “I brought a spare.”",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small warm luminous bulb on short forehead stalk and one smooth spare bulb in hand.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "lanternfish maintenance worker",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_02",
+      "name": "Nora Clamledger",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Clam shift supervisor.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Who clocked out in my shell?"
+          ],
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_DEEP_20261107",
+            "trio": "WSA_GAPS_DEEP_20261107_TRIO_A"
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nora Clamledger joins Deep Sea After Hours as clam shift supervisor. “Who clocked out in my shell?”",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small rounded clam shell collar and a thick clipboard.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "clam shift supervisor",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_03",
+      "name": "Bram Ventcheck",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Tube worm vent regulator.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The vent runs a little hot."
+          ],
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_DEEP_20261107",
+            "trio": "WSA_GAPS_DEEP_20261107_TRIO_A"
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bram Ventcheck joins Deep Sea After Hours as tube worm vent regulator. “The vent runs a little hot.”",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small pale rolled tube at flank and a short chunky thermometer with red tip.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "tube worm vent regulator",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_04",
+      "name": "Faye Softsignal",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bioluminescent signal keeper.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One blink means I'm still here."
+          ],
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_DEEP_20261107",
+            "trio": "WSA_GAPS_DEEP_20261107_TRIO_B"
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Faye Softsignal joins Deep Sea After Hours as bioluminescent signal keeper. “One blink means I'm still here.”",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short bead antennae and one sealed cyan lantern.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "bioluminescent signal keeper",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_05",
+      "name": "Gus Siltsettle",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sediment cleaner.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It settles after my shift."
+          ],
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_DEEP_20261107",
+            "trio": "WSA_GAPS_DEEP_20261107_TRIO_B"
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gus Siltsettle joins Deep Sea After Hours as sediment cleaner. “It settles after my shift.”",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: tiny smooth silt scoop with a small pale mound and broad short brush.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "sediment cleaner",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_06",
+      "name": "Pip Pressurecup",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Break-time resident.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The coffee is under pressure."
+          ],
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_GAPS_DEEP_20261107",
+            "trio": "WSA_GAPS_DEEP_20261107_TRIO_B"
+          },
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pip Pressurecup joins Deep Sea After Hours as break-time resident. “The coffee is under pressure.”",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: compact thick-walled deep-sea mug with handle.",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "break-time resident",
+          "src": "GAPS_DEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

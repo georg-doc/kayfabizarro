@@ -1,0 +1,211 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_LAW_CIVIC_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+    "sha256": "06056d9320ac7e48ac2491b2b32a08e39f78c0282c237b852b35766a138436d1"
+  },
+  "production_record": "LAWKEEPERS_12_2026-11-04/civic-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/law-civic/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      4
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_ORDNUNG_01",
+      "id_scope": "canonical_roster",
+      "name": "Sheriff Amtsgewicht",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot1 frontier SHERIFF: absurdly WIDE LOW sagging ink puddle wearing tiny faded tan wide-brim hat and short sand collar.",
+          "Heavy half-closed red gaze SIDEWAYS, mouth deep drooping flat lip with one huge ivory snaggle tooth.",
+          "One goo hand props up his own heavy badge, other clutches tiny rolled blank warrant."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot1 frontier SHERIFF: absurdly WIDE LOW sagging ink puddle wearing tiny faded tan wide-brim hat and short sand collar. An enormous chunky BRASS SIX-POINT STAR BADGE hangs by two short chains and nearly outweighs his body, badge plain no words. Heavy half-closed red gaze SIDEWAYS, mouth deep drooping flat lip with one huge ivory snaggle tooth. One goo hand props up his own heavy badge, other clutches tiny rolled blank warrant. Grandiose role physically burdensome, lovely clay leather/brass.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/civic-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_02",
+      "id_scope": "canonical_roster",
+      "name": "Frau Vorrang",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP MIDDLE slot2 FEMALE-READ TRAFFIC OFFICER: tall leaning pear blob, cream peaked cap and small teal high-visibility collar with broad ivory reflective band, subtle lashes.",
+          "One goo hand raises a fat white-gloved palm toward nobody, other holds small red-and-white round STOP paddle with entirely BLANK RED CENTER no word.",
+          "A tiny round brass whistle at collar, simple1-2props, pompous frozen gesture rather than action scene."
+        ]
+      },
+      "prompt_auszug": "TOP MIDDLE slot2 FEMALE-READ TRAFFIC OFFICER: tall leaning pear blob, cream peaked cap and small teal high-visibility collar with broad ivory reflective band, subtle lashes. Strained wide clenched ivory-tooth smile, WHITE/red/black eyes looking UP. One goo hand raises a fat white-gloved palm toward nobody, other holds small red-and-white round STOP paddle with entirely BLANK RED CENTER no word. A tiny round brass whistle at collar, simple1-2props, pompous frozen gesture rather than action scene.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/civic-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_03",
+      "id_scope": "canonical_roster",
+      "name": "Constable Randnotiz",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT slot3 LONDON-STYLE OLD BEAT CONSTABLE: nearly spherical compact ink blob, comically TALL dark navy rounded custodian helmet with invented small oval brass emblem, short indigo cape collar.",
+          "Both hands hug an enormous thick blank pocket notebook shut; one stubby pencil gripped sideways at lip without protruding tongue."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot3 LONDON-STYLE OLD BEAT CONSTABLE: nearly spherical compact ink blob, comically TALL dark navy rounded custodian helmet with invented small oval brass emblem, short indigo cape collar. One lid tightly squints, other RED pupil looks DOWN, mouth a furious crooked triangular UNDERBITE with two broad teeth, no O. Both hands hug an enormous thick blank pocket notebook shut; one stubby pencil gripped sideways at lip without protruding tongue. Helmet threatens to swamp blob, not human torso.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/civic-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_04",
+      "id_scope": "canonical_roster",
+      "name": "Gendarm Feierlichkeit",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT slot4 CONTINENTAL CEREMONIAL GENDARME: towering skinny curved bean ink blob, tiny dark bicorne with modest faded coral plume, short navy collar and heavy brass single shoulder tassel.",
+          "Huge jagged SIDEWAYS laugh with uneven teeth, one eye wider and other half-lidded, no tongue.",
+          "Both arms struggle to cradle a huge rounded rolled ceremonial sash pinned by one giant gold medallion; cloth feels like a soft rolled blanket."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot4 CONTINENTAL CEREMONIAL GENDARME: towering skinny curved bean ink blob, tiny dark bicorne with modest faded coral plume, short navy collar and heavy brass single shoulder tassel. Huge jagged SIDEWAYS laugh with uneven teeth, one eye wider and other half-lidded, no tongue. Both arms struggle to cradle a huge rounded rolled ceremonial sash pinned by one giant gold medallion; cloth feels like a soft rolled blanket. Medallion invented abstract spiral, no real symbols or text. Physical dignity defeating itself, no parade scenery.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/civic-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_05",
+      "id_scope": "canonical_roster",
+      "name": "Frau Knöllchenruhe",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot5 FEMALE-READ MUNICIPAL PARKING INSPECTOR: squat broad asymmetric splat, plum pillbox-like work cap and short grey-green collar, one soft goo curl.",
+          "Holds a chunky mechanical ticket printer whose blank cream receipt curls ONCE loosely around her own wrist; other hand pinches tiny pencil."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot5 FEMALE-READ MUNICIPAL PARKING INSPECTOR: squat broad asymmetric splat, plum pillbox-like work cap and short grey-green collar, one soft goo curl. Lazy knowing CLOSED asymmetric smirk with one long gold fang, one eye looks LEFT through tiny brass pince-nez. Holds a chunky mechanical ticket printer whose blank cream receipt curls ONCE loosely around her own wrist; other hand pinches tiny pencil. Viscous ink hand slightly stuck in paperwork, simple credible physical relationship, no actual words/numbers or street/vehicles.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/civic-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ORDNUNG_06",
+      "id_scope": "canonical_roster",
+      "name": "Herr Revierblick",
+      "bild": {
+        "datei": "LAWKEEPERS_12_2026-11-04/lawkeepers-civic-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT slot6 RURAL GAME/RANGER OFFICER: medium tall wavy splat with rounded bottom lobes, faded olive campaign hat with one small plain brass roundel, tiny rust-red neck scarf.",
+          "Cradles a worn wooden binocular case so overlarge he must hug it, one fat brass binocular lens protrudes under lid like an accusing eye."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot6 RURAL GAME/RANGER OFFICER: medium tall wavy splat with rounded bottom lobes, faded olive campaign hat with one small plain brass roundel, tiny rust-red neck scarf. Eyes wide WHITE/red/black looking RIGHT, lips pressed into short zigzag mouth with THREE mismatched teeth, no grin/tongue. Cradles a worn wooden binocular case so overlarge he must hug it, one fat brass binocular lens protrudes under lid like an accusing eye. No actual animal or environment, exaggerated but readable leather/wood/brass craft.",
+      "prompt_quelle": "LAWKEEPERS_12_2026-11-04/civic-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

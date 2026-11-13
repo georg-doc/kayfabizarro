@@ -1,0 +1,2683 @@
+{
+  "schema": "kfb.slop-writers-intake/1",
+  "status": "ACTIVE_SCOPE_PINNED_NOT_COMPLETE",
+  "task": "Hub Writer’s Room Slops, as forwarded by WS0; no forged Hub write",
+  "scope_source": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "path": "src/data/mobs2d/slop-roster.r1.json",
+    "head": "f9c0ff16343f6cc4a38f98ec6de8101bd40dbec7",
+    "count": 531
+  },
+  "current_observed": {
+    "head": "4fd30cf3eab57db75ff80794e7da97ecce1618a1",
+    "count": 609,
+    "note": "609 now; do not silently expand the 531-ID writing assignment."
+  },
+  "completed_card_drafts": 30,
+  "remaining_without_new_card_draft": 501,
+  "rules": {
+    "status": "DESIGN",
+    "preserve_canonical_ids": true,
+    "no_invented_prompt_or_visual_provenance": true,
+    "no_automatic_retirement": true,
+    "no_new_triplet_ids": true,
+    "no_hp_rarity_runtime_changes": true
+  },
+  "queue": [
+    {
+      "id": "SL_TEEN_PUNK_REBEL",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_TEEN_SKATER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_TEEN_DJ",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_TEEN_BUBBLEGUM_GOTH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_TEEN_HOODIE",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_TEEN_GRAFFITI",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_TEEN_BANDANA_TOUGH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_TEEN_GAMER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MAGIE_STERNENMAGIER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MAGIE_KRISTALLSEHER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MAGIE_GRIMOIRE_ZAUBERER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MAGIE_ALCHEMISTEN_BLOB",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MAGIE_KNOCHENHEXE",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MAGIE_BLITZMAGIER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MAGIE_IRRLICHT_ZAUBERER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MAGIE_BESCHWOERER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUETZE_MUETZE_1",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUETZE_MUETZE_2",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUETZE_MUETZE_3",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUETZE_MUETZE_4",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUETZE_MUETZE_5",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUETZE_MUETZE_6",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUETZE_MUETZE_7",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUETZE_MUETZE_8",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ALIEN_EYESTALK_TENTACLE",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ALIEN_UFO_CYCLOPS",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ALIEN_SIGNAL_ANTENNA",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ALIEN_BRAIN_DOME",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ALIEN_OCTO_INK",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ALIEN_CRYSTAL_GROWTH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ALIEN_ORBIT_RING",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ALIEN_ABDUCTION_BEAM",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_POLIER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_PRESSLUFTHAMMER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_MAURER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_EINWEISER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_SCHWEISSER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_BAGGERFAHRER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_ROHRINSTALLATEUR",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_MALER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_KNIGHT_SWORD_SHIELD",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_WIZARD_STAFF",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_ROGUE_DAGGER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_RANGER_BOW",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_CLERIC_STAFF",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_BARBARIAN_AXE",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_BARD_LUTE",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_ALCHEMIST_POTION",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NERD_NERD_1",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NERD_NERD_2",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NERD_NERD_3",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NERD_NERD_4",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NERD_NERD_5",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NERD_NERD_6",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NERD_NERD_7",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NERD_NERD_8",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KULTUR_KULTUR_BRITISCH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KULTUR_KULTUR_FRANZOESISCH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KULTUR_KULTUR_ITALIENISCH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KULTUR_KULTUR_JAPANISCH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KULTUR_KULTUR_INDISCH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KULTUR_KULTUR_MEXIKANISCH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KULTUR_KULTUR_ALPENLAENDISCH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KULTUR_KULTUR_AMERIKANISCH",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KOENIG_KOENIG_1",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KOENIG_KOENIG_2",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KOENIG_KOENIG_3",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KOENIG_KOENIG_4",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KOENIG_KOENIG_5",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KOENIG_KOENIG_6",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KOENIG_KOENIG_7",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_KOENIG_KOENIG_8",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CYBER_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CYBER_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CYBER_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CYBER_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CYBER_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CYBER_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CYBER_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CYBER_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_ZYLINDER_BANKIER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_BOERSENHAENDLER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_KASSENCHEF",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_RENDITE_ORAKEL",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_IMMOBILIEN_MOGUL",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_KREDITHAI",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_KRYPTO_PREDIGER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_OFFSHORE_FIXER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_HOFSTAAT_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_HOFSTAAT_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_HOFSTAAT_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_HOFSTAAT_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_HOFSTAAT_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_HOFSTAAT_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_HOFSTAAT_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_HOFSTAAT_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_18",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_19",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_20",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_21",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_22",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_23",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_24",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_25",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_26",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_27",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_28",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_29",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_30",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_31",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILD_32",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_18",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_19",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_20",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_21",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_22",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_23",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FUZZY_24",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MILITAER_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MILITAER_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MILITAER_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MILITAER_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MILITAER_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MILITAER_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SONDERTRUPP_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SONDERTRUPP_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SONDERTRUPP_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SONDERTRUPP_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SONDERTRUPP_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SONDERTRUPP_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CIA_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CIA_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CIA_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CIA_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CIA_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_CIA_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DEEPSTATE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DEEPSTATE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DEEPSTATE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DEEPSTATE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DEEPSTATE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DEEPSTATE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_18",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_19",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_20",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_21",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_22",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_23",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BOSSE_24",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_ZAUBERKUNST_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GELEHRTE_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GESCHICHTE_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_18",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SURREAL_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SURREAL_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SURREAL_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SURREAL_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SURREAL_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SURREAL_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_NORMIE_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_19",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_20",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_21",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_22",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_23",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_24",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_25",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_26",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_27",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_28",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_29",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_GLU_30",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PRESSE_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_POLITIK_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SUESS_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_OMA_18",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_18",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_19",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_20",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_21",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_22",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_PHILOSOPHIE_23",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FINANZ_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MUSIKER_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_01_MOVIE_STAR",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_02_INFLUENCER",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_03_OPERA_DIVA",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_04_HAUTE_COUTURE",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_05_CARNIVAL_SHOWGIRL",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_06_BOLLYWOOD_GLAMOUR",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_07_FLAMENCO",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_08_GEISHA_FASHION",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_09_VEILED_COUTURE",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_10_PUNK_COUTURE",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_11_SPACE_DIVA",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_12_RESORT_GLAMOUR",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_18",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_19",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_20",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_DIVA_V_21",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_17",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_WILDWEST_V_18",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_SCHAMANE_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FROST_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FROST_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FROST_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FROST_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FROST_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FROST_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_09",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_10",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_11",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_12",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_13",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_14",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_15",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_FORSCHER_16",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BERUFE_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BERUFE_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BERUFE_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BERUFE_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BERUFE_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BERUFE_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BERUFE_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BERUFE_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_V_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_V_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_V_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_V_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_V_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_V_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_V_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_BAU_V_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_V_01",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_V_02",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_V_03",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_V_04",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_V_05",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_V_06",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_V_07",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_RPG_V_08",
+      "status": "QUEUED_SOURCE_AND_CHARACTER_REVIEW",
+      "card_file": null
+    },
+    {
+      "id": "SL_MATROSE_01",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/sailors/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MATROSE_02",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/sailors/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MATROSE_03",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/sailors/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MATROSE_04",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/sailors/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MATROSE_05",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/sailors/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MATROSE_06",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/sailors/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MECHANIKER_01",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/mechanics/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MECHANIKER_02",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/mechanics/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MECHANIKER_03",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/mechanics/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MECHANIKER_04",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/mechanics/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MECHANIKER_05",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/mechanics/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_MECHANIKER_06",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/mechanics/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_PIRAT_01",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/pirates/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_PIRAT_02",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/pirates/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_PIRAT_03",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/pirates/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_PIRAT_04",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/pirates/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_PIRAT_05",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/pirates/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_PIRAT_06",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/pirates/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_ANALOG_01",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-analog/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_ANALOG_02",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-analog/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_ANALOG_03",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-analog/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_ANALOG_04",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-analog/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_ANALOG_05",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-analog/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_ANALOG_06",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-analog/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_01",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-digital/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_02",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-digital/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_03",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-digital/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_04",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-digital/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_05",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-digital/SLOP_CARDS_DESIGN.json"
+    },
+    {
+      "id": "SL_BUERO_DIGITAL_06",
+      "status": "DESIGN_DRAFT_IN_SETS",
+      "card_file": "SETS/office-digital/SLOP_CARDS_DESIGN.json"
+    }
+  ]
+}

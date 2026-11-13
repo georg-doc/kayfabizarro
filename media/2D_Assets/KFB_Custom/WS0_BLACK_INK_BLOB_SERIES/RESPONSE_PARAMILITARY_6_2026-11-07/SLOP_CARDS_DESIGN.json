@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_01",
+      "name": "Vern Checkpoint",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Vern Checkpoint stays improbably official when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Improbably official. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold the line here."
+          ],
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PARAMILITARY_20261107",
+            "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Vern Checkpoint serves with Checkpoint Crew, a paramilitary response detail assigned to HyperNorm disturbances. The olive cap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Vern Checkpoint looks improbably official even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "improbably official",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_02",
+      "name": "Mara Ember",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Mara Ember stays wryly alert when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Wryly alert. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give us a little room."
+          ],
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PARAMILITARY_20261107",
+            "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mara Ember serves with Checkpoint Crew, a paramilitary response detail assigned to HyperNorm disturbances. The rounded olive helmet is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Mara Ember looks wryly alert even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "wryly alert",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_03",
+      "name": "Cobb Sandbag",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cobb Sandbag stays stolidly ready when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Stolidly ready. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I need a closer look."
+          ],
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PARAMILITARY_20261107",
+            "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cobb Sandbag serves with Checkpoint Crew, a paramilitary response detail assigned to HyperNorm disturbances. The small tan sandbag carried against body is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cobb Sandbag looks stolidly ready even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stolidly ready",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_04",
+      "name": "Gil Tether",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Gil Tether stays eager to secure things when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Eager to secure things. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay with your detail."
+          ],
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PARAMILITARY_20261107",
+            "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gil Tether serves with Field Crew, a paramilitary response detail assigned to HyperNorm disturbances. The short coil of tan rope is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Gil Tether looks eager to secure things even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "eager to secure things",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_05",
+      "name": "Rue Marker",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Rue Marker stays suspiciously methodical when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Suspiciously methodical. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We have someone to check on."
+          ],
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PARAMILITARY_20261107",
+            "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Rue Marker serves with Field Crew, a paramilitary response detail assigned to HyperNorm disturbances. The olive cap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Rue Marker looks suspiciously methodical even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "suspiciously methodical",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PARAMILITARY_ACTOR_20261107_06",
+      "name": "Otis Supply",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Otis Supply stays mildly overwhelmed when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Mildly overwhelmed. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have this covered."
+          ],
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PARAMILITARY_20261107",
+            "trio": "WSA_RESPONSE_PARAMILITARY_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Otis Supply serves with Field Crew, a paramilitary response detail assigned to HyperNorm disturbances. The one small olive supply tin is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Otis Supply looks mildly overwhelmed even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "mildly overwhelmed",
+          "src": "RESPONSE_PARAMILITARY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

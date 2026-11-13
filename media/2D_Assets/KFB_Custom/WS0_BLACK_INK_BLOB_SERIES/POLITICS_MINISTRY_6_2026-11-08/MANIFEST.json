@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_POLITICS_MINISTRY_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "POLITICS_MINISTRY_6_2026-11-08/sheet-r1.png",
+    "sha256": "ee09240977fae6a5439417b84d3886f23fb59363d645c80c0bc4dc3e15eddbd4"
+  },
+  "production_record": "POLITICS_MINISTRY_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "POLITICS_MINISTRY_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "POLITICS_MINISTRY_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Six Portfolios",
+    "theme": "The Six Portfolios",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_POLITICS_MINISTRY_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Budgethinge",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_MINISTRY_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "finance minister",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_MINISTRY_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_02",
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "tiny coin scale with two large coins and visible uneven balance"
+      ],
+      "temperament": "Finance minister.",
+      "prompt_auszug": "low broad rounded splat, pinched eyes and pensive frown",
+      "prompt_quelle": "POLITICS_MINISTRY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "finance minister"
+    },
+    {
+      "id": "WSA_POLITICS_MINISTRY_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Diplomat",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_MINISTRY_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "foreign minister",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_MINISTRY_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_01",
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two differently colored small handshake shapes held together as one prop"
+      ],
+      "temperament": "Foreign minister.",
+      "prompt_auszug": "tall curled drop, patient sidelong eyes and polite smile",
+      "prompt_quelle": "POLITICS_MINISTRY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "foreign minister"
+    },
+    {
+      "id": "WSA_POLITICS_MINISTRY_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Doorline",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_MINISTRY_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "interior minister",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_MINISTRY_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_01",
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one miniature key-and-door plate with a chunky keyhole"
+      ],
+      "temperament": "Interior minister.",
+      "prompt_auszug": "wide wavy body, vigilant upturned gaze and tightly closed mouth",
+      "prompt_quelle": "POLITICS_MINISTRY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "interior minister"
+    },
+    {
+      "id": "WSA_POLITICS_MINISTRY_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Caseweight",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_MINISTRY_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "justice minister",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_MINISTRY_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_05",
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small smooth gavel with a soft cushion tied to its head"
+      ],
+      "temperament": "Justice minister.",
+      "prompt_auszug": "curved upright bean, thoughtful side glance and narrow smile",
+      "prompt_quelle": "POLITICS_MINISTRY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "justice minister"
+    },
+    {
+      "id": "WSA_POLITICS_MINISTRY_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Shieldfold",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_MINISTRY_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "defense minister",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_MINISTRY_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_04",
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small folded shield with a hinge and contrasting border"
+      ],
+      "temperament": "Defense minister.",
+      "prompt_auszug": "squat scalloped blob, tense raised eyebrows and worried grimace",
+      "prompt_quelle": "POLITICS_MINISTRY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "defense minister"
+    },
+    {
+      "id": "WSA_POLITICS_MINISTRY_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Vitaldial",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_MINISTRY_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "health minister",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_MINISTRY_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_04",
+        "WSA_POLITICS_MINISTRY_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small handheld pulse dial with a single bold clay zigzag"
+      ],
+      "temperament": "Health minister.",
+      "prompt_auszug": "round uneven drip, startled wide eyes and small O mouth",
+      "prompt_quelle": "POLITICS_MINISTRY_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "health minister"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Six Portfolios",
+    "team_kit": "Warm slate, sage, amber and dusty rose. Each portfolio gets a distinctive compact prop.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_MINISTRY_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_01",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_02",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_MINISTRY_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_04",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_05",
+          "WSA_POLITICS_MINISTRY_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_MINISTRY_ACTOR_20261108_01",
+      "WSA_POLITICS_MINISTRY_ACTOR_20261108_02",
+      "WSA_POLITICS_MINISTRY_ACTOR_20261108_03",
+      "WSA_POLITICS_MINISTRY_ACTOR_20261108_04",
+      "WSA_POLITICS_MINISTRY_ACTOR_20261108_05",
+      "WSA_POLITICS_MINISTRY_ACTOR_20261108_06"
+    ]
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "schema": "kfb.slop-cards/1",
+  "status": "DESIGN",
+  "cards": [
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_01",
+      "name": "Sokrates Nochnefrage",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Asks one harmless question and politely waits for the building to reconsider.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "kayfabizarro_philosophy"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_PHILOSOPHY_20261106"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Asks one harmless question and politely waits for the building to reconsider. His bell interrupts HyperNorm certainty with one more question. A dissonant card asks whether not knowing can be the beginning of good company. The Men in Black demand a single answer; Hunky and Dory keep revising the form. A small exception is quietly kept for a tired neighbour.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Rückfrage ist klein. Ihr Aufenthaltsbedarf wächst.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_02",
+      "name": "Nietzsch Nocheinmal",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Has overcome everything except the need to announce it.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "kayfabizarro_philosophy"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_PHILOSOPHY_20261106"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Has overcome everything except the need to announce it. His HyperNorm sun brooch announces a triumph over inherited rules. A dissonant card asks why everybody must applaud in the prescribed way. Hunky and Dory call doubt a packing error. The Men in Black request certainty; a spare place is quietly kept for a tired neighbour.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Überwindung erfordert weiterhin eine kurze Würdigung.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_03",
+      "name": "Madame Vielleicht",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Finds the reflection convincing enough to demand another opinion.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "kayfabizarro_philosophy"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_PHILOSOPHY_20261106"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Finds the reflection convincing enough to demand another opinion. Her mirror tests whether HyperNorm certainty survives being looked at twice. A dissonant card offers another angle without claiming it is the final one. The Men in Black want a clean answer. Hunky and Dory keep revising the question; the unofficial pauses are left for anyone needing to breathe.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Der Zweifel wurde durch Gegenprüfung zunächst bestätigt.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_04",
+      "name": "Diogenes Weniggenug",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Owns almost nothing and has strong views about the maintenance bill.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "kayfabizarro_philosophy"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_PHILOSOPHY_20261106"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Owns almost nothing and has strong views about the maintenance bill. His little HyperNorm barrel contains enough space for nearly all his needs. A dissonant card needs shelter and complicates his theory of enough. Hunky and Dory praise efficiency while the Men in Black count deviations. The small practical kindnesses remain off the official list.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Der geringe Besitz weist einen bemerkenswerten Verwaltungsaufwand auf.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_05",
+      "name": "Kant Punktgenau",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Would prefer the unforeseen to submit its timetable in advance.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "kayfabizarro_philosophy"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_PHILOSOPHY_20261106"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Would prefer the unforeseen to submit its timetable in advance. His clock admits HyperNorm surprises only at scheduled intervals. A dissonant card arrives early and politely asks who owns the minute. The Men in Black enforce the binary rule; Hunky and Dory raise the quota. In private, a frightened resident still receives patient attention.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Das Unvorhergesehene hat den Termin nicht eingehalten.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_PHILOSOPHY_ACTOR_20261106_06",
+      "name": "Schröda Ungeöffnet",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeps her options open by keeping the lid almost closed.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "kayfabizarro_philosophy"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_PHILOSOPHY_20261106"
+          },
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Keeps her options open by keeping the lid almost closed. Her HyperNorm box remains classified until its lid has supplied an answer. A dissonant card asks whether uncertainty requires a prisoner inside. Hunky and Dory insist that the figures balance. The Men in Black watch the ledger; one small kindness stays deliberately unrecorded.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Möglichkeiten wurden vorsorglich noch nicht geöffnet.",
+          "src": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

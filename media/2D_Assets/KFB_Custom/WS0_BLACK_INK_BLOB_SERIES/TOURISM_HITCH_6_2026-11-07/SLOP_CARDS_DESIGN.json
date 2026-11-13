@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_01",
+      "name": "Mina Thumbsout",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Optimistic hitchhiker with a gift for holding up a group.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Anywhere that way is fine."
+          ],
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_HITCH_20261107",
+            "trio": "WSA_TOURISM_HITCH_20261107_TRIO_A"
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mina Thumbsout booked a place with The Uncertain Lift. Anywhere that way is fine. The incident report lists oversized gloved thumb gesture and blank cardboard sign as the only personal effect accounted for.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Anywhere that way is fine.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "optimistic hitchhiker",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_02",
+      "name": "Ray Wrongway",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Appalled detour traveller with a gift for holding up a group.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We drove past that twice."
+          ],
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_HITCH_20261107",
+            "trio": "WSA_TOURISM_HITCH_20261107_TRIO_A"
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ray Wrongway booked a place with The Uncertain Lift. We drove past that twice. The incident report lists small road map with a boldly doubled-back route as the only personal effect accounted for.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: We drove past that twice.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "appalled detour traveller",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_03",
+      "name": "Fred Ropefix",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Smug roadside repairer with a gift for holding up a group.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The buckle needed less engineering."
+          ],
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_HITCH_20261107",
+            "trio": "WSA_TOURISM_HITCH_20261107_TRIO_A"
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Fred Ropefix booked a place with The Uncertain Lift. The buckle needed less engineering. The incident report lists small duct tape roll and scuffed backpack buckle as the only personal effect accounted for.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: The buckle needed less engineering.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "smug roadside repairer",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_04",
+      "name": "Pippa Pebbleboots",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Weary roadside camper with a gift for holding up a group.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I can sleep on anything except this."
+          ],
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_HITCH_20261107",
+            "trio": "WSA_TOURISM_HITCH_20261107_TRIO_B"
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pippa Pebbleboots booked a place with The Uncertain Lift. I can sleep on anything except this. The incident report lists rolled sleeping bag with a pocket lantern as the only personal effect accounted for.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I can sleep on anything except this.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "weary roadside camper",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_05",
+      "name": "Ollie Liftmaybe",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Skeptical roadside negotiator with a gift for holding up a group.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Can I negotiate the soundtrack?"
+          ],
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_HITCH_20261107",
+            "trio": "WSA_TOURISM_HITCH_20261107_TRIO_B"
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ollie Liftmaybe booked a place with The Uncertain Lift. Can I negotiate the soundtrack? The incident report lists miniature stuffed travel duffel with stitched handle as the only personal effect accounted for.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Can I negotiate the soundtrack?",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "skeptical roadside negotiator",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_06",
+      "name": "Cal Snackmile",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Startled road tripper with a gift for holding up a group.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That was the last water."
+          ],
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_HITCH_20261107",
+            "trio": "WSA_TOURISM_HITCH_20261107_TRIO_B"
+          },
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cal Snackmile booked a place with The Uncertain Lift. That was the last water. The incident report lists crumpled snack bag and giant empty water bottle as the only personal effect accounted for.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: That was the last water.",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled road tripper",
+          "src": "TOURISM_HITCH_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESTORE_FACADE_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESTORE_FACADE_6_2026-11-07/sheet-r1.png",
+    "sha256": "2e0f0a6170b8643f0174fdd12dfa4844da3d0425eaba36e85d0cb7cbd1831ed5"
+  },
+  "production_record": "RESTORE_FACADE_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESTORE_FACADE_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESTORE_FACADE_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Instant Front",
+    "theme": "Rapid Facade Builders",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "restoration encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Archie Foldwall",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_FACADE_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "eager panel lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_FACADE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_FACADE_ACTOR_20261107_02",
+        "WSA_RESTORE_FACADE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one folded flat cream facade panel held entirely inside the figure silhouette"
+      ],
+      "temperament": "Archie Foldwall is the crew's eager panel lead.",
+      "prompt_auszug": "curved upright body, attentive uneven brows and a tight closed pursed mouth",
+      "prompt_quelle": "RESTORE_FACADE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "eager panel lead"
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cleo Extrude",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_FACADE_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "intent nozzle specialist",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_FACADE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_FACADE_ACTOR_20261107_01",
+        "WSA_RESTORE_FACADE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one compact blue mortar-extrusion nozzle with a short yellow grip"
+      ],
+      "temperament": "Cleo Extrude is the crew's intent nozzle specialist.",
+      "prompt_auszug": "slender reverse-comma shape, eager eyes and a narrow open two-upper-tooth grin",
+      "prompt_quelle": "RESTORE_FACADE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "intent nozzle specialist"
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Plumbline",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_FACADE_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "doubtful alignment checker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_FACADE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_FACADE_ACTOR_20261107_01",
+        "WSA_RESTORE_FACADE_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny brass plumb bob on a short cord"
+      ],
+      "temperament": "Ned Plumbline is the crew's doubtful alignment checker.",
+      "prompt_auszug": "broad scalloped silhouette, heavy skeptical eyes and a straight closed dark mouth",
+      "prompt_quelle": "RESTORE_FACADE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "doubtful alignment checker"
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bo Quickbrace",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_FACADE_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "stubborn provisional builder",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_FACADE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_FACADE_ACTOR_20261107_05",
+        "WSA_RESTORE_FACADE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one short stout triangular brace"
+      ],
+      "temperament": "Bo Quickbrace is the crew's stubborn provisional builder.",
+      "prompt_auszug": "lean pear silhouette, one high brow and a closed crooked determined smirk",
+      "prompt_quelle": "RESTORE_FACADE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "stubborn provisional builder"
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Iris Clipfit",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_FACADE_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "wryly precise joiner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_FACADE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_FACADE_ACTOR_20261107_04",
+        "WSA_RESTORE_FACADE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one squat steel panel clip"
+      ],
+      "temperament": "Iris Clipfit is the crew's wryly precise joiner.",
+      "prompt_auszug": "round low body, wide unequal eyes and a tiny startled oval mouth without teeth",
+      "prompt_quelle": "RESTORE_FACADE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "wryly precise joiner"
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otis Finishcoat",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_FACADE_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "exhausted facade finisher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_FACADE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_FACADE_ACTOR_20261107_04",
+        "WSA_RESTORE_FACADE_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one broad flat brush tipped with cream paint"
+      ],
+      "temperament": "Otis Finishcoat is the crew's exhausted facade finisher.",
+      "prompt_auszug": "wide soft square body, half-lidded eyes and a dry closed smile",
+      "prompt_quelle": "RESTORE_FACADE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "exhausted facade finisher"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "restoration_task": "Rapid Facade Builders",
+    "team_kit": "faded sky-blue work caps, cream canvas bib tabs, worn yellow latch panels, clay steel tools with modest retro-sci-fi inserts",
+    "trios": [
+      {
+        "id": "WSA_RESTORE_FACADE_20261107_TRIO_A",
+        "name": "Panel Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESTORE_FACADE_ACTOR_20261107_01",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_02",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESTORE_FACADE_20261107_TRIO_B",
+        "name": "Fit Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESTORE_FACADE_ACTOR_20261107_04",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_05",
+          "WSA_RESTORE_FACADE_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESTORE_FACADE_ACTOR_20261107_01",
+      "WSA_RESTORE_FACADE_ACTOR_20261107_02",
+      "WSA_RESTORE_FACADE_ACTOR_20261107_03",
+      "WSA_RESTORE_FACADE_ACTOR_20261107_04",
+      "WSA_RESTORE_FACADE_ACTOR_20261107_05",
+      "WSA_RESTORE_FACADE_ACTOR_20261107_06"
+    ]
+  },
+  "georg_feedback": "All six cleanup and restoration sheets PASS; minor reference inheritances accepted."
+}

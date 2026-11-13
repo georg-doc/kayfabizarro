@@ -1,0 +1,269 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS4_REPORTERS_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS4_REPORTERS_6_2026-11-06/sheet-r1.png",
+    "sha256": "b00559870040d69a96a1ea53285a80576dde7e895f4fe13258ecd6e0ad540662"
+  },
+  "production_record": "SPORTS4_REPORTERS_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS4_REPORTERS_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS4_REPORTERS_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Die Sendung steht noch",
+    "visual_context": "1930s-to-1970s sports journalism crew,olive-green and mustard collars,felt hats,brass microphones,analogue cameras;no realpresslogos",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "domain": "REPORTERS",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_CANONICAL_LINEUP",
+    "sport_scope": "ALL_SPORTS"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS4_REPORTERS_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kurt Kurzvormikro",
+      "bild": {
+        "datei": "SPORTS4_REPORTERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "ribbed broadcast microphone",
+        "felt hat",
+        "blank presscard"
+      ],
+      "temperament": "He reports the turning point before the game has provided one.",
+      "prompt_auszug": "Kurt Kurzvormikro, male-read. Round pear ink blob with swept crest,excited alert eyes and huge crooked two-upper-tooth open commentary mouth;small olive felt hat with BLANK cream presscard,tiny mustard tie;holds ONE squat vintage ribbed chrome microphone below mouth.",
+      "prompt_quelle": "SPORTS4_REPORTERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "play-by-play commentator"
+    },
+    {
+      "id": "WSA_SPORTS4_REPORTERS_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bruno Brennweite",
+      "bild": {
+        "datei": "SPORTS4_REPORTERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "bellows camera",
+        "round flashbulb",
+        "mustard cap"
+      ],
+      "temperament": "He has photographed every decisive moment except the one everybody remembers.",
+      "prompt_auszug": "Bruno Brennweite, male-read. Very wide scalloped ink blob,low skeptical white eyes,long CLOSED toothless side-frown;mustard flatcap,tiny olive collar;holds ONE chunky bellows presscamera with large round flashbulb at CHEST,not covering face.",
+      "prompt_quelle": "SPORTS4_REPORTERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "sports photographer"
+    },
+    {
+      "id": "WSA_SPORTS4_REPORTERS_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ada Abweichung",
+      "bild": {
+        "datei": "SPORTS4_REPORTERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "three-bar notebook",
+        "stubby pencil",
+        "olive headband"
+      ],
+      "temperament": "She has the numbers and is looking for a compatible event.",
+      "prompt_auszug": "Ada Abweichung, female-read. Tall narrow ink bell with sidequiff,lashes and one high puzzled eyebrow,small pursed toothless mouth;olive headband and cream collar;holds tiny spiralnotebook showing only THREE uneven bar shapes,stubby pencil in other hand.",
+      "prompt_quelle": "SPORTS4_REPORTERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "statistics reporter"
+    },
+    {
+      "id": "WSA_SPORTS4_REPORTERS_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rita Rückfrage",
+      "bild": {
+        "datei": "SPORTS4_REPORTERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short interview microphone",
+        "blank cuecard",
+        "mustard scarf"
+      ],
+      "temperament": "She asks the question the official answer was hoping to avoid.",
+      "prompt_auszug": "Rita Rückfrage, female-read. Compact angular-in-outline rounded diamond ink blob,short sidecrest,lashed sharp sideglance and CLOSED sly smile;small mustard scarf and olive cuffbands;holds short hand microphone at flank and ONE blank folded interviewcard,not pointed at neighbouring actor.",
+      "prompt_quelle": "SPORTS4_REPORTERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "sideline interviewer"
+    },
+    {
+      "id": "WSA_SPORTS4_REPORTERS_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Oskar Ohrensache",
+      "bild": {
+        "datei": "SPORTS4_REPORTERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "headphones",
+        "two-reel recorder",
+        "olive collar"
+      ],
+      "temperament": "He is listening live to a silence nobody has cleared for broadcast.",
+      "prompt_auszug": "Oskar Ohrensache, male-read. Tall crooked comma ink blob,huge anxious unequal eyes and tiny toothless open gasp;large worn brown radio headphones only OVER CREST/ears,eyesclear;small olive collar;holds ONE small portable reel recorder with two round reels at waist.",
+      "prompt_quelle": "SPORTS4_REPORTERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "radio field reporter / sound recordist"
+    },
+    {
+      "id": "WSA_SPORTS4_REPORTERS_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gerd Gegendarstellung",
+      "bild": {
+        "datei": "SPORTS4_REPORTERS_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blank folded newspaper",
+        "olive visor"
+      ],
+      "temperament": "He edits certainty out of the report just before certainty is requested.",
+      "prompt_auszug": "Gerd Gegendarstellung, male-read. Broad domed ink blob with drooping curl,exhausted halflidded eyes and long CLOSED downturned mouth;olive visor,tiny mustard collar;holds ONE small folded cream newspaper with BLANK panels and black rectangles,no words,other hand pinching bridge-of-lid area below brow.",
+      "prompt_quelle": "SPORTS4_REPORTERS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "sports editor / columnist"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

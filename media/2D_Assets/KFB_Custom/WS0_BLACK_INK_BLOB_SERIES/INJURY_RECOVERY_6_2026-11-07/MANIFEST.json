@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_INJURY_RECOVERY_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
+    "sha256": "84299f8926ae4272bc3883a4990673160df0f75c92d174ab51024fa2e8ca1eeb"
+  },
+  "production_record": "INJURY_RECOVERY_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "INJURY_RECOVERY_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "INJURY_RECOVERY_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Recovery Club",
+    "theme": "Convalescents and mobility aids",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "injured resident",
+      "first responder encounter",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_INJURY_RECOVERY_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Giles Crutchstep",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "determined crutch user with wrapped base lobe",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_RECOVERY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_02",
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two short padded crutches held by goo hands, clean base wrap"
+      ],
+      "temperament": "Determined crutch user with wrapped base lobe.",
+      "prompt_auszug": "upright lean blob, steady forward eyes, focused closed smile",
+      "prompt_quelle": "INJURY_RECOVERY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "determined crutch user with wrapped base lobe"
+    },
+    {
+      "id": "WSA_INJURY_RECOVERY_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cora Caseclosed",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "impatient resident wearing an arm cast",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_RECOVERY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_01",
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "smooth white cast held in a simple blue sling"
+      ],
+      "temperament": "Impatient resident wearing an arm cast.",
+      "prompt_auszug": "wide rounded blob, one brow lifted, compressed pout",
+      "prompt_quelle": "INJURY_RECOVERY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "impatient resident wearing an arm cast"
+    },
+    {
+      "id": "WSA_INJURY_RECOVERY_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Theo Seatbrake",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "relieved resident in a compact transport chair",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_RECOVERY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_01",
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small manual chair with two readable wheels, full dark blob settled in seat"
+      ],
+      "temperament": "Relieved resident in a compact transport chair.",
+      "prompt_auszug": "round blob with upright face, relaxed eyelids, warm small smile",
+      "prompt_quelle": "INJURY_RECOVERY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "relieved resident in a compact transport chair"
+    },
+    {
+      "id": "WSA_INJURY_RECOVERY_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rory Strapcheck",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "anxious resident with a side support",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_RECOVERY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_05",
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "smooth curved brace on one lower lobe and one short grab handle"
+      ],
+      "temperament": "Anxious resident with a side support.",
+      "prompt_auszug": "tall bumpy oval, uneven worried eyes, small pinched mouth",
+      "prompt_quelle": "INJURY_RECOVERY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "anxious resident with a side support"
+    },
+    {
+      "id": "WSA_INJURY_RECOVERY_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Slowturn",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary resident with a wrapped head and cane",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_RECOVERY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_04",
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "clean partial head wrap and simple wood cane"
+      ],
+      "temperament": "Weary resident with a wrapped head and cane.",
+      "prompt_auszug": "drooped but upright bean, heavy eyelids, flat mouth",
+      "prompt_quelle": "INJURY_RECOVERY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary resident with a wrapped head and cane"
+    },
+    {
+      "id": "WSA_INJURY_RECOVERY_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Faye Firstwalk",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_RECOVERY_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "gleeful resident making progress with a walker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_RECOVERY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_04",
+        "WSA_INJURY_RECOVERY_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short rounded walker with simple sturdy frame and two feet clearly visible as hardware"
+      ],
+      "temperament": "Gleeful resident making progress with a walker.",
+      "prompt_auszug": "broad upright pear blob, open delighted asymmetrical smile, lifted gaze",
+      "prompt_quelle": "INJURY_RECOVERY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "gleeful resident making progress with a walker"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "injury_family": "Convalescents and mobility aids",
+    "team_kit": "Soft warm ivory dressings, dusty blue and pale sage clothing. Smooth sealed plaster, thick fabric, plain mobility supports.",
+    "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+    "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+    "trios": [
+      {
+        "id": "WSA_INJURY_RECOVERY_20261107_TRIO_A",
+        "name": "First Response Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_01",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_02",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_INJURY_RECOVERY_20261107_TRIO_B",
+        "name": "Follow-up Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_04",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_05",
+          "WSA_INJURY_RECOVERY_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_INJURY_RECOVERY_ACTOR_20261107_01",
+      "WSA_INJURY_RECOVERY_ACTOR_20261107_02",
+      "WSA_INJURY_RECOVERY_ACTOR_20261107_03",
+      "WSA_INJURY_RECOVERY_ACTOR_20261107_04",
+      "WSA_INJURY_RECOVERY_ACTOR_20261107_05",
+      "WSA_INJURY_RECOVERY_ACTOR_20261107_06"
+    ]
+  }
+}

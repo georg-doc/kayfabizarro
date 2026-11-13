@@ -1,0 +1,502 @@
+{
+  "schema": "kfb.slop-production-batch/1",
+  "date": "2026-11-07",
+  "language": "en",
+  "status": "GEORG_DESIGN_PASS",
+  "planned_generation_jobs": 6,
+  "completed_generation_jobs": 6,
+  "image_edit_jobs": 0,
+  "completed_depictions": 36,
+  "independent_identities": 36,
+  "female_read_planned": 12,
+  "georg_status": "PASS",
+  "hud_reference": {
+    "name": "Dreifaches Gadget-Sticker-Set-2.png",
+    "sha256": "95a9d8f05e1d93ed702e26c0cec568dbc0b219d0420bc69cac6552fbcf555188",
+    "usage": "Visual palette and equipment reference supplied by Georg.",
+    "assignments": {
+      "cyan": "Electrical containment",
+      "acid_green": "Acid and slime containment",
+      "yellow": "Industrial hazard containment"
+    }
+  },
+  "encounter_design": {
+    "status": "DESIGN",
+    "selection_policy": "Select a crew by incident. Each sheet provides two fixed details of three and a combined roster of six.",
+    "trio_count": 12,
+    "full_team_count": 6,
+    "suit_direction": "Continuous protective coveralls with sleeves, gloves, visible seams and small exposed ink feet. The face remains visible in an open hood."
+  },
+  "sets": [
+    {
+      "set_id": "WSA_SUITED_CYAN_20261107",
+      "title": "The Arc Detail",
+      "unit": "Electrical Containment",
+      "manifest": "SUITED_CYAN_6_2026-11-07/MANIFEST.json",
+      "sheet": "SUITED_CYAN_6_2026-11-07/sheet-r1.png",
+      "sha256": "bfb20c12cb6c64d3f4982e2735880a6c843cbcb7d2f4c95becc34eda8a543b2b",
+      "git_blob": "60b9a959b2b3eacb20536841570016ba483cb26c",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Electrical Containment",
+        "hud_skin_reference": "cyan",
+        "suit_direction": "Full coverall with small exposed ink feet and protective gloves.",
+        "screen_operator_ids": [
+          "WSA_SUITED_CYAN_ACTOR_20261107_05"
+        ],
+        "team_kit": "left CYAN panel only. Worn blue ceramic armor plates over slate-blue rubber full-body suits, small luminous cyan tubes in riveted rusty blue casings, grey copper couplers, translucent blue dial inserts. Hazard is stray electrical arcs and runaway circuitry.",
+        "trios": [
+          {
+            "id": "WSA_SUITED_CYAN_20261107_TRIO_A",
+            "name": "Surge Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_SUITED_CYAN_ACTOR_20261107_01",
+              "WSA_SUITED_CYAN_ACTOR_20261107_02",
+              "WSA_SUITED_CYAN_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_SUITED_CYAN_20261107_TRIO_B",
+            "name": "Grounding Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_SUITED_CYAN_ACTOR_20261107_04",
+              "WSA_SUITED_CYAN_ACTOR_20261107_05",
+              "WSA_SUITED_CYAN_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_SUITED_CYAN_ACTOR_20261107_01",
+          "WSA_SUITED_CYAN_ACTOR_20261107_02",
+          "WSA_SUITED_CYAN_ACTOR_20261107_03",
+          "WSA_SUITED_CYAN_ACTOR_20261107_04",
+          "WSA_SUITED_CYAN_ACTOR_20261107_05",
+          "WSA_SUITED_CYAN_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_SUITED_ACID_20261107",
+      "title": "The Lime Boundary",
+      "unit": "Acid and Slime Containment",
+      "manifest": "SUITED_ACID_6_2026-11-07/MANIFEST.json",
+      "sheet": "SUITED_ACID_6_2026-11-07/sheet-r1.png",
+      "sha256": "19e18ca0781907cdf7322aa12628277cdd9f08b8b6f4979695c9ffb530873ab8",
+      "git_blob": "ab209e6235486e30c69a9703007c81795611d8a1",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Acid and Slime Containment",
+        "hud_skin_reference": "acid green",
+        "suit_direction": "Full coverall with small exposed ink feet and protective gloves.",
+        "screen_operator_ids": [
+          "WSA_SUITED_ACID_ACTOR_20261107_05"
+        ],
+        "team_kit": "middle GREEN panel only. Acid-lime chemical rubber full-body suits, moss olive riveted seams, lime-fluid vial cores, sculpted slimy drips on tool edges, organic vents. Hazard is corrosive fictional living slime and spores.",
+        "trios": [
+          {
+            "id": "WSA_SUITED_ACID_20261107_TRIO_A",
+            "name": "Spill Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_SUITED_ACID_ACTOR_20261107_01",
+              "WSA_SUITED_ACID_ACTOR_20261107_02",
+              "WSA_SUITED_ACID_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_SUITED_ACID_20261107_TRIO_B",
+            "name": "Capture Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_SUITED_ACID_ACTOR_20261107_04",
+              "WSA_SUITED_ACID_ACTOR_20261107_05",
+              "WSA_SUITED_ACID_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_SUITED_ACID_ACTOR_20261107_01",
+          "WSA_SUITED_ACID_ACTOR_20261107_02",
+          "WSA_SUITED_ACID_ACTOR_20261107_03",
+          "WSA_SUITED_ACID_ACTOR_20261107_04",
+          "WSA_SUITED_ACID_ACTOR_20261107_05",
+          "WSA_SUITED_ACID_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_SUITED_YELLOW_20261107",
+      "title": "The Warning Line",
+      "unit": "Industrial Hazard Containment",
+      "manifest": "SUITED_YELLOW_6_2026-11-07/MANIFEST.json",
+      "sheet": "SUITED_YELLOW_6_2026-11-07/sheet-r1.png",
+      "sha256": "700121dcb1289da3d470a9c9312e257707a1ac50fe0ade0452582fc3efd3d3d4",
+      "git_blob": "5ab4e178cd6d4a8690563819e174bc2849c41976",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Industrial Hazard Containment",
+        "hud_skin_reference": "yellow hazard",
+        "suit_direction": "Full coverall with small exposed ink feet and protective gloves.",
+        "screen_operator_ids": [
+          "WSA_SUITED_YELLOW_ACTOR_20261107_05"
+        ],
+        "team_kit": "right YELLOW panel only. Saffron industrial full-body protective suits with black diagonal warning stripes in short panels, red-orange hoses, silver bolt heads, chunky yellow housings and amber lamps. Hazard is hot machinery and leaking industrial lines.",
+        "trios": [
+          {
+            "id": "WSA_SUITED_YELLOW_20261107_TRIO_A",
+            "name": "Machine Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_SUITED_YELLOW_ACTOR_20261107_01",
+              "WSA_SUITED_YELLOW_ACTOR_20261107_02",
+              "WSA_SUITED_YELLOW_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_SUITED_YELLOW_20261107_TRIO_B",
+            "name": "Perimeter Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_SUITED_YELLOW_ACTOR_20261107_04",
+              "WSA_SUITED_YELLOW_ACTOR_20261107_05",
+              "WSA_SUITED_YELLOW_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_SUITED_YELLOW_ACTOR_20261107_01",
+          "WSA_SUITED_YELLOW_ACTOR_20261107_02",
+          "WSA_SUITED_YELLOW_ACTOR_20261107_03",
+          "WSA_SUITED_YELLOW_ACTOR_20261107_04",
+          "WSA_SUITED_YELLOW_ACTOR_20261107_05",
+          "WSA_SUITED_YELLOW_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_SUITED_QUARANTINE_20261107",
+      "title": "The Soft Seal Ward",
+      "unit": "Full-Suit Quarantine",
+      "manifest": "SUITED_QUARANTINE_6_2026-11-07/MANIFEST.json",
+      "sheet": "SUITED_QUARANTINE_6_2026-11-07/sheet-r1.png",
+      "sha256": "b7b9f388fdb4f28fc56cf561979813f9ca7f9eba848efba60a0e0ab4b79893f2",
+      "git_blob": "a37f6e1ff42c86cf4490d577bae82f4aa02c724c",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Full-Suit Quarantine",
+        "hud_skin_reference": null,
+        "suit_direction": "Full coverall with small exposed ink feet and protective gloves.",
+        "screen_operator_ids": [
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_05"
+        ],
+        "team_kit": "ivory pearl rubber full-body coveralls with deep teal taped seams, pale blue filter pods, soft teal gloves and rounded ivory face rims. Hazard is fictional airborne contamination.",
+        "trios": [
+          {
+            "id": "WSA_SUITED_QUARANTINE_20261107_TRIO_A",
+            "name": "Intake Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_SUITED_QUARANTINE_ACTOR_20261107_01",
+              "WSA_SUITED_QUARANTINE_ACTOR_20261107_02",
+              "WSA_SUITED_QUARANTINE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_SUITED_QUARANTINE_20261107_TRIO_B",
+            "name": "Isolation Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_SUITED_QUARANTINE_ACTOR_20261107_04",
+              "WSA_SUITED_QUARANTINE_ACTOR_20261107_05",
+              "WSA_SUITED_QUARANTINE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_01",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_02",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_03",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_04",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_05",
+          "WSA_SUITED_QUARANTINE_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_SUITED_THERMAL_20261107",
+      "title": "The Ember Crew",
+      "unit": "Thermal Containment",
+      "manifest": "SUITED_THERMAL_6_2026-11-07/MANIFEST.json",
+      "sheet": "SUITED_THERMAL_6_2026-11-07/sheet-r1.png",
+      "sha256": "56438f04a80fc9563c596b1547c3c8550f25d2613a379fab17bc085ec215e5ee",
+      "git_blob": "ce470522ba82c8543723d490c65429c1e93eec0b",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Thermal Containment",
+        "hud_skin_reference": null,
+        "suit_direction": "Full coverall with small exposed ink feet and protective gloves.",
+        "screen_operator_ids": [
+          "WSA_SUITED_THERMAL_ACTOR_20261107_05"
+        ],
+        "team_kit": "brick-red full-body heat coveralls with cream woven panels, charcoal cuffs, muted brass valves, ember-orange warning glass. Hazard is runaway reactor heat and hot ash.",
+        "trios": [
+          {
+            "id": "WSA_SUITED_THERMAL_20261107_TRIO_A",
+            "name": "Heat Survey",
+            "row": 0,
+            "member_ids": [
+              "WSA_SUITED_THERMAL_ACTOR_20261107_01",
+              "WSA_SUITED_THERMAL_ACTOR_20261107_02",
+              "WSA_SUITED_THERMAL_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_SUITED_THERMAL_20261107_TRIO_B",
+            "name": "Cooling Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_SUITED_THERMAL_ACTOR_20261107_04",
+              "WSA_SUITED_THERMAL_ACTOR_20261107_05",
+              "WSA_SUITED_THERMAL_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_SUITED_THERMAL_ACTOR_20261107_01",
+          "WSA_SUITED_THERMAL_ACTOR_20261107_02",
+          "WSA_SUITED_THERMAL_ACTOR_20261107_03",
+          "WSA_SUITED_THERMAL_ACTOR_20261107_04",
+          "WSA_SUITED_THERMAL_ACTOR_20261107_05",
+          "WSA_SUITED_THERMAL_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_SUITED_CARD_20261107",
+      "title": "The Sealed Archive",
+      "unit": "Dangerous Card Containment",
+      "manifest": "SUITED_CARD_6_2026-11-07/MANIFEST.json",
+      "sheet": "SUITED_CARD_6_2026-11-07/sheet-r1.png",
+      "sha256": "cf460a33a4d020d64e962243a9e706f806ae65d09cbf887c94728920b03828b3",
+      "git_blob": "ac8d5b982a673af776b921d2443775e2634c5aca",
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "incident_type": "Dangerous Card Containment",
+        "hud_skin_reference": null,
+        "suit_direction": "Full coverall with small exposed ink feet and protective gloves.",
+        "screen_operator_ids": [
+          "WSA_SUITED_CARD_ACTOR_20261107_01",
+          "WSA_SUITED_CARD_ACTOR_20261107_05"
+        ],
+        "team_kit": "plum-indigo full-body protective suits with ivory ceramic seam plates, muted lilac gloves, dark glass and small bone-white latches. Hazard is fictional dangerous cards and unstable displays.",
+        "trios": [
+          {
+            "id": "WSA_SUITED_CARD_20261107_TRIO_A",
+            "name": "Capture Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_SUITED_CARD_ACTOR_20261107_01",
+              "WSA_SUITED_CARD_ACTOR_20261107_02",
+              "WSA_SUITED_CARD_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_SUITED_CARD_20261107_TRIO_B",
+            "name": "Archive Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_SUITED_CARD_ACTOR_20261107_04",
+              "WSA_SUITED_CARD_ACTOR_20261107_05",
+              "WSA_SUITED_CARD_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_SUITED_CARD_ACTOR_20261107_01",
+          "WSA_SUITED_CARD_ACTOR_20261107_02",
+          "WSA_SUITED_CARD_ACTOR_20261107_03",
+          "WSA_SUITED_CARD_ACTOR_20261107_04",
+          "WSA_SUITED_CARD_ACTOR_20261107_05",
+          "WSA_SUITED_CARD_ACTOR_20261107_06"
+        ]
+      },
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "georg_status": "PASS"
+    }
+  ],
+  "checks": {
+    "source_dimensions": "1536x1024 RGBA",
+    "png_count": 6,
+    "distinct_identity_count": 36,
+    "trios_verified": 12,
+    "background_zero_alpha_samples": 27,
+    "background_samples": 30,
+    "logical_grid_order": "x=512, x=1024, y=512",
+    "sheets": [
+      {
+        "key": "CYAN",
+        "sha256": "bfb20c12cb6c64d3f4982e2735880a6c843cbcb7d2f4c95becc34eda8a543b2b",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 604684,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 1,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          142,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "ACID",
+        "sha256": "19e18ca0781907cdf7322aa12628277cdd9f08b8b6f4979695c9ffb530873ab8",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 590865,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 1,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          27,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "YELLOW",
+        "sha256": "700121dcb1289da3d470a9c9312e257707a1ac50fe0ade0452582fc3efd3d3d4",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 536678,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          184,
+          0,
+          329
+        ]
+      },
+      {
+        "key": "QUARANTINE",
+        "sha256": "b7b9f388fdb4f28fc56cf561979813f9ca7f9eba848efba60a0e0ab4b79893f2",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 601846,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 1,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          182,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "THERMAL",
+        "sha256": "56438f04a80fc9563c596b1547c3c8550f25d2613a379fab17bc085ec215e5ee",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 595521,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          405,
+          0,
+          22
+        ]
+      },
+      {
+        "key": "CARD",
+        "sha256": "cf460a33a4d020d64e962243a9e706f806ae65d09cbf887c94728920b03828b3",
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "fully_transparent_pixels": 635544,
+        "background_samples": {
+          "(0, 0)": 0,
+          "(512, 512)": 0,
+          "(1535, 0)": 0,
+          "(0, 1023)": 0,
+          "(1535, 1023)": 0
+        },
+        "cut_line_alpha128_counts": [
+          57,
+          0,
+          67
+        ]
+      }
+    ]
+  },
+  "review_notes": [
+    {
+      "team": "Acid and Slime Containment",
+      "detail": "The upper-center seal tool reads as a wrench. The lower-left catch tray appears open."
+    },
+    {
+      "team": "Full-Suit Quarantine",
+      "detail": "The lower-right sleeve shows a swab-like prop."
+    },
+    {
+      "scope": "All sheets",
+      "detail": "The full suit kits share a rounded hood and coverall shape. Mouth shapes vary inside each crew."
+    },
+    {
+      "scope": "Extraction",
+      "detail": "The grid defines roster positions. Nominal equal-cell divisions intersect substantial alpha on: CYAN, ACID, YELLOW, QUARANTINE, THERMAL, CARD. Individual contours require extraction review."
+    }
+  ],
+  "runtime_status": "DESIGN_PROPOSALS_PENDING_RECEIVING_REVIEW",
+  "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+}

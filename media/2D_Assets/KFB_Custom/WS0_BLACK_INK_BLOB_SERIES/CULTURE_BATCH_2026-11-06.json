@@ -1,0 +1,159 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "owner": "WSA",
+  "date": "2026-11-06",
+  "status": "GEORG_DESIGN_PASS",
+  "counts": {
+    "sheets": 5,
+    "depictions": 30,
+    "identities": 30,
+    "female_read_identities": 10,
+    "generation_jobs": 5,
+    "layout_edit_jobs": 0
+  },
+  "sets": [
+    {
+      "code": "CINEMA",
+      "set_id": "WSA_CULTURE_CINEMA_20261106",
+      "manifest": "CULTURE_CINEMA_6_2026-11-06/MANIFEST.json",
+      "sha256": "5b366d854db557531925091d9a3b90687dcd06e671facb538edf393355a4c6d4",
+      "git_blob_sha": "bd5f5b9da6f0eb4a4a4a0ee3c3059616473a55dd",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "cinematic_kayfabizarro_2",
+        "user_family_title": "Cinematic Legacy",
+        "registry_title": "Cinematic Legacy & Motion Picture Kayfabe",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/cinematic_kayfabizarro_2.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Silent Film Tramp",
+        "Director with Megaphone",
+        "Popcorn Critic",
+        "Stunt Double Twins",
+        "Film Reel Snake",
+        "Red Carpet Starlet"
+      ]
+    },
+    {
+      "code": "INDUSTRY",
+      "set_id": "WSA_CULTURE_INDUSTRY_20261106",
+      "manifest": "CULTURE_INDUSTRY_6_2026-11-06/MANIFEST.json",
+      "sha256": "c7ce229dcd5326a821f9042e48c72fe494815ab2cfdcde78c0c16714ba9535ad",
+      "git_blob_sha": "55ba0dd91ad946d3ae125ce871e2a8720e9e6a1e",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "sonic_slaughterhouse",
+        "user_family_title": "Music Industry",
+        "registry_title": "Sonic Slaughterhouse — Music Industry",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/sonic_slaughterhouse.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Record Label Shark",
+        "One-Hit Wonder",
+        "Autotune Robot Singer",
+        "Groupie Pair",
+        "Roadie with Amp",
+        "Contract Fine-Print Lawyer"
+      ]
+    },
+    {
+      "code": "ICEBERG",
+      "set_id": "WSA_CULTURE_ICEBERG_20261106",
+      "manifest": "CULTURE_ICEBERG_6_2026-11-06/MANIFEST.json",
+      "sha256": "3ebcbd80aed07f5bbaabcad9e3a18d2c160d63dc9d03c227c57659876be22947",
+      "git_blob_sha": "2935aa9a5f7e4fb104b4762315be44bc49715915",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "sonic_warfare_music_history_01",
+        "user_family_title": "Iceberg Session Cards",
+        "registry_title": "The Iceberg Session Cards",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/sonic_warfare_music_history_01.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Vinyl Crate Digger",
+        "Session Drummer",
+        "Lost Tape Ghost",
+        "Iceberg Tip Rock Star",
+        "Mixing Desk Wizard",
+        "Bootleg Bandit"
+      ]
+    },
+    {
+      "code": "ROMANCE",
+      "set_id": "WSA_CULTURE_ROMANCE_20261106",
+      "manifest": "CULTURE_ROMANCE_6_2026-11-06/MANIFEST.json",
+      "sha256": "111bc8078458c6f8a8e72ae22b1655509ccf43281e9b5627fd484d387e3325f2",
+      "git_blob_sha": "df039637111588a3a735e982d5df4cf3d3ac96eb",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "romantic_kayfabe",
+        "user_family_title": "Love-Wrestling & Heartbreaks",
+        "registry_title": "Romantic Love-Wrestling & Krass Kayfabe-Heartbreaks",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/romantic_kayfabe.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Cupid with Folding Chair",
+        "Heartbreak Kid",
+        "Love Letter Pair",
+        "Jealous Ex Spy",
+        "Wedding Cake Topper Couple",
+        "Rebound Rubber Ball"
+      ]
+    },
+    {
+      "code": "EARNEST",
+      "set_id": "WSA_CULTURE_EARNEST_20261106",
+      "manifest": "CULTURE_EARNEST_6_2026-11-06/MANIFEST.json",
+      "sha256": "766d62b30de2d63884d42dcd706e792992d5f7496daf023425e651ef1b422407",
+      "git_blob_sha": "96ec89705b0bc41b6201fe3b5ba563e82b9fe665",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "the_importance_of_being_kayfab_earnest",
+        "user_family_title": "Kayfab-Earnest",
+        "registry_title": "Oscar Wilde's Importance of KAYFAB-EARNEST",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/the_importance_of_being_kayfab_earnest.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Dandy with Green Carnation",
+        "Lady Bracknell Lorgnette",
+        "Cucumber Sandwich Butler",
+        "Handbag Foundling",
+        "Bunbury Alibi Ghost",
+        "Witty Epigram Bubble"
+      ]
+    }
+  ],
+  "notes": [
+    "Source1536x1024 alpha sheets,not individual native catalogue masters",
+    "Exact actual prompts/reference input roles recorded",
+    "Pair/twin/couple cues in paired inanimate props,no binding actor relations",
+    "One-hit cream collar small-scale readability note retained",
+    "All text lore/cards DESIGN"
+  ],
+  "georg_status": "PASS"
+}

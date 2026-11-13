@@ -1,0 +1,328 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_HISTORY_MAYA_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "HISTORY_MAYA_6_2026-11-07/sheet-r1.png",
+    "sha256": "8dd73d27f12c6a8ea388650dd1dd6bf380c99038df285f56b88589620a83689e"
+  },
+  "production_record": "HISTORY_MAYA_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "HISTORY_MAYA_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "HISTORY_MAYA_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Courtyard Committee",
+    "theme": "Classic Maya-inspired court, workshop and market family",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "historical multiverse encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Paco Lastdate",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_MAYA_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "panicked calendar keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_MAYA_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_MAYA_ACTOR_20261107_02",
+        "WSA_HISTORY_MAYA_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small folded bark-paper-like booklet with simple dot marks"
+      ],
+      "temperament": "Can schedule anything except an interruption.",
+      "prompt_auszug": "tall wobbling droplet, wide uneven eyes, clenched interior two-tooth mouth",
+      "prompt_quelle": "HISTORY_MAYA_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "panicked calendar keeper"
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Brightstone",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_MAYA_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "suspicious jade artisan",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_MAYA_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_MAYA_ACTOR_20261107_01",
+        "WSA_HISTORY_MAYA_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small green polished bead and blunt cord drill"
+      ],
+      "temperament": "Thinks every perfect stone is concealing a flaw.",
+      "prompt_auszug": "wide uneven puddle-shaped base with upright face, narrow sideways eyes, sealed crooked lip",
+      "prompt_quelle": "HISTORY_MAYA_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "suspicious jade artisan"
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Frothwise",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_MAYA_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "delighted cacao steward",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_MAYA_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_MAYA_ACTOR_20261107_01",
+        "WSA_HISTORY_MAYA_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "tall clay cacao cup with a thick swirled foam top and a small pouring lip"
+      ],
+      "temperament": "Maintains morale one carefully guarded serving at a time.",
+      "prompt_auszug": "round generous bean, one eye squeezed joyfully, open sideways laugh with uneven interior teeth",
+      "prompt_quelle": "HISTORY_MAYA_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "delighted cacao steward"
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tomas Straightedge",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_MAYA_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "indignant courtyard mason",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_MAYA_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_MAYA_ACTOR_20261107_05",
+        "WSA_HISTORY_MAYA_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short stone square and compact basket of smooth limestone blocks"
+      ],
+      "temperament": "Believes a crooked step can undermine public confidence.",
+      "prompt_auszug": "squared squat blob, one huge offended eye and one heavy lid, tiny pursed pout",
+      "prompt_quelle": "HISTORY_MAYA_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "indignant courtyard mason"
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Orrin Softbounce",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_MAYA_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overconfident court athlete",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_MAYA_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_MAYA_ACTOR_20261107_04",
+        "WSA_HISTORY_MAYA_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small heavy rubber ball held on a padded belt at belly"
+      ],
+      "temperament": "Regards every bounce as applause.",
+      "prompt_auszug": "lean curved ink splat, smug eyes aimed down, narrow closed grin",
+      "prompt_quelle": "HISTORY_MAYA_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "overconfident court athlete"
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lina Threadagain",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_MAYA_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary textile maker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_MAYA_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_MAYA_ACTOR_20261107_04",
+        "WSA_HISTORY_MAYA_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small folded patterned cloth and chunky wooden weaving shuttle"
+      ],
+      "temperament": "Can repair a social fabric but charges extra for certainty.",
+      "prompt_auszug": "broad teardrop, sleepy opposite-direction gaze, sagging closed mouth",
+      "prompt_quelle": "HISTORY_MAYA_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary textile maker"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "historical_family": "Classic Maya-inspired court, workshop and market family",
+    "team_kit": "short cotton-like cream wraps with brick red and jade-green accents, carved jade bead collar, restrained woven headbands; ink faces clear, no giant feather towers",
+    "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+    "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+    "trios": [
+      {
+        "id": "WSA_HISTORY_MAYA_20261107_TRIO_A",
+        "name": "Court Circle",
+        "row": 0,
+        "member_ids": [
+          "WSA_HISTORY_MAYA_ACTOR_20261107_01",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_02",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_HISTORY_MAYA_20261107_TRIO_B",
+        "name": "Market Circle",
+        "row": 1,
+        "member_ids": [
+          "WSA_HISTORY_MAYA_ACTOR_20261107_04",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_05",
+          "WSA_HISTORY_MAYA_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_HISTORY_MAYA_ACTOR_20261107_01",
+      "WSA_HISTORY_MAYA_ACTOR_20261107_02",
+      "WSA_HISTORY_MAYA_ACTOR_20261107_03",
+      "WSA_HISTORY_MAYA_ACTOR_20261107_04",
+      "WSA_HISTORY_MAYA_ACTOR_20261107_05",
+      "WSA_HISTORY_MAYA_ACTOR_20261107_06"
+    ]
+  }
+}

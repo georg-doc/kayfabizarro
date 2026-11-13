@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_SCHOOL_STAFF_ACTOR_20261108_01",
+      "name": "Alf Bellrule",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School principal.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I can hear every corridor."
+          ],
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_STAFF_20261108",
+            "trio": "WSA_SCHOOL_STAFF_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The School Keeps Running, Alf Bellrule takes the role of school principal. “I can hear every corridor.”",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one small brass handbell and a slim folder held to the side.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school principal",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_STAFF_ACTOR_20261108_02",
+      "name": "Cobb Keyring",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Caretaker.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That's the door that sticks."
+          ],
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_STAFF_20261108",
+            "trio": "WSA_SCHOOL_STAFF_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The School Keeps Running, Cobb Keyring takes the role of caretaker. “That's the door that sticks.”",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short oversized keyring with three visibly different keys.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "caretaker",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_STAFF_ACTOR_20261108_03",
+      "name": "Mara Floorloop",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School cleaner.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The clean part starts here."
+          ],
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_STAFF_20261108",
+            "trio": "WSA_SCHOOL_STAFF_20261108_TRIO_A"
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The School Keeps Running, Mara Floorloop takes the role of school cleaner. “The clean part starts here.”",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small hand mop with a short handle and little bright bucket at flank.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school cleaner",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_STAFF_ACTOR_20261108_04",
+      "name": "Faye Ladleline",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School cook.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One more scoop for the quiet table."
+          ],
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_STAFF_20261108",
+            "trio": "WSA_SCHOOL_STAFF_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The School Keeps Running, Faye Ladleline takes the role of school cook. “One more scoop for the quiet table.”",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: stubby ladle and a small food bowl.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school cook",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_STAFF_ACTOR_20261108_05",
+      "name": "Len Crosswatch",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School crossing guard.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Wait for the gap."
+          ],
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_STAFF_20261108",
+            "trio": "WSA_SCHOOL_STAFF_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The School Keeps Running, Len Crosswatch takes the role of school crossing guard. “Wait for the gap.”",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one short crossing paddle with simple white stripes and a slim reflective sash.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school crossing guard",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SCHOOL_STAFF_ACTOR_20261108_06",
+      "name": "Ned Stampnote",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "School office clerk.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Expressive cartoon English delivery.",
+            "audio": null
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That came in after the bell."
+          ],
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SCHOOL_STAFF_20261108",
+            "trio": "WSA_SCHOOL_STAFF_20261108_TRIO_B"
+          },
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The School Keeps Running, Ned Stampnote takes the role of school office clerk. “That came in after the bell.”",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small wooden date stamp with blank base and two cream slips.",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "school office clerk",
+          "src": "SCHOOL_STAFF_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

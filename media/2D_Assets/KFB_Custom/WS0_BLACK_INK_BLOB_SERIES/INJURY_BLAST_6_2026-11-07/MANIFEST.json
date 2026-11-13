@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_INJURY_BLAST_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
+    "sha256": "14da458bfeaa836d396df593f1cd51b1a0c28243713ec76ad84daefb7a314011"
+  },
+  "production_record": "INJURY_BLAST_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "INJURY_BLAST_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "INJURY_BLAST_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Blast Survivors",
+    "theme": "Explosion impact",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "injured resident",
+      "first responder encounter",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_INJURY_BLAST_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Bellring",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dazed blast survivor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BLAST_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_BLAST_ACTOR_20261107_02",
+        "WSA_INJURY_BLAST_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "large padded ear protectors held against the sides of her head"
+      ],
+      "temperament": "Dazed blast survivor.",
+      "prompt_auszug": "a broad low rounded splat, offset bewildered eyes, tiny open O mouth",
+      "prompt_quelle": "INJURY_BLAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "dazed blast survivor"
+    },
+    {
+      "id": "WSA_INJURY_BLAST_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Fraycape",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled survivor with singed clothing",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BLAST_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_BLAST_ACTOR_20261107_01",
+        "WSA_INJURY_BLAST_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short ochre cape with a chunky curled scorched hem and forearm bandage"
+      ],
+      "temperament": "Startled survivor with singed clothing.",
+      "prompt_auszug": "tall tilted droplet, eyes looking down at the hem, tucked nervous teeth",
+      "prompt_quelle": "INJURY_BLAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "startled survivor with singed clothing"
+    },
+    {
+      "id": "WSA_INJURY_BLAST_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Puffback",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "stunned pressure-wave survivor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BLAST_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_BLAST_ACTOR_20261107_01",
+        "WSA_INJURY_BLAST_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "folded cream triangular sling supporting a limp goo hand"
+      ],
+      "temperament": "Stunned pressure-wave survivor.",
+      "prompt_auszug": "squashed square body, eyelids at different heights, flattened crooked lips",
+      "prompt_quelle": "INJURY_BLAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "stunned pressure-wave survivor"
+    },
+    {
+      "id": "WSA_INJURY_BLAST_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Sootblink",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "irritated soot-covered resident",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BLAST_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_BLAST_ACTOR_20261107_05",
+        "WSA_INJURY_BLAST_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "torn pale scarf held in one hand and a clean forehead patch"
+      ],
+      "temperament": "Irritated soot-covered resident.",
+      "prompt_auszug": "thick teardrop with two broad soot swipes, fierce sidelong glare, tight pout",
+      "prompt_quelle": "INJURY_BLAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "irritated soot-covered resident"
+    },
+    {
+      "id": "WSA_INJURY_BLAST_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Dustwrap",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "composed survivor protecting a hurt shoulder",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BLAST_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_BLAST_ACTOR_20261107_04",
+        "WSA_INJURY_BLAST_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small cool blue gel pack and big white wrap around shoulder lobe"
+      ],
+      "temperament": "Composed survivor protecting a hurt shoulder.",
+      "prompt_auszug": "upright comma blob, steady gaze, strained one-sided grimace",
+      "prompt_quelle": "INJURY_BLAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "composed survivor protecting a hurt shoulder"
+    },
+    {
+      "id": "WSA_INJURY_BLAST_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Aftershock",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_BLAST_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "alarmed survivor waiting for help",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_BLAST_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_BLAST_ACTOR_20261107_04",
+        "WSA_INJURY_BLAST_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "rolled red rescue blanket held at belly, taped temple pad"
+      ],
+      "temperament": "Alarmed survivor waiting for help.",
+      "prompt_auszug": "round scalloped blob, raised brows, jaw slightly dropped",
+      "prompt_quelle": "INJURY_BLAST_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "alarmed survivor waiting for help"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "injury_family": "Explosion impact",
+    "team_kit": "Smoky gray and dusty ochre with clean ivory wraps. A few large, soft soot marks on surface and simple singed garment hems.",
+    "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+    "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+    "trios": [
+      {
+        "id": "WSA_INJURY_BLAST_20261107_TRIO_A",
+        "name": "First Response Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_INJURY_BLAST_ACTOR_20261107_01",
+          "WSA_INJURY_BLAST_ACTOR_20261107_02",
+          "WSA_INJURY_BLAST_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_INJURY_BLAST_20261107_TRIO_B",
+        "name": "Follow-up Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_INJURY_BLAST_ACTOR_20261107_04",
+          "WSA_INJURY_BLAST_ACTOR_20261107_05",
+          "WSA_INJURY_BLAST_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_INJURY_BLAST_ACTOR_20261107_01",
+      "WSA_INJURY_BLAST_ACTOR_20261107_02",
+      "WSA_INJURY_BLAST_ACTOR_20261107_03",
+      "WSA_INJURY_BLAST_ACTOR_20261107_04",
+      "WSA_INJURY_BLAST_ACTOR_20261107_05",
+      "WSA_INJURY_BLAST_ACTOR_20261107_06"
+    ]
+  }
+}

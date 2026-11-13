@@ -1,0 +1,46 @@
+{
+  "schema": "kfb.slop-tier-rows/1",
+  "status": "DESIGN",
+  "columns": [
+    "Trash",
+    "Common",
+    "Elite"
+  ],
+  "rows": [
+    {
+      "row": 0,
+      "identity": "WSA_RPG_BARBAR_20261105",
+      "class": "barbar",
+      "name": "Grunz Grundsatz",
+      "members": [
+        "WSA_RPG_BARBAR_20261105_T1",
+        "WSA_RPG_BARBAR_20261105_T2",
+        "WSA_RPG_BARBAR_20261105_T3"
+      ],
+      "readings": [
+        "same identity escalating",
+        "siblings",
+        "gang"
+      ]
+    },
+    {
+      "row": 1,
+      "identity": "WSA_RPG_KULTIST_20261105",
+      "class": "kultist",
+      "name": "Schwester Restgewissheit",
+      "members": [
+        "WSA_RPG_KULTIST_20261105_T1",
+        "WSA_RPG_KULTIST_20261105_T2",
+        "WSA_RPG_KULTIST_20261105_T3"
+      ],
+      "readings": [
+        "same identity escalating",
+        "siblings",
+        "gang"
+      ]
+    }
+  ],
+  "source_stage_contract": "georg-doc/KFB-Stunt-Car-Race@1535d4cff060002cb082776876a129b07bd710fc/src/data/mobs2d/slop-sammeln.r1.json",
+  "absurdity": "Separate axis; not inferred from tier.",
+  "runtime_changes": false
+}

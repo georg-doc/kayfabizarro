@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-bf1fe6ce-d5f8-4127-b368-09474ca529b7.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "82115b3302e253fd07f78bd9d03d79eb3160ecc5539d6ee4b6faeda483f35aa3",
+  "git_blob_sha": "30a426fad6fa68b17c501ead1a79da5f8a8d23b5",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Make a new KFB soft claymation ink blob sprite sheet, Interpreters for the Untranslatable. The original inputs are style references for rounded footless whole dark charcoal-plum organic splat bodies, tiny ink hands, thick filled modeled eyelids, cream white sclera, red iris and black pupil. Exactly six independent complete upright figures in three columns and two rows, landscape 1536×1024 real transparent PNG. Equal substantial scale. Keep each silhouette, drops and all held props within its own cell, generous clear alpha gutters and margins. No stage, floor, shadows, scenery, border, branding or labels. Large sparse hand-shaped marks, gentle smooth satin clay, broad fabric folds, clear glass and clean finished plastic. Avoid dense grit and stipple. Tiny costume accents, dominant ink body and distinct readable expressions. Teeth behind lips. Do not inherit reference wings, eyepatches or costumes. Palette: Charcoal with desaturated plum, mustard, mint and cream, sparse desk accessories. Row-major cast:\n1. Female-read door-creak interpreter. tall curved blob, intent side gaze and lifted listening eyebrow. Key cue: one small old brass hinge attached to a short handheld wooden block.\n2. Male-read recorder of meaningful pauses. broad low bean, half lids and quietly serious mouth. Key cue: small blank notebook and one pocket hourglass with clear glass.\n3. Male-read archivist of shrugs. upright squared blob, shoulders raised, worried wide eyes. Key cue: stack of three chunky little unlettered binders held close below face.\n4. Male-read translator of sighs. low wide splat, tired drooping eyes and little open mouth. Key cue: small soft air bulb with a round simple dial, held at flank.\n5. Female-read interpreter of porcelain sounds. slim reverse comma, curious eyes and compact smile. Key cue: one small saucer and a spoon held near the ear lobe.\n6. Male-read subtitler of raised eyebrows. round scalloped blob, one visibly raised eyebrow and cautious grin. Key cue: one blank speech-shaped clay token and a tiny pencil.\nSix distinct standalone cutouts and strongly differentiated body shapes."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "selection_history": [],
+  "material_change": "Gentle charcoal/plum satin clay with broader sparse surface marks and smoother liquid, plastic and glass props.",
+  "georg_status": "PASS"
+}

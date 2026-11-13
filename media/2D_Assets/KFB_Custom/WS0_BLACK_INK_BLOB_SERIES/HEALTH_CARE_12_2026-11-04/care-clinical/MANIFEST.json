@@ -1,0 +1,194 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CARE_CLINICAL_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+    "sha256": "92c504462735ba939d538b002fae4e04425604c38e0318723dbbd3c644cdafd8"
+  },
+  "production_record": "HEALTH_CARE_12_2026-11-04/care-clinical/PRODUCTION_RECORD.json",
+  "cards": "HEALTH_CARE_12_2026-11-04/care-clinical/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source intake allowed; historical seam/crop evidence retained, no new gate invented."
+  },
+  "figuren": [
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Eigenbefund",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "stethoscope"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 FEMALE-READ chief physician: tall broad-bottom pear ink blob, swept violet goo quiff, tiny cream medical collar and small copper earstud. Frozen grand self-assurance, one raised lid and one almost closed, CLOSED crooked two-fang smirk, eyes sideways. Presses the comically HUGE round brass diaphragm of a thick burgundy stethoscope to her OWN goo body, listening intently. One simple beautiful prop, not human anatomy, no red cross.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/care-clinical/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "accepted_deviations": [
+        "Stethoscope detail incorrect; explicitly accepted by Georg as playing away in context."
+      ]
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pfleger Nachtschicht",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "hot-water bottle",
+        "folded towel"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 male exhausted NIGHT NURSE: very low broad soft ink splat, two small drooping crown lobes, tiny teal scrub collar. Deep flat sagging lower lip, single broad bottom tooth, heavy white-eyed lids looking down, utterly spent but tender. Both goo hands cradle one plump faded coral rubber hot-water bottle wrapped in a single ivory folded towel like precious treasure. Whole ink base visible.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/care-clinical/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Bissfest",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "ivory tooth model",
+        "dental mirror"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male proud DENTAL TECHNICIAN: compact almost spherical ink blob, cream small cap tilted, one brass monocle above eye. Eccentric enormous sideways CLENCHED irregular tooth smile, one eye squeezed and other wide. One hand delicately holds one absurdly enormous sculpted ivory molar MODEL, other holds a tiny round brass dental mirror reflecting nothing readable. No patient or surgery.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/care-clinical/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Professor Durchsicht",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass magnifier",
+        "tiny ivory bone model"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 male baffled DIAGNOSTIC EXAMINER: tall thin crooked bean splat, soft indigo cap and tiny worn ivory shoulder collar. Huge unequal white/red/black eyes looking inward, long offended crooked UNDERBITE with three widely spaced teeth. Holds enormous thick brass magnifying glass in front of one eye, which is visibly enlarged; opposite palm displays a TINY harmless ivory bone teaching model. Just two simple rounded props.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/care-clinical/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Dringlichkeitsgrad",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ticket roll",
+        "rubber stamp"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 FEMALE-READ TRIAGE ADMINISTRATOR: squat broad springy splat with coral curled goo bun and tiny teal collar. Strained wide CLENCHED grin, one white eye wide upward and one skeptical squint, lip pushed sideways. Holds a fat cream roll of blank tickets at belly and presses one big red rubber stamp into the roll end with frustrated certainty. Ticket remains short and inside her cell; no text/cross.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/care-clinical/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_CARE_CLINICAL_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Mörserruhe",
+      "bild": {
+        "datei": "HEALTH_CARE_12_2026-11-04/care-clinical/health-clinical-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wooden mortar and pestle"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 male old PHARMACIST: medium tall drooping asymmetric triangular-rounded ink splat, soft moss cap, tiny burgundy collar and brass pince-nez. Completely FLAT tight mouth with two little teeth peeking, heavy half-lids downward. Two broad goo hands tenderly grind a single rounded wooden mortar and thick short ivory pestle against own belly, patient concentration. Beautiful worn clay wood, no bottles/recipe/medicine labels.",
+      "prompt_quelle": "HEALTH_CARE_12_2026-11-04/care-clinical/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ],
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04",
+    "verdict": "all24PASS",
+    "accepted_detail_deviation": "Incorrect stethoscope detail accepted as non-blocking; no correction requested."
+  }
+}

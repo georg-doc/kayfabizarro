@@ -1,0 +1,207 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_EXPLORERS_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+    "sha256": "613b2f3856045d00bdf6d04a52566884f929a97f99b407383c1ffc5ec22b9a53"
+  },
+  "production_record": "EXPLORERS_PIONEERS_2026-11-04/PRODUCTION_RECORD.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/explorers/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      4
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_ENTDECKER_01",
+      "id_scope": "canonical_roster",
+      "name": "Dr. Bereitsbekannt",
+      "bild": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT: stout wide jungle pathfinder, lumpy four-lobed squat splat, battered olive pith helmet with one absurdly huge leaf stuck in brim, only short khaki collar/scarf.",
+          "Grips a thick curved expedition machete low at side and a small bunch of very large strange purple bananas with a single peel curling like a tentacle."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT: stout wide jungle pathfinder, lumpy four-lobed squat splat, battered olive pith helmet with one absurdly huge leaf stuck in brim, only short khaki collar/scarf. Suspicious one-eye squint, other eye looking left, compressed crooked underbite with three uneven teeth. Grips a thick curved expedition machete low at side and a small bunch of very large strange purple bananas with a single peel curling like a tentacle. Grizzled stubborn physical presence.",
+      "prompt_quelle": "EXPLORERS_PIONEERS_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ENTDECKER_02",
+      "id_scope": "canonical_roster",
+      "name": "Dr. Ada Scherbenglück",
+      "bild": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP CENTER: FEMALE-READ exuberant pyramid archaeologist, taller leaning pear silhouette with long curling goo crest, burnt-coral tied headscarf and small dusty sand-colored neckerchief."
+        ]
+      },
+      "prompt_auszug": "TOP CENTER: FEMALE-READ exuberant pyramid archaeologist, taller leaning pear silhouette with long curling goo crest, burnt-coral tied headscarf and small dusty sand-colored neckerchief. Wide delighted red-pupilled eyes, big asymmetrical open tooth grin, subtle lashes. One hand gently brushes a chunky jade scarab artifact in her other palm with a fat worn excavation brush; scarab has oversized rounded wings and gold insets. Beautiful tangible clay object, no hieroglyph text or floating symbols.",
+      "prompt_quelle": "EXPLORERS_PIONEERS_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ENTDECKER_03",
+      "id_scope": "canonical_roster",
+      "name": "Professor Kartenknick",
+      "bild": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT: very old desert surveyor, low sagging puddle shape, floppy faded indigo sunhat, little round brass spectacles resting low beneath enormous drooping lids, mouth a bored lopsided sigh with single long tooth.",
+          "Both goo hands struggle to hold a huge unfurled parchment map curling vigorously back around his goo sides; one large rounded brass compass hangs off map edge."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT: very old desert surveyor, low sagging puddle shape, floppy faded indigo sunhat, little round brass spectacles resting low beneath enormous drooping lids, mouth a bored lopsided sigh with single long tooth. Both goo hands struggle to hold a huge unfurled parchment map curling vigorously back around his goo sides; one large rounded brass compass hangs off map edge. No readable writing or map labels, parchment curls do the physical cartoon work. Pyramids implied only by expedition kit.",
+      "prompt_quelle": "EXPLORERS_PIONEERS_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ENTDECKER_04",
+      "id_scope": "canonical_roster",
+      "name": "Herr Erstkontakt",
+      "bild": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT: alien-planet botanical pioneer, tall narrow springy goo with asymmetric upper lobes and brass aviator goggles on forehead, faded mustard short shoulder cape.",
+          "Eyes crossed toward a giant bulbous teal alien mushroom he's holding at nose height; nose absent, amused astonished O-shaped mouth with two lower teeth."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT: alien-planet botanical pioneer, tall narrow springy goo with asymmetric upper lobes and brass aviator goggles on forehead, faded mustard short shoulder cape. Eyes crossed toward a giant bulbous teal alien mushroom he's holding at nose height; nose absent, amused astonished O-shaped mouth with two lower teeth. A short-handled rounded field trowel in other hand; mushroom thick coral-pink gills and fat cream stem, three large lilac spots, strange fleshy clay craft. No background growth/scenery, single specimen prop.",
+      "prompt_quelle": "EXPLORERS_PIONEERS_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ENTDECKER_05",
+      "id_scope": "canonical_roster",
+      "name": "Dr. Alma Gegenprobe",
+      "bild": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Holds a chunky round glass specimen jar against belly; inside one simple lime-green slug with absurdly big antenna bulbs presses its face to glass; other hand raises a bold brass magnifier at jar."
+        ]
+      },
+      "prompt_auszug": "BOTTOM CENTER: FEMALE-READ skeptical xenobiologist, compact broad sideways-leaning ink splat, weathered teal field hood pushed back around one soft curled goo quiff, two tiny modeled lashes. Half-lidded unimpressed red gaze, crooked CLOSED smile with one snaggle fang. Holds a chunky round glass specimen jar against belly; inside one simple lime-green slug with absurdly big antenna bulbs presses its face to glass; other hand raises a bold brass magnifier at jar. Round heavy glass translated into clay language, uncluttered readable silhouette. No lab coat torso.",
+      "prompt_quelle": "EXPLORERS_PIONEERS_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_ENTDECKER_06",
+      "id_scope": "canonical_roster",
+      "name": "Professor Kurbelweg",
+      "bild": {
+        "datei": "EXPLORERS_PIONEERS_2026-11-04/explorers-pioneers-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT: manic veteran expedition inventor, big nearly spherical splat with small drooping bottom lobes, one tall goo curl, worn reddish leather aviator cap and small scratched brass monocle.",
+          "One eye wide and one narrowed, huge wild lopsided laugh with uneven teeth and pink tongue.",
+          "Cradles a chunky retro brass field scanner like a concertina: round analog dial (no numbers), one broad flared sensing horn and short thick side handle."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT: manic veteran expedition inventor, big nearly spherical splat with small drooping bottom lobes, one tall goo curl, worn reddish leather aviator cap and small scratched brass monocle. One eye wide and one narrowed, huge wild lopsided laugh with uneven teeth and pink tongue. Cradles a chunky retro brass field scanner like a concertina: round analog dial (no numbers), one broad flared sensing horn and short thick side handle. One hand turns a big red winding crank. Worn 1930s retro-sci-fi device, only a few large shapes, no cables clutter, no lightning or floating icons.",
+      "prompt_quelle": "EXPLORERS_PIONEERS_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

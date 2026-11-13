@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_POLITICS_STATE_ACTOR_20261108_01",
+      "name": "Ned Seatbell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Presiding officer.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The bell has the floor."
+          ],
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_STATE_20261108",
+            "trio": "WSA_POLITICS_STATE_20261108_TRIO_A"
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Long Order of Business, Ned Seatbell takes the role of presiding officer. “The bell has the floor.”",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: little bell with a padded striker held close.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "presiding officer",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_STATE_ACTOR_20261108_02",
+      "name": "Mara Minutehand",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cabinet minute taker.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I'll record the silence as present."
+          ],
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_STATE_20261108",
+            "trio": "WSA_POLITICS_STATE_20261108_TRIO_A"
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Long Order of Business, Mara Minutehand takes the role of cabinet minute taker. “I'll record the silence as present.”",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: tiny open blank notebook and a short blunt pencil.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "cabinet minute taker",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_STATE_ACTOR_20261108_03",
+      "name": "Theo Floorclaim",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Backbench speaker.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "My point is nearly short."
+          ],
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_STATE_20261108",
+            "trio": "WSA_POLITICS_STATE_20261108_TRIO_A"
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Long Order of Business, Theo Floorclaim takes the role of backbench speaker. “My point is nearly short.”",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: compact handheld speech token with a sculpted upward arrow.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "backbench speaker",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_STATE_ACTOR_20261108_04",
+      "name": "Otto Rubberstamp",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Senior civil servant.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It arrived in triplicate."
+          ],
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_STATE_20261108",
+            "trio": "WSA_POLITICS_STATE_20261108_TRIO_B"
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Long Order of Business, Otto Rubberstamp takes the role of senior civil servant. “It arrived in triplicate.”",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one chunky date stamp with a blank base and tied paper slip.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "senior civil servant",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_STATE_ACTOR_20261108_05",
+      "name": "Ivy Fileturn",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Registry clerk.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "File under almost done."
+          ],
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_STATE_20261108",
+            "trio": "WSA_POLITICS_STATE_20261108_TRIO_B"
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Long Order of Business, Ivy Fileturn takes the role of registry clerk. “File under almost done.”",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two tiny file jackets joined by an oversize removable clip.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "registry clerk",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_POLITICS_STATE_ACTOR_20261108_06",
+      "name": "Perry Queuecode",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Public service desk officer.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry cartoon English delivery.",
+            "audio": null
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "You're number next."
+          ],
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_POLITICS_STATE_20261108",
+            "trio": "WSA_POLITICS_STATE_20261108_TRIO_B"
+          },
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Long Order of Business, Perry Queuecode takes the role of public service desk officer. “You're number next.”",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small spool of blank queue tickets with one exposed ticket.",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "public service desk officer",
+          "src": "POLITICS_STATE_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

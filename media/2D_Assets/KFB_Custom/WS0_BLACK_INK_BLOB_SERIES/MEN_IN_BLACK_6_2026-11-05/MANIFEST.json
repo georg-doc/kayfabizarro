@@ -1,0 +1,286 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MEN_IN_BLACK_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "MEN_IN_BLACK_6_2026-11-05/sheet-r1.png",
+    "sha256": "9ad5a234c6f4f4430490e177c1ca64ead6d3999d677bd984c9f84578da77d206"
+  },
+  "production_record": "MEN_IN_BLACK_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "MEN_IN_BLACK_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "MEN_IN_BLACK_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "family_context": {
+    "name": "Referat für eindeutige Angelegenheiten",
+    "roles": [
+      "section chief/handler",
+      "field agent",
+      "listening technician",
+      "redaction officer",
+      "interviewer",
+      "observation photographer"
+    ],
+    "temperaments": [
+      "deadpan authority / concealed anxiety",
+      "cool scrutiny / controlled predatory confidence",
+      "nervous over-attention / uncertainty about evidence",
+      "offended procedural precision / compulsive certainty",
+      "over-polite scrutiny / apparent warmth under institutional pressure",
+      "embarrassed vigilance / suspicious need for proof"
+    ],
+    "shared_outfit": "black lapel accents, ivory shirt collar, narrow black tie; optional earpiece/low glasses",
+    "adaptation": "Original fictional Men-in-Black/CIA-spook-style Ink Slop agents; no real agency claims, performer likenesses or movie character identities",
+    "canon_scope": "New source-only visual candidates, not replacements/identity assignments of existing canonical Men in Black or an automatic escalation-tier mapping",
+    "lore_status": "DESIGN proposal under existing Slop metanarrative; receiving WS0 maps actual role/IDs",
+    "relationship_policy": "Shared bureau context only; no pair/state/trio/combat-tier binding",
+    "standalone_actors": true
+  },
+  "figuren": [
+    {
+      "id": "WSA_MEN_IN_BLACK_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Agent Zuständig",
+      "bild": {
+        "datei": "MEN_IN_BLACK_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small black fedora",
+        "black lapels, ivory collar and narrow black tie",
+        "black leather attache case with silver clasps"
+      ],
+      "temperament": "deadpan authority / concealed anxiety",
+      "prompt_auszug": "MALE-READ SECTION CHIEF / HANDLER. Huge broad low pear blob with one short folded crown loop, small worn BLACK FEDORA, shared black lapels/ivory collar/thin black tie. Deadpan authoritarian fatigue: one half-lidded white eye huge, opposite compressed, one brow high and other drooped, enormous CLOSED crooked lower lip with one lower tooth. Both hands hold ONE short broad BLACK LEATHER ATTACHE CASE against belly, two bold silver clasps and sturdy handle, no labels. Grip more anxious than face, no weapon.",
+      "prompt_quelle": "MEN_IN_BLACK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MEN_IN_BLACK_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Agentin Ohnebefund",
+      "bild": {
+        "datei": "MEN_IN_BLACK_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short dark clay quiff",
+        "shared black lapels/ivory collar/tie",
+        "silver earpiece",
+        "folded black sunglasses held low",
+        "short silver penlight"
+      ],
+      "temperament": "cool scrutiny / controlled predatory confidence",
+      "prompt_auszug": "FEMALE-READ FIELD AGENT. Tall hooked bean with two small crown nubs, one short dark clay quiff, subtle lashes, shared collar/tie/lapels and one tiny silver earpiece. Cool predatory confidence: white eyes look SIDEWAYS in unequal squints, one raised arched brow and one low straight brow, tiny CLOSED asymmetrical smirk with one small upper fang. One hand holds ONE pair of thick BLACK SUNGLASSES folded LOW against own belly, well below chin; other holds ONE short fat silver PENLIGHT with plain rounded lens end pointing DOWN. No beam, glowing gadget, film-specific device or sunglasses on head/eyes.",
+      "prompt_quelle": "MEN_IN_BLACK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MEN_IN_BLACK_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Agent Nebenspur",
+      "bild": {
+        "datei": "MEN_IN_BLACK_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "shared black lapels/ivory collar/tie",
+        "earpiece with short coiled cord",
+        "compact two-reel recorder with red button"
+      ],
+      "temperament": "nervous over-attention / uncertainty about evidence",
+      "prompt_auszug": "MALE-READ LISTENING TECHNICIAN. Round top-heavy ink dumpling with three uneven fat crown drops, no hat, shared suit accents. Nervous over-attention: two huge unequal white eyes look UP in different directions, inner brows raised, small clenched mouth with one central tooth and puffed lower lip. One earpiece with a short coiled BLACK CORD visibly connects to ONE chunky compact REEL-TO-REEL RECORDER held at belly: two simple silver reels, one obvious dark tape strip, one red button, handle. Two round reels only, no impossible machinery or text. One hand touches own earpiece, other supports recorder.",
+      "prompt_quelle": "MEN_IN_BLACK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MEN_IN_BLACK_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Referent Schwärzlein",
+      "bild": {
+        "datei": "MEN_IN_BLACK_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "shared black lapels/ivory collar/tie",
+        "cream dossier with three black bars",
+        "short rectangular rubber stamp with red handle"
+      ],
+      "temperament": "offended procedural precision / compulsive certainty",
+      "prompt_auszug": "MALE-READ REDACTION OFFICER. Broad near-square soft splat with one drooping sideways lobe, no hat, shared collar/tie/lapels. Precise offended indignation: white eyes glare DOWN unevenly, one hard low brow and other raised in disbelief, skewed shallow rectangular mouth with three clenched unequal teeth and huge lip. Holds ONE thick cream DOSSIER FOLDER with exactly THREE bold BLACK REDACTION BARS across its cover, no actual writing. Other hand grips ONE squat rectangular BLACK RUBBER STAMP with red wooden handle low against body. No stamped words or censorship scene, just props.",
+      "prompt_quelle": "MEN_IN_BLACK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MEN_IN_BLACK_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Agentin Nurkurz",
+      "bild": {
+        "datei": "MEN_IN_BLACK_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short curled clay side lock",
+        "shared black lapels/ivory collar/tie",
+        "plain ivory coffee cup",
+        "open black badge wallet with blank silver oval"
+      ],
+      "temperament": "over-polite scrutiny / apparent warmth under institutional pressure",
+      "prompt_auszug": "FEMALE-READ INTERVIEWER, unsettlingly pleasant. Compact wavy-edged pear blob with one short curled clay side lock, subtle lashes, shared black suit accents. Over-polite apparent warmth concealing scrutiny: huge white eyes stare directly toward viewer at slightly different openness, eyebrows curved unequally, stretched SHALLOW crooked smile with two tiny widely spaced teeth, tense cheek fold. One hand cradles ONE small plain IVORY COFFEE CUP at own belly; other shows ONE small open BLACK BADGE WALLET with plain dull silver OVAL insert, blank with no logo/text. No table, chair, restraints or another person.",
+      "prompt_quelle": "MEN_IN_BLACK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MEN_IN_BLACK_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Agent Augenmaß",
+      "bild": {
+        "datei": "MEN_IN_BLACK_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small black felt hat",
+        "shared black lapels/ivory collar/tie",
+        "large black box camera with single silver-rimmed lens and flash reflector"
+      ],
+      "temperament": "embarrassed vigilance / suspicious need for proof",
+      "prompt_auszug": "MALE-READ OBSERVATION PHOTOGRAPHER. Tall bent kidney blob with coiled crown curl, little narrow-brim black felt hat tilted back, shared collar/tie/lapels. Furious embarrassed vigilance: one enormous white eye stares SIDEWAYS and other squints, asymmetric high/low brows, almost CLOSED nervous sneer with one offset tooth, enormous lower lip. Both hands hug ONE oversized old BLACK BOX CAMERA at lower belly, one huge silver-rimmed round lens, one short silver FLASH REFLECTOR at side and a thick simple shutter button. No flash firing, film reels, tripod, camera raised over eyes or extra gadget. Entire camera complete within own cell.",
+      "prompt_quelle": "MEN_IN_BLACK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha max254/low-alpha residue; final production cleanup pending",
+    "Logical3x2cells are not certified safe fixed512crops; individual contour isolation pending",
+    "No game sprites or safe extraction rectangles asserted"
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: alle Pass und können eingecheckt werden."
+  }
+}

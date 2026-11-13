@@ -1,0 +1,535 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_WORKERS2_20261104",
+  "figuren": [
+    {
+      "id": "SL_ARBEITER_07",
+      "name": {
+        "v": "Herr Reststoff",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He finds the city's most durable opinions stuck to his tools.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "the_carnival_of_unsolved_problems_therapy",
+                "grimms_kayfabe_legends_expansion_set_02",
+                "jung_and_shinn_a_guide_to_cosmic_cringe"
+              ],
+              "biome": [
+                "moos",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_ARBEITER_07",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Oben",
+            "delivery": "measured dry pauses",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Was weg soll, haftet auffallend gut. Er führt das auf die Beschlusslage zurück.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_WORKERS2_20261104",
+        "image_cell": {
+          "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "prompt_excerpt": "TOP LEFT slot7 MUNICIPAL STREET CLEANER: tall bent bean-like blob with one dramatically drooping upper goo lobe, faded turquoise peaked work cap and a small orange reflective collar strip. One eye wide other sleepy, lopsided compressed mouth exposing THREE flat uneven teeth, pupils looking down. He grips thick wood-handled trash grabber pinching a SINGLE absurdly large pink discarded chewing-gum wad, other hand holds round galvanized pail. Tactile worn clay metal, no clutter/ground."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_ARBEITER_08",
+      "name": {
+        "v": "Berta Mörtelherz",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She builds carefully because affection also needs something that sets.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "the_carnival_of_unsolved_problems_therapy",
+                "grimms_kayfabe_legends_expansion_set_02",
+                "jung_and_shinn_a_guide_to_cosmic_cringe"
+              ],
+              "biome": [
+                "moos",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_ARBEITER_08",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Mitte",
+            "delivery": "brisk clipped precision",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Sie hält zwei Steine zusammen. Der Rest des Gemeinwesens soll bitte kurz warten.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_WORKERS2_20261104",
+        "image_cell": {
+          "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "prompt_excerpt": "TOP MIDDLE slot8 FEMALE-READ BRICKLAYER: compact low squashed splat, broad bottom lobes, small coral tied headscarf and short dusty cream collar. Ecstatic SQUINTING smile with both eyes crescent lids but WHITE sclera RED iris BLACK pupil visible; one broad ivory tooth and tiny fang, no tongue. Both strong goo hands tenderly press a beautifully chunky red brick onto a second brick held at belly level, fat cream mortar squeezing out like frosting; one rounded clay trowel tucked under arm. Two bricks only, no wall/scenery."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_ARBEITER_09",
+      "name": {
+        "v": "Nils Nietfrage",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He studies one oversized rivet as if it might finally explain the specification.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "the_carnival_of_unsolved_problems_therapy",
+                "grimms_kayfabe_legends_expansion_set_02",
+                "jung_and_shinn_a_guide_to_cosmic_cringe"
+              ],
+              "biome": [
+                "moos",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_ARBEITER_09",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Mitte",
+            "delivery": "low weary drawl",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Das Teil entspricht der Vorgabe. Er sucht noch die passende Wirklichkeit dazu.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_WORKERS2_20261104",
+        "image_cell": {
+          "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "prompt_excerpt": "TOP RIGHT slot9 SHIPYARD RIVETER: towering narrow rounded triangular ink splat with little side droplets, old leather welding goggles raised and single large orange ear protector, short faded indigo work collar. Expression bewildered LEFTWARD tilted underbite with THREE widely spaced long ivory teeth, broad LOWER lip, WHITE eyes red iris black pupil gazing UP at one too-large rivet held at eye level. Other hand holds a chunky red pneumatic rivet gun, lowered. No round mouth, tongue, helmet or grin."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_ARBEITER_10",
+      "name": {
+        "v": "Frau Faltenlage",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She removes creases from everything except her understanding of the customers.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "the_carnival_of_unsolved_problems_therapy",
+                "grimms_kayfabe_legends_expansion_set_02",
+                "jung_and_shinn_a_guide_to_cosmic_cringe"
+              ],
+              "biome": [
+                "moos",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_ARBEITER_10",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Bass",
+            "delivery": "earnest rising urgency",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Die Wäsche wird glatt. Die Geschichte dahinter faltet sie ordentlich zurück.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_WORKERS2_20261104",
+        "image_cell": {
+          "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "prompt_excerpt": "BOTTOM LEFT slot10 FEMALE-READ COMMERCIAL LAUNDRY WORKER: very broad low wavy ink puddle, teal work kerchief and little round brass spectacles on forehead, subtle lashes. One eye almost closed in a knowing wink and other looking RIGHT, CLOSED asymmetric smile with single ivory fang. Hauls a soft basket full of TWO huge rolled ivory towels, one arm lifting a giant wooden clothes peg clipped onto corner of one towel. Beautiful rounded wicker/cloth modeled clay, joyful exhausted strength, no human torso."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_ARBEITER_11",
+      "name": {
+        "v": "Herr Drehmoment",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He tightens loose connections with a conviction nobody funded properly.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "the_carnival_of_unsolved_problems_therapy",
+                "grimms_kayfabe_legends_expansion_set_02",
+                "jung_and_shinn_a_guide_to_cosmic_cringe"
+              ],
+              "biome": [
+                "moos",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_ARBEITER_11",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Bass",
+            "delivery": "warm conspiratorial aside",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Er zieht nach. Die Verantwortung war leider schon beim ersten Anziehen rund.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_WORKERS2_20261104",
+        "image_cell": {
+          "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "prompt_excerpt": "BOTTOM MIDDLE slot11 RAILWAY TRACK MAINTAINER: spherical heavy compact splat with thick low side lobes, dented rusty-red hardhat, tiny mustard neckerchief. Furious concentration, enormous clenched jagged teeth pressing SIDEWAYS, one eye partly occluded by bulky lid, other WHITE/red/black facing tool. Grips a big thick-handled railway wrench on a SINGLE short rusty rail clamp held against belly. Strong very few broad forms, no track scene or ground, no small bolts clutter."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_ARBEITER_12",
+      "name": {
+        "v": "Herr Nachtabfuhr",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He collects abandoned ambitions and occasionally finds one still capable of making noise.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "the_carnival_of_unsolved_problems_therapy",
+                "grimms_kayfabe_legends_expansion_set_02",
+                "jung_and_shinn_a_guide_to_cosmic_cringe"
+              ],
+              "biome": [
+                "moos",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_ARBEITER_12",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Bass",
+            "delivery": "compressed indignant emphasis",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Die Trompete war zum Wegwerfen bestimmt. Sie hat offenbar eine abweichende Stellungnahme.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_WORKERS2_20261104",
+        "image_cell": {
+          "datei": "WORKERS_CEOS_DUO_2026-11-04/workers-sheet-r2.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "prompt_excerpt": "BOTTOM RIGHT slot12 NIGHT-SHIFT REFUSE COLLECTOR: medium tall slumped pear blob with a long curling goo crest, faded green cap reversed and tiny orange high-vis collar. Mouth deep downward weary CURVE with two small bottom teeth barely peeking, neither grin nor open/tongue; drooping lids with WHITE eyes RED iris BLACK pupils gazing LEFT. One goo hand holds a soft tied black refuse sack from which a single large bent brass trumpet bell sticks out absurdly; other hand lifts lid of a small dented galvanized trash can at side. Simple tactile disposables, no labels or smell lines."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    }
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_01",
+      "name": "Paco Lastdate",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can schedule anything except an interruption.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "This day was already booked.",
+            "Can the emergency wait?"
+          ],
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_MAYA_20261107",
+            "trio": "WSA_HISTORY_MAYA_20261107_TRIO_A"
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "His HyperNorm calendar has a designated day for events that were not meant to happen.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The emergency has been postponed to a more auspicious box.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "panicked calendar keeper",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_02",
+      "name": "Bram Brightstone",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Thinks every perfect stone is concealing a flaw.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Too perfect. Look again.",
+            "Keep the dust."
+          ],
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_MAYA_20261107",
+            "trio": "WSA_HISTORY_MAYA_20261107_TRIO_A"
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He polishes away all ambiguous reflections for the Men in Black, then saves the dust.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The dust is acquiring opinions.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "suspicious jade artisan",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_03",
+      "name": "Mara Frothwise",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Maintains morale one carefully guarded serving at a time.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "A little more foam?",
+            "This is the approved welcome."
+          ],
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_MAYA_20261107",
+            "trio": "WSA_HISTORY_MAYA_20261107_TRIO_A"
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hunky and Dory demand an approved welcome; Mara pours it from an unapproved height.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Hospitality has exceeded the recommended foam.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "delighted cacao steward",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_04",
+      "name": "Tomas Straightedge",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Believes a crooked step can undermine public confidence.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The steps object.",
+            "I followed the plan."
+          ],
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_MAYA_20261107",
+            "trio": "WSA_HISTORY_MAYA_20261107_TRIO_B"
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He gives each HyperNorm rebuilding a straighter edge and the same impossible plan.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The staircase has arrived at a philosophical objection.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "indignant courtyard mason",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_05",
+      "name": "Orrin Softbounce",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Regards every bounce as applause.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That bounce was mine.",
+            "Are we counting applause?"
+          ],
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_MAYA_20261107",
+            "trio": "WSA_HISTORY_MAYA_20261107_TRIO_B"
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The Men in Black use his demonstrations to distract residents from the exposed card.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: He is leading on points. Nobody has agreed what points are.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "overconfident court athlete",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_MAYA_ACTOR_20261107_06",
+      "name": "Lina Threadagain",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can repair a social fabric but charges extra for certainty.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The loose thread is working.",
+            "Please stop repairing it."
+          ],
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_MAYA_20261107",
+            "trio": "WSA_HISTORY_MAYA_20261107_TRIO_B"
+          },
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Her HyperNorm wraps use an official repeating pattern; one thread quietly takes another route.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The exception is holding the cloth together.",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "weary textile maker",
+          "src": "HISTORY_MAYA_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

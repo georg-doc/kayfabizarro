@@ -1,0 +1,328 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_HISTORY_STONE_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "HISTORY_STONE_6_2026-11-07/sheet-r1.png",
+    "sha256": "4853be8dfb5dae6901e817098e87a9857b5985be6bace1ff77a6150bd430d594"
+  },
+  "production_record": "HISTORY_STONE_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "HISTORY_STONE_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "HISTORY_STONE_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The First Residents",
+    "theme": "Stone Age daily-life multiverse family",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "historical multiverse encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_HISTORY_STONE_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Flint Secondtry",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_STONE_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "flint knapper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_STONE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_STONE_ACTOR_20261107_02",
+        "WSA_HISTORY_STONE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short blunt antler tool and one chipped flint handaxe"
+      ],
+      "temperament": "A perfectionist who is still on the first draft.",
+      "prompt_auszug": "low wide splat, one eye clenched in concentration, bitten-in closed lip, shoulders raised",
+      "prompt_quelle": "HISTORY_STONE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "flint knapper"
+    },
+    {
+      "id": "WSA_HISTORY_STONE_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Bigidea",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_STONE_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "proud tool inventor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_STONE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_STONE_ACTOR_20261107_01",
+        "WSA_HISTORY_STONE_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "oversized stone hammer on a very short wood handle"
+      ],
+      "temperament": "Treats every impact as a breakthrough.",
+      "prompt_auszug": "tall crooked droplet, enormous delighted eyes, small triumphant two-upper-tooth smile",
+      "prompt_quelle": "HISTORY_STONE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "proud tool inventor"
+    },
+    {
+      "id": "WSA_HISTORY_STONE_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Oona Hearthwise",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_STONE_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "disapproving hearth keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_STONE_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_STONE_ACTOR_20261107_01",
+        "WSA_HISTORY_STONE_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "shallow clay bowl of dark cold charcoal with one tiny ember"
+      ],
+      "temperament": "Patient with fire and spectacularly impatient with advice.",
+      "prompt_auszug": "round soft square, one raised eyelid, compressed sideways pout, elbow firmly tucked",
+      "prompt_quelle": "HISTORY_STONE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "disapproving hearth keeper"
+    },
+    {
+      "id": "WSA_HISTORY_STONE_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Mammothmaybe",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_STONE_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "terrified tracker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_STONE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_STONE_ACTOR_20261107_05",
+        "WSA_HISTORY_STONE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "stubby wood spear with blunt stone tip and a little tuft of shed mammoth fur tied to shaft"
+      ],
+      "temperament": "Hears a large animal in every small silence.",
+      "prompt_auszug": "lean tilted pear, huge offset gaze toward fur, teeth tucked behind trembling lower lip",
+      "prompt_quelle": "HISTORY_STONE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "terrified tracker"
+    },
+    {
+      "id": "WSA_HISTORY_STONE_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pippa Ochremark",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_STONE_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "ecstatic cave artist",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_STONE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_STONE_ACTOR_20261107_04",
+        "WSA_HISTORY_STONE_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short ochre crayon and small flat rock with one simple handprint"
+      ],
+      "temperament": "Sees an unapproved mural in every empty wall.",
+      "prompt_auszug": "broad asymmetrical heart-shaped blob, one eye rolled up in inspiration, skew wide open laugh with teeth inside mouth",
+      "prompt_quelle": "HISTORY_STONE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "ecstatic cave artist"
+    },
+    {
+      "id": "WSA_HISTORY_STONE_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Provisions",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_STONE_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "suspicious gatherer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_STONE_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_STONE_ACTOR_20261107_04",
+        "WSA_HISTORY_STONE_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small reed basket with three enormous clay berries"
+      ],
+      "temperament": "Counts lunch as a strategic reserve.",
+      "prompt_auszug": "compact bean with lopsided lobes, narrow side-eye, crooked tight closed smile",
+      "prompt_quelle": "HISTORY_STONE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "suspicious gatherer"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "historical_family": "Stone Age daily-life multiverse family",
+    "team_kit": "warm ochre hide capes, sinew ties, flint, bone and red earth; all organic ink body visible, no modern boots",
+    "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+    "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+    "trios": [
+      {
+        "id": "WSA_HISTORY_STONE_20261107_TRIO_A",
+        "name": "Hearth Circle",
+        "row": 0,
+        "member_ids": [
+          "WSA_HISTORY_STONE_ACTOR_20261107_01",
+          "WSA_HISTORY_STONE_ACTOR_20261107_02",
+          "WSA_HISTORY_STONE_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_HISTORY_STONE_20261107_TRIO_B",
+        "name": "Gathering Circle",
+        "row": 1,
+        "member_ids": [
+          "WSA_HISTORY_STONE_ACTOR_20261107_04",
+          "WSA_HISTORY_STONE_ACTOR_20261107_05",
+          "WSA_HISTORY_STONE_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_HISTORY_STONE_ACTOR_20261107_01",
+      "WSA_HISTORY_STONE_ACTOR_20261107_02",
+      "WSA_HISTORY_STONE_ACTOR_20261107_03",
+      "WSA_HISTORY_STONE_ACTOR_20261107_04",
+      "WSA_HISTORY_STONE_ACTOR_20261107_05",
+      "WSA_HISTORY_STONE_ACTOR_20261107_06"
+    ]
+  }
+}

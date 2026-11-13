@@ -1,0 +1,283 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_PHILOSOPHY_DUNGEON_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "PHILOSOPHY_DUNGEON_6_2026-11-06/sheet-r1.png",
+    "sha256": "5d7af2807a7bcb81205901550b7774eb83d08b24152928ee3e54c6d4070893f2"
+  },
+  "production_record": "PHILOSOPHY_DUNGEON_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "PHILOSOPHY_DUNGEON_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "PHILOSOPHY_DUNGEON_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Plato's Dungeon Raids",
+    "visual_context": "Fictional philosophical/academic fantasy archetypes; free thematic inspiration,not exact historical/scientific or canonical-card depiction",
+    "relationship_policy": "Shared thematic deck ensemble; distinct standalone identities,no pair/state/trio/tier binding",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Fictional academic authority,certainty,philosophical doubt and fantasy class archetypes;not factual claims about real thinkers"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Schattenwart Wirklichso",
+      "bild": {
+        "datei": "PHILOSOPHY_DUNGEON_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plum cap",
+        "small hinged shadow screen",
+        "bird-shaped cutout stick"
+      ],
+      "temperament": "Can make a small object cast an impressively complete explanation.",
+      "prompt_auszug": "Schattenwart Wirklichso, maennlich-read. Cave Shadow Puppeteer: tall hooked ink splat,small smoky-plum cave cap,ONE little hinged cream shadow screen held at flank with a simple inanimate flat bird-shaped cutout on short stick in other hand,no actual cave/extra puppet creature. Gleeful crooked grin with THREE upper teeth,one eyelid raised. Personality: Can make a small object cast an impressively complete explanation.",
+      "prompt_quelle": "PHILOSOPHY_DUNGEON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarros_ontological_hazards",
+      "user_concept": "Cave Shadow Puppeteer"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Idealwart Makellos",
+      "bild": {
+        "datei": "PHILOSOPHY_DUNGEON_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "ivory geometric cap",
+        "stone medallion",
+        "golden sphere on hand plinth"
+      ],
+      "temperament": "Disapproves of every example for failing to be the idea.",
+      "prompt_auszug": "Idealwart Makellos, maennlich-read. Ideal Form Statue interpreted black INK not stone human: squat broad symmetric-ish ink splat with deliberately uneven lobes,small ivory geometric cap,tiny stone medallion,ONE perfectly smooth golden sphere held on little plinth in goo hand,not standing on pedestal. Severe asymmetric closed toothless pout,one eye almost narrowed shut. Personality: Disapproves of every example for failing to be the idea.",
+      "prompt_quelle": "PHILOSOPHY_DUNGEON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarros_ontological_hazards",
+      "user_concept": "Ideal Form Statue"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gefangener Zweifach",
+      "bild": {
+        "datei": "PHILOSOPHY_DUNGEON_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "two linked wrist cuffs",
+        "short chain",
+        "empty spare cuff"
+      ],
+      "temperament": "Has been told he is not alone and would like to inspect the arrangement.",
+      "prompt_auszug": "Gefangener Zweifach, maennlich-read. Chained Prisoner Pair metaphor kept SIX actors total: ONE round top-heavy ink blob with TWO iron wrist cuffs linked by ONE short chain across own two goo hands,one extra EMPTY cuff dangling from small side loop as absent counterpart cue,no second prisoner. Huge unequal pleading eyes,small quivering toothless open mouth,whole blob upright. Personality: Has been told he is not alone and would like to inspect the arrangement.",
+      "prompt_quelle": "PHILOSOPHY_DUNGEON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarros_ontological_hazards",
+      "user_concept": "Chained Prisoner Pair"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "König Schlussendlich",
+      "bild": {
+        "datei": "PHILOSOPHY_DUNGEON_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "crooked gold crown",
+        "burgundy collar",
+        "closed ivory book"
+      ],
+      "temperament": "Has considered every objection that reached him in an approved form.",
+      "prompt_auszug": "König Schlussendlich, maennlich-read. Philosopher King: tall broad-based pear blob,small crooked gold crown ABOVE eyes,tiny burgundy shoulder collar,ONE small closed ivory book held like final authority. Hooded side-eye,closed crooked toothless lip line,comically absolute patience. Personality: Has considered every objection that reached him in an approved form.",
+      "prompt_quelle": "PHILOSOPHY_DUNGEON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarros_ontological_hazards",
+      "user_concept": "Philosopher King"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sophistin Glattweg",
+      "bild": {
+        "datei": "PHILOSOPHY_DUNGEON_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "teal laurel band",
+        "brass speaking horn",
+        "blank scroll"
+      ],
+      "temperament": "Can make either side sound like the room's original intention.",
+      "prompt_auszug": "Sophistin Glattweg, weiblich-read. Sophist Smooth Talker: broad lopsided round blob,small teal laurel headband,two lashes,tiny cream collar,ONE beautifully polished brass speaking horn held at flank and single blank rolled scroll. Enormous charming crooked open smile with TWO upper teeth,one eye knowingly narrowed. Personality: Can make either side sound like the room's original intention.",
+      "prompt_quelle": "PHILOSOPHY_DUNGEON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarros_ontological_hazards",
+      "user_concept": "Sophist Smooth Talker"
+    },
+    {
+      "id": "WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fackelführerin Vielleichtdort",
+      "bild": {
+        "datei": "PHILOSOPHY_DUNGEON_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "rust traveller cap",
+        "cream scarf",
+        "short clay-flame torch"
+      ],
+      "temperament": "Shows the way while privately hoping the way has noticed.",
+      "prompt_auszug": "Fackelführerin Vielleichtdort, weiblich-read. Torch Bearer Guide: tall narrow curved blob,small rust traveller cap and short cream scarf,two subtle lashes,ONE short torch with one warm solid modeled orange clay flame held off to side within cell,no background fire or cave. One wide hopeful eye one anxious eye,nervous closed toothless smile. Personality: Shows the way while privately hoping the way has noticed.",
+      "prompt_quelle": "PHILOSOPHY_DUNGEON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "kayfabizarros_ontological_hazards",
+      "user_concept": "Torch Bearer Guide"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "deck_binding": {
+    "deck_id": "kayfabizarros_ontological_hazards",
+    "user_family_title": "Plato's Dungeon Raids",
+    "registry_title": "Plato’s Dungeon Raids",
+    "source_repo": "georg-doc/kayfabizarro",
+    "source_path": "registry/assets/v1/decks/kayfabizarros_ontological_hazards.json",
+    "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+    "status": "THEMATIC_DESIGN_PROPOSAL",
+    "exact_card_mapping": null
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "kfb.slop-production-batch/1",
+  "date": "2026-11-07",
+  "language": "en",
+  "status": "GEORG_DESIGN_PASS",
+  "generation_jobs": 3,
+  "edit_jobs": 0,
+  "retries": 0,
+  "depictions": 18,
+  "independent_identities": 18,
+  "female_read_planned": 6,
+  "format": "SIX_UNIQUE_3X2",
+  "game_role_assignment": "PROPOSALS_ONLY; no automatic combat tier/hits/NPC assignment",
+  "style": "Original-reference-conditioned; same accepted gentle charcoal/plum clay steering",
+  "sets": [
+    {
+      "set_id": "WSA_REACTIONS_ALARM_20261107",
+      "title": "The Unexpected Residents",
+      "manifest": "REACTIONS_ALARM_6_2026-11-07/MANIFEST.json",
+      "sheet": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
+      "sha256": "5b236ac8151496493af74fc7e785130570d265ef41b620873cc5cf4fca65b89a",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "names": [
+        "Stanley Startle",
+        "Penny Scatter",
+        "Basil Surelynot",
+        "Dot Standstill",
+        "Sid Sideglance",
+        "Nora Overload"
+      ],
+      "states": [
+        "startled",
+        "panicked",
+        "incredulous",
+        "frozen in shock",
+        "suspicious",
+        "overwhelmed"
+      ]
+    },
+    {
+      "set_id": "WSA_REACTIONS_CONTACT_20261107",
+      "title": "Small Openings",
+      "manifest": "REACTIONS_CONTACT_6_2026-11-07/MANIFEST.json",
+      "sheet": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
+      "sha256": "b30e754cd6193521491e275555f7efcc4f95086f42a676c5ad7b74c32024154c",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "names": [
+        "Grace Afterall",
+        "Gilbert Muchobliged",
+        "Alf AlmostaParty",
+        "Hope Perhaps",
+        "Cecil Seenit",
+        "Morris Makesroom"
+      ],
+      "states": [
+        "relieved",
+        "grateful",
+        "awkwardly delighted",
+        "guardedly hopeful",
+        "embarrassed",
+        "compassionate concern"
+      ]
+    },
+    {
+      "set_id": "WSA_REACTIONS_FRICTION_20261107",
+      "title": "The Last Small Inconvenience",
+      "manifest": "REACTIONS_FRICTION_6_2026-11-07/MANIFEST.json",
+      "sheet": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
+      "sha256": "4e02255dbccc5bb05cfc0c5b987d640aed1f464d5873e0e00ab1bd0bb69429c6",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true,
+      "names": [
+        "Percy Outrage",
+        "Bert Wontbudge",
+        "Tess Anyminute",
+        "Arthur FineThen",
+        "Winnie Lastwink",
+        "Felix Notmyproblem"
+      ],
+      "states": [
+        "indignant",
+        "defiant",
+        "impatient",
+        "resigned",
+        "exhausted",
+        "barely concealed schadenfreude"
+      ]
+    }
+  ],
+  "technical_notes": [
+    "All three1536x1024RGBA alpha0..254;15background samples,13zero and2one.",
+    "No certified individual extraction, catalogue native-single masters, registry update or runtime tests.",
+    "Friction bottom-right gained lashes and may read more ambiguously than the planned male-read figure.",
+    "English game-facing names/cards/biographies;receiving-schema keys/enum tokens retained with English display values."
+  ],
+  "georg_status": "PASS"
+}

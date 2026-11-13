@@ -1,0 +1,138 @@
+{
+  "schema": "kfb.slop-golden-reference/1",
+  "scope": "GEORG_DESIGN_REFERENCE_NOT_ALPHA_MASTER_CERTIFICATION",
+  "style_source": "Composer0.2.3 originals;unchanged hashes;source pixels must be supplied to actual generation",
+  "originals": [
+    {
+      "filename": "fa536a8d-8c4c-4a00-8575-506b8d6484cc.png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "library_id": "libfile_675ccace12788191b3513ff9f1984364",
+      "role": "body/material",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "bytes": 1802767,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht freche Tinten-Knetmonster(1).png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png",
+      "library_id": "libfile_2b01029103748191a07d067750770947",
+      "role": "family morphology",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "bytes": 2179683,
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht wütende Tintenmonster aus Knete.png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/wut-family.png",
+      "library_id": "libfile_27b35aef6128819182ae6a09fa49b616",
+      "role": "family/expression exceptions",
+      "sha256": "237641ae0ba4b39dfe3b1aec8725ceb6a4108e945b0241adb54a1bbdbf3fb30e",
+      "bytes": 2252974,
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht wilde Bauarbeiter-Tintenmonster(1).png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/construction-props.png",
+      "library_id": "libfile_1ba03acd981481919f65f33e66ec96d7",
+      "role": "prop craft; glowing eyes optional",
+      "sha256": "e9c6c20d6bc984340b2458d00dda5dfadb948ee0c61c4065ef16d6b999072d24",
+      "bytes": 3658265,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        1,
+        253
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht verrückte Berufs-Klecksmonster.png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/professions-props.png",
+      "library_id": "libfile_fe402d7078008191abd23ad015670b5e",
+      "role": "accessory/material benchmark; faces too similar",
+      "sha256": "9fe95050d827919acb6f42c62f2a073169e4f5ee8e9309b89397428de49d6ce5",
+      "bytes": 2681218,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    },
+    {
+      "filename": "Acht wütende RPG-Klecksmonster.png",
+      "plugin_path": "skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png",
+      "library_id": "libfile_08e4172d49508191ba17a45e36bbec58",
+      "role": "accessory/material benchmark; faces too similar",
+      "sha256": "08bc11e8d49b3776b4e0c101c624affb9f54d682f9f4e9a16c4f64ed024082cf",
+      "bytes": 2520220,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "status": "USER_SELECTED_REFERENCE_NOT_NEW_GAME_ACCEPTANCE"
+    }
+  ],
+  "approved_format_examples": [
+    {
+      "manifest": "SPACE_CYBORGS_6_2026-11-06/MANIFEST.json",
+      "purpose": "six uniques;few upgrades;whole organic ink body"
+    },
+    {
+      "manifest": "SETS/couples-pilot/MANIFEST.json",
+      "purpose": "three independent-use couples"
+    },
+    {
+      "manifest": "SETS/residents-a/MANIFEST.json",
+      "purpose": "three identities,two states"
+    },
+    {
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json",
+      "purpose": "two identities,three visual stages"
+    },
+    {
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json",
+      "purpose": "two narrative trios"
+    }
+  ],
+  "rule": "PASS sheet examples are QA comparisons;do not silently create a chain of successive generated style parents. Animation identity reference is the exact approved registered single source."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-f7d13a3e-1847-493f-b73f-84cd30ce4fad.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "323504197c1292ffda10ce5b5e02a3a505f5c98a69e87a5b89ddf4797fd4690d",
+  "git_blob_sha": "2e2cf919e2c3590d500b2813247b5ebc4e720fa3",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a new KFB ink blob monster character sheet, The Floating Buffet. Supplied original PNGs are style inputs for rounded ink anatomy, thick modeled lids, plasticine surface and handcrafted accessory scale. Create exactly SIX full individual upright actors in a 3-column by 2-row landscape 1536×1024 PNG with a true transparent alpha backdrop. Each actor at equal substantial scale inside their own logical cell, entire prop and all droplets inside generous transparent gutters and outer margin. No scenery, floor, labels, border, branding, joined figures or background color. Each is a dark charcoal continuous footless ink splat with subtle plum sheen and rich softly rounded clay, small goo hands, bare goo base and expressive asymmetrical organic lobes. Compact costume pieces wrap the blob. Thick filled dark lids with white sclera, red iris and black pupil. Teeth inside lips. Offbeat tourist satire, six different poses, looks and mouth shapes. Visible wear and miniature handcrafted volume. No copied eyepatches, wings, military insignia or outfits from references. Wardrobe family: navy deck wraps, coral nautical prints, life vest colors and gaudy gold trim. Row-major cast:\n1. Female-read stern deckchair claimant: broad squared blob, disapproving side-eye, pressed frown. Prop: rolled striped towel and giant sun visor.\n2. Male-read ecstatic dessert raider: tall soft pear, gleaming eyes, toothy delighted laugh. Prop: silver plate with one elaborate jelly tower.\n3. Male-read seasick cabin guest: lean bowed blob, huge worried eyes, pursed cheeks. Prop: small rolled paper bag and sea-green wristband.\n4. Female-read impatient excursion regular: curved scalloped body, narrowed eyes, irritated closed smirk. Prop: folded port map and compact camera.\n5. Male-read proud souvenir shopper: low round splat, one lifted brow, narrow smug smile. Prop: tiny plastic ship in clear collectible bubble packaging.\n6. Male-read bored deck entertainer: long soft bent blob, heavy eyelids, sagging mouth. Prop: stubby shuffleboard cue and puck.\nEmphasize eyes and acting. Keep every figure independently usable as a sightseeing bystander. Hold props close. Separate all six in clear alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS"
+}

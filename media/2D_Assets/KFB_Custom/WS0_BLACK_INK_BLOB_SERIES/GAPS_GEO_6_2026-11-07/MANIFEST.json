@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_GAPS_GEO_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+    "sha256": "d399f394c27d93063aed9b78065b76d0637a9cb96f8f4536fc8b22057ff5e947"
+  },
+  "production_record": "GAPS_GEO_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "GAPS_GEO_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "GAPS_GEO_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Geological Complaints",
+    "theme": "Geological Complaints",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Iris Dripcount",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "stalactite witness",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_GEO_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_GEO_ACTOR_20261107_02",
+        "WSA_GAPS_GEO_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short pointed calcite head ornament and chunky three-bead drip counter"
+      ],
+      "temperament": "Stalactite witness.",
+      "prompt_auszug": "tall pointed blob with round ends, patient gaze and closed mouth",
+      "prompt_quelle": "GAPS_GEO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "stalactite witness"
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Faultline",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "indignant fault keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_GEO_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_GEO_ACTOR_20261107_01",
+        "WSA_GAPS_GEO_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two offset rock slabs held close with one stubby measuring rod"
+      ],
+      "temperament": "Indignant fault keeper.",
+      "prompt_auszug": "wide squared lopsided blob, hard side-eye and scowling lips",
+      "prompt_quelle": "GAPS_GEO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "indignant fault keeper"
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Fossilwait",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "long-waiting fossil",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_GEO_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_GEO_ACTOR_20261107_01",
+        "WSA_GAPS_GEO_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small large-spiral fossil half exposed in a clay matrix held in both hands"
+      ],
+      "temperament": "Long-waiting fossil.",
+      "prompt_auszug": "low rounded mass, flat tired lids, stretched little frown",
+      "prompt_quelle": "GAPS_GEO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "long-waiting fossil"
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Corecheck",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "geology sample inspector",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_GEO_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_GEO_ACTOR_20261107_05",
+        "WSA_GAPS_GEO_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short striped cylindrical drill core"
+      ],
+      "temperament": "Geology sample inspector.",
+      "prompt_auszug": "tall comma, searching eye movement and tiny parted mouth",
+      "prompt_quelle": "GAPS_GEO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "geology sample inspector"
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Alf Basalt",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "keeper of hexagonal columns",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_GEO_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_GEO_ACTOR_20261107_04",
+        "WSA_GAPS_GEO_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small group of three blunt hexagonal basalt prisms"
+      ],
+      "temperament": "Keeper of hexagonal columns.",
+      "prompt_auszug": "round scalloped blob, relaxed eyes and warm closed smile",
+      "prompt_quelle": "GAPS_GEO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "keeper of hexagonal columns"
+    },
+    {
+      "id": "WSA_GAPS_GEO_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Pebbleage",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "confused erosion clerk",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_GEO_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_GEO_ACTOR_20261107_04",
+        "WSA_GAPS_GEO_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one smooth rounded pebble and a miniature plain balance pan"
+      ],
+      "temperament": "Confused erosion clerk.",
+      "prompt_auszug": "upright pear, offset eyebrows and small O mouth",
+      "prompt_quelle": "GAPS_GEO_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "confused erosion clerk"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "thematic_family": "Geological Complaints",
+    "team_kit": "Basalt slate, ochre, calcite ivory and muted fern, chunky carved rock shapes and sparse broad texture",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Everyday roles and absurd material encounters.",
+    "trios": [
+      {
+        "id": "WSA_GAPS_GEO_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_GAPS_GEO_ACTOR_20261107_01",
+          "WSA_GAPS_GEO_ACTOR_20261107_02",
+          "WSA_GAPS_GEO_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_GAPS_GEO_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_GAPS_GEO_ACTOR_20261107_04",
+          "WSA_GAPS_GEO_ACTOR_20261107_05",
+          "WSA_GAPS_GEO_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_GAPS_GEO_ACTOR_20261107_01",
+      "WSA_GAPS_GEO_ACTOR_20261107_02",
+      "WSA_GAPS_GEO_ACTOR_20261107_03",
+      "WSA_GAPS_GEO_ACTOR_20261107_04",
+      "WSA_GAPS_GEO_ACTOR_20261107_05",
+      "WSA_GAPS_GEO_ACTOR_20261107_06"
+    ]
+  }
+}

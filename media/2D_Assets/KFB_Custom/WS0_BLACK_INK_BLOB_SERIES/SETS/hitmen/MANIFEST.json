@@ -1,0 +1,211 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_HITMEN_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+    "sha256": "62dd7006fee1b4dab7fa6072ae51cca415d8ea488d2a124db97cc2855bb079ae"
+  },
+  "production_record": "HITMEN_GANG_2026-11-04/PRODUCTION_RECORD.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/hitmen/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      4
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_GANG_01",
+      "id_scope": "canonical_roster",
+      "name": "Herr Feierabend",
+      "bild": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT: low wide barrel-shaped weary noir professional, battered charcoal fedora with burgundy ribbon, tiny cream shirt collar and loosened black tie.",
+          "Heavy half-shut lids and bored sideways red gaze, drooping closed mouth with one huge gold snaggle tooth.",
+          "Holds a chunky short old-fashioned pistol pointed safely downward and a tiny pink frosted doughnut pinched delicately in opposite goo hand."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT: low wide barrel-shaped weary noir professional, battered charcoal fedora with burgundy ribbon, tiny cream shirt collar and loosened black tie. Heavy half-shut lids and bored sideways red gaze, drooping closed mouth with one huge gold snaggle tooth. Holds a chunky short old-fashioned pistol pointed safely downward and a tiny pink frosted doughnut pinched delicately in opposite goo hand. Dense squat continuous goo, tired veteran gravitas, wonderfully modeled prop contrast.",
+      "prompt_quelle": "HITMEN_GANG_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_GANG_02",
+      "id_scope": "canonical_roster",
+      "name": "Violetta Schlussstrich",
+      "bild": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP CENTER: FEMALE-READ tall asymmetrical femme-fatale hitwoman, sculpted purple goo victory-roll curl, small plum pillbox hat with one soft feather, short deep red velvet shoulder wrap, tiny pearl earring.",
+          "Holds a long-stemmed black clay rose with a thick red bloom and a chunky vintage compact pistol lowered beside her."
+        ]
+      },
+      "prompt_auszug": "TOP CENTER: FEMALE-READ tall asymmetrical femme-fatale hitwoman, sculpted purple goo victory-roll curl, small plum pillbox hat with one soft feather, short deep red velvet shoulder wrap, tiny pearl earring. One sharply raised lid, knowing CLOSED crooked smile with two tiny uneven fangs, WHITE eyes RED iris BLACK pupil gazing sideways. Holds a long-stemmed black clay rose with a thick red bloom and a chunky vintage compact pistol lowered beside her. Strong elegant cartoon menace through expression, no human body/breasts, visible full ink splat base.",
+      "prompt_quelle": "HITMEN_GANG_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_GANG_03",
+      "id_scope": "canonical_roster",
+      "name": "Herr Letzter Takt",
+      "bild": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT: compact round fastidious bow-tied undertaker assassin, tiny dented black bowler and short indigo lapels, one eye magnified behind thick round brass monocle, other eye narrowed, pursed offended O-shaped mouth with single tooth.",
+          "Both thick goo hands clutch a heavy worn black violin case held upright with its lid slightly open revealing only a fat ivory violin scroll and curved wooden bow."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT: compact round fastidious bow-tied undertaker assassin, tiny dented black bowler and short indigo lapels, one eye magnified behind thick round brass monocle, other eye narrowed, pursed offended O-shaped mouth with single tooth. Both thick goo hands clutch a heavy worn black violin case held upright with its lid slightly open revealing only a fat ivory violin scroll and curved wooden bow. The awkward case almost his own size, no actual gun hidden in it, simple powerful silhouette.",
+      "prompt_quelle": "HITMEN_GANG_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_GANG_04",
+      "id_scope": "canonical_roster",
+      "name": "Onkel Samthand",
+      "bild": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT: broad squat hulking silent enforcer, thick drooping side lobes, patched flat cap and short rust-brown leather shoulder cape.",
+          "One huge goo fist holds a cartoonishly oversized brass knuckle-duster, other arm cradles a small cream stuffed rabbit with one droopy clay ear.",
+          "Tender possessive grip on toy, heavy weary hunch, tactile contrast, not gore."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT: broad squat hulking silent enforcer, thick drooping side lobes, patched flat cap and short rust-brown leather shoulder cape. Enormous grumpy UNDERBITE with two broad ivory lower teeth, tiny half-lidded WHITE eyes red irises black pupils. One huge goo fist holds a cartoonishly oversized brass knuckle-duster, other arm cradles a small cream stuffed rabbit with one droopy clay ear. Tender possessive grip on toy, heavy weary hunch, tactile contrast, not gore.",
+      "prompt_quelle": "HITMEN_GANG_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_GANG_05",
+      "id_scope": "canonical_roster",
+      "name": "Tante Duftnote",
+      "bild": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM CENTER: FEMALE-READ compact pear-shaped cheerful poisoner archetype, faded teal headscarf and little brass pince-nez, small goo curl, delicate lashes.",
+          "Huge delighted asymmetrical TOOTHY laugh, pupils attentively focused on a bulbous green glass perfume atomizer cradled in one hand, black rubber squeeze bulb in other; closed bottle with thick rounded brass top, no spray, no labels or symbols.",
+          "Short cream scarf only, dark full ink body dominant."
+        ]
+      },
+      "prompt_auszug": "BOTTOM CENTER: FEMALE-READ compact pear-shaped cheerful poisoner archetype, faded teal headscarf and little brass pince-nez, small goo curl, delicate lashes. Huge delighted asymmetrical TOOTHY laugh, pupils attentively focused on a bulbous green glass perfume atomizer cradled in one hand, black rubber squeeze bulb in other; closed bottle with thick rounded brass top, no spray, no labels or symbols. No actual poison recipe. Short cream scarf only, dark full ink body dominant. Beautifully modeled retro glass and rubber, exaggerated cartoon delight.",
+      "prompt_quelle": "HITMEN_GANG_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_GANG_06",
+      "id_scope": "canonical_roster",
+      "name": "Rex Restauftrag",
+      "bild": {
+        "datei": "HITMEN_GANG_2026-11-04/hitmen-women-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT: tall elastic eccentric retro-sci-fi bounty hitman, weathered rust-red aviator cap with little crooked aerial, round brass goggles pushed up, small teal collar, one eye huge and other squinting, manic open-mouthed crooked fang grin and thick pink tongue.",
+          "Cradles a chunky 1950s brass ray blaster with flared ring muzzle pointed down, other goo hand grips a small worn brown briefcase with one big brass latch."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT: tall elastic eccentric retro-sci-fi bounty hitman, weathered rust-red aviator cap with little crooked aerial, round brass goggles pushed up, small teal collar, one eye huge and other squinting, manic open-mouthed crooked fang grin and thick pink tongue. Cradles a chunky 1950s brass ray blaster with flared ring muzzle pointed down, other goo hand grips a small worn brown briefcase with one big brass latch. No blast or victim. Beautiful few bold modeled shapes, primitive handmade clay sci-fi craft, complete asymmetric ink splat.",
+      "prompt_quelle": "HITMEN_GANG_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

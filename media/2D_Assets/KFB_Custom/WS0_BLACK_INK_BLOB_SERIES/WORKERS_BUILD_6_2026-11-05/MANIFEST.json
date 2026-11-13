@@ -1,0 +1,261 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WORKERS_BUILD_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "WORKERS_BUILD_6_2026-11-05/sheet-r1.png",
+    "sha256": "cbc2a00aee74467156c2a97ecf7ac9d0c82eae723ef48695ca386bd49a671e8f"
+  },
+  "production_record": "WORKERS_BUILD_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "WORKERS_BUILD_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "WORKERS_BUILD_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Bauarbeiter – Baustelle Vorläufigfertig",
+    "visual_context": "ochre helmets, orange canvas, dusty blue and cream, handmade tools; no walls, worksite ground or scenelet",
+    "relationship_policy": "Shared visual worker family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_WORKERS_BUILD_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Polier Lotrecht",
+      "bild": {
+        "datei": "WORKERS_BUILD_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "ochre hardhat",
+        "folded plan",
+        "carpenter pencil"
+      ],
+      "temperament": "Knows the building is crooked because the plan says otherwise.",
+      "prompt_auszug": "Polier Lotrecht, maennlich-read. broad low splat in battered ochre hardhat, only two short orange vest panels leaving ink body visible, little folded plan and short carpenter pencil; one eyebrow alarmingly high, deep closed toothless pout. Personality: Knows the building is crooked because the plan says otherwise.",
+      "prompt_quelle": "WORKERS_BUILD_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_BUILD_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Elektrikerin Kontaktfreudig",
+      "bild": {
+        "datei": "WORKERS_BUILD_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "white hardhat",
+        "cable loop",
+        "pliers"
+      ],
+      "temperament": "Finds a connection in everything except the instructions.",
+      "prompt_auszug": "Elektrikerin Kontaktfreudig, weiblich-read. tall hooked comma blob, small white hardhat, subtle lashes, short thick cable loop and chunky pliers; huge widely spaced ivory eyes staring at two harmless cable ends, small open oval mouth with no teeth. Personality: Finds a connection in everything except the instructions.",
+      "prompt_quelle": "WORKERS_BUILD_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_BUILD_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Maurer Fugenfüller",
+      "bild": {
+        "datei": "WORKERS_BUILD_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blue work cap",
+        "brick",
+        "trowel"
+      ],
+      "temperament": "Believes every gap is a personal request for assistance.",
+      "prompt_auszug": "Maurer Fugenfüller, maennlich-read. round wide blob, soft blue work cap, brick cradled at side with little mortar dollop and short trowel in other goo hand; joyful asymmetrical open grin with THREE irregular upper teeth, one eye nearly winking. Personality: Believes every gap is a personal request for assistance.",
+      "prompt_quelle": "WORKERS_BUILD_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_BUILD_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Zimmermann Restmaß",
+      "bild": {
+        "datei": "WORKERS_BUILD_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "yellow hardhat",
+        "short handsaw",
+        "folding rule"
+      ],
+      "temperament": "Measures twice because the first measurement took the afternoon off.",
+      "prompt_auszug": "Zimmermann Restmaß, maennlich-read. tall narrow pear splat with crooked head lobe, yellow hardhat and tiny canvas belt patch, short handsaw held safely down beside body and folded wooden rule; looking upward cross-eyed with crooked toothless sideways lips. Personality: Measures twice because the first measurement took the afternoon off.",
+      "prompt_quelle": "WORKERS_BUILD_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_BUILD_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kranführerin Schwebend",
+      "bild": {
+        "datei": "WORKERS_BUILD_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ochre hardhat",
+        "forehead goggles",
+        "crane pendant controller"
+      ],
+      "temperament": "Moves heavy things gently and interruptions with less care.",
+      "prompt_auszug": "Kranführerin Schwebend, weiblich-read. squat broad asymmetrical blob, ochre hardhat with goggles on top, two lashes, small sturdy pendant crane controller on a SHORT curled cable; focused raised eyebrow and clenched crooked mouth with one internal upper tooth. Personality: Moves heavy things gently and interruptions with less care.",
+      "prompt_quelle": "WORKERS_BUILD_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WORKERS_BUILD_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Betonwart Schonhart",
+      "bild": {
+        "datei": "WORKERS_BUILD_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cream hardhat",
+        "mix bucket",
+        "mixing paddle"
+      ],
+      "temperament": "Has learned that waiting can become structurally permanent.",
+      "prompt_auszug": "Betonwart Schonhart, maennlich-read. heavy drooping rounded blob, small scuffed cream hardhat, compact metal bucket with grey clay mix and short mixing paddle; sleepy lids and tiny compressed closed toothless mouth. Personality: Has learned that waiting can become structurally permanent.",
+      "prompt_quelle": "WORKERS_BUILD_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

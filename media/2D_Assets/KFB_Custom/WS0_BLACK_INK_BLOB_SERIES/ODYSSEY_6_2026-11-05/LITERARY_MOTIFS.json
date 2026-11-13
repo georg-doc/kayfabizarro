@@ -1,0 +1,99 @@
+{
+  "schema": "kfb.slop-literary-context/1",
+  "status": "DESIGN",
+  "source_work": "Homer, Odyssey",
+  "motifs": [
+    {
+      "id": "WSA_ODYSSEY_ACTOR_20261105_01",
+      "source_name": "Penelope",
+      "motifs": [
+        "weaving/unweaving",
+        "patient resistance",
+        "homecoming relationship"
+      ],
+      "visual_anchor": "weaving frame, shuttle, loose yarn"
+    },
+    {
+      "id": "WSA_ODYSSEY_ACTOR_20261105_02",
+      "source_name": "Polyphemus",
+      "motifs": [
+        "Cyclops encounter",
+        "one eye",
+        "pastoral food/cheese"
+      ],
+      "visual_anchor": "one white-red-black eye and cheese; no injury"
+    },
+    {
+      "id": "WSA_ODYSSEY_ACTOR_20261105_03",
+      "source_name": "Odysseus",
+      "motifs": [
+        "cunning traveller",
+        "homecoming",
+        "bow"
+      ],
+      "visual_anchor": "traveller cap, bow, tied pouch"
+    },
+    {
+      "id": "WSA_ODYSSEY_ACTOR_20261105_04",
+      "source_name": "Poseidon",
+      "motifs": [
+        "sea-god opposition",
+        "hostile conditions"
+      ],
+      "visual_anchor": "trident/crown as conventional iconography, not a literal scene"
+    },
+    {
+      "id": "WSA_ODYSSEY_ACTOR_20261105_05",
+      "source_name": "Circe",
+      "motifs": [
+        "enchantment",
+        "hospitality",
+        "pig transformation"
+      ],
+      "visual_anchor": "pig-snout cup and stirring wand; no seventh pig actor"
+    },
+    {
+      "id": "WSA_ODYSSEY_ACTOR_20261105_06",
+      "source_name": "Aeolus windbag",
+      "motifs": [
+        "entrusted winds",
+        "containment/release",
+        "journey setback"
+      ],
+      "visual_anchor": "sack-like ink creature holding rope knot, not a portrait of Aeolus"
+    }
+  ],
+  "source_relations": [
+    {
+      "from": "WSA_ODYSSEY_ACTOR_20261105_01",
+      "to": "WSA_ODYSSEY_ACTOR_20261105_03",
+      "source_relation": "spouses / waiting and homecoming"
+    },
+    {
+      "from": "WSA_ODYSSEY_ACTOR_20261105_04",
+      "to": "WSA_ODYSSEY_ACTOR_20261105_02",
+      "source_relation": "Poseidon is Polyphemus father"
+    },
+    {
+      "from": "WSA_ODYSSEY_ACTOR_20261105_03",
+      "to": "WSA_ODYSSEY_ACTOR_20261105_02",
+      "source_relation": "encounter/opposition"
+    },
+    {
+      "from": "WSA_ODYSSEY_ACTOR_20261105_04",
+      "to": "WSA_ODYSSEY_ACTOR_20261105_03",
+      "source_relation": "opposition at sea"
+    },
+    {
+      "from": "WSA_ODYSSEY_ACTOR_20261105_05",
+      "to": "WSA_ODYSSEY_ACTOR_20261105_03",
+      "source_relation": "enchantment and hospitality encounter"
+    },
+    {
+      "from": "WSA_ODYSSEY_ACTOR_20261105_06",
+      "to": "WSA_ODYSSEY_ACTOR_20261105_03",
+      "source_relation": "entrusted travel aid and loss of containment"
+    }
+  ],
+  "scope_note": "Source-inspired associations only; no exact quotations, book/verse proof, canonical KFB marriage/faction assignment or game binding."
+}

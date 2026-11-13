@@ -1,0 +1,267 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRADES_MINEROIL_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TRADES_MINEROIL_6_2026-11-05/sheet-r1.png",
+    "sha256": "bed0c1e1395477302617a34c5a2e22bbafbef3dbb8628daa0d58f7a9d2fcbe97"
+  },
+  "production_record": "TRADES_MINEROIL_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "TRADES_MINEROIL_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "TRADES_MINEROIL_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Minen & Öl – Schicht unter Vorbehalt",
+    "visual_context": "historical mining and early oil drilling,modern extraction,retro-dieselpunk space resource workers",
+    "relationship_policy": "Six distinct standalone identities across historical/present/sci-fi contexts; shared trade family, not level/state/twin relations",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Workplace bureaucracy, hierarchy, solidarity, certainty and practical care; fictional HyperNorm residents, not inherent class traits"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRADES_MINEROIL_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Grubenwart Tiefgenug",
+      "bild": {
+        "datei": "TRADES_MINEROIL_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather miner cap",
+        "pickaxe",
+        "safety lantern"
+      ],
+      "temperament": "Considers daylight an administrative rumour.",
+      "prompt_auszug": "Grubenwart Tiefgenug, maennlich-read. HISTORICAL mine worker: broad low ink splat, scuffed leather miner cap with unlit little candle bracket ABOVE eyes, short wooden-handled pickaxe and small brass safety lantern at flank. Heavy uneven lids, deep crooked closed toothless frown. Personality: Considers daylight an administrative rumour.",
+      "prompt_quelle": "TRADES_MINEROIL_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "HISTORICAL"
+    },
+    {
+      "id": "WSA_TRADES_MINEROIL_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bohrknecht Förderlich",
+      "bild": {
+        "datei": "TRADES_MINEROIL_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brown flatcap",
+        "pipe wrench",
+        "oilcan"
+      ],
+      "temperament": "Tightens every joint except the one in the official argument.",
+      "prompt_auszug": "Bohrknecht Förderlich, maennlich-read. EARLY20th-century oil roughneck: tall crooked pear blob, brown flatcap, small canvas bib patch, one hefty old pipe wrench and tiny black oilcan. Fierce delighted open grin with TWO upper teeth, one eyebrow high. Personality: Tightens every joint except the one in the official argument.",
+      "prompt_quelle": "TRADES_MINEROIL_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "HISTORICAL"
+    },
+    {
+      "id": "WSA_TRADES_MINEROIL_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Geologin Fundstelle",
+      "bild": {
+        "datei": "TRADES_MINEROIL_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "white lamp hardhat",
+        "rock core",
+        "hand scanner"
+      ],
+      "temperament": "Can find a deposit more easily than an agreed explanation of it.",
+      "prompt_auszug": "Geologin Fundstelle, weiblich-read. CURRENT mine surveyor: round top-heavy blob, white hardhat with small lamp ABOVE eyes, subtle lashes, holds one simple violet rock core and chunky handheld scanner pointed toward core. Bulging unequal eyes and tiny off-centre toothless open oval mouth. Personality: Can find a deposit more easily than an agreed explanation of it.",
+      "prompt_quelle": "TRADES_MINEROIL_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "PRESENT_DAY"
+    },
+    {
+      "id": "WSA_TRADES_MINEROIL_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bohrmeister Druckhalt",
+      "bild": {
+        "datei": "TRADES_MINEROIL_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "ochre helmet",
+        "pressure gauge",
+        "shutoff valve"
+      ],
+      "temperament": "Keeps the pressure within limits while the limits keep moving.",
+      "prompt_auszug": "Bohrmeister Druckhalt, maennlich-read. CURRENT drilling specialist: squat square rounded splat, ochre helmet, two small orange vest panels only, compact pressure gauge attached to one little shutoff valve. Side-eye, enormous pursed toothless lower lip same dark-violet material. Personality: Keeps the pressure within limits while the limits keep moving.",
+      "prompt_quelle": "TRADES_MINEROIL_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "PRESENT_DAY"
+    },
+    {
+      "id": "WSA_TRADES_MINEROIL_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Asteroidenhauerin Splitterruh",
+      "bild": {
+        "datei": "TRADES_MINEROIL_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "open teal space helmet",
+        "spiral hand-drill",
+        "ore nugget"
+      ],
+      "temperament": "Finds solid work in a universe determined to remain mostly empty.",
+      "prompt_auszug": "Asteroidenhauerin Splitterruh, weiblich-read. SCI-FI asteroid miner: tall hooked splat, small teal retro-space work helmet OPEN FACE no visor, two lashes, tiny copper shoulder fittings not humanoid spacesuit, compact blunt spiral hand-drill and one little copper ore nugget. Wide crooked triumphant grin with ONE upper tooth. Personality: Finds solid work in a universe determined to remain mostly empty.",
+      "prompt_quelle": "TRADES_MINEROIL_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "SCI_FI"
+    },
+    {
+      "id": "WSA_TRADES_MINEROIL_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vakuumförderer Restdruck",
+      "bild": {
+        "datei": "TRADES_MINEROIL_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "padded dial cap",
+        "short sample hose",
+        "sealed amber cylinder"
+      ],
+      "temperament": "Collects the last drop before somebody changes the definition of a drop.",
+      "prompt_auszug": "Vakuumförderer Restdruck, maennlich-read. SCI-FI space oil technician: broad drooping splat, padded plum cap with one small dial ABOVE eyes, short brass hose ending at a sealed palm-sized amber sample cylinder, visibly connected. Raised worried brows, closed nervous toothless zigzag lips. Personality: Collects the last drop before somebody changes the definition of a drop.",
+      "prompt_quelle": "TRADES_MINEROIL_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "era_variant": "SCI_FI"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

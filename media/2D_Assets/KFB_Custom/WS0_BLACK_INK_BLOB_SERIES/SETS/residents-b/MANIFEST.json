@@ -1,0 +1,226 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESIDENTS_B_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 2,
+    "rows": 3,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+    "sha256": "d38b4ea9034666f98762efa6383f5fb45807bda9dad0dde037b98dcf24422cce"
+  },
+  "production_record": "RESIDENT_STATES_2026-11-04/sheet-b-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/residents-b/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      0,
+      1,
+      4,
+      5
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESIDENT_04_A",
+      "id_scope": "WSA_authoring_only",
+      "name": "Frau Wärmereserve",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "A_fear_confusion",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_04",
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "One big broad ivory tooth and two small upper fangs; SAME fat faded red rubber hot-water bottle with cream stopper held against body in BOTH states.",
+          "RIGHT B cold furious: eyes narrowed into unequal slits with visible red pupils/white sclera, eyebrows nearly FLAT not V, mouth clenched SIDEWAYS teeth exposing same three recognizable teeth, bottle squeezed against own belly, free thick goo hand closed at own waist.",
+          "Body slightly broader but same visual scale, exact rollers/lapels/bottle."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP identity04 FEMALE-READ elderly curlers-and-housecoat NEIGHBOR, very low wide saggy ink puddle, THREE enormous coral clay hair rollers embedded in soft curled upper goo lobe, small short indigo floral housecoat lapels with two cream flower dots and little cream fastening. One big broad ivory tooth and two small upper fangs; SAME fat faded red rubber hot-water bottle with cream stopper held against body in BOTH states. LEFT A confused-paranoid: one eye wide, other narrowed, WHITE/red/black pupils in different directions, deeply lopsided CLOSED uncertain lip with single broad tooth peeking; free hand cups own cheek, low lobes shrink inward as if listening to a noise. Not open screaming. RIGHT B cold furious: eyes narrowed into unequal slits with visible red pupils/white sclera, eyebrows nearly FLAT not V, mouth clenched SIDEWAYS teeth exposing same three recognizable teeth, bottle squeezed against own belly, free thick goo hand closed at own waist. Body slightly broader but same visual scale, exact rollers/lapels/bottle.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_04_B",
+      "id_scope": "WSA_authoring_only",
+      "name": "Frau Wärmereserve",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "B_anger",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_04",
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "One big broad ivory tooth and two small upper fangs; SAME fat faded red rubber hot-water bottle with cream stopper held against body in BOTH states.",
+          "RIGHT B cold furious: eyes narrowed into unequal slits with visible red pupils/white sclera, eyebrows nearly FLAT not V, mouth clenched SIDEWAYS teeth exposing same three recognizable teeth, bottle squeezed against own belly, free thick goo hand closed at own waist.",
+          "Body slightly broader but same visual scale, exact rollers/lapels/bottle."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP identity04 FEMALE-READ elderly curlers-and-housecoat NEIGHBOR, very low wide saggy ink puddle, THREE enormous coral clay hair rollers embedded in soft curled upper goo lobe, small short indigo floral housecoat lapels with two cream flower dots and little cream fastening. One big broad ivory tooth and two small upper fangs; SAME fat faded red rubber hot-water bottle with cream stopper held against body in BOTH states. LEFT A confused-paranoid: one eye wide, other narrowed, WHITE/red/black pupils in different directions, deeply lopsided CLOSED uncertain lip with single broad tooth peeking; free hand cups own cheek, low lobes shrink inward as if listening to a noise. Not open screaming. RIGHT B cold furious: eyes narrowed into unequal slits with visible red pupils/white sclera, eyebrows nearly FLAT not V, mouth clenched SIDEWAYS teeth exposing same three recognizable teeth, bottle squeezed against own belly, free thick goo hand closed at own waist. Body slightly broader but same visual scale, exact rollers/lapels/bottle.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_05_A",
+      "id_scope": "WSA_authoring_only",
+      "name": "Herr Senderecht",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "A_fear_confusion",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_05",
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW2 MIDDLE identity05 obsessive remote-control HOME SPORTS FAN, tall pear-shaped dark ink blob with one long curved crown lobe, tiny faded moss-green velvet tracksuit collar with cream double stripe and burgundy zipper pull, sparse THREE ivory teeth +one gold lower tooth.",
+          "SAME chunky cream-and-coral old-fashioned remote control with FOUR fat round brass buttons, no text/UI.",
+          "LEFT A panic: body hunches but equal visual size, BOTH eyes squeezed almost shut with thin visible WHITE/red/black slivers, mouth jagged horizontal fear grimace with recognizable gold tooth, both goo hands clutch remote to chest and soft crown lobe droops.",
+          "RIGHT B affronted explosive rage: one eye huge WHITE/red/black and the other one squeezed shut, mouth an enormous skewed TRIANGULAR toothy bellow, NOT matching row1 closed clench, crown lobe rises in thick round curve.",
+          "One hand holds remote against own torso, other planted flat on own goo hip.",
+          "Same tracksuit colors/stripe/remote, full goo base dominant and no human shoulders/waist/legs."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE identity05 obsessive remote-control HOME SPORTS FAN, tall pear-shaped dark ink blob with one long curved crown lobe, tiny faded moss-green velvet tracksuit collar with cream double stripe and burgundy zipper pull, sparse THREE ivory teeth +one gold lower tooth. SAME chunky cream-and-coral old-fashioned remote control with FOUR fat round brass buttons, no text/UI. LEFT A panic: body hunches but equal visual size, BOTH eyes squeezed almost shut with thin visible WHITE/red/black slivers, mouth jagged horizontal fear grimace with recognizable gold tooth, both goo hands clutch remote to chest and soft crown lobe droops. RIGHT B affronted explosive rage: one eye huge WHITE/red/black and the other one squeezed shut, mouth an enormous skewed TRIANGULAR toothy bellow, NOT matching row1 closed clench, crown lobe rises in thick round curve. One hand holds remote against own torso, other planted flat on own goo hip. Same tracksuit colors/stripe/remote, full goo base dominant and no human shoulders/waist/legs.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_05_B",
+      "id_scope": "WSA_authoring_only",
+      "name": "Herr Senderecht",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "B_anger",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_05",
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW2 MIDDLE identity05 obsessive remote-control HOME SPORTS FAN, tall pear-shaped dark ink blob with one long curved crown lobe, tiny faded moss-green velvet tracksuit collar with cream double stripe and burgundy zipper pull, sparse THREE ivory teeth +one gold lower tooth.",
+          "SAME chunky cream-and-coral old-fashioned remote control with FOUR fat round brass buttons, no text/UI.",
+          "LEFT A panic: body hunches but equal visual size, BOTH eyes squeezed almost shut with thin visible WHITE/red/black slivers, mouth jagged horizontal fear grimace with recognizable gold tooth, both goo hands clutch remote to chest and soft crown lobe droops.",
+          "RIGHT B affronted explosive rage: one eye huge WHITE/red/black and the other one squeezed shut, mouth an enormous skewed TRIANGULAR toothy bellow, NOT matching row1 closed clench, crown lobe rises in thick round curve.",
+          "One hand holds remote against own torso, other planted flat on own goo hip.",
+          "Same tracksuit colors/stripe/remote, full goo base dominant and no human shoulders/waist/legs."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE identity05 obsessive remote-control HOME SPORTS FAN, tall pear-shaped dark ink blob with one long curved crown lobe, tiny faded moss-green velvet tracksuit collar with cream double stripe and burgundy zipper pull, sparse THREE ivory teeth +one gold lower tooth. SAME chunky cream-and-coral old-fashioned remote control with FOUR fat round brass buttons, no text/UI. LEFT A panic: body hunches but equal visual size, BOTH eyes squeezed almost shut with thin visible WHITE/red/black slivers, mouth jagged horizontal fear grimace with recognizable gold tooth, both goo hands clutch remote to chest and soft crown lobe droops. RIGHT B affronted explosive rage: one eye huge WHITE/red/black and the other one squeezed shut, mouth an enormous skewed TRIANGULAR toothy bellow, NOT matching row1 closed clench, crown lobe rises in thick round curve. One hand holds remote against own torso, other planted flat on own goo hip. Same tracksuit colors/stripe/remote, full goo base dominant and no human shoulders/waist/legs.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_06_A",
+      "id_scope": "WSA_authoring_only",
+      "name": "Frau Teigruhe",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "zustand": "A_fear_confusion",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_06",
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW3 BOTTOM identity06 FEMALE-READ fussy late-night BAKER/NEIGHBOR, compact wavy bean ink splat with two soft top curls, short cream pajama collar with tiny faded teal dots, coral gingham neckerchief and small flour-dusted teal cap, subtle modeled lashes.",
+          "EXACT same chunky mustard ceramic mixing bowl with ONE short wooden spoon inside (part of one held prop) in BOTH states, thick ivory batter visibly near rim; TWO big uneven upper fangs and one wide lower tooth.",
+          "LEFT A stunned fear: eyes enormously WHITE red irises black pupils frozen DOWN at bowl, one lid much lower, mouth deep DOWNWARD-curved lower lip exposing just two tips, no open circular scream, both hands clutch bowl protectively and body leans BACK within own cell.",
+          "One hand steadies bowl tightly at own belly, other goo palm rests on own chest, not spoon attack.",
+          "Same cap/dotted pajama collar/gingham/bowl/spoon, rounded continuous visible goo lobes no apron torso."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM identity06 FEMALE-READ fussy late-night BAKER/NEIGHBOR, compact wavy bean ink splat with two soft top curls, short cream pajama collar with tiny faded teal dots, coral gingham neckerchief and small flour-dusted teal cap, subtle modeled lashes. EXACT same chunky mustard ceramic mixing bowl with ONE short wooden spoon inside (part of one held prop) in BOTH states, thick ivory batter visibly near rim; TWO big uneven upper fangs and one wide lower tooth. LEFT A stunned fear: eyes enormously WHITE red irises black pupils frozen DOWN at bowl, one lid much lower, mouth deep DOWNWARD-curved lower lip exposing just two tips, no open circular scream, both hands clutch bowl protectively and body leans BACK within own cell. RIGHT B ferocious sarcastic outrage: one eyebrow lifted HIGH and other flat compressed, WHITE/red/black pupils forward, mouth broad asymmetrical CLOSED fang snarl exposing SAME two upper fangs and broad lower tooth, no standard open laugh. One hand steadies bowl tightly at own belly, other goo palm rests on own chest, not spoon attack. Same cap/dotted pajama collar/gingham/bowl/spoon, rounded continuous visible goo lobes no apron torso.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "WSA_RESIDENT_06_B",
+      "id_scope": "WSA_authoring_only",
+      "name": "Frau Teigruhe",
+      "bild": {
+        "datei": "RESIDENT_STATES_2026-11-04/residents-states-sheet-b-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "zustand": "B_anger",
+      "paar_mit": null,
+      "zustand_von": "WSA_RESIDENT_06",
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW3 BOTTOM identity06 FEMALE-READ fussy late-night BAKER/NEIGHBOR, compact wavy bean ink splat with two soft top curls, short cream pajama collar with tiny faded teal dots, coral gingham neckerchief and small flour-dusted teal cap, subtle modeled lashes.",
+          "EXACT same chunky mustard ceramic mixing bowl with ONE short wooden spoon inside (part of one held prop) in BOTH states, thick ivory batter visibly near rim; TWO big uneven upper fangs and one wide lower tooth.",
+          "LEFT A stunned fear: eyes enormously WHITE red irises black pupils frozen DOWN at bowl, one lid much lower, mouth deep DOWNWARD-curved lower lip exposing just two tips, no open circular scream, both hands clutch bowl protectively and body leans BACK within own cell.",
+          "One hand steadies bowl tightly at own belly, other goo palm rests on own chest, not spoon attack.",
+          "Same cap/dotted pajama collar/gingham/bowl/spoon, rounded continuous visible goo lobes no apron torso."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM identity06 FEMALE-READ fussy late-night BAKER/NEIGHBOR, compact wavy bean ink splat with two soft top curls, short cream pajama collar with tiny faded teal dots, coral gingham neckerchief and small flour-dusted teal cap, subtle modeled lashes. EXACT same chunky mustard ceramic mixing bowl with ONE short wooden spoon inside (part of one held prop) in BOTH states, thick ivory batter visibly near rim; TWO big uneven upper fangs and one wide lower tooth. LEFT A stunned fear: eyes enormously WHITE red irises black pupils frozen DOWN at bowl, one lid much lower, mouth deep DOWNWARD-curved lower lip exposing just two tips, no open circular scream, both hands clutch bowl protectively and body leans BACK within own cell. RIGHT B ferocious sarcastic outrage: one eyebrow lifted HIGH and other flat compressed, WHITE/red/black pupils forward, mouth broad asymmetrical CLOSED fang snarl exposing SAME two upper fangs and broad lower tooth, no standard open laugh. One hand steadies bowl tightly at own belly, other goo palm rests on own chest, not spoon attack. Same cap/dotted pajama collar/gingham/bowl/spoon, rounded continuous visible goo lobes no apron torso.",
+      "prompt_quelle": "RESIDENT_STATES_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

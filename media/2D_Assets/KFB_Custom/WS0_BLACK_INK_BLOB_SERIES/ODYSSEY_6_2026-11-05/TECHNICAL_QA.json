@@ -1,0 +1,160 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "requested_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "37ef8863bac3f6b4f560ca86114edba7f407c24ea8d6c63c39621175f20a5f56",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 513359,
+  "cells": [
+    {
+      "cell": 0,
+      "extraction_rect": [
+        0,
+        0,
+        495,
+        505
+      ],
+      "alpha_gt16_bounds": [
+        17,
+        28,
+        480,
+        499
+      ],
+      "visible_size": [
+        463,
+        471
+      ]
+    },
+    {
+      "cell": 1,
+      "extraction_rect": [
+        495,
+        0,
+        1024,
+        505
+      ],
+      "alpha_gt16_bounds": [
+        15,
+        28,
+        510,
+        495
+      ],
+      "visible_size": [
+        495,
+        467
+      ]
+    },
+    {
+      "cell": 2,
+      "extraction_rect": [
+        1024,
+        0,
+        1536,
+        505
+      ],
+      "alpha_gt16_bounds": [
+        20,
+        9,
+        482,
+        500
+      ],
+      "visible_size": [
+        462,
+        491
+      ]
+    },
+    {
+      "cell": 3,
+      "extraction_rect": [
+        0,
+        505,
+        532,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        20,
+        15,
+        512,
+        505
+      ],
+      "visible_size": [
+        492,
+        490
+      ]
+    },
+    {
+      "cell": 4,
+      "extraction_rect": [
+        532,
+        505,
+        1012,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        20,
+        15,
+        453,
+        503
+      ],
+      "visible_size": [
+        433,
+        488
+      ]
+    },
+    {
+      "cell": 5,
+      "extraction_rect": [
+        1012,
+        505,
+        1536,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        28,
+        5,
+        490,
+        507
+      ],
+      "visible_size": [
+        462,
+        502
+      ]
+    }
+  ],
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "safe_vertical_seam_max_alpha": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "safe_horizontal_seam_max_alpha": 2,
+  "technical_holds": [
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending"
+  ],
+  "design_observations": [
+    "Exactly6actors including one-eyed Polyphemus and personified windbag; other5 have two eyes",
+    "Two female-read characters: Penelope and Circe",
+    "Circe wand reads as stirring stick and pig-snout cup handle carries transformation motif",
+    "Poseidon crown/prongs more elaborate than restrained brief",
+    "Wind curl and rope knot integral to windbag pose; no separate bag carrier"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "horizontal_cut_line_max_alpha": 2,
+  "reference_hash_checks": 6
+}

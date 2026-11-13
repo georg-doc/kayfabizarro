@@ -1,0 +1,46 @@
+{
+  "image": "sheet-r1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "ef9d183874efecbb98ac649cd575b81c42cb949d98831d42c6bd4559e4d71892",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "transparent_pixels": 745127,
+  "outer_edge_alpha_max": 3,
+  "cell_seam_alpha_max": {
+    "512": 1,
+    "1024": 1,
+    "horizontal": 0
+  },
+  "fixed_cell_crop_safe": true,
+  "georg_status": null,
+  "status": "DRAFT",
+  "runtime_tests": 0,
+  "visual_review": {
+    "whole_upright_footless_blobs": true,
+    "open_eye_rule": "white/ivory sclera, red iris, black pupil",
+    "row_continuity": "recognizable illustrated identity, not a matching rig or exact model",
+    "review_sizes_px": [
+      64,
+      96,
+      160,
+      192
+    ],
+    "backgrounds": [
+      "light",
+      "dark",
+      "checker"
+    ],
+    "deviations": [
+      "Medical student and physician have more open-mouth smiling than the planned concentrating/closed-mouth acting.",
+      "Stethoscope is a stylized icon; no instrument-anatomy accuracy approval is claimed."
+    ],
+    "design_acceptance": "PENDING_GEORG"
+  },
+  "alpha_note": "Selected native outputs peak254/255; residual alpha1–3 and final edge normalization remain deferred."
+}

@@ -1,0 +1,575 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_HEALTH_SELFCARE_20261104",
+  "figuren": [
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_01",
+      "name": {
+        "v": "Herr Kontrollpuls",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He measures reassurance repeatedly because the previous reading never quite lasts.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "hypochondriac self-monitor",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "measured low certainty with a late doubtful pause",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Werte beruhigen ihn. Er misst nach, ob das so bleiben darf.",
+        "black_white_logic": "He measures reassurance repeatedly because the previous reading never quite lasts.",
+        "druckbezug": "pflichtbewusst unter Druck der Men in Black",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_HEALTH_SELFCARE_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "role": "hypochondriac self-monitor",
+        "prompt_excerpt": "TOP LEFT slot1 male HYPOCHONDRIAC SELF-MONITOR: squat crooked bean ink splat, faded mustard pajama collar and tiny cream sleep cap. Eyes very wide WHITE/red/black anxiously DOWN, asymmetric clenched zigzag mouth biting one lower tooth. One goo arm wears a simple soft teal pressure cuff, other hand nervously squeezes its fat red bulb; cuff linked by ONE short thick hose to oversized round brass pressure gauge held against own body. Only one coherent readable apparatus, no text/numbers."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_02",
+      "name": {
+        "v": "Madame Vitalitätsvorschuss",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She sells tomorrow's wellbeing with a confidence unavailable for refunds.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "wellness merchant",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "warm tired middle register, breath between clauses",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Wirkung kommt später. Die Zuversicht wird im Voraus bezahlt.",
+        "black_white_logic": "She sells tomorrow's wellbeing with a confidence unavailable for refunds.",
+        "druckbezug": "motiviert durch Hunky & Dorys Anerkennung",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_HEALTH_SELFCARE_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "role": "wellness merchant",
+        "prompt_excerpt": "TOP MIDDLE slot2 FEMALE-READ WELLNESS MERCHANT: tall elegant leaning pear ink blob, huge soft violet upper curl, short plum satin collar and one fat copper earring. Ecstatic crooked open tooth LAUGH, one eye smiling almost shut and the other gazing fondly at her prop. Both hands worshipfully cradle ONE tiny bulbous amber glass corked bottle with a large cream stopper and opaque teal clay liquid. No label, glow or magical effects."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_03",
+      "name": {
+        "v": "Herr Fallpauschale",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He can account for every moment of care except the one that mattered.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "hospital billing clerk",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "clipped precise upper register",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Die Rechnung ist vollständig. Das erklärt einiges an den fehlenden Antworten.",
+        "black_white_logic": "He can account for every moment of care except the one that mattered.",
+        "druckbezug": "übererfüllend aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_HEALTH_SELFCARE_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "role": "hospital billing clerk",
+        "prompt_excerpt": "TOP RIGHT slot3 male HOSPITAL BILLING CLERK: broad low sagging ink splat, tiny moss eyeshade, worn indigo collar, round brass spectacles. Furious tight UNDERBITE, one wide eye and one squint focused down. Hugs ONE huge cream blank receipt roll unwinding into a SINGLE broad paper curl across his OWN belly, other hand holds a very small stubby pencil. No letters, coin clutter, background or paper crossing cell seam."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_04",
+      "name": {
+        "v": "Frau Dehnbar",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She believes improvement begins just beyond the point where everybody asked to stop.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "physiotherapist",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "low sudden indignant emphasis",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es geht noch ein Stück. Sie hat bereits beschlossen, welches.",
+        "black_white_logic": "She believes improvement begins just beyond the point where everybody asked to stop.",
+        "druckbezug": "pflichtbewusst unter Druck der Men in Black",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_HEALTH_SELFCARE_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "role": "physiotherapist",
+        "prompt_excerpt": "BOTTOM LEFT slot4 FEMALE-READ PHYSIOTHERAPIST: compact round springy asymmetrical ink splat, short coral headband and tiny teal sporty collar, subtle lashes. One eye fully shut in physical effort, other WHITE/red/black wide looking right; huge SIDEWAYS toothy grin, NO tongue. Thick rounded goo arms stretch ONE wide mustard rubber exercise loop at belly level, loop pulled into a simple oval, fingers squeeze rubber visibly. Both full ink lobes stand upright."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_05",
+      "name": {
+        "v": "Herr Sollzustand",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He maintains his wellbeing as if somebody were about to inspect the figures.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "self-optimisation devotee",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "bright rehearsed reassurance under strain",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Sein Befinden entspricht dem Zielwert. Er würde es nur gern selbst noch bemerken.",
+        "black_white_logic": "He maintains his wellbeing as if somebody were about to inspect the figures.",
+        "druckbezug": "motiviert durch Hunky & Dorys Anerkennung",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_HEALTH_SELFCARE_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "role": "self-optimisation devotee",
+        "prompt_excerpt": "BOTTOM MIDDLE slot5 male SELF-OPTIMISATION DEVOTEE: very tall narrow ink bean with three short irregular crown lobes, tiny cream zip collar and faded orange wrist cuff. Both white eyes strained upward for approval, thin CLOSED crooked stressed smile with two sparse fangs. Cradles a single large bulbous copper mechanical wellbeing gauge with blank ivory dial, a big ivory winding key at side; one hand winds the key obsessively. Primitive retro-future material, no screen UI/icons."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    },
+    {
+      "id": "WSA_HEALTH_SELFCARE_20261104_06",
+      "name": {
+        "v": "Herr Wartebestand",
+        "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He has waited so long that leaving now would make the whole arrangement suspicious.",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "waiting-room veteran",
+              "biome": [],
+              "decks": [
+                "medkayfab_hospital_hierarchy",
+                "medkayfab_the_bedside_ballet",
+                "medkayfab_thinking_traps"
+              ]
+            }
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "dry slow middle register with an exhausted finish",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authored 2026-11-04; source prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "https://github.com/georg-doc/kayfabizarro/blob/60d1fec7e078ce1ef0da3c9b6920180c585703d7/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er ist gleich dran. Diese Aussicht hat sich über Jahre bewährt.",
+        "black_white_logic": "He has waited so long that leaving now would make the whole arrangement suspicious.",
+        "druckbezug": "übererfüllend aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohner der HyperNorm-Gebäude und Zensurwesen; will Dissonanz einhegen, schwärzen oder glattbügeln. Satire mit Herz, kein medizinischer oder sonstiger Realrat."
+      },
+      "source": {
+        "set": "WSA_HEALTH_SELFCARE_20261104",
+        "image_cell": {
+          "datei": "HEALTH_CARE_12_2026-11-04/health-selfcare/health-selfcare-sheet-r1.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "role": "waiting-room veteran",
+        "prompt_excerpt": "BOTTOM RIGHT slot6 male old WAITING-ROOM VETERAN: wide heavy asymmetric puddle that remains UPRIGHT facing camera, soft maroon knit cap and short mustard cardigan collar. Very tired half-closed eyes looking left, huge DROOPING lower lip with three widely spaced teeth, no grin. Hugs a plump faded teal round seat cushion like a life preserver, other hand pinches ONE oversized plain brass queue token. No chair/furniture, no numbers, not lying down."
+      },
+      "deck_relation": "Loose authoring association, no exclusive spawn restriction or card-dialogue thematic matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN proposal only; no intake before Georg image PASS, preserve receiving canonical IDs and machine fields."
+    }
+  ]
+}

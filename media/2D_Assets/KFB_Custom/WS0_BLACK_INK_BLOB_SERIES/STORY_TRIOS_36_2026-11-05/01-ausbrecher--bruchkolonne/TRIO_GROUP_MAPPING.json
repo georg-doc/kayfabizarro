@@ -1,0 +1,38 @@
+{
+  "schema": "kfb.slop-trios/1",
+  "status": "DESIGN",
+  "groups": [
+    {
+      "id": "WSA_TRIO_AUSBRECHER_20261105",
+      "title": "Die unzuständige Zelle",
+      "kind": "gang",
+      "source_association": "Original escape-gang archetypes; broad striped-prisoner cartoon memory, no existing character copies.",
+      "shared_visual_anchor": "tiny black/ivory STRIPED cloth collars and little soft striped caps, ONE dull-red square patch each, exposed dark goo bodies",
+      "members": [
+        "WSA_TRIO_AUSBRECHER_20261105_01",
+        "WSA_TRIO_AUSBRECHER_20261105_02",
+        "WSA_TRIO_AUSBRECHER_20261105_03"
+      ],
+      "story_reading": "Three stands for many; complementary individual functions, no directed handoff.",
+      "canonical_kfb_deck_assignment": null,
+      "runtime_group_rule": null
+    },
+    {
+      "id": "WSA_TRIO_BRUCHKOLONNE_20261105",
+      "title": "Der ordentliche Einbruch",
+      "kind": "professional gang",
+      "source_association": "Original heist crew.",
+      "shared_visual_anchor": "little BURGUNDY knit caps with a TEAL stitched patch and short cream neckerchiefs, no suits covering bodies",
+      "members": [
+        "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_02",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_03"
+      ],
+      "story_reading": "Three stands for many; complementary individual functions, no directed handoff.",
+      "canonical_kfb_deck_assignment": null,
+      "runtime_group_rule": null
+    }
+  ],
+  "variant_logic": "All members distinct identities; zustand_von null.",
+  "receiving_group_assignment": null
+}

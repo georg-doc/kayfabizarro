@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_INJURY_ROAD_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
+    "sha256": "7038fb77afeab84cc849443c29db26a058adde52b7ba1063491c96ffb207de63"
+  },
+  "production_record": "INJURY_ROAD_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "INJURY_ROAD_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "INJURY_ROAD_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Crosswalk Incident",
+    "theme": "Vehicle collision injuries",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "injured resident",
+      "first responder encounter",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_INJURY_ROAD_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gordon Curbroll",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "shocked pedestrian clipped at the crossing",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_ROAD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_ROAD_ACTOR_20261107_02",
+        "WSA_INJURY_ROAD_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "crumpled shopping bag and clean shoulder wrap"
+      ],
+      "temperament": "Shocked pedestrian clipped at the crossing.",
+      "prompt_auszug": "upright pear leaned back, wide skewed eyes, tiny startled open mouth",
+      "prompt_quelle": "INJURY_ROAD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "shocked pedestrian clipped at the crossing"
+    },
+    {
+      "id": "WSA_INJURY_ROAD_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pippa Mirrorclip",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "annoyed pedestrian with arm in sling",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_ROAD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_ROAD_ACTOR_20261107_01",
+        "WSA_INJURY_ROAD_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "solid ivory sling and crooked rain hood"
+      ],
+      "temperament": "Annoyed pedestrian with arm in sling.",
+      "prompt_auszug": "square soft splat, eyebrows uneven, narrowed side glance and pursed lips",
+      "prompt_quelle": "INJURY_ROAD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "annoyed pedestrian with arm in sling"
+    },
+    {
+      "id": "WSA_INJURY_ROAD_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Drew Conecheck",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dazed cyclist with helmet dent",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_ROAD_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_INJURY_ROAD_ACTOR_20261107_01",
+        "WSA_INJURY_ROAD_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "smooth bicycle helmet with a broad shallow dent and cheek patch"
+      ],
+      "temperament": "Dazed cyclist with helmet dent.",
+      "prompt_auszug": "slim tall bean, mismatched gaze, drooping closed mouth",
+      "prompt_quelle": "INJURY_ROAD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "dazed cyclist with helmet dent"
+    },
+    {
+      "id": "WSA_INJURY_ROAD_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Alf Skidmark",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "indignant low-speed bump survivor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_ROAD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_ROAD_ACTOR_20261107_05",
+        "WSA_INJURY_ROAD_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "thick clean wrap on lower side lobe and single bent umbrella held close"
+      ],
+      "temperament": "Indignant low-speed bump survivor.",
+      "prompt_auszug": "wide squat blob with one broad tire-tread scuff on coat, one eye flared, open complaint",
+      "prompt_quelle": "INJURY_ROAD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "indignant low-speed bump survivor"
+    },
+    {
+      "id": "WSA_INJURY_ROAD_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Brakebeat",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "nervous passenger with neck strain",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_ROAD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_ROAD_ACTOR_20261107_04",
+        "WSA_INJURY_ROAD_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "padded soft neck collar and a folded seatbelt strap held in hand"
+      ],
+      "temperament": "Nervous passenger with neck strain.",
+      "prompt_auszug": "tall asymmetrical body, eyes pulled inward, clenched small mouth",
+      "prompt_quelle": "INJURY_ROAD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "nervous passenger with neck strain"
+    },
+    {
+      "id": "WSA_INJURY_ROAD_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Crossingwait",
+      "language": "en",
+      "bild": {
+        "datei": "INJURY_ROAD_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "relieved pedestrian with sprained side lobe",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_INJURY_ROAD_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_INJURY_ROAD_ACTOR_20261107_04",
+        "WSA_INJURY_ROAD_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one short cane with broad rubber ferrule and a small ankle-like goo-base wrap"
+      ],
+      "temperament": "Relieved pedestrian with sprained side lobe.",
+      "prompt_auszug": "round forward-leaning blob, raised brows, closed soft smile",
+      "prompt_quelle": "INJURY_ROAD_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "relieved pedestrian with sprained side lobe"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "injury_family": "Vehicle collision injuries",
+    "team_kit": "City raincoats, dull reflective strips, red or ochre fabric, a few large broad scuff marks, clean first-aid gear.",
+    "encounter_behavior": "Injured residents or convalescents who can be paired with the existing responders.",
+    "satirical_target": "Fictional injury reactions, practical assistance and the small frustrations of recovery",
+    "trios": [
+      {
+        "id": "WSA_INJURY_ROAD_20261107_TRIO_A",
+        "name": "First Response Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_INJURY_ROAD_ACTOR_20261107_01",
+          "WSA_INJURY_ROAD_ACTOR_20261107_02",
+          "WSA_INJURY_ROAD_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_INJURY_ROAD_20261107_TRIO_B",
+        "name": "Follow-up Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_INJURY_ROAD_ACTOR_20261107_04",
+          "WSA_INJURY_ROAD_ACTOR_20261107_05",
+          "WSA_INJURY_ROAD_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_INJURY_ROAD_ACTOR_20261107_01",
+      "WSA_INJURY_ROAD_ACTOR_20261107_02",
+      "WSA_INJURY_ROAD_ACTOR_20261107_03",
+      "WSA_INJURY_ROAD_ACTOR_20261107_04",
+      "WSA_INJURY_ROAD_ACTOR_20261107_05",
+      "WSA_INJURY_ROAD_ACTOR_20261107_06"
+    ]
+  }
+}
