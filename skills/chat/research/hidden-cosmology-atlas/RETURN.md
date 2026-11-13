@@ -1,6 +1,6 @@
 ## 2026-11-13 · Pasulka und Nolan ergänzt
 
-[Neue Dossiers und Verbindungen](packages/uap-knowledge-networks/PASULKA_NOLAN.md) · [Return und Grenzen](packages/uap-knowledge-networks/RETURN.md).16 neue Themen;13 Quellen;8 Vergleiche;10 Beziehungen. Bestehender Atlas-Owner, kein Spielcode. Site-Veröffentlichungsbeleg folgt nach erfolgreicher Publikation.
+[Neue Dossiers und Verbindungen](packages/uap-knowledge-networks/PASULKA_NOLAN.md) · [Return und Grenzen](packages/uap-knowledge-networks/RETURN.md).16 neue Themen;13 Quellen;8 Vergleiche;10 Beziehungen. Bestehender Atlas-Owner, kein Spielcode. [Atlas-Version23](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html#diana-walsh-pasulka) veröffentlicht. [Publikationsbeleg](packages/uap-knowledge-networks/SITE_PUBLICATION_PASULKA_NOLAN_R2_2026-11-13.json). Inhaltcommit:5fac78c6828f39051e46f1d047a2f4797b5e4271;27/27 Dateien exakt zurückgelesen. Nächstes Gate: Georgs Blick auf die breite Gegenüberstellung.
 
 ## 2026-11-13 · Heim, DeLonge, Hayden und Taylor
 

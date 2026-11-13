@@ -20,4 +20,10 @@ Keine Audio-Vollsichtung. Zwei Dritttranskripte nur selektiv erschlossen. Encoun
 
 Georgs Blick auf die breite Gegenüberstellung. Neue Tiefenrecherchen erst nach Themenwahl.
 
-Publikations- und Rücklesebeleg folgen nach Site-Veröffentlichung im additiven Receipt.
+## Veröffentlichung und Prüfung
+
+Atlas-Version23 erfolgreich veröffentlicht; Zugriff unverändert owner-private. [Lesefassung](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html#diana-walsh-pasulka). Inhaltcommit:5fac78c6828f39051e46f1d047a2f4797b5e4271;27/27 Dateien exakt zurückgelesen und Remote-Head geprüft. Source-Commit der Site:23d481e26c07188acd91fd7773248d2e9256e6c9.
+
+Strukturprüfungen bestanden: lokale Links/Anker, Quellenreferenzen, Graph-Endpunkte, eindeutige Autoren. Browserprüfung: Quellensprung öffnet den passenden Nachweis; Rückweg setzt Nolan-Anker. Live-Browseransicht nicht unabhängig authentifiziert geprüft; native Deployment-Bestätigung erfolgreich. Favicon404 lokal ohne Einfluss auf Inhalte.
+
+[Additiver Publikationsbeleg](SITE_PUBLICATION_PASULKA_NOLAN_R2_2026-11-13.json). Bestehende PR:#394, kein Merge.
