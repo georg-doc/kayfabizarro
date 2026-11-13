@@ -1,6 +1,6 @@
 # Gemeinsame Themen, unterschiedliche Methoden
 
-Die folgenden redaktionellen Nachbarschaften sind keine Mitgliedschaften und keine wechselseitigen Bestätigungen. Bezugspunkt sind die bereits erschlossenen [Vallée-Vergleiche](../jacques-vallee/COMPARISONS.md), [Farrell/Jorjani/Dark Journalist](../jacques-vallee/COMPARISON_MATRIX.md), [Fitts/Swann/Puharich](../jacques-vallee/COMPARISON_PSI_FINANCE.md) und [Bramley/Icke/Wann](../jacques-vallee/COMPARISON_SYMBOLS_CONTROL.md). Neue historische Kontakte werden daraus nicht konstruiert.
+Die folgenden redaktionellen Nachbarschaften sind keine Mitgliedschaften und keine wechselseitigen Bestätigungen. Bezugspunkt sind die bereits erschlossenen [Vallée-Vergleiche](../vallee/COMPARISONS.md), [Farrell/Jorjani/Dark Journalist](../vallee/COMPARISON_MATRIX.md), [Fitts/Swann/Puharich](../vallee/COMPARISON_PSI_FINANCE.md) und [Bramley/Icke/Wann](../vallee/COMPARISON_SYMBOLS_CONTROL.md). Neue historische Kontakte werden daraus nicht konstruiert.
 
 ## Heim ↔ Vallée
 
@@ -26,7 +26,7 @@ Die folgenden redaktionellen Nachbarschaften sind keine Mitgliedschaften und kei
 
 **Gemeinsam:** Bewusstsein und nicht rein materielle Erklärungen
 
-**Unterschied:** Heims indirekte Strukturargumentation unterscheidet sich von Berichten und Versuchsanordnungen zu Wahrnehmung/Psi. Sein Aufsatz von1978 lehnt paranormale Erfahrungen gerade als eigene empirische Basis ab.
+**Unterschied:** Heims indirekte Strukturargumentation unterscheidet sich von Berichten und Versuchsanordnungen zu Wahrnehmung/Psi. Sein Aufsatz von 1978 lehnt paranormale Erfahrungen gerade als eigene empirische Basis ab.
 
 **Beziehungstyp:** EDITORIAL_PARALLEL
 
@@ -82,11 +82,11 @@ Die folgenden redaktionellen Nachbarschaften sind keine Mitgliedschaften und kei
 
 [A Conversation with Former CIA Director Michael Hayden](https://www.cia.gov/resources/csi/static/Conversation-with-Director-Hayden.pdf)
 
-## Hayden ↔ Senatsstudie2014
+## Hayden ↔ Senatsstudie 2014
 
 **Gemeinsam:** Verhörprogramm und behauptete Wirksamkeit
 
-**Unterschied:** Konkreter inhaltlicher Widerspruch zwischen öffentlicher Insiderverteidigung2010 und späteren dokumentenbasierten Findings1–2; Gegenstand bleibt das Verhörprogramm, nicht UAP.
+**Unterschied:** Konkreter inhaltlicher Widerspruch zwischen öffentlicher Insiderverteidigung 2010 und späteren dokumentenbasierten Findings 1–2; Gegenstand bleibt das Verhörprogramm, nicht UAP.
 
 **Beziehungstyp:** DOCUMENTED_COUNTER_READING
 

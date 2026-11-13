@@ -12,7 +12,7 @@ Quellenfamilien vergleichen: Unternehmensbiografie und Patent; Pasulkas Ethnogra
 
 ### Öffentliche Biografie
 
-VIVEX beschreibt Tätigkeiten in Startoperationen und Medizintechnik. Launch Fever ist2003 unter Timothy E. Taylor bibliografisch nachgewiesen. Seine genaue Arbeitgeber- und Vertragsgeschichte wird dadurch noch nicht vollständig geklärt. [VIVEX · Tim Taylor biography](https://vivex.com/about/team/) · [Launch Fever](https://books.google.com/books/about/Launch_Fever.html?hl=en&id=Qqy5tyEs2gQC)
+VIVEX beschreibt Tätigkeiten in Startoperationen und Medizintechnik. Launch Fever ist 2003 unter Timothy E. Taylor bibliografisch nachgewiesen. Seine genaue Arbeitgeber- und Vertragsgeschichte wird dadurch noch nicht vollständig geklärt. [VIVEX · Tim Taylor biography](https://vivex.com/about/team/) · [Launch Fever](https://books.google.com/books/about/Launch_Fever.html?hl=en&id=Qqy5tyEs2gQC)
 
 ### Erfindungen
 
@@ -32,7 +32,7 @@ Pasulka berichtet Tylers Vorstellungen von körperlicher Abstimmung und Kontakt 
 
 ### Vatikan und Religion
 
-Pasulka erzählt eine religiöse Veränderung und unterscheidet Archive und Observatorium. Sie widerspricht im Buch ausdrücklich einer UFO-Forschung der Jesuiten am Observatorium. Der2017er Besucherlistenbeleg bleibt wegen404 vorerst ein konkretes Findmittel. [American Cosmic](https://books.google.com/books?id=XRmEDwAAQBAJ) · [Vatican Observatory · Annual Report 2017](https://www.vaticanobservatory.va/media/attachments/2022/05/05/ar2017.pdf)
+Pasulka erzählt eine religiöse Veränderung und unterscheidet Archive und Observatorium. Sie widerspricht im Buch ausdrücklich einer UFO-Forschung der Jesuiten am Observatorium. Der 2017er Besucherlistenbeleg bleibt wegen 404 vorerst ein konkretes Findmittel. [American Cosmic](https://books.google.com/books?id=XRmEDwAAQBAJ) · [Vatican Observatory · Annual Report 2017](https://www.vaticanobservatory.va/media/attachments/2022/05/05/ar2017.pdf)
 
 ### Bledsoe, Obama und Camp David
 

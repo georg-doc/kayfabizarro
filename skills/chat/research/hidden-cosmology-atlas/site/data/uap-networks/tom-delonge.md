@@ -28,7 +28,7 @@ Sekret Machines umfasst unterschiedliche Gattungen. Der Verlag führt insbesonde
 
 ### Materialien und Army-Kooperation
 
-TTS beschreibt Materialforschung und Kooperation. Freigegebene Army-Korrespondenz aus Juli2024 berichtet von wenigen Tests an sehr kleinen Materialien im Rahmen einer fünfjährigen CRADA. Die gesichteten Passagen enthalten keinen Nachweis nichtmenschlicher Herkunft oder eines Antriebs. [To The Stars · research](https://tothestars.media/pages/research) · [Army FOIA response FA-24-0006](https://documents2.theblackvault.com/documents/army/FA-24-0006.pdf)
+TTS beschreibt Materialforschung und Kooperation. Freigegebene Army-Korrespondenz aus Juli 2024 berichtet von wenigen Tests an sehr kleinen Materialien im Rahmen einer fünfjährigen CRADA. Die gesichteten Passagen enthalten keinen Nachweis nichtmenschlicher Herkunft oder eines Antriebs. [To The Stars · research](https://tothestars.media/pages/research) · [Army FOIA response FA-24-0006](https://documents2.theblackvault.com/documents/army/FA-24-0006.pdf)
 
 ### Medienunternehmen im Zeitverlauf
 
@@ -41,7 +41,7 @@ Die offiziellen TTS-Talks-Beschreibungen verbinden UFOs mit Bewusstsein und Gehe
 ## Publikations- und Interviewpfade
 
 - **Sekret Machines / Gods, Man & War:** Projekt- und Verlagsbeschreibungen; kein vollständiger Buchdurchgang. [Project Sekret / TTS Talks](https://tothestars.media/pages/project-sekret)
-- **TTS Talks9–11,15:** Gespräche mit Levenda/Semivan; Metadaten und Themen, kein Audioabgleich. [Project Sekret / TTS Talks](https://tothestars.media/pages/project-sekret)
+- **TTS Talks 9–11,15:** Gespräche mit Levenda/Semivan; Metadaten und Themen, kein Audioabgleich. [Project Sekret / TTS Talks](https://tothestars.media/pages/project-sekret)
 - **TTSA-Offering2017 / TTS-Report2026:** Organisations- und Geschäftsmodellvergleich. [TTSA · 2017 offering circular](https://www.sec.gov/Archives/edgar/data/1710274/000114420417050693/v476177_253g2.htm)
 - **Aliens Exist (FADER2018):** Journalistischer Zugang zu Person, Strategie und berichteten Überzeugungen. [Aliens Exist](https://www.thefader.com/2018/02/27/aliens-exist-feature)
 

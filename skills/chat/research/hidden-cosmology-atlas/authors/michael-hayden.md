@@ -16,7 +16,7 @@ Die Hochschulbiografie nennt NSA, CIA und die Funktion als erster Principal Depu
 
 ### Organisationskultur
 
-Im Interview2010 beschreibt Hayden die Stärkung einer gemeinsamen CIA-Kultur und personelle Kontinuität. Hier geht es um konkrete Führungsentscheidungen, nicht um die Ableitung einer verborgenen Gesamtsteuerung. [A Conversation with Former CIA Director Michael Hayden](https://www.cia.gov/resources/csi/static/Conversation-with-Director-Hayden.pdf)
+Im Interview 2010 beschreibt Hayden die Stärkung einer gemeinsamen CIA-Kultur und personelle Kontinuität. Hier geht es um konkrete Führungsentscheidungen, nicht um die Ableitung einer verborgenen Gesamtsteuerung. [A Conversation with Former CIA Director Michael Hayden](https://www.cia.gov/resources/csi/static/Conversation-with-Director-Hayden.pdf)
 
 ### Wirksamkeit und Rechtfertigung
 
@@ -24,7 +24,7 @@ Hayden verteidigt im Interview den Erkenntnisgewinn des Verhörprogramms, grenzt
 
 ### Dokumentarische Gegenlesart
 
-Die Senatsbefunde2014 widersprechen zentralen Wirksamkeits- und Notwendigkeitsbehauptungen. Findings1–2 unterscheiden Informationen, die vor oder ohne Zwang vorlagen, von dem behaupteten Mehrwert der Techniken. [SSCI detention study · findings and conclusions](https://ccrjustice.org/sites/default/files/attach/2015/12/SSCI_findingsandconclusions_2014-12.pdf)
+Die Senatsbefunde 2014 widersprechen zentralen Wirksamkeits- und Notwendigkeitsbehauptungen. Findings 1–2 unterscheiden Informationen, die vor oder ohne Zwang vorlagen, von dem behaupteten Mehrwert der Techniken. [SSCI detention study · findings and conclusions](https://ccrjustice.org/sites/default/files/attach/2015/12/SSCI_findingsandconclusions_2014-12.pdf)
 
 ### Risikokultur
 
@@ -39,7 +39,7 @@ Das Hayden Center bietet einen institutionellen Publikations- und Veranstaltungs
 - **A Conversation with Former CIA Director Michael Hayden (2010):** Direktes Interview; ausgewählte Seiten1–4. [A Conversation with Former CIA Director Michael Hayden](https://www.cia.gov/resources/csi/static/Conversation-with-Director-Hayden.pdf)
 - **Playing to the Edge (2016):** Bibliografie und Verlagsbeschreibung. [Playing to the Edge](https://play.google.com/store/books/details?id=kjepCQAAQBAJ)
 - **Hayden Center:** Institutioneller Ausgangspunkt für weitere Vorträge; keine Gesamtsichtung. [Michael V. Hayden · founder biography](https://haydencenter.gmu.edu/people/founder/)
-- **SSCI2014: Findings und abweichende Voten:** Gegenlesart erschlossen; Minority Views über Index registriert, nicht vollständig gelesen. [SSCI publication index including minority views](https://www.intelligence.senate.gov/2014/12/09/press-committee-releases-study-cias-detention-and-interrogation-program/)
+- **SSCI 2014: Findings und abweichende Voten:** Gegenlesart erschlossen; Minority Views über Index registriert, nicht vollständig gelesen. [SSCI publication index including minority views](https://www.intelligence.senate.gov/2014/12/09/press-committee-releases-study-cias-detention-and-interrogation-program/)
 
 ## Vergleich und Grenze
 

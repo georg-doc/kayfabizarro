@@ -22,3 +22,7 @@ Identity attributions are not sameAs edges. No undocumented Hayden-UAP relation.
 Georg reviews this breadth-first package and chooses which author corpus to expand next. No automatic archive pursuit, subscription purchase, contacts or follow-up run.
 
 Publication and exact commit readback are recorded in SITE_PUBLICATION_2026-11-13.json after deployment.
+
+## Validation
+
+Internal routes and fragment targets checked; JSON parses; source references and graph endpoints resolve; author IDs unique. Local browser confirms source link opens its details and back-link updates the intended route. Existing private host not visually authenticated in this pass.
