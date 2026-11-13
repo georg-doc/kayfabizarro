@@ -42,3 +42,10 @@ The exact Gemini dossier contains no original-work URLs, podcast timestamps or e
 Required: `source_id, author/speaker, source_work, original_url, timestamp/page, faithful_argument, author_native_qualification, claimed_relations`.
 
 **Status:** `DERIVED_INTRODUCTION` · `COMPLETE_GEMINI_DOC_MIGRATION_PENDING` · `NOTEBOOKLM_GITHUB_SOURCE_REFRESH_UNVERIFIED`.
+
+
+## Source-aligned comparison with Vallée · 2026-11-13
+
+Selected interview transcript passages distinguish baseline reality, human-created matrices and a greater reality (41:45–45:57). Wann explicitly avoids committing to a literal computer simulation. He compares his practice to Hesse's Glass Bead Game (31:02–33:36). These are attributed positions from an error-prone publisher transcript, not audio-verified quotations or evidence of a historical ritual network.
+
+[Comparison, source passages and limits](../packages/jacques-vallee/COMPARISON_SYMBOLS_CONTROL.md). Sources V57–V58 in the [source ledger](../packages/jacques-vallee/SOURCES.md). Earlier Gemini-derived material remains unverified outside these selected passages. No direct Vallée contact is inferred from a conceptual comparison.

@@ -187,14 +187,103 @@
       "id": "motifs",
       "author": "Bramley, Icke und Wann",
       "path": "william-bramley",
-      "type": "editorial_question",
+      "type": "comparison_navigation",
       "sourceIds": [
-        "V02",
-        "V33"
+        "V54",
+        "V56",
+        "V57"
       ],
-      "text": "Für die im Atlas vorhandenen Perspektiven bieten sich Religion, wiederkehrende Motive und gesellschaftliche Kontrolle als gemeinsame Fragen an. Die nächste vergleichende Lektüre sollte jeweils Erfahrung, zugeschriebenen Akteur und behaupteten historischen Mechanismus nebeneinanderlegen. Diese Karte registriert eine Lesefrage und behauptet noch keine aus den Originalwerken belegte Übereinstimmung."
+      "text": "Die bisherige gemeinsame Lesefrage ist jetzt in drei getrennten, quellenbezogenen Vergleichen ausgearbeitet: Bramley, Icke und Michael Wann. Direkte Rezeption und redaktionelle Nachbarschaft bleiben getrennt.",
+      "comparisonIds": [
+        "bramley",
+        "icke",
+        "wann"
+      ]
+    },
+    {
+      "id": "bramley",
+      "author": "William Bramley",
+      "path": "william-bramley",
+      "type": "explicit_textual_reception",
+      "sourceIds": [
+        "V54",
+        "V02",
+        "V04"
+      ],
+      "text": "Historische UFO-Berichte, religiöse Motive und gesellschaftliche Kontrolle. Bramley entwirft eine konkrete außerirdische Besitz- und Konfliktthese; Vallées Kontrollmodell lässt die Herkunft offener.",
+      "detail": {
+        "shared": "Historische UFO-Berichte, religiöse Motive und gesellschaftliche Kontrolle.",
+        "difference": "Bramley entwirft eine konkrete außerirdische Besitz- und Konfliktthese; Vallées Kontrollmodell lässt die Herkunft offener.",
+        "method": "Historische Synthese und Literaturvergleich. Bramley verlangt Kontextlektüre und setzt beim Leser die Möglichkeit außerirdischer Besuche bereits voraus.",
+        "connection": "Er nennt Passport to Magonia ausdrücklich und führt auch The Invisible College bibliografisch auf. Das belegt Rezeption, keine Zustimmung Vallées zu Bramleys Schlussfolgerungen.",
+        "sourceIds": [
+          "V54",
+          "V02",
+          "V04"
+        ],
+        "question": "Wo übernimmt Bramley Material von Vallée, wo ergänzt er einen eigenen Verursacher?",
+        "locator": "V54: S. 12 Fußnote, 33–35, 452–453 und Bibliografie; OCR, nicht am Druck abgeglichen."
+      }
+    },
+    {
+      "id": "icke",
+      "author": "David Icke",
+      "path": "david-icke",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V56",
+        "V55",
+        "V04",
+        "V05"
+      ],
+      "text": "Wahrnehmung, nichtmenschliche Akteure, kulturelle Deutungen und Kontrolle. Icke verknüpft diese Bereiche mit einem umfassenden Simulations- und Manipulationsmodell; Vallée hält mehrere Erklärungswege offen.",
+      "detail": {
+        "shared": "Wahrnehmung, nichtmenschliche Akteure, kulturelle Deutungen und Kontrolle.",
+        "difference": "Icke verknüpft diese Bereiche mit einem umfassenden Simulations- und Manipulationsmodell; Vallée hält mehrere Erklärungswege offen.",
+        "method": "Icke beschreibt seine Arbeit als Verbindung von Dokumenten, Begegnungen und synchronistischen Hinweisen. Im Interview unterscheidet er politische Netzwerke, nichtmenschliche Einwirkung und die Natur der Realität.",
+        "connection": "Hier eine redaktionelle Gegenüberstellung; in den gelesenen Passagen kein direkter Vallée-Bezug nachgewiesen.",
+        "sourceIds": [
+          "V56",
+          "V55",
+          "V04",
+          "V05"
+        ],
+        "question": "Welche Beobachtung trägt eine Teilthese, welche wird erst durch das Gesamtmodell gedeutet?",
+        "locator": "V56: 08:11–12:49, 24:42–28:32 und 40:17–43:29; nur Transkript. V55 ist Verlagswerbung."
+      }
+    },
+    {
+      "id": "wann",
+      "author": "Michael Wann",
+      "path": "michael-wann",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V57",
+        "V58",
+        "V02",
+        "V05"
+      ],
+      "text": "Symbole, Erzählungen, Bewusstsein und die Bedeutung wiederkehrender Muster. Wann unterscheidet natürliche Basisrealität, menschlich geschaffene Matrix und größere Wirklichkeit. Er legt sich bei „Simulation“ ausdrücklich nicht auf eine Computersimulation fest.",
+      "detail": {
+        "shared": "Symbole, Erzählungen, Bewusstsein und die Bedeutung wiederkehrender Muster.",
+        "difference": "Wann unterscheidet natürliche Basisrealität, menschlich geschaffene Matrix und größere Wirklichkeit. Er legt sich bei „Simulation“ ausdrücklich nicht auf eine Computersimulation fest.",
+        "method": "Synchromystischer Vergleich von Landschaft, persönlichen Erfahrungen und Literatur; im Gespräch verbindet er Hesses Glasperlenspiel mit dieser Praxis.",
+        "connection": "Methodische Nachbarschaft zu Vallées Motivvergleich; ein persönlicher Kontakt oder eine direkte Rezeption ist mit diesen Quellen nicht belegt.",
+        "sourceIds": [
+          "V57",
+          "V58",
+          "V02",
+          "V05"
+        ],
+        "question": "Ist eine Verbindung geografischer Befund, persönlich erlebte Bedeutung oder behaupteter historischer Mechanismus?",
+        "locator": "V57: 14:13–16:33, 31:02–33:36 und 41:45–45:57; nur Transkript. V58: Gastgeber-Show-Notes."
+      }
     }
   ],
   "matrixFile": "comparison-matrix.json",
-  "additionalMatrixFile": "comparison-matrix-psi-finance.json"
+  "additionalMatrixFile": "comparison-matrix-psi-finance.json",
+  "additionalMatrixFiles": [
+    "comparison-matrix-psi-finance.json",
+    "comparison-matrix-symbols-control.json"
+  ]
 }

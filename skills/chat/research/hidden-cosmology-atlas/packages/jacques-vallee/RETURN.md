@@ -75,3 +75,8 @@ Outcome: zweite Matrix mit sechs Achsen und vier Autoren; drei Detailkarten erwe
 ### R4 Veröffentlichungsabschluss
 
 Inhalt: `c1f5cdf90a8cc02e4a3c07627d8653ebe7850602`; 23 geänderte Dateien exakt von GitHub zurückgelesen. Sites-Publikation erfolgreich, Deployment `appgdep_6af659d079648191a193243ff0d6c212`, Site-Quellrevision `b30f6b7576755db604c90a546322811dc061315a`. 24 neue Vergleichszellen; alle internen Anker und Quellenzuordnungen auflösbar. Sichtprüfung der authentifizierten Live-Seite in diesem Lauf nicht durchgeführt. [Vergleich öffnen](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html#wahrnehmung-macht). Nächster Gate: Georgs Blick auf den Breitenvergleich; keine automatische Einzelfallvertiefung.
+
+
+## 2026-11-13 · Vallée Vergleich R5 — Bramley / Icke / Wann
+
+Dritte Vergleichsmatrix: sechs Achsen, vier Autoren; drei separate Karten ergänzen die bisherige Sammelfrage. V54–V58 additiv (58 Quellen), C48–C55 (55 Aussagen), R26–R30 (30 typisierte Beziehungen). Explizite Bramley→Vallée-Werkrezeption und Wann→Hesse-Literaturvergleich getrennt von redaktionellen Nachbarschaften. OCR-/Transkriptgrenzen erhalten; kein Audio-/Vollbuchaudit, keine Rabbit Holes, kein Spielcode. Route /vallee.html#symbole-kontrolle. Publikationsbeleg folgt.

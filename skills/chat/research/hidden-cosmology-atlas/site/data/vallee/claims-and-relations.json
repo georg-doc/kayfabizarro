@@ -518,6 +518,86 @@
       "status": "editorial_attribution",
       "locator": "Verlagsauszug; nicht als Puharich-Aussage verwenden.",
       "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C48",
+      "statement": "Bramley nennt Vallées Passport to Magonia als Sammlung älterer UFO-Berichte.",
+      "sourceIds": [
+        "V54"
+      ],
+      "status": "explicit_source_reference",
+      "locator": "S. 12 Fußnote laut OCR-Text.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C49",
+      "statement": "Bramleys Bibliografie führt The Invisible College und Passport to Magonia.",
+      "sourceIds": [
+        "V54"
+      ],
+      "status": "bibliographic_reference",
+      "locator": "Bibliografie, Eintrag Vallee.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C50",
+      "statement": "Bramley formuliert eine außerirdische Besitz- und Konflikthypothese.",
+      "sourceIds": [
+        "V54"
+      ],
+      "status": "author_hypothesis",
+      "locator": "S. 33–35 laut OCR-Text.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C51",
+      "statement": "Icke beschreibt drei Arbeitsfelder: politische Netzwerke, nichtmenschliche Einwirkung und Natur der Realität.",
+      "sourceIds": [
+        "V56"
+      ],
+      "status": "method_self_description",
+      "locator": "08:11–12:49, Transkript.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C52",
+      "statement": "Icke erklärt, ungewöhnliche Einzelberichte nicht sofort zu verwerfen oder allein aufgrund ihrer Mitteilung zu glauben.",
+      "sourceIds": [
+        "V56"
+      ],
+      "status": "author_self_qualification",
+      "locator": "41:17–42:05, Transkript; Durchführung seiner Gegenprüfungen nicht auditiert.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C53",
+      "statement": "Wann unterscheidet Basisrealität, menschliche Matrix und größere Wirklichkeit.",
+      "sourceIds": [
+        "V57"
+      ],
+      "status": "author_model",
+      "locator": "41:45–45:57, Transkript.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C54",
+      "statement": "Wann verbindet den Begriff Simulation ausdrücklich nicht zwingend mit einer Computersimulation.",
+      "sourceIds": [
+        "V57"
+      ],
+      "status": "author_self_qualification",
+      "locator": "41:45–42:33, Transkript.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C55",
+      "statement": "Wann interpretiert Hesses Glasperlenspiel als verwandte Praxis zum Synchromystizismus.",
+      "sourceIds": [
+        "V57"
+      ],
+      "status": "explicit_literary_comparison",
+      "locator": "31:02–33:36, Transkript.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
     }
   ],
   "relations": [
@@ -815,6 +895,73 @@
       ],
       "rationale": "Offene Urheberfrage neben konkreter Kontaktdeutung; kein persönlicher Kontakt abgeleitet.",
       "status": "editorial_comparison",
+      "causalClaim": false
+    },
+    {
+      "id": "R26",
+      "from": "william-bramley",
+      "to": "passport-to-magonia",
+      "type": "explicit_source_reference",
+      "sourceIds": [
+        "V54"
+      ],
+      "rationale": "Fußnote und Bibliografie benennen das Werk.",
+      "whatWouldChange": "Abgleich am Originaldruck könnte OCR-Fehler korrigieren.",
+      "status": "source_text_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R27",
+      "from": "william-bramley",
+      "to": "the-invisible-college",
+      "type": "bibliographic_reference",
+      "sourceIds": [
+        "V54"
+      ],
+      "rationale": "Bibliografie nennt Vallées Werk; keine pauschale inhaltliche Zustimmung ableitbar.",
+      "whatWouldChange": "Passagenprüfung könnte Umfang der Rezeption präzisieren.",
+      "status": "source_text_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R28",
+      "from": "jacques-vallee",
+      "to": "david-icke",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V04",
+        "V56"
+      ],
+      "rationale": "Offenes Ursprungsmodell neben umfassender Kontroll- und Simulationsdeutung.",
+      "whatWouldChange": "Ein belegtes Direktzitat würde zusätzlich eine Rezeptionskante erlauben.",
+      "status": "editorial_comparison",
+      "causalClaim": false
+    },
+    {
+      "id": "R29",
+      "from": "jacques-vallee",
+      "to": "michael-wann",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V02",
+        "V57"
+      ],
+      "rationale": "Motivvergleich und symbolische Bedeutungsarbeit als unterschiedliche Arbeitsweisen.",
+      "whatWouldChange": "Direkte Werkrezeption oder Kontaktquelle könnte den Beziehungstyp erweitern.",
+      "status": "editorial_comparison",
+      "causalClaim": false
+    },
+    {
+      "id": "R30",
+      "from": "michael-wann",
+      "to": "hermann-hesse-glass-bead-game",
+      "type": "explicit_literary_comparison",
+      "sourceIds": [
+        "V57"
+      ],
+      "rationale": "Wann stellt selbst den Vergleich zum Glasperlenspiel her.",
+      "whatWouldChange": "Audioabgleich würde die Transkriptzuordnung absichern.",
+      "status": "source_text_read",
       "causalClaim": false
     }
   ]

@@ -123,3 +123,10 @@ The original interviews and books retain priority over the current dossier's ren
 The `Inter-Author Matrix` section above contains cross-source **Gemini editorial relationships**, not automatically direct original-author citations or mutual agreement. The `Performance & Triplet Layer` describes a fictional KFB Resident staging, not a real William Bramley voice or a genuine quotation. Stable canonical Cards and the existing ChatterBox/Resident/Audio owners remain upstream of live game integration.
 
 **NotebookLM GitHub Web-source refresh:** UNTESTED. Use the stable path as a candidate source and Git commit for exact snapshot identity.
+
+
+## Source-aligned comparison with Vallée · 2026-11-13
+
+Selected OCR passages of The Gods of Eden identify explicit reception of Vallée: Passport to Magonia in the p. 12 footnote, both that work and The Invisible College in the bibliography. Bramley proposes an extraterrestrial custodial explanation (pp. 33–35), rather than merely repeating Vallée's open model. This establishes textual reception, not Vallée's endorsement. Original print not collated.
+
+[Comparison, source passages and limits](../packages/jacques-vallee/COMPARISON_SYMBOLS_CONTROL.md). Sources V54 in the [source ledger](../packages/jacques-vallee/SOURCES.md). Earlier Gemini-derived material remains unverified outside these selected passages. No direct Vallée contact is inferred from a conceptual comparison.

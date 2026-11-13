@@ -111,3 +111,8 @@ Die Website zeigt eine Lesefassung; GitHub bleibt der persistierte Master. Verö
 ## Erweiterung R4 · 13.11.2026
 
 [Fitts, Swann und Puharich neben Vallée](COMPARISON_PSI_FINANCE.md): sechs Vergleichsachsen, ausgewählte Originaltexte, Quellenstatus und unterschiedliche Verbindungsarten. [Strukturierte Daten](comparison-matrix-psi-finance.json).
+
+
+## Erweiterung R5 · 13.11.2026
+
+[Bramley, Icke und Michael Wann neben Vallée](COMPARISON_SYMBOLS_CONTROL.md): sechs Achsen, drei einzelne Karten und direkte Bramley-Rezeptionsspur. [Strukturierte Matrix](comparison-matrix-symbols-control.json). Die frühere Sammelkarte bleibt als Navigation erhalten.

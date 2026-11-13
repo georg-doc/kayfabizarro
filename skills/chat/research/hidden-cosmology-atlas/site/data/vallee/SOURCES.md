@@ -525,3 +525,46 @@ Sichtungsgrenze: Biografische Orientierung aus dem Familienumfeld; keine unabhä
 Fundstelle: Danksagung und Vorwort, PDF-Seiten 2–3 (Index 1–2)
 
 Sichtungsgrenze: Ausgewählter Autorentext in fremd gehosteter Textreproduktion mit Anchor Press/Doubleday-Angabe. Nicht mit einem Originaldruck abgeglichen; kein vollständiger Buchaudit.
+
+
+## Erweiterung R5 — Quellen V54–V58 (gesamt 58)
+
+### V54 · The Gods of Eden — ausgewählte Buchpassagen
+
+[Quelle](https://paperzz.com/doc/9020159/gods-of-eden---william-bramley) · William Bramley
+
+Fundstelle: Avon-Druckangabe März 1993, ISBN 0-380-71807-3; S. 1–4, 12 Fußnote, 33–35, 452–453 und Bibliografieeinträge Vallée
+
+Sichtungsgrenze: Fremd gehosteter OCR-/HTML-Text mit Editionsangabe; ausgewählte Passagen gelesen, keine Scan- oder vollständige Buchprüfung. Direkte Vallée-Rezeption im Text erkennbar; historische Schlussfolgerungen nicht unabhängig bestätigt.
+
+### V55 · The Dream — offizielle Buchankündigung
+
+[Quelle](https://davidicke.com/2023/09/04/the-dream-by-david-icke-the-extraordinary-revelation-of-who-we-are-and-where-we-are-pre-order-now/) · Gareth Icke / DavidIcke.com
+
+Fundstelle: 4. September 2023, Beschreibung von Simulation, Wahrnehmung und nichtmenschlicher Kontrolle
+
+Sichtungsgrenze: Werbetext auf der Autorenseite, mit Gareth-Icke-Byline; kein gelesenes Buch und keine unabhängige Bestätigung. Die Werbeaussage über wissenschaftliche Bestätigung der Simulation wird nicht übernommen.
+
+### V56 · David Icke: True Reality, Archon Control, & The Big Conspiracy
+
+[Quelle](https://freeclips.thehighersidechats.com/episode/david-icke-true-reality-archon-control-the-big-conspiracy) · David Icke im Gespräch mit Greg Carlwood
+
+Fundstelle: 15. Juni 2019; Transkript 08:11–12:49, 24:42–28:32, 40:17–43:29
+
+Sichtungsgrenze: Ausgewählte öffentlich bereitgestellte Transkriptpassagen; erkennbare Transkriptionsfehler, kein Audioabgleich. Moderation, Kapitelzusammenfassungen und Gästebeiträge getrennt. Zeitmarken sind Navigationshilfen des Herausgebers.
+
+### V57 · Michael Wann: Reality, Consciousness, & Escaping The Matrix
+
+[Quelle](https://freeclips.thehighersidechats.com/episode/michael-wann-reality-consciousness-escaping-the-matrix) · Michael Wann im Gespräch mit Greg Carlwood
+
+Fundstelle: 15. April 2021; Transkript 14:13–16:33, 31:02–33:36, 41:45–45:57
+
+Sichtungsgrenze: Ausgewählte Interviewtranskript-Passagen, kein Audioabgleich; fehlerhafte Namens-/Worttranskription sichtbar. Kapitelzusammenfassungen nicht als Wann-Zitate übernommen. Gleiche Herausgeberfamilie wie V56, keine unabhängige Bestätigung.
+
+### V58 · Michael Wann: Susquehanna Alchemy, River Goddess Worship, & The Big Ritual
+
+[Quelle](https://www.thehighersidechats.com/susquehanna-alchemy-river-goddess-worship-the-big-ritual/) · Greg Carlwood / The Higherside Chats
+
+Fundstelle: 12. Mai 2018; Show Notes und Themenübersicht
+
+Sichtungsgrenze: Originale Episodenseite gelesen; nur Gastgeberbeschreibung des geografisch-rituellen Themenfelds, keine gesichtete Aufnahme und kein Beleg behaupteter Rituale.

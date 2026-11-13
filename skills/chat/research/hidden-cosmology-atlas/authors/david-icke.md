@@ -106,3 +106,10 @@ Required: `source_id | speaker | work_title | publication_or_episode_date | orig
 - **KFB performance / Triplet:** independently authored fictional KFB Resident directions, not a real author's direct voice or invented quotation.
 
 **NotebookLM GitHub Web URL auto-refresh:** NOT VERIFIED. File path is stable; actual revision is the Git commit and `content_version` tracks editorial intent.
+
+
+## Source-aligned comparison with Vallée · 2026-11-13
+
+Selected interview transcript passages distinguish political networks, non-human influence and the nature of reality (08:11–12:49). Icke describes a synthesis of encounters, documents and synchronistic clues. At 41:17 he says unusual reports should not be believed simply because someone recounts them. This is his stated method, not an audited demonstration of its application. The official Dream announcement is publisher copy with a Gareth Icke byline, not a read book.
+
+[Comparison, source passages and limits](../packages/jacques-vallee/COMPARISON_SYMBOLS_CONTROL.md). Sources V55–V56 in the [source ledger](../packages/jacques-vallee/SOURCES.md). Earlier Gemini-derived material remains unverified outside these selected passages. No direct Vallée contact is inferred from a conceptual comparison.
