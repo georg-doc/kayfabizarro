@@ -44,3 +44,8 @@ Nächster inhaltlicher Schritt: weitere Publikationen und Interviews den Themenf
 24 Themenfelder jetzt mit Aussage/Modell, Werkstrang und Vergleich ausgearbeitet. 42 Quellen registriert; acht Vergleichskarten ergänzen die bestehenden Koautoren- und Kontaktkanten. Neue Schwerpunkte: Information, SETI/nichtbiologische Intelligenz, Erkenntnisgrenzen und Fiktion. Farrells ausdrückliche Vallée-Nennung ist bislang in einer indexierten Passage gelesen; kein Vollseitenzugriff. Verlags-ToCs und Vortragsmetadaten werden nicht als Volllektüre ausgewiesen. Keine neue Trinity-/Archiv-Einzelfallprüfung und kein Spielcode.
 
 [Themen](THEMES.md) · [Autorenvergleich](COMPARISONS.md)
+
+
+### Veröffentlichung der Breiten-Ausarbeitung
+
+Inhalt: 9d265298f9dade03cb9526660c05fab74c32e127. Site-Quelle: 410892383665357c6d1a71cf15e3955b1997f2d9. Deployment appgdep_6af6541047f081919372f249c35b4691: succeeded, 2026-11-13T00:04:44.955879+00:00. [Vallée im bestehenden Atlas](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html). Lokal Filter → Mehr erfahren → Originalquellenfundstelle geprüft. Gehostete visuelle Sichtung weiterhin an Anmeldung gebunden; kein solcher Sichtnachweis behauptet. Nächster Schritt: Georgs Blick auf Themenbreite und Autorenvergleiche.
