@@ -1,6 +1,6 @@
 ## 2026-11-13 · Bigelow und Kelleher
 
-[Zwei Dossiers und Vergleiche](packages/uap-knowledge-networks/BIGELOW_KELLEHER.md).16 neue Themen,10 Vergleiche,15 Beziehungen,10 Quellenaufnahmen. Breite ohne Rabbit Holes. [Return](packages/uap-knowledge-networks/RETURN.md).
+[Zwei Dossiers und Vergleiche](packages/uap-knowledge-networks/BIGELOW_KELLEHER.md).16 neue Themen,10 Vergleiche,15 Beziehungen,10 Quellenaufnahmen. Breite ohne Rabbit Holes. [Return](packages/uap-knowledge-networks/RETURN.md). [Atlas-Version25](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html#robert-bigelow) veröffentlicht; Inhaltcommit 8f98515543920c8ec1249d4b2b65fbabe3e412d8,26/26 Dateien exakt zurückgelesen. [Publikationsbeleg](packages/uap-knowledge-networks/SITE_PUBLICATION_BIGELOW_KELLEHER_R4_2026-11-13.json). Nächstes Gate: Georgs Sicht auf die breite Gegenüberstellung.
 
 ## 2026-11-13 · Puthoff und Davis
 

@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-13",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "draft_pr": 394,
+  "content_commit": "8f98515543920c8ec1249d4b2b65fbabe3e412d8",
+  "changed_files": [
+    "authors/robert-bigelow.md",
+    "packages/uap-knowledge-networks/robert-bigelow.md",
+    "authors/colm-kelleher.md",
+    "packages/uap-knowledge-networks/colm-kelleher.md",
+    "packages/uap-knowledge-networks/BIGELOW_KELLEHER.md",
+    "packages/uap-knowledge-networks/COMPARISONS.md",
+    "packages/uap-knowledge-networks/sources.json",
+    "packages/uap-knowledge-networks/claims-and-relations.json",
+    "packages/uap-knowledge-networks/SOURCES.md",
+    "packages/uap-knowledge-networks/README.md",
+    "packages/uap-knowledge-networks/RETURN.md",
+    "RETURN.md",
+    "authors/README.md",
+    "site/authors.json",
+    "site/uap-networks.html",
+    "site/index.html",
+    "site/vallee.html",
+    "site/data/uap-networks/robert-bigelow.md",
+    "site/data/uap-networks/colm-kelleher.md",
+    "site/data/uap-networks/BIGELOW_KELLEHER.md",
+    "site/data/uap-networks/COMPARISONS.md",
+    "site/data/uap-networks/sources.json",
+    "site/data/uap-networks/claims-and-relations.json",
+    "site/data/uap-networks/SOURCES.md",
+    "site/data/uap-networks/README.md",
+    "site/data/uap-networks/RETURN.md"
+  ],
+  "readback": {
+    "files": 26,
+    "exact_matches": 26,
+    "remote_head": "8f98515543920c8ec1249d4b2b65fbabe3e412d8"
+  },
+  "site": {
+    "project_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc",
+    "commit_sha": "b7b5bc7c68749a1b7579dd6ab296f384535f0397",
+    "archive": "/tmp/kfb-bigelow-kelleher-20261113.tar.gz",
+    "version": 25,
+    "version_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc~appgver_89a46871a0508191ad6ef7b0e424e7e4",
+    "deployment_id": "appgdep_6af674eee994819198895c1e2981cd79",
+    "status": "succeeded",
+    "url": "https://kfb-research-atlas.frizzlebob.chatgpt.site",
+    "audience": "existing owner-private unchanged"
+  },
+  "validation": [
+    "Unique HTML IDs; local anchors and download paths resolve",
+    "All graph source IDs and relationship endpoints resolve",
+    "All 42 comparison author destinations resolve; 34 unique non-empty author records",
+    "Local browser: Kelleher source link opens expanded UKN-S59 with pp353–354; backlink returns to #colm-kelleher",
+    "Published source SHA verified through get_site_version; production content not separately browser-inspected"
+  ],
+  "counts": {
+    "profiles": 10,
+    "themes": 76,
+    "comparisons": 42,
+    "relations": 52,
+    "sources": 66
+  },
+  "navigation_fix": "Registered six already-existing dossier/lens texts for Farrell, Jorjani, Liszt, Fitts, Wann and Michels, restoring comparison destinations without new research claims.",
+  "next_gate": "Georg reviews breadth comparison; no automatic deep dive."
+}
