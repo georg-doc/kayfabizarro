@@ -1,6 +1,6 @@
 ## 2026-11-13 · Puthoff und Davis
 
-[Zwei Dossiers und Vergleiche](packages/uap-knowledge-networks/PUTHOFF_DAVIS.md).16 neue Themen,12 Vergleiche,11 Beziehungen,12 Quellenaufnahmen. Breite ohne Rabbit Holes. [Return](packages/uap-knowledge-networks/RETURN.md).
+[Zwei Dossiers und Vergleiche](packages/uap-knowledge-networks/PUTHOFF_DAVIS.md).16 neue Themen,12 Vergleiche,11 Beziehungen,12 Quellenaufnahmen. Breite ohne Rabbit Holes. [Return](packages/uap-knowledge-networks/RETURN.md). [Atlas-Version24](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html#hal-puthoff) veröffentlicht; Inhaltcommit 62d82aa2bd2e74f64fadcd9841f68bc9eb53cee0,26/26 Dateien zurückgelesen. [Prüf- und Publikationsbeleg](packages/uap-knowledge-networks/SITE_PUBLICATION_PUTHOFF_DAVIS_R3_2026-11-13.json). Nächstes Gate: Georgs Sicht auf die Gegenüberstellung.
 
 ## 2026-11-13 · Pasulka und Nolan ergänzt
 
