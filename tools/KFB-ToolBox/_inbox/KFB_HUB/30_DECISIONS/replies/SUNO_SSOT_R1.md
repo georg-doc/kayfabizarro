@@ -73,6 +73,12 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Chicha de Maíz (Peruanische Chicha, Psychedelic, instrumental, 03.11., Kurzprompt) | 105 | G Moll | 151 eigenständig (170 roh; guitar 113, synth 17, woodwinds 13, brass 8) |
 | Warm Room Pulse (03.11.) | 85,8 | D Moll | 300 eigenständig (318 roh; guitar 145, woodwinds 123, keyboard 15, strings 7) |
 | Mysterious Horizons (03.11.) | 98,4 | A Moll | 142 eigenständig (151 roh; guitar 115, backing_vocals 13, brass 4, synth 4) |
+| 1-6 Spooky Cartoon Groove (11.11.) | 130,6 | A Moll | 118 eigenständig (129 roh; lead_vocals 68, brass 28, guitar 7, keyboard 6) |
+| 5-6 Dark Carnival Waltz (11.11.) | 101,2 | G Dur | 88 eigenständig (96 roh; lead_vocals 44, woodwinds 17, guitar 7, synth 7) |
+| 4-6 Creeping Boogaloo (12.11.) | 127,2 | A Moll | 148 eigenständig (173 roh; brass 30, strings 25, lead_vocals 20, backing_vocals 18) |
+| 6-6 Eerie Funk Minor (12.11.) | 127,1 | D Dur | 111 eigenständig (115 roh; synth 32, backing_vocals 23, brass 22, lead_vocals 14) |
+| 2-6 Toy Soldiers March (12.11.) | 87,5 | D# Dur | 55 eigenständig (55 roh; keyboard 45, strings 7, brass 1, guitar 1) |
+| 3-6 The Gilded Cage (12.11.) | 135,9 | G Moll | 76 eigenständig (80 roh; guitar 32, lead_vocals 23, backing_vocals 19, strings 1) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 

@@ -1,0 +1,46 @@
+# Für WSA Patch (Karten-Räume) · R2: begehbare Mindspaces mit Ton aus unseren Modulen · 13.11. (Georg)
+
+**Ziel:** Den Kartenraum-Prototyp (Zweig `wsa/patch-transfer-r1`) zu begehbaren Mindspaces ausbauen und den Ton so verdrahten, wie er später im Spiel läuft: dieselben Module, derselbe Katalog, dieselbe Karten-Logik. Was hier funktioniert, soll ohne Umbau ins Spiel wandern können. Kein Einbau ins Spiel, keine neue Site.
+
+**Tier 0** (wörtlich aus CANON_3D_R1 §0)
+1. **Kanon lesen:** `CANON_3D/CANON_3D_R1.md` (diese Seite) und die Zeilen deines Fachgebiets. **Vor dem Bau** liegt ein ausgefülltes Konzeptblatt `CANON_3D/KONZEPTBLATT_R1.md` vor; WS0 schreibt es (V-561).
+2. **Bauen nur mit den Kanon-Werkzeugen:** Umgebung `CANON_3D/lib/kfb_env.py` (Blender: `kfb_env_bpy`); Figuren, Material und Licht: Proof-Stage-Module. Eigene Platzierungs-, Licht- oder Knete-Helfer sind verboten.
+3. **Abgabe:** mechanisches Gate grün (`kfb_env_bpy.run()` + Proof-Stage G1–G7); dann der blinde Kritiker nach `CANON_3D/CRITIC_3D_R1.md`; Georg sieht nur Bestandenes.
+
+**Konzeptblatt (WS0):** `replies/PATCH_TRANSFER_R1/KONZEPTBLATT.md` (Vorlage `CANON_3D/KONZEPTBLATT_R1.md`) – ein Satz, Farb-Skript, Form-DNA, Lebensanker, Wertstruktur, Tiefenebenen. Ein Satz: „Dieser Raum zeigt eine Karte, die man betreten hat und die innen größer ist als außen, weil das Kartenbild selbst zu Wänden, Boden und Decke geworden ist; der Spieler soll zuerst den zweiten Ausgang sehen.“ Warnung V-561: nicht auf Messwerte hin bauen, sondern auf die Bildidee des Blatts.
+Bildmaterial sind die vorhandenen Kartenbilder und HyperNorm-Bilder, unverändert (darum kein eigenes Design-Paket nach V-740 für diesen isolierten Prototyp; Abnahme über Konzeptblatt, Gate und blinden Kritiker, Georg sieht nur das Video, V-1537); die Spielfigur mit Knete und KFB-Augen (CANON Gebiet 9); Licht aus dem einen Rig (V-385).
+
+**TIER0 Verteilung** (wörtlich aus `replies/FRAKTAL_R1/TIER0.md`)
+1. Alles Stehende und Liegende kommt aus einer Löser-Kaskade: je Maßstab ein Raster und eine Tabelle von Nachbarschafts-Wahrscheinlichkeiten zu allen Seiten. Kein zweiter Verteiler, keine eigene Formel, Zufall nur aus Saat und Ort.
+2. Löser ist `createLevel` und `collapse` aus `kfb-place-field` und `kfb-place-collapse`. Ein neuer Fall ist eine Tabellenzeile in `kfb-place-cascade.r3.json`, kein Code.
+3. Die Zelle der feineren Ebene ist bedingt durch den Zustand der gröberen. „leer“ vererbt sich, unter einem Objekt bleibt der Platz frei. Keine feine Ebene ohne gröbere.
+4. Gruppen, Größenstufen, Abfall und Lücken sind Ergebnis der Tabelle. Nie von Hand setzen: keine Kränze, Säume, Reihen, keine Abstandskurve je Objekt. Ausnahme Bäume (V-1216): Stufen keine, wenige (meist Dreiergruppe), viele (Fibonacci-Folge) als Tabellenwert der Ebene `hain`, nie im Code.
+5. Größe hängt am Raster der Ebene. Keine eigene Größenregel, Spannen aus der Tabelle.
+6. Hang, Schatten, Sperre, Thema, Deck und Wasserabstand wirken als Faktor im Vorwissen der Ebene, nie als Nachbearbeitung.
+7. `kinder()` nur, wenn ein Ereignis etwas auswirft (Einschlag, Spritzer, Fluff im Flug): Große bleiben nah und fallen, Mittlere fächern, Kleinste fliegen am weitesten. Was danach liegt, gehört wieder der Kaskade. Ausnahmen: Kartenrelief, dort bestimmt das Bild die Kugeln; Linien an Ufer und Rissen folgen dem Gelände, laufen spitz aus und setzen aus.
+8. Mindestens die Hälfte des Bodens bleibt frei, Materialcodes nur gegen kahle Flächen. Keine Konturen im Bereich 0,85–1,25 der Radien (V-749). Beides wird gemessen.
+9. Farbe aus Elternteil oder Boden an dieser Stelle, diskret, Kugeln nur über `ballCore`. Unter 3 Pixeln keine Instanz, sondern Shader oder nichts (V-403, V-1090). Nie Landmarken, Gebäude, Straßen oder Höhen (V-708).
+10. Abgabe: Löser-Ausgabe von oben über mehrere Zellen mit zwei Saaten plus die Tabelle, dann Einzelbilder aus dem Spiel (V-1100). Zählwerte in `perf.json`. Lesen nur `replies/FRAKTAL_R1/FRAKTAL_R1.md` §1 und §5.
+
+**Technik (V-1690):** WebGL mit three 0.186.1 und Rapier 0.19.2 wie im Spiel, kein fremder Renderer und keine eigene Spielschleife.
+
+**Räume (Weiterbau, was schon begonnen ist):** innen größer als außen; mindestens ein weiterer Ausgang je Raum; Escher-Übergänge Wand → Boden an markierten Stellen; Variante „Gewölbe“ mit Säulen und Treppen aus demselben Generator. Rahmen: Illusions-Budget (V-726), Regeln für Dungeon-Wände (V-754, CANON Gebiet 4).
+- **Treppen nach dem Walker (V-160, V-157):** Setzstufe 0,30 / Tritt ≥ 1,3 lab (Alternative 0,22 / 0,889), begehbar mit dem Medium-Rig ohne Auto-Hüpfer beim Joggen und Sprint; über 12 % Steigung Treppe mit Podest (V-158). Keine eigenen Stufenmaße, steiler nur mit Georg.
+- **Architektur vs. Verteilung:** Wände, Bögen, Säulen, Treppen und Portale sind Raum-Architektur aus dem Generator (wie Gebäude, TIER0 Punkt 9) und kommen nicht aus der Kaskade. Alles Lose im Raum (falls überhaupt) nur über die Kaskade.
+- **Portal zuerst als Choreografie (wie V-1384):** vor dem Bau eine Seite Choreografie – Zustände, Portal, Spieler, Kamera, Farbe/Form, Ton – als erster Teil der Rückgabe; dann bauen. Grundlage ist das abgenommene Portal Tueren R5b (q496, V-1430) und der eine TransitionDirector mit JSON-Rezepten (V-1431, Rezepte in `src/data/transitions/`); eine neue Portalform nur als Vorschlag.
+
+**Pflichtlektüre Ton:** `replies/AUDIO_ROUTING_R1.md` (V-841): ein Besitzer kfbAudio, nie zwei Musiken gleichzeitig (Song-Video > Zonen-Bett > globales Bett), HyperNorm-Bilder bleiben stumm (wie H15), der Klang kommt vom Raum-Teppich.
+
+**Ton – nur aus dem Bestand (Spiel `game/integration-r2` @48e17a65, privates Repo `georg-doc/KFB-Stunt-Car-Race`):**
+- Ein Ton-Pfad: `src/audio/kfbAudio.js` (ein AudioContext, Mixer mit Bussen Musik/SFX/Atmo/UI über `src/audio/mixer.js`, Ducking, Hörer an der Kamera). Die Laufzeit-Pakete der Audio-Site hängen dort an injiziertem Kontext und Bus – im Prototyp genauso einhängen.
+- Ereignisse → Klänge über `src/audio/cueMap.js` (Schritte je Boden: `bodenNachBiom`/`BIOME_STEP`; Landen, Portal, Treffer).
+- **Klangteppich aus Schichten je Raum (V-724), kein einzelnes Bett:** genau ein Suno-Fundament aus der Liste `mindscape` (`src/audio/songsR2.js`, ohne Shepard Ascent und Bouncing Busker Groove, V-1109), dazu die vorhandenen ElevenLabs-Schichten (Klangschalen, Natur-Loops) aus den Listen der Audio-Site; binaurale Schicht entfällt in R2 (V-718 ist nach dem MVP). Jeder Raum mischt die Schichten anders (Mischverhältnis je Karte in der Tabelle). Einen mind-Bus gibt es in `mixer.js` noch nicht: Teppich über den Musik-Bus, ein eigener Bus nur als Vorschlag zurück.
+- **Nie zwei Musiken gleichzeitig (V-841):** Die Auswahl nach Stichworten und Gewicht wie `src/audio/radioPlan.js` (bewusster Mismatch etwa 60/40, V-1281) wählt dieses eine Fundament je Raum – es gibt keine zweite Musik daneben. Der Teppich läuft als Zonen-Bett; am Portal blendet er in den Teppich des nächsten Raums über, Titel nur aus dem einen Katalog `40_AUDIO/music_catalog_r1.json` (Zweig `assets/private` @aa267b8b7ebea7c1e9d8da2acea90c3eeb8730be).
+- Klangbetten, Schritte, SFX: die Listen der Audio-Site (`site/audio-src`, `audio-site/data/site-listen.json`), Dateien von dort, wo die Audio-Site sie heute lädt.
+- Module unverändert aus dem Spiel-Repo importieren (fester Commit), nicht kopieren und umschreiben. Wo ein Modul für den Prototyp angepasst werden muss: als Vorschlag mit Begründung zurück, nicht still ändern.
+
+**Karten-Logik (einzige neue Datei):** Die Stimmung je Deck steht schon in `src/data/themen/kfb-themen-tags.r1.json` (Abschnitt `deck`, Wortschatz region/stimmung/element; Songs im Abschnitt `song`) – nur lesen, keine zweite Stimmungstabelle. Neu ist nur `kartenraum-ton.r1.json` mit den Raum-Sachen je Karte bzw. Deck: Mischverhältnis der Teppich-Schichten, Bodenart für die Schritte (Kartenbild-Boden, HyperNorm, Stein der Gewölbe), Raumgröße → Hall/Pegel des Betts. Portal: Übergang mit kurzem Stinger aus dem Bestand, Musik blendet über.
+
+**Grenzen:** keine eigenen Kopien von Songs oder Effekten, keine neue Songliste, kein zweiter AudioContext, kein Einbau ins Spiel, keine neue Site.
+
+**Rückgabe an WS0 in PR #49:** ein Video mit Ton (30–60 s durch drei Räume und ein Portal, einmal Gewölbe-Variante), die Tabelle `kartenraum-ton.r1.json`, Liste der unverändert übernommenen Module und der Anpassungsvorschläge, Choreografie-Seite Portal, Gate-Ergebnis (`kfb_env`/Proof-Stage), Urteil des blinden Kritikers, `perf.json` (Bildzeit und Speicher auf dem Mac mini, V-407, V-1216), Zweig-SHA.

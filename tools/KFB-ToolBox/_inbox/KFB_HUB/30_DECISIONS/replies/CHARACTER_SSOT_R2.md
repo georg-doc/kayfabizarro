@@ -4,6 +4,8 @@ Georg 11.11.: „für jeden Character, NPC, Slop etc. eine SSOT/JSON zentral ver
 
 ## Grundsatz
 
+- **Bearbeitet wird nur in der bestehenden Figuren-Werkstatt** (https://kfb-toolbox.frizzlebob.chatgpt.site/). Kein neues Werkzeug, keine neue Oberfläche (Georg 11.11., V-390). Fehlende Felder kommen dort als Tab bzw. Regler dazu.
+
 - **Eine Datei je Figur:** `data/characters/<id>.character.json` im Spiel-Repo (KFB-Stunt-Car-Race), Schema `kfb.character/2`.
 - **Wer schreibt:**
   - die Figuren-Werkstatt, über einen Vorschlags-Zweig auf GitHub (V-1106);
@@ -70,7 +72,7 @@ hero · kit_character · custom_rig · frankenstein · prop_character · pet · 
 ## Reihenfolge
 
 1. FrizzleBob: Werkstatt-Export 14.10., Rezept v5b, Kanon-Ohr, Lider (weit offen, q592), Schwanz, Shirt, Brauen- und Nasenfarbe in einer Datei; das Spiel liest daraus. (WS0)
-2. Migration der 132 Register-Figuren, Figurenkarten und Slop-Roster in `kfb.character/2`, erzeugt per Skript aus den bisherigen Quellen, mit Lückenliste. (WS0)
+2. Migration der 132 Register-Figuren, Figurenkarten und Slop-Roster in `kfb.character/2`, erzeugt per Skript aus den bisherigen Quellen, mit Lückenliste. (WS0) **Erledigt 11.11. für die 131 Register-Figuren** (`scripts/characters/build_characters_r2.py`, `index.r2.json`, Lückenliste `replies/CHARACTER_SSOT_R2_LUECKEN.md`, V-1623). Slop-Roster folgt; er trägt seine Karten schon im Feldformat.
 3. Dramatis Personae und Hub lesen die neue Quelle. (WSA work)
 4. Werkstatt schreibt Aussehen und Text über den Vorschlags-Zweig (Kern WSA PR #416). Probelauf: Georg ändert eine Farbe und sieht sie im nächsten Spielstand. (WSA work und WS0)
 5. Lücken im Inhalt füllt Georg per Diktat, nach Wichtigkeit: Helden, Slops, KayKit. Inhalte werden nicht erfunden.

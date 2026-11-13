@@ -1,0 +1,432 @@
+[
+ {
+  "phase": "geladen",
+  "status": "OK",
+  "error": null,
+  "netz": {
+   "nx": 63,
+   "nz": 87,
+   "frei": 3967
+  },
+  "parcours": 10,
+  "gegner": [
+   [
+    "soldat-1-gewehr",
+    "wache",
+    239,
+    129.1
+   ],
+   [
+    "soldat-2-gewehr",
+    "wache",
+    254,
+    136.6
+   ],
+   [
+    "soldat-3-gewehr",
+    "wache",
+    257,
+    142.6
+   ],
+   [
+    "soldat-4-streu",
+    "wache",
+    257,
+    151.6
+   ],
+   [
+    "soldat-5-schnell",
+    "wache",
+    243.5,
+    154.6
+   ],
+   [
+    "soldat-6-scharf",
+    "wache",
+    246.5,
+    166.7
+   ]
+  ]
+ },
+ {
+  "phase": "video_kamera",
+  "ziel": {
+   "id": "soldat-1-gewehr",
+   "vorn": [
+    -0.08940876080271348,
+    -0.9959950168006478
+   ],
+   "x": 243.3,
+   "z": 124.4
+  }
+ },
+ {
+  "phase": "video+0s",
+  "schuesse": 6,
+  "trefferSpieler": 0,
+  "gegner": [
+   [
+    "soldat-1-gewehr",
+    "schiessen",
+    "warten",
+    "walk_crouching_forward_right"
+   ],
+   [
+    "soldat-2-gewehr",
+    "schiessen",
+    "salve",
+    "firing_rifle_standing"
+   ],
+   [
+    "soldat-3-gewehr",
+    "schiessen",
+    "salve",
+    "firing_rifle_standing"
+   ],
+   [
+    "soldat-4-streu",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-5-schnell",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-6-scharf",
+    "wache",
+    null,
+    "walk_forward"
+   ]
+  ]
+ },
+ {
+  "phase": "schuss_gehoert",
+  "alarm": 5
+ },
+ {
+  "phase": "video+3s",
+  "schuesse": 13,
+  "trefferSpieler": 1,
+  "gegner": [
+   [
+    "soldat-1-gewehr",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-2-gewehr",
+    "schiessen",
+    "salve",
+    "firing_rifle_standing"
+   ],
+   [
+    "soldat-3-gewehr",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-4-streu",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-5-schnell",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-6-scharf",
+    "wache",
+    null,
+    "walk_forward"
+   ]
+  ]
+ },
+ {
+  "phase": "video+6s",
+  "schuesse": 19,
+  "trefferSpieler": 2,
+  "gegner": [
+   [
+    "soldat-1-gewehr",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-2-gewehr",
+    "schiessen",
+    "laden",
+    "reloading_standing"
+   ],
+   [
+    "soldat-3-gewehr",
+    "schiessen",
+    "zielen",
+    "idle_aiming"
+   ],
+   [
+    "soldat-4-streu",
+    "schiessen",
+    "vor",
+    "walk_right"
+   ],
+   [
+    "soldat-5-schnell",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-6-scharf",
+    "wache",
+    null,
+    "walk_forward"
+   ]
+  ]
+ },
+ {
+  "phase": "video+9s",
+  "schuesse": 23,
+  "trefferSpieler": 2,
+  "gegner": [
+   [
+    "soldat-1-gewehr",
+    "treffer",
+    "warten",
+    "walk_crouching_left"
+   ],
+   [
+    "soldat-2-gewehr",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-3-gewehr",
+    "schiessen",
+    "laden",
+    "reloading_standing"
+   ],
+   [
+    "soldat-4-streu",
+    "schiessen",
+    "zurueck",
+    "walk_right"
+   ],
+   [
+    "soldat-5-schnell",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-6-scharf",
+    "wache",
+    null,
+    "idle"
+   ]
+  ]
+ },
+ {
+  "phase": "video+12s",
+  "schuesse": 30,
+  "trefferSpieler": 2,
+  "gegner": [
+   [
+    "soldat-1-gewehr",
+    "fallen",
+    "salve",
+    "death_from_back_headshot"
+   ],
+   [
+    "soldat-2-gewehr",
+    "schiessen",
+    "salve",
+    "firing_rifle_standing"
+   ],
+   [
+    "soldat-3-gewehr",
+    "schiessen",
+    "warten",
+    "idle_crouching"
+   ],
+   [
+    "soldat-4-streu",
+    "wache",
+    "warten",
+    "walk_forward"
+   ],
+   [
+    "soldat-5-schnell",
+    "wache",
+    "vor",
+    "walk_forward"
+   ],
+   [
+    "soldat-6-scharf",
+    "wache",
+    null,
+    "walk_forward"
+   ]
+  ]
+ },
+ {
+  "phase": "ende",
+  "schuesse": 36,
+  "trefferSpieler": 3,
+  "trefferGegner": 2,
+  "leben": 82,
+  "opfer": "soldat-1-gewehr",
+  "gegner": [
+   {
+    "id": "soldat-1-gewehr",
+    "art": "gewehr",
+    "zustand": "fallen",
+    "phase": "salve",
+    "hp": 0,
+    "x": 243.1,
+    "z": 123.5,
+    "yaw": -1.38,
+    "magazin": 0,
+    "clip": "death_from_back_headshot",
+    "haltung": "tot"
+   },
+   {
+    "id": "soldat-2-gewehr",
+    "art": "gewehr",
+    "zustand": "schiessen",
+    "phase": "warten",
+    "hp": 100,
+    "x": 256.8,
+    "z": 133.8,
+    "yaw": -1.92,
+    "magazin": 2,
+    "clip": "idle_crouching",
+    "haltung": "deckung"
+   },
+   {
+    "id": "soldat-3-gewehr",
+    "art": "gewehr",
+    "zustand": "schiessen",
+    "phase": "warten",
+    "hp": 100,
+    "x": 257,
+    "z": 136.8,
+    "yaw": -2.03,
+    "magazin": 2,
+    "clip": "idle_crouching",
+    "haltung": "deckung"
+   },
+   {
+    "id": "soldat-4-streu",
+    "art": "streu",
+    "zustand": "wache",
+    "phase": "warten",
+    "hp": 100,
+    "x": 248.3,
+    "z": 151.6,
+    "yaw": -1.56,
+    "magazin": 6,
+    "clip": "idle",
+    "haltung": "idle"
+   },
+   {
+    "id": "soldat-5-schnell",
+    "art": "schnell",
+    "zustand": "wache",
+    "phase": "vor",
+    "hp": 100,
+    "x": 254,
+    "z": 151.5,
+    "yaw": -4.19,
+    "magazin": 18,
+    "clip": "walk_forward",
+    "haltung": "idle"
+   },
+   {
+    "id": "soldat-6-scharf",
+    "art": "scharf",
+    "zustand": "wache",
+    "phase": null,
+    "hp": 100,
+    "x": 246.5,
+    "z": 166.9,
+    "yaw": -3.14,
+    "magazin": 5,
+    "clip": "idle",
+    "haltung": "idle"
+   }
+  ],
+  "log": [
+   [
+    6.1,
+    "soldat-5-schnell",
+    "alarm"
+   ],
+   [
+    6.78,
+    "soldat-4-streu",
+    "schiessen"
+   ],
+   [
+    6.78,
+    "soldat-5-schnell",
+    "schiessen"
+   ],
+   [
+    6.8,
+    "soldat-1-gewehr",
+    "deckung"
+   ],
+   [
+    6.8,
+    "soldat-2-gewehr",
+    "schiessen"
+   ],
+   [
+    6.8,
+    "soldat-3-gewehr",
+    "schiessen"
+   ],
+   [
+    8.08,
+    "soldat-1-gewehr",
+    "schiessen"
+   ],
+   [
+    19.15,
+    "soldat-1-gewehr",
+    "treffer"
+   ],
+   [
+    19.87,
+    "soldat-1-gewehr",
+    "schiessen"
+   ],
+   [
+    21.28,
+    "soldat-1-gewehr",
+    "fallen"
+   ],
+   [
+    22.58,
+    "soldat-4-streu",
+    "wache"
+   ],
+   [
+    22.58,
+    "soldat-5-schnell",
+    "wache"
+   ]
+  ]
+ }
+]

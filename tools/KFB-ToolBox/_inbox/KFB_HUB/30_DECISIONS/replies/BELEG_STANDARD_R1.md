@@ -8,7 +8,8 @@ Anlass: Georg 11.11.: „Kamerapositionen und Standards definieren, in denen sol
 ```js
 import { belegVorbereiten, belegKamera, belegSchritt, belegFreigeben } from './lib/beleg.mjs'
 await belegVorbereiten(page)            // FB-Kanon-Wächter (beide Ohren, Schwanz), HUD aus
-await belegKamera(page, 'aktion')       // Ansicht aus der Liste unten; hält die Uhr an (Standbild)
+await belegKamera(page, 'aktion')       // Ansicht aus der Liste unten; hält die Uhr an (Standbild); Sonnenseite automatisch
+await belegFoto(page, 'pfad.png')        // Foto + Helligkeitsprüfung
 await belegSchritt(page, 1)             // Bildfolge: Kontakt, +1, +2, +4 …
 await belegKamera(page, 'aktion', { halten: false })   // feste Kamera, Spiel läuft (GIF/Video)
 ```
@@ -33,6 +34,8 @@ Fahrkamera und Spielkamera nur zusätzlich, nie als einzige Ansicht.
 ## Bild und Zeit
 
 - Licht: 13 Uhr als Standard; für Look- und Licht-Abnahmen zusätzlich Abendlicht und Nacht.
+- **Lichtseite (im Werkzeug, R1.1, 11.11. nach q625):** `belegKamera` stellt die Kamera auf die Sonnenseite der Figur (spiegelt den Azimut bei Bedarf). Steht die Spielerfigur mit dem Gesicht von der Sonne weg, dreht `belegKamera` sie an Ort und Stelle zur Sonne (30° seitlich) und wartet, bis sie ruhig steht. Bei anderen Motiven (`objekt`, NPCs) bricht es mit „Gegenlicht“ ab, dann Ort oder Blickrichtung des Motivs ändern. `licht: 'frei'` nur für bewusste Gegenlicht- oder Nachtbilder.
+- **Helligkeit (im Werkzeug):** Bilder mit `belegFoto(page, pfad)` aufnehmen statt mit `page.screenshot`. Es misst die Hauptsache (mittlere Hälfte ihres Bildausschnitts) und bricht unter Luma 60 ab (q625: Soldatengesicht 32, Mund unsichtbar). Dann Licht, Ort, Uhrzeit oder Materialfarbe prüfen, nicht das Bild aufhellen.
 - Ort: offener Boden ohne Verdeckung; für Treffer der Prüfpfosten in Clip-Reichweite.
 - Bewegung: Spiel mit `replay=30`, sodass jedes Bild 1/30 s Spielzeit ist. Bildfolge Kontakt, +1, +2, +4.
 - GIF: feste Farbpalette über alle Bilder, damit nichts flackert; kein Rahmen zwischen den Hälften, Vergleiche als getrennte Bilder oder sauberes Links/Rechts.

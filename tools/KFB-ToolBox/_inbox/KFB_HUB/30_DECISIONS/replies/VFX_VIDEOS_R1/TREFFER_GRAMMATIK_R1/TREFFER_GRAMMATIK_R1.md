@@ -100,3 +100,48 @@ Mündung, Geschoss-Spur, Klingen und Goo sind nicht Teil dieser Tabelle. Rezepte
 5. **Umfang von Lieferung 2.** Vorschlag: Faust, Uppercut, Bodenaufschlag, Pistole, Blaster in einem Schritt; Explosion und Feuer erst nach deiner Antwort zu Punkt 4.
 6. **Ablage.** Die Texturen liegen unter src/private/unity_vfx_r1 und werden nicht committet. Für den Einbau brauche ich den Weg, auf dem sie ins private Asset-Repo kommen (läuft über dich).
 7. **Nicht vorgesehen:** Pixel-Rezepte (Arcade), Blut. PolyOne-Feuer ist weich und realistisch; ich würde daraus nur den Funkenflug („dust“) für Metall und Feuer nehmen.
+
+## 6 · Nachtrag q594 (Georg: „VFX okay-ish“, TUNE) · in Lieferung 3 aufgenommen
+
+Fünf Punkte, alle hinter `trefferrezept=r1`. Werte in `src/data/combat/trefferEreignisse.r1.json`, Rezeptwerte weiter 1:1 aus den Prefabs (neu im Erzeuger: Poison_01, Poison_02).
+
+| Punkt | Entscheidung | Begründung |
+|---|---|---|
+| **1 · Blaster eine Farbe** | Ereignis `blaster` trägt `palette: violet`. Dieselbe Palette färbt Mündung, Geschoss, Spur, Licht und Treffer. Der Geschosskern ist in der Leuchtstärke gedeckelt (`geschossHelle`), sonst brennt er weiß aus. | Die Waffenfarbe gab es schon als Palette (`WEAPON_FX_COLORS`), der Treffer hing aber fest an der rosa Rezeptfarbe und Mündung und Geschoss an der blauen Rampe. Jetzt eine Quelle; färbt jemand die Waffe um, zieht der Treffer mit. |
+| **2 · Blaster-Treffer** | Kern = **Poison_01** (Liquid, Flüssigkeits-Platscher, normal gemischt) in der Waffenfarbe, darüber die zweite Liquid-Schicht als heller Kern (additiv). Blitz = ImpactShotValo2 (unregelmäßige Zacken) mit den schnellen Werten von ImpactClassic01 PS(7). Kreuzstern (Impact07/08) entfällt. | Energiewaffe trifft als Plasma: Es spritzt und zerläuft, es bricht nichts heraus. Liquid ist die einzige Vorlage im Paket, die sich wie eine Masse ausbreitet und in Tropfen auflöst; die Zacken davor sind die Entladung im Kontaktbild. Die Blitzfunken aus dem Bestand (`entladungsfunken`) bleiben. |
+| **3 · Pistole** | Blitz = ImpactShotValo (viele ungleiche Strahlen), klein und kurz (0,2 s, sofort volle Größe). Kern = ImpactShotValo2 im Staubton des getroffenen Materials. Dazu SplashV2 als Ausbruchbogen, gerichtet entlang der Flächennormale. Strichstern (Impact01/04/05) entfällt. | Kugel-Einschlag: erst der kleine helle Blitz, dann fliegt Material von der Fläche weg. Die Formen sind unregelmäßig und drehen je Schuss zufällig; nur der Bogen ist gerichtet. |
+| **4 · Einschlagpunkte** | `russpunkte`: wenige dunkle Punkte im Trefferzentrum über das vorhandene Rußsystem der Waffen, kurz, fallen mit Schwerkraft, fliegen von der Fläche weg. | Kein neues Teilchensystem; dieselben Punkte wie der Mündungsruß, nur schwer und kurz. |
+| **5 · Ausbruchstücke** | `ausbruch`: Stückgröße = Zielgröße × Anteil je Material × √Wucht, Menge wächst mit Ziel und Wucht. Die Zielgröße kommt mit dem Treffer (Prüfziele, Baumstamm, Krone, Props, Kästen der Kampfziele). Hauswand zählt als Fläche (kleine Stücke aus der Delle), erst das Wandloch wirft große. Dicke Ziele: Stücke springen von der Oberfläche zurück; dünne: fliegen in Schlagrichtung weiter. Metall wirft keine Stücke. | Vorher feste Größen je Prop-Art. Jetzt gibt ein dünner Pfosten kleine Splitter, ein Stamm Brocken, die Faust mehr als die Kugel, der Uppercut mehr als die Faust. |
+
+Dazu zwei Korrekturen aus dem Selbst-Check: Geschoss-Treffer an Prüfzielen und Bäumen sitzen jetzt auf der Oberfläche (vorher in der Zielachse, an dicken Zielen war der Effekt im Holz verborgen). Die dunkle Unterlage ist an Pistole und Blaster klein gehalten (dunkles Trefferzentrum statt schwarzer Stern).
+
+Offen für die Besitzer: `kartenhaus.wand.offen` trägt keine Lochgröße (Vorgabe aus der Tabelle; mit Feld `groesse` skaliert es mit). Slops melden noch keine Treffer mit Größe; der Tabelleneintrag `slop` (Tintenklümpchen) liegt bereit.
+
+## 7 · Lieferung 4 · Feuer am Bruch und Nachglühen in der Waffenfarbe (hinter `kaskaderezept=r1`)
+
+Ein System statt zwei: Am Bruch arbeitet jetzt der vorhandene Nachbrand der Fassade (`cascade/r4/wall-afterburn.js`, q575), als Rezept erweitert. Der alte Schalter `wandbrand=r1` hat mit `kaskaderezept=r1` keine Wirkung mehr. Werte im Block `nachbrand` von `kaskadeEreignisse.r1.json`.
+
+| Teil | Was | Warum |
+|---|---|---|
+| **Ort** | Die echte Bruchkante aus dem Bruchgraphen der Wand (dieselbe Geometrie wie die sichtbare Laibung). Treffer ohne Loch glühen als Ring am Einschuss. | Ursache am Kontakt: Es glüht, wo Material gerissen ist. |
+| **Glühen** | Laibung und ein schmaler Saum auf der Fassade leuchten in der Waffenfarbe, sofort hell, über einige Sekunden abklingend. Energiewaffen zucken dabei kurz auf. | Die Farbe kommt aus derselben Zuordnung wie Mündung und Treffer (Palette der Waffe, sonst Tabelle `nachbrand.waffen`). |
+| **Funken** | Einzelne Funken lösen sich von Punkten der Kante, fliegen von der Wand weg, fallen mit Schwerkraft und werden immer seltener. Bestand: `fire-sparks.r1.js`, um Farbe und Fallmodus erweitert. | Ende: Jeder Funke fällt und erlischt, die Folge dünnt aus. |
+| **Flammen** | Nur Brandwaffen (Rakete, Granate, Bomben). Flammenzungen (Bestand: Nyrthos-Bildfolge und Zungen aus q575) wurzeln an mehreren Stellen der Bruchkante und schlagen nach oben, deutlich größer als bisher; Rauch und Glutsaum wie gehabt. | PROMPT_PYRO §3: Wurzel am Kontakt, Zungen lösen sich, Rauch darüber, Glut klingt aus. |
+| **Entfallen** | Die Paketschichten an der Wand (Fackel, Rauch, Feuerlinie am Wandfuß). | Runde Formen und flache Flammen passten nicht zu den Flammen am Bruch. |
+
+Die Waffe kommt über einen Treffer-Kontext aus dem Kampf (`combatTargets.js`), weil die Ereignisse des Viertels nur „rocket“ oder „gatling“ tragen.
+
+Befunde für die Besitzer, nichts davon geändert:
+- Die schwarzen runden Flecken im Wand-Beleg sind die Tintenkugeln des Hauses, die aus der Bresche fallen (Zensur-Ausbruch), kein Rauch.
+- Das Viertel behandelt den Blaster wie eine Rakete: Die Namensprüfung in `hitWorld` (`/…|blast/`) trifft auch „blaster“. Jeder Blaster-Treffer reißt deshalb ein großes Loch.
+- `kartenhaus.wand.offen` kommt je Haus nur beim ersten Loch und trägt weder Waffe noch Lochgröße.
+
+## 8 · q599 TUNE · Loch, Trümmer, Flammen an der Kante, Tintenkugeln
+
+| Punkt | Was vorher falsch war | Jetzt |
+|---|---|---|
+| **Lochform (Rakete)** | `fracture.mjs` legte auch der Explosion einen glatten Umriss zugrunde (Ellipse mit drei Sinus-Lappen) und darauf zwei bis drei konzentrische Ringe kleiner Stücke. Die Lochkante lief als Treppe zwischen diesen Ringen: gleichmäßige Sägezähne rund um eine Blase. Die Wurzeln setzten erst außen an. | Nach Krater-Modell: Wurzeln laufen vom Kern nach außen. Schollen sind die Flächen zwischen zwei Wurzeln, begrenzt von versetzten, mehrfach geknickten Quernähten (nie ein Ring). Was fällt, entscheidet die bestehende Bruchregel (Nähe, Rauschen, Schlagrichtung). Die Kante folgt den Rissen: Buchten entlang der Wurzeln, Zacken an den Quernähten, zur Schlagrichtung tiefer. Nur für Raketen an Wänden; Gatling, Faust, Blaster, Rammen und der Geländekrater bleiben beim bisherigen Weg. |
+| **Trümmer** | Nur kleine Klumpen im festen Höchstmaß; die Wandsplitter des Viertels lasen sich neben den Tintenkugeln nicht. | Drei Klassen aus dem Loch (Etherington #27), Größe nach Lochradius (`groesse` am Ereignis): Platten brechen ab und fallen, Brocken fächern in Wurfrichtung auf, Splitter fliegen zuerst und weit. Alle mit Schwerkraft, sie liegen kurz und sinken dann ein. |
+| **Flammen** | Wenige Brandstellen, je vier Karten in einer Reihe entlang der Wandachse, dazu eigengebaute Shader-Zungen; das Ende war ein gemeinsames Wegblenden. | Eine Bildfolgen-Karte je Kantenpunkt auf der echten Lochkante, wo die Öffnung über bzw. neben der Kante liegt. Höhe nach Offenheit, an Spitzen höher. Keine Shader-Zungen. Ausgehen einzeln, außen zuerst: Flammen schrumpfen in die fleckige Glut der Kante (Glutfarbe statt Flammenfarbe), danach die Rauchfahne. |
+| **Tintenkugeln** | 0,11–0,195 m, bis 24 auf einmal, sofort aus dem ganzen Loch. | 0,04–0,075 m mal Wucht, höchstens 7 je Bresche, 7 je Sekunde, erst nach 0,45 s und aus dem unteren Teil des Lochs. |
+
