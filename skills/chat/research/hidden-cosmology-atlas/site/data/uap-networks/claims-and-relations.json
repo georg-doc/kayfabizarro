@@ -1,0 +1,741 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "Breadth-first; typed evidence relations, no inferred hidden-control edges",
+  "entities": [
+    {
+      "id": "burkhard-heim",
+      "type": "person",
+      "name": "Burkhard Heim"
+    },
+    {
+      "id": "tom-delonge",
+      "type": "person",
+      "name": "Tom DeLonge"
+    },
+    {
+      "id": "michael-hayden",
+      "type": "person",
+      "name": "Michael V. Hayden"
+    },
+    {
+      "id": "timothy-taylor",
+      "type": "person",
+      "name": "Timothy E. Taylor / „Tyler D.“"
+    },
+    {
+      "id": "tyler-d",
+      "type": "pseudonymous_book_subject",
+      "name": "Tyler D. (American Cosmic)"
+    },
+    {
+      "id": "jesse-michels",
+      "type": "person",
+      "name": "Jesse Michels"
+    },
+    {
+      "id": "chris-bledsoe",
+      "type": "person",
+      "name": "Chris Bledsoe"
+    },
+    {
+      "id": "diana-walsh-pasulka",
+      "type": "person",
+      "name": "Diana Walsh Pasulka"
+    },
+    {
+      "id": "garry-nolan",
+      "type": "person",
+      "name": "Garry Nolan"
+    },
+    {
+      "id": "james-master",
+      "type": "pseudonymous_book_subject",
+      "name": "James Master"
+    },
+    {
+      "id": "tts",
+      "type": "organization",
+      "name": "To The Stars"
+    },
+    {
+      "id": "jim-semivan",
+      "type": "person",
+      "name": "Jim Semivan"
+    },
+    {
+      "id": "hal-puthoff",
+      "type": "person",
+      "name": "Hal Puthoff"
+    },
+    {
+      "id": "peter-levenda",
+      "type": "person",
+      "name": "Peter Levenda"
+    },
+    {
+      "id": "us-army-gvsc",
+      "type": "organization",
+      "name": "US Army DEVCOM GVSC"
+    },
+    {
+      "id": "walter-droscher",
+      "type": "person",
+      "name": "Walter Dröscher"
+    },
+    {
+      "id": "andreas-resch",
+      "type": "person",
+      "name": "Andreas Resch"
+    },
+    {
+      "id": "jochem-hauser",
+      "type": "person",
+      "name": "Jochem Hauser"
+    },
+    {
+      "id": "hayden-center",
+      "type": "organization",
+      "name": "Hayden Center"
+    },
+    {
+      "id": "drew-ponder",
+      "type": "person",
+      "name": "Drew Ponder"
+    }
+  ],
+  "claims": [
+    {
+      "id": "UKN-C-burkhard-heim-1",
+      "subject": "burkhard-heim",
+      "theme": "Feldantrieb und frühe Kontrabarie",
+      "attributable_paraphrase": "Der Archivführer erschließt das frühe Programm einer Kopplung von Elektromagnetismus und Gravitation für einen rückstoßfreien Antrieb. Das ist ein historisches Theorie- und Technikziel; ein funktionsfähiger Antrieb ist damit nicht dokumentiert.",
+      "source_ids": [
+        "UKN-S17"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-2",
+      "subject": "burkhard-heim",
+      "theme": "Geometrie und Metron",
+      "attributable_paraphrase": "In der Einführung wird die Materiestruktur geometrisch und diskret gedacht; das Metron bildet eine elementare Flächengröße. Heims sechs Dimensionen sind mathematische Modellgrößen, keine sechs Erscheinungsebenen Vallées.",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-3",
+      "subject": "burkhard-heim",
+      "theme": "Teilchenmassen",
+      "attributable_paraphrase": "Die überlieferte Fassung von 1982 ist ein konkreter Gleichungstext. Implementierungen und Parameterfragen sind eine eigene Prüfungsebene; hier wurden weder Rechnungen reproduziert noch Messdaten neu ausgewertet.",
+      "source_ids": [
+        "UKN-S14",
+        "UKN-S18"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-4",
+      "subject": "burkhard-heim",
+      "theme": "Syntrometrie und Organisation",
+      "attributable_paraphrase": "Der Archivführer ordnet Syntrometrie als Heims verallgemeinerte Struktur- und Logiklehre ein. Für den Atlas ist die Verbindung von Physik und Bedeutungsordnung relevant, ohne sie mit einer experimentellen Bewusstseinstheorie gleichzusetzen.",
+      "source_ids": [
+        "UKN-S17"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-5",
+      "subject": "burkhard-heim",
+      "theme": "Leben",
+      "attributable_paraphrase": "Der Aufsatz beginnt mit einer Beschreibung materieller Systeme über Form, innere Struktur und Zusammensetzung. Die anschließende Übertragung auf Lebensprozesse ist als theoretisches Programm erschlossen.",
+      "source_ids": [
+        "UKN-S15"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-6",
+      "subject": "burkhard-heim",
+      "theme": "Psyche und Fortleben",
+      "attributable_paraphrase": "Heim erklärt im Auftakt von Postmortale Zustände?, indirekt von einer Strukturtheorie auszugehen. Er grenzt sich dort ausdrücklich von paranormalen Erfahrungen als empirischer Ausgangsbasis ab – eine wichtige methodische Differenz zu Erfahrungsberichten.",
+      "source_ids": [
+        "UKN-S16"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-7",
+      "subject": "burkhard-heim",
+      "theme": "Zusammenarbeit und spätere Antriebsmodelle",
+      "attributable_paraphrase": "Die Einführung von 1998 dokumentiert Heim, Dröscher und Resch mit unterschiedlichen Beiträgen. Hauser/Dröschers späterer Antriebspfad ist gesondert zu führen: der erschlossene arXiv-Beitrag von 2011 ist zurückgezogen. Daraus folgt weder eine Widerlegung sämtlicher Heim-Arbeiten noch eine Bestätigung ihrer Technik.",
+      "source_ids": [
+        "UKN-S13",
+        "UKN-S19"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-1",
+      "subject": "tom-delonge",
+      "theme": "Disclosure und Insiderwissen",
+      "attributable_paraphrase": "Das FADER-Profil rekonstruiert sein Bemühen, politische und technische Ansprechpartner für eine öffentliche Erzählung zu gewinnen. Die behaupteten Inhalte privater Briefings bleiben als berichtete Aussagen geführt.",
+      "source_ids": [
+        "UKN-S25"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-2",
+      "subject": "tom-delonge",
+      "theme": "Was er behauptet",
+      "attributable_paraphrase": "Der Artikel bündelt unter anderem seine Überzeugungen zu außerirdischer Präsenz, geheimgehaltener Technik und verdeckten historischen Zusammenhängen. Diese journalistische Bündelung wird nicht als neu gesichtetes, lückenloses DeLonge-Originalinterview ausgegeben.",
+      "source_ids": [
+        "UKN-S25"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-3",
+      "subject": "tom-delonge",
+      "theme": "TTSA als Organisation",
+      "attributable_paraphrase": "Die Emissionsunterlagen von 2017 führen DeLonge, Jim Semivan und Hal Puthoff in Gründer-/Leitungsrollen. Das ist eine dokumentierte Organisationsverbindung und ein belastbarerer Netzwerkknoten als bloße thematische Nähe.",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-4",
+      "subject": "tom-delonge",
+      "theme": "Fiktion und Sachbuch",
+      "attributable_paraphrase": "Sekret Machines umfasst unterschiedliche Gattungen. Der Verlag führt insbesondere die Sachbuchtrilogie Gods, Man & War und Gespräche mit Peter Levenda und Semivan. Verlagskategorie Sachbuch bedeutet nicht, dass jede darin vertretene These bewiesen ist.",
+      "source_ids": [
+        "UKN-S22"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-5",
+      "subject": "tom-delonge",
+      "theme": "Materialien und Army-Kooperation",
+      "attributable_paraphrase": "TTS beschreibt Materialforschung und Kooperation. Freigegebene Army-Korrespondenz aus Juli2024 berichtet von wenigen Tests an sehr kleinen Materialien im Rahmen einer fünfjährigen CRADA. Die gesichteten Passagen enthalten keinen Nachweis nichtmenschlicher Herkunft oder eines Antriebs.",
+      "source_ids": [
+        "UKN-S21",
+        "UKN-S23"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-6",
+      "subject": "tom-delonge",
+      "theme": "Medienunternehmen im Zeitverlauf",
+      "attributable_paraphrase": "Die 2026er Halbjahresmeldung beschreibt TTS als Unterhaltungs- und IP-Unternehmen mit wissenschaftlichem Beirat. Historische TTSA-Struktur und heutiges Geschäftsmodell werden im Atlas zeitlich getrennt.",
+      "source_ids": [
+        "UKN-S24"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-7",
+      "subject": "tom-delonge",
+      "theme": "Bewusstsein, Religion und kulturelle Vorbereitung",
+      "attributable_paraphrase": "Die offiziellen TTS-Talks-Beschreibungen verbinden UFOs mit Bewusstsein und Geheimhaltung. Das eröffnet eine Nachbarschaft zu Pasulka und Vallée: Wie werden unklare Phänomene durch Erzählungen gesellschaftlich wirksam?",
+      "source_ids": [
+        "UKN-S22"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-1",
+      "subject": "michael-hayden",
+      "theme": "Institutionen und Führung",
+      "attributable_paraphrase": "Die Hochschulbiografie nennt NSA, CIA und die Funktion als erster Principal Deputy DNI. Das Profil beschreibt außerdem das Spannungsverhältnis von Freiheit, Sicherheit und Cyber-Risiken.",
+      "source_ids": [
+        "UKN-S27"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-2",
+      "subject": "michael-hayden",
+      "theme": "Organisationskultur",
+      "attributable_paraphrase": "Im Interview2010 beschreibt Hayden die Stärkung einer gemeinsamen CIA-Kultur und personelle Kontinuität. Hier geht es um konkrete Führungsentscheidungen, nicht um die Ableitung einer verborgenen Gesamtsteuerung.",
+      "source_ids": [
+        "UKN-S26"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-3",
+      "subject": "michael-hayden",
+      "theme": "Wirksamkeit und Rechtfertigung",
+      "attributable_paraphrase": "Hayden verteidigt im Interview den Erkenntnisgewinn des Verhörprogramms, grenzt seine Position zugleich von einer pauschalen Verteidigung aller Techniken ab. Diese Selbstbeschreibung ist eine Aussage des Beteiligten.",
+      "source_ids": [
+        "UKN-S26"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-4",
+      "subject": "michael-hayden",
+      "theme": "Dokumentarische Gegenlesart",
+      "attributable_paraphrase": "Die Senatsbefunde2014 widersprechen zentralen Wirksamkeits- und Notwendigkeitsbehauptungen. Findings1–2 unterscheiden Informationen, die vor oder ohne Zwang vorlagen, von dem behaupteten Mehrwert der Techniken.",
+      "source_ids": [
+        "UKN-S28"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-5",
+      "subject": "michael-hayden",
+      "theme": "Risikokultur",
+      "attributable_paraphrase": "Die Verlagsbeschreibung von Playing to the Edge vermittelt den Anspruch, verfügbare Handlungsspielräume weit auszuschöpfen. Das ist eine rekonstruierte Management- und Sicherheitsposition; das Buch wurde hier nicht vollständig gelesen.",
+      "source_ids": [
+        "UKN-S30"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-6",
+      "subject": "michael-hayden",
+      "theme": "Öffentlichkeit und Kontrolle",
+      "attributable_paraphrase": "Das Hayden Center bietet einen institutionellen Publikations- und Veranstaltungspfad. Beim Vergleich mit Fitts, Webb, Corbett oder Dark Journalist stehen unterschiedliche Maßstäbe für Geheimhaltung, Legitimation und Kontrolle nebeneinander.",
+      "source_ids": [
+        "UKN-S27",
+        "UKN-S29"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-1",
+      "subject": "timothy-taylor",
+      "theme": "Öffentliche Biografie",
+      "attributable_paraphrase": "VIVEX beschreibt Tätigkeiten in Startoperationen und Medizintechnik. Launch Fever ist2003 unter Timothy E. Taylor bibliografisch nachgewiesen. Seine genaue Arbeitgeber- und Vertragsgeschichte wird dadurch noch nicht vollständig geklärt.",
+      "source_ids": [
+        "UKN-S01",
+        "UKN-S02"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-2",
+      "subject": "timothy-taylor",
+      "theme": "Erfindungen",
+      "attributable_paraphrase": "Das Patent US5454827A nennt Taylor und Gilbert M. Aust. Es schafft einen konkreten Ausgangspunkt für die technische Biografie. Eine Patentschrift belegt weder einen außerirdischen Ursprung der Idee noch die pauschale Zahl aller Erfindungen.",
+      "source_ids": [
+        "UKN-S03"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-3",
+      "subject": "timothy-taylor",
+      "theme": "„Tyler D.“ als Zuschreibung",
+      "attributable_paraphrase": "American Cosmic arbeitet mit Pseudonymen. Die Gleichsetzung mit Taylor ist in der späteren Rezeption verbreitet; in den hier gelesenen Originalpassagen wird sie nicht ausdrücklich aufgelöst. Beide Datensätze bleiben verbunden, aber nicht als sicher identisch verschmolzen.",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S09"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-4",
+      "subject": "timothy-taylor",
+      "theme": "Wüstenort und „James“",
+      "attributable_paraphrase": "Pasulka berichtet eine Reise mit Tyler und James zu einem angeblichen Fundort. Der Bericht belegt ihre Erzählung und ihre religionswissenschaftliche Fragestellung, nicht die Herkunft des gefundenen Materials. Garry Nolans Identifizierung als James bleibt in dieser Aufnahme eine Zuschreibung; ein eigener Bestätigungsbeleg wurde nicht gesichtet.",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-5",
+      "subject": "timothy-taylor",
+      "theme": "Frequenz, Erfindung und Praxis",
+      "attributable_paraphrase": "Pasulka berichtet Tylers Vorstellungen von körperlicher Abstimmung und Kontakt sowie eine persönliche Routine. Ponders spätere Frequency Wave Theory ist davon getrennt: ein eigener Deutungsrahmen, keine hier belegte Taylor-Publikation oder überprüfte physikalische Theorie.",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S08"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-6",
+      "subject": "timothy-taylor",
+      "theme": "Vatikan und Religion",
+      "attributable_paraphrase": "Pasulka erzählt eine religiöse Veränderung und unterscheidet Archive und Observatorium. Sie widerspricht im Buch ausdrücklich einer UFO-Forschung der Jesuiten am Observatorium. Der2017er Besucherlistenbeleg bleibt wegen404 vorerst ein konkretes Findmittel.",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S06"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-7",
+      "subject": "timothy-taylor",
+      "theme": "Bledsoe, Obama und Camp David",
+      "attributable_paraphrase": "Im erschlossenen AI-Transkript sagt Bledsoe zunächst, Taylor habe Obama gebrieft; später unterscheidet er eine behauptete Tischbegegnung von seinem eigenen Schluss auf das Briefing. Michels fragt nach und reagiert. Ohne Originalaudio und unabhängiges Dokument bleibt das zugeschriebenes Zeugnis plus Schlussfolgerung.",
+      "source_ids": [
+        "UKN-S07"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-8",
+      "subject": "timothy-taylor",
+      "theme": "Invisible College und öffentliche Mythologie",
+      "attributable_paraphrase": "Der Ausdruck dient als Deutungsrahmen für informelle Wissenszirkel. Eine formale Mitgliedschaftsliste folgt daraus nicht. Reddit, VETTED und Ponder zeigen verschiedene Rezeptionswege; sie dürfen nicht als drei unabhängige Belege für denselben Ursprung gezählt werden.",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S08",
+        "UKN-S09",
+        "UKN-S11",
+        "UKN-S12"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    }
+  ],
+  "relations": [
+    {
+      "id": "UKN-R01",
+      "from": "burkhard-heim",
+      "to": "walter-droscher",
+      "type": "COAUTHOR",
+      "scope": "1998 introduction",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R02",
+      "from": "burkhard-heim",
+      "to": "andreas-resch",
+      "type": "EDITORIAL_COLLABORATION",
+      "scope": "1998 introduction",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R03",
+      "from": "walter-droscher",
+      "to": "jochem-hauser",
+      "type": "COAUTHOR",
+      "scope": "2011 withdrawn preprint record",
+      "source_ids": [
+        "UKN-S19"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R04",
+      "from": "tom-delonge",
+      "to": "tts",
+      "type": "FOUNDER_ROLE",
+      "scope": "2017 filing",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R05",
+      "from": "jim-semivan",
+      "to": "tts",
+      "type": "FOUNDER_ROLE",
+      "scope": "2017 filing",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R06",
+      "from": "hal-puthoff",
+      "to": "tts",
+      "type": "FOUNDER_ROLE",
+      "scope": "2017 filing",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R07",
+      "from": "tom-delonge",
+      "to": "peter-levenda",
+      "type": "PUBLICATION_COLLABORATION",
+      "scope": "Sekret Machines",
+      "source_ids": [
+        "UKN-S22"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R08",
+      "from": "tts",
+      "to": "us-army-gvsc",
+      "type": "DOCUMENTED_RESEARCH_COOPERATION",
+      "scope": "2019–2024 described period; selected July2024 correspondence",
+      "source_ids": [
+        "UKN-S23"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R09",
+      "from": "michael-hayden",
+      "to": "hayden-center",
+      "type": "FOUNDER_ROLE",
+      "scope": "Institutional biography checked2026-11-13",
+      "source_ids": [
+        "UKN-S27"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R10",
+      "from": "timothy-taylor",
+      "to": "tyler-d",
+      "type": "IDENTITY_ATTRIBUTION_NOT_SAME_AS",
+      "scope": "Later commentary; original identity disclosure not read",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S09"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R11",
+      "from": "garry-nolan",
+      "to": "james-master",
+      "type": "IDENTITY_ATTRIBUTION_NOT_SAME_AS",
+      "scope": "Later attribution; no independent original inspected here",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R12",
+      "from": "diana-walsh-pasulka",
+      "to": "tyler-d",
+      "type": "REPORTED_PARTICIPANT_CONTACT",
+      "scope": "American Cosmic2019",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R13",
+      "from": "diana-walsh-pasulka",
+      "to": "james-master",
+      "type": "REPORTED_PARTICIPANT_CONTACT",
+      "scope": "American Cosmic2019",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R14",
+      "from": "jesse-michels",
+      "to": "chris-bledsoe",
+      "type": "INTERVIEW",
+      "scope": "Selected third-party transcript114:50–117:29",
+      "source_ids": [
+        "UKN-S07"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R15",
+      "from": "chris-bledsoe",
+      "to": "timothy-taylor",
+      "type": "REPORTED_CONTACT",
+      "scope": "Bledsoe's attributed account, not independent verification",
+      "source_ids": [
+        "UKN-S07"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R16",
+      "from": "drew-ponder",
+      "to": "timothy-taylor",
+      "type": "INTERPRETIVE_ESSAY_ABOUT",
+      "scope": "2025 public preview",
+      "source_ids": [
+        "UKN-S08"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "UKN-X01",
+      "pair": "Heim ↔ Vallée",
+      "shared_topic": "Dimensionen, Wirklichkeit, Grenzen des Erklärungsmodells",
+      "difference": "Heim konstruiert eine mathematische Strukturlehre; Vallée vergleicht Beobachtungen, Erleben und kulturelle Wirkung. Die Dimensionenzahl und Vallées Ebenen sind nicht dasselbe.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "atlas_author": "jacques-vallee"
+    },
+    {
+      "id": "UKN-X02",
+      "pair": "Heim ↔ Farrell",
+      "shared_topic": "Exotische Physik, Antrieb und verborgenes Wissen",
+      "difference": "Heims Gleichungs- und Begriffsarbeit ist von Farrells historischen und geopolitischen Synthesen zu trennen. Eine konkrete Farrell-Zitation Heims wurde in diesem Paket noch nicht am Original gesichert.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S19"
+      ],
+      "atlas_author": "joseph-farrell"
+    },
+    {
+      "id": "UKN-X03",
+      "pair": "Heim ↔ Swann/Puharich",
+      "shared_topic": "Bewusstsein und nicht rein materielle Erklärungen",
+      "difference": "Heims indirekte Strukturargumentation unterscheidet sich von Berichten und Versuchsanordnungen zu Wahrnehmung/Psi. Sein Aufsatz von1978 lehnt paranormale Erfahrungen gerade als eigene empirische Basis ab.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S16"
+      ],
+      "atlas_author": "ingo-swann"
+    },
+    {
+      "id": "UKN-X04",
+      "pair": "Heim ↔ Jorjani",
+      "shared_topic": "Ontologie, Geist und Technik",
+      "difference": "Gemeinsamer Fragenraum; mathematisches Modell, philosophische Auslegung und politische Folgerung haben unterschiedliche Begründungslasten. Kein persönliches Netzwerk daraus abgeleitet.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "atlas_author": "jason-reza-jorjani"
+    },
+    {
+      "id": "UKN-X05",
+      "pair": "DeLonge ↔ Vallée/Pasulka",
+      "shared_topic": "UFOs, Medien, Glauben und gesellschaftliche Wirkung",
+      "difference": "DeLonges Organisation produziert öffentliche Erzählungen und Sach-/Unterhaltungsformate. Pasulka untersucht unter anderem solche Sinnbildung; Vallée bietet Vergleichsmodelle. Gemeinsamer Gegenstand ist keine gemeinsame Erklärung.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S22"
+      ],
+      "atlas_author": "jacques-vallee"
+    },
+    {
+      "id": "UKN-X06",
+      "pair": "DeLonge ↔ Farrell/Dark Journalist",
+      "shared_topic": "Geheimhaltung, Technologie und historische Großbilder",
+      "difference": "Eine dokumentierte Organisation lässt sich mit den unterschiedlichen Lesarten ihrer Ziele vergleichen. Die Existenz der Organisation bestätigt keine übergreifende Secret-Space- oder Kontrollthese.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "atlas_author": "daniel-liszt"
+    },
+    {
+      "id": "UKN-X07",
+      "pair": "DeLonge ↔ Fitts",
+      "shared_topic": "Organisation, Ressourcen und öffentliche Rechenschaft",
+      "difference": "Die TTS-Filings liefern überprüfbare Unternehmensangaben. Sie können als begrenzter Datensatz neben Fitts' umfassenderen Finanz- und Governance-Fragen stehen; sie belegen keine geheimen Gesamtgeldflüsse.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S24"
+      ],
+      "atlas_author": "catherine-austin-fitts"
+    },
+    {
+      "id": "UKN-X08",
+      "pair": "Hayden ↔ Webb/Corbett/Fitts",
+      "shared_topic": "Sicherheit, Geheimhaltung, Interessen und Aufsicht",
+      "difference": "Hayden argumentiert aus Leitungserfahrung und Sicherheitsverantwortung. Die anderen Dossiers erschließen kritische Macht- und Finanzanalysen. Präzise Gegenproben brauchen denselben Vorgang und dieselbe Zeitspanne.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S26"
+      ],
+      "atlas_author": "whitney-webb"
+    },
+    {
+      "id": "UKN-X09",
+      "pair": "Hayden ↔ Senatsstudie2014",
+      "shared_topic": "Verhörprogramm und behauptete Wirksamkeit",
+      "difference": "Konkreter inhaltlicher Widerspruch zwischen öffentlicher Insiderverteidigung2010 und späteren dokumentenbasierten Findings1–2; Gegenstand bleibt das Verhörprogramm, nicht UAP.",
+      "relation_type": "DOCUMENTED_COUNTER_READING",
+      "source_ids": [
+        "UKN-S28"
+      ],
+      "atlas_author": "michael-hayden"
+    },
+    {
+      "id": "UKN-X10",
+      "pair": "Taylor/Tyler ↔ Swann/Puharich",
+      "shared_topic": "Kontakt, Wahrnehmung und technische Metaphern",
+      "difference": "Pasulkas berichtete persönliche Routine ist kein kontrollierter Versuch. Unterschiede in Protokoll, Messung und Ergebnis müssen erhalten bleiben.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "atlas_author": "andrija-puharich"
+    },
+    {
+      "id": "UKN-X11",
+      "pair": "Taylor/Tyler ↔ Jorjani/Wann/Bramley/Icke",
+      "shared_topic": "Nichtmenschliche Akteure, Religion und Wirklichkeitsdeutung",
+      "difference": "Die Ähnlichkeit einzelner Motive erlaubt einen Vergleich. Sie belegt weder dieselben Akteure noch dieselbe historische Ursache oder einen gemeinsamen Forschungsverbund.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "atlas_author": "michael-wann"
+    },
+    {
+      "id": "UKN-X12",
+      "pair": "Taylor ↔ Jesse Michels",
+      "shared_topic": "Überlieferung durch Interview und Nachfragen",
+      "difference": "Der gesichtete Bezug ist ein Gespräch Michels–Bledsoe über Taylor. Daraus wird kein eigenes Taylor-Interview und kein Beleg, dass Michels alle Aussagen seines Gastes übernimmt.",
+      "relation_type": "DOCUMENTED_INTERVIEW_ABOUT_SUBJECT",
+      "source_ids": [
+        "UKN-S07"
+      ],
+      "atlas_author": "jesse-michels"
+    }
+  ]
+}

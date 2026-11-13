@@ -136,3 +136,13 @@ Six source-led profiles added; total dedicated author masters: **24**, not 24 co
 ## Quellenbasierte Ergänzung · 2026-11-13
 
 - [Jacques Vallée](jacques-vallee.md): Originaltexte, Werk- und Interviewinventur, Trinity-Gegenprobe und typisierte Verbindungen. [Recherchepaket und Prüfgrenzen](../packages/jacques-vallee/RETURN.md). Keine automatische Übernahme als Spielkanon.
+
+
+## 2026-11-13 · Vier weitere Perspektiven
+
+- [Burkhard Heim](burkhard-heim.md) — Theorie, Materie und Bewusstsein
+- [Tom DeLonge](tom-delonge.md) — Disclosure, Medien und organisierte Forschung
+- [Michael V. Hayden](michael-hayden.md) — Institutionelle Innenansicht und Gegenlesart
+- [Timothy E. Taylor / „Tyler D.“](timothy-taylor.md) — Biografie, Erfahrungsberichte und die Entstehung eines Insiderbilds
+
+[Vergleichspaket und Sichtungsgrenzen](../packages/uap-knowledge-networks/RETURN.md)

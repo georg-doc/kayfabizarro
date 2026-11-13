@@ -45,3 +45,8 @@ A Michels interview with one of the existing eight authors constitutes a **DOCUM
 The generic `WorldView Research` plugin must discover this record on source-inventory-first runs; use the same host/guest boundary on non-KFB projects. Do not introduce KFB lore or comedic interpretations into this source register.
 
 **Next gate:** `MICHELS_AUTHOR_VS_GUEST_SOURCE_RECEIPT_v0.1.0` — retrieve one original episode with exact guest and host turns, capture publication date/timecode and evaluate what Michels actually asserts.
+
+
+## 2026-11-13 · Taylor/Bledsoe passage added
+
+Selected third-party AI transcript, not original audio: [Why NASA Studies This Man](https://pod.wave.co/podcast/american-alchemy/why-the-cia-studies-this-ufo-experiencer),114:50–117:29. Bledsoe's Obama-briefing assertion, Michels' questions and Bledsoe's distinction between an alleged dinner and an inferred briefing are kept separate. No new Taylor interview or blanket host endorsement inferred. [Eight transmission chains and identity limits](../packages/uap-knowledge-networks/TIMOTHY_TAYLOR.md). Audio verification parked under breadth-first scope.

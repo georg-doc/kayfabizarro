@@ -1,3 +1,7 @@
+## 2026-11-13 · Heim, DeLonge, Hayden und Taylor
+
+[Vier Dossiers und Taylor-Quellenketten](packages/uap-knowledge-networks/README.md) · [Sichtungsgrenzen und nächstes Gate](packages/uap-knowledge-networks/RETURN.md).28 Themen,31 Quellen,12 Vergleiche,16 typisierte Beziehungen. Bestehender Owner und Branch; kein Spielcode. Site-Publikation und genaue Revision folgen im Paketbeleg.
+
 ## 2026-11-13 · Vallée-Themenlandkarte veröffentlicht
 
 [Research Atlas: Jacques Vallée](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html) · [Publikationsbeleg](packages/jacques-vallee/SITE_PUBLICATION_2026-11-13.json). 20 Themenfelder, verlinkte Werke/Interviews/Quellen und Downloads. Bestehende private Site aktualisiert, GitHub-Inhalte exakt zurückgelesen. Lokale Bedienprüfung bestanden; veröffentlichte Browseransicht erfordert Anmeldung. **Aktueller Auftrag: Breite zuerst; neue Rabbit-Holes geparkt.**
