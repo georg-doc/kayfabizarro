@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "scope": "Breadth-first; typed evidence relations, no inferred hidden-control edges",
   "entities": [
     {
@@ -101,6 +101,31 @@
       "id": "drew-ponder",
       "type": "person",
       "name": "Drew Ponder"
+    },
+    {
+      "id": "jacques-vallee",
+      "name": "Jacques Vallée",
+      "type": "person"
+    },
+    {
+      "id": "federico-faggin",
+      "name": "Federico Faggin",
+      "type": "person"
+    },
+    {
+      "id": "sol-foundation",
+      "name": "Sol Foundation",
+      "type": "organization"
+    },
+    {
+      "id": "stanford-university",
+      "name": "Stanford University",
+      "type": "organization"
+    },
+    {
+      "id": "uncw",
+      "name": "University of North Carolina Wilmington",
+      "type": "organization"
     }
   ],
   "claims": [
@@ -231,7 +256,7 @@
       "id": "UKN-C-tom-delonge-5",
       "subject": "tom-delonge",
       "theme": "Materialien und Army-Kooperation",
-      "attributable_paraphrase": "TTS beschreibt Materialforschung und Kooperation. Freigegebene Army-Korrespondenz aus Juli 2024 berichtet von wenigen Tests an sehr kleinen Materialien im Rahmen einer fünfjährigen CRADA. Die gesichteten Passagen enthalten keinen Nachweis nichtmenschlicher Herkunft oder eines Antriebs.",
+      "attributable_paraphrase": "TTS beschreibt Materialforschung und Kooperation. Freigegebene Army-Korrespondenz aus Juli2024 berichtet von wenigen Tests an sehr kleinen Materialien im Rahmen einer fünfjährigen CRADA. Die gesichteten Passagen enthalten keinen Nachweis nichtmenschlicher Herkunft oder eines Antriebs.",
       "source_ids": [
         "UKN-S21",
         "UKN-S23"
@@ -276,7 +301,7 @@
       "id": "UKN-C-michael-hayden-2",
       "subject": "michael-hayden",
       "theme": "Organisationskultur",
-      "attributable_paraphrase": "Im Interview 2010 beschreibt Hayden die Stärkung einer gemeinsamen CIA-Kultur und personelle Kontinuität. Hier geht es um konkrete Führungsentscheidungen, nicht um die Ableitung einer verborgenen Gesamtsteuerung.",
+      "attributable_paraphrase": "Im Interview2010 beschreibt Hayden die Stärkung einer gemeinsamen CIA-Kultur und personelle Kontinuität. Hier geht es um konkrete Führungsentscheidungen, nicht um die Ableitung einer verborgenen Gesamtsteuerung.",
       "source_ids": [
         "UKN-S26"
       ],
@@ -298,7 +323,7 @@
       "id": "UKN-C-michael-hayden-4",
       "subject": "michael-hayden",
       "theme": "Dokumentarische Gegenlesart",
-      "attributable_paraphrase": "Die Senatsbefunde 2014 widersprechen zentralen Wirksamkeits- und Notwendigkeitsbehauptungen. Findings 1–2 unterscheiden Informationen, die vor oder ohne Zwang vorlagen, von dem behaupteten Mehrwert der Techniken.",
+      "attributable_paraphrase": "Die Senatsbefunde2014 widersprechen zentralen Wirksamkeits- und Notwendigkeitsbehauptungen. Findings1–2 unterscheiden Informationen, die vor oder ohne Zwang vorlagen, von dem behaupteten Mehrwert der Techniken.",
       "source_ids": [
         "UKN-S28"
       ],
@@ -332,7 +357,7 @@
       "id": "UKN-C-timothy-taylor-1",
       "subject": "timothy-taylor",
       "theme": "Öffentliche Biografie",
-      "attributable_paraphrase": "VIVEX beschreibt Tätigkeiten in Startoperationen und Medizintechnik. Launch Fever ist 2003 unter Timothy E. Taylor bibliografisch nachgewiesen. Seine genaue Arbeitgeber- und Vertragsgeschichte wird dadurch noch nicht vollständig geklärt.",
+      "attributable_paraphrase": "VIVEX beschreibt Tätigkeiten in Startoperationen und Medizintechnik. Launch Fever ist2003 unter Timothy E. Taylor bibliografisch nachgewiesen. Seine genaue Arbeitgeber- und Vertragsgeschichte wird dadurch noch nicht vollständig geklärt.",
       "source_ids": [
         "UKN-S01",
         "UKN-S02"
@@ -390,7 +415,7 @@
       "id": "UKN-C-timothy-taylor-6",
       "subject": "timothy-taylor",
       "theme": "Vatikan und Religion",
-      "attributable_paraphrase": "Pasulka erzählt eine religiöse Veränderung und unterscheidet Archive und Observatorium. Sie widerspricht im Buch ausdrücklich einer UFO-Forschung der Jesuiten am Observatorium. Der 2017er Besucherlistenbeleg bleibt wegen 404 vorerst ein konkretes Findmittel.",
+      "attributable_paraphrase": "Pasulka erzählt eine religiöse Veränderung und unterscheidet Archive und Observatorium. Sie widerspricht im Buch ausdrücklich einer UFO-Forschung der Jesuiten am Observatorium. Der2017er Besucherlistenbeleg bleibt wegen404 vorerst ein konkretes Findmittel.",
       "source_ids": [
         "UKN-S04",
         "UKN-S06"
@@ -422,6 +447,184 @@
         "UKN-S12"
       ],
       "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-1",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Religionsgeschichte vor der UFO-Forschung",
+      "attributable_paraphrase": "Heaven Can Wait (2014) untersucht das Fegefeuer in katholischer Andacht und populärer Kultur. Diese historische Arbeit bildet einen eigenen Schwerpunkt, nicht bloß die Vorgeschichte einer UFO-These.",
+      "source_ids": [
+        "UKN-S41"
+      ],
+      "status": "PUBLICATION_SCOPE",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-2",
+      "subject": "diana-walsh-pasulka",
+      "theme": "American Cosmic: Wissenschaft als Autorität",
+      "attributable_paraphrase": "Die Ethnografie untersucht, wie wissenschaftliches Prestige, technische Artefakte und persönliche Erfahrungen Überzeugungen tragen. Die Frage nach der Glaubensbildung ist von der Frage nach der außerirdischen Herkunft eines Gegenstands zu unterscheiden.",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "status": "AUTHOR_ANALYSIS",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-3",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Tyler, James und der Zugang zum Feld",
+      "attributable_paraphrase": "Pasulka berichtet eine Reise mit pseudonymisierten Beteiligten zu einem angeblichen Fundort in New Mexico. Der Zugang und ihre Beobachtung sind Bestandteil ihres Berichts; die behauptete Fundortgeschichte bleibt eine andere Belegebene.",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "status": "REPORTED_EXPERIENCE",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-4",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Kontaktpraktiken und Inspiration",
+      "attributable_paraphrase": "Tylers Routine und sein Bild eines auf Empfang eingestellten Körpers zeigen eine Verbindung von Technikmetapher, Lebensführung und Erfindungserzählung. Pasulka berichtet diese Praxis; sie legt damit keine geprüfte Frequenz- oder Gravitationstheorie vor.",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "status": "REPORTED_BELIEF",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-5",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Medien, KI und Posthumanismus",
+      "attributable_paraphrase": "Believing in Bits, mit Simone Natale herausgegeben, erweitert die Perspektive auf digitale Medien und das Übernatürliche. Die eigene Werkübersicht nennt außerdem Posthumanism mit Michael Bess; KI und menschliche Transformation sind damit eigene Vergleichsachsen.",
+      "source_ids": [
+        "UKN-S42",
+        "UKN-S05"
+      ],
+      "status": "PUBLICATION_SCOPE",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-6",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Encounters und The Others",
+      "attributable_paraphrase": "Die Autorenseite erschließt Encounters über Berichte nichtmenschlicher Intelligenzen und The Others über UFOs, KI und verborgene Einflussvorstellungen. Hier als Werk- und Themenpfade aufgenommen; diese beiden Bücher wurden nicht vollständig gelesen.",
+      "source_ids": [
+        "UKN-S05"
+      ],
+      "status": "PUBLISHER_AUTHOR_DESCRIPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-7",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Historische Parallelen ohne vorschnelle Gleichsetzung",
+      "attributable_paraphrase": "Im Interview2026 unterscheidet Pasulka das Sammeln ähnlicher Berichte von der Entscheidung, ob mittelalterliche und moderne Menschen tatsächlich dasselbe sahen. Religiöse Erfahrung wird ernst genommen, ohne ihren Gegenstand dadurch zu beweisen.",
+      "source_ids": [
+        "UKN-S40"
+      ],
+      "status": "ATTRIBUTED_INTERVIEW_POSITION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-8",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Persönliche Deutung, Apokalypse und Philosophie",
+      "attributable_paraphrase": "Im erschlossenen Michels-Transkript deutet sie um40:07 eine gegenwärtige Enthüllung an, vergleicht um41:38 ihre historische Arbeit mit Vallée und erörtert später Girard und Platons Höhle. Das geht über eine rein distanzierte Beschreibung hinaus. Dritttranskript, keine wortgetreue Audiofreigabe.",
+      "source_ids": [
+        "UKN-S39"
+      ],
+      "status": "ATTRIBUTED_TRANSCRIPT_POSITION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-1",
+      "subject": "garry-nolan",
+      "theme": "Biomedizin und Messverfahren",
+      "attributable_paraphrase": "Das Stanford-Profil nennt Immunologie, Krebsforschung und Einzelzellanalyse mit CyTOF, MIBI und CODEX. Diese Arbeit erklärt seine instrumentelle Kompetenz, bestätigt aber keine UAP-Ursprungsthese.",
+      "source_ids": [
+        "UKN-S33"
+      ],
+      "status": "INSTITUTIONAL_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-2",
+      "subject": "garry-nolan",
+      "theme": "Unternehmerische Übersetzung",
+      "attributable_paraphrase": "Stanford dokumentiert Gründungen und Beteiligungen etwa bei Rigel, Nodality, Ionpath und Akoya. Der Transfer von Forschung in Instrumente und Unternehmen bildet einen eigenen Themenstrang; eine UAP-Finanzierung folgt daraus nicht.",
+      "source_ids": [
+        "UKN-S33"
+      ],
+      "status": "INSTITUTIONAL_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-3",
+      "subject": "garry-nolan",
+      "theme": "Materialanalyse mit Vallée",
+      "attributable_paraphrase": "Nolan, Vallée, Sizun Jiang und Larry Lemke publizierten2022 zur Charakterisierung ungewöhnlicher Materialien. Die Kooperation ist durch die Autorenzeile belegt. Untersucht wird unter anderem die Council-Bluffs-Probe CB_JV-1.",
+      "source_ids": [
+        "UKN-S34"
+      ],
+      "status": "DOCUMENTED_COAUTHORSHIP",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-4",
+      "subject": "garry-nolan",
+      "theme": "Was die Probe tatsächlich zeigt",
+      "attributable_paraphrase": "Auf S.2 berichten die Autoren keine signifikanten Abweichungen von irdisch normalen Isotopenverhältnissen. S.11 trennt mögliche Isotopenanreicherung von einem Herkunftsnachweis; S.12 lässt Ursprung und Bedeutung offen. Das ist keine Bestätigung außerirdischer Technik.",
+      "source_ids": [
+        "UKN-S34"
+      ],
+      "status": "PUBLISHED_RESULT_NOT_REPLICATED_HERE",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-5",
+      "subject": "garry-nolan",
+      "theme": "Erweiterte SETI-Fragestellung",
+      "attributable_paraphrase": "Das gemeinsame Papier mit Vallée und Federico Faggin schlägt einen breiteren Suchbegriff vor: andere Signalformen, Bewusstsein und bisher vernachlässigte Suchräume. Das ist ein Forschungsprogramm, kein Nachweis einer entdeckten Intelligenz.",
+      "source_ids": [
+        "UKN-S35"
+      ],
+      "status": "RESEARCH_PROPOSAL",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-6",
+      "subject": "garry-nolan",
+      "theme": "Wahrnehmung, Gehirn und Intuition",
+      "attributable_paraphrase": "Im Michels-Dritttranskript berichtet Nolan um06:34–08:19 von angefragter Beratung, MRT-Bildern und Auffälligkeiten im Caudate-/Putamen-Bereich. Die Verknüpfung mit Intuition oder UAP-Wahrnehmung bleibt hier eine zugeschriebene Hypothese; weder Patientendaten noch eine kausale Studie wurden geprüft.",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "status": "ATTRIBUTED_TRANSCRIPT_HYPOTHESIS",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-7",
+      "subject": "garry-nolan",
+      "theme": "Invisible College und Forschungszugang",
+      "attributable_paraphrase": "Nolan nennt im selben Transkript Vallée, Puthoff, Davis, Bigelow und Kelleher als Kontakte seines Einstiegs. Das belegt zunächst seinen Bericht über ein Netzwerk, keine formale Organisation oder gemeinsame Doktrin.",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "status": "REPORTED_CONTACT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-8",
+      "subject": "garry-nolan",
+      "theme": "Sol: Forschung, Politik und Öffentlichkeit",
+      "attributable_paraphrase": "Die Gründungsmitteilung2023 verbindet Nolan und Peter Skafish mit dem Aufbau einer Forschungs- und Politikplattform. Im aktuellen Register stehen Pasulka und Vallée im Beirat. Organisation und programmatischer Anspruch sind belegt; einzelne Mitglieder können unterschiedliche Erklärungen vertreten.",
+      "source_ids": [
+        "UKN-S36",
+        "UKN-S37"
+      ],
+      "status": "ORGANIZATIONAL_SELF_RECORD",
       "checked": "2026-11-13"
     }
   ],
@@ -602,6 +805,117 @@
         "UKN-S08"
       ],
       "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R17",
+      "from": "garry-nolan",
+      "to": "jacques-vallee",
+      "type": "COAUTHOR",
+      "scope": "Materialpapier2022",
+      "source_ids": [
+        "UKN-S34"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R18",
+      "from": "garry-nolan",
+      "to": "federico-faggin",
+      "type": "COAUTHOR",
+      "scope": "SETI-Proposal2016",
+      "source_ids": [
+        "UKN-S35"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R19",
+      "from": "garry-nolan",
+      "to": "sol-foundation",
+      "type": "COFOUNDER",
+      "scope": "Gründungsmitteilung15.08.2023; aktuelles Register13.11.2026",
+      "source_ids": [
+        "UKN-S36",
+        "UKN-S37"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R20",
+      "from": "diana-walsh-pasulka",
+      "to": "sol-foundation",
+      "type": "ADVISORY_BOARD",
+      "scope": "Register geprüft13.11.2026; Eintrittsdatum nicht ermittelt",
+      "source_ids": [
+        "UKN-S36"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R21",
+      "from": "jacques-vallee",
+      "to": "sol-foundation",
+      "type": "ADVISORY_BOARD",
+      "scope": "Register geprüft13.11.2026; Eintrittsdatum nicht ermittelt",
+      "source_ids": [
+        "UKN-S36"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R22",
+      "from": "jesse-michels",
+      "to": "garry-nolan",
+      "type": "INTERVIEW",
+      "scope": "Ausgewähltes Dritttranskript04:00–08:19",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R23",
+      "from": "jesse-michels",
+      "to": "diana-walsh-pasulka",
+      "type": "INTERVIEW",
+      "scope": "Panel und Nachgespräch, Dritttranskript40:07–48:08",
+      "source_ids": [
+        "UKN-S39"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R24",
+      "from": "diana-walsh-pasulka",
+      "to": "jacques-vallee",
+      "type": "EXPLICIT_INTELLECTUAL_REFERENCE",
+      "scope": "Dritttranskript41:38",
+      "source_ids": [
+        "UKN-S39"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R25",
+      "from": "garry-nolan",
+      "to": "stanford-university",
+      "type": "ACADEMIC_APPOINTMENT",
+      "scope": "Pathology; institutionelles Profil13.11.2026",
+      "source_ids": [
+        "UKN-S33"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R26",
+      "from": "diana-walsh-pasulka",
+      "to": "uncw",
+      "type": "ACADEMIC_APPOINTMENT",
+      "scope": "Philosophy and Religion; Profil13.11.2026",
+      "source_ids": [
+        "UKN-S32"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
     }
   ],
   "comparisons": [
@@ -631,7 +945,7 @@
       "id": "UKN-X03",
       "pair": "Heim ↔ Swann/Puharich",
       "shared_topic": "Bewusstsein und nicht rein materielle Erklärungen",
-      "difference": "Heims indirekte Strukturargumentation unterscheidet sich von Berichten und Versuchsanordnungen zu Wahrnehmung/Psi. Sein Aufsatz von 1978 lehnt paranormale Erfahrungen gerade als eigene empirische Basis ab.",
+      "difference": "Heims indirekte Strukturargumentation unterscheidet sich von Berichten und Versuchsanordnungen zu Wahrnehmung/Psi. Sein Aufsatz von1978 lehnt paranormale Erfahrungen gerade als eigene empirische Basis ab.",
       "relation_type": "EDITORIAL_PARALLEL",
       "source_ids": [
         "UKN-S16"
@@ -695,9 +1009,9 @@
     },
     {
       "id": "UKN-X09",
-      "pair": "Hayden ↔ Senatsstudie 2014",
+      "pair": "Hayden ↔ Senatsstudie2014",
       "shared_topic": "Verhörprogramm und behauptete Wirksamkeit",
-      "difference": "Konkreter inhaltlicher Widerspruch zwischen öffentlicher Insiderverteidigung 2010 und späteren dokumentenbasierten Findings 1–2; Gegenstand bleibt das Verhörprogramm, nicht UAP.",
+      "difference": "Konkreter inhaltlicher Widerspruch zwischen öffentlicher Insiderverteidigung2010 und späteren dokumentenbasierten Findings1–2; Gegenstand bleibt das Verhörprogramm, nicht UAP.",
       "relation_type": "DOCUMENTED_COUNTER_READING",
       "source_ids": [
         "UKN-S28"
@@ -736,6 +1050,102 @@
         "UKN-S07"
       ],
       "atlas_author": "jesse-michels"
+    },
+    {
+      "id": "UKN-X13",
+      "pair": "Pasulka ↔ Taylor / Tyler D.",
+      "shared_topic": "Kontaktpraxis, Erfindung, New Mexico und Vatikan",
+      "difference": "Pasulka beschreibt einen pseudonymisierten Feldkontakt. Die spätere Zuordnung zu Taylor bleibt ein gesonderter Identitätsschritt; dessen Berufsbiografie authentifiziert den außergewöhnlichen Teil nicht.",
+      "relation_type": "REPORTED_CONTACT_WITH_IDENTITY_LIMIT",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S01"
+      ],
+      "atlas_author": "timothy-taylor"
+    },
+    {
+      "id": "UKN-X14",
+      "pair": "Nolan ↔ Taylor / James und Tyler",
+      "shared_topic": "Materialien, Erfahrungswissen und Insiderzugang",
+      "difference": "Die Erzählung von James und Tyler erzeugt eine mögliche Brücke. Ohne hier gesichtete direkte Identitätsbestätigung oder eigene Kooperationsunterlage wird daraus keine gesicherte Nolan–Taylor-Forschungsbeziehung.",
+      "relation_type": "ATTRIBUTION_CHAIN_NOT_CONFIRMED_EDGE",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "atlas_author": "timothy-taylor"
+    },
+    {
+      "id": "UKN-X15",
+      "pair": "Pasulka ↔ Vallée",
+      "shared_topic": "Historische Erfahrungsberichte, Religion, kulturelle Wirkung",
+      "difference": "Pasulka erschließt Sinnbildung und religiöse Praxis; Vallée vergleicht Phänomenmuster und Erklärungsmodelle. Ihr Bezug auf ihn erscheint im Michels-Transkript. Die gemeinsame Sol-Beiratsrolle ist zusätzlich institutionell dokumentiert.",
+      "relation_type": "COMPARISON_AND_ORGANIZATIONAL_LINK",
+      "source_ids": [
+        "UKN-S39",
+        "UKN-S36"
+      ],
+      "atlas_author": "jacques-vallee"
+    },
+    {
+      "id": "UKN-X16",
+      "pair": "Nolan ↔ Vallée",
+      "shared_topic": "Materialien, Forschungsstandards, erweiterte SETI-Suche",
+      "difference": "Hier gibt es konkrete Koautorschaft. Das Materialpapier und der SETI-Vorschlag haben verschiedene Gattungen: ein begrenzter Analysebefund einerseits, Erweiterung des Suchprogramms andererseits.",
+      "relation_type": "DOCUMENTED_COAUTHORSHIP",
+      "source_ids": [
+        "UKN-S34",
+        "UKN-S35"
+      ],
+      "atlas_author": "jacques-vallee"
+    },
+    {
+      "id": "UKN-X17",
+      "pair": "Pasulka ↔ Nolan",
+      "shared_topic": "Wissenschaftliche Autorität und außergewöhnliche Erfahrungen",
+      "difference": "Pasulkas Bericht über Überzeugungen von Wissenschaftlern ist kein Ersatz für Nolans Messdaten. Bei Sol ist eine gemeinsame institutionelle Umgebung sichtbar. Das Council-Bluffs-Papier wird nicht zum Befund der American-Cosmic-Reise umetikettiert.",
+      "relation_type": "METHOD_COMPARISON_AND_ORGANIZATION",
+      "source_ids": [
+        "UKN-S40",
+        "UKN-S34",
+        "UKN-S36"
+      ],
+      "atlas_author": "garry-nolan"
+    },
+    {
+      "id": "UKN-X18",
+      "pair": "Pasulka ↔ Jesse Michels",
+      "shared_topic": "Religion, UAP, historische Analogien und Philosophie",
+      "difference": "Michels moderiert und setzt Rahmungen. Pasulkas Antworten, Nell-Aussagen und Episodentitel erhalten getrennte Sprecherzuordnung. Ein Titel über den Vatikan ist keine Erklärung des Vatikans.",
+      "relation_type": "INTERVIEW_PLATFORM",
+      "source_ids": [
+        "UKN-S39",
+        "UKN-S44"
+      ],
+      "atlas_author": "jesse-michels"
+    },
+    {
+      "id": "UKN-X19",
+      "pair": "Nolan ↔ Jesse Michels",
+      "shared_topic": "Laborarbeit, Wahrnehmung, Geheimhaltung und Forschungshürden",
+      "difference": "Der Host verbindet Forschungsfragen mit weitergehenden Perspektiven. Der direkte Materialbefund begrenzt pauschale Herkunftsdeutungen, ohne sämtliche übrigen Proben oder UAP-Fälle zu entscheiden.",
+      "relation_type": "INTERVIEW_AND_LIMITED_COUNTER_READING",
+      "source_ids": [
+        "UKN-S38",
+        "UKN-S34"
+      ],
+      "atlas_author": "jesse-michels"
+    },
+    {
+      "id": "UKN-X20",
+      "pair": "Pasulka/Nolan ↔ Sol",
+      "shared_topic": "Institutionalisierung einer zuvor oft informellen Debatte",
+      "difference": "Nolan ist Mitgründer; Pasulka und Vallée werden als Beiratsmitglieder geführt. Das erlaubt eine datierte Organisationskarte. Es liefert weder eine Liste eines historischen Invisible College noch eine einheitliche Weltanschauung.",
+      "relation_type": "DOCUMENTED_ORGANIZATIONAL_ROLES",
+      "source_ids": [
+        "UKN-S36",
+        "UKN-S37"
+      ],
+      "atlas_author": "garry-nolan"
     }
   ]
 }

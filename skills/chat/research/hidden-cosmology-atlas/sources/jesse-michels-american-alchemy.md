@@ -50,3 +50,8 @@ The generic `WorldView Research` plugin must discover this record on source-inve
 ## 2026-11-13 · Taylor/Bledsoe passage added
 
 Selected third-party AI transcript, not original audio: [Why NASA Studies This Man](https://pod.wave.co/podcast/american-alchemy/why-the-cia-studies-this-ufo-experiencer),114:50–117:29. Bledsoe's Obama-briefing assertion, Michels' questions and Bledsoe's distinction between an alleged dinner and an inferred briefing are kept separate. No new Taylor interview or blanket host endorsement inferred. [Eight transmission chains and identity limits](../packages/uap-knowledge-networks/TIMOTHY_TAYLOR.md). Audio verification parked under breadth-first scope.
+
+
+## Pasulka und Nolan ·13.11.2026
+
+[Vergleichspaket](../packages/uap-knowledge-networks/PASULKA_NOLAN.md). Neue Interviewpfade: Nolan-Laborinterview (ausgewähltes Dritttranskript04:00–08:19), Pasulka/Nell-Panel und Nachgespräch (40:07–48:08). Audio nicht gegengeprüft. Kapitel-/Transkriptzeiten dienen als Sprungmarken und können durch Werbung abweichen. Moderator, Gast und Erzählerstimme nicht vermischen.

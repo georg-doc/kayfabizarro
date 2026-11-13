@@ -281,3 +281,137 @@ Prüfdatum:2026-11-13. Mehrere Quellen derselben Familie zählen nicht automatis
 - Gelesen: Index read selectively
 - Grenze: 2026 anonymous reconstructions are not Heim originals; upload dates aren't composition dates.
 - Quellenfamilie: heim-theory-guide
+
+
+## Ergänzung: Pasulka und Nolan ·13.11.2026
+
+### UKN-S32 · Diana Pasulka · UNCW profile
+
+- URL: https://www.uncw.edu/profiles/p/pasulkad
+- Autor/Herausgeber: UNCW
+- Art: Institutional biography
+- Fundstelle: Bio, lines136–141
+- Gesichtet: Original bio read
+- Grenze: Current page also names Diana Heath (formerly Walsh Pasulka); Atlas retains publication name.
+- Quellenfamilie: uncw
+
+### UKN-S33 · Garry Nolan · Stanford profile
+
+- URL: https://profiles.stanford.edu/garry-nolan
+- Autor/Herausgeber: Stanford University
+- Art: Institutional biography and bibliography
+- Fundstelle: Bio; academic appointments; publications
+- Gesichtet: Selected bio and publication entries read
+- Grenze: Biomedical credentials are not institutional endorsement of UAP claims.
+- Quellenfamilie: stanford-nolan
+
+### UKN-S34 · Improved instrumental techniques…
+
+- URL: https://doi.org/10.1016/j.paerosci.2021.100788
+- Autor/Herausgeber: Nolan; Vallée; Jiang; Lemke
+- Art: Original journal article
+- Fundstelle: Progress in Aerospace Sciences128 (2022),100788; pp.1–2,11–12
+- Gesichtet: Selected original PDF pages read via AFU copy
+- Grenze: No independent replication; CB_JV-1 is not identified as the New Mexico sample in American Cosmic.
+- Quellenfamilie: nolan-vallee-materials
+- Gelesene Archivkopie: https://files.afu.se/Downloads/Magazines/0%20-%20Articles/0%20-%20Scientific%20Journal%20Articles/2022%2001%2000_Progress%20in%20Aerospace%2C%20Vol%20128%20-%20Improved%20instrumental%20techniques%20-%20Nolan%2C%20Vallee%2C%20Jiang%2C%20Lemke.pdf
+
+### UKN-S35 · Towards Multi-disciplinary SETI Research
+
+- URL: https://www.jacquesvallee.net/wp-content/uploads/2018/11/Towards_Multi-disciplinary_SETI_Research.pdf
+- Autor/Herausgeber: Vallée; Nolan; Faggin
+- Art: Original research proposal
+- Fundstelle: 2016 per author's research index; pp.1–4
+- Gesichtet: Selected original text read; reused Vallée source
+- Grenze: Proposal, not detection or experimental proof.
+- Quellenfamilie: vallee-nolan-faggin-seti
+
+### UKN-S36 · Sol Foundation · people and research
+
+- URL: https://thesolfoundation.org/
+- Autor/Herausgeber: Sol Foundation
+- Art: Organizational self-description
+- Fundstelle: Executive Leadership and Advisory Board
+- Gesichtet: Original current roster read
+- Grenze: Membership is date-sensitive and does not imply agreement on every claim.
+- Quellenfamilie: sol-foundation
+
+### UKN-S37 · Sol launch announcement
+
+- URL: https://thesolfoundation.org/launch-announcement/
+- Autor/Herausgeber: Sol Foundation
+- Art: Original institutional announcement
+- Fundstelle: 15 August2023; opening paragraphs
+- Gesichtet: Original announcement read
+- Grenze: Evidence of organization and aims, not evidence of nonhuman technology.
+- Quellenfamilie: sol-foundation
+
+### UKN-S38 · UFO Material Locked Away at Stanford University feat. Garry Nolan
+
+- URL: https://podscripts.co/podcasts/american-alchemy-with-jesse-michels/ufo-material-locked-away-at-stanford-university-feat-garry-nolan
+- Autor/Herausgeber: Jesse Michels / Garry Nolan; Podscripts transcription
+- Art: Third-party transcript of interview
+- Fundstelle: 04:00–08:19; host description and montage distinguished
+- Gesichtet: Selected transcript read, audio not checked
+- Grenze: Transcription errors and ad offsets; listed5 October2024 is not established as original recording date.
+- Quellenfamilie: american-alchemy-nolan
+
+### UKN-S39 · The Biblical Truth of UFOs & Angels (ft. Karl Nell & Diana Pasulka)
+
+- URL: https://podscripts.co/podcasts/american-alchemy-with-jesse-michels/the-biblical-truth-of-ufos-angels-ft-karl-nell-diana-pasulka
+- Autor/Herausgeber: Jesse Michels / Diana Pasulka / Karl Nell; Podscripts transcription
+- Art: Third-party transcript of panel and follow-up
+- Fundstelle: listed19 December2024; intro;40:07–48:08
+- Gesichtet: Selected transcript read, audio not checked
+- Grenze: Speaker shifts and ad offsets require audio before quoting; Nell's claims are not Pasulka's.
+- Quellenfamilie: american-alchemy-pasulka-nell
+
+### UKN-S40 · Belief in UFOs is very similar to that of the early Christian community
+
+- URL: https://english.elpais.com/culture/2026-03-22/diana-walsh-pasulka-specialist-in-religions-belief-in-ufos-is-very-similar-to-that-of-the-early-christian-community.html
+- Autor/Herausgeber: Daniel Mediavilla interviewing Diana Walsh Pasulka
+- Art: Direct published interview, English translation
+- Fundstelle: 22 March2026; methodology, materials, apocalyptic belief
+- Gesichtet: Published interview read
+- Grenze: Author's testimony about scientists is not their laboratory report; English version of Spanish interview.
+- Quellenfamilie: pasulka-mediavilla-2026
+
+### UKN-S41 · Heaven Can Wait
+
+- URL: https://academic.oup.com/book/10418
+- Autor/Herausgeber: Diana Walsh Pasulka / Oxford University Press
+- Art: Publisher record and abstract
+- Fundstelle: 2014; title, abstract, publication date
+- Gesichtet: Publisher metadata and abstract only
+- Grenze: Not full book reading.
+- Quellenfamilie: pasulka-heaven
+
+### UKN-S42 · Believing in Bits · copyright and bibliographic record
+
+- URL: https://academic.oup.com/book/35192/chapter-abstract/299569778
+- Autor/Herausgeber: Simone Natale and Diana Pasulka, editors / OUP
+- Art: Publisher record
+- Fundstelle: online24 October2019; print28 November2019; copyright2020
+- Gesichtet: Publisher record read
+- Grenze: Replaces stale forthcoming2018 on author website for dating; not chapter reading.
+- Quellenfamilie: believing-in-bits
+
+### UKN-S43 · Pasulka with Lex Fridman #149
+
+- URL: https://www.youtube.com/watch?v=iqBh7G4uDR8
+- Autor/Herausgeber: Lex Fridman / Diana Walsh Pasulka
+- Art: Original episode description and chapter index
+- Fundstelle: 27 December2020;57:34 American Cosmic;1:13:06 Vallée;1:22:31 AI
+- Gesichtet: Original publisher metadata and chapter list only
+- Grenze: Topic indexing, not transcript or audio verification.
+- Quellenfamilie: lex-pasulka-149
+
+### UKN-S44 · UFOs & Religion: Vatican Reveals Hidden Link
+
+- URL: https://open.spotify.com/episode/0Vh7Xpwlbs5F6owAed2DAI
+- Autor/Herausgeber: American Alchemy with Jesse Michels
+- Art: Episode listing
+- Fundstelle: Title and guest description
+- Gesichtet: Search-indexed listing only
+- Grenze: Discovery record; title is editorial framing, not Vatican institutional disclosure.
+- Quellenfamilie: american-alchemy-pasulka-vatican

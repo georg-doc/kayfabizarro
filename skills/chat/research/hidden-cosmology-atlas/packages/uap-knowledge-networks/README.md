@@ -1,3 +1,9 @@
+# UAP-Wissensnetzwerke — sechs Perspektiven
+
+Erweiterung13.11.2026: [Diana Walsh Pasulka](diana-walsh-pasulka.md) und [Garry Nolan](garry-nolan.md), mit [Verbindungen und acht neuen Vergleichen](PASULKA_NOLAN.md). Gesamt:44 Themen,44 Quellen,20 Vergleiche,26 typisierte Beziehungen. Sichtungsgrenzen gelten pro Quelle; keine vollständige Werksichtung.
+
+---
+
 # Heim, DeLonge, Hayden und Taylor — Wissen, Institutionen und UAP-Erzählungen
 
 Stand:2026-11-13 · v1.0.0 · Owner: KFB Research Atlas

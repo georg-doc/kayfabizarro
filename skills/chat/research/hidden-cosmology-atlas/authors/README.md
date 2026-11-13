@@ -146,3 +146,11 @@ Six source-led profiles added; total dedicated author masters: **24**, not 24 co
 - [Timothy E. Taylor / „Tyler D.“](timothy-taylor.md) — Biografie, Erfahrungsberichte und die Entstehung eines Insiderbilds
 
 [Vergleichspaket und Sichtungsgrenzen](../packages/uap-knowledge-networks/RETURN.md)
+
+
+## 2026-11-13 · Pasulka und Nolan
+
+- [Diana Walsh Pasulka](diana-walsh-pasulka.md) — Religion, Medien und Feldforschung
+- [Garry Nolan](garry-nolan.md) — Biomedizin, Materialien und Forschungsorganisation
+
+[Verbindungen zu Taylor, Vallée und Jesse Michels](../packages/uap-knowledge-networks/PASULKA_NOLAN.md)

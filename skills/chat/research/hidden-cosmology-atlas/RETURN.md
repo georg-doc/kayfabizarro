@@ -1,3 +1,7 @@
+## 2026-11-13 · Pasulka und Nolan ergänzt
+
+[Neue Dossiers und Verbindungen](packages/uap-knowledge-networks/PASULKA_NOLAN.md) · [Return und Grenzen](packages/uap-knowledge-networks/RETURN.md).16 neue Themen;13 Quellen;8 Vergleiche;10 Beziehungen. Bestehender Atlas-Owner, kein Spielcode. Site-Veröffentlichungsbeleg folgt nach erfolgreicher Publikation.
+
 ## 2026-11-13 · Heim, DeLonge, Hayden und Taylor
 
 [Vier Dossiers und Taylor-Quellenketten](packages/uap-knowledge-networks/README.md) · [Sichtungsgrenzen und nächstes Gate](packages/uap-knowledge-networks/RETURN.md).28 Themen,31 Quellen,12 Vergleiche,16 typisierte Beziehungen. Bestehender Owner und Branch; kein Spielcode. [Atlas-Lesefassung](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html) in Version22 veröffentlicht; [Publikationsbeleg](packages/uap-knowledge-networks/SITE_PUBLICATION_2026-11-13.json). Inhalt:163f36db8e3de680f278a9ab574b789d8eb80ff2;33/33 Dateien exakt zurückgelesen. Nächstes Gate: Georgs Blick auf die breite Aufnahme.
