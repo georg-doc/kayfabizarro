@@ -73,3 +73,8 @@ Der öffentliche Berufs- und Publikationsdatensatz wird getrennt von der Zuschre
 ## Erweiterung13.11.2026 · Puthoff und Davis
 
 [Themen und Vergleichsmatrix](PUTHOFF_DAVIS.md) · [Puthoff](hal-puthoff.md) · [Davis](eric-davis.md). Jetzt acht Profile,60 Themenfelder,32 Vergleiche und37 Beziehungen. Neue Quellen45–56; V05 und UKN-S54 sind dieselbe Publikation, keine unabhängigen Belege.
+
+
+## Erweiterung13.11.2026 · Bigelow und Kelleher
+
+[Themen und Vergleichsmatrix](BIGELOW_KELLEHER.md) · [Bigelow](robert-bigelow.md) · [Kelleher](colm-kelleher.md). Jetzt zehn Profile,76 Themenfelder,42 Vergleiche und52 Beziehungen. Neue Quellen57–66; Quellen20 und38 wiederverwendet. Skinwalkers-Buch und Artikel sind eine Quellenfamilie.

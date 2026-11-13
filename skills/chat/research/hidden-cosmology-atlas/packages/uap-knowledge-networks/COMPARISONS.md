@@ -303,3 +303,86 @@ Typ: EDITORIAL_PARALLEL. [Teleportation Physics Study](https://www.coscienza.org
 **Unterschied:** Das bestehende Puharich-Dossier eröffnet eine historische Vergleichsachse. Thematische Nähe ersetzt weder eine konkrete Kontaktquelle noch eine unabhängige Bestätigung paranormaler Effekte.
 
 Typ: EDITORIAL_PARALLEL. [Remote Viewing at Stanford Research Institute](https://waves.lima-city.de/cms/pdf/jse_10_1_puthoff.pdf) · [An Evaluation of Remote Viewing: Research and Applications](https://www.alice.id.tue.nl/references/mumford-rose-goslin-1995.pdf) · [Teleportation Physics Study](https://www.coscienza.org/wp-content/uploads/Teleportation-Physics-Study.pdf) · [Bestehendes Autorendossier](../../authors/andrija-puharich.md)
+
+
+# Bigelow und Kelleher · Ergänzung13.11.2026
+
+## Bigelow ↔ Kelleher
+
+**Gemeinsam:** Forschungsorganisation und Bewusstseinsfragen.
+
+**Unterschied:** Direkte gemeinsame Autorenschaft im BICS-Bericht; Kellehers Biografie beschreibt außerdem Tätigkeiten in Bigelows Unternehmen. Unternehmer, Förderer und wissenschaftlicher Organisator sind unterschiedliche Rollen.
+
+Typ: COAUTHORSHIP_AND_REPORTED_EMPLOYMENT. [The 2021 BICS Essay Contest](https://journalofscientificexploration.org/index.php/jse/article/view/2693/1597) · [The Pentagon’s Secret UFO Program, the Hitchhiker Effect, and Models of Contagion](https://www.theblackvault.com/casefiles/wp-content/uploads/2022/06/colmkelleher-edgescience.pdf) · [Bestehendes Autorendossier](../../authors/colm-kelleher.md)
+
+## Bigelow / Kelleher ↔ Puthoff
+
+**Gemeinsam:** Bewusstsein, Begutachtung und Anomalieforschung.
+
+**Unterschied:** Der BICS-Originaltext nennt Puthoff als Juror. Kelleher bezeichnet ihn außerdem als BAASS-Berater. Ein Jury- oder Beratungsmandat ist keine Zustimmung zu sämtlichen Aussagen der Organisatoren.
+
+Typ: DOCUMENTED_JURY_AND_PARTICIPANT_ACCOUNT. [The 2021 BICS Essay Contest](https://journalofscientificexploration.org/index.php/jse/article/view/2693/1597) · [The Pentagon’s Secret UFO Program, the Hitchhiker Effect, and Models of Contagion](https://www.theblackvault.com/casefiles/wp-content/uploads/2022/06/colmkelleher-edgescience.pdf) · [Bestehendes Autorendossier](../../authors/hal-puthoff.md)
+
+## Kelleher ↔ Davis
+
+**Gemeinsam:** NIDS und die Untersuchung ungewöhnlicher Phänomene.
+
+**Unterschied:** Kellehers Leitungsbiografie und Davis’ Autorenfußnote weisen auf dieselbe Institution. Ein bestimmtes gemeinsames Experiment oder eine Koautorschaft zwischen beiden ist durch diese Dokumente noch nicht belegt.
+
+Typ: SHARED_INSTITUTION. [TTSA · 2017 offering circular](https://www.sec.gov/Archives/edgar/data/1710274/000114420417050693/v476177_253g2.htm) · [Incommensurability, Orthodoxy and the Physics of High Strangeness](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf) · [Bestehendes Autorendossier](../../authors/eric-davis.md)
+
+## Kelleher ↔ Vallée
+
+**Gemeinsam:** Fallberichte, High Strangeness und kulturelle Wirkung.
+
+**Unterschied:** Die NIDS-Verbindung ist datierbar. Kelleher konzentriert sich hier auf Human Effects und Feldberichte; Vallée/Davis ordnen unterschiedliche Informationsebenen. Ähnlicher Gegenstand bedeutet keine identische Erklärung.
+
+Typ: SHARED_INSTITUTION_AND_EDITORIAL_COMPARISON. [TTSA · 2017 offering circular](https://www.sec.gov/Archives/edgar/data/1710274/000114420417050693/v476177_253g2.htm) · [Incommensurability, Orthodoxy and the Physics of High Strangeness](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf) · [The Pentagon’s Secret UFO Program, the Hitchhiker Effect, and Models of Contagion](https://www.theblackvault.com/casefiles/wp-content/uploads/2022/06/colmkelleher-edgescience.pdf) · [Bestehendes Autorendossier](../../authors/jacques-vallee.md)
+
+## Kelleher ↔ Nolan
+
+**Gemeinsam:** Biomedizin und anomale Erfahrungen.
+
+**Unterschied:** Der TTSA-Beirat2017 ist eine direkt dokumentierte Organisationsverbindung. Nolans konkrete Materialanalysen und Kellehers Deutungen von Erfahrungsberichten bleiben verschiedene Evidenzarten.
+
+Typ: ORGANIZATIONAL_RELATION. [TTSA · 2017 offering circular](https://www.sec.gov/Archives/edgar/data/1710274/000114420417050693/v476177_253g2.htm) · [Improved instrumental techniques…](https://doi.org/10.1016/j.paerosci.2021.100788) · [Bestehendes Autorendossier](../../authors/garry-nolan.md)
+
+## Bigelow ↔ Davis / Vallée
+
+**Gemeinsam:** Infrastruktur und theoretische UAP-Modelle.
+
+**Unterschied:** NIDS und BAASS sind zeitlich zu trennen. Die Beratung von Vallée/Davis bei NIDS belegt nicht, dass jedes ihrer Modelle ein von Bigelow finanziertes oder gebilligtes Projektergebnis war.
+
+Typ: INSTITUTIONAL_CONTEXT. [Incommensurability, Orthodoxy and the Physics of High Strangeness](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf) · [Advanced Aerospace Weapon System Applications Contract Status](https://documents2.theblackvault.com/documents/dia/AAWSAP/DI_Brief_2009.pdf) · [Bestehendes Autorendossier](../../authors/eric-davis.md)
+
+## Bigelow ↔ Nolan
+
+**Gemeinsam:** Informeller Forschungszugang.
+
+**Unterschied:** Nolan nennt Bigelow im erschlossenen Michels-Dritttranskript als Kontakt. Dieser Bericht liefert keine geprüfte Vertrags-, Finanzierungs- oder Eigentumskette für Nolans Proben.
+
+Typ: REPORTED_CONTACT. [UFO Material Locked Away at Stanford University feat. Garry Nolan](https://podscripts.co/podcasts/american-alchemy-with-jesse-michels/ufo-material-locked-away-at-stanford-university-feat-garry-nolan) · [Improved instrumental techniques…](https://doi.org/10.1016/j.paerosci.2021.100788) · [Bestehendes Autorendossier](../../authors/garry-nolan.md)
+
+## Bigelow / Kelleher ↔ Pasulka
+
+**Gemeinsam:** Wissenschaftliche Autorität, Erfahrung und Glaubensbildung.
+
+**Unterschied:** BICS ist eine Forschung und Überzeugungen organisierende Institution; Pasulkas ethnografische Perspektive kann deren Wissensbildung untersuchen. Das ist ein redaktioneller Vergleich, kein neuer Kooperationsnachweis.
+
+Typ: EDITORIAL_PARALLEL. [American Cosmic](https://books.google.com/books?id=XRmEDwAAQBAJ) · [About BICS](https://www.bigelowinstitute.org/index.php/about-bics/) · [The 2021 BICS Essay Contest](https://journalofscientificexploration.org/index.php/jse/article/view/2693/1597) · [Bestehendes Autorendossier](../../authors/diana-walsh-pasulka.md)
+
+## Bigelow / Kelleher ↔ Swann / Puharich
+
+**Gemeinsam:** Bewusstsein jenseits gewöhnlicher Wahrnehmungsmodelle.
+
+**Unterschied:** Remote Viewing, Fortleben nach dem Tod und berichtete Folgewirkungen anomaler Erfahrungen sind verschiedene Hypothesen. Ein gemeinsamer Psi-Begriff darf ihre jeweilige Beleglast nicht aufheben.
+
+Typ: EDITORIAL_PARALLEL. [Remote Viewing at Stanford Research Institute](https://waves.lima-city.de/cms/pdf/jse_10_1_puthoff.pdf) · [About BICS](https://www.bigelowinstitute.org/index.php/about-bics/) · [The Pentagon’s Secret UFO Program, the Hitchhiker Effect, and Models of Contagion](https://www.theblackvault.com/casefiles/wp-content/uploads/2022/06/colmkelleher-edgescience.pdf) · [Bestehendes Autorendossier](../../authors/ingo-swann.md)
+
+## Bigelow / Kelleher ↔ Farrell / Dark Journalist
+
+**Gemeinsam:** Geheime Programme und ungewöhnliche Technologie.
+
+**Unterschied:** DIA-Auftrag und BEAM sind konkrete, verschiedenartige Organisations- beziehungsweise Technikbelege. Die weitergehenden historischen Synthesen der bestehenden Dossiers sind damit nicht automatisch bestätigt.
+
+Typ: EDITORIAL_PARALLEL. [Bigelow Expandable Activity Module (BEAM)](https://www.nasa.gov/international-space-station/bigelow-expandable-activity-module-beam/) · [Advanced Aerospace Weapon System Applications Contract Status](https://documents2.theblackvault.com/documents/dia/AAWSAP/DI_Brief_2009.pdf) · [Bestehendes Autorendossier](../../authors/joseph-farrell.md)

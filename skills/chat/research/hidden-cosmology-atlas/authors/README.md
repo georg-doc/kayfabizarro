@@ -158,3 +158,7 @@ Six source-led profiles added; total dedicated author masters: **24**, not 24 co
 
 - [Hal Puthoff](hal-puthoff.md) — SRI, Swann, Vakuumphysik, UAP-Modelle.
 - [Eric W. Davis](eric-davis.md) — Vallée-Modell, Teleportationsstudie, theoretische Physik, Sol.
+
+
+- [Robert Bigelow](robert-bigelow.md) — Raumfahrt, Forschungsförderung, BICS.
+- [Colm Kelleher](colm-kelleher.md) — Biochemie, NIDS/BAASS, Human Effects, BICS.

@@ -538,3 +538,108 @@ Jesse Michels / American Alchemy. Interview discovery record.
 Gesichtet: Original video fetch failed; link confirmed by publisher episode notes. Grenze: No audio, transcript, timestamps or interview claims verified.
 
 Quellenfamilie: michels-puthoff-weinstein. Geprüft: 2026-11-13.
+
+
+## Bigelow und Kelleher · neue Quellen
+
+Zusätzlich UKN-S20: pp.33–34, Kelleher-/Nolan-Beirat und Biografie erneut gesichtet.
+
+### UKN-S57 · Bigelow Expandable Activity Module (BEAM)
+
+NASA. Institutional mission record.
+
+[Quelle](https://www.nasa.gov/international-space-station/bigelow-expandable-activity-module-beam/) · Fundstelle: Mission overview; launch8 April2016, expansion28 May2016.
+
+Gesichtet: Mission description read. Grenze: Confirms conventional space hardware, not anomalous propulsion.
+
+Quellenfamilie: nasa-beam. Geprüft: 2026-11-13.
+
+### UKN-S58 · About BICS
+
+Bigelow Institute for Consciousness Studies. Organizational self-description.
+
+[Quelle](https://www.bigelowinstitute.org/index.php/about-bics/) · Fundstelle: Founding April2020 and research purpose.
+
+Gesichtet: Page read. Grenze: Institution's aims, not validation of survival after death.
+
+Quellenfamilie: bics-about. Geprüft: 2026-11-13.
+
+### UKN-S59 · The 2021 BICS Essay Contest
+
+Colm Kelleher; Robert Bigelow. JSE36(2),350–365 (2022), Commentary.
+
+[Quelle](https://journalofscientificexploration.org/index.php/jse/article/view/2693/1597) · Fundstelle: Abstract; pp.353–354 judges and judging; publication20 August2022.
+
+Gesichtet: Selected original text;16-page PDF not fully reviewed. Grenze: Organizers' account; essay judging does not substitute for independent replication.
+
+Quellenfamilie: bics-contest-2021. Geprüft: 2026-11-13.
+
+### UKN-S60 · The Pentagon’s Secret UFO Program, the Hitchhiker Effect, and Models of Contagion
+
+Colm A. Kelleher. EdgeScience50,June2022,pp.19–24; archived original article.
+
+[Quelle](https://www.theblackvault.com/casefiles/wp-content/uploads/2022/06/colmkelleher-edgescience.pdf) · Fundstelle: pp.19,22–24: proposed transmission, Puthoff, models, author biography.
+
+Gesichtet: Selected original text; PDF text only. Grenze: Adapted from Skinwalkers at the Pentagon; same source family, not independent corroboration. No patient records or causal study audited.
+
+Quellenfamilie: kelleher-skinwalkers. Geprüft: 2026-11-13.
+
+### UKN-S61 · Hunt for the Skinwalker
+
+Colm A. Kelleher; George Knapp / Simon & Schuster. Publisher record,2005.
+
+[Quelle](https://www.simonandschuster.com/books/Hunt-for-the-Skinwalker/Colm-A-Kelleher/9781416505211) · Fundstelle: Book description, author biography,6 December2005.
+
+Gesichtet: Publisher metadata and description read. Grenze: Book not read in full; promotional wording is not a finding.
+
+Quellenfamilie: hunt-skinwalker. Geprüft: 2026-11-13.
+
+### UKN-S62 · Brain Trust
+
+Colm A. Kelleher / Simon & Schuster. Publisher record,2004.
+
+[Quelle](https://www.simonandschuster.co.uk/books/Brain-Trust/Colm-A-Kelleher/9781416507567) · Fundstelle: Book description;19 October2004.
+
+Gesichtet: Description and metadata read. Grenze: Claims indexed as author hypotheses, not medical advice or verified covert-program findings.
+
+Quellenfamilie: kelleher-brain-trust. Geprüft: 2026-11-13.
+
+### UKN-S63 · Advanced Aerospace Weapon System Applications Contract Status
+
+Defense Intelligence Agency; FOIA copy via The Black Vault. Original government briefing,8 May2009.
+
+[Quelle](https://documents2.theblackvault.com/documents/dia/AAWSAP/DI_Brief_2009.pdf) · Fundstelle: Contract HHM402-08-C-0072; slides3–4 (PDF4–5).
+
+Gesichtet: Selected original text;12-page PDF. Grenze: Briefing dates commencement21 September2008; search-indexed DIA memo says signed22 September. Do not collapse commencement and signature. Official DIA endpoints403.
+
+Quellenfamilie: dia-aawsap-2009. Geprüft: 2026-11-13.
+
+### UKN-S64 · The Augustine-Braude Bigelow Survival Debate: A Postmortem and Prospects for Future Directions
+
+Michael Sudduth. JSE38(3),468–531 (2024), Essay.
+
+[Quelle](https://journalofscientificexploration.org/index.php/jse/article/view/3309) · Fundstelle: Abstract and bibliographic record;14 October2024.
+
+Gesichtet: Abstract read; correction link present, full article/correction not assessed. Grenze: Maps criticism, reply and proposed tests; no claim that every argument was audited.
+
+Quellenfamilie: sudduth-bics-debate. Geprüft: 2026-11-13.
+
+### UKN-S65 · Bigelow Aerospace founder says commercial world will lead in space
+
+Lara Logan / CBS 60 Minutes; Robert Bigelow interview. Original interview text,28 May2017.
+
+[Quelle](https://www.cbsnews.com/news/bigelow-aerospace-founder-says-commercial-world-will-lead-in-space/) · Fundstelle: Exchange about ET presence.
+
+Gesichtet: Selected published interview text; no audio verification. Grenze: Personal conviction, not a presented technical proof.
+
+Quellenfamilie: bigelow-cbs-2017. Geprüft: 2026-11-13.
+
+### UKN-S66 · Skinwalkers at the Pentagon
+
+James Lacatski; Colm Kelleher; George Knapp. Bookseller record; original book2021.
+
+[Quelle](https://www.barnesandnoble.com/w/skinwalkers-at-the-pentagon-james-t-lacatski-deng/1142912835) · Fundstelle: Title/authors and description; print citation confirmed in EdgeScience2022,p.23.
+
+Gesichtet: Metadata only; attempted standalone extract unavailable. Grenze: Book not read; shares source family with UKN-S60.
+
+Quellenfamilie: kelleher-skinwalkers. Geprüft: 2026-11-13.

@@ -1,11 +1,13 @@
-# Return · Puthoff & Davis · 2026-11-13
+# Return · Bigelow & Kelleher · 2026-11-13
 
 Owner: skills/chat/research/hidden-cosmology-atlas · Repo georg-doc/kayfabizarro · Branch research/hidden-cosmology-atlas-2026-10-13 · Draft PR394.
 
-Ausgangshead: b978e05dc70c26c0fff7ab4ffd9bff4efdfd9a67.
+Ausgangshead: 89d4403a705985112dc9a7be364cc55e809638c2.
 
-Zwei Dossiers,16 neue Themen,12 Vergleiche,11 Beziehungen und12 Quellenaufnahmen. Bestehende Inhalte additiv erhalten. Originale, Abstracts, Teilnehmerberichte, Organisationsangaben und Findmittel einzeln gekennzeichnet. Keine Spieländerung.
+Zwei Dossiers,16 Themen,10 Vergleiche,15 Beziehungen und10 Quellenaufnahmen. Bestehende Inhalte additiv erhalten; kein Spielcode. Publikations- und Organisationsbelege getrennt von außergewöhnlichen Aussagen.
 
-Grenzen: keine Volllektüre, keine Audioverifikation. Michels-Video als Findmittel; Nature1974 als Metadaten. Keine Wilson-Davis-/Bergungs-Einzelprüfung. EarthTech-Zugriff nicht zuverlässig. Publikation und Prüfbeleg werden nach Abschluss ergänzt.
+Grenzen: ausgewählte Originaltexte, Abstracts und Metadaten; keine Vollbibliografie oder Audiosichtung. Kein Bild-/Scanprüfclaim. Offizielle DIA-/AARO-Endpunkte403, NIDS-Webarchiv nicht erreichbar, Buchauszug502. DIA-Briefing als Originaltext in FOIA-Kopie gelesen. [Details](BIGELOW_KELLEHER.md).
 
-Nächstes Gate: Georgs Sicht auf diese breite Gegenüberstellung; keine automatische Vertiefung.
+Publikation und Prüfbeleg folgen nach Abschluss.
+
+Nächstes Gate: Georgs Blick auf die breite Vergleichsansicht; keine automatische Vertiefung.
