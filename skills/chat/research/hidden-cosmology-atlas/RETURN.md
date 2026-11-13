@@ -705,3 +705,10 @@ Inhalt: `c1f5cdf90a8cc02e4a3c07627d8653ebe7850602`; 23 geänderte Dateien exakt 
 ## 2026-11-13 · Vallée Vergleich R5 — Bramley / Icke / Wann
 
 Dritte Vergleichsmatrix: sechs Achsen, vier Autoren; drei separate Karten ergänzen die bisherige Sammelfrage. V54–V58 additiv (58 Quellen), C48–C55 (55 Aussagen), R26–R30 (30 typisierte Beziehungen). Explizite Bramley→Vallée-Werkrezeption und Wann→Hesse-Literaturvergleich getrennt von redaktionellen Nachbarschaften. OCR-/Transkriptgrenzen erhalten; kein Audio-/Vollbuchaudit, keine Rabbit Holes, kein Spielcode. Route /vallee.html#symbole-kontrolle. Publikationsbeleg folgt.
+
+
+### R5 Veröffentlichungsabschluss
+
+Inhalt `a7fe4ef850c3175d7dec56982efde5f8798283c0`; 23 geänderte Dateien exakt zurückgelesen und Remote-Head bestätigt. Bestehende private Site erfolgreich publiziert: `appgdep_6af65bdb0c7c8191902fee6f23f9de1b`, Site-Quelle `bc51217b4334be7f1478013b0d6ed9c4c21d0dca`. [Vergleich öffnen](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html#symbole-kontrolle).
+
+Prüfung: sechs Tabellenzeilen im lokalen Browser, Bramley-Quellenlink öffnet Register mit Editions-/Seitenfundstelle und Rückweg. Interne Anker und Quellenzuordnungen auflösbar; veraltete Zählung auf 58 korrigiert. Live-Host nicht authentifiziert visuell geprüft; Publikation durch Sites bestätigt. Nächster Gate: Georgs inhaltliche Sichtung, keine automatische Einzelfallvertiefung.
