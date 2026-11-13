@@ -26,3 +26,7 @@ Publication and exact commit readback are recorded in SITE_PUBLICATION_2026-11-1
 ## Validation
 
 Internal routes and fragment targets checked; JSON parses; source references and graph endpoints resolve; author IDs unique. Local browser confirms source link opens its details and back-link updates the intended route. Existing private host not visually authenticated in this pass.
+
+## Publication / handoff
+
+Content commit: 163f36db8e3de680f278a9ab574b789d8eb80ff2;33/33 intended files fetched and matched. Site version22, source b75f166e67d439a138e35257975d586f5e161362, deploymentappgdep_6af667a37d24819187c6f96bc8c6be5f:succeeded. [Reader](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html). Existing owner-private access preserved. [Exact file manifest and tests](SITE_PUBLICATION_2026-11-13.json). No branch merge or public promotion.
