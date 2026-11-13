@@ -695,3 +695,8 @@ Nächster Gate: Georgs inhaltlicher Blick auf den Direktvergleich; keine automat
 ## 2026-11-13 · Vallée Vergleich R4 — Fitts / Swann / Puharich
 
 Outcome: zweite Matrix mit sechs Achsen und vier Autoren; drei Detailkarten erweitert. Quellen V48–V53 additiv; jetzt 53 Quellen, 47 Aussagen, 25 Beziehungen. Originalrede, Policy-Briefing, Nachlass-/Verlagstexte und Puharichs reproduziertes Vorwort getrennt gekennzeichnet. Keine neue Fallprüfung, keine Spieländerung. Neuer Site-Anker: /vallee.html#wahrnehmung-macht. Veröffentlichung und Tests folgen im Abschlussbeleg.
+
+
+### R4 Veröffentlichungsabschluss
+
+Inhalt: `c1f5cdf90a8cc02e4a3c07627d8653ebe7850602`; 23 geänderte Dateien exakt von GitHub zurückgelesen. Sites-Publikation erfolgreich, Deployment `appgdep_6af659d079648191a193243ff0d6c212`, Site-Quellrevision `b30f6b7576755db604c90a546322811dc061315a`. 24 neue Vergleichszellen; alle internen Anker und Quellenzuordnungen auflösbar. Sichtprüfung der authentifizierten Live-Seite in diesem Lauf nicht durchgeführt. [Vergleich öffnen](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html#wahrnehmung-macht). Nächster Gate: Georgs Blick auf den Breitenvergleich; keine automatische Einzelfallvertiefung.
