@@ -96,3 +96,10 @@ Damit entsteht eine prüfbare Nachbarschaft zu Fitts oder Webb/Goodwin, aber noc
 5. **Archive:** Rice-Sperrfristen beachten; Findbuchkenntnis nicht als Akteneinsicht ausgeben.
 
 Die Website zeigt eine Lesefassung; GitHub bleibt der persistierte Master. Veröffentlichungsstand und Prüfungen stehen im Return.
+
+
+## Breiten-Ausarbeitung · 13.11.2026
+
+24 Themenfelder jetzt mit Aussage/Modell, Werkstrang und Vergleich ausgearbeitet. 42 Quellen registriert; acht Vergleichskarten ergänzen die bestehenden Koautoren- und Kontaktkanten. Neue Schwerpunkte: Information, SETI/nichtbiologische Intelligenz, Erkenntnisgrenzen und Fiktion. Farrells ausdrückliche Vallée-Nennung ist bislang in einer indexierten Passage gelesen; kein Vollseitenzugriff. Verlags-ToCs und Vortragsmetadaten werden nicht als Volllektüre ausgewiesen. Keine neue Trinity-/Archiv-Einzelfallprüfung und kein Spielcode.
+
+[Themen](THEMES.md) · [Autorenvergleich](COMPARISONS.md)

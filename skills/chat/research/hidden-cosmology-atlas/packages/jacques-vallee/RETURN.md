@@ -37,3 +37,10 @@ Nächster inhaltlicher Schritt: weitere Publikationen und Interviews den Themenf
 [Im Research Atlas öffnen](https://kfb-research-atlas.frizzlebob.chatgpt.site/vallee.html). Bestehende private Site erfolgreich aktualisiert; Zugang unverändert. GitHub-Themenstand: `ea4ebc3ae2d368c0f4bc4c6f21f4f660f1551305`; Site-Quellcommit: `a0ea0b3c793deaeda0dad06ea325c3d2fa7fc38c`. [Publikationsbeleg und tatsächliche Prüfungen](SITE_PUBLICATION_2026-11-13.json).
 
 20 Themenfelder; Filter und Quellenweg lokal im Browser geprüft. Alle28 gespeicherten GitHub-Dateien exakt zurückgelesen. Die veröffentlichte Seite verlangt im Prüf-Browser eine Anmeldung; authentifizierte Sichtprüfung daher offen. Keine neue Einzelfallrecherche gestartet.
+
+
+## Breiten-Ausarbeitung · 13.11.2026
+
+24 Themenfelder jetzt mit Aussage/Modell, Werkstrang und Vergleich ausgearbeitet. 42 Quellen registriert; acht Vergleichskarten ergänzen die bestehenden Koautoren- und Kontaktkanten. Neue Schwerpunkte: Information, SETI/nichtbiologische Intelligenz, Erkenntnisgrenzen und Fiktion. Farrells ausdrückliche Vallée-Nennung ist bislang in einer indexierten Passage gelesen; kein Vollseitenzugriff. Verlags-ToCs und Vortragsmetadaten werden nicht als Volllektüre ausgewiesen. Keine neue Trinity-/Archiv-Einzelfallprüfung und kein Spielcode.
+
+[Themen](THEMES.md) · [Autorenvergleich](COMPARISONS.md)

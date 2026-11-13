@@ -1,205 +1,243 @@
-# Jacques Vallée — Themenlandkarte
+# Jacques Vallée — 24 Themenfelder
 
-[Autorenprofil](../../authors/jacques-vallee.md) · [Publikationen](BIBLIOGRAPHY.md) · [Interviews](INTERVIEWS.md) · [Quellen](SOURCES.md)
-
-**Arbeitsmodus: Breite vor Einzelfalltiefe.** Ziel ist eine möglichst vollständige Erfassung der Themen, Aussagen, Theoriefamilien, Werke und Verbindungen. Die20 Felder unten sind eine strukturierte Landkarte des bisher erschlossenen Korpus; sie behaupten keine vollständige Erfassung jeder Aussage. Offene Detailprüfungen bleiben erhalten und sind vorerst geparkt.
+Stand 13.11.2026. Breite, Aussagen und Modelle; kein Anspruch, jedes Werk vollständig gelesen zu haben. Lesetiefe steht im Quellenregister. Vergleichstexte sind redaktionelle Synthesen.
 
 ## Beobachtung, Zeugen und Fallklassifikation
 
-Wie werden ungewöhnliche Beobachtungen gesammelt, vergleichbar beschrieben und nach Qualität eingeordnet?
+Vallée organisiert Fallberichte als vergleichbare Daten. Ein ungeklärter Bericht ist zunächst eine Untersuchungskategorie; Klassifikation und Erklärung sind verschiedene Arbeitsschritte.
 
-**Art:** Methodik / Datenorganisation. **Nachbarschaften:** Hynek; Dolan. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Anatomy of a Phenomenon; Challenge to Science; CAIPAN 2014.
 
-**Nächste Erschließung in der Breite:** Frühe Bücher, Klassifikationssystem und Capella als zusammengehörigen Werkstrang erschließen.
+**Vergleich:** Die Vergleichsachse mit Hynek ist die gemeinsame Fallarbeit; mit Dolan zusätzlich die historische und institutionelle Darstellung.
 
-Quellen: [V02](SOURCES.md#v02) · [V08](SOURCES.md#v08).
+**Quellen:** [Research bibliography](https://www.jacquesvallee.net/research/); [A Strategy for Research](https://www.geipan.fr/sites/default/files/15_VALLEE_sli.pdf)
 
 ## Kritik am einfachen extraterrestrischen Besuchermodell
 
-Vallée argumentiert, dass ein schlichtes Modell physischer Besucher bestimmte Berichtsmuster unzureichend erklärt.
+Seine fünf Argumente richten sich gegen ein einfaches Besuchermodell: Häufigkeit, menschenähnliche Erscheinungen, berichtete Entführungsabläufe, historische Kontinuität und physikalisch widersprüchlich wirkendes Verhalten passen für ihn nicht gut dazu.
 
-**Art:** Autorenthese. **Nachbarschaften:** Dolan; Farrell; Liszt. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Five Arguments … (1990).
 
-**Nächste Erschließung in der Breite:** Die abweichenden Erklärungen der Autoren nebeneinander kartieren.
+**Vergleich:** Er verwirft damit nicht jede denkbare nichtmenschliche Intelligenz. Ein geheimer technischer Ursprung und ein umfassenderes Kontrollmodell bleiben unterschiedliche Hypothesen.
 
-Quellen: [V04](SOURCES.md#v04).
+**Quellen:** [Five Arguments Against the Extraterrestrial Origin of Unidentified Flying Objects](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Five_Arguments_Against_the_Extraterrestr-1.pdf)
 
 ## Folklore, Feen und historische Begegnungsmotive
 
-Historische und moderne Begegnungserzählungen werden als vergleichbarer Motivbestand untersucht.
+Vallée vergleicht moderne UFO-Erzählungen mit älteren Begegnungsmotiven. Die kulturelle Verpackung verändert sich, während gewisse Erzählstrukturen wiederkehren.
 
-**Art:** Vergleichender Ansatz. **Nachbarschaften:** Aubeck; Keel; Warburg / Motivvergleich. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Passport to Magonia; Wonders in the Sky mit Chris Aubeck.
 
-**Nächste Erschließung in der Breite:** Motive und Epochen erfassen; Ähnlichkeit und behauptete Kontinuität unterscheiden.
+**Vergleich:** Motivähnlichkeit ist die Vergleichsebene zu Warburg; eine identische Ursache über Jahrhunderte wäre eine zusätzliche Behauptung.
 
-Quellen: [V02](SOURCES.md#v02) · [V07](SOURCES.md#v07).
+**Quellen:** [Research bibliography](https://www.jacquesvallee.net/research/); [Interview with UFO researcher and author Jacques Vallée](https://openminds.tv/interview-ufo-researcher-author-jacques-vallee/)
 
 ## Religion, Mythos und kulturelle Deutung
 
-Welche kulturellen Kategorien bestimmen, als was eine ungewöhnliche Erfahrung verstanden wird?
+Er behandelt religiöse Deutungen als Teil der Wirkung ungewöhnlicher Erfahrungen. Erscheinung, Interpretation und spätere Glaubensgemeinschaft lassen sich getrennt betrachten.
 
-**Art:** Thematische Lesefrage. **Nachbarschaften:** Kripal; Jorjani; Bramley; Icke. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Dimensions; The Invisible College.
 
-**Nächste Erschließung in der Breite:** Religiöse, mythologische und esoterische Lesarten mit ihrer jeweiligen Zuschreibung aufnehmen.
+**Vergleich:** Anschluss an Jorjani und Kripal: Welche Rolle spielen Erfahrungen bei der Entstehung von Weltbildern? Eine theologische Antwort ist damit noch nicht festgelegt.
 
-Quellen: [V02](SOURCES.md#v02) · [V07](SOURCES.md#v07).
+**Quellen:** [Research bibliography](https://www.jacquesvallee.net/research/); [Interview with UFO researcher and author Jacques Vallée](https://openminds.tv/interview-ufo-researcher-author-jacques-vallee/); [The Invisible College](https://www.anomalistbooks.com/book.cfm?id=79); [Dimensions](https://www.anomalistbooks.com/book.cfm?id=22)
 
 ## Kontrollsystem und gesellschaftliches Lernen
 
-Wiederkehrende Erfahrungen könnten auf Überzeugungen und kulturelle Entwicklung wirken; ein bestimmter Urheber bleibt offen.
+Die Kontrollsystem-Hypothese verschiebt die Frage von der Herkunft eines Objekts zur Wirkung wiederkehrender Erfahrungen auf Überzeugungen. Vallée lässt mehrere mögliche Ursprünge offen.
 
-**Art:** Hypothesenfamilie. **Nachbarschaften:** Farrell; Jorjani; Liszt. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Five Arguments …; Dimensions; Interview 2014.
 
-**Nächste Erschließung in der Breite:** Wirkung, Absicht und angenommener Akteur als getrennte Felder erfassen.
+**Vergleich:** Farrell und Liszt liefern stärker benannte Akteurs- und Technikmodelle. Diese können verglichen werden, ohne Vallées offenes Modell auf dieselben Urheber festzulegen.
 
-Quellen: [V04](SOURCES.md#v04) · [V07](SOURCES.md#v07).
+**Quellen:** [Five Arguments Against the Extraterrestrial Origin of Unidentified Flying Objects](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Five_Arguments_Against_the_Extraterrestr-1.pdf); [Interview with UFO researcher and author Jacques Vallée](https://openminds.tv/interview-ufo-researcher-author-jacques-vallee/); [The Invisible College](https://www.anomalistbooks.com/book.cfm?id=79)
 
 ## Verstärkung, Sichtungswellen und Verhaltensmuster
 
-Der Vergleich mit Verstärkungsmechanismen ist ein vorgeschlagener Zugang zu zeitlichen Mustern.
+Vallée verwendet unregelmäßige Verstärkung als Analogie: sporadische, irritierende Erfahrungen könnten Verhalten und Erwartungen längerfristig prägen.
 
-**Art:** Autoranalogie. **Nachbarschaften:** Wann; Systemtheorie. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Interview 2014; The Invisible College.
 
-**Nächste Erschließung in der Breite:** Zeitliche Muster als Themenfeld aufnehmen, ohne jetzt eine statistische Einzelprüfung zu starten.
+**Vergleich:** Die Analogie eröffnet einen Vergleich mit Lern- und Systemmodellen; sie ist für sich keine statistische Erklärung von Sichtungswellen.
 
-Quellen: [V07](SOURCES.md#v07).
+**Quellen:** [Interview with UFO researcher and author Jacques Vallée](https://openminds.tv/interview-ufo-researcher-author-jacques-vallee/); [The Invisible College](https://www.anomalistbooks.com/book.cfm?id=79)
 
 ## Raum, Zeit und alternative Wirklichkeitsmodelle
 
-Alternative Deutungen reichen über das einfache Raumschiffmodell hinaus und berühren ungewöhnliche Raum-Zeit-Berichte.
+Vallée und Davis schlagen vor, Berichte nicht allein mit einem gewöhnlichen Flugkörpermodell zu lesen. Ungewöhnliche Raum-, Zeit- und Wahrnehmungsangaben gehören in die Beschreibung.
 
-**Art:** Spekulative Modellfamilie. **Nachbarschaften:** Jorjani; Farrell. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Incommensurability, Orthodoxy and the Physics of High Strangeness (2003).
 
-**Nächste Erschließung in der Breite:** Begriffe sauber erfassen; interdimensional ist keine universell bewiesene Erklärung.
+**Vergleich:** Der gemeinsame Fragenraum mit Jorjani oder Farrell ist größer als die gemeinsame Antwort: alternative Ontologien sind nicht automatisch dieselbe Theorie.
 
-Quellen: [V04](SOURCES.md#v04) · [V05](SOURCES.md#v05).
+**Quellen:** [Five Arguments Against the Extraterrestrial Origin of Unidentified Flying Objects](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Five_Arguments_Against_the_Extraterrestr-1.pdf); [Incommensurability, Orthodoxy and the Physics of High Strangeness](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf)
 
 ## Sechs Ebenen ungewöhnlicher Erfahrung
 
-Physische, anti-physische, psychologische, physiologische, psychische und kulturelle Beschreibungen werden getrennt betrachtet.
+Das Modell mit Eric Davis trennt physische, anti-physische, psychologische, physiologische, psychische und kulturelle Ebenen. So können widersprüchliche Berichtsmerkmale sichtbar bleiben.
 
-**Art:** Modell mit Eric Davis. **Nachbarschaften:** Davis; Kripal. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Vallée / Davis 2003, S. 7–10.
 
-**Nächste Erschließung in der Breite:** Die sechs Ebenen als unterschiedliche Vergleichsansichten anbieten.
+**Vergleich:** Für den Atlas eignet sich das als Mehrfachansicht einer Aussage, ohne aus sechs Beschreibungsebenen sechs bewiesene Mechanismen zu machen.
 
-Quellen: [V05](SOURCES.md#v05).
+**Quellen:** [Incommensurability, Orthodoxy and the Physics of High Strangeness](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf)
 
 ## Bewusstsein und Wahrnehmung
 
-Subjektive Erfahrung und physischer Bericht sollen gemeinsam untersucht werden, ohne sie gleichzusetzen.
+Bewusstsein erscheint bei Vallée sowohl als Teil des beobachteten Erlebnisses als auch als Gegenstand weitergehender Informationsmodelle. Beides ist vom materiellen Spurenbefund zu unterscheiden.
 
-**Art:** Forschungsfeld. **Nachbarschaften:** Swann; Puharich; Jorjani. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Vallée / Davis 2003; Software of Consciousness 2018.
 
-**Nächste Erschließung in der Breite:** Autorenmodelle von Bewusstsein und ihre Erfahrungsbegriffe gegenüberstellen.
+**Vergleich:** Swann und Puharich sind benachbarte PSI-Linsen; Jorjani verbindet solche Fragen mit einer eigenen philosophischen Deutung.
 
-Quellen: [V05](SOURCES.md#v05) · [V09](SOURCES.md#v09).
+**Quellen:** [Incommensurability, Orthodoxy and the Physics of High Strangeness](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf); [The Software of Consciousness: Intriguing Lessons and Lingering Puzzles on the Far Side of Reality](https://www.jacquesvallee.net/wp-content/uploads/2018/11/The_Software_of_Consciousness_Intriguing.pdf)
 
 ## PSI, Remote Viewing und SRI-Umfeld
 
-Vallées Rückblicke verbinden Kommunikationsforschung mit experimentellen PSI-Kontexten.
+In seinem Rückblick von 2018 beschreibt Vallée ein Umfeld aus Kommunikationsforschung und PSI-Experimenten, darunter Zusammenarbeit mit Ingo Swann.
 
-**Art:** Retrospektiv berichtete Forschung. **Nachbarschaften:** Swann; Puthoff; Targ. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Software of Consciousness, Folien 21 und 24–27.
 
-**Nächste Erschließung in der Breite:** Personen, Experimente, Institutionen und Publikationen breit erfassen.
+**Vergleich:** Hier besteht eine ausdrücklich berichtete persönliche Verbindung. Die allgemeinere Nachbarschaft zu Puharich ist im Paket bislang kein gleichwertiger Kontaktnachweis.
 
-Quellen: [V09](SOURCES.md#v09).
+**Quellen:** [The Software of Consciousness: Intriguing Lessons and Lingering Puzzles on the Far Side of Reality](https://www.jacquesvallee.net/wp-content/uploads/2018/11/The_Software_of_Consciousness_Intriguing.pdf)
 
 ## Täuschung, Desinformation und Deutungshoheit
 
-Manipulation, fehlerhafte Daten und mögliche reale Restphänomene werden nebeneinander behandelt.
+Vallée untersucht, wie Täuschungen und mediale Inszenierung die UFO-Forschung prägen können. Ein manipuliertes Narrativ und ein möglicherweise ungeklärtes Ausgangsphänomen sind dabei verschiedene Fragen.
 
-**Art:** Autorposition / Untersuchungsfeld. **Nachbarschaften:** Farrell; Liszt; Webb; Corbett. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Messengers of Deception; Revelations; Interview 2008.
 
-**Nächste Erschließung in der Breite:** Staatliche, mediale und gruppeninterne Erklärungsmodelle sammeln.
+**Vergleich:** Die Quellenkritik verbindet ihn methodisch mit Corbett und Webb; daraus folgt keine gemeinsame Erklärung sämtlicher Fälle.
 
-Quellen: [V06](SOURCES.md#v06) · [V02](SOURCES.md#v02).
+**Quellen:** [Jacques Vallee on Messengers of Deception](https://www.dailygrail.com/2008/07/jacques-vallee-on-messengers-of-deception/); [Research bibliography](https://www.jacquesvallee.net/research/); [Revelations](https://anomalistbooks.com/book.cfm?id=38)
 
 ## Kontaktgruppen, Überzeugung und soziale Dynamik
 
-Wie entstehen aus Erfahrungen organisierte Überzeugungen und soziale Bewegungen?
+Kontaktberichte können zu Gruppenidentität, Autorität und politischen oder religiösen Programmen werden. Vallées Werk behandelt diese gesellschaftlichen Folgen als eigenen Untersuchungsgegenstand.
 
-**Art:** Werkbezogener Themenpfad. **Nachbarschaften:** Bramley; Icke; Jorjani. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Messengers of Deception; The Invisible College.
 
-**Nächste Erschließung in der Breite:** Gruppenmodelle und narrative Mechanismen erschließen; einzelne Gruppenfälle später.
+**Vergleich:** Für Bramley, Icke und Jorjani ist dies ein Vergleichsfeld: Wer deutet eine Erfahrung, wer organisiert sie, welche institutionelle Folge wird behauptet?
 
-Quellen: [V02](SOURCES.md#v02) · [V06](SOURCES.md#v06).
+**Quellen:** [Research bibliography](https://www.jacquesvallee.net/research/); [Jacques Vallee on Messengers of Deception](https://www.dailygrail.com/2008/07/jacques-vallee-on-messengers-of-deception/); [The Invisible College](https://www.anomalistbooks.com/book.cfm?id=79)
 
 ## Materialspuren, Isotope und Forensik
 
-Physische Proben bilden einen eigenen Forschungsstrang neben Erzählungen und Modellen.
+Materialuntersuchungen bilden einen empirisch anders gelagerten Werkstrang als historische Motive und Bewusstseinsmodelle. Analytische Verfahren sollen Eigenschaften von Proben bestimmen.
 
-**Art:** Analytischer Forschungsansatz. **Nachbarschaften:** Nolan; Lemke. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Nolan / Vallée / Jiang / Lemke (2022); Galloway-Papier.
 
-**Nächste Erschließung in der Breite:** Probenarten, Verfahren und Publikationen inventarisieren; Labor-Rabbit-Holes vertagt.
+**Vergleich:** Nolan ist ein dokumentierter Mitautor. Eine ungewöhnliche Materialeigenschaft allein bestimmt weder Herkunft noch Hersteller.
 
-Quellen: [V11](SOURCES.md#v11) · [V12](SOURCES.md#v12).
+**Quellen:** [Improved instrumental techniques, including isotopic analysis, applicable to the characterization of unusual materials with potential relevance to aerospace forensics](https://doi.org/10.1016/j.paerosci.2021.100788); [Estimates of radiative energy values in ground-level observations of an unidentified aerial phenomenon: New physical data](https://www.3af.fr/docs/2025110701_1328693110_2025-estimates-of-radiative-energy-values-in-ground-level-observations-of-an-0aunidentified-aerial-phenomenon-new-physical-data.pdf)
 
 ## Informatik, Informationssysteme und vernetzte Zusammenarbeit
 
-Vallées technische Publikationen behandeln Kommunikation und Wissensorganisation.
+Vallées berufliches Werk umfasst Informationssysteme, Computerkommunikation und vernetzte Zusammenarbeit. Diese Laufbahn steht neben seiner Anomalienforschung und erklärt sein Interesse an Datenorganisation.
 
-**Art:** Beruflicher Werkstrang. **Nachbarschaften:** Engelbart; Feinler. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Offizielle Übersicht Professional Work.
 
-**Nächste Erschließung in der Breite:** Technische Arbeiten neben UFO-Werken sichtbar machen.
+**Vergleich:** Der Anschluss an heutige Wissenssysteme liegt in Arbeitsmethoden; die berufliche Nähe zu Technologie ist kein Beleg für eine verdeckte Steuerungsrolle.
 
-Quellen: [V03](SOURCES.md#v03).
+**Quellen:** [Professional work](https://www.jacquesvallee.net/professionalwork/)
 
 ## Datenbanken, Ontologie und internationale Vergleichbarkeit
 
-Heterogene Fallbestände benötigen gemeinsame Begriffe und nachvollziehbare Datenqualität.
+Sein CAIPAN-Beitrag stellt die Zusammenführung heterogener Fallbestände als Forschungsaufgabe dar: Kategorien, Datenqualität und Vergleichbarkeit müssen vor großen Erklärungen geklärt werden.
 
-**Art:** Methodischer Werkstrang. **Nachbarschaften:** Hynek; Dolan; Atlas-Methoden. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** A Strategy for Research (2014).
 
-**Nächste Erschließung in der Breite:** Korpora, Kategorien und Lücken der Erfassung kartieren.
+**Vergleich:** Das lässt sich direkt auf den Atlas übertragen: ein wiederholter Bericht braucht eine nachvollziehbare Herkunft, nicht nur mehrere URLs.
 
-Quellen: [V08](SOURCES.md#v08).
+**Quellen:** [A Strategy for Research](https://www.geipan.fr/sites/default/files/15_VALLEE_sli.pdf)
 
 ## Forschungsinstitutionen und private Forschungsnetzwerke
 
-Archive, Vortragsorte, gemeinsame Publikationen und Organisationen bilden verschiedene institutionelle Kontexte.
+Vallée bewegt sich in mehreren institutionellen Kontexten: wissenschaftliche Workshops, private Forschung, Publikationsnetzwerke und ein heute archivierter persönlicher Nachlass.
 
-**Art:** Dokumentarische Landkarte. **Nachbarschaften:** GEIPAN; Rice; NIDS / BAASS: Findbuchspur. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** CAIPAN; Vallée / Davis; Rice MS0672; UAP-Preprint 2025.
 
-**Nächste Erschließung in der Breite:** Institutionstyp und tatsächliche Rolle pro Verbindung sichtbar halten.
+**Vergleich:** Co-Autorschaft, Vortragsteilnahme und archivierte Korrespondenz sind unterschiedliche Beziehungen. Der Graph sollte diese Rollen erhalten.
 
-Quellen: [V08](SOURCES.md#v08) · [V09](SOURCES.md#v09) · [V10](SOURCES.md#v10) · [V15](SOURCES.md#v15) · [V16](SOURCES.md#v16).
+**Quellen:** [A Strategy for Research](https://www.geipan.fr/sites/default/files/15_VALLEE_sli.pdf); [The Software of Consciousness: Intriguing Lessons and Lingering Puzzles on the Far Side of Reality](https://www.jacquesvallee.net/wp-content/uploads/2018/11/The_Software_of_Consciousness_Intriguing.pdf); [The New Science of Unidentified Aerospace-Undersea Phenomena (UAP)](https://arxiv.org/abs/2502.06794); [Jacques Vallee papers](https://archives.library.rice.edu/repositories/2/resources/1085); [A decade of discovery: 10 years of Rice's Archives of the Impossible](https://news.rice.edu/news/2024/decade-discovery-10-years-rices-archives-impossible)
 
 ## Unternehmertum, Risikokapital und Raumfahrt
 
-Die berufliche Laufbahn und Raumfahrtfinanzierung eröffnen einen wirtschaftlichen Werkstrang.
+Unternehmertum und Risikokapital gehören zu Vallées öffentlicher Biografie. Der NASA-Bericht zu Red Planet Capital bietet einen konkreten institutionellen Bezug zur Raumfahrtfinanzierung.
 
-**Art:** Beruflicher / institutioneller Kontext. **Nachbarschaften:** Fitts; Webb / Goodwin. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Professional Work; NASA-Bericht, Appendix B.
 
-**Nächste Erschließung in der Breite:** Öffentliche Programme, Selbstaussagen und analytische Nachbarschaften getrennt aufnehmen.
+**Vergleich:** Fitts fragt nach Finanzierung und Governance geheimer Programme. Vallées belegte berufliche Finanzrolle ist ein Vergleichseinstieg, kein Beleg für solche Programme.
 
-Quellen: [V01](SOURCES.md#v01) · [V03](SOURCES.md#v03) · [V13](SOURCES.md#v13).
+**Quellen:** [Official biography](https://www.jacquesvallee.net/); [Professional work](https://www.jacquesvallee.net/professionalwork/); [NASA venture-capital study](https://www.nasa.gov/wp-content/uploads/2015/06/vc_study_final_report-external-11_23_2020.pdf)
 
 ## Forschungstagebücher und Entwicklung der eigenen Position
 
-Forbidden Science dokumentiert den über Jahrzehnte entstandenen persönlichen Forschungs- und Kontaktkontext.
+Forbidden Science bietet eine über Jahrzehnte geführte persönliche Chronik seiner Forschung und Begegnungen. Damit lässt sich die Entwicklung von Fragen und Einschätzungen untersuchen.
 
-**Art:** Tagebuchkorpus. **Nachbarschaften:** Hynek; Kripal; weitere Personen nach Band. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Forbidden Science, sieben registrierte Bände.
 
-**Nächste Erschließung in der Breite:** Sieben Bände nach Zeitraum, Themen und Personen erschließen.
+**Vergleich:** Eine Tagebuchnotiz kann eine zeitgebundene Sicht dokumentieren; eine spätere Edition und das erinnerte Ereignis benötigen getrennte Datumsfelder.
 
-Quellen: [V25](SOURCES.md#v25) · [V26](SOURCES.md#v26) · [V27](SOURCES.md#v27).
+**Quellen:** [Forbidden Science publisher catalog](https://anomalistbooks.com/catalog.cfm); [Forbidden Science6: Scattered Castles](https://anomalistbooks.com/book.cfm?id=118); [Forbidden Science7: Final Report](https://anomalistbooks.com/book.cfm?id=122)
 
 ## Internationale und historische Berichtskulturen
 
-Historische Quellen und das Werk über die Sowjetunion eröffnen Vergleiche jenseits einer rein US-amerikanischen Perspektive.
+Vallées Korpus überschreitet moderne US-Berichte: historische Sammlungen, europäische Überlieferungen und UFO Chronicles of the Soviet Union erweitern den Vergleichsraum.
 
-**Art:** Werkbezogener Themenpfad. **Nachbarschaften:** Aubeck; Dolan. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Passport to Magonia; Wonders in the Sky; UFO Chronicles of the Soviet Union.
 
-**Nächste Erschließung in der Breite:** Regionen, Epochen und Übersetzungstraditionen im Korpus erfassen.
+**Vergleich:** Mit Aubeck besteht gemeinsame Autorschaft. Länderübergreifende Motivvergleiche müssen auch Übersetzung und unterschiedliche Erfassung berücksichtigen.
 
-Quellen: [V02](SOURCES.md#v02).
+**Quellen:** [Research bibliography](https://www.jacquesvallee.net/research/)
 
 ## Interviews, populäre Vermittlung und Rezeption
 
-Interviews und spätere Bezugnahmen zeigen, wie Vallées Modelle weitergegeben und verändert werden.
+Die Vermittlung reicht von Fachbeiträgen und Büchern über öffentliche Vorträge bis zu langen Podcasts. Spätere Autoren greifen einzelne Elemente dieses vielfältigen Werks auf.
 
-**Art:** Publikations- und Rezeptionsfeld. **Nachbarschaften:** Jorjani; Grimerica; Joe Rogan. Die Zuordnung bezeichnet je nach Quellenlage Zusammenarbeit, Rezeption oder eine redaktionelle Vergleichsfrage; sie ist kein pauschaler Kontaktnachweis.
+**Werkstrang:** Offizieller Medien- und Vortragsindex; Interviews 2008/2014; Jorjani 2023.
 
-**Nächste Erschließung in der Breite:** Auftritte nach Themen indexieren; exakte Zeitmarken nur bei Bedarf vertiefen.
+**Vergleich:** Ein Podcasttitel erschließt ein Thema, ersetzt aber keine gehörte Passage. Jorjanis Bezugnahme ist im vorhandenen Transkript konkreter belegt.
 
-Quellen: [V06](SOURCES.md#v06) · [V07](SOURCES.md#v07) · [V14](SOURCES.md#v14) · [V28](SOURCES.md#v28) · [V29](SOURCES.md#v29) · [V30](SOURCES.md#v30) · [V31](SOURCES.md#v31).
+**Quellen:** [Jacques Vallee on Messengers of Deception](https://www.dailygrail.com/2008/07/jacques-vallee-on-messengers-of-deception/); [Interview with UFO researcher and author Jacques Vallée](https://openminds.tv/interview-ufo-researcher-author-jacques-vallee/); [Jason Jorjani, Redefining Parapsychology… (584)](https://skeptiko.com/jason-jorjani-redefining-parapsychology-image-cheapening-584/); [Grimerica241: Dr. Jacques Vallée](https://grimerica.ca/2017/09/15/ep241/); [Rendezvous with Vallée](https://www.dailygrail.com/2017/09/rendezvous-with-vallee/); [Joe Rogan Experience2288: Jacques Vallée](https://www.youtube.com/watch?v=vZEcVY2iZsk); [Media index](https://www.jacquesvallee.net/media/); [Video presentations](https://www.jacquesvallee.net/videopresentations/)
+
+## Information, Zufall und Wirklichkeitsmodelle
+
+Vallée behandelt Information als möglichen Zugang zur Wirklichkeit und verbindet die Frage nach Bewusstsein mit der nach den Grenzen formaler Beschreibungen.
+
+**Werkstrang:** Software of Consciousness; Chaitin-Rezension.
+
+**Vergleich:** Informationsmetapher, mathematisches Resultat und physikalische Hypothese sind unterschiedliche Ebenen.
+
+**Quellen:** [The Software of Consciousness: Intriguing Lessons and Lingering Puzzles on the Far Side of Reality](https://www.jacquesvallee.net/wp-content/uploads/2018/11/The_Software_of_Consciousness_Intriguing.pdf); [Review of three books by Gregory Chaitin](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Chaitin-book.pdf)
+
+## SETI und nichtbiologische Intelligenz
+
+Nolan, Vallée und Faggin schlagen 2016 vor, die Suche nach Intelligenz über vertraute biologische Voraussetzungen und Signalannahmen hinaus zu erweitern. Der Vorschlag umfasst auch konventionelle elektromagnetische Suche.
+
+**Werkstrang:** Towards Multi-disciplinary SETI Research.
+
+**Vergleich:** Alternative Bewusstseins- und Kommunikationsmodelle werden als Forschungsoptionen behandelt, nicht als bereits nachgewiesene Kontaktwege.
+
+**Quellen:** [Towards Multi-disciplinary SETI Research](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Towards_Multi-disciplinary_SETI_Research.pdf)
+
+## Erkenntnisgrenzen und offene Modelle
+
+Vallées Chaitin-Rezension zeigt sein Interesse an algorithmischer Information, Zufall und Grenzen formaler Erkenntnis. Daraus ergibt sich eine zusätzliche Lesart seines Widerstands gegen vorschnell geschlossene Erklärungen.
+
+**Werkstrang:** Chaitin-Rezension, 15. September 2001.
+
+**Vergleich:** Der Bezug zur UFO-Methodik ist unsere redaktionelle Synthese. Mathematische Unvollständigkeit beweist keine bestimmte UFO- oder Bewusstseinstheorie.
+
+**Quellen:** [Review of three books by Gregory Chaitin](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Chaitin-book.pdf)
+
+## Fiktion als anderer Erzählraum
+
+Vallées offizielle Romanübersicht führt unter anderem Alintel, Fastwalker und Stratagem. Die Werkbeschreibungen verbinden verdeckte Projekte, Begegnungen, Technologie und gesellschaftliche Interessen.
+
+**Werkstrang:** Offizielle Fiction-Bibliografie.
+
+**Vergleich:** Für KFB ist dies eine Formnachbarschaft: Forschungsfragen können fiktional verarbeitet werden. Romanhandlungen werden nicht als historische Netzwerkbelege importiert.
+
+**Quellen:** [Fiction bibliography](https://www.jacquesvallee.net/fiction/)

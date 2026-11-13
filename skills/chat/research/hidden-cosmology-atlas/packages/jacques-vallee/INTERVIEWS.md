@@ -24,3 +24,8 @@
 Der [offizielle Medienindex](https://www.jacquesvallee.net/media/) enthält weitere Auftritte. Thinking Allowed1988 ist als Spur vorhanden, der Videoabruf gelang hier nicht. Der alte Paracast-Link vom3.September2017 lieferte404. Keine daraus rekonstruierten Zitate.
 
 **Abdeckungsgrenze:** In diesem Lauf wurden keine kompletten Podcasts oder Videos angehört. Textfundstellen und Metadaten sind ausdrücklich keine behauptete audiovisuelle Sichtung.
+
+
+## Zusätzliche Vortragsübersicht
+
+Der [offizielle Vortragsindex](https://www.jacquesvallee.net/videopresentations/) erschließt A Theory of Everything (else), The Age of the Impossible und Remarkable Men and Mysterious Machines. Metadaten erfasst; keine Video-Sichtung und keine neuen Zeitmarken behauptet. Index-, Upload- und Veranstaltungsdatum nicht gleichsetzen.

@@ -48,3 +48,8 @@ Stark sind der Wechsel zwischen Beobachtung und Deutung, der historische Verglei
 Rice führt die Sammlung als **MS0672**. Korrespondenz öffnet im Januar2028, Hintergrundmaterial im Dezember2029 und Fallakten am1.Januar2031. Der Findbucheintrag ist zugänglich; die gesperrten Inhalte sind hier nicht eingesehen. [Findbuch](https://archives.library.rice.edu/repositories/2/resources/1085)
 
 Diese erste breite Aufnahme enthält ausgewählte Originaltexte, eine dokumentierte Gegenprobe, eine aktuelle Bibliografie und Interviewpfade. Sie ist **keine vollständige Lektüre sämtlicher Bücher oder Sichtung aller Auftritte**. [Prüfumfang und nächster Schritt](../packages/jacques-vallee/RETURN.md)
+
+
+## Ausgearbeitete Themen und Autorenvergleiche
+
+[24 Themenfelder mit Aussagen und Werkbezug](../packages/jacques-vallee/THEMES.md) · [Acht Vergleichskarten](../packages/jacques-vallee/COMPARISONS.md). Stand 13.11.2026; 42 registrierte Quellen mit Lesetiefe.

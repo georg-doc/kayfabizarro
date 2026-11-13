@@ -61,3 +61,23 @@ Das ist ein eigener Werkstrang. Eine Finanzpublikation oder eine technische Beru
 ## Aktuelle Reihenfolge
 
 Zuerst Themen, Aussagen, Theoriefamilien und Verbindungen aller erfassten Werkstränge in der [Themenlandkarte](THEMES.md) erschließen. Kapitelgenaue Gegenproben und einzelne Archivfälle bleiben für später geparkt.
+
+
+## Breiten-Ergänzung 13.11.2026
+
+- Dimensions, The Invisible College und Revelations: Verlagsbeschreibungen und Inhaltsverzeichnisse als Themenerschließung, keine Volltextlektüre.
+- Nolan / Vallée / Faggin: Towards Multi-disciplinary SETI Research (2016 laut offizieller Bibliografie), ausgewählte Originalpassagen.
+- Vallée: Rezension dreier Chaitin-Bücher (15.09.2001), ausgewählte Originalpassagen.
+- Romane: Alintel, Fastwalker, Stratagem; offizielle Werkbeschreibungen. Fiktion bleibt getrennt von historischen Belegen.
+
+[Dimensions](https://www.anomalistbooks.com/book.cfm?id=22)
+
+[The Invisible College](https://www.anomalistbooks.com/book.cfm?id=79)
+
+[Revelations](https://anomalistbooks.com/book.cfm?id=38)
+
+[Towards Multi-disciplinary SETI Research](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Towards_Multi-disciplinary_SETI_Research.pdf)
+
+[Review of three books by Gregory Chaitin](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Chaitin-book.pdf)
+
+[Fiction bibliography](https://www.jacquesvallee.net/fiction/)

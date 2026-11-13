@@ -1,284 +1,423 @@
-# Jacques Vallée — Quellenregister
+# Quellenregister Jacques Vallée
 
-[Zurück zum Dossier](README.md) · [Maschinenlesbar](sources.json)
+Stand 13.11.2026. 42 registrierte Quellen; darunter Primärtexte, Verlagsbeschreibungen, Metadaten und frühere Gegenquellen. Quellenzahl ist keine Zahl unabhängiger Bestätigungen.
 
-Zugriffsumfang steht pro Quelle. Originalaussage, Tatsachenbestätigung und bibliografischer Hinweis sind unterschiedliche Belegarten.
+## V01 — Official biography
 
-<a id="v01"></a>
-## V01 · Official biography
+https://www.jacquesvallee.net/
 
-[Quelle öffnen](https://www.jacquesvallee.net/) · Jacques Vallée · Datum nicht normalisiert
+Jacques Vallée. Datum siehe Quelle.
 
-Fundstelle: Website biography.
+Fundstelle: Website biography
 
-Prüfumfang: Read; professional roles self-reported, not all independently checked.
+Lesetiefe: Read; professional roles self-reported, not all independently checked.
 
-<a id="v02"></a>
-## V02 · Research bibliography
+## V02 — Research bibliography
 
-[Quelle öffnen](https://www.jacquesvallee.net/research/) · Jacques Vallée · Datum nicht normalisiert
+https://www.jacquesvallee.net/research/
 
-Fundstelle: Book and paper list.
+Jacques Vallée. Datum siehe Quelle.
 
-Prüfumfang: Read; mixes editions, not a complete current bibliography.
+Fundstelle: Book and paper list
 
-<a id="v03"></a>
-## V03 · Professional work
+Lesetiefe: Read; mixes editions, not a complete current bibliography.
 
-[Quelle öffnen](https://www.jacquesvallee.net/professionalwork/) · Jacques Vallée · Datum nicht normalisiert
+## V03 — Professional work
 
-Fundstelle: Computing and business publications.
+https://www.jacquesvallee.net/professionalwork/
 
-Prüfumfang: Read bibliography; listed books and papers not read in full.
+Jacques Vallée. Datum siehe Quelle.
 
-<a id="v04"></a>
-## V04 · Five Arguments Against the Extraterrestrial Origin of Unidentified Flying Objects
+Fundstelle: Computing and business publications
 
-[Quelle öffnen](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Five_Arguments_Against_the_Extraterrestr-1.pdf) · Jacques Vallée · 1990
+Lesetiefe: Read bibliography; listed books and papers not read in full.
 
-Fundstelle: JSE 4(1), 105–117; PDF pp.3 and13 = printed105 and115.
+## V04 — Five Arguments Against the Extraterrestrial Origin of Unidentified Flying Objects
 
-Prüfumfang: Text and three rendered PDF pages inspected; author's arguments, not proof of an alternative origin.
+https://www.jacquesvallee.net/wp-content/uploads/2018/11/Five_Arguments_Against_the_Extraterrestr-1.pdf
 
-<a id="v05"></a>
-## V05 · Incommensurability, Orthodoxy and the Physics of High Strangeness
+Jacques Vallée. 1990.
 
-[Quelle öffnen](https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf) · Jacques Vallée; Eric W. Davis · 2003
+Fundstelle: JSE 4(1), 105–117; PDF pp.3 and13 = printed105 and115
 
-Fundstelle: Porto proceedings; pp.7–10.
+Lesetiefe: Text and three rendered PDF pages inspected; author's arguments, not proof of an alternative origin.
 
-Prüfumfang: Selected original text read; six-layer model is a proposal.
+## V05 — Incommensurability, Orthodoxy and the Physics of High Strangeness
 
-<a id="v06"></a>
-## V06 · Jacques Vallee on Messengers of Deception
+https://www.jacquesvallee.net/wp-content/uploads/2018/11/Incommensurability_Orthodoxy_and_the_Phy.pdf
 
-[Quelle öffnen](https://www.dailygrail.com/2008/07/jacques-vallee-on-messengers-of-deception/) · Greg Taylor interviewing Jacques Vallée · 2008-07-17
+Jacques Vallée; Eric W. Davis. 2003.
 
-Fundstelle: Interview text.
+Fundstelle: Porto proceedings; pp.7–10
 
-Prüfumfang: Relevant full interview text read; not a substitute for reading the book.
+Lesetiefe: Selected original text read; six-layer model is a proposal.
 
-<a id="v07"></a>
-## V07 · Interview with UFO researcher and author Jacques Vallée
+## V06 — Jacques Vallee on Messengers of Deception
 
-[Quelle öffnen](https://openminds.tv/interview-ufo-researcher-author-jacques-vallee/) · Nagib Kary and collaborators interviewing Vallée · 2014-07-24
+https://www.dailygrail.com/2008/07/jacques-vallee-on-messengers-of-deception/
 
-Fundstelle: Robin Q1; Troadec Q4,Q5,Q7.
+Greg Taylor interviewing Jacques Vallée. 2008-07-17.
 
-Prüfumfang: Translated published text read; original recording not inspected.
+Fundstelle: Interview text
 
-<a id="v08"></a>
-## V08 · A Strategy for Research
+Lesetiefe: Relevant full interview text read; not a substitute for reading the book.
 
-[Quelle öffnen](https://www.geipan.fr/sites/default/files/15_VALLEE_sli.pdf) · Jacques Vallée · 2014-07
+## V07 — Interview with UFO researcher and author Jacques Vallée
 
-Fundstelle: CNES/GEIPAN CAIPAN; Capella and ontology sections.
+https://openminds.tv/interview-ufo-researcher-author-jacques-vallee/
 
-Prüfumfang: Extracted slide text inspected; not a validation by CNES of all hypotheses.
+Nagib Kary and collaborators interviewing Vallée. 2014-07-24.
 
-<a id="v09"></a>
-## V09 · The Software of Consciousness: Intriguing Lessons and Lingering Puzzles on the Far Side of Reality
+Fundstelle: Robin Q1; Troadec Q4,Q5,Q7
 
-[Quelle öffnen](https://www.jacquesvallee.net/wp-content/uploads/2018/11/The_Software_of_Consciousness_Intriguing.pdf) · Jacques Vallée · 2018-08-04
+Lesetiefe: Translated published text read; original recording not inspected.
 
-Fundstelle: J. B. Rhine address; slides21,24–27.
+## V08 — A Strategy for Research
 
-Prüfumfang: Selected text inspected; cited 1995 Swann report not independently obtained.
+https://www.geipan.fr/sites/default/files/15_VALLEE_sli.pdf
 
-<a id="v10"></a>
-## V10 · The New Science of Unidentified Aerospace-Undersea Phenomena (UAP)
+Jacques Vallée. 2014-07.
 
-[Quelle öffnen](https://arxiv.org/abs/2502.06794) · Kevin Knuth et al., including Richard Dolan and Jacques Vallée · 2025
+Fundstelle: CNES/GEIPAN CAIPAN; Capella and ontology sections
 
-Fundstelle: Author list and abstract.
+Lesetiefe: Extracted slide text inspected; not a validation by CNES of all hypotheses.
 
-Prüfumfang: Metadata and abstract only; full argument and peer-review status not checked.
+## V09 — The Software of Consciousness: Intriguing Lessons and Lingering Puzzles on the Far Side of Reality
 
-<a id="v11"></a>
-## V11 · Improved instrumental techniques, including isotopic analysis, applicable to the characterization of unusual materials with potential relevance to aerospace forensics
+https://www.jacquesvallee.net/wp-content/uploads/2018/11/The_Software_of_Consciousness_Intriguing.pdf
 
-[Quelle öffnen](https://doi.org/10.1016/j.paerosci.2021.100788) · Garry Nolan; Jacques Vallée; Sizun Jiang; Larry Lemke · 2022
+Jacques Vallée. 2018-08-04.
 
-Fundstelle: Progress in Aerospace Sciences128,100788.
+Fundstelle: J. B. Rhine address; slides21,24–27
 
-Prüfumfang: Bibliographic lead; publisher access failed. No analytical results verified here.
+Lesetiefe: Selected text inspected; cited 1995 Swann report not independently obtained.
 
-<a id="v12"></a>
-## V12 · Estimates of radiative energy values in ground-level observations of an unidentified aerial phenomenon: New physical data
+## V10 — The New Science of Unidentified Aerospace-Undersea Phenomena (UAP)
 
-[Quelle öffnen](https://www.3af.fr/docs/2025110701_1328693110_2025-estimates-of-radiative-energy-values-in-ground-level-observations-of-an-0aunidentified-aerial-phenomenon-new-physical-data.pdf) · Article authors to be fully normalized from title page · 2025
+https://arxiv.org/abs/2502.06794
 
-Fundstelle: Sections4–7, Galloway observations and model limitations.
+Kevin Knuth et al., including Richard Dolan and Jacques Vallée. 2025.
 
-Prüfumfang: Selected extracted text read; title-page author metadata not yet normalized.
+Fundstelle: Author list and abstract
 
-<a id="v13"></a>
-## V13 · NASA venture-capital study
+Lesetiefe: Metadata and abstract only; full argument and peer-review status not checked.
 
-[Quelle öffnen](https://www.nasa.gov/wp-content/uploads/2015/06/vc_study_final_report-external-11_23_2020.pdf) · NASA · 2020
+## V11 — Improved instrumental techniques, including isotopic analysis, applicable to the characterization of unusual materials with potential relevance to aerospace forensics
 
-Fundstelle: NASA/TP-20205010519, AppendixB, printedp.26.
+https://doi.org/10.1016/j.paerosci.2021.100788
 
-Prüfumfang: Appendix text inspected; programme history, not Vallée's personal investment ledger.
+Garry Nolan; Jacques Vallée; Sizun Jiang; Larry Lemke. 2022.
 
-<a id="v14"></a>
-## V14 · Jason Jorjani, Redefining Parapsychology… (584)
+Fundstelle: Progress in Aerospace Sciences128,100788
 
-[Quelle öffnen](https://skeptiko.com/jason-jorjani-redefining-parapsychology-image-cheapening-584/) · Skeptiko interviewing Jason Reza Jorjani · Datum nicht normalisiert
+Lesetiefe: Bibliographic lead; publisher access failed. No analytical results verified here.
 
-Fundstelle: 44:08–49:22, particularly45:30 and46:12–46:44.
+## V12 — Estimates of radiative energy values in ground-level observations of an unidentified aerial phenomenon: New physical data
 
-Prüfumfang: Publisher transcript inspected. Audio not listened; timestamps unverified against recording; one-party account.
+https://www.3af.fr/docs/2025110701_1328693110_2025-estimates-of-radiative-energy-values-in-ground-level-observations-of-an-0aunidentified-aerial-phenomenon-new-physical-data.pdf
 
-<a id="v15"></a>
-## V15 · Jacques Vallee papers
+Article authors to be fully normalized from title page. 2025.
 
-[Quelle öffnen](https://archives.library.rice.edu/repositories/2/resources/1085) · Rice University Woodson Research Center · Datum nicht normalisiert
+Fundstelle: Sections4–7, Galloway observations and model limitations
 
-Fundstelle: MS0672, Access restrictions.
+Lesetiefe: Selected extracted text read; title-page author metadata not yet normalized.
 
-Prüfumfang: Finding aid inspected; no restricted collection contents inspected.
+## V13 — NASA venture-capital study
 
-<a id="v16"></a>
-## V16 · A decade of discovery: 10 years of Rice's Archives of the Impossible
+https://www.nasa.gov/wp-content/uploads/2015/06/vc_study_final_report-external-11_23_2020.pdf
 
-[Quelle öffnen](https://news.rice.edu/news/2024/decade-discovery-10-years-rices-archives-impossible) · Rice University · 2024
+NASA. 2020.
 
-Fundstelle: Founding conversation and collection history.
+Fundstelle: NASA/TP-20205010519, AppendixB, printedp.26
 
-Prüfumfang: Read institutional account; distinguishes 2014 conversation from later donation.
+Lesetiefe: Appendix text inspected; programme history, not Vallée's personal investment ledger.
 
-<a id="v17"></a>
-## V17 · Trinity counter-investigation overview
+## V14 — Jason Jorjani, Redefining Parapsychology… (584)
 
-[Quelle öffnen](https://douglasjohnson.ghost.io/crash-story-the-trinity-ufo-crash-hoax/) · Douglas Dean Johnson · 2023-05-01
+https://skeptiko.com/jason-jorjani-redefining-parapsychology-image-cheapening-584/
 
-Fundstelle: Investigation hub.
+Skeptiko interviewing Jason Reza Jorjani. Datum siehe Quelle.
 
-Prüfumfang: Critic's interpretation; underlying items separately registered below.
+Fundstelle: 44:08–49:22, particularly45:30 and46:12–46:44
 
-<a id="v18"></a>
-## V18 · Eddie Apodaca: documentary counterprobe
+Lesetiefe: Publisher transcript inspected. Audio not listened; timestamps unverified against recording; one-party account.
 
-[Quelle öffnen](https://douglasjohnson.ghost.io/crash-story-file-eddie-apodaca-the-real-policeman-who-cracked-the-trinity-ufo-crash-case/) · Douglas Dean Johnson · 2023
+## V15 — Jacques Vallee papers
 
-Fundstelle: Military and police documents.
+https://archives.library.rice.edu/repositories/2/resources/1085
 
-Prüfumfang: Article plus two reproduced historical documents inspected; custody through critic.
+Rice University Woodson Research Center. Datum siehe Quelle.
 
-<a id="v19"></a>
-## V19 · Police probation memorandum
+Fundstelle: MS0672, Access restrictions
 
-[Quelle öffnen](https://storage.ghost.io/c/c0/be/c0be35e5-1c72-42e1-af60-00793bc5b49d/content/images/2023/04/Apodaca-completes-2-year-probationary-periodRED.jpg) · J. P. Roach / New Mexico State Police · 1953-08-11
+Lesetiefe: Finding aid inspected; no restricted collection contents inspected.
 
-Fundstelle: Eddie Apodaca; two years completed10August1953.
+## V16 — A decade of discovery: 10 years of Rice's Archives of the Impossible
 
-Prüfumfang: Image visually inspected; highlighted copy hosted by Johnson, not retrieved independently from archive.
+https://news.rice.edu/news/2024/decade-discovery-10-years-rices-archives-impossible
 
-<a id="v20"></a>
-## V20 · Military separation record for Eddie C. Apodaca
+Rice University. 2024.
 
-[Quelle öffnen](https://storage.ghost.io/c/c0/be/c0be35e5-1c72-42e1-af60-00793bc5b49d/content/images/2023/04/Eddie-C.-Apodaca-military.jpg) · US military · 1945
+Fundstelle: Founding conversation and collection history
 
-Fundstelle: WD AGO53-55; boxes7 and36.
+Lesetiefe: Read institutional account; distinguishes 2014 conversation from later donation.
 
-Prüfumfang: Image visually inspected; arrivalUS9Nov1945, separation15Nov1945. Same custody limit asV19.
+## V17 — Trinity counter-investigation overview
 
-<a id="v21"></a>
-## V21 · Response to Trinity criticism
+https://douglasjohnson.ghost.io/crash-story-the-trinity-ufo-crash-hoax/
 
-[Quelle öffnen](https://drive.google.com/file/d/1rR5fUV6-qcT3IpNWZyi103LutkRKRJ_-/view) · Jacques Vallée · 2023-05-15
+Douglas Dean Johnson. 2023-05-01.
 
-Fundstelle: PDFpp.3–8; bracketp.6, pilot and Apodacapp.7–8.
+Fundstelle: Investigation hub
 
-Prüfumfang: Six rendered pages inspected; critic-hosted print of coauthor-site response, printdate17May2023; full book not inspected.
+Lesetiefe: Critic's interpretation; underlying items separately registered below.
 
-<a id="v22"></a>
-## V22 · Reme Baca interview by Tom Carey, transcript
+## V18 — Eddie Apodaca: documentary counterprobe
 
-[Quelle öffnen](https://douglasjohnson.ghost.io/content/files/2023/05/Reme-Baca-interview-by-Tom-Carey--late-2002-early-2003--delinked-.pdf) · Reme Baca / Tom Carey; transcript hosted by Johnson · Datum nicht normalisiert
+https://douglasjohnson.ghost.io/crash-story-file-eddie-apodaca-the-real-policeman-who-cracked-the-trinity-ufo-crash-case/
 
-Fundstelle: PDFpp.5–9;05:47–11:10; year at11:08.
+Douglas Dean Johnson. 2023.
 
-Prüfumfang: Selected transcript read; audio not listened; late2002/early2003 dating supplied by host.
+Fundstelle: Military and police documents
 
-<a id="v23"></a>
-## V23 · Baca–Carey recording provenance
+Lesetiefe: Article plus two reproduced historical documents inspected; custody through critic.
 
-[Quelle öffnen](https://douglasjohnson.ghost.io/crash-story-file-the-reme-baca-smoking-gun-interview/) · Douglas Dean Johnson · 2023
+## V19 — Police probation memorandum
 
-Fundstelle: Recording and transcript publication.
+https://storage.ghost.io/c/c0/be/c0be35e5-1c72-42e1-af60-00793bc5b49d/content/images/2023/04/Apodaca-completes-2-year-probationary-periodRED.jpg
 
-Prüfumfang: Not a second independent witness to events.
+J. P. Roach / New Mexico State Police. 1953-08-11.
 
-<a id="v24"></a>
-## V24 · Trinity follow-up criticism
+Fundstelle: Eddie Apodaca; two years completed10August1953
 
-[Quelle öffnen](https://douglasjohnson.ghost.io/witness-credibility-shredded-for-vallee-trinity-tale/) · Douglas Dean Johnson · 2024-01-25
+Lesetiefe: Image visually inspected; highlighted copy hosted by Johnson, not retrieved independently from archive.
 
-Fundstelle: Later-edition discussion; updated2025.
+## V20 — Military separation record for Eddie C. Apodaca
 
-Prüfumfang: Selected text; critic's later assessment, not independent replication.
+https://storage.ghost.io/c/c0/be/c0be35e5-1c72-42e1-af60-00793bc5b49d/content/images/2023/04/Eddie-C.-Apodaca-military.jpg
 
-<a id="v25"></a>
-## V25 · Forbidden Science publisher catalog
+US military. 1945.
 
-[Quelle öffnen](https://anomalistbooks.com/catalog.cfm) · Anomalist Books · Datum nicht normalisiert
+Fundstelle: WD AGO53-55; boxes7 and36
 
-Fundstelle: Volumes1–7.
+Lesetiefe: Image visually inspected; arrivalUS9Nov1945, separation15Nov1945. Same custody limit asV19.
 
-Prüfumfang: Catalog checked; books not read in full.
+## V21 — Response to Trinity criticism
 
-<a id="v26"></a>
-## V26 · Forbidden Science6: Scattered Castles
+https://drive.google.com/file/d/1rR5fUV6-qcT3IpNWZyi103LutkRKRJ_-/view
 
-[Quelle öffnen](https://anomalistbooks.com/book.cfm?id=118) · Anomalist Books · 2025
+Jacques Vallée. 2023-05-15.
 
-Fundstelle: ISBN9781949501360; journals2010–2019.
+Fundstelle: PDFpp.3–8; bracketp.6, pilot and Apodacapp.7–8
 
-Prüfumfang: Metadata only.
+Lesetiefe: Six rendered pages inspected; critic-hosted print of coauthor-site response, printdate17May2023; full book not inspected.
 
-<a id="v27"></a>
-## V27 · Forbidden Science7: Final Report
+## V22 — Reme Baca interview by Tom Carey, transcript
 
-[Quelle öffnen](https://anomalistbooks.com/book.cfm?id=122) · Anomalist Books · 2026
+https://douglasjohnson.ghost.io/content/files/2023/05/Reme-Baca-interview-by-Tom-Carey--late-2002-early-2003--delinked-.pdf
 
-Fundstelle: ISBN9781949501421; journals2020–2025.
+Reme Baca / Tom Carey; transcript hosted by Johnson. Datum siehe Quelle.
 
-Prüfumfang: Current catalog entry checked; contents not read.
+Fundstelle: PDFpp.5–9;05:47–11:10; year at11:08
 
-<a id="v28"></a>
-## V28 · Grimerica241: Dr. Jacques Vallée
+Lesetiefe: Selected transcript read; audio not listened; late2002/early2003 dating supplied by host.
 
-[Quelle öffnen](https://grimerica.ca/2017/09/15/ep241/) · Grimerica · 2017-09-15
+## V23 — Baca–Carey recording provenance
 
-Fundstelle: Publisher says interview starts35:15.
+https://douglasjohnson.ghost.io/crash-story-file-the-reme-baca-smoking-gun-interview/
 
-Prüfumfang: Episode metadata only; audio not listened.
+Douglas Dean Johnson. 2023.
 
-<a id="v29"></a>
-## V29 · Rendezvous with Vallée
+Fundstelle: Recording and transcript publication
 
-[Quelle öffnen](https://www.dailygrail.com/2017/09/rendezvous-with-vallee/) · Grimerica interviewer via Daily Grail · 2017-09
+Lesetiefe: Not a second independent witness to events.
 
-Fundstelle: Recap of Grimerica interview.
+## V24 — Trinity follow-up criticism
 
-Prüfumfang: Same source family asV28; not corroboration.
+https://douglasjohnson.ghost.io/witness-credibility-shredded-for-vallee-trinity-tale/
 
-<a id="v30"></a>
-## V30 · Joe Rogan Experience2288: Jacques Vallée
+Douglas Dean Johnson. 2024-01-25.
 
-[Quelle öffnen](https://www.youtube.com/watch?v=vZEcVY2iZsk) · PowerfulJRE · 2025-03-12
+Fundstelle: Later-edition discussion; updated2025
 
-Fundstelle: Official upload.
+Lesetiefe: Selected text; critic's later assessment, not independent replication.
 
-Prüfumfang: Metadata only; audio/transcript not inspected.
+## V25 — Forbidden Science publisher catalog
 
-<a id="v31"></a>
-## V31 · Media index
+https://anomalistbooks.com/catalog.cfm
 
-[Quelle öffnen](https://www.jacquesvallee.net/media/) · Jacques Vallée · Datum nicht normalisiert
+Anomalist Books. Datum siehe Quelle.
 
-Fundstelle: Interviews and talks.
+Fundstelle: Volumes1–7
 
-Prüfumfang: Discovery inventory, not evidence that all linked media were watched.
+Lesetiefe: Catalog checked; books not read in full.
+
+## V26 — Forbidden Science6: Scattered Castles
+
+https://anomalistbooks.com/book.cfm?id=118
+
+Anomalist Books. 2025.
+
+Fundstelle: ISBN9781949501360; journals2010–2019
+
+Lesetiefe: Metadata only.
+
+## V27 — Forbidden Science7: Final Report
+
+https://anomalistbooks.com/book.cfm?id=122
+
+Anomalist Books. 2026.
+
+Fundstelle: ISBN9781949501421; journals2020–2025
+
+Lesetiefe: Current catalog entry checked; contents not read.
+
+## V28 — Grimerica241: Dr. Jacques Vallée
+
+https://grimerica.ca/2017/09/15/ep241/
+
+Grimerica. 2017-09-15.
+
+Fundstelle: Publisher says interview starts35:15
+
+Lesetiefe: Episode metadata only; audio not listened.
+
+## V29 — Rendezvous with Vallée
+
+https://www.dailygrail.com/2017/09/rendezvous-with-vallee/
+
+Grimerica interviewer via Daily Grail. 2017-09.
+
+Fundstelle: Recap of Grimerica interview
+
+Lesetiefe: Same source family asV28; not corroboration.
+
+## V30 — Joe Rogan Experience2288: Jacques Vallée
+
+https://www.youtube.com/watch?v=vZEcVY2iZsk
+
+PowerfulJRE. 2025-03-12.
+
+Fundstelle: Official upload
+
+Lesetiefe: Metadata only; audio/transcript not inspected.
+
+## V31 — Media index
+
+https://www.jacquesvallee.net/media/
+
+Jacques Vallée. Datum siehe Quelle.
+
+Fundstelle: Interviews and talks
+
+Lesetiefe: Discovery inventory, not evidence that all linked media were watched.
+
+## V32 — Dimensions
+
+https://www.anomalistbooks.com/book.cfm?id=22
+
+Anomalist Books. Datum siehe Quelle.
+
+Fundstelle: Verlagsbeschreibung und Inhaltsverzeichnis; Buch nicht vollständig gelesen.
+
+Lesetiefe: Verlagsbeschreibung und Inhaltsverzeichnis; Buch nicht vollständig gelesen.
+
+## V33 — The Invisible College
+
+https://www.anomalistbooks.com/book.cfm?id=79
+
+Anomalist Books. Datum siehe Quelle.
+
+Fundstelle: Verlagsbeschreibung und Inhaltsverzeichnis; Kontaktberichte, Wunder, Überzeugungsbildung.
+
+Lesetiefe: Verlagsbeschreibung und Inhaltsverzeichnis; Kontaktberichte, Wunder, Überzeugungsbildung.
+
+## V34 — Revelations
+
+https://anomalistbooks.com/book.cfm?id=38
+
+Anomalist Books. Datum siehe Quelle.
+
+Fundstelle: Verlagsbeschreibung und Inhaltsverzeichnis; keine Prüfung aller besprochenen Fälle.
+
+Lesetiefe: Verlagsbeschreibung und Inhaltsverzeichnis; keine Prüfung aller besprochenen Fälle.
+
+## V35 — Towards Multi-disciplinary SETI Research
+
+https://www.jacquesvallee.net/wp-content/uploads/2018/11/Towards_Multi-disciplinary_SETI_Research.pdf
+
+Garry Nolan, Jacques Vallée, Federico Faggin. 2016.
+
+Fundstelle: Ausgewählter Originaltext, insbesondere S. 1–4; Forschungsangebot, keine bestätigte Kontaktmethode.
+
+Lesetiefe: Ausgewählter Originaltext, insbesondere S. 1–4; Forschungsangebot, keine bestätigte Kontaktmethode.
+
+## V36 — Review of three books by Gregory Chaitin
+
+https://www.jacquesvallee.net/wp-content/uploads/2018/11/Chaitin-book.pdf
+
+Jacques Vallée. 2001-09-15.
+
+Fundstelle: Ausgewählte Seiten 1–3 und 6; datiert 15. September 2001.
+
+Lesetiefe: Ausgewählte Seiten 1–3 und 6; datiert 15. September 2001.
+
+## V37 — Video presentations
+
+https://www.jacquesvallee.net/videopresentations/
+
+Jacques Vallée. Datum siehe Quelle.
+
+Fundstelle: Offizieller Vortragsindex; Videos nicht angesehen. Indexdatum nicht automatisch Veranstaltungsdatum.
+
+Lesetiefe: Offizieller Vortragsindex; Videos nicht angesehen. Indexdatum nicht automatisch Veranstaltungsdatum.
+
+## V38 — Fiction bibliography
+
+https://www.jacquesvallee.net/fiction/
+
+Jacques Vallée. Datum siehe Quelle.
+
+Fundstelle: Eigene Werkbeschreibungen; Romane nicht vollständig gelesen.
+
+Lesetiefe: Eigene Werkbeschreibungen; Romane nicht vollständig gelesen.
+
+## V39 — The other side of neuroscience: challenging the materialist faith
+
+https://gizadeathstar.com/2016/02/the-transhumanist-scrapbook-the-other-side-of-neuroscience-challenging-the-materialist-faith/
+
+Joseph P. Farrell. Datum siehe Quelle.
+
+Fundstelle: Indexierte Textpassage mit namentlicher Vallée-Referenz gelesen; Vollseite bei zwei Abrufen nicht verfügbar.
+
+Lesetiefe: Indexierte Textpassage mit namentlicher Vallée-Referenz gelesen; Vollseite bei zwei Abrufen nicht verfügbar.
+
+## V40 — X-Series episode index
+
+https://darkjournalist.com/xmaster.php
+
+Daniel Liszt / Dark Journalist. Datum siehe Quelle.
+
+Fundstelle: Eigene Serienbeschreibung und Episodenübersicht; Episoden nicht angesehen.
+
+Lesetiefe: Eigene Serienbeschreibung und Episodenübersicht; Episoden nicht angesehen.
+
+## V41 — The Breakaway Civilization with Joseph Farrell
+
+https://solari.com/the-breakaway-civilization-with-joseph-farrell/
+
+Catherine Austin Fitts. Datum siehe Quelle.
+
+Fundstelle: Öffentlicher Ankündigungstext von 2012 gelesen; Interview nicht gehört.
+
+Lesetiefe: Öffentlicher Ankündigungstext von 2012 gelesen; Interview nicht gehört.
+
+## V42 — Review: Covert Wars and Breakaway Civilizations
+
+https://solari.com/catherines-review-of-covert-wars-and-breakaway-civilizations-the-secret-space-program-celestial-psyops-and-hidden-conflicts-2/
+
+Catherine Austin Fitts. Datum siehe Quelle.
+
+Fundstelle: Öffentliche Rezension, ausgewählte Textpassagen; besprochenes Buch nicht vollständig gelesen.
+
+Lesetiefe: Öffentliche Rezension, ausgewählte Textpassagen; besprochenes Buch nicht vollständig gelesen.

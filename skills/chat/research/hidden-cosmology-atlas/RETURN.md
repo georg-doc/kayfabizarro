@@ -666,3 +666,8 @@ Acceptance: https://kfb-research-atlas.frizzlebob.chatgpt.site/#ws0 ; table: htt
 Unresolved: original-passages for most exportclaims;9reference tokens;30title identitymatches; unlinked Brainfood, original2010Roko post, fullCurtis/Yurchak inspection, audio/song verification and product comparisons. These remain explicit follow-ons, not silently completed.
 
 ONE NEXT GATE: Georg jointly reviews the three entries for source boundaries, FrizzleBob voice and practical value. Stop expansion here until that review.
+
+
+### Vallée · Breiten-Ausarbeitung 13.11.2026
+
+24 ausgearbeitete Themenfelder, 42 registrierte Quellen und acht typisierte Autorenvergleiche. Owner: [Vallée Return](packages/jacques-vallee/RETURN.md). Keine neue Einzelfallvertiefung, kein Spielcode. Bestehende private Atlas-Site bleibt Veröffentlichungsziel; Deployment-Receipt folgt nach erfolgreicher Veröffentlichung.
