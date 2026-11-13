@@ -1,0 +1,60 @@
+{
+  "case_id": "p2-maletti-0499",
+  "question": "Hat Gianadelio Maletti dem Beitritt zur P2 zugestimmt?",
+  "assessment": "Eintrag im Register nachgewiesen; persönliche Zustimmung bestritten und in den geprüften Quellen nicht abschließend geklärt.",
+  "readings": [
+    {
+      "id": "member",
+      "proposition": "Der Eintrag erfasst eine wirkliche Aufnahme.",
+      "test": "Eigenhändig unterzeichnete Aufnahmeerklärung, authentifizierte Korrespondenz oder unabhängig dokumentierte Beitragszahlung suchen."
+    },
+    {
+      "id": "listed",
+      "proposition": "Maletti wurde nach Kontakten ohne vollzogenen Beitritt geführt.",
+      "test": "Aufnahmevorschlag, Vermerk über Ablehnung oder Vergleich mit nachweislich ohne Zustimmung geführten Personen suchen; keine Beweiskraft aus bloß fehlender Quittung."
+    }
+  ],
+  "sources": [
+    {
+      "id": "register",
+      "origin": "P2-Register · Reperto 4/C",
+      "type": "Faksimile",
+      "locator": "Druckseite 1159, FAS 0499, Tessera 1610, QUOTE SOCIALI 1977 und 1978 je 50",
+      "url": "https://www.senato.it/service/PDF/PDFServer/BGT/909713.pdf#page=1159",
+      "supports": "Verwaltungseintrag. Alle Felder stammen aus derselben Registerzeile.",
+      "mirror": "https://www.archivioantimafia.org/p2/commissione_parlamentare/03.%20Volume%20I%20%28022-025%29/023.%20volume_01_tomo_02.pdf#page=1159"
+    },
+    {
+      "id": "maletti",
+      "origin": "Maletti · Anhörung Johannesburg, 3. März 1997",
+      "type": "Eigenaussage",
+      "url": "https://www.parlamento.it/parlam/bicam/terror/stenografici/maletti1.htm",
+      "supports": "Er schildert das Angebot und bestreitet Annahme und Beitragsleistung."
+    },
+    {
+      "id": "viezzer",
+      "origin": "Antonio Viezzer · 13. Oktober 1982",
+      "type": "Aussage eines zweiten Teilnehmers",
+      "locator": "Stenografischer Bericht VI, Sitzungsseiten 65–66",
+      "url": "https://www.archivioantimafia.org/p2/commissione_parlamentare/02.%20Resoconti%20Stenografici%20vol%20I-XVI%20%28006-021%29/011.%20volume_06.pdf",
+      "supports": "Gemeinsame Besuche bei Gelli und Gespräche. Die Passage beschreibt keine Aufnahmehandlung."
+    },
+    {
+      "id": "gelli",
+      "origin": "Licio Gelli · 20. September 1976, Vigna und Pappalardo",
+      "type": "Vernehmungsprotokoll",
+      "url": "https://www.archivioantimafia.org/p2/commissione_parlamentare/08.%20Volume%20VI%20%2867-86%29/077.%20volume_06_tomo_11.pdf#page=589",
+      "locator": "Druckseiten 572–573, PDF-S. 589",
+      "supports": "Gelli verneinte Malettis Zugehörigkeit zur alten Loge. Der Fragezeitraum auf S. 572 ist vor Dezember 1974.",
+      "limit": "Vor dem im Register verzeichneten Kartenbeginn am 1. Januar 1977. Die spätere Zusammenfassung ist keine unabhängige Bestätigung.",
+      "later_restatement": "https://www.senato.it/service/PDF/PDFServer/BGT/909707.pdf#page=75"
+    },
+    {
+      "id": "pellegrino",
+      "origin": "Pellegrino · 20. März 1997",
+      "type": "Nachträgliche Würdigung",
+      "url": "https://www.parlamento.it/parlam/bicam/terror/stenografici/steno12.htm",
+      "supports": "Der Vorsitzende berichtet seine Beurteilung der Indizien. Seine Würdigung ist kein neuer Aufnahmebeleg."
+    }
+  ]
+}

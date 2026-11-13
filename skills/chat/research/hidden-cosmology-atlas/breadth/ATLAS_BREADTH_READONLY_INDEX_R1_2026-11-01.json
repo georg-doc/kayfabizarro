@@ -1,0 +1,4687 @@
+{
+  "schema": "kfb.atlas.readonly-breadth-index/1",
+  "date": "2026-11-01",
+  "readOnly": true,
+  "consumerReadiness": "RESEARCH_ONLY_NOT_SITE_RELEASED",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "inputGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+  "sourceSnapshotGitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214",
+  "ownerRoot": "skills/chat/research/hidden-cosmology-atlas/",
+  "sourcePackets": [
+    {
+      "path": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "path": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "path": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "path": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    }
+  ],
+  "entityIdPolicy": "Existing R4 bare slugs. author/<slug> is a transport alias. source/<sourceId> denotes a work endpoint, not a person.",
+  "entities": [
+    {
+      "entityId": "joseph-farrell",
+      "name": "Joseph P. Farrell",
+      "kind": "author",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "censusState": "EXISTING_GITHUB_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "annie-jacobsen",
+      "name": "Annie Jacobsen",
+      "kind": "researcher",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/annie-jacobsen.md"
+    },
+    {
+      "entityId": "linda-hunt",
+      "name": "Linda Hunt",
+      "kind": "researcher",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/linda-hunt.md"
+    },
+    {
+      "entityId": "christopher-simpson",
+      "name": "Christopher Simpson",
+      "kind": "researcher",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/christopher-simpson.md"
+    },
+    {
+      "entityId": "john-loftus",
+      "name": "John Loftus",
+      "kind": "researcher",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "wernher-von-braun",
+      "name": "Wernher von Braun",
+      "kind": "person",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "reinhard-gehlen",
+      "name": "Reinhard Gehlen",
+      "kind": "person",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "otto-skorzeny",
+      "name": "Otto Skorzeny",
+      "kind": "person",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "tim-weiner",
+      "name": "Tim Weiner",
+      "kind": "researcher",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "douglas-valentine",
+      "name": "Douglas Valentine",
+      "kind": "researcher",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "peter-dale-scott",
+      "name": "Peter Dale Scott",
+      "kind": "researcher",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/peter-dale-scott.md"
+    },
+    {
+      "entityId": "david-talbot",
+      "name": "David Talbot",
+      "kind": "researcher",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "william-donovan",
+      "name": "William J. Donovan",
+      "kind": "person",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "allen-dulles",
+      "name": "Allen W. Dulles",
+      "kind": "person",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "frank-wisner",
+      "name": "Frank Wisner",
+      "kind": "person",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "whitney-webb",
+      "name": "Whitney Webb",
+      "kind": "author",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/whitney-webb.md",
+      "sourceSnapshotGitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+    },
+    {
+      "entityId": "dan-moldea",
+      "name": "Dan E. Moldea",
+      "kind": "author",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "seymour-hersh",
+      "name": "Seymour Hersh",
+      "kind": "author",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/seymour-hersh.md",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "meyer-lansky",
+      "name": "Meyer Lansky",
+      "kind": "person",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "lucky-luciano",
+      "name": "Charles 'Lucky' Luciano",
+      "kind": "person",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "roy-cohn",
+      "name": "Roy Cohn",
+      "kind": "person",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "jeffrey-epstein",
+      "name": "Jeffrey Epstein",
+      "kind": "person",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "catherine-austin-fitts",
+      "name": "Catherine Austin Fitts",
+      "kind": "author",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "censusState": "EXISTING_GITHUB_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "lucy-komisar",
+      "name": "Lucy Komisar",
+      "kind": "researcher",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "david-cay-johnston",
+      "name": "David Cay Johnston",
+      "kind": "researcher",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "five-star-trust-claimed-network",
+      "name": "Five Star Trust — claimed financial network",
+      "kind": "entity",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "censusState": "IDENTITY_RESOLUTION_FIRST",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "five-star-trust-icij",
+      "name": "Five Star Trust — ICIJ offshore entity",
+      "kind": "entity",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "censusState": "IDENTITY_RESOLUTION_FIRST",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "mega-corporation-unresolved",
+      "name": "Mega Corporation — exact referent pending",
+      "kind": "entity",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "censusState": "IDENTITY_RESOLUTION_FIRST",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "mega-group",
+      "name": "Mega Group — philanthropist study group",
+      "kind": "entity",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "censusState": "IDENTITY_RESOLUTION_FIRST",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "gary-webb",
+      "name": "Gary Webb",
+      "kind": "researcher",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/gary-webb.md",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "robert-parry",
+      "name": "Robert Parry",
+      "kind": "researcher",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/robert-parry.md",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "jonathan-marshall",
+      "name": "Jonathan Marshall",
+      "kind": "researcher",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "oliver-north",
+      "name": "Oliver North",
+      "kind": "person",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "richard-secord",
+      "name": "Richard Secord",
+      "kind": "person",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "leslie-wexner",
+      "name": "Leslie Wexner",
+      "kind": "person",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "world-commerce-corporation",
+      "name": "World Commerce Corporation",
+      "kind": "entity",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "EXISTING_TOPIC_NOT_NEW_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH",
+      "topicRegistrationIds": [
+        "REC-C02-01"
+      ]
+    },
+    {
+      "entityId": "jason-samosa",
+      "name": "Jason Samosa",
+      "kind": "author",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "EXISTING_DRIVE_DONOR_NOT_GH_AUTHOR",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH",
+      "topicRegistrationIds": [
+        "REC-C02-01"
+      ]
+    },
+    {
+      "entityId": "jason-reza-jorjani",
+      "name": "Jason Reza Jorjani",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "EXISTING_GITHUB_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH",
+      "topicRegistrationIds": [
+        "REC-C02-02"
+      ]
+    },
+    {
+      "entityId": "william-bramley",
+      "name": "William Bramley",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "EXISTING_GITHUB_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "daniel-liszt",
+      "name": "Daniel Liszt / Dark Journalist",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "EXISTING_GITHUB_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "david-icke",
+      "name": "David Icke",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "EXISTING_GITHUB_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "michael-wann",
+      "name": "Michael Wann",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "EXISTING_GITHUB_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "andrija-puharich",
+      "name": "Andrija Puharich",
+      "kind": "researcher",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "SOURCE_TOPIC_EXISTS_DOSSIER_PENDING",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/andrija-puharich.md",
+      "topicRegistrationIds": [
+        "REC-C02-02"
+      ]
+    },
+    {
+      "entityId": "ingo-swann",
+      "name": "Ingo Swann",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/ingo-swann.md"
+    },
+    {
+      "entityId": "thomas-townsend-brown",
+      "name": "Thomas Townsend Brown",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/thomas-townsend-brown.md"
+    },
+    {
+      "entityId": "nikola-tesla",
+      "name": "Nikola Tesla",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/nikola-tesla.md"
+    },
+    {
+      "entityId": "jacques-vallee",
+      "name": "Jacques Vallée",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "RESEARCH_DOSSIER_REGISTERED",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_BASED_DOSSIER_ADDED_2026_11_13",
+      "ownerPath": "authors/jacques-vallee.md",
+      "researchReturn": "packages/jacques-vallee/RETURN.md",
+      "researchCheckedAt": "2026-11-13"
+    },
+    {
+      "entityId": "richard-dolan",
+      "name": "Richard Dolan",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "nick-redfern",
+      "name": "Nick Redfern",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "kurt-metzger",
+      "name": "Kurt Metzger",
+      "kind": "author",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "EXISTING_GITHUB_MASTER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "jesse-michels-american-alchemy",
+      "name": "Jesse Michels / American Alchemy",
+      "kind": "host",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "EXISTING_GITHUB_SOURCE_HOST_NOT_AUTHOR",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH",
+      "topicRegistrationIds": [
+        "REC-C02-02"
+      ]
+    },
+    {
+      "entityId": "jan-irvin",
+      "name": "Jan Irvin",
+      "kind": "author",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "EXISTING_DRIVE_DONOR_NOT_GH_AUTHOR",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "christopher-knowles",
+      "name": "Christopher Knowles",
+      "kind": "author",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "EXISTING_DRIVE_DONOR_NOT_GH_AUTHOR",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "george-arney-unresolved",
+      "name": "George Arney — identity/research referent not yet established",
+      "kind": "person",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "IDENTITY_RESOLUTION_FIRST",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "federal-reserve-system",
+      "name": "Federal Reserve System",
+      "kind": "entity",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "federal-reserve-board",
+      "name": "Board of Governors of the Federal Reserve System",
+      "kind": "entity",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "federal-reserve-banks",
+      "name": "12 Federal Reserve Banks",
+      "kind": "entity",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "bank-for-international-settlements",
+      "name": "Bank for International Settlements (BIS)",
+      "kind": "entity",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "bank-of-england",
+      "name": "Bank of England",
+      "kind": "entity",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "federal-open-market-committee",
+      "name": "Federal Open Market Committee (FOMC)",
+      "kind": "entity",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "paul-warburg",
+      "name": "Paul Warburg",
+      "kind": "person",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "nelson-aldrich",
+      "name": "Nelson W. Aldrich",
+      "kind": "person",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "carter-glass",
+      "name": "Carter Glass",
+      "kind": "person",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "ellen-brown",
+      "name": "Ellen Brown",
+      "kind": "author",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "g-edward-griffin",
+      "name": "G. Edward Griffin",
+      "kind": "author",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "nomi-prins",
+      "name": "Nomi Prins",
+      "kind": "author",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "murray-rothbard",
+      "name": "Murray N. Rothbard",
+      "kind": "author",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "institute-for-works-of-religion",
+      "name": "Istituto per le Opere di Religione (IOR)",
+      "kind": "entity",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "apsa",
+      "name": "Administration of the Patrimony of the Apostolic See (APSA)",
+      "kind": "entity",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "banco-ambrosiano",
+      "name": "Banco Ambrosiano",
+      "kind": "entity",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "banca-privata-finanziaria",
+      "name": "Banca Privata Finanziaria (BPF)",
+      "kind": "entity",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "propaganda-due",
+      "name": "Propaganda Due (P2)",
+      "kind": "entity",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "asif-vatican",
+      "name": "Vatican Supervisory and Financial Information Authority (ASIF)",
+      "kind": "entity",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "INSTITUTION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "michele-sindona",
+      "name": "Michele Sindona",
+      "kind": "person",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "roberto-calvi",
+      "name": "Roberto Calvi",
+      "kind": "person",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "paul-marcinkus",
+      "name": "Paul Marcinkus",
+      "kind": "person",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "licio-gelli",
+      "name": "Licio Gelli",
+      "kind": "person",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "HISTORICAL_NODE_NO_AUTHOR_DOSSIER",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "john-pollard-historian",
+      "name": "John F. Pollard",
+      "kind": "researcher",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "gerald-posner",
+      "name": "Gerald Posner",
+      "kind": "researcher",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "theosophical-society",
+      "name": "Theosophical Society",
+      "kind": "entity",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "HISTORICAL_ORGANIZATION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "hermetic-order-golden-dawn",
+      "name": "Hermetic Order of the Golden Dawn",
+      "kind": "entity",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "HISTORICAL_ORGANIZATION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "ordo-templi-orientis",
+      "name": "Ordo Templi Orientis (O.T.O.)",
+      "kind": "entity",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "HISTORICAL_ORGANIZATION_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "mystery-schools",
+      "name": "Mystery Schools — historiographical/conceptual umbrella",
+      "kind": "concept",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NOT_A_SINGLE_LEGAL_ENTITY",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "freemasonry-traditions",
+      "name": "Freemasonry — multiple Grand Lodges, not one owner",
+      "kind": "concept",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NOT_A_SINGLE_LEGAL_ENTITY",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "rosicrucian-traditions",
+      "name": "Rosicrucianism — diverse organizations/traditions",
+      "kind": "concept",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NOT_A_SINGLE_LEGAL_ENTITY",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "helena-blavatsky",
+      "name": "Helena Petrovna Blavatsky",
+      "kind": "author",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "rudolf-steiner",
+      "name": "Rudolf Steiner",
+      "kind": "author",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "manly-p-hall",
+      "name": "Manly P. Hall",
+      "kind": "author",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "aleister-crowley",
+      "name": "Aleister Crowley",
+      "kind": "author",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "wouter-hanegraaff",
+      "name": "Wouter J. Hanegraaff",
+      "kind": "author",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "antoine-faivre",
+      "name": "Antoine Faivre",
+      "kind": "author",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "NEW_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "sam-tripoli",
+      "name": "Sam Tripoli",
+      "kind": "host",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "NEW_AUTHOR_AND_CREATIVE_DONOR_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "george-carlin",
+      "name": "George Carlin",
+      "kind": "author",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "CONVERGENT_INTERESTS_PRIMARY_CLIP_RESEARCH_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "robert-monroe",
+      "name": "Robert A. Monroe",
+      "kind": "author",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "LOOSH_SOURCE_WORK_IDENTIFIED_AUTHOR_MASTER_PENDING",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "loosh",
+      "name": "Loosh / emotional harvesting (Monroe term)",
+      "kind": "concept",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "AUTHOR_NARRATIVE_CONCEPT_NOT_EMPIRICAL_MECHANISM",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "first-enoch",
+      "name": "1 Enoch / Book of the Watchers",
+      "kind": "work",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "CRITICAL_EDITION_TEXTUAL_WORK",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "nephilim",
+      "name": "Nephilim / Watchers tradition",
+      "kind": "concept",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "MYTH_TEXT_CONCEPT_VERSION_DEPENDENT",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "tartaria-narratives",
+      "name": "Tartaria / Tartary historical-geographical vs modern narrative",
+      "kind": "concept",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "MULTIPLE_FIELDS_HISTORICAL_TOPONYM_VS_MODERN_MYTH",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "atlantis-narratives",
+      "name": "Atlantis / Plato and later alternative-historical narratives",
+      "kind": "concept",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "MULTIPLE_FIELDS_CLASSICAL_TEXT_VS_MODERN_CLAIM",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "sovereign-military-order-of-malta",
+      "name": "Sovereign Military Order of Malta (SMOM)",
+      "kind": "entity",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "LEGAL_IDENTITY_REQUIRES_EXACT_ORGANIZATION",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "ghislaine-maxwell",
+      "name": "Ghislaine Maxwell",
+      "kind": "person",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "PUBLIC_RECORD_SUBJECT_NOT_AUTHOR_ENDORSEMENT",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "terramar-project",
+      "name": "The TerraMar Project",
+      "kind": "entity",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "OCEAN_PROJECT_REPORTED_NOT_ATLANTIS_PROOF",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "bimini-cuba-atlantis-claim",
+      "name": "Bimini–Cuba Atlantis search attribution",
+      "kind": "concept",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "censusState": "DARK_JOURNALIST_ASSERTION_NOT_INDEPENDENT_HISTORICAL_FACT",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "james-corbett",
+      "name": "James Corbett",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "JOURNALISTIC_DONOR_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/james-corbett.md",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "derrick-broze",
+      "name": "Derrick Broze",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "IDENTITY_CORRECTION_DAVID_BOZE_PROBABLE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/derrick-broze.md",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "tom-oliver-regenauer",
+      "name": "Tom-Oliver Regenauer",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "JOURNALISTIC_DONOR_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "patrik-baab",
+      "name": "Patrik Baab",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "JOURNALISTIC_DONOR_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/patrik-baab.md",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "dirk-pohlmann",
+      "name": "Dirk Pohlmann",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "JOURNALISTIC_DONOR_CANDIDATE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "mark-goodwin",
+      "name": "Mark Goodwin",
+      "kind": "researcher",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "censusState": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "SOURCE_LEAD_DOSSIER",
+      "ownerPath": "authors/mark-goodwin.md",
+      "sourceSnapshotGitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+    },
+    {
+      "entityId": "iain-davis",
+      "name": "Iain Davis",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "john-klyczek",
+      "name": "John Klyczek",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "max-jones",
+      "name": "Max Jones",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "c-z-means",
+      "name": "C. Z. Means / ParaPower Mapping",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "ed-berger",
+      "name": "Ed Berger",
+      "kind": "researcher",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "UNLIMITED_HANGOUT_TEAM_VERIFIED_OUTLET_METADATA",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "jeffrey-sachs",
+      "name": "Jeffrey D. Sachs",
+      "kind": "author",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "ACADEMIC_ANALYST_NOT_AUTOMATIC_JOURNALIST",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "scott-ritter",
+      "name": "Scott Ritter",
+      "kind": "researcher",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "COMMENTATOR_ANALYST_STATUS_NEEDS_EXACT_SOURCE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "ryan-dawson",
+      "name": "Ryan Dawson",
+      "kind": "researcher",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "INDEPENDENT_COMMENTATOR_ORIGINALS_PENDING",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "carroll-quigley",
+      "name": "Carroll Quigley",
+      "kind": "author",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "HISTORIAN_BIBLIOGRAPHIC_ORIGINAL",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "cecil-rhodes",
+      "name": "Cecil John Rhodes",
+      "kind": "person",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "HISTORICAL_PERSON_ORIGINAL_WILL_SOURCE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "alfred-milner",
+      "name": "Alfred Milner",
+      "kind": "person",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "HISTORICAL_PERSON_NEEDS_ORIGINAL_CORRESPONDENCE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "technocracy-inc",
+      "name": "Technocracy Incorporated",
+      "kind": "entity",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "HISTORICAL_TECHNOCRACY_ORGANIZATION",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "howard-scott",
+      "name": "Howard Scott",
+      "kind": "person",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "HISTORICAL_TECHNOCRACY_SUBJECT",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "m-king-hubbert",
+      "name": "M. King Hubbert",
+      "kind": "person",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "HISTORICAL_TECHNOCRACY_SUBJECT",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "rhodes-trust",
+      "name": "Rhodes Trust",
+      "kind": "entity",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "HISTORICAL_ORGANIZATION_ORIGINAL_WILL_SOURCE",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "unlimited-hangout",
+      "name": "Unlimited Hangout",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "ORIGINAL_PUBLISHER_VERIFIED",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "corbett-report",
+      "name": "The Corbett Report",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "ORIGINAL_PUBLISHER_VERIFIED",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "conscious-resistance-network",
+      "name": "The Conscious Resistance Network",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "ORIGINAL_PUBLISHER_VERIFIED",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "pyramid-of-power-series",
+      "name": "The Pyramid of Power (17 chapters)",
+      "kind": "work",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "ORIGINAL_PUBLISHER_SERIES_17",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "one-nation-under-blackmail",
+      "name": "One Nation Under Blackmail (two volumes)",
+      "kind": "work",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "censusState": "ORIGINAL_PUBLICATION_LIBRARY_DONOR_PRESENT",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "tragedy-and-hope",
+      "name": "Tragedy and Hope (1966)",
+      "kind": "work",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "BIBLIOGRAPHIC_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "anglo-american-establishment",
+      "name": "The Anglo-American Establishment (1981)",
+      "kind": "work",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "censusState": "BIBLIOGRAPHIC_SOURCE_LEAD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "rhodes-will-codicils",
+      "name": "Cecil Rhodes wills and codicils",
+      "kind": "work",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "censusState": "ORIGINAL_HISTORICAL_DOCUMENT_INDEX",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "technocracy-movement-1930s",
+      "name": "Technocracy movement 1930s",
+      "kind": "concept",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "censusState": "HISTORIOGRAPHIC_RESEARCH_FIELD",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "reuters-news",
+      "name": "Reuters",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "associated-press",
+      "name": "Associated Press (AP)",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "financial-times",
+      "name": "Financial Times",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "new-york-times",
+      "name": "The New York Times",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "the-guardian",
+      "name": "The Guardian",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "wall-street-journal",
+      "name": "The Wall Street Journal",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "bbc-news",
+      "name": "BBC News",
+      "kind": "entity",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "censusState": "CROSS_EDITORIAL_NEWS_SAMPLE_OUTLET",
+      "censusRef": "../ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json",
+      "researchStatus": "UNCHANGED_CENSUS_RECORD_NOT_RESEARCHED_BY_THIS_BATCH"
+    },
+    {
+      "entityId": "theosophical-society-england",
+      "name": "The Theosophical Society in England",
+      "kind": "institution",
+      "status": "PROPOSED_SOURCE_CONTEXT_IDENTITY_NOT_R4_MUTATION"
+    },
+    {
+      "entityId": "fasab",
+      "name": "Federal Accounting Standards Advisory Board",
+      "kind": "institution",
+      "status": "PROPOSED_SOURCE_CONTEXT_IDENTITY_NOT_R4_MUTATION"
+    },
+    {
+      "entityId": "mark-skidmore",
+      "name": "Mark Skidmore",
+      "kind": "researcher",
+      "status": "PROPOSED_SOURCE_CONTEXT_IDENTITY_NOT_R4_MUTATION"
+    },
+    {
+      "entityId": "source/PW-S01",
+      "name": "Operation Paperclip — Little, Brown publisher edition",
+      "kind": "work",
+      "sourceId": "PW-S01"
+    },
+    {
+      "entityId": "source/PW-S02",
+      "name": "The Pentagon’s Brain — Penguin NZ edition",
+      "kind": "work",
+      "sourceId": "PW-S02"
+    },
+    {
+      "entityId": "source/PW-S03",
+      "name": "Michael J. Neufeld review of Operation Paperclip, Quest 21(3)",
+      "kind": "work",
+      "sourceId": "PW-S03"
+    },
+    {
+      "entityId": "source/PW-S04",
+      "name": "Secret Agenda — Smithsonian catalog",
+      "kind": "work",
+      "sourceId": "PW-S04"
+    },
+    {
+      "entityId": "source/PW-S05",
+      "name": "Linda Hunt, U.S. coverup of Nazi scientists",
+      "kind": "work",
+      "sourceId": "PW-S05"
+    },
+    {
+      "entityId": "source/PW-S06",
+      "name": "Acting Secretary of State to President Truman, FRUS 1946 V, doc.448",
+      "kind": "work",
+      "sourceId": "PW-S06"
+    },
+    {
+      "entityId": "source/PW-S07",
+      "name": "NARA RG263 CIA Records — IWG",
+      "kind": "work",
+      "sourceId": "PW-S07"
+    },
+    {
+      "entityId": "source/PW-S08",
+      "name": "Christopher Simpson author catalog",
+      "kind": "work",
+      "sourceId": "PW-S08"
+    },
+    {
+      "entityId": "source/PW-S09",
+      "name": "Blowback — publisher edition",
+      "kind": "work",
+      "sourceId": "PW-S09"
+    },
+    {
+      "entityId": "source/PW-S10",
+      "name": "Science of Coercion — publisher edition",
+      "kind": "work",
+      "sourceId": "PW-S10"
+    },
+    {
+      "entityId": "source/PW-S11",
+      "name": "The Splendid Blond Beast — publisher edition",
+      "kind": "work",
+      "sourceId": "PW-S11"
+    },
+    {
+      "entityId": "source/PW-S12",
+      "name": "The Road to 9/11 — UC Press",
+      "kind": "work",
+      "sourceId": "PW-S12"
+    },
+    {
+      "entityId": "source/PW-S13",
+      "name": "Deep Politics and the Death of JFK — UC Press paperback",
+      "kind": "work",
+      "sourceId": "PW-S13"
+    },
+    {
+      "entityId": "source/BPS-S01",
+      "name": "Beyond Telepathy, third edition ebook",
+      "kind": "work",
+      "sourceId": "BPS-S01"
+    },
+    {
+      "entityId": "source/BPS-S02",
+      "name": "Ingo Swann Works",
+      "kind": "work",
+      "sourceId": "BPS-S02"
+    },
+    {
+      "entityId": "source/BPS-S03",
+      "name": "CIA-RDP79-00999A000300080001-3",
+      "kind": "work",
+      "sourceId": "BPS-S03"
+    },
+    {
+      "entityId": "source/BPS-S04",
+      "name": "Ask Molly: Did CIA Really Study Psychic Powers?",
+      "kind": "work",
+      "sourceId": "BPS-S04"
+    },
+    {
+      "entityId": "source/BPS-S05",
+      "name": "US1974483A Electrostatic motor",
+      "kind": "work",
+      "sourceId": "BPS-S05"
+    },
+    {
+      "entityId": "source/BPS-S06",
+      "name": "US2949550A Electrokinetic apparatus",
+      "kind": "work",
+      "sourceId": "BPS-S06"
+    },
+    {
+      "entityId": "source/BPS-S07",
+      "name": "Bahder and Fazi: Force on an Asymmetric Capacitor",
+      "kind": "work",
+      "sourceId": "BPS-S07"
+    },
+    {
+      "entityId": "source/BPS-S08",
+      "name": "US645576A System of transmission of electrical energy",
+      "kind": "work",
+      "sourceId": "BPS-S08"
+    },
+    {
+      "entityId": "source/BPS-S09",
+      "name": "US685957A Apparatus for the utilization of radiant energy",
+      "kind": "work",
+      "sourceId": "BPS-S09"
+    },
+    {
+      "entityId": "source/BPS-S10",
+      "name": "Nikola Tesla Museum Activity archive finding aid",
+      "kind": "work",
+      "sourceId": "BPS-S10"
+    },
+    {
+      "entityId": "source/BIN-S01",
+      "name": "How is the Federal Reserve System structured?",
+      "kind": "work",
+      "sourceId": "BIN-S01"
+    },
+    {
+      "entityId": "source/BIN-S02",
+      "name": "Who owns the Federal Reserve?",
+      "kind": "work",
+      "sourceId": "BIN-S02"
+    },
+    {
+      "entityId": "source/BIN-S03",
+      "name": "About the Bank for International Settlements",
+      "kind": "work",
+      "sourceId": "BIN-S03"
+    },
+    {
+      "entityId": "source/BIN-S04",
+      "name": "Mission and Vision",
+      "kind": "work",
+      "sourceId": "BIN-S04"
+    },
+    {
+      "entityId": "source/BIN-S05",
+      "name": "Praedicate Evangelium — APSA",
+      "kind": "work",
+      "sourceId": "BIN-S05"
+    },
+    {
+      "entityId": "source/BIN-S06",
+      "name": "Mission, Objects and Freedom statements",
+      "kind": "work",
+      "sourceId": "BIN-S06"
+    },
+    {
+      "entityId": "source/BIN-S07",
+      "name": "Early History",
+      "kind": "work",
+      "sourceId": "BIN-S07"
+    },
+    {
+      "entityId": "source/BIN-S08",
+      "name": "Charity registration decision: The Theosophical Society in England",
+      "kind": "work",
+      "sourceId": "BIN-S08"
+    },
+    {
+      "entityId": "source/SOL-S01",
+      "name": "Solari Papers",
+      "kind": "work",
+      "sourceId": "SOL-S01"
+    },
+    {
+      "entityId": "source/SOL-S02",
+      "name": "Missing Money 2020 Update",
+      "kind": "work",
+      "sourceId": "SOL-S02"
+    },
+    {
+      "entityId": "source/SOL-S03",
+      "name": "DoD and HUD Missing Money Supporting Documentation",
+      "kind": "work",
+      "sourceId": "SOL-S03"
+    },
+    {
+      "entityId": "source/SOL-S04",
+      "name": "Army General Fund Adjustments Not Adequately Documented or Supported, DODIG-2016-113",
+      "kind": "work",
+      "sourceId": "SOL-S04"
+    },
+    {
+      "entityId": "source/SOL-S05",
+      "name": "SFFAS 56: Classified Activities, Handbook Version 24",
+      "kind": "work",
+      "sourceId": "SOL-S05"
+    },
+    {
+      "entityId": "source/SOL-S06",
+      "name": "Interview 1497 — Catherine Austin Fitts on Where the Missing Trillions Are Going",
+      "kind": "work",
+      "sourceId": "SOL-S06"
+    },
+    {
+      "entityId": "source/SOL-S07",
+      "name": "Empire Endgame: Digital Slave Population!",
+      "kind": "work",
+      "sourceId": "SOL-S07"
+    },
+    {
+      "entityId": "source/SOL-S08",
+      "name": "2nd Quarter 2026 Wrap Up: News Trends & Stories, Part II with Dr. Joseph P. Farrell",
+      "kind": "work",
+      "sourceId": "SOL-S08"
+    },
+    {
+      "entityId": "source/SOL-S09",
+      "name": "The Solari Papers #3: Musings on the Department of Defense",
+      "kind": "work",
+      "sourceId": "SOL-S09"
+    },
+    {
+      "entityId": "source/SOL-S10",
+      "name": "Archived Events",
+      "kind": "work",
+      "sourceId": "SOL-S10"
+    },
+    {
+      "entityId": "source/SOL-S11",
+      "name": "A Correspondence",
+      "kind": "work",
+      "sourceId": "SOL-S11"
+    },
+    {
+      "entityId": "source/SOL-S12",
+      "name": "Missing Money Key Documents",
+      "kind": "work",
+      "sourceId": "SOL-S12"
+    },
+    {
+      "entityId": "source/JWG-S01",
+      "name": "Sustainably Surveilling and Tokenizing Nature: The Case of O.N.E. Amazon",
+      "kind": "work",
+      "sourceId": "JWG-S01",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWG-S02",
+      "name": "Satellogic announces $30m strategic investment",
+      "kind": "work",
+      "sourceId": "JWG-S02",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWG-S03",
+      "name": "Veea investor presentation",
+      "kind": "work",
+      "sourceId": "JWG-S03",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWG-S04",
+      "name": "ONE Amazon current product description",
+      "kind": "work",
+      "sourceId": "JWG-S04",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWG-S05",
+      "name": "Are biodiversity credits just another business-as-usual finance scheme?",
+      "kind": "work",
+      "sourceId": "JWG-S05",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWC-S01",
+      "name": "Unlimited Hangout — About",
+      "kind": "work",
+      "sourceId": "JWC-S01",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWC-S02",
+      "name": "Using Bitcoin and Stablecoins to Expand Dollar Dominance with Whitney Webb and Mark Goodwin",
+      "kind": "work",
+      "sourceId": "JWC-S02",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWC-S03",
+      "name": "Report for the G20 on tokenisation highlights the opportunities, risks and future considerations for central banks",
+      "kind": "work",
+      "sourceId": "JWC-S03",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "source/JWC-S04",
+      "name": "Recommendations on Biodiversity Credits of the Community Advisory Panel: Discussion Paper for Consultation",
+      "kind": "work",
+      "sourceId": "JWC-S04",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C01",
+      "kind": "claim",
+      "claimId": "JWG-C01",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C02",
+      "kind": "claim",
+      "claimId": "JWG-C02",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C03",
+      "kind": "claim",
+      "claimId": "JWG-C03",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C04",
+      "kind": "claim",
+      "claimId": "JWG-C04",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C05",
+      "kind": "claim",
+      "claimId": "JWG-C05",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C06",
+      "kind": "claim",
+      "claimId": "JWG-C06",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C07",
+      "kind": "claim",
+      "claimId": "JWG-C07",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C08",
+      "kind": "claim",
+      "claimId": "JWG-C08",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWG-C09",
+      "kind": "claim",
+      "claimId": "JWG-C09",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWC-C01",
+      "kind": "claim",
+      "claimId": "JWC-C01",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWC-C02",
+      "kind": "claim",
+      "claimId": "JWC-C02",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWC-C03",
+      "kind": "claim",
+      "claimId": "JWC-C03",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "claim/JWC-C04",
+      "kind": "claim",
+      "claimId": "JWC-C04",
+      "extensionId": "C02_WEBB_GOODWIN"
+    },
+    {
+      "entityId": "JH3-W01",
+      "kind": "work",
+      "name": "Dark Alliance: Movie Tie-In Edition",
+      "sourceId": "JH3-S01",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "JH3-W02",
+      "kind": "work",
+      "name": "The CIA-Contra-Crack Cocaine Controversy: Chapter XII Conclusions",
+      "sourceId": "JH3-S02",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "JH3-W03",
+      "kind": "work",
+      "name": "The CIA-Contra-Crack Cocaine Controversy: Chapter I, prior investigations",
+      "sourceId": "JH3-S03",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "JH3-W04",
+      "kind": "work",
+      "name": "Hear Parry and Webb Discuss Contra-Cocaine",
+      "sourceId": "JH3-S04",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "JH3-W05",
+      "kind": "work",
+      "name": "CIA Inspector General Report, Volume II: The Contra Story — Findings",
+      "sourceId": "JH3-S05",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "JH3-W06",
+      "kind": "work",
+      "name": "Torture at Abu Ghraib",
+      "sourceId": "JH3-S06",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "JH3-W07",
+      "kind": "work",
+      "name": "Review of Department of Defense Detention and Interrogation Operations, S. Hrg. 108-868",
+      "sourceId": "JH3-S07",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "JH3-W08",
+      "kind": "work",
+      "name": "Article 15-6 Investigation of the 800th Military Police Brigade — catalog",
+      "sourceId": "JH3-S08",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JH3-S01",
+      "kind": "source",
+      "sourceId": "JH3-S01",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JH3-S02",
+      "kind": "source",
+      "sourceId": "JH3-S02",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JH3-S03",
+      "kind": "source",
+      "sourceId": "JH3-S03",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JH3-S04",
+      "kind": "source",
+      "sourceId": "JH3-S04",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JH3-S05",
+      "kind": "source",
+      "sourceId": "JH3-S05",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JH3-S06",
+      "kind": "source",
+      "sourceId": "JH3-S06",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JH3-S07",
+      "kind": "source",
+      "sourceId": "JH3-S07",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JH3-S08",
+      "kind": "source",
+      "sourceId": "JH3-S08",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JT3-S01",
+      "kind": "source",
+      "sourceId": "JT3-S01",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JT3-S02",
+      "kind": "source",
+      "sourceId": "JT3-S02",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JT3-S03",
+      "kind": "source",
+      "sourceId": "JT3-S03",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JT3-S04",
+      "kind": "source",
+      "sourceId": "JT3-S04",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JT3-S05",
+      "kind": "source",
+      "sourceId": "JT3-S05",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JT3-S06",
+      "kind": "source",
+      "sourceId": "JT3-S06",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JT3-S07",
+      "kind": "source",
+      "sourceId": "JT3-S07",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "source/JT3-S08",
+      "kind": "source",
+      "sourceId": "JT3-S08",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C01",
+      "kind": "claim",
+      "claimId": "JH3-C01",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C02",
+      "kind": "claim",
+      "claimId": "JH3-C02",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C03",
+      "kind": "claim",
+      "claimId": "JH3-C03",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C04",
+      "kind": "claim",
+      "claimId": "JH3-C04",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C05",
+      "kind": "claim",
+      "claimId": "JH3-C05",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C06",
+      "kind": "claim",
+      "claimId": "JH3-C06",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C07",
+      "kind": "claim",
+      "claimId": "JH3-C07",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C08",
+      "kind": "claim",
+      "claimId": "JH3-C08",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JH3-C09",
+      "kind": "claim",
+      "claimId": "JH3-C09",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C01",
+      "kind": "claim",
+      "claimId": "JT3-C01",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C02",
+      "kind": "claim",
+      "claimId": "JT3-C02",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C03",
+      "kind": "claim",
+      "claimId": "JT3-C03",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C04",
+      "kind": "claim",
+      "claimId": "JT3-C04",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C05",
+      "kind": "claim",
+      "claimId": "JT3-C05",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C06",
+      "kind": "claim",
+      "claimId": "JT3-C06",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C07",
+      "kind": "claim",
+      "claimId": "JT3-C07",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C08",
+      "kind": "claim",
+      "claimId": "JT3-C08",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    },
+    {
+      "entityId": "claim/JT3-C09",
+      "kind": "claim",
+      "claimId": "JT3-C09",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "PW-S01",
+      "title": "Operation Paperclip — Little, Brown publisher edition",
+      "url": "https://www.hbglibrary.com/titles/annie-jacobsen/operation-paperclip/9780316221030/",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S02",
+      "title": "The Pentagon’s Brain — Penguin NZ edition",
+      "url": "https://www.penguin.co.nz/books/the-pentagons-brain-9781804998830",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S03",
+      "title": "Michael J. Neufeld review of Operation Paperclip, Quest 21(3)",
+      "url": "https://repository.si.edu/bitstreams/1c401522-1edc-466f-94b2-cd0cccd319e3/download",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S04",
+      "title": "Secret Agenda — Smithsonian catalog",
+      "url": "https://www.si.edu/object/siris_sil_411400",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S05",
+      "title": "Linda Hunt, U.S. coverup of Nazi scientists",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/00963402.1985.11455944",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S06",
+      "title": "Acting Secretary of State to President Truman, FRUS 1946 V, doc.448",
+      "url": "https://history.state.gov/historicaldocuments/frus1946v05/d448",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S07",
+      "title": "NARA RG263 CIA Records — IWG",
+      "url": "https://www.archives.gov/iwg/declassified-records/rg-263-cia-records",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S08",
+      "title": "Christopher Simpson author catalog",
+      "url": "https://openroadmedia.com/contributor/christopher-simpson",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S09",
+      "title": "Blowback — publisher edition",
+      "url": "https://openroadmedia.com/ebook/blowback/9781497623064",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S10",
+      "title": "Science of Coercion — publisher edition",
+      "url": "https://openroadmedia.com/ebook/science-of-coercion/9781497672703",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S11",
+      "title": "The Splendid Blond Beast — publisher edition",
+      "url": "https://openroadmedia.com/ebook/the-splendid-blond-beast/9781504043496",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S12",
+      "title": "The Road to 9/11 — UC Press",
+      "url": "https://www.ucpress.edu/books/the-road-to-9-11/paper",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "PW-S13",
+      "title": "Deep Politics and the Death of JFK — UC Press paperback",
+      "url": "https://www.ucpress.edu/books/deep-politics-and-the-death-of-jfk/paper",
+      "receiptPath": "breadth/postwar-profiles-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S01",
+      "title": "Beyond Telepathy, third edition ebook",
+      "url": "https://www.simonandschuster.com/books/Beyond-Telepathy/Andrija-Puharich/9781644116906",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S02",
+      "title": "Ingo Swann Works",
+      "url": "https://ingoswann.com/works",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S03",
+      "title": "CIA-RDP79-00999A000300080001-3",
+      "url": "https://www.cia.gov/readingroom/docs/CIA-RDP79-00999A000300080001-3.pdf",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S04",
+      "title": "Ask Molly: Did CIA Really Study Psychic Powers?",
+      "url": "https://www.cia.gov/stories/story/ask-molly-did-cia-really-study-psychic-powers",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S05",
+      "title": "US1974483A Electrostatic motor",
+      "url": "https://patents.google.com/patent/US1974483A/en",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S06",
+      "title": "US2949550A Electrokinetic apparatus",
+      "url": "https://patents.google.com/patent/US2949550A/en",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S07",
+      "title": "Bahder and Fazi: Force on an Asymmetric Capacitor",
+      "url": "https://arxiv.org/abs/physics/0211001v2",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S08",
+      "title": "US645576A System of transmission of electrical energy",
+      "url": "https://patents.google.com/patent/US645576A/en",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S09",
+      "title": "US685957A Apparatus for the utilization of radiant energy",
+      "url": "https://patents.google.com/patent/US685957A/en",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BPS-S10",
+      "title": "Nikola Tesla Museum Activity archive finding aid",
+      "url": "https://tesla-museum.org/en/legacy/archive/activity/",
+      "receiptPath": "breadth/psi-source-receipts.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BIN-S01",
+      "title": "How is the Federal Reserve System structured?",
+      "url": "https://www.federalreserve.gov/faqs/about_12593.htm",
+      "receiptPath": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BIN-S02",
+      "title": "Who owns the Federal Reserve?",
+      "url": "https://www.federalreserve.gov/faqs/about_14986.htm",
+      "receiptPath": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BIN-S03",
+      "title": "About the Bank for International Settlements",
+      "url": "https://www.bis.org/about",
+      "receiptPath": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BIN-S04",
+      "title": "Mission and Vision",
+      "url": "https://www.ior.va/en/mission-and-vision/",
+      "receiptPath": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BIN-S05",
+      "title": "Praedicate Evangelium — APSA",
+      "url": "https://www.vatican.va/content/francesco/en/apost_constitutions/documents/20220319-costituzione-ap-praedicate-evangelium.html",
+      "receiptPath": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BIN-S06",
+      "title": "Mission, Objects and Freedom statements",
+      "url": "https://www.ts-adyar.org/mission-objects",
+      "receiptPath": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BIN-S07",
+      "title": "Early History",
+      "url": "https://www.ts-adyar.org/early-history",
+      "receiptPath": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "BIN-S08",
+      "title": "Charity registration decision: The Theosophical Society in England",
+      "url": "https://www.gov.uk/government/publications/charity-registration-decision-the-theosophical-society-in-england/charity-registration-decision-the-theosophical-society-in-england",
+      "receiptPath": "breadth/institution-coverage.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S01",
+      "title": "Solari Papers",
+      "url": "https://solari.com/solari-papers/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S02",
+      "title": "Missing Money 2020 Update",
+      "url": "https://missingmoney.solari.com/missing-money-update-may-2020/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S03",
+      "title": "DoD and HUD Missing Money Supporting Documentation",
+      "url": "https://missingmoney.solari.com/dod-and-hud-missing-money-supporting-documentation/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S04",
+      "title": "Army General Fund Adjustments Not Adequately Documented or Supported, DODIG-2016-113",
+      "url": "https://www.dodig.mil/Reports/Audits-and-Evaluations/Article/1119298/army-general-fund-adjustments-not-adequately-documented-or-supported/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S05",
+      "title": "SFFAS 56: Classified Activities, Handbook Version 24",
+      "url": "https://files.fasab.gov/pdffiles/handbook_sffas_56.pdf",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S06",
+      "title": "Interview 1497 — Catherine Austin Fitts on Where the Missing Trillions Are Going",
+      "url": "https://corbettreport.com/interview-1497-catherine-austin-fitts-on-where-the-missing-trillions-are-going/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S07",
+      "title": "Empire Endgame: Digital Slave Population!",
+      "url": "https://darkjournalist.com/s-fitts17.php",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S08",
+      "title": "2nd Quarter 2026 Wrap Up: News Trends & Stories, Part II with Dr. Joseph P. Farrell",
+      "url": "https://solari.com/2nd-quarter-2026-wrap-up-news-trends-stories-part-ii-with-dr-joseph-p-farrell/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S09",
+      "title": "The Solari Papers #3: Musings on the Department of Defense",
+      "url": "https://solari.com/the-solari-papers-3-musings-on-the-department-of-defense/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S10",
+      "title": "Archived Events",
+      "url": "https://solari.com/archived-events/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S11",
+      "title": "A Correspondence",
+      "url": "https://solari.com/a-correspondence/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    },
+    {
+      "sourceId": "SOL-S12",
+      "title": "Missing Money Key Documents",
+      "url": "https://solari.com/missingmoney-solari-com-key-documents/",
+      "receiptPath": "breadth/solari-intake.json",
+      "gitSha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214"
+    }
+  ],
+  "claimRefs": [
+    {
+      "claimId": "PW-C01",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C02",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C03",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C04",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C05",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C06",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C07",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C08",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C09",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C10",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "PW-C11",
+      "receiptPath": "breadth/postwar-profiles-receipts.json"
+    },
+    {
+      "claimId": "BPS-C01",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C02",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C03",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C04",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C05",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C06",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C07",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C08",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C09",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C10",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BPS-C11",
+      "receiptPath": "breadth/psi-source-receipts.json"
+    },
+    {
+      "claimId": "BIN-C01",
+      "receiptPath": "breadth/institution-coverage.json"
+    },
+    {
+      "claimId": "BIN-C02",
+      "receiptPath": "breadth/institution-coverage.json"
+    },
+    {
+      "claimId": "BIN-C03",
+      "receiptPath": "breadth/institution-coverage.json"
+    },
+    {
+      "claimId": "BIN-C04",
+      "receiptPath": "breadth/institution-coverage.json"
+    },
+    {
+      "claimId": "BIN-C05",
+      "receiptPath": "breadth/institution-coverage.json"
+    },
+    {
+      "claimId": "BIN-C06",
+      "receiptPath": "breadth/institution-coverage.json"
+    },
+    {
+      "claimId": "BIN-C07",
+      "receiptPath": "breadth/institution-coverage.json"
+    },
+    {
+      "claimId": "BIN-C08",
+      "receiptPath": "breadth/institution-coverage.json"
+    },
+    {
+      "claimId": "SOL-C01",
+      "receiptPath": "breadth/solari-intake.json"
+    },
+    {
+      "claimId": "SOL-C02",
+      "receiptPath": "breadth/solari-intake.json"
+    },
+    {
+      "claimId": "SOL-C03",
+      "receiptPath": "breadth/solari-intake.json"
+    },
+    {
+      "claimId": "SOL-C04",
+      "receiptPath": "breadth/solari-intake.json"
+    },
+    {
+      "claimId": "SOL-C05",
+      "receiptPath": "breadth/solari-intake.json"
+    }
+  ],
+  "documentaryEdges": [
+    {
+      "edgeId": "BPS-E01",
+      "fromEntityId": "andrija-puharich",
+      "toEntityId": "source/BPS-S01",
+      "type": "BIBLIOGRAPHIC_AUTHOR_CREDIT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C01"
+      ],
+      "sourceIds": [
+        "BPS-S01"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/andrija-puharich.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original edition title page; do not assign Horowitz introduction claims to Puharich.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E02",
+      "fromEntityId": "ingo-swann",
+      "toEntityId": "source/BPS-S02",
+      "type": "PUBLISHER_LISTS_WORKS",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C02"
+      ],
+      "sourceIds": [
+        "BPS-S02"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/ingo-swann.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect individual work title pages and author text.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E03",
+      "fromEntityId": "thomas-townsend-brown",
+      "toEntityId": "source/BPS-S05",
+      "type": "PATENT_NAMES_INVENTOR",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C04"
+      ],
+      "sourceIds": [
+        "BPS-S05"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/thomas-townsend-brown.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original patent scan and identity record.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E04",
+      "fromEntityId": "thomas-townsend-brown",
+      "toEntityId": "source/BPS-S06",
+      "type": "PATENT_NAMES_INVENTOR",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C05"
+      ],
+      "sourceIds": [
+        "BPS-S06"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/thomas-townsend-brown.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original patent scan; performance remains separate.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E05",
+      "fromEntityId": "nikola-tesla",
+      "toEntityId": "source/BPS-S08",
+      "type": "PATENT_NAMES_INVENTOR",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C08"
+      ],
+      "sourceIds": [
+        "BPS-S08"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/nikola-tesla.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original patent scan and family record.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E06",
+      "fromEntityId": "nikola-tesla",
+      "toEntityId": "source/BPS-S09",
+      "type": "PATENT_NAMES_INVENTOR",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BPS-C09"
+      ],
+      "sourceIds": [
+        "BPS-S09"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/nikola-tesla.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original patent scan; do not infer performance.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BIN-E01",
+      "fromEntityId": "federal-reserve-board",
+      "toEntityId": "federal-reserve-banks",
+      "type": "OFFICIAL_ACCOUNT_OF_OVERSIGHT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BIN-C01"
+      ],
+      "sourceIds": [
+        "BIN-S01"
+      ],
+      "sourceLocator": "FAQ paragraph 2 / rendered line 10",
+      "eventDate": null,
+      "publicationDate": "2026-05-28",
+      "identityStatus": "EXACT_WITHIN_NAMED_SOURCE_SCOPE",
+      "originalSourceScope": "Official structural description, not a transaction or complete statutory audit.",
+      "editor": "Codex child agent /root/reader_review; institution breadth assignment 2026-11-01",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect dated statutory provisions and amendments defining oversight and exceptions.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BIN-E02",
+      "fromEntityId": "apsa",
+      "toEntityId": "institute-for-works-of-religion",
+      "type": "NORMATIVE_TRANSACTION_EXECUTION_CHANNEL",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BIN-C05"
+      ],
+      "sourceIds": [
+        "BIN-S05"
+      ],
+      "sourceLocator": "Praedicate Evangelium art. 219 §3",
+      "eventDate": "2022-03-19",
+      "publicationDate": "2022-03-19",
+      "identityStatus": "EXACT_WITHIN_NAMED_SOURCE_SCOPE",
+      "originalSourceScope": "The promulgated provision routes transactions in art. 219 §§1–2 through IOR; no specific execution or historical transfer is proved.",
+      "editor": "Codex child agent /root/reader_review; institution breadth assignment 2026-11-01",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Check subsequent amendments and dated implementation/transaction records before inferring present or past operations.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BIN-E03",
+      "fromEntityId": "theosophical-society-england",
+      "toEntityId": "theosophical-society",
+      "type": "REGULATOR_DESCRIBES_NATIONAL_BODY_IN_INTERNATIONAL_FRAMEWORK",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BIN-C07"
+      ],
+      "sourceIds": [
+        "BIN-S08"
+      ],
+      "sourceLocator": "Background, rendered line 90",
+      "eventDate": "2016-06-20",
+      "publicationDate": "2020-09-22",
+      "identityStatus": "EXACT_WITHIN_NAMED_SOURCE_SCOPE",
+      "originalSourceScope": "Regulator identifies the national body’s context; no universal corporate ownership relationship inferred.",
+      "editor": "Codex child agent /root/reader_review; institution breadth assignment 2026-11-01",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Read governing instruments and current legal registration for exact affiliations and powers.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "SOL-E01",
+      "fromEntityId": "catherine-austin-fitts",
+      "toEntityId": "james-corbett",
+      "type": "DOCUMENTED_INTERVIEW",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "SOL-C02"
+      ],
+      "sourceIds": [
+        "SOL-S06"
+      ],
+      "sourceLocator": "Transcript opening, speaker-labeled Fitts and Corbett turns through SFFAS56 discussion",
+      "eventDate": null,
+      "publicationDate": "2019-11-26",
+      "editor": "/root",
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/catherine-austin-fitts.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original dated recording and publisher corrections; distinguish appearance from endorsement.",
+      "identityStatus": "EXACT_NAMED_PUBLISHER_PARTICIPANTS",
+      "originalSourceScope": "PUBLISHER_TRANSCRIPT_PASSAGES_READ",
+      "auditEventIds": [
+        "AB01-AUDIT-01"
+      ]
+    },
+    {
+      "edgeId": "SOL-E02",
+      "fromEntityId": "catherine-austin-fitts",
+      "toEntityId": "daniel-liszt",
+      "type": "DOCUMENTED_INTERVIEW",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "SOL-C03"
+      ],
+      "sourceIds": [
+        "SOL-S07",
+        "SOL-S10"
+      ],
+      "sourceLocator": "Episode header and description paragraphs",
+      "eventDate": "2017-04-27",
+      "publicationDate": null,
+      "editor": "/root",
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/catherine-austin-fitts.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original dated recording and publisher corrections; distinguish appearance from endorsement.",
+      "identityStatus": "EXACT_NAMED_PUBLISHER_PARTICIPANTS",
+      "originalSourceScope": "PUBLISHER_SYNOPSIS_READ",
+      "auditEventIds": [
+        "AB01-AUDIT-01"
+      ],
+      "publicAvailabilityDate": "2017-06-20",
+      "publicAvailabilitySourceId": "SOL-S10"
+    },
+    {
+      "edgeId": "SOL-E03",
+      "fromEntityId": "catherine-austin-fitts",
+      "toEntityId": "joseph-farrell",
+      "type": "DOCUMENTED_PROGRAM_LISTING",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "SOL-C04"
+      ],
+      "sourceIds": [
+        "SOL-S08"
+      ],
+      "sourceLocator": "Title, dated summary and subscriber gate",
+      "eventDate": null,
+      "publicationDate": "2026-07-28",
+      "editor": "/root",
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null,
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/catherine-austin-fitts.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect original dated recording and publisher corrections; distinguish appearance from endorsement.",
+      "identityStatus": "EXACT_NAMED_PUBLISHER_PARTICIPANTS",
+      "originalSourceScope": "PUBLIC_DESCRIPTION_READ_SUBSCRIBER_BODY_UNREAD",
+      "auditEventIds": [
+        "AB01-AUDIT-01"
+      ]
+    }
+  ],
+  "conceptualNoncausalEdges": [
+    {
+      "edgeId": "PW-R01",
+      "fromEntityId": "annie-jacobsen",
+      "toEntityId": "linda-hunt",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Compare generations of Paperclip reporting and trace shared source roots rather than count retellings as independent witnesses.",
+      "claimIds": [
+        "PW-C01",
+        "PW-C03",
+        "PW-C04",
+        "PW-C05"
+      ],
+      "sourceIds": [
+        "PW-S01",
+        "PW-S03",
+        "PW-S04",
+        "PW-S05"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Inspect each author’s precise notes against the same personnel files.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "PW-R02",
+      "fromEntityId": "linda-hunt",
+      "toEntityId": "christopher-simpson",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Compare specialist recruitment, intelligence recruitment and postwar accountability as distinct questions.",
+      "claimIds": [
+        "PW-C04",
+        "PW-C06",
+        "PW-C07"
+      ],
+      "sourceIds": [
+        "PW-S05",
+        "PW-S08",
+        "PW-S09",
+        "PW-S11"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Read Blowback and Secret Agenda passages before asserting overlap in specific actors.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "PW-R03",
+      "fromEntityId": "christopher-simpson",
+      "toEntityId": "peter-dale-scott",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Compare explanations of institutional secrecy and state/private interests without inferring a common command network.",
+      "claimIds": [
+        "PW-C07",
+        "PW-C08",
+        "PW-C09"
+      ],
+      "sourceIds": [
+        "PW-S11",
+        "PW-S12",
+        "PW-S13"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Identify one exact claim in each work and independently inspect its original records.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "PW-R04",
+      "fromEntityId": "annie-jacobsen",
+      "toEntityId": "source/PW-S06",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Compare publisher-described recruitment narrative with an official policy text; policy and practice may differ.",
+      "claimIds": [
+        "PW-C01",
+        "PW-C10"
+      ],
+      "sourceIds": [
+        "PW-S01",
+        "PW-S06"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Locate dated individual screening and employment files.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "PW-R05",
+      "fromEntityId": "linda-hunt",
+      "toEntityId": "source/PW-S06",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Use formal screening rules as a question against Hunt’s reported circumvention thesis, not as proof that circumvention never occurred.",
+      "claimIds": [
+        "PW-C04",
+        "PW-C10"
+      ],
+      "sourceIds": [
+        "PW-S05",
+        "PW-S06"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Inspect before/after dossiers, signatories and dates for a named case.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E07",
+      "fromEntityId": "andrija-puharich",
+      "toEntityId": "ingo-swann",
+      "type": "CONCEPTUAL_NEIGHBOR",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "claimIds": [],
+      "sourceIds": [
+        "BPS-S01",
+        "BPS-S02"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/andrija-puharich.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Shared psi topic is editorial comparison; historical collaboration requires an original dated record.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BPS-E08",
+      "fromEntityId": "thomas-townsend-brown",
+      "toEntityId": "nikola-tesla",
+      "type": "CONCEPTUAL_NEIGHBOR",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "claimIds": [],
+      "sourceIds": [
+        "BPS-S05",
+        "BPS-S06",
+        "BPS-S08",
+        "BPS-S09"
+      ],
+      "sourceLocator": "See linked source receipts; no page number invented",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_NAMED_SOURCE_ENTITY",
+      "originalSourceScope": "Bounded metadata/text scopes in linked source receipts",
+      "editor": "/root/psi_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/thomas-townsend-brown.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Electrical invention is a thematic neighbor only; no collaboration or technology transfer established.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BIN-E04",
+      "fromEntityId": "theosophical-society",
+      "toEntityId": "mystery-schools",
+      "type": "EDITORIAL_COMPARISON_OF_ESOTERIC_TRANSMISSION_CONCEPTS",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "claimIds": [
+        "BIN-C06",
+        "BIN-C08"
+      ],
+      "sourceIds": [
+        "BIN-S06",
+        "BIN-S07"
+      ],
+      "sourceLocator": "Adyar Mission/Objects and Early History; Atlas editor comparison",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_WITHIN_NAMED_SOURCE_SCOPE",
+      "originalSourceScope": "Comparison of stated spiritual inquiry and historical narrative with an Atlas concept, not organizational descent.",
+      "editor": "Codex child agent /root/reader_review; institution breadth assignment 2026-11-01",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Specify one dated school, text and claimant; retract/replace if the comparison conflates legal identities or asserts a lineage without evidence.",
+      "auditEventIds": []
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "AB01-Q01",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "question": "Which named recruit’s admission decision can be compared with the 1946 screening exclusions?",
+      "sourceIds": [
+        "PW-S06",
+        "PW-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Dated personnel decision and original screening file",
+      "nextFalsifier": "A case identifier or decision that contradicts the proposed screening history.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q02",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "question": "Where do Jacobsen and Hunt rely on the same original recruitment file?",
+      "sourceIds": [
+        "PW-S01",
+        "PW-S05"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Exact book/article citations and underlying document",
+      "nextFalsifier": "Separate cited originals or a mistaken citation would revise the shared-source comparison.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q03",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "question": "Which specific Neufeld objection survives comparison with Jacobsen’s actual passage?",
+      "sourceIds": [
+        "PW-S03",
+        "PW-S01"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Review passage, book edition and cited original",
+      "nextFalsifier": "The exact passage or original supporting the author rather than the objection.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q04",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "question": "Which dated instrument transferred functions from OSS to SSU, CIG and CIA?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Contemporaneous executive and administrative orders",
+      "nextFalsifier": "A discontinuity or limited mandate defeats an uninterrupted-actor inference.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q05",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "question": "Which personnel recruitment assertion in Simpson is supported by a named declassified file?",
+      "sourceIds": [
+        "PW-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Book page plus individual file and recruitment date",
+      "nextFalsifier": "Different individual, chronology or non-recruitment role.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q06",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "question": "Which relationship does Peter Dale Scott actually assert between formal institutions and informal networks?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Scott original passage and its cited event record",
+      "nextFalsifier": "Different scope or chronology requires changing the attributed relation.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q07",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "question": "Which court record identifies a specific Lansky transaction and counterpart?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Case number, dated exhibit and uniquely identified parties",
+      "nextFalsifier": "Namesakes, missing counterpart or nonfinancial contact.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q08",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "question": "Which Roy Cohn–organized-crime relationship is directly documented rather than inferred from representation?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Retainer, court record or contemporaneous attributed statement",
+      "nextFalsifier": "Legal representation without the alleged operational role.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q09",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "question": "Which Webb article distinguishes a documented Epstein contact from an allegation of participation?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Exact byline, passage, court exhibit and contrary record",
+      "nextFalsifier": "Contact-only evidence or an acquittal/correction changes the allegation assessment.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q10",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "question": "Does the private Five Star Trust narrative name the same legal entity as the ICIJ entry?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Jurisdiction, registration number, dates and parties",
+      "nextFalsifier": "Any identifier conflict defeats identity merger.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q11",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "question": "Which record distinguishes Mega Group from a company named Mega Corporation?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Constitutional/company records and exact dates",
+      "nextFalsifier": "Different legal identity, members or period.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q12",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "question": "How do unsupported Solari adjustment totals reconcile with reversals and actual disbursements?",
+      "sourceIds": [
+        "SOL-S02",
+        "SOL-S04"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Original vouchers, ledger and recipient records",
+      "nextFalsifier": "Offsetting/repeated entries or timing adjustments defeat conversion to cash loss.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q13",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "question": "Which Iran-Contra document supports one named North–Secord operational relationship?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Dated original testimony or exhibit",
+      "nextFalsifier": "Attribution correction or contrary contemporaneous record.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q14",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "question": "Which dated Epstein record supports a proposed Wexner relation and its precise legal nature?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Court/company record with dates and roles",
+      "nextFalsifier": "Different role, period or entity.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q15",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "question": "Can a proposed WCC–Iran-Contra bridge be traced without merging BPF and Moneyrex?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Existing WCC R4 source IDs plus exact transaction/corporate document",
+      "nextFalsifier": "Distinct entity or unsupported bridge; preserve existing owner correction.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q16",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "question": "Which original Tesla specification is actually cited by a later extraordinary-energy narrative?",
+      "sourceIds": [
+        "BPS-S08",
+        "BPS-S09"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Later exact quotation plus patent original",
+      "nextFalsifier": "Omitted energy input or different device changes the comparison.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q17",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "question": "Which Brown device conditions are evaluated in the asymmetric-capacitor research?",
+      "sourceIds": [
+        "BPS-S05",
+        "BPS-S06",
+        "BPS-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Patent drawings, full paper and experiment conditions",
+      "nextFalsifier": "Different electrode, medium or force model defeats direct replication claim.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q18",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "question": "Which Puharich statements and Swann statements concern the same perceptual mechanism?",
+      "sourceIds": [
+        "BPS-S01",
+        "BPS-S02"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Original author passages, not later introductions",
+      "nextFalsifier": "Different definitions or evidence classes prevent a shared mechanism assertion.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q19",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "question": "Which original Irvin publication supports each proposition in the private donor dossier?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Author publication with exact passage",
+      "nextFalsifier": "Donor-only invented phrasing must not be attributed.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q20",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "question": "Which Knowles work links a named symbol to a named media work?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Dated original essay/book passage",
+      "nextFalsifier": "Editorial association absent from original or different symbolic meaning.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q21",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "question": "Which Fitts–Corbett proposition belongs to the guest and which to the host?",
+      "sourceIds": [
+        "SOL-S06"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Speaker-aligned original recording",
+      "nextFalsifier": "Audio or correction changes transcript attribution.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q22",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "question": "Which statutory powers accompany Reserve Bank member shares?",
+      "sourceIds": [
+        "BIN-S01",
+        "BIN-S02"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Dated Federal Reserve Act provisions and shareholder rules",
+      "nextFalsifier": "Specific limitations defeat ordinary-equity ownership inference.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q23",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "question": "Which BIS governance provision allocates a proposed decision right?",
+      "sourceIds": [
+        "BIN-S03"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Current statutes and dated decision record",
+      "nextFalsifier": "Advisory/cooperative role rather than binding authority.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q24",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "question": "Which original source connects a Fitts monetary claim to an actual central-bank action?",
+      "sourceIds": [
+        "SOL-S06",
+        "BIN-S02"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Exact speaker passage plus decision or transaction",
+      "nextFalsifier": "Accounting rhetoric without the stated action or actor.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q25",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "question": "What transactions does the 2022 APSA constitution route through IOR?",
+      "sourceIds": [
+        "BIN-S05"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Article 219 and subsequent amendments",
+      "nextFalsifier": "Different scope/date or amended rule.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q26",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "question": "Which original record identifies the legal IOR entity in a proposed Ambrosiano link?",
+      "sourceIds": [
+        "BIN-S04"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Dated court/bank record and entity identifiers",
+      "nextFalsifier": "APSA substitution, namesake or unsupported role.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q27",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "question": "What exact source connects IOR, Lansky and the Sovereign Military Order of Malta?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Three independently identified endpoints and each original relation",
+      "nextFalsifier": "One missing or mismatched link keeps the triangle an open question.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q28",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "question": "Which legal body does a Theosophical membership or property assertion concern?",
+      "sourceIds": [
+        "BIN-S06",
+        "BIN-S08"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Local registration and dated governing instrument",
+      "nextFalsifier": "England/Adyar conflation or wrong incorporation date.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q29",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "question": "Who originally asserted continuity between a named mystery school and a modern author?",
+      "sourceIds": [
+        "BIN-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Original author claim and dated transmission records",
+      "nextFalsifier": "Symbolic similarity alone does not establish institutional continuity.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q30",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "question": "Which source defines Mystery Schools as an author concept rather than a legal organization?",
+      "sourceIds": [
+        "BIN-S06",
+        "BIN-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Exact passage with author vocabulary",
+      "nextFalsifier": "A named legal entity requires separate identity; an umbrella cannot inherit its acts.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    }
+  ],
+  "reusedExternalRecords": {
+    "sourceIds": [
+      "JM-S16",
+      "JM-S17",
+      "JM-S21"
+    ],
+    "claimIds": [
+      "JM-C19",
+      "JM-C21",
+      "JM-C22"
+    ],
+    "relationIds": [
+      "JM-H09",
+      "JM-H10",
+      "JM-W10"
+    ],
+    "scope": "Read current Puharich R2 owner locally; external sources not reread or played in this batch. JM-S21 stays URL-only; JM-S16/S17 one recording lineage.",
+    "ownerPath": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/",
+    "returnPath": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/RETURN.md",
+    "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2"
+  },
+  "metrics": {
+    "censusCandidates": 140,
+    "newAuthorMasters": 8,
+    "sourceRecords": 43,
+    "claimRecords": 35,
+    "documentaryEdges": 12,
+    "conceptualEdges": 8,
+    "questions": 30,
+    "clusters": 10,
+    "audioMinutesListened": 0,
+    "financialTransactionsVerified": 0
+  },
+  "limits": [
+    "Source records include indexed-only and unavailable leads; counts are not full-source reading counts.",
+    "Empty counterEvidence arrays mean not supplied, never no contrary evidence exists.",
+    "Documentary publication edges establish a listing/credit, not underlying claims.",
+    "Batch C author dossiers, journalistic evidence chains and Site/Notion projection remain queued."
+  ],
+  "updated": "2026-11-01",
+  "currentMilestone": "ATLAS_BREADTH_CORPUS_BATCH_C_02",
+  "metricsScope": "Original AB01 metrics retained; use extensions for C02 deltas. Topic registration does not add historical source/claim counts.",
+  "extensions": [
+    {
+      "extensionId": "C02_WEBB_GOODWIN",
+      "sourceSnapshotGitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b",
+      "sourcePackets": [
+        {
+          "path": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "path": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        }
+      ],
+      "authorPaths": [
+        "authors/whitney-webb.md",
+        "authors/mark-goodwin.md"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "JWG-S01",
+          "url": "https://unlimitedhangout.com/sustainably-surveilling-and-tokenizing-nature-the-case-of-o-n-e-amazon/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWG-S02",
+          "url": "https://satellogic.com/news/press-releases/satellogic-announces-30-million-strategic-investment-from-tether-investments-limited/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWG-S03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1840317/000121390024047544/ea020705801ex99-1_plumacq1.htm",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWG-S04",
+          "url": "https://oneamazon.com/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWG-S05",
+          "url": "https://news.mongabay.com/2024/03/are-biodiversity-credits-just-another-business-as-usual-finance-scheme/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWC-S01",
+          "url": "https://unlimitedhangout.com/about-us/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWC-S02",
+          "url": "https://unlimitedhangout.com/2024/08/resources/show-notes/using-bitcoin-and-stablecoins-to-expand-dollar-dominance-with-whitney-webb-and-mark-goodwin/",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWC-S03",
+          "url": "https://www.bis.org/media-releases/20241021-report-g20-tokenisation-highlights-opportunities-risks-and-future-considerations-central-banks",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "sourceId": "JWC-S04",
+          "url": "https://www.biodiversitycreditalliance.org/wp-content/uploads/2024/08/EN-Recommendations-from-the-CAP-for-consultation.pdf",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        }
+      ],
+      "claimRefs": [
+        {
+          "claimId": "JWG-C01",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C02",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C03",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C04",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C05",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C06",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C07",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C08",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWG-C09",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWC-C01",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWC-C02",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWC-C03",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        },
+        {
+          "claimId": "JWC-C04",
+          "receiptPath": "journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b"
+        }
+      ],
+      "documentaryEdges": [
+        {
+          "edgeId": "JWG-E01",
+          "fromEntityId": "whitney-webb",
+          "toEntityId": "source/JWG-S01",
+          "type": "CO_BYLINE",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01"
+          ],
+          "claimIds": [
+            "JWG-C06"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Current page byline/date",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/whitney-webb.md",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWG-E02",
+          "fromEntityId": "mark-goodwin",
+          "toEntityId": "source/JWG-S01",
+          "type": "CO_BYLINE",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01"
+          ],
+          "claimIds": [
+            "JWG-C06"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Current page byline/date",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/mark-goodwin.md",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWG-E03",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWG-S02",
+          "type": "CITES",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWG-S02"
+          ],
+          "claimIds": [
+            "JWG-C07"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Partners passage; financing hyperlink (retrieved link37)",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWG-E04",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWG-S03",
+          "type": "CITES",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWG-S03"
+          ],
+          "claimIds": [
+            "JWG-C08"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Partners/technology passage; presentation hyperlink (retrieved link60)",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWG-E05",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWG-S04",
+          "type": "LINKS_DOMAIN_CURRENT_VERSION_DIFFERS",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWG-S04"
+          ],
+          "claimIds": [
+            "JWG-C09"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "What is O.N.E. Amazon? company hyperlink (retrieved link21)",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        },
+        {
+          "edgeId": "JWC-E01",
+          "fromEntityId": "whitney-webb",
+          "toEntityId": "catherine-austin-fitts",
+          "type": "PUBLISHER_LISTS_GUEST_WITH_HOST",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWC-S02"
+          ],
+          "claimIds": [
+            "JWC-C02"
+          ],
+          "sourceLocator": "Byline/date and description/Originally published, lines63–81",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "originalPublicationDate": "2024-08-20",
+          "nextFalsifier": "Original recording or publisher correction changes the listed participant role.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json"
+        },
+        {
+          "edgeId": "JWC-E02",
+          "fromEntityId": "mark-goodwin",
+          "toEntityId": "catherine-austin-fitts",
+          "type": "PUBLISHER_LISTS_GUEST_WITH_HOST",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JWC-S02"
+          ],
+          "claimIds": [
+            "JWC-C02"
+          ],
+          "sourceLocator": "Byline/date and description/Originally published, lines63–81",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "originalPublicationDate": "2024-08-20",
+          "nextFalsifier": "Original recording or publisher correction changes the listed participant role.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json"
+        }
+      ],
+      "authorAssertionEdges": [
+        {
+          "edgeId": "JWG-E06",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "claim/JWG-C01",
+          "type": "SOURCE_ASSERTS",
+          "layer": "B_AUTHOR_ASSERTION",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01"
+          ],
+          "claimIds": [
+            "JWG-C01"
+          ],
+          "reviewStatus": "UNREVIEWED",
+          "independentReviewer": null,
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "sourceLocator": "Opening argument and What is O.N.E. Amazon? passages",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/jwg-source-receipts.json",
+          "nextFalsifier": "Check archived article/link edition and original counterpart evidence; no operational causation inferred",
+          "editor": "/root/psi_profiles; metadata integration /root",
+          "publicationDate": "2024-08-28",
+          "eventDate": null,
+          "counterEvidence": [],
+          "identityStatus": "EXACT_SOURCE_METADATA_OR_ATTRIBUTED_POSITION",
+          "originalSourceScope": "See per-source bounded HTML receipt"
+        }
+      ],
+      "conceptualNoncausalEdges": [
+        {
+          "edgeId": "JWC-E03",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWC-S03",
+          "type": "CONCEPTUAL_CONTRAST",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWC-S03"
+          ],
+          "claimIds": [
+            "JWG-C01",
+            "JWC-C03"
+          ],
+          "sourceLocator": "Bounded source passages identified in linked receipts",
+          "rationale": "Compare political-economic critique with institutional risk/efficiency framing; later policy is not a case rebuttal.",
+          "nextFalsifier": "A specific original project audit could replace generic policy context.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "eventDate": null,
+          "publicationDate": null
+        },
+        {
+          "edgeId": "JWC-E04",
+          "fromEntityId": "source/JWG-S01",
+          "toEntityId": "source/JWC-S04",
+          "type": "CONCEPTUAL_NEIGHBOR",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S01",
+            "JWC-S04"
+          ],
+          "claimIds": [
+            "JWG-C01",
+            "JWC-C04"
+          ],
+          "sourceLocator": "Bounded source passages identified in linked receipts",
+          "rationale": "Compare the authors’ monitoring concerns with separately authored consent/privacy recommendations; no case verdict.",
+          "nextFalsifier": "Independent affected-community accounts and executed terms could establish case-specific agreement or conflict.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "eventDate": null,
+          "publicationDate": null
+        },
+        {
+          "edgeId": "JWC-E05",
+          "fromEntityId": "source/JWG-S02",
+          "toEntityId": "source/JWG-S03",
+          "type": "CONCEPTUAL_EVIDENCE_COMPARISON",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JWG-S02",
+            "JWG-S03"
+          ],
+          "claimIds": [
+            "JWG-C02",
+            "JWG-C04"
+          ],
+          "sourceLocator": "Bounded source passages identified in linked receipts",
+          "rationale": "Contrast financing-instrument evidence and deployment-plan evidence; no use-of-funds bridge is established.",
+          "nextFalsifier": "A dated agreement and traced disbursement could establish or contradict a specific linkage.",
+          "editor": "/root",
+          "reviewStatus": "UNREVIEWED",
+          "sourceGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/journalism/webb-goodwin-2026-11-01/context-receipts.json",
+          "eventDate": null,
+          "publicationDate": null
+        }
+      ],
+      "questions": [
+        {
+          "questionId": "JWG-Q01",
+          "question": "Trace financing use",
+          "missingOriginal": "Signed instruments and disbursements",
+          "status": "OPEN"
+        },
+        {
+          "questionId": "JWG-Q02",
+          "question": "Check counterpart agreements and deployment",
+          "missingOriginal": "Contracts and field audits",
+          "status": "OPEN"
+        },
+        {
+          "questionId": "JWG-Q03",
+          "question": "Establish specific rights and consent",
+          "missingOriginal": "Executed contracts and independent community testimony",
+          "status": "OPEN"
+        },
+        {
+          "questionId": "JWG-Q04",
+          "question": "Compare instrument editions and outcomes",
+          "missingOriginal": "Archived offers, current terms, ecological baseline and independent outcomes",
+          "status": "OPEN"
+        }
+      ],
+      "reviewPath": "journalism/webb-goodwin-2026-11-01/c02-review.md",
+      "metrics": {
+        "newAuthorMasters": 2,
+        "sourceRecords": 9,
+        "claims": 13,
+        "documentaryEdges": 7,
+        "authorAssertionEdges": 1,
+        "conceptualEdges": 3,
+        "questions": 4
+      },
+      "limits": [
+        "One joint article, three linked corporate originals; one inaccessible journalism lead.",
+        "Two additional primary contexts are institutional policy and stakeholder recommendations, not an independent O.N.E. Amazon case audit."
+      ]
+    },
+    {
+      "extensionId": "C03_JOURNALISTIC_SOURCE_CHAINS",
+      "sourceSnapshotGitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35",
+      "sourcePackets": [
+        {
+          "path": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "path": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        }
+      ],
+      "authorPaths": [
+        "authors/gary-webb.md",
+        "authors/robert-parry.md",
+        "authors/seymour-hersh.md",
+        "authors/james-corbett.md",
+        "authors/derrick-broze.md",
+        "authors/patrik-baab.md"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "JH3-S01",
+          "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+          "independenceGroup": "seven-stories-dark-alliance",
+          "receiptPath": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JH3-S02",
+          "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch12.htm",
+          "independenceGroup": "doj-oig-contra-investigation",
+          "receiptPath": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JH3-S03",
+          "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch01p2.htm",
+          "independenceGroup": "doj-oig-contra-investigation",
+          "receiptPath": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JH3-S04",
+          "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+          "independenceGroup": "parry-consortium-retrospective",
+          "receiptPath": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JH3-S05",
+          "url": "https://irp.fas.org/cia/product/cocaine2/findings.html",
+          "independenceGroup": "cia-oig-96-0143-ig-volume-ii",
+          "receiptPath": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JH3-S06",
+          "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+          "independenceGroup": "hersh-abu-ghraib-taguba",
+          "receiptPath": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JH3-S07",
+          "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+          "independenceGroup": "taguba-800th-mp-investigation",
+          "receiptPath": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JH3-S08",
+          "url": "https://exhibit.apus.edu/items/show/1219",
+          "independenceGroup": "taguba-800th-mp-investigation",
+          "receiptPath": "packages/journalistic-source-chains-c03/journalists-history-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JT3-S01",
+          "url": "https://corbettreport.com/qfc-technocracy/",
+          "independenceGroup": "CORBETT_2022",
+          "receiptPath": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JT3-S02",
+          "url": "https://archive.org/download/TheTechnocrat-September%201937/TheTechnocrat-September%201937.pdf",
+          "independenceGroup": "TECHNOCRACY_INC_1937",
+          "receiptPath": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JT3-S03",
+          "url": "https://corbettreport.com/opting-out-of-technocracy/",
+          "independenceGroup": "CORBETT_BROZE_2025",
+          "receiptPath": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JT3-S04",
+          "url": "https://theconsciousresistance.com/pop-chapter13-technocracy/",
+          "independenceGroup": "BROZE_CH13",
+          "receiptPath": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JT3-S05",
+          "url": "https://thepyramidofpower.net/chapter-13-the-technocratic-state/",
+          "independenceGroup": "BROZE_CH13",
+          "receiptPath": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JT3-S06",
+          "url": "https://www.nachdenkseiten.de/?p=80224",
+          "independenceGroup": "NDS_BAAB_2022",
+          "receiptPath": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JT3-S07",
+          "url": "https://www.patrikbaab.de/bucher",
+          "independenceGroup": "BAAB_SELF_DESCRIPTION",
+          "receiptPath": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        },
+        {
+          "sourceId": "JT3-S08",
+          "url": "https://www.presserat.de/pressekodex.html",
+          "independenceGroup": "GERMAN_PRESS_COUNCIL",
+          "receiptPath": "packages/journalistic-source-chains-c03/jt3-source-receipts.json",
+          "gitSha": "9b27a3818ec7386d9aafe7146ba0831827e28e35"
+        }
+      ],
+      "claimRefs": [
+        {
+          "claimId": "JH3-C01",
+          "sourceIds": [
+            "JH3-S01"
+          ]
+        },
+        {
+          "claimId": "JH3-C02",
+          "sourceIds": [
+            "JH3-S02"
+          ]
+        },
+        {
+          "claimId": "JH3-C03",
+          "sourceIds": [
+            "JH3-S04"
+          ]
+        },
+        {
+          "claimId": "JH3-C04",
+          "sourceIds": [
+            "JH3-S05"
+          ]
+        },
+        {
+          "claimId": "JH3-C05",
+          "sourceIds": [
+            "JH3-S06"
+          ]
+        },
+        {
+          "claimId": "JH3-C06",
+          "sourceIds": [
+            "JH3-S07"
+          ]
+        },
+        {
+          "claimId": "JH3-C07",
+          "sourceIds": [
+            "JH3-S01"
+          ]
+        },
+        {
+          "claimId": "JH3-C08",
+          "sourceIds": [
+            "JH3-S04"
+          ]
+        },
+        {
+          "claimId": "JH3-C09",
+          "sourceIds": [
+            "JH3-S06"
+          ]
+        },
+        {
+          "claimId": "JT3-C01",
+          "sourceIds": [
+            "JT3-S01"
+          ]
+        },
+        {
+          "claimId": "JT3-C02",
+          "sourceIds": [
+            "JT3-S02"
+          ]
+        },
+        {
+          "claimId": "JT3-C03",
+          "sourceIds": [
+            "JT3-S05"
+          ]
+        },
+        {
+          "claimId": "JT3-C04",
+          "sourceIds": [
+            "JT3-S02",
+            "JT3-S05"
+          ]
+        },
+        {
+          "claimId": "JT3-C05",
+          "sourceIds": [
+            "JT3-S06"
+          ]
+        },
+        {
+          "claimId": "JT3-C06",
+          "sourceIds": [
+            "JT3-S08"
+          ]
+        },
+        {
+          "claimId": "JT3-C07",
+          "sourceIds": [
+            "JT3-S03"
+          ]
+        },
+        {
+          "claimId": "JT3-C08",
+          "sourceIds": [
+            "JT3-S04"
+          ]
+        },
+        {
+          "claimId": "JT3-C09",
+          "sourceIds": [
+            "JT3-S04"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "edgeId": "JH3-E01",
+          "fromEntityId": "source/JH3-S01",
+          "toEntityId": "source/JH3-S02",
+          "type": "EDITORIAL_SOURCE_COMPARISON",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JH3-S01",
+            "JH3-S02"
+          ],
+          "claimIds": [
+            "JH3-C01",
+            "JH3-C02"
+          ],
+          "rationale": "Compare publisher vindication language with qualified official conclusions.",
+          "sourceLocator": [
+            {
+              "sourceId": "JH3-S01",
+              "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+              "locator": "HTML lines 31–59, 76–92: edition metadata and promotional description. No book body."
+            },
+            {
+              "sourceId": "JH3-S02",
+              "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch12.htm",
+              "locator": "HTML lines 0–7, opening conclusions including named exceptions."
+            }
+          ],
+          "timeScope": {
+            "from": null,
+            "to": null,
+            "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+          },
+          "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap.",
+          "reviewStatus": "UNREVIEWED"
+        },
+        {
+          "edgeId": "JH3-E02",
+          "fromEntityId": "source/JH3-S04",
+          "toEntityId": "source/JH3-S05",
+          "type": "EDITORIAL_SOURCE_COMPARISON",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JH3-S04",
+            "JH3-S05"
+          ],
+          "claimIds": [
+            "JH3-C03",
+            "JH3-C04"
+          ],
+          "rationale": "Test retrospective framing against a bounded government policy finding; direct citation not established.",
+          "sourceLocator": [
+            {
+              "sourceId": "JH3-S04",
+              "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+              "locator": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard."
+            },
+            {
+              "sourceId": "JH3-S05",
+              "url": "https://irp.fas.org/cia/product/cocaine2/findings.html",
+              "locator": "Findings paragraphs 57–69 (HTML lines 135–209); title/date checked on volume index."
+            }
+          ],
+          "timeScope": {
+            "from": null,
+            "to": null,
+            "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+          },
+          "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap.",
+          "reviewStatus": "UNREVIEWED"
+        },
+        {
+          "edgeId": "JH3-E03",
+          "fromEntityId": "source/JH3-S06",
+          "toEntityId": "source/JH3-S07",
+          "type": "EDITORIAL_SOURCE_COMPARISON",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JH3-S06",
+            "JH3-S07"
+          ],
+          "claimIds": [
+            "JH3-C05",
+            "JH3-C06"
+          ],
+          "rationale": "Compare reporting with later testimony, acknowledging shared Taguba inquiry root.",
+          "sourceLocator": [
+            {
+              "sourceId": "JH3-S06",
+              "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+              "locator": "Article body HTML lines 46–49 and 83–118; excluded generated summary. Displayed date May 3; print issue May 10."
+            },
+            {
+              "sourceId": "JH3-S07",
+              "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+              "locator": "Taguba opening statement on May 11, 2004, HTML lines 4511–4594; adjacent questions lines 4735–4768. HTML transcription only."
+            }
+          ],
+          "timeScope": {
+            "from": null,
+            "to": null,
+            "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+          },
+          "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap.",
+          "reviewStatus": "UNREVIEWED"
+        },
+        {
+          "edgeId": "JH3-E04",
+          "fromEntityId": "source/JH3-S07",
+          "toEntityId": "source/JH3-S08",
+          "type": "EDITORIAL_SOURCE_COMPARISON",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JH3-S07",
+            "JH3-S08"
+          ],
+          "claimIds": [
+            "JH3-C06"
+          ],
+          "rationale": "Catalog helps locate report; neither catalog nor testimony is a read report scan.",
+          "sourceLocator": [
+            {
+              "sourceId": "JH3-S07",
+              "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+              "locator": "Taguba opening statement on May 11, 2004, HTML lines 4511–4594; adjacent questions lines 4735–4768. HTML transcription only."
+            },
+            {
+              "sourceId": "JH3-S08",
+              "url": "https://exhibit.apus.edu/items/show/1219",
+              "locator": "Catalog metadata HTML lines 16–46. Thumbnail link inspected as image URL; report body not read."
+            }
+          ],
+          "timeScope": {
+            "from": null,
+            "to": null,
+            "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+          },
+          "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap.",
+          "reviewStatus": "UNREVIEWED"
+        },
+        {
+          "edgeId": "JH3-E05",
+          "fromEntityId": "gary-webb",
+          "toEntityId": "JH3-W01",
+          "type": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JH3-S01"
+          ],
+          "claimIds": [
+            "JH3-C07"
+          ],
+          "rationale": "Publisher metadata identifies Gary Webb as author of Dark Alliance: Movie Tie-In Edition.",
+          "sourceLocator": [
+            {
+              "sourceId": "JH3-S01",
+              "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+              "locator": "HTML lines 31–59, 76–92: edition metadata and promotional description. No book body."
+            }
+          ],
+          "timeScope": {
+            "fromDate": "2014-09-30",
+            "toDate": null,
+            "note": "Specific catalog edition or article date only; not author career span."
+          },
+          "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author.",
+          "reviewStatus": "UNREVIEWED"
+        },
+        {
+          "edgeId": "JH3-E06",
+          "fromEntityId": "robert-parry",
+          "toEntityId": "JH3-W04",
+          "type": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JH3-S04"
+          ],
+          "claimIds": [
+            "JH3-C08"
+          ],
+          "rationale": "The indexed Consortium News item identifies Robert Parry as the editor-note speaker.",
+          "sourceLocator": [
+            {
+              "sourceId": "JH3-S04",
+              "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+              "locator": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard."
+            }
+          ],
+          "timeScope": {
+            "fromDate": "2014-10-02",
+            "toDate": null,
+            "note": "Specific catalog edition or article date only; not author career span."
+          },
+          "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author.",
+          "reviewStatus": "UNREVIEWED"
+        },
+        {
+          "edgeId": "JH3-E07",
+          "fromEntityId": "seymour-hersh",
+          "toEntityId": "JH3-W06",
+          "type": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JH3-S06"
+          ],
+          "claimIds": [
+            "JH3-C09"
+          ],
+          "rationale": "The article byline identifies Seymour M. Hersh.",
+          "sourceLocator": [
+            {
+              "sourceId": "JH3-S06",
+              "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+              "locator": "Article body HTML lines 46–49 and 83–118; excluded generated summary. Displayed date May 3; print issue May 10."
+            }
+          ],
+          "timeScope": {
+            "fromDate": "2004-05-03",
+            "toDate": null,
+            "note": "Specific catalog edition or article date only; not author career span."
+          },
+          "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author.",
+          "reviewStatus": "UNREVIEWED"
+        },
+        {
+          "edgeId": "JT3-E01",
+          "fromEntityId": "james-corbett",
+          "toEntityId": "derrick-broze",
+          "type": "HOSTS_GUEST_METADATA",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JT3-S03"
+          ],
+          "claimIds": [
+            "JT3-C07"
+          ],
+          "sourceLocator": "JT 3-S 03 header and introductory guest-description paragraph, dated 9 June 2025",
+          "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/james-corbett.md",
+          "independentReviewer": null,
+          "reviewStatus": "UNREVIEWED",
+          "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+          "rationale": "Publisher explicitly presents Broze as the guest; supports a program relationship only.",
+          "timeScope": "Program publication 2025-06-09; no event recording date independently established.",
+          "counterevidence": [],
+          "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+          "comparisonKind": "METADATA_OR_CITATION_ONLY"
+        },
+        {
+          "edgeId": "JT3-E02",
+          "fromEntityId": "source/JT3-S01",
+          "toEntityId": "source/JT3-S02",
+          "type": "CITES",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JT3-S01",
+            "JT3-S02"
+          ],
+          "claimIds": [
+            "JT3-C01"
+          ],
+          "sourceLocator": "JT 3-S 01 SHOW NOTES: The Technocrat – Vol.3 – No.4 – September 1937 link; JT 3-S 02 issue masthead",
+          "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/james-corbett.md",
+          "independentReviewer": null,
+          "reviewStatus": "UNREVIEWED",
+          "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+          "rationale": "Observed hyperlink traces publisher episode to historical issue; does not establish endorsement or modern continuity.",
+          "timeScope": "Episode 2022-11-02 cites periodical 1937-09.",
+          "counterevidence": [],
+          "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+          "comparisonKind": "METADATA_OR_CITATION_ONLY"
+        },
+        {
+          "edgeId": "JT3-E03",
+          "fromEntityId": "derrick-broze",
+          "toEntityId": "source/JT3-S04",
+          "type": "PUBLISHER_BYLINE",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JT3-S04"
+          ],
+          "claimIds": [
+            "JT3-C08"
+          ],
+          "sourceLocator": "JT 3-S 04 title block: Derrick Broze byline immediately above July 14,2023",
+          "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+          "independentReviewer": null,
+          "reviewStatus": "UNREVIEWED",
+          "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+          "rationale": "Explicit byline supports release authorship at publisher metadata scope.",
+          "timeScope": "Release 2023-07-14.",
+          "counterevidence": [],
+          "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+          "comparisonKind": "METADATA_OR_CITATION_ONLY"
+        },
+        {
+          "edgeId": "JT3-E04",
+          "fromEntityId": "source/JT3-S04",
+          "toEntityId": "source/JT3-S05",
+          "type": "LINKS_TRANSCRIPT",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JT3-S04",
+            "JT3-S05"
+          ],
+          "claimIds": [
+            "JT3-C09"
+          ],
+          "sourceLocator": "JT 3-S 04 paragraph Transcript and sources links to JT 3-S 05 exact URL",
+          "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+          "independentReviewer": null,
+          "reviewStatus": "UNREVIEWED",
+          "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+          "rationale": "Observed link identifies the publisher transcript route; release and transcript share one documentary lineage.",
+          "timeScope": "Dated release 2023-07-14; transcript page publication date unknown; retrieved 2026-11-01.",
+          "counterevidence": [],
+          "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+          "comparisonKind": "METADATA_OR_CITATION_ONLY"
+        },
+        {
+          "edgeId": "JT3-E05",
+          "fromEntityId": "source/JT3-S05",
+          "toEntityId": "source/JT3-S02",
+          "type": "EDITION_COMPARISON",
+          "layer": "D_OPEN_DISPUTE_CORRECTION",
+          "causality": false,
+          "sourceIds": [
+            "JT3-S02",
+            "JT3-S05"
+          ],
+          "claimIds": [
+            "JT3-C04"
+          ],
+          "sourceLocator": "JT 3-S 05 Understanding Historical Technocracy paragraph introducing 1938 declaration; JT 3-S 02 printed p.3/PDF index 2",
+          "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+          "independentReviewer": null,
+          "reviewStatus": "UNREVIEWED",
+          "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+          "rationale": "Matching historical declaration invites edition comparison; possible1938 reprint remains unresolved.",
+          "timeScope": "Historical issue 1937-09 versus transcript reference 1938; transcript retrieved 2026-11-01.",
+          "counterevidence": [],
+          "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+          "comparisonKind": "EDITION_COMPARISON_NOT_DISCONFIRMATION"
+        },
+        {
+          "edgeId": "JT3-E06",
+          "fromEntityId": "patrik-baab",
+          "toEntityId": "source/JT3-S06",
+          "type": "INTERVIEW_RESPONDENT",
+          "layer": "A_DOCUMENTARY",
+          "causality": false,
+          "sourceIds": [
+            "JT3-S06"
+          ],
+          "claimIds": [
+            "JT3-C05"
+          ],
+          "sourceLocator": "JT 3-S 06 introductory description names respondent Patrik Baab; question-and-answer body; byline Marcus Klöckner",
+          "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/patrik-baab.md",
+          "independentReviewer": null,
+          "reviewStatus": "UNREVIEWED",
+          "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+          "rationale": "Publisher distinguishes interview respondent from interviewer; method statement belongs to Baab.",
+          "timeScope": "Interview publication 2022-01-28.",
+          "counterevidence": [],
+          "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+          "comparisonKind": "METADATA_OR_CITATION_ONLY"
+        },
+        {
+          "edgeId": "JT3-E07",
+          "fromEntityId": "source/JT3-S06",
+          "toEntityId": "source/JT3-S08",
+          "type": "METHODOLOGICAL_COMPARISON",
+          "layer": "C_CONCEPTUAL_NONCAUSAL",
+          "causality": false,
+          "sourceIds": [
+            "JT3-S06",
+            "JT3-S08"
+          ],
+          "claimIds": [
+            "JT3-C05",
+            "JT3-C06"
+          ],
+          "sourceLocator": "JT 3-S 06 answers on research and comparison of media; JT 3-S 08 sections 1–3 and guideline 2.4",
+          "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+          "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/patrik-baab.md",
+          "independentReviewer": null,
+          "reviewStatus": "UNREVIEWED",
+          "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+          "rationale": "Researcher-selected normative comparison; the code is not cited by Baab here and is not a judgment on him.",
+          "timeScope": "Interview 2022-01-28 compared with code version 2025-03-19; no retroactive misconduct finding.",
+          "counterevidence": [],
+          "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+          "comparisonKind": "NORMATIVE_COMPARISON_NOT_REBUTTAL"
+        }
+      ],
+      "metrics": {
+        "authors": 6,
+        "sources": 16,
+        "claims": 18,
+        "relations": 14,
+        "sourceChains": 6
+      },
+      "derivedGraphPath": "packages/journalistic-source-chains-c03/atlas-source-chains.json",
+      "readerPath": "packages/journalistic-source-chains-c03/NOTEBOOKLM_READER.md",
+      "consumerReadiness": "PREPARED_ONLY_NOT_DEPLOYED"
+    }
+  ],
+  "registeredResearchCollections": [
+    {
+      "registrationId": "REC-C02-01",
+      "label": "Moneyrex archive-access R4 within existing WCC/Samosa topic",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/RETURN.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md"
+      ],
+      "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "reuseSourceIds": [
+        "WC-S20",
+        "WC-S41",
+        "WC-S42",
+        "WC-S43",
+        "WC-S44",
+        "WC-S45",
+        "WC-S46"
+      ],
+      "reuseClaimIds": [
+        "WC-C45",
+        "WC-C46",
+        "WC-C47",
+        "WC-C48",
+        "WC-C49",
+        "WC-C50"
+      ],
+      "accessState": "1981 letter catalog only; 1964–72 shareholder records not acquired; prepared requests not sent.",
+      "registrationOnly": true
+    },
+    {
+      "registrationId": "REC-C02-02",
+      "label": "Jorjani/Michels trilogy and Puharich 1984 recovery R2",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/RETURN.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/PUHARICH_1984_PRIMARY_SOURCE_RECOVERY_R2.md"
+      ],
+      "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "reuseSourceIds": [
+        "JM-S16",
+        "JM-S17",
+        "JM-S21"
+      ],
+      "reuseClaimIds": [
+        "JM-C19",
+        "JM-C21",
+        "JM-C22"
+      ],
+      "accessState": "Topic Return reports publisher transcript indexing, 0 original audio minutes and unverified remainder claim; no primary external research in reconciliation.",
+      "registrationOnly": true
+    },
+    {
+      "registrationId": "REC-C02-03",
+      "label": "TheWebb.io benchmark and external-provider gate",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/WEBB_IO_ARCHIVE_BENCHMARK_AND_EXTERNAL_MCP_GATE_R1_2026-11-01.md",
+      "documentPaths": [],
+      "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "reuseSourceIds": [],
+      "reuseClaimIds": [],
+      "accessState": "Vendor/publisher discovery and design comparison; no provider/API/MCP integration verified.",
+      "registrationOnly": true
+    },
+    {
+      "registrationId": "REC-C02-05",
+      "label": "Journalism and creative cross-lens governance",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/JOURNALISTIC_DONORS_MEDIA_TRIANGULATION_AND_PRIMARY_CUSTODY_CONTRACT_R1_2026-11-01.md",
+        "skills/chat/research/hidden-cosmology-atlas/CROSS_LENS_CREATIVE_DONOR_SOURCE_NETWORK_CONTRACT_R1_2026-11-01.md"
+      ],
+      "gitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+      "reuseSourceIds": [],
+      "reuseClaimIds": [],
+      "accessState": "Existing contract, not completed original research",
+      "registrationOnly": true
+    }
+  ],
+  "reconciliationRef": {
+    "path": "breadth/WEBCHAT_RECONCILIATION_C02_2026-11-01.json",
+    "gitSha": "2b1110659f76d32e6ca96cb215d84fb11ff5686b",
+    "findings": 5,
+    "commitAuditCount": 20,
+    "scope": "Pinned first-parent commit metadata plus named topic and registry bodies; not exhaustive historical search"
+  },
+  "consumerRule": "Existing AB01 arrays plus extension arrays form read-only navigation. Resolve every packet at its own gitSha; do not assume one snapshot for all periods. Existing topic collections remain reference-only, never duplicated counts."
+}

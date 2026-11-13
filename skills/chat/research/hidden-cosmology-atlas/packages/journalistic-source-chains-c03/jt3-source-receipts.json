@@ -1,0 +1,607 @@
+{
+  "packetId": "ATLAS_BREADTH_C03_JT3",
+  "inputGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+  "researchDate": "2026-11-01",
+  "executor": "/root/psi_profiles",
+  "reviewStatus": "UNREVIEWED",
+  "authorInventoryCheck": {
+    "james-corbett": "ABSENT_AT_EXACT_HEAD",
+    "derrick-broze": "ABSENT_AT_EXACT_HEAD",
+    "patrik-baab": "ABSENT_AT_EXACT_HEAD"
+  },
+  "sources": [
+    {
+      "sourceId": "JT3-S01",
+      "title": "What is Technocracy? QFC092",
+      "url": "https://corbettreport.com/qfc-technocracy/",
+      "sourceKind": "PUBLISHER_EPISODE_PAGE",
+      "publicationDate": "2022-11-02",
+      "accessScope": "HTML_READ",
+      "sourceLocator": "Title/byline, intro and show notes; not spoken content",
+      "independenceGroup": "CORBETT_2022",
+      "retrievedDate": "2026-11-01",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0,
+      "originalCreator": "James Corbett / The Corbett Report",
+      "eventDate": null,
+      "releaseDate": "2022-11-02",
+      "copyrightNotes": "Link and short attributed paraphrase only; no full copyrighted work reproduced.",
+      "readLimitations": "HTML_READ; scope limited to Title/byline, intro and show notes; not spoken content. Audio/video playback and page-image inspection: 0."
+    },
+    {
+      "sourceId": "JT3-S02",
+      "title": "The Technocrat vol3 no4",
+      "url": "https://archive.org/download/TheTechnocrat-September%201937/TheTechnocrat-September%201937.pdf",
+      "sourceKind": "ORIGINAL_PERIODICAL_REPRODUCTION",
+      "publicationDate": "1937-09",
+      "accessScope": "OCR_AND_PDF_TEXT_READ_IMAGES_FAILED",
+      "sourceLocator": "Printed p2 masthead and p3 definition; PDF indexes 1,2; OCR section What Is Technocracy?",
+      "independenceGroup": "TECHNOCRACY_INC_1937",
+      "retrievedDate": "2026-11-01",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0,
+      "ocrUrl": "https://archive.org/stream/TheTechnocrat-September%201937/TheTechnocrat-September%201937_djvu.txt",
+      "archiveMetadataUrl": "https://archive.org/details/TheTechnocrat-September%201937/page/n2/mode/1up",
+      "originalCreator": "Technocracy Inc., Regional Division 11833–11834",
+      "eventDate": null,
+      "releaseDate": "1937-09",
+      "copyrightNotes": "Link and short attributed paraphrase only; no full copyrighted work reproduced.",
+      "readLimitations": "OCR_AND_PDF_TEXT_READ_IMAGES_FAILED; scope limited to Printed p2 masthead and p3 definition; PDF indexes 1,2; OCR section What Is Technocracy?. Audio/video playback and page-image inspection: 0."
+    },
+    {
+      "sourceId": "JT3-S03",
+      "title": "Opting Out of Technocracy",
+      "url": "https://corbettreport.com/opting-out-of-technocracy/",
+      "sourceKind": "HOST_PROGRAM_METADATA",
+      "publicationDate": "2025-06-09",
+      "accessScope": "HTML_METADATA_READ",
+      "sourceLocator": "Title/byline, guest description, show notes only",
+      "independenceGroup": "CORBETT_BROZE_2025",
+      "retrievedDate": "2026-11-01",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0,
+      "originalCreator": "The Corbett Report",
+      "eventDate": null,
+      "releaseDate": "2025-06-09",
+      "copyrightNotes": "Link and short attributed paraphrase only; no full copyrighted work reproduced.",
+      "readLimitations": "HTML_METADATA_READ; scope limited to Title/byline, guest description, show notes only. Audio/video playback and page-image inspection: 0."
+    },
+    {
+      "sourceId": "JT3-S04",
+      "title": "Pyramid of Power Chapter 13 release",
+      "url": "https://theconsciousresistance.com/pop-chapter13-technocracy/",
+      "sourceKind": "PUBLISHER_RELEASE_PAGE",
+      "publicationDate": "2023-07-14",
+      "accessScope": "HTML_READ",
+      "sourceLocator": "Byline, date, 17-part series description",
+      "independenceGroup": "BROZE_CH13",
+      "retrievedDate": "2026-11-01",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0,
+      "originalCreator": "Derrick Broze / The Conscious Resistance Network",
+      "eventDate": null,
+      "releaseDate": "2023-07-14",
+      "copyrightNotes": "Link and short attributed paraphrase only; no full copyrighted work reproduced.",
+      "readLimitations": "HTML_READ; scope limited to Byline, date, 17-part series description. Audio/video playback and page-image inspection: 0."
+    },
+    {
+      "sourceId": "JT3-S05",
+      "title": "Pyramid of Power Chapter 13 transcript",
+      "url": "https://thepyramidofpower.net/chapter-13-the-technocratic-state/",
+      "sourceKind": "PUBLISHER_TRANSCRIPT",
+      "publicationDate": null,
+      "accessScope": "HTML_PASSAGES_READ_NOT_AV_VERIFIED",
+      "sourceLocator": "Opening and Understanding Historical Technocracy through historical declaration",
+      "independenceGroup": "BROZE_CH13",
+      "retrievedDate": "2026-11-01",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0,
+      "originalCreator": "Derrick Broze / The Pyramid of Power; quoted speaker Patrick Wood",
+      "eventDate": null,
+      "releaseDate": null,
+      "copyrightNotes": "Link and short attributed paraphrase only; no full copyrighted work reproduced.",
+      "readLimitations": "HTML_PASSAGES_READ_NOT_AV_VERIFIED; scope limited to Opening and Understanding Historical Technocracy through historical declaration. Audio/video playback and page-image inspection: 0."
+    },
+    {
+      "sourceId": "JT3-S06",
+      "title": "Baab interviewed by Marcus Klöckner",
+      "url": "https://www.nachdenkseiten.de/?p=80224",
+      "sourceKind": "PUBLISHER_INTERVIEW_TEXT",
+      "publicationDate": "2022-01-28",
+      "accessScope": "HTML_PASSAGES_READ",
+      "sourceLocator": "Selected Q&A on research/power/newsroom incentives/media comparison",
+      "independenceGroup": "NDS_BAAB_2022",
+      "retrievedDate": "2026-11-01",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0,
+      "originalCreator": "Marcus Klöckner (interviewer/byline); Patrik Baab (respondent)",
+      "eventDate": null,
+      "releaseDate": "2022-01-28",
+      "copyrightNotes": "Link and short attributed paraphrase only; no full copyrighted work reproduced.",
+      "readLimitations": "HTML_PASSAGES_READ; scope limited to Selected Q&A on research/power/newsroom incentives/media comparison. Audio/video playback and page-image inspection: 0."
+    },
+    {
+      "sourceId": "JT3-S07",
+      "title": "Patrik Baab publications",
+      "url": "https://www.patrikbaab.de/bucher",
+      "sourceKind": "AUTHOR_BIBLIOGRAPHY",
+      "publicationDate": null,
+      "accessScope": "HTML_DESCRIPTIONS_READ",
+      "sourceLocator": "Three book entries; not chapters/footnotes",
+      "independenceGroup": "BAAB_SELF_DESCRIPTION",
+      "retrievedDate": "2026-11-01",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0,
+      "originalCreator": "Patrik Baab / author website",
+      "eventDate": null,
+      "releaseDate": null,
+      "copyrightNotes": "Link and short attributed paraphrase only; no full copyrighted work reproduced.",
+      "readLimitations": "HTML_DESCRIPTIONS_READ; scope limited to Three book entries; not chapters/footnotes. Audio/video playback and page-image inspection: 0."
+    },
+    {
+      "sourceId": "JT3-S08",
+      "title": "German Press Council Pressekodex",
+      "url": "https://www.presserat.de/pressekodex.html",
+      "sourceKind": "INSTITUTIONAL_NORM",
+      "publicationDate": "2025-03-19",
+      "accessScope": "HTML_NORM_READ",
+      "sourceLocator": "Preamble, sections 1–3 and guideline 2.4",
+      "independenceGroup": "GERMAN_PRESS_COUNCIL",
+      "retrievedDate": "2026-11-01",
+      "audioMinutesListened": 0,
+      "pageImagesInspected": 0,
+      "originalCreator": "Deutscher Presserat",
+      "eventDate": null,
+      "releaseDate": "2025-03-19",
+      "copyrightNotes": "Link and short attributed paraphrase only; no full copyrighted work reproduced.",
+      "readLimitations": "HTML_NORM_READ; scope limited to Preamble, sections 1–3 and guideline 2.4. Audio/video playback and page-image inspection: 0."
+    }
+  ],
+  "claims": [
+    {
+      "claimId": "JT3-C01",
+      "text": "Episode frames technocracy as threat and cites original periodical.",
+      "sourceIds": [
+        "JT3-S01"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "PUBLISHER_FRAMING_AND_REFERENCE",
+      "attributedSpeaker": "James Corbett / publisher introduction",
+      "specificPassage": "Publisher introduction before SHOW NOTES; SHOW NOTES links to The Technocrat, September 1937",
+      "sourceLocator": "Publisher introduction before SHOW NOTES; SHOW NOTES links to The Technocrat, September 1937",
+      "statementKind": "PUBLISHER_FRAMING_AND_BIBLIOGRAPHIC_REFERENCE",
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Spoken episode content not inspected; external historical continuity not established."
+      ],
+      "nextSourceTest": "Inspect exact episode transcript or timecoded audio and one contemporary policy original.",
+      "counterSourceScope": "No independent contrary source inspected for this claim.",
+      "comparisonKind": "NONE"
+    },
+    {
+      "claimId": "JT3-C02",
+      "text": "Periodical proposes technical distribution outside politics/finance.",
+      "sourceIds": [
+        "JT3-S02"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "HISTORICAL_SELF_DESCRIPTION",
+      "attributedSpeaker": "Technocracy Inc., unsigned institutional declaration",
+      "specificPassage": "What Is Technocracy?, printed p. 3 / PDF index 2; issue masthead printed p. 2 / PDF index 1",
+      "sourceLocator": "What Is Technocracy?, printed p. 3 / PDF index 2; issue masthead printed p. 2 / PDF index 1",
+      "statementKind": "HISTORICAL_INSTITUTION_SELF_DESCRIPTION",
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Original images not inspected; proposal implementation and validity not established."
+      ],
+      "nextSourceTest": "Authenticate page images and compare independently documented institutional history.",
+      "counterSourceScope": "No independent contrary source inspected for this claim.",
+      "comparisonKind": "NONE"
+    },
+    {
+      "claimId": "JT3-C03",
+      "text": "Broze transcript explains contemporary power through technocracy.",
+      "sourceIds": [
+        "JT3-S05"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "AUTHOR_INTERPRETATION",
+      "attributedSpeaker": "Derrick Broze (documentary narration); Patrick Wood is separately attributed within quoted interview segments",
+      "specificPassage": "Publisher transcript: introduction and Understanding Historical Technocracy, before and around the Patrick Wood extract",
+      "sourceLocator": "Publisher transcript: introduction and Understanding Historical Technocracy, before and around the Patrick Wood extract",
+      "statementKind": "AUTHOR_INTERPRETATION",
+      "independentSources": [],
+      "contrarySources": [
+        "JT3-S02"
+      ],
+      "unknowns": [
+        "A historical program does not establish contemporary organizational succession; audio unverified."
+      ],
+      "nextSourceTest": "Select one explicit contemporary continuity claim and seek dated transfer, financing or policy records.",
+      "counterSourceScope": "Contextual or normative comparison only; no independent direct rebuttal established.",
+      "comparisonKind": "HISTORICAL_CONTEXT_OR_EDITION_CHECK_NOT_DIRECT_REBUTTAL"
+    },
+    {
+      "claimId": "JT3-C04",
+      "text": "Corresponding declaration predates transcript’s cited 1938 publication; exact reprint unresolved.",
+      "sourceIds": [
+        "JT3-S02",
+        "JT3-S05"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "EDITION_QUESTION_NOT_ERROR_FINDING",
+      "attributedSpeaker": "Atlas research comparison; not a claim spoken by either historical or contemporary author",
+      "specificPassage": "JT3-S05 paragraph beginning In 1938 compared with JT3-S02 What Is Technocracy?, printed p. 3 / PDF index 2",
+      "sourceLocator": "JT3-S05 paragraph beginning In 1938 compared with JT3-S02 What Is Technocracy?, printed p. 3 / PDF index 2",
+      "statementKind": "EDITORIAL_EDITION_QUESTION",
+      "independentSources": [],
+      "contrarySources": [
+        "JT3-S02"
+      ],
+      "unknowns": [
+        "Exact 1938 publication/reprint not identified; earlier matching text does not prove misdating."
+      ],
+      "nextSourceTest": "Retrieve the cited 1938 edition and compare the original page images with the 1937 issue.",
+      "counterSourceScope": "Contextual or normative comparison only; no independent direct rebuttal established.",
+      "comparisonKind": "HISTORICAL_CONTEXT_OR_EDITION_CHECK_NOT_DIRECT_REBUTTAL"
+    },
+    {
+      "claimId": "JT3-C05",
+      "text": "Baab presents research as scrutiny of power and comparison of sources.",
+      "sourceIds": [
+        "JT3-S06"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "RESPONDENT_METHOD_POSITION",
+      "attributedSpeaker": "Patrik Baab, interview respondent; questions and introductory framing by Marcus Klöckner",
+      "specificPassage": "Interview answers following questions about what counts as research and advice to interested citizens; selected newsroom-incentive answers",
+      "sourceLocator": "Interview answers following questions about what counts as research and advice to interested citizens; selected newsroom-incentive answers",
+      "statementKind": "RESPONDENT_METHODOLOGICAL_POSITION",
+      "independentSources": [],
+      "contrarySources": [
+        "JT3-S08"
+      ],
+      "unknowns": [
+        "Interview expresses a method; implementation in specific reporting not audited."
+      ],
+      "nextSourceTest": "Inspect a specific reporting claim, underlying notes/documents and strongest independent counteraccount.",
+      "counterSourceScope": "Contextual or normative comparison only; no independent direct rebuttal established.",
+      "comparisonKind": "NORMATIVE_COMPARISON_NOT_DIRECT_REBUTTAL"
+    },
+    {
+      "claimId": "JT3-C06",
+      "text": "Code requires diligence, uncertainty labeling and correction.",
+      "sourceIds": [
+        "JT3-S08"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "NORMATIVE_STANDARD_NOT_ADJUDICATION",
+      "attributedSpeaker": "Deutscher Presserat",
+      "specificPassage": "Pressekodex version 19 March 2025, sections 1–3, especially section 2 and guideline 2.4",
+      "sourceLocator": "Pressekodex version 19 March 2025, sections 1–3, especially section 2 and guideline 2.4",
+      "statementKind": "NORMATIVE_STANDARD",
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Not a ruling on Baab and not evidence of a violation."
+      ],
+      "nextSourceTest": "Apply the stated standard to one complete claim-specific evidence chain without presuming a verdict.",
+      "counterSourceScope": "No independent contrary source inspected for this claim.",
+      "comparisonKind": "NONE"
+    },
+    {
+      "claimId": "JT3-C07",
+      "text": "Publisher identifies Derrick Broze as guest in the 9 June 2025 program.",
+      "sourceIds": [
+        "JT3-S03"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "HOST_GUEST_PROGRAM_METADATA",
+      "attributedSpeaker": "The Corbett Report",
+      "specificPassage": "Program header dated Jun 9, 2025 and introductory paragraph beginning Derrick Broze of The Conscious Resistance joins us today",
+      "sourceLocator": "Program header dated Jun 9, 2025 and introductory paragraph beginning Derrick Broze of The Conscious Resistance joins us today",
+      "statementKind": "HOST_GUEST_PROGRAM_METADATA",
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Metadata not verified against audio/video; no additional spoken claims inferred."
+      ],
+      "nextSourceTest": "Compare an archived publisher edition and original recording metadata if attribution is disputed.",
+      "counterSourceScope": "No contrary source inspected for this metadata claim.",
+      "comparisonKind": "NONE",
+      "eventDate": "2025-06-09"
+    },
+    {
+      "claimId": "JT3-C08",
+      "text": "The chapter release page names Derrick Broze as author and dates the post 14 July 2023.",
+      "sourceIds": [
+        "JT3-S04"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "PUBLISHER_BYLINE_METADATA",
+      "attributedSpeaker": "The Conscious Resistance Network",
+      "specificPassage": "Title The Pyramid of Power: Chapter 13 – The Technocratic State; adjacent byline Derrick Broze and date July 14, 2023",
+      "sourceLocator": "Title The Pyramid of Power: Chapter 13 – The Technocratic State; adjacent byline Derrick Broze and date July 14, 2023",
+      "statementKind": "PUBLISHER_BYLINE_METADATA",
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Metadata not verified against audio/video; no additional spoken claims inferred."
+      ],
+      "nextSourceTest": "Compare an archived publisher edition and original recording metadata if attribution is disputed.",
+      "counterSourceScope": "No contrary source inspected for this metadata claim.",
+      "comparisonKind": "NONE",
+      "eventDate": "2023-07-14"
+    },
+    {
+      "claimId": "JT3-C09",
+      "text": "The release page links to the chapter transcript and sources endpoint.",
+      "sourceIds": [
+        "JT3-S04"
+      ],
+      "reviewStatus": "UNREVIEWED",
+      "status": "PUBLISHER_LINK_METADATA",
+      "attributedSpeaker": "The Conscious Resistance Network",
+      "specificPassage": "Transcript and sources link immediately after the release description, targeting https://thepyramidofpower.net/chapter-13-the-technocratic-state/",
+      "sourceLocator": "Transcript and sources link immediately after the release description, targeting https://thepyramidofpower.net/chapter-13-the-technocratic-state/",
+      "statementKind": "PUBLISHER_LINK_METADATA",
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Metadata not verified against audio/video; no additional spoken claims inferred."
+      ],
+      "nextSourceTest": "Compare an archived publisher edition and original recording metadata if attribution is disputed.",
+      "counterSourceScope": "No contrary source inspected for this metadata claim.",
+      "comparisonKind": "NONE",
+      "eventDate": "2023-07-14"
+    }
+  ],
+  "relations": [
+    {
+      "edgeId": "JT3-E01",
+      "fromEntityId": "james-corbett",
+      "toEntityId": "derrick-broze",
+      "type": "HOSTS_GUEST_METADATA",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S03"
+      ],
+      "claimIds": [
+        "JT3-C07"
+      ],
+      "sourceLocator": "JT 3-S 03 header and introductory guest-description paragraph, dated 9 June 2025",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/james-corbett.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Publisher explicitly presents Broze as the guest; supports a program relationship only.",
+      "timeScope": "Program publication 2025-06-09; no event recording date independently established.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E02",
+      "fromEntityId": "source/JT3-S01",
+      "toEntityId": "source/JT3-S02",
+      "type": "CITES",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S01",
+        "JT3-S02"
+      ],
+      "claimIds": [
+        "JT3-C01"
+      ],
+      "sourceLocator": "JT 3-S 01 SHOW NOTES: The Technocrat – Vol.3 – No.4 – September 1937 link; JT 3-S 02 issue masthead",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/james-corbett.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Observed hyperlink traces publisher episode to historical issue; does not establish endorsement or modern continuity.",
+      "timeScope": "Episode 2022-11-02 cites periodical 1937-09.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E03",
+      "fromEntityId": "derrick-broze",
+      "toEntityId": "source/JT3-S04",
+      "type": "PUBLISHER_BYLINE",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S04"
+      ],
+      "claimIds": [
+        "JT3-C08"
+      ],
+      "sourceLocator": "JT 3-S 04 title block: Derrick Broze byline immediately above July 14,2023",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Explicit byline supports release authorship at publisher metadata scope.",
+      "timeScope": "Release 2023-07-14.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E04",
+      "fromEntityId": "source/JT3-S04",
+      "toEntityId": "source/JT3-S05",
+      "type": "LINKS_TRANSCRIPT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S04",
+        "JT3-S05"
+      ],
+      "claimIds": [
+        "JT3-C09"
+      ],
+      "sourceLocator": "JT 3-S 04 paragraph Transcript and sources links to JT 3-S 05 exact URL",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Observed link identifies the publisher transcript route; release and transcript share one documentary lineage.",
+      "timeScope": "Dated release 2023-07-14; transcript page publication date unknown; retrieved 2026-11-01.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E05",
+      "fromEntityId": "source/JT3-S05",
+      "toEntityId": "source/JT3-S02",
+      "type": "EDITION_COMPARISON",
+      "layer": "D_OPEN_DISPUTE_CORRECTION",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S02",
+        "JT3-S05"
+      ],
+      "claimIds": [
+        "JT3-C04"
+      ],
+      "sourceLocator": "JT 3-S 05 Understanding Historical Technocracy paragraph introducing 1938 declaration; JT 3-S 02 printed p.3/PDF index 2",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Matching historical declaration invites edition comparison; possible1938 reprint remains unresolved.",
+      "timeScope": "Historical issue 1937-09 versus transcript reference 1938; transcript retrieved 2026-11-01.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "EDITION_COMPARISON_NOT_DISCONFIRMATION"
+    },
+    {
+      "edgeId": "JT3-E06",
+      "fromEntityId": "patrik-baab",
+      "toEntityId": "source/JT3-S06",
+      "type": "INTERVIEW_RESPONDENT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S06"
+      ],
+      "claimIds": [
+        "JT3-C05"
+      ],
+      "sourceLocator": "JT 3-S 06 introductory description names respondent Patrik Baab; question-and-answer body; byline Marcus Klöckner",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/patrik-baab.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Publisher distinguishes interview respondent from interviewer; method statement belongs to Baab.",
+      "timeScope": "Interview publication 2022-01-28.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E07",
+      "fromEntityId": "source/JT3-S06",
+      "toEntityId": "source/JT3-S08",
+      "type": "METHODOLOGICAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S06",
+        "JT3-S08"
+      ],
+      "claimIds": [
+        "JT3-C05",
+        "JT3-C06"
+      ],
+      "sourceLocator": "JT 3-S 06 answers on research and comparison of media; JT 3-S 08 sections 1–3 and guideline 2.4",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/patrik-baab.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Researcher-selected normative comparison; the code is not cited by Baab here and is not a judgment on him.",
+      "timeScope": "Interview 2022-01-28 compared with code version 2025-03-19; no retroactive misconduct finding.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "NORMATIVE_COMPARISON_NOT_REBUTTAL"
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "JT3-Q01",
+      "question": "Which contemporary policy has a documented historical succession chain?",
+      "missingOriginal": "Drafting/personnel/funding chronology with exact entities",
+      "status": "OPEN"
+    },
+    {
+      "questionId": "JT3-Q02",
+      "question": "Which 1938 edition or reprint matches the documentary declaration?",
+      "missingOriginal": "1938 original and authenticated 1937 page images",
+      "status": "OPEN"
+    },
+    {
+      "questionId": "JT3-Q03",
+      "question": "How does one Baab field claim compare with independent records?",
+      "missingOriginal": "Claim-specific notes, witnesses, documents and counteraccount",
+      "status": "OPEN"
+    },
+    {
+      "questionId": "JT3-Q04",
+      "question": "What method does the actual book articulate and apply?",
+      "missingOriginal": "Exact edition and methodological chapter",
+      "status": "OPEN"
+    }
+  ],
+  "sourceCountsByAuthor": {
+    "james-corbett": 3,
+    "derrick-broze": 4,
+    "patrik-baab": 3
+  },
+  "failureReceipts": [
+    {
+      "url": "https://archive.org/details/TechnocracyStudyCourse1945/mode/2up",
+      "result": "CACHE_MISS_NO_CONTENT_USED"
+    },
+    {
+      "url": "https://archive.org/download/TheTechnocrat-September 1937/TheTechnocrat-September 1937.pdf",
+      "attempt": "screenshots PDF indexes 1 and 2",
+      "result": "CACHE_MISS_0_IMAGES"
+    },
+    {
+      "url": "https://www.westendverlag.de/buch/recherchieren/",
+      "result": "CACHE_MISS_NO_BOOK_CONTENT_USED"
+    },
+    {
+      "url": "https://patrikbaab.de/wp-content/uploads/2024/03/Konfliktreiche-Referenden-Kopie.pdf",
+      "result": "REDIRECT_500_NO_CONTENT_USED"
+    }
+  ],
+  "coverage": {
+    "authorProfiles": 3,
+    "uniqueSources": 8,
+    "claims": 9,
+    "relations": 7,
+    "questions": 4,
+    "periodicalPrintedPagesTextRead": 2,
+    "pageImagesInspected": 0,
+    "audioMinutesListened": 0,
+    "videoMinutesViewed": 0,
+    "bookChaptersRead": 0,
+    "githubWrites": 0
+  },
+  "nextGate": "Independent source-fidelity review; integrate only after current-head dedup; no acceptance claimed"
+}

@@ -1,0 +1,954 @@
+{
+  "schema": "kfb-atlas-source-chain-view/1.0",
+  "date": "2026-11-01",
+  "readOnly": true,
+  "inputGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+  "sourcePackets": [
+    "journalists-history-receipts.json",
+    "jt3-source-receipts.json"
+  ],
+  "consumerReadiness": "PREPARED_ONLY_NOT_DEPLOYED",
+  "entities": [
+    {
+      "entityId": "gary-webb",
+      "kind": "author",
+      "name": "Gary Webb",
+      "ownerPath": "authors/gary-webb.md"
+    },
+    {
+      "entityId": "robert-parry",
+      "kind": "author",
+      "name": "Robert Parry",
+      "ownerPath": "authors/robert-parry.md"
+    },
+    {
+      "entityId": "seymour-hersh",
+      "kind": "author",
+      "name": "Seymour Hersh",
+      "ownerPath": "authors/seymour-hersh.md"
+    },
+    {
+      "entityId": "james-corbett",
+      "kind": "author",
+      "name": "James Corbett",
+      "ownerPath": "authors/james-corbett.md"
+    },
+    {
+      "entityId": "derrick-broze",
+      "kind": "author",
+      "name": "Derrick Broze",
+      "ownerPath": "authors/derrick-broze.md"
+    },
+    {
+      "entityId": "patrik-baab",
+      "kind": "author",
+      "name": "Patrik Baab",
+      "ownerPath": "authors/patrik-baab.md"
+    },
+    {
+      "entityId": "JH3-W01",
+      "kind": "work",
+      "name": "Dark Alliance: Movie Tie-In Edition",
+      "sourceId": "JH3-S01"
+    },
+    {
+      "entityId": "JH3-W02",
+      "kind": "work",
+      "name": "The CIA-Contra-Crack Cocaine Controversy: Chapter XII Conclusions",
+      "sourceId": "JH3-S02"
+    },
+    {
+      "entityId": "JH3-W03",
+      "kind": "work",
+      "name": "The CIA-Contra-Crack Cocaine Controversy: Chapter I, prior investigations",
+      "sourceId": "JH3-S03"
+    },
+    {
+      "entityId": "JH3-W04",
+      "kind": "work",
+      "name": "Hear Parry and Webb Discuss Contra-Cocaine",
+      "sourceId": "JH3-S04"
+    },
+    {
+      "entityId": "JH3-W05",
+      "kind": "work",
+      "name": "CIA Inspector General Report, Volume II: The Contra Story — Findings",
+      "sourceId": "JH3-S05"
+    },
+    {
+      "entityId": "JH3-W06",
+      "kind": "work",
+      "name": "Torture at Abu Ghraib",
+      "sourceId": "JH3-S06"
+    },
+    {
+      "entityId": "JH3-W07",
+      "kind": "work",
+      "name": "Review of Department of Defense Detention and Interrogation Operations, S. Hrg. 108-868",
+      "sourceId": "JH3-S07"
+    },
+    {
+      "entityId": "JH3-W08",
+      "kind": "work",
+      "name": "Article 15-6 Investigation of the 800th Military Police Brigade — catalog",
+      "sourceId": "JH3-S08"
+    },
+    {
+      "entityId": "source/JH3-S01",
+      "kind": "source",
+      "sourceId": "JH3-S01"
+    },
+    {
+      "entityId": "source/JH3-S02",
+      "kind": "source",
+      "sourceId": "JH3-S02"
+    },
+    {
+      "entityId": "source/JH3-S03",
+      "kind": "source",
+      "sourceId": "JH3-S03"
+    },
+    {
+      "entityId": "source/JH3-S04",
+      "kind": "source",
+      "sourceId": "JH3-S04"
+    },
+    {
+      "entityId": "source/JH3-S05",
+      "kind": "source",
+      "sourceId": "JH3-S05"
+    },
+    {
+      "entityId": "source/JH3-S06",
+      "kind": "source",
+      "sourceId": "JH3-S06"
+    },
+    {
+      "entityId": "source/JH3-S07",
+      "kind": "source",
+      "sourceId": "JH3-S07"
+    },
+    {
+      "entityId": "source/JH3-S08",
+      "kind": "source",
+      "sourceId": "JH3-S08"
+    },
+    {
+      "entityId": "source/JT3-S01",
+      "kind": "source",
+      "sourceId": "JT3-S01"
+    },
+    {
+      "entityId": "source/JT3-S02",
+      "kind": "source",
+      "sourceId": "JT3-S02"
+    },
+    {
+      "entityId": "source/JT3-S03",
+      "kind": "source",
+      "sourceId": "JT3-S03"
+    },
+    {
+      "entityId": "source/JT3-S04",
+      "kind": "source",
+      "sourceId": "JT3-S04"
+    },
+    {
+      "entityId": "source/JT3-S05",
+      "kind": "source",
+      "sourceId": "JT3-S05"
+    },
+    {
+      "entityId": "source/JT3-S06",
+      "kind": "source",
+      "sourceId": "JT3-S06"
+    },
+    {
+      "entityId": "source/JT3-S07",
+      "kind": "source",
+      "sourceId": "JT3-S07"
+    },
+    {
+      "entityId": "source/JT3-S08",
+      "kind": "source",
+      "sourceId": "JT3-S08"
+    },
+    {
+      "entityId": "claim/JH3-C01",
+      "kind": "claim",
+      "claimId": "JH3-C01"
+    },
+    {
+      "entityId": "claim/JH3-C02",
+      "kind": "claim",
+      "claimId": "JH3-C02"
+    },
+    {
+      "entityId": "claim/JH3-C03",
+      "kind": "claim",
+      "claimId": "JH3-C03"
+    },
+    {
+      "entityId": "claim/JH3-C04",
+      "kind": "claim",
+      "claimId": "JH3-C04"
+    },
+    {
+      "entityId": "claim/JH3-C05",
+      "kind": "claim",
+      "claimId": "JH3-C05"
+    },
+    {
+      "entityId": "claim/JH3-C06",
+      "kind": "claim",
+      "claimId": "JH3-C06"
+    },
+    {
+      "entityId": "claim/JH3-C07",
+      "kind": "claim",
+      "claimId": "JH3-C07"
+    },
+    {
+      "entityId": "claim/JH3-C08",
+      "kind": "claim",
+      "claimId": "JH3-C08"
+    },
+    {
+      "entityId": "claim/JH3-C09",
+      "kind": "claim",
+      "claimId": "JH3-C09"
+    },
+    {
+      "entityId": "claim/JT3-C01",
+      "kind": "claim",
+      "claimId": "JT3-C01"
+    },
+    {
+      "entityId": "claim/JT3-C02",
+      "kind": "claim",
+      "claimId": "JT3-C02"
+    },
+    {
+      "entityId": "claim/JT3-C03",
+      "kind": "claim",
+      "claimId": "JT3-C03"
+    },
+    {
+      "entityId": "claim/JT3-C04",
+      "kind": "claim",
+      "claimId": "JT3-C04"
+    },
+    {
+      "entityId": "claim/JT3-C05",
+      "kind": "claim",
+      "claimId": "JT3-C05"
+    },
+    {
+      "entityId": "claim/JT3-C06",
+      "kind": "claim",
+      "claimId": "JT3-C06"
+    },
+    {
+      "entityId": "claim/JT3-C07",
+      "kind": "claim",
+      "claimId": "JT3-C07"
+    },
+    {
+      "entityId": "claim/JT3-C08",
+      "kind": "claim",
+      "claimId": "JT3-C08"
+    },
+    {
+      "entityId": "claim/JT3-C09",
+      "kind": "claim",
+      "claimId": "JT3-C09"
+    }
+  ],
+  "chains": [
+    {
+      "chainId": "C03-CHAIN-01",
+      "authorId": "gary-webb",
+      "sourceIds": [
+        "JH3-S01",
+        "JH3-S02",
+        "JH3-S03"
+      ],
+      "scope": "Publisher work lead → bounded DOJ findings; Webb original passage still missing.",
+      "completeHistoricalProof": false
+    },
+    {
+      "chainId": "C03-CHAIN-02",
+      "authorId": "robert-parry",
+      "sourceIds": [
+        "JH3-S04",
+        "JH3-S05",
+        "JH3-S03"
+      ],
+      "scope": "Indexed original note → editorial comparison with CIA reporting-policy findings; direct citation not established.",
+      "completeHistoricalProof": false
+    },
+    {
+      "chainId": "C03-CHAIN-03",
+      "authorId": "seymour-hersh",
+      "sourceIds": [
+        "JH3-S06",
+        "JH3-S07",
+        "JH3-S08"
+      ],
+      "scope": "Partially read article → later testimony with shared Taguba inquiry root; report scan still missing.",
+      "completeHistoricalProof": false
+    },
+    {
+      "chainId": "C03-CHAIN-04",
+      "authorId": "james-corbett",
+      "sourceIds": [
+        "JT3-S01",
+        "JT3-S02",
+        "JT3-S03"
+      ],
+      "scope": "Publisher episode notes → cited historical periodical text; spoken contemporary claims not audited.",
+      "completeHistoricalProof": false
+    },
+    {
+      "chainId": "C03-CHAIN-05",
+      "authorId": "derrick-broze",
+      "sourceIds": [
+        "JT3-S04",
+        "JT3-S05",
+        "JT3-S02",
+        "JT3-S03"
+      ],
+      "scope": "Release → publisher transcript → historical edition comparison; no audiovisual verification.",
+      "completeHistoricalProof": false
+    },
+    {
+      "chainId": "C03-CHAIN-06",
+      "authorId": "patrik-baab",
+      "sourceIds": [
+        "JT3-S06",
+        "JT3-S07",
+        "JT3-S08"
+      ],
+      "scope": "Author method interview → bibliography → normative comparison, not adjudication of field reporting.",
+      "completeHistoricalProof": false
+    }
+  ],
+  "relations": [
+    {
+      "edgeId": "JH3-E01",
+      "fromEntityId": "source/JH3-S01",
+      "toEntityId": "source/JH3-S02",
+      "type": "EDITORIAL_SOURCE_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "sourceIds": [
+        "JH3-S01",
+        "JH3-S02"
+      ],
+      "claimIds": [
+        "JH3-C01",
+        "JH3-C02"
+      ],
+      "rationale": "Compare publisher vindication language with qualified official conclusions.",
+      "sourceLocator": [
+        {
+          "sourceId": "JH3-S01",
+          "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+          "locator": "HTML lines 31–59, 76–92: edition metadata and promotional description. No book body."
+        },
+        {
+          "sourceId": "JH3-S02",
+          "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch12.htm",
+          "locator": "HTML lines 0–7, opening conclusions including named exceptions."
+        }
+      ],
+      "timeScope": {
+        "from": null,
+        "to": null,
+        "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+      },
+      "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap.",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "edgeId": "JH3-E02",
+      "fromEntityId": "source/JH3-S04",
+      "toEntityId": "source/JH3-S05",
+      "type": "EDITORIAL_SOURCE_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "sourceIds": [
+        "JH3-S04",
+        "JH3-S05"
+      ],
+      "claimIds": [
+        "JH3-C03",
+        "JH3-C04"
+      ],
+      "rationale": "Test retrospective framing against a bounded government policy finding; direct citation not established.",
+      "sourceLocator": [
+        {
+          "sourceId": "JH3-S04",
+          "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+          "locator": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard."
+        },
+        {
+          "sourceId": "JH3-S05",
+          "url": "https://irp.fas.org/cia/product/cocaine2/findings.html",
+          "locator": "Findings paragraphs 57–69 (HTML lines 135–209); title/date checked on volume index."
+        }
+      ],
+      "timeScope": {
+        "from": null,
+        "to": null,
+        "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+      },
+      "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap.",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "edgeId": "JH3-E03",
+      "fromEntityId": "source/JH3-S06",
+      "toEntityId": "source/JH3-S07",
+      "type": "EDITORIAL_SOURCE_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "sourceIds": [
+        "JH3-S06",
+        "JH3-S07"
+      ],
+      "claimIds": [
+        "JH3-C05",
+        "JH3-C06"
+      ],
+      "rationale": "Compare reporting with later testimony, acknowledging shared Taguba inquiry root.",
+      "sourceLocator": [
+        {
+          "sourceId": "JH3-S06",
+          "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+          "locator": "Article body HTML lines 46–49 and 83–118; excluded generated summary. Displayed date May 3; print issue May 10."
+        },
+        {
+          "sourceId": "JH3-S07",
+          "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+          "locator": "Taguba opening statement on May 11, 2004, HTML lines 4511–4594; adjacent questions lines 4735–4768. HTML transcription only."
+        }
+      ],
+      "timeScope": {
+        "from": null,
+        "to": null,
+        "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+      },
+      "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap.",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "edgeId": "JH3-E04",
+      "fromEntityId": "source/JH3-S07",
+      "toEntityId": "source/JH3-S08",
+      "type": "EDITORIAL_SOURCE_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "sourceIds": [
+        "JH3-S07",
+        "JH3-S08"
+      ],
+      "claimIds": [
+        "JH3-C06"
+      ],
+      "rationale": "Catalog helps locate report; neither catalog nor testimony is a read report scan.",
+      "sourceLocator": [
+        {
+          "sourceId": "JH3-S07",
+          "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+          "locator": "Taguba opening statement on May 11, 2004, HTML lines 4511–4594; adjacent questions lines 4735–4768. HTML transcription only."
+        },
+        {
+          "sourceId": "JH3-S08",
+          "url": "https://exhibit.apus.edu/items/show/1219",
+          "locator": "Catalog metadata HTML lines 16–46. Thumbnail link inspected as image URL; report body not read."
+        }
+      ],
+      "timeScope": {
+        "from": null,
+        "to": null,
+        "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+      },
+      "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap.",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "edgeId": "JH3-E05",
+      "fromEntityId": "gary-webb",
+      "toEntityId": "JH3-W01",
+      "type": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JH3-S01"
+      ],
+      "claimIds": [
+        "JH3-C07"
+      ],
+      "rationale": "Publisher metadata identifies Gary Webb as author of Dark Alliance: Movie Tie-In Edition.",
+      "sourceLocator": [
+        {
+          "sourceId": "JH3-S01",
+          "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+          "locator": "HTML lines 31–59, 76–92: edition metadata and promotional description. No book body."
+        }
+      ],
+      "timeScope": {
+        "fromDate": "2014-09-30",
+        "toDate": null,
+        "note": "Specific catalog edition or article date only; not author career span."
+      },
+      "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author.",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "edgeId": "JH3-E06",
+      "fromEntityId": "robert-parry",
+      "toEntityId": "JH3-W04",
+      "type": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JH3-S04"
+      ],
+      "claimIds": [
+        "JH3-C08"
+      ],
+      "rationale": "The indexed Consortium News item identifies Robert Parry as the editor-note speaker.",
+      "sourceLocator": [
+        {
+          "sourceId": "JH3-S04",
+          "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+          "locator": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard."
+        }
+      ],
+      "timeScope": {
+        "fromDate": "2014-10-02",
+        "toDate": null,
+        "note": "Specific catalog edition or article date only; not author career span."
+      },
+      "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author.",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "edgeId": "JH3-E07",
+      "fromEntityId": "seymour-hersh",
+      "toEntityId": "JH3-W06",
+      "type": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JH3-S06"
+      ],
+      "claimIds": [
+        "JH3-C09"
+      ],
+      "rationale": "The article byline identifies Seymour M. Hersh.",
+      "sourceLocator": [
+        {
+          "sourceId": "JH3-S06",
+          "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+          "locator": "Article body HTML lines 46–49 and 83–118; excluded generated summary. Displayed date May 3; print issue May 10."
+        }
+      ],
+      "timeScope": {
+        "fromDate": "2004-05-03",
+        "toDate": null,
+        "note": "Specific catalog edition or article date only; not author career span."
+      },
+      "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author.",
+      "reviewStatus": "UNREVIEWED"
+    },
+    {
+      "edgeId": "JT3-E01",
+      "fromEntityId": "james-corbett",
+      "toEntityId": "derrick-broze",
+      "type": "HOSTS_GUEST_METADATA",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S03"
+      ],
+      "claimIds": [
+        "JT3-C07"
+      ],
+      "sourceLocator": "JT 3-S 03 header and introductory guest-description paragraph, dated 9 June 2025",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/james-corbett.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Publisher explicitly presents Broze as the guest; supports a program relationship only.",
+      "timeScope": "Program publication 2025-06-09; no event recording date independently established.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E02",
+      "fromEntityId": "source/JT3-S01",
+      "toEntityId": "source/JT3-S02",
+      "type": "CITES",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S01",
+        "JT3-S02"
+      ],
+      "claimIds": [
+        "JT3-C01"
+      ],
+      "sourceLocator": "JT 3-S 01 SHOW NOTES: The Technocrat – Vol.3 – No.4 – September 1937 link; JT 3-S 02 issue masthead",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/james-corbett.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Observed hyperlink traces publisher episode to historical issue; does not establish endorsement or modern continuity.",
+      "timeScope": "Episode 2022-11-02 cites periodical 1937-09.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E03",
+      "fromEntityId": "derrick-broze",
+      "toEntityId": "source/JT3-S04",
+      "type": "PUBLISHER_BYLINE",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S04"
+      ],
+      "claimIds": [
+        "JT3-C08"
+      ],
+      "sourceLocator": "JT 3-S 04 title block: Derrick Broze byline immediately above July 14,2023",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Explicit byline supports release authorship at publisher metadata scope.",
+      "timeScope": "Release 2023-07-14.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E04",
+      "fromEntityId": "source/JT3-S04",
+      "toEntityId": "source/JT3-S05",
+      "type": "LINKS_TRANSCRIPT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S04",
+        "JT3-S05"
+      ],
+      "claimIds": [
+        "JT3-C09"
+      ],
+      "sourceLocator": "JT 3-S 04 paragraph Transcript and sources links to JT 3-S 05 exact URL",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Observed link identifies the publisher transcript route; release and transcript share one documentary lineage.",
+      "timeScope": "Dated release 2023-07-14; transcript page publication date unknown; retrieved 2026-11-01.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E05",
+      "fromEntityId": "source/JT3-S05",
+      "toEntityId": "source/JT3-S02",
+      "type": "EDITION_COMPARISON",
+      "layer": "D_OPEN_DISPUTE_CORRECTION",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S02",
+        "JT3-S05"
+      ],
+      "claimIds": [
+        "JT3-C04"
+      ],
+      "sourceLocator": "JT 3-S 05 Understanding Historical Technocracy paragraph introducing 1938 declaration; JT 3-S 02 printed p.3/PDF index 2",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/derrick-broze.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Matching historical declaration invites edition comparison; possible1938 reprint remains unresolved.",
+      "timeScope": "Historical issue 1937-09 versus transcript reference 1938; transcript retrieved 2026-11-01.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "EDITION_COMPARISON_NOT_DISCONFIRMATION"
+    },
+    {
+      "edgeId": "JT3-E06",
+      "fromEntityId": "patrik-baab",
+      "toEntityId": "source/JT3-S06",
+      "type": "INTERVIEW_RESPONDENT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S06"
+      ],
+      "claimIds": [
+        "JT3-C05"
+      ],
+      "sourceLocator": "JT 3-S 06 introductory description names respondent Patrik Baab; question-and-answer body; byline Marcus Klöckner",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/patrik-baab.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Publisher distinguishes interview respondent from interviewer; method statement belongs to Baab.",
+      "timeScope": "Interview publication 2022-01-28.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "METADATA_OR_CITATION_ONLY"
+    },
+    {
+      "edgeId": "JT3-E07",
+      "fromEntityId": "source/JT3-S06",
+      "toEntityId": "source/JT3-S08",
+      "type": "METHODOLOGICAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "sourceIds": [
+        "JT3-S06",
+        "JT3-S08"
+      ],
+      "claimIds": [
+        "JT3-C05",
+        "JT3-C06"
+      ],
+      "sourceLocator": "JT 3-S 06 answers on research and comparison of media; JT 3-S 08 sections 1–3 and guideline 2.4",
+      "sourceGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/authors/patrik-baab.md",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "nextFalsifier": "Inspect exact edition or original recording; metadata and comparison do not imply causal continuity.",
+      "rationale": "Researcher-selected normative comparison; the code is not cited by Baab here and is not a judgment on him.",
+      "timeScope": "Interview 2022-01-28 compared with code version 2025-03-19; no retroactive misconduct finding.",
+      "counterevidence": [],
+      "counterevidenceScope": "No direct contrary record inspected; uncertainties and required originals are retained in linked claims.",
+      "comparisonKind": "NORMATIVE_COMPARISON_NOT_REBUTTAL"
+    }
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "JH3-S01",
+      "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+      "independenceGroup": "seven-stories-dark-alliance"
+    },
+    {
+      "sourceId": "JH3-S02",
+      "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch12.htm",
+      "independenceGroup": "doj-oig-contra-investigation"
+    },
+    {
+      "sourceId": "JH3-S03",
+      "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch01p2.htm",
+      "independenceGroup": "doj-oig-contra-investigation"
+    },
+    {
+      "sourceId": "JH3-S04",
+      "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+      "independenceGroup": "parry-consortium-retrospective"
+    },
+    {
+      "sourceId": "JH3-S05",
+      "url": "https://irp.fas.org/cia/product/cocaine2/findings.html",
+      "independenceGroup": "cia-oig-96-0143-ig-volume-ii"
+    },
+    {
+      "sourceId": "JH3-S06",
+      "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+      "independenceGroup": "hersh-abu-ghraib-taguba"
+    },
+    {
+      "sourceId": "JH3-S07",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+      "independenceGroup": "taguba-800th-mp-investigation"
+    },
+    {
+      "sourceId": "JH3-S08",
+      "url": "https://exhibit.apus.edu/items/show/1219",
+      "independenceGroup": "taguba-800th-mp-investigation"
+    },
+    {
+      "sourceId": "JT3-S01",
+      "url": "https://corbettreport.com/qfc-technocracy/",
+      "independenceGroup": "CORBETT_2022"
+    },
+    {
+      "sourceId": "JT3-S02",
+      "url": "https://archive.org/download/TheTechnocrat-September%201937/TheTechnocrat-September%201937.pdf",
+      "independenceGroup": "TECHNOCRACY_INC_1937"
+    },
+    {
+      "sourceId": "JT3-S03",
+      "url": "https://corbettreport.com/opting-out-of-technocracy/",
+      "independenceGroup": "CORBETT_BROZE_2025"
+    },
+    {
+      "sourceId": "JT3-S04",
+      "url": "https://theconsciousresistance.com/pop-chapter13-technocracy/",
+      "independenceGroup": "BROZE_CH13"
+    },
+    {
+      "sourceId": "JT3-S05",
+      "url": "https://thepyramidofpower.net/chapter-13-the-technocratic-state/",
+      "independenceGroup": "BROZE_CH13"
+    },
+    {
+      "sourceId": "JT3-S06",
+      "url": "https://www.nachdenkseiten.de/?p=80224",
+      "independenceGroup": "NDS_BAAB_2022"
+    },
+    {
+      "sourceId": "JT3-S07",
+      "url": "https://www.patrikbaab.de/bucher",
+      "independenceGroup": "BAAB_SELF_DESCRIPTION"
+    },
+    {
+      "sourceId": "JT3-S08",
+      "url": "https://www.presserat.de/pressekodex.html",
+      "independenceGroup": "GERMAN_PRESS_COUNCIL"
+    }
+  ],
+  "claimRefs": [
+    {
+      "claimId": "JH3-C01",
+      "sourceIds": [
+        "JH3-S01"
+      ]
+    },
+    {
+      "claimId": "JH3-C02",
+      "sourceIds": [
+        "JH3-S02"
+      ]
+    },
+    {
+      "claimId": "JH3-C03",
+      "sourceIds": [
+        "JH3-S04"
+      ]
+    },
+    {
+      "claimId": "JH3-C04",
+      "sourceIds": [
+        "JH3-S05"
+      ]
+    },
+    {
+      "claimId": "JH3-C05",
+      "sourceIds": [
+        "JH3-S06"
+      ]
+    },
+    {
+      "claimId": "JH3-C06",
+      "sourceIds": [
+        "JH3-S07"
+      ]
+    },
+    {
+      "claimId": "JH3-C07",
+      "sourceIds": [
+        "JH3-S01"
+      ]
+    },
+    {
+      "claimId": "JH3-C08",
+      "sourceIds": [
+        "JH3-S04"
+      ]
+    },
+    {
+      "claimId": "JH3-C09",
+      "sourceIds": [
+        "JH3-S06"
+      ]
+    },
+    {
+      "claimId": "JT3-C01",
+      "sourceIds": [
+        "JT3-S01"
+      ]
+    },
+    {
+      "claimId": "JT3-C02",
+      "sourceIds": [
+        "JT3-S02"
+      ]
+    },
+    {
+      "claimId": "JT3-C03",
+      "sourceIds": [
+        "JT3-S05"
+      ]
+    },
+    {
+      "claimId": "JT3-C04",
+      "sourceIds": [
+        "JT3-S02",
+        "JT3-S05"
+      ]
+    },
+    {
+      "claimId": "JT3-C05",
+      "sourceIds": [
+        "JT3-S06"
+      ]
+    },
+    {
+      "claimId": "JT3-C06",
+      "sourceIds": [
+        "JT3-S08"
+      ]
+    },
+    {
+      "claimId": "JT3-C07",
+      "sourceIds": [
+        "JT3-S03"
+      ]
+    },
+    {
+      "claimId": "JT3-C08",
+      "sourceIds": [
+        "JT3-S04"
+      ]
+    },
+    {
+      "claimId": "JT3-C09",
+      "sourceIds": [
+        "JT3-S04"
+      ]
+    }
+  ],
+  "metrics": {
+    "authors": 6,
+    "sources": 16,
+    "claims": 18,
+    "relations": 14,
+    "sourceChains": 6
+  },
+  "limits": [
+    "Graph is derived navigation, not a second source owner.",
+    "No historical control/funding/criminal affiliation inferred.",
+    "Causal false also on documentary publication relationships.",
+    "Source coverage is bounded; independent historical corroboration is not implied."
+  ]
+}

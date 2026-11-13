@@ -1,0 +1,2641 @@
+{
+  "schema_version": "1.1.0",
+  "scope": "Breadth-first; typed evidence relations, no inferred hidden-control edges",
+  "entities": [
+    {
+      "id": "burkhard-heim",
+      "type": "person",
+      "name": "Burkhard Heim"
+    },
+    {
+      "id": "tom-delonge",
+      "type": "person",
+      "name": "Tom DeLonge"
+    },
+    {
+      "id": "michael-hayden",
+      "type": "person",
+      "name": "Michael V. Hayden"
+    },
+    {
+      "id": "timothy-taylor",
+      "type": "person",
+      "name": "Timothy E. Taylor / „Tyler D.“"
+    },
+    {
+      "id": "tyler-d",
+      "type": "pseudonymous_book_subject",
+      "name": "Tyler D. (American Cosmic)"
+    },
+    {
+      "id": "jesse-michels",
+      "type": "person",
+      "name": "Jesse Michels"
+    },
+    {
+      "id": "chris-bledsoe",
+      "type": "person",
+      "name": "Chris Bledsoe"
+    },
+    {
+      "id": "diana-walsh-pasulka",
+      "type": "person",
+      "name": "Diana Walsh Pasulka"
+    },
+    {
+      "id": "garry-nolan",
+      "type": "person",
+      "name": "Garry Nolan"
+    },
+    {
+      "id": "james-master",
+      "type": "pseudonymous_book_subject",
+      "name": "James Master"
+    },
+    {
+      "id": "tts",
+      "type": "organization",
+      "name": "To The Stars"
+    },
+    {
+      "id": "jim-semivan",
+      "type": "person",
+      "name": "Jim Semivan"
+    },
+    {
+      "id": "hal-puthoff",
+      "type": "person",
+      "name": "Hal Puthoff"
+    },
+    {
+      "id": "peter-levenda",
+      "type": "person",
+      "name": "Peter Levenda"
+    },
+    {
+      "id": "us-army-gvsc",
+      "type": "organization",
+      "name": "US Army DEVCOM GVSC"
+    },
+    {
+      "id": "walter-droscher",
+      "type": "person",
+      "name": "Walter Dröscher"
+    },
+    {
+      "id": "andreas-resch",
+      "type": "person",
+      "name": "Andreas Resch"
+    },
+    {
+      "id": "jochem-hauser",
+      "type": "person",
+      "name": "Jochem Hauser"
+    },
+    {
+      "id": "hayden-center",
+      "type": "organization",
+      "name": "Hayden Center"
+    },
+    {
+      "id": "drew-ponder",
+      "type": "person",
+      "name": "Drew Ponder"
+    },
+    {
+      "id": "jacques-vallee",
+      "name": "Jacques Vallée",
+      "type": "person"
+    },
+    {
+      "id": "federico-faggin",
+      "name": "Federico Faggin",
+      "type": "person"
+    },
+    {
+      "id": "sol-foundation",
+      "name": "Sol Foundation",
+      "type": "organization"
+    },
+    {
+      "id": "stanford-university",
+      "name": "Stanford University",
+      "type": "organization"
+    },
+    {
+      "id": "uncw",
+      "name": "University of North Carolina Wilmington",
+      "type": "organization"
+    },
+    {
+      "id": "eric-davis",
+      "name": "Eric W. Davis",
+      "type": "person"
+    },
+    {
+      "id": "ingo-swann",
+      "name": "Ingo Swann",
+      "type": "person"
+    },
+    {
+      "id": "russell-targ",
+      "name": "Russell Targ",
+      "type": "person"
+    },
+    {
+      "id": "richard-dolan",
+      "name": "Richard Dolan",
+      "type": "person"
+    },
+    {
+      "id": "nids",
+      "name": "National Institute for Discovery Science",
+      "type": "organization"
+    },
+    {
+      "id": "afrl",
+      "name": "Air Force Research Laboratory",
+      "type": "organization"
+    },
+    {
+      "id": "robert-bigelow",
+      "name": "Robert T. Bigelow",
+      "type": "person"
+    },
+    {
+      "id": "colm-kelleher",
+      "name": "Colm A. Kelleher",
+      "type": "person"
+    },
+    {
+      "id": "bics",
+      "name": "Bigelow Institute for Consciousness Studies",
+      "type": "organization"
+    },
+    {
+      "id": "baass",
+      "name": "Bigelow Aerospace Advanced Space Studies",
+      "type": "organization"
+    },
+    {
+      "id": "bigelow-aerospace",
+      "name": "Bigelow Aerospace",
+      "type": "organization"
+    },
+    {
+      "id": "dia",
+      "name": "Defense Intelligence Agency",
+      "type": "organization"
+    },
+    {
+      "id": "nasa",
+      "name": "NASA",
+      "type": "organization"
+    },
+    {
+      "id": "george-knapp",
+      "name": "George Knapp",
+      "type": "person"
+    },
+    {
+      "id": "james-lacatski",
+      "name": "James T. Lacatski",
+      "type": "person"
+    },
+    {
+      "id": "jeremy-corbell",
+      "name": "Jeremy Corbell",
+      "type": "person"
+    },
+    {
+      "id": "aaro",
+      "name": "All-domain Anomaly Resolution Office",
+      "type": "organization"
+    },
+    {
+      "id": "kona-blue",
+      "name": "KONA BLUE",
+      "type": "program"
+    }
+  ],
+  "claims": [
+    {
+      "id": "UKN-C-burkhard-heim-1",
+      "subject": "burkhard-heim",
+      "theme": "Feldantrieb und frühe Kontrabarie",
+      "attributable_paraphrase": "Der Archivführer erschließt das frühe Programm einer Kopplung von Elektromagnetismus und Gravitation für einen rückstoßfreien Antrieb. Das ist ein historisches Theorie- und Technikziel; ein funktionsfähiger Antrieb ist damit nicht dokumentiert.",
+      "source_ids": [
+        "UKN-S17"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-2",
+      "subject": "burkhard-heim",
+      "theme": "Geometrie und Metron",
+      "attributable_paraphrase": "In der Einführung wird die Materiestruktur geometrisch und diskret gedacht; das Metron bildet eine elementare Flächengröße. Heims sechs Dimensionen sind mathematische Modellgrößen, keine sechs Erscheinungsebenen Vallées.",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-3",
+      "subject": "burkhard-heim",
+      "theme": "Teilchenmassen",
+      "attributable_paraphrase": "Die überlieferte Fassung von 1982 ist ein konkreter Gleichungstext. Implementierungen und Parameterfragen sind eine eigene Prüfungsebene; hier wurden weder Rechnungen reproduziert noch Messdaten neu ausgewertet.",
+      "source_ids": [
+        "UKN-S14",
+        "UKN-S18"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-4",
+      "subject": "burkhard-heim",
+      "theme": "Syntrometrie und Organisation",
+      "attributable_paraphrase": "Der Archivführer ordnet Syntrometrie als Heims verallgemeinerte Struktur- und Logiklehre ein. Für den Atlas ist die Verbindung von Physik und Bedeutungsordnung relevant, ohne sie mit einer experimentellen Bewusstseinstheorie gleichzusetzen.",
+      "source_ids": [
+        "UKN-S17"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-5",
+      "subject": "burkhard-heim",
+      "theme": "Leben",
+      "attributable_paraphrase": "Der Aufsatz beginnt mit einer Beschreibung materieller Systeme über Form, innere Struktur und Zusammensetzung. Die anschließende Übertragung auf Lebensprozesse ist als theoretisches Programm erschlossen.",
+      "source_ids": [
+        "UKN-S15"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-6",
+      "subject": "burkhard-heim",
+      "theme": "Psyche und Fortleben",
+      "attributable_paraphrase": "Heim erklärt im Auftakt von Postmortale Zustände?, indirekt von einer Strukturtheorie auszugehen. Er grenzt sich dort ausdrücklich von paranormalen Erfahrungen als empirischer Ausgangsbasis ab – eine wichtige methodische Differenz zu Erfahrungsberichten.",
+      "source_ids": [
+        "UKN-S16"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-burkhard-heim-7",
+      "subject": "burkhard-heim",
+      "theme": "Zusammenarbeit und spätere Antriebsmodelle",
+      "attributable_paraphrase": "Die Einführung von 1998 dokumentiert Heim, Dröscher und Resch mit unterschiedlichen Beiträgen. Hauser/Dröschers späterer Antriebspfad ist gesondert zu führen: der erschlossene arXiv-Beitrag von 2011 ist zurückgezogen. Daraus folgt weder eine Widerlegung sämtlicher Heim-Arbeiten noch eine Bestätigung ihrer Technik.",
+      "source_ids": [
+        "UKN-S13",
+        "UKN-S19"
+      ],
+      "status": "THEORY_AND_RECEPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-1",
+      "subject": "tom-delonge",
+      "theme": "Disclosure und Insiderwissen",
+      "attributable_paraphrase": "Das FADER-Profil rekonstruiert sein Bemühen, politische und technische Ansprechpartner für eine öffentliche Erzählung zu gewinnen. Die behaupteten Inhalte privater Briefings bleiben als berichtete Aussagen geführt.",
+      "source_ids": [
+        "UKN-S25"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-2",
+      "subject": "tom-delonge",
+      "theme": "Was er behauptet",
+      "attributable_paraphrase": "Der Artikel bündelt unter anderem seine Überzeugungen zu außerirdischer Präsenz, geheimgehaltener Technik und verdeckten historischen Zusammenhängen. Diese journalistische Bündelung wird nicht als neu gesichtetes, lückenloses DeLonge-Originalinterview ausgegeben.",
+      "source_ids": [
+        "UKN-S25"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-3",
+      "subject": "tom-delonge",
+      "theme": "TTSA als Organisation",
+      "attributable_paraphrase": "Die Emissionsunterlagen von 2017 führen DeLonge, Jim Semivan und Hal Puthoff in Gründer-/Leitungsrollen. Das ist eine dokumentierte Organisationsverbindung und ein belastbarerer Netzwerkknoten als bloße thematische Nähe.",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-4",
+      "subject": "tom-delonge",
+      "theme": "Fiktion und Sachbuch",
+      "attributable_paraphrase": "Sekret Machines umfasst unterschiedliche Gattungen. Der Verlag führt insbesondere die Sachbuchtrilogie Gods, Man & War und Gespräche mit Peter Levenda und Semivan. Verlagskategorie Sachbuch bedeutet nicht, dass jede darin vertretene These bewiesen ist.",
+      "source_ids": [
+        "UKN-S22"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-5",
+      "subject": "tom-delonge",
+      "theme": "Materialien und Army-Kooperation",
+      "attributable_paraphrase": "TTS beschreibt Materialforschung und Kooperation. Freigegebene Army-Korrespondenz aus Juli2024 berichtet von wenigen Tests an sehr kleinen Materialien im Rahmen einer fünfjährigen CRADA. Die gesichteten Passagen enthalten keinen Nachweis nichtmenschlicher Herkunft oder eines Antriebs.",
+      "source_ids": [
+        "UKN-S21",
+        "UKN-S23"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-6",
+      "subject": "tom-delonge",
+      "theme": "Medienunternehmen im Zeitverlauf",
+      "attributable_paraphrase": "Die 2026er Halbjahresmeldung beschreibt TTS als Unterhaltungs- und IP-Unternehmen mit wissenschaftlichem Beirat. Historische TTSA-Struktur und heutiges Geschäftsmodell werden im Atlas zeitlich getrennt.",
+      "source_ids": [
+        "UKN-S24"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-tom-delonge-7",
+      "subject": "tom-delonge",
+      "theme": "Bewusstsein, Religion und kulturelle Vorbereitung",
+      "attributable_paraphrase": "Die offiziellen TTS-Talks-Beschreibungen verbinden UFOs mit Bewusstsein und Geheimhaltung. Das eröffnet eine Nachbarschaft zu Pasulka und Vallée: Wie werden unklare Phänomene durch Erzählungen gesellschaftlich wirksam?",
+      "source_ids": [
+        "UKN-S22"
+      ],
+      "status": "PUBLICATION_OR_ORGANIZATION_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-1",
+      "subject": "michael-hayden",
+      "theme": "Institutionen und Führung",
+      "attributable_paraphrase": "Die Hochschulbiografie nennt NSA, CIA und die Funktion als erster Principal Deputy DNI. Das Profil beschreibt außerdem das Spannungsverhältnis von Freiheit, Sicherheit und Cyber-Risiken.",
+      "source_ids": [
+        "UKN-S27"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-2",
+      "subject": "michael-hayden",
+      "theme": "Organisationskultur",
+      "attributable_paraphrase": "Im Interview2010 beschreibt Hayden die Stärkung einer gemeinsamen CIA-Kultur und personelle Kontinuität. Hier geht es um konkrete Führungsentscheidungen, nicht um die Ableitung einer verborgenen Gesamtsteuerung.",
+      "source_ids": [
+        "UKN-S26"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-3",
+      "subject": "michael-hayden",
+      "theme": "Wirksamkeit und Rechtfertigung",
+      "attributable_paraphrase": "Hayden verteidigt im Interview den Erkenntnisgewinn des Verhörprogramms, grenzt seine Position zugleich von einer pauschalen Verteidigung aller Techniken ab. Diese Selbstbeschreibung ist eine Aussage des Beteiligten.",
+      "source_ids": [
+        "UKN-S26"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-4",
+      "subject": "michael-hayden",
+      "theme": "Dokumentarische Gegenlesart",
+      "attributable_paraphrase": "Die Senatsbefunde2014 widersprechen zentralen Wirksamkeits- und Notwendigkeitsbehauptungen. Findings1–2 unterscheiden Informationen, die vor oder ohne Zwang vorlagen, von dem behaupteten Mehrwert der Techniken.",
+      "source_ids": [
+        "UKN-S28"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-5",
+      "subject": "michael-hayden",
+      "theme": "Risikokultur",
+      "attributable_paraphrase": "Die Verlagsbeschreibung von Playing to the Edge vermittelt den Anspruch, verfügbare Handlungsspielräume weit auszuschöpfen. Das ist eine rekonstruierte Management- und Sicherheitsposition; das Buch wurde hier nicht vollständig gelesen.",
+      "source_ids": [
+        "UKN-S30"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-michael-hayden-6",
+      "subject": "michael-hayden",
+      "theme": "Öffentlichkeit und Kontrolle",
+      "attributable_paraphrase": "Das Hayden Center bietet einen institutionellen Publikations- und Veranstaltungspfad. Beim Vergleich mit Fitts, Webb, Corbett oder Dark Journalist stehen unterschiedliche Maßstäbe für Geheimhaltung, Legitimation und Kontrolle nebeneinander.",
+      "source_ids": [
+        "UKN-S27",
+        "UKN-S29"
+      ],
+      "status": "INSTITUTIONAL_STATEMENT_AND_COUNTERREADING",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-1",
+      "subject": "timothy-taylor",
+      "theme": "Öffentliche Biografie",
+      "attributable_paraphrase": "VIVEX beschreibt Tätigkeiten in Startoperationen und Medizintechnik. Launch Fever ist2003 unter Timothy E. Taylor bibliografisch nachgewiesen. Seine genaue Arbeitgeber- und Vertragsgeschichte wird dadurch noch nicht vollständig geklärt.",
+      "source_ids": [
+        "UKN-S01",
+        "UKN-S02"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-2",
+      "subject": "timothy-taylor",
+      "theme": "Erfindungen",
+      "attributable_paraphrase": "Das Patent US5454827A nennt Taylor und Gilbert M. Aust. Es schafft einen konkreten Ausgangspunkt für die technische Biografie. Eine Patentschrift belegt weder einen außerirdischen Ursprung der Idee noch die pauschale Zahl aller Erfindungen.",
+      "source_ids": [
+        "UKN-S03"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-3",
+      "subject": "timothy-taylor",
+      "theme": "„Tyler D.“ als Zuschreibung",
+      "attributable_paraphrase": "American Cosmic arbeitet mit Pseudonymen. Die Gleichsetzung mit Taylor ist in der späteren Rezeption verbreitet; in den hier gelesenen Originalpassagen wird sie nicht ausdrücklich aufgelöst. Beide Datensätze bleiben verbunden, aber nicht als sicher identisch verschmolzen.",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S09"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-4",
+      "subject": "timothy-taylor",
+      "theme": "Wüstenort und „James“",
+      "attributable_paraphrase": "Pasulka berichtet eine Reise mit Tyler und James zu einem angeblichen Fundort. Der Bericht belegt ihre Erzählung und ihre religionswissenschaftliche Fragestellung, nicht die Herkunft des gefundenen Materials. Garry Nolans Identifizierung als James bleibt in dieser Aufnahme eine Zuschreibung; ein eigener Bestätigungsbeleg wurde nicht gesichtet.",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-5",
+      "subject": "timothy-taylor",
+      "theme": "Frequenz, Erfindung und Praxis",
+      "attributable_paraphrase": "Pasulka berichtet Tylers Vorstellungen von körperlicher Abstimmung und Kontakt sowie eine persönliche Routine. Ponders spätere Frequency Wave Theory ist davon getrennt: ein eigener Deutungsrahmen, keine hier belegte Taylor-Publikation oder überprüfte physikalische Theorie.",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S08"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-6",
+      "subject": "timothy-taylor",
+      "theme": "Vatikan und Religion",
+      "attributable_paraphrase": "Pasulka erzählt eine religiöse Veränderung und unterscheidet Archive und Observatorium. Sie widerspricht im Buch ausdrücklich einer UFO-Forschung der Jesuiten am Observatorium. Der2017er Besucherlistenbeleg bleibt wegen404 vorerst ein konkretes Findmittel.",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S06"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-7",
+      "subject": "timothy-taylor",
+      "theme": "Bledsoe, Obama und Camp David",
+      "attributable_paraphrase": "Im erschlossenen AI-Transkript sagt Bledsoe zunächst, Taylor habe Obama gebrieft; später unterscheidet er eine behauptete Tischbegegnung von seinem eigenen Schluss auf das Briefing. Michels fragt nach und reagiert. Ohne Originalaudio und unabhängiges Dokument bleibt das zugeschriebenes Zeugnis plus Schlussfolgerung.",
+      "source_ids": [
+        "UKN-S07"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-timothy-taylor-8",
+      "subject": "timothy-taylor",
+      "theme": "Invisible College und öffentliche Mythologie",
+      "attributable_paraphrase": "Der Ausdruck dient als Deutungsrahmen für informelle Wissenszirkel. Eine formale Mitgliedschaftsliste folgt daraus nicht. Reddit, VETTED und Ponder zeigen verschiedene Rezeptionswege; sie dürfen nicht als drei unabhängige Belege für denselben Ursprung gezählt werden.",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S08",
+        "UKN-S09",
+        "UKN-S11",
+        "UKN-S12"
+      ],
+      "status": "ATTRIBUTION_WITH_EXPLICIT_LIMIT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-1",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Religionsgeschichte vor der UFO-Forschung",
+      "attributable_paraphrase": "Heaven Can Wait (2014) untersucht das Fegefeuer in katholischer Andacht und populärer Kultur. Diese historische Arbeit bildet einen eigenen Schwerpunkt, nicht bloß die Vorgeschichte einer UFO-These.",
+      "source_ids": [
+        "UKN-S41"
+      ],
+      "status": "PUBLICATION_SCOPE",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-2",
+      "subject": "diana-walsh-pasulka",
+      "theme": "American Cosmic: Wissenschaft als Autorität",
+      "attributable_paraphrase": "Die Ethnografie untersucht, wie wissenschaftliches Prestige, technische Artefakte und persönliche Erfahrungen Überzeugungen tragen. Die Frage nach der Glaubensbildung ist von der Frage nach der außerirdischen Herkunft eines Gegenstands zu unterscheiden.",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "status": "AUTHOR_ANALYSIS",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-3",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Tyler, James und der Zugang zum Feld",
+      "attributable_paraphrase": "Pasulka berichtet eine Reise mit pseudonymisierten Beteiligten zu einem angeblichen Fundort in New Mexico. Der Zugang und ihre Beobachtung sind Bestandteil ihres Berichts; die behauptete Fundortgeschichte bleibt eine andere Belegebene.",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "status": "REPORTED_EXPERIENCE",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-4",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Kontaktpraktiken und Inspiration",
+      "attributable_paraphrase": "Tylers Routine und sein Bild eines auf Empfang eingestellten Körpers zeigen eine Verbindung von Technikmetapher, Lebensführung und Erfindungserzählung. Pasulka berichtet diese Praxis; sie legt damit keine geprüfte Frequenz- oder Gravitationstheorie vor.",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "status": "REPORTED_BELIEF",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-5",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Medien, KI und Posthumanismus",
+      "attributable_paraphrase": "Believing in Bits, mit Simone Natale herausgegeben, erweitert die Perspektive auf digitale Medien und das Übernatürliche. Die eigene Werkübersicht nennt außerdem Posthumanism mit Michael Bess; KI und menschliche Transformation sind damit eigene Vergleichsachsen.",
+      "source_ids": [
+        "UKN-S42",
+        "UKN-S05"
+      ],
+      "status": "PUBLICATION_SCOPE",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-6",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Encounters und The Others",
+      "attributable_paraphrase": "Die Autorenseite erschließt Encounters über Berichte nichtmenschlicher Intelligenzen und The Others über UFOs, KI und verborgene Einflussvorstellungen. Hier als Werk- und Themenpfade aufgenommen; diese beiden Bücher wurden nicht vollständig gelesen.",
+      "source_ids": [
+        "UKN-S05"
+      ],
+      "status": "PUBLISHER_AUTHOR_DESCRIPTION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-7",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Historische Parallelen ohne vorschnelle Gleichsetzung",
+      "attributable_paraphrase": "Im Interview2026 unterscheidet Pasulka das Sammeln ähnlicher Berichte von der Entscheidung, ob mittelalterliche und moderne Menschen tatsächlich dasselbe sahen. Religiöse Erfahrung wird ernst genommen, ohne ihren Gegenstand dadurch zu beweisen.",
+      "source_ids": [
+        "UKN-S40"
+      ],
+      "status": "ATTRIBUTED_INTERVIEW_POSITION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-diana-walsh-pasulka-8",
+      "subject": "diana-walsh-pasulka",
+      "theme": "Persönliche Deutung, Apokalypse und Philosophie",
+      "attributable_paraphrase": "Im erschlossenen Michels-Transkript deutet sie um40:07 eine gegenwärtige Enthüllung an, vergleicht um41:38 ihre historische Arbeit mit Vallée und erörtert später Girard und Platons Höhle. Das geht über eine rein distanzierte Beschreibung hinaus. Dritttranskript, keine wortgetreue Audiofreigabe.",
+      "source_ids": [
+        "UKN-S39"
+      ],
+      "status": "ATTRIBUTED_TRANSCRIPT_POSITION",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-1",
+      "subject": "garry-nolan",
+      "theme": "Biomedizin und Messverfahren",
+      "attributable_paraphrase": "Das Stanford-Profil nennt Immunologie, Krebsforschung und Einzelzellanalyse mit CyTOF, MIBI und CODEX. Diese Arbeit erklärt seine instrumentelle Kompetenz, bestätigt aber keine UAP-Ursprungsthese.",
+      "source_ids": [
+        "UKN-S33"
+      ],
+      "status": "INSTITUTIONAL_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-2",
+      "subject": "garry-nolan",
+      "theme": "Unternehmerische Übersetzung",
+      "attributable_paraphrase": "Stanford dokumentiert Gründungen und Beteiligungen etwa bei Rigel, Nodality, Ionpath und Akoya. Der Transfer von Forschung in Instrumente und Unternehmen bildet einen eigenen Themenstrang; eine UAP-Finanzierung folgt daraus nicht.",
+      "source_ids": [
+        "UKN-S33"
+      ],
+      "status": "INSTITUTIONAL_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-3",
+      "subject": "garry-nolan",
+      "theme": "Materialanalyse mit Vallée",
+      "attributable_paraphrase": "Nolan, Vallée, Sizun Jiang und Larry Lemke publizierten2022 zur Charakterisierung ungewöhnlicher Materialien. Die Kooperation ist durch die Autorenzeile belegt. Untersucht wird unter anderem die Council-Bluffs-Probe CB_JV-1.",
+      "source_ids": [
+        "UKN-S34"
+      ],
+      "status": "DOCUMENTED_COAUTHORSHIP",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-4",
+      "subject": "garry-nolan",
+      "theme": "Was die Probe tatsächlich zeigt",
+      "attributable_paraphrase": "Auf S.2 berichten die Autoren keine signifikanten Abweichungen von irdisch normalen Isotopenverhältnissen. S.11 trennt mögliche Isotopenanreicherung von einem Herkunftsnachweis; S.12 lässt Ursprung und Bedeutung offen. Das ist keine Bestätigung außerirdischer Technik.",
+      "source_ids": [
+        "UKN-S34"
+      ],
+      "status": "PUBLISHED_RESULT_NOT_REPLICATED_HERE",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-5",
+      "subject": "garry-nolan",
+      "theme": "Erweiterte SETI-Fragestellung",
+      "attributable_paraphrase": "Das gemeinsame Papier mit Vallée und Federico Faggin schlägt einen breiteren Suchbegriff vor: andere Signalformen, Bewusstsein und bisher vernachlässigte Suchräume. Das ist ein Forschungsprogramm, kein Nachweis einer entdeckten Intelligenz.",
+      "source_ids": [
+        "UKN-S35"
+      ],
+      "status": "RESEARCH_PROPOSAL",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-6",
+      "subject": "garry-nolan",
+      "theme": "Wahrnehmung, Gehirn und Intuition",
+      "attributable_paraphrase": "Im Michels-Dritttranskript berichtet Nolan um06:34–08:19 von angefragter Beratung, MRT-Bildern und Auffälligkeiten im Caudate-/Putamen-Bereich. Die Verknüpfung mit Intuition oder UAP-Wahrnehmung bleibt hier eine zugeschriebene Hypothese; weder Patientendaten noch eine kausale Studie wurden geprüft.",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "status": "ATTRIBUTED_TRANSCRIPT_HYPOTHESIS",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-7",
+      "subject": "garry-nolan",
+      "theme": "Invisible College und Forschungszugang",
+      "attributable_paraphrase": "Nolan nennt im selben Transkript Vallée, Puthoff, Davis, Bigelow und Kelleher als Kontakte seines Einstiegs. Das belegt zunächst seinen Bericht über ein Netzwerk, keine formale Organisation oder gemeinsame Doktrin.",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "status": "REPORTED_CONTACT",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-garry-nolan-8",
+      "subject": "garry-nolan",
+      "theme": "Sol: Forschung, Politik und Öffentlichkeit",
+      "attributable_paraphrase": "Die Gründungsmitteilung2023 verbindet Nolan und Peter Skafish mit dem Aufbau einer Forschungs- und Politikplattform. Im aktuellen Register stehen Pasulka und Vallée im Beirat. Organisation und programmatischer Anspruch sind belegt; einzelne Mitglieder können unterschiedliche Erklärungen vertreten.",
+      "source_ids": [
+        "UKN-S36",
+        "UKN-S37"
+      ],
+      "status": "ORGANIZATIONAL_SELF_RECORD",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-1",
+      "subject": "hal-puthoff",
+      "theme": "SRI und Ingo Swann",
+      "attributable_paraphrase": "Puthoff beschreibt den Beginn seiner Zusammenarbeit mit Swann1972 und seine Leitung des SRI-Programms bis1985. Seine Darstellung des Magnetometerversuchs ist ein Teilnehmerbericht; sie belegt den Forschungszusammenhang, nicht unabhängig den behaupteten Effekt.",
+      "source_ids": [
+        "UKN-S45"
+      ],
+      "status": "Teilnehmerbericht",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-2",
+      "subject": "hal-puthoff",
+      "theme": "Targ, Sinnesabschirmung und Bewertung",
+      "attributable_paraphrase": "Mit Russell Targ publizierte er1974 in Nature. Die AIR-Evaluation1995 unterschied statistische Laborabweichungen von ungeklärter paranormaler Ursache und fehlendem nachgewiesenem operativem Nutzen. Diese Ebenen dürfen weder zu einem pauschalen Erfolg noch zu einer Nichtexistenzbehauptung verkürzt werden.",
+      "source_ids": [
+        "UKN-S46",
+        "UKN-S47"
+      ],
+      "status": "Publikation & Gegenlesart",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-3",
+      "subject": "hal-puthoff",
+      "theme": "Trägheit aus dem Nullpunktfeld",
+      "attributable_paraphrase": "Haisch, Rueda und Puthoff schlagen elektromagnetische Wechselwirkung mit dem Nullpunktfeld als Erklärung von Trägheit vor. Levin kritisiert2009 zentrale mathematische und physikalische Annahmen der HRP1994-Ableitung. Hier stehen ein Theorieansatz und eine konkrete Fachkritik nebeneinander.",
+      "source_ids": [
+        "UKN-S48",
+        "UKN-S49"
+      ],
+      "status": "Theorie & Fachkritik",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-4",
+      "subject": "hal-puthoff",
+      "theme": "Raumzeit als technische Fragestellung",
+      "attributable_paraphrase": "Der JBIS-Beitrag2010,2012 auf arXiv eingestellt, diskutiert Antrieb durch Veränderung von Vakuum beziehungsweise Raumzeitmetrik. Das erschließt ein theoretisches Forschungsprogramm; ein funktionierendes Triebwerk ist damit nicht dokumentiert.",
+      "source_ids": [
+        "UKN-S50"
+      ],
+      "status": "Theoretischer Ansatz",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-5",
+      "subject": "hal-puthoff",
+      "theme": "Gemeinsame Physik mit Davis",
+      "attributable_paraphrase": "Puthoff, Maccone und Davis behandeln2004 den Levi-Civita-Effekt in einer polarisierbaren Vakuumdarstellung. Die Koautorschaft ist direkt belegt. Eine gemeinsame Veröffentlichung ist präziser als das pauschale Etikett eines geheimen Netzwerks.",
+      "source_ids": [
+        "UKN-S51"
+      ],
+      "status": "Koautorschaft",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-6",
+      "subject": "hal-puthoff",
+      "theme": "Ultraterrestrische Alternativen",
+      "attributable_paraphrase": "Puthoff stellt neben außerirdischen auch verborgene irdische, zeitbezogene und weitere Erklärungsmodelle zur Diskussion. Er schlägt vor, Hypothesen versuchsweise anzunehmen und nach Spuren zu suchen. In diesem Kontext zitiert er ausdrücklich Dolans Breakaway-Civilization-These.",
+      "source_ids": [
+        "UKN-S52"
+      ],
+      "status": "Hypothesen & Zitation",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-7",
+      "subject": "hal-puthoff",
+      "theme": "To The Stars und DeLonge",
+      "attributable_paraphrase": "Das bereits erschlossene SEC-Dokument führt Puthoff als Mitgründer von To The Stars. Damit ist eine organisatorische Verbindung zu DeLonge belegt; die Unternehmensrolle bestätigt keine Behauptung über geborgene Technologie.",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "status": "Organisationsdokument",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-hal-puthoff-8",
+      "subject": "hal-puthoff",
+      "theme": "Nolan und öffentliche Vermittlung",
+      "attributable_paraphrase": "Nolan nennt Puthoff im erschlossenen Michels-Dritttranskript unter seinen Kontakten. Das Interview mit Weinstein und Michels ist zusätzlich als Sichtungsweg registriert, ohne daraus ungeprüfte Aussagen oder Zeitmarken zu übernehmen.",
+      "source_ids": [
+        "UKN-S38",
+        "UKN-S56"
+      ],
+      "status": "Kontaktbericht & Interview-Findmittel",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-1",
+      "subject": "eric-davis",
+      "theme": "Vallée: sechs Analyseebenen",
+      "attributable_paraphrase": "Das gemeinsame Papier2003 unterscheidet physische, antiphysische, biologische beziehungsweise physiologische, psychologische, psychische und kulturelle Aspekte von UAP-Berichten. Diese Ebenen sind Kategorien der Analyse, keine sechs nachgewiesenen Welten.",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "status": "Koautorschaft & Modell",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-2",
+      "subject": "eric-davis",
+      "theme": "Inkommensurabilität",
+      "attributable_paraphrase": "Vallée und Davis problematisieren menschliche Voraussetzungen sowohl in SETI als auch in der UFO-Deutung. Unverständlichkeit wird als Herausforderung an Modelle behandelt; sie ist für sich kein Nachweis nichtmenschlicher Intelligenz.",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "status": "Methodische These",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-3",
+      "subject": "eric-davis",
+      "theme": "NIDS als konkreter Zusammenhang",
+      "attributable_paraphrase": "Die Autorenfußnote2003 bezeichnet beide als beratende Mitglieder des National Institute for Discovery Science. Sie belegt diese damalige Selbstzuordnung, nicht jede später behauptete Verbindung zu Bigelow-Projekten.",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "status": "Zeitgebundene Autorenangabe",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-4",
+      "subject": "eric-davis",
+      "theme": "Physik mit Puthoff und Maccone",
+      "attributable_paraphrase": "Der Beitrag2004 liefert einen direkten Publikationspfad zur Vakuumdarstellung der Relativitätstheorie. Er gehört zur theoretischen Physik und dokumentiert keine geheime oder außerirdische Hardware.",
+      "source_ids": [
+        "UKN-S51"
+      ],
+      "status": "Koautorschaft",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-5",
+      "subject": "eric-davis",
+      "theme": "Teleportation: mehrere Bedeutungen",
+      "attributable_paraphrase": "Die AFRL-Studie trennt Quantenzustandsübertragung, Raumzeit-/Vakuumkonzepte und psychische Teleportation. Diese verschiedenen Kategorien dürfen nicht als ein experimentell einheitlich bestätigtes Phänomen gelesen werden.",
+      "source_ids": [
+        "UKN-S53"
+      ],
+      "status": "Literaturstudie",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-6",
+      "subject": "eric-davis",
+      "theme": "Psychokinetische Teleportation",
+      "attributable_paraphrase": "Davis bewertet im Executive Summary die von ihm ausgewerteten Berichte positiv und hält psychokinetische Teleportation für realisierbar beziehungsweise kontrollierbar. Das ist seine Schlussfolgerung aus Literatur, keine hier unabhängig geprüfte Replikation. Das Vorwort verneint eine staatliche Billigung der Ergebnisse.",
+      "source_ids": [
+        "UKN-S53"
+      ],
+      "status": "Außergewöhnliche Autorenbehauptung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-7",
+      "subject": "eric-davis",
+      "theme": "Sol und Programmberatung",
+      "attributable_paraphrase": "Sol führt Davis im Beirat und beschreibt ihn als Berater von AAWSAP, AATIP und UAP Task Force. Das ist eine konkrete institutionelle Selbstdarstellung; Umfang und Inhalt dieser Rollen wurden hier nicht anhand von Vertrags- oder Personalakten geprüft.",
+      "source_ids": [
+        "UKN-S55",
+        "UKN-S36"
+      ],
+      "status": "Organisatorische Selbstdarstellung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-eric-davis-8",
+      "subject": "eric-davis",
+      "theme": "Nolans Netzwerk und die Aussagegrenze",
+      "attributable_paraphrase": "Nolan nennt Davis im Michels-Dritttranskript als Kontakt. Zusammen mit Sol entsteht ein nachvollziehbarer Vermittlungsweg. Behauptungen über geborgene Fluggeräte oder Wilson-Davis-Unterlagen werden hier nicht durch diese Kontakte mitbestätigt; ihre Einzelprüfung bleibt außerhalb des Breitenslices.",
+      "source_ids": [
+        "UKN-S38",
+        "UKN-S55"
+      ],
+      "status": "Kontaktbericht & Scope",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-robert-bigelow-1",
+      "subject": "robert-bigelow",
+      "theme": "Raumfahrt mit überprüfbarem Produkt",
+      "attributable_paraphrase": "NASA dokumentiert BEAM als expandierbares Habitat an der ISS: Start und Entfaltung erfolgten2016. Hier liegt ein tatsächlich eingesetztes technisches Produkt vor; daraus folgt kein Beleg für UFO-Antriebe.",
+      "source_ids": [
+        "UKN-S57"
+      ],
+      "status": "Institutioneller Techniknachweis",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-robert-bigelow-2",
+      "subject": "robert-bigelow",
+      "theme": "BAASS und öffentlicher Forschungsauftrag",
+      "attributable_paraphrase": "Das DIA-Briefing vom8. Mai2009 benennt BAASS als Auftragnehmer und10 Millionen Dollar Anfangsmittel. Es beschreibt Zukunftsstudien zu Luft- und Raumfahrtbedrohungen. Auftrag und Mittel sind dokumentiert; eine erfolgreiche Bergung oder Nachkonstruktion fremder Technik ist damit nicht belegt.",
+      "source_ids": [
+        "UKN-S63"
+      ],
+      "status": "Originaler Verwaltungsbeleg",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-robert-bigelow-3",
+      "subject": "robert-bigelow",
+      "theme": "Was der Auftrag umfasst",
+      "attributable_paraphrase": "Die Themenliste reicht von Antrieb und Materialien bis zu Human Interface und Human Effects. Sie eröffnet mehrere Forschungsachsen und erklärt, warum technische und personenbezogene Fragen nebeneinander auftauchen. Ein aufgelistetes Arbeitsgebiet ist noch kein Ergebnis.",
+      "source_ids": [
+        "UKN-S63"
+      ],
+      "status": "Dokumentierter Forschungsumfang",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-robert-bigelow-4",
+      "subject": "robert-bigelow",
+      "theme": "NIDS, BAASS und die beteiligten Forscher",
+      "attributable_paraphrase": "Kellehers Biografie beschreibt NIDS-Leitung und spätere BAASS-Verantwortung. Vallée und Davis nennen2003 ihre NIDS-Beratung. Diese datierten Rollen erlauben einen institutionellen Vergleich; die Organisationen werden nicht zu einem einzigen zeitlosen Programm verschmolzen.",
+      "source_ids": [
+        "UKN-S60",
+        "UKN-S54",
+        "UKN-S20"
+      ],
+      "status": "Mehrere zeitgebundene Rollenbelege",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-robert-bigelow-5",
+      "subject": "robert-bigelow",
+      "theme": "Persönliche UFO-Position",
+      "attributable_paraphrase": "Bigelow erklärt2017 gegenüber CBS seine Überzeugung einer gegenwärtigen extraterrestrischen Präsenz. Das ist eine persönliche Position, kein vorgelegter Herkunftsnachweis.",
+      "source_ids": [
+        "UKN-S65"
+      ],
+      "status": "Interviewposition",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-robert-bigelow-6",
+      "subject": "robert-bigelow",
+      "theme": "BICS und die Frage nach dem Tod",
+      "attributable_paraphrase": "BICS nennt April2020 als Gründung und die Erforschung eines Fortlebens des Bewusstseins als Ziel. Das verschiebt den Schwerpunkt gegenüber Raumfahrt und UAP; eine institutionelle Forschungsabsicht ist noch kein Nachweis ihres Gegenstands.",
+      "source_ids": [
+        "UKN-S58"
+      ],
+      "status": "Institutionelle Selbstbeschreibung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-robert-bigelow-7",
+      "subject": "robert-bigelow",
+      "theme": "Wettbewerb als Forschungsförderung",
+      "attributable_paraphrase": "Bigelow und Kelleher berichten gemeinsam über den Essaywettbewerb2021, dessen Preisgeld auf1,8 Millionen Dollar stieg. Ihr Maßstab lautet sinngemäß: Fortleben jenseits vernünftigen Zweifels begründen. Juryurteil, finanzierter Beitrag und experimenteller Nachweis sind verschiedene Dinge.",
+      "source_ids": [
+        "UKN-S59"
+      ],
+      "status": "Gemeinsamer Organisatorenbericht",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-robert-bigelow-8",
+      "subject": "robert-bigelow",
+      "theme": "Gegenlesarten und neue Forschungsprogramme",
+      "attributable_paraphrase": "Sudduths Abstract kartiert Kritik am Wettbewerb, Antworten darauf und Vorschläge für strengere Tests. Der Organisatorenbericht kündigt zudem Challenge2023 mit Fokus auf Kommunikation mit dem Jenseits an. Ankündigung und späterer Forschungserfolg bleiben getrennt.",
+      "source_ids": [
+        "UKN-S64",
+        "UKN-S59"
+      ],
+      "status": "Debatte & Forschungsprogramm",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-colm-kelleher-1",
+      "subject": "colm-kelleher",
+      "theme": "Biomedizinischer Hintergrund",
+      "attributable_paraphrase": "Verlagsbiografie und TTSA-Unterlagen beschreiben Zell- und Molekularbiologie, Immunologie sowie Tätigkeiten bei Prosetta. Diese Qualifikation ist ein eigener biografischer Strang; sie validiert keine paranormalen Ursachen.",
+      "source_ids": [
+        "UKN-S61",
+        "UKN-S20"
+      ],
+      "status": "Biografische Selbst-/Verlagsangaben",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-colm-kelleher-2",
+      "subject": "colm-kelleher",
+      "theme": "Forschung und operative Verantwortung",
+      "attributable_paraphrase": "Seine Autorenbiografie2022 nennt NIDS1996–2004, BAASS und später Umweltkontroll-/Lebenserhaltungssysteme bei Bigelow Aerospace2013–2020. Forschungsleitung und technische Tätigkeit gehören in getrennte Zeitabschnitte.",
+      "source_ids": [
+        "UKN-S60"
+      ],
+      "status": "Datierte Autorenbiografie",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-colm-kelleher-3",
+      "subject": "colm-kelleher",
+      "theme": "Brain Trust: biologische und verdeckte Erklärungen",
+      "attributable_paraphrase": "Das Buch2004 verknüpft Prionenfragen mit Hypothesen über Tierverstümmelungen und verdeckte Probenentnahme. Hier ist der Themenumfang anhand der Verlagsbeschreibung aufgenommen; weder die medizinischen noch die historischen Thesen wurden in diesem Slice geprüft.",
+      "source_ids": [
+        "UKN-S62"
+      ],
+      "status": "Werk- und Hypothesenübersicht",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-colm-kelleher-4",
+      "subject": "colm-kelleher",
+      "theme": "Hunt for the Skinwalker",
+      "attributable_paraphrase": "Das gemeinsam mit George Knapp veröffentlichte Buch2005 bündelt Ranchberichte über Lichter, Tierereignisse und weitere Anomalien. Verlagsbeschreibung und Autorenschaft sind erschlossen; das Buch ist kein hier vollständig geprüfter Datensatz.",
+      "source_ids": [
+        "UKN-S61"
+      ],
+      "status": "Buchbeschreibung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-colm-kelleher-5",
+      "subject": "colm-kelleher",
+      "theme": "Skinwalkers at the Pentagon",
+      "attributable_paraphrase": "Mit Lacatski und Knapp beschreibt Kelleher2021 AAWSAP aus Beteiligtenperspektive. Sein Artikel2022 ist ausdrücklich daraus adaptiert: Buch und Artikel sind deshalb keine unabhängigen Bestätigungen derselben Ereignisse.",
+      "source_ids": [
+        "UKN-S66",
+        "UKN-S60"
+      ],
+      "status": "Teilnehmerbericht & Quellenfamilie",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-colm-kelleher-6",
+      "subject": "colm-kelleher",
+      "theme": "Hitchhiker und Ansteckungsmodelle",
+      "attributable_paraphrase": "Kelleher deutet Folgeberichte nach Ranchbesuchen als mögliche Übertragung und vergleicht infektiöse mit sozialer Ansteckung. Er räumt zu kleine Fallzahlen für feste Schlüsse ein. Analogie ist kein nachgewiesener Erreger oder Wirkmechanismus.",
+      "source_ids": [
+        "UKN-S60"
+      ],
+      "status": "Zugeschriebene Hypothese",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-colm-kelleher-7",
+      "subject": "colm-kelleher",
+      "theme": "Bewusstsein und Human Effects",
+      "attributable_paraphrase": "Er diskutiert Bewusstsein als grundlegender statt bloß abgeleiteter Realität und schlägt weitere Gehirnuntersuchungen vor. Das verbindet Ontologie und Forschungsagenda; die vorgeschlagenen Messungen sind nicht bereits deren Bestätigung.",
+      "source_ids": [
+        "UKN-S60"
+      ],
+      "status": "Deutung & Forschungsvorschlag",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-colm-kelleher-8",
+      "subject": "colm-kelleher",
+      "theme": "Kooperation und öffentliche Wissensvermittlung",
+      "attributable_paraphrase": "Der BICS-Text belegt Koautorschaft mit Bigelow und nennt Puthoff als Juror. Das TTSA-Dokument2017 führt Kelleher und Nolan im Beirat. Nolans Michels-Bericht nennt weitere Kontakte; diese Quellen werden nicht zu einer gemeinsamen Lehre zusammengezogen.",
+      "source_ids": [
+        "UKN-S59",
+        "UKN-S20",
+        "UKN-S38"
+      ],
+      "status": "Koautorschaft, Organisation & Kontaktbericht",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-george-knapp-1",
+      "subject": "george-knapp",
+      "theme": "Journalistisches Selbstverständnis",
+      "attributable_paraphrase": "Knapp beschreibt seine Arbeit 2025 als Nachrichtengeschichte, nicht als Glaubensbekenntnis. Das Verlagsprofil verortet ihn bei KLAS-TV und investigativer Berichterstattung.",
+      "source_ids": [
+        "UKN-S67",
+        "UKN-S68"
+      ],
+      "status": "Berufliches Profil und Selbstaussage",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-george-knapp-2",
+      "subject": "george-knapp",
+      "theme": "Lazar, Area51 und Quellenschutz",
+      "attributable_paraphrase": "Knapp hält in seiner Aussage 2025 an seiner Einschätzung Bob Lazars fest und schildert Druck auf Informanten. Das dokumentiert seine Position, nicht die behaupteten Geheimprogramme.",
+      "source_ids": [
+        "UKN-S68"
+      ],
+      "status": "Reporterposition / berichtete Vorgänge",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-george-knapp-3",
+      "subject": "george-knapp",
+      "theme": "Skinwalker als gemeinsames Buchprojekt",
+      "attributable_paraphrase": "Hunt for the Skinwalker (2005) verbindet Kellehers Forschungsperspektive mit Knapps Darstellung. Skinwalkers at the Pentagon erweitert den Autorenkreis um Lacatski. Diese Zusammenarbeit ist dokumentiert; Buch, Interview und spätere Nacherzählung bleiben dieselbe Quellenfamilie.",
+      "source_ids": [
+        "UKN-S61",
+        "UKN-S66",
+        "UKN-S78"
+      ],
+      "status": "Koautorschaft",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-george-knapp-4",
+      "subject": "george-knapp",
+      "theme": "Dokumente als Verbindung zu Bigelow und Lacatski",
+      "attributable_paraphrase": "Im amtlichen Anhörungsprotokoll nennt Knapp beide als Empfänger seiner russischen Unterlagen. Er berichtet von Übersetzung und Analyse durch ein Team. Das ist eine präzise Kontakt- und Übergabeaussage; die Aktenauthentizität ist damit nicht unabhängig geprüft.",
+      "source_ids": [
+        "UKN-S69"
+      ],
+      "status": "Protokollierte eigene Aussage",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-george-knapp-5",
+      "subject": "george-knapp",
+      "theme": "Puthoff und Davis im Interview",
+      "attributable_paraphrase": "Die Sendung vom 28. Januar 2018 führt Knapp als Gastgeber und beide Physiker als Gäste. Die Beschreibung trennt Davis’ Ausschlussargument von Puthoffs Darstellung technischer und institutioneller Fragen. Das ist ein Medienkontakt, kein gemeinsames Experiment.",
+      "source_ids": [
+        "UKN-S71"
+      ],
+      "status": "Dokumentierter Interviewkontext",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-george-knapp-6",
+      "subject": "george-knapp",
+      "theme": "Disclosure und behauptete Materialzugänge",
+      "attributable_paraphrase": "Knapp berichtet 2025 über angebliche, nicht abgeschlossene Materialverhandlungen Bigelows. Seine Quelle wird nicht öffentlich identifiziert. Der Atlas führt dies als Reporterbehauptung, nicht als belegten Materialtransfer.",
+      "source_ids": [
+        "UKN-S68"
+      ],
+      "status": "Nicht unabhängig bestätigte Behauptung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-george-knapp-7",
+      "subject": "george-knapp",
+      "theme": "WEAPONIZED als Vermittlungsebene",
+      "attributable_paraphrase": "Die Folgen96/97 mit Corbell und Lacatski bündeln 2025 Programmgeschichte, Geheimhaltung, Wahrnehmungsberichte und Konflikte mit AARO. Ihre zugespitzte Ankündigungssprache gehört zur medialen Rahmung und wird nicht als Lacatskis wörtliche Rede übernommen.",
+      "source_ids": [
+        "UKN-S72",
+        "UKN-S73"
+      ],
+      "status": "Originale Episodenbeschreibungen",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-george-knapp-8",
+      "subject": "george-knapp",
+      "theme": "Nähe, Distanz und Quellenkreisläufe",
+      "attributable_paraphrase": "Knapp interviewt eigene Mitautoren. Deshalb kann eine Aussage vom Buch zum Podcast und weiter in eine Anhörung wandern, ohne neue unabhängige Evidenz zu gewinnen. Die DOPSR-Akte erlaubt dagegen eine eigenständige Prüfung des Freigabevorgangs.",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S78"
+      ],
+      "status": "Redaktionelle Quellenanalyse",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-james-lacatski-1",
+      "subject": "james-lacatski",
+      "theme": "Technischer und administrativer Hintergrund",
+      "attributable_paraphrase": "Die Gastbiografie nennt Kerntechnikabschlüsse sowie Programm-, Vertragsaufsichts-, Sicherheits- und Gegenaufklärungsaufgaben bei AAWSAP. Dies wird als biografische Selbstdarstellung im Senderprofil geführt, nicht als vollständig geprüfte Personalakte.",
+      "source_ids": [
+        "UKN-S75"
+      ],
+      "status": "Gastbiografie",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-james-lacatski-2",
+      "subject": "james-lacatski",
+      "theme": "AAWSAP und die Abgrenzung zu AATIP",
+      "attributable_paraphrase": "Im Transkript von2023 unterscheidet Lacatski sein Vertragsprogramm von AATIP und beschreibt ein breiteres UFO-/Anomaliespektrum. Das DIA-Briefing von2009 dokumentiert den BAASS-Auftrag unabhängig davon. Namen, Laufzeiten und Aufgaben werden nicht zu einer lückenlosen Einheit geglättet.",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S63"
+      ],
+      "status": "Retrospektiver Bericht neben Verwaltungsbeleg",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-james-lacatski-3",
+      "subject": "james-lacatski",
+      "theme": "Bigelow und Kelleher: Auftraggeberseite und Umsetzung",
+      "attributable_paraphrase": "Der öffentliche DIA-Beleg benennt BAASS als Auftragnehmer; Lacatskis Interview beschreibt die Programmseite. Kelleher erscheint als operativer Organisator und Mitautor. Die Rollen ergänzen sich, sind aber weder identisch noch jeweils unabhängig voneinander.",
+      "source_ids": [
+        "UKN-S63",
+        "UKN-S70",
+        "UKN-S66"
+      ],
+      "status": "Rollenvergleich",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-james-lacatski-4",
+      "subject": "james-lacatski",
+      "theme": "Datenbank und Klassifikation",
+      "attributable_paraphrase": "Der Transkriptausschnitt um1:18 verweist auf das Vallée-Davis-Schema für eine durchsuchbare Falldatenbank. Das ist eine berichtete methodische Übernahme. Daraus folgt weder eine gemeinsame Erhebung jedes Falls noch eine Bestätigung der Datenbankinhalte.",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S54"
+      ],
+      "status": "Berichteter Methodenbezug",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-james-lacatski-5",
+      "subject": "james-lacatski",
+      "theme": "Behauptetes Fluggerät unbekannter Herkunft",
+      "attributable_paraphrase": "Im Interview wird die Buchaussage über ein vorhandenes Fluggerät und Zugang zu dessen Innerem diskutiert. Lacatski bleibt bei der freigegebenen Formulierung. Die weitergehende Annahme des Interviewers, er sei selbst darin gewesen, wird nicht als Lacatskis eigene Aussage gespeichert.",
+      "source_ids": [
+        "UKN-S70"
+      ],
+      "status": "Außergewöhnliche Insiderbehauptung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-james-lacatski-6",
+      "subject": "james-lacatski",
+      "theme": "Bewusstsein und begleitende Phänomene",
+      "attributable_paraphrase": "Die Sendungsbeschreibung von2026 umfasst neben UAP auch Hitchhiker-, Poltergeist- und Begegnungsberichte. Diese erweitern sein Themenfeld über Flugtechnik hinaus. Beschreibungen und persönliche Erlebnisse liefern hier noch kein bestätigtes Wirkmodell.",
+      "source_ids": [
+        "UKN-S74"
+      ],
+      "status": "Sendungszusammenfassung",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-james-lacatski-7",
+      "subject": "james-lacatski",
+      "theme": "KONA BLUE und konkurrierende Programmgeschichten",
+      "attributable_paraphrase": "AARO beschreibt eine vorbereitende PSAP-Phase2011, aber keinen eingerichteten operativen SAP und keinen Materialtransfer. WEAPONIZED96 kündigt Lacatskis abweichende Sicht an. Administrative Entwicklung, behauptete Fortsetzung und tatsächlicher Materialzugang bleiben getrennte Fragen.",
+      "source_ids": [
+        "UKN-S76",
+        "UKN-S72"
+      ],
+      "status": "Behördenposition / angekündigte Gegenposition",
+      "checked": "2026-11-13"
+    },
+    {
+      "id": "UKN-C-james-lacatski-8",
+      "subject": "james-lacatski",
+      "theme": "Sicherheitsfreigabe und Wissensgrenze",
+      "attributable_paraphrase": "Die DOPSR-Entscheidung von2021 erlaubt eine bearbeitete Veröffentlichung und schließt eine Faktenbestätigung ausdrücklich aus. Für2023 ist das entsprechende Schreiben bislang nur im Suchindex erschlossen. Freigabe ist daher kein staatliches Gütesiegel für die berichteten Phänomene.",
+      "source_ids": [
+        "UKN-S78",
+        "UKN-S77"
+      ],
+      "status": "Originaler Verfahrensbeleg",
+      "checked": "2026-11-13"
+    }
+  ],
+  "relations": [
+    {
+      "id": "UKN-R01",
+      "from": "burkhard-heim",
+      "to": "walter-droscher",
+      "type": "COAUTHOR",
+      "scope": "1998 introduction",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R02",
+      "from": "burkhard-heim",
+      "to": "andreas-resch",
+      "type": "EDITORIAL_COLLABORATION",
+      "scope": "1998 introduction",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R03",
+      "from": "walter-droscher",
+      "to": "jochem-hauser",
+      "type": "COAUTHOR",
+      "scope": "2011 withdrawn preprint record",
+      "source_ids": [
+        "UKN-S19"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R04",
+      "from": "tom-delonge",
+      "to": "tts",
+      "type": "FOUNDER_ROLE",
+      "scope": "2017 filing",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R05",
+      "from": "jim-semivan",
+      "to": "tts",
+      "type": "FOUNDER_ROLE",
+      "scope": "2017 filing",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R06",
+      "from": "hal-puthoff",
+      "to": "tts",
+      "type": "FOUNDER_ROLE",
+      "scope": "2017 filing",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R07",
+      "from": "tom-delonge",
+      "to": "peter-levenda",
+      "type": "PUBLICATION_COLLABORATION",
+      "scope": "Sekret Machines",
+      "source_ids": [
+        "UKN-S22"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R08",
+      "from": "tts",
+      "to": "us-army-gvsc",
+      "type": "DOCUMENTED_RESEARCH_COOPERATION",
+      "scope": "2019–2024 described period; selected July2024 correspondence",
+      "source_ids": [
+        "UKN-S23"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R09",
+      "from": "michael-hayden",
+      "to": "hayden-center",
+      "type": "FOUNDER_ROLE",
+      "scope": "Institutional biography checked2026-11-13",
+      "source_ids": [
+        "UKN-S27"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R10",
+      "from": "timothy-taylor",
+      "to": "tyler-d",
+      "type": "IDENTITY_ATTRIBUTION_NOT_SAME_AS",
+      "scope": "Later commentary; original identity disclosure not read",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S09"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R11",
+      "from": "garry-nolan",
+      "to": "james-master",
+      "type": "IDENTITY_ATTRIBUTION_NOT_SAME_AS",
+      "scope": "Later attribution; no independent original inspected here",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R12",
+      "from": "diana-walsh-pasulka",
+      "to": "tyler-d",
+      "type": "REPORTED_PARTICIPANT_CONTACT",
+      "scope": "American Cosmic2019",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R13",
+      "from": "diana-walsh-pasulka",
+      "to": "james-master",
+      "type": "REPORTED_PARTICIPANT_CONTACT",
+      "scope": "American Cosmic2019",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R14",
+      "from": "jesse-michels",
+      "to": "chris-bledsoe",
+      "type": "INTERVIEW",
+      "scope": "Selected third-party transcript114:50–117:29",
+      "source_ids": [
+        "UKN-S07"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R15",
+      "from": "chris-bledsoe",
+      "to": "timothy-taylor",
+      "type": "REPORTED_CONTACT",
+      "scope": "Bledsoe's attributed account, not independent verification",
+      "source_ids": [
+        "UKN-S07"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R16",
+      "from": "drew-ponder",
+      "to": "timothy-taylor",
+      "type": "INTERPRETIVE_ESSAY_ABOUT",
+      "scope": "2025 public preview",
+      "source_ids": [
+        "UKN-S08"
+      ],
+      "not_implied": "No shared doctrine, sponsorship or extraordinary claim follows from this edge."
+    },
+    {
+      "id": "UKN-R17",
+      "from": "garry-nolan",
+      "to": "jacques-vallee",
+      "type": "COAUTHOR",
+      "scope": "Materialpapier2022",
+      "source_ids": [
+        "UKN-S34"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R18",
+      "from": "garry-nolan",
+      "to": "federico-faggin",
+      "type": "COAUTHOR",
+      "scope": "SETI-Proposal2016",
+      "source_ids": [
+        "UKN-S35"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R19",
+      "from": "garry-nolan",
+      "to": "sol-foundation",
+      "type": "COFOUNDER",
+      "scope": "Gründungsmitteilung15.08.2023; aktuelles Register13.11.2026",
+      "source_ids": [
+        "UKN-S36",
+        "UKN-S37"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R20",
+      "from": "diana-walsh-pasulka",
+      "to": "sol-foundation",
+      "type": "ADVISORY_BOARD",
+      "scope": "Register geprüft13.11.2026; Eintrittsdatum nicht ermittelt",
+      "source_ids": [
+        "UKN-S36"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R21",
+      "from": "jacques-vallee",
+      "to": "sol-foundation",
+      "type": "ADVISORY_BOARD",
+      "scope": "Register geprüft13.11.2026; Eintrittsdatum nicht ermittelt",
+      "source_ids": [
+        "UKN-S36"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R22",
+      "from": "jesse-michels",
+      "to": "garry-nolan",
+      "type": "INTERVIEW",
+      "scope": "Ausgewähltes Dritttranskript04:00–08:19",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R23",
+      "from": "jesse-michels",
+      "to": "diana-walsh-pasulka",
+      "type": "INTERVIEW",
+      "scope": "Panel und Nachgespräch, Dritttranskript40:07–48:08",
+      "source_ids": [
+        "UKN-S39"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R24",
+      "from": "diana-walsh-pasulka",
+      "to": "jacques-vallee",
+      "type": "EXPLICIT_INTELLECTUAL_REFERENCE",
+      "scope": "Dritttranskript41:38",
+      "source_ids": [
+        "UKN-S39"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R25",
+      "from": "garry-nolan",
+      "to": "stanford-university",
+      "type": "ACADEMIC_APPOINTMENT",
+      "scope": "Pathology; institutionelles Profil13.11.2026",
+      "source_ids": [
+        "UKN-S33"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R26",
+      "from": "diana-walsh-pasulka",
+      "to": "uncw",
+      "type": "ACADEMIC_APPOINTMENT",
+      "scope": "Philosophy and Religion; Profil13.11.2026",
+      "source_ids": [
+        "UKN-S32"
+      ],
+      "not_implied": "No shared doctrine or validation of extraordinary claims follows from this relation."
+    },
+    {
+      "id": "UKN-R27",
+      "from": "hal-puthoff",
+      "to": "ingo-swann",
+      "type": "PARTICIPANT_ACCOUNT",
+      "scope": "SRI1972; Puthoff retrospective1996",
+      "source_ids": [
+        "UKN-S45"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R28",
+      "from": "hal-puthoff",
+      "to": "russell-targ",
+      "type": "COAUTHORSHIP",
+      "scope": "Nature1974 bibliographic record",
+      "source_ids": [
+        "UKN-S46"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R29",
+      "from": "hal-puthoff",
+      "to": "eric-davis",
+      "type": "COAUTHORSHIP",
+      "scope": "Levi-Civita paper2004, with Maccone",
+      "source_ids": [
+        "UKN-S51"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R30",
+      "from": "eric-davis",
+      "to": "jacques-vallee",
+      "type": "COAUTHORSHIP",
+      "scope": "Porto2003 six-layer paper",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R31",
+      "from": "eric-davis",
+      "to": "nids",
+      "type": "AUTHOR_AFFILIATION",
+      "scope": "2003 author footnote: consulting member",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R32",
+      "from": "jacques-vallee",
+      "to": "nids",
+      "type": "AUTHOR_AFFILIATION",
+      "scope": "2003 author footnote: consulting member",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R33",
+      "from": "eric-davis",
+      "to": "sol-foundation",
+      "type": "ORGANIZATIONAL_SELF_RECORD",
+      "scope": "Advisory Board roster13.11.2026",
+      "source_ids": [
+        "UKN-S55"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R34",
+      "from": "garry-nolan",
+      "to": "eric-davis",
+      "type": "REPORTED_CONTACT",
+      "scope": "Nolan in selected Michels third-party transcript",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R35",
+      "from": "garry-nolan",
+      "to": "hal-puthoff",
+      "type": "REPORTED_CONTACT",
+      "scope": "Nolan in selected Michels third-party transcript",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R36",
+      "from": "hal-puthoff",
+      "to": "richard-dolan",
+      "type": "CITES",
+      "scope": "Ultraterrestrial Models, reference5",
+      "source_ids": [
+        "UKN-S52"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R37",
+      "from": "eric-davis",
+      "to": "afrl",
+      "type": "CONTRACT_REPORT_AUTHOR",
+      "scope": "Teleportation Physics Study; not endorsement",
+      "source_ids": [
+        "UKN-S53"
+      ],
+      "not_implied": "No common doctrine, validation of extraordinary claims or unrecorded collaboration is implied."
+    },
+    {
+      "id": "UKN-R38",
+      "from": "robert-bigelow",
+      "to": "colm-kelleher",
+      "type": "COAUTHORSHIP",
+      "scope": "BICS commentary2022",
+      "source_ids": [
+        "UKN-S59"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R39",
+      "from": "robert-bigelow",
+      "to": "bics",
+      "type": "FOUNDER_SELF_RECORD",
+      "scope": "BICS institutional page: April2020",
+      "source_ids": [
+        "UKN-S58"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R40",
+      "from": "hal-puthoff",
+      "to": "bics",
+      "type": "JURY_MEMBER",
+      "scope": "2021 essay competition, organizers' report p.353",
+      "source_ids": [
+        "UKN-S59"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R41",
+      "from": "colm-kelleher",
+      "to": "nids",
+      "type": "REPORTED_LEADERSHIP",
+      "scope": "SEC2017 biography; author biography1996–2004",
+      "source_ids": [
+        "UKN-S20",
+        "UKN-S60"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R42",
+      "from": "colm-kelleher",
+      "to": "baass",
+      "type": "REPORTED_EMPLOYMENT",
+      "scope": "Deputy Administrator, author biography2022",
+      "source_ids": [
+        "UKN-S60"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R43",
+      "from": "colm-kelleher",
+      "to": "bigelow-aerospace",
+      "type": "REPORTED_EMPLOYMENT",
+      "scope": "Life support/environmental control2013–2020, author biography",
+      "source_ids": [
+        "UKN-S60"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R44",
+      "from": "baass",
+      "to": "dia",
+      "type": "CONTRACTOR",
+      "scope": "HHM402-08-C-0072, briefing8 May2009",
+      "source_ids": [
+        "UKN-S63"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R45",
+      "from": "bigelow-aerospace",
+      "to": "nasa",
+      "type": "TECHNICAL_PARTNERSHIP",
+      "scope": "BEAM spacecraft project",
+      "source_ids": [
+        "UKN-S57"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R46",
+      "from": "colm-kelleher",
+      "to": "tts",
+      "type": "ADVISORY_BOARD",
+      "scope": "SEC2017",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R47",
+      "from": "garry-nolan",
+      "to": "tts",
+      "type": "ADVISORY_BOARD",
+      "scope": "SEC2017; independent of Sol role",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R48",
+      "from": "garry-nolan",
+      "to": "robert-bigelow",
+      "type": "REPORTED_CONTACT",
+      "scope": "Nolan in Michels third-party transcript",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R49",
+      "from": "garry-nolan",
+      "to": "colm-kelleher",
+      "type": "REPORTED_CONTACT",
+      "scope": "Nolan in Michels third-party transcript",
+      "source_ids": [
+        "UKN-S38"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R50",
+      "from": "colm-kelleher",
+      "to": "george-knapp",
+      "type": "COAUTHORSHIP",
+      "scope": "Hunt for the Skinwalker2005",
+      "source_ids": [
+        "UKN-S61"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R51",
+      "from": "colm-kelleher",
+      "to": "james-lacatski",
+      "type": "COAUTHORSHIP",
+      "scope": "Skinwalkers at the Pentagon2021",
+      "source_ids": [
+        "UKN-S66"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R52",
+      "from": "hal-puthoff",
+      "to": "baass",
+      "type": "PARTICIPANT_ATTRIBUTION",
+      "scope": "Kelleher2022,p.22 describes consultant/contractor",
+      "source_ids": [
+        "UKN-S60"
+      ],
+      "not_implied": "Does not establish a common doctrine, a specific unrecorded experiment, or validation of extraordinary claims."
+    },
+    {
+      "id": "UKN-R53",
+      "from": "george-knapp",
+      "to": "james-lacatski",
+      "type": "COAUTHORSHIP",
+      "scope": "Skinwalkers draft title, PDFp.21",
+      "source_ids": [
+        "UKN-S78"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R54",
+      "from": "george-knapp",
+      "to": "robert-bigelow",
+      "type": "REPORTED_DOCUMENT_TRANSFER",
+      "scope": "Knapp hearing2025,printedp.34; own transfer account",
+      "source_ids": [
+        "UKN-S69"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R55",
+      "from": "george-knapp",
+      "to": "james-lacatski",
+      "type": "REPORTED_DOCUMENT_TRANSFER",
+      "scope": "Same reported handover, not an independent authentication",
+      "source_ids": [
+        "UKN-S69"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R56",
+      "from": "george-knapp",
+      "to": "hal-puthoff",
+      "type": "INTERVIEW_HOST_GUEST",
+      "scope": "Coast to Coast28Jan2018",
+      "source_ids": [
+        "UKN-S71"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R57",
+      "from": "george-knapp",
+      "to": "eric-davis",
+      "type": "INTERVIEW_HOST_GUEST",
+      "scope": "Coast to Coast28Jan2018",
+      "source_ids": [
+        "UKN-S71"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R58",
+      "from": "george-knapp",
+      "to": "james-lacatski",
+      "type": "INTERVIEW_HOST_GUEST",
+      "scope": "WEAPONIZED2023/2025 and C2C2026",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S72",
+        "UKN-S73",
+        "UKN-S74"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R59",
+      "from": "james-lacatski",
+      "to": "dia",
+      "type": "BIOGRAPHICAL_ROLE_ATTRIBUTION",
+      "scope": "AAWSAP program manager and COR per guest biography",
+      "source_ids": [
+        "UKN-S75"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R60",
+      "from": "james-lacatski",
+      "to": "baass",
+      "type": "REPORTED_PROGRAM_CONTRACT_CONTEXT",
+      "scope": "Interview2023 plus2009DIA contractor record; not a personal contract signature",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S63"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R61",
+      "from": "james-lacatski",
+      "to": "eric-davis",
+      "type": "REPORTED_METHOD_REUSE",
+      "scope": "Vallée-Davis classification mentioned in interview transcript",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S54"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R62",
+      "from": "james-lacatski",
+      "to": "jacques-vallee",
+      "type": "REPORTED_METHOD_REUSE",
+      "scope": "Classification/database comparison; no shared casework inferred",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S54"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R63",
+      "from": "george-knapp",
+      "to": "jeremy-corbell",
+      "type": "PODCAST_COHOST",
+      "scope": "WEAPONIZED original episode pages",
+      "source_ids": [
+        "UKN-S72",
+        "UKN-S73"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    },
+    {
+      "id": "UKN-R64",
+      "from": "aaro",
+      "to": "kona-blue",
+      "type": "RETROSPECTIVE_AGENCY_ACCOUNT",
+      "scope": "PSAP versus operationalSAP; HTML transmission of agency text",
+      "source_ids": [
+        "UKN-S76"
+      ],
+      "not_implied": "No common doctrine, independent corroboration, successful reverse engineering or undisclosed personal instruction inferred."
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "UKN-X01",
+      "pair": "Heim ↔ Vallée",
+      "shared_topic": "Dimensionen, Wirklichkeit, Grenzen des Erklärungsmodells",
+      "difference": "Heim konstruiert eine mathematische Strukturlehre; Vallée vergleicht Beobachtungen, Erleben und kulturelle Wirkung. Die Dimensionenzahl und Vallées Ebenen sind nicht dasselbe.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "atlas_author": "jacques-vallee"
+    },
+    {
+      "id": "UKN-X02",
+      "pair": "Heim ↔ Farrell",
+      "shared_topic": "Exotische Physik, Antrieb und verborgenes Wissen",
+      "difference": "Heims Gleichungs- und Begriffsarbeit ist von Farrells historischen und geopolitischen Synthesen zu trennen. Eine konkrete Farrell-Zitation Heims wurde in diesem Paket noch nicht am Original gesichert.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S19"
+      ],
+      "atlas_author": "joseph-farrell"
+    },
+    {
+      "id": "UKN-X03",
+      "pair": "Heim ↔ Swann/Puharich",
+      "shared_topic": "Bewusstsein und nicht rein materielle Erklärungen",
+      "difference": "Heims indirekte Strukturargumentation unterscheidet sich von Berichten und Versuchsanordnungen zu Wahrnehmung/Psi. Sein Aufsatz von1978 lehnt paranormale Erfahrungen gerade als eigene empirische Basis ab.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S16"
+      ],
+      "atlas_author": "ingo-swann"
+    },
+    {
+      "id": "UKN-X04",
+      "pair": "Heim ↔ Jorjani",
+      "shared_topic": "Ontologie, Geist und Technik",
+      "difference": "Gemeinsamer Fragenraum; mathematisches Modell, philosophische Auslegung und politische Folgerung haben unterschiedliche Begründungslasten. Kein persönliches Netzwerk daraus abgeleitet.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S13"
+      ],
+      "atlas_author": "jason-reza-jorjani"
+    },
+    {
+      "id": "UKN-X05",
+      "pair": "DeLonge ↔ Vallée/Pasulka",
+      "shared_topic": "UFOs, Medien, Glauben und gesellschaftliche Wirkung",
+      "difference": "DeLonges Organisation produziert öffentliche Erzählungen und Sach-/Unterhaltungsformate. Pasulka untersucht unter anderem solche Sinnbildung; Vallée bietet Vergleichsmodelle. Gemeinsamer Gegenstand ist keine gemeinsame Erklärung.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S22"
+      ],
+      "atlas_author": "jacques-vallee"
+    },
+    {
+      "id": "UKN-X06",
+      "pair": "DeLonge ↔ Farrell/Dark Journalist",
+      "shared_topic": "Geheimhaltung, Technologie und historische Großbilder",
+      "difference": "Eine dokumentierte Organisation lässt sich mit den unterschiedlichen Lesarten ihrer Ziele vergleichen. Die Existenz der Organisation bestätigt keine übergreifende Secret-Space- oder Kontrollthese.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S20"
+      ],
+      "atlas_author": "daniel-liszt"
+    },
+    {
+      "id": "UKN-X07",
+      "pair": "DeLonge ↔ Fitts",
+      "shared_topic": "Organisation, Ressourcen und öffentliche Rechenschaft",
+      "difference": "Die TTS-Filings liefern überprüfbare Unternehmensangaben. Sie können als begrenzter Datensatz neben Fitts' umfassenderen Finanz- und Governance-Fragen stehen; sie belegen keine geheimen Gesamtgeldflüsse.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S24"
+      ],
+      "atlas_author": "catherine-austin-fitts"
+    },
+    {
+      "id": "UKN-X08",
+      "pair": "Hayden ↔ Webb/Corbett/Fitts",
+      "shared_topic": "Sicherheit, Geheimhaltung, Interessen und Aufsicht",
+      "difference": "Hayden argumentiert aus Leitungserfahrung und Sicherheitsverantwortung. Die anderen Dossiers erschließen kritische Macht- und Finanzanalysen. Präzise Gegenproben brauchen denselben Vorgang und dieselbe Zeitspanne.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S26"
+      ],
+      "atlas_author": "whitney-webb"
+    },
+    {
+      "id": "UKN-X09",
+      "pair": "Hayden ↔ Senatsstudie2014",
+      "shared_topic": "Verhörprogramm und behauptete Wirksamkeit",
+      "difference": "Konkreter inhaltlicher Widerspruch zwischen öffentlicher Insiderverteidigung2010 und späteren dokumentenbasierten Findings1–2; Gegenstand bleibt das Verhörprogramm, nicht UAP.",
+      "relation_type": "DOCUMENTED_COUNTER_READING",
+      "source_ids": [
+        "UKN-S28"
+      ],
+      "atlas_author": "michael-hayden"
+    },
+    {
+      "id": "UKN-X10",
+      "pair": "Taylor/Tyler ↔ Swann/Puharich",
+      "shared_topic": "Kontakt, Wahrnehmung und technische Metaphern",
+      "difference": "Pasulkas berichtete persönliche Routine ist kein kontrollierter Versuch. Unterschiede in Protokoll, Messung und Ergebnis müssen erhalten bleiben.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "atlas_author": "andrija-puharich"
+    },
+    {
+      "id": "UKN-X11",
+      "pair": "Taylor/Tyler ↔ Jorjani/Wann/Bramley/Icke",
+      "shared_topic": "Nichtmenschliche Akteure, Religion und Wirklichkeitsdeutung",
+      "difference": "Die Ähnlichkeit einzelner Motive erlaubt einen Vergleich. Sie belegt weder dieselben Akteure noch dieselbe historische Ursache oder einen gemeinsamen Forschungsverbund.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "atlas_author": "michael-wann"
+    },
+    {
+      "id": "UKN-X12",
+      "pair": "Taylor ↔ Jesse Michels",
+      "shared_topic": "Überlieferung durch Interview und Nachfragen",
+      "difference": "Der gesichtete Bezug ist ein Gespräch Michels–Bledsoe über Taylor. Daraus wird kein eigenes Taylor-Interview und kein Beleg, dass Michels alle Aussagen seines Gastes übernimmt.",
+      "relation_type": "DOCUMENTED_INTERVIEW_ABOUT_SUBJECT",
+      "source_ids": [
+        "UKN-S07"
+      ],
+      "atlas_author": "jesse-michels"
+    },
+    {
+      "id": "UKN-X13",
+      "pair": "Pasulka ↔ Taylor / Tyler D.",
+      "shared_topic": "Kontaktpraxis, Erfindung, New Mexico und Vatikan",
+      "difference": "Pasulka beschreibt einen pseudonymisierten Feldkontakt. Die spätere Zuordnung zu Taylor bleibt ein gesonderter Identitätsschritt; dessen Berufsbiografie authentifiziert den außergewöhnlichen Teil nicht.",
+      "relation_type": "REPORTED_CONTACT_WITH_IDENTITY_LIMIT",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S01"
+      ],
+      "atlas_author": "timothy-taylor"
+    },
+    {
+      "id": "UKN-X14",
+      "pair": "Nolan ↔ Taylor / James und Tyler",
+      "shared_topic": "Materialien, Erfahrungswissen und Insiderzugang",
+      "difference": "Die Erzählung von James und Tyler erzeugt eine mögliche Brücke. Ohne hier gesichtete direkte Identitätsbestätigung oder eigene Kooperationsunterlage wird daraus keine gesicherte Nolan–Taylor-Forschungsbeziehung.",
+      "relation_type": "ATTRIBUTION_CHAIN_NOT_CONFIRMED_EDGE",
+      "source_ids": [
+        "UKN-S04"
+      ],
+      "atlas_author": "timothy-taylor"
+    },
+    {
+      "id": "UKN-X15",
+      "pair": "Pasulka ↔ Vallée",
+      "shared_topic": "Historische Erfahrungsberichte, Religion, kulturelle Wirkung",
+      "difference": "Pasulka erschließt Sinnbildung und religiöse Praxis; Vallée vergleicht Phänomenmuster und Erklärungsmodelle. Ihr Bezug auf ihn erscheint im Michels-Transkript. Die gemeinsame Sol-Beiratsrolle ist zusätzlich institutionell dokumentiert.",
+      "relation_type": "COMPARISON_AND_ORGANIZATIONAL_LINK",
+      "source_ids": [
+        "UKN-S39",
+        "UKN-S36"
+      ],
+      "atlas_author": "jacques-vallee"
+    },
+    {
+      "id": "UKN-X16",
+      "pair": "Nolan ↔ Vallée",
+      "shared_topic": "Materialien, Forschungsstandards, erweiterte SETI-Suche",
+      "difference": "Hier gibt es konkrete Koautorschaft. Das Materialpapier und der SETI-Vorschlag haben verschiedene Gattungen: ein begrenzter Analysebefund einerseits, Erweiterung des Suchprogramms andererseits.",
+      "relation_type": "DOCUMENTED_COAUTHORSHIP",
+      "source_ids": [
+        "UKN-S34",
+        "UKN-S35"
+      ],
+      "atlas_author": "jacques-vallee"
+    },
+    {
+      "id": "UKN-X17",
+      "pair": "Pasulka ↔ Nolan",
+      "shared_topic": "Wissenschaftliche Autorität und außergewöhnliche Erfahrungen",
+      "difference": "Pasulkas Bericht über Überzeugungen von Wissenschaftlern ist kein Ersatz für Nolans Messdaten. Bei Sol ist eine gemeinsame institutionelle Umgebung sichtbar. Das Council-Bluffs-Papier wird nicht zum Befund der American-Cosmic-Reise umetikettiert.",
+      "relation_type": "METHOD_COMPARISON_AND_ORGANIZATION",
+      "source_ids": [
+        "UKN-S40",
+        "UKN-S34",
+        "UKN-S36"
+      ],
+      "atlas_author": "garry-nolan"
+    },
+    {
+      "id": "UKN-X18",
+      "pair": "Pasulka ↔ Jesse Michels",
+      "shared_topic": "Religion, UAP, historische Analogien und Philosophie",
+      "difference": "Michels moderiert und setzt Rahmungen. Pasulkas Antworten, Nell-Aussagen und Episodentitel erhalten getrennte Sprecherzuordnung. Ein Titel über den Vatikan ist keine Erklärung des Vatikans.",
+      "relation_type": "INTERVIEW_PLATFORM",
+      "source_ids": [
+        "UKN-S39",
+        "UKN-S44"
+      ],
+      "atlas_author": "jesse-michels"
+    },
+    {
+      "id": "UKN-X19",
+      "pair": "Nolan ↔ Jesse Michels",
+      "shared_topic": "Laborarbeit, Wahrnehmung, Geheimhaltung und Forschungshürden",
+      "difference": "Der Host verbindet Forschungsfragen mit weitergehenden Perspektiven. Der direkte Materialbefund begrenzt pauschale Herkunftsdeutungen, ohne sämtliche übrigen Proben oder UAP-Fälle zu entscheiden.",
+      "relation_type": "INTERVIEW_AND_LIMITED_COUNTER_READING",
+      "source_ids": [
+        "UKN-S38",
+        "UKN-S34"
+      ],
+      "atlas_author": "jesse-michels"
+    },
+    {
+      "id": "UKN-X20",
+      "pair": "Pasulka/Nolan ↔ Sol",
+      "shared_topic": "Institutionalisierung einer zuvor oft informellen Debatte",
+      "difference": "Nolan ist Mitgründer; Pasulka und Vallée werden als Beiratsmitglieder geführt. Das erlaubt eine datierte Organisationskarte. Es liefert weder eine Liste eines historischen Invisible College noch eine einheitliche Weltanschauung.",
+      "relation_type": "DOCUMENTED_ORGANIZATIONAL_ROLES",
+      "source_ids": [
+        "UKN-S36",
+        "UKN-S37"
+      ],
+      "atlas_author": "garry-nolan"
+    },
+    {
+      "id": "UKN-X21",
+      "pair": "Puthoff ↔ Swann",
+      "shared_topic": "Remote Viewing und anomale Wahrnehmung",
+      "difference": "Puthoff organisiert und beschreibt Versuche; Swann ist beteiligter Wahrnehmender und eigenständiger Autor. Seine weiteren kosmologischen Erzählungen folgen nicht aus dem SRI-Kontakt.",
+      "relation_type": "DOCUMENTED_RESEARCH_CONTACT",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S47"
+      ],
+      "atlas_author": "ingo-swann",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X22",
+      "pair": "Davis ↔ Swann",
+      "shared_topic": "Psi und Grenzen physischer Erklärung",
+      "difference": "Davis diskutiert psychokinetischen Transport in einer Literaturstudie; Swanns Remote Viewing betrifft Wahrnehmung. Thematische Nachbarschaft belegt weder dieselbe Fähigkeit noch gemeinsame Versuche.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S53"
+      ],
+      "atlas_author": "ingo-swann",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X23",
+      "pair": "Davis ↔ Vallée",
+      "shared_topic": "High Strangeness und nichtanthropozentrische Modelle",
+      "difference": "Direkte Koautorschaft und damalige NIDS-Angabe; das Modell verbindet Erleben, Physik und Kultur. Es bleibt eine Interpretation berichteter Ereignisse.",
+      "relation_type": "COAUTHORSHIP",
+      "source_ids": [
+        "UKN-S54"
+      ],
+      "atlas_author": "jacques-vallee",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X24",
+      "pair": "Puthoff ↔ Vallée",
+      "shared_topic": "Alternativen zur einfachen Raumschiffhypothese",
+      "difference": "Puthoff entwickelt bedingte Ursprungsszenarien; Vallée/Davis gliedern die Berichtsphänomene. Nolans Kontaktbericht ersetzt keine gemeinsame Veröffentlichung zu diesen beiden Ansätzen.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S52",
+        "UKN-S54",
+        "UKN-S38"
+      ],
+      "atlas_author": "jacques-vallee",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X25",
+      "pair": "Puthoff / Davis ↔ Nolan",
+      "shared_topic": "Messbarkeit, Expertise und Forschungszugang",
+      "difference": "Nolan arbeitet an Materialcharakterisierung; Puthoff/Davis an theoretischen Modellen und anomalen Berichten. Nolan berichtet Kontakte; Davis und Nolan sind außerdem über Sol institutionell verbunden.",
+      "relation_type": "MIXED_TYPED_EVIDENCE",
+      "source_ids": [
+        "UKN-S34",
+        "UKN-S38",
+        "UKN-S55",
+        "UKN-S36"
+      ],
+      "atlas_author": "garry-nolan",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X26",
+      "pair": "Puthoff / Davis ↔ Pasulka",
+      "shared_topic": "Wissenschaftliche Autorität und außergewöhnliche Erfahrung",
+      "difference": "Pasulkas ethnografische Perspektive fragt, wie Wissen und Überzeugung entstehen. Puthoff/Davis formulieren auch eigene Erklärungsansprüche. Davis und Pasulka erscheinen bei Sol; daraus folgt keine gemeinsame Ontologie.",
+      "relation_type": "EDITORIAL_PARALLEL_AND_ORGANIZATION",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S36",
+        "UKN-S53",
+        "UKN-S54"
+      ],
+      "atlas_author": "diana-walsh-pasulka",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X27",
+      "pair": "Puthoff ↔ DeLonge",
+      "shared_topic": "Technologie, Forschung und Öffentlichkeit",
+      "difference": "SEC-Unterlagen belegen die gemeinsame Organisation. Physikalische Hypothesen, Unternehmensziele und narrative Vermittlung sind verschiedene Tätigkeiten.",
+      "relation_type": "ORGANIZATIONAL_RELATION",
+      "source_ids": [
+        "UKN-S20",
+        "UKN-S50"
+      ],
+      "atlas_author": "tom-delonge",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X28",
+      "pair": "Puthoff / Davis ↔ Heim",
+      "shared_topic": "Gravitation und alternative Antriebe",
+      "difference": "Die behandelten PV-/Metrikansätze und Heims Strukturtheorie sind unterschiedliche theoretische Systeme. Ähnliche Antriebsziele begründen keine gemeinsame Theorie oder Kooperation.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S13",
+        "UKN-S50",
+        "UKN-S51"
+      ],
+      "atlas_author": "burkhard-heim",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X29",
+      "pair": "Puthoff ↔ Farrell / Dolan",
+      "shared_topic": "Verborgene Technologie und Breakaway Civilization",
+      "difference": "Puthoff nennt Dolan ausdrücklich. Farrells im Atlas erschlossene historische Synthese ist eine andere Deutungsebene. Die Zitation belegt Rezeption, nicht die Existenz einer abgespaltenen Zivilisation.",
+      "relation_type": "CITATION_AND_EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S52"
+      ],
+      "atlas_author": "joseph-farrell",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X30",
+      "pair": "Puthoff / Davis ↔ Jorjani",
+      "shared_topic": "Bewusstsein, Ontologie und technologische Möglichkeiten",
+      "difference": "Im vorhandenen Jorjani-Dossier stehen philosophische und kulturpolitische Deutungen; hier stehen Versuche, Literaturstudien und Physikmodelle. Gemeinsame Begriffe sind keine Identität der Methoden.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S53",
+        "UKN-S54"
+      ],
+      "atlas_author": "jason-reza-jorjani",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X31",
+      "pair": "Puthoff / Davis ↔ Dark Journalist",
+      "shared_topic": "Geheime Programme und ungewöhnliche Phänomene",
+      "difference": "Liszt erschließt diese Themen journalistisch und narrativ. Im neuen Slice werden Autorentext, Auftrag und Organisationsrolle getrennt; keine persönliche Kooperation mit Liszt wird daraus abgeleitet.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S53",
+        "UKN-S55"
+      ],
+      "atlas_author": "daniel-liszt",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X32",
+      "pair": "Puthoff / Davis ↔ Puharich",
+      "shared_topic": "Psi als Forschungsgegenstand",
+      "difference": "Das bestehende Puharich-Dossier eröffnet eine historische Vergleichsachse. Thematische Nähe ersetzt weder eine konkrete Kontaktquelle noch eine unabhängige Bestätigung paranormaler Effekte.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S47",
+        "UKN-S53"
+      ],
+      "atlas_author": "andrija-puharich",
+      "comparison_basis": "New primary sources plus existing Atlas author dossier; editorial comparisons are not historical network edges."
+    },
+    {
+      "id": "UKN-X33",
+      "pair": "Bigelow ↔ Kelleher",
+      "shared_topic": "Forschungsorganisation und Bewusstseinsfragen",
+      "difference": "Direkte gemeinsame Autorenschaft im BICS-Bericht; Kellehers Biografie beschreibt außerdem Tätigkeiten in Bigelows Unternehmen. Unternehmer, Förderer und wissenschaftlicher Organisator sind unterschiedliche Rollen.",
+      "relation_type": "COAUTHORSHIP_AND_REPORTED_EMPLOYMENT",
+      "source_ids": [
+        "UKN-S59",
+        "UKN-S60"
+      ],
+      "atlas_author": "colm-kelleher",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X34",
+      "pair": "Bigelow / Kelleher ↔ Puthoff",
+      "shared_topic": "Bewusstsein, Begutachtung und Anomalieforschung",
+      "difference": "Der BICS-Originaltext nennt Puthoff als Juror. Kelleher bezeichnet ihn außerdem als BAASS-Berater. Ein Jury- oder Beratungsmandat ist keine Zustimmung zu sämtlichen Aussagen der Organisatoren.",
+      "relation_type": "DOCUMENTED_JURY_AND_PARTICIPANT_ACCOUNT",
+      "source_ids": [
+        "UKN-S59",
+        "UKN-S60"
+      ],
+      "atlas_author": "hal-puthoff",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X35",
+      "pair": "Kelleher ↔ Davis",
+      "shared_topic": "NIDS und die Untersuchung ungewöhnlicher Phänomene",
+      "difference": "Kellehers Leitungsbiografie und Davis’ Autorenfußnote weisen auf dieselbe Institution. Ein bestimmtes gemeinsames Experiment oder eine Koautorschaft zwischen beiden ist durch diese Dokumente noch nicht belegt.",
+      "relation_type": "SHARED_INSTITUTION",
+      "source_ids": [
+        "UKN-S20",
+        "UKN-S54"
+      ],
+      "atlas_author": "eric-davis",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X36",
+      "pair": "Kelleher ↔ Vallée",
+      "shared_topic": "Fallberichte, High Strangeness und kulturelle Wirkung",
+      "difference": "Die NIDS-Verbindung ist datierbar. Kelleher konzentriert sich hier auf Human Effects und Feldberichte; Vallée/Davis ordnen unterschiedliche Informationsebenen. Ähnlicher Gegenstand bedeutet keine identische Erklärung.",
+      "relation_type": "SHARED_INSTITUTION_AND_EDITORIAL_COMPARISON",
+      "source_ids": [
+        "UKN-S20",
+        "UKN-S54",
+        "UKN-S60"
+      ],
+      "atlas_author": "jacques-vallee",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X37",
+      "pair": "Kelleher ↔ Nolan",
+      "shared_topic": "Biomedizin und anomale Erfahrungen",
+      "difference": "Der TTSA-Beirat2017 ist eine direkt dokumentierte Organisationsverbindung. Nolans konkrete Materialanalysen und Kellehers Deutungen von Erfahrungsberichten bleiben verschiedene Evidenzarten.",
+      "relation_type": "ORGANIZATIONAL_RELATION",
+      "source_ids": [
+        "UKN-S20",
+        "UKN-S34"
+      ],
+      "atlas_author": "garry-nolan",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X38",
+      "pair": "Bigelow ↔ Davis / Vallée",
+      "shared_topic": "Infrastruktur und theoretische UAP-Modelle",
+      "difference": "NIDS und BAASS sind zeitlich zu trennen. Die Beratung von Vallée/Davis bei NIDS belegt nicht, dass jedes ihrer Modelle ein von Bigelow finanziertes oder gebilligtes Projektergebnis war.",
+      "relation_type": "INSTITUTIONAL_CONTEXT",
+      "source_ids": [
+        "UKN-S54",
+        "UKN-S63"
+      ],
+      "atlas_author": "eric-davis",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X39",
+      "pair": "Bigelow ↔ Nolan",
+      "shared_topic": "Informeller Forschungszugang",
+      "difference": "Nolan nennt Bigelow im erschlossenen Michels-Dritttranskript als Kontakt. Dieser Bericht liefert keine geprüfte Vertrags-, Finanzierungs- oder Eigentumskette für Nolans Proben.",
+      "relation_type": "REPORTED_CONTACT",
+      "source_ids": [
+        "UKN-S38",
+        "UKN-S34"
+      ],
+      "atlas_author": "garry-nolan",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X40",
+      "pair": "Bigelow / Kelleher ↔ Pasulka",
+      "shared_topic": "Wissenschaftliche Autorität, Erfahrung und Glaubensbildung",
+      "difference": "BICS ist eine Forschung und Überzeugungen organisierende Institution; Pasulkas ethnografische Perspektive kann deren Wissensbildung untersuchen. Das ist ein redaktioneller Vergleich, kein neuer Kooperationsnachweis.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S04",
+        "UKN-S58",
+        "UKN-S59"
+      ],
+      "atlas_author": "diana-walsh-pasulka",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X41",
+      "pair": "Bigelow / Kelleher ↔ Swann / Puharich",
+      "shared_topic": "Bewusstsein jenseits gewöhnlicher Wahrnehmungsmodelle",
+      "difference": "Remote Viewing, Fortleben nach dem Tod und berichtete Folgewirkungen anomaler Erfahrungen sind verschiedene Hypothesen. Ein gemeinsamer Psi-Begriff darf ihre jeweilige Beleglast nicht aufheben.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S45",
+        "UKN-S58",
+        "UKN-S60"
+      ],
+      "atlas_author": "ingo-swann",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X42",
+      "pair": "Bigelow / Kelleher ↔ Farrell / Dark Journalist",
+      "shared_topic": "Geheime Programme und ungewöhnliche Technologie",
+      "difference": "DIA-Auftrag und BEAM sind konkrete, verschiedenartige Organisations- beziehungsweise Technikbelege. Die weitergehenden historischen Synthesen der bestehenden Dossiers sind damit nicht automatisch bestätigt.",
+      "relation_type": "EDITORIAL_PARALLEL",
+      "source_ids": [
+        "UKN-S57",
+        "UKN-S63"
+      ],
+      "atlas_author": "joseph-farrell",
+      "comparison_basis": "New source records plus existing Atlas dossiers; conceptual comparisons do not assert historical collaboration."
+    },
+    {
+      "id": "UKN-X43",
+      "pair": "Knapp ↔ Bigelow",
+      "shared_topic": "Dokumentenzugang und Forschungsförderung",
+      "difference": "Knapp nennt Bigelow als Empfänger seiner russischen Unterlagen. Das dokumentiert eine berichtete Übergabe, nicht deren Inhalt oder Authentizität.",
+      "relation_type": "REPORTED_DOCUMENT_TRANSFER",
+      "source_ids": [
+        "UKN-S69"
+      ],
+      "atlas_author": "robert-bigelow",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X44",
+      "pair": "Knapp ↔ Kelleher",
+      "shared_topic": "Skinwalker und öffentliche Vermittlung",
+      "difference": "Gemeinsame Bücher verbinden Feldforschung und journalistische Darstellung. Diese Rollen ergänzen sich; Mitautorschaft ist keine unabhängige Gegenprüfung.",
+      "relation_type": "COAUTHORSHIP",
+      "source_ids": [
+        "UKN-S61",
+        "UKN-S66",
+        "UKN-S78"
+      ],
+      "atlas_author": "colm-kelleher",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X45",
+      "pair": "Knapp ↔ Puthoff",
+      "shared_topic": "Technische Deutungen und Öffentlichkeit",
+      "difference": "Die Sendungsseite2018 belegt einen Interviewkontakt. Knapp vermittelt; Puthoff erläutert eigene Forschungsansätze. Der Auftritt beweist kein gemeinsames Experiment.",
+      "relation_type": "INTERVIEW",
+      "source_ids": [
+        "UKN-S71"
+      ],
+      "atlas_author": "hal-puthoff",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X46",
+      "pair": "Knapp ↔ Davis",
+      "shared_topic": "UAP-Erklärung und Beweismaßstab",
+      "difference": "Der Sender fasst Davis’ Ausschlussargument zusammen. Knapps Moderation ist ein Verbreitungsweg, keine zusätzliche physikalische Bestätigung.",
+      "relation_type": "INTERVIEW",
+      "source_ids": [
+        "UKN-S71"
+      ],
+      "atlas_author": "eric-davis",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X47",
+      "pair": "Knapp ↔ Lacatski",
+      "shared_topic": "Insiderwissen und Veröffentlichung",
+      "difference": "Reporter, Mitautor und Interviewer stehen einem sicherheitsgebundenen Programmteilnehmer gegenüber. Fragen des Moderators und bestätigte Aussagen des Gastes müssen getrennt bleiben.",
+      "relation_type": "COAUTHORSHIP_AND_INTERVIEW",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S78"
+      ],
+      "atlas_author": "james-lacatski",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X48",
+      "pair": "Lacatski ↔ Bigelow",
+      "shared_topic": "Staatlicher Auftrag und private Umsetzung",
+      "difference": "DIA/BAASS lassen sich als institutionelle Rollen verbinden. Die Existenz des Vertrags belegt nicht sämtliche später erzählten Ergebnisse.",
+      "relation_type": "PROGRAM_CONTRACT_CONTEXT",
+      "source_ids": [
+        "UKN-S63",
+        "UKN-S70"
+      ],
+      "atlas_author": "robert-bigelow",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X49",
+      "pair": "Lacatski ↔ Kelleher",
+      "shared_topic": "Programmsteuerung und Fallarbeit",
+      "difference": "Gemeinsame Autorenschaft ist direkt belegt. Ihre unterschiedlichen Arbeitsrollen erklären Perspektiven, erzeugen aber keine zwei unabhängigen Quellen für denselben Bericht.",
+      "relation_type": "COAUTHORSHIP_AND_ROLE_COMPARISON",
+      "source_ids": [
+        "UKN-S78",
+        "UKN-S70"
+      ],
+      "atlas_author": "colm-kelleher",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X50",
+      "pair": "Lacatski ↔ Puthoff",
+      "shared_topic": "Technische Studien im AAWSAP-Umfeld",
+      "difference": "Der Anschluss läuft über DIA/BAASS und Kellehers Benennung Puthoffs als Berater. Eine direkte persönliche Weisung Lacatskis an Puthoff wird damit nicht belegt.",
+      "relation_type": "INSTITUTIONAL_PATH_NOT_DIRECT_EDGE",
+      "source_ids": [
+        "UKN-S63",
+        "UKN-S60"
+      ],
+      "atlas_author": "hal-puthoff",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X51",
+      "pair": "Lacatski ↔ Davis",
+      "shared_topic": "Klassifikation und technische Modelle",
+      "difference": "Das Interview erwähnt das Vallée-Davis-Schema; deren eigene Veröffentlichung beschreibt den Ansatz. Methodenzitat, Vertragsrolle und persönliche Zusammenarbeit sind verschiedene Beziehungen.",
+      "relation_type": "REPORTED_METHOD_REUSE",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S54"
+      ],
+      "atlas_author": "eric-davis",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    },
+    {
+      "id": "UKN-X52",
+      "pair": "Lacatski ↔ Vallée",
+      "shared_topic": "Strukturierte Fallvergleiche",
+      "difference": "Die berichtete Datenbankklassifikation ist anschlussfähig an Vallées vergleichende Methodik. Der Verweis bestätigt keine bestimmte ontologische Erklärung der Fälle.",
+      "relation_type": "REPORTED_METHOD_REUSE",
+      "source_ids": [
+        "UKN-S70",
+        "UKN-S54"
+      ],
+      "atlas_author": "jacques-vallee",
+      "comparison_basis": "Documented roles or explicitly labelled editorial/method comparison; no inferred common doctrine."
+    }
+  ]
+}

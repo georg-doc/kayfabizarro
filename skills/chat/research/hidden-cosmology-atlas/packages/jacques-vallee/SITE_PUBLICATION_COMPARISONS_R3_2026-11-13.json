@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-13",
+  "contentCommit": "c8a366587865689cd5219443eb12b2076666790d",
+  "siteSourceCommit": "3319d00f18aae1a9fbd7bcb3eb5b833e7516fdd9",
+  "deployment": {
+    "id": "appgdep_6af657d1d28881918c974f3122d69470",
+    "project_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc",
+    "title": "KFB Research Atlas",
+    "version_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc~appgver_9db1e8c9eca08191bce40b0d6985bab5",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://kfb-research-atlas.frizzlebob.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae66f5da80c8191b5b130f20a47c2bc",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-13T00:20:46.988782+00:00"
+  },
+  "scope": {
+    "comparisonAxes": 6,
+    "columns": 4,
+    "sourceCount": 47,
+    "newSources": [
+      "V43",
+      "V44",
+      "V45",
+      "V46",
+      "V47"
+    ]
+  },
+  "readScope": "Selected original preview text, publisher transcripts, essay and episode descriptions. Zero new audio viewings or PDF scan pages. No case audit.",
+  "checks": [
+    "25 changed GitHub files matched exact commit",
+    "Remote ref verified",
+    "Unique anchors and internal links passed",
+    "24 matrix cells reference registered source IDs",
+    "Local browser matrix and Farrell source navigation passed"
+  ],
+  "hostedVisualReadback": "NOT_VERIFIED_LOGIN_REQUIRED"
+}

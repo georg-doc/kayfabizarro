@@ -1,0 +1,23 @@
+Create one structured research data table from the sources currently available in this notebook. Use English. This is a source-recovery export for a research atlas, not an essay.
+
+Use these columns:
+Record ID | Record type | Source ID(s) | Title / subject | Author / speaker and role | Source type | Date | Original URL | Locator | Statement / description | Related record ID | Relation type | Attribution / evidence status | Missing information
+
+RECORDS
+1. SOURCE: One row for each distinct source you can actually identify. Assign stable local IDs S001, S002, etc. Preserve the displayed title and identify the author, speaker, interviewer or publisher separately where known. Distinguish original documents, lectures, journalism, books, transcripts, commentary and AI-generated summaries. Record duplicates or excerpts of the same work as related records, not independent witnesses.
+2. CLAIM: Add rows for central claims and interpretations, using IDs C001, C002, etc. Each row should contain one clear proposition, the person making it, supporting Source ID(s), and the closest available page, section or timestamp. Distinguish the author's assertion, a quotation of another person, an interviewer/student question, and the report's own synthesis.
+3. RELATION: Add rows R001, R002, etc. for explicitly described connections between people, institutions, works or claims. Name both endpoints in Title / subject and link the relevant record IDs. Use precise types such as cites, quotes, funded, employed, disputes or thematic comparison. A thematic similarity is not evidence of contact, influence or coordination.
+
+RULES
+- Work only from accessible notebook sources. Do not search for additional material or fill gaps from general knowledge.
+- Include all identifiable SOURCE rows before allocating space to CLAIM and RELATION rows. Prioritize central, well-located claims and relations; do not imply exhaustive extraction.
+- Copy only URLs actually present in accessible source material or metadata. Never reconstruct or guess links, DOI values, titles, dates, names, page numbers or timestamps. Use "not available" when missing. Do not expose private sharing links, access tokens or personal contact details.
+- Use actual dates only when available and label publication, event or upload dates. Preserve uncertainty and approximate dates.
+- For claims, status should describe what the source supports: "author assertion", "source explicitly documents", "reported by secondary source", "editorial inference", "disputed within notebook", or "unresolved". These are not global truth ratings.
+- For generated reports, mindmaps and infographics, record them as derivative material. Their arrows and headings do not establish historical causation, funding, ancestry or institutional control. Attribute claims to the underlying author only when that attribution is visible.
+- Distinguish sources cited inside a document from sources independently present in the notebook. Mark cited-but-unavailable works as "lead only; not inspected".
+- Keep conflicting accounts separate and connect them with "disputes". Do not flatten disagreement into consensus. Multiple retellings from one original source remain one evidence lineage.
+- Where relevant, separate factual chronology, the author's explanatory model, moral judgments and predictions. Do not infer collective motives from ethnicity, religion or group membership.
+- Keep cells concise and self-contained. Put uncertainties and missing originals in Missing information, not invented answers.
+
+End with one COVERAGE row stating how many SOURCE, CLAIM and RELATION rows were produced, which materials were inaccessible or fragmentary, and whether the notebook's complete source list was actually visible. If completeness cannot be verified, explicitly say so. Produce the table directly without questions or follow-up steps.

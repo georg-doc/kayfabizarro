@@ -1,0 +1,107 @@
+{
+  "from": "NB01",
+  "to": "NB02",
+  "matches": [
+    {
+      "nb01Id": "NB01-S01",
+      "nb02Id": "NB02-N009",
+      "match": "TITLE_LEVEL",
+      "title": "Alles über MKUltra! - \"Der programmierte Mensch\" - Wie Geheimdienste unseren Geist vermessen"
+    },
+    {
+      "nb01Id": "NB01-S02",
+      "nb02Id": "NB02-N047",
+      "match": "TITLE_LEVEL",
+      "title": "EMPERORS_NEW_CLOTHES_Power_Leaks_Kompendium.md"
+    },
+    {
+      "nb01Id": "NB01-S03",
+      "nb02Id": "NB02-N023",
+      "match": "TITLE_LEVEL",
+      "title": "Game Theory #6:  The World's Bank"
+    },
+    {
+      "nb01Id": "NB01-S04",
+      "nb02Id": "NB02-N080",
+      "match": "TITLE_LEVEL",
+      "title": "Geo-Strategy END:  Psychohistory (The Science of Imagining the Future)"
+    },
+    {
+      "nb01Id": "NB01-S05",
+      "nb02Id": "NB02-N015",
+      "match": "TITLE_LEVEL",
+      "title": "Great Books #1:  Secrets of the Universe"
+    },
+    {
+      "nb01Id": "NB01-S06",
+      "nb02Id": "NB02-N081",
+      "match": "TITLE_LEVEL",
+      "title": "Great Books #2:  Homer and the Invention of the Human"
+    },
+    {
+      "nb01Id": "NB01-S07",
+      "nb02Id": "NB02-N021",
+      "match": "TITLE_LEVEL",
+      "title": "Great Books #3:  Poets and Prophets"
+    },
+    {
+      "nb01Id": "NB01-S08",
+      "nb02Id": "NB02-N071",
+      "match": "TITLE_LEVEL",
+      "title": "MedKayfab - Ophthalmology & Optics Edition.pdf"
+    },
+    {
+      "nb01Id": "NB01-S09",
+      "nb02Id": "NB02-N036",
+      "match": "TITLE_LEVEL",
+      "title": "Secret History #24:  Empire of Church"
+    }
+  ],
+  "notebookMembership": "Source list is an exported inventory, not direct notebook UI verification.",
+  "jiang": {
+    "sourceRecordId": "NB02-R0264",
+    "notebookSourceId": "NB02-N023",
+    "existingSourceId": "JP-S01",
+    "enrichment": {
+      "author": "Jiang Xueqin / Predictive History",
+      "url": "https://www.youtube.com/watch?v=CbamEcNuDXo",
+      "publicationDate": "2026-01-22",
+      "provenance": "NB01 original YouTube/caption inspection; not supplied by table"
+    },
+    "claimMatches": [
+      {
+        "recordId": "NB02-R0267",
+        "existingClaimIds": [
+          "JP-C01",
+          "JP-C02"
+        ],
+        "status": "PARTIAL_OVERLAP; compound exported statement retained separately"
+      },
+      {
+        "recordId": "NB02-R0274",
+        "existingClaimIds": [
+          "JP-C04"
+        ],
+        "status": "THEMATIC_OVERLAP; no original legal causation verified"
+      },
+      {
+        "recordId": "NB02-R0266",
+        "existingClaimIds": [],
+        "status": "NEW_EXPORTED_CLAIM; passage verification pending"
+      },
+      {
+        "recordId": "NB02-R0268",
+        "existingClaimIds": [],
+        "status": "NEW_EXPORTED_CLAIM; passage verification pending"
+      }
+    ]
+  },
+  "retainedAssets": [
+    "NB01-M2",
+    "NB01-M3",
+    "NB01-M4",
+    "NB01-M5",
+    "NB01-I1"
+  ],
+  "rule": "No prior author claim, verified locator or source receipt overwritten; no derivative counted as another independent witness."
+}

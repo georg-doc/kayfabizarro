@@ -1,0 +1,27 @@
+# WS0-Check-in · Privacy Kayfabe und Signatur auf bestehenden Deck-PDFs
+
+3. November 2026 · Entscheidungsvorlage für Georg und WS0 · V-1258
+
+**Stand.** Der Dossierpilot ist von Georg und WS0 abgenommen. Die Überwachungskarte verwendet den Dietrich-Tipp. Basilisk und Sealed Room haben am gedruckten Motiv geprüfte englische Spieltexte, getrennte deutsche Sprechfassungen und je eine selbst prüfbare Aufgabe für fünf bis zehn Minuten. Der Spielanschluss bleibt bis nach dem MVP geparkt. [Pilot-Commit und Änderungen](https://github.com/georg-doc/kayfabizarro/commit/c9aa3b1940bec496dbb36546c46308d785021e2d) · [Atlas-Pilot](https://kfb-research-atlas.frizzlebob.chatgpt.site/#ws0)
+
+**Quellenstatus.** Rokos Text vom 23. Juli 2010 ist in einer archivierten Kopie des damaligen Google-Cache lesbar. Bei Curtis ist die Aussage, dass Menschen trotz sichtbarer Widersprüche mitspielen, weil sie sich keine Alternative vorstellen können, am Filmton bei 00:24:08–00:24:29 geprüft. Vollständige Untertitel und Bildstichproben bis zum Abspann lagen vor. Eine durchgehende audiovisuelle Sichtung bleibt offen. [Roko](https://web.archive.org/web/20141013084601/http://kruel.co/lw/r02.txt) · [Curtis](https://archive.org/details/HyperNormalisation)
+
+## Befund zum ersten Deckwerkstatt-Export
+
+Beide Privacy-Kayfabe-Dateien haben 15 Seiten im selben Format. Das Web-PDF ist mit 3,83 MB rund 88 % kleiner als der Master mit 32,08 MB. Die geprüften Seitenbilder haben dieselben Pixelmaße. Die auf Seite 3 verglichene kleine Schrift bleibt in der Webfassung lesbar. Für die Onlineansicht eignet sich die kleine Datei. Für Druck und weitere Bearbeitung bleibt der größere Export die Vorlage; die tatsächliche Druckgröße braucht einen Probebogen.
+
+Auf Seite 3 stellen intaktes Schloss, Schlosserrechnung, Gästeliste und behördliche Anordnung eine spielbare Frage: Welche Spur erklärt, wie jemand hineingelangt ist? Seite 4 trennt den Maulwurf aus der Druckkarte und den winkenden Gastgeber aus dem Entwurf. Redaktionell offen bleibt die scheinbar präzise „0.01%“-Angabe auf *The Transparency Report* (S. 7). Vor einer Druckauflage als fiktive Unternehmensauskunft kenntlich machen oder belegen.
+
+## Was für alte Exporte geklärt ist
+
+Georg nutzt einen bezahlten Zugang und findet den genannten Schalter in seinem Konto nicht. Google beschreibt „Visible watermarking“ für berechtigte Konten und nennt beim Schalter generierte Bilder und Videos. Daraus lässt sich weder die Verfügbarkeit für genau diesen PDF-Export noch eine rückwirkende Änderung alter PDFs ableiten. Georgs Wunsch ist eine verlässliche eigene Signatur auch für den Altbestand. Eine manuelle Überdeckung des Google-Zeichens durch die KFB-Plakette ist technisch möglich. Als Berechtigungsnachweis dafür reicht das Abo allein nicht aus. Googles allgemeine Bedingungen untersagen das Entfernen, Unkenntlichmachen und Verändern eigener Marken und Logos. Eine abweichende Erlaubnis für diese Dateien ist bislang nicht dokumentiert. [Google-Hilfe zu Plänen und Wasserzeichen](https://support.google.com/gemininotebook/answer/16213268?hl=en) · [Google-Nutzungsbedingungen, Abschnitt „Google-Inhalte“](https://policies.google.com/terms?hl=de&gl=de)
+
+## Vorschlag für einen späteren Ein-Deck-Test
+
+1. **Vorlage.** Den bestehenden PDF-Master und Georgs freigegebene Signaturgrafik (SVG oder transparentes PNG) als Eingaben nehmen. Dateiprüfsumme, Seitenformat, Drehung und Editionskennung festhalten. Ein eigener Dateiname für die Ausgabe schützt das Original und verhindert Doppelstempel.
+2. **Platzierung.** Für die Webfassung eine schmale Fußleiste außerhalb des bisherigen Seitenbilds anlegen. Die vorhandene PDF-Seite ohne erneute Rasterung oder Skalierung platzieren und die Plakette rechts im neuen Streifen setzen. Als englische Beschriftung käme „KFB · Edited by Georg“ für tatsächlich bearbeitete Ausgaben infrage. Für unveränderte Zusammenstellungen wäre „KFB Edition“ präziser. Die breitere Gemini-Kennzeichnung alter und neuer Exporte darf dabei ihre Position behalten.
+3. **Druckprofil.** Eine zusätzliche Fußleiste verändert das Papierformat. Bei festem Schneidbogen die Signatur auf Titel- oder Schlussseite in einer geprüften Freifläche setzen. Falls die Freifläche fehlt, die Plakette auf ein separates Kolophon legen. Eine Seitenplakette bleibt beim Ausschneiden nicht auf jeder Karte; eine Signatur pro Einzelkarte wäre ein eigener Satzauftrag.
+4. **Automatisierung.** Ein PDF-Werkzeug kann Originalseite und Signatur als getrennte PDF-Objekte zusammensetzen. Ausgabe getrennt nach Master und Web erzeugen, mit Quellprüfsumme und Profil versionieren. Ein optionales Profil zum gezielten Abdecken des vorhandenen Zeichens erst nach dokumentierter Erlaubnis für den konkreten Export und Einsatz prüfen.
+5. **Abnahme.** Titel, dichte Viererkarte (S. 3) und Schlussseite (S. 15) als Vorher/Nachher vorlegen. Bei allen 15 Seiten maschinell kontrollieren, dass sich das alte Seitenbild im ursprünglichen Bereich nicht verändert hat und kein Objekt abgeschnitten ist. Am echten Ausdruck Kartengröße, Schnittmarken und Kleinschrift prüfen.
+
+**Entscheidung für nach dem MVP:** Soll die Signatur die gesamte Ausgabe kennzeichnen oder muss sie auf jeder ausgeschnittenen Karte bleiben? Für die erste Variante genügt der beschriebene PDF-Schritt. Für die zweite braucht WS0 eine reservierte Fläche im Kartenlayout. Dieser Check-in dokumentiert den Vorschlag; die gelieferten Privacy-PDFs wurden nicht bearbeitet.

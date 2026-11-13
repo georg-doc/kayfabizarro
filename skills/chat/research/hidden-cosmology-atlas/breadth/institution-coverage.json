@@ -1,0 +1,527 @@
+{
+  "schema": "kfb.atlas.institution-coverage-draft/1",
+  "date": "2026-11-01",
+  "status": "SOURCE_SCOPED_RESEARCH_ONLY",
+  "researchRunId": "ATLAS_BREADTH_CORPUS_BATCH_AB_01_INSTITUTIONS",
+  "agent": "/root/reader_review",
+  "model": "not independently observed",
+  "owner": "Hidden Cosmology Atlas Editorial Research",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+  "proposedOwnerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+  "entities": [
+    {
+      "entityId": "federal-reserve-system",
+      "name": "Federal Reserve System",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS"
+    },
+    {
+      "entityId": "federal-reserve-board",
+      "name": "Board of Governors of the Federal Reserve System",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS"
+    },
+    {
+      "entityId": "federal-reserve-banks",
+      "name": "12 Federal Reserve Banks",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS"
+    },
+    {
+      "entityId": "bank-for-international-settlements",
+      "name": "Bank for International Settlements (BIS)",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS"
+    },
+    {
+      "entityId": "federal-open-market-committee",
+      "name": "Federal Open Market Committee (FOMC)",
+      "kind": "entity",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS"
+    },
+    {
+      "entityId": "institute-for-works-of-religion",
+      "name": "Istituto per le Opere di Religione (IOR)",
+      "kind": "entity",
+      "cluster": "C09_VATICAN_FINANCE"
+    },
+    {
+      "entityId": "apsa",
+      "name": "Administration of the Patrimony of the Apostolic See (APSA)",
+      "kind": "entity",
+      "cluster": "C09_VATICAN_FINANCE"
+    },
+    {
+      "entityId": "theosophical-society",
+      "name": "Theosophical Society",
+      "kind": "entity",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS"
+    },
+    {
+      "entityId": "mystery-schools",
+      "name": "Mystery Schools \u2014 historiographical/conceptual umbrella",
+      "kind": "concept",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS"
+    },
+    {
+      "entityId": "theosophical-society-england",
+      "name": "The Theosophical Society in England (2015 incorporated company)",
+      "kind": "entity",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "status": "PROPOSED_IDENTITY_SPLIT_NOT_CENSUS_MUTATION",
+      "reason": "Separate national legal body identified in BIN-S08; do not merge with 1875/1905 Adyar identity."
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "BIN-S01",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "title": "How is the Federal Reserve System structured?",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/faqs/about_12593.htm",
+      "publicationDate": "2026-05-28",
+      "eventDate": null,
+      "retrievedAt": "2026-11-01",
+      "sourceKind": "INSTITUTIONAL_PRIMARY_SELF_DESCRIPTION",
+      "sourceLocator": "FAQ body, paragraphs 1\u20134; rendered lines 9\u201313; date is Last Update",
+      "passageSummary": "The official account distinguishes Board, FOMC and 12 Reserve Banks. It identifies the Board as a federal agency accountable to Congress, overseeing the Reserve Banks.",
+      "accessStatus": "HTML_TEXT_READ",
+      "reviewStatus": "UNREVIEWED",
+      "coverage": {
+        "originalHtmlPassageRead": true,
+        "pdfPagesViewed": 0,
+        "audioMinutesListened": 0
+      },
+      "independenceRoot": "Federal Reserve Board",
+      "limits": "Bounded published passage only; no full archive, account, transaction or independent performance audit."
+    },
+    {
+      "sourceId": "BIN-S02",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "title": "Who owns the Federal Reserve?",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/faqs/about_14986.htm",
+      "publicationDate": "2026-05-28",
+      "eventDate": null,
+      "retrievedAt": "2026-11-01",
+      "sourceKind": "INSTITUTIONAL_PRIMARY_SELF_DESCRIPTION",
+      "sourceLocator": "FAQ body, rendered lines 10\u201316; date is Last Update",
+      "passageSummary": "The FAQ distinguishes the System from separately incorporated Reserve Banks and describes member-bank stock as a statutory membership requirement unlike ordinary corporate stock.",
+      "accessStatus": "HTML_TEXT_READ",
+      "reviewStatus": "UNREVIEWED",
+      "coverage": {
+        "originalHtmlPassageRead": true,
+        "pdfPagesViewed": 0,
+        "audioMinutesListened": 0
+      },
+      "independenceRoot": "Federal Reserve Board",
+      "limits": "Bounded published passage only; no full archive, account, transaction or independent performance audit."
+    },
+    {
+      "sourceId": "BIN-S03",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "title": "About the Bank for International Settlements",
+      "publisher": "Bank for International Settlements",
+      "url": "https://www.bis.org/about",
+      "publicationDate": null,
+      "eventDate": null,
+      "retrievedAt": "2026-11-01",
+      "sourceKind": "INSTITUTIONAL_PRIMARY_SELF_DESCRIPTION",
+      "sourceLocator": "Mission paragraph and four bullets, rendered lines 509\u2013515",
+      "passageSummary": "BIS describes its mission as supporting central banks through cooperation and providing a forum, analysis, knowledge-sharing and banking services.",
+      "accessStatus": "HTML_TEXT_READ",
+      "reviewStatus": "UNREVIEWED",
+      "coverage": {
+        "originalHtmlPassageRead": true,
+        "pdfPagesViewed": 0,
+        "audioMinutesListened": 0
+      },
+      "independenceRoot": "Bank for International Settlements",
+      "limits": "Bounded published passage only; no full archive, account, transaction or independent performance audit."
+    },
+    {
+      "sourceId": "BIN-S04",
+      "cluster": "C09_VATICAN_FINANCE",
+      "title": "Mission and Vision",
+      "publisher": "Istituto per le Opere di Religione",
+      "url": "https://www.ior.va/en/mission-and-vision/",
+      "publicationDate": null,
+      "eventDate": null,
+      "retrievedAt": "2026-11-01",
+      "sourceKind": "INSTITUTIONAL_PRIMARY_SELF_DESCRIPTION",
+      "sourceLocator": "Mission section, rendered lines 188\u2013194, citing Statutes art. 2",
+      "passageSummary": "IOR describes custody and administration of entrusted or transferred property intended for religious or charitable purposes. Its ethical aspirations are self-description, not a completed conduct audit.",
+      "accessStatus": "HTML_TEXT_READ",
+      "reviewStatus": "UNREVIEWED",
+      "coverage": {
+        "originalHtmlPassageRead": true,
+        "pdfPagesViewed": 0,
+        "audioMinutesListened": 0
+      },
+      "independenceRoot": "Istituto per le Opere di Religione",
+      "limits": "Bounded published passage only; no full archive, account, transaction or independent performance audit."
+    },
+    {
+      "sourceId": "BIN-S05",
+      "cluster": "C09_VATICAN_FINANCE",
+      "title": "Praedicate Evangelium \u2014 APSA",
+      "publisher": "Holy See / Pope Francis",
+      "url": "https://www.vatican.va/content/francesco/en/apost_constitutions/documents/20220319-costituzione-ap-praedicate-evangelium.html",
+      "publicationDate": "2022-03-19",
+      "eventDate": "2022-03-19",
+      "retrievedAt": "2026-11-01",
+      "sourceKind": "PROMULGATED_INSTITUTIONAL_CONSTITUTION",
+      "sourceLocator": "Articles 219 \u00a7\u00a71\u20133, 220 \u00a7\u00a71\u20132, 221 \u00a7\u00a71\u20133; rendered lines 1305\u20131322",
+      "passageSummary": "The constitution assigns APSA administration of specified assets and services for the Curia; art. 219 \u00a73 says execution of the transactions specified in \u00a7\u00a71\u20132 takes place through IOR. These are distinct named institutions with a stated functional connection.",
+      "accessStatus": "HTML_TEXT_READ",
+      "reviewStatus": "UNREVIEWED",
+      "coverage": {
+        "originalHtmlPassageRead": true,
+        "pdfPagesViewed": 0,
+        "audioMinutesListened": 0
+      },
+      "independenceRoot": "Holy See / Pope Francis",
+      "limits": "Bounded published passage only; no full archive, account, transaction or independent performance audit."
+    },
+    {
+      "sourceId": "BIN-S06",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "title": "Mission, Objects and Freedom statements",
+      "publisher": "Theosophical Society, Adyar",
+      "url": "https://www.ts-adyar.org/mission-objects",
+      "publicationDate": null,
+      "eventDate": null,
+      "retrievedAt": "2026-11-01",
+      "sourceKind": "INSTITUTIONAL_PRIMARY_SELF_DESCRIPTION",
+      "sourceLocator": "Three Objects / Freedom of Thought; rendered lines 7\u201316",
+      "passageSummary": "The institution dates formation to 17 November 1875 and Madras incorporation to 3 April 1905; its objects concern universal brotherhood, comparative study and unexplained nature/human capacities. Its stated 1924 resolution permits members to reject doctrines.",
+      "accessStatus": "HTML_TEXT_READ",
+      "reviewStatus": "UNREVIEWED",
+      "coverage": {
+        "originalHtmlPassageRead": true,
+        "pdfPagesViewed": 0,
+        "audioMinutesListened": 0
+      },
+      "independenceRoot": "Theosophical Society, Adyar",
+      "limits": "Bounded published passage only; no full archive, account, transaction or independent performance audit."
+    },
+    {
+      "sourceId": "BIN-S07",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "title": "Early History",
+      "publisher": "Theosophical Society, Adyar",
+      "url": "https://www.ts-adyar.org/early-history",
+      "publicationDate": null,
+      "eventDate": "1875-11-17",
+      "retrievedAt": "2026-11-01",
+      "sourceKind": "INSTITUTIONAL_RETROSPECTIVE_HISTORY",
+      "sourceLocator": "The Society is Founded; rendered lines 15\u201317",
+      "passageSummary": "The institutional retrospective connects a September 1875 lecture on Egyptian proportions with the formation decision and dates Olcott\u2019s inaugural address to 17 November 1875. Its spiritual claims remain attributed institutional narration.",
+      "accessStatus": "HTML_TEXT_READ",
+      "reviewStatus": "UNREVIEWED",
+      "coverage": {
+        "originalHtmlPassageRead": true,
+        "pdfPagesViewed": 0,
+        "audioMinutesListened": 0
+      },
+      "independenceRoot": "Theosophical Society, Adyar",
+      "limits": "Bounded published passage only; no full archive, account, transaction or independent performance audit."
+    },
+    {
+      "sourceId": "BIN-S08",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "title": "Charity registration decision: The Theosophical Society in England",
+      "publisher": "Charity Commission for England and Wales",
+      "url": "https://www.gov.uk/government/publications/charity-registration-decision-the-theosophical-society-in-england/charity-registration-decision-the-theosophical-society-in-england",
+      "publicationDate": "2020-09-22",
+      "eventDate": "2016-06-20",
+      "retrievedAt": "2026-11-01",
+      "sourceKind": "REGULATOR_ORIGINAL_DECISION",
+      "sourceLocator": "Background / Decision / What are the purposes; rendered lines 84\u2013105",
+      "passageSummary": "The decision dated 20 June 2016 accepts charitable status for the English body on education and moral/ethical improvement grounds; it describes the company incorporated 28 July 2015 as successor to an unincorporated organization.",
+      "accessStatus": "HTML_TEXT_READ",
+      "reviewStatus": "UNREVIEWED",
+      "coverage": {
+        "originalHtmlPassageRead": true,
+        "pdfPagesViewed": 0,
+        "audioMinutesListened": 0
+      },
+      "independenceRoot": "Charity Commission for England and Wales",
+      "limits": "Bounded published passage only; no full archive, account, transaction or independent performance audit."
+    }
+  ],
+  "claims": [
+    {
+      "claimId": "BIN-C01",
+      "entityId": "federal-reserve-system",
+      "sourceIds": [
+        "BIN-S01"
+      ],
+      "proposition": "The Board\u2019s published structure account identifies the Board, FOMC and 12 Reserve Banks as distinct components.",
+      "evidenceStatus": "INSTITUTIONAL_ACCOUNT_PASSAGE_SUPPORTED",
+      "reviewStatus": "UNREVIEWED",
+      "counterEvidence": [],
+      "limitations": "Limited to identified source, jurisdiction and date; does not establish unexamined financing, beneficial ownership or operational conduct."
+    },
+    {
+      "claimId": "BIN-C02",
+      "entityId": "federal-reserve-banks",
+      "sourceIds": [
+        "BIN-S02"
+      ],
+      "proposition": "The Board describes member-bank Reserve Bank stock as a membership requirement with characteristics different from ordinary private-company stock; this is not a generic ownership finding for every actor.",
+      "evidenceStatus": "INSTITUTIONAL_ACCOUNT_PASSAGE_SUPPORTED",
+      "reviewStatus": "UNREVIEWED",
+      "counterEvidence": [],
+      "limitations": "Limited to identified source, jurisdiction and date; does not establish unexamined financing, beneficial ownership or operational conduct."
+    },
+    {
+      "claimId": "BIN-C03",
+      "entityId": "bank-for-international-settlements",
+      "sourceIds": [
+        "BIN-S03"
+      ],
+      "proposition": "BIS presents central-bank cooperation and services as its institutional mission; this page establishes the self-description, not policy effectiveness or covert command.",
+      "evidenceStatus": "INSTITUTIONAL_ACCOUNT_PASSAGE_SUPPORTED",
+      "reviewStatus": "UNREVIEWED",
+      "counterEvidence": [],
+      "limitations": "Limited to identified source, jurisdiction and date; does not establish unexamined financing, beneficial ownership or operational conduct."
+    },
+    {
+      "claimId": "BIN-C04",
+      "entityId": "institute-for-works-of-religion",
+      "sourceIds": [
+        "BIN-S04"
+      ],
+      "proposition": "IOR states that its purpose concerns property entrusted or transferred for religious or charitable works.",
+      "evidenceStatus": "INSTITUTIONAL_ACCOUNT_PASSAGE_SUPPORTED",
+      "reviewStatus": "UNREVIEWED",
+      "counterEvidence": [],
+      "limitations": "Limited to identified source, jurisdiction and date; does not establish unexamined financing, beneficial ownership or operational conduct."
+    },
+    {
+      "claimId": "BIN-C05",
+      "entityId": "apsa",
+      "sourceIds": [
+        "BIN-S05"
+      ],
+      "proposition": "The 2022 constitution assigns APSA asset-administration duties and directs execution of specified transactions through IOR.",
+      "evidenceStatus": "NORMATIVE_DOCUMENT_PASSAGE_SUPPORTED",
+      "reviewStatus": "UNREVIEWED",
+      "counterEvidence": [],
+      "limitations": "Limited to identified source, jurisdiction and date; does not establish unexamined financing, beneficial ownership or operational conduct."
+    },
+    {
+      "claimId": "BIN-C06",
+      "entityId": "theosophical-society",
+      "sourceIds": [
+        "BIN-S06",
+        "BIN-S07"
+      ],
+      "proposition": "Adyar identifies its 1875 formation and 1905 incorporation; its educational/spiritual aims and retrospective narrative are distinct from evidence that supernatural claims are true.",
+      "evidenceStatus": "INSTITUTIONAL_ACCOUNT_PASSAGE_SUPPORTED",
+      "reviewStatus": "UNREVIEWED",
+      "counterEvidence": [],
+      "limitations": "Limited to identified source, jurisdiction and date; does not establish unexamined financing, beneficial ownership or operational conduct."
+    },
+    {
+      "claimId": "BIN-C07",
+      "entityId": "theosophical-society-england",
+      "sourceIds": [
+        "BIN-S08"
+      ],
+      "proposition": "The regulator\u2019s 2016 decision concerns the English national body and records 2015 company incorporation; it is not a ruling about all Theosophical organizations or esoteric truth.",
+      "evidenceStatus": "REGULATORY_DECISION_PASSAGE_SUPPORTED",
+      "reviewStatus": "UNREVIEWED",
+      "counterEvidence": [],
+      "limitations": "Limited to identified source, jurisdiction and date; does not establish unexamined financing, beneficial ownership or operational conduct."
+    },
+    {
+      "claimId": "BIN-C08",
+      "entityId": "mystery-schools",
+      "sourceIds": [
+        "BIN-S06",
+        "BIN-S07",
+        "BIN-S08"
+      ],
+      "proposition": "For Atlas indexing, Mystery Schools remains a conceptual umbrella, not an inferred legal parent of the specifically identified Theosophical bodies.",
+      "evidenceStatus": "EDITORIAL_IDENTITY_BOUNDARY_NOT_HISTORICAL_CLAIM",
+      "reviewStatus": "UNREVIEWED",
+      "counterEvidence": [],
+      "limitations": "Limited to identified source, jurisdiction and date; does not establish unexamined financing, beneficial ownership or operational conduct."
+    }
+  ],
+  "edges": [
+    {
+      "edgeId": "BIN-E01",
+      "fromEntityId": "federal-reserve-board",
+      "toEntityId": "federal-reserve-banks",
+      "type": "OFFICIAL_ACCOUNT_OF_OVERSIGHT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BIN-C01"
+      ],
+      "sourceIds": [
+        "BIN-S01"
+      ],
+      "sourceLocator": "FAQ paragraph 2 / rendered line 10",
+      "eventDate": null,
+      "publicationDate": "2026-05-28",
+      "identityStatus": "EXACT_WITHIN_NAMED_SOURCE_SCOPE",
+      "originalSourceScope": "Official structural description, not a transaction or complete statutory audit.",
+      "editor": "Codex child agent /root/reader_review; institution breadth assignment 2026-11-01",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Inspect dated statutory provisions and amendments defining oversight and exceptions.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BIN-E02",
+      "fromEntityId": "apsa",
+      "toEntityId": "institute-for-works-of-religion",
+      "type": "NORMATIVE_TRANSACTION_EXECUTION_CHANNEL",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BIN-C05"
+      ],
+      "sourceIds": [
+        "BIN-S05"
+      ],
+      "sourceLocator": "Praedicate Evangelium art. 219 \u00a73",
+      "eventDate": "2022-03-19",
+      "publicationDate": "2022-03-19",
+      "identityStatus": "EXACT_WITHIN_NAMED_SOURCE_SCOPE",
+      "originalSourceScope": "The promulgated provision routes transactions in art. 219 \u00a7\u00a71\u20132 through IOR; no specific execution or historical transfer is proved.",
+      "editor": "Codex child agent /root/reader_review; institution breadth assignment 2026-11-01",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Check subsequent amendments and dated implementation/transaction records before inferring present or past operations.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BIN-E03",
+      "fromEntityId": "theosophical-society-england",
+      "toEntityId": "theosophical-society",
+      "type": "REGULATOR_DESCRIBES_NATIONAL_BODY_IN_INTERNATIONAL_FRAMEWORK",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "claimIds": [
+        "BIN-C07"
+      ],
+      "sourceIds": [
+        "BIN-S08"
+      ],
+      "sourceLocator": "Background, rendered line 90",
+      "eventDate": "2016-06-20",
+      "publicationDate": "2020-09-22",
+      "identityStatus": "EXACT_WITHIN_NAMED_SOURCE_SCOPE",
+      "originalSourceScope": "Regulator identifies the national body\u2019s context; no universal corporate ownership relationship inferred.",
+      "editor": "Codex child agent /root/reader_review; institution breadth assignment 2026-11-01",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Read governing instruments and current legal registration for exact affiliations and powers.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "BIN-E04",
+      "fromEntityId": "theosophical-society",
+      "toEntityId": "mystery-schools",
+      "type": "EDITORIAL_COMPARISON_OF_ESOTERIC_TRANSMISSION_CONCEPTS",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "claimIds": [
+        "BIN-C06",
+        "BIN-C08"
+      ],
+      "sourceIds": [
+        "BIN-S06",
+        "BIN-S07"
+      ],
+      "sourceLocator": "Adyar Mission/Objects and Early History; Atlas editor comparison",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "EXACT_WITHIN_NAMED_SOURCE_SCOPE",
+      "originalSourceScope": "Comparison of stated spiritual inquiry and historical narrative with an Atlas concept, not organizational descent.",
+      "editor": "Codex child agent /root/reader_review; institution breadth assignment 2026-11-01",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [],
+      "nextFalsifier": "Specify one dated school, text and claimant; retract/replace if the comparison conflates legal identities or asserts a lineage without evidence.",
+      "auditEventIds": []
+    }
+  ],
+  "questions": [
+    {
+      "questionId": "BIN-Q01",
+      "cluster": "C08_MONETARY_CENTRAL_BANKS",
+      "question": "Which exact statutory provisions and dated member-stock rules support a proposed ownership or control claim?",
+      "alreadyCoveredSourceIds": [
+        "BIN-S01",
+        "BIN-S02",
+        "BIN-S03"
+      ],
+      "nextOriginal": "Federal Reserve Act sections and BIS statutes/membership instruments, separately dated and read.",
+      "status": "OPEN_NOT_EXECUTED"
+    },
+    {
+      "questionId": "BIN-Q02",
+      "cluster": "C09_VATICAN_FINANCE",
+      "question": "For any asserted financial link, which exact legal entity, period, transaction and original instrument are involved?",
+      "alreadyCoveredSourceIds": [
+        "BIN-S04",
+        "BIN-S05"
+      ],
+      "nextOriginal": "Dated IOR/APSA statutes, amendment history and relevant audited disclosures; separate historical WCC/BPF/Moneyrex owner records.",
+      "status": "OPEN_NOT_EXECUTED"
+    },
+    {
+      "questionId": "BIN-Q03",
+      "cluster": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "question": "Which named organization, text or initiatory lineage does a particular Mystery Schools claim mean, and who originally asserted the continuity?",
+      "alreadyCoveredSourceIds": [
+        "BIN-S06",
+        "BIN-S07",
+        "BIN-S08"
+      ],
+      "nextOriginal": "Exact founding rules/minutes or original author passage, edition and date; do not substitute modern institutional history for 1875 minutes.",
+      "status": "OPEN_NOT_EXECUTED"
+    }
+  ],
+  "coverage": {
+    "includedHtmlSources": 8,
+    "pdfPagesViewed": 0,
+    "audioMinutesListened": 0,
+    "fullArchivesRead": 0,
+    "financialTransactionsVerified": 0,
+    "authorDossiersCreated": 0
+  },
+  "excludedOrFailedAccess": [
+    {
+      "url": "https://www.theosophical.org/about/faq?catid=79%3Asociety&id=1043%3Athree-objects&view=article",
+      "status": "DIRECT_FETCH_403",
+      "use": "Discovery only; not relied upon in records."
+    }
+  ],
+  "privacy": "Public institutional/regulator pages only. No private source, account, document IDs, contact data or NIE content.",
+  "notes": [
+    "Institutional primary sources establish published identity, purposes and specified normative provisions, not universal corroboration.",
+    "Fed FAQs share one issuer; Adyar pages share one issuer. Their page counts do not equal independent corroboration.",
+    "No alleged covert-financing/control edge has been added.",
+    "New England entity is an explicit proposed identity split, not an author dossier."
+  ]
+}

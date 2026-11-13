@@ -1,0 +1,109 @@
+## 2026-11-01 — C03 journalism breadth and Notebook source handoff
+
+Added Gary Webb, Robert Parry, Seymour Hersh, James Corbett, Derrick Broze and Patrik Baab source-lead profiles. Prepared a standalone NotebookLM reader, source URL list and typed Atlas source-chain view, plus access-bounded Gemini inventory prompt/schema and additive reconciliation workflow. Public-only TheWebb interaction checked; no paid access. Sixteen source records, eighteen claims, fourteen noncausal relations; independent bounded review and deterministic closure passed. Source checkpoint `9b27a3818ec7386d9aafe7146ba0831827e28e35`. Existing breadth index and source arrays preserved additively. No Notebook import or Site release. See current Return.
+
+---
+
+## 2026-11-01 — C02 Webb/Goodwin sources and web-chat navigation
+
+Added two author masters and one jointly bylined ONE Amazon investigation chain with nine source references, thirteen claims, eleven noncausal edges and four questions. Added bounded primary corporate, policy and community-advisory context; recorded missing independent case evidence. Reconciled five navigation findings across twenty first-parent commits, including already-registered Moneyrex R4 and JM/Puharich work. Preserved AB01 arrays and historical registry entries; added immutable source pins and validation. Source checkpoint `2b1110659f76d32e6ca96cb215d84fb11ff5686b`. See current Return and C02 test report. No Site publication, main merge, Hub edit or archive outreach.
+
+---
+
+## 2026-11-01 — Breadth corpus AB01, source leads and independent review
+
+- Added eight author masters; retained existing eight and appended narrow Solari links to three.
+- Inventoried private donor custody without publishing donor IDs or bodies.
+- Added 43 source records, 35 claims, 20 noncausal relations (12 documentary, eight conceptual), and 30 questions; C08–C10 institutional coverage included.
+- Corrected Solari interview/public-availability dates and FASAB issuer attribution after independent review; resolved author/work aliases and preserved source-scope gaps.
+- Source snapshot `267e2ea50cf333c1d87d55c4970ee6ac0ec72214`, 21/21 exact file readbacks. Read-only receiver index pins that snapshot. Tests and review receipts in `breadth/`.
+- No Site/Notion/Hub/private-NIE publication or merge. Next `ATLAS_BREADTH_CORPUS_BATCH_C_02`.
+
+## 2026-11-01 · R4 · Journalistic donor sources, reporting-lineage checks, Technocracy and Rhodes source leads
+
+- Added **cross-cutting journalistic donors lens** over the existing research graph with individual byline, original work, exact primary-source citations, correction review, source independence, strongest contrary material and multi-outlet comparisons. No journalist receives a universal trust-score or historical factual status solely from profession, employer, awards or political perspective.
+- New additive [R4 140-candidate/10-cluster census](ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json): **37 new candidates** after R3 103, earlier R1/R2/R3 preserved; existing Whitney Webb/Seymour Hersh and others reused, not forked. Newly referenced names include Corbett, Derrick Broze, Regenauer, Patrik Baab, Pohlmann, Unlimited Hangout contributors, Sachs, Ritter, Dawson, Quigley, Rhodes and historical Technocracy Inc. Added relevant Reuters/AP/FT/NYT/Guardian/WSJ/BBC editorial reporting discovery node candidates, **not automatic corroboration**.
+- **Identity correction:** “David Boze” likely original `Derrick Broze` and official *Pyramid of Power* series **17 chapters** (13th specifically Technocratic State); “Carol Quickly” = **Carroll Quigley**, “Seymore Hersh” = **Seymour Hersh**, “patrick baab” official **Patrik Baab**.
+- New [journalistic source-root and media triangulation contract](JOURNALISTIC_DONORS_MEDIA_TRIANGULATION_AND_PRIMARY_CUSTODY_CONTRACT_R1_2026-11-01.md) records original articles/episodes, cited legal/FOIA/financial documents, archived editions, one underlying wire vs many mirrors, independent counteroriginals, editor/agent/reviewer and question-specific corpus source quality. Reused verified primary-site indexes Unlimited Hangout, Corbett Report, Broze POP, regenauer.press; historic Quigley catalog, Rhodes wills/FRUS 1902 and *Nature* 1933 Technocracy.
+- Connected private Dropbox search found Whitney Webb *One Nation Under Blackmail* PDF/OCR and Regenauer donor copies; Google Drive search found Webb/Epstein, Corbett WWI, technocracy private donor material. **Filenames indexed only**, protected source IDs/bodies not copied to GitHub or considered audited original claims.
+- Updated existing [WSA Work brief](WSA_WORK_BREADTH_FIRST_AUTHOR_ATLAS_EXPANSION_BRIEF_R1_2026-11-01.md) and [Site receiver brief](RESEARCH_ATLAS_SITE_BREADTH_WIKI_NOTION_GRAPH_FOLLOWON_BRIEF_R1_2026-11-01.md) add source-chain original/falsifier, publisher triangulation and media lens, with old text preserved. [R4 test report](ATLAS_JOURNALISTIC_DONOR_R4_TEST_REPORT_2026-11-01.md) **35/35** static tests after one test predicate correction, one R4 metadata wording correction; **0 new finished authors, original page/video/audio audits, 0 historical control edges, 0 Work/CI/Site/Notion tests**.
+- **Next owning Work gate** remains `ATLAS_BREADTH_CORPUS_BATCH_AB_01`. Current private GPT Site remains unchanged; no new public/Stage/Hub route, merge or Live.
+
+---
+
+## 2026-11-01 · R3 · Comedians/creative donors, mythic sources, reversible research–creative lenses
+
+- **Georg user direction:** use *one existing GitHub Atlas* for writers/researchers/hosts/standup comedians/occult narrators, original books and ancient works, field interpretation and KFB satire, with **equal discoverability but different source/claim truth conditions**. Preserve both forward research→NIE/KFB creative transformation and reverse Card/motif→original source/evidence.
+- **New [R3 candidate census](ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R3_2026-11-01.json)**: **103 nodes / 10 clusters**, additive 12 proposed nodes to R2 91; R2 and R1 originals unchanged; newly introduced Sam Tripoli, Carlin, Monroe, Loosh, *1 Enoch*, Nephilim, Tartaria, Atlantis, Malta institution, Maxwell, TerraMar and Liszt/Atlantis attribution. **0 newly completed author dossiers, 0 certified historical/conspiratorial edges**.
+- **Actual discovery:** Sam Tripoli official/Apple episode indices document Dark Journalist and Farrell guest slots; *Far Journeys* 1985 bibliography is an edition anchor for Monroe's Loosh garden narrative; academic *1 Enoch* critical text differentiates textual witnesses. Dark Journalist's X-122 reproduced transcript attributes Maxwell/TerraMar/Atlantis theory to **Liszt**; Maxwell's reproduced DOJ interview confirms only her account of ocean exploration and TerraMar, not historical Atlantis searching. Carlin's 2001 `converging interests` TV quote indexed, original program not played.
+- **New [Cross Lens Creative Donor Contract](CROSS_LENS_CREATIVE_DONOR_SOURCE_NETWORK_CONTRACT_R1_2026-11-01.md)**: 12 switchable research/creative methods including Cui Bono, Follow the Money, Converging Interests and Synchromystic; separate source-origin, author statement, analytical translation and fictional performance. Host/guest, ancient text/myth and history separate; Vatican IOR/Lansky/Order of Malta presented as **OPEN_TRIANGLE_QUERY**, not an operational network finding. No automatic new Atlas→Card or source→NPC identity.
+- **WSA Work and existing private Site follow-on** receive additive authoritative headers; current already-built Site not modified or re-published. Private Drive/Dropbox donor search only; protected source IDs/contents not copied. [Actual test report](ATLAS_CREATIVE_LENS_SOURCE_GRAPH_R3_TEST_REPORT_2026-11-01.md): **30/30 static readback assertions**, two test predicates adjusted, no source repair. 0 archival video minutes, 0 PDF screenshot pages, 0 Agent execution/CI/browser/NIE or NotebookLM integration.
+- **ONE next Work gate:** `ATLAS_BREADTH_CORPUS_BATCH_AB_01`, now with bidirectional creative donor role and source-crosslink requirements; no parallel owner, automatic merge or live promotion.
+
+---
+
+## 2026-11-01 · R2 · Federal Reserve / Vatican / Mystery Schools & versioned evidence graph
+
+- **Additive scope:** [R2 ten-cluster/91-node research-intake census](ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R2_2026-11-01.json) adds **37 proposed entity/author/concept candidates and 3 clusters** to the original **54-node/7-cluster R1** (R1 unchanged). Clusters cover monetary/Fed/BIS, Vatican IOR/APSA/financial networks, documented societies and Mystery Schools as conceptual umbrella. **Existing Dark Journalist = Daniel Liszt**, no “Dark Jungle” owner/dossier.
+- **Original publisher source discovery:** Federal Reserve's Board/reserve-bank descriptions, BIS reports, IOR/ASPA distinct institutional explanations, Theosophical Society historical account/UK Charity Commission. These are URL/HTML text/source-index leads, **not new audited original PDFs or verified illicit network claims**.
+- **New evidence/quality contract:** [Graph, provenance, owner and correction-history design](ATLAS_GRAPH_PROVENANCE_QUALITY_AND_VERSIONING_CONTRACT_R1_2026-11-01.md) defines four visually distinct edge layers, authorship vs AI reviewer traceability, falsifier field, Git SHA/version comparison, no transitive causality or merged legal entities. [Three retrospective correction examples](ATLAS_GRAPH_CORRECTION_HISTORY_CASES_R1_2026-11-01.json): `WC-C32` genealogical identity, `WC-C36` Moneyrex/BPF company scope, JM-C19/C21/C22 original vs later attributed quote. No newly investigated event, model identity or source claim fabricated.
+- **Existing receiving briefs updated additively:** [WSA dossier breadth Work](WSA_WORK_BREADTH_FIRST_AUTHOR_ATLAS_EXPANSION_BRIEF_R1_2026-11-01.md) and [current Site wiki/Notion/graph follow-on](RESEARCH_ATLAS_SITE_BREADTH_WIKI_NOTION_GRAPH_FOLLOWON_BRIEF_R1_2026-11-01.md). No second editable graph store, Notion SSOT, new Site project, or game runtime.
+- [Source/structure QA](ATLAS_GRAPH_QUALITY_AND_CLUSTER_R2_TEST_REPORT_2026-11-01.md) **28/28** actual GitHub-readback consistency tests; 0 new dossiers, 0 historical documentary edges, 0 audiovisual original media, 0 original PDF screenshot pages, 0 Site/browser/CI/Work tests. Current private Research Atlas Site unchanged, authenticated hosted revision still awaiting separate review.
+- **One next productive gate** `ATLAS_BREADTH_CORPUS_BATCH_AB_01` on current owner branch/Draft PR #394; no merge, Hub link/Cloudflare Stage/Live promotion.
+
+---
+
+## 2026-11-01 · GEORG PRIORITY OVERRIDE · Breadth-first author landscape before more deep-dive research
+
+- **Georg decision:** first expand **authors, works, institutions, clusters, candidate source relationships and missing-original questions** using WSA Work; do not spend the main next Work slice on Puharich audio or Moneyrex claim proof. Current private GPT Site R1 is sufficient evidence-model baseline, broaden data before new site features. No merge, publication or Live change.
+- **Added** [54-candidate, 7-cluster source/owner census](ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R1_2026-11-01.json): eight existing GitHub master authors, additional Google Drive author donors (including Jan Irvin and Christopher Knowles), source-backed Puharich topic, WCC institutional register, previously absent historians/journalists, and distinct legal-person/institution/claims nodes. **Zero new completed author dossiers** in this briefing pass. Names “George Arney”, “Mega Corporation”, user’s “Meyer-Lensky” and two unrelated-looking “Five Star Trust” instances remain explicit identity-resolution questions.
+- **Added** [WSA Work broad-corpus job](WSA_WORK_BREADTH_FIRST_AUTHOR_ATLAS_EXPANSION_BRIEF_R1_2026-11-01.md) — dedup existing GitHub/Drive/Dropbox/Notion → source-led dossier batches → structured research question/graph candidates → separate source tests → source+Return GitHub readbacks. Existing documentary vs conceptual edge guards intact.
+- **Added** [existing GPT Site follow-on briefing](RESEARCH_ATLAS_SITE_BREADTH_WIKI_NOTION_GRAPH_FOLLOWON_BRIEF_R1_2026-11-01.md) — grow the **existing private Site**, not another Site, into navigable author/cluster/wiki/typed graph once source corpus is real. Notion is a potential linked read-only Obsidian-like presentation layer with optional later one-way GitHub→Notion audited pilot, **no Notion writes done**.
+- **Original source leads discovered** NARA OSS/CIA and US State FRUS Paperclip original, official DOJ Epstein/FBI Vault and Iran-Contra National Security Archive indexes; private Dropbox historical Five Star Trust summary *read but not accepted as primary evidence*. Notion `Recherchequellen` page and private Drive donor titles read/discovered, no private IDs/contents reproduced publicly.
+- [QA](ATLAS_BREADTH_EXPANSION_BRIEF_TEST_REPORT_R1_2026-11-01.md): **25/25 static owner/metadata/privacy/graph-status checks PASS**, one test predicate corrected, 0 new primary PDF page-image checks, 0 completed authors, 0 Site/browser CI tests, 0 agent runs, 0 private Notion/Drive/Dropbox modifications.
+- **One next research execution gate:** `ATLAS_BREADTH_CORPUS_BATCH_AB_01`. Separate site consumer gate is `ATLAS_SITE_BREADTH_INDEX_INTAKE_01` and remains dependent on real GitHub corpus. Do not block author research on authenticated Site login/Hub link.
+
+---
+
+# 2026-10-31 · Private Research Atlas reader R1
+
+Source-grounded reader implemented and privately deployed. Hosted authenticated proof/Hub link pending login. See current RETURN.md and site/TEST_REPORT.md. Existing ledgers and private NIE owners retained.
+
+# Hidden Cosmology Atlas — Additive Owner Changelog
+**Owner:** existing KFB Hidden Cosmology Atlas Editorial Research; `georg-doc/kayfabizarro`; branch `research/hidden-cosmology-atlas-2026-10-13`; Draft PR #394. Historical research topic logs remain in their individual `topics/*/CHANGELOG.md` files and prior Git commits. This root summary is a **new chronological index**, not a replacement of those records.
+
+## 2026-10-31 · SITE DIRECTION YES — Meta-Admin Research Atlas Site briefing and one real source journey
+- **Georg decision:** specialist **GPT Site yes** as the meta-administrative Research Atlas front end for cross-source research and search, central author/institution/topic registry, typed historical and Warburg relation browsing, bounded Work research dispatch, and NIE/NotebookLM/essay/KFB-source-constrained export. The previous 2026-10-31 conditional Site roadmap remains intact but has a superseding decision addendum. **No Site built or published** in this source-only briefing slice.
+- **Added** [KFB_RESEARCH_ATLAS_META_ADMIN_GPT_SITE_BRIEF_R1_2026-10-31.md](KFB_RESEARCH_ATLAS_META_ADMIN_GPT_SITE_BRIEF_R1_2026-10-31.md): UI and minimal reader journey, source-fidelity acceptance, real auth/Work dispatch conditions, IP and original-source privacy, existing owner contracts, dispatch/consumer boundaries, exact Site-ready Work prompt.
+- **Added** [RESEARCH_ATLAS_END_TO_END_CASE_PUHARICH_JORJANI_R1_2026-10-31.md](RESEARCH_ATLAS_END_TO_END_CASE_PUHARICH_JORJANI_R1_2026-10-31.md): actual existing `JM-S16/S17/S19` → `JM-C19/C21/C22` → `JM-H09/H10/JM-W10` documented source chain, divergent 1984 vs 2026 wording, `half-abductions-staged` original still missing, seven-step test path, proposed faithful NIE/external packet. **Documentation walkthrough only; 0 Site clicks/audio verification.**
+- **Added** [ATLAS_ENTITY_REGISTRY_VIEW_R1_2026-10-31.json](ATLAS_ENTITY_REGISTRY_VIEW_R1_2026-10-31.json): 14 author/host/institution/candidate subject pointers and 2 topic pointers, **read-only derived index** (8 actual author Markdown masters, not another source truth DB). No new Puharich/Swann/Brown/Tesla author master yet.
+- **Added** [RESEARCH_ATLAS_META_ADMIN_SITE_BRIEF_TEST_REPORT_R1_2026-10-31.md](RESEARCH_ATLAS_META_ADMIN_SITE_BRIEF_TEST_REPORT_R1_2026-10-31.md): **25/25 actual structural/owner/privacy/source-ID tests**, corrected one overly literal test predicate; no historical claims, site QA, CI, media playback or NotebookLM sync inferred.
+- **Donor evidence:** inspected GitHub `overworld/docs/NIE_ADAPTER_HOOK.md` (**not built**), current card/ChatterBox and Site-policy source contracts. Searched connected private Dropbox and read three personally-owned NIE-related text documents. Full NIE Graph Viz manifest is marked **local only**; only sanitized interface-level provenance is present on GitHub, not private content, Dropbox file identifiers or local paths. No direct Site→Dropbox/Work integration proven.
+- **Updated additively:** original [wiki/graph/Site roadmap](RESEARCH_WIKI_GRAPH_SITE_AND_DOSSIER_ROADMAP_R1_2026-10-31.md) decision override, [Atlas v0.2 living owner](LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md), owner [RETURN.md](RETURN.md). Existing WCC R4 (46/50) and JM R2 (21/26) topic histories, sources/relations, and private Docs remain untouched.
+- **No source/runtime/CI/browser/Stage/Hub/main router/Live changes**, no new canonical research runtime, no auto-merge. Canonical KFB Production Hub remains the cross-KFB front door. The later Site gets a Hub link only upon verifiable Site publication. Stage route **none** for this research briefing.
+- **One next productive Site gate:** `RESEARCH_ATLAS_SITE_PUHARICH_EVIDENCE_READER_01`; a real Site-capable executor should render and inspect exact source, claims, typed link and prepared Work/consumer packet (with truthful auth status), then return actual Site URL and browser evidence *if published*.
+
+
+
+
+
+## Site projection published — 2026-11-01
+
+Existing Atlas updated and browser-verified: https://kfb-research-atlas.frizzlebob.chatgpt.site. Research snapshot 2944c3e304c554d8a4673ddc242efc20bd0e9c00; Site source a2df88789637c71e2bfb4beabd6ced40d6d42e6f. 16 in-site source-led profiles plus8historical masterlinks; six C03 source chains; C02 packet; NotebookLM downloads. See [publication/test receipt](site/SITE_AUTHORS_CHAINS_DEPLOYMENT_2026-11-01.md). No merge/access change. Next gate GEMINI_INVENTORY_RECONCILIATION; user runs Gemini independently.
+
+
+## NB02 + WS0 pilot Return — 2026-11-01
+
+User authorized full table cleanup, NB01 reconciliation, then exactly three WS0 five-layer entries on current GitHub, no game code. Owner: existing Hidden Cosmology Atlas. Repo georg-doc/kayfabizarro; branch research/hidden-cosmology-atlas-2026-10-13; draft PR394 unchanged/unmerged. Content checkpoint513d45bd8e897308ad4aea0fb9f2e594928e3976 (67 exact file readbacks). Main7e1c4ab0f143b2f1c0f33017eb473574f20190c9 and source deck branch8799ce51e757ba30a9fa1ab2016a8e402d08f90e were rechecked unchanged before closure.
+
+Result: packages/notebook-return-nb02/ preserves745rows in50blocks with all14original fields, unique IDs and scoped joins;99source-list entries;9/9NB01aliases matched by title. Nine unresolved reference tokens remain flagged, with no guessed cross-block identity. Structural cleanup does not certify352claims. OriginalSheet unchanged. Full normalized CSV/JSON is downloadable in the private Atlas; GitHub preserves the complete equivalent block records and reconciliation/audit.
+
+packages/ws0-dossier-pilot/ contains3entries,11source receipts, inventory, data contract, readable essays, one-page effort/game handoff, and independent/test reports. Joins: cid:observation_underground:35;cid:kayfabizarro_philosophy:30;cid:ignore_dystopia:41. Allfive layers perentry, one featured SolutionWatch, explicit satire/interpretation/source boundaries. Existing cardtext retained. Game, card/deckmasters and runtime owners unchanged. No newdecks/massruns.
+
+Independent review confirmed745-row/14-field preservation, all admitted joins, card fidelity and source attribution after two narrow source-ID repairs. Three local routes show five layers; NB02 search resolves Jiang source. Actual existing privateSite #ws0 and #nb02 were browser-verified at content513d45bd8e89. Site sourcebf54ca58ccb107d10b418c567e4989d7bcfd34d2; deploymentappgdep_6ae6bb22bed0819199a9d9c74948066f succeeded. Owner-only audience unchanged. Sitehas_mcp=false; no live AI/game integration claimed. See packages/ws0-dossier-pilot/TEST_REPORT.md.
+
+Acceptance: https://kfb-research-atlas.frizzlebob.chatgpt.site/#ws0 ; table: https://kfb-research-atlas.frizzlebob.chatgpt.site/#nb02 . No separate CloudflareStage, centralrouter or Hub update required.
+
+Unresolved: original-passages for most exportclaims;9reference tokens;30title identitymatches; unlinked Brainfood, original2010Roko post, fullCurtis/Yurchak inspection, audio/song verification and product comparisons. These remain explicit follow-ons, not silently completed.
+
+ONE NEXT GATE: Georg jointly reviews the three entries for source boundaries, FrizzleBob voice and practical value. Stop expansion here until that review.

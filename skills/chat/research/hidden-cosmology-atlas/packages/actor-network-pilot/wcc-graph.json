@@ -1,0 +1,237 @@
+{
+  "id": "wcc-walzwerk",
+  "nodes": [
+    {
+      "id": "ryan",
+      "label": "Frank Ryan, Präsident der World Commerce Corporation (WCC)"
+    },
+    {
+      "id": "wcc",
+      "label": "World Commerce Corporation"
+    },
+    {
+      "id": "cz",
+      "label": "Tschechoslowakische Delegation"
+    },
+    {
+      "id": "seller",
+      "label": "Tschechoslowakischer Verkäufer"
+    },
+    {
+      "id": "donovan",
+      "label": "William Donovan, Rechtsanwalt"
+    },
+    {
+      "id": "state",
+      "label": "US-Außenministerium"
+    },
+    {
+      "id": "treasury",
+      "label": "US-Finanzministerium"
+    },
+    {
+      "id": "acheson",
+      "label": "Dean Acheson, US-Außenminister"
+    },
+    {
+      "id": "chase",
+      "label": "Chase National Bank"
+    },
+    {
+      "id": "ubs",
+      "label": "Union Bank of Switzerland"
+    },
+    {
+      "id": "duesseldorf",
+      "label": "Im Vermerk unbenannte Düsseldorfer Bank"
+    },
+    {
+      "id": "chase-int",
+      "label": "Chase International Bank"
+    },
+    {
+      "id": "kaeufer",
+      "label": "Internationale Maschinenhandel GmbH, Düsseldorf"
+    },
+    {
+      "id": "oatis",
+      "label": "William Oatis, inhaftierter Journalist"
+    },
+    {
+      "id": "arg",
+      "label": "Argentinische Käuferseite"
+    },
+    {
+      "id": "claimants",
+      "label": "US-Anspruchsberechtigte"
+    }
+  ],
+  "edges": [
+    {
+      "id": "zuerich",
+      "source": "ryan",
+      "target": "cz",
+      "relation": "verhandelte mit",
+      "date": "März 1952",
+      "status": "berichtet",
+      "document": "perkins",
+      "locator": "Discussion, erster Absatz",
+      "reading": "Donovan meldete dem Außenministerium am 2. April eine Einigung unter Genehmigungsvorbehalt. Der Vermerk überliefert seine Darstellung der Zürcher Verhandlungen.",
+      "counter_reading": {
+        "document": "michalek-2006",
+        "locator": "S. 614–616, Fn. 14",
+        "observation": "Michálek nennt John Ryan, der US-Vermerk Frank Ryan. Eigenständige Bestätigung der Identität ausstehend.",
+        "archive_lead": "NA ČR, f. Antonín Zápotocký, zv. 63, č. j. 0529/52"
+      }
+    },
+    {
+      "id": "bericht",
+      "source": "donovan",
+      "target": "state",
+      "relation": "berichtete an",
+      "date": "2. April 1952",
+      "status": "dokumentierter Bericht",
+      "document": "perkins",
+      "locator": "Discussion, erster Absatz",
+      "reading": "Die WCC hatte Donovans Kanzlei mandatiert. Donovan war die Auskunftsperson des Ministeriums. Die Akte benennt keinen einzelnen Urheber des gesamten Zahlungsplans."
+    },
+    {
+      "id": "zahlung",
+      "source": "treasury",
+      "target": "chase",
+      "relation": "sollte 10 Mio. USD per Scheck bereitstellen",
+      "date": "April 1952",
+      "status": "vorgeschlagen",
+      "document": "perkins",
+      "locator": "Discussion, Absatz zum Scheck; Alternative I und Fußnote 3",
+      "reading": "Die WCC beantragte die staatliche Genehmigung. Nach Donovans Bericht über die Zürcher Verhandlungen sollte das Treasury einen Scheck ausstellen. Benötigt wurden die Zustimmung der US-Regierung und die Treasury-Lizenz. Acheson billigte am 4. April die Ablehnung des Vorschlags in dieser Form. Für eine Überweisung gemäß diesem Plan fehlt ein Zahlungsbeleg."
+    },
+    {
+      "id": "transfer",
+      "source": "chase",
+      "target": "ubs",
+      "relation": "sollte nach Ryans Freigabe weiterleiten",
+      "date": "April 1952",
+      "status": "vorgeschlagen",
+      "document": "perkins",
+      "locator": "Discussion, Absatz zum Scheck",
+      "reading": "Chase National sollte an die Schweizer Bank zugunsten des Verkäufers übertragen. Die vorgesehene Freigabe durch Ryan war Teil der Abwicklung. Über die staatliche Lizenz verfügte er nicht."
+    },
+    {
+      "id": "beguenstigung",
+      "source": "ubs",
+      "target": "seller",
+      "relation": "sollte für Rechnung des Verkäufers empfangen",
+      "date": "April 1952",
+      "status": "vorgeschlagen",
+      "document": "perkins",
+      "locator": "Discussion, Absatz zum Scheck",
+      "reading": "Begünstigt im Entwurf war der tschechoslowakische Verkäufer. Ein Gewinn der beiden Banken lässt sich aus ihren Zahlungsfunktionen nicht beziffern."
+    },
+    {
+      "id": "akkreditiv",
+      "source": "duesseldorf",
+      "target": "chase-int",
+      "relation": "sollte ein Akkreditiv eröffnen",
+      "date": "April 1952",
+      "status": "vorgeschlagen",
+      "document": "perkins",
+      "locator": "Discussion, Absatz zum Akkreditiv",
+      "reading": "Parallel sollte die Düsseldorfer Bank bei Chase International ein unwiderrufliches, sechs Monate gültiges Akkreditiv zugunsten der WCC eröffnen."
+    },
+    {
+      "id": "rueckzahlung",
+      "source": "wcc",
+      "target": "treasury",
+      "relation": "sollte nach Ziehung erstatten",
+      "date": "April 1952",
+      "status": "vorgeschlagen",
+      "document": "perkins",
+      "locator": "Discussion, Absatz zum Akkreditiv",
+      "reading": "Die WCC sollte das Treasury aus dem Akkreditiv erstatten. Chase International hatte hier eine andere Funktion als die im Scheckweg genannte Chase National."
+    },
+    {
+      "id": "lieferung",
+      "source": "wcc",
+      "target": "kaeufer",
+      "relation": "sollte die Anlage verkaufen an",
+      "date": "April 1952",
+      "status": "vorgeschlagen",
+      "document": "perkins",
+      "locator": "Discussion, nach dem Akkreditiv",
+      "reading": "Als Käuferin des Walzwerks war die Internationale Maschinenhandel GmbH in Düsseldorf vorgesehen."
+    },
+    {
+      "id": "oatis",
+      "source": "ryan",
+      "target": "oatis",
+      "relation": "verknüpfte das Geschäft mit der Freilassung von",
+      "date": "26. März 1952",
+      "status": "zugeschriebene Äußerung",
+      "document": "perkins",
+      "locator": "Discussion, Absätze zum 26. und 29. März",
+      "reading": "Ryan habe die Freilassung des Journalisten binnen zehn Tagen nach Vertragsschluss zur Bedingung gemacht. Die Delegation stellte die Freilassung bei Vertragsabschluss in Aussicht. Das Außenministerium erklärte seine Ablehnung dieser Verknüpfung."
+    },
+    {
+      "id": "entscheidung",
+      "source": "acheson",
+      "target": "wcc",
+      "relation": "billigte die Ablehnung des beantragten Geschäfts",
+      "date": "4. April 1952",
+      "status": "Entscheidung laut Editionsvermerk",
+      "document": "perkins",
+      "locator": "Alternative I, Recommendation und Fußnote 3",
+      "reading": "Perkins empfahl Ablehnung. Laut Editionsfußnote vermerkt die Akte Achesons Zustimmung. Das von ihm gezeichnete Telegramm 440 nach Prag gab die Entscheidung wieder. Für einen Verkauf verlangte die US-Seite ein Sperrkonto."
+    },
+    {
+      "id": "auktion",
+      "source": "treasury",
+      "target": "arg",
+      "relation": "verkaufte die Anlage für 9 Mio. USD",
+      "date": "17. Mai 1954",
+      "status": "vollzogen laut Editionsvermerk",
+      "document": "verkauf",
+      "locator": "Fußnote 5",
+      "reading": "Nach öffentlicher Ausschreibung war die argentinische Seite Höchstbieterin. Die Teile wurden zwischen Juni und September 1954 nach Argentinien verschifft."
+    },
+    {
+      "id": "erloes",
+      "source": "state",
+      "target": "claimants",
+      "relation": "berichtete die Verteilung des Erlöses an",
+      "date": "20. Juni 1969",
+      "status": "amtlicher Rückblick",
+      "document": "rogers",
+      "locator": "Discussion, Absatz über die Verteilung der 9 Mio. USD",
+      "reading": "Rogers berichtete Nixon, die USA hätten die neun Millionen Dollar aus dem Verkauf an Anspruchsberechtigte verteilt. Einzelnamen, Teilbeträge und Buchungstage nennt diese Stelle nicht."
+    }
+  ],
+  "documents": [
+    {
+      "id": "perkins",
+      "title": "George Perkins an Dean Acheson · 4. April 1952",
+      "url": "https://history.state.gov/historicaldocuments/frus1952-54v08/d8"
+    },
+    {
+      "id": "johnson",
+      "title": "Botschafter Johnson aus Prag · 5. Februar 1954",
+      "url": "https://history.state.gov/historicaldocuments/frus1952-54v08/d54"
+    },
+    {
+      "id": "verkauf",
+      "title": "Argentinien-Dossier · FRUS IV, Dok. 126, Fußnote 5",
+      "url": "https://history.state.gov/historicaldocuments/frus1952-54v04/d126"
+    },
+    {
+      "id": "rogers",
+      "title": "William Rogers an Richard Nixon · 20. Juni 1969",
+      "url": "https://history.state.gov/historicaldocuments/frus1969-76v29/d83"
+    },
+    {
+      "id": "michalek-2006",
+      "title": "Slavomír Michálek · Zürcher Verhandlungen aus tschechoslowakischer Überlieferung · 2006",
+      "url": "https://www.historickycasopis.sk/pdf/Historicky_casopis_4_2006.pdf",
+      "kind": "Archivalische Sekundärstudie"
+    }
+  ]
+}
