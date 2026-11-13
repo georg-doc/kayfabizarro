@@ -3068,6 +3068,10 @@ imp = []
 for l in open(idx, encoding='utf-8'):
     m = re.match(r'\| `(.+?)` \| (.*?) \| (.*) \|$', l.strip())
     if m and m.group(1) != 'Datei:Zeile': imp.append(dict(source=m.group(1), part=m.group(2), georg=m.group(3)))
+# WS0 13.11.: Schutz – Einträge, die nur in DECISIONS.md stehen (seit V-1612 von Hand angehängt), würden beim Neuschreiben verschwinden
+_ids = {e['id'] for e in E}; _md = open(os.path.join(H, 'DECISIONS.md'), encoding='utf-8').read() if os.path.exists(os.path.join(H, 'DECISIONS.md')) else ''
+_fehlt = sorted(set(re.findall(r'^\| (V-\d{3,4}) \|', _md, re.M)) - _ids)
+if _fehlt: raise SystemExit(f'ABBRUCH: {len(_fehlt)} Einträge nur in DECISIONS.md ({_fehlt[0]} … {_fehlt[-1]}); erst in ENTRIES übernehmen, nichts geschrieben')
 json.dump(dict(schema='kfb.decisions/1', updated=str(datetime.date.today()), entries=E, imported_acceptance=imp), open(os.path.join(H, 'decisions.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 md = ['# KFB Entscheidungen (PASS / TUNE / FAIL / RULE / TBD)', '', f'Stand {datetime.date.today()} · erzeugt aus `build_decisions.py` · Teil A handgepflegt (nur ergänzen), Teil B automatisch aus den STATUS- bzw. RETURN-Dateien.', '', '## A · Entscheidungen und Vorgaben', '', '| Nr | Datum | Gilt ab | Bereich | Urteil | Vorgabe | Warum | Besitzer | Prüfung | Quelle |', '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
 for e in E: md.append(f"| {e['id']} | {e['date']} | {e['applies']} | {e['area']} | **{e['verdict']}** | {e['text']}{(' **[ersetzt: ' + e['supersedes'] + ']**') if e.get('supersedes') else ''}{(' **[abgelöst/geändert durch ' + ', '.join(e['superseded_by']) + ']**') if e['superseded_by'] else ''} | {e['why']} | {e['owner']} | {e['check']} | {e['source']} |")
