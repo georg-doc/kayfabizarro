@@ -79,6 +79,11 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | 6-6 Eerie Funk Minor (12.11.) | 127,1 | D Dur | 111 eigenständig (115 roh; synth 32, backing_vocals 23, brass 22, lead_vocals 14) |
 | 2-6 Toy Soldiers March (12.11.) | 87,5 | D# Dur | 55 eigenständig (55 roh; keyboard 45, strings 7, brass 1, guitar 1) |
 | 3-6 The Gilded Cage (12.11.) | 135,9 | G Moll | 76 eigenständig (80 roh; guitar 32, lead_vocals 23, backing_vocals 19, strings 1) |
+| Shadow Office Shuffle (Suno solo, Style aus Hub, 13.11.) | 104,4 | G# Dur | 78 eigenständig (84 roh; keine tragende Familie) |
+| Sand Under the Throne (Suno solo, Style aus Hub, 13.11.) | 90,6 | E Dur | 152 eigenständig (168 roh; keine tragende Familie) |
+| Waltz for a Tragic Flaw (Suno solo, Style aus Hub, 13.11.) | 89,4 | D Moll | 323 eigenständig (348 roh; keine tragende Familie) |
+| Small Mammal Sunshine (Suno solo, Style aus Hub, 13.11.) | 104,8 | G Moll | 422 eigenständig (585 roh; keine tragende Familie) |
+| Brain Gym Bebop (Suno solo, Style aus Hub, 13.11.) | 129,7 | G Moll | 149 eigenständig (189 roh; keine tragende Familie) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
