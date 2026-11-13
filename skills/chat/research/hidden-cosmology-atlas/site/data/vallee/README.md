@@ -106,3 +106,8 @@ Die Website zeigt eine Lesefassung; GitHub bleibt der persistierte Master. Verö
 
 
 [Neu: Vallée, Farrell, Jorjani und Dark Journalist — sechs Vergleichsachsen](COMPARISON_MATRIX.md).
+
+
+## Erweiterung R4 · 13.11.2026
+
+[Fitts, Swann und Puharich neben Vallée](COMPARISON_PSI_FINANCE.md): sechs Vergleichsachsen, ausgewählte Originaltexte, Quellenstatus und unterschiedliche Verbindungsarten. [Strukturierte Daten](comparison-matrix-psi-finance.json).

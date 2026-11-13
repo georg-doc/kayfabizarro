@@ -39,3 +39,12 @@ Which passages belong to the original book versus the new introduction? Which or
 ## Integration and review
 
 Canonical owner established by the breadth source milestone. Source-lead status is retained; review coverage and remaining gaps are recorded in [the batch test report](../breadth/TEST_REPORT_R1_2026-11-01.md). This does not certify unread books or historical claims.
+
+
+## Vallée-Vergleich R4 · 13.11.2026
+
+In Uri deutet Puharich Begegnungen als Kommunikation mit überlegenen Wesen. Das ist bestimmter als Vallées offenes Ursprungsmodell. Beyond Telepathy erschließt daneben einen physiologischen Erklärungsansatz, hier über die Verlagsbeschreibung.
+
+Puharich nennt im Vorwort-/Danksagungsbereich Geller, Mitchell, Targ und Puthoff. Dies belegt seine eigene Darstellung eines Forschungsumfelds; daraus folgt weder deren Zustimmung zu seiner Kosmologie noch ein belegter Vallée–Puharich-Kontakt.
+
+[Gemeinsame Themen, Methoden und Beleggrenzen](../packages/jacques-vallee/COMPARISON_PSI_FINANCE.md). Quellen V53, V51, V52, V04, V09 im [Vallée-Quellenregister](../packages/jacques-vallee/SOURCES.md).

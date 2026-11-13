@@ -690,3 +690,8 @@ GitHub-Inhalt: c8a366587865689cd5219443eb12b2076666790d; Site-Quelle: 3319d00f18
 Prüfungen: alle 25 geänderten GitHub-Dateien exakt zurückgelesen, Remote-Head bestätigt; eindeutige HTML-Anker, interne Links und alle 24 Tabellenzellen/Quellenverweise geprüft. Lokaler Browser zeigt sechs Vergleichszeilen und öffnet die Farrell-Buchquelle direkt. Private Live-Ansicht nicht authentifiziert visuell geprüft; Deployment bestätigt. Erstes Publikationsresultat war lokal nicht auswertbar; Versionsliste vor Wiederholung geprüft, Zielrevision dort noch nicht vorhanden. Kein doppeltes Deployment behauptet.
 
 Nächster Gate: Georgs inhaltlicher Blick auf den Direktvergleich; keine automatischen Rabbit Holes.
+
+
+## 2026-11-13 · Vallée Vergleich R4 — Fitts / Swann / Puharich
+
+Outcome: zweite Matrix mit sechs Achsen und vier Autoren; drei Detailkarten erweitert. Quellen V48–V53 additiv; jetzt 53 Quellen, 47 Aussagen, 25 Beziehungen. Originalrede, Policy-Briefing, Nachlass-/Verlagstexte und Puharichs reproduziertes Vorwort getrennt gekennzeichnet. Keine neue Fallprüfung, keine Spieländerung. Neuer Site-Anker: /vallee.html#wahrnehmung-macht. Veröffentlichung und Tests folgen im Abschlussbeleg.

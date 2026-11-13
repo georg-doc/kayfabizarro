@@ -468,6 +468,56 @@
       "locator": "Titel und Beschreibung",
       "status": "publication_relationship",
       "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C43",
+      "statement": "Fitts richtet ihr Solari-Briefing auf Governance und finanzpolitische Reform aus.",
+      "sourceIds": [
+        "V48"
+      ],
+      "status": "author_policy_position",
+      "locator": "Einleitung; keine Prüfung aller finanziellen Schlussfolgerungen.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C44",
+      "statement": "Swanns Rede unterscheidet gesellschaftliche PSI-Abwehr, psychische Beeinflussung und militärische Nutzung.",
+      "sourceIds": [
+        "V50"
+      ],
+      "status": "author_framework",
+      "locator": "Ausgewählte Textpassagen, keine Wirksamkeitsbestätigung.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C45",
+      "statement": "Puharich vertritt in Uri eine konkrete Deutung als Kommunikation mit überlegenen Wesen.",
+      "sourceIds": [
+        "V53"
+      ],
+      "status": "author_interpretation",
+      "locator": "Vorwort; fremd gehostete Textreproduktion.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C46",
+      "statement": "Puharich erklärt, genannte Personen müssten seine Interpretationen und Schlussfolgerungen nicht teilen.",
+      "sourceIds": [
+        "V53"
+      ],
+      "status": "author_self_qualification",
+      "locator": "Schluss des Vorworts.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C47",
+      "statement": "Die neue Einleitung der Ausgabe Beyond Telepathy von 2026 stammt von Mitch Horowitz.",
+      "sourceIds": [
+        "V51"
+      ],
+      "status": "editorial_attribution",
+      "locator": "Verlagsauszug; nicht als Puharich-Aussage verwenden.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
     }
   ],
   "relations": [
@@ -739,6 +789,32 @@
       "rationale": "Offizielle Episodenseite benennt Gast.",
       "whatWouldChange": "Aufnahme würde tatsächliche Beiträge zuordnen; Ankündigung allein genügt dafür nicht.",
       "status": "source_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R24",
+      "from": "jacques-vallee",
+      "to": "catherine-austin-fitts",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V04",
+        "V48"
+      ],
+      "rationale": "Kontrollmodell und finanzielle Governance betreffen verschiedene Fragen.",
+      "status": "editorial_comparison",
+      "causalClaim": false
+    },
+    {
+      "id": "R25",
+      "from": "jacques-vallee",
+      "to": "andrija-puharich",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V04",
+        "V53"
+      ],
+      "rationale": "Offene Urheberfrage neben konkreter Kontaktdeutung; kein persönlicher Kontakt abgeleitet.",
+      "status": "editorial_comparison",
       "causalClaim": false
     }
   ]

@@ -116,3 +116,12 @@ Required: `source_id | speaker | work_title | publication_or_episode_date | orig
 ## SOURCE_GAPS_AND_WORKS — breadth intake, 2026-11-01
 
 [Solari source appendix](../breadth/solari-intake.md) adds dated publisher passages, the May 2020 Skidmore/Fitts update and separate official-accounting leads. Original statements, publisher synopses and uninspected leads remain distinct; unsupported adjustments are not a measured cash-loss total. See [shared receipts and publication edges](../breadth/solari-intake.json). Preserve the existing author model; exact original passages remain the next source gate.
+
+
+## Vallée-Vergleich R4 · 13.11.2026
+
+Fitts fragt vorrangig nach Finanzierung, Zuständigkeit und Reformmöglichkeiten; Vallée nach Eigenschaften und Wirkung ungewöhnlicher Erfahrungen. Finanzielle Kontrolle und sein Kontrollmodell sind verschiedene Begriffe.
+
+Die Fitts–Farrell-Publikationsbeziehung ist belegt. Eine persönliche Vallée–Fitts-Verbindung oder eine Beteiligung Vallées an geheimen Finanzierungen ist aus diesem Paket nicht ableitbar.
+
+[Gemeinsame Themen, Methoden und Beleggrenzen](../packages/jacques-vallee/COMPARISON_PSI_FINANCE.md). Quellen V48, V41, V42, V04, V13 im [Vallée-Quellenregister](../packages/jacques-vallee/SOURCES.md).

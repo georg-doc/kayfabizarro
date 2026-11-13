@@ -83,3 +83,8 @@ Für die im Atlas vorhandenen Perspektiven bieten sich Religion, wiederkehrende 
 [Autoren-Dossier](../../authors/william-bramley.md)
 
 [Research bibliography](https://www.jacquesvallee.net/research/); [The Invisible College](https://www.anomalistbooks.com/book.cfm?id=79)
+
+
+## Erweiterung R4 · 13.11.2026
+
+[Fitts, Swann und Puharich neben Vallée](COMPARISON_PSI_FINANCE.md): sechs Vergleichsachsen, ausgewählte Originaltexte, Quellenstatus und unterschiedliche Verbindungsarten. [Strukturierte Daten](comparison-matrix-psi-finance.json).

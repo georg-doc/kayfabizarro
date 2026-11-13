@@ -474,3 +474,54 @@ Daniel Liszt / Dark Journalist
 Fundstelle: Abschnitte zu Disclosure, Bedrohungsszenario und Space Defense Funding
 
 Lesetiefe: Eigene Sendungsbeschreibungen gelesen, keine Videosichtung. Behauptungen der Beschreibungen sind keine unabhängige Bestätigung.
+
+
+## Erweiterung R4 — Quellen V48–V53 (gesamt 53)
+
+### V48 · Reversing the Financial Coup d’État — The Solari Papers 1
+
+[Quelle](https://missingmoney.solari.com/the-solari-papers-1/) · Catherine Austin Fitts
+
+Fundstelle: Einleitung und Governance-/Souveränitätsabschnitte; August 2023
+
+Sichtungsgrenze: Ausgewählte HTML-Passagen. Finanzpolitische Argumentation gelesen; Zahlen, Mittelverwendung und rechtliche Schlussfolgerungen nicht unabhängig geprüft.
+
+### V49 · Works — Ingo Swann
+
+[Quelle](https://ingoswann.com/works) · Ingo Swann estate
+
+Fundstelle: Beschreibungen Natural ESP, Penetration und Remote Viewing: The Real Story
+
+Sichtungsgrenze: Nachlassübersicht, keine vollständige Lektüre der beworbenen Bücher; Herausgeberstimme von Swanns Aussagen getrennt.
+
+### V50 · Psychic Warfare — 1977 speech
+
+[Quelle](https://img1.wsimg.com/blobby/go/50159857-4104-4889-a3c3-ac551cafbac6/downloads/Psychic%20Warfare.pdf?ver=1791541629881) · Ingo Swann
+
+Fundstelle: Textpassagen zu sozialem Widerstand gegen PSI, psychischer Beeinflussung und militärischer Nutzung; PDF-Indexseiten 6–11
+
+Sichtungsgrenze: Ausgewählte extrahierte Textpassagen der vom Nachlass verlinkten Rede; keine empirische Validierung und kein Audioabgleich.
+
+### V51 · Beyond Telepathy — 3rd edition, description and excerpt
+
+[Quelle](https://www.simonandschuster.com/books/Beyond-Telepathy/Andrija-Puharich/9781644116906) · Andrija Puharich; neue Einleitung Mitch Horowitz
+
+Fundstelle: Verlagsbeschreibung und Auszug aus Horowitz’ Einleitung; Ausgabe 24.02.2026
+
+Sichtungsgrenze: Physiologische Thesen hier nur über Verlagsbeschreibung erschlossen. Die neue Einleitung stammt von Horowitz, nicht von Puharich.
+
+### V52 · Andrija Puharich — biographical overview
+
+[Quelle](https://www.puharich.nl/) · Puharich family website
+
+Fundstelle: Kurzbiografie und Werkübersicht
+
+Sichtungsgrenze: Biografische Orientierung aus dem Familienumfeld; keine unabhängige Bestätigung paranormaler oder technischer Behauptungen.
+
+### V53 · Uri: A Journal of the Mystery of Uri Geller
+
+[Quelle](https://logoilibrary.com/wp-content/uploads/2020/10/Uri-A-Journal-of-the-Mystery-of-Uri-Geller.pdf) · Andrija Puharich
+
+Fundstelle: Danksagung und Vorwort, PDF-Seiten 2–3 (Index 1–2)
+
+Sichtungsgrenze: Ausgewählter Autorentext in fremd gehosteter Textreproduktion mit Anchor Press/Doubleday-Angabe. Nicht mit einem Originaldruck abgeglichen; kein vollständiger Buchaudit.

@@ -39,3 +39,12 @@ Retrieve an edition title page and one relevant primary passage before attributi
 ## Integration and review
 
 Canonical owner established by the breadth source milestone. Source-lead status is retained; review coverage and remaining gaps are recorded in [the batch test report](../breadth/TEST_REPORT_R1_2026-11-01.md). This does not certify unread books or historical claims.
+
+
+## Vallée-Vergleich R4 · 13.11.2026
+
+Swann spricht auch als beteiligter Praktiker über PSI und seine Nutzung. Vallée untersucht Erfahrungen, Daten und Deutungen; daraus entsteht nicht automatisch dieselbe Theorie des Bewusstseins.
+
+Vallée berichtet 2018 selbst über Zusammenarbeit mit Swann. Das ist ein zugeschriebener persönlicher Forschungsbezug, nicht nur unsere Themenbrücke; die neue Swann-Rede bestätigt diese Zusammenarbeit nicht unabhängig.
+
+[Gemeinsame Themen, Methoden und Beleggrenzen](../packages/jacques-vallee/COMPARISON_PSI_FINANCE.md). Quellen V50, V49, V09 im [Vallée-Quellenregister](../packages/jacques-vallee/SOURCES.md).
