@@ -1,0 +1,325 @@
+{
+ "id": "kfb_jetpack.twin.r1",
+ "schema": "kfb.addon-contract/1",
+ "date": "2026-11-14",
+ "status": "pending-georg",
+ "jetvar": "twin",
+ "stand": "r1b",
+ "job": "WSB_JETPACK_TWIN_R1 (Georg 14.11., V-1734): kompakter Claymation-Jetpack mit Zwillingsdüsen nach Konzeptblatt; Sitz wie Rocket R7 (V-1528), kein Klapp-Gelenk, Platte geskinnt, Rest starr.",
+ "verfahren": {
+  "groesse": "1,8125 wie Rocket R7",
+  "sitz": "z 0,95 an spine, Neigung 5,74° fest (wie R7); Matrix identisch mit R7 (geprüft, Abweichung 0)",
+  "platte": "bau_twin.py (Kopie bau_r4_r6.py + JP_MAIN_ALL), JP_FIT 4, JP_GAP 0,0005, oben −15 %, unten −20 %, dann skin_platte.py",
+  "wurzel_q080": "Wurzel ohne Eigenlage, Lage nur in matrix_gltf_local unter spine; geprüft 0 mm (pruef_q080.mjs)"
+ },
+ "skins": {
+  "twin": {
+   "root_node": "KFB_Jetpack_Twin",
+   "glb": "50_BLENDER/WSB_JETPACK_TWIN_R1/glb/KFB_Jetpack_Twin.r1b.glb",
+   "sha256": "488fada788e3cbe6d38ebc889c35aacb81b3bb7f8f2d8a66d84617a830ed6814",
+   "wurzel": "ohne Eigenlage (Q-080), geprüft 0 mm",
+   "ohne_platte": true,
+   "bau": {
+    "scale": 1.8125,
+    "z_local": 0.95,
+    "neigung_deg": 5.74,
+    "jp_tmax": 1.6,
+    "jp_fit": 4,
+    "jp_gap": 0.0005,
+    "platte_oben_gekuerzt": 0.15,
+    "platte_unten_gekuerzt": 0.2,
+    "platte_begrenzung": "alle S1-Teile (JP_MAIN_ALL, zwei Tanks)",
+    "schlauch_h": 0.05,
+    "manometer_z": 0.04,
+    "platte_breite": 0.13,
+    "block_dy": -0.0274
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "spine",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.8147882844737344,
+      0.2829380685065533,
+      0,
+      0,
+      -0.2829380685065533,
+      2.8147882844737344,
+      0,
+      2.369605336801159e-22,
+      0.3518851824647353,
+      -0.31965442777807823,
+      1
+     ]
+    }
+   },
+   "platte_teil": {
+    "glb": "50_BLENDER/WSB_JETPACK_TWIN_R1/glb/KFB_Jetpack_Twin_Platte_FB.r1b.glb",
+    "sha256": "ee7dcfde605dd8378edcc156d6beb251e254a9bff1530235af6a141549fc229a",
+    "mesh_node": "S1_platte",
+    "kind": "skinned",
+    "slot": "back",
+    "gewichte_mittel": {
+     "spine": 0.674,
+     "chest": 0.274,
+     "hips": 0.052
+    },
+    "einbau": "über das Tausch-System wie Rocket R7 (GURTE_R1), zusammen mit jetvar=twin ein- und ausblenden"
+   },
+   "einbau_hinweis": "Elternknochen spine; starres Pack wie die anderen Jetpacks (keine Gelenk-Datei), dazu die geskinnte Platte",
+   "thrust": [
+    "KFB_Thrust_L",
+    "KFB_Thrust_R"
+   ],
+   "thrust_hinweis": "lokal +Z = Schubrichtung (aus den Düsenglocken nach unten), wie KFB_Thrust_0 bei Rocket",
+   "gruppen": [
+    "platte (eigenes Teil)",
+    "tank",
+    "duese",
+    "band",
+    "gurt",
+    "manometer",
+    "glas",
+    "messing",
+    "schlauch"
+   ],
+   "materialzonen": {
+    "JP_Twin_Tank": "Tank (auch Kragen/Düse)",
+    "JP_Twin_Band": "Band",
+    "JP_Twin_Messing": "Messing (Nieten, Muffen, Verbinder, Schnalle, Manometerrand)",
+    "JP_Twin_Schlauch": "Schlauch",
+    "JP_Twin_Platte": "Platte",
+    "JP_Twin_Gurt": "Gurte, Schnallensteg",
+    "JP_Twin_Glas": "Manometer-Glas",
+    "JP_Twin_Zifferblatt": "Zifferblatt",
+    "JP_Twin_Rot": "rotes Feld",
+    "JP_Twin_Zeiger": "Zeiger",
+    "JP_Twin_Dunkel": "Düse innen"
+   },
+   "teile": "50_BLENDER/WSB_JETPACK_TWIN_R1/data/teile_twin.r1b.json",
+   "bau_log": "50_BLENDER/WSB_JETPACK_TWIN_R1/data/bau_twin.r1b_g95.json",
+   "messung_datei": "50_BLENDER/WSB_JETPACK_TWIN_R1/data/messung_twin.r1b_g95.json",
+   "clips_gemessen": 39,
+   "clips_quelle": "haltung=r1 gebacken (WSB_HALTUNG_R1/clips_fb, assets/wsb-haltung-r1 @4ced9ade) zuerst, sonst IDLE_R1 clips_fb, Flug KFB_Flight.r1h.RigMedium, Schuss mb1",
+   "spalt_platte_ruecken_p90_cm_max": {
+    "unten": 0.5,
+    "oben": 1.08
+   },
+   "rumpf_cm_max": 0.05,
+   "ruhe": {
+    "kopf_cm": 0.0,
+    "ohren_cm": 0.0,
+    "arme_cm": 0.0,
+    "spalt_unten_p90": 0.39,
+    "spalt_oben_p90": 0.26
+   },
+   "kopf_eindringen_cm": {
+    "Running_A": 0.15,
+    "Sneaking": 1.39,
+    "flight_bank_left": 3.41,
+    "flight_bank_right": 3.43,
+    "flight_boost": 6.71,
+    "flight_brake_recover": 4.66,
+    "flight_climb": 3.88,
+    "flight_cruise": 4.66,
+    "flight_dive": 7.27,
+    "flight_idle_hover": 0.13,
+    "flight_land_prepare": 0.13,
+    "kfb_dance_twist_dance_a": 2.12,
+    "kfb_idle_drunk_idle_variation_a": 0.4
+   },
+   "kopf_teil": {
+    "Running_A": "S2_schlauch_R",
+    "Sneaking": "S1_platte",
+    "flight_bank_left": "S2_schlauch_R",
+    "flight_bank_right": "S2_schlauch_L",
+    "flight_boost": "S2_schlauch_L",
+    "flight_brake_recover": "S2_schlauch_L",
+    "flight_climb": "S2_schlauch_L",
+    "flight_cruise": "S2_schlauch_L",
+    "flight_dive": "S2_schlauch_L",
+    "flight_idle_hover": "S2_schlauch_L",
+    "flight_land_prepare": "S2_schlauch_L",
+    "kfb_dance_twist_dance_a": "S2_schlauch_R",
+    "kfb_idle_drunk_idle_variation_a": "S2_schlauch_L"
+   },
+   "ohren_eindringen_cm_max": 0.0,
+   "arme_beruehrung_cm": {
+    "Crouching": 0.58,
+    "Running_A": 0.59,
+    "Running_B": 0.96,
+    "kfb_dance_samba_a": 3.79
+   },
+   "schwanz_sicht": {
+    "ruhe": {
+     "links": 62.6,
+     "rechts": 66.9
+    },
+    "Walking_A": {
+     "min_links": 52.8,
+     "min_rechts": 56.6
+    },
+    "Walking_B": {
+     "min_links": 46.9,
+     "min_rechts": 51.6
+    }
+   }
+  }
+ },
+ "toleranz_vorschlag": {
+  "frage_an_georg": "Im Flug liegt der Hinterkopf über dem oberen Pack. Das gilt bei R7-Lage auch für Rocket R7 selbst (flight_cruise 7,7 cm, flight_dive 10,8 cm; im R7-Vertrag nie gemessen). Twin bei R7-Lage: cruise 4,7 cm, dive 7,3 cm. Einfache Toleranz statt Mechanik: Sitz tiefer (z 0,82). Dann ist der Flug frei bis auf boost/dive (1,8/2,4 cm), der Schwanz ist in Ruhe aber nur 39–46 % statt 63–67 % sichtbar (Walking_B min ~25 %), und das Pack sitzt tiefer als auf dem Konzeptblatt.",
+  "empfehlung": "R7-Lage liefern (Konzept-Sitz, Schwanz sichtbar); die Flug-Überdeckung ist kleiner als bei Rocket R7. z 0,82 nur, wenn Georg den Flug höher gewichtet als Sitz und Schwanz. Keine neue Mechanik.",
+  "rocket_r7_flug_referenz_cm": {
+   "Idle_A": 0.0,
+   "Running_A": 2.3,
+   "flight_bank_left": 6.59,
+   "flight_boost": 10.16,
+   "flight_brake_recover": 7.69,
+   "flight_climb": 6.72,
+   "flight_cruise": 7.69,
+   "flight_dive": 10.84,
+   "flight_idle_hover": 2.26
+  },
+  "twin_z082": {
+   "root_node": "KFB_Jetpack_Twin",
+   "glb": "50_BLENDER/WSB_JETPACK_TWIN_R1/glb/KFB_Jetpack_Twin.r1b_z082.glb",
+   "sha256": "7140252c6f34253476357f5600243796fae89648696372966bd3cf83044c1bbd",
+   "wurzel": "ohne Eigenlage (Q-080), geprüft 0 mm",
+   "ohne_platte": true,
+   "bau": {
+    "scale": 1.8125,
+    "z_local": 0.82,
+    "neigung_deg": 5.74,
+    "jp_tmax": 1.6,
+    "jp_fit": 4,
+    "jp_gap": 0.0005,
+    "platte_oben_gekuerzt": 0.15,
+    "platte_unten_gekuerzt": 0.2,
+    "platte_begrenzung": "alle S1-Teile (JP_MAIN_ALL, zwei Tanks)",
+    "schlauch_h": 0.05,
+    "manometer_z": 0.04,
+    "platte_breite": 0.13,
+    "block_dy": -0.0291
+   },
+   "seat_gross": {
+    "fb-broad": {
+     "parent_node": "spine",
+     "matrix_gltf_local": [
+      2.8289729735545706,
+      0,
+      0,
+      0,
+      0,
+      2.8147882844737344,
+      0.2829380685065533,
+      0,
+      0,
+      -0.2829380685065533,
+      2.8147882844737344,
+      0,
+      2.369605336801159e-22,
+      0.22188512458828513,
+      -0.34737447426890294,
+      1
+     ]
+    }
+   },
+   "platte_teil": {
+    "glb": "50_BLENDER/WSB_JETPACK_TWIN_R1/glb/KFB_Jetpack_Twin_Platte_FB.r1b_z082.glb",
+    "sha256": "8f84ccfed429efa782749660212d5f0673b8c04fc9ed8d57e2db8e0f501ebf87",
+    "mesh_node": "S1_platte",
+    "kind": "skinned",
+    "slot": "back",
+    "gewichte_mittel": {
+     "spine": 0.761,
+     "hips": 0.126,
+     "chest": 0.113
+    },
+    "einbau": "über das Tausch-System wie Rocket R7 (GURTE_R1), zusammen mit jetvar=twin ein- und ausblenden"
+   },
+   "einbau_hinweis": "Elternknochen spine; starres Pack wie die anderen Jetpacks (keine Gelenk-Datei), dazu die geskinnte Platte",
+   "thrust": [
+    "KFB_Thrust_L",
+    "KFB_Thrust_R"
+   ],
+   "thrust_hinweis": "lokal +Z = Schubrichtung (aus den Düsenglocken nach unten), wie KFB_Thrust_0 bei Rocket",
+   "gruppen": [
+    "platte (eigenes Teil)",
+    "tank",
+    "duese",
+    "band",
+    "gurt",
+    "manometer",
+    "glas",
+    "messing",
+    "schlauch"
+   ],
+   "materialzonen": {
+    "JP_Twin_Tank": "Tank (auch Kragen/Düse)",
+    "JP_Twin_Band": "Band",
+    "JP_Twin_Messing": "Messing (Nieten, Muffen, Verbinder, Schnalle, Manometerrand)",
+    "JP_Twin_Schlauch": "Schlauch",
+    "JP_Twin_Platte": "Platte",
+    "JP_Twin_Gurt": "Gurte, Schnallensteg",
+    "JP_Twin_Glas": "Manometer-Glas",
+    "JP_Twin_Zifferblatt": "Zifferblatt",
+    "JP_Twin_Rot": "rotes Feld",
+    "JP_Twin_Zeiger": "Zeiger",
+    "JP_Twin_Dunkel": "Düse innen"
+   },
+   "teile": "50_BLENDER/WSB_JETPACK_TWIN_R1/data/teile_twin.r1b.json",
+   "bau_log": "50_BLENDER/WSB_JETPACK_TWIN_R1/data/bau_twin.r1b_g82.json",
+   "messung_datei": "50_BLENDER/WSB_JETPACK_TWIN_R1/data/messung_twin.r1b_g82.json",
+   "clips_gemessen": 39,
+   "clips_quelle": "haltung=r1 gebacken (WSB_HALTUNG_R1/clips_fb, assets/wsb-haltung-r1 @4ced9ade) zuerst, sonst IDLE_R1 clips_fb, Flug KFB_Flight.r1h.RigMedium, Schuss mb1",
+   "spalt_platte_ruecken_p90_cm_max": {
+    "unten": 0.66,
+    "oben": 0.69
+   },
+   "rumpf_cm_max": 0.01,
+   "ruhe": {
+    "kopf_cm": 0.0,
+    "ohren_cm": 0.0,
+    "arme_cm": 0.0,
+    "spalt_unten_p90": 0.48,
+    "spalt_oben_p90": 0.39
+   },
+   "kopf_eindringen_cm": {
+    "flight_boost": 1.79,
+    "flight_dive": 2.37
+   },
+   "kopf_teil": {
+    "flight_boost": "S2_schlauch_L",
+    "flight_dive": "S2_schlauch_L"
+   },
+   "ohren_eindringen_cm_max": 0.0,
+   "arme_beruehrung_cm": {
+    "kfb_dance_samba_a": 3.83
+   },
+   "schwanz_sicht": {
+    "ruhe": {
+     "links": 39.0,
+     "rechts": 45.9
+    },
+    "Walking_A": {
+     "min_links": 33.7,
+     "min_rechts": 39.8
+    },
+    "Walking_B": {
+     "min_links": 22.2,
+     "min_rechts": 30.5
+    }
+   }
+  }
+ },
+ "abweichungen_konzeptblatt": [
+  "Schlauchbögen niedriger als auf dem Konzeptblatt (Scheitel ≈ 0,05 über dem Tankkopf statt ≈ 0,07) und auf die hintere Tankschulter geführt (Arme frei); höhere Bögen stecken im Flug tiefer im Kopf",
+  "Manometer zwischen den Tankschultern statt darüber (oben mittig traf der Messingrand im Flug den Kopf bis 8 cm)",
+  "Manometer-Glas als glänzender Innenring (Knete deckt eine volle Glasscheibe weiß zu)",
+  "Rückenplatte 0,13 breit (nur zwischen den Tanks sichtbar; breiter streifte sie beim Laufen die Arme)"
+ ]
+}
