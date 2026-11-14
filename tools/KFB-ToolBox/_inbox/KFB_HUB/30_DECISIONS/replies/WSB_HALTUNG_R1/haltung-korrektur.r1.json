@@ -1,0 +1,1529 @@
+{
+ "schema": "kfb.haltung-korrektur/1",
+ "job": "WSB_HALTUNG_R1 (Georg 14.11., V-1727)",
+ "note": "Haltungs-Korrektur als Daten auf IDLE_R1 (assets/idle-fb-r1 @26e19652). Nur Abweichungen von IDLE_R1, jede mit Grund und Messung. Die Spiel-Sitzung spielt nur ab (V-1065), keine eigenen Offsets. Clips bleiben unverändert, keine neuen Schlüssel.",
+ "basis": {
+  "idle_r1": "assets/idle-fb-r1 @26e19652 · data/clips.idle_r1.json · data/korrektur.json (FB-Oberarm 18°, Gewicht je Clip)",
+  "spielstand": "site/stage @84acfcd1 (Build 58b070e6, animtakt=1)",
+  "figur": "FB_TEMPLATE_LOOK_v5b.glb + clips_fb/*.fb.glb (so wie das Spiel sie lädt)"
+ },
+ "raum": {
+  "drehung": "Euler XYZ in Grad, im Raum des Elternknochens (für upperarm.* = chest), vormultipliziert: q' = Δ · q (wie IDLE_R1 arm_korr)",
+  "achse": "upperarm.r um −Z, upperarm.l um +Z = nach außen (geprüft: +Z rechts verschlechtert, Messung m2/t_zpos)",
+  "knochen": "nur Schulter, Oberarm, Unterarm, Hand (Brief)"
+ },
+ "messung": {
+  "werkzeug": "messe3.mjs (three wie im Spiel, CPU-Skinning, Arm-Ecken im Rumpf-Netz, Maske = in der Bindepose außerhalb)",
+  "einheit": "cm (0,616 m je Rig-Einheit wie IDLE_R1)",
+  "felder": {
+   "unterarm_hand_cm": "tiefste Ecke von Unterarm/Hand im Rumpf = „Arm steckt im Bauch“",
+   "achsel_cm": "tiefste Ecke am Oberarm (Achsel, liegt bei FB in allen Clips 2–9 cm im Rumpf, aus der Spielkamera verdeckt)",
+   "anteil_pct": "Anteil der Arm-Ecken im Rumpf"
+  },
+  "regel": "kleinste Stufe aus 4/8/12°, bei der Unterarm/Hand ≤ 1,5 cm; höchstens 12° zusätzlich (sanft, Brief Tier 0)"
+ },
+ "koerper": {
+  "fb": {
+   "clips": {
+    "kfb_idle_standing_idle_03_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "zusatz_abspreizen_grad": 8,
+     "idle_r1_gewicht_neu": 1.444,
+     "grund": "Grundhaltung happy (am häufigsten zu sehen): Fäuste vor dem Bauch, Unterarm 2,4 cm im Rumpf",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 2.39,
+       "achsel_cm": 5.29,
+       "anteil_pct": 6.2
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.99,
+       "achsel_cm": 5.02,
+       "anteil_pct": 4.8
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "kfb_idle_happy_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "zusatz_abspreizen_grad": 8,
+     "idle_r1_gewicht_neu": 1.444,
+     "grund": "Grundhaltung happy: Unterarm 3,5 cm im Rumpf",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 3.48,
+       "achsel_cm": 7.44,
+       "anteil_pct": 6.7
+      },
+      "nachher": {
+       "unterarm_hand_cm": 1.15,
+       "achsel_cm": 6.56,
+       "anteil_pct": 5.3
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "kfb_idle_mutant_idle_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "zusatz_abspreizen_grad": 4,
+     "idle_r1_gewicht_neu": 1.222,
+     "grund": "Einschub Achselzucken: Hand 1,5 cm an der Hüfte",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 1.47,
+       "achsel_cm": 7.74,
+       "anteil_pct": 6.2
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.72,
+       "achsel_cm": 7.54,
+       "anteil_pct": 6.2
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "kfb_idle_ninja_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "zusatz_abspreizen_grad": 8,
+     "idle_r1_gewicht_neu": 1.444,
+     "grund": "Einschub threat: Unterarm 2,7 cm im Rumpf",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 2.7,
+       "achsel_cm": 7.17,
+       "anteil_pct": 9.1
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.8,
+       "achsel_cm": 6.3,
+       "anteil_pct": 5.3
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "kfb_idle_offensive_idle_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "zusatz_abspreizen_grad": 12,
+     "idle_r1_gewicht_neu": 1.667,
+     "grund": "Grundhaltung threat: Unterarm 7,6 cm im Rumpf, 27 % der Arm-Ecken; auch mit 12° noch 4,5 cm (Grenze der sanften Korrektur, eigene FB-Fassung bleibt offen wie in IDLE_R1)",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 7.63,
+       "achsel_cm": 8.48,
+       "anteil_pct": 27.4
+      },
+      "nachher": {
+       "unterarm_hand_cm": 4.52,
+       "achsel_cm": 6.43,
+       "anteil_pct": 12.0
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "kfb_idle_drunk_idle_variation_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "zusatz_abspreizen_grad": 12,
+     "idle_r1_gewicht_neu": 1.667,
+     "grund": "Grundhaltung bored: Unterarm 4,1 cm im Rumpf",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 4.08,
+       "achsel_cm": 6.21,
+       "anteil_pct": 7.7
+      },
+      "nachher": {
+       "unterarm_hand_cm": 1.53,
+       "achsel_cm": 3.92,
+       "anteil_pct": 3.9
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "kfb_gesture_pointing_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "zusatz_abspreizen_grad": 12,
+     "idle_r1_gewicht_neu": 1.667,
+     "grund": "Einschub zeigt: linker Unterarm 4,8 cm im Rumpf; mit 12° noch 2,7 cm (Rest, Geste)",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 4.81,
+       "achsel_cm": 8.88,
+       "anteil_pct": 12.0
+      },
+      "nachher": {
+       "unterarm_hand_cm": 2.71,
+       "achsel_cm": 7.81,
+       "anteil_pct": 9.1
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "kfb_gesture_standing_greeting_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "zusatz_abspreizen_grad": 4,
+     "idle_r1_gewicht_neu": 1.222,
+     "grund": "Einschub grüßt: Unterarm 2,0 cm im Rumpf",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 1.96,
+       "achsel_cm": 5.82,
+       "anteil_pct": 4.8
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.89,
+       "achsel_cm": 5.58,
+       "anteil_pct": 4.3
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "kfb_gesture_taunt_a": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "zusatz_abspreizen_grad": 12,
+     "idle_r1_gewicht_neu": 1.667,
+     "grund": "Einschub neckt: Unterarm 2,7 cm im Rumpf",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 2.68,
+       "achsel_cm": 8.05,
+       "anteil_pct": 9.1
+      },
+      "nachher": {
+       "unterarm_hand_cm": 1.55,
+       "achsel_cm": 7.24,
+       "anteil_pct": 9.1
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "Idle_A": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "zusatz_abspreizen_grad": 4,
+     "idle_r1_gewicht_neu": 1.222,
+     "grund": "Ruhe-Clip unter jeder Waffenhaltung (spec.idle): linker Unterarm 1,4 cm, Achsel tief",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 1.45,
+       "achsel_cm": 4.58,
+       "anteil_pct": 4.3
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.49,
+       "achsel_cm": 4.18,
+       "anteil_pct": 2.4
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "Running_A": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "zusatz_abspreizen_grad": 4,
+     "idle_r1_gewicht_neu": 1.222,
+     "grund": "Laufen: Unterarm 1,6 cm im Rumpf beim Armschwung",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 1.64,
+       "achsel_cm": 5.58,
+       "anteil_pct": 5.8
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.88,
+       "achsel_cm": 5.29,
+       "anteil_pct": 4.8
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "Running_B": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "zusatz_abspreizen_grad": 12,
+     "idle_r1_gewicht_neu": 1.667,
+     "grund": "Sprint: Unterarm 3,6 cm im Rumpf beim Armschwung",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 3.57,
+       "achsel_cm": 5.24,
+       "anteil_pct": 8.6
+      },
+      "nachher": {
+       "unterarm_hand_cm": 1.5,
+       "achsel_cm": 3.91,
+       "anteil_pct": 4.8
+      }
+     },
+     "idle_r1_gewicht": 1
+    },
+    "Ranged_1H_Aiming": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "zusatz_abspreizen_grad": 8,
+     "idle_r1_gewicht_neu": 0.444,
+     "grund": "IDLE_R1-Gewicht 0; Quelle der neuen Pistolen-Haltung (Bild 0) und Zielen: Hand 2,8 cm an der Hüfte",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 2.78,
+       "achsel_cm": 4.6,
+       "anteil_pct": 6.2
+      },
+      "nachher": {
+       "unterarm_hand_cm": 1.17,
+       "achsel_cm": 3.64,
+       "anteil_pct": 3.4
+      }
+     },
+     "idle_r1_gewicht": 0
+    },
+    "Ranged_1H_Shoot": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "zusatz_abspreizen_grad": 8,
+     "idle_r1_gewicht_neu": 0.444,
+     "grund": "IDLE_R1-Gewicht 0; wie Ranged_1H_Aiming (gleiches Bild 0)",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 2.78,
+       "achsel_cm": 4.6,
+       "anteil_pct": 6.2
+      },
+      "nachher": {
+       "unterarm_hand_cm": 1.17,
+       "achsel_cm": 3.64,
+       "anteil_pct": 3.4
+      }
+     },
+     "idle_r1_gewicht": 0
+    }
+   },
+   "ohne_aenderung": {
+    "kfb_gesture_talking_a": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm schon mit IDLE_R1",
+     "messung": {
+      "unterarm_hand_cm": 0,
+      "achsel_cm": 3.73,
+      "anteil_pct": 2.9
+     }
+    },
+    "kfb_gesture_waving_gesture_a": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm schon mit IDLE_R1",
+     "messung": {
+      "unterarm_hand_cm": 0,
+      "achsel_cm": 4.27,
+      "anteil_pct": 2.9
+     }
+    },
+    "Walking_B": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm schon mit IDLE_R1",
+     "messung": {
+      "unterarm_hand_cm": 0,
+      "achsel_cm": 4.18,
+      "anteil_pct": 2.4
+     }
+    },
+    "Running_HoldingRifle": {
+     "grund": "Zweihand-Haltung: Abspreizen löst die Stützhand von der Waffe, darum nur Befund; Gatling bleibt (Brief)",
+     "messung": {
+      "unterarm_hand_cm": 5.62,
+      "achsel_cm": 7.01,
+      "anteil_pct": 9.6
+     }
+    },
+    "Ranged_1H_Shooting": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm schon mit IDLE_R1",
+     "messung": {
+      "unterarm_hand_cm": 0.39,
+      "achsel_cm": 3.84,
+      "anteil_pct": 2.4
+     }
+    },
+    "Ranged_2H_Aiming": {
+     "grund": "Zweihand-Haltung: Abspreizen löst die Stützhand von der Waffe, darum nur Befund",
+     "messung": {
+      "unterarm_hand_cm": 3.95,
+      "achsel_cm": 4.6,
+      "anteil_pct": 15.4
+     }
+    },
+    "Ranged_2H_Shoot": {
+     "grund": "Zweihand-Haltung: Abspreizen löst die Stützhand von der Waffe, darum nur Befund",
+     "messung": {
+      "unterarm_hand_cm": 4.63,
+      "achsel_cm": 5.14,
+      "anteil_pct": 12.5
+     }
+    },
+    "Ranged_1H_Shoot_mb1": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm schon mit IDLE_R1",
+     "messung": {
+      "unterarm_hand_cm": 0,
+      "achsel_cm": 2.39,
+      "anteil_pct": 1.4
+     }
+    }
+   },
+   "haltungen": {
+    "pistol": {
+     "spec": {
+      "id": "pistol-fb-h1",
+      "clip": "Ranged_1H_Aiming",
+      "seconds": 0,
+      "bones": [
+       "upperarm.r",
+       "lowerarm.r",
+       "wrist.r",
+       "hand.r",
+       "handslot.r"
+      ],
+      "idle": "Idle_A",
+      "figure": "frizzlebob"
+     },
+     "korr": {},
+     "befund_vorher": "Die Pistole setzt im Spiel keine Haltung (states.weapon null, kein ·oben). Die Arme spielen den Ruhe-Pool: in standing_idle_03 steht die Pistole senkrecht neben dem Kopf, in happy/mutant hängt sie am Oberschenkel (Georgs Beleg).",
+     "loesung": "Feste Haltung wie Gatling/Action-Figur-Gewehr (setWeaponHold): Bild 0 von Ranged_1H_Aiming = vorhandene Tiefhaltung (Oberarm hängt, Unterarm 43° nach unten, Lauf 22° nach unten und 18° nach außen, Hand an der Hüfte). Nur der rechte Arm; Beine, Hüfte, linker Arm spielen weiter (Idle_A bzw. Gang). Dazu Oberarm 8° nach außen (Hand 2,8 → 1,2 cm).",
+     "schuss": "combatPlayer: beim Ausrüsten von pistol/blaster im selben Bild setWeaponHold(haltungen.<waffe>.spec) (sonst blitzt der Ruhe-Clip mit der Waffe am Kopf auf). Schuss: setWeaponHold(null) → Schuss wie heute (Ranged_1H_Shoot_mb1 läuft als eigene Aktion, nicht als upperShot) → sobald das Gewicht der Schuss-Aktion unter 0,35 fällt, Haltung zurück (in der Prüfhilfe so gemessen, a2_video.r3.mjs). Mit A2: Haltung über 0,2 s einblenden. Kein neuer Clip, kein Offset im Spielcode.",
+     "gemessen_im_spiel": "handslot.r im Brust-Raum (−0,498; −0,318; 0,064), Mündung vorn unten (m3/dbg.json)",
+     "korr_hinweis": "keine Laufzeit-Drehung: die 8° für den Oberarm stecken gebacken in Ranged_1H_Aiming (Bild 0 wird von setWeaponHold aus dem gebackenen Clip abgetastet)"
+    },
+    "blaster": {
+     "spec": {
+      "id": "blaster-fb-h1",
+      "clip": "Ranged_1H_Aiming",
+      "seconds": 0,
+      "bones": [
+       "upperarm.r",
+       "lowerarm.r",
+       "wrist.r",
+       "hand.r",
+       "handslot.r"
+      ],
+      "idle": "Idle_A",
+      "figure": "frizzlebob"
+     },
+     "korr": {},
+     "befund_vorher": "wie Pistole: keine Haltung, Blaster hängt mit dem Ruhe-Clip nach unten außen",
+     "loesung": "gleiche Haltung wie Pistole (eigene id)",
+     "korr_hinweis": "keine Laufzeit-Drehung: die 8° für den Oberarm stecken gebacken in Ranged_1H_Aiming (Bild 0 wird von setWeaponHold aus dem gebackenen Clip abgetastet)"
+    },
+    "spreadshot": {
+     "spec": "unverändert (spreadshot-fb-r1, Ranged_1H_Aiming @0,2667)",
+     "befund": "Action-Figur-Gewehr einhändig an der Hüfte (V-592) sitzt; der Kolben verdeckt von der Seite den Bauch, steckt aber nicht darin (Vorderansicht: Abstand). Sitz-Versatz (0,1; 0; 0,02) aus K10 bleibt."
+    },
+    "gatling": {
+     "spec": "unverändert (gatling-fb-r2, Running_HoldingRifle @0,25, V-1014/V-1040/V-1140)",
+     "befund": "nur Befund (Brief): in der Haltung steckt der linke Unterarm 5,4–5,6 cm, der rechte 3,3–3,7 cm im Rumpf (Bild 6–9); aus der Spielkamera durch die Waffe großteils verdeckt."
+    }
+   },
+   "waffen_sitz": {
+    "pistol": "unverändert: handslot.r, slotOffset Ry +90° (V-581)",
+    "blaster": "unverändert: handslot.r, Ry +90°",
+    "spreadshot": "unverändert: Ry +90°, Versatz (0,1; 0; 0,02)",
+    "gatling": "unverändert (Brief)",
+    "regel": "Korrektur nur bei sichtbarer Durchdringung; in den Nachher-Bildern keine Waffe im Körper."
+   },
+   "gebacken": {
+    "weg": "WS0 14.11.: Weg 1 (V-1065). Zusatzwinkel per arm_korr.mjs (IDLE_R1, gleiche Achse) auf die vorhandenen .fb.glb gebacken, in Stufen 4/8/12° je Clip mit Gewicht 1; Hüftkorrektur und alle anderen Spuren unverändert. Gesamtwinkel = 18° × idle_r1_gewicht_neu.",
+    "dateien": {
+     "KFB_Motion_Library_Rig_Medium.fb.glb": "a681a2a41d266b6769aedd28f021e09bf1ca54bb96101e4c9d93ec7f6b2a7b3a",
+     "KFB_Motion_gesture.v2.Rig_Medium.fb.glb": "8e2d3bf6d593c5f6904d3a68acc8becf513a8d2edcbbe9d1c813eff2a482d95b",
+     "KFB_Motion_idle.v2.Rig_Medium.fb.glb": "cdf3a53c0611f77c175338b881435488ab8dfab224a85b32c61a1eb141618912",
+     "Rig_Medium_CombatRanged.fb.glb": "a344f02b1a62d410e14ff253a405dfc7a096eff33d894f51ca9f608404e69c2e",
+     "Rig_Medium_General.fb.glb": "c3f7d27fb065f772742d4568eb34942bb6921c42a9be24fe190332f6702de902",
+     "Rig_Medium_MovementBasic.fb.glb": "9e174054a563b8e0a278c3a91467dcda63284a10c14a7c602a36fe32a1d8380d"
+    },
+    "ordner": "50_BLENDER/WSB_HALTUNG_R1/clips_fb/ (gleiche Dateinamen wie IDLE_R1/clips_fb, tauschen)",
+    "pruefung": "gebacken ohne Laufzeit-Drehung gemessen = Prüfhilfe-Werte (14/14 Clips gleich, bake/gebacken.json); im Spiel Gegenprobe mit ausgetauschten Dateien: gleiche Bilder (fb/blaetter/A_fb_gegenprobe_gebacken.jpg)"
+   },
+   "offensive_idle": {
+    "befund": "auch mit +12° Unterarm 4,5 cm, 16 % der Arm-Ecken im Rumpf (Grenze der sanften Korrektur)",
+    "vorschlag": "aus dem Ruhe-Pool nehmen: threat.base = kfb_idle_ninja_a (mit +8° gebacken: Unterarm 0,8 cm), threat.beats = [kfb_gesture_taunt_a]; offensive_idle bleibt in der Datei (gebacken +12°), wird nur nicht mehr gewählt. Eine eigene FB-Fassung bräuchte neue Schlüssel (Brief Tier 0: nein).",
+    "pool_neu": {
+     "threat": {
+      "base": [
+       {
+        "clip": "kfb_idle_ninja_a",
+        "w": 1
+       }
+      ],
+      "beats": [
+       {
+        "clip": "kfb_gesture_taunt_a",
+        "w": 1
+       }
+      ],
+      "note": "WSB Haltung R1: offensive_idle raus (Arm 4,5 cm im Rumpf auch mit +12°)"
+     }
+    }
+   },
+   "belege": [
+    "fb/blaetter/A_fb_ruhe_gang.jpg",
+    "fb/blaetter/A_fb_pistole_blaster.jpg",
+    "fb/blaetter/A_fb_gewehr_gatling.jpg",
+    "fb/blaetter/A_fb_gegenprobe_gebacken.jpg"
+   ]
+  },
+  "spy": {
+   "figur": "kaykit_spy_schwarz.glb (Auftrag 6, assets/wsb-reihe-r1-spy @a9660e1f), weiß gleich",
+   "clips": {
+    "Idle_A": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "zusatz_abspreizen_grad": 12,
+     "grund": "Grundhaltung: Hände 4,2/4,1 cm in der Anzugjacke (beidseitig, nicht die Uhr)",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 4.24,
+       "achsel_cm": 7.64,
+       "anteil_pct": 11.0
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.7,
+       "achsel_cm": 6.01,
+       "anteil_pct": 4.1
+      }
+     }
+    },
+    "Idle_B": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "zusatz_abspreizen_grad": 4,
+     "grund": "Ruhe-Einschub: Hand 2,1 cm in der Jacke",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 2.12,
+       "achsel_cm": 6.38,
+       "anteil_pct": 5.3
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.88,
+       "achsel_cm": 5.84,
+       "anteil_pct": 5.0
+      }
+     }
+    },
+    "Walking_B": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "zusatz_abspreizen_grad": 4,
+     "grund": "Gehen: Hand 1,6 cm an der Jacke beim Schwung",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 1.59,
+       "achsel_cm": 6.97,
+       "anteil_pct": 5.3
+      },
+      "nachher": {
+       "unterarm_hand_cm": 0.39,
+       "achsel_cm": 6.41,
+       "anteil_pct": 4.1
+      }
+     }
+    },
+    "Running_A": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "zusatz_abspreizen_grad": 8,
+     "grund": "Laufen: Unterarm 3,2 cm in der Jacke",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 3.21,
+       "achsel_cm": 7.7,
+       "anteil_pct": 9.1
+      },
+      "nachher": {
+       "unterarm_hand_cm": 1.44,
+       "achsel_cm": 6.72,
+       "anteil_pct": 4.4
+      }
+     }
+    },
+    "Running_B": {
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "zusatz_abspreizen_grad": 12,
+     "grund": "Sprint: Unterarm 6,9 cm, 25 % der Ecken; mit 12° noch 3,6 cm (Rest, Empfehlung aus Auftrag 6 gilt: Running_A statt Running_B)",
+     "messung": {
+      "vorher": {
+       "unterarm_hand_cm": 6.87,
+       "achsel_cm": 8.16,
+       "anteil_pct": 25.4
+      },
+      "nachher": {
+       "unterarm_hand_cm": 3.56,
+       "achsel_cm": 6.16,
+       "anteil_pct": 11.6
+      }
+     }
+    }
+   },
+   "ohne_aenderung": {
+    "Hit_A": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm",
+     "messung": {
+      "unterarm_hand_cm": 0.74,
+      "achsel_cm": 5.28,
+      "anteil_pct": 3.8
+     }
+    },
+    "Walking_A": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm",
+     "messung": {
+      "unterarm_hand_cm": 0.19,
+      "achsel_cm": 4.89,
+      "anteil_pct": 2.8
+     }
+    },
+    "Running_HoldingRifle": {
+     "grund": "Zweihand-Gewehr (V-582-Familien aus Auftrag 6): Abspreizen löst die Stützhand, darum nur Befund",
+     "messung": {
+      "unterarm_hand_cm": 3.24,
+      "achsel_cm": 7.27,
+      "anteil_pct": 6.3
+     }
+    },
+    "Ranged_1H_Aiming": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm",
+     "messung": {
+      "unterarm_hand_cm": 0.74,
+      "achsel_cm": 5.28,
+      "anteil_pct": 3.8
+     }
+    },
+    "Ranged_1H_Shoot": {
+     "grund": "Unterarm/Hand ≤ 1,5 cm",
+     "messung": {
+      "unterarm_hand_cm": 0.74,
+      "achsel_cm": 5.28,
+      "anteil_pct": 3.8
+     }
+    },
+    "Ranged_2H_Aiming": {
+     "grund": "Zweihand-Gewehr (V-582-Familien aus Auftrag 6): Abspreizen löst die Stützhand, darum nur Befund",
+     "messung": {
+      "unterarm_hand_cm": 3.8,
+      "achsel_cm": 5.28,
+      "anteil_pct": 5.1
+     }
+    },
+    "Ranged_2H_Reload": {
+     "grund": "Zweihand-Gewehr (V-582-Familien aus Auftrag 6): Abspreizen löst die Stützhand, darum nur Befund",
+     "messung": {
+      "unterarm_hand_cm": 7.94,
+      "achsel_cm": 7.03,
+      "anteil_pct": 13.5
+     }
+    },
+    "Ranged_2H_Shoot": {
+     "grund": "Zweihand-Gewehr (V-582-Familien aus Auftrag 6): Abspreizen löst die Stützhand, darum nur Befund",
+     "messung": {
+      "unterarm_hand_cm": 2.93,
+      "achsel_cm": 5.28,
+      "anteil_pct": 3.8
+     }
+    }
+   },
+   "befund_zweihand": "Ranged_2H_Reload: linke Hand 7,9 cm an der Brust (greift zum Magazin, Clip-Inhalt). Ranged_2H_Aiming: Stützhand 3,8 cm vor der Brust statt am Vorderschaft (offen aus Auftrag 6, Punkt 2).",
+   "waffen_sitz": {
+    "Spy_Gun": "unverändert: handslot.r, Ry +90° (Auftrag 6 ohne Befund)",
+    "Marksman_Rifle": "unverändert: Familien r2 aus Auftrag 6 (rifle_familien.r2.json)"
+   },
+   "beleg": "spy/A_spy_ruhe_gang.r2.jpg (vorher Original-Clips, nachher gebackene clips_kaykit). Das erste Blatt spy/A_spy_ruhe_gang.jpg ist ungültig: die Bühnenhülle reichte --poseKorr nicht weiter, nachher = vorher.",
+   "hinweis_r3": "Der Spy nutzt die KayKit-Original-Clips: es gelten die Werte aus koerper.kaykit (gebacken), die Einzelwerte oben sind die Spy-Messung als Eingang."
+  },
+  "soldat": {
+   "figur": "plastic_army_soldier.r5.glb (Auftrag 1)",
+   "clips": {},
+   "befund": "Keine sichtbare Durchdringung in idle, idle_aiming, firing_rifle_standing, reloading_standing, walk_forward (Bühne v1.3, vorn/seitlich/schräg). Die Arme halten das Gewehr mit beiden Händen, die Hände liegen am Gewehr. Arme und Rumpf sind ein Netz; die Netz-Trennung nach Knochengewicht misst an den Schulterlöchern Schein-Tiefen, darum zählt hier das Bild.",
+   "waffen_sitz": "unverändert: M1 Garand im Modell, beide Hände am Gewehr",
+   "beleg": "soldat/A_soldat_befund.jpg",
+   "messung_r3": "messe4 (Strahlen-Parität, Einheit m → cm ×100): idle 6,0 · reloading 6,5 · firing 4,5 · idle_aiming 3,2 · run 3,1 · walk 0 cm; das sind die Hände am Gewehr vor der Brust (Zweihand), Abspreizen löst die Hände vom Gewehr → keine Korrektur."
+  },
+  "kaykit": {
+   "gilt_fuer": "alle Figuren mit KayKit-Körper auf Rig_Medium und Original-Clips (NPCs gothgirl, adventurer-barbarian, adventurer-mage, lorekeeper, farmer-b, toy-soldier, skeleton-*, Spy-Duo); eine Korrektur je Clip (WS0 14.11., Georg: „90+% der medium rig kaykit NPCs“)",
+   "gemessen": [
+    "Barbarian",
+    "Farmer_B",
+    "Lorekeeper",
+    "Skeleton_Warrior",
+    "Mage",
+    "GothGirl",
+    "Spy"
+   ],
+   "regel": "je Clip kleinste Stufe 4/8/12°, bei der Unterarm/Hand bei ALLEN gemessenen Körpern ≤ 1,5 cm; sonst die Stufe mit dem kleinsten Höchstwert",
+   "ausnahme_dick": "keine: der Barbar liegt in allen Clips im Bereich von Bäuerin und Magier (z. B. Idle_A 5,5 / 5,7 / 5,1 cm), keine eigene Fassung nötig",
+   "clips": {
+    "Cheering": {
+     "zusatz_abspreizen_grad": 0,
+     "drehung": {},
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 2.65,
+      "nachher": null
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl"
+     ],
+     "grund": "Abspreizen verschlechtert (Arme oben): keine Änderung"
+    },
+    "Hit_A": {
+     "zusatz_abspreizen_grad": 8,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 2.47,
+      "nachher": 0.81
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl",
+      "Spy"
+     ]
+    },
+    "Idle_A": {
+     "zusatz_abspreizen_grad": 12,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 5.7,
+      "nachher": 2.64
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl",
+      "Spy"
+     ]
+    },
+    "Idle_B": {
+     "zusatz_abspreizen_grad": 12,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 4.02,
+      "nachher": 0.9
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl",
+      "Spy"
+     ]
+    },
+    "Interact": {
+     "zusatz_abspreizen_grad": 8,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 2.47,
+      "nachher": 0.81
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl"
+     ]
+    },
+    "Running_A": {
+     "zusatz_abspreizen_grad": 12,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 4.92,
+      "nachher": 2.5
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl",
+      "Spy"
+     ]
+    },
+    "Running_B": {
+     "zusatz_abspreizen_grad": 12,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 6.87,
+      "nachher": 3.56
+     },
+     "koerper": [
+      "Spy"
+     ],
+     "grund": "NPCs nutzen Running_B nicht; Wert aus dem Spy"
+    },
+    "Sit_Floor_Idle": {
+     "zusatz_abspreizen_grad": 4,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 2.52,
+      "nachher": 1.47
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl"
+     ]
+    },
+    "Walking_A": {
+     "zusatz_abspreizen_grad": 4,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 1.77,
+      "nachher": 1.37
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl",
+      "Spy"
+     ]
+    },
+    "Walking_B": {
+     "zusatz_abspreizen_grad": 8,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -8
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       8
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 3.13,
+      "nachher": 1.17
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl",
+      "Spy"
+     ]
+    },
+    "Walking_C": {
+     "zusatz_abspreizen_grad": 12,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 4.21,
+      "nachher": 1.66
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl"
+     ]
+    },
+    "Waving": {
+     "zusatz_abspreizen_grad": 4,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -4
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       4
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 4.19,
+      "nachher": 3.17
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl"
+     ]
+    },
+    "kfb_idle_happy_a": {
+     "zusatz_abspreizen_grad": 12,
+     "drehung": {
+      "upperarm.r": [
+       0,
+       0,
+       -12
+      ],
+      "upperarm.l": [
+       0,
+       0,
+       12
+      ]
+     },
+     "messung_max_ueber_koerper_cm": {
+      "vorher": 7.85,
+      "nachher": 4.38
+     },
+     "koerper": [
+      "Barbarian",
+      "Farmer_B",
+      "Lorekeeper",
+      "Skeleton_Warrior",
+      "Mage",
+      "GothGirl"
+     ]
+    }
+   },
+   "gebacken": {
+    "dateien": {
+     "KFB_Motion_Library_Rig_Medium.kk.glb": "66d85cfd11e2775190839d9c26b7ae34799d2c9a027f3aa62820919e214bbe08",
+     "Rig_Medium_General.kk.glb": "ffa4939043b0b67b57a62a681b70032b833dfd708fe7c17cb173707df0cb2b0f",
+     "Rig_Medium_MovementBasic.kk.glb": "305278eb8027967db20d351f98dc748f8d0f153472842d58184725337acc4019",
+     "Rig_Medium_Simulation.kk.glb": "4d930ba6329f6f2d1dda4f2bd93a03ca7d69f817bdc27801306b1c51ae4f4afb"
+    },
+    "ordner": "50_BLENDER/WSB_HALTUNG_R1/clips_kaykit/ (*.kk.glb; Quelle = src/assets/actors/Rig_Medium_*.glb bzw. Motion Library v1, QUELLEN_SHA256.txt)",
+    "hinweis": "Die Motion-Library-v1-Datei lädt das Spiel für Nicht-FB-Figuren über ML-URL; WS0 entscheidet, wo die gebackene Fassung liegt. v2-Pakete (idle/gesture) liegen auf dem Mac mini nicht als Original vor: deren NPC-Clips (talking, read_page_turn, strut, clapping) sind ungemessen, offen."
+   },
+   "messung": "messe4.mjs (Innen-Test über Strahlen-Parität; die KayKit-Rumpfnetze sind an Arm- und Halsöffnungen offen, der Normalen-Test aus messe3 lieferte dort Schein-Tiefen bis zur Kappung). FB- und Spy-Werte mit messe4 unverändert.",
+   "beleg": "npc/blaetter/A_npc_vorher_nachher.r2.jpg (Barbar, Bäuerin, Lorekeeper, Skelett; Idle_A, happy_a, Walking_B, Running_A; Bühne v1.3)"
+  }
+ },
+ "laufzeit": {
+  "empfehlung": "umgesetzt nach WS0-Entscheid: Clip-Korrekturen gebacken (koerper.fb.gebacken, koerper.kaykit.gebacken). Im Spiel bleibt nur die Haltung für Pistole und Blaster als Daten.",
+  "weg2_schicht": {
+   "reihenfolge": "nach allen Mischern und nach weaponHold.beforeStep-restore, vor dem Rendern (Debug-Haken __kfbM1Interp.afterAnim liegt an dieser Stelle)",
+   "formel": "je Knochen Δ = Σ Gewicht(Aktion) · Δ(Clip der Aktion), Aktionen ·weapon-lower nicht zählen, Knochen unter aktiver Haltung nur mit haltungen.<waffe>.korr; q = Δ · q_sauber (Euler XYZ Grad, Elternraum)",
+   "falle": "three schreibt einen Knochen nur bei geänderter Clip-Lage (PropertyMixer.apply vergleicht mit dem letzten Wert). Bei stehender Pose (Haltung = pausierte Aktion, konstante Spuren, Tempo 0) sammelt sich eine einfache Vormultiplikation je Bild an: der Arm dreht weiter (so im Spiel gesehen, Lauf h_nachher1).",
+   "rezept": "je Knochen q_sauber merken: ist q unverändert gleich dem zuletzt gesetzten Wert, dann q_sauber behalten, sonst q_sauber = q; danach q = Δ · q_sauber und den gesetzten Wert merken (scripts/haltung.mjs, Zeilen W.clean/W.done)"
+  },
+  "haltung_pistole": "combatPlayer: beim Ausrüsten von pistol/blaster im selben Bild setWeaponHold(haltungen.<waffe>.spec) (sonst blitzt der Ruhe-Clip mit der Waffe am Kopf auf). Schuss: setWeaponHold(null) → Schuss wie heute (Ranged_1H_Shoot_mb1 läuft als eigene Aktion, nicht als upperShot) → sobald das Gewicht der Schuss-Aktion unter 0,35 fällt, Haltung zurück (in der Prüfhilfe so gemessen, a2_video.r3.mjs). Mit A2: Haltung über 0,2 s einblenden. Kein neuer Clip, kein Offset im Spielcode."
+ },
+ "a2": {
+  "messung": {
+   "werkzeug": "a2_mess.mjs, Prüftakt replay (ein Schritt je Bild), Drehgeschwindigkeit je Knochen im Figurenraum je Bild",
+   "datei": "data/a2/a2_messung_vorher.json",
+   "befund": [
+    {
+     "wechsel": "Stehen → Gehen/Laufen",
+     "gemessen": "Gangclip übernimmt in 2 Bildern (Walking_B 0,55 → 1,0); Oberarm 1310–1590°/s, Kopf 200–250°/s in einem Bild",
+     "ursache": "m1-gait gaitWeights(v) hängt nur am momentanen Tempo; das Tempo steigt in ~2 Bildern über die Gehgrenze (0,8 × Walking_B)"
+    },
+    {
+     "wechsel": "Laufen → Gehen",
+     "gemessen": "harter Schnitt in 1 Bild; Hüfte 837°/s, Brust 864°/s, Kopf 548°/s",
+     "ursache": "M1Player kappt beim Gehen die Geschwindigkeit sofort (setLinvel auf M1MOVE.walk), gaitWeights springt mit"
+    },
+    {
+     "wechsel": "Gehen → Laufen",
+     "gemessen": "Überblendung über ~3 Bilder (0,05 s)",
+     "ursache": "wie oben, Beschleunigung"
+    },
+    {
+     "wechsel": "Gehen/Laufen → Stehen",
+     "gemessen": "ruhig (keine Spitze)",
+     "ursache": "Abbremsen über mehrere Bilder"
+    },
+    {
+     "wechsel": "Schuss (Ranged_1H_Shoot_mb1)",
+     "gemessen": "setzt im ersten Bild mit Gewicht 1 ein (Brust 225°/s), Rückblende 0,09 s (Hüfte/Kopf 200–230°/s)",
+     "ursache": "playUpper fade 0,06; stopUpper 0,12/0,15"
+    },
+    {
+     "wechsel": "Waffenhaltung an/aus",
+     "gemessen": "setWeaponHold setzt die Pose sofort mit Gewicht 1 (kein Einblenden), dazu setIdle fade 0,1",
+     "ursache": "weaponHoldPose.set"
+    },
+    {
+     "wechsel": "Ruhe-Pool",
+     "gemessen": "Einschübe und Grundhaltungswechsel ohne Spitze (fadeBeat 0,45, fadeBase 0,6); nach dem Stehenbleiben kam ein Einschub schon nach 2,3 s",
+     "ursache": "idleStep: holdS = max(holdS, 1,5) nach Bewegung"
+    }
+   ]
+  },
+  "vorschlag": {
+   "gang_gewichte": {
+    "glaettung_s": {
+     "stehen_zu_gang": 0.25,
+     "gang_zu_gang": 0.25,
+     "gang_zu_stehen": 0.3
+    },
+    "formel": "w_eff += (w_ziel − w_eff) · min(1, dt / glaettung) je Gang-Gewicht (inkl. w.idle), Phase bleibt gemeinsam (Handover §3)",
+    "ort": "m1-gait step nach gaitWeights (nur Werte, keine neuen Clips)"
+   },
+   "schuss": {
+    "einblenden_s": 0.1,
+    "rueckblenden_s": 0.25
+   },
+   "waffenhaltung": {
+    "einblenden_s": 0.2,
+    "ausblenden_s": 0.2,
+    "hinweis": "Pose-Gewicht der kfb-hold-Aktion von 0 auf 1 statt sofort; setIdle(spec.idle) mit fade 0,3 statt 0,1"
+   },
+   "ruhe_pool": {
+    "erster_einschub_nach_bewegung_s": 4.0,
+    "beatAlleS": [
+     8,
+     16
+    ],
+    "beatMaxS": 6,
+    "fadeBaseS": 0.6,
+    "fadeBeatS": 0.45,
+    "hinweis": "IDLE_R1-Werte bleiben; neu nur der Mindestabstand des ersten Einschubs nach dem Stehenbleiben (heute 1,5 s)"
+   },
+   "tempo": {
+    "gang_timescale": "unverändert 0,8–1,25 (TS)",
+    "hinweis": "kein Befund"
+   }
+  },
+  "beleg": {
+   "video": "a2/A2_fb_uebergaenge_vorher_nachher.r2.mp4 (seitlich, links vorher, rechts nachher, Prüftakt replay, jedes gezeichnete Bild ein Videobild, feste 60 fps, 1119 Bilder; r2: Haltung beim Ziehen und nach dem Schuss sofort, siehe laufzeit.haltung_pistole)",
+   "pruefhilfe": "nachher = Überblendung aus der zuletzt gezeigten Pose bei denselben Wechseln (a2_video.mjs, Dauer je Wechselart wie vorgeschlagen) + gebackene Haltung; stellvertretend für die Gewichtsglättung im Spiel",
+   "streifen": [
+    "a2/streifen/A2_uebergaenge_vorher_nachher.r2.jpg",
+    "a2/streifen/A2_pistole_ziehen_schuss_vorher_nachher.r2.jpg"
+   ]
+  }
+ },
+ "b": {
+  "befund_heute": {
+   "video": "b/B_fb_gesicht_heute_spiel.mp4 (Spiel, von vorn am Kopf geführt, Prüftakt replay, 60 fps, 1176 Bilder)",
+   "messung": "mimikStatus je Bild (b_heute.mjs): in 14 s Ruhe keine Mimik-Schicht aktiv (basis/kurz null, Lid-Zuschlag 0, Mund null); beim Schuss kurz grimmig (Lider +0,14, Brauen furrow, Mund s) für 0,45 s; MIMIK.zielen nicht aktiv (Pistole ohne Zielen)",
+   "gegen_georg": {
+    "brauen": "im Leerlauf nur raiseL/raiseR mit 45 % bei einem Blickwechsel (GESICHT.leerlauf.braue); im Video keine sichtbare Brauen-Bewegung in 14 s",
+    "lider": "nur Blinzeln (fbLeben 3–6 s, 0,18 s); keine Lid-Stufen im Leerlauf",
+    "mund": "kein Mund-Leerlauf; Mund steht fest (Ruhe-Mund)",
+    "blick": "Leerlauf-Ziele alle 1,4–3,6 s plus frei 0,8–2,2 s; in der Boxer-Ruhehaltung blickt FB fast nur nach unten seitlich"
+   }
+  },
+  "vorschlag": {
+   "GESICHT": {
+    "leerlauf": {
+     "radius": 9,
+     "verweilen": [
+      2.5,
+      5.5
+     ],
+     "frei": [
+      1.2,
+      2.6
+     ],
+     "kameraAnteil": 0.2,
+     "freiAnteil": 0.3,
+     "braue": 0.6,
+     "gewichte": {
+      "slop": 1.0,
+      "npc": 1.2,
+      "pickup": 1.4,
+      "kamera": 1
+     },
+     "sakkade_s": 0.09,
+     "nachblick": {
+      "anteil": 0.35,
+      "grad": 4,
+      "nachS": [
+       0.6,
+       1.4
+      ]
+     },
+     "blinzeln": {
+      "alleS": [
+       3,
+       6
+      ],
+      "dauerS": 0.18,
+      "beiBlickwechsel": 0.5,
+      "doppelt": 0.15
+     },
+     "lid": {
+      "offen": 0.12,
+      "weit": 0.04,
+      "warten": 0.36,
+      "wartenNachS": 3.5,
+      "gelangweilt": 0.48
+     },
+     "kombi": {
+      "entdecken": {
+       "wann": "neues Ziel pickup/npc/slop",
+       "braue": [
+        "both",
+        1.0
+       ],
+       "lid": "weit",
+       "mund": "oh",
+       "dauerS": 0.7
+      },
+      "kamera": {
+       "wann": "Blick in die Kamera",
+       "braue": [
+        "raiseL|raiseR",
+        0.8
+       ],
+       "mund": "smile",
+       "dauerS": 1.4
+      },
+      "warten": {
+       "wann": "verweilen > wartenNachS",
+       "lid": "warten",
+       "braue": null,
+       "mund": "neutral"
+      },
+      "gelangweilt": {
+       "wann": "Ruhe > gelangweiltNachS (IDLE_R1 45 s)",
+       "lid": "gelangweilt",
+       "braue": [
+        "sad",
+        0.4
+       ],
+       "mund": "m"
+      }
+     },
+     "mund_einschub": {
+      "alleS": [
+       6,
+       12
+      ],
+      "dauerS": [
+       0.6,
+       1.4
+      ],
+      "saetze": [
+       {
+        "mund": "smile",
+        "w": 3
+       },
+       {
+        "mund": "d",
+        "w": 2,
+        "hinweis": "Kritiker: m las sich wie neutral → d (kleiner offener Mund)"
+       },
+       {
+        "mund": "d",
+        "w": 1
+       },
+       {
+        "mund": "oh",
+        "w": 1
+       }
+      ],
+      "nieBeim": [
+       "sprechen",
+       "kampf"
+      ]
+     }
+    },
+    "taetigkeit": {
+     "fluff": {
+      "prio": 3,
+      "dauer": 0.9
+     },
+     "aufheben": {
+      "prio": 3,
+      "dauer": 0.8
+     },
+     "kampf": {
+      "prio": 4,
+      "dauer": 0.5
+     }
+    },
+    "kampf_hinweis": "MIMIK.zielen (basis) heute nur beim Zielen; Vorschlag: basis zielen, sobald eine Fernwaffe gezogen ist (Lider 0,36/0,04, Brauen furrow 0,55), grimmig/treffer wie heute"
+   },
+   "mapping": {
+    "verweilen": "heute [1,4; 3,6] → [2,5; 5,5] (ruhiger)",
+    "frei": "heute [0,8; 2,2] → [1,2; 2,6]",
+    "kameraAnteil": "0,15 → 0,20",
+    "freiAnteil": "0,25 → 0,30",
+    "braue": "0,45 → 0,60 und nur noch als Teil einer Kombination",
+    "neu": "sakkade_s, nachblick, blinzeln (Werte aus fbLeben, plus beiBlickwechsel/doppelt), lid (Stufen im Rig-Maß der Bühne: offen 0,12 · weit 0,04 · warten 0,36 · gelangweilt 0,48), kombi (entdecken, kamera, warten, gelangweilt), mund_einschub"
+   },
+   "bestand": {
+    "brauen": "face-mount browReact/browHold: raiseL, raiseR, both, furrow, sad (Stärke k)",
+    "lider": "EyeRig v6 emote lidUpper/lidLower (E2-Lidhaut), Lider folgen dem Blick (V-1412), dünne E2 (V-1050)",
+    "mund": "PetMouth-Schlüssel des Satzes gpt_a_r2 (fbmund=r1): neutral, smile, m, d, s, ee, uh, ah, oh, r, f, woo, l"
+   },
+   "einbau": "blickZiel.createLeerlauf liefert heute { ziel, art, neu, braue }; ergänzt um kombi (Name) und lid/mund-Ziel; faceMountActor setzt Brauen über browReact/browHold, Lider über den Mimik-Zuschlag (wie MIMIK), Mund über setTex wie mimikLids (nur wenn FB nicht spricht). Keine neuen Assets."
+  },
+  "beleg": {
+   "video": "b/B_fb_gesicht_vorschlag_buehne.mp4 (Bühne v1.3, FB A11 + Hasenschwanz wie attachFbTail, E2-Lider, Mund gpt_a, 20 s, 60 fps, 1200 Bilder)",
+   "blatt": "b/B_fb_gesicht_heute_vorschlag.r2.jpg",
+   "kanon": "b/B_fb_kanon_buehne_ohren_schwanz.jpg (beide Ohren, links A11, Schwanz) · im Spiel je Lauf geprüft (FB_Ear_L_v5, FB_Ear_R_v5, KFB_Tail_Bunny sichtbar)",
+   "zeitleiste": "b/zeitleiste.json, b/choreo_werte.json, b/choreo.py",
+   "buehne": "Kopie WSB_HALTUNG_R1/stage, opt-in --gesicht (gesichtBild: Lider über applyEmote, Blick über Augen-Pivots, Brauen als Versatz der in der GLB gebackenen Carl_Brow_L/R, Mund-Bild auf FB_Mouth_Smile) und --fbTail; N35 unverändert",
+   "grenze": "Auf der Bühne heben/neigen die Brauen als starre Teile (Prüfhilfe); im Spiel macht das face-mount browReact mit seiner eigenen Kurve (1,2 s)."
+  }
+ },
+ "kritiker": {
+  "lauf": "R1, frischer Agent, nur Bilder + CRITIC_3D_R1 + Georgs Ziel; nur Befundliste",
+  "behoben": [
+   "A2-Nachher: nach dem Schuss blitzte die alte Ruhehaltung (Pistole am Kopf) auf → Haltung sofort beim Ziehen und nach dem Schuss-Ende zurück, Video und Streifen r2"
+  ],
+  "befunde_offen": [
+   {
+    "bild": "FB Ruhe standing_idle_03",
+    "befund": "Arme mit +8° nur wenig weiter außen; die Boxer-Grundhaltung hält die Fäuste vor Brust/Kinn (Clip-Inhalt). Hand nahe Kinn/Nase.",
+    "einschaetzung": "Grenze der sanften Korrektur; Abhilfe wäre eine andere Grundhaltung im Pool (Auswahl, A2) oder eine eigene FB-Fassung (neue Schlüssel, nein)"
+   },
+   {
+    "bild": "FB Schuss Pistole/Blaster",
+    "befund": "unverändert; hinteres Waffenende nah am Shirt/Bauch, Blick nicht entlang des Laufs",
+    "einschaetzung": "Messung mb1: Arm 0 cm im Rumpf; Waffenende am Bauch aus der Schrägansicht nicht als Durchdringung belegt. Blick beim Schuss: Kampf-Mimik/Blickziel kampf (prio 4) zielt auf das Ziel, auf der Testwiese ohne Ziel"
+   },
+   {
+    "bild": "Action-Figur-Gewehr Schuss vorn34",
+    "befund": "Lauf wirkt schräg zum Boden, Schaftende an der Schulter (hoch)",
+    "einschaetzung": "eigene Spiel-Haltung (KFB_SpreadShot_1H_R1), laut Brief nur Befund; an WS0 zur Prüfung"
+   },
+   {
+    "bild": "Gatling",
+    "befund": "hinteres Ende im Bauch, zweite Hand frei",
+    "einschaetzung": "Brief: Gatling bleibt; deckt sich mit der Messung (linker Unterarm 5,5 cm)"
+   },
+   {
+    "bild": "Spy/NPC Running",
+    "befund": "Arme beim Laufen recht weit außen („Flügel“-Ansatz), gering",
+    "einschaetzung": "12° bei Running_A/B; bei Bedarf 8° (Rest 3,3 cm)"
+   },
+   {
+    "bild": "NPC-Bühnenbilder",
+    "befund": "Kit-Punktaugen ohne KFB-Augen/Lider",
+    "einschaetzung": "Bühne zeigt die Roh-Cast-GLBs als prop; im Spiel tragen die NPCs Georgs Augen-Batch; außerhalb des Auftrags"
+   },
+   {
+    "bild": "Soldat",
+    "befund": "keine Arme im Körper sichtbar; reloading: vordere Hand offen; run_forward-Zeile leer (Bühnen-Bodengate)",
+    "einschaetzung": "Clip-Inhalt; keine Korrektur"
+   },
+   {
+    "bild": "B Gesicht",
+    "befund": "Mund-Einschub m kaum von neutral zu unterscheiden; Brauen als starre Blöcke nur verschoben; Vorschlag nur frontal belegt, im Spiel sieht man FB meist von hinten",
+    "einschaetzung": "Mund-Einschub besser smile/d statt m; Brauen im Spiel über face-mount browReact (eigene Formen); Gesicht wirkt vor allem in Dialog-, Kamera- und Fotomomenten"
+   },
+   {
+    "bild": "Bühnen-Kanonbild",
+    "befund": "Mund kaum sichtbar, kein Shirt, kleiner Zipfel zwischen den Ohren",
+    "einschaetzung": "Bühnenkarte A11 mit Original-Mund-Decal und ohne Shirt (Kanon-Probe); Zipfel = FB-Kopfhaar laut Kanon"
+   }
+  ]
+ }
+}
