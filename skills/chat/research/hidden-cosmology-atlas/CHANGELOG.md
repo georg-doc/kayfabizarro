@@ -1,3 +1,7 @@
+## 2026-11-14
+
+Vier Autorenperspektiven ergänzt: David Grusch, Wolfgang Effenberger, Michael Grandt und Wolfgang Eggert. Quellenketten, Gegenlesarten, Sichtungsgrenzen und navigierbare Site-Seite.
+
 ## 2026-11-01 — C03 journalism breadth and Notebook source handoff
 
 Added Gary Webb, Robert Parry, Seymour Hersh, James Corbett, Derrick Broze and Patrik Baab source-lead profiles. Prepared a standalone NotebookLM reader, source URL list and typed Atlas source-chain view, plus access-bounded Gemini inventory prompt/schema and additive reconciliation workflow. Public-only TheWebb interaction checked; no paid access. Sixteen source records, eighteen claims, fourteen noncausal relations; independent bounded review and deterministic closure passed. Source checkpoint `9b27a3818ec7386d9aafe7146ba0831827e28e35`. Existing breadth index and source arrays preserved additively. No Notebook import or Site release. See current Return.
