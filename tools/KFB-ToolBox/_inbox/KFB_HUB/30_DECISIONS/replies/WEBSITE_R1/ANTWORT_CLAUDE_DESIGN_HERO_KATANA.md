@@ -6,4 +6,4 @@ Guter Blockout, die acht Schnitte mit vier Karten und 21 Schnipseln sind genau d
 
 2) Kartenrahmen als Daten: nicht schätzen. Das Spiel schneidet jede Karte aus der Deck-Seite mit dem Kartenmodul src/card-edge/ (kfb-card-builder.js: je Karte Seite und Viertel-Quad, kfb-card-format.js: Kartenformat; Repo georg-doc/KFB-Stunt-Car-Race, Zweig game/integration-r2). Für sichere Decks gilt die Zuordnung aus src/cardMapping.js (isMappingSafe/isPdfSafe); bei unsicheren Decks keine Karten-Schnitte, nur die ganze Seite (wie im Viewer v5 „fail-closed“). Die Karten bekommen die Kanon-Kante und die Rückseite aus demselben Modul.
 
-3) Liegend oder hängend: Georg entscheidet im Hub, Antwort folgt.
+3) Liegend oder hängend: Georg hat entschieden: hängend (deine Empfehlung). Die Seite hängt an einer Leine bzw. ist die Wand des Kartenraums, die Karten fallen in den Raum und führen direkt in den Kartenraum. Damit ist der waagerechte Hieb (FB_Katana_waagerecht) der wichtigste der neuen Clips; bis er da ist, treffen die vorhandenen Hiebe aus r1e.
