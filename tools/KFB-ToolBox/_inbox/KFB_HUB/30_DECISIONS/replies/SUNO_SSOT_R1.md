@@ -84,6 +84,15 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Waltz for a Tragic Flaw (Suno solo, Style aus Hub, 13.11.) | 89,4 | D Moll | 323 eigenständig (348 roh; keine tragende Familie) |
 | Small Mammal Sunshine (Suno solo, Style aus Hub, 13.11.) | 104,8 | G Moll | 422 eigenständig (585 roh; keine tragende Familie) |
 | Brain Gym Bebop (Suno solo, Style aus Hub, 13.11.) | 129,7 | G Moll | 149 eigenständig (189 roh; keine tragende Familie) |
+| River Meets the Sky (14.11.) | 137 | G Dur | 179 eigenständig (193 roh; guitar 113, woodwinds 20, backing_vocals 18, synth 13) |
+| Forbidden Ice (14.11.) | 115,9 | C Moll | 377 eigenständig (496 roh; keyboard 127, synth 112, guitar 55, woodwinds 49) |
+| Cuban Psychedelia (14.11.) | 125,7 | G Moll | 139 eigenständig (154 roh; guitar 98, brass 18, synth 8, keyboard 7) |
+| Garden of Night Blooms (13.11.) | 84,6 | E Moll | 182 eigenständig (188 roh; guitar 59, strings 38, brass 34, woodwinds 34) |
+| Dusty Highway Dreams (13.11.) | 131,9 | E Moll | 21 eigenständig (21 roh; guitar 20, woodwinds 1) |
+| Siegfried's Motorik (14.11.) | 99 | B Moll | 41 eigenständig (50 roh; synth 16, guitar 12, strings 11, keyboard 2) |
+| Eerie Minor Groove (13.11.) | 128 | C Moll | 109 eigenständig (111 roh; lead_vocals 74, brass 16, synth 15, guitar 4) |
+| Brain Gym Hard Bop (13.11.) | 128,2 | C Moll | 130 eigenständig (159 roh; woodwinds 78, brass 36, guitar 6, keyboard 4) |
+| Bouncy Breakbeat (13.11.) | 123,6 | G Moll | 294 eigenständig (395 roh; woodwinds 184, brass 76, guitar 22, keyboard 10) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
