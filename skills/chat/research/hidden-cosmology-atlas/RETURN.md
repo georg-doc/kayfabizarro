@@ -1,3 +1,7 @@
+## Publikationsabschluss · 2026-11-14
+
+Atlas-Version26 erfolgreich veröffentlicht, einschließlich Knapp/Lacatski. GitHub-Inhaltcommit `2ca7114db93d693498ce0226813928ba3c18fcb0`,19/19 Dateien exakt zurückgelesen. Site-Quellstand `28fbdc19efa7e4972ab5f8fb5170d7fe13075e7b`. [Vier Profile](https://kfb-research-atlas.frizzlebob.chatgpt.site/author-lenses.html) · [Publikationsbeleg](packages/author-lenses-november/SITE_PUBLICATION_2026-11-14.json). Frühere Knapp/Lacatski-Site-Blockade damit erledigt. Live-Browser verlangt persönliche Anmeldung; gerenderte Produktionsansicht nicht unabhängig sichtbar. Lokale Quellen-/Rücknavigation geprüft. Nächstes Gate: Georgs Sicht auf Themenbreite und Vergleichslinsen.
+
 ## 2026-11-14 · Grusch, Effenberger, Grandt, Eggert
 
 [Vier neue Breitenprofile](packages/author-lenses-november/README.md).42 Themen,38 Quellen,21 redaktionelle Vergleiche,9 dokumentierte Beziehungen. [Return](packages/author-lenses-november/RETURN.md). Site-Publikation wird im abschließenden Beleg dokumentiert; Knapp/Lacatski dabei eingeschlossen.
