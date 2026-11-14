@@ -7,7 +7,7 @@
 
 **Anlass (Georg 14.11., wörtlich):** „(boden)schatten haben wir bei WSA patch auch noch nicht …“ und „auch der restliche schatten ist flackerig und buggy (auf kopf etc)“. Bezug: Card Dungeon R0 auf deiner InfiniteRooms-Site (`?dungeon=r0`).
 
-**Ziel:** Schatten im Dungeon wie im Spiel: weiche Kontaktschatten am Boden unter Figuren, Füßen, Truhen, Säulen und Deckungen, ein ruhiger Sonnen- bzw. Raumlicht-Schatten ohne Flackern und ohne Schattenflecken auf Kopf und Körper der Figuren. Nichts neu erfinden: die Module aus dem Spiel-Repo `georg-doc/KFB-Stunt-Car-Race`, `game/integration-r2` @bed60d284ce303ac57df72b53ad5e15e171a941d unverändert importieren; nötige Anpassungen als Vorschlag mit Begründung zurück.
+**Ziel:** Schatten im Dungeon wie im Spiel: weiche Kontaktschatten am Boden unter Figuren, Füßen, Truhen, Säulen und Deckungen, ein ruhiger Sonnen- bzw. Raumlicht-Schatten ohne Flackern und ohne Schattenflecken auf Kopf und Körper der Figuren. Nichts neu erfinden: die Module aus dem Spiel-Repo `georg-doc/KFB-Stunt-Car-Race`, `game/integration-r2` @8ef8a7100f719229e740ae09db2c4af9b1141364 unverändert importieren; nötige Anpassungen als Vorschlag mit Begründung zurück. Dieser Stand bringt auch FB nach der SSOT ohne Hash-Schalter (V-1731): Mund Satz A aus `frizzlebob.character.json`, FB-Lider, T-Shirt; FB nur über den Spiel-Lader, kein eigener Hash, kein Original-Mund.
 
 **Bestand, der das löst:**
 - Licht und Schattenkasten: das eine Rig `src/vendor/light/kfb-stage-light.v1.1.js` (V-385, V-392, V-440) mit `fitShadow` – Kasten eng um den Inhalt, Mittelpunkt auf das Texelraster gerastet (kein Flackern beim Bewegen), normalBias und bias aus dem Texel abgeleitet statt fester Zahlen. Je Raum den Kasten auf den aktiven Raum einpassen.
