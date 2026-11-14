@@ -1,6 +1,6 @@
-# Für Claude Design (Deck Viewer) · Deck-Viewer v5 als einbaufertiges Modul für den Fractal Almanac im Spiel und die Website · 14.11. (Georg, V-1757)
+# Für Claude Design (Website-Chat) · Deck-Viewer v5 als einbaufertiges Modul für den Fractal Almanac im Spiel und die Website · 14.11. (Georg, V-1757)
 
-**Anlass (Georg 14.11., wörtlich):** „ja, deck-viewer v5 in den almanac einbauen – mit clean claymation HUD elementen & clay-buttons etc“. Der Viewer v5 ist deine Seite; im Spiel läuft er so nicht (er braucht die Seiten-Laufzeit `support.js` und lädt den Korpus direkt aus `raw.githubusercontent.com/georg-doc/kayfabizarro`, das Repo wird privat, V-1746). Darum: dieselben Ansichten als Modul, das das Spiel und die Website einhängen.
+**Anlass (Georg 14.11., wörtlich):** „ja, deck-viewer v5 in den almanac einbauen – mit clean claymation HUD elementen & clay-buttons etc“. Der Viewer v5 ist eine Claude-Design-Seite (auch die Website braucht ihn, darum hier im Website-Chat); im Spiel läuft er so nicht (er braucht die Seiten-Laufzeit `support.js` und lädt den Korpus direkt aus `raw.githubusercontent.com/georg-doc/kayfabizarro`, das Repo wird privat, V-1746). Darum: dieselben Ansichten als Modul, das das Spiel und die Website einhängen.
 
 **Quellen (lesen, nicht neu erfinden):**
 - Viewer v5: Repo `georg-doc/kayfabizarro`, Zweig `sync/lab-rkit-2026-10-09` @cbbc4be5, Ordner `KFB Comic Card Deck Viewer v4 (WS0)/`: `KFB Deck Viewer v5.dc.html` (Kandidat), `deckviewer/kfb-corpus.js`, `deckviewer/ink-frame.js`, `deckviewer/kfb-ink-canon.js`, `HOUSEKEEPING.md`, `CHANGELOG.md` (Ansichten Reader · Galerie · Stapel · Coverflow · Full-View, Deep-Links `?deck=&card=`).
