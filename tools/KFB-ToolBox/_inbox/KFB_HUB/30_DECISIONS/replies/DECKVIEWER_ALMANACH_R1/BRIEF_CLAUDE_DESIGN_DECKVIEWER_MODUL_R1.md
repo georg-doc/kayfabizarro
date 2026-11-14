@@ -1,0 +1,18 @@
+# Für Claude Design (Deck Viewer) · Deck-Viewer v5 als einbaufertiges Modul für den Fractal Almanac im Spiel und die Website · 14.11. (Georg, V-1757)
+
+**Anlass (Georg 14.11., wörtlich):** „ja, deck-viewer v5 in den almanac einbauen – mit clean claymation HUD elementen & clay-buttons etc“. Der Viewer v5 ist deine Seite; im Spiel läuft er so nicht (er braucht die Seiten-Laufzeit `support.js` und lädt den Korpus direkt aus `raw.githubusercontent.com/georg-doc/kayfabizarro`, das Repo wird privat, V-1746). Darum: dieselben Ansichten als Modul, das das Spiel und die Website einhängen.
+
+**Quellen (lesen, nicht neu erfinden):**
+- Viewer v5: Repo `georg-doc/kayfabizarro`, Zweig `sync/lab-rkit-2026-10-09` @cbbc4be5, Ordner `KFB Comic Card Deck Viewer v4 (WS0)/`: `KFB Deck Viewer v5.dc.html` (Kandidat), `deckviewer/kfb-corpus.js`, `deckviewer/ink-frame.js`, `deckviewer/kfb-ink-canon.js`, `HOUSEKEEPING.md`, `CHANGELOG.md` (Ansichten Reader · Galerie · Stapel · Coverflow · Full-View, Deep-Links `?deck=&card=`).
+- Almanach im Spiel: Repo `georg-doc/KFB-Stunt-Car-Race`, Zweig `game/integration-r2` @67cad7952: `src/hud/hudL3.js` (Hülle mit Ebenen Decks → Karten eines Decks → Detail), `src/HudClay.jsx` (`openAlmanac`, Daten über `host.almanac()`), `src/cardImage.js` (`cardFaceUrl(deckId, num, width)`, Original-Kartenbild, nie umgefärbt), `src/data/cards.json` (Decktitel, Kartenzahl).
+- Clay-Look: `src/data/hud/kfb-clay-kit.r2.json`, `src/data/hud/hud-skins.r2.json`, `src/data/hud/hud-screen.r1.json` im selben Zweig; Richtung von Georg für das HUD (14.11.): „cleanen panels/overlays … claymation fluff balls … claybound-style buttons“, Bildvorlage Knöpfe https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WEBSITE_R1/refs/ref_claybound_menu.jpg (nur Haltung und Material). Almanach-Regeln: Stapel oben links, geht senkrecht nach unten auf (V-1480); Klick → Overlay mit Decks und Raster → Viewer (V-043).
+
+**Ziel:** ein Ordner `deckViewer/` mit `index.js` (ES-Modul, Vanilla, ohne Build-Schritt), `deckViewer.css` (falls nötig) und `README.md`:
+- `createDeckViewer({ el, decks, cardUrl, pdfUrl, mode, at, skin, onClose, onKey })` → `{ open(at), setMode(mode), state(), dispose() }`.
+- `decks()`: vom Host, Liste `{ id, title, cards: [{ num, name }] }` (im Spiel nur die gesammelten Karten); `cardUrl(deckId, num, px)` liefert das Kartenbild (im Spiel `cardFaceUrl`); `pdfUrl(deckId)` optional für Reader/Seiten, sonst Reader über Kartenbilder. Kein eigener Abruf von kayfabizarro-Adressen.
+- Ansichten wie v5: Reader, Galerie, Stapel, Coverflow, Full-View; `at: { deck, num }` öffnet direkt dort (wie die Deep-Links).
+- Aussehen: ruhige, flache Clay-Panels und Clay-Knöpfe aus dem Clay-Kit (Zustände Ruhe, Hover, Klick mit leichter Stauchung), Karten bleiben Originalbilder mit der Spiel-Kartenkante; kein Papier-Theme im Spiel (`skin: 'clay'`), Papier-Theme für die Website wählbar (`skin: 'paper'`).
+- Tasten nur über den Host (`onKey`-Rückruf; im Spiel verteilt der Router `src/hostKeys.js` die Tasten, V-1474); Maus, Touch und Rad im Modul.
+- Leistung: wie v5 nur das Fokusblatt in voller Größe, Nachbarn klein; nichts blockiert das Spiel-Bild.
+
+**Rückgabe:** Projekt-Ordner mit `deckViewer/` und einer Testseite, die `createDeckViewer` mit drei Beispieldecks zeigt, dazu je Ansicht ein Screenshot (Clay und Papier). WS0 hängt das Modul in `src/hud/hudL3.js` als Ebene 2/3 des Almanachs ein und gibt dir einen Bildbeleg aus dem Spiel zurück.
