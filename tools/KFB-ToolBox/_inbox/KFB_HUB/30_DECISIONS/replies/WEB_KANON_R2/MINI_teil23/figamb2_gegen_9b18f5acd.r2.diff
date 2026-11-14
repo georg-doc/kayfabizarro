@@ -1,0 +1,40 @@
+diff --git a/src/look/figureAmbient.js b/src/look/figureAmbient.js
+index 14443a75..aed66edf 100644
+--- a/src/look/figureAmbient.js
++++ b/src/look/figureAmbient.js
+@@ -7,6 +7,13 @@
+ // noch die Hemisphäre des einen Rigs auf (Boden-Ton des Bioms × bounce), wie beim Gelände. Kinn/Unterseite bleibt dunkler als die Sonnenseite.
+ export const FIGAMB_ON = !(typeof location !== 'undefined' && /(^|[#,])figamb=0(,|$)/.test(location.hash)) // Georg 23.10.: Standard; figamb=0 = alter Stand
+ export const FIG_AMB = Object.freeze({ day: 1.0, night: 2.6 }) // Belichtungsfaktor der Figuren, nach mood.glow (0 Tag … 1 Nacht); Georg 23.10.: „etwas kräftiger“ (1,9 → 2,6)
++// figamb=2 (Georg 14.11., V-1751: „rechts Web-Datei mit korrektem kopf-schatten“, Dory „schatten & colors“): Ursache gemessen (WSB WEB_KANON_R2 Teil 3, gleiche Kamera und Lichter
++// wie das Bildpaar): der Bodenanteil der Rig-Hemisphäre wirkt auf Figuren × 2,5 (uFigGround in applyFigureShadow, q300) und hellt jede nach unten gewandte Fläche auf –
++// Kopfunterseite, Kinn, Bauch – und mischt dabei den Bodenton ins Material (Dorys Orange wird heller, gemessen +4,5 … +7 von 255). Mit 1,0 wirkt die Hemisphäre auf Figuren wie auf allem
++// anderen; das ist auch der Wert der Web-Datei und von figschatten=1. Eigenschatten-Dämpfung (0,55, q300) und Belichtung (FIG_AMB) bleiben. Ohne figamb=2 alles wie heute.
++export const FIGAMB_V2 = typeof location !== 'undefined' && /(^|[#,])figamb=2(,|$)/.test(location.hash)
++export const FIG_AMB_V2 = Object.freeze({ ground: 1.0 }) // Bodenanteil der Hemisphäre auf Figuren mit figamb=2 (gemessen: bester Wert für FB, Hunky und Dory, Abweichung der Figurenpixel zur Web-Datei −43 … −67 %)
++export const figurBodenlicht = (heute) => (FIGAMB_V2 ? FIG_AMB_V2.ground : heute) // ein Wert für alle Figuren (kein Figuren-Sonderweg)
+ const U = { uFigAmb: { value: 1 } }
+ export const FIG_AMB_TEST = { off: false, U } // Prüfhilfe: A/B im selben Moment (Faktor 1)
+ 
+diff --git a/src/m1/M1World.jsx b/src/m1/M1World.jsx
+index 29379341..c5fc8b67 100644
+--- a/src/m1/M1World.jsx
++++ b/src/m1/M1World.jsx
+@@ -111,7 +111,7 @@ import { SEED_HASH, BIOME_CFG } from '../world/biomeField.js'   // N-194: Welt-S
+ import { createAmphitheater, amphLog, AMPH_LOD_URL } from '../modules/amphitheater'
+ import { SHADE_ON, SHADE_TEST, scanShadeFloor, updateShadeFloor } from '../look/shadeFloor' // V-683: Schattenseite aller Nicht-Gelände-Objekte (shade=1, A/B)
+ import { FIGLIGHT_ON, FIG_LIGHT_TEST, attachFigureLights } from '../look/figureLights' // Figurenlicht R1 (Georg 23.10.): je Figur, die nächsten vier, immer, mit Lichtkreis (figlight=1, A/B)
+-import { FIGAMB_ON, FIG_AMB_TEST, applyFigureAmbient, updateFigureAmbient } from '../look/figureAmbient' // Georg 23.10.: Figuren lesbar mit bestehendem Licht (figamb=1, A/B)
++import { FIGAMB_ON, FIG_AMB_TEST, applyFigureAmbient, updateFigureAmbient, figurBodenlicht } from '../look/figureAmbient' // Georg 23.10.: Figuren lesbar mit bestehendem Licht (figamb=1, A/B)
+ import { MIBFIX_ON } from '../look/halsSchatten.js'   // Arena R1 Stufe 1 (q616, mibfix=r1)
+ import { OUTLINE_ON, OUTLINE_TEST, createFigureOutline } from '../look/figureOutline' // Probe Georg 23.10.: Umriss nur außen für Figuren (outline=1)
+ import { SHADOW_CULL_ON, createShadowCull } from '../look/shadowCull.js'
+@@ -1199,7 +1199,7 @@ function FigureShade() {   // Figuren-Antwort des einen Rigs (Eigenschatten 0,55
+   useEffect(() => { if (FIGAMB_ON) expose('FigAmb', Object.assign(FIG_AMB_TEST, { refresh: () => updateFigureAmbient(mods.light?.mood?.() || LIGHT_INFO()?.mood) })) }, []) // refresh: Prüfhilfe bei angehaltener Uhr
+   const U = useMemo(() => Object.fromEntries(['player', 'partner'].map((k) => [k, { uFootY: { value: 0 }, uFootH: { value: 0.35 * K }, uFootK: { value: 0.2 } }])), [])
+   const { gl } = useThree(), FSCH = useMemo(() => (FIGSCHATTEN_ON ? createFigurSchatten() : null), [])   // V-1627
+-  const t = useRef(0), v = useMemo(() => new THREE.Vector3(), []), FS = useMemo(() => ({ uFigShadowK: { value: 0.55 }, uFigBleed: { value: 0 }, uFigSkip: { value: 0 }, uFigGround: { value: FSCH ? FIGSCHATTEN.bodenlicht : FIG_GROUND }, ...(FSCH ? FSCH.uniforms : {}) }), [])   // V-1627 Kontrast-Vorschlag: mit figschatten weniger Bodenaufhellung   // Selbstschatten auf Figuren gedämpft (Arm-Kante, Georg 21.10.)
++  const t = useRef(0), v = useMemo(() => new THREE.Vector3(), []), FS = useMemo(() => ({ uFigShadowK: { value: 0.55 }, uFigBleed: { value: 0 }, uFigSkip: { value: 0 }, uFigGround: { value: figurBodenlicht(FSCH ? FIGSCHATTEN.bodenlicht : FIG_GROUND) }, ...(FSCH ? FSCH.uniforms : {}) }), [])   // V-1627 Kontrast-Vorschlag: mit figschatten weniger Bodenaufhellung   // Selbstschatten auf Figuren gedämpft (Arm-Kante, Georg 21.10.)
+   useEffect(() => { expose('FigShadow', FS); if (FSCH) expose('FigSchatten', { info: FSCH.info, dbg: FIGSCHATTEN_DBG, rt: FSCH.rt, cam: FSCH.cam }); return () => FSCH?.dispose() }, [FS])   // Prüfhilfe Eigenschatten (V-842, V-1627)
+   useFrame((_, dt) => { const scan = (t.current -= dt) <= 0; if (scan) t.current = 1
+     const list = [['player', mods.player?.object3d], ['partner', mods.partner?.object3d], ...[...(mods.npc?.holders?.() || []), ...(mods.groups?.holders?.() || []), ...(mods.band?.holders?.() || [])].map((h) => [h.name, h]), ...SZ_FIG.figs.map((h) => ['sz:' + h.uuid, h]), ...(MIBFIX_ON ? (mods.mib?.actors?.() || []).map((a) => ['mib:' + a.object3d.name, a.object3d]) : []), ...(ARENA_ON ? ARENA.holders() : [])]   // WS-NPC: Bewohner wie Spieler und Partnerin   // Arena R1 q616a (mibfix=r1): MiB-Ereignis-Figuren mit der Figuren-Antwort des Rigs
