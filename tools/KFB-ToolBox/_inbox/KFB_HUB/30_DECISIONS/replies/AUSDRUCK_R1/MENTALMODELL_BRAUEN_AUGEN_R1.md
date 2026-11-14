@@ -34,3 +34,18 @@ Stärken: **heute** = bisherige Werte (Georg q683: bleibt Standard). **cartoon**
 - **Grenze aus der Geometrie, nicht geraten:** Oberkante des Augapfels aus dem Augenrahmen (Augenmitte + R). Unterkante der Braue an beiden Enden aus ihrer Hülle im Ruhezustand. Spalt mindestens 0,08 R.
 - Lid-Schräge (Rig-Kanal `slant`) und Oberlid je Pose aus der Tabelle, gekoppelt an die tatsächlich erreichte Brauenhöhe.
 - Beleg: nah und mittlere Entfernung, gleiche Kamera. Ein Prüfbild mit eingezeichneter Grenze (Augen-Oberkante) zeigt, dass keine Braue darunter rutscht.
+
+## 5 · R2 nach der Recherche (RECHERCHE_MIMIK_R1.md: Etherington, Williams, Cohen/SpongeBob, John K./Ren, FACS)
+- **Kontaktlinie ist die Oberlid-Kante, nicht der Augapfel.** Die Braue steuert, das Lid trägt die Form („compress or pull open“).
+  - Bei Wut senkt sich das Oberlid um 30–45 % und kippt parallel zur Braue, innen tief. Die Braue liegt auf dieser Kante, Spalt 0, nie darunter.
+  - Neutral und bei Trauer schwebt sie 0,05–0,1 Augenhöhen darüber.
+  - Die Pupille bleibt bei Wut ganz sichtbar.
+- **Drei Regler je Braue:** Innenhöhe, Außenhöhe, Zug zur Mitte (FACS AU1/AU2/AU4).
+  - Kein Drehen um die Mitte. Bei Wut liegt der Drehpunkt nahe am Außenende.
+- **Durchgehende Linie:** Beide Brauen ergeben eine Geste: V (Wut), Dach (Sorge), Welle (Skepsis).
+- **Takes:**
+  - Ausholen mit Augen zu, Brauen auf den Lidern.
+  - Akzent: Brauen schnellen hoch, das Auge streckt sich nach oben.
+  - Der Akzent steht etwa 6 Frames, dann folgt die Beruhigung. Der Kopf führt.
+- **Ohren:** hoch und vorn = Wachheit, Überraschung, Freude · flach zurück = Wut, Angst · hängend = Trauer · ein Ohr zuckt = Skepsis.
+- **Werte je Ausdruck:** Tabelle (b) in RECHERCHE_MIMIK_R1.md. Die Richtungen sind belegt, die Zahlen sind Startwerte für das Rig.
