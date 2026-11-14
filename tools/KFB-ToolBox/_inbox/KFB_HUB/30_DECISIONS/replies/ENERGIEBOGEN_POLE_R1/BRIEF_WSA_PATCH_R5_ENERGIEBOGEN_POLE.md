@@ -1,0 +1,11 @@
+# Für WSA Patch (Karten-Räume) · R5: Recherche Pol- und Quellen-Effekte für die vier Energiebögen · 14.11. (Georg, V-1708, V-1772)
+
+**Anlass:** Georg (Hub q550): „alle sind gut; -> aber überall fehlen noch die passenden VFX an den polen/quellen -> bitte auch recherchieren“. Georg 14.11.: auf patch.gg erscheinen täglich neue Module, Remixes und Donoren – die erste Quelle vor jedem Eigenbau (V-1767). Reihenfolge: nach R4.
+
+**Bestand (unverändert lassen):** die vier Bogen-Rezepte SOLAR_BRIDGE, SPECTRAL_RIBBON, VOLTAGE_FILAMENT, INK_TENSION in `src/data/vfx/energy-arc.r1.json` und `src/vfx/energy-poles.r1.js` (Repo `georg-doc/KFB-Stunt-Car-Race`, Stamm `game/integration-r2` @93c848eeb); die Bögen bleiben, gesucht sind nur die Effekte an den beiden Enden (Pol bzw. Quelle): Ladung, Funken, Glut, Bodenleuchten, Kontakt-Knistern, Ton. Vorhandene Effekt-Bausteine im Spiel zum Vergleich: Patch-Feuer (`src/look/feuerNaht.js`), Patch Elements (`src/vendor/elements/`, geparkt hinter `elemente=r1`).
+
+**Ziel:** je Bogen-Art zwei bis drei fertige Kandidaten aus patch.gg (Module, Remixes, Donoren), ersatzweise aus freien Paketen; nichts selbst gezeichnet. Je Kandidat: Seite/URL, ob Quelle und Nutzung erlaubt sind (wie auf der Seite angegeben), Technik (three.js/Shader/Teilchen), kurzes Video oder Bildfolge am Pol eines unserer Bögen (Bogen aus dem Bestand, Effekt am Ende), ungefähre Kosten pro Bild.
+
+**Regeln:** Fachwissen aus `KFB_HUB/30_DECISIONS/replies/VFX_FACHPROMPTS_R1/` (README, PROMPT_PYRO, PROMPT_ATMOSPHERE) anwenden; Effekt nur dort, wo Energie austritt oder auftrifft, mit der Kraftrichtung (V-1608/q590-Regel: Ursache und Richtung); je Bogen-Art die Kandidaten nebeneinander in Spielgeschwindigkeit neben einem echten Spiel-Vorbild zeigen und vor der Rückgabe gegen PROMPT_PYRO §9 (Anti-Patterns) prüfen, was selbst gebaut wirkt, geht nicht zurück; Downloads fremder Pakete nur nach Georgs Ja; keine eigenen VFX-Formen vorzeigen; Kandidaten unverändert importierbar nach Host-Vertrag R1 (`create(options) → { object3d, update, dispose }`, `replies/KFB_HOST_CONTRACT_R3F_R1.md`).
+
+**Rückgabe als Kommentar in PR #49:** Tabelle Bogen-Art → Kandidaten (URL, Erlaubnis, Technik, Kosten), je Kandidat ein Video bzw. eine Bildfolge; WS0 stellt daraus die Hub-Frage mit den Bildern, Georg wählt.
