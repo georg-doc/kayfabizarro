@@ -93,6 +93,11 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Eerie Minor Groove (13.11.) | 128 | C Moll | 109 eigenständig (111 roh; lead_vocals 74, brass 16, synth 15, guitar 4) |
 | Brain Gym Hard Bop (13.11.) | 128,2 | C Moll | 130 eigenständig (159 roh; woodwinds 78, brass 36, guitar 6, keyboard 4) |
 | Bouncy Breakbeat (13.11.) | 123,6 | G Moll | 294 eigenständig (395 roh; woodwinds 184, brass 76, guitar 22, keyboard 10) |
+| Xenolith Arpeggios (14.11.) | 138,9 | G Moll | 188 eigenständig (192 roh; guitar 62, backing_vocals 36, brass 20, lead_vocals 20) |
+| Neptune's Rebellion (14.11.) | 139,1 | G Moll | 30 eigenständig (31 roh; brass 19, strings 9, woodwinds 2) |
+| Reverberating Honkytonk (14.11.) | 115,5 | B Moll | 90 eigenständig (91 roh; guitar 75, brass 6, woodwinds 5, strings 2) |
+| Synth Blob Beat (14.11.) | 120,7 | C Moll | 3 eigenständig (3 roh; guitar 2, synth 1) |
+| Psychedelic Groove Gun (14.11.) | 128,6 | E Moll | 14 eigenständig (14 roh; brass 10, synth 2, woodwinds 2) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
