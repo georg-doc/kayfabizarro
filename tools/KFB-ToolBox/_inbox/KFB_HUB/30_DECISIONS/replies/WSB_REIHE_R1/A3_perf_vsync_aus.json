@@ -1,0 +1,237 @@
+{
+ "schema": "kfb.perf/1",
+ "vsync": "aus (--disable-frame-rate-limit --disable-gpu-vsync): Bildzeit = echte Rechenzeit",
+ "methode": "je Lauf frischer Browser (kalt = leerer Cache, warm = Neuladen im selben Kontext), Bildzeit 10 s je Ort per requestAnimationFrame",
+ "geraet": "Mac mini (WSB), Chromium Playwright, ANGLE Metal, 1440×900 @1",
+ "stand": {
+  "zweig": "site/stage",
+  "build": "58b070e6f3c63a444841b5390ea3fac9e337247c",
+  "notiz": "Fusskontakte je Fuss (3D-Schatten fuehrt), Soldaten Einzelschuss, Mausfang-Diagnose je Klick",
+  "datum": "2026-11-13T23:50:06.373Z"
+ },
+ "gemessen": "2026-11-14T03:02:58.046Z",
+ "laeufe": {
+  "A_release": {
+   "url": "/",
+   "seitenfehler": [],
+   "konsole": [],
+   "warnungen": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "using deprecated parameters for the initialization function; pass a single object instead",
+    "WebGL: INVALID_VALUE: texSubImage2D: no pixels",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found."
+   ],
+   "abrufe": [
+    "fail(net::ERR_ABORTED) /kfb-songs/kitsune_no_majo.m4a"
+   ],
+   "orte": {
+    "start": {
+     "bildzeit": {
+      "bilder": 1080,
+      "fps": 108.3,
+      "p50": 9.4,
+      "p95": 11.1,
+      "p99": 14,
+      "max": 26.4,
+      "ueber33ms": 0
+     },
+     "speicher": {
+      "jsHeapMB": 420.9,
+      "jsHeapTotalMB": 473.5
+     }
+    }
+   },
+   "kalt": {
+    "domMs": 485,
+    "canvasMs": 546,
+    "readyMs": 7975,
+    "transferMB": 27.7
+   },
+   "warm": {
+    "domMs": 312,
+    "canvasMs": 325,
+    "readyMs": 7307,
+    "transferMB": 6.9
+   },
+   "debugGlobal": "undefined"
+  },
+  "B_release_debug": {
+   "url": "/#m1,harvest,look=terrain3,world=endless,veg=cartoon,hud=v6,s…",
+   "seitenfehler": [],
+   "konsole": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "warnungen": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "using deprecated parameters for the initialization function; pass a single object instead",
+    "WebGL: INVALID_VALUE: texSubImage2D: no pixels",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found.",
+    "THREE.WebGLRenderer: Texture marked for update but no image data found."
+   ],
+   "abrufe": [
+    "fail(net::ERR_ABORTED) /kfb-songs/bluegrass_porch_roll.m4a",
+    "fail(net::ERR_ABORTED) /kfb-songs/bluegrass_porch_roll.m4a",
+    "404 /raw/52adc8f139a08eb0ea4735e56415ba8056948a6a/media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png",
+    "fail(net::ERR_ABORTED) /kfb-songs/1_6_spooky_cartoon_groove.m4a",
+    "fail(net::ERR_ABORTED) /kfb-songs/1_6_spooky_cartoon_groove.m4a"
+   ],
+   "orte": {
+    "start": {
+     "bildzeit": {
+      "bilder": 1144,
+      "fps": 114.6,
+      "p50": 8.6,
+      "p95": 12.4,
+      "p99": 15,
+      "max": 16.8,
+      "ueber33ms": 0
+     },
+     "speicher": {
+      "jsHeapMB": 578,
+      "jsHeapTotalMB": 653.4,
+      "geometrien": 216,
+      "texturen": 181,
+      "drawCalls": 292,
+      "dreiecke": 747245
+     }
+    },
+    "wald": {
+     "pos": [
+      60,
+      -220
+     ],
+     "bildzeit": {
+      "bilder": 809,
+      "fps": 81.2,
+      "p50": 12.3,
+      "p95": 13.5,
+      "p99": 13.8,
+      "max": 18.3,
+      "ueber33ms": 0
+     },
+     "speicher": {
+      "jsHeapMB": 648.5,
+      "jsHeapTotalMB": 700.2,
+      "geometrien": 274,
+      "texturen": 186,
+      "drawCalls": 252,
+      "dreiecke": 898910
+     }
+    },
+    "arena": {
+     "pos": [
+      237.6,
+      96.9
+     ],
+     "gegner": [
+      237.6,
+      118.9
+     ],
+     "anzahl": 6,
+     "gottmodus": true,
+     "bildzeit": {
+      "bilder": 1542,
+      "fps": 154.5,
+      "p50": 6.2,
+      "p95": 12,
+      "p99": 14.6,
+      "max": 34.1,
+      "ueber33ms": 1
+     },
+     "speicher": {
+      "jsHeapMB": 701.7,
+      "jsHeapTotalMB": 753,
+      "geometrien": 302,
+      "texturen": 186,
+      "drawCalls": 215,
+      "dreiecke": 1156378
+     }
+    }
+   },
+   "kalt": {
+    "domMs": 359,
+    "canvasMs": 371,
+    "readyMs": 8398,
+    "transferMB": 42.1
+   },
+   "warm": {
+    "domMs": 264,
+    "canvasMs": 329,
+    "readyMs": 7492,
+    "transferMB": 6.9
+   },
+   "debugGlobal": "object"
+  }
+ }
+}
