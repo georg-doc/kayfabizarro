@@ -1,6 +1,6 @@
 # Mixamo-Liste für später · Kulturtechniken R1 (Georg q692, 15.11.2026)
 
-Du hast alle fünf Reihen gewählt. Lade sie, wann es passt: Link öffnen, Clip anklicken, **Download** mit **FBX Binary**, **With Skin** (bringt die Ruhehaltung mit, das braucht WSB), **30 fps**. Die Datei heißt wie der Clip.
+Du hast alle fünf Reihen gewählt. Lade sie, wann es passt: Link öffnen, Clip anklicken, **Download** mit **FBX Binary**, **Without Skin**, **30 fps**, auf das KayKit-Rig wie bisher (so übernimmt WSB sie). Die Datei heißt wie der Clip.
 
 Ablage: Dropbox `KFB_HUB/50_BLENDER/KULTURTECHNIKEN_R1/in_mixamo/`. WSB rendert sie danach auf der Bühne, und du wählst wieder im Hub.
 
