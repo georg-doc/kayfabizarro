@@ -40,11 +40,12 @@ Dazu aus dem Bestand, wie im Teil-A-Return vorgeschlagen: die 20 abgenommenen Ta
 
 **Requisiten für diese Runde:**
 - Lesen: `50_BLENDER/K11/props/KFB_Book_Open.k11.glb` an `KFB_Grip`.
-- Comic-Heft, geschlossenes Buch, Karte für l4: Platzhalter, Build folgt.
+- Karte für l4: das vorhandene Kartenmodul nach V-1348, kein eigener Bau. Es ist eine flache Ebene mit KFB-Tuschekontur und KFB-Rückseite (Stamm `src/world/cardRelief.js`, Rückseite `src/assets/cards/KayfaBizarro_Card_Backside_01_lowrez.png`). Du misst nur den festen slotOffset an `KFB_Grip`.
+- Comic-Heft, geschlossenes Buch: Platzhalter, Build folgt.
 - Fluff übergeben und f7: `KFB_HUB/50_BLENDER/B41/props/KFB_Throw_FluffBomb.medium.r1.glb`.
 - Kessel und Flasche (f5): Platzhalter, Build folgt.
 - Geschenke: `Present_Base.gltf` aus dem Brief.
-- Sitz-Clips d3, d4, d5: Stuhl Platzhalter, Build folgt. Du meldest die Sitzhöhe je Clip.
+- Sitz-Clips d3, d4, d5: Hocker aus `50_BLENDER/B34/out/KFB_Ship_Table_Stools.r1.glb`, unverändert. Du meldest die Sitzhöhe je Clip. Passt die Höhe nicht, gilt Platzhalter, Build folgt.
 
 **Rückgabe:**
 - Bundle und RETURN.md in `KFB_HUB/30_DECISIONS/replies/KULTURTECHNIKEN_R1/`.
