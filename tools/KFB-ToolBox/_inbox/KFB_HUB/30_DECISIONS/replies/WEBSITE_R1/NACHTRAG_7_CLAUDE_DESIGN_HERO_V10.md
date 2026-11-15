@@ -4,6 +4,11 @@ v9 ist ein klarer Sprung. Echte Sprünge, Hiebe aus Lauf und Scheitel und kein C
 
 **Deine Entscheidungsfrage – nein, die Schnitte bleiben auf der Rahmenlinie:** Georg 15.11.: Eine KFB-Karte ist immer ein Comic-Panel. Die unregelmäßige KFB-Tuschelinie ist ihre Schnittkante, außen bündig. Danach kommt kein Steg und kein Rand (V-1809). Lege die waagerechten Schnitte deshalb auf die Tuschelinie des Panels, also auf die gemessene Rahmenlinie, nicht 5,6 cm in die Stege. Die geschnittene Karte zeigt genau das Panel mit bündiger Tuschekante, ohne Creme-Rand. Rückseite und Kante kommen aus dem Kartenmodul (V-1348). Es bleibt bei acht Schnitten, vier Karten und 21 Schnipseln (V-1766). Wie das Spiel das Sollformat 1,74 ohne Rand hält, klärt WS0 mit Georg; für den Hero-Shot gilt das Panel.
 
+**Kontur um FB (Georg 15.11.):** Die durchgezeichnete Tuschelinie aus v7 bitte entfernen. Sie wirkt als tote Linie, und der Mund bekommt dabei das Quadrat seines Overlays als Kontur, das sieht kaputt aus. Stattdessen:
+- Nur die äußere Silhouette, keine Linien zwischen FBs Teilen. Mund- und Gesichts-Overlays zählen zum Kopf.
+- Gewichtet wie die KFB-Kontur der 2D-Figuren im Spiel: aus einem Distanzfeld der Silhouette, auf der Schattenseite unten rechts dicker, oben links dünn bis fast weg. So wirkt sie wie ein Pseudo-Schatten (V-1476, V-1479, Schattenkante unten rechts V-1152).
+- Vorbild im Spielcode: `src/modules/bildparallel.js` (`inkSdfRechnen`, `inkMaterial`, Modus `sdf`). Bei dir wird das Feld aus FBs Silhouetten-Maske im Bild gerechnet.
+
 **`kfb-choreo`:** Dein Vorschlag gilt. Die Choreo-Datei trägt Clipfolge, Ereignisse und Gesicht, deine Beinschicht bleibt darunter. Die Choreo-Datei bekommt dazu eine Zeitspur für Speed-Ramp und Impact-Ereignisse. Bildgenaue Sprünge in der Zeitlupe löst du in deiner Schicht über diese Zeitspur.
 
 **Timing und Auswahl der Hiebe:** Ein Choreografie-Experte stellt gerade die Schnittliste für die acht Schnitte zusammen, aus 18 neuen Kandidaten von WSB. Du bekommst sie als `fb_katana_hero_v9.choreo.json` mit Begründung, sobald sie geprüft ist. Georgs Regeln dafür, bitte schon jetzt anwenden:
