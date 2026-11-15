@@ -162,17 +162,25 @@ void main() { vec3 x = vec3( vUv * 60.0, uZ ) + vec3( 0.0, 0.37 * vUv.x * 60.0, 
   }
   R.setRenderTarget(null); R.dispose(); return out;
 };
+window.KFB_LK_TERRAIN12 = async ({ w = 960, h = 640 } = {}) => {
+  const R = K.makeRenderer(w, h), imgs = [];
+  for (const v of ['v11', 'v12']) { const tr = K.makeTerrain(), o = { profile: 'background', seed: 'terrain', scaleRef: K.FIG_H };
+    if (v === 'v11') await K.clayVariant('v11', tr, o); else applyClay12(tr, THREE, o);
+    const st = K.makeStage({ figures: [], fit: { center: { x: 0, y: 0, z: -5 }, radius: 32 }, ground: false }); st.scene.add(tr);
+    st.render(R, K.camera(w, h, 55, [0, 3.4, 16], [0, 0.6, -6])); imgs.push(K.readRGBA(R)); }
+  R.dispose(); R.forceContextLoss?.(); return { out: { terrain_fahrt_v12: pair(imgs[0], imgs[1], ['heute (v1.1)', 'Knete v1.2']) }, info: {} };
+};
 window.KFB_LK = {
-  async runFB({ w = 960, h = 640, p = { rim: 4.0, ring: 0.1, wall: 0.7, depth: 1.4, maxSlope: 1.5, small: 0 }, names = ['Datei', 'Look: Lichtkante'] } = {}) {
+  async runFB({ w = 960, h = 640, p = { rim: 4.0, ring: 0.1, wall: 0.7, depth: 1.4, maxSlope: 1.5, small: 0 }, names = ['Datei', 'Look: Lichtkante'], v12 = false } = {}) {
     const R = K.makeRenderer(w, h), out = {}, info = { p, datei: FB_WEB };
     const { root, height, mundRuhe, chk } = await loadFB(); info.height = +height.toFixed(3); info.mund = mundRuhe;
     const stale = []; root.traverse((o) => { if (o.userData && 'kfbClayOrig' in o.userData) { stale.push(o.name); delete o.userData.kfbClayOrig; } }); info.staleKfbClayOrig = stale; // r1i traegt alte Spiel-Extras, removeClay wuerde sonst JSON statt Material einsetzen (nur im Speicher entfernt)
     const orig = new Map(); root.traverse((o) => { if (o.isMesh) orig.set(o, o.material); });
-    const handle = applyClay11(root, THREE, { profile: 'character', seed: 'frizzlebob', scaleRef: height, skip: (o) => !(o.isMesh && SKIN.test(o.material?.name || '')) });
+    const handle = (v12 ? applyClay12 : applyClay11)(root, THREE, { profile: 'character', seed: 'frizzlebob', scaleRef: height, skip: (o) => !(o.isMesh && SKIN.test(o.material?.name || '')) }); info.clay = v12 ? 'kfb-clay.v1.2' : 'v1.1+LK-Patch';
     info.haut = handle.meshes.length; chk('applyClay');
     handle.uniforms.uClayMottle.value = 0;                      // Marmorierung steckt schon in der Datei
     const look = new Map(); root.traverse((o) => { if (o.isMesh && o.material !== orig.get(o)) { o.material.normalMap = null; o.material.needsUpdate = true; look.set(o, o.material); } }); // Datei-Relief raus, Live-Knete mit Lichtkante rein (nicht doppelt)
-    chk('normalMap'); const { U } = patchLK(root); setLK(U, true, p); chk('patchLK');
+    chk('normalMap'); if (!v12) { const { U } = patchLK(root); setLK(U, true, p); } chk('patchLK');
     const use = (which) => { for (const [o, m] of orig) o.material = which === 'look' && look.has(o) ? look.get(o) : m; };
     const stage = K.makeStage({ figures: [root], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.4 } });
     chk('makeStage'); use('datei'); chk('use datei'); const w1 = kanonWache(root, orig); use('look'); const w2 = kanonWache(root, orig); info.wache = { datei: w1, look: w2 };

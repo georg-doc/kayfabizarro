@@ -33,7 +33,7 @@ try {
   const cfg = { only: ONLY }; if (P) cfg.p = P;
   if (process.argv.includes('--range')) console.log('RANGE', JSON.stringify(await page.evaluate(() => window.KFB_LK_RANGE())));
   const MATCH = process.argv.includes('--match') || process.argv.includes('--range'); if (process.argv.includes('--match')) console.log('MATCH', JSON.stringify(await page.evaluate(() => window.KFB_LK_MATCH())));
-  const r = MATCH ? { out: {}, info: {} } : await page.evaluate((c) => (c.fb ? window.KFB_LK.runFB(c) : window.KFB_LK.run(c)), { ...cfg, fb: process.argv.includes('--fb') });
+  const r = MATCH ? { out: {}, info: {} } : process.argv.includes('--terrain12') ? await page.evaluate(() => window.KFB_LK_TERRAIN12()) : await page.evaluate((c) => (c.fb ? window.KFB_LK.runFB(c) : window.KFB_LK.run(c)), { ...cfg, fb: process.argv.includes('--fb'), v12: process.argv.includes('--v12'), ...(process.argv.includes('--v12') ? { names: ['Datei', 'Knete v1.2'] } : {}) });
   for (const [k, url] of Object.entries(r.out)) { const f = path.join(EVD, `${k}_${TAG}.png`); fs.writeFileSync(f, Buffer.from(url.slice(url.indexOf(',') + 1), 'base64')); console.log('wrote', path.relative(DIR, f)); }
   console.log(JSON.stringify(r.info));
 } finally {
