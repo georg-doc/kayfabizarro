@@ -19,7 +19,7 @@ IDS = ['closed', 'mbp', 'small_open', 'mid_open', 'ah',
        'smile_closed', 'smile_teeth', 'laugh', 'smirk', 'grimace',
        'sad', 'angry', 'surprised', 'scared', 'disgust']
 ALIAS = {'th_tongue': 'l_th', 'teeth_small': 'grimace'}          # Spiel-Dateinamen, die es im R4-Raster unter anderem Namen gibt
-CLOSED_FAMILY = ['closed', 'mbp', 'smile_closed', 'smirk', 'sad']   # Lippenlinie wie closed
+CLOSED_FAMILY = ['closed', 'mbp', 'smile_closed']   # Lippenlinie wie closed (sad und smirk sind in allen R4-Bögen offen, V-1817)
 TALL_RATIO = 1.7
 
 def alpha_of(path):
