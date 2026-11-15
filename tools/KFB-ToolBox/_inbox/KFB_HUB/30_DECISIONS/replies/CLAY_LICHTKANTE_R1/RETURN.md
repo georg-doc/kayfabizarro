@@ -1,5 +1,13 @@
 # RETURN · CLAY_LICHTKANTE_R1 · Stilbild „Lichtkante gebacken“ · 15.11.2026
 
+## Korrektur 15.11. (Georg über WS0, V-1832): FB nur aus der SSOT
+- **Fehler:** Das erste FB-Bild (`fb_face_r1..r3`) kam vom alten Clay-Golden. Dessen proof-kit lädt `FB_TEMPLATE_LOOK_v5b.glb` und blendet `FB_Eye_[LR]` aus. Deshalb fehlten die Augen. Die Bilder sind ungültig und gehen nicht mehr raus.
+- **Neu:** `fb_ssot_face_r3.png` und `fb_ssot_full_r3.png`. FB kommt aus `appearance.export.v.web` = `FB_WEB_KANON.r1i.glb` (Stamm @c3789d36, assets/private), geladen mit GLTFLoader und MeshoptDecoder. Der Mund steht über `fb_mund.v2.js` auf Ruhe („neutral“, Satz yellow_buck). Vergleich „Datei | Look: Lichtkante“.
+- **Look nur auf der Haut** (Materialien FB_Yellow und KFB_Tail_Clay, 9 Netze). Augen, Lider, Brauen, Nase, Mund und Shirt behalten ihr Material aus der Datei. Ein Licht-Rig, kein Randlicht, kein Fresnel.
+- **Wie der Look entsteht:** Auf der Look-Seite wird die gebackene Knet-Normale der Datei durch Live-kfb-clay v1.1 mit Lichtkante ersetzt, damit das Relief nicht doppelt liegt. Die Marmorierung ist aus, denn sie steckt schon in der Textur. Der Unterschied ist also gebackener Kanon gegen Live-Kanon mit Lichtkante. Laut WSB weicht die Datei 1,6 bis 3,2 von 255 vom Spiel ab, also ist der sichtbare Unterschied im Wesentlichen die Lichtkante.
+- **Kanon-Wache** im Code vor jedem Bild, auf beiden Seiten PASS: beide Lederhäute, beide Pupillen, beide Lidhäute, beide Brauen, Nase, beide Ohren, Schwanz, Mund in Ruhe; kein Teil hat sein Material getauscht. Ich habe die Bilder selbst angesehen.
+- **Befund für WS0:** In r1i tragen `KFB_Tail_Bunny` und `KFB_Shirt_FB` noch `userData.kfbClayOrig` aus dem Spiel (glTF-Extras). `applyClay` und `removeClay` setzen dann ein JSON-Objekt statt eines Materials ein: Absturz bzw. falsches Material bei jedem, der auf die Datei Knete anwendet. Im Harness wird der Eintrag nur im Speicher entfernt; die Datei ist unverändert. Fix gehört in den Web-Export (Extras säubern).
+
 Auftrag: Georg wählt Option 2 aus RECHERCHE_R1 (CLAY_PSYCHE_LOOK_R1): Knete mit Lichtkante, gebacken.
 
 ## Ursache (warum die Dellen nur dunkle Flecken waren, V-1451)

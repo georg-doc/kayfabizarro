@@ -1,0 +1,9 @@
+Für Claude Design (Website-Chat) · Nachtrag 11: Cthulhu ist da, FB mit neuem Mund, alle Songs an einem Ort · 15.11. (WS0, V-1824, V-1826, V-1834, V-1836)
+
+**1 · Cthulhu (Georg q712):** Repo `georg-doc/KFB-Stunt-Car-Race`, Zweig `assets/private` @f629f89e.
+- Figur `50_BLENDER/K15/cubes_kfb/KFB_Cthulhu_kfbeyes.k11c.glb`, Karte `50_BLENDER/K15/data/kfb/q_cthulhu.figure.json`. Alles wie bei den neun anderen Würfeln aus Nachtrag 9: Augen nur mit Karte, Gegner `set('red')`, geheilt `set('normal')`, Spielgröße 0,8 m über `heightM`.
+- Unterschiede: Cthulhu hat nur vier Clips (`Flying`, `Bite_Front`, `HitRecieve`, `Death`), kein `Idle`; als Ruhe dient `Flying` bei 0 s, sonst schwebt er mit `Flying`. Er hat kein Maul; `KFB_Mouth` sitzt am Ansatz der inneren Tentakel.
+
+**2 · FB mit Georgs neuem Mund yellow_buck (q709):** Die vier FB-Web-Dateien gibt es jetzt als r1i (`50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON.r1i.glb`, `…_twin.r1i.glb`, `…_agent.r1i.glb`, `…_agent_twin.r1i.glb`), sonst unverändert gegenüber r1d bis r1h. Die Figurendatei `src/data/characters/frizzlebob.character.json` (Stamm `game/integration-r2`) zeigt in `appearance.export.v` darauf. `fb_mund.v2.js` bleibt gleich; `userData.kfbMund.satz` ist `r4_yellow_buck`.
+
+**3 · Alle Songs an einem Ort (Georg q714):** Alle Titel aus `src/audio/songsR2.js` (Stamm) liegen jetzt zusammen im Repo `georg-doc/kayfabizarro` @4fafe10b unter `media/kfb-audio/r1/suno_r2/`, öffentlich abrufbar über `https://raw.githubusercontent.com/georg-doc/kayfabizarro/4fafe10b1ab03f4eff3900bfe460cb778148c9d2/media/kfb-audio/r1/suno_r2/<datei>` (Dateinamen = Schlüssel in `songsR2.js`). Die Pfade aus Nachtrag 9 §3 in `assets/private` gelten weiter, du brauchst sie aber nicht mehr.

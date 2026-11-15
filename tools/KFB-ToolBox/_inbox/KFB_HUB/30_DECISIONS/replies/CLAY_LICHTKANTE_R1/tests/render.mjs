@@ -14,9 +14,10 @@ const P = arg('--p') ? JSON.parse(arg('--p')) : undefined, ONLY = arg('--only') 
 fs.mkdirSync(EVD, { recursive: true });
 
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.glb': 'model/gltf-binary', '.png': 'image/png' };
+const PRIV = path.join(process.env.HOME, 'kfb-ws0/stamm-wt/src/private'); // assets/private (FB-Web-Kanon), nur gelesen, nichts kopiert
 const server = http.createServer((req, res) => {
-  const u = decodeURIComponent(new URL(req.url, 'http://x').pathname), f = path.join(ROOT, u);
-  if (!f.startsWith(ROOT) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); res.end(); return; }
+  const u = decodeURIComponent(new URL(req.url, 'http://x').pathname), base = u.startsWith('/private/') ? PRIV : ROOT, f = path.join(base, u.startsWith('/private/') ? u.slice(9) : u);
+  if (!f.startsWith(base) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); res.end(); return; }
   res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream', 'cache-control': 'no-store' }); fs.createReadStream(f).pipe(res);
 });
 await new Promise((r) => server.listen(0, '127.0.0.1', r));
@@ -30,7 +31,7 @@ try {
   await page.goto(`http://127.0.0.1:${PORT}/CLAY_LICHTKANTE_R1/lichtkante.html`, { waitUntil: 'load' });
   await page.waitForFunction(() => window.KFB_LK_READY === true, null, { timeout: 120000 });
   const cfg = { only: ONLY }; if (P) cfg.p = P;
-  const r = await page.evaluate((c) => window.KFB_LK.run(c), cfg);
+  const r = await page.evaluate((c) => (c.fb ? window.KFB_LK.runFB(c) : window.KFB_LK.run(c)), { ...cfg, fb: process.argv.includes('--fb') });
   for (const [k, url] of Object.entries(r.out)) { const f = path.join(EVD, `${k}_${TAG}.png`); fs.writeFileSync(f, Buffer.from(url.slice(url.indexOf(',') + 1), 'base64')); console.log('wrote', path.relative(DIR, f)); }
   console.log(JSON.stringify(r.info));
 } finally {
