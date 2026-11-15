@@ -4,18 +4,35 @@
    "log": [
     "Mund aus Figurendatei: gpt_a_r2 · Ruhe neutral"
    ],
-   "r4": [],
-   "errs": []
+   "errs": [],
+   "r4": []
   },
   "ohne_schalter": {
    "log": [],
-   "r4": [],
-   "errs": []
+   "errs": [],
+   "r4": []
   },
   "r4_round_clay": {
    "log": [
     "Mund aus Figurendatei: r4_round_clay · Ruhe neutral"
    ],
+   "errs": [],
+   "mixerAngehalten": true,
+   "kamera": {
+    "hoehe": 1.766,
+    "abstand": 0.72,
+    "azimut": 0,
+    "lichtSeite": 0.89,
+    "rect": [
+     0.199,
+     0.193,
+     0.808,
+     0.799
+    ]
+   },
+   "naseUnten": 658,
+   "naseAus": 1,
+   "mundAus": 1,
    "r4": [
     "round_clay/ah",
     "round_clay/closed",
@@ -30,12 +47,60 @@
     "round_clay/small_open",
     "round_clay/smile_closed"
    ],
-   "errs": []
+   "kameraNach": {
+    "pos": [
+     0.04163040548231934,
+     1.2455522032744635,
+     20.40730470943927
+    ],
+    "ziel": [
+     0.016136750103564697,
+     1.2102348313830644,
+     19.684691322371165
+    ],
+    "rect": [
+     0.199,
+     0.193,
+     0.808,
+     0.799
+    ],
+    "licht": {
+     "modus": "sonne",
+     "seite": 0.89,
+     "azimut": 0
+    }
+   },
+   "nase": {
+    "naseUnten": 658,
+    "ruheOben": 671,
+    "ruheUnten": 810,
+    "ohOben": 664,
+    "ohUnten": 831,
+    "abstandRuhe": 13,
+    "abstandOh": 6
+   }
   },
   "r4_full_soft": {
    "log": [
     "Mund aus Figurendatei: r4_full_soft · Ruhe neutral"
    ],
+   "errs": [],
+   "mixerAngehalten": true,
+   "kamera": {
+    "hoehe": 1.766,
+    "abstand": 0.72,
+    "azimut": 0,
+    "lichtSeite": 0.88,
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ]
+   },
+   "naseUnten": 659,
+   "naseAus": 1,
+   "mundAus": 1,
    "r4": [
     "full_soft/ah",
     "full_soft/closed",
@@ -50,12 +115,60 @@
     "full_soft/small_open",
     "full_soft/smile_closed"
    ],
-   "errs": []
+   "kameraNach": {
+    "pos": [
+     0.04608888180774383,
+     1.2447326149420719,
+     20.411169134226615
+    ],
+    "ziel": [
+     0.018925102703849846,
+     1.2094152430506728,
+     19.688616601365695
+    ],
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ],
+    "licht": {
+     "modus": "sonne",
+     "seite": 0.88,
+     "azimut": 0
+    }
+   },
+   "nase": {
+    "naseUnten": 659,
+    "ruheOben": 665,
+    "ruheUnten": 812,
+    "ohOben": 654,
+    "ohUnten": 834,
+    "abstandRuhe": 6,
+    "abstandOh": -5
+   }
   },
   "r4_buck_grin": {
    "log": [
     "Mund aus Figurendatei: r4_buck_grin · Ruhe neutral"
    ],
+   "errs": [],
+   "mixerAngehalten": true,
+   "kamera": {
+    "hoehe": 1.766,
+    "abstand": 0.72,
+    "azimut": 0,
+    "lichtSeite": 0.88,
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ]
+   },
+   "naseUnten": 660,
+   "naseAus": 1,
+   "mundAus": 1,
    "r4": [
     "buck_grin/ah",
     "buck_grin/closed",
@@ -70,12 +183,60 @@
     "buck_grin/small_open",
     "buck_grin/smile_closed"
    ],
-   "errs": []
+   "kameraNach": {
+    "pos": [
+     0.04815381090514741,
+     1.2442087859482136,
+     20.413470993083543
+    ],
+    "ziel": [
+     0.019948597016330796,
+     1.2088914140568146,
+     19.69095836374756
+    ],
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ],
+    "licht": {
+     "modus": "sonne",
+     "seite": 0.88,
+     "azimut": 0
+    }
+   },
+   "nase": {
+    "naseUnten": 660,
+    "ruheOben": 666,
+    "ruheUnten": 808,
+    "ohOben": 657,
+    "ohUnten": 829,
+    "abstandRuhe": 6,
+    "abstandOh": -3
+   }
   },
   "r4_yellow_buck": {
    "log": [
     "Mund aus Figurendatei: r4_yellow_buck · Ruhe neutral"
    ],
+   "errs": [],
+   "mixerAngehalten": true,
+   "kamera": {
+    "hoehe": 1.766,
+    "abstand": 0.72,
+    "azimut": 0,
+    "lichtSeite": 0.89,
+    "rect": [
+     0.199,
+     0.193,
+     0.808,
+     0.799
+    ]
+   },
+   "naseUnten": 658,
+   "naseAus": 1,
+   "mundAus": 1,
    "r4": [
     "yellow_buck/ah",
     "yellow_buck/closed",
@@ -90,12 +251,60 @@
     "yellow_buck/small_open",
     "yellow_buck/smile_closed"
    ],
-   "errs": []
+   "kameraNach": {
+    "pos": [
+     0.042780646863986985,
+     1.2451980563807246,
+     20.40903277095907
+    ],
+    "ziel": [
+     0.01682256990830551,
+     1.2098806844893255,
+     19.686435918016954
+    ],
+    "rect": [
+     0.199,
+     0.193,
+     0.808,
+     0.799
+    ],
+    "licht": {
+     "modus": "sonne",
+     "seite": 0.89,
+     "azimut": 0
+    }
+   },
+   "nase": {
+    "naseUnten": 658,
+    "ruheOben": 679,
+    "ruheUnten": 793,
+    "ohOben": 668,
+    "ohUnten": 821,
+    "abstandRuhe": 21,
+    "abstandOh": 10
+   }
   },
   "r4_sausage": {
    "log": [
     "Mund aus Figurendatei: r4_sausage · Ruhe neutral"
    ],
+   "errs": [],
+   "mixerAngehalten": true,
+   "kamera": {
+    "hoehe": 1.766,
+    "abstand": 0.72,
+    "azimut": 0,
+    "lichtSeite": 0.89,
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ]
+   },
+   "naseUnten": 659,
+   "naseAus": 1,
+   "mundAus": 1,
    "r4": [
     "sausage/ah",
     "sausage/closed",
@@ -110,12 +319,60 @@
     "sausage/small_open",
     "sausage/smile_closed"
    ],
-   "errs": []
+   "kameraNach": {
+    "pos": [
+     0.049006179446939024,
+     1.2448075745702663,
+     20.410647534105312
+    ],
+    "ziel": [
+     0.019243724840558564,
+     1.2094902026788672,
+     19.68819737669868
+    ],
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ],
+    "licht": {
+     "modus": "sonne",
+     "seite": 0.89,
+     "azimut": 0
+    }
+   },
+   "nase": {
+    "naseUnten": 659,
+    "ruheOben": 665,
+    "ruheUnten": 804,
+    "ohOben": 655,
+    "ohUnten": 828,
+    "abstandRuhe": 6,
+    "abstandOh": -4
+   }
   },
   "r4_sausage_coral": {
    "log": [
     "Mund aus Figurendatei: r4_sausage_coral · Ruhe neutral"
    ],
+   "errs": [],
+   "mixerAngehalten": true,
+   "kamera": {
+    "hoehe": 1.766,
+    "abstand": 0.72,
+    "azimut": 0,
+    "lichtSeite": 0.89,
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ]
+   },
+   "naseUnten": 657,
+   "naseAus": 1,
+   "mundAus": 1,
    "r4": [
     "sausage_coral/ah",
     "sausage_coral/closed",
@@ -129,12 +386,60 @@
     "sausage_coral/small_open",
     "sausage_coral/smile_closed"
    ],
-   "errs": []
+   "kameraNach": {
+    "pos": [
+     0.043256107376170805,
+     1.2460275629845547,
+     20.40465404796427
+    ],
+    "ziel": [
+     0.015759607428562132,
+     1.2107101910931557,
+     19.682114100193054
+    ],
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ],
+    "licht": {
+     "modus": "sonne",
+     "seite": 0.89,
+     "azimut": 0
+    }
+   },
+   "nase": {
+    "naseUnten": 657,
+    "ruheOben": 698,
+    "ruheUnten": 783,
+    "ohOben": 677,
+    "ohUnten": 828,
+    "abstandRuhe": 41,
+    "abstandOh": 20
+   }
   },
   "r4_crooked_rogue": {
    "log": [
     "Mund aus Figurendatei: r4_crooked_rogue · Ruhe neutral"
    ],
+   "errs": [],
+   "mixerAngehalten": true,
+   "kamera": {
+    "hoehe": 1.766,
+    "abstand": 0.72,
+    "azimut": 0,
+    "lichtSeite": 0.89,
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ]
+   },
+   "naseUnten": 657,
+   "naseAus": 1,
+   "mundAus": 1,
    "r4": [
     "crooked_rogue/ah",
     "crooked_rogue/closed",
@@ -149,12 +454,60 @@
     "crooked_rogue/small_open",
     "crooked_rogue/smile_closed"
    ],
-   "errs": []
+   "kameraNach": {
+    "pos": [
+     0.04404457484907615,
+     1.2458632232382552,
+     20.405457859698043
+    ],
+    "ziel": [
+     0.016093395982843914,
+     1.210545851346856,
+     19.682935358155287
+    ],
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ],
+    "licht": {
+     "modus": "sonne",
+     "seite": 0.89,
+     "azimut": 0
+    }
+   },
+   "nase": {
+    "naseUnten": 657,
+    "ruheOben": 668,
+    "ruheUnten": 800,
+    "ohOben": 661,
+    "ohUnten": 829,
+    "abstandRuhe": 11,
+    "abstandOh": 4
+   }
   },
   "r4_monster_maw": {
    "log": [
     "Mund aus Figurendatei: r4_monster_maw · Ruhe neutral"
    ],
+   "errs": [],
+   "mixerAngehalten": true,
+   "kamera": {
+    "hoehe": 1.766,
+    "abstand": 0.72,
+    "azimut": 0,
+    "lichtSeite": 0.88,
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ]
+   },
+   "naseUnten": 659,
+   "naseAus": 1,
+   "mundAus": 1,
    "r4": [
     "monster_maw/ah",
     "monster_maw/closed",
@@ -169,7 +522,38 @@
     "monster_maw/small_open",
     "monster_maw/smile_closed"
    ],
-   "errs": []
+   "kameraNach": {
+    "pos": [
+     0.0485665494937705,
+     1.2444751587712592,
+     20.41223492639472
+    ],
+    "ziel": [
+     0.019834057779095624,
+     1.2091577868798602,
+     19.68974307345742
+    ],
+    "rect": [
+     0.2,
+     0.193,
+     0.808,
+     0.799
+    ],
+    "licht": {
+     "modus": "sonne",
+     "seite": 0.88,
+     "azimut": 0
+    }
+   },
+   "nase": {
+    "naseUnten": 659,
+    "ruheOben": 659,
+    "ruheUnten": 807,
+    "ohOben": 650,
+    "ohUnten": 829,
+    "abstandRuhe": 0,
+    "abstandOh": -9
+   }
   }
  },
  "fehler": [],
