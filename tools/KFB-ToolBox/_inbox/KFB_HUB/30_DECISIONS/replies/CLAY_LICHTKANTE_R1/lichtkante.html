@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>KFB Lichtkante R1</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<style>body{margin:0;background:#222;color:#ddd;font:13px system-ui}#log{padding:8px;white-space:pre}</style></head>
+<body><div id="log">Lichtkante R1 · Stilbild-Harness (headless) · tests/render.mjs</div>
+<script type="module">
+/* Stilbild "Lichtkante": gleiche Buehne, gleiche Kamera, gleiches Licht wie der Clay-Golden (proof-kit v1.1, MESA Tag, ACES 1).
+   A = kfb-clay v1.1 unveraendert. B = Kandidat Lichtkante: dieselbe Dellen-Rechnung, aber Schuessel mit flacherem Boden und steilerer Wand
+   und ein hoeherer Wulst, ueberwiegend am Schubende (Halbmond bleibt), damit die Oberlippe Licht faengt statt nur dunkler Flecken.
+   Umschalten per Uniform uLK.x im selben Programm: A rechnet exakt den Kanon-Pfad. Kanon-Dateien bleiben unberuehrt. */
+import * as K from '../CLAY_SSOT_R1/proof-kit.v1.1.js';
+const { THREE } = K;
+for (const a of Object.values(K.ASSETS)) if (!a.url.startsWith('../')) a.url = '../CLAY_SSOT_R1/' + a.url; // Assets liegen beim Clay-SSOT
+
+const LK_DECL = /* glsl */`
+uniform vec4 uLK;   // x an, y Wulst-Faktor, z Ring-Boden (0 = nur Halbmond), w Wand-Schaerfe (0 = Gauss wie v1.1)
+uniform vec2 uLK2;  // x Tiefe-Faktor, y maxSlope-Faktor
+uniform float uLKSmall; // 1 = auch kleine Dellen (Ebene dent) mit Lichtkante, 0 = kleine Dellen wie Kanon
+vec3 kfbDentLayerLK( vec3 x, uvec3 s, vec4 P, vec4 E ) {
+  vec3 b = floor( x ); vec3 grad = vec3( 0.0 );
+  float dens = P.y, slope = P.z, rim = P.w * uLK.y, eMax = max( 1.0, E.x ), sig = E.y, R0 = E.z;
+  float pw = 2.0 + 2.0 * uLK.w, RW = 0.22;
+  for ( int kk = - 1; kk <= 1; kk ++ ) for ( int jj = - 1; jj <= 1; jj ++ ) for ( int ii = - 1; ii <= 1; ii ++ ) {
+    ivec3 c = ivec3( b ) + ivec3( ii, jj, kk );
+    float q2 = kfbH1( c >> 1, s ^ uvec3( 0x2C1Bu, 0x3C6Eu, 0x0F11u ) ), q4 = kfbH1( c >> 2, s ^ uvec3( 0x1B87u, 0x7F4Au, 0x2545u ) );
+    float field = 0.35 + 1.65 * smoothstep( 0.15, 0.85, 0.5 * ( q2 + q4 ) );
+    vec3 r = kfbH3( c, s ); if ( r.x >= dens * field ) continue;
+    vec3 r2 = kfbH3( c, s ^ uvec3( 0x9E37u, 0x79B9u, 0x7F4Au ) );
+    vec3 r3 = kfbH3( c, s ^ uvec3( 0x85EBu, 0xCA6Bu, 0xC2B2u ) );
+    vec3 r4 = kfbH3( c, s ^ uvec3( 0x27D4u, 0xEB2Fu, 0x1656u ) );
+    vec3 r5 = kfbH3( c, s ^ uvec3( 0x61C8u, 0x8647u, 0x3B9Fu ) );
+    vec3 o = vec3( c ) + r2; vec3 q = x - o;
+    float e = 1.0 + ( eMax - 1.0 ) * sqrt( r4.y );
+    float nrm = 2.0 * ( r5.x + r5.y + r5.z - 1.5 );
+    float R = R0 * exp( sig * clamp( nrm, - 2.2, 2.2 ) ); R = min( R, 0.98 / ( 1.5 * e ) );
+    if ( dot( q, q ) > 2.25 * R * R * e * e ) continue;
+    vec3 a = normalize( r3 - 0.5 + 1e-4 );
+    float aq = dot( a, q ), k = 1.0 - 1.0 / e;
+    vec3 u = q - k * a * aq; float lu = length( u ), rr = lu / R; if ( rr > 1.5 ) continue;
+    float t = aq / ( R * e ), gt = kfbG( t ), dg = 1.0 / ( ( 1.0 + abs( t ) ) * ( 1.0 + abs( t ) ) );
+    float D = uLK2.x * slope * R / 1.356 * ( 0.65 + 0.7 * r4.z );
+    float rs = max( rr, 1e-4 ), rp = pow( rs, pw );
+    float E1 = exp( - 2.5 * rp ), dE1 = - 2.5 * pw * rp / rs * E1;          // Schuessel: hoeheres pw = flacher Boden, steilere Wand
+    float zr = ( rr - 1.0 ) / RW, E2 = exp( - zr * zr );
+    float cr = 0.25 * ( 1.0 + gt ) * ( 1.0 + gt ), dcr = 0.5 * ( 1.0 + gt );
+    float crw = uLK.z + ( 1.0 - uLK.z ) * cr, dcrw = ( 1.0 - uLK.z ) * dcr;   // Wulst: Halbmond am Schubende, Ring-Boden optional
+    float dhdr = - dE1 * ( 1.0 - 0.5 * gt ) + rim * ( - 2.0 * zr / RW ) * E2 * crw;
+    vec3 gradR = ( u - k * a * dot( a, u ) ) / ( max( lu, 1e-6 ) * R );
+    grad += D * ( dhdr * gradR + ( 0.5 * E1 + rim * E2 * dcrw ) * dg * a / ( R * e ) );
+  }
+  return grad;
+}
+`;
+function patchLK(root) {
+  const mats = new Set();
+  root.traverse((o) => { if (!o.isMesh) return; (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) => { if (m?.userData?.kfbClay) mats.add(m); }); });
+  const U = { uLK: { value: new THREE.Vector4(0, 1, 0, 0) }, uLK2: { value: new THREE.Vector2(1, 1) }, uLKSmall: { value: 0 } };
+  for (const m of mats) {
+    const prev = m.onBeforeCompile, key = m.customProgramCacheKey();
+    m.onBeforeCompile = (sh, r) => {
+      prev(sh, r);
+      Object.assign(sh.uniforms, U);
+      const f0 = sh.fragmentShader;
+      sh.fragmentShader = f0
+        .replace('vec3 kfbFacets(', LK_DECL + '\nvec3 kfbFacets(')
+        .replace('g += w * kfbDentLayer( p / uClayDent2.x', 'g += w * ( uLK.x > 0.5 ? kfbDentLayerLK( p / uClayDent2.x').replace('g += w * kfbDentLayer( p / uClayDent.x', 'g += w * ( uLK.x > 0.5 && uLKSmall > 0.5 ? kfbDentLayerLK( p / uClayDent.x')
+        .replace(/kfbDentLayerLK\( p \/ uClayDent2\.x, s \^ uvec3\( 51u, 52u, 53u \), uClayDent2, uClayDent2E \);/, 'kfbDentLayerLK( p / uClayDent2.x, s ^ uvec3( 51u, 52u, 53u ), uClayDent2, uClayDent2E ) : kfbDentLayer( p / uClayDent2.x, s ^ uvec3( 51u, 52u, 53u ), uClayDent2, uClayDent2E ) );')
+        .replace(/kfbDentLayerLK\( p \/ uClayDent\.x, s \^ uvec3\( 31u, 32u, 33u \), uClayDent, uClayDentE \);/, 'kfbDentLayerLK( p / uClayDent.x, s ^ uvec3( 31u, 32u, 33u ), uClayDent, uClayDentE ) : kfbDentLayer( p / uClayDent.x, s ^ uvec3( 31u, 32u, 33u ), uClayDent, uClayDentE ) );')
+        .replace('if ( clayGl > uClayMaxSlope ) clayG *= uClayMaxSlope / clayGl;', 'float clayMS = uClayMaxSlope * ( uLK.x > 0.5 ? uLK2.y : 1.0 ); if ( clayGl > clayMS ) clayG *= clayMS / clayGl;');
+      const ok = (sh.fragmentShader.match(/: kfbDentLayer\(/g) || []).length === 2 && sh.fragmentShader.includes('clayMS');
+      if (!ok) throw new Error('LK patch did not apply');
+    };
+    m.customProgramCacheKey = () => key + '+lk-r2';
+    m.needsUpdate = true;
+  }
+  return { U, n: mats.size };
+}
+function setLK(U, on, p) { U.uLK.value.set(on ? 1 : 0, p.rim, p.ring, p.wall); U.uLK2.value.set(p.depth, p.maxSlope); U.uLKSmall.value = p.small ? 1 : 0; }
+
+function label(ctx, x, y, text) {
+  ctx.font = '600 30px system-ui, sans-serif'; ctx.textBaseline = 'top';
+  ctx.fillStyle = 'rgba(0,0,0,0.55)'; const w = ctx.measureText(text).width; ctx.fillRect(x, y, w + 28, 46);
+  ctx.fillStyle = '#fff'; ctx.fillText(text, x + 14, y + 8);
+}
+function pair(A, B, names) {
+  const c = document.createElement('canvas'), gap = 8; c.width = A.w * 2 + gap; c.height = A.h; const ctx = c.getContext('2d');
+  ctx.fillStyle = '#111'; ctx.fillRect(0, 0, c.width, c.height);
+  ctx.putImageData(new ImageData(A.data, A.w, A.h), 0, 0); ctx.putImageData(new ImageData(B.data, B.w, B.h), A.w + gap, 0);
+  label(ctx, 16, 16, names[0]); label(ctx, A.w + gap + 16, 16, names[1]);
+  return c.toDataURL('image/png');
+}
+function headBox(root) { const b = new THREE.Box3(); root.updateMatrixWorld(true); root.traverse((o) => { if (o.isMesh && o.visible && /head/i.test(o.name)) b.expandByObject(o, true); }); return b; }
+
+window.KFB_LK = {
+  async run({ w = 960, h = 640, p = { rim: 3.0, ring: 0, wall: 0.5, depth: 1.15, maxSlope: 1.3, small: 0 }, only = null, names = ['heute', 'Lichtkante'] } = {}) {
+    const R = K.makeRenderer(w, h), out = {}, info = { p };
+    const shot = (stage, U, cam) => { setLK(U, false, p); stage.render(R, cam); const a = K.readRGBA(R); setLK(U, true, p); stage.render(R, cam); const b = K.readRGBA(R); return pair(a, b, names); };
+    if (!only || only.includes('fb')) {
+      const root = K.placeFigure(await K.loadGLB('fb'));
+      await K.clayVariant('v11', root, { profile: 'character', seed: 'frizzlebob' });
+      const { U, n } = patchLK(root); info.fbMats = n;
+      const stage = K.makeStage({ figures: [root], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.4 } });
+      const hb = headBox(root), hc = hb.getCenter(new THREE.Vector3()), hs = hb.getSize(new THREE.Vector3()), d = Math.max(hs.x, hs.y) * 2.1;
+      out.fb_face = shot(stage, U, K.camera(w, h, 30, [hc.x + 0.28 * d, hc.y + 0.06 * d, hc.z + d], [hc.x, hc.y, hc.z]));
+      out.fb_full = shot(stage, U, K.camera(w, h, 30, [0.9, 1.15, 4.4], [0, 0.95, 0]));
+    }
+    if (!only || only.includes('terrain')) {
+      const tr = K.makeTerrain(); await K.clayVariant('v11', tr, { profile: 'background', seed: 'terrain', scaleRef: K.FIG_H });
+      const { U } = patchLK(tr);
+      const stage = K.makeStage({ figures: [], fit: { center: { x: 0, y: 0, z: -5 }, radius: 32 }, ground: false }); stage.scene.add(tr);
+      out.terrain_nah = shot(stage, U, K.camera(w, h, 50, [2, 2.0, 9], [0, 0.2, 0]));
+      out.terrain_fahrt = shot(stage, U, K.camera(w, h, 55, [0, 3.4, 16], [0, 0.6, -6]));
+    }
+    if (!only || only.includes('stage')) {
+      const st = K.placeWide(await K.loadGLB('stage'), 14);
+      await K.clayVariant('v11', st, { profile: 'midground', seed: 'utopia_stage', scaleRef: K.FIG_H });
+      const { U } = patchLK(st);
+      const S = K.makeStage({ figures: [], fit: { center: { x: 0, y: 2, z: 0 }, radius: 9.5 }, ground: true }); S.scene.add(st);
+      out.buehne = shot(S, U, K.camera(w, h, 34, [1.5, 3.0, 9.5], [0, 1.6, 0]));
+    }
+    const gl = R.getContext(), dbg = gl.getExtension('WEBGL_debug_renderer_info'); info.gpu = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : '';
+    R.dispose(); R.forceContextLoss?.();
+    return { out, info };
+  },
+};
+window.KFB_LK_READY = true;
+</script></body></html>
