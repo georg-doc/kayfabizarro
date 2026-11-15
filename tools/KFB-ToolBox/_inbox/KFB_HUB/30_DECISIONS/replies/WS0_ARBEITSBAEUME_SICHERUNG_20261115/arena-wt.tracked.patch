@@ -1,0 +1,64 @@
+diff --git a/src/world/arena/arenaGegner.js b/src/world/arena/arenaGegner.js
+index c5b5371a3..263b98689 100644
+--- a/src/world/arena/arenaGegner.js
++++ b/src/world/arena/arenaGegner.js
+@@ -74,7 +74,7 @@ export function createArenaGegner({ stadt, groundAt, spieler, kampf = () => null
+       S.E.push({ id, art, w, F, x: p[0], z: p[1], yaw: Math.atan2(tor[0] - p[0], tor[2] - p[1]), hp: GEGNER.hp, zustand: 'wache', zt: 0, wache: [p, q], wi: 1, pfad: null, warte: rnd(0, 2),
+         bekannt: null, gesehen: -99, deckung: null, magazin: w.magazin, salve: 0, schussT: 0, haltung: 'idle', vx: 0, vz: 0, px: p[0], pz: p[1], seitZiel: null, phase: null, pt: 0, vorZustand: null })
+     })
+-    S.ziel = addCombatTarget({ name: 'arena-gegner', boxes: () => S.E.filter((E) => E.hp > 0).map((E) => { const y = groundAt(E.x, E.z), h = E.haltung === 'deckung' ? 1.2 : GEGNER.hoeheM; return { id: E.id, min: [E.x - 0.32, y, E.z - 0.32], max: [E.x + 0.32, y + h, E.z + 0.32], material: 'plastic' } }),
++    S.ziel = addCombatTarget({ name: 'arena-gegner', boxes: () => S.E.filter((E) => E.hp > 0).map((E) => { const y = groundAt(E.x, E.z), h = E.haltung === 'deckung' || E.haltung === 'deckungZiel' ? 1.2 : GEGNER.hoeheM; return { id: E.id, min: [E.x - 0.32, y, E.z - 0.32], max: [E.x + 0.32, y + h, E.z + 0.32], material: 'plastic' } }),
+       hit: (info) => { const E = S.E.find((e) => e.id === info.id); if (E) treffer(E, info) } })
+     S.status = 'OK'
+   })().catch((e) => { S.status = 'ERROR'; S.error = String(e?.message || e) })
+@@ -186,15 +186,17 @@ export function createArenaGegner({ stadt, groundAt, spieler, kampf = () => null
+         if (E.rolle === 'vor' && E.bekannt && E.phase === 'warten' && !siehtP && Math.hypot(E.bekannt[0] - E.x, E.bekannt[2] - E.z) > E.w.reichM * 0.85 && S.t - (E.vorT ?? -99) > 6 && darfPlanen()) { E.vorT = S.t; const c = deckungSuchen(E, E.bekannt); if (c) { S.vorN = (S.vorN || 0) + 1; nimmDeckung(E, c); break }
+           const B = E.bekannt, D = Math.hypot(B[0] - E.x, B[2] - E.z), r = E.w.reichM * 0.7, n0 = S.netz.naechste(B[0] + ((E.x - B[0]) / D) * r, B[2] + ((E.z - B[2]) / D) * r), w = n0 && S.netz.weg([E.x, E.z], n0, { max: TAKTIK.wegMaxOffen }); if (w) { w.shift(); S.vorN = (S.vorN || 0) + 1; nimmDeckung(E, { x: n0[0], z: n0[1], pfad: w, spaeh: null }); break } }   // vorrücken: außer Reichweite von Deckung zu Deckung näher
+         E.pt -= dt
+-        if (E.phase === 'warten') { E.haltung = 'deckung'; if (E.pt <= 0) { const frueh = E.magazin < E.w.magazin * TAKTIK.nachladenAnteil && !kameradLaedt(E)   // Nachladen im Team: früh nur, wenn keiner in der Nähe gerade lädt
++        if (E.phase === 'warten') { E.haltung = E.bekannt && E.pt < 0.6 && E.magazin > 0 ? 'deckungZiel' : 'deckung'; if (E.pt <= 0) {   // in Deckung geduckt; kurz vor dem Hervortreten im Anschlag const frueh = E.magazin < E.w.magazin * TAKTIK.nachladenAnteil && !kameradLaedt(E)   // Nachladen im Team: früh nur, wenn keiner in der Nähe gerade lädt
+             if (E.magazin <= 0 || frueh) { E.phase = 'laden'; E.pt = S.dauer.reloading_standing || 3; S.taktLaden += frueh && E.magazin > 0 ? 1 : 0 } else if (E.magazin <= 2 && E.magazin < E.w.magazin && kameradLaedt(E)) { E.pt = 0.4; S.feuersperre++ } else if (siehtP) { E.phase = 'zielen'; E.pt = 0.45 } else {   // Feuersperre: letzte Schüsse halten, solange ein Kamerad lädt; sonst seitlich hervortreten, bevorzugt auf der Späh-Seite der Deckung
+               const s = Math.random() < 0.5 ? -1 : 1, r = E.zielYaw ?? E.yaw, x = E.x + Math.cos(r) * s * GEGNER.seit, z = E.z - Math.sin(r) * s * GEGNER.seit, sp0 = E.spaeh && Math.hypot(E.spaeh[0] - E.x, E.spaeh[1] - E.z) < GEGNER.seit * 1.6 ? E.spaeh : null
+-              if (sp0) { E.phase = 'vor'; E.seitZiel = sp0 } else if (S.netz.ok(x, z)) { E.phase = 'vor'; E.seitZiel = [x, z] } else E.pt = 0.6 } } }
++              if (sp0) { E.phase = 'vor'; E.seitZiel = sp0 } else if (S.netz.ok(x, z)) { E.phase = 'vor'; E.seitZiel = [x, z] } else { E.phase = 'zielen'; E.pt = 0.45 } } } }   // kein Platz zur Seite: an Ort und Stelle aufstehen und über die Deckung schauen
+         else if (E.phase === 'vor') { E.haltung = 'ziel'; const da = schieb(E, E.seitZiel[0], E.seitZiel[1], GEGNER.seitTempo, dt); if (siehtP || da) { E.phase = siehtP ? 'zielen' : 'zurueck'; E.pt = 0.4 } }
+-        else if (E.phase === 'zielen') { E.haltung = 'ziel'; if (E.pt <= 0) { if (!siehtP) E.phase = 'zurueck'; else { E.phase = 'salve'; E.salve = Math.round(rnd(...E.w.salve)); E.schussT = 0 } } }
++        else if (E.phase === 'zielen') { E.haltung = 'ziel'; if (E.pt <= 0) { if (siehtP) { E.leer = 0; E.phase = 'salve'; E.salve = Math.round(rnd(...E.w.salve)); E.schussT = 0 } else { E.phase = 'zurueck'; E.leer = (E.leer || 0) + 1
++              if (E.leer >= 3 && E.bekannt && darfPlanen()) { E.leer = 0; const c = deckungSuchen(E, E.bekannt); if (c) { nimmDeckung(E, c); break } } } } }   // dreimal ohne Sicht: neue Stellung
+         else if (E.phase === 'salve') { E.haltung = 'feuer'; E.schussT -= dt; if (E.schussT <= 0) { const frei = !(P && freundImWeg(E, E.F.muendung(_a).toArray(), [P[0], P[1] + 1.0, P[2]]))
+             if (!frei) { S.gesperrt++; E.phase = 'zurueck' } else if (E.magazin <= 1 && kameradLaedt(E)) { S.feuersperre++; E.phase = 'zurueck' } else if (E.salve > 0 && E.magazin > 0 && P && siehtP) { schiesse(E, P); E.salve--; E.schussT = E.w.abstandS } else E.phase = 'zurueck' } }   // Kamerad in der Schusslinie: nicht schießen, zurück und neu ansetzen
+-        else if (E.phase === 'zurueck') { E.haltung = 'ziel'; const [x, z] = E.deckung || [E.x, E.z]; if (schieb(E, x, z, GEGNER.seitTempo, dt)) { E.phase = E.magazin <= 0 ? 'laden' : 'warten'; E.pt = E.magazin <= 0 ? S.dauer.reloading_standing || 3 : E.rolle === 'stuetze' ? rnd(0.4, 0.9) : rnd(0.8, 1.8) } }   // Stütze hält den Druck: kürzere Pausen
++        else if (E.phase === 'zurueck') { E.haltung = 'deckung';   // geduckt zurück hinter die Deckung (walk_crouching_*)
++          const [x, z] = E.deckung || [E.x, E.z]; if (schieb(E, x, z, GEGNER.seitTempo, dt)) { E.phase = E.magazin <= 0 ? 'laden' : 'warten'; E.pt = E.magazin <= 0 ? S.dauer.reloading_standing || 3 : E.rolle === 'stuetze' ? rnd(0.4, 0.9) : rnd(0.8, 1.8) } }   // Stütze hält den Druck: kürzere Pausen
+         else if (E.phase === 'laden') { E.haltung = 'laden'; if (E.pt <= 0) { E.magazin = E.w.magazin; E.phase = 'warten'; E.pt = rnd(0.2, 0.6) } }
+         break }
+       case 'treffer': E.haltung = 'treffer'; if (E.zt > 0.7) { const z = E.vorZustand || 'schiessen'; if (z === 'wache' || z === 'alarm') { setze(E, 'alarm'); E.haltung = 'ziel' } else if (Math.random() < 0.4 && P && darfPlanen()) { const c = deckungSuchen(E, P); if (c) nimmDeckung(E, c); else setze(E, 'schiessen', { phase: 'warten', pt: 0.3 }) } else setze(E, 'schiessen', { phase: 'warten', pt: 0.3 }) } break
+diff --git a/src/world/arena/arenaSoldat.js b/src/world/arena/arenaSoldat.js
+index 20945085e..f751ee900 100644
+--- a/src/world/arena/arenaSoldat.js
++++ b/src/world/arena/arenaSoldat.js
+@@ -47,7 +47,7 @@ export function createSoldat({ vorlage, ton = null, groundAt, id }) {
+   const hand = fig.getObjectByName('Hand_R'), mz = new THREE.Object3D(); mz.name = 'muendung'; if (hand && vorlage.muendungLokal) { mz.position.copy(vorlage.muendungLokal); hand.add(mz) }
+   const mixer = new THREE.AnimationMixer(fig), clips = Object.fromEntries(vorlage.animations.map((a) => [a.name, a])), act = new Map()
+   const action = (n) => { if (!clips[n]) return null; if (!act.has(n)) act.set(n, mixer.clipAction(clips[n])); return act.get(n) }
+-  const S = { clip: null, a: null, tod: null, tonT: 0, haltung: 'idle' }
++  const S = { clip: null, a: null, tod: null, tonT: 0, haltung: 'idle', geduckt: false }
+   function spiele(n, { loop = true, fade = 0.2, rate = 1 } = {}) {
+     if (S.clip === n) { if (S.a) S.a.timeScale = rate; return }
+     const a = action(n); if (!a) return; a.reset(); a.setLoop(loop ? THREE.LoopRepeat : THREE.LoopOnce, Infinity); a.clampWhenFinished = !loop; a.timeScale = rate; a.play()
+@@ -64,11 +64,13 @@ export function createSoldat({ vorlage, ton = null, groundAt, id }) {
+     actor: { object3d: holder, status: () => ({ status: 'OK', shown: holder.visible }) },   // für claySSOT (Kit-Knete) und FigureShade
+     present({ x, z, yaw, vx = 0, vz = 0, haltung = 'idle', hopp = 0 }, dt) {   // hopp: Höhe in m (Leerlauf-Hüpfer auf der Spielzeugbasis, kein Clip)
+       holder.position.set(x, groundAt(x, z) + hopp, z); holder.rotation.set(0, yaw, 0); S.haltung = haltung
+-      if (haltung === 'tot') { if (!S.tod) { S.tod = TOD[Math.floor(Math.random() * TOD.length)]; spiele(S.tod, { loop: false, fade: 0.1 }) } }
++      const geduckt = haltung === 'deckung' || haltung === 'deckungZiel'
++      if (haltung === 'tot') { if (!S.tod) { S.tod = S.geduckt && clips.death_crouching_headshot_front ? 'death_crouching_headshot_front' : TOD[Math.floor(Math.random() * TOD.length)]; spiele(S.tod, { loop: false, fade: 0.1 }) } }   // aus der Hocke: Hocke-Sterbeclip
+       else if (haltung === 'treffer') spiele('hit_reaction_rifle', { loop: false, fade: 0.08 })
+       else if (haltung === 'feuer') spiele('firing_rifle_standing', { fade: 0.06 })
+       else if (haltung === 'laden') spiele('reloading_standing', { loop: false, fade: 0.15 })
+-      else if (!bewegeClip(yaw, vx, vz, haltung === 'deckung')) spiele(haltung === 'ziel' ? 'idle_aiming' : haltung === 'deckung' ? 'idle_crouching' : 'idle', { fade: 0.25 })
++      else if (!bewegeClip(yaw, vx, vz, geduckt)) spiele(haltung === 'ziel' ? 'idle_aiming' : haltung === 'deckungZiel' ? 'idle_crouching_aiming' : haltung === 'deckung' ? 'idle_crouching' : 'idle', { fade: 0.25 })   // Deckung: Hocke, kurz vor dem Hervortreten Hocke mit Anschlag
++      if (haltung !== 'tot' && haltung !== 'treffer') S.geduckt = geduckt
+       mixer.update(dt)
+       if ((ton || SOLDATGRUEN_ON || HELL.uArenaHell.value !== 1) && (S.tonT -= dt) <= 0) { S.tonT = 1; fig.traverse((o) => { if (o.isMesh) for (const m of [].concat(o.material)) farbeAn(m, ton) }) }   // nach der Knete erneut (die tauscht Materialien); ohne Ton und Schalter kein Haken
+     },
