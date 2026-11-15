@@ -12,7 +12,8 @@
 | FB-Web mit Katana (heute r1f) | `50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON_agent_twin.r1f.glb`, Messblatt `50_BLENDER/FB_WEB_KANON_R1/RETURN_r1f.md` |
 | Katana, Griff, `KFB_Tip` | `50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/waffen/KFB_Katana.r1d.glb`; Spiel-Karte Stamm `src/data/combat/k10/kfb_kit_ninja_katana.fb_r1.weapon.json` |
 | Katana im Spiel (Clips, Treffer, Hit-Stop 48 ms) | Stamm `src/data/combat/katanaReference.r1.json` |
-| KayKit-Nahkampf, unverändert (V-1752) | Stamm `src/assets/actors/Rig_Medium_CombatMelee.glb`, z. B. `Melee_1H_Attack_Jump_Chop`, `Melee_2H_Attack_Spin`, `Melee_2H_Attack_Spinning`, `Melee_1H_Attack_Slice_Horizontal`; Sprung `Jump_Start`, `Jump_Idle`, `Jump_Land` |
+| KayKit-Nahkampf, unverändert (V-1752) | Stamm `src/assets/actors/Rig_Medium_CombatMelee.glb`, z. B. `Melee_1H_Attack_Jump_Chop`, `Melee_2H_Attack_Spin`, `Melee_2H_Attack_Spinning`, `Melee_1H_Attack_Slice_Horizontal` |
+| KayKit-Sprung, unverändert | Stamm `src/assets/actors/Rig_Medium_MovementBasic.glb`: `Jump_Start`, `Jump_Idle`, `Jump_Land` (auf FB schon in r1f) |
 | Weitere Bibliotheken | `motion_lib_r1/`, `50_BLENDER/GEGNER_R1/_privat_kauf_asset/mixamo/`, Quaternius UAL 1/2 (lokal, wie Kulturtechniken Teil A) |
 | FB-Spiel-Clips (Übertrag) | Skript `50_BLENDER/IDLE_R1/scripts/clips_auf_figur.mjs`, Ablage wie `50_BLENDER/IDLE_R1/clips_fb/` |
 
@@ -30,9 +31,9 @@
 - **FB-Web:** `FB_WEB_KANON_agent_twin.r1g.glb` = r1f plus die gewählten Clips, sonst nichts geändert, Messwerte in `RETURN_r1g.md` wie bei r1f.
 - **FB-Spiel und KayKit Medium:**
   - Importierte Clips nach V-1752 repariert (≤ 1,5 cm im Rumpf).
-  - Bodenausgleich je Figur × Clip wie K12 (V-596).
-  - Katana an `KFB_Grip` mit festem slotOffset (V-536, V-574).
+  - Bodenausgleich je Figur × Clip und je Bild wie K12 (`floorlift/*.json`, V-596). Kein Hüft-Lift in der Spur, kein pauschaler groundOffset.
+  - Katana wie die Spiel-Karte `kfb_kit_ninja_katana.fb_r1`: am vorgesehenen Handslot `handslot.r` (Kit-Waffe, V-574). Ein fester Versatz nur dort, wo die Klinge sichtbar durch den Körper geht, mit Beleg (V-581).
   - Daten im Pool-Format wie `clips.kulturtechniken_r1.json`, mit Feldern für Schnittzeit, Tip-Höhe, Wurzelweg, Absprung/Landung und `rigs`.
-- **Beleg:** vorn oder seitlich auf der einheitlichen Proof-Stage, Knete, KFB-Augen, Kanon-Wache FB, ein Kritiker je Runde.
+- **Beleg:** vorn oder seitlich auf der einheitlichen Proof-Stage plus Spielkamera als zweite Prüfung im Spiel-Look (V-1227). Knete, KFB-Augen, Kanon-Wache FB (beide Ohren, Schwanz), ein Kritiker je Runde.
 
 **Rückgabe:** Git-Bundle mit Zweig `assets/wsb-katana-luft-r2d` von `assets/private` @f922c319, RETURN.md und Vorschauen in `KFB_HUB/30_DECISIONS/replies/WEB_KANON_R2/MINI_r2d/`. WS0 pusht, baut die Hub-Karten, gibt r1g an Claude Design weiter und baut die Clips ins Spiel ein (Katana-Kombos, Hero-Shots, `kfb-choreo`).
