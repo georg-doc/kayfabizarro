@@ -18,13 +18,13 @@ Konzept für diesen Job (WS0 bestätigt): keine Szene, sondern Posen-Blätter zw
 2. Schritt 2 ist dieser Auftrag: Du stellst je Take nur die **Extrem-Pose** (Phase E) in der Stufe „cartoon“, an FB und an der KayKit-Farmerin mit Hut, als Ausdrucksblatt zur Auswahl durch Georg. Noch keine Clips.
 3. Erst nach Georgs Wahl folgen die ganzen Clips (Schritt 3, eigener Auftrag).
 
-**Grundlage:** `assets/private` @12da5db2. Pfade ohne Präfix liegen dort.
+**Grundlage:** `assets/private` @800a85eb. Pfade ohne Präfix liegen dort.
 
 | Teil | Bestand (geprüfter Pfad) |
 |---|---|
 | Acting-Katalog (16 Takes, Phasen A/E/H/Ü/R, Winkel, Gesicht, Stufen) | `replies/AUSDRUCK_R1/ACTING_KATALOG_R1.md` (Register-Repo `georg-doc/kayfabizarro`, Zweig `docs/kfb-decisions-register-2026-10-11`, dort unter dem Register-Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`) |
 | Gesichtswerte im Spiel | Stamm `game/integration-r2` (Repo `georg-doc/KFB-Stunt-Car-Race`): `src/modules/ausdruck.js` (Stufen fein/cartoon/extrem, Ausdrücke), `src/modules/haltung.js` (Haltungen, Gefühle) |
-| FB | `50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON.r1i.glb` (FB im Shirt, Figurendatei `appearance.export.v.web`), Augen-Blick-Knoten und Lid-Morphs wie in `50_BLENDER/FB_WEB_KANON_R1/RETURN_r1d.md`, Mund-Knoten `FB_Mund_<schlüssel>` |
+| FB | `50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON.r1j.glb` (FB im Shirt, Figurendatei `appearance.export.v.web`), Augen-Blick-Knoten und Lid-Morphs wie in `50_BLENDER/FB_WEB_KANON_R1/RETURN_r1d.md`, Mund-Knoten `FB_Mund_<schlüssel>` |
 | KayKit-Figur (Rig_Medium) | Farmerin mit Hut `50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_hut.r1b.glb` (Figurendatei `src/data/characters/farmer_hut.character.json` im Stamm). Die Datei hat nur die Augenanker `eye_anchor.l/.r`, keine Augen und keine Lid-Morphs, und noch keine gebackene Web-Datei. |
 | Augen und Lider der Farmerin | Proof-Stage-Augenschicht `replies/PROOF_STAGE_R1/kfb-proof-eyes.v1.js` (mit `vendor/`, Register-Repo wie oben): EyeRig v6 + E2-Lider auf `eye_anchor.l/.r`, Werte aus der Figurendatei `appearance.augenR2` (Größe 1,15, Schielen 0,45, Pupille 1,0, Blickgrenze 0,5) und `appearance.lids` (E2, Farbe Kopfton dunkler, matt) |
 | Brauen und Lider (Regeln) | `replies/AUSDRUCK_R1/MENTALMODELL_BRAUEN_AUGEN_R1.md` §1–§5 und `RECHERCHE_MIMIK_R1.md` (Register-Repo wie oben) |
@@ -46,6 +46,6 @@ Konzept für diesen Job (WS0 bestätigt): keine Szene, sondern Posen-Blätter zw
 - Kanon-Wache auf jedem Bild: FB mit beiden Augen, Lidern im dunkleren Kopfton, Brauen, Nase, Mund, beiden Ohren, Schwanz; die Farmerin mit beiden KFB-Augen, Pupillen, E2-Lidern im dunkleren Hautton und ihrem Mund aus der Datei.
 
 **Rückgabe:**
-- Git-Bundle mit Zweig `assets/wsb-ausdrucksblatt-r1` von `assets/private` @12da5db2: Blätter und je Take eine Posen-Datei (Knochenrotationen als JSON je Figur, damit Schritt 3 darauf aufbaut) unter `50_BLENDER/AUSDRUCK_R1/`.
+- Git-Bundle mit Zweig `assets/wsb-ausdrucksblatt-r1` von `assets/private` @800a85eb: Blätter und je Take eine Posen-Datei (Knochenrotationen als JSON je Figur, damit Schritt 3 darauf aufbaut) unter `50_BLENDER/AUSDRUCK_R1/`.
 - RETURN `RETURN_ausdrucksblatt_r1.md` in `KFB_HUB/30_DECISIONS/replies/AUSDRUCK_R1/MINI_blatt_r1/`: je Take die gestellten Winkel und wo du vom Katalog abgewichen bist (mit Grund).
 - WS0 baut daraus die Hub-Karten für Georg.
