@@ -1,0 +1,757 @@
+{
+ "design": "r4_buck_grin",
+ "label": "Braun, Hasenzähne",
+ "note": "MOUTHS_GPT_R4 (V-1765/V-1817), Georg q705",
+ "source": "replies/MOUTHS_GPT_R4/_src/mouths_r4_buck_grin.png",
+ "canvas": [
+  512,
+  512
+ ],
+ "scale": {
+  "factor": 1.272,
+  "rule": "gleichmaessig x=y, closed-Breite 261 -> 332 px (= Satz A)"
+ },
+ "anchor": {
+  "x": 256,
+  "y": 220,
+  "closed_upper_lip_top_y": 137.0,
+  "rule": "wie R2: closed-Familie (closed, mbp, smile_closed) Lippenlinie auf den Anker; offene Formen: Oberlippe = closed-Oberlippe - upperLift * extra"
+ },
+ "upperLift": {
+  "value": 0.35,
+  "value_baked": 0.35,
+  "range": [
+   0.0,
+   1.0
+  ],
+  "tested": [
+   0.3,
+   0.4
+  ],
+  "rule": "dy = -(upperLift - value_baked) * extra_height_px relative to the baked PNG (dy_from_baked)"
+ },
+ "height_limit": {
+  "max_px": 326.9,
+  "ratio_to_closed": 1.703,
+  "ref_closed_aspect": 0.578,
+  "rule": "1,7 x max(closed-Hoehe, REF x closed-Breite); REF = Median closed-Seitenverhaeltnis der sechs Brief-Typen"
+ },
+ "shadow": {
+  "color": [
+   62,
+   38,
+   16
+  ],
+  "tight_sigma": 3.0,
+  "tight_alpha": 0.4,
+  "drop_sigma": 9.0,
+  "drop_dy": 8,
+  "drop_alpha": 0.38,
+  "note": "unter dem Mund eingebacken in X.png; noshadow/X.png ohne"
+ },
+ "ersatz": {},
+ "closed_height_px": 192,
+ "closed_width_px": 333,
+ "mouths": [
+  {
+   "id": "closed",
+   "file": "closed.png",
+   "noshadow": "noshadow/closed.png",
+   "trim": "trim/closed.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    84,
+    120
+   ],
+   "bbox_canvas": [
+    90,
+    127,
+    333,
+    192
+   ],
+   "height_ratio_to_closed": 1.0,
+   "width_ratio_to_closed": 1.0,
+   "height_to_closed_width": 0.577,
+   "anchor_mode": "seam",
+   "upper_lip_top_canvas": 137.0,
+   "lip_line_canvas": 220.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "mbp",
+   "file": "mbp.png",
+   "noshadow": "noshadow/mbp.png",
+   "trim": "trim/mbp.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    84,
+    125
+   ],
+   "bbox_canvas": [
+    91,
+    131,
+    329,
+    175
+   ],
+   "height_ratio_to_closed": 0.911,
+   "width_ratio_to_closed": 0.988,
+   "height_to_closed_width": 0.526,
+   "anchor_mode": "seam",
+   "upper_lip_top_canvas": 144.0,
+   "lip_line_canvas": 220.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "small_open",
+   "file": "small_open.png",
+   "noshadow": "noshadow/small_open.png",
+   "trim": "trim/small_open.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    86,
+    117
+   ],
+   "bbox_canvas": [
+    93,
+    124,
+    327,
+    192
+   ],
+   "height_ratio_to_closed": 1.0,
+   "width_ratio_to_closed": 0.982,
+   "height_to_closed_width": 0.577,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 137.0,
+   "lip_line_canvas": 250.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "mid_open",
+   "file": "mid_open.png",
+   "noshadow": "noshadow/mid_open.png",
+   "trim": "trim/mid_open.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    84,
+    108
+   ],
+   "bbox_canvas": [
+    91,
+    115,
+    330,
+    223
+   ],
+   "height_ratio_to_closed": 1.161,
+   "width_ratio_to_closed": 0.991,
+   "height_to_closed_width": 0.67,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 127.0,
+   "lip_line_canvas": 233.0,
+   "extra_height_px": 29.0,
+   "dy_from_baked": {
+    "0.0": 10.1,
+    "0.3": 1.4,
+    "0.4": -1.5
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "ah",
+   "file": "ah.png",
+   "noshadow": "noshadow/ah.png",
+   "trim": "trim/ah.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    81,
+    98
+   ],
+   "bbox_canvas": [
+    87,
+    104,
+    338,
+    259
+   ],
+   "height_ratio_to_closed": 1.349,
+   "width_ratio_to_closed": 1.015,
+   "height_to_closed_width": 0.778,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 114.0,
+   "lip_line_canvas": 222.0,
+   "extra_height_px": 67.0,
+   "dy_from_baked": {
+    "0.0": 23.4,
+    "0.3": 3.3,
+    "0.4": -3.4
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "ee_wide",
+   "file": "ee_wide.png",
+   "noshadow": "noshadow/ee_wide.png",
+   "trim": "trim/ee_wide.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    76,
+    110
+   ],
+   "bbox_canvas": [
+    82,
+    117,
+    348,
+    217
+   ],
+   "height_ratio_to_closed": 1.13,
+   "width_ratio_to_closed": 1.045,
+   "height_to_closed_width": 0.652,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 129.0,
+   "lip_line_canvas": 248.0,
+   "extra_height_px": 23.0,
+   "dy_from_baked": {
+    "0.0": 8.0,
+    "0.3": 1.1,
+    "0.4": -1.2
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "oh",
+   "file": "oh.png",
+   "noshadow": "noshadow/oh.png",
+   "trim": "trim/oh.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    127,
+    103
+   ],
+   "bbox_canvas": [
+    134,
+    109,
+    244,
+    253
+   ],
+   "height_ratio_to_closed": 1.318,
+   "width_ratio_to_closed": 0.733,
+   "height_to_closed_width": 0.76,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 114.0,
+   "lip_line_canvas": 224.0,
+   "extra_height_px": 66.0,
+   "dy_from_baked": {
+    "0.0": 23.1,
+    "0.3": 3.3,
+    "0.4": -3.3
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "oo",
+   "file": "oo.png",
+   "noshadow": "noshadow/oo.png",
+   "trim": "trim/oo.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    146,
+    121
+   ],
+   "bbox_canvas": [
+    153,
+    128,
+    207,
+    199
+   ],
+   "height_ratio_to_closed": 1.036,
+   "width_ratio_to_closed": 0.622,
+   "height_to_closed_width": 0.598,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 132.0,
+   "lip_line_canvas": 228.0,
+   "extra_height_px": 13.0,
+   "dy_from_baked": {
+    "0.0": 4.5,
+    "0.3": 0.6,
+    "0.4": -0.7
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "fv",
+   "file": "fv.png",
+   "noshadow": "noshadow/fv.png",
+   "trim": "trim/fv.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    78,
+    118
+   ],
+   "bbox_canvas": [
+    84,
+    124,
+    344,
+    194
+   ],
+   "height_ratio_to_closed": 1.01,
+   "width_ratio_to_closed": 1.033,
+   "height_to_closed_width": 0.583,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 137.0,
+   "lip_line_canvas": 202.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "l_th",
+   "file": "l_th.png",
+   "noshadow": "noshadow/l_th.png",
+   "trim": "trim/l_th.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    73,
+    112
+   ],
+   "bbox_canvas": [
+    79,
+    119,
+    354,
+    214
+   ],
+   "height_ratio_to_closed": 1.115,
+   "width_ratio_to_closed": 1.063,
+   "height_to_closed_width": 0.643,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 130.0,
+   "lip_line_canvas": 184.0,
+   "extra_height_px": 21.0,
+   "dy_from_baked": {
+    "0.0": 7.3,
+    "0.3": 1.0,
+    "0.4": -1.1
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "smile_closed",
+   "file": "smile_closed.png",
+   "noshadow": "noshadow/smile_closed.png",
+   "trim": "trim/smile_closed.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    81,
+    117
+   ],
+   "bbox_canvas": [
+    87,
+    124,
+    338,
+    180
+   ],
+   "height_ratio_to_closed": 0.938,
+   "width_ratio_to_closed": 1.015,
+   "height_to_closed_width": 0.541,
+   "anchor_mode": "seam",
+   "upper_lip_top_canvas": 161.0,
+   "lip_line_canvas": 220.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "smile_teeth",
+   "file": "smile_teeth.png",
+   "noshadow": "noshadow/smile_teeth.png",
+   "trim": "trim/smile_teeth.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    85,
+    106
+   ],
+   "bbox_canvas": [
+    91,
+    112,
+    330,
+    208
+   ],
+   "height_ratio_to_closed": 1.083,
+   "width_ratio_to_closed": 0.991,
+   "height_to_closed_width": 0.625,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 137.0,
+   "lip_line_canvas": 232.0,
+   "extra_height_px": 1.0,
+   "dy_from_baked": {
+    "0.0": 0.3,
+    "0.3": 0.0,
+    "0.4": -0.1
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "laugh",
+   "file": "laugh.png",
+   "noshadow": "noshadow/laugh.png",
+   "trim": "trim/laugh.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    86,
+    93
+   ],
+   "bbox_canvas": [
+    92,
+    99,
+    328,
+    256
+   ],
+   "height_ratio_to_closed": 1.333,
+   "width_ratio_to_closed": 0.985,
+   "height_to_closed_width": 0.769,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 117.0,
+   "lip_line_canvas": 216.0,
+   "extra_height_px": 56.0,
+   "dy_from_baked": {
+    "0.0": 19.6,
+    "0.3": 2.8,
+    "0.4": -2.8
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "smirk",
+   "file": "smirk.png",
+   "noshadow": "noshadow/smirk.png",
+   "trim": "trim/smirk.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    85,
+    88
+   ],
+   "bbox_canvas": [
+    91,
+    94,
+    330,
+    208
+   ],
+   "height_ratio_to_closed": 1.083,
+   "width_ratio_to_closed": 0.991,
+   "height_to_closed_width": 0.625,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 137.0,
+   "lip_line_canvas": 239.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "grimace",
+   "file": "grimace.png",
+   "noshadow": "noshadow/grimace.png",
+   "trim": "trim/grimace.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    72,
+    120
+   ],
+   "bbox_canvas": [
+    79,
+    127,
+    354,
+    179
+   ],
+   "height_ratio_to_closed": 0.932,
+   "width_ratio_to_closed": 1.063,
+   "height_to_closed_width": 0.538,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 137.0,
+   "lip_line_canvas": 185.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "sad",
+   "file": "sad.png",
+   "noshadow": "noshadow/sad.png",
+   "trim": "trim/sad.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    86,
+    117
+   ],
+   "bbox_canvas": [
+    92,
+    124,
+    329,
+    205
+   ],
+   "height_ratio_to_closed": 1.068,
+   "width_ratio_to_closed": 0.988,
+   "height_to_closed_width": 0.616,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 132.0,
+   "lip_line_canvas": 194.0,
+   "extra_height_px": 15.0,
+   "dy_from_baked": {
+    "0.0": 5.2,
+    "0.3": 0.7,
+    "0.4": -0.8
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "angry",
+   "file": "angry.png",
+   "noshadow": "noshadow/angry.png",
+   "trim": "trim/angry.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    73,
+    111
+   ],
+   "bbox_canvas": [
+    80,
+    117,
+    352,
+    188
+   ],
+   "height_ratio_to_closed": 0.979,
+   "width_ratio_to_closed": 1.057,
+   "height_to_closed_width": 0.565,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 137.0,
+   "lip_line_canvas": 187.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "surprised",
+   "file": "surprised.png",
+   "noshadow": "noshadow/surprised.png",
+   "trim": "trim/surprised.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    110,
+    93
+   ],
+   "bbox_canvas": [
+    117,
+    99,
+    277,
+    280
+   ],
+   "height_ratio_to_closed": 1.458,
+   "width_ratio_to_closed": 0.832,
+   "height_to_closed_width": 0.841,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 104.0,
+   "lip_line_canvas": 213.0,
+   "extra_height_px": 93.0,
+   "dy_from_baked": {
+    "0.0": 32.5,
+    "0.3": 4.6,
+    "0.4": -4.7
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "scared",
+   "file": "scared.png",
+   "noshadow": "noshadow/scared.png",
+   "trim": "trim/scared.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    86,
+    105
+   ],
+   "bbox_canvas": [
+    93,
+    111,
+    327,
+    244
+   ],
+   "height_ratio_to_closed": 1.271,
+   "width_ratio_to_closed": 0.982,
+   "height_to_closed_width": 0.733,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 118.0,
+   "lip_line_canvas": 223.0,
+   "extra_height_px": 55.0,
+   "dy_from_baked": {
+    "0.0": 19.2,
+    "0.3": 2.7,
+    "0.4": -2.8
+   },
+   "touches_canvas_edge": false
+  },
+  {
+   "id": "disgust",
+   "file": "disgust.png",
+   "noshadow": "noshadow/disgust.png",
+   "trim": "trim/disgust.png",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    78,
+    116
+   ],
+   "bbox_canvas": [
+    84,
+    122,
+    345,
+    194
+   ],
+   "height_ratio_to_closed": 1.01,
+   "width_ratio_to_closed": 1.036,
+   "height_to_closed_width": 0.583,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 137.0,
+   "lip_line_canvas": 185.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "touches_canvas_edge": false
+  }
+ ]
+}

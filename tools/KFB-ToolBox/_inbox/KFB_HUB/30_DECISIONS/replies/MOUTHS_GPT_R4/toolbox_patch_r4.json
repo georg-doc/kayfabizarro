@@ -1,0 +1,52 @@
+{
+ "schema": "kfb.character.patch/1",
+ "id": "frizzlebob",
+ "note": "VORSCHLAG WS0 15.11. (V-1817, Georg q705): Mund-Sätze R4 für die ToolBox (WSA Work). Nur mit Schalter muender4=r1 im Spiel bekannt. Beispiel-Patch für FrizzleBob mit r4_yellow_buck (gelbe Lippe, Hasenzähne); Größe, Sitz, Ruhe und Viseme-Zuordnung bleiben wie Georgs Stand vom 11./14.11. Die Wahl des Typs je Figur trifft Georg in der ToolBox.",
+ "base": {
+  "path": "src/data/characters/frizzlebob.character.json",
+  "blobSha": "40d7a86eb3a87b76f3d56465f37a74b06a936b82",
+  "commit": "69830312c"
+ },
+ "changes": {
+  "appearance": {
+   "mouth": {
+    "v": {
+     "size": 0.5,
+     "dy": -0.58,
+     "sx": 1,
+     "dx": -0.032,
+     "tilt": 0,
+     "rot": 0,
+     "bend": 0,
+     "set": "r4_yellow_buck",
+     "lift": 0.03,
+     "wrap": 1,
+     "onTop": false,
+     "visemeMap": { "closed": "neutral", "open": "ah", "wide": "ee", "round": "oh", "smile": "smile" },
+     "owner": "decal-set",
+     "rest": "neutral",
+     "anchor": { "node": "KFB_Mouth_anchor", "width": 0.4968421906232834, "src": "A11 KFB_Mouth_anchor.extras.mouthBounds" }
+    },
+    "src": "WS0 Vorschlag 15.11. (V-1817, Mund-Sätze R4)",
+    "status": "VORSCHLAG"
+   }
+  }
+ },
+ "toolbox": {
+  "feld": "appearance.mouth.v.set",
+  "auswahl_neu": [
+   { "set": "r4_round_clay", "setLabel": "R4 round_clay (Rund, Rosé, Zahnlücke)", "path": "src/assets/actors/mouths-r4-round_clay/" },
+   { "set": "r4_full_soft", "setLabel": "R4 full_soft (Voll, Mauve, Zahnlücke)", "path": "src/assets/actors/mouths-r4-full_soft/" },
+   { "set": "r4_buck_grin", "setLabel": "R4 buck_grin (Braun, Hasenzähne)", "path": "src/assets/actors/mouths-r4-buck_grin/" },
+   { "set": "r4_yellow_buck", "setLabel": "R4 yellow_buck (Gelb, Hasenzähne)", "path": "src/assets/actors/mouths-r4-yellow_buck/" },
+   { "set": "r4_sausage", "setLabel": "R4 sausage (Tomatenrot, drei Zähne)", "path": "src/assets/actors/mouths-r4-sausage/" },
+   { "set": "r4_sausage_coral", "setLabel": "R4 sausage_coral (Koralle-Wurstlippe, Zahnlücke)", "path": "src/assets/actors/mouths-r4-sausage_coral/", "ersatz": { "fv": "l_th", "disgust": "grimace" } },
+   { "set": "r4_crooked_rogue", "setLabel": "R4 crooked_rogue (Gauner, Eckzahn)", "path": "src/assets/actors/mouths-r4-crooked_rogue/" },
+   { "set": "r4_monster_maw", "setLabel": "R4 monster_maw (Monster violett, Spitzzähne)", "path": "src/assets/actors/mouths-r4-monster_maw/" }
+  ],
+  "formen": ["closed", "mbp", "small_open", "mid_open", "ah", "ee_wide", "oh", "oo", "fv", "l_th", "smile_closed", "smile_teeth", "laugh", "smirk", "grimace", "sad", "angry", "surprised", "scared", "disgust"],
+  "viseme_zuordnung_spiel": { "neutral": "closed", "smile": "smile_closed", "m": "mbp", "d": "small_open", "s": "grimace", "ee": "ee_wide", "uh": "mid_open", "ah": "ah", "oh": "oh", "r": "small_open", "f": "fv", "woo": "oo", "l": "l_th" },
+  "anker": "anchors.json je Satz im R2-Format: anchor (256, 220) = Lippenlinie von closed, upperLift 0,35 eingebacken, closed_width_px 332 wie Satz A, Schatten eingebacken; Größe in der ToolBox gleich wie bei gpt_a_r2",
+  "figurenkarte_headpart": "Für Kopfteil-Figuren (Hunky, Dory) liest headpartMouth.js die R4-Sätze noch nicht; mouth.set r4_* dort erst nach Einbau in headpartMouth.js."
+ }
+}
