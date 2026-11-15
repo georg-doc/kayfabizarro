@@ -30,13 +30,14 @@ Konzept für diesen Job (WS0 bestätigt, wie R1): keine Szene, sondern Posen-Bl�
 - **Glieder:** die Vertices mit dem größten Gewicht auf Oberarm, Unterarm oder Hand (links und rechts), bei FB dazu die Knete-Hände.
 - **Körper:** Rumpf und Kopf (Vertices mit dem größten Gewicht auf Hüfte, Wirbelsäule, Brust, Hals, Kopf), bei FB auch Shirt und Kopf-Netze, bei der Farmerin Latzhose und Haare.
 - **Test:** Liegt ein Glied-Vertex innerhalb der geschlossenen Körperhülle? Zum Beispiel Strahl-Parität gegen die gestellten Körper-Dreiecke, `three-mesh-bvh` ist im Stamm vorhanden. Erlaubt ist Berührung bis 1 % der Figurenhöhe Eindringtiefe, etwa eine Hand an der Wange. Mehr ist FAIL.
-- **Je Take und Figur:** größte Eindringtiefe und betroffene Knochen ins Messblatt. Bei FAIL die Pose korrigieren (Winkel, Ellbogen nach außen, Hand vor den Körper), nicht das Netz.
+- **Je Take und Figur:** größte Eindringtiefe und betroffene Knochen ins Messblatt. Bei FAIL die Pose korrigieren (Winkel, Ellbogen nach außen, Hand vor den Körper), nicht das Netz. Grundlage bei FB ist die vorhandene Arm-Korrektur aus IDLE_R1 (V-1388, Oberarm 18°, V-1378): erst sie anwenden, dann je Take nachstellen.
 - Das Gate läuft über **alle 16** Takes. Schlägt es bei einer angenommenen Pose an, korrigierst du nur so weit wie nötig und markierst die Pose im Messblatt.
 - Das Gate kommt als eigenes Modul in `50_BLENDER/AUSDRUCK_R1/stage/` mit kurzem Test, damit Schritt 3 und das Spiel es wiederverwenden.
 
 **2 · Farmer-Augen über den Spielweg:**
 - Stamm `game/integration-r2` (Repo `georg-doc/KFB-Stunt-Car-Race`): `src/modules/eyeActor.js` (`createEyeActor`) mit `kaykit-eye-adapter.v1.js`, `pet-eye-rig.v6.js`, `lidFix.js`, E2-Lidhaut `clay-skin-attach.v1.js` und `src/modules/augenR2.js` (`applyAugenR2`, Werte aus der Figurendatei `src/data/characters/farmer_hut.character.json`, `appearance.augenR2` und `appearance.lids`, gelesen über `figurDatei.js`), wie im Spiel mit `augen=r2`.
-- Diese Module lädst du in die Bühnenkopie statt `kfb-proof-eyes.v1.js` für die Farmerin. FB bleibt, wie er ist: Augen und Lider sind in r1j eingebacken.
+- Diese Module lädst du in die Bühnenkopie statt `kfb-proof-eyes.v1.js` für die Farmerin. Für KayKit-Figuren folgt die Proof-Bühne damit dem Spielweg (V-1122, V-1412/V-1413); V-518 gilt nur noch für Figuren ohne Spiel-Augen (WS0, V-1844).
+- FB bleibt, wie er ist: Augen und Lider sind in r1j eingebacken. Die FB-Sperre mit dem Proof-Durchlass für r1j (sha256 1d13f2cd…, V-1838, Georg q717) läuft auch in der Bühnenkopie R1b.
 - **Gegenprobe:** ein Bild der Farmerin von vorn in Ruhepose neben einem Spielbild derselben Figur mit gleichem Blick. Die Augen müssen gleich sitzen: im Kopf, Pupillen nur leicht nach innen.
 - Gilt für **alle 16** Farmerin-Zellen, auch für die angenommenen Posen.
 

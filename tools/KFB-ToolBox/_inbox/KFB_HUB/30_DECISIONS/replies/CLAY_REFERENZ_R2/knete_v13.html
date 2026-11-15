@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>Knete v1.3 Stilbild</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<style>body{margin:0;background:#222;color:#ddd;font:13px system-ui}</style></head>
+<body><div id="log">Knete v1.3 Stilbild (headless) · tests/render.mjs</div>
+<script type="module">
+/* CLAY_REFERENZ_R2 · Stilbild „Claybound | v1.1 | v1.3“. Buehne, Licht, Kamera und Renderer = Clay-Golden (proof-kit.v1.1: kfb-stage-light, MESA Tag,
+   ACES 1). Mitte und rechts dasselbe Objekt, dieselbe Kamera, dasselbe Licht; nur die Knete-Datei wechselt (kfb-clay.v1.1.js | kfb-clay.v1.3.js).
+   FB nur aus der SSOT: frizzlebob.character.json appearance.export.v.web = FB_WEB_KANON.r1j.glb (assets/private @800a85eb), Knete nur auf der Haut. */
+import * as K from '../CLAY_SSOT_R1/proof-kit.v1.1.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { applyClay as applyClay11 } from '../CLAY_SSOT_R1/kfb-clay.v1.1.js';
+import { applyClay as applyClay13, VERSION as V13 } from '../CLAY_SSOT_R1/kfb-clay.v1.3.js';
+const { THREE } = K;
+const CLAY = { v11: applyClay11, v13: applyClay13 };
+const FB_WEB = '/private/50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON.r1j.glb';
+const FELS = '/place/kfb_stone_leicht_felsen.r1.glb';
+const SKIN = /^(FB_Yellow|KFB_Tail_Clay)$/;
+const KANON = ['FB_Lederhaut_L', 'FB_Lederhaut_R', 'FB_Pupille_L', 'FB_Pupille_R', 'FB_Lidhaut_L', 'FB_Lidhaut_R', 'Carl_Brow_L', 'Carl_Brow_R', 'Carl_Nose', 'FB_Ear_L_v5', 'FB_Ear_R_v5', 'KFB_Tail_Bunny'];
+
+function loader() { const ld = new GLTFLoader(); ld.setMeshoptDecoder(MeshoptDecoder); return ld; }
+function matsOk(root, tag) { const b = []; root.traverse((o) => { if (o.isMesh && ![].concat(o.material).every((m) => m && m.isMaterial)) b.push(o.name); }); if (b.length) throw new Error('G2 Material kaputt nach ' + tag + ': ' + b.join(', ')); }
+function normalsOk(root) { let bad = 0, n = 0; root.traverse((o) => { const a = o.isMesh && o.geometry.attributes.normal; if (!a) return; for (let i = 0; i < a.count; i++) { const x = a.getX(i), y = a.getY(i), z = a.getZ(i), l = x * x + y * y + z * z; n++; if (!Number.isFinite(l) || l < 1e-8) bad++; } }); return { n, bad }; }
+function kanonWache(root, origMat) {
+  const fehlt = [], shown = (o) => { for (let x = o; x; x = x.parent) { if (!x.visible) return false; if (x.scale.x === 0 && x.scale.y === 0 && x.scale.z === 0) return false; } return true; };
+  root.updateMatrixWorld(true);
+  for (const n of KANON) { const o = root.getObjectByName(n); if (!o || !shown(o)) fehlt.push(n); else o.traverse((m) => { if (m.isMesh && origMat.has(m) && m.material !== origMat.get(m) && !SKIN.test(origMat.get(m).name || '')) fehlt.push(n + ' (Material getauscht)'); }); }
+  let mund = 0; root.traverse((o) => { if (/^FB_Mund_/.test(o.name) && o.isMesh && shown(o)) mund++; });
+  if (!mund) fehlt.push('Mund');
+  return { ok: fehlt.length === 0, fehlt, mundTeile: mund };
+}
+async function loadFB() {
+  const root = (await loader().loadAsync(FB_WEB)).scene; matsOk(root, 'Laden');
+  root.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; } });
+  const { fbMund } = await import('/private/50_BLENDER/FB_WEB_KANON_R1/web/fb_mund.v2.js'); const mund = fbMund(root); const ruhe = mund.ruhe(); matsOk(root, 'fbMund');
+  const stale = []; root.traverse((o) => { if (o.userData && 'kfbClayOrig' in o.userData) { stale.push(o.name); delete o.userData.kfbClayOrig; } }); // Brief: Extras beim Laden verwerfen
+  root.updateMatrixWorld(true); const b = new THREE.Box3().setFromObject(root, true);
+  root.position.set(-(b.min.x + b.max.x) / 2, -b.min.y, -(b.min.z + b.max.z) / 2); root.updateMatrixWorld(true);
+  return { root, height: b.max.y - b.min.y, ruhe, stale };
+}
+/* eine Figur, zwei Knete-Varianten auf der Haut: je Variante eigene Materialien, Umschalten per Materialtausch (gleiche Geometrie, gleiche Pose) */
+async function fbVariants() {
+  const fb = await loadFB(), root = fb.root, orig = new Map(); root.traverse((o) => { if (o.isMesh) orig.set(o, o.material); });
+  const sets = {}, info = { datei: FB_WEB, height: +fb.height.toFixed(3), mundRuhe: fb.ruhe, staleKfbClayOrig: fb.stale, normals: normalsOk(root) };
+  for (const v of ['v11', 'v13']) {
+    for (const [o, m] of orig) o.material = m;
+    const h = CLAY[v](root, THREE, { profile: 'character', seed: 'frizzlebob', scaleRef: fb.height, skip: (o) => !(o.isMesh && SKIN.test(orig.get(o)?.name || o.material?.name || '')) });
+    h.uniforms.uClayMottle.value = 0;   // Marmorierung steckt in der Datei-Textur
+    const m = new Map(); root.traverse((o) => { if (o.isMesh && o.material !== orig.get(o)) { o.material.normalMap = null; o.material.needsUpdate = true; m.set(o, o.material); delete o.userData.kfbClayOrig; } });
+    sets[v] = m; info[v] = { haut: h.meshes.length, version: [...m.values()][0]?.userData.kfbClay.version };
+  }
+  const use = (v) => { for (const [o, m] of orig) o.material = sets[v].get(o) || m; };
+  matsOk(root, 'Varianten');
+  const g5 = {}; for (const v of ['v11', 'v13']) { use(v); let skin = 0, clay = 0; root.traverse((o) => { if (o.isMesh && SKIN.test(orig.get(o).name || '')) { skin++; if (o.material.userData.kfbClay?.version === (v === 'v13' ? V13 : 'kfb-clay.v1.1')) clay++; } }); g5[v] = { skin, clay, ok: skin > 0 && skin === clay }; }
+  info.G5 = g5;
+  for (const v of ['v11', 'v13']) { use(v); const w = kanonWache(root, orig); info['wache_' + v] = w; if (!w.ok) throw new Error('Kanon-Wache FAIL ' + v + ': ' + w.fehlt.join(', ')); }
+  if (info.normals.bad / Math.max(1, info.normals.n) > 0.001) throw new Error('G2 Normalen: ' + JSON.stringify(info.normals));
+  return { root, use, height: fb.height, info };
+}
+async function felsVariants() {
+  const g = await loader().loadAsync(FELS); const root = new THREE.Group(); root.add(g.scene); matsOk(root, 'Fels laden');
+  const names = []; root.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; names.push(o.name + ':' + (o.material?.name || '')); } });
+  root.updateMatrixWorld(true); let b = new THREE.Box3().setFromObject(root, true); const s = b.getSize(new THREE.Vector3());
+  const sc = 2.4 / Math.max(s.y, 1e-6); root.scale.setScalar(sc); root.updateMatrixWorld(true); b = new THREE.Box3().setFromObject(root, true); // Fels ~2,4 m hoch (grosser Felsblock am Weg)
+  root.position.set(-(b.min.x + b.max.x) / 2, -b.min.y - 0.05, -(b.min.z + b.max.z) / 2); root.updateMatrixWorld(true);
+  const orig = new Map(); root.traverse((o) => { if (o.isMesh) orig.set(o, o.material); });
+  const sets = {}; for (const v of ['v11', 'v13']) { for (const [o, m] of orig) o.material = m; CLAY[v](root, THREE, { profile: 'midground', seed: 'kfb_stone_felsen', scaleRef: K.FIG_H }); const m = new Map(); root.traverse((o) => { if (o.isMesh && o.material !== orig.get(o)) { m.set(o, o.material); delete o.userData.kfbClayOrig; } }); sets[v] = m; }
+  const use = (v) => { for (const [o, m] of orig) o.material = sets[v].get(o) || m; };
+  return { root, use, info: { datei: FELS, meshes: names, size: s.toArray().map((x) => +(x * sc).toFixed(2)), clay: { v11: sets.v11.size, v13: sets.v13.size } } };
+}
+function label(ctx, x, y, text, sz = 26) { ctx.font = `600 ${sz}px system-ui, sans-serif`; ctx.textBaseline = 'top'; ctx.fillStyle = 'rgba(0,0,0,0.6)'; const w = ctx.measureText(text).width; ctx.fillRect(x, y, w + 24, sz + 16); ctx.fillStyle = '#fff'; ctx.fillText(text, x + 12, y + 8); }
+async function refCrop(file, crop, w, h) {
+  const img = new Image(); img.src = './' + file; await img.decode();
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const ctx = c.getContext('2d');
+  const [x, y, cw, ch] = crop, s = Math.max(w / cw, h / ch), dw = cw * s, dh = ch * s;
+  ctx.imageSmoothingQuality = 'high'; ctx.drawImage(img, x, y, cw, ch, (w - dw) / 2, (h - dh) / 2, dw, dh); return ctx.getImageData(0, 0, w, h);
+}
+function triptych(imgs, names) {
+  const gap = 8, w = imgs[0].width, h = imgs[0].height, c = document.createElement('canvas'); c.width = w * 3 + gap * 2; c.height = h; const ctx = c.getContext('2d');
+  ctx.fillStyle = '#111'; ctx.fillRect(0, 0, c.width, c.height);
+  imgs.forEach((im, i) => { ctx.putImageData(im, i * (w + gap), 0); label(ctx, i * (w + gap) + 14, 14, names[i]); });
+  return c.toDataURL('image/jpeg', 0.9);
+}
+const toImageData = (img) => new ImageData(img.data, img.w, img.h);
+/* heller Saum (LIGHT_MODEL_R2 L-3): mittlere Helligkeit der Ringe 1..8 px innerhalb der Silhouette bei 1920x1080; Saum = Ringe aussen heller als Ring 6-8 */
+function saum(img, mask) {
+  const W = img.w, H = img.h, inside = new Uint8Array(W * H); for (let i = 0; i < W * H; i++) inside[i] = mask.data[i * 4] > 127 ? 1 : 0;
+  let cur = inside.slice(); const rings = [];
+  for (let k = 1; k <= 8; k++) { const nx = cur.slice(); let sum = 0, cnt = 0;
+    for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) { const i = y * W + x; if (!cur[i]) continue; if (!cur[i - 1] || !cur[i + 1] || !cur[i - W] || !cur[i + W]) { nx[i] = 0; const p = i * 4; sum += 0.2126 * img.data[p] + 0.7152 * img.data[p + 1] + 0.0722 * img.data[p + 2]; cnt++; } }
+    rings.push(+(sum / Math.max(1, cnt)).toFixed(1)); cur = nx; }
+  const core = (rings[5] + rings[6] + rings[7]) / 3; let width = 0; for (let k = 0; k < 5; k++) { if (rings[k] > core * 1.06) width = k + 1; else break; }
+  return { rings, core: +core.toFixed(1), saumPx: width };
+}
+
+window.KFB_V13 = async ({ w = 640, h = 540 } = {}) => {
+  const R = K.makeRenderer(w, h), out = {}, info = { gpu: '' };
+  const gl = R.getContext(), dbg = gl.getExtension('WEBGL_debug_renderer_info'); info.gpu = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : '';
+  const FB = await fbVariants(); info.fb = FB.info;
+  const stage = K.makeStage({ figures: [FB.root], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.4 } });
+  const shot = (S, use, cam) => ['v11', 'v13'].map((v) => { use(v); S.render(R, cam); return toImageData(K.readRGBA(R)); });
+  const head = FB.root.getObjectByName('CharacterTemplate_Head'), hb = new THREE.Box3().setFromObject(head, true), hc = hb.getCenter(new THREE.Vector3()), hs = hb.getSize(new THREE.Vector3()), d = Math.max(hs.x, hs.y) * 2.0;
+  const H = FB.height;
+  const camFace = K.camera(w, h, 30, [hc.x + 0.18 * d, hc.y - 0.02 * d, hc.z + d], [hc.x, hc.y - 0.12 * hs.y, hc.z]);   // wie Spiel-Bild „KFB heute v1.1“: Kopf fuellt das Bild, leicht von vorn-seitlich
+  const camFull = K.camera(w, h, 30, [0, 0.55 * H, 2.9 * H], [0, 0.5 * H, 0]);                                           // FB ganz von vorn
+  const [a1, b1] = shot(stage, FB.use, camFace);
+  out.v13_1_gesicht = triptych([await refCrop('ref_knetekugel_blenderkit.jpg', [18, 18, 476, 402], w, h), a1, b1], ['Knete-Kugel (Ref.)', 'v1.1', 'v1.3']);
+  const [a2, b2] = shot(stage, FB.use, camFull);
+  out.v13_2_ganz = triptych([await refCrop('ref_claybound_ss3.jpg', [700, 395, 205, 225], w, h), a2, b2], ['Claybound Figur', 'v1.1', 'v1.3']);
+  /* Saum-Pruefung bei 1080p, FB ganz von vorn */
+  { const R2 = K.makeRenderer(1920, 1080), cam = K.camera(1920, 1080, 30, [0, 0.55 * H, 2.9 * H], [0, 0.5 * H, 0]); const mask = K.renderMask(R2, stage, cam, [FB.root]); info.saum = {};
+    for (const v of ['v11', 'v13']) { FB.use(v); stage.render(R2, cam); info.saum[v] = saum(K.readRGBA(R2), mask); }
+    R2.dispose(); R2.forceContextLoss?.(); }
+  /* Fels, Profil midground, Fahrtsicht (Fahrkamera: ~3,4 m hoch, leicht nach unten, 55°) */
+  const F = await felsVariants(); info.fels = F.info;
+  const S3 = K.makeStage({ figures: [], fit: { center: { x: 0, y: 1, z: 0 }, radius: 5 }, ground: true }); S3.scene.add(F.root);
+  const [a3, b3] = shot(S3, F.use, K.camera(w, h, 55, [1.2, 3.4, 9.0], [0, 1.0, 0]));
+  out.v13_3_fels = triptych([await refCrop('ref_claybound_ss1.jpg', [1180, 410, 500, 420], w, h), a3, b3], ['Claybound Fels', 'v1.1', 'v1.3']);
+  /* Nahblick fuer die Selbstpruefung (nicht fuer Georg): Fels nah und FB-Wange nah, v1.1 | v1.3 */
+  const [a4, b4] = shot(S3, F.use, K.camera(w, h, 40, [0.6, 1.6, 3.4], [0, 1.1, 0]));
+  out.check_fels_nah = triptych([await refCrop('vergleich_claybound_kfb.jpg', [0, 0, 670, 480], w, h), a4, b4], ['Claybound Fels nah', 'v1.1', 'v1.3']);
+  R.dispose(); R.forceContextLoss?.();
+  return { out, info };
+};
+window.KFB_V13_READY = true;
+</script></body></html>
