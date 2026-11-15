@@ -3,15 +3,8 @@
  "id": "fb_katana_hero_v9",
  "notiz": "Choreo R2d (15.11., Georg: nur Extreme zeigen). Acht Schnitte an der haengenden Seite: 1-4 senkrecht als fallender Hieb aus dem Sprung (Kette c2), 5 waagerecht aus dem Lauf, 6-8 waagerecht am Scheitel steigender Spruenge. Zeiten t = Spielzeit in s inkl. Zeitlupe und Hit-Stop; clipzeit in der zeitspur = Inhaltszeit bei Faktor 1. Zeitlupe nur im Ausholen (Schnitt 1, 5, 8), zwei Bilder vor Kontakt Faktor 1,2, im Kontakt Hit-Stop 48 ms, danach 1,0. Felder ab, kette, nahtOffen, zeitspur, bahn, kamera sind Erweiterungen zu fb_katana_schnitt. nahtOffen = Blend-Daten noch nicht gemessen (WSB Teil B). Sprungbahn und Clips laufen in Inhaltszeit, also mit in die Zeitlupe. Impact: kein Kantenblitz, Licht/Funken keiner (katana.hit.metal passt nicht zu Karton); kein Stoss an der Matte, die Klinge trifft sie nie.",
  "figur": "frizzlebob",
- "datei": "50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON_agent_twin.r1f.glb",
- "clipsFehlenInDatei": [
-  "Jump_Start",
-  "Jump_Idle",
-  "Jump_Land",
-  "Melee_1H_Attack_Jump_Chop",
-  "Melee_2H_Attack_Spinning",
-  "Melee_2H_Attack_Spin"
- ],
+ "datei": "50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON_agent_twin.r1h.glb",
+ "clipsFehlenInDatei": [],
  "requisit": {
   "datei": "50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/waffen/KFB_Katana.r1d.glb",
   "slot": "handslotr"
