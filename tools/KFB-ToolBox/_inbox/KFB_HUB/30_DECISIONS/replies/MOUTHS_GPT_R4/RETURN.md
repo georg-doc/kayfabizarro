@@ -76,3 +76,14 @@ grey_thin und olive_thin sind geschnitten, aber nicht im Hub (Höhenproblem, son
 - Figurenkarte `mouth`: `owner: "decal-set"`, `set: "r4_<typ>"`, `setLabel` (= Typname wie im Hub), `path`, `rest: "closed"`, `default: "smile_closed"`, `upperLift`, `anchor.node` / `anchor.width`.
 - Charakter `appearance.mouth.v.set` = derselbe Satzname; `visemeMap` um die neuen Formen erweitern (fv, l_th, mid_open, laugh, smirk, sad, angry, surprised, scared, disgust).
 - Auswahlliste der Mund-Sätze um die gewählten R4-Typen ergänzen.
+
+## 6 · Einbau (V-1817, nach Georg q705: alle acht Typen)
+- **R2-Format:** `_tools/game_r2_r4.py` importiert das R2-Werkzeug (`MOUTHS_GPT_R2/_tools/cut_align.py`: measure, place, Schatten, Anker 256/220, upperLift 0,35) und liest die neu geschnittenen `<typ>/trim/`. Ausgabe `game/<typ>/` (Bild mit Schatten, noshadow/, trim/, anchors.json mit `closed_width_px`).
+- **Größe:** Jeder Typ wird gleichmäßig (x = y) skaliert, bis closed 332 px breit ist wie Satz A. Damit passt die heutige ToolBox-Größe ohne Nachstellen.
+- **Flache Ruheform gelöst, ohne Stauchen:** Die Grenze 1,7 × closed misst bei dünnen Lippen Unsinn. Neu: 1,7 × max(closed-Höhe, 0,578 × closed-Breite); 0,578 = Median des closed-Seitenverhältnisses der sechs Brief-Typen. Ergebnis: **keine Form in keinem Typ gestaucht**, kein `*_full` nötig, nichts berührt den Rand. sausage_coral surprised ist zwar 2,2 × closed, aber flacher als surprised der dicken Typen (gemessen an der Breite).
+- **Ersatz sausage_coral:** fv und disgust werden nicht ausgeliefert. Spiel: `ERSATZ r4_sausage_coral { f: 'l_th' }` (wie Satz B, V-1764). disgust ist kein Spiel-Schlüssel; in anchors.json steht `ersatz: { fv: l_th, disgust: grimace }`.
+- **Spiel:** `src/assets/actors/mouths-r4-<typ>/` (wie mouths-gpt-a|b, öffentlicher Teil, nichts unter src/private). `mundSaetze.js`: Sätze `r4_<typ>` und Zuordnung (s grimace, uh mid_open, f fv, l l_th) nur mit `muender4=r1` (flags.js, WS0, pruefen). Ohne Schalter ist ein r4-Satz unbekannt, FB bleibt bei seinem Rückfall.
+- **Korrektur zu §5:** `visemeMap` der Figurendatei bleibt wie sie ist (closed/open/wide/round/smile → PetMouth-Schlüssel); die neuen Formen kommen über die Zuordnung im Satz.
+- **Noch offen:** `headpartMouth.js` (Hunky, Dory) kennt die R4-Sätze nicht. Gefühle (laugh, angry, scared …) haben noch keinen Mimik-Schlüssel im Spiel.
+- **Beleg:** `beleg/<typ>.jpg` (FB, gesicht, Ruhe | oh), Prüfskript `test/_muender4.mjs` im Zweig `ws0/muender-r4`.
+- **ToolBox:** `toolbox_patch_r4.json` (kfb.character.patch/1, Vorschlag FB → r4_yellow_buck, dazu Auswahlliste der acht Sätze). Probe mit apply_patch.py --dry: greift, Neu-Backen nötig (Satzwechsel).

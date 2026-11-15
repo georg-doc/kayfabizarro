@@ -1,5 +1,17 @@
 # Rückgabe · Sprechblasen R2 · 15.11.2026 (V-1814, Brief BRIEF_WSA_SPRECHBLASEN_R2)
 
+## TUNE nach PASS (q706/q707) · Commit 88d71d98 auf ws0/blasen-r2, Modul sha256 8632bb6a24c6…
+- **Schrei sternförmig:** Jede Spitze liegt jetzt auf dem Strahl vom Mittelpunkt (± 5° geseedet), nicht mehr senkrecht zur Kontur. Verteilung nach Bogenlänge und Höhe aus der Zeilenhöhe bleiben. Auf flachen Strahlen wird die Spitze höchstens 1,15-fach verlängert, damit sie noch herausragt. Die Täler liegen ebenfalls auf dem Strahl.
+- **Lange Oberkante:** Über die Höhenklassen legt sich eine langsame Welle (zwei Perioden, geseedet, bleibt in 0,75–1,3 × H0).
+- **KA-BOOM-Flanke:** Zackenzahl gerade, zwei Hälften. An beiden Enden sitzt immer eine Spitze, nie ein Tal. Damit ist die lange Flanke weg. Das gilt auch für Soundwords, deshalb sind `07_soundword_R1_R2.jpg` und `R2_07_soundword.mp4` ebenfalls neu.
+- **Gedanken-Schweif wie ein Zipfel:** ein sanfter Bogen (Bauch 0,20–0,28 der Strecke, Seite geseedet) vom nächsten kleinen Lobe bis knapp vor den Kopf. 3–4 Kreise, je 0,6–0,7 × des vorigen, kleinster am Kopf. Abstände 0,3–0,6 × Durchmesser.
+- **Gedanken-Schweif sichtbar:** Die Kreisgröße wächst mit der Wolke (erster Kreis 0,5–1,25 Zeilenhöhen, bei langen Blasen ≥ 0,6). Ist der Kopf weit weg, wachsen die Lücken anteilig bis höchstens 1 × Durchmesser. Der kleinste Kreis hält mindestens 0,9 Zeilenhöhen Abstand zum Kopfziel.
+- **Prüfungen:** 13 statt 11, alle bestanden. Neu: Spitze auf dem Strahl, Spitze an beiden Enden, Bogen und Krümmung des Schweifs, Kreisgröße, Abstand zum Kopf.
+- **Neu (überschrieben):** `02_denken_R1_R2.jpg` 5cec86ed044b · `03_schreien_R1_R2.jpg` 99dd5dc1ed80 · `07_soundword_R1_R2.jpg` ebc61abdf55a · `R2_02_denken.mp4` 55fe4956b492 · `R2_03_schreien.mp4` 08baf337aaed · `R2_07_soundword.mp4` 76b09a9b9c6a.
+- **Noch offen:** Die lange Schrei-Oberkante ist besser, wirkt aber noch leicht gleichmäßig. Steht der Kopf sehr nah an einer langen Wolke (unter etwa 70 px), fehlt Platz: Die Kreise schrumpfen dann bis 0,5 Zeilenhöhen, und die Krümmung ist kaum zu sehen. Auf der Testseite steht der Kopf bei Denken deshalb 100 px unter der Wolke.
+
+---
+
 Kandidat für Georg. Noch kein Einbau ins Spiel, keine Hub-Karte (macht WS0).
 
 ## Was da ist
@@ -20,9 +32,8 @@ Kandidat für Georg. Noch kein Einbau ins Spiel, keine Hub-Karte (macht WS0).
 - **Timing:** Pop wie heute (0,82 → 1,04 → 1 in 170 ms), Schrei härter, Flüstern weich, Gedanken-Kreise vom Kopf zur Wolke, Buchstaben nacheinander (55 ms), Erzähler schiebt sich von der Bildkante herein.
 
 ## Wo es noch nicht stimmt (selbst angesehen)
-- **Schrei lang:** Die obere Zackenreihe wirkt noch etwas gleichmäßig. Lange Schreie werden sehr groß, der Zipfel ist daneben klein.
-- **Soundword „KA-BOOM!“:** Am linken Ende bleibt eine etwas längere Zackenflanke (viel schwächer als vorher, aber sichtbar).
-- **Denken lang:** Die Wolke wird groß, die Schweifkreise wirken daneben klein.
+- (R2 vor dem TUNE) Schrei lang zu gleichmäßig, KA-BOOM-Flanke, Schweifkreise zu klein: siehe TUNE oben.
+- **Schrei lang:** Lange Schreie werden sehr groß, der Zipfel ist daneben klein.
 - **Flüstern:** Der gestückelte Zipfel ist in Spielgröße klein, die Unterscheidung trägt vor allem die Schrift.
 - **Antworten:** Zipfel 30/22 wirken an den kleinen Kästen groß (aber SSOT-konform, wie heute im Spiel).
 

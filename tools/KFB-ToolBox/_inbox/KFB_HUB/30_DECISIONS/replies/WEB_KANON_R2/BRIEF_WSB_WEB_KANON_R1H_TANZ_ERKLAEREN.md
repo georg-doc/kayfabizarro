@@ -2,7 +2,7 @@
 
 **Kern (3 Zeilen):**
 1. Georg: Auf der Website tanzt FB in Pausen, wenn er gerade nichts erklärt, und für Spielregeln, FAQ und Onboarding braucht er Gesten zum Erklären.
-2. Beides gibt es im Bestand. Es kommt unverändert in die Web-Datei, wie die Katana-Clips in r1g.
+2. Beides gibt es im Bestand. Tänze und d1–d8 kommen unverändert in die Web-Datei, wie die Katana-Clips in r1g; die Gesprächsclips werden vorher auf FB übertragen und repariert.
 3. Lieferung `FB_WEB_KANON_agent_twin.r1h.glb` = r1g plus die Clips unten, sonst nichts geändert, mit Messblatt.
 
 **Grundlage:** `assets/private` @2fde66e6. Pfade ohne Präfix liegen dort.
@@ -18,10 +18,11 @@
 - Erklären: die 13 Clips der Gesprächsbibliothek und d1–d8. Sitz-Clips (d3, d4, d5) nur, wenn sie ohne Stuhl lesbar bleiben; sonst als Lücke melden.
 
 **Regeln:**
-- Clips unverändert (V-574); auf FB sind sie schon nach V-1752 repariert, nichts neu übertragen.
+- Tänze und d1–d8 aus KULTURTECHNIKEN: auf FB schon nach V-1752 repariert, unverändert übernehmen (V-574).
+- Die 13 Clips der Gesprächsbibliothek gibt es nur auf KayKit Rig_Medium: mit `50_BLENDER/IDLE_R1/scripts/clips_auf_figur.mjs` auf FB übertragen, nach V-1752 reparieren (≤ 1,5 cm im Rumpf), FB-Abspreizung wie in IDLE_R1 (V-1733), Messwert vorher/nachher ins Messblatt. Für diese 13 Clips den FB-Bodenausgleich messen wie K12 (oder „nicht nötig“ mit Messwert) und ein Vorschaublatt vorn oder seitlich mit Kanon-Wache mitliefern.
 - Arme frei wie im Spiel (V-1733), FB-Kanon-Wache (beide Ohren, Schwanz).
 - Gleiche Packung wie r1g; Größe im Messblatt nennen.
 
-**Messblatt `RETURN_r1h.md`:** je Clip Name, Länge, Schleife ja/nein, Takt (bpm, beatsPerLoop, downbeatS) aus dem Manifest, und bei Erklär-Clips die Rolle (zeigen, zählen, abwägen, Zustimmen, Widersprechen …) aus dem Katalog.
+**Messblatt `RETURN_r1h.md`:** je Clip Name, Länge, Schleife ja/nein, Takt (bpm, beatsPerLoop, downbeatS) aus dem Manifest und der Bodenausgleich für FB (`bodenausgleich.frizzlebob` → `data/floorlift/frizzlebob.floorlift.json`, als Tabelle je Bild zum Anwenden auf der Website; die Clip-Spur bleibt unverändert, V-596). Bei Erklär-Clips dazu eine Rolle (zeigen, zählen, abwägen, zustimmen, widersprechen …), abgeleitet aus `label_de` und `group` des Katalogs und als abgeleitet gekennzeichnet.
 
 **Rückgabe:** Git-Bundle mit Zweig `assets/wsb-fb-web-kanon-r1h` von `assets/private` @2fde66e6, RETURN in `KFB_HUB/30_DECISIONS/replies/WEB_KANON_R2/MINI_r1h/`. WS0 pusht und gibt r1h an Claude Design weiter.
