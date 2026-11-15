@@ -40,6 +40,7 @@ Konzept für diesen Job (WS0 bestätigt): keine Szene, sondern Posen-Blätter zw
 - Posen nur an den Knochen der Figuren, Proportionen und Netze bleiben (V-574). Keine neuen Teile.
 
 **Bilder:**
+- Weg: Posen in Blender stellen, je Take als GLB exportieren und auf der Proof-Bühne rendern (`render.mjs` aus `replies/PROOF_STAGE_R1/`), denn die Augenschicht ist ein three.js-Modul. Für die Farmerin legst du dafür eine Figurenkarte an, in die du die Werte aus `appearance.augenR2` und `appearance.lids` überträgst (Augengröße, Schielen, Lidfarbe).
 - Proof-Bühne in Knete, Licht der Bühne, Kamera von vorn oder dreiviertel vorn auf Augenhöhe, Figur ganz im Bild.
 - Je Take eine Zelle „FB | Farmerin“ mit dem Take-Namen. Blätter zu je vier Takes (also vier Blätter für die 16), JPG ≤ 2 MB.
 - Ein Blatt „Stufen“ mit Jubel, Schreck, Wut je fein | cartoon | extrem an FB.

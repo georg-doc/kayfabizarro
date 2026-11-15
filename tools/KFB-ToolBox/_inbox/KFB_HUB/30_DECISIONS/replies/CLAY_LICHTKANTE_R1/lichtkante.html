@@ -118,6 +118,50 @@ async function loadFB() {
   return { root, height: b.max.y - b.min.y, mundRuhe: mund.ruhe(), chk };
 }
 
+import { applyClay as applyClay12 } from '../CLAY_SSOT_R1/kfb-clay.v1.2.js';
+window.KFB_LK_MATCH = async ({ w = 960, h = 640, p = { rim: 4.0, ring: 0.1, wall: 0.7, depth: 1.4, maxSlope: 1.5, small: 0 } } = {}) => {
+  /* Abgleich: Stilbild r3 (v1.1 + Lichtkante-Patch) gegen kfb-clay v1.2 pur, gleiche Szene, gleiche Kamera, gleicher Seed */
+  const R = K.makeRenderer(w, h), res = {};
+  const diff = (a, b) => { let mx = 0, sum = 0; for (let i = 0; i < a.data.length; i += 4) for (let c = 0; c < 3; c++) { const d = Math.abs(a.data[i + c] - b.data[i + c]); mx = Math.max(mx, d); sum += d; } return { max: mx, mean: +(sum / (a.data.length * 0.75)).toFixed(4) }; };
+  const cases = [
+    ['terrain_fahrt', () => K.makeTerrain(), { profile: 'background', seed: 'terrain', scaleRef: K.FIG_H }, (st, root) => { st.scene.add(root); }, { figures: [], fit: { center: { x: 0, y: 0, z: -5 }, radius: 32 }, ground: false }, [55, [0, 3.4, 16], [0, 0.6, -6]]],
+    ['fb_full', async () => K.placeFigure(await K.loadGLB('fb')), { profile: 'character', seed: 'frizzlebob' }, null, null, [30, [0.9, 1.15, 4.4], [0, 0.95, 0]]],
+  ];
+  for (const [key, make, opts, add, stageOpts, cam] of cases) {
+    const imgs = [];
+    for (const mode of ['r3', 'v12']) {
+      const root = await make();
+      if (mode === 'r3') { await K.clayVariant('v11', root, opts); const { U } = patchLK(root); setLK(U, true, p); } else applyClay12(root, THREE, opts);
+      const st = K.makeStage(stageOpts || { figures: [root], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.4 } }); if (add) add(st, root);
+      st.render(R, K.camera(w, h, cam[0], cam[1], cam[2])); imgs.push(K.readRGBA(R));
+    }
+    res[key] = diff(imgs[0], imgs[1]);
+  }
+  R.dispose(); R.forceContextLoss?.(); return res;
+};
+import { GLSL as GLSL12, CLAY_PROFILES as P12 } from '../CLAY_SSOT_R1/kfb-clay.v1.2.js';
+import { GLSL as GLSL11, CLAY_PROFILES as P11 } from '../CLAY_SSOT_R1/kfb-clay.v1.1.js';
+window.KFB_LK_RANGE = async () => {
+  /* Groesste Gradienten-Komponente je Dellen-Ebene (Zellen-Einheiten wie clayBake RANGE), 1024x1024 Stichproben auf drei schraegen Schnitten */
+  const R = new THREE.WebGLRenderer({ preserveDrawingBuffer: true }); R.setSize(1024, 1024, false);
+  const rt = new THREE.WebGLRenderTarget(1024, 1024, { type: THREE.FloatType });
+  const out = {};
+  for (const [ver, G, PR] of [['v11', GLSL11, P11], ['v12', GLSL12, P12]]) for (const prof of ['character', 'midground', 'background']) for (const layer of ['dent2', 'dent']) {
+    const P = PR[prof][layer];
+    const U = { uP: { value: new THREE.Vector4(1, P.density, P.slope, P.rim) }, uE: { value: new THREE.Vector4(P.elong, P.sigma, P.radius, 0) }, uX: { value: new THREE.Vector3(P.ring ?? 0, P.wall ?? 0, P.rimW ?? 0.26) }, uZ: { value: 0 } };
+    const call = ver === 'v12' ? 'kfbDentLayer( x, uvec3( 51u, 52u, 53u ), uP, uE, uX )' : 'kfbDentLayer( x, uvec3( 51u, 52u, 53u ), uP, uE )';
+    const fs = G.FRAG_DECL + `uniform vec4 uP, uE; uniform vec3 uX; uniform float uZ; varying vec2 vUv;
+void main() { vec3 x = vec3( vUv * 60.0, uZ ) + vec3( 0.0, 0.37 * vUv.x * 60.0, 0.21 * vUv.y * 60.0 ); vec3 g = ${call}; gl_FragColor = vec4( abs( g ), length( g ) ); }`;
+    const m = new THREE.ShaderMaterial({ uniforms: U, vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4( position.xy, 0.0, 1.0 ); }', fragmentShader: fs });
+    const q = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), m), sc = new THREE.Scene(); sc.add(q); const cam = new THREE.Camera();
+    let comp = 0, len = 0; const px = new Float32Array(1024 * 1024 * 4);
+    for (const z of [0.13, 7.71, 19.4]) { U.uZ.value = z; R.setRenderTarget(rt); R.render(sc, cam); R.readRenderTargetPixels(rt, 0, 0, 1024, 1024, px);
+      for (let i = 0; i < px.length; i += 4) { comp = Math.max(comp, px[i], px[i + 1], px[i + 2]); len = Math.max(len, px[i + 3]); } }
+    out[`${ver}.${prof}.${layer}`] = { maxComp: +comp.toFixed(3), maxLen: +len.toFixed(3) };
+    m.dispose();
+  }
+  R.setRenderTarget(null); R.dispose(); return out;
+};
 window.KFB_LK = {
   async runFB({ w = 960, h = 640, p = { rim: 4.0, ring: 0.1, wall: 0.7, depth: 1.4, maxSlope: 1.5, small: 0 }, names = ['Datei', 'Look: Lichtkante'] } = {}) {
     const R = K.makeRenderer(w, h), out = {}, info = { p, datei: FB_WEB };

@@ -31,7 +31,9 @@ try {
   await page.goto(`http://127.0.0.1:${PORT}/CLAY_LICHTKANTE_R1/lichtkante.html`, { waitUntil: 'load' });
   await page.waitForFunction(() => window.KFB_LK_READY === true, null, { timeout: 120000 });
   const cfg = { only: ONLY }; if (P) cfg.p = P;
-  const r = await page.evaluate((c) => (c.fb ? window.KFB_LK.runFB(c) : window.KFB_LK.run(c)), { ...cfg, fb: process.argv.includes('--fb') });
+  if (process.argv.includes('--range')) console.log('RANGE', JSON.stringify(await page.evaluate(() => window.KFB_LK_RANGE())));
+  const MATCH = process.argv.includes('--match') || process.argv.includes('--range'); if (process.argv.includes('--match')) console.log('MATCH', JSON.stringify(await page.evaluate(() => window.KFB_LK_MATCH())));
+  const r = MATCH ? { out: {}, info: {} } : await page.evaluate((c) => (c.fb ? window.KFB_LK.runFB(c) : window.KFB_LK.run(c)), { ...cfg, fb: process.argv.includes('--fb') });
   for (const [k, url] of Object.entries(r.out)) { const f = path.join(EVD, `${k}_${TAG}.png`); fs.writeFileSync(f, Buffer.from(url.slice(url.indexOf(',') + 1), 'base64')); console.log('wrote', path.relative(DIR, f)); }
   console.log(JSON.stringify(r.info));
 } finally {

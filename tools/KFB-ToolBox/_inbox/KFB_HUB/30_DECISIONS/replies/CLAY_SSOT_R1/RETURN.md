@@ -1,3 +1,39 @@
+# RETURN · CLAY_SSOT_R1 · **v1.2 „Lichtkante“** (15.11.2026)
+
+**Auftrag:** Georg 15.11. PASS auf das Stilbild CLAY_LICHTKANTE_R1 r3 (FB aus der SSOT-Datei, „Datei | Look“).
+**Ergebnis:** `kfb-clay.v1.2.js` (sha256 `9c60ecd6…88be`) als neue Datei. v1.1 bleibt byte-gleich (`a81a3ee3…3fd0`).
+
+## Was sich ändert (v1.1 → v1.2)
+- **Nur die großen Daumendrücke (dent2):**
+  - die Schüssel hat einen flacheren Boden und eine steilere Wand (Super-Gauß, wall 0,7);
+  - der Wulst ist viermal so hoch (rim 0,4 / 0,28 / 0,24);
+  - der Wulst bleibt überwiegend ein Halbmond, mit Ring-Anteil 0,1 und Wulstbreite 0,22;
+  - die Tiefe ist mal 1,4.
+- **maxSlope** mal 1,5 in allen drei Profilen (0,63 / 0,6 / 0,42).
+- **Neues Uniform** je Dellen-Ebene: `uClayDentX` / `uClayDent2X` (ring, wall, rimW). `kfbDentLayer` hat dafür ein fünftes Argument.
+- **Kleine Dellen** rechnen exakt wie v1.1 (wall 0 nimmt den v1.1-Zweig). Gemessen: gleiche Gradienten-Maxima wie v1.1.
+
+## Prüfungen
+- **Unit:** 43/43 PASS (`tests/kfb-clay.v1.2.unit.test.mjs`).
+- **Golden:** G0 bis G5 PASS (`tests/golden.v1.2.test.mjs`, Referenz v1.1, ANGLE Metal M1 Max), 0 Fehler.
+  - G1: SSIM 1,0000, größte Pixel-Abweichung 0.
+  - G2: stripePeak 1,46–2,31, coherence 0,46–0,58.
+  - G5: chroma ≥ 0,956.
+- **Relief gegen v1.1:** FB 1,52×, Goth 1,19×, Hunky 1,54×.
+- **Abgleich mit dem abgenommenen Stilbild r3** (v1.1 plus Lichtkante-Patch gegen v1.2 pur, gleiche Szene): Gelände in Fahrtsicht höchstens 1/255 Abweichung, FB 0/255.
+- **Krater-Check:** nur per Sicht am Stilbild, kein Messtor. Die Gefahr bleibt als offener Punkt.
+
+## Für das Spiel (WS0)
+1. **Vendor** byte-gleich nach `src/vendor/clay/kfb-clay.v1.2.js`, Import in `claySSOT.js` hinter einem Schalter; v1.1 bleibt als Rückweg.
+2. **clayBake:** v1.2 bleibt verträglich, weil die Uniforms aus `shared` kopiert werden und `kfbClayGrad` aufgerufen wird.
+   - Gemessene größte Gradienten-Komponente dent2: character 0,878, midground 0,739, background 0,511.
+   - Die Kodierungsgrenze `RANGE.dent2 = 0,9` ist damit knapp. Vorschlag 1,2 als Reserve, dann `test/claybake.mjs`.
+3. **Knetkorn-Adapter (Gelände, V-1451):** Die Wiederaufnahme-Bedingung „Lichtkante statt Abdunklung“ ist erfüllt, sobald der Adapter die v1.2-GLSL nimmt.
+4. **FB-Web-Kanon:** neu backen mit v1.2 (WSB). In r1i dabei die alten `userData.kfbClayOrig`-Extras an `KFB_Tail_Bunny` und `KFB_Shirt_FB` entfernen.
+5. **Beleg im Spiel:** Fahrkamera und von vorn, mit FB-Kanon-Wache.
+
+---
+
 # RETURN · CLAY_SSOT_R1 · **v1.1 "etwas mehr Knete"** (WS0 · 17./18.10.2026)
 
 **Brief:** Georg 17.10.: "etwas mehr Knete, wir müssen die Kerben- und Dellen-Mathematik optimieren" (a bit more clay; improve the notch and dent maths).
