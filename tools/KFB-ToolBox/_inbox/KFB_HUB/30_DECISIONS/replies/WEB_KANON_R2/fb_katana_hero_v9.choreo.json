@@ -1,0 +1,1402 @@
+{
+ "schema": "kfb.choreo/1",
+ "id": "fb_katana_hero_v9",
+ "notiz": "Choreo R2d (15.11., Georg: nur Extreme zeigen). Acht Schnitte an der haengenden Seite: 1-4 senkrecht als fallender Hieb aus dem Sprung (Kette c2), 5 waagerecht aus dem Lauf, 6-8 waagerecht am Scheitel steigender Spruenge. Zeiten t = Spielzeit in s inkl. Zeitlupe und Hit-Stop; clipzeit in der zeitspur = Inhaltszeit bei Faktor 1. Zeitlupe nur im Ausholen (Schnitt 1, 5, 8), zwei Bilder vor Kontakt Faktor 1,2, im Kontakt Hit-Stop 48 ms, danach 1,0. Felder ab, kette, nahtOffen, zeitspur, bahn, kamera sind Erweiterungen zu fb_katana_schnitt. nahtOffen = Blend-Daten noch nicht gemessen (WSB Teil B). Sprungbahn und Clips laufen in Inhaltszeit, also mit in die Zeitlupe. Impact: kein Kantenblitz, Licht/Funken keiner (katana.hit.metal passt nicht zu Karton); kein Stoss an der Matte, die Klinge trifft sie nie.",
+ "figur": "frizzlebob",
+ "datei": "50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON_agent_twin.r1f.glb",
+ "clipsFehlenInDatei": [
+  "Jump_Start",
+  "Jump_Idle",
+  "Jump_Land",
+  "Melee_1H_Attack_Jump_Chop",
+  "Melee_2H_Attack_Spinning",
+  "Melee_2H_Attack_Spin"
+ ],
+ "requisit": {
+  "datei": "50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/waffen/KFB_Katana.r1d.glb",
+  "slot": "handslotr"
+ },
+ "stufe": "cartoon",
+ "dauer": 14.25,
+ "ketten": {
+  "c2": "Jump_Start@0 -> Melee_1H_Attack_Jump_Chop@0,167 blendS 0,2 (-> Jump_Land@0,4 blendS 0,2); gemessen WSB",
+  "b4": "Jump_Start@0 -> Melee_2H_Attack_Spinning@0,167 blendS 0,2 -> Jump_Land@0 blendS 0,2; gemessen WSB",
+  "k7": "b4 mit 0,12 s Jump_Idle nach Jump_Start und voller Drehung; N2 offen",
+  "k8": "Jump_Start@0,30 -> Melee_2H_Attack_Spin@0,25 blendS 0,2 -> Jump_Land@0 blendS 0,2; N3 offen; Rueckfall k7 mit hoeherer Bahn"
+ },
+ "naehte": {
+  "N1": "Melee_1H_Attack_Jump_Chop@0,967 -> Jump_Start@0,13, blendS 0,15",
+  "N2": "Jump_Idle@0,12 -> Melee_2H_Attack_Spinning@0,167, blendS 0,2",
+  "N3": "Jump_Start@0,30 -> Melee_2H_Attack_Spin@0,25 blendS 0,2; Melee_2H_Attack_Spin@1,11 -> Jump_Land@0 blendS 0,2"
+ },
+ "koerper": [
+  {
+   "t": 0.0,
+   "clip": "FB_Halten_katana_Idle_A"
+  },
+  {
+   "t": 0.5,
+   "clip": "FB_Katana_dash",
+   "ab": 0,
+   "ueberblend": 0.12,
+   "einmal": true
+  },
+  {
+   "t": 0.9,
+   "clip": "Jump_Start",
+   "ab": 0.07,
+   "ueberblend": 0.12,
+   "einmal": true
+  },
+  {
+   "t": 1.23,
+   "clip": "Melee_1H_Attack_Jump_Chop",
+   "ab": 0.167,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "c2"
+  },
+  {
+   "t": 2.73,
+   "clip": "Jump_Start",
+   "ab": 0.13,
+   "ueberblend": 0.15,
+   "einmal": true,
+   "nahtOffen": "N1"
+  },
+  {
+   "t": 3.0,
+   "clip": "Melee_1H_Attack_Jump_Chop",
+   "ab": 0.167,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "c2"
+  },
+  {
+   "t": 3.85,
+   "clip": "Jump_Start",
+   "ab": 0.13,
+   "ueberblend": 0.15,
+   "einmal": true,
+   "nahtOffen": "N1"
+  },
+  {
+   "t": 4.12,
+   "clip": "Melee_1H_Attack_Jump_Chop",
+   "ab": 0.167,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "c2"
+  },
+  {
+   "t": 4.97,
+   "clip": "Jump_Start",
+   "ab": 0.13,
+   "ueberblend": 0.15,
+   "einmal": true,
+   "nahtOffen": "N1"
+  },
+  {
+   "t": 5.24,
+   "clip": "Melee_1H_Attack_Jump_Chop",
+   "ab": 0.167,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "c2"
+  },
+  {
+   "t": 6.09,
+   "clip": "FB_Katana_dash",
+   "ab": 0,
+   "ueberblend": 0.15,
+   "einmal": true
+  },
+  {
+   "t": 6.49,
+   "clip": "FB_Katana_waagerecht",
+   "ab": 0.03,
+   "ueberblend": 0.1,
+   "einmal": true
+  },
+  {
+   "t": 7.46,
+   "clip": "Jump_Start",
+   "ab": 0.1,
+   "ueberblend": 0.15,
+   "einmal": true
+  },
+  {
+   "t": 7.76,
+   "clip": "Melee_2H_Attack_Spinning",
+   "ab": 0.167,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "b4"
+  },
+  {
+   "t": 8.1,
+   "clip": "Jump_Land",
+   "ab": 0,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "b4"
+  },
+  {
+   "t": 8.5,
+   "clip": "Jump_Start",
+   "ab": 0.1,
+   "ueberblend": 0.15,
+   "einmal": true
+  },
+  {
+   "t": 8.8,
+   "clip": "Jump_Idle",
+   "ab": 0,
+   "ueberblend": 0.0,
+   "einmal": true,
+   "kette": "k7"
+  },
+  {
+   "t": 8.92,
+   "clip": "Melee_2H_Attack_Spinning",
+   "ab": 0.167,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "k7",
+   "nahtOffen": "N2"
+  },
+  {
+   "t": 9.44,
+   "clip": "Jump_Land",
+   "ab": 0,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "k7"
+  },
+  {
+   "t": 9.81,
+   "clip": "Jump_Start",
+   "ab": 0.1,
+   "ueberblend": 0.15,
+   "einmal": true
+  },
+  {
+   "t": 10.01,
+   "clip": "Melee_2H_Attack_Spin",
+   "ab": 0.25,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "k8",
+   "nahtOffen": "N3"
+  },
+  {
+   "t": 11.78,
+   "clip": "Jump_Land",
+   "ab": 0,
+   "ueberblend": 0.2,
+   "einmal": true,
+   "kette": "k8",
+   "nahtOffen": "N3"
+  },
+  {
+   "t": 12.45,
+   "clip": "FB_Katana_wegstecken",
+   "ab": 0,
+   "ueberblend": 0.15,
+   "einmal": true
+  }
+ ],
+ "haltung": [
+  {
+   "t": 0.0,
+   "ziel": "seite"
+  },
+  {
+   "t": 1.0,
+   "haltung": "geduckt",
+   "dauer": 0.3
+  },
+  {
+   "t": 2.77,
+   "haltung": "geduckt",
+   "dauer": 0.3
+  },
+  {
+   "t": 3.89,
+   "haltung": "geduckt",
+   "dauer": 0.3
+  },
+  {
+   "t": 5.01,
+   "haltung": "geduckt",
+   "dauer": 0.3
+  },
+  {
+   "t": 6.92,
+   "haltung": "geduckt",
+   "dauer": 0.3
+  },
+  {
+   "t": 7.53,
+   "haltung": "geduckt",
+   "dauer": 0.3
+  },
+  {
+   "t": 8.57,
+   "haltung": "geduckt",
+   "dauer": 0.3
+  },
+  {
+   "t": 9.88,
+   "haltung": "geduckt",
+   "dauer": 0.3
+  },
+  {
+   "t": 12.35,
+   "ziel": "kamera"
+  },
+  {
+   "t": 12.45,
+   "haltung": "stolz"
+  },
+  {
+   "t": 13.35,
+   "reaktion": "nicken",
+   "staerke": 0.6
+  }
+ ],
+ "gesicht": [
+  {
+   "t": 0.0,
+   "blick": [
+    0.0,
+    0.05
+   ]
+  },
+  {
+   "t": 0.3,
+   "gefuehl": "konzentration"
+  },
+  {
+   "t": 1.05,
+   "ausdruck": "zielen"
+  },
+  {
+   "t": 2.39,
+   "ausdruck": "anstrengung",
+   "dauer": 0.15
+  },
+  {
+   "t": 2.49,
+   "ausdruck": "treffer",
+   "dauer": 0.25
+  },
+  {
+   "t": 2.82,
+   "ausdruck": "anstrengung"
+  },
+  {
+   "t": 3.5,
+   "ausdruck": "anstrengung",
+   "dauer": 0.15
+  },
+  {
+   "t": 3.6,
+   "ausdruck": "grimmig",
+   "dauer": 0.25
+  },
+  {
+   "t": 3.94,
+   "ausdruck": "anstrengung"
+  },
+  {
+   "t": 4.62,
+   "ausdruck": "anstrengung",
+   "dauer": 0.15
+  },
+  {
+   "t": 4.72,
+   "ausdruck": "grimmig",
+   "dauer": 0.25
+  },
+  {
+   "t": 5.06,
+   "ausdruck": "anstrengung"
+  },
+  {
+   "t": 5.74,
+   "ausdruck": "anstrengung",
+   "dauer": 0.15
+  },
+  {
+   "t": 5.84,
+   "ausdruck": "grimmig",
+   "dauer": 0.25
+  },
+  {
+   "t": 6.97,
+   "ausdruck": "zielen"
+  },
+  {
+   "t": 6.98,
+   "ausdruck": "anstrengung",
+   "dauer": 0.15
+  },
+  {
+   "t": 7.08,
+   "ausdruck": "grimmig",
+   "dauer": 0.25
+  },
+  {
+   "t": 7.58,
+   "ausdruck": "anstrengung"
+  },
+  {
+   "t": 7.84,
+   "ausdruck": "anstrengung",
+   "dauer": 0.15
+  },
+  {
+   "t": 7.94,
+   "ausdruck": "grimmig",
+   "dauer": 0.25
+  },
+  {
+   "t": 8.62,
+   "ausdruck": "anstrengung"
+  },
+  {
+   "t": 9.0,
+   "ausdruck": "anstrengung",
+   "dauer": 0.15
+  },
+  {
+   "t": 9.1,
+   "ausdruck": "grimmig",
+   "dauer": 0.25
+  },
+  {
+   "t": 9.93,
+   "ausdruck": "zielen"
+  },
+  {
+   "t": 11.25,
+   "ausdruck": "anstrengung",
+   "dauer": 0.15
+  },
+  {
+   "t": 11.35,
+   "ausdruck": "treffer",
+   "dauer": 0.25
+  },
+  {
+   "t": 12.35,
+   "blick": [
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "t": 12.45,
+   "gefuehl": "stolz"
+  },
+  {
+   "t": 13.35,
+   "braue": "raiseL"
+  }
+ ],
+ "zeitspur": [
+  {
+   "t": 0.0,
+   "faktor": 1.0,
+   "clipzeit": 0
+  },
+  {
+   "t": 1.57,
+   "faktor": 1.0,
+   "clipzeit": 1.57
+  },
+  {
+   "t": 1.66,
+   "faktor": 0.15,
+   "clipzeit": 1.61
+  },
+  {
+   "t": 2.33,
+   "faktor": 0.15,
+   "clipzeit": 1.71
+  },
+  {
+   "t": 2.43,
+   "faktor": 1.2,
+   "clipzeit": 1.76
+  },
+  {
+   "t": 2.49,
+   "faktor": 1.2,
+   "clipzeit": 1.83
+  },
+  {
+   "t": 2.54,
+   "faktor": 1.0,
+   "clipzeit": 1.83
+  },
+  {
+   "t": 6.54,
+   "faktor": 1.0,
+   "clipzeit": 5.69
+  },
+  {
+   "t": 6.62,
+   "faktor": 0.2,
+   "clipzeit": 5.73
+  },
+  {
+   "t": 7.02,
+   "faktor": 0.2,
+   "clipzeit": 5.81
+  },
+  {
+   "t": 7.02,
+   "faktor": 1.2,
+   "clipzeit": 5.81
+  },
+  {
+   "t": 7.08,
+   "faktor": 1.2,
+   "clipzeit": 5.88
+  },
+  {
+   "t": 7.12,
+   "faktor": 1.0,
+   "clipzeit": 5.88
+  },
+  {
+   "t": 10.17,
+   "faktor": 1.0,
+   "clipzeit": 8.83
+  },
+  {
+   "t": 10.26,
+   "faktor": 0.15,
+   "clipzeit": 8.87
+  },
+  {
+   "t": 11.13,
+   "faktor": 0.15,
+   "clipzeit": 9.0
+  },
+  {
+   "t": 11.3,
+   "faktor": 1.2,
+   "clipzeit": 9.09
+  },
+  {
+   "t": 11.35,
+   "faktor": 1.2,
+   "clipzeit": 9.15
+  },
+  {
+   "t": 11.4,
+   "faktor": 1.0,
+   "clipzeit": 9.15
+  },
+  {
+   "t": 14.25,
+   "faktor": 1.0,
+   "clipzeit": 12.0
+  }
+ ],
+ "bahn": [
+  {
+   "schnitt": 1,
+   "absprung": 1.16,
+   "landung": 2.43,
+   "zusatzHoeheM": 0.0,
+   "hinweis": "Hoehe steckt im Clip (Huefte +0,36 m, 0,60 s Flug); Buehne gibt nur den Weg zur naechsten Schnittlinie"
+  },
+  {
+   "schnitt": 2,
+   "absprung": 2.93,
+   "landung": 3.53,
+   "zusatzHoeheM": 0.0,
+   "hinweis": "Hoehe steckt im Clip (Huefte +0,36 m, 0,60 s Flug); Buehne gibt nur den Weg zur naechsten Schnittlinie"
+  },
+  {
+   "schnitt": 3,
+   "absprung": 4.05,
+   "landung": 4.65,
+   "zusatzHoeheM": 0.0,
+   "hinweis": "Hoehe steckt im Clip (Huefte +0,36 m, 0,60 s Flug); Buehne gibt nur den Weg zur naechsten Schnittlinie"
+  },
+  {
+   "schnitt": 4,
+   "absprung": 5.17,
+   "landung": 5.77,
+   "zusatzHoeheM": 0.0,
+   "hinweis": "Hoehe steckt im Clip (Huefte +0,36 m, 0,60 s Flug); Buehne gibt nur den Weg zur naechsten Schnittlinie"
+  },
+  {
+   "schnitt": 6,
+   "absprung": 7.69,
+   "landung": 8.23,
+   "zusatzHoeheM": 0.3,
+   "flugS": 0.5
+  },
+  {
+   "schnitt": 7,
+   "absprung": 8.73,
+   "landung": 9.51,
+   "zusatzHoeheM": 0.65,
+   "flugS": 0.73
+  },
+  {
+   "schnitt": 8,
+   "absprung": 10.04,
+   "landung": 11.85,
+   "zusatzHoeheM": 1.0,
+   "flugS": 0.9
+  }
+ ],
+ "kamera": [
+  {
+   "t": 0.0,
+   "art": "stand",
+   "sicht": "dreiviertel_vorn",
+   "hoehe": "brust",
+   "optik": "normal"
+  },
+  {
+   "t": 0.9,
+   "art": "schnitt",
+   "sicht": "profil",
+   "hoehe": "huefte_tief",
+   "optik": "weit"
+  },
+  {
+   "t": 1.66,
+   "art": "orbit",
+   "gradUm": 120,
+   "bis": 2.33,
+   "sicht": "profil_nach_dreiviertel_vorn",
+   "hoehe": "steigt_auf_kopf",
+   "optik": "weit_nah"
+  },
+  {
+   "t": 2.49,
+   "art": "stand",
+   "sicht": "dreiviertel_vorn",
+   "hoehe": "huefte",
+   "optik": "weit"
+  },
+  {
+   "t": 2.73,
+   "art": "schnitt",
+   "sicht": "profil",
+   "hoehe": "brust",
+   "optik": "normal",
+   "fahrt": "seitlich_mit_FB",
+   "bis": 6.06
+  },
+  {
+   "t": 6.09,
+   "art": "schnitt",
+   "sicht": "dreiviertel_vorn",
+   "hoehe": "knie",
+   "optik": "weit"
+  },
+  {
+   "t": 6.62,
+   "art": "orbit",
+   "gradUm": 60,
+   "bis": 7.02,
+   "hoehe": "knie",
+   "optik": "weit_nah"
+  },
+  {
+   "t": 7.46,
+   "art": "schnitt",
+   "sicht": "seite_viertel",
+   "hoehe": "brust",
+   "optik": "normal",
+   "hinweis": "Kamera dort, wohin FB nach einer Vierteldrehung schaut",
+   "fahrt": "kranfahrt_hoch_mit_den_Spruengen",
+   "bis": 9.64
+  },
+  {
+   "t": 9.81,
+   "art": "schnitt",
+   "sicht": "dreiviertel_vorn_untersicht",
+   "hoehe": "knie",
+   "optik": "weit"
+  },
+  {
+   "t": 10.26,
+   "art": "orbit",
+   "gradUm": 150,
+   "bis": 11.13,
+   "hoehe": "steigt_auf_klinge",
+   "optik": "weit_nah"
+  },
+  {
+   "t": 11.35,
+   "art": "stand",
+   "sicht": "dreiviertel_vorn",
+   "hoehe": "kopf",
+   "optik": "weit"
+  },
+  {
+   "t": 12.45,
+   "art": "schnitt",
+   "sicht": "vorn",
+   "hoehe": "brust",
+   "optik": "normal_ruhig"
+  }
+ ],
+ "ereignisse": [
+  {
+   "t": 1.1,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 1,
+    "pose": "ausholen_boden",
+    "halt": true
+   }
+  },
+  {
+   "t": 2.26,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 1,
+    "pose": "ausholen_luft",
+    "halt": true
+   }
+  },
+  {
+   "t": 2.41,
+   "name": "ton",
+   "daten": {
+    "schnitt": 1,
+    "cue": "katana.r1.swing",
+    "plan": "katanaPlanR1:fire"
+   }
+  },
+  {
+   "t": 2.49,
+   "name": "schnitt",
+   "daten": {
+    "schnitt": 1,
+    "art": "senkrecht_fallend",
+    "richtung": "oben_nach_unten",
+    "bulletTime": true
+   }
+  },
+  {
+   "t": 2.49,
+   "name": "hitstop",
+   "daten": {
+    "schnitt": 1,
+    "ms": 48
+   }
+  },
+  {
+   "t": 2.49,
+   "name": "shake",
+   "daten": {
+    "schnitt": 1,
+    "staerke": 0.8,
+    "dauerBilder": 5,
+    "richtung": [
+     0,
+     -1,
+     0
+    ],
+    "gedaempft": true
+   }
+  },
+  {
+   "t": 2.49,
+   "name": "reaktion",
+   "daten": {
+    "schnitt": 1,
+    "ziel": "seite",
+    "art": "biegt_nach_unten_federt",
+    "vfx": "katana.hit",
+    "vfxOrt": "kontaktpunkt",
+    "lichtFunken": "keiner",
+    "vfxQuelle": "src/data/combat/katanaReference.r1.json ereignisse katana.hit"
+   }
+  },
+  {
+   "t": 2.49,
+   "name": "ton",
+   "daten": {
+    "schnitt": 1,
+    "cue": "katanaPlanR1:contact",
+    "material": "wood",
+    "hinweis": "Karton fehlt im Plan, hit_holz ist der naechste Bestand"
+   }
+  },
+  {
+   "t": 2.7,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 1,
+    "pose": "ausschwingen",
+    "halt": false
+   }
+  },
+  {
+   "t": 2.87,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 2,
+    "pose": "ausholen_boden",
+    "halt": false
+   }
+  },
+  {
+   "t": 3.47,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 2,
+    "pose": "ausholen_luft",
+    "halt": false
+   }
+  },
+  {
+   "t": 3.52,
+   "name": "ton",
+   "daten": {
+    "schnitt": 2,
+    "cue": "katana.r1.swing",
+    "plan": "katanaPlanR1:fire"
+   }
+  },
+  {
+   "t": 3.6,
+   "name": "schnitt",
+   "daten": {
+    "schnitt": 2,
+    "art": "senkrecht_fallend",
+    "richtung": "oben_nach_unten",
+    "bulletTime": false
+   }
+  },
+  {
+   "t": 3.6,
+   "name": "hitstop",
+   "daten": {
+    "schnitt": 2,
+    "ms": 48
+   }
+  },
+  {
+   "t": 3.6,
+   "name": "shake",
+   "daten": {
+    "schnitt": 2,
+    "staerke": 0.35,
+    "dauerBilder": 3,
+    "richtung": [
+     0,
+     -1,
+     0
+    ],
+    "gedaempft": true
+   }
+  },
+  {
+   "t": 3.6,
+   "name": "reaktion",
+   "daten": {
+    "schnitt": 2,
+    "ziel": "seite",
+    "art": "biegt_nach_unten_federt",
+    "vfx": "katana.hit",
+    "vfxOrt": "kontaktpunkt",
+    "lichtFunken": "keiner",
+    "vfxQuelle": "src/data/combat/katanaReference.r1.json ereignisse katana.hit"
+   }
+  },
+  {
+   "t": 3.6,
+   "name": "ton",
+   "daten": {
+    "schnitt": 2,
+    "cue": "katanaPlanR1:contact",
+    "material": "wood",
+    "hinweis": "Karton fehlt im Plan, hit_holz ist der naechste Bestand"
+   }
+  },
+  {
+   "t": 3.82,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 2,
+    "pose": "ausschwingen",
+    "halt": false
+   }
+  },
+  {
+   "t": 3.99,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 3,
+    "pose": "ausholen_boden",
+    "halt": false
+   }
+  },
+  {
+   "t": 4.59,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 3,
+    "pose": "ausholen_luft",
+    "halt": false
+   }
+  },
+  {
+   "t": 4.64,
+   "name": "ton",
+   "daten": {
+    "schnitt": 3,
+    "cue": "katana.r1.swing",
+    "plan": "katanaPlanR1:fire"
+   }
+  },
+  {
+   "t": 4.72,
+   "name": "schnitt",
+   "daten": {
+    "schnitt": 3,
+    "art": "senkrecht_fallend",
+    "richtung": "oben_nach_unten",
+    "bulletTime": false
+   }
+  },
+  {
+   "t": 4.72,
+   "name": "hitstop",
+   "daten": {
+    "schnitt": 3,
+    "ms": 48
+   }
+  },
+  {
+   "t": 4.72,
+   "name": "shake",
+   "daten": {
+    "schnitt": 3,
+    "staerke": 0.4,
+    "dauerBilder": 3,
+    "richtung": [
+     0,
+     -1,
+     0
+    ],
+    "gedaempft": true
+   }
+  },
+  {
+   "t": 4.72,
+   "name": "reaktion",
+   "daten": {
+    "schnitt": 3,
+    "ziel": "seite",
+    "art": "biegt_nach_unten_federt",
+    "vfx": "katana.hit",
+    "vfxOrt": "kontaktpunkt",
+    "lichtFunken": "keiner",
+    "vfxQuelle": "src/data/combat/katanaReference.r1.json ereignisse katana.hit"
+   }
+  },
+  {
+   "t": 4.72,
+   "name": "ton",
+   "daten": {
+    "schnitt": 3,
+    "cue": "katanaPlanR1:contact",
+    "material": "wood",
+    "hinweis": "Karton fehlt im Plan, hit_holz ist der naechste Bestand"
+   }
+  },
+  {
+   "t": 4.94,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 3,
+    "pose": "ausschwingen",
+    "halt": false
+   }
+  },
+  {
+   "t": 5.11,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 4,
+    "pose": "ausholen_boden",
+    "halt": false
+   }
+  },
+  {
+   "t": 5.71,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 4,
+    "pose": "ausholen_luft",
+    "halt": false
+   }
+  },
+  {
+   "t": 5.76,
+   "name": "ton",
+   "daten": {
+    "schnitt": 4,
+    "cue": "katana.r1.swing",
+    "plan": "katanaPlanR1:fire"
+   }
+  },
+  {
+   "t": 5.84,
+   "name": "schnitt",
+   "daten": {
+    "schnitt": 4,
+    "art": "senkrecht_fallend",
+    "richtung": "oben_nach_unten",
+    "bulletTime": false
+   }
+  },
+  {
+   "t": 5.84,
+   "name": "hitstop",
+   "daten": {
+    "schnitt": 4,
+    "ms": 48
+   }
+  },
+  {
+   "t": 5.84,
+   "name": "shake",
+   "daten": {
+    "schnitt": 4,
+    "staerke": 0.5,
+    "dauerBilder": 4,
+    "richtung": [
+     0,
+     -1,
+     0
+    ],
+    "gedaempft": true
+   }
+  },
+  {
+   "t": 5.84,
+   "name": "reaktion",
+   "daten": {
+    "schnitt": 4,
+    "ziel": "seite",
+    "art": "biegt_nach_unten_federt",
+    "vfx": "katana.hit",
+    "vfxOrt": "kontaktpunkt",
+    "lichtFunken": "keiner",
+    "vfxQuelle": "src/data/combat/katanaReference.r1.json ereignisse katana.hit"
+   }
+  },
+  {
+   "t": 5.84,
+   "name": "ton",
+   "daten": {
+    "schnitt": 4,
+    "cue": "katanaPlanR1:contact",
+    "material": "wood",
+    "hinweis": "Karton fehlt im Plan, hit_holz ist der naechste Bestand"
+   }
+  },
+  {
+   "t": 6.06,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 4,
+    "pose": "ausschwingen",
+    "halt": false
+   }
+  },
+  {
+   "t": 7.0,
+   "name": "ton",
+   "daten": {
+    "schnitt": 5,
+    "cue": "katana.r1.swing",
+    "plan": "katanaPlanR1:fire"
+   }
+  },
+  {
+   "t": 7.02,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 5,
+    "pose": "ausholen",
+    "halt": false
+   }
+  },
+  {
+   "t": 7.08,
+   "name": "schnitt",
+   "daten": {
+    "schnitt": 5,
+    "art": "waagerecht_lauf",
+    "richtung": "waagerecht",
+    "bulletTime": true
+   }
+  },
+  {
+   "t": 7.08,
+   "name": "hitstop",
+   "daten": {
+    "schnitt": 5,
+    "ms": 48
+   }
+  },
+  {
+   "t": 7.08,
+   "name": "shake",
+   "daten": {
+    "schnitt": 5,
+    "staerke": 0.7,
+    "dauerBilder": 5,
+    "richtung": [
+     -1,
+     0,
+     0
+    ],
+    "gedaempft": true
+   }
+  },
+  {
+   "t": 7.08,
+   "name": "reaktion",
+   "daten": {
+    "schnitt": 5,
+    "ziel": "karte",
+    "art": "biegt_in_hiebrichtung_federt",
+    "vfx": "katana.hit",
+    "vfxOrt": "kontaktpunkt",
+    "lichtFunken": "keiner",
+    "vfxQuelle": "src/data/combat/katanaReference.r1.json ereignisse katana.hit"
+   }
+  },
+  {
+   "t": 7.08,
+   "name": "ton",
+   "daten": {
+    "schnitt": 5,
+    "cue": "katanaPlanR1:contact",
+    "material": "wood",
+    "hinweis": "Karton fehlt im Plan, hit_holz ist der naechste Bestand"
+   }
+  },
+  {
+   "t": 7.36,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 5,
+    "pose": "ausschwingen",
+    "halt": false
+   }
+  },
+  {
+   "t": 7.63,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 6,
+    "pose": "ausholen_boden",
+    "halt": false
+   }
+  },
+  {
+   "t": 7.86,
+   "name": "ton",
+   "daten": {
+    "schnitt": 6,
+    "cue": "katana.r1.swing",
+    "plan": "katanaPlanR1:fire"
+   }
+  },
+  {
+   "t": 7.94,
+   "name": "schnitt",
+   "daten": {
+    "schnitt": 6,
+    "art": "waagerecht_scheitel",
+    "richtung": "waagerecht",
+    "bulletTime": false
+   }
+  },
+  {
+   "t": 7.94,
+   "name": "hitstop",
+   "daten": {
+    "schnitt": 6,
+    "ms": 48
+   }
+  },
+  {
+   "t": 7.94,
+   "name": "shake",
+   "daten": {
+    "schnitt": 6,
+    "staerke": 0.4,
+    "dauerBilder": 3,
+    "richtung": [
+     1,
+     0,
+     0
+    ],
+    "gedaempft": true
+   }
+  },
+  {
+   "t": 7.94,
+   "name": "reaktion",
+   "daten": {
+    "schnitt": 6,
+    "ziel": "karte",
+    "art": "biegt_in_hiebrichtung_federt",
+    "vfx": "katana.hit",
+    "vfxOrt": "kontaktpunkt",
+    "lichtFunken": "keiner",
+    "vfxQuelle": "src/data/combat/katanaReference.r1.json ereignisse katana.hit"
+   }
+  },
+  {
+   "t": 7.94,
+   "name": "ton",
+   "daten": {
+    "schnitt": 6,
+    "cue": "katanaPlanR1:contact",
+    "material": "wood",
+    "hinweis": "Karton fehlt im Plan, hit_holz ist der naechste Bestand"
+   }
+  },
+  {
+   "t": 8.3,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 6,
+    "pose": "ausschwingen",
+    "halt": false
+   }
+  },
+  {
+   "t": 8.67,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 7,
+    "pose": "ausholen_boden",
+    "halt": false
+   }
+  },
+  {
+   "t": 9.02,
+   "name": "ton",
+   "daten": {
+    "schnitt": 7,
+    "cue": "katana.r1.swing",
+    "plan": "katanaPlanR1:fire"
+   }
+  },
+  {
+   "t": 9.1,
+   "name": "schnitt",
+   "daten": {
+    "schnitt": 7,
+    "art": "waagerecht_scheitel",
+    "richtung": "waagerecht",
+    "bulletTime": false
+   }
+  },
+  {
+   "t": 9.1,
+   "name": "hitstop",
+   "daten": {
+    "schnitt": 7,
+    "ms": 48
+   }
+  },
+  {
+   "t": 9.1,
+   "name": "shake",
+   "daten": {
+    "schnitt": 7,
+    "staerke": 0.5,
+    "dauerBilder": 4,
+    "richtung": [
+     -1,
+     0,
+     0
+    ],
+    "gedaempft": true
+   }
+  },
+  {
+   "t": 9.1,
+   "name": "reaktion",
+   "daten": {
+    "schnitt": 7,
+    "ziel": "karte",
+    "art": "biegt_in_hiebrichtung_federt",
+    "vfx": "katana.hit",
+    "vfxOrt": "kontaktpunkt",
+    "lichtFunken": "keiner",
+    "vfxQuelle": "src/data/combat/katanaReference.r1.json ereignisse katana.hit"
+   }
+  },
+  {
+   "t": 9.1,
+   "name": "ton",
+   "daten": {
+    "schnitt": 7,
+    "cue": "katanaPlanR1:contact",
+    "material": "wood",
+    "hinweis": "Karton fehlt im Plan, hit_holz ist der naechste Bestand"
+   }
+  },
+  {
+   "t": 9.64,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 7,
+    "pose": "ausschwingen",
+    "halt": false
+   }
+  },
+  {
+   "t": 9.98,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 8,
+    "pose": "ausholen_boden",
+    "halt": false
+   }
+  },
+  {
+   "t": 10.59,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 8,
+    "pose": "ausholen_luft",
+    "halt": true
+   }
+  },
+  {
+   "t": 11.27,
+   "name": "ton",
+   "daten": {
+    "schnitt": 8,
+    "cue": "katana.r1.swing",
+    "plan": "katanaPlanR1:fire"
+   }
+  },
+  {
+   "t": 11.35,
+   "name": "schnitt",
+   "daten": {
+    "schnitt": 8,
+    "art": "waagerecht_scheitel",
+    "richtung": "waagerecht",
+    "bulletTime": true
+   }
+  },
+  {
+   "t": 11.35,
+   "name": "hitstop",
+   "daten": {
+    "schnitt": 8,
+    "ms": 48
+   }
+  },
+  {
+   "t": 11.35,
+   "name": "shake",
+   "daten": {
+    "schnitt": 8,
+    "staerke": 1.0,
+    "dauerBilder": 6,
+    "richtung": [
+     1,
+     0,
+     0
+    ],
+    "gedaempft": true
+   }
+  },
+  {
+   "t": 11.35,
+   "name": "reaktion",
+   "daten": {
+    "schnitt": 8,
+    "ziel": "karte",
+    "art": "biegt_in_hiebrichtung_federt",
+    "vfx": "katana.hit",
+    "vfxOrt": "kontaktpunkt",
+    "lichtFunken": "keiner",
+    "vfxQuelle": "src/data/combat/katanaReference.r1.json ereignisse katana.hit"
+   }
+  },
+  {
+   "t": 11.35,
+   "name": "ton",
+   "daten": {
+    "schnitt": 8,
+    "cue": "katanaPlanR1:contact",
+    "material": "wood",
+    "hinweis": "Karton fehlt im Plan, hit_holz ist der naechste Bestand"
+   }
+  },
+  {
+   "t": 11.85,
+   "name": "karten_fallen"
+  },
+  {
+   "t": 12.05,
+   "name": "extrem",
+   "daten": {
+    "schnitt": 8,
+    "pose": "ausschwingen",
+    "halt": false
+   }
+  }
+ ],
+ "ausloeser": {
+  "karte_getroffen": [
+   {
+    "dt": 0,
+    "ausdruck": "treffer",
+    "dauer": 0.3
+   },
+   {
+    "dt": 0.3,
+    "ausdruck": "triumph"
+   }
+  ],
+  "kamera_blick": [
+   {
+    "dt": 0,
+    "blick": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "dt": 0.05,
+    "braue": "raiseR"
+   },
+   {
+    "dt": 0.1,
+    "ausdruck": "kameraR",
+    "dauer": 1.2
+   }
+  ]
+ }
+}

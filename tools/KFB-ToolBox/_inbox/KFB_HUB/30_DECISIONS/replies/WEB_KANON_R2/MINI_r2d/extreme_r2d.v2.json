@@ -1,0 +1,185 @@
+{
+ "regel": "Georg 15.11.: Extrem-Posen zählen, nicht die Schwungmitte. Je Kandidat vom schnellsten Moment der Katana-Spitze aus: Ausholen = nächster Ruhepunkt davor (erstes lokales Minimum der Spitzengeschwindigkeit unter 35 % der Spitze, rückwärts gesucht), Impact = nächster Ruhepunkt danach (vorwärts, gleiche Regel), Ausschwingen = erstes Bild danach, ab dem die Spitze 0,2 s lang unter 20 % bleibt. Zeiten in s (30 fps). Vorschlag für den Choreografie-Experten, kein Ersatz für seine Wahl.",
+ "kandidaten": {
+  "a1_ual2_sword_regular_a": {
+   "ausholenS": 0.2,
+   "impactS": 0.333,
+   "ausschwingenS": 0.333,
+   "spitzeGeschwS": 0.267,
+   "tipHoeheM": {
+    "ausholen": 0.34,
+    "impact": 1.522
+   }
+  },
+  "a2_ual1_sword_attack": {
+   "ausholenS": 0.2,
+   "impactS": 0.567,
+   "ausschwingenS": 0.567,
+   "spitzeGeschwS": 0.467,
+   "tipHoeheM": {
+    "ausholen": 0.949,
+    "impact": -0.118
+   }
+  },
+  "a3_mixamo_jump_attack": {
+   "ausholenS": 0.267,
+   "impactS": 0.567,
+   "ausschwingenS": 0.933,
+   "spitzeGeschwS": 0.433,
+   "tipHoeheM": {
+    "ausholen": -0.146,
+    "impact": 0.861
+   }
+  },
+  "a4_mixamo_backflip": {
+   "ausholenS": 0.3,
+   "impactS": 0.567,
+   "ausschwingenS": 0.7,
+   "spitzeGeschwS": 0.467,
+   "tipHoeheM": {
+    "ausholen": 0.139,
+    "impact": 0.847
+   }
+  },
+  "a5_mixamo_great_sword_slash_5": {
+   "ausholenS": 0.3,
+   "impactS": 0.633,
+   "ausschwingenS": 0.9,
+   "spitzeGeschwS": 0.533,
+   "tipHoeheM": {
+    "ausholen": 0.553,
+    "impact": 1.179
+   }
+  },
+  "a6_mixamo_jumping_over_into_combat": {
+   "ausholenS": 2.567,
+   "impactS": 3.133,
+   "ausschwingenS": 3.367,
+   "spitzeGeschwS": 2.8,
+   "tipHoeheM": {
+    "ausholen": 0.428,
+    "impact": 1.1
+   }
+  },
+  "b1_ual2_sword_regular_c": {
+   "ausholenS": 0.433,
+   "impactS": 0.9,
+   "ausschwingenS": 0.9,
+   "spitzeGeschwS": 0.667,
+   "tipHoeheM": {
+    "ausholen": 0.805,
+    "impact": 0.021
+   }
+  },
+  "b2_mixamo_great_sword_jump_attack": {
+   "ausholenS": 0.9,
+   "impactS": 1.4,
+   "ausschwingenS": 1.533,
+   "spitzeGeschwS": 1.2,
+   "tipHoeheM": {
+    "ausholen": 0.59,
+    "impact": 1.386
+   }
+  },
+  "b3_kaykit_melee_2h_attack_spin": {
+   "ausholenS": 0.567,
+   "impactS": 1.5,
+   "ausschwingenS": 1.5,
+   "spitzeGeschwS": 0.733,
+   "tipHoeheM": {
+    "ausholen": 1.09,
+    "impact": 0.565
+   }
+  },
+  "b4_kette_jump_start_2h_spinning_jump_land": {
+   "ausholenS": 0.333,
+   "impactS": 0.667,
+   "ausschwingenS": 0.9,
+   "spitzeGeschwS": 0.567,
+   "tipHoeheM": {
+    "ausholen": 0.199,
+    "impact": 0.542
+   }
+  },
+  "b5_mixamo_great_sword_high_spin_attack": {
+   "ausholenS": 0.2,
+   "impactS": 0.733,
+   "ausschwingenS": 1.7,
+   "spitzeGeschwS": 0.433,
+   "tipHoeheM": {
+    "ausholen": 0.693,
+    "impact": 0.391
+   }
+  },
+  "b6_ual2_sword_heavy_combo": {
+   "ausholenS": 1.667,
+   "impactS": 2.0,
+   "ausschwingenS": 2.0,
+   "spitzeGeschwS": 1.833,
+   "tipHoeheM": {
+    "ausholen": 0.353,
+    "impact": 0.449
+   }
+  },
+  "c1_kaykit_jump_land": {
+   "ausholenS": 0.133,
+   "impactS": 0.333,
+   "ausschwingenS": 0.5,
+   "spitzeGeschwS": 0.233,
+   "tipHoeheM": {
+    "ausholen": 0.684,
+    "impact": 0.221
+   }
+  },
+  "c2_kette_jump_start_1h_jump_chop_jump_land": {
+   "ausholenS": 0.9,
+   "impactS": 1.167,
+   "ausschwingenS": 1.167,
+   "spitzeGeschwS": 1.0,
+   "tipHoeheM": {
+    "ausholen": 1.751,
+    "impact": 0.258
+   }
+  },
+  "c3_mixamo_hard_landing": {
+   "ausholenS": 0.067,
+   "impactS": 0.3,
+   "ausschwingenS": 0.467,
+   "spitzeGeschwS": 0.133,
+   "tipHoeheM": {
+    "ausholen": 0.421,
+    "impact": -0.185
+   }
+  },
+  "c4_ual2_ninjajump_land": {
+   "ausholenS": 0.0,
+   "impactS": 0.467,
+   "ausschwingenS": 0.467,
+   "spitzeGeschwS": 0.133,
+   "tipHoeheM": {
+    "ausholen": -0.373,
+    "impact": 0.361
+   }
+  },
+  "c5_ual1_jump_land": {
+   "ausholenS": 0.0,
+   "impactS": 0.6,
+   "ausschwingenS": 1.133,
+   "spitzeGeschwS": 0.1,
+   "tipHoeheM": {
+    "ausholen": 0.478,
+    "impact": 0.695
+   }
+  },
+  "c6_mixamo_standing_land_to_idle": {
+   "ausholenS": 0.0,
+   "impactS": 0.067,
+   "ausschwingenS": 1.1,
+   "spitzeGeschwS": 0.0,
+   "tipHoeheM": {
+    "ausholen": 0.874,
+    "impact": 0.579
+   }
+  }
+ }
+}
