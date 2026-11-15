@@ -87,3 +87,5 @@ grey_thin und olive_thin sind geschnitten, aber nicht im Hub (Höhenproblem, son
 - **Noch offen:** `headpartMouth.js` (Hunky, Dory) kennt die R4-Sätze nicht. Gefühle (laugh, angry, scared …) haben noch keinen Mimik-Schlüssel im Spiel.
 - **Beleg:** `beleg/<typ>.jpg` (FB, gesicht, Ruhe | oh), Prüfskript `test/_muender4.mjs` im Zweig `ws0/muender-r4`.
 - **ToolBox:** `toolbox_patch_r4.json` (kfb.character.patch/1, Vorschlag FB → r4_yellow_buck, dazu Auswahlliste der acht Sätze). Probe mit apply_patch.py --dry: greift, Neu-Backen nötig (Satzwechsel).
+- **Befund Beleg:** Alle acht laden auf FB (Log, Bilder, 0 Seitenfehler). Die dicken Typen (round_clay, full_soft, buck_grin, sausage, crooked_rogue, monster_maw) sind höher als Satz A; mit FBs heutigem Sitz (dy −0,58) berührt die Oberlippe beim oh die Nase. Je Figur in der ToolBox dy etwas tiefer oder size kleiner setzen.
+- **Zweig:** `ws0/muender-r4` @65c1b0039 (gepusht). Nichts für assets/private nötig. Unit flags meldet testfahrtGleich FAIL, auch schon auf ws0/stamm ohne diese Änderung.
