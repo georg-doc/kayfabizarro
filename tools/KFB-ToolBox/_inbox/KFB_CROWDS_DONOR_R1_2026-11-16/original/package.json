@@ -1,0 +1,25 @@
+{
+  "name": "crowds",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "vite --config vite.config.mjs --host 127.0.0.1 --port 5381 --strictPort",
+    "thumbs": "node make-thumbs.mjs"
+  },
+  "dependencies": {
+    "@recast-navigation/three": "0.44.0",
+    "n8ao": "2.0.1",
+    "postprocessing": "6.39.6",
+    "recast-navigation": "0.44.0",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "4.5.1",
+    "playwright": "1.64.1",
+    "vite": "8.3.5"
+  }
+}

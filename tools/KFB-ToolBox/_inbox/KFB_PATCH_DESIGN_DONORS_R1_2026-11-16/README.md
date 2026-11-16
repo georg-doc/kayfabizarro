@@ -10,6 +10,10 @@ All packets are additive, source-pinned intake on this isolated donor branch. Ex
 
 Every packet has its own SOURCE_LOCK and original licenses/third-party notices. Private source/media and binary art are excluded from the two new code packets. Particle Stanford bunny is explicitly excluded; original art license notes are preserved. These are genuine original sources, not similarly-named substitutions.
 
+## Crowds and dummy dolls
+
+[Original Crowds packet](../KFB_CROWDS_DONOR_R1_2026-11-16/INTEGRATION_HANDOFF.md): patch/crowds @35ca0a412c8b96024517124db6cbce7d90393ecc, MIT code / CC0 mannequin, Recast/Detour0.44.0.17exact original text files + genuine270300B mannequin GLB;6JSsyntaxchecksPASS. Source navigation/crowd/walker/figure modules are renderer-free consumers; NO Rapier contact/ragdoll solver. Existing Racer Rapier0.19.2 remains the physics owner. Handoff defines future WALK→IMPACT→RECOVER with one position writer, first3–5dummy test; no actual game coupling or NPC/FPS acceptance claimed.
+
 ## Existing Fernwald
 
 Already canonical in KFB-Stunt-Car-Race game/integration-r2 @2e5c62abb32106f084ea2d9c8f66b914be24cfc3. See Lowpoly handoff for exact file blobs/API: placeVeg supplies positions, Fernwald batches distant canopies with85/95m hysteresis; nearby kit trees use25–35m. Racer Site does not yet mount this owner. Lowpoly may add source-faithful hero/near trees after isolation and existing road/junction/place exclusion checks; do not introduce a new scatterer or replace Fernwald silhouettes accidentally.

@@ -1,0 +1,17 @@
+Crowds and navigation (a block demo on Patch)
+
+Navigation: Recast and Detour by Mikko Mononen and contributors (zlib).
+  https://github.com/recastnavigation/recastnavigation. Licence: third-party/LICENSE-recastnavigation.txt.
+Browser build: recast-navigation-js 0.44.0 by Isaac Mason (MIT).
+  https://github.com/isaac-mason/recast-navigation-js. Licence: third-party/LICENSE-recast-navigation-js.txt.
+Ambient occlusion: N8AO by N8python (MIT), https://github.com/N8python/n8ao.
+  With postprocessing by Raoul van Ruschen (Zlib), https://github.com/pmndrs/postprocessing, which it imports.
+three.js: MIT, the three.js authors. https://github.com/mrdoob/three.js
+Town and castle pieces (models/kit-town.glb, kit-castle.glb): Kenney's Fantasy Town Kit 2.0 and Castle Kit, CC0.
+  https://kenney.nl/assets/fantasy-town-kit, https://kenney.nl/assets/castle-kit
+The mannequin (models/mannequin.glb): Patch, CC0, with clips retargeted from Quaternius' Universal Animation Library 1
+  and 2, CC0. https://quaternius.com/packs/universalanimationlibrary.html
+Red Hat Mono (assets/red-hat-mono-*.woff2): The Red Hat Project Authors, SIL Open Font License 1.1: OFL-red-hat-mono.txt.
+The levels, the crowd's behaviour, the instanced figures and the demo: Patch, MIT.
+The Level choice's pictures (thumbs/): stills of this demo, Patch, CC0.
+There is no sound.
