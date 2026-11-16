@@ -378,6 +378,65 @@
         "issue 372"
       ],
       "prompt": "Do not restart Curtain design. Read tools/KFB-ToolBox/_inbox/KFB Theatre Curtain Recovery Board/KFB_THEATRE_CURTAIN_RECOVERY_SESSION_2026-10-07/tools/KFB-ToolBox/_inbox/KFB_THEATRE_CURTAIN_RECOVERY_CLAUDE_DESIGN_2026-10-07/RETURN.md and IMPLEMENTATION_HANDOFF.md from main. Preserve the accepted r3 donor and integrate only when the receiving architecture seam explicitly opens. No fake plaque/sign/wordmark/SVG overlay; no second Curtain simulation owner."
+    },
+    {
+      "id": "brief-ws0-gaussian-splats-r0",
+      "title": "WS0 · Gaussian Splats · Props, Slops, Scenelets R0",
+      "badge": "BRIEFING · NOT BUILT",
+      "status": "ready",
+      "provider": "WS0 Asset Authoring → existing Asset Librarian / Race recipient",
+      "desc": "Source-backed candidate: isolate one real 2D prop, one existing 72-atlas Slop and one Meshy scenelet, then test original versus splat. Patch styles deferred. Review-branch only; not live.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/docs/ws0-splat-assets-slops-scenelets-r0-2026-11-16/skills/chat/WS0_GAUSSIAN_SPLAT_2D_SLOPS_SCENELETS_R0_2026-11-16.md",
+      "tags": [
+        "ws0",
+        "gaussian splats",
+        "sdf",
+        "2d props",
+        "slops",
+        "scenelets",
+        "source isolate"
+      ],
+      "prompt": "Read the 2026-11-16 R0 briefing and Return. Source-isolate actual originals and validate file hashes before SDF/splat candidate. Do not replace existing asset registry, game renderer, physics or World owner."
+    },
+    {
+      "id": "brief-ws0-sdf-dungeon-followup-r0",
+      "title": "WS0 · SDF/Splat Dungeon · Höhlen, Räume, Wände, Eingänge",
+      "badge": "FOLLOW-UP · AFTER FIRST THREE",
+      "status": "hold",
+      "provider": "WS0 → existing InfiniteRooms R3 / Race receiving owner",
+      "desc": "A/B/C/D geometry-versus-renderer test in one real R3 traversable corridor: 3.2m hatch, breakable wall and room. R3 environment NO-GO; 0 new splat tests; no stage/live. Review branch only.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/docs/ws0-splat-assets-slops-scenelets-r0-2026-11-16/skills/chat/WS0_SDF_SPLAT_DUNGEON_CAVES_ROOMS_WALLS_ENTRIES_R0_2026-11-16.md",
+      "tags": [
+        "ws0",
+        "dungeon",
+        "cave",
+        "sdf",
+        "splats",
+        "infinite rooms",
+        "wall",
+        "entry"
+      ],
+      "prompt": "Run ONLY after source-verified three-class baseline. Preserve R3/Aperture/Rapier/Terrain/Portal owners and show actual original geometry in isolation before a SDF→mesh / SDF→splat comparator. No new game implementation authorization."
+    },
+    {
+      "id": "brief-ws0-creature-animation-r0",
+      "title": "WS0 · Creature Animation · Enemies, Tiere und Insekten",
+      "badge": "OPTIONAL COMPANION · NOT BUILT",
+      "status": "hold",
+      "provider": "WS0 Visual/Motion Authoring → existing KFB ToolBox Motion / Race",
+      "desc": "Reference-video + Blender procedural keypose/clip authoring and automated motion QA. Existing K15 Chicken/Crab as source candidates, then verified insect. Optional same-pose Splat render; no new gameplay owner. Review-branch only.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/docs/ws0-splat-assets-slops-scenelets-r0-2026-11-16/skills/chat/WS0_CREATURE_ANIMATION_AUTHORING_COMPANION_R0_2026-11-16.md",
+      "tags": [
+        "ws0",
+        "creature",
+        "animation",
+        "k15",
+        "insects",
+        "blender",
+        "splat",
+        "motion"
+      ],
+      "prompt": "Read WS0_CREATURE_ANIMATION_AUTHORING_COMPANION_R0_2026-11-16.md, preserve KFB actor/rig/runtime ownership; isolate real K15 Chicken original + clips before one new authoring bake. Does not block existing Splat R0 sequence."
     }
   ],
   "openQuestions": [
