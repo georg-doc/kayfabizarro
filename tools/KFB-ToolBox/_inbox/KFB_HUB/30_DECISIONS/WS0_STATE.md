@@ -9,6 +9,14 @@
 Stand 24.10.2026, Register bis V-729. WS1-Status jetzt auf ws1/status. Nach jedem /compact und zu Beginn jeder Steuerrunde zuerst lesen. Wird von WS0 laufend gepflegt, nicht neu erfunden.
 
 
+## 0 · Stand 16.11. ~20:45 (Register bis V-1871) – NACH NEUSTART ZUERST LESEN
+- **Stamm** `game/integration-r2` @648f932e. Smoke-Skript liegt jetzt dauerhaft in `30_DECISIONS/scripts/smoke2.mjs` (Scratchpad wird beim Neustart geleert): `node <pfad>/smoke2.mjs "/#<RELEASE_HASH>,debug,mute"` aus `~/kfb-ws0/stamm-wt`.
+- **Fahren (Patch, fahrphysik=patch1):** Fahrton Mischung als Vorgabe (V-1864/q729), Haftung (V-1866 PASS), Sprung/Drift (V-1865/1867 PASS). Offen: Fassrolle/Zweirad nur K2B, Straße/Viertel als eigener Boden.
+- **Soldaten:** Kampf = Sterbe-Clip; Umfahren = Puppe mit Farbfleck (soldatpuppe=r1, q734 PASS); Größe 1,45 Vorgabe (q735); zweifarbiger Verlauf soldatverlauf=r1 → **Hub q737 offen**. Fluff r 0,06.
+- **Offen bei Georg (Konzept, 16.11.):** Würfelmonster wegbouncen, KayKit-NPCs Kollision (zwei Wege zeigen), 2D-Props Hartgummi/Umknicken (Gummibäume gummi=1 gibt es, V-1227), Slops als schwere Pop-ups wegwirbeln + Zerfließen (Inkwave-Dissolve für alle), Straßennetz-Draufsicht.
+- **Racer:** Briefing b460 (`replies/RACER_KERN_R1/BRIEF_WSR_RACER_KERN_R1.md`) für neuen Chat WS-Racer; Georg startet ihn nach dem Neustart.
+- **Infinite Rooms R3:** B2 im Stamm (infiniterooms=r3, aus); WSA-Sichtprüfung offen.
+
 ## 0 · Stand 11.11. ~06:00 (Register bis V-1659) – Georg AFK, morgen Hub abarbeiten
 - **Trunk** @d39917d1. An: arena=r1, mibfix=r1, fbmund=r1, pupse=r1. Aus/prüfen: figlicht=r1 (q623 offen), waldton=r1 (ungeprüft, kein Beleg), arenagegner (Arena-Sitzung baut Stufe 3 mit Plastik-Soldaten army_green_r2 + Horror-/Pups-Stimmen).
 - **Hub offen:** q623 (Figurenlicht + welcher Schatten). Briefings an WSA: b385 (SANDLINE-Vergleich, Veröffentlichung hängt an DNS git.chatgpt-team.site), b386 (ToolBox v13: Mund-Sätze, Brauen, Nase), b393 (Audio-Site: Horror-SFX, Rülpser/Pupse, 2 Songs, Soundbed). Suno b388–b390, b392 warten auf Georgs Stems (1 und 5 aufgenommen).
