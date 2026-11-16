@@ -1,0 +1,54 @@
+{
+ "KM": {
+  "pressR": 0.19,
+  "flat": 0.8,
+  "flatFace": 0.5,
+  "cover": 0.35,
+  "coverFace": 0.12,
+  "elong": 1.5,
+  "ring": 0.2,
+  "rollA": 0.02,
+  "rollL": 3
+ },
+ "grainT": 0.5,
+ "grainK": 0.35,
+ "parts": {
+  "CharacterTemplate_ArmLeft": {
+   "presses": 88,
+   "rhoLocal": 0.2827
+  },
+  "CharacterTemplate_ArmRight": {
+   "presses": 88,
+   "rhoLocal": 0.2827
+  },
+  "CharacterTemplate_Body": {
+   "presses": 26,
+   "rhoLocal": 0.9104
+  },
+  "CharacterTemplate_Head": {
+   "presses": 28,
+   "rhoLocal": 0.9504
+  },
+  "CharacterTemplate_LegLeft": {
+   "presses": 26,
+   "rhoLocal": 0.7846
+  },
+  "CharacterTemplate_LegRight": {
+   "presses": 26,
+   "rhoLocal": 0.7846
+  },
+  "FB_Ear_L_v5": {
+   "presses": 0,
+   "rhoLocal": 0.4639
+  },
+  "FB_Ear_R_v5": {
+   "presses": 0,
+   "rhoLocal": 0.4545
+  },
+  "KFB_Tail_Bunny": {
+   "presses": 26,
+   "rhoLocal": 0.913
+  }
+ },
+ "wache": true
+}
