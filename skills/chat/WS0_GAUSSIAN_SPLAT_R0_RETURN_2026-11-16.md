@@ -37,3 +37,11 @@
 **WS0/Asset Librarian: Quelle zuerst isolieren.** Wähle **einen echten 2D-Prop, einen bestehenden 72er-Slop und ein kleines vorhandenes Diorama-/Scenelet-GLB**, zeige Originale mit tatsächlicher Quellidentität und Hash einzeln, markiere fehlende Originale offen. Erst dann den 3er A/B-Viewer bauen; **anschließend** den R3-Höhlen-/Dungeon-Raum-/Wand-/Eingangskorridor mit derselben geprüften Splat-Pipeline als viertes Modul untersuchen. Patch-Styles bleiben ausgenommen.
 
 **Georg muss derzeit nichts tun.** Sichtbare Ergebnisse entstehen erst mit Original-Isolation und den darauf folgenden tatsächlichen Viewer-Renders.
+
+## Additiver Anschluss · 16.11.2026 · Creature Animation als separater Produktionsbaustein
+
+Georg fragte nach der am 15.11.2026 auf Reddit beschriebenen Fable-/Blender-/Godot-Animation-Pipeline für RPG-Kreaturen, Enemies, Tiere und Insekten. Der Beitrag ist ein **Methodik-Donor, keine veröffentlichte direkt installierbare Pipeline**. Er passt als eigener **Clip-Authoring-/QA-Workflow** zu KFB; skinned Meshes und optionale animierte Splats können dieselben Clips nutzen. 2D Slops benötigen stattdessen die vorhandenen 2D-/SDF-Deformationssysteme, kein erzwungenes Skelettrig.
+
+Neues Addendum: `skills/chat/WS0_CREATURE_ANIMATION_AUTHORING_COMPANION_R0_2026-11-16.md`. Originalquelle: `KFB-Stunt-Car-Race/src/data/npc/fluffer.kinds.k15.json` (15 echte K15-Quell-GLBs mit dokumentierten SHA/Clips). Erster konditionaler Pilot: **K15 Chicken** unverändert mit realem `Idle`, `Walk`, `Bite_Front` isolieren; später nur einen neuen optionalen `peck-then-recoil`-Clip backen und separat Mesh-vs-Splat-Playback vergleichen. Crab/Arthropoden und Insekten folgen nach tatsächlicher Source-Verifikation. Bestehendes `KFB Animation Lab` ist laut `skills/chat/tool-nodes/animation-lab.md` noch UNVERIFIED; ToolBox Motion Lab bisher nur für humanoide Rigs nachgewiesen, nicht für Tiere.
+
+Es wurden in dieser Fortsetzung **0** neue Animationen, Rigs, Splat-Bakes oder Spielszenen erstellt. Der dokumentierte **eine nächste produktive Gate bleibt die vorherige Original-Quellenisolation** für Props/Slops/Scenelets. Der Animation-Companion ist ein zusätzlicher optionaler, nicht blockierender Folgeauftrag. Kein neuer Actor-, Runtime-, Physics-, AI- oder Combat-Owner, keine Stage.
