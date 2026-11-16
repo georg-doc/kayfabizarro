@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>Knete v1.4 Stilbild</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<style>body{margin:0;background:#222;color:#ddd;font:13px system-ui}</style></head>
+<body><div id="log">kfb-clay v1.4 · Stilbild „v1.1 | v1.4 Körnung“ + Prüfungen (headless, tests/stilbild.v1.4.mjs)</div>
+<script type="module">
+/* Stilbild und mechanische Prüfungen für kfb-clay v1.4 (V-1853). Bühne = proof-kit.v1.4 (kfb-stage-light.v1.1, MESA Tag, ACES 1, ein Rig, kein
+   Randlicht). FB nur aus der SSOT: frizzlebob.character.json appearance.export.v.web = FB_WEB_KANON.r1j.glb (assets/private @800a85eb).
+   Links v1.1, rechts v1.4 mit koernung: dieselbe Figur, dieselbe Kamera, dasselbe Licht; Knete nur auf der Haut wie im Spiel (Brauen, Nase, Shirt
+   behalten ihr Datei-Material). Prüfungen nach Proof-Stage-Art: G1 Augen sichtbar, G2 Material/Normalen, G3 Bodenkontakt, G5 Knete-Modul + Körnung,
+   G6 Schattensaum (measureShadowSeam), Kanon-Wache; G4 nur Hinweis, G7 (Edelstein) entfällt. */
+import * as K from './proof-kit.v1.4.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { applyClay as applyClay11 } from './kfb-clay.v1.1.js';
+import { applyClay as applyClay14, VERSION as V14 } from './kfb-clay.v1.4.js';
+const { THREE } = K;
+const FB_WEB = '/private/50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON.r1j.glb';
+const SKIN = /^(FB_Yellow|KFB_Tail_Clay)$/;
+const KANON = ['FB_Lederhaut_L', 'FB_Lederhaut_R', 'FB_Pupille_L', 'FB_Pupille_R', 'FB_Lidhaut_L', 'FB_Lidhaut_R', 'Carl_Brow_L', 'Carl_Brow_R', 'Carl_Nose', 'FB_Ear_L_v5', 'FB_Ear_R_v5', 'KFB_Tail_Bunny'];
+const shown = (o) => { for (let x = o; x; x = x.parent) { if (!x.visible) return false; if (x.scale.x === 0 && x.scale.y === 0 && x.scale.z === 0) return false; } return true; };
+function kanonWache(root, orig) { const fehlt = []; root.updateMatrixWorld(true);
+  for (const n of KANON) { const o = root.getObjectByName(n); if (!o || !shown(o)) fehlt.push(n); else o.traverse((m) => { if (m.isMesh && orig.has(m) && m.material !== orig.get(m) && !SKIN.test(orig.get(m).name || '')) fehlt.push(n + ' (Material getauscht)'); }); }
+  let mund = 0; root.traverse((o) => { if (/^FB_Mund_/.test(o.name) && o.isMesh && shown(o)) mund++; }); if (!mund) fehlt.push('Mund'); return { ok: !fehlt.length, fehlt }; }
+async function loadFB() {
+  const ld = new GLTFLoader(); ld.setMeshoptDecoder(MeshoptDecoder); const root = (await ld.loadAsync(FB_WEB)).scene;
+  root.traverse((o) => { if (o.isMesh) { o.castShadow = !/^FB_Mund_/.test(o.name); o.receiveShadow = true; o.frustumCulled = false; } });   // wie im Spiel (V-1773): Mund wirft keinen Schatten
+  const { fbMund } = await import('/private/50_BLENDER/FB_WEB_KANON_R1/web/fb_mund.v2.js'); const ruhe = fbMund(root).ruhe();
+  const stale = []; root.traverse((o) => { if (o.userData && 'kfbClayOrig' in o.userData) { stale.push(o.name); delete o.userData.kfbClayOrig; } });
+  root.updateMatrixWorld(true); const b = new THREE.Box3().setFromObject(root, true);
+  root.position.set(-(b.min.x + b.max.x) / 2, -b.min.y, -(b.min.z + b.max.z) / 2); root.updateMatrixWorld(true);
+  return { root, height: b.max.y - b.min.y, ruhe, stale };
+}
+function label(ctx, x, y, t) { ctx.font = '600 26px system-ui, sans-serif'; ctx.textBaseline = 'top'; ctx.fillStyle = 'rgba(0,0,0,0.6)'; const w = ctx.measureText(t).width; ctx.fillRect(x, y, w + 24, 42); ctx.fillStyle = '#fff'; ctx.fillText(t, x + 12, y + 8); }
+function pair(a, b, n) { const c = document.createElement('canvas'), g = 8; c.width = a.w * 2 + g; c.height = a.h; const x = c.getContext('2d'); x.fillStyle = '#111'; x.fillRect(0, 0, c.width, c.height);
+  x.putImageData(new ImageData(a.data, a.w, a.h), 0, 0); x.putImageData(new ImageData(b.data, b.w, b.h), a.w + g, 0); label(x, 14, 14, n[0]); label(x, a.w + g + 14, 14, n[1]); return c.toDataURL('image/jpeg', 0.9); }
+
+window.KFB_V14 = async ({ w = 960, h = 720 } = {}) => {
+  const out = {}, info = { light: K.LIGHT_VERSION, clay: V14 };
+  const fb = await loadFB(), root = fb.root, H = fb.height; info.fb = { datei: FB_WEB, height: +H.toFixed(3), mund: fb.ruhe, staleKfbClayOrig: fb.stale };
+  const orig = new Map(); root.traverse((o) => { if (o.isMesh) orig.set(o, o.material); });
+  const map = await K.koernMap(); const sets = {}, handles = {};
+  for (const v of ['v11', 'v14k']) { for (const [o, m] of orig) o.material = m;
+    const opts = { profile: 'character', seed: 'frizzlebob', scaleRef: H, skip: (o) => !(o.isMesh && SKIN.test(orig.get(o)?.name || '')) };
+    const hnd = v === 'v11' ? applyClay11(root, THREE, opts) : applyClay14(root, THREE, { ...opts, koernung: true, koernungMap: map });
+    hnd.uniforms.uClayMottle.value = 0; handles[v] = hnd;
+    const m = new Map(); root.traverse((o) => { if (o.isMesh && o.material !== orig.get(o)) { o.material.normalMap = null; o.material.needsUpdate = true; m.set(o, o.material); delete o.userData.kfbClayOrig; } }); sets[v] = m; }
+  const use = (v) => { for (const [o, m] of orig) o.material = sets[v].get(o) || m; };
+  /* Prüfungen */
+  const G = {};
+  { const bad = []; let nN = 0, nBad = 0; root.traverse((o) => { if (!o.isMesh) return; for (const m of [].concat(o.material)) if (!m || !m.isMaterial) bad.push(o.name); const a = o.geometry.attributes.normal; if (!a) { bad.push(o.name + ' ohne Normalen'); return; } for (let i = 0; i < a.count; i++) { const l = a.getX(i) ** 2 + a.getY(i) ** 2 + a.getZ(i) ** 2; nN++; if (!Number.isFinite(l) || l < 1e-8) nBad++; } });
+    G.G2 = { name: 'Material/Normalen', bad, normals: nN, badNormals: nBad, result: !bad.length && nBad / nN <= 0.001 ? 'PASS' : 'FAIL' }; }
+  for (const v of ['v11', 'v14k']) { use(v); const wa = kanonWache(root, orig); info['wache_' + v] = wa; if (!wa.ok) throw new Error('Kanon-Wache FAIL ' + v + ': ' + wa.fehlt.join(', ')); }
+  use('v14k'); { let skin = 0, clay = 0, korn = 0; const kornNames = []; root.traverse((o) => { if (!o.isMesh) return; const u = o.material.userData.kfbClay; if (SKIN.test(orig.get(o).name || '')) { skin++; if (u?.version === V14) clay++; } if (u?.koernung) { korn++; kornNames.push(o.name); } });
+    const noGrainOk = ['Carl_Brow_L', 'Carl_Brow_R', 'Carl_Nose', 'KFB_Shirt_FB', 'FB_Lederhaut_L', 'FB_Pupille_L', 'FB_Lidhaut_L', 'FB_Mund_closed'].every((n) => !root.getObjectByName(n).material.userData.kfbClay?.koernung);
+    G.G5 = { name: 'Knete-Modul aktiv (v1.4) + Körnung nur Haut', skin, clay, koernung: korn, ohneKoernungRichtig: noGrainOk, result: skin > 0 && skin === clay && korn === skin && noGrainOk ? 'PASS' : 'FAIL' }; }
+  { root.updateMatrixWorld(true); const b = new THREE.Box3().setFromObject(root, true); G.G3 = { name: 'Bodenkontakt ±1 cm', minY_m: +b.min.y.toFixed(4), result: Math.abs(b.min.y) <= 0.01 ? 'PASS' : 'FAIL' }; }
+  const R = K.makeRenderer(w, h), stage = K.makeStage({ figures: [root], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.4 } });
+  const head = root.getObjectByName('CharacterTemplate_Head'), hb = new THREE.Box3().setFromObject(head, true), hc = hb.getCenter(new THREE.Vector3()), hs = hb.getSize(new THREE.Vector3()), d = Math.max(hs.x, hs.y) * 2.0;
+  const cams = {
+    gesicht: K.camera(w, h, 30, [hc.x + 0.18 * d, hc.y - 0.02 * d, hc.z + d], [hc.x, hc.y - 0.12 * hs.y, hc.z]),
+    vorn: K.camera(w, h, 30, [0, 0.55 * H, 2.9 * H], [0, 0.5 * H, 0]),
+    spielkamera: K.camera(w, h, 55, [0, 0.55 * H + 3.4 - 1, 12], [0, 0.5 * H, 0]),   // Spielkamera-Abstand: FB ~12 m vor der Kamera, Figur ≈ 12–13 % der Bildhöhe (V-662 K1)
+  };
+  /* G1: Augen sichtbar (Masken-Render der Lederhäute/Pupillen, Anteil am Bild ≥ 0,12 % je Auge) in der Nahansicht */
+  { const eyePx = {}; for (const side of ['L', 'R']) { const parts = [root.getObjectByName('FB_Lederhaut_' + side), root.getObjectByName('FB_Pupille_' + side)];
+      const keep = new Map(), white = new THREE.MeshBasicMaterial({ color: 0xffffff }), black = new THREE.MeshBasicMaterial({ color: 0x000000 }), bg = stage.scene.background;
+      stage.scene.traverse((o) => { if (o.isMesh) { keep.set(o, o.material); o.material = parts.some((p) => p === o || (p && p.getObjectById(o.id))) ? white : black; } }); stage.scene.background = new THREE.Color(0, 0, 0);
+      const tm = R.toneMapping; R.toneMapping = THREE.NoToneMapping; R.render(stage.scene, cams.gesicht); const img = K.readRGBA(R); R.toneMapping = tm; keep.forEach((m, o) => { o.material = m; }); stage.scene.background = bg;
+      let n = 0; for (let i = 0; i < img.data.length; i += 4) if (img.data[i] > 127) n++; eyePx[side] = +(100 * n / (img.w * img.h)).toFixed(3); }
+    G.G1 = { name: 'Augen sichtbar (near_face)', anteilProzent: eyePx, result: eyePx.L >= 0.12 && eyePx.R >= 0.12 ? 'PASS' : 'FAIL' }; }
+  /* G6: Schattensaum, vier Richtungen um die Figur */
+  { const rows = {}; for (const [nm, az] of [['front', 0], ['threeq', 45], ['side', 90], ['back', 180]]) { const a = az * Math.PI / 180, r = 3.2 * H; const cam = K.camera(w, h, 30, [Math.sin(a) * r, 0.6 * H, Math.cos(a) * r], [0, 0.45 * H, 0]); const s = stage.seam(R, cam); rows[nm] = { seamPx: s.seamPx, isolatedPx: s.isolatedPx }; }
+    G.G6 = { name: 'Schattensaum (kfb-stage-light.v1.1, measureShadowSeam)', rows, result: Object.values(rows).every((r) => r.seamPx === 0) ? 'PASS' : 'FAIL' }; }
+  G.G4 = { name: 'Fremdteile/Löcher', result: 'n/a (Datei unverändert, nur Material)' }; G.G7 = { name: 'Edelstein', result: 'n/a (keine Gem-Knoten)' };
+  info.gates = G;
+  /* Bilder */
+  for (const [cn, cam] of Object.entries(cams)) { use('v11'); stage.render(R, cam); const a = K.readRGBA(R); use('v14k'); stage.render(R, cam); const b = K.readRGBA(R); out['v14_' + cn] = pair(a, b, ['v1.1 (heute)', 'v1.4 Körnung']); }
+  /* Determinismus: zweiter Aufbau mit gleicher Karte und gleichem Seed, gleiches Bild */
+  R.dispose(); R.forceContextLoss?.();
+  return { out, info };
+};
+window.KFB_V14_READY = true;
+</script></body></html>

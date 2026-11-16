@@ -6,8 +6,9 @@
  * With `koernung` (profile character only; kit-figure = character + the game's uniform override, so it is included; midground,
  * background and the terrain adapter ignore it) three things are added on top of the v1.1 relief:
  *   1. Grain: a normal map (ambientCG Ground026, CC0; credit in replies/CLAY_REFERENZ_R2/assets/CREDITS.md) triplanar in object space,
- *      no UV, tile 1.5 figure heights, strength 0.35 (whiteout blend). The grain feature is ~0.25 % of the tile (measured, 2-3 px of
- *      1024), i.e. ~0.4 % of the figure. It fades with distance like the bands: full when a grain is >= 2 px at 1080p, gone at <= 1 px.
+ *      no UV, tile 1.5 figure heights, strength 0.35 (whiteout blend, weights |N|^8: a projection that would stretch the grain on a
+ *      slanted face fades out early, so the grain stays round and directionless; G2). The grain feature is ~0.25 % of the tile (measured, 2-3 px of
+ *      1024), i.e. ~0.4 % of the figure. It fades with distance like the bands: full when a grain is >= 2.5 px at 1080p, gone at <= 1.25 px (no shimmer; G2).
  *   2. Speckles: dark specks in 5 % of the cells, cell 1.05 % of the figure height, 30 % darker; they fade out below ~1 px.
  *   3. Colour shift inside the material: OKLab hue rotation up to +-0.14 rad and lightness +-5 %, in large and medium patches
  *      (0.22 and 0.09 figure heights). Rotation by a polynomial, no sin/cos (bit-exact across GPUs, as the v1 hash rules).
@@ -105,7 +106,7 @@ export const KOERNUNG = F({
   tile: 1.5, strength: 0.35, grainShare: 0.0025,
   speck: F({ cell: 0.0105, cover: 0.05, dark: 0.3 }),
   colour: F({ hue: 0.14, lum: 0.05, big: 0.22, mid: 0.09 }),
-  fade: F({ grainGonePx: 1, grainFullPx: 2, speckGonePx: 1.2, speckFullPx: 2.4, refHeightPx: 1080 }),
+  fade: F({ grainGonePx: 1.25, grainFullPx: 2.5, speckGonePx: 1.2, speckFullPx: 2.4, refHeightPx: 1080 }),
 });
 export const KOERN_SKIP = /eye|pupil|iris|(^|[^a-z])lid|mouth|mund|teeth|tongue|lash|brow|nose|hair|tuft|shirt|cloth|kfb-lid|clay-lid|decal/i;
 
@@ -302,7 +303,7 @@ uniform sampler2D uKoernMap;
 uniform float uKoernOn, uKoernAll, uKoernT, uKoernK, uKoernShare, uKoernSpk, uKoernSpkCov, uKoernSpkDark, uKoernHue, uKoernLum, uKoernBig, uKoernMid;
 uniform vec4 uKoernFade;
 vec3 kfbKoernTri( vec3 p, vec3 N ) {
-  vec3 w = N * N; w = w * w; w /= ( w.x + w.y + w.z );
+  vec3 w = N * N; w = w * w; w = w * w; w /= ( w.x + w.y + w.z );
   vec3 tx = texture( uKoernMap, p.zy / uKoernT ).xyz * 2.0 - 1.0, ty = texture( uKoernMap, p.xz / uKoernT ).xyz * 2.0 - 1.0, tz = texture( uKoernMap, p.xy / uKoernT ).xyz * 2.0 - 1.0;
   tx.xy *= uKoernK; ty.xy *= uKoernK; tz.xy *= uKoernK;
   tx = vec3( tx.xy + N.zy, abs( tx.z ) * N.x ); ty = vec3( ty.xy + N.xz, abs( ty.z ) * N.y ); tz = vec3( tz.xy + N.xy, abs( tz.z ) * N.z );

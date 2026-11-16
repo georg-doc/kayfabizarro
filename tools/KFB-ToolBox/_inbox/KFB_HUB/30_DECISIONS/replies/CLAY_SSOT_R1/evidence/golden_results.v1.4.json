@@ -1,0 +1,1085 @@
+{
+ "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+ "three": "r180 (CDN)",
+ "resolutions": {
+  "lo": [
+   800,
+   450
+  ],
+  "hi": [
+   1600,
+   900
+  ]
+ },
+ "ms": 32943,
+ "errors": 0,
+ "tests": {
+  "G0": {
+   "rule": "synthetic: isotropic + craters pass, + faint stripes fail",
+   "limits": {
+    "stripePeak": 3,
+    "coherence": 0.7
+   },
+   "isotropic": {
+    "coherence": 0.551,
+    "stripePeak": 1.884,
+    "fftAniso": 2.452,
+    "energy": 0.0015
+   },
+   "craters": {
+    "coherence": 0.587,
+    "stripePeak": 1.45,
+    "fftAniso": 2.7,
+    "energy": 0.0031
+   },
+   "isotropicPlusStripes": {
+    "coherence": 0.867,
+    "stripePeak": 8.956,
+    "fftAniso": 24.891,
+    "energy": 0.0024
+   },
+   "cratersPlusStripes": {
+    "coherence": 0.723,
+    "stripePeak": 6.445,
+    "fftAniso": 16.039,
+    "energy": 0.0036
+   },
+   "result": "PASS"
+  },
+  "G1": {
+   "rule": "SSIM(load1,load2) >= 0.995, every v1.2 render, both resolutions",
+   "rows": [
+    {
+     "res": "lo",
+     "key": "fb_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_x2.5",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_x2.5_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "stage",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "terrain",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_x2.5",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_x2.5_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "stage",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "terrain",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    }
+   ],
+   "other": {
+    "none": {
+     "minSsim": 1,
+     "maxDiff": 0
+    },
+    "v11": {
+     "minSsim": 1,
+     "maxDiff": 0
+    },
+    "v14": {
+     "minSsim": 1,
+     "maxDiff": 0
+    }
+   },
+   "minSsim": 1,
+   "maxDiff": 0,
+   "result": "PASS"
+  },
+  "G1b": {
+   "rule": "v1.4 without koernung vs v1.1: max pixel difference 0 (every render)",
+   "rows": [
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "fb_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "fb_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "fb_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "fb_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "goth_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "goth_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "goth_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "goth_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "hunky_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "hunky_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "hunky_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "hunky_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "fb_face_x2.5",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "fb_face_x2.5_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "stage",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "lo",
+     "key": "terrain",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "fb_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "fb_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "fb_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "fb_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "goth_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "goth_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "goth_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "goth_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "hunky_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "hunky_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "hunky_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "hunky_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "fb_face_x2.5",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "fb_face_x2.5_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "stage",
+     "maxDiff": 0
+    },
+    {
+     "L": 1,
+     "res": "hi",
+     "key": "terrain",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "fb_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "fb_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "fb_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "fb_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "goth_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "goth_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "goth_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "goth_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "hunky_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "hunky_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "hunky_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "hunky_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "fb_face_x2.5",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "fb_face_x2.5_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "stage",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "lo",
+     "key": "terrain",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "fb_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "fb_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "fb_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "fb_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "goth_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "goth_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "goth_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "goth_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "hunky_full",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "hunky_full_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "hunky_face",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "hunky_face_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "fb_face_x2.5",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "fb_face_x2.5_flat",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "stage",
+     "maxDiff": 0
+    },
+    {
+     "L": 2,
+     "res": "hi",
+     "key": "terrain",
+     "maxDiff": 0
+    }
+   ],
+   "maxDiff": 0,
+   "result": "PASS"
+  },
+  "G2": {
+   "rule": "face relief: stripePeak <= 3.0 and coherence <= 0.70 (v1.2, all figures, both resolutions; thresholds unchanged from v1)",
+   "rows": [
+    {
+     "variant": "v14k",
+     "res": "lo",
+     "fig": "fb",
+     "coherence": 0.481,
+     "stripePeak": 3.011,
+     "fftAniso": 2.779,
+     "energy": 0.0211
+    },
+    {
+     "variant": "v14k",
+     "res": "lo",
+     "fig": "goth",
+     "coherence": 0.456,
+     "stripePeak": 1.445,
+     "fftAniso": 2.28,
+     "energy": 0.0116
+    },
+    {
+     "variant": "v14k",
+     "res": "lo",
+     "fig": "hunky",
+     "coherence": 0.463,
+     "stripePeak": 1.734,
+     "fftAniso": 2.458,
+     "energy": 0.0077
+    },
+    {
+     "variant": "v14k",
+     "res": "hi",
+     "fig": "fb",
+     "coherence": 0.466,
+     "stripePeak": 2.802,
+     "fftAniso": 2.758,
+     "energy": 0.0224
+    },
+    {
+     "variant": "v14k",
+     "res": "hi",
+     "fig": "goth",
+     "coherence": 0.456,
+     "stripePeak": 1.381,
+     "fftAniso": 2.119,
+     "energy": 0.0139
+    },
+    {
+     "variant": "v14k",
+     "res": "hi",
+     "fig": "hunky",
+     "coherence": 0.44,
+     "stripePeak": 1.625,
+     "fftAniso": 2.404,
+     "energy": 0.0087
+    },
+    {
+     "variant": "v11",
+     "res": "lo",
+     "fig": "fb",
+     "coherence": 0.479,
+     "stripePeak": 1.745,
+     "fftAniso": 2.572,
+     "energy": 0.0079
+    },
+    {
+     "variant": "v11",
+     "res": "lo",
+     "fig": "goth",
+     "coherence": 0.361,
+     "stripePeak": 1.519,
+     "fftAniso": 2.229,
+     "energy": 0.0073
+    },
+    {
+     "variant": "v11",
+     "res": "lo",
+     "fig": "hunky",
+     "coherence": 0.515,
+     "stripePeak": 1.923,
+     "fftAniso": 3.527,
+     "energy": 0.0042
+    },
+    {
+     "variant": "v11",
+     "res": "hi",
+     "fig": "fb",
+     "coherence": 0.487,
+     "stripePeak": 1.683,
+     "fftAniso": 2.582,
+     "energy": 0.0081
+    },
+    {
+     "variant": "v11",
+     "res": "hi",
+     "fig": "goth",
+     "coherence": 0.367,
+     "stripePeak": 1.508,
+     "fftAniso": 2.201,
+     "energy": 0.0075
+    },
+    {
+     "variant": "v11",
+     "res": "hi",
+     "fig": "hunky",
+     "coherence": 0.525,
+     "stripePeak": 1.904,
+     "fftAniso": 3.488,
+     "energy": 0.0043
+    }
+   ],
+   "result": "FAIL"
+  },
+  "G3": {
+   "rule": "FrizzleBob face, stage scale x1 vs x2.5: SSIM >= 0.98 (v1.2)",
+   "rows": [
+    {
+     "variant": "v14k",
+     "res": "lo",
+     "ssim": 1
+    },
+    {
+     "variant": "v14k",
+     "res": "hi",
+     "ssim": 1
+    },
+    {
+     "variant": "v11",
+     "res": "lo",
+     "ssim": 1
+    },
+    {
+     "variant": "v11",
+     "res": "hi",
+     "ssim": 1
+    },
+    {
+     "variant": "none",
+     "res": "lo",
+     "ssim": 1
+    },
+    {
+     "variant": "none",
+     "res": "hi",
+     "ssim": 1
+    }
+   ],
+   "result": "PASS"
+  },
+  "G4": {
+   "rule": "SSIM(down2(hi), lo) for v1.2 >= unclayed - 0.01 (faces and full figures)",
+   "rows": [
+    {
+     "variant": "v14k",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.9982
+    },
+    {
+     "variant": "v14k",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9974
+    },
+    {
+     "variant": "v14k",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.998
+    },
+    {
+     "variant": "v14k",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.9976
+    },
+    {
+     "variant": "v14k",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9976
+    },
+    {
+     "variant": "v14k",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.9969
+    },
+    {
+     "variant": "v11",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.9988
+    },
+    {
+     "variant": "v11",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9979
+    },
+    {
+     "variant": "v11",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9985
+    },
+    {
+     "variant": "v11",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.998
+    },
+    {
+     "variant": "v11",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9983
+    },
+    {
+     "variant": "v11",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.9974
+    },
+    {
+     "variant": "none",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.9988
+    },
+    {
+     "variant": "none",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9979
+    },
+    {
+     "variant": "none",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9985
+    },
+    {
+     "variant": "none",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.998
+    },
+    {
+     "variant": "none",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9982
+    },
+    {
+     "variant": "none",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.9974
+    }
+   ],
+   "result": "PASS"
+  },
+  "G5": {
+   "rule": "OKLab chroma in figure mask, clay / original >= 0.95 (lo res)",
+   "rows": [
+    {
+     "variant": "v14k",
+     "fig": "fb",
+     "view": "full",
+     "chromaRatio": 0.995,
+     "lightRatio": 0.988
+    },
+    {
+     "variant": "v14k",
+     "fig": "fb",
+     "view": "face",
+     "chromaRatio": 1.002,
+     "lightRatio": 0.988
+    },
+    {
+     "variant": "v14k",
+     "fig": "goth",
+     "view": "full",
+     "chromaRatio": 0.95,
+     "lightRatio": 0.968
+    },
+    {
+     "variant": "v14k",
+     "fig": "goth",
+     "view": "face",
+     "chromaRatio": 0.984,
+     "lightRatio": 0.991
+    },
+    {
+     "variant": "v14k",
+     "fig": "hunky",
+     "view": "full",
+     "chromaRatio": 1.018,
+     "lightRatio": 0.985
+    },
+    {
+     "variant": "v14k",
+     "fig": "hunky",
+     "view": "face",
+     "chromaRatio": 1.023,
+     "lightRatio": 0.976
+    },
+    {
+     "variant": "v11",
+     "fig": "fb",
+     "view": "full",
+     "chromaRatio": 0.997,
+     "lightRatio": 0.994
+    },
+    {
+     "variant": "v11",
+     "fig": "fb",
+     "view": "face",
+     "chromaRatio": 1,
+     "lightRatio": 0.997
+    },
+    {
+     "variant": "v11",
+     "fig": "goth",
+     "view": "full",
+     "chromaRatio": 0.957,
+     "lightRatio": 0.968
+    },
+    {
+     "variant": "v11",
+     "fig": "goth",
+     "view": "face",
+     "chromaRatio": 0.996,
+     "lightRatio": 0.993
+    },
+    {
+     "variant": "v11",
+     "fig": "hunky",
+     "view": "full",
+     "chromaRatio": 1.023,
+     "lightRatio": 0.987
+    },
+    {
+     "variant": "v11",
+     "fig": "hunky",
+     "view": "face",
+     "chromaRatio": 1.03,
+     "lightRatio": 0.975
+    }
+   ],
+   "result": "PASS"
+  }
+ },
+ "reliefRatio": [
+  {
+   "res": "lo",
+   "fig": "fb",
+   "v11": 0.0079,
+   "v12": 0.0211,
+   "ratio": 2.67
+  },
+  {
+   "res": "lo",
+   "fig": "goth",
+   "v11": 0.0073,
+   "v12": 0.0116,
+   "ratio": 1.59
+  },
+  {
+   "res": "lo",
+   "fig": "hunky",
+   "v11": 0.0042,
+   "v12": 0.0077,
+   "ratio": 1.83
+  },
+  {
+   "res": "hi",
+   "fig": "fb",
+   "v11": 0.0081,
+   "v12": 0.0224,
+   "ratio": 2.77
+  },
+  {
+   "res": "hi",
+   "fig": "goth",
+   "v11": 0.0075,
+   "v12": 0.0139,
+   "ratio": 1.85
+  },
+  {
+   "res": "hi",
+   "fig": "hunky",
+   "v11": 0.0043,
+   "v12": 0.0087,
+   "ratio": 2.02
+  }
+ ]
+}

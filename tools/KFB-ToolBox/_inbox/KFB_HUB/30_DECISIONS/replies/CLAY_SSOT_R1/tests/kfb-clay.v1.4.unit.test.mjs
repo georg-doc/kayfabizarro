@@ -99,7 +99,7 @@ ok(FK.getObjectByName('FB_Eye_L').material.userData.kfbClay === undefined, 'eyes
 const sK = compile(FK.getObjectByName('Body').material);
 ok(/kfbKoernTri/.test(sK.fragmentShader) && sK.uniforms.uKoernMap.value === tex && sK.uniforms.uKoernOn.value === 1, 'koernung on: stage code and the caller map in the shader');
 ok(FK.getObjectByName('Body').material.customProgramCacheKey() !== F14.getObjectByName('Body').material.customProgramCacheKey(), 'koernung on/off compile to different programs (off keeps the v1.1 program)');
-const fd = hK.koernUniforms.uKoernFade.value; ok(Math.abs(fd.x - 1 / 1080) < 1e-9 && Math.abs(fd.y - 2 / 1080) < 1e-9 && Math.abs(fd.z - 1.2 / 1080) < 1e-9 && Math.abs(fd.w - 2.4 / 1080) < 1e-9, 'distance fade: grain full at >= 2 px, gone at <= 1 px (1080p); specks 2.4 / 1.2 px');
+const fd = hK.koernUniforms.uKoernFade.value; ok(Math.abs(fd.x - 1.25 / 1080) < 1e-9 && Math.abs(fd.y - 2.5 / 1080) < 1e-9 && Math.abs(fd.z - 1.2 / 1080) < 1e-9 && Math.abs(fd.w - 2.4 / 1080) < 1e-9, 'distance fade: grain full at >= 2.5 px, gone at <= 1.25 px (1080p); specks 2.4 / 1.2 px');
 hK.setKoernung(false); ok(hK.koernUniforms.uKoernAll.value === 0, 'handle.setKoernung(false) switches the stage off at runtime'); hK.setKoernung(true);
 const FX = figureParts(), hX = C.applyClay(FX, THREE, { profile: 'character', seed: 'frizzlebob', koernung: true, koernungMap: tex, koernungSkip: /ArmLeft/ });
 ok(FX.getObjectByName('CharacterTemplate_ArmLeft').material.userData.kfbClay.koernung === false, 'koernungSkip from the figure card adds exceptions');

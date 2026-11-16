@@ -1,3 +1,85 @@
+# RETURN · kfb-clay v1.4 = v1.1 + Körnung ×3 · 16.11.2026 (V-1853) · ein Gate rot, deshalb kein Kritiker-Lauf
+
+## Kurz
+- `kfb-clay.v1.4.js` (sha256 `be49a87f…cd9f`) enthält v1.1 unverändert und die neue Stufe „Körnung“ (Option `koernung`, Standard aus). v1.1 bleibt byte-gleich (`a81a3ee3…3fd0`).
+- **Ohne `koernung`:** derselbe Shader wie v1.1, Zeichen für Zeichen (Unit). Pixelgleich über alle 64 Golden-Renders (G1b, max. Abweichung 0).
+- **Mit `koernung`:** Unit 60/60. Golden G0, G1, G3, G4 und G5 PASS. Proof-Stage G1, G2, G3, G5, G6 PASS; Kanon-Wache PASS.
+- **G2 FAIL** nur bei FB in niedriger Auflösung: stripePeak 3,011 (Grenze 3,0); in hoher Auflösung 2,80 PASS.
+  - Ursache gemessen: Die Brauen sind nach Kanon (V-1853) ohne Körnung. Ihre körnungsfreien, waagrecht begrenzten Flächen erzeugen im Differenzbild eine Richtung.
+  - Mit ausgeblendeten Brauen und Nase: v1.4 2,56 / 2,51 gegen v1.1 2,48 / 2,62. Die Körnung selbst bringt also keine Streifen.
+  - Nach Tier 0 geht ein roter Gate-Lauf nicht an den Kritiker. **Entscheidung WS0**, siehe unten.
+
+## Die Stufe (Werte aus AN_WS0_KNETE_KOERNUNG.md, Georgs Wahl ×3)
+- **Körnung:** Normal-Karte ambientCG Ground026 (CC0), triplanar im Objektraum, ohne UV.
+  - Kachel 1,5 Figurenhöhen, Stärke 0,35.
+  - Gewichte |N|⁸: Eine Projektion, die das Korn auf schrägen Flächen strecken würde, blendet früh aus (Prüfversuch für G2, unschädlich für den Look).
+  - Ausblenden mit dem Abstand: voll ab 2,5 px Korngröße bei 1080p, weg unter 1,25 px.
+- **Sprenkel:** 5 % der Zellen, Zelle 1,05 % H, 30 % dunkler. Aus unter 1,2 px, voll ab 2,4 px.
+- **Farbverschiebung** in OKLab: Farbton bis ±0,14 rad (Drehung als Polynom, kein sin/cos), Helligkeit ±5 %, Flecken 0,22 und 0,09 H.
+- **Seed** je Netz aus claySeed der Figurenkarte (V-429): zwei Ladevorgänge sind gleich (G1 SSIM 1, Abweichung 0).
+- **Nur Profil `character`.** kit-figure ist character plus der Uniform-Override des Spiels und läuft damit mit. midground und background ignorieren die Option (`info().koernung` meldet „not used“).
+- **Ausnahmen:**
+  - SKIP_DEFAULT wie v1.1 (Augen, Lider, Mund usw. ganz ohne Knete);
+  - KOERN_SKIP für Brauen, Nase, Haarbüschel, Shirt und Stoff: Sie behalten die v1.1-Knete, bekommen aber keine Körnung;
+  - `koernungSkip` von der Figurenkarte ergänzt die Liste.
+- **Karte:** über die Adresse, die der Aufrufer übergibt (`koernungMap`: URL oder THREE.Texture). Ohne Karte wirft `applyClay` einen Fehler. Nennung in `../CLAY_REFERENZ_R2/assets/CREDITS.md`.
+- **clayBake** bleibt unverändert; die Stufe läuft live (drei Textur-Abrufe je Pixel). `handle.setKoernung(on)` schaltet zur Laufzeit.
+- **Materialantwort `character` (V-566), Zusatz:** feine Poren und Krümel, nur nah; spärliche dunkle Sprenkel; weiche Farbverschiebung im Material. Rauheit 0,72 und Sheen 0,04 unverändert, ein Rig, kein Randlicht, kein Fresnel.
+
+## Prüfungen
+- **Unit** `tests/kfb-clay.v1.4.unit.test.mjs`: 60/60. Geprüft sind:
+  - der v1.1-Vertrag und die Werte der Übergabe;
+  - Shader ohne Körnung = v1.1;
+  - die Ausnahmen, `koernungSkip`, die Abstands-Schwellen und `setKoernung`;
+  - dass midground die Option ignoriert und der Seed gleich bleibt;
+  - die Körnungs-GLSL: genau drei Abrufe, kein sin/cos/fwidth/UV.
+- **Golden** `tests/golden.v1.4.test.mjs` → `evidence/golden_results.v1.4.json`. Zwei Ladevorgänge, 800×450 und 1600×900, Varianten v14k / v14 / v11 / none; Bühne `proof-kit.v1.4.js` mit Licht v1.1.
+  - G0 PASS.
+  - G1 SSIM 1, Abweichung 0 (v14k, v14, v11, none).
+  - G1b v14 = v11 (0 über 64 Renders).
+  - G2: FB lo 3,011 FAIL, FB hi 2,80, Goth 1,45 / 1,38, Hunky 1,73 / 1,63; Kohärenz höchstens 0,48.
+    - Für G2 ist „flach“ = v1.1-Relief aus und Körnungs-Normalen aus; Farbe und Sprenkel bleiben, denn sie sind kein Relief.
+    - Mit „alles aus“ lag FB bei 5,5, weil die Farbflecken mitgemessen wurden.
+  - G3 SSIM 1 / 1.
+  - G4 mindestens 0,9969 (Referenz unverändert 0,9974, Grenze Referenz − 0,01).
+  - G5 Chroma mindestens 0,950 (Grenze 0,95, knapp).
+  - Relief-Energie gegenüber v1.1: 1,6–2,8.
+- **G2-Diagnose** `tests/g2diag.v1.4.mjs` → `evidence/g2diag.v1.4.json`, FB-Gesicht:
+
+  | Fall | v1.4 lo / hi | v1.1 lo / hi |
+  |---|---|---|
+  | normal | 3,01 / 2,80 | 1,75 / 1,68 |
+  | Brauen und Nase ausgeblendet | 2,56 / 2,51 | 2,48 / 2,62 |
+  | nur Brauenschatten aus | höher | höher |
+
+  Also: nicht der Schatten, sondern die körnungsfreien Brauenflächen.
+- **Proof-Stage-Art** im Stilbild-Harness `stilbild.v1.4.html` / `tests/stilbild.v1.4.mjs` → `evidence/stilbild_v14_info_s1.json`; FB aus r1j, die alten Extras `kfbClayOrig` an Schwanz und Shirt beim Laden verworfen:
+  - G1 Augenanteil nah: L 3,8 %, R 2,4 % (≥ 0,12 %);
+  - G2 Material und Normalen: 0 defekt;
+  - G3 Bodenkontakt: PASS;
+  - G5: 9/9 Hautnetze `kfb-clay.v1.4` mit Körnung; Brauen, Nase, Shirt, Augen und Mund ohne;
+  - G6 Schattensaum: vorn, schräg, seitlich, hinten je 0 px;
+  - G4 und G7: n/a;
+  - Kanon-Wache: beide Seiten PASS.
+- **Bühne:** `proof-kit.v1.4.js` nutzt `kfb-stage-light.v1.1`, als byte-gleiche Kopie in `vendor/`: Vorderseiten werfen, enger Schattenkasten, 4096. Der helle Saum an der Nasenbasis ist weg (`evidence/v14_gesicht_s1.jpg`).
+  - `proof-kit.v1.js` bleibt unverändert, damit ältere Belege reproduzierbar bleiben. Die v1.4-Tests und -Bilder laufen über v1.4.
+
+## Bilder
+- `evidence/v14_gesicht_s1.jpg`, `evidence/v14_vorn_s1.jpg`, `evidence/v14_spielkamera_s1.jpg` (FB ≈ 12 m, Spielkamera-Abstand). Jeweils v1.1 | v1.4 Körnung.
+- Soll-Referenz: `../CLAY_REFERENZ_R2/evidence/combo_gesicht_heute_x1_x2_x3.jpg` (×3).
+
+## Entscheidung WS0 (blockiert den Kritiker-Lauf)
+- **A)** G2 für Teile ohne Körnung maskieren. Die Brauen- und Nasenflächen gehen dann nicht ins Differenzbild ein; die Grenze 3,0 bleibt. Das ist eine Änderung an der Prüfung, also WS0s Entscheidung. Danach Kritiker-Lauf.
+- **B)** Brauen und Nase bekommen doch Körnung. Das ist eine Kanon-Änderung (V-1853 nimmt sie aus) und reicht vermutlich nach der Diagnose.
+- **C)** Die Ausnahme akzeptieren: v1.4 mit dieser Diagnose ins Spiel (Schalter `knete14`, aus) und Abnahme im Spiel.
+
+## Offen
+- Der blinde Kritiker ist nicht gelaufen (Tier 0: rotes Gate).
+- G5 liegt genau auf der Grenze 0,95. Die Farbverschiebung senkt die Sättigung im Mittel minimal.
+- Spiel-Einbau, Abnahme und Hub-Karte: WS0.
+
+---
+
 # RETURN · CLAY_SSOT_R1 · **v1.2 „Lichtkante“** (15.11.2026)
 
 **Auftrag:** Georg 15.11. PASS auf das Stilbild CLAY_LICHTKANTE_R1 r3 (FB aus der SSOT-Datei, „Datei | Look“).

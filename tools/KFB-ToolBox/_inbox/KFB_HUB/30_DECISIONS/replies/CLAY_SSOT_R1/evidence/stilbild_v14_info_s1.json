@@ -1,0 +1,81 @@
+{
+ "light": "kfb-stage-light.v1.1",
+ "clay": "kfb-clay.v1.4",
+ "fb": {
+  "datei": "/private/50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON.r1j.glb",
+  "height": 1.742,
+  "mund": "neutral",
+  "staleKfbClayOrig": [
+   "KFB_Tail_Bunny",
+   "KFB_Shirt_FB"
+  ]
+ },
+ "wache_v11": {
+  "ok": true,
+  "fehlt": []
+ },
+ "wache_v14k": {
+  "ok": true,
+  "fehlt": []
+ },
+ "gates": {
+  "G2": {
+   "name": "Material/Normalen",
+   "bad": [],
+   "normals": 84332,
+   "badNormals": 0,
+   "result": "PASS"
+  },
+  "G5": {
+   "name": "Knete-Modul aktiv (v1.4) + Körnung nur Haut",
+   "skin": 9,
+   "clay": 9,
+   "koernung": 9,
+   "ohneKoernungRichtig": true,
+   "result": "PASS"
+  },
+  "G3": {
+   "name": "Bodenkontakt ±1 cm",
+   "minY_m": 0,
+   "result": "PASS"
+  },
+  "G1": {
+   "name": "Augen sichtbar (near_face)",
+   "anteilProzent": {
+    "L": 3.801,
+    "R": 2.354
+   },
+   "result": "PASS"
+  },
+  "G6": {
+   "name": "Schattensaum (kfb-stage-light.v1.1, measureShadowSeam)",
+   "rows": {
+    "front": {
+     "seamPx": 0,
+     "isolatedPx": 0
+    },
+    "threeq": {
+     "seamPx": 0,
+     "isolatedPx": 0
+    },
+    "side": {
+     "seamPx": 0,
+     "isolatedPx": 0
+    },
+    "back": {
+     "seamPx": 0,
+     "isolatedPx": 0
+    }
+   },
+   "result": "PASS"
+  },
+  "G4": {
+   "name": "Fremdteile/Löcher",
+   "result": "n/a (Datei unverändert, nur Material)"
+  },
+  "G7": {
+   "name": "Edelstein",
+   "result": "n/a (keine Gem-Knoten)"
+  }
+ }
+}
