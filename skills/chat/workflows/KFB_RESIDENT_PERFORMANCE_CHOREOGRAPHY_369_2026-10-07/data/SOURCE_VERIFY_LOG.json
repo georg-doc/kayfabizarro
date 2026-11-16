@@ -1,0 +1,26 @@
+{
+ "runner": "Blender 5.2.2 python on Mac Mini (urllib from raw.githubusercontent.com at pinned commits; git blob sha1 check per file)",
+ "batches": [
+  {
+   "groups": [
+    "resident",
+    "prop",
+    "kaykit_native",
+    "fluff_donor",
+    "exchange_donor"
+   ],
+   "ok": 52,
+   "bad": []
+  },
+  {
+   "groups": [
+    "motion_ssot"
+   ],
+   "ok": 71,
+   "bad": []
+  }
+ ],
+ "total": 123,
+ "mismatches": 0,
+ "extraCheck": "Farmer_B.glb local Dropbox copy sha1 == GitHub main sha1 (c0d87a11ea6ce4b313c41c24f71e0664c68de1e6)"
+}

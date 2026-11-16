@@ -1,0 +1,399 @@
+{
+ "schema": "kfb.dance.run.v1",
+ "seed": 7,
+ "music": "jazz-trio",
+ "musicBpm": 89.1,
+ "halfTime": false,
+ "beatFrames": [
+  17,
+  31,
+  47,
+  63,
+  79,
+  95,
+  111,
+  127,
+  143,
+  159,
+  175,
+  190,
+  207,
+  223,
+  239,
+  255,
+  268,
+  281,
+  297,
+  313,
+  329,
+  345,
+  361,
+  377,
+  393,
+  409,
+  425,
+  441,
+  457,
+  473,
+  487,
+  505
+ ],
+ "cast": [
+  {
+   "id": "orc",
+   "rig": "L",
+   "styles": [
+    "novelty",
+    "hiphop"
+   ]
+  },
+  {
+   "id": "farmer_a",
+   "rig": "M",
+   "styles": [
+    "retro",
+    "jazz"
+   ]
+  },
+  {
+   "id": "farmer",
+   "rig": "M",
+   "styles": [
+    "hiphop",
+    "house"
+   ]
+  },
+  {
+   "id": "gothgirl",
+   "rig": "M",
+   "styles": [
+    "house",
+    "hiphop"
+   ]
+  },
+  {
+   "id": "lorekeeper",
+   "rig": "M",
+   "styles": [
+    "retro",
+    "latin"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "mode": "battle",
+   "blocks": [
+    0,
+    7
+   ],
+   "soloists": [
+    "farmer",
+    "orc"
+   ]
+  }
+ ],
+ "timelines": {
+  "farmer": [
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 304,
+    "a1": 363,
+    "scale": 1.0483,
+    "start": 17.28,
+    "mirror": true,
+    "label": "SOLO",
+    "win": 21
+   },
+   {
+    "clip": "kfb_dance_house_b",
+    "frozen": false,
+    "a0": 363,
+    "a1": 437,
+    "scale": 0.8663,
+    "start": 79.13,
+    "mirror": true,
+    "label": "SOLO",
+    "win": 30
+   },
+   {
+    "react": "watch",
+    "start": 143.23,
+    "label": "watches"
+   },
+   {
+    "clip": "kfb_dance_hokey_pokey_a",
+    "frozen": false,
+    "a0": 11,
+    "a1": 72,
+    "scale": 1.0049,
+    "start": 268.06,
+    "mirror": true,
+    "label": "SOLO",
+    "win": 11
+   },
+   {
+    "clip": "kfb_dance_house_b",
+    "frozen": false,
+    "a0": 304,
+    "a1": 363,
+    "scale": 1.0767,
+    "start": 329.35,
+    "mirror": false,
+    "label": "SOLO",
+    "win": 29
+   },
+   {
+    "react": "watch",
+    "start": 392.88,
+    "label": "watches"
+   }
+  ],
+  "orc": [
+   {
+    "react": "watch",
+    "start": 17.28,
+    "label": "watches"
+   },
+   {
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "frozen": true,
+    "a0": 321,
+    "a1": 369,
+    "scale": 1.3235,
+    "start": 143.23,
+    "mirror": false,
+    "label": "SOLO",
+    "win": 38
+   },
+   {
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "frozen": true,
+    "a0": 120,
+    "a1": 171,
+    "scale": 1.2019,
+    "start": 206.76,
+    "mirror": false,
+    "label": "SOLO",
+    "win": 34
+   },
+   {
+    "react": "watch",
+    "start": 268.06,
+    "label": "watches"
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 9,
+    "a1": 78,
+    "scale": 0.9287,
+    "start": 392.88,
+    "mirror": false,
+    "label": "SOLO",
+    "win": 2
+   }
+  ],
+  "farmer_a": [
+   {
+    "clip": "kfb_dance_jazz_dancing_a",
+    "frozen": false,
+    "a0": 3,
+    "a1": 46,
+    "scale": 1.4383,
+    "start": 17.28,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 31
+   },
+   {
+    "react": "clap",
+    "start": 113.23,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_hokey_pokey_a",
+    "frozen": false,
+    "a0": 11,
+    "a1": 72,
+    "scale": 1.0414,
+    "start": 143.23,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 11
+   },
+   {
+    "react": "cheer",
+    "start": 238.06,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_swing_dancing_a",
+    "frozen": false,
+    "a0": 8,
+    "a1": 82,
+    "scale": 0.8283,
+    "start": 268.06,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 56
+   },
+   {
+    "react": "clap",
+    "start": 362.88,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_slide_hip_hop_a",
+    "frozen": false,
+    "a0": 146,
+    "a1": 195,
+    "scale": 1.3078,
+    "start": 392.88,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 52
+   },
+   {
+    "react": "cheer",
+    "start": 426.96,
+    "label": "crowd"
+   }
+  ],
+  "gothgirl": [
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "frozen": false,
+    "a0": 139,
+    "a1": 199,
+    "scale": 1.0308,
+    "start": 17.28,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 4
+   },
+   {
+    "react": "cheer",
+    "start": 113.23,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_hip_hop_c",
+    "frozen": false,
+    "a0": 12,
+    "a1": 82,
+    "scale": 0.9075,
+    "start": 143.23,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 7
+   },
+   {
+    "react": "cheer",
+    "start": 238.06,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_house_b",
+    "frozen": false,
+    "a0": 126,
+    "a1": 181,
+    "scale": 1.1145,
+    "start": 268.06,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 26
+   },
+   {
+    "react": "cheer",
+    "start": 362.88,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_slide_hip_hop_a",
+    "frozen": false,
+    "a0": 73,
+    "a1": 146,
+    "scale": 0.8778,
+    "start": 392.88,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 51
+   },
+   {
+    "react": "cheer",
+    "start": 426.96,
+    "label": "crowd"
+   }
+  ],
+  "lorekeeper": [
+   {
+    "clip": "kfb_dance_samba_a",
+    "frozen": false,
+    "a0": 247,
+    "a1": 303,
+    "scale": 1.1044,
+    "start": 17.28,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 44
+   },
+   {
+    "react": "cheer",
+    "start": 113.23,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_step_hip_hop_a",
+    "frozen": true,
+    "a0": 14,
+    "a1": 74,
+    "scale": 1.0588,
+    "start": 143.23,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 65
+   },
+   {
+    "react": "clap",
+    "start": 238.06,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_house_a",
+    "frozen": false,
+    "a0": 126,
+    "a1": 181,
+    "scale": 1.1145,
+    "start": 268.06,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 18
+   },
+   {
+    "react": "clap",
+    "start": 362.88,
+    "label": "crowd"
+   },
+   {
+    "clip": "kfb_dance_samba_a",
+    "frozen": false,
+    "a0": 442,
+    "a1": 489,
+    "scale": 1.3634,
+    "start": 392.88,
+    "mirror": false,
+    "label": "crowd groove",
+    "win": 48
+   },
+   {
+    "react": "cheer",
+    "start": 426.96,
+    "label": "crowd"
+   }
+  ]
+ },
+ "end": 492,
+ "name": "DANCE_C_dance_off"
+}

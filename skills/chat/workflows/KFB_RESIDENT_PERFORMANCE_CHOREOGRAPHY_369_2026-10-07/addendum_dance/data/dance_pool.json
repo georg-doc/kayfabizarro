@@ -1,0 +1,1299 @@
+{
+ "schema": "kfb.dance.pool.v1",
+ "fps": 24,
+ "clips": [
+  {
+   "clip": "kfb_dance_breakdance_uprock_var_1_a",
+   "style": "breaking",
+   "travelFrozen": false,
+   "frames": 52,
+   "period": 12.5,
+   "bpm": 115.2,
+   "bounceM": 0.097,
+   "beats": [
+    1,
+    13,
+    25,
+    39
+   ],
+   "windows": []
+  },
+  {
+   "clip": "kfb_dance_chicken_a",
+   "style": "novelty",
+   "travelFrozen": false,
+   "frames": 116,
+   "period": 10.5,
+   "bpm": 137.1,
+   "bounceM": 0.082,
+   "beats": [
+    8,
+    20,
+    34,
+    43,
+    55,
+    62,
+    76,
+    91,
+    104,
+    112
+   ],
+   "windows": [
+    {
+     "a0": 8,
+     "a1": 55,
+     "beats": 4,
+     "period": 11.75,
+     "energy": 1.388,
+     "intensity": 1
+    },
+    {
+     "a0": 55,
+     "a1": 104,
+     "beats": 4,
+     "period": 12.25,
+     "energy": 2.2749,
+     "intensity": 2
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_dancing_maraschino_step_a",
+   "style": "retro",
+   "travelFrozen": false,
+   "frames": 79,
+   "period": 19,
+   "bpm": 75.8,
+   "bounceM": 0.063,
+   "beats": [
+    12,
+    31,
+    51,
+    67
+   ],
+   "windows": []
+  },
+  {
+   "clip": "kfb_dance_hip_hop_a",
+   "style": "hiphop",
+   "travelFrozen": false,
+   "frames": 329,
+   "period": 14.0,
+   "bpm": 102.9,
+   "bounceM": 0.145,
+   "beats": [
+    9,
+    35,
+    52,
+    64,
+    78,
+    92,
+    107,
+    123,
+    139,
+    151,
+    174,
+    188,
+    199,
+    212,
+    228,
+    243,
+    255,
+    277,
+    287,
+    301,
+    313
+   ],
+   "windows": [
+    {
+     "a0": 9,
+     "a1": 78,
+     "beats": 4,
+     "period": 17.25,
+     "energy": 1.9597,
+     "intensity": 2
+    },
+    {
+     "a0": 78,
+     "a1": 139,
+     "beats": 4,
+     "period": 15.25,
+     "energy": 2.0318,
+     "intensity": 2
+    },
+    {
+     "a0": 139,
+     "a1": 199,
+     "beats": 4,
+     "period": 15.0,
+     "energy": 1.858,
+     "intensity": 1
+    },
+    {
+     "a0": 199,
+     "a1": 255,
+     "beats": 4,
+     "period": 14.0,
+     "energy": 1.9683,
+     "intensity": 2
+    },
+    {
+     "a0": 255,
+     "a1": 313,
+     "beats": 4,
+     "period": 14.5,
+     "energy": 1.8212,
+     "intensity": 1
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_hip_hop_c",
+   "style": "hiphop",
+   "travelFrozen": false,
+   "frames": 332,
+   "period": 14.5,
+   "bpm": 99.3,
+   "bounceM": 0.275,
+   "beats": [
+    12,
+    37,
+    52,
+    67,
+    82,
+    101,
+    125,
+    139,
+    154,
+    183,
+    198,
+    214,
+    230,
+    244,
+    257,
+    272,
+    289,
+    303,
+    324
+   ],
+   "windows": [
+    {
+     "a0": 12,
+     "a1": 82,
+     "beats": 4,
+     "period": 17.5,
+     "energy": 1.8259,
+     "intensity": 1
+    },
+    {
+     "a0": 82,
+     "a1": 154,
+     "beats": 4,
+     "period": 18.0,
+     "energy": 2.3465,
+     "intensity": 2
+    },
+    {
+     "a0": 154,
+     "a1": 230,
+     "beats": 4,
+     "period": 19.0,
+     "energy": 1.7892,
+     "intensity": 1
+    },
+    {
+     "a0": 230,
+     "a1": 289,
+     "beats": 4,
+     "period": 14.75,
+     "energy": 2.5038,
+     "intensity": 2
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_hokey_pokey_a",
+   "style": "novelty",
+   "travelFrozen": false,
+   "frames": 281,
+   "period": 13.5,
+   "bpm": 106.7,
+   "bounceM": 0.035,
+   "beats": [
+    11,
+    31,
+    44,
+    59,
+    72,
+    83,
+    92,
+    102,
+    111,
+    120,
+    144,
+    153,
+    162,
+    172,
+    190,
+    206,
+    216,
+    232,
+    245,
+    263,
+    275
+   ],
+   "windows": [
+    {
+     "a0": 11,
+     "a1": 72,
+     "beats": 4,
+     "period": 15.25,
+     "energy": 0.7699,
+     "intensity": 1
+    },
+    {
+     "a0": 72,
+     "a1": 111,
+     "beats": 4,
+     "period": 9.75,
+     "energy": 0.6477,
+     "intensity": 1
+    },
+    {
+     "a0": 111,
+     "a1": 162,
+     "beats": 4,
+     "period": 12.75,
+     "energy": 2.6203,
+     "intensity": 3
+    },
+    {
+     "a0": 162,
+     "a1": 216,
+     "beats": 4,
+     "period": 13.5,
+     "energy": 2.2931,
+     "intensity": 2
+    },
+    {
+     "a0": 216,
+     "a1": 275,
+     "beats": 4,
+     "period": 14.75,
+     "energy": 1.7818,
+     "intensity": 1
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_house_a",
+   "style": "house",
+   "travelFrozen": false,
+   "frames": 477,
+   "period": 15.0,
+   "bpm": 96.0,
+   "bounceM": 0.107,
+   "beats": [
+    1,
+    10,
+    23,
+    40,
+    60,
+    74,
+    93,
+    113,
+    126,
+    137,
+    148,
+    164,
+    181,
+    195,
+    211,
+    225,
+    246,
+    259,
+    272,
+    289,
+    304,
+    317,
+    331,
+    348,
+    363,
+    379,
+    391,
+    402,
+    416,
+    437,
+    447,
+    459,
+    475
+   ],
+   "windows": [
+    {
+     "a0": 1,
+     "a1": 60,
+     "beats": 4,
+     "period": 14.75,
+     "energy": 3.6568,
+     "intensity": 3
+    },
+    {
+     "a0": 60,
+     "a1": 126,
+     "beats": 4,
+     "period": 16.5,
+     "energy": 2.4046,
+     "intensity": 2
+    },
+    {
+     "a0": 126,
+     "a1": 181,
+     "beats": 4,
+     "period": 13.75,
+     "energy": 2.0866,
+     "intensity": 2
+    },
+    {
+     "a0": 181,
+     "a1": 246,
+     "beats": 4,
+     "period": 16.25,
+     "energy": 3.1179,
+     "intensity": 3
+    },
+    {
+     "a0": 246,
+     "a1": 304,
+     "beats": 4,
+     "period": 14.5,
+     "energy": 2.9493,
+     "intensity": 3
+    },
+    {
+     "a0": 304,
+     "a1": 363,
+     "beats": 4,
+     "period": 14.75,
+     "energy": 3.3633,
+     "intensity": 3
+    },
+    {
+     "a0": 363,
+     "a1": 416,
+     "beats": 4,
+     "period": 13.25,
+     "energy": 2.8176,
+     "intensity": 3
+    },
+    {
+     "a0": 416,
+     "a1": 475,
+     "beats": 4,
+     "period": 14.75,
+     "energy": 3.6173,
+     "intensity": 3
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_house_b",
+   "style": "house",
+   "travelFrozen": false,
+   "frames": 477,
+   "period": 15,
+   "bpm": 96.0,
+   "bounceM": 0.101,
+   "beats": [
+    1,
+    10,
+    23,
+    40,
+    60,
+    74,
+    93,
+    113,
+    126,
+    137,
+    148,
+    164,
+    181,
+    195,
+    211,
+    225,
+    246,
+    259,
+    272,
+    289,
+    304,
+    317,
+    331,
+    348,
+    363,
+    379,
+    395,
+    416,
+    437,
+    447,
+    475
+   ],
+   "windows": [
+    {
+     "a0": 1,
+     "a1": 60,
+     "beats": 4,
+     "period": 14.75,
+     "energy": 3.6396,
+     "intensity": 3
+    },
+    {
+     "a0": 60,
+     "a1": 126,
+     "beats": 4,
+     "period": 16.5,
+     "energy": 2.3983,
+     "intensity": 2
+    },
+    {
+     "a0": 126,
+     "a1": 181,
+     "beats": 4,
+     "period": 13.75,
+     "energy": 2.0677,
+     "intensity": 2
+    },
+    {
+     "a0": 181,
+     "a1": 246,
+     "beats": 4,
+     "period": 16.25,
+     "energy": 3.1085,
+     "intensity": 3
+    },
+    {
+     "a0": 246,
+     "a1": 304,
+     "beats": 4,
+     "period": 14.5,
+     "energy": 2.9234,
+     "intensity": 3
+    },
+    {
+     "a0": 304,
+     "a1": 363,
+     "beats": 4,
+     "period": 14.75,
+     "energy": 3.3317,
+     "intensity": 3
+    },
+    {
+     "a0": 363,
+     "a1": 437,
+     "beats": 4,
+     "period": 18.5,
+     "energy": 3.0149,
+     "intensity": 3
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_jazz_dancing_a",
+   "style": "jazz",
+   "travelFrozen": false,
+   "frames": 132,
+   "period": 11.0,
+   "bpm": 130.9,
+   "bounceM": 0.109,
+   "beats": [
+    3,
+    14,
+    24,
+    36,
+    46,
+    58,
+    67,
+    79,
+    89,
+    101,
+    111,
+    122
+   ],
+   "windows": [
+    {
+     "a0": 3,
+     "a1": 46,
+     "beats": 4,
+     "period": 10.75,
+     "energy": 0.824,
+     "intensity": 1
+    },
+    {
+     "a0": 46,
+     "a1": 89,
+     "beats": 4,
+     "period": 10.75,
+     "energy": 0.8244,
+     "intensity": 1
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_locking_hip_hop_a",
+   "style": "hiphop",
+   "travelFrozen": true,
+   "frames": 409,
+   "period": 12.0,
+   "bpm": 120.0,
+   "bounceM": 0.139,
+   "beats": [
+    5,
+    21,
+    33,
+    50,
+    74,
+    88,
+    98,
+    109,
+    120,
+    135,
+    146,
+    158,
+    171,
+    183,
+    196,
+    209,
+    224,
+    234,
+    247,
+    258,
+    271,
+    284,
+    292,
+    304,
+    321,
+    331,
+    345,
+    356,
+    369,
+    383,
+    395
+   ],
+   "windows": [
+    {
+     "a0": 74,
+     "a1": 120,
+     "beats": 4,
+     "period": 11.5,
+     "energy": 2.4582,
+     "intensity": 2
+    },
+    {
+     "a0": 120,
+     "a1": 171,
+     "beats": 4,
+     "period": 12.75,
+     "energy": 2.6927,
+     "intensity": 3
+    },
+    {
+     "a0": 171,
+     "a1": 224,
+     "beats": 4,
+     "period": 13.25,
+     "energy": 2.5159,
+     "intensity": 2
+    },
+    {
+     "a0": 224,
+     "a1": 271,
+     "beats": 4,
+     "period": 11.75,
+     "energy": 2.4265,
+     "intensity": 2
+    },
+    {
+     "a0": 271,
+     "a1": 321,
+     "beats": 4,
+     "period": 12.5,
+     "energy": 2.9806,
+     "intensity": 3
+    },
+    {
+     "a0": 321,
+     "a1": 369,
+     "beats": 4,
+     "period": 12.0,
+     "energy": 2.0012,
+     "intensity": 2
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_northern_soul_spin_a",
+   "style": "retro",
+   "travelFrozen": false,
+   "frames": 98,
+   "period": 15.5,
+   "bpm": 92.9,
+   "bounceM": 0.05,
+   "beats": [
+    7,
+    21,
+    38,
+    65,
+    86
+   ],
+   "windows": [
+    {
+     "a0": 7,
+     "a1": 86,
+     "beats": 4,
+     "period": 19.75,
+     "energy": 4.3046,
+     "intensity": 3
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_samba_a",
+   "style": "latin",
+   "travelFrozen": false,
+   "frames": 574,
+   "period": 10.5,
+   "bpm": 137.1,
+   "bounceM": 0.197,
+   "beats": [
+    4,
+    14,
+    25,
+    36,
+    47,
+    58,
+    68,
+    79,
+    91,
+    103,
+    114,
+    121,
+    135,
+    152,
+    177,
+    190,
+    201,
+    214,
+    225,
+    236,
+    247,
+    259,
+    271,
+    289,
+    303,
+    317,
+    334,
+    346,
+    358,
+    369,
+    379,
+    388,
+    399,
+    411,
+    421,
+    432,
+    442,
+    456,
+    468,
+    478,
+    489,
+    500,
+    510,
+    520,
+    531,
+    543,
+    553,
+    564
+   ],
+   "windows": [
+    {
+     "a0": 4,
+     "a1": 47,
+     "beats": 4,
+     "period": 10.75,
+     "energy": 4.6552,
+     "intensity": 3
+    },
+    {
+     "a0": 47,
+     "a1": 91,
+     "beats": 4,
+     "period": 11.0,
+     "energy": 4.4801,
+     "intensity": 3
+    },
+    {
+     "a0": 91,
+     "a1": 135,
+     "beats": 4,
+     "period": 11.0,
+     "energy": 4.9989,
+     "intensity": 3
+    },
+    {
+     "a0": 201,
+     "a1": 247,
+     "beats": 4,
+     "period": 11.5,
+     "energy": 3.3805,
+     "intensity": 3
+    },
+    {
+     "a0": 247,
+     "a1": 303,
+     "beats": 4,
+     "period": 14.0,
+     "energy": 1.9653,
+     "intensity": 2
+    },
+    {
+     "a0": 303,
+     "a1": 358,
+     "beats": 4,
+     "period": 13.75,
+     "energy": 3.6038,
+     "intensity": 3
+    },
+    {
+     "a0": 358,
+     "a1": 399,
+     "beats": 4,
+     "period": 10.25,
+     "energy": 3.0705,
+     "intensity": 3
+    },
+    {
+     "a0": 399,
+     "a1": 442,
+     "beats": 4,
+     "period": 10.75,
+     "energy": 3.1444,
+     "intensity": 3
+    },
+    {
+     "a0": 442,
+     "a1": 489,
+     "beats": 4,
+     "period": 11.75,
+     "energy": 2.9853,
+     "intensity": 3
+    },
+    {
+     "a0": 489,
+     "a1": 531,
+     "beats": 4,
+     "period": 10.5,
+     "energy": 4.6151,
+     "intensity": 3
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_slide_hip_hop_a",
+   "style": "hiphop",
+   "travelFrozen": false,
+   "frames": 417,
+   "period": 15.5,
+   "bpm": 92.9,
+   "bounceM": 0.07,
+   "beats": [
+    10,
+    24,
+    43,
+    55,
+    73,
+    84,
+    100,
+    122,
+    146,
+    161,
+    172,
+    184,
+    195,
+    205,
+    216,
+    239,
+    251,
+    264,
+    286,
+    309,
+    322,
+    334,
+    344,
+    356,
+    367,
+    389,
+    408
+   ],
+   "windows": [
+    {
+     "a0": 10,
+     "a1": 73,
+     "beats": 4,
+     "period": 15.75,
+     "energy": 2.2447,
+     "intensity": 2
+    },
+    {
+     "a0": 73,
+     "a1": 146,
+     "beats": 4,
+     "period": 18.25,
+     "energy": 1.419,
+     "intensity": 1
+    },
+    {
+     "a0": 146,
+     "a1": 195,
+     "beats": 4,
+     "period": 12.25,
+     "energy": 1.0766,
+     "intensity": 1
+    },
+    {
+     "a0": 195,
+     "a1": 251,
+     "beats": 4,
+     "period": 14.0,
+     "energy": 1.9544,
+     "intensity": 2
+    },
+    {
+     "a0": 251,
+     "a1": 322,
+     "beats": 4,
+     "period": 17.75,
+     "energy": 0.9359,
+     "intensity": 1
+    },
+    {
+     "a0": 322,
+     "a1": 367,
+     "beats": 4,
+     "period": 11.25,
+     "energy": 2.0329,
+     "intensity": 2
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_swing_dancing_a",
+   "style": "jazz",
+   "travelFrozen": false,
+   "frames": 126,
+   "period": 16,
+   "bpm": 90.0,
+   "bounceM": 0.251,
+   "beats": [
+    8,
+    32,
+    50,
+    65,
+    82,
+    97,
+    111
+   ],
+   "windows": [
+    {
+     "a0": 8,
+     "a1": 82,
+     "beats": 4,
+     "period": 18.5,
+     "energy": 2.1405,
+     "intensity": 2
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_twist_dance_a",
+   "style": "retro",
+   "travelFrozen": false,
+   "frames": 228,
+   "period": 18,
+   "bpm": 80.0,
+   "bounceM": 0.13,
+   "beats": [
+    7,
+    34,
+    53,
+    70,
+    88,
+    114,
+    134,
+    151,
+    177,
+    194,
+    212
+   ],
+   "windows": [
+    {
+     "a0": 7,
+     "a1": 88,
+     "beats": 4,
+     "period": 20.25,
+     "energy": 2.4357,
+     "intensity": 2
+    },
+    {
+     "a0": 88,
+     "a1": 177,
+     "beats": 4,
+     "period": 22.25,
+     "energy": 2.703,
+     "intensity": 3
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_wave_hip_hop_a",
+   "style": "hiphop",
+   "travelFrozen": false,
+   "frames": 405,
+   "period": 17,
+   "bpm": 84.7,
+   "bounceM": 0.088,
+   "beats": [
+    8,
+    39,
+    52,
+    68,
+    86,
+    101,
+    125,
+    136,
+    155,
+    167,
+    188,
+    208,
+    221,
+    236,
+    255,
+    270,
+    285,
+    297,
+    313,
+    324,
+    337,
+    350,
+    365,
+    381,
+    392
+   ],
+   "windows": [
+    {
+     "a0": 8,
+     "a1": 86,
+     "beats": 4,
+     "period": 19.5,
+     "energy": 1.5354,
+     "intensity": 1
+    },
+    {
+     "a0": 86,
+     "a1": 155,
+     "beats": 4,
+     "period": 17.25,
+     "energy": 1.8653,
+     "intensity": 2
+    },
+    {
+     "a0": 155,
+     "a1": 221,
+     "beats": 4,
+     "period": 16.5,
+     "energy": 2.3577,
+     "intensity": 2
+    },
+    {
+     "a0": 221,
+     "a1": 285,
+     "beats": 4,
+     "period": 16.0,
+     "energy": 2.1343,
+     "intensity": 2
+    },
+    {
+     "a0": 285,
+     "a1": 337,
+     "beats": 4,
+     "period": 13.0,
+     "energy": 0.7794,
+     "intensity": 1
+    },
+    {
+     "a0": 337,
+     "a1": 392,
+     "beats": 4,
+     "period": 13.75,
+     "energy": 1.5476,
+     "intensity": 1
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_step_hip_hop_a",
+   "style": "hiphop",
+   "travelFrozen": true,
+   "frames": 189,
+   "period": 14,
+   "bpm": 102.9,
+   "bounceM": 0.048,
+   "beats": [
+    14,
+    37,
+    46,
+    60,
+    74,
+    97,
+    121,
+    132,
+    158,
+    175,
+    185
+   ],
+   "windows": [
+    {
+     "a0": 14,
+     "a1": 74,
+     "beats": 4,
+     "period": 15.0,
+     "energy": 1.215,
+     "intensity": 1
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_thriller_part3_a",
+   "style": "novelty",
+   "travelFrozen": true,
+   "frames": 615,
+   "period": 12.5,
+   "bpm": 115.2,
+   "bounceM": 0.197,
+   "beats": [
+    4,
+    19,
+    30,
+    42,
+    54,
+    68,
+    79,
+    91,
+    99,
+    109,
+    117,
+    131,
+    150,
+    160,
+    171,
+    183,
+    198,
+    213,
+    226,
+    237,
+    255,
+    272,
+    292,
+    309,
+    326,
+    340,
+    353,
+    368,
+    380,
+    392,
+    409,
+    421,
+    433,
+    456,
+    469,
+    481,
+    494,
+    507,
+    518,
+    531,
+    543,
+    556,
+    568,
+    581,
+    592,
+    611
+   ],
+   "windows": [
+    {
+     "a0": 4,
+     "a1": 54,
+     "beats": 4,
+     "period": 12.5,
+     "energy": 2.8317,
+     "intensity": 3
+    },
+    {
+     "a0": 54,
+     "a1": 99,
+     "beats": 4,
+     "period": 11.25,
+     "energy": 3.276,
+     "intensity": 3
+    },
+    {
+     "a0": 99,
+     "a1": 150,
+     "beats": 4,
+     "period": 12.75,
+     "energy": 2.9263,
+     "intensity": 3
+    },
+    {
+     "a0": 150,
+     "a1": 198,
+     "beats": 4,
+     "period": 12.0,
+     "energy": 1.4233,
+     "intensity": 1
+    },
+    {
+     "a0": 198,
+     "a1": 255,
+     "beats": 4,
+     "period": 14.25,
+     "energy": 2.3025,
+     "intensity": 2
+    },
+    {
+     "a0": 326,
+     "a1": 380,
+     "beats": 4,
+     "period": 13.5,
+     "energy": 0.731,
+     "intensity": 1
+    },
+    {
+     "a0": 380,
+     "a1": 433,
+     "beats": 4,
+     "period": 13.25,
+     "energy": 1.2854,
+     "intensity": 1
+    },
+    {
+     "a0": 433,
+     "a1": 494,
+     "beats": 4,
+     "period": 15.25,
+     "energy": 1.3953,
+     "intensity": 1
+    },
+    {
+     "a0": 494,
+     "a1": 543,
+     "beats": 4,
+     "period": 12.25,
+     "energy": 1.199,
+     "intensity": 1
+    },
+    {
+     "a0": 543,
+     "a1": 592,
+     "beats": 4,
+     "period": 12.25,
+     "energy": 1.3048,
+     "intensity": 1
+    }
+   ]
+  },
+  {
+   "clip": "kfb_dance_gangnam_style_a",
+   "style": "novelty",
+   "travelFrozen": false,
+   "frames": 298,
+   "period": 11,
+   "bpm": 130.9,
+   "bounceM": 0.111,
+   "beats": [
+    2,
+    12,
+    24,
+    35,
+    46,
+    57,
+    68,
+    79,
+    90,
+    100,
+    111,
+    123,
+    133,
+    145,
+    156,
+    166,
+    178,
+    190,
+    204,
+    215,
+    230,
+    239,
+    250,
+    260,
+    275,
+    290
+   ],
+   "windows": [
+    {
+     "a0": 2,
+     "a1": 46,
+     "beats": 4,
+     "period": 11.0,
+     "energy": 1.5256,
+     "intensity": 1
+    },
+    {
+     "a0": 46,
+     "a1": 90,
+     "beats": 4,
+     "period": 11.0,
+     "energy": 1.5411,
+     "intensity": 1
+    },
+    {
+     "a0": 90,
+     "a1": 133,
+     "beats": 4,
+     "period": 10.75,
+     "energy": 2.3868,
+     "intensity": 2
+    },
+    {
+     "a0": 133,
+     "a1": 178,
+     "beats": 4,
+     "period": 11.25,
+     "energy": 2.1807,
+     "intensity": 2
+    },
+    {
+     "a0": 178,
+     "a1": 230,
+     "beats": 4,
+     "period": 13.0,
+     "energy": 1.7081,
+     "intensity": 1
+    },
+    {
+     "a0": 230,
+     "a1": 275,
+     "beats": 4,
+     "period": 11.25,
+     "energy": 0.9849,
+     "intensity": 1
+    }
+   ]
+  }
+ ]
+}

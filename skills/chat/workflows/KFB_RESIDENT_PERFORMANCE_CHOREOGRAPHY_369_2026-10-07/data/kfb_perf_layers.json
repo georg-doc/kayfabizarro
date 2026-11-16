@@ -1,0 +1,782 @@
+{
+ "schema": "kfb.resident-performance-layers/0-candidate",
+ "date": "2026-10-07",
+ "issue": 369,
+ "status": "CANDIDATE \u00b7 SOURCE-ISOLATED BLENDER PROOF \u00b7 NO RUNTIME CLAIM",
+ "rigs": [
+  "Rig_Medium",
+  "Rig_Large"
+ ],
+ "units": "degrees, bone-local Euler XYZ, composed as base_basis @ delta (Blender NLA COMBINE / three.js additive)",
+ "axisConvention": {
+  "spine|chest|head": {
+   "+X": "pitch forward (lean in / nod down)",
+   "+Z": "lean to the character's right",
+   "+Y": "twist (turn); +Y turns the face to the character's left"
+  },
+  "note": "Verified identical on Rig_Medium (Farmer_B) and Rig_Large (Orc Brute) with a 15-degree probe. Same numbers serve both rigs because the joint frames match; Large only scales distance."
+ },
+ "rules": [
+  "Layers touch spine/chest/head (+ upperarm/lowerarm/wrist only in 'shrug'). Never hips/root/legs -> foot contact is unchanged by construction.",
+  "Base Pose layers are sustained (hold while the affect lasts, fade 8-12 frames).",
+  "Micro-motion layers are envelopes on top of any base/activity clip.",
+  "Head layers stay small (|pitch| <= 14): the runtime EyeRig/gaze owns where the face looks; larger head-down hides the face under hats/hair (measured on Farmer_B).",
+  "Face, brows, mouth, Emanata, bubbles are not in these layers."
+ ],
+ "basePose": {
+  "open_neutral": {},
+  "attentive": {
+   "spine": [
+    8,
+    0,
+    0
+   ],
+   "chest": [
+    5,
+    0,
+    0
+   ],
+   "head": [
+    -4,
+    0,
+    0
+   ]
+  },
+  "curious": {
+   "spine": [
+    10,
+    0,
+    0
+   ],
+   "chest": [
+    6,
+    0,
+    0
+   ],
+   "head": [
+    4,
+    0,
+    18
+   ]
+  },
+  "proud": {
+   "spine": [
+    -8,
+    0,
+    0
+   ],
+   "chest": [
+    -10,
+    0,
+    0
+   ],
+   "head": [
+    -14,
+    0,
+    0
+   ],
+   "upperarm.l": [
+    12,
+    0,
+    0
+   ],
+   "upperarm.r": [
+    12,
+    0,
+    0
+   ],
+   "lowerarm.l": [
+    20,
+    0,
+    0
+   ],
+   "lowerarm.r": [
+    20,
+    0,
+    0
+   ]
+  },
+  "relaxed": {
+   "spine": [
+    -4,
+    0,
+    6
+   ],
+   "chest": [
+    -3,
+    0,
+    0
+   ],
+   "head": [
+    0,
+    0,
+    8
+   ]
+  },
+  "guarded": {
+   "spine": [
+    -4,
+    0,
+    0
+   ],
+   "chest": [
+    10,
+    0,
+    0
+   ],
+   "head": [
+    12,
+    0,
+    -10
+   ],
+   "upperarm.l": [
+    0,
+    0,
+    -25
+   ],
+   "upperarm.r": [
+    0,
+    0,
+    25
+   ],
+   "lowerarm.l": [
+    0,
+    0,
+    -40
+   ],
+   "lowerarm.r": [
+    0,
+    0,
+    40
+   ]
+  },
+  "closed_low": {
+   "spine": [
+    14,
+    0,
+    0
+   ],
+   "chest": [
+    12,
+    0,
+    0
+   ],
+   "head": [
+    18,
+    0,
+    0
+   ],
+   "upperarm.l": [
+    0,
+    0,
+    -10
+   ],
+   "upperarm.r": [
+    0,
+    0,
+    10
+   ]
+  },
+  "closed_asym": {
+   "spine": [
+    -6,
+    0,
+    8
+   ],
+   "chest": [
+    0,
+    -14,
+    0
+   ],
+   "head": [
+    0,
+    16,
+    -10
+   ]
+  },
+  "forward_closed": {
+   "spine": [
+    12,
+    0,
+    0
+   ],
+   "chest": [
+    10,
+    0,
+    0
+   ],
+   "head": [
+    -10,
+    0,
+    0
+   ],
+   "upperarm.l": [
+    15,
+    0,
+    0
+   ],
+   "upperarm.r": [
+    15,
+    0,
+    0
+   ]
+  },
+  "closed_small": {
+   "spine": [
+    6,
+    0,
+    0
+   ],
+   "chest": [
+    8,
+    -10,
+    0
+   ],
+   "head": [
+    18,
+    -16,
+    12
+   ],
+   "upperarm.l": [
+    0,
+    0,
+    -25
+   ],
+   "upperarm.r": [
+    0,
+    0,
+    25
+   ],
+   "lowerarm.l": [
+    0,
+    0,
+    -40
+   ],
+   "lowerarm.r": [
+    0,
+    0,
+    40
+   ]
+  },
+  "guarded_asym": {
+   "spine": [
+    -4,
+    0,
+    -12
+   ],
+   "chest": [
+    0,
+    14,
+    0
+   ],
+   "head": [
+    6,
+    -10,
+    16
+   ]
+  },
+  "low_relaxed": {
+   "spine": [
+    16,
+    0,
+    0
+   ],
+   "chest": [
+    10,
+    0,
+    0
+   ],
+   "head": [
+    18,
+    0,
+    8
+   ]
+  },
+  "open_soft": {
+   "spine": [
+    5,
+    0,
+    0
+   ],
+   "chest": [
+    -4,
+    0,
+    0
+   ],
+   "head": [
+    10,
+    0,
+    0
+   ]
+  },
+  "listening": {
+   "spine": [
+    5,
+    0,
+    0
+   ],
+   "chest": [
+    3,
+    0,
+    0
+   ],
+   "head": [
+    0,
+    0,
+    14
+   ]
+  }
+ },
+ "relational": {
+  "lean_toward": {
+   "spine": [
+    6,
+    0,
+    0
+   ],
+   "chest": [
+    4,
+    0,
+    0
+   ],
+   "head": [
+    -3,
+    0,
+    0
+   ]
+  },
+  "lean_away": {
+   "spine": [
+    -6,
+    0,
+    0
+   ],
+   "chest": [
+    -4,
+    0,
+    0
+   ],
+   "head": [
+    3,
+    0,
+    0
+   ]
+  },
+  "side_lean_r": {
+   "spine": [
+    0,
+    0,
+    6
+   ],
+   "head": [
+    0,
+    0,
+    -3
+   ]
+  },
+  "side_lean_l": {
+   "spine": [
+    0,
+    0,
+    -6
+   ],
+   "head": [
+    0,
+    0,
+    3
+   ]
+  },
+  "turn_toward": {
+   "split": {
+    "spine": 0.25,
+    "chest": 0.3,
+    "head": 0.45
+   },
+   "maxYawDeg": 40,
+   "note": "runtime sets the yaw to the target; beyond 40 deg the locomotion/encounter owner turns the feet."
+  }
+ },
+ "microEnvelopes": {
+  "nod": {
+   "fps": 30,
+   "keys": [
+    [
+     0,
+     {
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     6,
+     {
+      "head": [
+       14,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     12,
+     {
+      "head": [
+       -3,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     17,
+     {
+      "head": [
+       8,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     24,
+     {
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  "soft_nod": {
+   "fps": 30,
+   "keys": [
+    [
+     0,
+     {
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     8,
+     {
+      "head": [
+       9,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     18,
+     {
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  "head_tilt": {
+   "fps": 30,
+   "keys": [
+    [
+     0,
+     {
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     8,
+     {
+      "head": [
+       2,
+       0,
+       12
+      ]
+     }
+    ],
+    [
+     30,
+     {
+      "head": [
+       2,
+       0,
+       10
+      ]
+     }
+    ],
+    [
+     40,
+     {
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  "recoil": {
+   "fps": 30,
+   "keys": [
+    [
+     0,
+     {
+      "spine": [
+       0,
+       0,
+       0
+      ],
+      "chest": [
+       0,
+       0,
+       0
+      ],
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     4,
+     {
+      "spine": [
+       -10,
+       0,
+       0
+      ],
+      "chest": [
+       -6,
+       0,
+       0
+      ],
+      "head": [
+       -8,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     10,
+     {
+      "spine": [
+       -7,
+       0,
+       0
+      ],
+      "chest": [
+       -4,
+       0,
+       0
+      ],
+      "head": [
+       -5,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     22,
+     {
+      "spine": [
+       0,
+       0,
+       0
+      ],
+      "chest": [
+       0,
+       0,
+       0
+      ],
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  "settle": {
+   "fps": 30,
+   "keys": [
+    [
+     0,
+     {
+      "spine": [
+       2,
+       0,
+       0
+      ],
+      "chest": [
+       2,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     6,
+     {
+      "spine": [
+       -1,
+       0,
+       0
+      ],
+      "chest": [
+       -1,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     14,
+     {
+      "spine": [
+       0,
+       0,
+       0
+      ],
+      "chest": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  "bounce_small": {
+   "fps": 30,
+   "keys": [
+    [
+     0,
+     {
+      "spine": [
+       0,
+       0,
+       0
+      ],
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     5,
+     {
+      "spine": [
+       -4,
+       0,
+       0
+      ],
+      "head": [
+       -3,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     10,
+     {
+      "spine": [
+       2,
+       0,
+       0
+      ],
+      "head": [
+       2,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     15,
+     {
+      "spine": [
+       0,
+       0,
+       0
+      ],
+      "head": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   ]
+  },
+  "anticipate_hand": {
+   "fps": 30,
+   "keys": [
+    [
+     0,
+     {
+      "chest": [
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     5,
+     {
+      "chest": [
+       -3,
+       0,
+       0
+      ]
+     }
+    ],
+    [
+     9,
+     {
+      "chest": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   ],
+   "note": "chest counter-move before any give/point/wave strip"
+  }
+ },
+ "passHistory": [
+  {
+   "pass": 1,
+   "result": "FAIL distance readability: torso/head-only offsets (<=8 deg spine/chest, <=12 head) are invisible at gameplay distance on chibi rigs; near view reads mostly through head/hat."
+  },
+  {
+   "pass": 2,
+   "result": "PARTIAL: amplitudes ~2x + arm components. Near/mid: all 14 read. Far (~5x body height): proud, closed_low, low_relaxed, curious read via head/hat silhouette on Farmer_B; on Lorekeeper and Orc Brute mostly only closed_low reads. Subtle states need gesture/full-body clip/Emanatum at FAR LOD."
+  }
+ ]
+}
