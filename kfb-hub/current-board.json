@@ -417,6 +417,26 @@
         "entry"
       ],
       "prompt": "Run ONLY after source-verified three-class baseline. Preserve R3/Aperture/Rapier/Terrain/Portal owners and show actual original geometry in isolation before a SDF→mesh / SDF→splat comparator. No new game implementation authorization."
+    },
+    {
+      "id": "brief-ws0-creature-animation-r0",
+      "title": "WS0 · Creature Animation · Enemies, Tiere und Insekten",
+      "badge": "OPTIONAL COMPANION · NOT BUILT",
+      "status": "hold",
+      "provider": "WS0 Visual/Motion Authoring → existing KFB ToolBox Motion / Race",
+      "desc": "Reference-video + Blender procedural keypose/clip authoring and automated motion QA. Existing K15 Chicken/Crab as source candidates, then verified insect. Optional same-pose Splat render; no new gameplay owner. Review-branch only.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/docs/ws0-splat-assets-slops-scenelets-r0-2026-11-16/skills/chat/WS0_CREATURE_ANIMATION_AUTHORING_COMPANION_R0_2026-11-16.md",
+      "tags": [
+        "ws0",
+        "creature",
+        "animation",
+        "k15",
+        "insects",
+        "blender",
+        "splat",
+        "motion"
+      ],
+      "prompt": "Read WS0_CREATURE_ANIMATION_AUTHORING_COMPANION_R0_2026-11-16.md, preserve KFB actor/rig/runtime ownership; isolate real K15 Chicken original + clips before one new authoring bake. Does not block existing Splat R0 sequence."
     }
   ],
   "openQuestions": [
