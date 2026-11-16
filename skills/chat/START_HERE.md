@@ -4,6 +4,8 @@ Georg requested a source-backed four-step experiment sequence, **not** a new gam
 
 Read: `skills/chat/WS0_GAUSSIAN_SPLAT_2D_SLOPS_SCENELETS_R0_2026-11-16.md` → `skills/chat/WS0_SDF_SPLAT_DUNGEON_CAVES_ROOMS_WALLS_ENTRIES_R0_2026-11-16.md` → `skills/chat/WS0_GAUSSIAN_SPLAT_R0_RETURN_2026-11-16.md` / `WS0_GAUSSIAN_SPLAT_R0_CHANGELOG_2026-11-16.md`. On review branch `docs/ws0-splat-assets-slops-scenelets-r0-2026-11-16`; not yet main or live. Race checked `game/integration-r2` @ `648f932e52eadaa019e141ce8e34508bd372e5e5`; InfiniteRooms R3 has 16/16 technical tests reported but environment FAIL/NO-GO, **not** splat/whole-game PASS. **Actual new splat renders and GPU tests: 0.**
 
+Optional independent animation-authoring companion (no new runtime): `skills/chat/WS0_CREATURE_ANIMATION_AUTHORING_COMPANION_R0_2026-11-16.md` — actual K15 Chicken/Crab rig sources, behavior/animal-video reference, Blender scripted clips, QA and optional same-clip skinned-Splat playback; do not confuse this with the prioritized original-source Splat gate. Creator's Reddit skill is a method description, not an imported app.
+
 Next gate: WS0 source-isolates one real original of each of the first three categories with exact bytes/hash before any conversion, then the dungeon source corridor. No placeholders, no separate renderer/physics owner, no automatic merge, Site, Cloudflare Stage or Live promotion.
 
 ---
