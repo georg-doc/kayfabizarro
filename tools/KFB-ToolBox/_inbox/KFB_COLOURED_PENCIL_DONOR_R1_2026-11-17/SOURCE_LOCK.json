@@ -1,0 +1,79 @@
+{
+  "project": "blendi/coloured-pencil",
+  "source": "https://patch.gg/blendi/coloured-pencil",
+  "clone_url": "https://git.patch.gg/blendi/coloured-pencil.git",
+  "head": "0400f90d08ca97aae11edb41e3ff3af830acc8c7",
+  "code_license": "MIT",
+  "art_license": "CC0-1.0",
+  "scope": "minimal closed shading and optional shape modules only; no demo world/player/renderer/clock/physics or binary art",
+  "mirror": "~/.codex/mirrors/patch--coloured-pencil.git",
+  "mirror_note": "Created once with --mirror --filter=blob:none; server ignored filtering, recorded once; no fallback clone.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob": "fb9221170b24f044beb857b1ad448d1717a25783",
+      "sha256": "766db5265472c2b543561b16ef986a69b2a8f4eae576c45c78250c8d123eb5df",
+      "bytes": 1655
+    },
+    {
+      "path": "LICENCE-NOTES.md",
+      "git_blob": "80146a61712629ee2b49663af6c2dc85562e55a3",
+      "sha256": "c2bc1f256ec6034d408eb6013fba69f076b5e150cc2fe8dfacc744c25964d8b3",
+      "bytes": 2579
+    },
+    {
+      "path": "README.md",
+      "git_blob": "cbe841c9c000724618b70031b3590570686ec06b",
+      "sha256": "745f46a2c92d39f5cebf3e5bd96a95da7e5c1f22ad21e6e57b1de40d25f3597d",
+      "bytes": 5018
+    },
+    {
+      "path": "package.json",
+      "git_blob": "feead4a80e2ff45a4a000fbf0db4a5162dac4fd8",
+      "sha256": "a878fef2080d832039162a8095aada57052e641cfe75fedbe261dfdb1c690adf",
+      "bytes": 302
+    },
+    {
+      "path": "public/CREDITS.md",
+      "git_blob": "1309b6d5b6556a264064d491588ce07e73e618fb",
+      "sha256": "a4e9a5798d0c5ad18d3ec1950893fdb0b7c3570964dace67779d956e6623224f",
+      "bytes": 610
+    },
+    {
+      "path": "public/LICENSES/CC0-1.0.txt",
+      "git_blob": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048
+    },
+    {
+      "path": "src/pencil.js",
+      "git_blob": "8bea1ef8dd17620ffc74de8177b7d9568e6ebd06",
+      "sha256": "069f86a75dcd5c36eb008172355f46c16c200db53ea728f5d06ea2f41d7d43e2",
+      "bytes": 8023
+    },
+    {
+      "path": "src/page.js",
+      "git_blob": "23213d95a7e8a109b56b10872635814b9577b543",
+      "sha256": "05aac0317386414feaea61dc88dea08bf8327d0557ded9824edd3ef4b416576c",
+      "bytes": 5200
+    },
+    {
+      "path": "src/shape.js",
+      "git_blob": "41d9ec69db0e90bee15bf237b8604b240f062ee8",
+      "sha256": "567692468dfee2114cde9a2c7bc7ee11497625346d89f2181b4e703585f61bcd",
+      "bytes": 5999
+    },
+    {
+      "path": "src/noise.js",
+      "git_blob": "5bf8317360253f95fbcf8baddd9a16e5055e27a8",
+      "sha256": "8f85d12655db0b1c5cb6ef9d84cb65d782a9b463209b4199848395574786fb1b",
+      "bytes": 1068
+    }
+  ],
+  "checks": {
+    "syntax_js_pass": 4,
+    "missing_relative_imports": [],
+    "render_test": "NOT_RUN",
+    "receiving_integration": "NOT_IMPLEMENTED"
+  }
+}

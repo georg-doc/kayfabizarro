@@ -21,3 +21,11 @@ Already canonical in KFB-Stunt-Car-Race game/integration-r2 @2e5c62abb32106f084e
 ## Claude Design next use
 
 Open the chosen packet's handoff and SOURCE_LOCK. Show actual source objects alone before adaptation. Use the existing KFB material, building/deformer, Surface Truth, facade/Curator and forest owners. Feed standalone generators through the existing host scene and lifecycle. Keep SOURCE VERIFIED, MODULE READY, VISUALLY PROVEN and GAME INTEGRATED separate. No user license decision or source-access gate remains for these delivered code scopes.
+
+
+## Drawing styles · source access recovered 2026-11-17
+
+- [Coloured Pencil](../KFB_COLOURED_PENCIL_DONOR_R1_2026-11-17/INTEGRATION_HANDOFF.md), blendi/coloured-pencil @0400f90d08ca97aae11edb41e3ff3af830acc8c7, MITcode/CC0art.10originalUTF8files,4JSsyntaxchecksPASS. Pure pencil.js exports field/fieldBy/hue andcreatePencil materials; one common vertex hatch/color preparation can feed selected material swaps. Do not use UV-deleting createBatch on textured KFB props; compose existing deformer/material hooks, not overwrite onBeforeCompile. Cloth/floor remains its own material/UV/light seam; double-sided material is not cloth simulation.
+- [Watercolour](../KFB_WATERCOLOUR_DONOR_R1_2026-11-17/INTEGRATION_HANDOFF.md), blendi/watercolour @713908667b250c35598a737503e68b72cb9a2192, MITcode/CC0art.11originalfiles,5JSsyntaxchecksPASS. wash+pencil is the minimal closure, with arrival DataTexture/root attributes/uNow. Existing Website colorfront/time remains single owner; bind arrival data through an adapter. Donor hardcoded scale/walking speed and heavy stipple trees are not adopted into Racer.
+
+Both actual source repositories/mirrors/rights are positively verified; original notices and exact blobs/SHAs are retained. No demo character, Rapier0.21.0 world, renderer/loop or binary art was copied into these material packets. Optional page pass must join the existing final render chain. These packets remove Claude Design's source-access blocker; no shader/GPU/product-style acceptance or Racer re-theme is claimed. Claude Design can start its existing Buntstift switch from these exact modules and its own receiving owner, preserving the current facade/deformer/material contracts.
