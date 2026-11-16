@@ -1,0 +1,690 @@
+{
+ "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+ "three": "r180 (CDN)",
+ "resolutions": {
+  "lo": [
+   800,
+   450
+  ],
+  "hi": [
+   1600,
+   900
+  ]
+ },
+ "ms": 24617,
+ "errors": 0,
+ "tests": {
+  "G0": {
+   "rule": "synthetic: isotropic + craters pass, + faint stripes fail",
+   "limits": {
+    "stripePeak": 3,
+    "coherence": 0.7
+   },
+   "isotropic": {
+    "coherence": 0.551,
+    "stripePeak": 1.884,
+    "fftAniso": 2.452,
+    "energy": 0.0015
+   },
+   "craters": {
+    "coherence": 0.587,
+    "stripePeak": 1.45,
+    "fftAniso": 2.7,
+    "energy": 0.0031
+   },
+   "isotropicPlusStripes": {
+    "coherence": 0.867,
+    "stripePeak": 8.956,
+    "fftAniso": 24.891,
+    "energy": 0.0024
+   },
+   "cratersPlusStripes": {
+    "coherence": 0.723,
+    "stripePeak": 6.445,
+    "fftAniso": 16.039,
+    "energy": 0.0036
+   },
+   "result": "PASS"
+  },
+  "G1": {
+   "rule": "SSIM(load1,load2) >= 0.995, every v1.3 render, both resolutions",
+   "rows": [
+    {
+     "res": "lo",
+     "key": "fb_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_x2.5",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_x2.5_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "stage",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "terrain",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_x2.5",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_x2.5_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "stage",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "terrain",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    }
+   ],
+   "other": {
+    "none": {
+     "minSsim": 1,
+     "maxDiff": 0
+    },
+    "v11": {
+     "minSsim": 1,
+     "maxDiff": 0
+    }
+   },
+   "minSsim": 1,
+   "maxDiff": 0,
+   "result": "PASS"
+  },
+  "G2": {
+   "rule": "face relief: stripePeak <= 3.0 and coherence <= 0.70 (v1.3, all figures, both resolutions; thresholds unchanged from v1)",
+   "rows": [
+    {
+     "variant": "v13",
+     "res": "lo",
+     "fig": "fb",
+     "coherence": 0.607,
+     "stripePeak": 2.353,
+     "fftAniso": 3.64,
+     "energy": 0.0027
+    },
+    {
+     "variant": "v13",
+     "res": "lo",
+     "fig": "goth",
+     "coherence": 0.451,
+     "stripePeak": 1.723,
+     "fftAniso": 2.103,
+     "energy": 0.0034
+    },
+    {
+     "variant": "v13",
+     "res": "lo",
+     "fig": "hunky",
+     "coherence": 0.444,
+     "stripePeak": 1.76,
+     "fftAniso": 2.686,
+     "energy": 0.0016
+    },
+    {
+     "variant": "v13",
+     "res": "hi",
+     "fig": "fb",
+     "coherence": 0.636,
+     "stripePeak": 2.499,
+     "fftAniso": 3.801,
+     "energy": 0.0028
+    },
+    {
+     "variant": "v13",
+     "res": "hi",
+     "fig": "goth",
+     "coherence": 0.465,
+     "stripePeak": 1.732,
+     "fftAniso": 2.115,
+     "energy": 0.0035
+    },
+    {
+     "variant": "v13",
+     "res": "hi",
+     "fig": "hunky",
+     "coherence": 0.462,
+     "stripePeak": 2.28,
+     "fftAniso": 2.682,
+     "energy": 0.0017
+    },
+    {
+     "variant": "v11",
+     "res": "lo",
+     "fig": "fb",
+     "coherence": 0.491,
+     "stripePeak": 1.795,
+     "fftAniso": 2.655,
+     "energy": 0.0079
+    },
+    {
+     "variant": "v11",
+     "res": "lo",
+     "fig": "goth",
+     "coherence": 0.384,
+     "stripePeak": 1.529,
+     "fftAniso": 2.309,
+     "energy": 0.0075
+    },
+    {
+     "variant": "v11",
+     "res": "lo",
+     "fig": "hunky",
+     "coherence": 0.514,
+     "stripePeak": 1.919,
+     "fftAniso": 3.506,
+     "energy": 0.0042
+    },
+    {
+     "variant": "v11",
+     "res": "hi",
+     "fig": "fb",
+     "coherence": 0.496,
+     "stripePeak": 1.691,
+     "fftAniso": 2.67,
+     "energy": 0.008
+    },
+    {
+     "variant": "v11",
+     "res": "hi",
+     "fig": "goth",
+     "coherence": 0.392,
+     "stripePeak": 1.507,
+     "fftAniso": 2.287,
+     "energy": 0.0077
+    },
+    {
+     "variant": "v11",
+     "res": "hi",
+     "fig": "hunky",
+     "coherence": 0.523,
+     "stripePeak": 1.903,
+     "fftAniso": 3.485,
+     "energy": 0.0043
+    }
+   ],
+   "result": "PASS"
+  },
+  "G3": {
+   "rule": "FrizzleBob face, stage scale x1 vs x2.5: SSIM >= 0.98 (v1.3)",
+   "rows": [
+    {
+     "variant": "v13",
+     "res": "lo",
+     "ssim": 1
+    },
+    {
+     "variant": "v13",
+     "res": "hi",
+     "ssim": 1
+    },
+    {
+     "variant": "v11",
+     "res": "lo",
+     "ssim": 1
+    },
+    {
+     "variant": "v11",
+     "res": "hi",
+     "ssim": 1
+    },
+    {
+     "variant": "none",
+     "res": "lo",
+     "ssim": 1
+    },
+    {
+     "variant": "none",
+     "res": "hi",
+     "ssim": 1
+    }
+   ],
+   "result": "PASS"
+  },
+  "G4": {
+   "rule": "SSIM(down2(hi), lo) for v1.3 >= unclayed - 0.01 (faces and full figures)",
+   "rows": [
+    {
+     "variant": "v13",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.999
+    },
+    {
+     "variant": "v13",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9983
+    },
+    {
+     "variant": "v13",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9988
+    },
+    {
+     "variant": "v13",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.9984
+    },
+    {
+     "variant": "v13",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9986
+    },
+    {
+     "variant": "v13",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.9981
+    },
+    {
+     "variant": "v11",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.999
+    },
+    {
+     "variant": "v11",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9983
+    },
+    {
+     "variant": "v11",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9988
+    },
+    {
+     "variant": "v11",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.9984
+    },
+    {
+     "variant": "v11",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9986
+    },
+    {
+     "variant": "v11",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.9981
+    },
+    {
+     "variant": "none",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.999
+    },
+    {
+     "variant": "none",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9983
+    },
+    {
+     "variant": "none",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9988
+    },
+    {
+     "variant": "none",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.9984
+    },
+    {
+     "variant": "none",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9986
+    },
+    {
+     "variant": "none",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.998
+    }
+   ],
+   "result": "PASS"
+  },
+  "G5": {
+   "rule": "OKLab chroma in figure mask, clay / original >= 0.95 (lo res)",
+   "rows": [
+    {
+     "variant": "v13",
+     "fig": "fb",
+     "view": "full",
+     "chromaRatio": 0.998,
+     "lightRatio": 0.996
+    },
+    {
+     "variant": "v13",
+     "fig": "fb",
+     "view": "face",
+     "chromaRatio": 1,
+     "lightRatio": 0.996
+    },
+    {
+     "variant": "v13",
+     "fig": "goth",
+     "view": "full",
+     "chromaRatio": 0.956,
+     "lightRatio": 0.967
+    },
+    {
+     "variant": "v13",
+     "fig": "goth",
+     "view": "face",
+     "chromaRatio": 0.995,
+     "lightRatio": 0.993
+    },
+    {
+     "variant": "v13",
+     "fig": "hunky",
+     "view": "full",
+     "chromaRatio": 1.024,
+     "lightRatio": 0.989
+    },
+    {
+     "variant": "v13",
+     "fig": "hunky",
+     "view": "face",
+     "chromaRatio": 1.033,
+     "lightRatio": 0.981
+    },
+    {
+     "variant": "v11",
+     "fig": "fb",
+     "view": "full",
+     "chromaRatio": 0.997,
+     "lightRatio": 0.994
+    },
+    {
+     "variant": "v11",
+     "fig": "fb",
+     "view": "face",
+     "chromaRatio": 1,
+     "lightRatio": 0.997
+    },
+    {
+     "variant": "v11",
+     "fig": "goth",
+     "view": "full",
+     "chromaRatio": 0.957,
+     "lightRatio": 0.968
+    },
+    {
+     "variant": "v11",
+     "fig": "goth",
+     "view": "face",
+     "chromaRatio": 0.996,
+     "lightRatio": 0.993
+    },
+    {
+     "variant": "v11",
+     "fig": "hunky",
+     "view": "full",
+     "chromaRatio": 1.023,
+     "lightRatio": 0.987
+    },
+    {
+     "variant": "v11",
+     "fig": "hunky",
+     "view": "face",
+     "chromaRatio": 1.03,
+     "lightRatio": 0.975
+    }
+   ],
+   "result": "PASS"
+  }
+ },
+ "reliefRatio": [
+  {
+   "res": "lo",
+   "fig": "fb",
+   "v11": 0.0079,
+   "v13": 0.0027,
+   "ratio": 0.34
+  },
+  {
+   "res": "lo",
+   "fig": "goth",
+   "v11": 0.0075,
+   "v13": 0.0034,
+   "ratio": 0.45
+  },
+  {
+   "res": "lo",
+   "fig": "hunky",
+   "v11": 0.0042,
+   "v13": 0.0016,
+   "ratio": 0.38
+  },
+  {
+   "res": "hi",
+   "fig": "fb",
+   "v11": 0.008,
+   "v13": 0.0028,
+   "ratio": 0.35
+  },
+  {
+   "res": "hi",
+   "fig": "goth",
+   "v11": 0.0077,
+   "v13": 0.0035,
+   "ratio": 0.45
+  },
+  {
+   "res": "hi",
+   "fig": "hunky",
+   "v11": 0.0043,
+   "v13": 0.0017,
+   "ratio": 0.4
+  }
+ ]
+}

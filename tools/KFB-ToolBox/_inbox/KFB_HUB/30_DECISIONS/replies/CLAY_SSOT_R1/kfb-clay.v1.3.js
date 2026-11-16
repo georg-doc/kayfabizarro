@@ -14,13 +14,13 @@
  *           curved form this cancels the curvature (the press reads as a flat facet with a soft edge, like the BlenderKit clay ball); on a
  *           flat form it is a very shallow dish. No wall, no rim ridge, no crater. Fewer and larger than v1.1.
  *   dent  = CREASE (Knickfalte), replaces the small dents (the "machine gun"). A few short, thin, slightly bent lines where the clay was
- *           compressed or folded (orange Claybound rocks): a narrow Gaussian groove that tapers at both ends.
+ *           compressed or folded (orange Claybound rocks): where a small disc cuts the surface, a narrow groove that tapers at its ends.
  *   grain = FINGER GROOVES (Fingerrillen), replaces the value-noise grain. Patches of very fine, shallow, wavy parallel grooves, one random
  *           direction per patch in the surface plane (purple Claybound slab, fingerprints on the clay ball). Near only (distance band).
  *           The wave is a smooth periodic polynomial of fract(), not sin (bit-exact across GPUs).
  * All three live in object space (3D, no UV): they lie seamlessly on every form, which is what triplanar mapping buys a texture workflow.
  * Uniform slots: uClayDent2 = (cell, density, slope at the rim, knee), uClayDent2E = (elongMax, sigma, median radius in cells, -);
- *   uClayDent = (cell, density, side slope, -), uClayDentE = (half length, width, bend; all in cells, -);
+ *   uClayDent = (cell, density, side slope, -), uClayDentE = (disc radius, width, bend; all in cells, -);
  *   uClayGrain = (wavelength, slope), uClayGrooveX = (patch cell in wavelengths, patch cover, warp) (new uniform).
  *
  * API (identical to v1.1; three.js r180, WebGL2; THREE is passed in):
@@ -39,7 +39,7 @@ const F = Object.freeze;
 /* Sizes are in units of scaleRef (1 = one reference length, for figures the figure height). slope = steepest normal tilt of a median feature.
  * dent2 (thumb press): size = cell, density = presses per cell (before the cluster field), slope = tilt at the rim, knee = soft edge width
  *   (share of the radius), elong = largest length/width, sigma = log-normal spread of the radius, radius = median radius in cells.
- * dent (crease): size = cell, density = creases per cell, slope = side tilt of the groove, len = half length, width = groove width,
+ * dent (crease): size = cell, density = creases per cell, slope = side tilt of the groove, len = disc radius (half length), width = groove width,
  *   bend = sideways bow (len, width, bend in cells).
  * grain (finger grooves): size = groove wavelength, slope = groove tilt, patch = patch cell in wavelengths, cover = share of patch cells
  *   that hold grooves, warp = waviness (in wavelengths).
@@ -51,20 +51,20 @@ export const CLAY_PROFILES = F({
     id: 'character', label: 'Figuren · am glattesten (Claybound) · v1.3', scaleRef: 'object',
     lump: F({ size: 0.085, slope: 0.08 }),
     dent: F({ size: 0.12, density: 0.12, slope: 0.10, len: 0.36, width: 0.03, bend: 0.25 }),
-    dent2: F({ size: 0.1, density: 0.3, slope: 0.12, knee: 0.18, elong: 1.6, sigma: 0.3, radius: 0.35 }),
-    grain: F({ size: 0.0045, slope: 0.05, patch: 10, cover: 0.35, warp: 0.35 }),
+    dent2: F({ size: 0.1, density: 0.3, slope: 0.12, knee: 0.25, elong: 1.6, sigma: 0.3, radius: 0.35 }),
+    grain: F({ size: 0.0045, slope: 0.035, patch: 10, cover: 0.5, warp: 0.9 }),
     facet: F({ size: 0.0, slope: 0.0 }),
-    bands: F({ lump: F([1 / 160, 1 / 50]), dent: F([1 / 54, 1 / 22]), dent2: F([1 / 480, 1 / 150]), grain: F([1 / 300, 1 / 120]), facet: F([1, 1]) }),
+    bands: F({ lump: F([1 / 160, 1 / 50]), dent: F([1 / 54, 1 / 22]), dent2: F([1 / 480, 1 / 150]), grain: F([1 / 200, 1 / 90]), facet: F([1, 1]) }),
     mottle: 0.025, maxSlope: 0.34, roughMin: 0.72, sheen: 0.04, srcNormalK: 0.5, emissive: false,
   }),
   midground: F({
     id: 'midground', label: 'Dioramen · Requisiten · Fels · v1.3', scaleRef: 'object',
     lump: F({ size: 0.12, slope: 0.09 }),
-    dent: F({ size: 0.14, density: 0.35, slope: 0.16, len: 0.38, width: 0.035, bend: 0.3 }),
-    dent2: F({ size: 0.16, density: 0.3, slope: 0.10, knee: 0.18, elong: 1.8, sigma: 0.3, radius: 0.35 }),
-    grain: F({ size: 0.006, slope: 0.06, patch: 12, cover: 0.4, warp: 0.35 }),
+    dent: F({ size: 0.14, density: 0.9, slope: 0.24, len: 0.42, width: 0.02, bend: 0.25 }),
+    dent2: F({ size: 0.16, density: 0.3, slope: 0.10, knee: 0.35, elong: 1.8, sigma: 0.3, radius: 0.35 }),
+    grain: F({ size: 0.006, slope: 0.06, patch: 12, cover: 0.4, warp: 0.9 }),
     facet: F({ size: 0.09, slope: 0.05 }),
-    bands: F({ lump: F([1 / 200, 1 / 60]), dent: F([1 / 63, 1 / 25]), dent2: F([1 / 480, 1 / 150]), grain: F([1 / 300, 1 / 120]), facet: F([1 / 400, 1 / 120]) }),
+    bands: F({ lump: F([1 / 200, 1 / 60]), dent: F([1 / 36, 1 / 14]), dent2: F([1 / 480, 1 / 150]), grain: F([1 / 200, 1 / 90]), facet: F([1 / 400, 1 / 120]) }),
     mottle: 0.03, maxSlope: 0.36, roughMin: 0.82, sheen: 0.02, srcNormalK: 0.6, emissive: true,
   }),
   background: F({
@@ -216,10 +216,11 @@ vec3 kfbPressLayer( vec3 x, uvec3 s, vec4 P, vec4 E ) {
   }
   return grad;
 }
-/* v1.3 CREASE. x in cells. P = (cell, density, side slope S, -), E = (half length L, width w, bend b, -), all in cells.
-   Line through the centre along a, bowed sideways along p: v = q - a t - p b' L tau^2, t = a.q, tau = t / L, d = |v|.
+/* v1.3 CREASE. x in cells. P = (cell, density, side slope S, -), E = (radius L, width w, bend b, -), all in cells.
+   A crease is where a small disc (centre o, normal m, radius L) cuts the surface: wherever the surface passes the disc it shows as a thin
+   line ON the surface (a tube would only pierce it and leave a dot). d = m.q + b' (a.q)^2 / L (slight bow), rho = |q - m (m.q)|, tau = rho / L:
      h = -D exp(-(d/w)^2) (1 - tau^2)^2,  D = S w / 0.858 (steepest side = S)
-   A thin groove that tapers at both ends; it lies on the surface, never a pit. */
+   A thin groove that tapers at its ends; it lies on the surface, never a pit. */
 vec3 kfbCreaseLayer( vec3 x, uvec3 s, vec4 P, vec4 E ) {
   vec3 b = floor( x ); vec3 grad = vec3( 0.0 );
   float dens = P.y, S = P.z, L0 = E.x, w = max( E.y, 1e-4 ), bend = E.z;
@@ -231,15 +232,16 @@ vec3 kfbCreaseLayer( vec3 x, uvec3 s, vec4 P, vec4 E ) {
     vec3 r4 = kfbH3( c, s ^ uvec3( 0x27D4u, 0xEB2Fu, 0x1656u ) );
     vec3 r5 = kfbH3( c, s ^ uvec3( 0x61C8u, 0x8647u, 0x3B9Fu ) );
     vec3 q = x - ( vec3( c ) + r2 );
-    vec3 a = normalize( r3 - 0.5 + 1e-4 );
-    vec3 p = cross( a, r5 - 0.5 ); float lp = length( p ); p = lp > 1e-3 ? p / lp : normalize( cross( a, vec3( 0.0, 1.0, 0.3 ) ) );
-    float L = L0 * ( 0.7 + 0.6 * r4.x ), be = bend * ( 2.0 * r4.y - 1.0 );
-    float t = dot( a, q ), tau = t / L; if ( abs( tau ) >= 1.0 ) continue;
-    vec3 v = q - a * t - p * ( be * L * tau * tau ); float d = length( v ); if ( d > 3.0 * w ) continue;
+    float L = L0 * ( 0.7 + 0.6 * r4.x ); if ( dot( q, q ) > L * L + 9.0 * w * w ) continue;
+    vec3 m = normalize( r3 - 0.5 + 1e-4 );
+    vec3 a = cross( m, r5 - 0.5 ); float la = length( a ); a = la > 1e-3 ? a / la : normalize( cross( m, vec3( 0.0, 1.0, 0.3 ) ) );
+    float be = bend * ( 2.0 * r4.y - 1.0 ), aq = dot( a, q );
+    float d = dot( m, q ) + be * aq * aq / L; if ( abs( d ) > 3.0 * w ) continue;
+    vec3 qt = q - m * dot( m, q ); float rho = length( qt ), tau = rho / L; if ( tau >= 1.0 ) continue;
     float T = ( 1.0 - tau * tau ) * ( 1.0 - tau * tau ), dT = - 4.0 * tau * ( 1.0 - tau * tau );
     float Ed = exp( - ( d * d ) / ( w * w ) ), D = S * ( 0.7 + 0.6 * r4.z ) * w / 0.858;
-    vec3 gd = ( v - a * dot( a, v ) - 2.0 * be * tau * a * dot( p, v ) ) / max( d, 1e-6 );
-    grad += - D * ( ( - 2.0 * d / ( w * w ) ) * Ed * T * gd + Ed * dT * a / L );
+    vec3 gd = m + 2.0 * be * aq / L * a, gt = qt / ( max( rho, 1e-6 ) * L );
+    grad += - D * ( ( - 2.0 * d / ( w * w ) ) * Ed * T * gd + Ed * dT * gt );
   }
   return grad;
 }

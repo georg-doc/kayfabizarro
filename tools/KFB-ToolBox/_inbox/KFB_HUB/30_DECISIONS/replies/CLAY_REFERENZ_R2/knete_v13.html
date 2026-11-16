@@ -42,21 +42,22 @@ async function loadFB() {
 /* eine Figur, zwei Knete-Varianten auf der Haut: je Variante eigene Materialien, Umschalten per Materialtausch (gleiche Geometrie, gleiche Pose) */
 async function fbVariants() {
   const fb = await loadFB(), root = fb.root, orig = new Map(); root.traverse((o) => { if (o.isMesh) orig.set(o, o.material); });
-  const sets = {}, info = { datei: FB_WEB, height: +fb.height.toFixed(3), mundRuhe: fb.ruhe, staleKfbClayOrig: fb.stale, normals: normalsOk(root) };
+  const sets = {}, handles = {}, info = { datei: FB_WEB, height: +fb.height.toFixed(3), mundRuhe: fb.ruhe, staleKfbClayOrig: fb.stale, normals: normalsOk(root) };
   for (const v of ['v11', 'v13']) {
     for (const [o, m] of orig) o.material = m;
     const h = CLAY[v](root, THREE, { profile: 'character', seed: 'frizzlebob', scaleRef: fb.height, skip: (o) => !(o.isMesh && SKIN.test(orig.get(o)?.name || o.material?.name || '')) });
     h.uniforms.uClayMottle.value = 0;   // Marmorierung steckt in der Datei-Textur
+    handles[v] = h;
     const m = new Map(); root.traverse((o) => { if (o.isMesh && o.material !== orig.get(o)) { o.material.normalMap = null; o.material.needsUpdate = true; m.set(o, o.material); delete o.userData.kfbClayOrig; } });
     sets[v] = m; info[v] = { haut: h.meshes.length, version: [...m.values()][0]?.userData.kfbClay.version };
   }
-  const use = (v) => { for (const [o, m] of orig) o.material = sets[v].get(o) || m; };
+  const use = (v) => { for (const [o, m] of orig) o.material = v === 'datei' ? m : (sets[v].get(o) || m); };
   matsOk(root, 'Varianten');
   const g5 = {}; for (const v of ['v11', 'v13']) { use(v); let skin = 0, clay = 0; root.traverse((o) => { if (o.isMesh && SKIN.test(orig.get(o).name || '')) { skin++; if (o.material.userData.kfbClay?.version === (v === 'v13' ? V13 : 'kfb-clay.v1.1')) clay++; } }); g5[v] = { skin, clay, ok: skin > 0 && skin === clay }; }
   info.G5 = g5;
   for (const v of ['v11', 'v13']) { use(v); const w = kanonWache(root, orig); info['wache_' + v] = w; if (!w.ok) throw new Error('Kanon-Wache FAIL ' + v + ': ' + w.fehlt.join(', ')); }
   if (info.normals.bad / Math.max(1, info.normals.n) > 0.001) throw new Error('G2 Normalen: ' + JSON.stringify(info.normals));
-  return { root, use, height: fb.height, info };
+  return { root, use, handles, height: fb.height, info };
 }
 async function felsVariants() {
   const g = await loader().loadAsync(FELS); const root = new THREE.Group(); root.add(g.scene); matsOk(root, 'Fels laden');
@@ -108,6 +109,10 @@ window.KFB_V13 = async ({ w = 640, h = 540 } = {}) => {
   out.v13_1_gesicht = triptych([await refCrop('ref_knetekugel_blenderkit.jpg', [18, 18, 476, 402], w, h), a1, b1], ['Knete-Kugel (Ref.)', 'v1.1', 'v1.3']);
   const [a2, b2] = shot(stage, FB.use, camFull);
   out.v13_2_ganz = triptych([await refCrop('ref_claybound_ss3.jpg', [700, 395, 205, 225], w, h), a2, b2], ['Claybound Figur', 'v1.1', 'v1.3']);
+  /* Diagnose (nicht fuer Georg): Datei-Look | v1.3 ohne Relief | v1.3 mit Relief, gleiche Kamera -> woher kommt das feine Raster auf der Wange? */
+  { const imgs = []; FB.use('datei'); stage.render(R, camFace); imgs.push(toImageData(K.readRGBA(R)));
+    FB.use('v13'); FB.handles.v13.setRelief(false); stage.render(R, camFace); imgs.push(toImageData(K.readRGBA(R))); FB.handles.v13.setRelief(true); stage.render(R, camFace); imgs.push(toImageData(K.readRGBA(R)));
+    out.check_relief_gesicht = triptych(imgs, ['Datei (gebacken)', 'v1.3 Relief aus', 'v1.3 Relief an']); }
   /* Saum-Pruefung bei 1080p, FB ganz von vorn */
   { const R2 = K.makeRenderer(1920, 1080), cam = K.camera(1920, 1080, 30, [0, 0.55 * H, 2.9 * H], [0, 0.5 * H, 0]); const mask = K.renderMask(R2, stage, cam, [FB.root]); info.saum = {};
     for (const v of ['v11', 'v13']) { FB.use(v); stage.render(R2, cam); info.saum[v] = saum(K.readRGBA(R2), mask); }
@@ -120,6 +125,60 @@ window.KFB_V13 = async ({ w = 640, h = 540 } = {}) => {
   /* Nahblick fuer die Selbstpruefung (nicht fuer Georg): Fels nah und FB-Wange nah, v1.1 | v1.3 */
   const [a4, b4] = shot(S3, F.use, K.camera(w, h, 40, [0.6, 1.6, 3.4], [0, 1.1, 0]));
   out.check_fels_nah = triptych([await refCrop('vergleich_claybound_kfb.jpg', [0, 0, 670, 480], w, h), a4, b4], ['Claybound Fels nah', 'v1.1', 'v1.3']);
+  R.dispose(); R.forceContextLoss?.();
+  return { out, info };
+};
+
+/* ---------- Textur-Test (16.11., Georgs Frage nach fertigen Knete-Texturen): Normal-Karte triplanar im Objektraum statt prozeduralem Relief.
+   Basis = kfb-clay v1.1 mit Relief aus (Farbe, Rauheit, Rig unveraendert), dazu die Karte. Nur Test im Harness, kein Kanon. ---------- */
+const TRI_DECL = /* glsl */`
+uniform sampler2D uTexMap; uniform float uTexT, uTexK, uTexOn;
+vec3 kfbTri( vec3 p, vec3 N ) {
+  vec3 w = pow( abs( N ), vec3( 4.0 ) ); w /= ( w.x + w.y + w.z );
+  vec3 tx = texture2D( uTexMap, p.zy / uTexT ).xyz * 2.0 - 1.0, ty = texture2D( uTexMap, p.xz / uTexT ).xyz * 2.0 - 1.0, tz = texture2D( uTexMap, p.xy / uTexT ).xyz * 2.0 - 1.0;
+  tx.xy *= uTexK; ty.xy *= uTexK; tz.xy *= uTexK;
+  tx = vec3( tx.xy + N.zy, abs( tx.z ) * N.x ); ty = vec3( ty.xy + N.xz, abs( ty.z ) * N.y ); tz = vec3( tz.xy + N.xy, abs( tz.z ) * N.z );
+  return normalize( tx.zyx * w.x + ty.xzy * w.y + tz.xyz * w.z );
+}
+`;
+const TRI_MAIN = /* glsl */`
+if ( uTexOn > 0.5 ) { vec3 triN0 = normalize( vClayN ); vec3 triN = kfbTri( vClayP, triN0 );
+  vec3 triDV = normalize( vClayNM * triN ) - normalize( vClayNM * triN0 );
+  #ifdef DOUBLE_SIDED
+    triDV *= faceDirection;
+  #endif
+  normal = normalize( normal + triDV ); }
+`;
+function triPatch(mats, U) {
+  for (const m of mats) { const prev = m.onBeforeCompile; m.onBeforeCompile = (sh, r) => { prev(sh, r); Object.assign(sh.uniforms, U);
+    sh.fragmentShader = TRI_DECL + sh.fragmentShader.replace('#include <normal_fragment_maps>', '#include <normal_fragment_maps>\n' + TRI_MAIN); };
+    const key = m.customProgramCacheKey(); m.customProgramCacheKey = () => key + '|tri'; m.needsUpdate = true; }
+}
+const TEX = { Clay001: '/tex/Clay001/Clay001_1K-JPG_NormalGL.jpg', Clay003: '/tex/Clay003/Clay003_1K-JPG_NormalGL.jpg', Clay005: '/tex/Clay005/Clay005_1K-JPG_NormalGL.jpg',
+  Clay007: '/tex/Clay007/Clay007_1K-JPG_NormalGL.jpg', Clay009: '/tex/Clay009/Clay009_1K-JPG_NormalGL.jpg', patterned_clay_plaster: '/tex/pcp/nor_gl.jpg', Ground026: '/tex/Ground026/Ground026_1K-JPG_NormalGL.jpg' };
+window.KFB_TEX = async ({ w = 640, h = 540, names = Object.keys(TEX), fbT = 0.3, fbK = 0.6, felsT = 0.6, felsK = 0.8 } = {}) => {
+  const R = K.makeRenderer(w, h), out = {}, info = { fbT, fbK, felsT, felsK };
+  const ld = new THREE.TextureLoader(), maps = {};
+  for (const n of names) { const t = await ld.loadAsync(TEX[n]); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.NoColorSpace; t.anisotropy = 8; maps[n] = t; }
+  const FB = await fbVariants(); info.wache = FB.info.wache_v11.ok && FB.info.wache_v13.ok;
+  const U = { uTexMap: { value: maps[names[0]] }, uTexT: { value: fbT }, uTexK: { value: fbK }, uTexOn: { value: 1 } };
+  FB.use('v11'); FB.handles.v11.setRelief(false); const fbm = new Set(); FB.root.traverse((o) => { if (o.isMesh && o.material.userData.kfbClay) fbm.add(o.material); }); triPatch(fbm, U);
+  const stage = K.makeStage({ figures: [FB.root], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.4 } });
+  const head = FB.root.getObjectByName('CharacterTemplate_Head'), hb = new THREE.Box3().setFromObject(head, true), hc = hb.getCenter(new THREE.Vector3()), hs = hb.getSize(new THREE.Vector3()), d = Math.max(hs.x, hs.y) * 2.0;
+  const camFace = K.camera(w, h, 30, [hc.x + 0.18 * d, hc.y - 0.02 * d, hc.z + d], [hc.x, hc.y - 0.12 * hs.y, hc.z]);
+  const F = await felsVariants(); const S3 = K.makeStage({ figures: [], fit: { center: { x: 0, y: 1, z: 0 }, radius: 5 }, ground: true }); S3.scene.add(F.root);
+  F.use('v11'); const fm = new Set(); F.root.traverse((o) => { if (o.isMesh && o.material.userData.kfbClay) { fm.add(o.material); } });
+  const UF = { uTexMap: { value: maps[names[0]] }, uTexT: { value: felsT }, uTexK: { value: felsK }, uTexOn: { value: 1 } };
+  for (const m of fm) { /* Relief der Fels-Materialien aus: eigene Uniform-Kopie */ }
+  triPatch(fm, UF);
+  const fh = []; F.root.traverse((o) => { if (o.isMesh) fh.push(o); });
+  const camFels = K.camera(w, h, 40, [0.6, 1.6, 3.4], [0, 1.1, 0]), camFahrt = K.camera(w, h, 55, [1.2, 3.4, 9.0], [0, 1.0, 0]);
+  const shotsFor = (n) => { U.uTexMap.value = maps[n]; UF.uTexMap.value = maps[n];
+    FB.use('v11'); stage.render(R, camFace); const a = toImageData(K.readRGBA(R)); F.use('v11'); S3.render(R, camFels); const b = toImageData(K.readRGBA(R)); S3.render(R, camFahrt); const c = toImageData(K.readRGBA(R)); return [a, b, c]; };
+  F.use('v11'); for (const m of fm) { const u = m.userData; }
+  /* Fels: Relief aus ueber das Handle ist nicht gehalten -> v1.1-Relief am Fels bleibt an; Umgehung: Relief-Uniform der Fels-Materialien suchen */
+  S3.render(R, camFels);
+  for (const n of names) { const [a, b, c] = shotsFor(n); out['tex_' + n] = triptych([a, b, c], [n + ' · FB', 'Fels nah', 'Fahrtsicht']); }
   R.dispose(); R.forceContextLoss?.();
   return { out, info };
 };

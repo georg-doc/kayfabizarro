@@ -1,0 +1,102 @@
+{
+ "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+ "fb": {
+  "datei": "/private/50_BLENDER/FB_WEB_KANON_R1/_privat_kauf_asset/FB_WEB_KANON.r1j.glb",
+  "height": 1.742,
+  "mundRuhe": "neutral",
+  "staleKfbClayOrig": [
+   "KFB_Tail_Bunny",
+   "KFB_Shirt_FB"
+  ],
+  "normals": {
+   "n": 84332,
+   "bad": 0
+  },
+  "v11": {
+   "haut": 9,
+   "version": "kfb-clay.v1.1"
+  },
+  "v13": {
+   "haut": 9,
+   "version": "kfb-clay.v1.3"
+  },
+  "G5": {
+   "v11": {
+    "skin": 9,
+    "clay": 9,
+    "ok": true
+   },
+   "v13": {
+    "skin": 9,
+    "clay": 9,
+    "ok": true
+   }
+  },
+  "wache_v11": {
+   "ok": true,
+   "fehlt": [],
+   "mundTeile": 1
+  },
+  "wache_v13": {
+   "ok": true,
+   "fehlt": [],
+   "mundTeile": 1
+  }
+ },
+ "saum": {
+  "v11": {
+   "rings": [
+    110.6,
+    96.1,
+    98.1,
+    100.3,
+    102.2,
+    103.9,
+    104.8,
+    106
+   ],
+   "core": 104.9,
+   "saumPx": 0
+  },
+  "v13": {
+   "rings": [
+    110.4,
+    95.9,
+    98,
+    100.3,
+    102.2,
+    103.8,
+    104.7,
+    106
+   ],
+   "core": 104.8,
+   "saumPx": 0
+  }
+ },
+ "fels": {
+  "datei": "/place/kfb_stone_leicht_felsen.r1.glb",
+  "meshes": [
+   "stone_felsen_m_g:kfb_stone_neutral",
+   "stone_felsen_m_h:kfb_stone_neutral",
+   "stone_felsen_m_i:kfb_stone_neutral",
+   "stone_felsen_m_j:kfb_stone_neutral",
+   "stone_felsen_m_k:kfb_stone_neutral",
+   "stone_felsen_m_l:kfb_stone_neutral",
+   "stone_felsen_l_m:kfb_stone_neutral",
+   "stone_felsen_l_n:kfb_stone_neutral",
+   "stone_felsen_l_o:kfb_stone_neutral",
+   "stone_felsen_l_p:kfb_stone_neutral",
+   "stone_felsen_l_q:kfb_stone_neutral",
+   "stone_felsen_l_r:kfb_stone_neutral"
+  ],
+  "size": [
+   3.62,
+   2.4,
+   3.37
+  ],
+  "clay": {
+   "v11": 12,
+   "v13": 12
+  }
+ }
+}
