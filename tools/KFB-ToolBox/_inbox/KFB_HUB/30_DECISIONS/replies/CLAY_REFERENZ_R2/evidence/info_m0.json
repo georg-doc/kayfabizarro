@@ -1,0 +1,786 @@
+{
+ "head": [
+  [
+   -0.3103406889746722,
+   0.750022946870844,
+   -0.37557975876398164
+  ],
+  [
+   0.31034061761191867,
+   1.3304708755104178,
+   0.2143393040439104
+  ]
+ ],
+ "list": [
+  {
+   "name": "CharacterTemplate_ArmLeft",
+   "mat": "FB_Yellow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.327,
+    0.676,
+    -0.081
+   ],
+   "s": [
+    0.544,
+    0.138,
+    0.143
+   ],
+   "skinned": true,
+   "tris": 440
+  },
+  {
+   "name": "CharacterTemplate_ArmRight",
+   "mat": "FB_Yellow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.327,
+    0.676,
+    -0.081
+   ],
+   "s": [
+    0.544,
+    0.138,
+    0.143
+   ],
+   "skinned": true,
+   "tris": 440
+  },
+  {
+   "name": "CharacterTemplate_Body",
+   "mat": "FB_Yellow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0,
+    0.501,
+    -0.081
+   ],
+   "s": [
+    0.479,
+    0.538,
+    0.397
+   ],
+   "skinned": true,
+   "tris": 418
+  },
+  {
+   "name": "CharacterTemplate_Head",
+   "mat": "FB_Yellow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0,
+    1.04,
+    -0.081
+   ],
+   "s": [
+    0.621,
+    0.58,
+    0.59
+   ],
+   "skinned": true,
+   "tris": 12544
+  },
+  {
+   "name": "CharacterTemplate_LegLeft",
+   "mat": "FB_Yellow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.104,
+    0.163,
+    -0.04
+   ],
+   "s": [
+    0.147,
+    0.326,
+    0.244
+   ],
+   "skinned": true,
+   "tris": 334
+  },
+  {
+   "name": "CharacterTemplate_LegRight",
+   "mat": "FB_Yellow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.104,
+    0.163,
+    -0.04
+   ],
+   "s": [
+    0.147,
+    0.326,
+    0.244
+   ],
+   "skinned": true,
+   "tris": 334
+  },
+  {
+   "name": "FB_Ear_L_v5",
+   "mat": "FB_Yellow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.186,
+    1.448,
+    -0.113
+   ],
+   "s": [
+    0.337,
+    0.57,
+    0.144
+   ],
+   "skinned": true,
+   "tris": 35108
+  },
+  {
+   "name": "FB_Ear_R_v5",
+   "mat": "FB_Yellow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.187,
+    1.453,
+    -0.111
+   ],
+   "s": [
+    0.338,
+    0.579,
+    0.149
+   ],
+   "skinned": true,
+   "tris": 22720
+  },
+  {
+   "name": "FB_Lederhaut_R",
+   "mat": "",
+   "map": false,
+   "nmap": false,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.118,
+    1.095,
+    0.136
+   ],
+   "s": [
+    0.153,
+    0.154,
+    0.148
+   ],
+   "skinned": false,
+   "tris": 884
+  },
+  {
+   "name": "FB_Lidhaut_R",
+   "mat": "",
+   "map": false,
+   "nmap": false,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.112,
+    1.095,
+    0.124
+   ],
+   "s": [
+    0.152,
+    0.164,
+    0.135
+   ],
+   "skinned": false,
+   "tris": 31360
+  },
+  {
+   "name": "FB_Pupille_R",
+   "mat": "",
+   "map": false,
+   "nmap": false,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.115,
+    1.094,
+    0.208
+   ],
+   "s": [
+    0.044,
+    0.044,
+    0.004
+   ],
+   "skinned": false,
+   "tris": 1290
+  },
+  {
+   "name": "FB_Lederhaut_L",
+   "mat": "",
+   "map": false,
+   "nmap": false,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.118,
+    1.095,
+    0.135
+   ],
+   "s": [
+    0.153,
+    0.154,
+    0.148
+   ],
+   "skinned": false,
+   "tris": 884
+  },
+  {
+   "name": "FB_Lidhaut_L",
+   "mat": "",
+   "map": false,
+   "nmap": false,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.112,
+    1.095,
+    0.124
+   ],
+   "s": [
+    0.152,
+    0.164,
+    0.135
+   ],
+   "skinned": false,
+   "tris": 31360
+  },
+  {
+   "name": "FB_Pupille_L",
+   "mat": "",
+   "map": false,
+   "nmap": false,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.115,
+    1.094,
+    0.208
+   ],
+   "s": [
+    0.044,
+    0.044,
+    0.004
+   ],
+   "skinned": false,
+   "tris": 1290
+  },
+  {
+   "name": "Carl_Brow_L",
+   "mat": "Carl_Brow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.127,
+    1.225,
+    0.117
+   ],
+   "s": [
+    0.165,
+    0.081,
+    0.132
+   ],
+   "skinned": false,
+   "tris": 94
+  },
+  {
+   "name": "Carl_Brow_R",
+   "mat": "Carl_Brow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.14,
+    1.228,
+    0.107
+   ],
+   "s": [
+    0.163,
+    0.079,
+    0.134
+   ],
+   "skinned": false,
+   "tris": 94
+  },
+  {
+   "name": "Carl_Nose",
+   "mat": "Carl_Brow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.01,
+    1.045,
+    0.258
+   ],
+   "s": [
+    0.092,
+    0.105,
+    0.234
+   ],
+   "skinned": false,
+   "tris": 448
+  },
+  {
+   "name": "FB_Mund_closed",
+   "mat": "FB_Mund_closed",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.01,
+    0.941,
+    0.134
+   ],
+   "s": [
+    0.411,
+    0.277,
+    0.167
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_smile_closed",
+   "mat": "FB_Mund_smile_closed",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_mbp",
+   "mat": "FB_Mund_mbp",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_small_open_instance_0",
+   "mat": "FB_Mund_small_open",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_grimace",
+   "mat": "FB_Mund_grimace",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_ee_wide",
+   "mat": "FB_Mund_ee_wide",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_mid_open",
+   "mat": "FB_Mund_mid_open",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_ah_1",
+   "mat": "FB_Mund_ah",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_oh_1",
+   "mat": "FB_Mund_oh",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_small_open_instance_1",
+   "mat": "FB_Mund_small_open",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_fv",
+   "mat": "FB_Mund_fv",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_oo",
+   "mat": "FB_Mund_oo",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "FB_Mund_l_th",
+   "mat": "FB_Mund_l_th",
+   "map": true,
+   "nmap": false,
+   "transp": true,
+   "side": 2,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.003,
+    0.976,
+    -0.345
+   ],
+   "s": [
+    0,
+    0,
+    0
+   ],
+   "skinned": false,
+   "tris": 256
+  },
+  {
+   "name": "kfb-hair-tuft#1_L",
+   "mat": "Carl_Brow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.097,
+    1.288,
+    0.001
+   ],
+   "s": [
+    0.137,
+    0.132,
+    0.084
+   ],
+   "skinned": false,
+   "tris": 108
+  },
+  {
+   "name": "kfb-hair-tuft#2_M",
+   "mat": "Carl_Brow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    -0.001,
+    1.333,
+    -0.012
+   ],
+   "s": [
+    0.134,
+    0.223,
+    0.121
+   ],
+   "skinned": false,
+   "tris": 84
+  },
+  {
+   "name": "kfb-hair-tuft#3_R",
+   "mat": "Carl_Brow",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.099,
+    1.308,
+    -0.011
+   ],
+   "s": [
+    0.116,
+    0.145,
+    0.073
+   ],
+   "skinned": false,
+   "tris": 108
+  },
+  {
+   "name": "KFB_Tail_Bunny",
+   "mat": "KFB_Tail_Clay",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0.002,
+    0.341,
+    -0.296
+   ],
+   "s": [
+    0.152,
+    0.14,
+    0.133
+   ],
+   "skinned": false,
+   "tris": 1800
+  },
+  {
+   "name": "KFB_Shirt_FB",
+   "mat": "KFB_Shirt_Cloth",
+   "map": true,
+   "nmap": true,
+   "transp": false,
+   "side": 0,
+   "vis": true,
+   "cast": true,
+   "c": [
+    0,
+    0.567,
+    -0.081
+   ],
+   "s": [
+    0.497,
+    0.394,
+    0.414
+   ],
+   "skinned": true,
+   "tris": 10380
+  }
+ ]
+}

@@ -66,9 +66,9 @@ async function felsVariants() {
   const sc = 2.4 / Math.max(s.y, 1e-6); root.scale.setScalar(sc); root.updateMatrixWorld(true); b = new THREE.Box3().setFromObject(root, true); // Fels ~2,4 m hoch (grosser Felsblock am Weg)
   root.position.set(-(b.min.x + b.max.x) / 2, -b.min.y - 0.05, -(b.min.z + b.max.z) / 2); root.updateMatrixWorld(true);
   const orig = new Map(); root.traverse((o) => { if (o.isMesh) orig.set(o, o.material); });
-  const sets = {}; for (const v of ['v11', 'v13']) { for (const [o, m] of orig) o.material = m; CLAY[v](root, THREE, { profile: 'midground', seed: 'kfb_stone_felsen', scaleRef: K.FIG_H }); const m = new Map(); root.traverse((o) => { if (o.isMesh && o.material !== orig.get(o)) { m.set(o, o.material); delete o.userData.kfbClayOrig; } }); sets[v] = m; }
+  const sets = {}, handles = {}; for (const v of ['v11', 'v13']) { for (const [o, m] of orig) o.material = m; handles[v] = CLAY[v](root, THREE, { profile: 'midground', seed: 'kfb_stone_felsen', scaleRef: K.FIG_H }); const m = new Map(); root.traverse((o) => { if (o.isMesh && o.material !== orig.get(o)) { m.set(o, o.material); delete o.userData.kfbClayOrig; } }); sets[v] = m; }
   const use = (v) => { for (const [o, m] of orig) o.material = sets[v].get(o) || m; };
-  return { root, use, info: { datei: FELS, meshes: names, size: s.toArray().map((x) => +(x * sc).toFixed(2)), clay: { v11: sets.v11.size, v13: sets.v13.size } } };
+  return { root, use, handles, info: { datei: FELS, meshes: names, size: s.toArray().map((x) => +(x * sc).toFixed(2)), clay: { v11: sets.v11.size, v13: sets.v13.size } } };
 }
 function label(ctx, x, y, text, sz = 26) { ctx.font = `600 ${sz}px system-ui, sans-serif`; ctx.textBaseline = 'top'; ctx.fillStyle = 'rgba(0,0,0,0.6)'; const w = ctx.measureText(text).width; ctx.fillRect(x, y, w + 24, sz + 16); ctx.fillStyle = '#fff'; ctx.fillText(text, x + 12, y + 8); }
 async function refCrop(file, crop, w, h) {
@@ -169,18 +169,31 @@ window.KFB_TEX = async ({ w = 640, h = 540, names = Object.keys(TEX), fbT = 0.3,
   const F = await felsVariants(); const S3 = K.makeStage({ figures: [], fit: { center: { x: 0, y: 1, z: 0 }, radius: 5 }, ground: true }); S3.scene.add(F.root);
   F.use('v11'); const fm = new Set(); F.root.traverse((o) => { if (o.isMesh && o.material.userData.kfbClay) { fm.add(o.material); } });
   const UF = { uTexMap: { value: maps[names[0]] }, uTexT: { value: felsT }, uTexK: { value: felsK }, uTexOn: { value: 1 } };
-  for (const m of fm) { /* Relief der Fels-Materialien aus: eigene Uniform-Kopie */ }
+  F.handles.v11.setRelief(false);
   triPatch(fm, UF);
-  const fh = []; F.root.traverse((o) => { if (o.isMesh) fh.push(o); });
   const camFels = K.camera(w, h, 40, [0.6, 1.6, 3.4], [0, 1.1, 0]), camFahrt = K.camera(w, h, 55, [1.2, 3.4, 9.0], [0, 1.0, 0]);
   const shotsFor = (n) => { U.uTexMap.value = maps[n]; UF.uTexMap.value = maps[n];
     FB.use('v11'); stage.render(R, camFace); const a = toImageData(K.readRGBA(R)); F.use('v11'); S3.render(R, camFels); const b = toImageData(K.readRGBA(R)); S3.render(R, camFahrt); const c = toImageData(K.readRGBA(R)); return [a, b, c]; };
-  F.use('v11'); for (const m of fm) { const u = m.userData; }
-  /* Fels: Relief aus ueber das Handle ist nicht gehalten -> v1.1-Relief am Fels bleibt an; Umgehung: Relief-Uniform der Fels-Materialien suchen */
-  S3.render(R, camFels);
   for (const n of names) { const [a, b, c] = shotsFor(n); out['tex_' + n] = triptych([a, b, c], [n + ' · FB', 'Fels nah', 'Fahrtsicht']); }
   R.dispose(); R.forceContextLoss?.();
   return { out, info };
+};
+
+/* Diagnose Mund-Quadrat (Georg 16.11.): welche Netze liegen am Mund, wer wirft Schatten? */
+window.KFB_MUND = async ({ w = 960, h = 720, mode = 'list', off = [] } = {}) => {
+  const fb = await loadFB(), root = fb.root, list = [];
+  const head = root.getObjectByName('CharacterTemplate_Head'), hb = new THREE.Box3().setFromObject(head, true);
+  root.traverse((o) => { if (!o.isMesh) return; const b = new THREE.Box3().setFromObject(o, true), s = b.getSize(new THREE.Vector3()), c = b.getCenter(new THREE.Vector3());
+    const m = [].concat(o.material)[0]; list.push({ name: o.name, mat: m.name, map: !!m.map, nmap: !!m.normalMap, transp: m.transparent, side: m.side, vis: o.visible, cast: o.castShadow, c: c.toArray().map((x) => +x.toFixed(3)), s: s.toArray().map((x) => +x.toFixed(3)), skinned: !!o.isSkinnedMesh, tris: (o.geometry.index ? o.geometry.index.count : o.geometry.attributes.position.count) / 3 }); });
+  if (mode === 'list') return { out: {}, info: { head: [hb.min.toArray(), hb.max.toArray()], list } };
+  const R = K.makeRenderer(w, h), out = {}; const stage = K.makeStage({ figures: [root], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.4 } });
+  const hc = hb.getCenter(new THREE.Vector3()), hs = hb.getSize(new THREE.Vector3()), d = Math.max(hs.x, hs.y) * 1.5;
+  const cam = K.camera(w, h, 30, [hc.x + 0.18 * d, hc.y - 0.1 * d, hc.z + d], [hc.x, hc.y - 0.2 * hs.y, hc.z]);
+  const imgs = []; stage.render(R, cam); imgs.push(toImageData(K.readRGBA(R)));
+  root.traverse((o) => { if (o.isMesh && off.some((re) => new RegExp(re).test(o.name))) { o.castShadow = false; } }); stage.render(R, cam); imgs.push(toImageData(K.readRGBA(R)));
+  root.traverse((o) => { if (o.isMesh && off.some((re) => new RegExp(re).test(o.name))) { o.visible = false; } }); stage.render(R, cam); imgs.push(toImageData(K.readRGBA(R)));
+  out.mund = triptych(imgs, ['wie geladen', 'ohne Schatten: ' + off.join(','), 'ausgeblendet']); R.dispose(); R.forceContextLoss?.();
+  return { out, info: {} };
 };
 window.KFB_V13_READY = true;
 </script></body></html>
