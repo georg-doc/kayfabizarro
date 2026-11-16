@@ -20,3 +20,10 @@ Alle Einträge sind additions-only; Source-Branch `docs/ws0-splat-assets-slops-s
 - Local Return + Changelog, Review-Router/Hub-Hinweis. **Keine** Splat-Implementierung, kein Asset-Binärimport, keine Render-, Collider- oder GPU-Tests im Auftrag; keine öffentliche Stage und kein Live.
 - Keine neuen Stilkanons, keine placeholders, kein zweiter Runtime-Owner, kein Merge/Live.
 - Nächster Gate: Source-Objekte einzeln mit echten Bytes/Hash isolieren; erst dann A/B-Viewer, danach Dungeon-Vergleich.
+
+## 04 · 16.11.2026 · Creature Motion als eigener Authoring-Companion (kein neues Game-Modul)
+
+- Neu: `WS0_CREATURE_ANIMATION_AUTHORING_COMPANION_R0_2026-11-16.md` aus Reddit `1xx75ht`; Methodik: echtes animalisches Bewegungs-Referenzmaterial, Attack-Timeline, Blender-Pose-Bake, vier fokussierte Verbesserungsdurchgänge, unabhängige Playback-/Contact-QA.
+- Geschützter KFB-Stand: vorhandene `K15`-Kreaturen/Originalrigs und Clips, vorhandene `mobs2d`-Slop-Animation, ToolBox Motion/Animation Lab als bestehender Authoring-Kandidat, alle Race Gameplay-/Combat-/Physik-Owner unverändert.
+- Ein Pilot vorgeschlagen: vorhandenes K15 `Chicken` mit source-validiertem `Idle/Walk/Bite_Front` und **einem zusätzlichen** `peck-then-recoil`-Clip. Danach Crab (Arthropode), echte Insektenquelle nach Quellbeweis und separat 2D-Slop-Deformation. Splat folgt dem Animationsclip optional, ist **nicht** Teil des eigentlichen Clip-Bakes.
+- **0** neue Blender-Bakes, 0 neues Video-Referenzmaterial, 0 Browser-/GPU-/Combat-Tests, kein Merge/Stage/Live. Dieser Sidecar blockiert die priorisierten drei Splat-Originale / nachfolgenden R3-Dungeon-Vergleich **nicht**.
