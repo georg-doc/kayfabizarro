@@ -46,6 +46,6 @@ Erst dieses Blatt, dann bauen. Kein Stückwerk: Biss, Spucken, Fläche, Tod und 
 
 ## 6 · Nachtrag nach dem ersten Kritiker-Lauf (16.11., V-1854)
 - Der Kritiker sah den Biss als Anlehnen: Der Kit-Clip `Bite_Front` zeigt aus Spielabstand kein deutliches Aufklappen und Zuschnappen. Die Tintenfläche las sich wie Schatten.
-- **Bestand zuerst (V-956, V-954 FAIL):** Der Mac mini sichtet die vorhandenen Clips jeder Art (`Bite_Front`, `Bite_InPlace`, `Yes`, `No`, `Jump`, `HitRecieve`) nah und von der Seite mit FB davor und schlägt vor, wie sie ohne Umbau zu Biss und Spucken zusammengesetzt werden (Reihenfolge, Tempo, Übergänge). Neue Clips nur, wenn Georg eine Lücke bestätigt; dann Schlüsselposen von Hand neben einer Referenz (V-939/V-944), nicht parametrisch.
-- Die Kampfdaten je Art (Kontaktbild, Reichweite, Abgangsbild) kommen in die vorhandene Figurenkarte der Würfelmonster (`50_BLENDER/K15/data/kfb/q_<art>.figure.json`, Abschnitt `kampf`), kein neues Format.
+- **Bestand zuerst (V-956, V-954 FAIL):** Der Mac mini sichtet die vorhandenen Clips jeder Art (`Bite_Front`, `Bite_InPlace`, `Yes`, `No`, `Jump`, `HitRecieve`) nah und von der Seite mit FB davor und schlägt vor, wie sie ohne Umbau zu Biss und Spucken zusammengesetzt werden (Reihenfolge, Tempo, Übergänge). Über neue Clips (ob, wie, wer) entscheidet Georg erst nach dem Bestands-Bericht (V-954 offen).
+- Die Kampfdaten je Art (Kontaktbild, Reichweite, Abgangsbild) kommen in die Figuren-SSOT der Würfelmonster (`src/data/characters/q_<art>.character.json`, Abschnitt `game`, V-1611), kein neues Format.
 - WS0 im Spiel: Tinte tiefschwarz mit Glanz und Wulst, Ziel neben FB, größere Tropfen in hohem Bogen, Effekt am Maul, Rückstoß für FB (gebaut, Stamm), Seitenkamera für Belege.
