@@ -1,0 +1,98 @@
+{
+  "project": "blendi/oil-paint",
+  "source": "https://patch.gg/blendi/oil-paint",
+  "api": "https://patch.gg/api/v1/projects/blendi/oil-paint/repo",
+  "clone_url": "https://git.patch.gg/blendi/oil-paint.git",
+  "head": "804c65fa3a6c6fcdc732ed1bde450fd140cfb4e9",
+  "code_license": "MIT",
+  "art_license": "CC0-1.0",
+  "scope": "Closed eight-module oilpaint core and original notices only; no demo world/player/clock/renderer/physics or binary art.",
+  "mirror": "~/.codex/mirrors/patch--oil-paint.git",
+  "mirror_note": "Created once --mirror --filter=blob:none; server ignored filtering, recorded; no full working clone fallback or global install.",
+  "files": [
+    {
+      "path": "LICENCE-NOTES.md",
+      "git_blob": "4706ef31ba07332ef510cf1793882ef3f5e70aa2",
+      "sha256": "ee3596170e8414d9c70aea8e8809ab71144017e6870badf66989fba3ce6b9b7c",
+      "bytes": 2913
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "1d668fe956cc3e68b965e33ad88e53ac51886e5a",
+      "sha256": "7365d4eae601e727a532de8495f0af8bd005de273fe352fa8fecb42de8c12785",
+      "bytes": 1627
+    },
+    {
+      "path": "README.md",
+      "git_blob": "6eb647f7bda08de24c21ae79b3d9629b26b7c88e",
+      "sha256": "ce19bb158a13ab19e5d423db34300ada41b2b4a63955cb2dd9963fed4bdaf10d",
+      "bytes": 10329
+    },
+    {
+      "path": "package.json",
+      "git_blob": "5ca0cfc6dd8394951660e0690737f2217fc6c949",
+      "sha256": "b14ac23bc9fdaa134bf98bd5d284db3b335b839b82bf8d23e53cdc9982efcd70",
+      "bytes": 360
+    },
+    {
+      "path": "public/CREDITS.md",
+      "git_blob": "94dd99f1efbe043209a84789b7c73448c583ae8a",
+      "sha256": "c1278a846e2293982e9e7ceab115081ccf19dab446ead94e73a161ccdcf0a5cd",
+      "bytes": 545
+    },
+    {
+      "path": "public/LICENSES/CC0-1.0.txt",
+      "git_blob": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048
+    },
+    {
+      "path": "src/oilpaint/brush.js",
+      "git_blob": "9cb49b366e669fdd5175327e92778778a452de54",
+      "sha256": "2be2a3341f8fb16cb9974175a763c28f924ccc2f43df7edbff177b35505fa54b",
+      "bytes": 4682
+    },
+    {
+      "path": "src/oilpaint/common.js",
+      "git_blob": "7701f98363947500c045026d595eafb4ef2208c0",
+      "sha256": "14b37b64675300f74a8fea61f086b76d85da6abdaf361008a5dbf640bd68d0ca",
+      "bytes": 9650
+    },
+    {
+      "path": "src/oilpaint/dabs.js",
+      "git_blob": "fa0111ce615bd5cb727ab2cce695bc8f3721f07e",
+      "sha256": "cd94a78fb1520f5adce69920fafdfa678b541be5d53057fcd797a72cdab9b357",
+      "bytes": 8321
+    },
+    {
+      "path": "src/oilpaint/finish.js",
+      "git_blob": "3c88b92656f2c3460ef58d00469ef22e95e0e770",
+      "sha256": "6e9928388917c72b36a8f4f303d3fed9e27baf81fdb84e78ebc8e7c67130532c",
+      "bytes": 4877
+    },
+    {
+      "path": "src/oilpaint/ground.js",
+      "git_blob": "88fadadf53df73115f087ff4e078e802b01d7cde",
+      "sha256": "ff161d11dc265b6a0b7f768223bf75b26982cdbf08dc380cca0e0a9a80adb7fc",
+      "bytes": 3533
+    },
+    {
+      "path": "src/oilpaint/index.js",
+      "git_blob": "cad561c9668f1ad6b0343b49af70d3df171eb12e",
+      "sha256": "1e9804f0f8d3fcc617f1d333a267c9612c117deb4ff580810814d87a9bbef5b6",
+      "bytes": 1389
+    },
+    {
+      "path": "src/oilpaint/pins.js",
+      "git_blob": "4bba683e3330c64e87c17f54f9c1f3ca6fd33f9f",
+      "sha256": "3d9087d943dff946066177fc53a6e13ed255d2fcb01523f556d852f0e69bfa2f",
+      "bytes": 5278
+    },
+    {
+      "path": "src/oilpaint/shade.js",
+      "git_blob": "12d1160ab45133b8275bbce62430a71d7f0fd21e",
+      "sha256": "6c217276e8d7f110bef96a8e58615dac3df6b2013c5951487d4a6c5377aa4fb0",
+      "bytes": 2858
+    }
+  ]
+}

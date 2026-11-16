@@ -1,0 +1,43 @@
+# Oil Paint → Claude Design / KFB · source intake R1 · 2026-11-17
+
+Actual original: https://patch.gg/blendi/oil-paint . Public `/api/v1/projects/blendi/oil-paint/repo` and central mirror agree on `804c65fa3a6c6fcdc732ed1bde450fd140cfb4e9` (release1.1.3). Code MIT, copyright2026Patch; art CC0-1.0. Notices and exact source identities are retained. This packet removes source access as a blocker; it is not a receiving integration or a visual style PASS.
+
+## Delivered original closure
+
+Fourteen unchanged UTF-8 originals: eight `src/oilpaint/{index,common,brush,dabs,ground,pins,shade,finish}.js` modules plus root LICENSE, LICENCE-NOTES.md, README.md, package.json and public CREDITS.md / CC0 text. SOURCE_LOCK records original Git blob, SHA256 and bytes. Only external runtime dependency is three0.186.1, matching the present Racer's Three family. Minimal raw code is browser/WebGL2; not a WebGPU/node-material implementation.
+
+Demo world/forest/cabin/snow/aurora/player/physics/input/camera/loop, Patch block helper, figures/clips and screenshots are excluded. No world generator or branded example is substituted. The notices describe the whole original repository but this package ships only the listed code closure and notice texts. Original CPU-side brush/noise texture creation needs no downloaded images.
+
+## What it actually is
+
+It is **not a generic oil filter applied over the finished image**. It paints objects with instanced cards representing real world-pinned brush touches. Every object needs three authored palette mixes (light/half/shade) and directions/sizes for its strokes. Existing model texture art is not preserved by simply assigning it. Brush thickness, streaks and canvas shading are procedural. Most cards face the eye; ground cards lie on the actual surface and retain stable overlap order. Colour/palette output deliberately uses linear/no-tonemapping assumptions; current KFB ACES/clay/deformer ownership must be reconciled explicitly, never silently changed for the whole game.
+
+## Exact reusable API / host hooks
+
+`createShared()` returns common uniforms: uTime, uPixel, uSunDir, uWind, uFocus, uLamp/uLampCol, terrain tHeight/tLand+extent, static/moving shade maps/matrices, haze, bounce, glaze, impasto and generated noise/blank textures. Host owns configuration and lifecycle. `createBrushSheet()` builds the original512×512eight-mark DataTexture once; reuse it.
+
+`dabGeometry(count,{name:[typedArray,itemSize]},dynamic=false)` returns InstancedBufferGeometry of two triangles per touch. `dabMaterial(shared,{head,body,uniforms,minPx,maxPx,cells,depthTest,depthWrite})` takes GLSL `makeDab(inout Dab d)` and returns a GLSL3 ShaderMaterial. `dabMesh(geometry,material,order)` disables automatic matrix updates and frustum culling, sets stable renderOrder. Host must supply any per-group culling/visibility; don't assume ordinary mesh bounding boxes will cull distant touches.
+
+`groundRings(shared,{head,body,per,n,cell0,levels,minPx,maxPx,cells})` returns `{group,follow(x,z)}`. Follow only updates grid origins; each stable finest-cell identity persists, with distance/level reduction and growth rather than camera-dependent resorting. Ground height/normal/land inputs must come from the current Surface Truth, not the donor demo. Changing seed/world extent needs explicit adapter policy.
+
+`pinDabs(shared,palettes,parts)` takes parts `{mesh,count,accept(p),style(p,n)→{pal,size:[across,along],dir}}`; returns `{mesh,count,update()}`. Update after the existing object's transforms/bones have updated. It samples source geometry vertices using area-weighted triangle selection, stores pins, then CPU-updates positions/normals/directions and uploads three instanced attributes. Per pin, a skinned source can do three applyBoneTransform calls. It does not automatically see a GPU-only KFB deformer, morph target or InstancedMesh instance transform; those need a deliberate existing-owner adapter. Do not duplicate deformation or create a second pose writer.
+
+`createShade(renderer,shared,stillScene,{sun,size,box,centre,back,near,far})` captures static shade once, default4096×2560, and returns `update(scene,focus)` for a256²dynamic layer1 shade. This is an alternate image-style shadow evaluator, not permission for a second KFB lighting owner. Static shade must be refreshed if accepted world objects/sun change. Renderer target/override restoration and existing layers must be integrated safely.
+
+`createFrame(renderer,shared,{samples=4})` returns `{target,uniforms,resize,render}`: renders the actual scene to colour+depth, then one final canvas/varnish pass. Optional shafts use uShafts and default uSteps22; uCanvas controls weave. Host scene/camera/clock remain authoritative; put this into the single existing render path if adopted. No two final passes or extra renderer. Source resets target to null rather than preserving an arbitrary host target; wrap that boundary deliberately. Source has no complete dispose contract: explicitly track/release generated geometry, materials, brush/noise/blank textures, frame/depth targets and shade targets. Some shade resources are closed over; a receiving adaptation must expose their teardown.
+
+Host update contract: existing time→uTime; existing resize/drawing-buffer dimensions and FOV→uPixel; after pose update→pin.update; existing focus→ground.follow; accepted shade owner adapter; existing final render→frame.render. Keep source lock, material provenance, and host colour configuration visible. Do not invoke the original demo boot/scenes/player.
+
+## Suggested use / costs, stated as engineering inference
+
+**Buntstift first** remains the receiving order. Pencil is the smallest reversible selected-material prototype: once-prepared hatch/color fields, no new brush-card forest. Aquarell can use a selected solid object's pigment/arrival shading with the already existing colour front; high vehicle speed does not inherently make the calculations invalid or unfinishable. Faster travel is mainly a temporal readability/streaming/coverage challenge. Heavy stipple trees, large arrival uploads and optional wet-paper final pass are separate extra costs. Avoid copying the demo's walking radius into the Racer.
+
+Oil Paint has the largest integration/authoring delta: per-object palettes/stroke direction, a large number of visible cards, screen overdraw, custom depth/shadows/colour pipeline, CPU pinning of animated figures, optional22-sample-per-pixel sun shafts, plus full-resolution/MSAA target bandwidth. It already uses instancing and distance simplification; a single static prop or compact quiet scene need not be expensive. A whole Racer world or many animated NPCs is a separate budget test. Strong fit candidates: small website tableaux, room/rule presentations, calm exploration, one interactive story object, small minigames with bounded visibility. Preserve car/road/navigation clarity; oil-painted scenery with a clearer driving layer is a candidate requiring real product proof, not an automatic drop-in combination.
+
+Practical quality controls to test: cap per-object stroke counts, chunk/cull groups, leave static pins frozen, update only changing poses, reduce DPR/render target/MSAA, disable uShafts first, bound visible depth/particles. Quality must survive camera motion, zoom, shadows, silhouette readability, deformer motion and style toggle/reload. Test normal gameplay vs pencil vs bounded wash vs bounded oil on the same scene/viewport/device; compare CPU/GPU/frame p50/p95 and memory/compilation/load spikes. No shader cost or FPS number has been measured for KFB here. Original README's RTX4090/1080p ~4.5–4.6ms is a donor-author measurement, **not KFB or mobile evidence**.
+
+## Real intake checks / next proof
+
+Positive original identity/API/rights; exact central mirrorHEAD; all14originalbytes and Git blobs verified; all8JS syntax checksPASS; zero unresolved relative imports. CPU smoke on Three revision186: createShared,512²brush,20pins updated with finite positions,3groundRing levels. No GPU shader compile, browser render, mobile benchmark, art acceptance or actual receiving integration. TEST_REPORT.json contains these boundaries.
+
+Next receiving proof after pencil: one genuine existing KFB prop, original geometry isolated first, authored oil palette/directions, one host renderer, reversible ordinary/oil style, no physics change, real frame-time and visible deformation/shadow proof. Return exact receiving commit+adapter+dispose contract to existing WS0/Claude/Racer module ledger. Do not import the donor's570k-leaf forest or replace existing Fernwald/Lowpoly placement/LOD owner.

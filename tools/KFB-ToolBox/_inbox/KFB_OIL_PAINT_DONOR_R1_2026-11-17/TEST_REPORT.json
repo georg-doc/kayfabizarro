@@ -1,0 +1,34 @@
+{
+  "sourceHead": "804c65fa3a6c6fcdc732ed1bde450fd140cfb4e9",
+  "exactOriginalFiles": 14,
+  "originalBytes": 63410,
+  "syntaxPassFiles": [
+    "src/oilpaint/brush.js",
+    "src/oilpaint/common.js",
+    "src/oilpaint/dabs.js",
+    "src/oilpaint/finish.js",
+    "src/oilpaint/ground.js",
+    "src/oilpaint/index.js",
+    "src/oilpaint/pins.js",
+    "src/oilpaint/shade.js"
+  ],
+  "missingRelativeImports": [],
+  "externalImports": [
+    "three@0.186.1"
+  ],
+  "cpuSmoke": {
+    "status": "PASS",
+    "threeRevision": "186",
+    "brushSize": [
+      512,
+      512
+    ],
+    "pins": 20,
+    "finitePositions": true,
+    "groundLevels": 3
+  },
+  "gpuShaderCompile": "NOT_RUN",
+  "browserRender": "NOT_RUN",
+  "performance": "NOT_MEASURED",
+  "receivingIntegration": "NOT_DONE"
+}
