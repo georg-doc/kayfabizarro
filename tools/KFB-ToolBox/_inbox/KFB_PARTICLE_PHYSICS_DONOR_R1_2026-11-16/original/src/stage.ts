@@ -1,0 +1,222 @@
+// The studio the scenes stand in: from the library's demo (demo/runtime/stage.ts, MIT, Daniel Greenheck), cut to what they use.
+import {
+  Color,
+  CylinderGeometry,
+  DoubleSide,
+  ExtrudeGeometry,
+  Group,
+  LatheGeometry,
+  Mesh,
+  MeshStandardMaterial,
+  PlaneGeometry,
+  Shape,
+  Vector2,
+  type Object3D,
+  type Texture,
+} from 'three';
+
+export function material(color: number, roughness = 0.4, metalness = 0.15): MeshStandardMaterial {
+  return new MeshStandardMaterial({ color, roughness, metalness });
+}
+
+function roundedOutline(width: number, height: number, radius: number): Shape {
+  const x = width / 2,
+    y = height / 2;
+  const shape = new Shape();
+  shape.moveTo(-x + radius, -y);
+  shape.lineTo(x - radius, -y);
+  shape.quadraticCurveTo(x, -y, x, -y + radius);
+  shape.lineTo(x, y - radius);
+  shape.quadraticCurveTo(x, y, x - radius, y);
+  shape.lineTo(-x + radius, y);
+  shape.quadraticCurveTo(-x, y, -x, y - radius);
+  shape.lineTo(-x, -y + radius);
+  shape.quadraticCurveTo(-x, -y, -x + radius, -y);
+  return shape;
+}
+
+function extruded(
+  shape: Shape,
+  depth: number,
+  bevel: number,
+  color: number,
+  roughness = 0.4,
+  metalness = 0.35,
+): Mesh {
+  const mesh = new Mesh(
+    new ExtrudeGeometry(shape, {
+      depth,
+      bevelEnabled: true,
+      bevelSize: bevel,
+      bevelThickness: bevel,
+      bevelSegments: 3,
+      curveSegments: 12,
+      steps: 1,
+    }),
+    material(color, roughness, metalness),
+  );
+  mesh.castShadow = true;
+  mesh.receiveShadow = true;
+  return mesh;
+}
+
+/**
+ * Beveled graphite plinth, inset deck, and recessed support feet. Top is y=0.
+ * `deckMap` replaces the deck's color with a texture.
+ */
+export function platform(width: number, depth: number, deckMap?: Texture): Group {
+  const group = new Group();
+  const body = extruded(roundedOutline(width, depth, 0.1), 0.065, 0.012, 0x26343f, 0.32, 0.5);
+  body.rotation.x = -Math.PI / 2;
+  body.position.y = -0.095;
+  const deck = extruded(
+    roundedOutline(width - 0.055, depth - 0.055, 0.085),
+    0.011,
+    0.006,
+    0x536873,
+    0.52,
+    0.12,
+  );
+  if (deckMap) {
+    const deckMaterial = deck.material as MeshStandardMaterial;
+    deckMaterial.map = deckMap;
+    deckMaterial.color.set(0xffffff);
+    deckMaterial.metalness = 0;
+  }
+  deck.rotation.x = -Math.PI / 2;
+  deck.position.y = -0.017;
+  group.add(body, deck);
+  const feet = new CylinderGeometry(0.045, 0.05, 0.043, 32);
+  const feetMaterial = material(0x101a22, 0.8, 0);
+  for (const x of [-1, 1])
+    for (const z of [-1, 1]) {
+      const foot = new Mesh(feet, feetMaterial);
+      foot.position.set(x * (width / 2 - 0.15), -0.128, z * (depth / 2 - 0.15));
+      group.add(foot);
+    }
+  return group;
+}
+
+/** Clear walls from `base` up, with a top rim and optional lid, around a `width` × `depth` floor. */
+function glassShell(
+  width: number,
+  depth: number,
+  height: number,
+  lid: boolean,
+  base = 0.012,
+  opacity = 0.1,
+): Group {
+  const group = new Group();
+  const shell = roundedOutline(width + 0.065, depth + 0.065, 0.055);
+  shell.holes.push(roundedOutline(width + 0.045, depth + 0.045, 0.045));
+  const glass = extruded(shell, height, 0.001, 0xb9dce5, 0.1, 0);
+  const glassMaterial = glass.material as MeshStandardMaterial;
+  glassMaterial.transparent = true;
+  glassMaterial.opacity = opacity;
+  glassMaterial.depthWrite = false;
+  glassMaterial.side = DoubleSide;
+  glass.castShadow = false;
+  glass.rotation.x = -Math.PI / 2;
+  glass.position.y = base;
+  group.add(glass);
+  const cap = extruded(shell, 0.003, 0.001, 0xa4bec8, 0.22, 0.5);
+  cap.rotation.x = -Math.PI / 2;
+  cap.position.y = base + height + 0.001;
+  group.add(cap);
+  if (lid) group.add(glassPane(width, depth, base + height + 0.001, opacity * 0.8));
+  return group;
+}
+
+/** A flat, clear panel covering a `width` × `depth` opening at height `y`. */
+function glassPane(width: number, depth: number, y: number, opacity = 0.08): Mesh {
+  const pane = extruded(
+    roundedOutline(width + 0.065, depth + 0.065, 0.055),
+    0.003,
+    0.001,
+    0xb9dce5,
+    0.1,
+    0,
+  );
+  const paneMaterial = pane.material as MeshStandardMaterial;
+  paneMaterial.transparent = true;
+  paneMaterial.opacity = opacity;
+  paneMaterial.depthWrite = false;
+  paneMaterial.side = DoubleSide;
+  pane.castShadow = false;
+  pane.rotation.x = -Math.PI / 2;
+  pane.position.y = y;
+  return pane;
+}
+
+function basinRim(width: number, depth: number): Mesh {
+  const outline = roundedOutline(width + 0.1, depth + 0.1, 0.078);
+  outline.holes.push(roundedOutline(width + 0.035, depth + 0.035, 0.043));
+  const rim = extruded(outline, 0.024, 0.004, 0x7f949d, 0.28, 0.7);
+  rim.rotation.x = -Math.PI / 2;
+  rim.position.y = 0.003;
+  return rim;
+}
+
+export function basin(
+  width = 1.65,
+  depth = 1.15,
+  glassHeight = 0,
+  deckMap?: Texture,
+  glassOpacity?: number,
+): Group {
+  const group = platform(width + 0.13, depth + 0.13, deckMap);
+  group.add(basinRim(width, depth));
+  if (glassHeight > 0)
+    group.add(glassShell(width, depth, glassHeight, false, undefined, glassOpacity));
+  return group;
+}
+
+export function pedestal(radius = 0.95): Mesh {
+  const profile = [
+    [0, -0.14],
+    [radius - 0.07, -0.14],
+    [radius - 0.05, -0.12],
+    [radius - 0.05, -0.1],
+    [radius - 0.01, -0.09],
+    [radius, -0.075],
+    [radius, -0.028],
+    [radius - 0.012, -0.01],
+    [radius - 0.035, 0],
+    [0, 0],
+  ].map(([x, y]) => new Vector2(x, y));
+  const mesh = new Mesh(new LatheGeometry(profile, 96), material(0x405762, 0.32, 0.5));
+  mesh.receiveShadow = true;
+  mesh.castShadow = true;
+  return mesh;
+}
+
+export function floor(): Mesh {
+  const mesh = new Mesh(new PlaneGeometry(200, 200), material(0x03060a, 0.9, 0));
+  mesh.rotation.x = -Math.PI / 2;
+  mesh.position.y = -0.15;
+  mesh.receiveShadow = true;
+  return mesh;
+}
+
+export function disposeObjects(objects: readonly Object3D[]): void {
+  const geometries = new Set();
+  const materials = new Set();
+  for (const object of objects) {
+    object.removeFromParent();
+    object.traverse((child) => {
+      if (!(child instanceof Mesh)) return;
+      if (!geometries.has(child.geometry)) {
+        child.geometry.dispose();
+        geometries.add(child.geometry);
+      }
+      for (const value of Array.isArray(child.material) ? child.material : [child.material]) {
+        if (!materials.has(value)) {
+          value.dispose();
+          materials.add(value);
+        }
+      }
+    });
+  }
+}
+
+export const backdrop = new Color(0x10161e);

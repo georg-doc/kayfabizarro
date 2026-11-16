@@ -1,0 +1,151 @@
+{
+  "project": "patch/lowpoly-trees",
+  "source": "https://patch.gg/patch/lowpoly-trees",
+  "clone_url": "https://git.patch.gg/patch/lowpoly-trees.git",
+  "head": "5164e23c0721669d061a0b856f4f0ab2c3243ab5",
+  "code_license": "MIT",
+  "art_license": "MIT",
+  "scope": "source-code only; no KFB runtime integration; no binary art",
+  "mirror": "~/.codex/mirrors/patch--lowpoly-trees.git",
+  "mirror_note": "Created once with --mirror --filter=blob:none. Server ignored filtering; no fallback clone.",
+  "files": [
+    {
+      "path": "CREDITS.txt",
+      "git_blob": "03f956f99769c1bd88e79a3f36b8e2025e9301d5",
+      "sha256": "3c07ce10fed5f9e8bb138f0c16d2f8f84478ffd3233322dec2d2614831714651",
+      "bytes": 604
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "6b2dfa437f4d660bbe91bbd7a06428c9816edef8",
+      "sha256": "957a018444b866588ef5cf67c2c403353286fc4f239f9f2c87b69b684822c9f8",
+      "bytes": 1601
+    },
+    {
+      "path": "README.md",
+      "git_blob": "fed567779198b176d4ba835a26388a78443bc7f4",
+      "sha256": "e062166179463bc46a5d0f5248bd52cd3fe457304e6bdc8df301c6cd17a2c10a",
+      "bytes": 14255
+    },
+    {
+      "path": "package.json",
+      "git_blob": "1215bf4d715d4f7c758d8e3c80c5d6ec254baff8",
+      "sha256": "4f64c6664bd4d5456715370af30be5931cf80896ab0f79906b4752094e2ffdaa",
+      "bytes": 490
+    },
+    {
+      "path": "src/demo.js",
+      "git_blob": "8e08f1479b31c5b8eee60dcdf2e02acdefd0e03a",
+      "sha256": "ea82f30e656acd465d9dac0e50e8dc381769de28342cfcc0bafc230a825e705e",
+      "bytes": 22879
+    },
+    {
+      "path": "src/fx.js",
+      "git_blob": "497db3509348303a910095d51248e9ed52b72e8d",
+      "sha256": "8dfc270e9b79c40e46988e6d37b58fe7d63e498062f53e141e11b84fa22d4518",
+      "bytes": 7434
+    },
+    {
+      "path": "src/params.js",
+      "git_blob": "4fabb4f1e7151510eacfb6dac741a7c440f0da9a",
+      "sha256": "9d1486dfccadd17ef4e4ffec3c0044ee49ef1e1ccac9f26631ddcd40cd60b52f",
+      "bytes": 7771
+    },
+    {
+      "path": "src/tree-worker.js",
+      "git_blob": "de76c93824c2c2cfb38e93b84501d25ed7149a0d",
+      "sha256": "0912a97508347c4884914ea93e02cf57ecd86c501f2964fa2a8a723ba82b26f4",
+      "bytes": 1610
+    },
+    {
+      "path": "src/walker.js",
+      "git_blob": "b9ac806e50cc567615e666c4b5595690ca3873ad",
+      "sha256": "94e9da475c58cc32b6603bce94e65ad5e137c87f13efa860d1ecbb679e7df535",
+      "bytes": 19199
+    },
+    {
+      "path": "src/world.js",
+      "git_blob": "3cdff3424d1411c0b263f74fb629f7510dadb91f",
+      "sha256": "611b61b880322b708b1928236a9c6799017dbf304a2d873ee0a25cac848a7a6c",
+      "bytes": 21756
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/CREDITS.md",
+      "git_blob": "48fd129d87e4f7b6cd2249e1c9bc52a3a8ebaaed",
+      "sha256": "ba7e005c3cfa7232a666328cd051abf871fd26698c654c407c6072a1dcfefceb",
+      "bytes": 4229
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/LICENSE",
+      "git_blob": "378700641ad4651ba88e7506e82a9ccc1a9a3469",
+      "sha256": "113ca778e1689cd12270a412d9ac4872d7fc12a7990f7afab5712f0d75c278ef",
+      "bytes": 1082
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/README.md",
+      "git_blob": "a8af0604b16a8a73f2e60b2e1a21e0253e717845",
+      "sha256": "c48d6553fc46ce416e28321b8567c699ba9732816ea0cf7ccd3d694f0737b0c3",
+      "bytes": 11165
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/THIRD_PARTY_NOTICES.md",
+      "git_blob": "b962eb4c77f395cb3dac2929679fe961feb35a55",
+      "sha256": "b61927e869dd75125728be388f62e029cd005d89241c85541b3f4e6dcb12c55a",
+      "bytes": 447
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/package.json",
+      "git_blob": "8287ff14e812036321e9b67142280331ea5d2276",
+      "sha256": "703be1ad2e254ed5fe8182f26a5c66acf01a5a98b489db86e02bc0a1a91923ad",
+      "bytes": 1293
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/src/animation.js",
+      "git_blob": "0cd28803d2101e14cdbfd723ffb4d06025b10b4e",
+      "sha256": "bf24140e7599271844ad2e5889a18e2819474942a3ee4aaac6d446fb1a83dbb3",
+      "bytes": 433
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/src/archetypes.js",
+      "git_blob": "c78da6b3e871d40b8e3d48e67301429d0186cbc9",
+      "sha256": "aa8204b863a21ad21b194700323f56b7e060da8d8affd14f2da78eae9c338d36",
+      "bytes": 9776
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/src/controller.js",
+      "git_blob": "33a623d14335604afef3477971d62d777c9ef327",
+      "sha256": "0de94c8abdf0534164f3bdab7635f6406c9b3ff15248615afc56263697f33291",
+      "bytes": 2270
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/src/index.js",
+      "git_blob": "9a38fa2c2ebf404a634ad082b183dff37451a848",
+      "sha256": "541282fb7d8022de3d39baace85dccfb300805c2a3da7b247475f0bb4bff8223",
+      "bytes": 55237
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/src/profile.js",
+      "git_blob": "54e2641ab7bb55695d747dacf4a446d491dcf214",
+      "sha256": "05f46601b5b3d4ba7f9b3e6562fe2dd741baea2f340de032c3f404c62b54d2fb",
+      "bytes": 3424
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/src/rig.js",
+      "git_blob": "6ebbbcad09ae5716d4987ece8121828f682318ad",
+      "sha256": "5f7309da8cb21f43222ca7a3874b8cd7201fb340fe50c1c1e92eb9a7377452b4",
+      "bytes": 27249
+    },
+    {
+      "path": "vendor/lowpoly-tree-generator/src/vines.js",
+      "git_blob": "48d1d3605ffe4b45ca63bf54ac343f60447cd32b",
+      "sha256": "2880fd0af961cf7ae355b4979b0f8d34e07faae42e7a287b76681d8145aad621",
+      "bytes": 15634
+    },
+    {
+      "path": "vite.config.mjs",
+      "git_blob": "c8f026becf705ccdfaeeb7997af58e827e7463ae",
+      "sha256": "1afef851a869b6211560eb3e2182cffbf23dabd146c89305dab38a41204043f9",
+      "bytes": 1219
+    }
+  ]
+}

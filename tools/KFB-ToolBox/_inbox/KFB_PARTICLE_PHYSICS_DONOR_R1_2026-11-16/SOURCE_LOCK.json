@@ -1,0 +1,619 @@
+{
+  "project": "patch/particle-physics",
+  "source": "https://patch.gg/patch/particle-physics",
+  "clone_url": "https://git.patch.gg/patch/particle-physics.git",
+  "head": "788280e4e0b3dfa7c46dcdda5a1742a97f522f92",
+  "code_license": "MIT",
+  "art_license": "CC0-1.0",
+  "scope": "source-code only; no KFB runtime integration; no binary art",
+  "mirror": "~/.codex/mirrors/patch--particle-physics.git",
+  "mirror_note": "Created once with --mirror --filter=blob:none. Server ignored filtering; no fallback clone.",
+  "files": [
+    {
+      "path": "LICENCE-NOTES.md",
+      "git_blob": "7dfa6c37a95c53b85e585953cabe0690ecb70690",
+      "sha256": "f29aa0808b7efe4769ce3e934a9609b73381f287d3e77ee36afdf92a09a84c29",
+      "bytes": 2689
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "7e3dc76e9e9546b8ca576e34ee412befd8ff0b12",
+      "sha256": "1f13e9c521e2a4385a548e5bacc0f9835235c1f73aebc253d79d57d109870293",
+      "bytes": 1539
+    },
+    {
+      "path": "README.md",
+      "git_blob": "960216b7b4d7f8797e4aa8a0ab4f32a14158e6a8",
+      "sha256": "23761b91891c3ba022807dfc4e0ffcb00a05bd5d93b3626e17c4f510cf73b4af",
+      "bytes": 10375
+    },
+    {
+      "path": "package.json",
+      "git_blob": "15e5fa4eaaebd14bcde62c11cbcc32821f55fbb3",
+      "sha256": "bdd025be23ccb1a62270a124b3d9902d51086b7bebca6aaed46425c1073fdbb4",
+      "bytes": 512
+    },
+    {
+      "path": "src/app.ts",
+      "git_blob": "f4cfd91ea7a72f45c16c80d3b05e2e92f0787a3a",
+      "sha256": "f4e0248984b75aa1df4334b64a9f083025a84dafa078da74911fca4b2afd2bfa",
+      "bytes": 37200
+    },
+    {
+      "path": "src/assets.ts",
+      "git_blob": "06a82b238e4cec677349d1225a2c46058fe252f1",
+      "sha256": "2a50a922886ec816ab45a1154537a4428ff092678e8a3563b8217b5f1961de83",
+      "bytes": 2623
+    },
+    {
+      "path": "src/boot.ts",
+      "git_blob": "bfb7f527c967ac700c379de7cf9b100ba4811330",
+      "sha256": "1338f90b676362d9bf5f077d4a974eb20c372c06e9edd23a66691c4d9565dcf2",
+      "bytes": 4598
+    },
+    {
+      "path": "src/demo.ts",
+      "git_blob": "f707837d7fc85b07a93bacbe25202f384afd2472",
+      "sha256": "b193e277f9d6c624fddeaab3d8e777acbbe6b00a5951cbd02fd8dc34dbec4a3f",
+      "bytes": 2465
+    },
+    {
+      "path": "src/env.d.ts",
+      "git_blob": "19edf137db1e8d1225ef3b43ec7950d26c24a035",
+      "sha256": "2f0ca15224591c03876100677b6b0449a48d11cabd07f901ad9072ce248f2a88",
+      "bytes": 167
+    },
+    {
+      "path": "src/fill-worker.ts",
+      "git_blob": "908206b17b6d45e50db94dc64614fe530f375960",
+      "sha256": "5138cec54bd44200e868ef4f9cbf8eadb394719309602524ffbe044421a0b285",
+      "bytes": 1286
+    },
+    {
+      "path": "src/fill.ts",
+      "git_blob": "9ca9bf889dd0df1cda8d72cdd363a31a7114bc89",
+      "sha256": "93272aaeca803e467abebe7b766080280586b091c37315db53e3a9e131351e71",
+      "bytes": 1859
+    },
+    {
+      "path": "src/gpu-trouble.ts",
+      "git_blob": "ddde5e972bb86a60690c61367d46a942723dde13",
+      "sha256": "a7c1978d0b464a8af95d3b200030aeda843b46e0eb17eae40f7cc14bdd4d6773",
+      "bytes": 2939
+    },
+    {
+      "path": "src/scenes/liquids.ts",
+      "git_blob": "4f8a90cfc40d67a7577094ad9875753e4c272bb1",
+      "sha256": "9065bb0307bcb376feea0cea1c4ebfdfb741397aa943fd2c3e8d366e8cd4307d",
+      "bytes": 16674
+    },
+    {
+      "path": "src/scenes/shared.ts",
+      "git_blob": "209110be197c1417fe5d1a0c734c2d7f5cf23d03",
+      "sha256": "5b90677044ffafe72b13374e06d2dcce18b5422fa7a3db9a4dc9981967697433",
+      "bytes": 7691
+    },
+    {
+      "path": "src/scenes/smoke.ts",
+      "git_blob": "5c7468631dc3ad361e8193f0a6ffd75597d5797d",
+      "sha256": "7d949bb65473cb28f273a67df7dcfbb363d610d6db6a32a8e2ea78fda65aa4a5",
+      "bytes": 6198
+    },
+    {
+      "path": "src/scenes/solids.ts",
+      "git_blob": "b31dc13d40566f1a22badb78f05850cab9d4a1af",
+      "sha256": "0f4ce10d17c9d6b9a549db3ac7dcd729e0ac156a4795e73edb9e1e0df26aab26",
+      "bytes": 9936
+    },
+    {
+      "path": "src/stage.ts",
+      "git_blob": "60d3885cd95621e1cbc3a6ba600d6481d830cf5a",
+      "sha256": "bb168dfc037ba78bd8cbabbd55fc2be9e46f3f38f3c4901a2b5be522dff16963",
+      "bytes": 6454
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/LICENSE",
+      "git_blob": "908abf2d8999a749fa879ccf7d0f6e584f071b95",
+      "sha256": "1da076811aba823a1eb0c8fd492d4db0bfb8b7b134f8f659e1cbdb6060c51758",
+      "bytes": 1073
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/VENDOR.md",
+      "git_blob": "ffa108b3197d390db77f2cb6f0aaa55ef759dcd5",
+      "sha256": "6bccfc36d4c9512422b2d6c98285cdb55bad8dde44fac41a849aae24e8259dde",
+      "bytes": 2359
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/ClothSystem.ts",
+      "git_blob": "2fe5fe9889efd02e1d2358ceea08a86442a7d781",
+      "sha256": "155de90fae6014427f426caa77b5449939052bacce97d81a59342517f2a9e803",
+      "bytes": 10762
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/aero.ts",
+      "git_blob": "4e11880b803e62581274beefb4bea64a056804a7",
+      "sha256": "ebf82d13839e7d5331cdfa20890d3ddb64f0c5f4f55fbecf96edc4824e8fd455",
+      "bytes": 12632
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/bending.ts",
+      "git_blob": "eabe9beea9588efdb56da705c6d287284c2f985b",
+      "sha256": "5b255036416ccc1de48e37599f5d5d46866c2ec84bf009c8ef201e22958d8425",
+      "bytes": 10613
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/distance.ts",
+      "git_blob": "18992e6181e0bd9aeae33587e3cbedf193decf36",
+      "sha256": "9f7f53ffa603fd106331298f65a7f3e3d8794c48f2cf31d107f7c80d2cde1e39",
+      "bytes": 1921
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/graph.ts",
+      "git_blob": "71a1d8786edadccf05d9532af3d78997cfc31dd1",
+      "sha256": "d9022ca05b59ec862707629aa8b46b9b8c7ea2db613704045bfed15101066786",
+      "bytes": 15604
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/index.ts",
+      "git_blob": "9888996a88672c61d403c4aced9454e6e4aeca9d",
+      "sha256": "21b74a3f652cbd5d7327ef8ab7f0d396d809c3b292a795b7ba987212e2c49276",
+      "bytes": 296
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/surface.ts",
+      "git_blob": "89459fdbb110cec6521ca27370c48d005e4d01f5",
+      "sha256": "93c3d73a587941ae5e8dbfbf73097b4ff465f56f6c699105bf764c665c5c0b12",
+      "bytes": 5084
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/tether.ts",
+      "git_blob": "f630e1e8a1f43268740cac633201a2f0f81d532c",
+      "sha256": "908327d0288d173f65408531cd75238bafbcf1cdfccee451acec407c2d123008",
+      "bytes": 6427
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/cloth/tetherBuild.ts",
+      "git_blob": "a4e0584e32da41790b9f0e65692a0355feb247b0",
+      "sha256": "f795ebcdf7ed9ffdb357cdaa4623787a61073f9dd731067a3039362f9569768d",
+      "bytes": 10347
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/accumulator.ts",
+      "git_blob": "ef82289912f91f2f230b440ddd0bd6e9f81ed826",
+      "sha256": "d2cb50996757ef6db8bb1df64aacc9228ed2bcf80c3f79ad74a61c4c86985132",
+      "bytes": 5949
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/collision/PrimitiveSet.ts",
+      "git_blob": "01853b3a9ee08efe25a7fc78a8ccb2f52a27e344",
+      "sha256": "2b41bc3d8b569869ea7f8cbc2a2f599b421ab1842b33b61c3d4c0dde6900f1b0",
+      "bytes": 20516
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/collision/SDFCollider.ts",
+      "git_blob": "75d256f27f9ac7a311279dfccd63b139c9ead45c",
+      "sha256": "ed6d358066d7b6f6fbcd178b1eb113566b71aa1ecc21304d9e92c7de285dd83c",
+      "bytes": 11979
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/collision/collider.ts",
+      "git_blob": "932ed48d8268b59c8b698f019be4434697a1d0e0",
+      "sha256": "359bf9cdbee11ead2b664d573c1a5c66a5ae2b7f48e56cb0a761f66226253fce",
+      "bytes": 4761
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/collision/index.ts",
+      "git_blob": "b90a901c4e1ce6990000e2fdb2e2ffbd2665bbfd",
+      "sha256": "ab1520ee95138cf07a9d3854c9532c005f8b8c3d5dd7d81796fea835fed00549",
+      "bytes": 585
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/collision/primitives.ts",
+      "git_blob": "ee26eeb2cd4852b8e51d813b601fc10dd39a1df4",
+      "sha256": "af13748d1db269af1ab244d730e5fcf7e764c9cfe006e37c67334c280eda1d33",
+      "bytes": 10140
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/collision/sdf.ts",
+      "git_blob": "f4b42ad6edc8ccd26e67d154a78890674eead5c1",
+      "sha256": "59a7278c13b1a25524c3de811328f38250558fd7de3db39a717decebd16fce05",
+      "bytes": 7235
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/constraints/distance.ts",
+      "git_blob": "48ff5bb259fb62de22c34b4494781dfc057406b0",
+      "sha256": "8a7d912c1a8457b1bc864e6882ab62bde0fbd7b3f1bef5ce48ee1c7281522349",
+      "bytes": 4768
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/constraints/types.ts",
+      "git_blob": "5cfacf4639ffa767ac24086b3d07edc8aea95e76",
+      "sha256": "6bedbb1807ce32ca0334d3c7224187fe36a7728dcc0b89921d5dd04e45daf857",
+      "bytes": 5842
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/constraints/xpbd.ts",
+      "git_blob": "29a78f44e54a26900ea377a2b80fd405b31f4e9f",
+      "sha256": "3fb4cf5b0fe3ceb8b18af5388f1948826d4f03709c5b4af7f17372060d0e8adb",
+      "bytes": 1554
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/contact/ContactBuffer.ts",
+      "git_blob": "dd05f29e3dde37caf49103659c1b766fe5091bf9",
+      "sha256": "906ee6ddfbda9aef0d43ee51a20c96ee31aeb011d7a973a113bf5a4bf2664ab6",
+      "bytes": 6190
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/contact/generate.ts",
+      "git_blob": "b7c63856035acfa8a871c3ae8d94f1f4bf5262f1",
+      "sha256": "ed72310e15525ae7980e73e795dfb9ef03c8aa76e48b416b23503c02bd4fcb9b",
+      "bytes": 3857
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/contact/index.ts",
+      "git_blob": "8e3ecf5016866d9b9871070ab0f4b7f926ad816c",
+      "sha256": "cde9638c6d8bb3845d6fa7d91ebcd6018534e3cece4a76919d899f1dba92d09f",
+      "bytes": 314
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/contact/solve.ts",
+      "git_blob": "febdf88ff60a937344629bf7b30df4e41af6969e",
+      "sha256": "9b14de6189a695253c31ab8716132fa20d6c5bbaf85b862ffb8e7b4d1f7934a9",
+      "bytes": 7784
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/frameStepper.ts",
+      "git_blob": "cda47a65559c549d947d1bb3db7e85bb859f56a7",
+      "sha256": "619a886ebf87304da117bf28d572579822e2c9588603ff7c6c5b90e8cd150651",
+      "bytes": 3473
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/hashGrid/HashGrid.ts",
+      "git_blob": "d3410204a7e34f965ba96424f2619684584a2d5e",
+      "sha256": "3353cacd75740b8b57aa8d3855e71e8d23c5500ec1fcd45f9e89450a8dbb692c",
+      "bytes": 10394
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/hashGrid/cellIndex.ts",
+      "git_blob": "3711110cbb941fec83bb4f78491049a30cd2375d",
+      "sha256": "af48ae651c365753adca43b113577777bece1a3e05a06741fe32e6a2210175e1",
+      "bytes": 7442
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/hashGrid/index.ts",
+      "git_blob": "83318b767f7fc668bfdfb3b0933f07176573950a",
+      "sha256": "0ac627c8e0898e628f7a74678efd69c9de98b98bbabe67fd1b885951c58a1ff2",
+      "bytes": 202
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/hashGrid/mortonHash.ts",
+      "git_blob": "0a135ed3c51bd9ca5578a7b611f1ba48dd8b8f0e",
+      "sha256": "de84d0cca9f831e007c5892a609ce9f30363f536f1959fb3778a3b2fe48ee8e2",
+      "bytes": 3637
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/hashGrid/neighborList.ts",
+      "git_blob": "e82f34aaba7af43966264ff43724ceacebf2285a",
+      "sha256": "70256e8214aff4f953073bfee253467376d2ad893aa2131197b0dbb68c9312d6",
+      "bytes": 5566
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/hashGrid/query.ts",
+      "git_blob": "8d6cd0b408550587f5fb12cb662b4b97c44a99af",
+      "sha256": "1cc8d5c17765ec364ca98ee444e85d487154da5605463d003263af0396bb29a6",
+      "bytes": 2678
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/hashGrid/sort.ts",
+      "git_blob": "c3f9ad92fe41af1307eb3d9abcba99c8dc8b015c",
+      "sha256": "c46c4004542a0dffdd4f9555937b9ce76762a506d6c25fe16d59760c5c277a6b",
+      "bytes": 7010
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/index.ts",
+      "git_blob": "9f5cf8312a0a524bb006957a8c43dfb592628f48",
+      "sha256": "721fc9d5d3105d02a1cefe27604f0f4b0126f96631b6f6fc62da1c9c272fb2a7",
+      "bytes": 1492
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/integrate.ts",
+      "git_blob": "59a1247ac7b78933befd56a3dc52775897280831",
+      "sha256": "3cfba0fb66c2da191dd73d3cb25cbf9e62b1c7676feffb12683c07d2de35dace",
+      "bytes": 1952
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/loop.ts",
+      "git_blob": "f822b5f75ca826fc2b2caa7c231d529237e755db",
+      "sha256": "af599b153106c5675b52eebab1ec5715daab32275d4e46dd875c320ba6646801",
+      "bytes": 16440
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/materials.ts",
+      "git_blob": "c046766a648699aed41748bf0d2b74fc8437d836",
+      "sha256": "5a2275a5cc890feadc4f21f6171de78df4e96e81573a6dae93278ec0eb7b5992",
+      "bytes": 3196
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/mesh.ts",
+      "git_blob": "ef69929f8250533fc60946df3159549b347df403",
+      "sha256": "4242146f50786b46f5e6822783adb73646e9197d493ea9576a179819972f6559",
+      "bytes": 2122
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/particles.ts",
+      "git_blob": "7a4bba8ee5f60eb44676fcf6ad10fc478fb4f845",
+      "sha256": "c6e023473fc1db1a859f8cec22f4a2ce600d7d93256a96dd84922ea2e64630b9",
+      "bytes": 11905
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/renderer.ts",
+      "git_blob": "215c25910cc75e571e4b8248b919ab568b8312f9",
+      "sha256": "db26f3b8ffcb561bbde28dfdd356dbb45fb74f266b9c2144810a2a71e74cf892",
+      "bytes": 1353
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/core/sph/kernels.ts",
+      "git_blob": "edf737befb179af7f870c6455d96a73a6a6f3bb1",
+      "sha256": "fa9949da9ff1fe2df6dc96c6db49965d1845baffd7af1d991f61975ef2d8f445",
+      "bytes": 4146
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/FluidSystem.ts",
+      "git_blob": "de6f3c55af2593313124a602e8cce791c1cb749a",
+      "sha256": "443649544f94410a355ead317fff0437157687441478220d28002bd1b17a56cb",
+      "bytes": 13390
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/ViscositySolver.ts",
+      "git_blob": "1a9760e015e20faf5a789761a361520a129307cb",
+      "sha256": "154a65ed4cf4beebf3d5eddc039ac3a2824cbc0576a4ec43ec5e70e3a3e446e2",
+      "bytes": 6922
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/index.ts",
+      "git_blob": "32da5b9a0bf09ff6e1474c28999f5319e8522e30",
+      "sha256": "5f32ad2328c85af17ca8ed12269f501ce3b73c931d12d1c4b6f3659ab9de667e",
+      "bytes": 279
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/render/FluidSurfaceRenderer.ts",
+      "git_blob": "237421af8a6ebf6df99828c88c646d82a03e65bf",
+      "sha256": "25006070e75c1efb8635d32c6a53cceb8a752018cf17216e28387fcfa9848c7c",
+      "bytes": 31870
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/render/SurfaceField.ts",
+      "git_blob": "e0758c86f6c2aff742e07fd0bc62612d8b3cb6b8",
+      "sha256": "73cdf154d15292ba4ae3b222493fd5158b9045f1fd227076655819dd23cdac7f",
+      "bytes": 18994
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/render/index.ts",
+      "git_blob": "30342a960f51975e9dedc25850856226c53d159b",
+      "sha256": "b425c79297cafeefbee54a38e07efee666c7e0cd0ac9352bdc86857a8d0a7d26",
+      "bytes": 129
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/sim/adhesion.ts",
+      "git_blob": "eb439b23894c9d6034713d224b7219fc794c9cec",
+      "sha256": "451510291ed26703288a8fdd43ecd6a4574f3f15d03fce106e49aa8b1469ee94",
+      "bytes": 2241
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/sim/boundaryVolume.ts",
+      "git_blob": "e69d5b0fba143b1d3883aaf5de0af6dfdd1a23ce",
+      "sha256": "0ab55b7b0a7da6acb3880d70dd61afaf5a25f681b940a584a76fbf31e2599398",
+      "bytes": 2725
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/sim/cohesion.ts",
+      "git_blob": "df243e1b783ed8694c103bbe403a73eaa9a8c40a",
+      "sha256": "a246da829f84ed8be08a6a3c7b855427d178d34c28eee37a02b617b483d60109",
+      "bytes": 4561
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/sim/lambda.ts",
+      "git_blob": "1386545d49dd3144a73835d92bc4123288eb32a2",
+      "sha256": "9f99e2561733fb4f2ef1f926eb0ad0fff0bba0b6431ab3fe865c0dc3e23357af",
+      "bytes": 3159
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/sim/positionDelta.ts",
+      "git_blob": "629fad051128c3cfa45d5baa800d3a25b8bab6eb",
+      "sha256": "215c182346391fb891e5850f2649191c33294a328e275e9a458e1db8aea27850",
+      "bytes": 3295
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/sim/shared.ts",
+      "git_blob": "aa2e0377176dc5c93a44ac98c1a6b93bf083810e",
+      "sha256": "b7496a9e7082d7d11749a3835ad86f8285230158841d39d1d3cec561c93b332a",
+      "bytes": 2835
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/fluids/sim/velocity.ts",
+      "git_blob": "73420592bbd96a8a8af03dc417326c78908e0d9c",
+      "sha256": "fb75cb62ceb937b85c6d232e3cfef843d97e64d1c0a0b13b379cd6499e9b6f7b",
+      "bytes": 5118
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/gas/GasSystem.ts",
+      "git_blob": "8c7340708a2c307069b5aa8793c98a97d19423fa",
+      "sha256": "60bf7a79116df9b0f9850ab91194ab239ae2244e1b6944508b7239be570d3ba1",
+      "bytes": 10915
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/gas/heat.ts",
+      "git_blob": "fc1d4f449b91499262beb1299d17fb37dd6a56b6",
+      "sha256": "459f68d95167486fab84b713d63cbd1d42801743f8ebc36448e1e939a6355c1f",
+      "bytes": 3866
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/gas/index.ts",
+      "git_blob": "96458404015c5d6eca596d5840b3d373001f488d",
+      "sha256": "37777e4a6ca9fac7a8531434879d1c2e6c89591852399484a1b4eafbbae34eaa",
+      "bytes": 363
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/gas/render/GasSpriteRenderer.ts",
+      "git_blob": "a150c37329a7b784586069ff03d2103917a32265",
+      "sha256": "81ecb033972884ac7f2e926c64848d0eacb8d9881c513c9f78c1bc80663312bc",
+      "bytes": 3676
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/gas/render/GasVolumeRenderer.ts",
+      "git_blob": "b7aa2f2308e91f4bd88a9da266107120048b8026",
+      "sha256": "052bc5a9a98b8457f7999576733162bdc28adfd13c0e3ca2809d8e924db72a87",
+      "bytes": 13911
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/gas/render/types.ts",
+      "git_blob": "61e44775fa430c90906e659b71756421d189b44a",
+      "sha256": "4ccb4de1b3c404b37b40ae8197037dcc6eaeb688721e836bc1d9d5d67cae3ad7",
+      "bytes": 837
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/gas/smokeAdvect.ts",
+      "git_blob": "a43f7963899cc0a6b04d119f68501c8cea807c57",
+      "sha256": "f9eb7de949bb13a202cbff74b76e698b570aa08420631b85d494c69756d52855",
+      "bytes": 2938
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/index.ts",
+      "git_blob": "68ae2360ec687571e7f6d022b7c9fb4f53c38240",
+      "sha256": "abc94481fb69ae528286308b3487668ca3d570d74328823778984d45043fc20f",
+      "bytes": 328
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/render/particles.ts",
+      "git_blob": "6a0b9d8af7d3c4577d1dceb88ef6c450d52b154f",
+      "sha256": "fcb65b4a4aef0bd3d0d5516ff92d288b920d7d28c90b831d0e816e72eef79dfe",
+      "bytes": 2078
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/render/viewport.ts",
+      "git_blob": "7845798c5d1ed7a6aacf1c519d3a0e143c4b476a",
+      "sha256": "a21c2fa97d9ecb57f375316277cd1382e377aac2b78245dbc2d4f41332d20f00",
+      "bytes": 967
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/sdf/bake.ts",
+      "git_blob": "4a72d82223bfe46f35807fb36709531b49dee571",
+      "sha256": "464b37c3c9f0b9a1f773bcca72a1e92cee1028a40b4a8a9b723f2ebc38b4e962",
+      "bytes": 16329
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/sdf/index.ts",
+      "git_blob": "bc248c74dbb0ebfe8160765671a748a226d129b8",
+      "sha256": "85fb0e6ee31dc6624de3dbe7cb702ef52a78bfd20f9ede8c379f77c04c9dff27",
+      "bytes": 190
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/sdf/sample.ts",
+      "git_blob": "b00d3882b8d094494747ad4d9ee9e37f1a9b2f55",
+      "sha256": "14b9c606c2785b846e6d24f8a532cdd281fe6a81eed0b05a264a364a4cfead97",
+      "bytes": 3064
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/sdf/writeBinary.ts",
+      "git_blob": "d6ad673aa34043218cd05bd495e1a4dee5eb2e19",
+      "sha256": "a68adab5b8032e6df7b2e2a31e75fb50fc7e128764c65a87a41fdc73a3db088d",
+      "bytes": 4178
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/simulation/Simulation.ts",
+      "git_blob": "caa904aee144badb98ca2aa0429bf82b0f53901e",
+      "sha256": "9ec10549c2f1834935ac94c7b2d928385658df020c7c5d36b0ed25efd3c3be42",
+      "bytes": 42901
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/simulation/handles.ts",
+      "git_blob": "fdb210b0e69cfc75cf2f81edffe44d80e20a8e07",
+      "sha256": "2011330c278c4dc497cb97e9c0b0ef5816b7a76ba7615d4bb7c8043af533377c",
+      "bytes": 10057
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/simulation/index.ts",
+      "git_blob": "2a59aeaa7be6d5a451f42d81c43223c7d9feed8a",
+      "sha256": "5aa1a509e745e1802f76fd2434143ab96b32e1f9b201acdb7def313945fb1eb2",
+      "bytes": 278
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/simulation/layout.ts",
+      "git_blob": "4fe3ab254f09064bfcc6d171a9c3f23642f65215",
+      "sha256": "9805897c3fabd76a4aa24fd6fe6ced5976b68a14a65c68da29099fb0b3169e32",
+      "bytes": 4562
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/SoftbodyMesh.ts",
+      "git_blob": "a1a61b3ff70e7043f6aae9fdcaaf185373a4c472",
+      "sha256": "f128ccd10f8dfdfcda2f12aaab6d2635ab5dda49e89050dfbd5e07eff0f8ba39",
+      "bytes": 1453
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/SoftbodySystem.ts",
+      "git_blob": "217e595ef7724c66a31e17bc76256920d0493007",
+      "sha256": "5da28b828412e0cac804b11182bd1aa18fc2c7a88ca89564601036977c821ec9",
+      "bytes": 20606
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/bindMesh.ts",
+      "git_blob": "38e965605b71580e1eb12305a3c2dae9cfe9d70b",
+      "sha256": "66ebe3adcb7aa164ded13b6e676c540b58d6a021660fae934e39885d849c3b86",
+      "bytes": 5328
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/dlb.ts",
+      "git_blob": "50b66dc8ef3151b055146d188967cdef8f8b34b9",
+      "sha256": "8e6297c27c9819b980f4b4eb782dce028d38d10be24e86f5934689bb53ce7eab",
+      "bytes": 11386
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/index.ts",
+      "git_blob": "43a8e5e3e52f133475ac3a9b09d2750a04a92318",
+      "sha256": "29695705957f70879df9cc0a5c772057247ec66511f3e9847e445835450bb864",
+      "bytes": 263
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/polarDecomp.ts",
+      "git_blob": "032192d92e52410046bd95a8c0dcbeaaf79cb3d7",
+      "sha256": "091f0ab6cba23df6d305efbf94c1e93976839ae766d204fcadc6791169b98e26",
+      "bytes": 10366
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/rotation.ts",
+      "git_blob": "b80f3e2be85f877608ac3df14b689de536db38d1",
+      "sha256": "161f24233544dee256ff0a12bb751a6ea92e0270bd5f5acbdb432c82c02ea990",
+      "bytes": 3495
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/shapeMatch.ts",
+      "git_blob": "af07e5f54f60102914b44a4bdbf8bc8155125ee3",
+      "sha256": "9199963d53f7ea165c24b3350e2bb49226a327575060a8178bc9f524cb6b038f",
+      "bytes": 13659
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/shapeMatchImplicit.ts",
+      "git_blob": "acc3b6cb08f05c6bb15a97407abc2edc6d5c5ab8",
+      "sha256": "e4f7a2f8cdb239cce91b5c8bfbffe0812e92742b41bc386ac87ffbc055bef49d",
+      "bytes": 18909
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/skinMaterial.ts",
+      "git_blob": "72e47298a66ce01fa1dec3ca74a881eb041f4010",
+      "sha256": "2af8056741679d3824f3d46edb65b9fe57d35a86b47eecd9187cef31379d8d4a",
+      "bytes": 8763
+    },
+    {
+      "path": "vendor/threejs-particle-fluids/src/softbody/voxelize.ts",
+      "git_blob": "e97ef05c3d3e6bfa1d6508b2ef0f185e7a56183e",
+      "sha256": "85902ccd4128c2944376cbd066b0162cc769dabb89175bc7440712d940da3225",
+      "bytes": 9934
+    },
+    {
+      "path": "vite.config.mjs",
+      "git_blob": "fb18602affc8fe2098db99b68c537e2290ac170d",
+      "sha256": "444a34db47b83a4fe46e2cd56524a63d3ad53393e7dc7518e7700991e8c208e0",
+      "bytes": 981
+    }
+  ]
+}
