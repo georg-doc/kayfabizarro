@@ -1,3 +1,20 @@
+# CURRENT · SOURCE RECOVERED / MIT VERIFIED / MODULAR DONOR READY · 2026-11-16
+
+The earlier failure below is historical. Existing central mirror origin and Patch project identity were inspected and refreshed successfully: micha-ostrowski/apex-drift @224734fe7a064a5483f2c8c6bf3ca8a8d0676d82, authored10Nov2026 "Change the licence to MIT". Original LICENSE (MIT ©2026 micha-ostrowski), CREDITS and exact source blobs are now read and preserved. No global pch install or Patch remix was needed.
+
+Current modular Claude Design packet: [README and existing-owner integration](https://github.com/georg-doc/kayfabizarro/blob/ccb77d7b687aa19faac1107f95cd9983aee8c4d3/tools/KFB-ToolBox/_inbox/KFB_APEX_DRIFT_MODULAR_DONOR_R1_2026-11-16/README.md).
+Isolated branch: donor/apex-drift-modules-2026-11-16. Verified head: ccb77d7b687aa19faac1107f95cd9983aee8c4d3.18delivered text files fetched back exactly;9original files SHA-verified. No production game source changed, no merge/Live promotion. This toolbox code-only modular intake is the actual delivered destination; the historical proposed KFB game ref/apex-drift-r1 was not created.
+
+Five source-derived factories: warehouse,hangar,container,crane,lamp, plus unchanged existing KFB kit deformer, approved HyperNormal facade-input helpers, runnable source-isolation preview and tests. Original source closure and notices remain untouched. Part contracts10/10 and source hashes9/9PASS; original warehouse vs existing KFB bend and actual source parts were browser-inspected. This is not a full physical KFB building/city acceptance; source textures use Math.random and rendering proof is a local donor preview.
+
+There is NO source skyscraper/cityscape generator in this Apex pin. The original tall structures are cranes/neon frames. Grotesque high-rises/HyperNormal buildings must be explicit future KFB designs using the existing S5/Elastic Grotesque/Curator owners. Existing Track Core remains sole road constructor; do not adopt Apex modelTrack/layCentreline as another runtime. No private H16media or art/audio binaries exported.
+
+Next productive use: Claude Design consumes the exact modular packet, source-isolates the chosen original part, then builds one KFB material/deformation/facade candidate through those existing owners. Source acquisition/licensing is no longer a blocker for this code-only scope.
+
+---
+
+# HISTORICAL FAILURE RECOVERY
+
 # WEBSITE_R1 / CLAUDE DESIGN · APEX DRIFT ORIGINAL SOURCE ACCESS · FAILURE RECOVERY · 16.11.2026
 
 **Scope:** One bounded donor-intake slice for the existing KayfaBizarro Website R1 Claude Design owner. The user wants the genuine Patch `micha-ostrowski/apex-drift` source on GitHub as a donor for a moving camera, real original road and skyscrapers, adjacent to the already-supplied Patchwork Quilt and KFB sky. **Status: SOURCE BLOCKED / LICENCE UNKNOWN / NO CODE TRANSFER.** This file is a verified GitHub handoff, **not** the Apex Drift source. Do not label it as a donor import or as design approval.
