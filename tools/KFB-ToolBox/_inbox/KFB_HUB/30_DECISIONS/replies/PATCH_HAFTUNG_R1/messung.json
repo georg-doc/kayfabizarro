@@ -1,0 +1,134 @@
+{
+ "ohne": {
+  "laeufe": [
+   {
+    "richtung": 0,
+    "ueberschlaege": 1,
+    "dachS": 3.2,
+    "luftAnteil": 0.42,
+    "vMittel": 9.7,
+    "wegM": 187,
+    "upMin": -0.98
+   },
+   {
+    "richtung": 4.2,
+    "ueberschlaege": 0,
+    "dachS": 1,
+    "luftAnteil": 0.38,
+    "vMittel": 11.2,
+    "wegM": 263,
+    "upMin": -0.1
+   },
+   {
+    "richtung": 5.3,
+    "ueberschlaege": 0,
+    "dachS": 1.7,
+    "luftAnteil": 0.51,
+    "vMittel": 11,
+    "wegM": 272,
+    "upMin": -0.91
+   }
+  ],
+  "summe": {
+   "ueberschlaege": 1,
+   "dachS": 5.9,
+   "vMittel": 10.6,
+   "wegM": 722
+  },
+  "haft": {
+   "an": false,
+   "kuppe": 0,
+   "lage": 0,
+   "abtriebMax": 0
+  },
+  "fehler": []
+ },
+ "mit": {
+  "laeufe": [
+   {
+    "richtung": 0,
+    "ueberschlaege": 0,
+    "dachS": 0,
+    "luftAnteil": 0.32,
+    "vMittel": 13.3,
+    "wegM": 333,
+    "upMin": 0.59
+   },
+   {
+    "richtung": 4.2,
+    "ueberschlaege": 0,
+    "dachS": 0,
+    "luftAnteil": 0.36,
+    "vMittel": 13,
+    "wegM": 313,
+    "upMin": 0.39
+   },
+   {
+    "richtung": 5.3,
+    "ueberschlaege": 0,
+    "dachS": 0,
+    "luftAnteil": 0.27,
+    "vMittel": 12.1,
+    "wegM": 274,
+    "upMin": 0.7
+   }
+  ],
+  "summe": {
+   "ueberschlaege": 0,
+   "dachS": 0,
+   "vMittel": 12.8,
+   "wegM": 920
+  },
+  "haft": {
+   "an": true,
+   "kuppe": 209,
+   "lage": 409,
+   "abtriebMax": 0.35
+  },
+  "fehler": []
+ },
+ "stark": {
+  "laeufe": [
+   {
+    "richtung": 0,
+    "ueberschlaege": 0,
+    "dachS": 0,
+    "luftAnteil": 0.16,
+    "vMittel": 10.4,
+    "wegM": 212,
+    "upMin": 0.59
+   },
+   {
+    "richtung": 4.2,
+    "ueberschlaege": 0,
+    "dachS": 0,
+    "luftAnteil": 0.39,
+    "vMittel": 7.1,
+    "wegM": 138,
+    "upMin": 0.51
+   },
+   {
+    "richtung": 5.3,
+    "ueberschlaege": 0,
+    "dachS": 0,
+    "luftAnteil": 0.29,
+    "vMittel": 11.8,
+    "wegM": 229,
+    "upMin": 0.57
+   }
+  ],
+  "summe": {
+   "ueberschlaege": 0,
+   "dachS": 0,
+   "vMittel": 9.8,
+   "wegM": 579
+  },
+  "haft": {
+   "an": true,
+   "kuppe": 100,
+   "lage": 331,
+   "abtriebMax": 0.64
+  },
+  "fehler": []
+ }
+}
