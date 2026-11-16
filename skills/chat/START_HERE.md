@@ -1,3 +1,13 @@
+## ADDITIVE WS0 RESEARCH HANDOFF · 2026-11-16 · GAUSSIAN SPLAT PILOTS (PREPARED / NO BUILD)
+
+Georg requested a source-backed four-step experiment sequence, **not** a new game runtime. First 2D Props, existing private-Atlas Slops and small real GLB Scenelets; **after these**, a traversable dungeon/cave entry, physical breakable wall and room built as an A/B/C/D comparison (original mesh, SDF→mesh, original→splats, SDF→splats). PatchWorld/patch.gg styles are deferred at Georg's instruction. WS0 owns asset/source/visual QA; existing KFB Asset Registry/Librarian and `KFB-Stunt-Car-Race` R2/InfiniteRooms/Terrain/Portal/Physics owners remain intact.
+
+Read: `skills/chat/WS0_GAUSSIAN_SPLAT_2D_SLOPS_SCENELETS_R0_2026-11-16.md` → `skills/chat/WS0_SDF_SPLAT_DUNGEON_CAVES_ROOMS_WALLS_ENTRIES_R0_2026-11-16.md` → `skills/chat/WS0_GAUSSIAN_SPLAT_R0_RETURN_2026-11-16.md` / `WS0_GAUSSIAN_SPLAT_R0_CHANGELOG_2026-11-16.md`. On review branch `docs/ws0-splat-assets-slops-scenelets-r0-2026-11-16`; not yet main or live. Race checked `game/integration-r2` @ `648f932e52eadaa019e141ce8e34508bd372e5e5`; InfiniteRooms R3 has 16/16 technical tests reported but environment FAIL/NO-GO, **not** splat/whole-game PASS. **Actual new splat renders and GPU tests: 0.**
+
+Next gate: WS0 source-isolates one real original of each of the first three categories with exact bytes/hash before any conversion, then the dungeon source corridor. No placeholders, no separate renderer/physics owner, no automatic merge, Site, Cloudflare Stage or Live promotion.
+
+---
+
 ## ADDITIVE WS0 INTAKE · 2026-11-04 · BLACK INK BLOB SERIES (DOCS/PROVENANCE ONLY)
 
 Georg visually accepted 18 Black Ink Blob PNG sheets (nine 12-character series). WS0 owns prompt/character curation; verified current WS1 `game/inkblobs-r1` / private atlas (72 actors) remains runtime recipient. Candidate contract: `media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/README.md`; intake issue **#466**. 18 original PNG bytes were locally inspected but **NOT committed**; 108 sprite crops are review candidates with 48 boundary-risk flags. One real source character was visually isolated. Next gate: WS0/Asset Librarian import **one** safe six-pack and WS1 show one actual hit/bounce/ink collision proof. No new renderer/runtime owner, no auto-merge, no Stage/Live claim. The WS0 DECISIONS register remains the V-number authority.
