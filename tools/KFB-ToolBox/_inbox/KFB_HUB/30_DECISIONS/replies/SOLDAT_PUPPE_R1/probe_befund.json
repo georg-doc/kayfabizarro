@@ -1,0 +1,169 @@
+{
+ "schritte": [
+  {
+   "was": "explosion",
+   "id": "soldat-1-gewehr",
+   "t": 24.67,
+   "puppe": [
+    {
+     "phase": "faellt",
+     "t": 0.52,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 1.02,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 1.53,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 2.05,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 2.57,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 3.05,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 3.57,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 4.08,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "liegt",
+     "t": 4.43,
+     "koerper": 0,
+     "fehlt": []
+    },
+    {
+     "phase": "liegt",
+     "t": 4.43,
+     "koerper": 0,
+     "fehlt": []
+    }
+   ]
+  },
+  {
+   "was": "schuss",
+   "id": "soldat-3-gewehr",
+   "t": 31.77,
+   "puppe": [
+    {
+     "phase": "faellt",
+     "t": 0.5,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 1.02,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 1.52,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 2.03,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 2.53,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "faellt",
+     "t": 3.03,
+     "koerper": 11,
+     "fehlt": []
+    },
+    {
+     "phase": "liegt",
+     "t": 3.48,
+     "koerper": 0,
+     "fehlt": []
+    },
+    {
+     "phase": "liegt",
+     "t": 3.48,
+     "koerper": 0,
+     "fehlt": []
+    }
+   ]
+  },
+  {
+   "was": "umfahren",
+   "t": 37.83,
+   "vorher": 0,
+   "nachher": 1,
+   "puppen": 3
+  }
+ ],
+ "arena": {
+  "on": true,
+  "url": true
+ },
+ "gegnerZahl": 6,
+ "ende": 44.06,
+ "liegend": [
+  [
+   "soldat-1-gewehr",
+   {
+    "phase": "liegt",
+    "t": 4.43,
+    "koerper": 0,
+    "fehlt": []
+   }
+  ],
+  [
+   "soldat-2-gewehr",
+   {
+    "phase": "faellt",
+    "t": 4.23,
+    "koerper": 11,
+    "fehlt": []
+   }
+  ],
+  [
+   "soldat-3-gewehr",
+   {
+    "phase": "liegt",
+    "t": 3.48,
+    "koerper": 0,
+    "fehlt": []
+   }
+  ]
+ ],
+ "fehler": []
+}
