@@ -129,3 +129,8 @@ Quellen: [apolut: Eggert über Armageddon und Endzeitsekten](https://apolut.net/
 - **[apolut: Eggert über Armageddon und Endzeitsekten](https://apolut.net/im-gespraech-wolfgang-eggert/)** — 19.August2024; Markus Fiedler. Gelesen: Beschreibung. Grenze: Keine vollständige Interviewsichtung, Herausgeberrahmung nicht als Wortlaut Eggerts verwendet. Quellenfamilie: eggert-fiedler-2024.
 - **[NuoFlix: Erst Manhattan, jetzt Berlin?](https://nuoflix.de/erst-manhatten-jetzt-berlin--im-gespraech-mit-wolfgang-eggert)** — 30.November2023; Beschreibung und fünf Quellenlinks. Gelesen: Suchindex, direkte Abrufe Timeout. Grenze: Links aufgenommen als ungesichtete Ausgangsquellen; keine Filmzeitmarken und kein Beleg für geheime Koordination. Quellenfamilie: eggert-nuoflix-2023.
 - **[Eggert: Im Namen Gottes – bibliografischer Nachweis](https://www.eurobuch.at/buch/isbn/3935845006.html)** — Gesamttitel, ISBN9783935845007,Chronos-Medien,2001. Gelesen: Metadaten. Grenze: Sekundärer Katalog; unterschiedliche Ausgaben nicht zusammengezogen. Keine Volltextnutzung aus anonymen PDF-Spiegeln. Quellenfamilie: eggert-bibliography.
+
+
+## Vergleichsergänzung · 2026-11-16
+
+[Neun Vergleiche mit Quellenketten](../packages/author-lenses-november/COMPARISONS_2026-11-16.md): gemeinsame Werke, direkte Rezeption, verschiedene Werke desselben Autors und bloße Themenähnlichkeit getrennt. [Atlas-Ansicht](https://kfb-research-atlas.frizzlebob.chatgpt.site/author-lenses.html#comparisons-20261116).

@@ -1,3 +1,7 @@
+# Ergänzung 2026-11-16
+
+Neun Autorenvergleiche, maschinenlesbare Quellenketten, Wiki-Anker und Rückwege. Frühere Inhalte bleiben erhalten.
+
 ## 2026-11-14
 
 Vier Autorenperspektiven ergänzt: David Grusch, Wolfgang Effenberger, Michael Grandt und Wolfgang Eggert. Quellenketten, Gegenlesarten, Sichtungsgrenzen und navigierbare Site-Seite.

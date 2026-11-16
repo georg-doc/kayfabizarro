@@ -14,3 +14,7 @@
 In his 2006 article Ganser quotes an unnamed NATO source describing Gehlen as the intellectual originator of German stay-behind and alleging early knowledge by Adenauer. **Footnote 48** cites *Searchlight*, January 1991. The surviving OCR of issue 187 reproduces this characterization in the feature on pp. 3–6. This is one chain of testimony. [Ganser article, passage and note 48](https://www.siper.ch/assets/uploads/files/publications/Intelligence%20and%20National%20Security%20%282006%29%20-%20The%20CIA%20in%20Western%20Europe%20and%20the%20Abuse.pdf) · [Searchlight 187, digitized issue](https://www.scribd.com/document/378818633/Searchlight-187-January-1991)
 
 The [German handover case](../topics/gehlen-german-stay-behind/README.md) independently identifies an operational role for Gehlen in 1951 and Smith's instruction to Mellenthin in 1952. Neither settles the anonymous source's broader priority claim. Coverage here is bibliographic for the dissertation, structural and selective for the monograph, passage-and-note specific for the article.
+
+## Vergleichsergänzung · 2026-11-16
+
+[Neun Vergleiche mit Quellenketten](../packages/author-lenses-november/COMPARISONS_2026-11-16.md): gemeinsame Werke, direkte Rezeption, verschiedene Werke desselben Autors und bloße Themenähnlichkeit getrennt. [Atlas-Ansicht](https://kfb-research-atlas.frizzlebob.chatgpt.site/author-lenses.html#comparisons-20261116).

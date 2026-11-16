@@ -1,3 +1,13 @@
+# Current Return · Autorenvergleiche · 2026-11-16
+
+Owner: Research Atlas; branch `research/hidden-cosmology-atlas-2026-10-13`; Draft PR #394. Baseline e746bc60e58b13dd69bf2dcdb3b0012a27c18a75.
+
+Neun Vergleiche Effenberger/Grandt/Eggert × Regenauer/Ganser/Farrell. 15 ausgewählte Quellen mit Fundstelle und Leseumfang. Gemeinsames Quigley-Werk, direkte Ganser-Rezeption und Themenähnlichkeit getrennt. Keine neuen Ereignis-Rabbit-Holes, keine Spieländerung.
+
+GitHub-Inhaltsstand und Site-Publikation werden im abschließenden Receipt vermerkt. Grenzen: keine vollständigen Bücher/Interviews neu gesichtet; Farrell-2013-Seite nur indexierter Originalauszug; Grandt-Bibliographien nicht zugänglich. Nächster Gate: Georg prüft die neun Vergleichskarten; keine automatische Vertiefung.
+
+---
+
 ## Publikationsabschluss · 2026-11-14
 
 Atlas-Version26 erfolgreich veröffentlicht, einschließlich Knapp/Lacatski. GitHub-Inhaltcommit `2ca7114db93d693498ce0226813928ba3c18fcb0`,19/19 Dateien exakt zurückgelesen. Site-Quellstand `28fbdc19efa7e4972ab5f8fb5170d7fe13075e7b`. [Vier Profile](https://kfb-research-atlas.frizzlebob.chatgpt.site/author-lenses.html) · [Publikationsbeleg](packages/author-lenses-november/SITE_PUBLICATION_2026-11-14.json). Frühere Knapp/Lacatski-Site-Blockade damit erledigt. Live-Browser verlangt persönliche Anmeldung; gerenderte Produktionsansicht nicht unabhängig sichtbar. Lokale Quellen-/Rücknavigation geprüft. Nächstes Gate: Georgs Sicht auf Themenbreite und Vergleichslinsen.

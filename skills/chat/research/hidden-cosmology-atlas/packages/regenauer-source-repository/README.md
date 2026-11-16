@@ -25,3 +25,8 @@ Looking only at exact outbound hostnames after treating `www.` and the bare host
 [Keyword finder for 190 HTML editions](topic-finder.csv) contains 72 essay/topic matches across 55 articles. These are literal search cues in the article body, not editorial tags or claims. Queries cover explicit COG terminology, stay-behind/Gladio, 9/11 and named people, institutions and publishers. Missing synonyms, names used without their first names, audio and the PDF-only edition limit recall. For example, [Kollektive Selbstzerstörung](https://www.regenauer.press/kollektive-selbstzerstoerung) links its COG phrasing to an encyclopedia. [Flagge meiden](https://www.regenauer.press/flagge-meiden) links its Swedish stay-behind and Palme passages to WikiSpooks. Both are starting points for checking source custody, not evidence about the Toepke handover. The [two-essay source audit](../../topics/gehlen-german-stay-behind/RESEARCH_NEIGHBOURS.md) already follows selected links farther.
 
 For a future publisher inventory, 45 works point to 62 exact Corbett Report URLs, and 31 point to 40 Unlimited Hangout URLs (www and bare host grouped, distinct works counted once). Start by resolving these targets to the publisher's own work IDs. Neither publisher's full corpus is included in this edition.
+
+
+## Ergänzung 2026-11-16
+
+[Vergleich mit Effenberger, Grandt und Eggert](../author-lenses-november/COMPARISONS_2026-11-16.md): Quigley-Anschluss auf Werkebene belegt; NGO- und Motivvergleiche ohne erfundene gemeinsame Belege. Bestehendes Linkinventar unverändert.

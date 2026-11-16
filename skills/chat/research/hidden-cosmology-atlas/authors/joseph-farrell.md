@@ -63,3 +63,8 @@ Die [Interviewseite](https://projectcamelot.org/joseph_farrell.html) kennzeichne
 ## Quellenbasierter Vergleich mit Jacques Vallée · 13.11.2026
 
 [Gemeinsame Themen, unterschiedliche Aussagen und Methoden](../packages/jacques-vallee/COMPARISON_MATRIX.md). Ergänzt Originalbuchvorschau, ausgewählte Herausgebertranskripte und eigene Sendungsbeschreibungen; ersetzt keine vollständige Prüfung des älteren Dossier-Intakes.
+
+
+## Vergleichsergänzung · 2026-11-16
+
+[Neun Vergleiche mit Quellenketten](../packages/author-lenses-november/COMPARISONS_2026-11-16.md): gemeinsame Werke, direkte Rezeption, verschiedene Werke desselben Autors und bloße Themenähnlichkeit getrennt. [Atlas-Ansicht](https://kfb-research-atlas.frizzlebob.chatgpt.site/author-lenses.html#comparisons-20261116).

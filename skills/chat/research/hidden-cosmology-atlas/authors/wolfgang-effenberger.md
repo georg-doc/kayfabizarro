@@ -128,3 +128,8 @@ Quellen: [Schwarzbuch EU & NATO: Verlagsseite](https://zeitgeist-online.de/schwa
 - **[NATO ACT: Warfighting Capstone Concept](https://www.act.nato.int/our-work/nato-warfighting-capstone-concept/)** — Approval 2021; What is NWCC; Functional Design 2040. Gelesen: Webtext. Grenze: Selbstdarstellung der NATO; dokumentiert Planungsziele, nicht neutral deren Umsetzung oder Folgen. Quellenfamilie: nato-act-nwcc.
 - **[Effenberger: Artikelregister](https://wolfgangeffenberger.com/ARTIKEL1)** — 2025/2026: City of London/Wall Street, 9/11, Bilderberg, Iran, NATO. Gelesen: Titel und Teaser im Suchindex. Grenze: Themeninventur; diese Essays wurden nicht alle gelesen. Keine Einzelthesen aus Titeln verifiziert. Quellenfamilie: effenberger-article-index.
 - **[Effenberger: Interviewregister](https://wolfgangeffenberger.com/INTERVIEWS)** — NuoFlix Effenberger Aktuell, Politik Spezial, Michael Meyen. Gelesen: Titel/Datumsangaben im Index. Grenze: Keine Audiosichtung und keine überprüften Zeitmarken. Quellenfamilie: effenberger-interview-index.
+
+
+## Vergleichsergänzung · 2026-11-16
+
+[Neun Vergleiche mit Quellenketten](../packages/author-lenses-november/COMPARISONS_2026-11-16.md): gemeinsame Werke, direkte Rezeption, verschiedene Werke desselben Autors und bloße Themenähnlichkeit getrennt. [Atlas-Ansicht](https://kfb-research-atlas.frizzlebob.chatgpt.site/author-lenses.html#comparisons-20261116).

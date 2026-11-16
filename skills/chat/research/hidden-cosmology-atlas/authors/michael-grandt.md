@@ -132,3 +132,8 @@ Quellen: [Michael Grandt: Bücherverzeichnis](https://www.michaelgrandt.de/meine
 - **[Grandt: Der kommende Bankencrash](https://www.michaelgrandt.de/meine-buecher/der-kommende-bankencrash-und-wie-sie-sich-davor-schuetzen-koennen/)** — 2024, ISBN9783989920026; Suchindex des Originals. Gelesen: Suchindex; direkter Abruf Timeout. Grenze: Prognose und Schutzstrategien nicht unabhängig überprüft; keine Anlageempfehlung. Quellenfamilie: grandt-banking.
 - **[Grandt: Schwarzbuch Waldorf](https://www.michaelgrandt.de/meine-buecher/schwarzbuch-waldorf/)** — 2008, Gütersloher Verlagshaus; Verlagstext. Gelesen: Web-/Indextext. Grenze: Werkprogramm, keine Bewertung aller Schulen. Quellenfamilie: grandt-waldorf.
 - **[SchülerStandard: Interview mit Michael Grandt](https://www.derstandard.at/story/1224776558261/kritiker-sollen-mundtot-gemacht-werden)** — 28.Oktober2008; Recherchemethodik, Kritik und Transparenz. Gelesen: Interviewtext. Grenze: Einleitung berichtet Änderungen nach Klage; kein Urteil eingesehen. Interviewantworten und journalistische Einleitung getrennt. Quellenfamilie: grandt-standard-2008.
+
+
+## Vergleichsergänzung · 2026-11-16
+
+[Neun Vergleiche mit Quellenketten](../packages/author-lenses-november/COMPARISONS_2026-11-16.md): gemeinsame Werke, direkte Rezeption, verschiedene Werke desselben Autors und bloße Themenähnlichkeit getrennt. [Atlas-Ansicht](https://kfb-research-atlas.frizzlebob.chatgpt.site/author-lenses.html#comparisons-20261116).
