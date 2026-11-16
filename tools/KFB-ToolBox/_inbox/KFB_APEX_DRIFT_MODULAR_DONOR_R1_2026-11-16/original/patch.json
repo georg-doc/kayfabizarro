@@ -1,0 +1,67 @@
+{
+  "project": "micha-ostrowski/apex-drift",
+  "version": "1.1.0",
+  "channel": "public",
+  "files": "dist",
+  "recipe": {
+    "test": {
+      "checks": [
+        "menu-shown",
+        "race-started",
+        "car-drives",
+        "exp-earned",
+        "skill-activated",
+        "drift-scored",
+        "results-shown",
+        "back-to-menu"
+      ]
+    },
+    "credits": [
+      {
+        "files": "audio/**",
+        "license": "CC0-1.0",
+        "author": "Freesound contributors, listed in audio/CREDITS.txt"
+      },
+      {
+        "files": "models/**",
+        "license": "CC0-1.0",
+        "author": "Patch (Vireo rally car, from Realistic car by @patch)"
+      },
+      {
+        "files": "stage/*-diff.webp",
+        "license": "CC0-1.0",
+        "author": "Poly Haven: Rob Tuytel, Charlotte Baglioni, Rico Cilliers"
+      },
+      {
+        "files": "stage/*-nor.webp",
+        "license": "CC0-1.0",
+        "author": "Poly Haven: Rob Tuytel, Charlotte Baglioni, Rico Cilliers"
+      },
+      {
+        "files": "stage/rocks.glb",
+        "license": "CC0-1.0",
+        "author": "Kless Gyzen, Poly Haven"
+      },
+      {
+        "files": "stage/bark-pine.webp",
+        "license": "CC0-1.0",
+        "author": "ambientCG"
+      },
+      {
+        "files": "stage/pine-leaf.webp",
+        "license": "MIT",
+        "author": "Daniel Greenheck (ez-tree)"
+      },
+      {
+        "files": "stage/trees.*",
+        "license": "MIT",
+        "author": "Daniel Greenheck (ez-tree), via Patch's Tree generator block"
+      },
+      {
+        "files": "assets/**",
+        "license": "MIT",
+        "author": "Realistic car by @patch on Patch (https://patch.gg/patch/car), three.js authors, Dimforge (Rapier, Apache-2.0) and Apex Drift"
+      }
+    ]
+  }
+}
