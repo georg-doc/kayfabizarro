@@ -1,3 +1,15 @@
+## Additive proposal · own-slot entry gate and central focus card · 2026-11-17
+
+**New Georg design clarification:** one own public narrative card is **mandatory to participate**, not an optional gift to rivals. The existing R14 game still allows empty-slot actors to manipulate dice, so [candidate R15 rule note](CENTRAL_FOCUS_ENTRY_GATE_R15_PROPOSAL_2026-11-17.md) adds a strict action gate: empty own slot → PLAY from hand; when hand empty → DRAW first; no Fear/Hope/Hate dice operations or harvest while empty. This must be *tested*, not retroactively treated as already present in R14.
+
+**New center:** one extra ordinary card from existing shared fifty becomes neutral FOCUS issue at center of six-faction hexagonal *table arrangement* (only n=2–6 actual player positions active; no NPCs). A = permanent thematic story anchor, no new scoring. B = shared open trophy/discard target for existing three dice, **only centre automatically refills from stock** after capture/burn; outer cards still require contributor's re-entry. Starting stock `49−4n`: 41 at two seats, 25 at six. Same three communal Fear/Hope/Hate dice, no R/A/F bonus economy, no missions, no new stats or 57th card. Optional Show/Spin/Sell stays non-scoring. Geometric Power Pyramid/eye is design concept, not rendered art.
+
+**Tested evidence:** [38/38 deterministic conservation/entry fixtures](CENTRAL_FOCUS_R15_TEST_NOTES_2026-11-17.md), including all n=2..6, centre capture and burn/refill, outer capture and one-turn forced re-entry; **0 games using new mechanic, 0 human games, 0 timed turns**. R14 6,000 simulations remain historical, NOT gate/center balance evidence. Model-level risks: repetitive player lockout, centre farming, and no re-entry at empty hand + empty stock. The 5→6 next-player harvest gift is **not** solved by introducing a central FOCUS.
+
+**Publishing and owner:** `georg-doc/kayfabizarro` / `games/invisible-handshake/` / `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475. Additive docs-only proposal, no Site/Cloudflare `kayfabizarro.pages.dev` Stage route or Hub tile, no code integration into existing runtime, no merge or Live promotion. Research Atlas and KFB rules owners remain untouched. **One next gate:** 2-player first A vs B microtest, then six-seat lockout/centre-farming stress; Georg A/B/FAIL before introducing missions or solo/NPC gameplay.
+
+---
+
 ## Consolidated Webchat handoff · 17 November 2026
 
 Georg requested consolidation and lower-cost, bounded Webchat continuation later. [CURRENT_STATE](CURRENT_STATE.md) is the new game-owner entry point, with [copy-ready Webchat brief](WEBCHAT_HANDOFF.md), [prioritized Atlas research queue](RESEARCH_QUEUE.md) and [manifest](HANDOFF_MANIFEST.json). Source/evidence snapshot d8ceb4156081ba06220f63266a66ad92e6c1b33d. Same branch and draft PR475; all previous evidence preserved. R14 is the current tested candidate, not a balanced or deployed game. R09 Site remains historical and was not reverified.
