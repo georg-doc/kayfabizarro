@@ -1,3 +1,19 @@
+## R0.8 · End-turn scoring and market-board repair · 17 November 2026
+
+Owner/branch unchanged: georg-doc/kayfabizarro, design/invisible-handshake-paper-r0-2026-11-17, Draft PR475. Implementation checkpoint d90c34c04007d3e15368017ad09bf5dcba9c4325; all15 intended files fetched and byte-compared after write. Runtime remains r07/site/dist (version8), evidence r08/.
+
+[Private game Site](https://the-invisible-handshake.frizzlebob.chatgpt.site) updated to version2; source2d32b43115d0c523920670dcbcfa409d69a761e2; deployment appgdep_6afc642dd5048191849a1e198345f96a succeeded. Saved-version provenance read back. Exact live URL opens owner login; authenticated live canvas not observed. Local same-source desktop/mobile and interaction checks recorded in [R08](r08/README.md).
+
+Small rule selected: bank active base network after each own completed turn; exactly8 deposits; agenda once final. Multiplayer Favor/shared tiebreak unchanged; equal solo scores mean System wins regardless of Favor (UI/help now consistent). [1944-game comparison](r08/tests/SCORING_COMPARISON_REPORT.md) and144-game production-equivalence PASS. Multiplayer shared wins10.2%→3.5%; terminal winner changes357→113/648. Early-lead persistence rises42.7%→71.6%; fixed proxy policies, not human balance/fun.
+
+UI: decorative triangle removed; selectable three-channel/four-column market matrix, explicit confirmation, cost and recruitment production preview, visible zoom/top/reset, orbit/pan, original dice. English copy. State/save version8 separate from R07. No changes to existing KFB game code outside this owner.
+
+Critic permits reviewable private prototype, not human acceptance. Dependencies remain text-only; no graphical relationship layer, no post-Frame cost preview. Small-screen full detail uses text cards. No remote multiplayer, final artwork or entertainment proof. Current UI fixes the critic's solo wording issue; remaining seams recorded.
+
+One next gate: Georg plays one solo and one two-person game, judges whether mid/late turns remain interesting and early leads recoverable. No auto-merge or public promotion.
+
+---
+
 ## R0.7 · Playable private prototype · 17 November2026
 
 User authorized parallel research, simulations and online modular3D prototype; earlier paper-only gate superseded for this candidate. Existing owner/PR475 retained. [Play private Site](https://the-invisible-handshake.frizzlebob.chatgpt.site) · Site v1 source040b5b22f6bb6c93220e1d8a51c99658023499c7, deployment appgdep_6afc3d27bba081919727443237b63da1 succeeded. Browser live view reaches login; authenticated live canvas not observed. Local actual full6-seat demo and soloWindow turn tested.

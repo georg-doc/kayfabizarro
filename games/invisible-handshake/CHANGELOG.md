@@ -1,3 +1,6 @@
+## R0.8 · 2026-11-17
+Own-turn banking selected after1944 paired games;144 production-equivalence games. Functional selectable market matrix replaces ornamental triangle; camera controls and explicit confirmation. Existing private Site v2. Early-lead/graph/Frame-preview limits remain. See RETURN.md and r08/README.md.
+
 ## R0.7 · Playable private prototype · 17 November2026
 
 User authorized parallel research, simulations and online modular3D prototype; earlier paper-only gate superseded for this candidate. Existing owner/PR475 retained. [Play private Site](https://the-invisible-handshake.frizzlebob.chatgpt.site) · Site v1 source040b5b22f6bb6c93220e1d8a51c99658023499c7, deployment appgdep_6afc3d27bba081919727443237b63da1 succeeded. Browser live view reaches login; authenticated live canvas not observed. Local actual full6-seat demo and soloWindow turn tested.
