@@ -1,0 +1,430 @@
+{
+  "revision": "physics-foundations-2026-11-17",
+  "baseline": "aded465e4b4704bc1a8a0a3800daa10c0291a242",
+  "scope": "Quellenbasierter Breitenabschluss zu vier Autoren. Keine vollständige mathematische Begutachtung, keine neuen Experimente, keine Hardware-/Geheimprogramm-Rabbit-Holes.",
+  "profiles": [
+    {
+      "id": "thomas-townsend-brown",
+      "name": "Thomas Townsend Brown",
+      "summary": "Ein realer Hochspannungseffekt und seine Deutung als Gravitation sind verschiedene Behauptungen.",
+      "claims": [
+        {
+          "id": "PH-C-thomas-townsend-brown-1",
+          "title": "Patent und Medium",
+          "layer": "ORIGINALAUSSAGE",
+          "statement": "Brown beschreibt Bewegung relativ zu einem dielektrischen, ionisierbaren Medium und nennt ausdrücklich Luft. Die Patentpublikation dokumentiert diese technische Behauptung.",
+          "source_ids": [
+            "PH-S01"
+          ],
+          "limit": "Weder Patent noch Fahrzeugskizze belegt einen einsatzfähigen Antigravitationsantrieb."
+        },
+        {
+          "id": "PH-C-thomas-townsend-brown-2",
+          "title": "Der offene Stand 2003",
+          "layer": "EXPERIMENT / MODELL",
+          "statement": "Bahder und Fazi unterscheiden einen zu kleinen ballistischen Ionenwind-Schätzwert von plausibler Ladungsdrift. Sie verlangen weitere Druck-, Gas- und Vakuumtests.",
+          "source_ids": [
+            "PH-S02"
+          ],
+          "limit": "Ihr damaliges offenes Mechanismusurteil ist kein Nachweis neuer Gravitation; die hier gelesene Ausgabe ist eine Vorfassung."
+        },
+        {
+          "id": "PH-C-thomas-townsend-brown-3",
+          "title": "Druckabhängigkeit 2004",
+          "layer": "EXPERIMENTELLER BEFUND",
+          "statement": "Canning und Kollegen berichten keine Rotation unter 300Torr bis auf eine einmalige Bewegung bei Lichtbogenbildung. Ihr Modell überträgt Impuls durch Ionenkollisionen an Luft und erklärt die beobachteten Trends.",
+          "source_ids": [
+            "PH-S03"
+          ],
+          "limit": "Der Aufbau war nicht für extrem kleine Kräfte optimiert. Die einmalige Bewegung wird von den Autoren als möglicher Materialausstoß eingeordnet, nicht als kontinuierlicher Vakuumschub."
+        },
+        {
+          "id": "PH-C-thomas-townsend-brown-4",
+          "title": "Unabhängige Gegenprobe",
+          "layer": "EXPERIMENT / SPÄTERE DEUTUNG",
+          "statement": "Tajmar testet eine abgeschirmte, geschlossene Box mit innenliegenden Elektroden. Bei bis 38kV bleibt die mittlere Position unverändert; die angegebene Kraftmessgenauigkeit beträgt 10,5µN.",
+          "source_ids": [
+            "PH-S04"
+          ],
+          "limit": "Das war ein Boxversuch in Luft, kein eigener Hochvakuumtest. Der Nullbefund begrenzt diese Konfiguration; er beweist nicht die Nichtexistenz jeder denkbaren Kraft."
+        }
+      ],
+      "next_question": "Für eine spätere technische Vertiefung: Messgrenzen und Geometrien zwischen Patent, ARL-, NASA- und Tajmar-Aufbau quantitativ vergleichen. Kein Hochspannungs-Selbstbauauftrag."
+    },
+    {
+      "id": "burkhard-heim",
+      "name": "Burkhard Heim",
+      "summary": "Originalformel, spätere Software und Antriebsinterpretation werden getrennt geführt.",
+      "claims": [
+        {
+          "id": "PH-C-burkhard-heim-1",
+          "title": "Datierte Formel",
+          "layer": "ORIGINALTEXT / THEORIE",
+          "statement": "Die IGW-Wiedergabe enthält Heims Text vom 25.02.1982 mit Quantenzahlen, Massenspektren und numerischen Vorschriften. Das ist ein konkreter prüfbarer Formelsatz.",
+          "source_ids": [
+            "PH-S05"
+          ],
+          "limit": "Keine im Atlas nachgerechnete Herleitung oder neu bestätigte Teilchenmassenvorhersage."
+        },
+        {
+          "id": "PH-C-burkhard-heim-2",
+          "title": "Rechnen und Bestätigen",
+          "layer": "SPÄTERE REKONSTRUKTION",
+          "statement": "Das heutige Archiv beschreibt eine Implementierungslinie und bietet einstellbare Konstanten sowie einen Hinweis auf eine optimierte Gravitationskonstante.",
+          "source_ids": [
+            "PH-S06"
+          ],
+          "limit": "Übereinstimmende Programme sind keine unabhängigen Experimente. Vorhersagequalität verlangt festgelegte Parameter, Auswahlregeln und Daten, die nicht zur Anpassung dienten."
+        },
+        {
+          "id": "PH-C-burkhard-heim-3",
+          "title": "Extended Heim Theory",
+          "layer": "SPÄTERE DEUTUNG",
+          "statement": "Hauser und Dröscher behandeln 2011 zusätzliche gravitationsartige Felder und skizzieren einen als Heim experiment bezeichneten Aufbau. Ihre EHT ist als spätere Autorenfassung erfasst.",
+          "source_ids": [
+            "PH-S07"
+          ],
+          "limit": "Eine Versuchsskizze und die Interpretation anderer Messungen sind kein von Heim durchgeführter, hier belegter Antriebsnachweis."
+        },
+        {
+          "id": "PH-C-burkhard-heim-4",
+          "title": "Publikationsstatus",
+          "layer": "DOKUMENTARISCHER BEFUND",
+          "statement": "Der arXiv-Eintrag der ausgewählten Hauser/Dröscher-Arbeit ist zurückgezogen. Die historische v1 bleibt als Rezeptionsquelle unterscheidbar.",
+          "source_ids": [
+            "PH-S08"
+          ],
+          "limit": "Rücknahme allein erklärt weder den Grund noch widerlegt sie sämtliche Heim-Arbeiten. In diesem Paket wurde kein unabhängiger reproduzierter Heim-Antrieb nachgewiesen."
+        }
+      ],
+      "next_question": "Massenformel, Versionswahl und verblindete Vorhersageprüfung bleiben eine eigene spätere Untersuchung; sie werden nicht als bereits erledigt ausgegeben."
+    },
+    {
+      "id": "hal-puthoff",
+      "name": "Hal Puthoff",
+      "summary": "Nullpunktfeld, Trägheitsmodell und technisch nutzbarer Antrieb sind drei verschiedene Ebenen.",
+      "claims": [
+        {
+          "id": "PH-C-hal-puthoff-1",
+          "title": "ZPF und Trägheit",
+          "layer": "ORIGINALAUSSAGE / THEORIE",
+          "statement": "Haisch, Rueda und Puthoff stellen 1998 Trägheit als Reaktion auf Vakuumfelder dar und beschreiben mögliche Antriebsfolgen als Forschungsperspektive.",
+          "source_ids": [
+            "PH-S09"
+          ],
+          "limit": "Kein in diesen gelesenen Passagen vorgeführter Trägheitsregler oder Energieerzeuger."
+        },
+        {
+          "id": "PH-C-hal-puthoff-2",
+          "title": "Konkrete Fachkritik",
+          "layer": "THEORETISCHE GEGENPRÜFUNG",
+          "statement": "Levin kritisiert 2009 die nichtrelativistischen Annahmen und Kraftberechnung der HRP 1994-Arbeit; die von ihm untersuchte Kraftkomponente erzeuge keine Trägheit.",
+          "source_ids": [
+            "PH-S10"
+          ],
+          "limit": "Hier ist der Verlagsabstract geprüft. Die Kritik nicht pauschal auf jede spätere Formulierung oder die gesamte Quantentheorie übertragen."
+        },
+        {
+          "id": "PH-C-hal-puthoff-3",
+          "title": "PV ist nicht automatisch volle GR",
+          "layer": "MODELL / BEOBACHTUNGSVERGLEICH",
+          "statement": "Ibison findet für die untersuchte PV-Theorie eine Strahlungsleistung von zwei Dritteln der GR-Vorhersage und einen Konflikt mit dem beobachteten Bahnzerfall von PSR 1913+16.",
+          "source_ids": [
+            "PH-S12"
+          ],
+          "limit": "Das ist ein spezifischer Modelltest laut Originalabstract, keine vom Atlas durchgeführte Pulsardatenanalyse."
+        },
+        {
+          "id": "PH-C-hal-puthoff-4",
+          "title": "Metric Engineering",
+          "layer": "SPÄTERES THEORIEPROGRAMM",
+          "statement": "Puthoff erklärt 2010 ausdrücklich, sein Ansatz setze die Fähigkeit zur Manipulation der Raumzeitvariablen voraus und untersuche ihre Folgen. Die praktische Realisierung bleibt eine Herausforderung.",
+          "source_ids": [
+            "PH-S13"
+          ],
+          "limit": "Aus berechneten Eigenschaften eines angenommenen Systems folgt nicht, dass dessen technische Voraussetzung existiert."
+        }
+      ],
+      "next_question": "Nur bei späterem Auftrag: exakt versionierte Modellannahmen und experimentell unterscheidbare Vorhersagen prüfen; keine allgemeine Suche nach freier Energie."
+    },
+    {
+      "id": "eric-davis",
+      "name": "Eric Davis",
+      "summary": "Der Teleportationsbericht versammelt unterschiedliche Kategorien und unterschiedliche Belegarten.",
+      "claims": [
+        {
+          "id": "PH-C-eric-davis-1",
+          "title": "Ein gemeinsames Theoriepapier",
+          "layer": "ORIGINALTEXT / KOAUTORSCHAFT",
+          "statement": "Davis, Puthoff und Maccone leiten den Levi-Civita-Effekt in einer PV-Darstellung her. Appendix B bezeichnet die untersuchte Geometrie ausdrücklich nicht als durchquerbares Wurmloch.",
+          "source_ids": [
+            "PH-S11"
+          ],
+          "limit": "Koautorschaft belegt Zusammenarbeit an einem Text, keinen gebauten Raumzeitantrieb."
+        },
+        {
+          "id": "PH-C-eric-davis-2",
+          "title": "Der Auftrag 2004",
+          "layer": "LITERATURSTUDIE",
+          "statement": "Davis unterscheidet Raumzeitkonzepte, Quantenteleportation und psychokinetische Berichte. Er bewertet letztere im Vorwort positiv.",
+          "source_ids": [
+            "PH-S14"
+          ],
+          "limit": "Das Foreword schließt behördliche Billigung oder Ablehnung der Ideen aus. Positive Literaturbewertung ersetzt keine unabhängige Replikation."
+        },
+        {
+          "id": "PH-C-eric-davis-3",
+          "title": "Der tatsächlich experimentelle Anschluss",
+          "layer": "EXPERIMENTELLER BEFUND",
+          "statement": "Bouwmeester und Kollegen berichten 1997 die Übertragung eines Photonen-Polarisationszustands. Davis verweist auf diese Arbeit.",
+          "source_ids": [
+            "PH-S15",
+            "PH-S14"
+          ],
+          "limit": "Zustandsübertragung ist weder Transport eines Menschen noch Bestätigung psychokinetischer Objektbewegung."
+        },
+        {
+          "id": "PH-C-eric-davis-4",
+          "title": "Rezeptionskette zu Puthoff",
+          "layer": "DOKUMENTIERTER KONTAKT / DEUTUNG",
+          "statement": "Davis dankt Puthoff im Bericht für Diskussionen über dessen PV-Modell und bezeichnet ihn als Mentor. Daraus lässt sich eine konkrete Theorie-Rezeptionskette bilden.",
+          "source_ids": [
+            "PH-S14"
+          ],
+          "limit": "Mentorat, Auftrag und Publikation dürfen nicht als drei unabhängige Bestätigungen derselben physikalischen Behauptung gezählt werden."
+        }
+      ],
+      "next_question": "Die zugrunde liegenden PK-Originalberichte bleiben unbestätigte Literaturpfade. Keine neue Psi-Fallrecherche in diesem Paket."
+    }
+  ],
+  "sources": [
+    {
+      "id": "PH-S01",
+      "title": "Brown: Electrokinetic apparatus, US2949550A (1960)",
+      "url": "https://patents.google.com/patent/US2949550A/en",
+      "locator": "Beschreibung: medium/air; Ansprüche 1–8. Anmeldung 03.07.1957; Veröffentlichung 16.08.1960.",
+      "read_scope": "Metadaten und ausgewählte Beschreibung/Ansprüche als OCR gelesen; keine Patentfiguren neu bildgeprüft.",
+      "kind": "PATENT_PRIMARY_TEXT",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S02",
+      "title": "Bahder/Fazi: Force on an Asymmetric Capacitor (2003)",
+      "url": "https://arxiv.org/pdf/physics/0211001",
+      "locator": "Abschnitt 6, gedruckte S.21–22, PDF27–28/34; Inhaltsverzeichnis und Versionskopf.",
+      "read_scope": "Ausgewählte Textpassagen. Diese arXiv-PDF trägt ARL-TR-XXX, März2003; nicht mit der endgültigen ARL-TR-3005-Ausgabe gleichgesetzt.",
+      "kind": "EXPERIMENT_AND_MODEL",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S03",
+      "title": "Canning/Melcher/Winet: Asymmetrical Capacitors for Propulsion (2004)",
+      "url": "https://ntrs.nasa.gov/api/citations/20040171929/downloads/20040171929.pdf",
+      "locator": "NASA/CR-2004-213312; gedruckte S.1–4,6–8,10,16; PDF5–8,10–12,14,20/23.",
+      "read_scope": "Abstract, ausgewählte Versuchs-/Beobachtungspassagen und Schluss gelesen. Keine Rohdaten neu ausgewertet.",
+      "kind": "EXPERIMENTAL_REPORT",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S04",
+      "title": "Tajmar: Biefeld–Brown Effect: Misinterpretation of Corona Wind Phenomena (2004)",
+      "url": "https://tu-dresden.de/ing/maschinenwesen/ilr/rfs/ressourcen/dateien/forschung/folder-2007-08-21-5231434330/ag_raumfahrtantriebe/Biefeld-Brown-Effect-AIAA-Journal-Revised.pdf?lang=en",
+      "locator": "Universitäts-Reprint; PDF1,5–9/20: Abstract, Experiment, Discussion. Journalfassung: AIAA Journal42,315–318.",
+      "read_scope": "Ausgewählte Textpassagen; Reprint-Paginierung nicht mit Journalpaginierung verwechselt.",
+      "kind": "EXPERIMENTAL_COUNTERTEST",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S05",
+      "title": "Heim: Massenformel, datierter Text 25.02.1982",
+      "url": "https://burkhardheim.de/assets/Massenformel_nach_B_Heim_1982.pdf",
+      "locator": "IGW-Wiedergabe2002/2003, PDF1–3 und8–10/10; Symboldefinitionen, Resonanzspektren und numerische Anweisungen.",
+      "read_scope": "Textauszüge gelesen; Reproduktion, nicht autographes Original. Keine vollständige Ableitungsprüfung oder eigene numerische Replikation.",
+      "kind": "REPRODUCED_AUTHOR_TEXT",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S06",
+      "title": "Heim-Archiv: Massenformel und Implementierungsgeschichte",
+      "url": "https://burkhardheim.de/massenformel",
+      "locator": "Abschnitte Quellen & Originalcode, Versionsgeschichte; erweiterte Parameter und Gamma-Optimierungshinweis.",
+      "read_scope": "Archiv-/Betreiberbeschreibung gelesen; Programme und behauptete Zifferngleichheit nicht selbst getestet.",
+      "kind": "LATER_IMPLEMENTATION_DESCRIPTION",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S07",
+      "title": "Hauser/Dröscher: Physics of Extreme Gravitomagnetic and Gravity-Like Fields (2011), v1",
+      "url": "https://arxiv.org/pdf/1104.3247v1",
+      "locator": "PDF1–3 und11–12/17: EHT, Einleitung und vorgeschlagener Heim-Versuch.",
+      "read_scope": "Ausgewählte Passagen der historischen Erstfassung. Fremde Versuchsbefunde nicht unabhängig nachgeprüft.",
+      "kind": "LATER_THEORETICAL_EXTENSION",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S08",
+      "title": "arXiv: Status von Hauser/Dröscher 1104.3247",
+      "url": "https://arxiv.org/abs/1104.3247",
+      "locator": "Versionsverlauf: v1 16.04.2011, v2 17.05.2011; withdrawn.",
+      "read_scope": "Originaler Repository-Status geprüft; kein Rücknahmegrund daraus erfunden.",
+      "kind": "PUBLICATION_STATUS",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S09",
+      "title": "Haisch/Rueda/Puthoff: Advances in the Proposed Electromagnetic Zero-Point Field Theory of Inertia (1998)",
+      "url": "https://arxiv.org/pdf/physics/9807023",
+      "locator": "PDF1 und9/11: Abstract, Conclusions; rückblickender Bezug auf HRP 1994.",
+      "read_scope": "Ausgewählte Originalpassagen; keine eigene mathematische Replikation.",
+      "kind": "THEORY_PROGRAMME",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S10",
+      "title": "Levin: Critical analysis of the Haisch-Rueda-Puthoff inertia theory (2009)",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.79.012114",
+      "locator": "Verlagsabstract; Phys.Rev.A79,012114.",
+      "read_scope": "Abstract gelesen; Volltext zugangsbeschränkt. Kritik betrifft die bezeichnete HRP 1994-Ableitung, nicht pauschal alle Vakuumphysik.",
+      "kind": "THEORETICAL_CRITIQUE_ABSTRACT",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S11",
+      "title": "Puthoff/Maccone/Davis: Levi-Civita Effect in the PV representation (2004)",
+      "url": "https://arxiv.org/pdf/physics/0403064",
+      "locator": "PDF1–2 und7–8/8; Einleitung und Appendix B.",
+      "read_scope": "Ausgewählte Originalpassagen. Gleichungen nicht unabhängig nachgerechnet.",
+      "kind": "COAUTHORED_THEORY",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S12",
+      "title": "Ibison: Investigation of the polarizable vacuum cosmology (2003/2004)",
+      "url": "https://arxiv.org/abs/astro-ph/0302273",
+      "locator": "v3 vom03.02.2004, Abstract: Vorhersagen und PSR 1913+16.",
+      "read_scope": "Originalabstract gelesen; weder Pulsardaten noch gesamte Rechnung neu geprüft.",
+      "kind": "MODEL_OBSERVATION_COMPARISON_ABSTRACT",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S13",
+      "title": "Puthoff: Advanced Space Propulsion Based on Vacuum Engineering (2010/2012)",
+      "url": "https://arxiv.org/pdf/1204.2184",
+      "locator": "JBIS63,82–89(2010); arXiv2012; gedruckte S.88–89/PDF7–8: Discussion.",
+      "read_scope": "Einleitung und ausgewählte Diskussionspassagen gelesen.",
+      "kind": "CONDITIONAL_ENGINEERING_MODEL",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S14",
+      "title": "Davis: Teleportation Physics Study (2004)",
+      "url": "https://www.coscienza.org/wp-content/uploads/Teleportation-Physics-Study.pdf",
+      "locator": "AFRL-PR-ED-TR-2003-0034; PDF3 Foreword,9 Acknowledgements,10 Preface; PDF51 Bouwmeester-Verweis.",
+      "read_scope": "Originalbericht auf Drittserver: ausgewählte Textpassagen, nicht alle88Seiten. FAS-Abruf durch Zugriffsschranke blockiert; keine neue Primärprüfung der PK-Berichte.",
+      "kind": "COMMISSIONED_LITERATURE_STUDY",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "PH-S15",
+      "title": "Bouwmeester et al.: Experimental quantum teleportation (1997)",
+      "url": "https://people.ee.duke.edu/~jungsang/ECE590_01/BouwmeesterNature1997.pdf",
+      "locator": "Nature390,575–579; DOI10.1038/37539; PDF1: Abstract und Einleitung.",
+      "read_scope": "Originalartikel als Universitätskopie; Abstract/Einleitung gelesen, keine Reanalyse der Messkurven.",
+      "kind": "QUANTUM_EXPERIMENT",
+      "checked": "2026-11-17"
+    }
+  ],
+  "terms": [
+    {
+      "term": "Patent",
+      "meaning": "Datierter technischer Anspruch; Funktionsbehauptungen brauchen gesonderte Messbelege."
+    },
+    {
+      "term": "Experimenteller Befund",
+      "meaning": "Ergebnis eines bestimmten Aufbaus mit Messgrenze und Störgrößen; keine automatische Bestätigung der bevorzugten Erklärung."
+    },
+    {
+      "term": "Mathematisches Modell",
+      "meaning": "Folgerungen unter angegebenen Annahmen; Konsistenz, Messvergleich und technische Realisierung sind getrennte Prüfungen."
+    },
+    {
+      "term": "Replikation",
+      "meaning": "Neuer unabhängiger Test desselben Effekts. Kopien eines Textes oder Ports desselben Programms sind keine unabhängigen Bestätigungen."
+    },
+    {
+      "term": "Quantenteleportation",
+      "meaning": "Übertragung eines Quantenzustands; im hier ausgewählten Experiment ein Polarisationszustand. Kein Beleg für makroskopischen Materietransport.",
+      "source_ids": [
+        "PH-S15"
+      ]
+    },
+    {
+      "term": "Nullpunktfeld / Metric Engineering",
+      "meaning": "Vakuumphysik, spezielle Erklärungsmodelle und deren technische Nutzung nicht gleichsetzen.",
+      "source_ids": [
+        "PH-S09",
+        "PH-S13"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "hal-puthoff",
+      "to_id": "eric-davis",
+      "type": "COAUTHOR",
+      "source_ids": [
+        "PH-S11"
+      ],
+      "status": "DOCUMENTED",
+      "causal": false
+    },
+    {
+      "from_id": "eric-davis",
+      "to_id": "hal-puthoff",
+      "type": "ACKNOWLEDGES_MENTOR",
+      "source_ids": [
+        "PH-S14"
+      ],
+      "status": "AUTHOR_REPORTED",
+      "causal": false
+    },
+    {
+      "from_id": "PH-S14",
+      "to_id": "PH-S15",
+      "type": "CITES",
+      "source_ids": [
+        "PH-S14"
+      ],
+      "status": "DOCUMENTED",
+      "causal": false
+    },
+    {
+      "from_id": "PH-S07",
+      "to_id": "burkhard-heim",
+      "type": "LATER_THEORETICAL_RECEPTION",
+      "source_ids": [
+        "PH-S07",
+        "PH-S08"
+      ],
+      "status": "WITHDRAWN_VERSION_TRACKED",
+      "causal": false
+    },
+    {
+      "from_id": "thomas-townsend-brown",
+      "to_id": "hal-puthoff",
+      "type": "CONCEPTUAL_NEIGHBOR",
+      "source_ids": [
+        "PH-S01",
+        "PH-S13"
+      ],
+      "status": "EDITORIAL_NONCAUSAL",
+      "causal": false,
+      "rationale": "Vergleich elektrischer Antriebsbehauptungen mit Raumzeitmodellen; keine persönliche oder technische Transferkante."
+    }
+  ],
+  "review": {
+    "page_images_verified": 0,
+    "audio_minutes": 0,
+    "note": "Text/OCR und ausgewählte Originalpassagen; keine vollständigen Bücher. Browser-Screenshotversuche nicht als Bildprüfung gezählt. Heim-Einführung1998 heruntergeladen, diesmal nicht textlich ausgewertet; Puthoff1989-Scan nicht ausgewertet. Unpassenden Suchtreffer physics/0308093 verworfen."
+  }
+}

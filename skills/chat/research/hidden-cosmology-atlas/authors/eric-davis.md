@@ -68,3 +68,8 @@ Status: Kontaktbericht & Scope. [UFO Material Locked Away at Stanford University
 Davis ist nicht bloß ein neutraler Sammler: Seine positive Bewertung psychokinetischer Berichte wird ausdrücklich als Position erfasst. Regierungsauftrag, Beiratsrolle und physikalische Publikation sind dennoch keine Bestätigung dieser Position.
 
 [Vergleiche und Quellenwege](../packages/uap-knowledge-networks/PUTHOFF_DAVIS.md) · [Atlas](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html#eric-davis)
+
+
+## Physik-Paket · 17.11.2026
+
+Der Teleportationsbericht versammelt unterschiedliche Kategorien und unterschiedliche Belegarten. [Originalaussagen, Messbefunde und spätere Deutungen](../packages/physics-foundations/README.md) · [Atlas mit Fundstellen](https://kfb-research-atlas.frizzlebob.chatgpt.site/physics.html#eric-davis). Vorherige Sichtungsgrenzen bleiben datiert erhalten; das neue Paket benennt die zusätzliche Textprüfung und weiterhin offene Replikationen.

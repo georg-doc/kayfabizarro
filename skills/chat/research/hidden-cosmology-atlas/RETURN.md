@@ -1,3 +1,11 @@
+## 2026-11-17 · Physics foundations and 56-card handoff
+
+Owner: hidden-cosmology-atlas; branch research/hidden-cosmology-atlas-2026-10-13; baseline aded465e4b4704bc1a8a0a3800daa10c0291a242; draft PR #394.
+
+Added packages/physics-foundations (README, physics.json, TEST_REPORT, DECK_56_HANDOFF), site/physics.html and mirrored data; extended four author dossiers and existing navigation. 16 claims / 15 sources distinguish Brown experiments, Heim formula/reception, Puthoff models and Davis literature categories. Read scopes and limits recorded per source. Local browser/source disclosure and data consistency checks passed. Site publication receipt follows after deployment.
+
+Next gate: Georg reviews the physics distinctions and proposed deck title; mechanics/card allocation belong to the separate game chat. No rabbit holes, no game code, no public-access change.
+
 # Abschluss 2026-11-16 · Neun Autorenvergleiche
 
 [Abschlussbeleg mit GitHub-, Site- und Prüfstatus](packages/author-lenses-november/RETURN_COMPARISONS_2026-11-16.md). Inhalte 41368cd934cc13c47c9a3424b49a676f5d05f40d; private Site erfolgreich veröffentlicht. Live-Inhalt im Browser durch Anmeldung verdeckt; lokale Ansicht geprüft. Nächster Gate: Georgs Sichtung, keine automatische Vertiefung.

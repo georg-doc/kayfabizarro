@@ -39,3 +39,8 @@ Which experimental results survive controlled vacuum tests and correction for ga
 ## Integration and review
 
 Canonical owner established by the breadth source milestone. Source-lead status is retained; review coverage and remaining gaps are recorded in [the batch test report](../breadth/TEST_REPORT_R1_2026-11-01.md). This does not certify unread books or historical claims.
+
+
+## Physik-Paket · 17.11.2026
+
+Ein realer Hochspannungseffekt und seine Deutung als Gravitation sind verschiedene Behauptungen. [Originalaussagen, Messbefunde und spätere Deutungen](../packages/physics-foundations/README.md) · [Atlas mit Fundstellen](https://kfb-research-atlas.frizzlebob.chatgpt.site/physics.html#thomas-townsend-brown). Vorherige Sichtungsgrenzen bleiben datiert erhalten; das neue Paket benennt die zusätzliche Textprüfung und weiterhin offene Replikationen.

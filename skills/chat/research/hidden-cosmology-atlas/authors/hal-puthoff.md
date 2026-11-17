@@ -22,7 +22,7 @@ Status: Publikation & Gegenlesart. [Information transmission under conditions of
 
 ## Trägheit aus dem Nullpunktfeld
 
-Haisch, Rueda und Puthoff schlagen elektromagnetische Wechselwirkung mit dem Nullpunktfeld als Erklärung von Trägheit vor. Levin kritisiert2009 zentrale mathematische und physikalische Annahmen der HRP1994-Ableitung. Hier stehen ein Theorieansatz und eine konkrete Fachkritik nebeneinander.
+Haisch, Rueda und Puthoff schlagen elektromagnetische Wechselwirkung mit dem Nullpunktfeld als Erklärung von Trägheit vor. Levin kritisiert 2009 zentrale mathematische und physikalische Annahmen der HRP 1994-Ableitung. Hier stehen ein Theorieansatz und eine konkrete Fachkritik nebeneinander.
 
 Status: Theorie & Fachkritik. [Advances in the proposed electromagnetic zero-point field theory of inertia](https://arxiv.org/abs/physics/9807023) · [Inertia as a zero-point-field force: Critical analysis](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.79.012114)
 
@@ -71,3 +71,8 @@ Status: Kontaktbericht & Interview-Findmittel. [UFO Material Locked Away at Stan
 Keine gemeinsame Gesamtlehre unterstellen. Insbesondere ist der physikalische Begriff Nullpunktfeld kein Beleg für freie Energie, Psi oder eine UAP-Herkunft.
 
 [Vergleiche und Quellenwege](../packages/uap-knowledge-networks/PUTHOFF_DAVIS.md) · [Atlas](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html#hal-puthoff)
+
+
+## Physik-Paket · 17.11.2026
+
+Nullpunktfeld, Trägheitsmodell und technisch nutzbarer Antrieb sind drei verschiedene Ebenen. [Originalaussagen, Messbefunde und spätere Deutungen](../packages/physics-foundations/README.md) · [Atlas mit Fundstellen](https://kfb-research-atlas.frizzlebob.chatgpt.site/physics.html#hal-puthoff). Vorherige Sichtungsgrenzen bleiben datiert erhalten; das neue Paket benennt die zusätzliche Textprüfung und weiterhin offene Replikationen.

@@ -51,3 +51,8 @@ Die Einführung von 1998 dokumentiert Heim, Dröscher und Resch mit unterschiedl
 Keine direkte Zusammenarbeit mit Vallée, Taylor oder DeLonge ist im hier erschlossenen Korpus nachgewiesen. Vergleiche mit Farrell, Swann, Puharich und Jorjani betreffen Themen und Methoden; Zitationsbeziehungen benötigen die jeweilige Originalpassage.
 
 [Vergleich mit bestehenden Autoren](../packages/uap-knowledge-networks/COMPARISONS.md) · [Quellenregister und Sichtungsumfang](../packages/uap-knowledge-networks/SOURCES.md) · [Zur Atlas-Lesefassung](https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html#burkhard-heim)
+
+
+## Physik-Paket · 17.11.2026
+
+Originalformel, spätere Software und Antriebsinterpretation werden getrennt geführt. [Originalaussagen, Messbefunde und spätere Deutungen](../packages/physics-foundations/README.md) · [Atlas mit Fundstellen](https://kfb-research-atlas.frizzlebob.chatgpt.site/physics.html#burkhard-heim). Vorherige Sichtungsgrenzen bleiben datiert erhalten; das neue Paket benennt die zusätzliche Textprüfung und weiterhin offene Replikationen.
