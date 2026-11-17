@@ -23,6 +23,11 @@ One next gate: Georg plays one solo and one2-person round, checks whether depend
 ---
 # The Invisible Handshake · Additive changelog
 
+## 2026-11-17 · Current proposal · mandatory entry and central FOCUS (R15 design only)
+
+Georg corrected the public-card supply framing: own public narrative card **is required** to participate in the arena. New [candidate note](CENTRAL_FOCUS_ENTRY_GATE_R15_PROPOSAL_2026-11-17.md) adds an empty-own-slot legal-action gate (PLAY from hand, or DRAW first if empty hand; no die actions until own card restored). This is **not** an already-simulated R14 rule. Proposes common 1-card FOCUS narrative from same 50-card stock (start stock 49−4n) in the center of the six-faction board: A permanent narrative context only versus B open capturable focus with single centre-only auto-refill. No 57th card, no new stat/mission, same three Fear/Hope/Hate dice and 2–6-player priority. [Deterministic static test](CENTRAL_FOCUS_R15_TEST_NOTES_2026-11-17.md): 38/38 conservation/gating fixtures; **not a gameplay simulation**. Risks: targeted lockout, Focus trophy farming, exhausted stock/hand re-entry; R14's 5→6 gifting not repaired. [Owner Return](RETURN.md), current state and central router updated, no Stage/Hub/Live and no KFB game runtime integration. **Next gate:** 2-player A/B and six-seat denial stress → Georg A/B/FAIL.
+
+
 ## 2026-11-17 · R0.6 Borromean RAF Pyramid + Psychology Atlas addendum · CANDIDATE
 
 - Georg asked to reuse KFB's original **three colored borromean D6 / R-A-F (Resonanz, Amplitude, Frequenz)** for a tactile power-pyramid/Overton/HyperNormalisation triangle with corner themes, cluster/POI focus, die rotation 1–6, position movement and an all-seeing-eye center. Original [Travel S60c Sky Dice](../../travel/travel-v16/terrain-v16/sky-dice.js) and [KFB Pinball audio](../../skills/KFB%20PetStudio/KFB%20FrankenStein%20Studio%2016/KFB-v16/petstudio-v9/kfb-pinball-audio.js) are verified *code/source* donors, **no actual art model isolated**.
