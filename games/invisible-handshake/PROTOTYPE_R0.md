@@ -1,3 +1,5 @@
+> **2026-11-17 · R0.2 Medienlandschaft und Kulturmacht (aktueller Zusatz):** [MEDIA_ECOSYSTEM_R02_2026-11-17.md](MEDIA_ECOSYSTEM_R02_2026-11-17.md) legt Podcast/Influencer, Medien, Fact-Checker, Vorfeldorganisationen, NGOs, Plattformen, Lawfare, Cognitive Warfare und Kulturproduktion als **fiktive** Akteure/Plots im vorhandenen 56-Karten-Budget an. **Keine neue Ressource oder Pflichtmechanik.** R0 und seine Ausdrucke sind historische Testbasis, nicht die retunete Kartenversion.
+
 > **2026-11-17 · R0.1 semantic TUNE (newer than this R0 text):** Georg prefers **INFLUENCE** instead of VOICE, explicitly including manipulation, blackmail, covert agreements and geopolitical leverage. **RESOURCES** instead of MONEY is a candidate to include finance, supply chains and infrastructure; **RULES** explicitly includes lawfare, selective enforcement and emergency exceptions. See [SEMANTICS_R01_2026-11-17.md](SEMANTICS_R01_2026-11-17.md). Existing R0 printed cards and examples below are historical baseline, **not** the retuned production wording. Mechanics and 56-slot budget unchanged; no human test yet.
 
 # THE INVISIBLE HANDSHAKE · Twelve-card paper prototype R0
