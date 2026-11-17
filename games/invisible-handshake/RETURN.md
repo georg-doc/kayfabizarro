@@ -1,3 +1,13 @@
+## Additive handoff · R0.3 six power spheres · 2026-11-17
+
+**Owner:** `georg-doc/kayfabizarro` / `games/invisible-handshake` · branch `design/invisible-handshake-paper-r0-2026-11-17` · Draft PR #475, not merged. **Outcome:** Georg's scope correction from narrow media actors to full power/ecosystem network persisted as [R0.3](POWER_SPHERES_KAYFABE_BIZARRO_R03_2026-11-17.md). Six thematic spheres × five original fictional institution seeds = 30 candidate slots; five occurrences each of six directed RESOURCES/RULES/INFLUENCE pairs. Kayfabe (public/private), Bizarro (double satire), Foucault/Derrida/Hartmann and cross-domain reference rules; existing MKULTRA/Monarch donor PR #408 and Research Atlas PR #394 reused read-only. The 56-slot deck budget (6+30+12+8) and R0 action model remain unchanged; R0.2 media candidates are retained as options, not deleted.
+
+**Evidence:** [R0.3 static test](TEST_REPORT_R03_2026-11-17.md) reports **8/8** assertions, 30 distinct node titles and 6/6 directed pair counts; one constructed POACH scoring swing A 9→4 / B 4→9, **risk not a PASS on balance**. No human games, turn timing, actual 12-card R0.3 print master, browser render or Stage/Hub acceptance. Current old R0 PDFs still contain MONEY/VOICE and are not current themed proof. No second owner, new gameplay code, real-world defamation treated as sourced, auto-merge or Live promotion. Central START_HERE and additive changelog should link this exact R0.3; KFB Hub remains unchanged/no live tile for a docs-only candidate.
+
+**Open:** actual fun, game length and six-seat downtime, swing vulnerability, wording RESOURCES, aesthetic/ideological double inversion, claims vs source metadata. **One next gate:** 12-proxy-card physical microtest spanning six spheres, including a 3-sphere POACH/VETO cascade and competing ideology framings; Georg KEEP/TUNE/FAIL. Do not expand 56-card copy or art before gate. Fetch exact PR/head before further action.
+
+---
+
 ## Additive handoff · R0.2 media ecosystem · 2026-11-17
 
 **Outcome:** Georg's requested media/cognitive-warfare layer documented as **design only, not accepted or game-tested**. [R0.1 taxonomy](SEMANTICS_R01_2026-11-17.md) replaces VOICE with INFLUENCE and proposes RESOURCES for MONEY; [R0.2 media ecosystem](MEDIA_ECOSYSTEM_R02_2026-11-17.md) includes sponsored podcasts, mainstream media, platforms, NGOs/front organizations, fact-checkers, cultural studios, covert influence, lawfare, public NATO ACT cognitive-warfare concepts and historical MKULTRA as clearly separated reference sources. No new rule owner or fourth resource; original R0 RECRUIT, POACH, VETO, PLOT and 0–3 FAVOR remain.
