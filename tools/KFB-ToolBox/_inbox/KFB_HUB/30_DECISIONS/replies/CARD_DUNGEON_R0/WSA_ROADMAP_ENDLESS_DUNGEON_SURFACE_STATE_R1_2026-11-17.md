@@ -20,16 +20,16 @@ Karten, HyperNorm und Farbbänder sind Darstellungszustände desselben Raums. Je
 
 ## Reihenfolge und Abnahme
 
-### 1 · Gemeinsamer Raumzustand und Oberflächenübergänge — IN ARBEIT
+### 1 · Gemeinsamer Raumzustand und Oberflächenübergänge — IM PRIVATEN PRÜFSTAND UMGESETZT
 
-- [ ] Versioniertes Raumzustandsformat: stabile Identität, Inhaltszuordnung, Entdeckung/Fortschritt, getrennte Oberfläche und Verweis auf den bestehenden Zerstörungsbesitzer.
-- [ ] Paarweise Übergänge Karten ↔ HyperNorm, Karten ↔ Farbbänder, HyperNorm ↔ Farbbänder.
-- [ ] Fester Muster-Seed; Fortschritt 0..1, weiche Kante und Mustermaßstab; Rücklauf verwendet dieselbe Maske.
-- [ ] Wand, Boden, Decke und neue/liegende Bruchstücke verwenden den gleichen Zustand; Musterkoordinaten bleiben beim Lösen erhalten.
-- [ ] Exakte Endpunkte, kein Alpha-Loch und keine Änderung der Collider durch Darstellung.
-- [ ] Geschützter vollständiger Prüfstand-Reset; keine späten Worker-Reste.
-- [ ] Kanonische Shader weiterverwenden; ein HyperNorm-Kern, vorhandenes Licht, ein Host-Takt und vorhandener Audio-Besitzer.
-- [ ] Alle Paare in beide Richtungen, unterbrochener Rücklauf, Bruch während Übergang und Reset live prüfen; Code-/Funktionsbelege bereitstellen.
+- [x] Versioniertes Raumzustandsformat: stabile Identität, Inhaltszuordnung, Entdeckung/Fortschritt, getrennte Oberfläche und Verweis auf den bestehenden Zerstörungsbesitzer.
+- [x] Paarweise Übergänge Karten ↔ HyperNorm, Karten ↔ Farbbänder, HyperNorm ↔ Farbbänder.
+- [x] Fester Muster-Seed; Fortschritt 0..1, weiche Kante und Mustermaßstab; Rücklauf verwendet dieselbe Maske.
+- [x] Wand, Boden, Decke und neue/liegende Bruchstücke verwenden den gleichen Zustand; Musterkoordinaten bleiben beim Lösen erhalten.
+- [x] Exakte Endpunkte, kein Alpha-Loch und keine Änderung der Collider durch Darstellung.
+- [x] Geschützter vollständiger Prüfstand-Reset; keine späten Worker-Reste.
+- [x] Kanonische Shader weiterverwenden; ein HyperNorm-Kern, vorhandenes Licht, ein Host-Takt und vorhandener Audio-Besitzer.
+- [x] Alle Paare in beide Richtungen, unterbrochener Rücklauf, Bruch während Übergang und Reset live prüfen; Code-/Funktionsbelege bereitstellen.
 
 Eine zustandsseitige Serialisierung ist noch keine vollständige Wiederherstellung zerstörter Geometrie. Letztere gehört zu Schritt 2 und braucht bestätigte Delta-/Snapshot-Daten des vorhandenen Geometriebesitzers.
 
@@ -42,6 +42,20 @@ Eine zustandsseitige Serialisierung ist noch keine vollständige Wiederherstellu
 - [ ] Raumzustand nach Entladen/Wiederladen identisch: Entdeckung, Loot-IDs, Abschluss, Oberflächenmaske und bestätigte Zerstörungs-Deltas.
 - [ ] Begrenzte jüngste Zerstörungszustände vorhalten; Rekonstruktion entfernter Räume nur nach expliziter Regel, nie sichtbar durch den Spieler hindurch.
 - [ ] Rückreise, Reset, Versionswechsel und längere Fahrt prüfen; Speicher erreicht ein Plateau statt weiter zu wachsen.
+
+### 2b · Räumliche Audio-Rezepte — GEPLANT, Datenanschluss in Schritt 1
+
+Georgs Ergänzung vom 17.11.: Räume erhalten Zuordnungen zu Charakter-/Deck-Musik, Instrumentals, Biom-Stimmung und Ambient-Betten. Nur Katalogreferenzen in Raumrezepten, keine kopierten Audiodateien und keine neuen Stream-Besitzer. Die vorhandene Radio-/Musik-Auswahl bleibt über Laufen, Jetpack und Fahrzeug erhalten; eigene Musik läuft über diesen vorhandenen Pfad.
+
+- [x] Gemeinsamer Zustand führt ein versioniertes, host-eigenes Audiorezept als Daten. Räumliche Wiedergabe und Synth bleiben geplant.
+- [ ] Aktuelle WS0-Kataloge und Besitzverträge für Musik, Charakter-Zuordnung, Atmo und Radio prüfen; fehlende Zuordnungen explizit lassen.
+- [ ] Hörbare Nachbarschaft aus dem Raum-Verbindungsgraphen bestimmen, auch bei Escher-Verbindungen und gedrehten Räumen. Luftlinie durch beliebige Wände ist keine akustische Verbindung.
+- [ ] Durchgänge als begrenzte Klangöffnungen: Abstand, Richtung, Öffnungsgrad, Dämpfung/Tiefpass und Übergangsbreite. Neue Breschen aktualisieren denselben Wegzustand.
+- [ ] Nachbarraum beim Annähern vorladen. Quell-/Hörerposition und lokale Schwerkraftrichtung gemeinsam transformieren; optional vorhandene binaurale Ausgabe verwenden, ohne erzwungenes Rollen des Hörers bei Kamerabewegung.
+- [ ] Musikwechsel/Überblendung, räumliche Vorschau und Atmo-Betten gemeinsam beim vorhandenen Mixer planen. Nicht denselben Track zugleich im Radio, im Raum und durch mehrere Türen mehrfach starten.
+- [ ] Benutzerwahl im Radio respektieren; Musik- und Atmo-Busse getrennt regeln, Sprache/Kampf nach vorhandener Ducking-Regel. Reverb-/Dämpfungsübergänge und Nachhall-Tails beim Raumwechsel/Entladen erhalten.
+- [ ] Hin-/Rückweg, gedrehter Raum, Zylinder, zerstörter Durchgang, Pause/Stille, Mute und Wechsel der Reiseart prüfen. Stimmen und vorgeladene Daten begrenzen.
+- [ ] Der Visualizer liest weiterhin nur Musik-/Ambient-Pulse des vorhandenen Mixers. Kein zweiter AudioContext, Analyser oder Musik-Takt.
 
 ### 3 · Raumrezepte und Deckkatalog — GEPLANT
 
@@ -81,3 +95,5 @@ Gerichtetes Zufließen als zusätzliche Maske; Richtung aus örtlicher Schwerkra
 
 Aktuelle private Site: https://kfb-infiniterooms.frizzlebob.chatgpt.site/blaster-lab/
 Lokale Übergabe dieser Runde: `docs/handoffs/room-surface-state-r1/RETURN.md` in der Site-Quelle. Nach Abschluss folgt eine additive GitHub-Statusdatei mit Quell-Head, Belegen, Prüfergebnis und offenen Game-Anschlüssen; diese initiale Roadmap behauptet keine fertige Umsetzung.
+
+Audio-Ergänzung mit Shepard-/Drone-Einschätzung: `WSA_AUDIO_SLICE_INFINITEROOMS_R1_2026-11-17.md` im selben GitHub-Hub-Ordner. Abschließender Status dieser Stufe: `WSA_STATUS_ROOM_SURFACE_STATE_R1_2026-11-17.md`.
