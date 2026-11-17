@@ -50,7 +50,7 @@ Use **only existing actions**:
 **Important:** "Narrative control" must change a visible network relation or an actionable vulnerability; otherwise it is merely a joke/title, not gameplay. The player must see exactly which card can now be poached or supplied.
 
 ## Constructed example: the podcast changes hands
-Before: Player A holds `THE SPONSORED PODCAST` (INFLUENCE → RESOURCES), with its RESOURCE need met by `THE EMERGENCY LENDER`; A's network is full (3 Institutions) and thus its podcast is **EXPOSED** under existing R0 rules. Player B has `THE POLICY NGO` (INFLUENCE → RESOURCES), needs a media channel in a future alliance and holds 1 Favor.
+Before: Player A holds `THE SPONSORED PODCAST` (INFLUENCE → RESOURCES), with its RESOURCE need met by `THE EMERGENCY LENDER`; A's network is full (3 Institutions) and thus its podcast is **EXPOSED** under existing R0 rules. Player B has `THE VERIFICATION COUNCIL` (RULES → INFLUENCE), whose NEED will be met by owning a new INFLUENCE supplier, and holds 1 Favor.
 - B's turn grants +1 FAVOR: **1 → 2**.
 - B declares POACH at podcast: pays **1 FAVOR**, 2 → 1.
 - A may VETO by paying **1 FAVOR**. If A does not, podcast moves from A's network to B's (B must replace one if already full).
