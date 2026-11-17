@@ -1,3 +1,5 @@
+> **R15B user supersession / centre has no dice (2026-11-17):** Georg rejected this document's direct-centre-dice **Variant B**: FOCUS cannot be targeted by MOVE/SWAP/ADJUST/REROLL and is not a seventh occupied narrative. The new [collapse-triggered centre A/B](FOCUS_COLLAPSE_R15B_CANDIDATE_2026-11-17.md) lets an **outer** Fear/Hope/Hate die crossing 6→7 or 1→0 conditionally release/reframe the Focus; payout depends on **actor vs contributor** and optionally the two surviving dice's **pre-collapse** locations. These earlier centre variants are preserved as historical design, **NOT the current proposal**. Static evidence: [R15B test notes](FOCUS_COLLAPSE_R15B_TEST_REPORT_2026-11-17.md), not human games.
+
 # THE INVISIBLE HANDSHAKE · R15 concept candidates · Mandatory entry & shared Focus Narrative
 **Date:** 2026-11-17 · **Status:** UNTESTED DESIGN PROPOSAL / ADDITIVE ONLY · **owner:** `games/invisible-handshake/` · **branch:** `design/invisible-handshake-paper-r0-2026-11-17` · Draft PR #475. **Current tested core remains R14**; no merged rules, site update, official R15 revision, game art or new runtime.
 
