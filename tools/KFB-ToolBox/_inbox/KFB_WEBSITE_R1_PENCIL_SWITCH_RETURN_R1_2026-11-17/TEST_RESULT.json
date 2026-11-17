@@ -1,0 +1,59 @@
+{
+ "pencilDiffersFromOriginal": true,
+ "originalComesBackExactly": true,
+ "pencilComesBackExactly": true,
+ "toggles": 10,
+ "programsBefore": 14,
+ "programsAfter": 14,
+ "pencilMaterials": [
+  3,
+  3
+ ],
+ "bentOutlineOriginal": {
+  "pixels": 327755,
+  "box": [
+   250,
+   0,
+   1279,
+   719
+  ]
+ },
+ "bentOutlinePencil": {
+  "pixels": 325589,
+  "box": [
+   250,
+   0,
+   1279,
+   719
+  ]
+ },
+ "bendState": [
+  {
+   "art": "baum",
+   "a": 1.017
+  }
+ ],
+ "pxDesktop": 3.333,
+ "pxMobile": 7.815,
+ "bufferMobile": [
+  780,
+  1688
+ ],
+ "glError": 0,
+ "report": {
+  "on": true,
+  "switched": 5,
+  "materials": 3,
+  "skipped": [
+   {
+    "name": "Mesh",
+    "reason": "no hatch attribute: run prepare() in the prop step"
+   },
+   {
+    "name": "Mesh",
+    "reason": "no hatch attribute: run prepare() in the prop step"
+   }
+  ],
+  "px": 7.815
+ }
+}
