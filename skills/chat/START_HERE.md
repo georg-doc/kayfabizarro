@@ -1,3 +1,9 @@
+## ADDITIVE GAME-DESIGN CANDIDATE · 2026-11-17 · THE INVISIBLE HANDSHAKE R0
+
+A separate **text-only, independent analog card-game** paper prototype is on `design/invisible-handshake-paper-r0-2026-11-17` (pending Draft PR), owner `games/invisible-handshake/`. Source brief: Research Atlas `packages/historical-texts/GAME_MECHANICS_BRIEF.md` on `research/hidden-cosmology-atlas-2026-10-13` / PR #394. Twelve original test cards, English Quickstart, 56-slot budget, four player-count capacity calculations and three written dry runs; **0 human playtests, 0 Stage publication**. KFB rules/runtime remain unchanged. Human gate: Georg tests the 12-card microloop (KEEP/TUNE/FAIL); do not create a new Hub live tile or full deck before that gate. [R0 Return](../../games/invisible-handshake/RETURN.md).
+
+---
+
 ## ADDITIVE WS0 INTAKE · 2026-11-04 · BLACK INK BLOB SERIES (DOCS/PROVENANCE ONLY)
 
 Georg visually accepted 18 Black Ink Blob PNG sheets (nine 12-character series). WS0 owns prompt/character curation; verified current WS1 `game/inkblobs-r1` / private atlas (72 actors) remains runtime recipient. Candidate contract: `media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/README.md`; intake issue **#466**. 18 original PNG bytes were locally inspected but **NOT committed**; 108 sprite crops are review candidates with 48 boundary-risk flags. One real source character was visually isolated. Next gate: WS0/Asset Librarian import **one** safe six-pack and WS1 show one actual hit/bounce/ink collision proof. No new renderer/runtime owner, no auto-merge, no Stage/Live claim. The WS0 DECISIONS register remains the V-number authority.
