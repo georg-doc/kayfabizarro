@@ -1,0 +1,1001 @@
+{
+  "rounds": 24,
+  "seeds": 200,
+  "rows": [
+    {
+      "n": 2,
+      "config": "builder",
+      "runs": 200,
+      "wins": 4.5,
+      "focal": 4.5,
+      "others": 4.5,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 7400,
+        "play": 1600,
+        "draw": 600
+      },
+      "created": {
+        "prepare": 1800
+      },
+      "resolved": {
+        "prepare": 1800
+      },
+      "self_return": {
+        "prepare": 0
+      },
+      "next_return": {
+        "prepare": 1800
+      }
+    },
+    {
+      "n": 2,
+      "config": "waiter",
+      "runs": 200,
+      "wins": 2.9175,
+      "focal": 2.96,
+      "others": 2.875,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 7219,
+        "adjust": 1167,
+        "play": 1109,
+        "draw": 105
+      },
+      "created": {
+        "reroll": 1196
+      },
+      "resolved": {
+        "reroll": 1167
+      },
+      "self_return": {
+        "reroll": 0
+      },
+      "next_return": {
+        "reroll": 1167
+      }
+    },
+    {
+      "n": 2,
+      "config": "random",
+      "runs": 200,
+      "wins": 0.3075,
+      "focal": 0.29,
+      "others": 0.325,
+      "zero": 101,
+      "lower": 133,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "draw": 1286,
+        "move": 1952,
+        "reroll": 2420,
+        "adjust": 2362,
+        "swap": 1354,
+        "play": 226
+      },
+      "created": {
+        "reroll": 378,
+        "prepare": 133
+      },
+      "resolved": {
+        "reroll": 94,
+        "prepare": 29
+      },
+      "self_return": {
+        "reroll": 53,
+        "prepare": 17
+      },
+      "next_return": {
+        "reroll": 14,
+        "prepare": 5
+      }
+    },
+    {
+      "n": 2,
+      "config": "mixed",
+      "runs": 200,
+      "wins": 3.42,
+      "focal": 2.415,
+      "others": 4.425,
+      "zero": 0,
+      "lower": 21,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 4250,
+        "reroll": 2666,
+        "play": 1305,
+        "move": 466,
+        "swap": 138,
+        "draw": 775
+      },
+      "created": {
+        "reroll": 438,
+        "prepare": 1023
+      },
+      "resolved": {
+        "reroll": 408,
+        "prepare": 960
+      },
+      "self_return": {
+        "reroll": 75,
+        "prepare": 179
+      },
+      "next_return": {
+        "reroll": 310,
+        "prepare": 731
+      }
+    },
+    {
+      "n": 2,
+      "config": "waiter_focal",
+      "runs": 200,
+      "wins": 4.475,
+      "focal": 7.1,
+      "others": 1.85,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 2331,
+        "adjust": 5057,
+        "play": 1669,
+        "draw": 543
+      },
+      "created": {
+        "prepare": 1443,
+        "reroll": 379
+      },
+      "resolved": {
+        "prepare": 1420,
+        "reroll": 370
+      },
+      "self_return": {
+        "prepare": 0,
+        "reroll": 0
+      },
+      "next_return": {
+        "prepare": 1420,
+        "reroll": 370
+      }
+    },
+    {
+      "n": 2,
+      "config": "builder_focal",
+      "runs": 200,
+      "wins": 4.415,
+      "focal": 1.855,
+      "others": 6.975,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 5013,
+        "reroll": 2428,
+        "play": 1639,
+        "draw": 520
+      },
+      "created": {
+        "prepare": 1424,
+        "reroll": 378
+      },
+      "resolved": {
+        "prepare": 1395,
+        "reroll": 371
+      },
+      "self_return": {
+        "prepare": 0,
+        "reroll": 0
+      },
+      "next_return": {
+        "prepare": 1395,
+        "reroll": 371
+      }
+    },
+    {
+      "n": 3,
+      "config": "builder",
+      "runs": 200,
+      "wins": 4.509999999999998,
+      "focal": 4.495,
+      "others": 4.5175,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 11106,
+        "play": 2494,
+        "draw": 800
+      },
+      "created": {
+        "prepare": 2800
+      },
+      "resolved": {
+        "prepare": 2706
+      },
+      "self_return": {
+        "prepare": 0
+      },
+      "next_return": {
+        "prepare": 2706
+      }
+    },
+    {
+      "n": 3,
+      "config": "waiter",
+      "runs": 200,
+      "wins": 2.968333333333334,
+      "focal": 2.945,
+      "others": 2.98,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 10773,
+        "adjust": 1781,
+        "play": 1681,
+        "draw": 165
+      },
+      "created": {
+        "reroll": 1800
+      },
+      "resolved": {
+        "reroll": 1781
+      },
+      "self_return": {
+        "reroll": 0
+      },
+      "next_return": {
+        "reroll": 1781
+      }
+    },
+    {
+      "n": 3,
+      "config": "random",
+      "runs": 200,
+      "wins": 0.29500000000000015,
+      "focal": 0.34,
+      "others": 0.2725,
+      "zero": 81,
+      "lower": 193,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "draw": 1870,
+        "move": 3051,
+        "reroll": 3354,
+        "adjust": 3214,
+        "swap": 2608,
+        "play": 303
+      },
+      "created": {
+        "reroll": 503,
+        "prepare": 232
+      },
+      "resolved": {
+        "prepare": 44,
+        "reroll": 133
+      },
+      "self_return": {
+        "prepare": 8,
+        "reroll": 37
+      },
+      "next_return": {
+        "prepare": 11,
+        "reroll": 17
+      }
+    },
+    {
+      "n": 3,
+      "config": "mixed",
+      "runs": 200,
+      "wins": 3.544999999999999,
+      "focal": 4.13,
+      "others": 3.2525,
+      "zero": 0,
+      "lower": 24,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 7232,
+        "reroll": 2862,
+        "swap": 508,
+        "play": 2010,
+        "move": 798,
+        "draw": 990
+      },
+      "created": {
+        "prepare": 1774,
+        "reroll": 474
+      },
+      "resolved": {
+        "prepare": 1684,
+        "reroll": 443
+      },
+      "self_return": {
+        "prepare": 95,
+        "reroll": 24
+      },
+      "next_return": {
+        "prepare": 1244,
+        "reroll": 324
+      }
+    },
+    {
+      "n": 3,
+      "config": "waiter_focal",
+      "runs": 200,
+      "wins": 4.458333333333334,
+      "focal": 5.39,
+      "others": 3.9925,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 2638,
+        "adjust": 8489,
+        "play": 2480,
+        "draw": 793
+      },
+      "created": {
+        "prepare": 2289,
+        "reroll": 419
+      },
+      "resolved": {
+        "prepare": 2259,
+        "reroll": 416
+      },
+      "self_return": {
+        "prepare": 0,
+        "reroll": 0
+      },
+      "next_return": {
+        "prepare": 2259,
+        "reroll": 416
+      }
+    },
+    {
+      "n": 3,
+      "config": "builder_focal",
+      "runs": 200,
+      "wins": 4.4,
+      "focal": 2.76,
+      "others": 5.22,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 5770,
+        "reroll": 5429,
+        "play": 2438,
+        "draw": 763
+      },
+      "created": {
+        "reroll": 915,
+        "prepare": 1753
+      },
+      "resolved": {
+        "reroll": 905,
+        "prepare": 1735
+      },
+      "self_return": {
+        "reroll": 0,
+        "prepare": 0
+      },
+      "next_return": {
+        "reroll": 905,
+        "prepare": 1735
+      }
+    },
+    {
+      "n": 4,
+      "config": "builder",
+      "runs": 200,
+      "wins": 4.5,
+      "focal": 4.44,
+      "others": 4.519999999999997,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 14716,
+        "play": 3343,
+        "draw": 1141
+      },
+      "created": {
+        "prepare": 3600
+      },
+      "resolved": {
+        "prepare": 3600
+      },
+      "self_return": {
+        "prepare": 0
+      },
+      "next_return": {
+        "prepare": 3600
+      }
+    },
+    {
+      "n": 4,
+      "config": "waiter",
+      "runs": 200,
+      "wins": 3.02,
+      "focal": 3.115,
+      "others": 2.98833333333333,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 14194,
+        "adjust": 2416,
+        "play": 2297,
+        "draw": 293
+      },
+      "created": {
+        "reroll": 2442
+      },
+      "resolved": {
+        "reroll": 2416
+      },
+      "self_return": {
+        "reroll": 0
+      },
+      "next_return": {
+        "reroll": 2416
+      }
+    },
+    {
+      "n": 4,
+      "config": "random",
+      "runs": 200,
+      "wins": 0.3225,
+      "focal": 0.325,
+      "others": 0.32166666666666677,
+      "zero": 59,
+      "lower": 259,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "draw": 2487,
+        "move": 4070,
+        "reroll": 4214,
+        "adjust": 4234,
+        "swap": 3801,
+        "play": 394
+      },
+      "created": {
+        "reroll": 675,
+        "prepare": 306
+      },
+      "resolved": {
+        "prepare": 88,
+        "reroll": 170
+      },
+      "self_return": {
+        "prepare": 14,
+        "reroll": 37
+      },
+      "next_return": {
+        "prepare": 16,
+        "reroll": 18
+      }
+    },
+    {
+      "n": 4,
+      "config": "mixed",
+      "runs": 200,
+      "wins": 3.46,
+      "focal": 2.725,
+      "others": 3.7050000000000005,
+      "zero": 0,
+      "lower": 35,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 8190,
+        "reroll": 5054,
+        "swap": 900,
+        "draw": 1316,
+        "play": 2619,
+        "move": 1121
+      },
+      "created": {
+        "reroll": 848,
+        "prepare": 2063
+      },
+      "resolved": {
+        "reroll": 797,
+        "prepare": 1971
+      },
+      "self_return": {
+        "reroll": 16,
+        "prepare": 30
+      },
+      "next_return": {
+        "reroll": 591,
+        "prepare": 1441
+      }
+    },
+    {
+      "n": 4,
+      "config": "waiter_focal",
+      "runs": 200,
+      "wins": 4.505,
+      "focal": 5.465,
+      "others": 4.185,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 2574,
+        "adjust": 12175,
+        "play": 3345,
+        "draw": 1106
+      },
+      "created": {
+        "prepare": 3226,
+        "reroll": 415
+      },
+      "resolved": {
+        "prepare": 3193,
+        "reroll": 411
+      },
+      "self_return": {
+        "prepare": 0,
+        "reroll": 0
+      },
+      "next_return": {
+        "prepare": 3193,
+        "reroll": 411
+      }
+    },
+    {
+      "n": 4,
+      "config": "builder_focal",
+      "runs": 200,
+      "wins": 4.26875,
+      "focal": 2.715,
+      "others": 4.786666666666669,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 6540,
+        "reroll": 8550,
+        "play": 3172,
+        "draw": 938
+      },
+      "created": {
+        "reroll": 1449,
+        "prepare": 2001
+      },
+      "resolved": {
+        "reroll": 1434,
+        "prepare": 1981
+      },
+      "self_return": {
+        "reroll": 0,
+        "prepare": 0
+      },
+      "next_return": {
+        "reroll": 1434,
+        "prepare": 1981
+      }
+    },
+    {
+      "n": 5,
+      "config": "builder",
+      "runs": 200,
+      "wins": 4.582000000000011,
+      "focal": 4.655,
+      "others": 4.56375,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 18434,
+        "play": 4175,
+        "draw": 1391
+      },
+      "created": {
+        "prepare": 4599
+      },
+      "resolved": {
+        "prepare": 4582
+      },
+      "self_return": {
+        "prepare": 0
+      },
+      "next_return": {
+        "prepare": 4582
+      }
+    },
+    {
+      "n": 5,
+      "config": "waiter",
+      "runs": 200,
+      "wins": 2.997000000000002,
+      "focal": 2.95,
+      "others": 3.00875,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 17818,
+        "adjust": 2997,
+        "play": 2839,
+        "draw": 346
+      },
+      "created": {
+        "reroll": 3027
+      },
+      "resolved": {
+        "reroll": 2997
+      },
+      "self_return": {
+        "reroll": 0
+      },
+      "next_return": {
+        "reroll": 2997
+      }
+    },
+    {
+      "n": 5,
+      "config": "random",
+      "runs": 200,
+      "wins": 0.3380000000000002,
+      "focal": 0.38,
+      "others": 0.3275,
+      "zero": 36,
+      "lower": 278,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "draw": 3107,
+        "move": 5149,
+        "reroll": 5208,
+        "adjust": 5227,
+        "swap": 4833,
+        "play": 476
+      },
+      "created": {
+        "reroll": 808,
+        "prepare": 390
+      },
+      "resolved": {
+        "reroll": 226,
+        "prepare": 112
+      },
+      "self_return": {
+        "reroll": 30,
+        "prepare": 14
+      },
+      "next_return": {
+        "reroll": 30,
+        "prepare": 17
+      }
+    },
+    {
+      "n": 5,
+      "config": "mixed",
+      "runs": 200,
+      "wins": 3.5139999999999985,
+      "focal": 4.15,
+      "others": 3.355,
+      "zero": 0,
+      "lower": 47,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 11360,
+        "reroll": 5097,
+        "swap": 1252,
+        "play": 3324,
+        "move": 1358,
+        "draw": 1609
+      },
+      "created": {
+        "prepare": 2856,
+        "reroll": 828
+      },
+      "resolved": {
+        "prepare": 2731,
+        "reroll": 783
+      },
+      "self_return": {
+        "prepare": 17,
+        "reroll": 1
+      },
+      "next_return": {
+        "prepare": 2062,
+        "reroll": 581
+      }
+    },
+    {
+      "n": 5,
+      "config": "waiter_focal",
+      "runs": 200,
+      "wins": 4.528,
+      "focal": 6.685,
+      "others": 3.98875,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 2333,
+        "adjust": 16077,
+        "play": 4179,
+        "draw": 1411
+      },
+      "created": {
+        "prepare": 4171,
+        "reroll": 389
+      },
+      "resolved": {
+        "prepare": 4143,
+        "reroll": 385
+      },
+      "self_return": {
+        "prepare": 0,
+        "reroll": 0
+      },
+      "next_return": {
+        "prepare": 4143,
+        "reroll": 385
+      }
+    },
+    {
+      "n": 5,
+      "config": "builder_focal",
+      "runs": 200,
+      "wins": 4.163000000000002,
+      "focal": 2.67,
+      "others": 4.53625,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 7310,
+        "reroll": 11717,
+        "play": 3873,
+        "draw": 1100
+      },
+      "created": {
+        "reroll": 1982,
+        "prepare": 2210
+      },
+      "resolved": {
+        "reroll": 1961,
+        "prepare": 2202
+      },
+      "self_return": {
+        "reroll": 0,
+        "prepare": 0
+      },
+      "next_return": {
+        "reroll": 1961,
+        "prepare": 2202
+      }
+    },
+    {
+      "n": 6,
+      "config": "builder",
+      "runs": 200,
+      "wins": 4.523333333333332,
+      "focal": 4.735,
+      "others": 4.481,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 22078,
+        "play": 5036,
+        "draw": 1686
+      },
+      "created": {
+        "prepare": 5475
+      },
+      "resolved": {
+        "prepare": 5428
+      },
+      "self_return": {
+        "prepare": 0
+      },
+      "next_return": {
+        "prepare": 5428
+      }
+    },
+    {
+      "n": 6,
+      "config": "waiter",
+      "runs": 200,
+      "wins": 2.9633333333333356,
+      "focal": 3.105,
+      "others": 2.9349999999999996,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 21461,
+        "adjust": 3556,
+        "play": 3379,
+        "draw": 404
+      },
+      "created": {
+        "reroll": 3577
+      },
+      "resolved": {
+        "reroll": 3556
+      },
+      "self_return": {
+        "reroll": 0
+      },
+      "next_return": {
+        "reroll": 3556
+      }
+    },
+    {
+      "n": 6,
+      "config": "random",
+      "runs": 200,
+      "wins": 0.29416666666666663,
+      "focal": 0.315,
+      "others": 0.2900000000000001,
+      "zero": 28,
+      "lower": 382,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "draw": 3713,
+        "move": 6120,
+        "reroll": 6255,
+        "adjust": 6200,
+        "swap": 5940,
+        "play": 572
+      },
+      "created": {
+        "reroll": 891,
+        "prepare": 475
+      },
+      "resolved": {
+        "prepare": 113,
+        "reroll": 240
+      },
+      "self_return": {
+        "prepare": 14,
+        "reroll": 28
+      },
+      "next_return": {
+        "prepare": 17,
+        "reroll": 34
+      }
+    },
+    {
+      "n": 6,
+      "config": "mixed",
+      "runs": 200,
+      "wins": 3.459166666666667,
+      "focal": 2.705,
+      "others": 3.6100000000000017,
+      "zero": 0,
+      "lower": 47,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 12426,
+        "reroll": 7309,
+        "play": 3919,
+        "move": 1649,
+        "swap": 1553,
+        "draw": 1944
+      },
+      "created": {
+        "reroll": 1197,
+        "prepare": 3154
+      },
+      "resolved": {
+        "reroll": 1144,
+        "prepare": 3007
+      },
+      "self_return": {
+        "reroll": 1,
+        "prepare": 5
+      },
+      "next_return": {
+        "reroll": 843,
+        "prepare": 2173
+      }
+    },
+    {
+      "n": 6,
+      "config": "waiter_focal",
+      "runs": 200,
+      "wins": 4.523333333333332,
+      "focal": 4.325,
+      "others": 4.563,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "reroll": 2733,
+        "adjust": 19299,
+        "play": 5068,
+        "draw": 1700
+      },
+      "created": {
+        "prepare": 5029,
+        "reroll": 442
+      },
+      "resolved": {
+        "prepare": 4988,
+        "reroll": 440
+      },
+      "self_return": {
+        "prepare": 0,
+        "reroll": 0
+      },
+      "next_return": {
+        "prepare": 4988,
+        "reroll": 440
+      }
+    },
+    {
+      "n": 6,
+      "config": "builder_focal",
+      "runs": 200,
+      "wins": 4.095000000000001,
+      "focal": 2.865,
+      "others": 4.341000000000002,
+      "zero": 0,
+      "lower": 0,
+      "passes": 0,
+      "stock_empty": 0,
+      "used": {
+        "adjust": 8071,
+        "reroll": 14897,
+        "play": 4593,
+        "draw": 1239
+      },
+      "created": {
+        "reroll": 2524,
+        "prepare": 2422
+      },
+      "resolved": {
+        "reroll": 2507,
+        "prepare": 2407
+      },
+      "self_return": {
+        "reroll": 0,
+        "prepare": 0
+      },
+      "next_return": {
+        "reroll": 2507,
+        "prepare": 2407
+      }
+    }
+  ]
+}

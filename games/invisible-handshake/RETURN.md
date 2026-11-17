@@ -1,3 +1,9 @@
+## R14 · Open harvest and finite draw/play · 17 November 2026
+
+Same owner, branch and draft PR475. [Report](r14-open-harvest/REPORT.md), method, source, results and independent checks saved. 6,000 games across2–6 players,24 rounds. Actor crossing7 wins any contributor's card; crossing0 discards.50-card conservation, own-slot play and draw as full actions, no chips/hold. All-builder tables yield about4.5 trophies/player, but every one of43,839 resolved deterministic5→6 preparations in harvest-first groups goes to the NEXT player, none to its preparer. Lone builders among waiters score less than opponents under these scripts. Not optimal-play proof.
+
+Basic hand economy passes; voluntary refill is hard-coded, so public-card supply incentives remain unresolved. Independent9fixture groups/30narrowruns include a legal non-scoring relocation cycle. Hidden goals are an explicitly UNTESTED proposal; random allocation alone does not balance them. No Site/runtime changes, merge or gameplay acceptance. Next bounded experiment: a risky same-turn harvest opportunity versus guaranteed next-player capture, before adding private missions. Existing Site remains older prototype.
+
 ## R13 · Free actions reveal denial loop · 17 November 2026
 
 Same owner, design branch and draft PR475. [Report](r13-action-choice/REPORT.md), method, source, results and independent review saved. 5,000 games plus 5,000 illustrative snapshots. Free adjust/reroll/move/swap with min(2,n−1) hold: six-player denial policy uses move 84.8%, swap 13.7%; 99.9% of resolved claims destroyed, 90/100 games entirely scoreless. Mixed policy yields 1.76 trophies/player over 18 turns. All four actions have local uses, but the unrestricted menu is NOT accepted as balanced. Optional opposite-face flip does not repair the loop. Focal omissions reveal heuristic fragility, not optimal-strategy proof.
