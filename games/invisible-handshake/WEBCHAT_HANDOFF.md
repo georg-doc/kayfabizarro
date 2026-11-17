@@ -1,3 +1,7 @@
+> **New user-directed concept gate, 2026-11-17 (more recent than the R14-specific instructions below):** The own public narrative slot is **mandatory for playing**; if empty, the player must spend a turn to PLAY from hand, or DRAW first when hand empty, and cannot manipulate the shared dice while off the board. Georg also proposed a shared, centrally located FOCUS NARRATIVE within the six-faction hexagonal table arrangement. [R15 proposal](CENTRAL_FOCUS_ENTRY_GATE_R15_PROPOSAL_2026-11-17.md) compares **A narrative-only permanent center** versus **B open capturable/burnable center with an explicit center-only stock refill**. [38 small static fixtures](CENTRAL_FOCUS_R15_TEST_NOTES_2026-11-17.md) verify card conservation and gate behavior, not game balance. Current tested baseline remains **R14**; the empty-own-slot restriction was NOT present in R14 options. The next bounded test is **A vs B with the same entry gate, 2 players first and six-seat denial stress**, not premature mission/solo/faction art work. The old below-next-job preparation variants remain a separate, unresolved follow-up; center does **not** automatically fix the 5→6 donation. No automatic Atlas research or Site deployment.
+
+---
+
 # Copy-ready Webchat continuation
 
 Work on **The Invisible Handshake**, the existing KFB-compatible satirical card-game candidate, without changing KFB game code.
