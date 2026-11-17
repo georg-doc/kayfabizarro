@@ -1,5 +1,13 @@
 # The Invisible Handshake · Additive changelog
 
+## 2026-11-17 · R0.5 Overton, HyperNormalisation & automated diagnostics · CANDIDATE
+
+- Georg proposes a movable public **Overton window**: default test = a two-slot aperture across four MARKET Institutions; outside-window RECRUIT costs 1 FAVOR, inside costs 0, optional PLOT shifts the frame ±1 and recruits once. This is a spatial/public-attention proxy, **not** a real political opinion continuum; B issue-specific scale remains deferred.
+- HyperNormalisation uses KFB's Kayfabe/Bizarro to separate observable network state from public storyline; PsyOps, False Flags and fictional "MKUltra 4.0" stay existing PLOT/EVENT skins until an actual mechanic passes. KFB Freestyle ritual is **Name It / Claim It / Power It**; optional new game "Show It / Spin It / Sell It" is non-scoring, non-mandatory.
+- [R0.5 mechanical note](OVERTON_HYPERNORMALISATION_R05_2026-11-17.md), [14-case bot simulation](SIMULATION_R05_REPORT_2026-11-17.md), [machine summary](SIM_R05_COMPACT_RESULTS.json), [exhaustive window probe](OVER_TON_WINDOW_PROBE_R05.js) and [Atlas research jobs](ATLAS_RESEARCH_HANDOFF_R05_2026-11-17.md) saved. **3,500 automated games; 48 window affordability checks, 4 moves/8 resulting recruit pairs; 0 human plays, 0 R0.5 full-session window sims, 0 new print masters.**
+- Junta, Machiavelli, Sun Tzu and Hegel sources checked. Low successful POACH under constant VETO, 50% final PUBLIC HEARING chance, and unbalanced Solo remain risks. **Next gate:** human two-player with-vs-without window + optional one solo turn. No Stage/Live, no KFB Hub tile, no auto merge.
+
+
 ## 2026-11-17 · R0.4 cross-sphere proxy + BGA mechanics research · CANDIDATE
 
 Georg bestätigt das Sechs-Sphären-Prinzip und priorisiert **2–6 Spieler**; Solo als optionale Variante derselben Karten. Neuer [12-Card R0.4 Text-/Regelsatz](PROXY_12_AND_SOLO_R04_2026-11-17.md) umfasst 2 Rollen, 6 Institutionspaare über sechs Einflusssphären, 3 Plot-Formen, 1 Event. Zwei neue Gesprächs-PDFs: 3 Seiten mit 12 Karten, 2 Seiten Quickstart/Solo, noch **nicht als GitHub-Binärdateien abgelegt**. [BGA-/Reddit-Recherche](BGA_MECHANICS_DONOR_AUDIT_R04_2026-11-17.md) vergleicht 11 öffentlich lesbare BGA-Regelzusammenfassungen und Solo-Erfahrungsberichte; priorisiert mutable alliances (Pax Pamir), evidence/exposure (Watergate), simple veto (Coup), verwirft schwere Systemimporte. [Testreport](TEST_REPORT_R04_2026-11-17.md): 8/8 Strukturchecks; 5/5 PDF-Seiten gerendert und geprüft. Keine human games, kein behaupteter 6p-Tempo-PASS, 56 Karten nicht ausgearbeitet, keine Stage-Route, kein Hub Live Tile. **One gate:** Georg testet physisch das 12-Karten-2-Spieler-Szenario, optional einen Solo-B-Zug, meldet KEEP/TUNE/FAIL.
