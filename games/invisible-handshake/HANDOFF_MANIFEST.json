@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "date": "2026-11-17",
+  "status": "CONSOLIDATED_CANDIDATE_NOT_BALANCED",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "design/invisible-handshake-paper-r0-2026-11-17",
+  "pr": 475,
+  "owner": "games/invisible-handshake/",
+  "evidence_head": "d8ceb4156081ba06220f63266a66ad92e6c1b33d",
+  "entry": "CURRENT_STATE.md",
+  "handoff": "WEBCHAT_HANDOFF.md",
+  "research_queue": "RESEARCH_QUEUE.md",
+  "current_model": "r14-open-harvest/test.py",
+  "reports": [
+    "r10-chip-test/REPORT.md",
+    "r11-directed-fhh/REPORT.md",
+    "r12-hold-time/REPORT.md",
+    "r13-action-choice/REPORT.md",
+    "r14-open-harvest/REPORT.md"
+  ],
+  "implemented_site_rules": "R09 historical prototype; not R14; host not reverified",
+  "research_executed": false,
+  "background_jobs_created": false,
+  "next_job": "Compare preparation incentives; no private-goal implementation until a bounded test",
+  "atlas_refs": {
+    "main": "cf510373bb7290b182c3f3a5467c5766acfcb149",
+    "psychology": "61c3a937077a52d3673845c27f69bcaafd0d805c"
+  }
+}

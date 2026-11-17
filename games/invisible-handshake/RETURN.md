@@ -1,3 +1,11 @@
+## Consolidated Webchat handoff · 17 November 2026
+
+Georg requested consolidation and lower-cost, bounded Webchat continuation later. [CURRENT_STATE](CURRENT_STATE.md) is the new game-owner entry point, with [copy-ready Webchat brief](WEBCHAT_HANDOFF.md), [prioritized Atlas research queue](RESEARCH_QUEUE.md) and [manifest](HANDOFF_MANIFEST.json). Source/evidence snapshot d8ceb4156081ba06220f63266a66ad92e6c1b33d. Same branch and draft PR475; all previous evidence preserved. R14 is the current tested candidate, not a balanced or deployed game. R09 Site remains historical and was not reverified.
+
+Game-rule decisions, superseded chips/holding, optional flip/private missions, finite-card assumptions, tested limits and preparation/public-supply problems are now in one place. Existing Atlas branches were ref-verified; dossier completeness was not newly audited. No new external research required for handoff; future author/lens/institution packets are PLANNED, not executed. No background schedule, agent fan-out, auto-merge or Site publication created.
+
+Next action when Georg resumes: paste the Webchat brief and compare at most two small preparation-incentive variants, using existing R14 evidence. Larger conceptual synthesis and necessary Atlas cross-checks remain available here on request.
+
 ## R14 · Open harvest and finite draw/play · 17 November 2026
 
 Same owner, branch and draft PR475. [Report](r14-open-harvest/REPORT.md), method, source, results and independent checks saved. 6,000 games across2–6 players,24 rounds. Actor crossing7 wins any contributor's card; crossing0 discards.50-card conservation, own-slot play and draw as full actions, no chips/hold. All-builder tables yield about4.5 trophies/player, but every one of43,839 resolved deterministic5→6 preparations in harvest-first groups goes to the NEXT player, none to its preparer. Lone builders among waiters score less than opponents under these scripts. Not optimal-play proof.
