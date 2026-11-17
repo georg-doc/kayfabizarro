@@ -1,3 +1,15 @@
+## Additive Return · R0.4 Cross-Sphere / BGA donor audit / Solo optional · 2026-11-17
+
+**Outcome:** Text-only 12-card, six-sphere physical microtest candidate ready; **2–6 players are primary**, Solo is optional same-56-card sidecar. Exact owner remains `georg-doc/kayfabizarro` / `games/invisible-handshake/` · branch `design/invisible-handshake-paper-r0-2026-11-17` · Draft PR #475 · source donors Atlas PR #394 and MKULTRA research PR #408 read-only.
+
+**Files:** [Cross-sphere 12-card proxy + deterministic Solo B](PROXY_12_AND_SOLO_R04_2026-11-17.md), [BGA mechanics and Reddit audit](BGA_MECHANICS_DONOR_AUDIT_R04_2026-11-17.md), [R0.4 test/evidence](TEST_REPORT_R04_2026-11-17.md). Scope remains 56 cards (6+30+12+8), three channels, FAVOR 0–3, RECRUIT/POACH/VETO/PLOT; 12 is a deliberately non-full-game print fixture. R0 legacy Solo A remains candidate; B is not accepted until tested. R0.3 POACH 10-point relative swing remains open.
+
+**Actual checks:** 8/8 structural assertions and 5/5 PDF pages generated/extracted/rendered; cards: 12 IDs once each on 3 PDF pages; English Quickstart + optional Solo B in 2 PDF pages. Images/overlaps/crops inspected in local PDF renders. PDFs live in this ChatGPT conversation, not in GitHub binaries or any public URL. BGA comparison = **11 rules-summary pages**, no games played there. Human tabletop sessions 0, timed turns 0, complete 56-card plays 0, independent gameplay critic 0; No Cloudflare Stage or Hub live surface, no merge.
+
+**Decision:** 2–6 standard first, solo a small separable sidecar. Reject now: additional factions, new solo deck, dozens of game phases, published real-person conspiracy claims. **One next gate:** Georg tests 12-proxy 2-player cross-sphere game, optionally one solo System turn and decides KEEP/TUNE/FAIL on network/control tension and clarity; only then authorize a full 56-proxy timing test or an A/B mechanic change. The next executor fetches the exact PR head before touching the branch.
+
+---
+
 ## Additive handoff · R0.3 six power spheres · 2026-11-17
 
 **Owner:** `georg-doc/kayfabizarro` / `games/invisible-handshake` · branch `design/invisible-handshake-paper-r0-2026-11-17` · Draft PR #475, not merged. **Outcome:** Georg's scope correction from narrow media actors to full power/ecosystem network persisted as [R0.3](POWER_SPHERES_KAYFABE_BIZARRO_R03_2026-11-17.md). Six thematic spheres × five original fictional institution seeds = 30 candidate slots; five occurrences each of six directed RESOURCES/RULES/INFLUENCE pairs. Kayfabe (public/private), Bizarro (double satire), Foucault/Derrida/Hartmann and cross-domain reference rules; existing MKULTRA/Monarch donor PR #408 and Research Atlas PR #394 reused read-only. The 56-slot deck budget (6+30+12+8) and R0 action model remain unchanged; R0.2 media candidates are retained as options, not deleted.
