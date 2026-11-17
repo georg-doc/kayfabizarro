@@ -1,0 +1,186 @@
+{
+ "race_dominoes": {
+  "port": {
+   "frames": 234,
+   "reported": {
+    "toy": 14,
+    "gummi": 0
+   },
+   "refused": 0,
+   "lossAsked": 8.57,
+   "unknownVehicle": 0,
+   "host": {
+    "reports": 14,
+    "invalid": 0,
+    "lossApplied": 0
+   },
+   "vehicle": "patch-vireo",
+   "speed": 18
+  },
+  "toys": {
+   "pieces": 44,
+   "bodies": 44,
+   "awake": 44,
+   "frozen": 0,
+   "byTheBook": 0,
+   "perClass": {
+    "domino": 44
+   },
+   "hits": 14,
+   "taken": 44,
+   "handedBack": 0,
+   "steps": 234,
+   "stepsSkipped": 0,
+   "msPerStep": 1.101
+  },
+  "bend": {
+   "kontakte": 0,
+   "wellen": 0,
+   "aktiv": 0,
+   "plaetze": []
+  }
+ },
+ "diesel_dominoes": {
+  "port": {
+   "frames": 354,
+   "reported": {
+    "toy": 15,
+    "gummi": 0
+   },
+   "refused": 0,
+   "lossAsked": 2.49,
+   "unknownVehicle": 0,
+   "host": {
+    "reports": 15,
+    "invalid": 0,
+    "lossApplied": 0
+   },
+   "vehicle": "crimson_flame_dragster",
+   "speed": 12
+  },
+  "toys": {
+   "pieces": 44,
+   "bodies": 44,
+   "awake": 44,
+   "frozen": 0,
+   "byTheBook": 0,
+   "perClass": {
+    "domino": 44
+   },
+   "hits": 15,
+   "taken": 44,
+   "handedBack": 0,
+   "steps": 354,
+   "stepsSkipped": 0,
+   "msPerStep": 0.997
+  },
+  "bend": {
+   "kontakte": 0,
+   "wellen": 0,
+   "aktiv": 0,
+   "plaetze": []
+  }
+ },
+ "race_crowd": {
+  "port": {
+   "frames": 456,
+   "reported": {
+    "toy": 12,
+    "gummi": 1
+   },
+   "refused": 0,
+   "lossAsked": 8.88,
+   "unknownVehicle": 0,
+   "host": {
+    "reports": 13,
+    "invalid": 0,
+    "lossApplied": 0
+   },
+   "vehicle": "patch-vireo",
+   "speed": 18
+  },
+  "toys": {
+   "pieces": 29,
+   "bodies": 9,
+   "awake": 9,
+   "frozen": 20,
+   "byTheBook": 0,
+   "perClass": {
+    "meeple": 14,
+    "pawn": 12,
+    "die6": 2,
+    "dieN": 1
+   },
+   "hits": 12,
+   "taken": 29,
+   "handedBack": 0,
+   "steps": 456,
+   "stepsSkipped": 0,
+   "msPerStep": 0.642
+  },
+  "bend": {
+   "kontakte": 1,
+   "wellen": 0,
+   "aktiv": 1,
+   "plaetze": [
+    {
+     "art": "baum",
+     "a": 0.304
+    }
+   ]
+  }
+ },
+ "diesel_crowd": {
+  "port": {
+   "frames": 612,
+   "reported": {
+    "toy": 15,
+    "gummi": 2
+   },
+   "refused": 0,
+   "lossAsked": 4.31,
+   "unknownVehicle": 0,
+   "host": {
+    "reports": 17,
+    "invalid": 0,
+    "lossApplied": 0
+   },
+   "vehicle": "crimson_flame_dragster",
+   "speed": 12
+  },
+  "toys": {
+   "pieces": 29,
+   "bodies": 8,
+   "awake": 8,
+   "frozen": 21,
+   "byTheBook": 0,
+   "perClass": {
+    "meeple": 14,
+    "pawn": 12,
+    "die6": 2,
+    "dieN": 1
+   },
+   "hits": 15,
+   "taken": 29,
+   "handedBack": 0,
+   "steps": 612,
+   "stepsSkipped": 0,
+   "msPerStep": 0.381
+  },
+  "bend": {
+   "kontakte": 2,
+   "wellen": 0,
+   "aktiv": 2,
+   "plaetze": [
+    {
+     "art": "baum",
+     "a": 0.879
+    },
+    {
+     "art": "baum",
+     "a": 1.169
+    }
+   ]
+  }
+ }
+}

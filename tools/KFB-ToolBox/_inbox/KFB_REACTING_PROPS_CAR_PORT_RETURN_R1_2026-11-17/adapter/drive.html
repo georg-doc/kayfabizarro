@@ -1,0 +1,120 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000;overflow:hidden}</style>
+<script type="importmap">{ "imports": { "three": "./build/three.module.js", "three/addons/": "./jsm/" } }</script></head><body>
+<script type="module">
+// Test drive for patchworld.js: a placeholder road (hard, plain), the quilt beside it with a hemmed edge, the game's sky and light above.
+// Switches (query): trees=original|palette|cloth, city=original|palette|cloth, citySeams=0|1, bits=0|1|2, theme, hour, ground=quilt|flat, seams=near|off, strip=<metres from the road>|0 for everywhere, speed, cam=chase|high|side
+import * as THREE from 'three'
+import { noise } from './patchq/noise.js'
+import { createPatchworld } from './patchworld.js'
+import { makeKfbSky } from './kfbsky.js'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { bake, toRoles, toGrade, toCloth, HARD, MATT } from './kfbprops.js'
+import { createField } from './kfbfield.js'
+import { createToys } from './kfbtoys.js'
+import { createBend } from './kfbbend.js'
+import { layChain, chainPace } from './kfbdomino.js'
+import RAPIER from './rapier/rapier.mjs'
+import { connectCar } from './kfbcarport.js'
+const Q = new URLSearchParams(location.search), W = innerWidth, H = innerHeight, V = (x, y, z) => new THREE.Vector3(x, y, z)
+try {
+  const R = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); R.setSize(W, H); document.body.appendChild(R.domElement); R.shadowMap.enabled = true; R.shadowMap.type = THREE.PCFSoftShadowMap; R.toneMapping = THREE.ACESFilmicToneMapping; R.toneMappingExposure = 1.1
+  const S = new THREE.Scene(), cam = new THREE.PerspectiveCamera(52, W / H, 0.1, 2400), theme = Q.get('theme') || 'mesa', focus = { x: 0, z: 0 }
+  const info = {}; const K = await makeKfbSky(THREE, { theme, hour: +(Q.get('hour') ?? 15.2), fit: () => ({ center: { x: focus.x, y: 1, z: focus.z - 10 }, radius: 42 }) })
+  // the road: a centre line x(z), level across, gently rising and falling along
+  const HALF = 4.6, xc = (z) => 11 * Math.sin(z / 46) + 5 * Math.sin(z / 19 + 1.3), roadY = (z) => 1.4 + 1.1 * Math.sin(z / 63) + 0.5 * Math.sin(z / 27 + 2)
+  const rdist = (x, z) => { const sl = (xc(z + 0.5) - xc(z - 0.5)); return Math.abs(x - xc(z)) / Math.sqrt(1 + sl * sl) }
+  const sstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t) }
+  const wild = (x, z) => 4.4 * noise(x / 17 + 3, z / 17 - 7) + 1.6 * noise(x / 6 - 2, z / 6 + 9) + 0.2
+  const height = (x, z) => { const k = sstep(HALF + 1.5, HALF + 16, rdist(x, z)); return (roadY(z) - 0.1) * (1 - k) + wild(x, z) * k }
+  const BT = await import('./game/src/look/biomeTerrain.js'), BF = await import('./game/src/world/biomeField.js'), P = BT.BIOME_PALETTES[Math.max(0, BF.BIOMES.indexOf(theme))]
+  const bands = [['sand', 1.0], ['low', 2.0], ['mid', 3.1], ['high', 4.2], ['peak', 99]].map(([name, top]) => ({ name, top, colour: P[name] }))
+  const strip = +(Q.get('strip') ?? 0) || Infinity
+  const world = createPatchworld(THREE, { height, bands, road: { dist: rdist, half: HALF }, strip, seams: Q.get('seams') || 'near', ground: Q.get('ground') || 'quilt', perUpdate: 6, tile: +(Q.get('tile') ?? 12) }); S.add(world.object3d, K.group)
+  // --- props beside the road: trees per tile, set pieces per station along the road. One draw call per kind and part; all of it travels. ---
+  const ROUND = Q.get('round') !== '0', L = new GLTFLoader(), baked = async (name, height, rx = 0, round = 0) => bake((await L.loadAsync(`m/${name}/${name}.gltf`)).scene, { height, rx, round: ROUND ? round : 0 })
+  const felt = world.fabrics.felt('#ffffff', { vertexColors: true }), hard = HARD(), matt = MATT(), GRADE = Q.get('grade') !== '0'
+  const ROLES = { leaf: P.leaf, leafAlt: P.leafAlt, bloom: P.bloom, bark: P.bark, stone: P.stone, accent: P.accent, landmark: P.landmark, earth: P.earth }
+  // looks: original | palette | cloth; on top of any of them the one grade (grade=0 turns it off)
+  const PASTEL = Q.get('tone') === 'pastel'
+  const dress = (geo, look, { seams = false, kind = 'tree', tier = 'field', mat = matt, L = null } = {}) => { let g = look === 'original' ? geo : toRoles(geo, ROLES, kind); if (GRADE) g = toGrade(g, ROLES, tier === 'pop' ? { tier, ...(L ? { L } : {}) } : PASTEL ? { tier: 'calm', L: [0.56, 0.9], pull: 0.5, foot: 0.14 } : { tier }); if (look !== 'cloth') return [[g, mat]]; const c = toCloth(g, { seams }); return c.threads ? [[c.cloth, felt], [c.threads, matt]] : [[c.cloth, felt]] }
+  const ground = (x, z) => height(x, z) + 0.12, side = (z, off) => { const sl = xc(z + 0.5) - xc(z - 0.5), k = 1 / Math.sqrt(1 + sl * sl); return [xc(z) + off * k, z - off * sl * k] }, yawAt = (z) => Math.atan2(xc(z + 1) - xc(z - 1), 2)
+  const kinds = {}, TREES = [['Tree_1_A_Color1', 7.5], ['Tree_2_A_Color1', 8.5], ['Tree_3_A_Color1', 6.5], ['Tree_4_A_Color1', 9.5], ['Bush_1_A_Color1', 1.8]], tl = Q.get('trees') || 'original', cl = Q.get('city') || 'original'
+  for (let k = 0; k < TREES.length; k++) kinds['tree' + k] = dress(await baked(...TREES[k], 0, 62), tl, { seams: Q.get('treeSeams') === '1' })
+  const BN = ['A', 'B', 'C', 'D', 'E', 'F'], BH = [17, 24, 14, 30, 20, 26]; for (let k = 0; k < 6; k++) kinds['house' + k] = dress(await baked(`building_${BN[k]}_withoutBase`, BH[k]), cl, { seams: Q.get('citySeams') === '1', kind: 'building' })
+  const bit = (g, L = null) => dress(g, 'original', { tier: 'pop', mat: hard, L })   // board-game pieces: own colours, hard surface, the brightest tier
+  for (const [n, name] of [['dom0', 'domino_tile_6-6'], ['dom1', 'domino_tile_1-2'], ['dom2', 'domino_tile_0-5']]) kinds[n] = bit(await baked(name, 2.4, Math.PI / 2, 40))
+  for (const [n, name] of [['chip0', 'coin_10_gold'], ['chip1', 'coin_10_silver'], ['chip2', 'coin_10_copper']]) kinds[n] = bit(await baked(name, 0.5, 0, 40))
+  const DICE = [['D6_B_blue', 2.8], ['D6_C_yellow', 2.4], ['D6_B_green', 3.2], ['D20_blue', 3.6], ['D20_yellow', 3.0], ['D8_green', 3.2], ['D4_red', 2.6]]; for (let k = 0; k < DICE.length; k++) kinds['die' + k] = bit(await baked(...DICE[k], 0, 35))
+  const CROWD = ['meeple_red', 'meeple_green', 'meeple_yellow', 'pawn_A_red', 'pawn_A_blue', 'pawn_A_yellow']; for (let k = 0; k < 6; k++) kinds['crowd' + k] = bit(await baked(CROWD[k], k < 3 ? 2.6 : 2.3, 0, 55))
+  { const { buildPiece } = await import('./chess-set.js'), set = { light: '#efe6d2', dark: '#3a3340' }; for (const ch of ['K', 'Q', 'B', 'N', 'R', 'P', 'k', 'q', 'b', 'n', 'r', 'p']) { const node = buildPiece(ch, set), h0 = node.userData.piece.height; kinds['chess' + ch] = bit(bake(node, { height: h0 * 5.2, round: ROUND ? 55 : 0 }), [0.2, 0.93]) } }
+  { const tex = await new THREE.TextureLoader().loadAsync('card_back.png'); tex.colorSpace = THREE.SRGBColorSpace; kinds.card = [[new THREE.BoxGeometry(3.0, 5.0, 0.07).translate(0, 2.5, 0), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.55 })]] }
+  const BITS = +(Q.get('bits') ?? 1), PHYS = Q.get('phys') !== '0'; let CHIP_H = 0.4726 / 3.2; { const g = kinds.chip0[0][0]; g.computeBoundingBox(); if (PHYS) CHIP_H = g.boundingBox.max.y - g.boundingBox.min.y; info.chip = [g.boundingBox.min.toArray().map((v) => +v.toFixed(2)), g.boundingBox.max.toArray().map((v) => +v.toFixed(2))]; const d = kinds.dom0[0][0]; d.computeBoundingBox(); info.dom = [d.boundingBox.min.toArray().map((v) => +v.toFixed(2)), d.boundingBox.max.toArray().map((v) => +v.toFixed(2))] }
+  const perTile = (ci, cj, rand, add) => { const T = 26; for (let i = 0; i < 9; i++) { const x = (ci + rand()) * T, z = (cj + rand()) * T, d = rdist(x, z), k = Math.floor(rand() * 5), yaw = rand() * 6.28, sc = 0.75 + rand() * 0.6; if (d < HALF + 9 || rand() < 0.35) continue; const n = Math.floor(-z / 220), zs = -z - n * 220; if (n % 4 === 2 && zs > 20 && zs < 150 && x > xc(z) && d < 46) continue; add('tree' + k, { x, y: ground(x, z), z, yaw, scale: sc }) } }
+  const stations = (n, add) => { if (!BITS) return; const z0 = -n * 220 - 24, r = (() => { let s = (n + 7) * 2654435761 >>> 0; return () => ((s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296) })(), at = (z, off, o = {}) => { const [x, zz] = side(z, off); return { x, y: ground(x, zz) + (o.dy ?? 0), z: zz, yaw: o.yaw ?? yawAt(z), ...o } }
+    if (n % 4 === 0) { // a domino run as the crash barrier, the first thirteen caught mid-fall; chip stacks opposite
+      layChain((sd) => at(z0 - sd, -(HALF + 1.7), { dy: -0.1 }), { n: 44, gap: 1.5, group: 's' + n + ':run' }).forEach((sp, i) => add('dom' + (i % 3), PHYS ? sp : { ...sp, tilt: -Math.max(0, 1 - i / 13) * 1.25 }))
+      for (const [dz, off, m, k] of [[-30, 7.5, 13, 0], [-33, 10.5, 8, 1], [-27, 11, 18, 2], [-52, 8, 10, 1]]) { const cs = PHYS ? 2 : 3.2, mm = PHYS ? Math.ceil(m / 2.2) : m; for (let i = 0; i < mm; i++) add('chip' + k, at(z0 + dz, HALF + off, { dy: i * CHIP_H * cs - 0.1, yaw: r() * 6.28, scale: cs, group: 's' + n + ':stack' + dz })) } }
+    if (n % 4 === 1) { // dice as boulders, and a crowd of pawns and meeples at the fence
+      for (let i = 0; i < 12; i++) add('die' + (i % 7), at(z0 - 8 - i * 8.5 - r() * 4, (i % 2 ? 1 : -1) * (HALF + 3.5 + r() * 7), { yaw: r() * 6.28 }))
+      for (let i = 0; i < 26; i++) { const z = z0 - 60 - i * 2.1, off = HALF + 2.4 + (i % 2) * 1.9; add('crowd' + (i % 6), at(z, off, { yaw: yawAt(z) - Math.PI / 2 + (r() - 0.5) * 0.5 })) } }
+    if (n % 4 === 2) for (let row = 0; row < 2; row++) for (let i = 0; i < 6; i++) { const z = z0 - 22 - i * 17 - row * 5, k = (i + row * 2) % 6; add('house' + k, at(z, HALF + 13 + row * 15, { yaw: yawAt(z) - Math.PI / 2, dy: -0.3, scale: row ? 1.15 : 0.8 })) }
+    if (n % 4 === 3) { // an avenue of chess pieces, light on one side and dark on the other, and two houses of cards
+      const order = ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R', 'P', 'P', 'P', 'P']; order.forEach((ch, i) => { const z = z0 - 10 - i * 6.5; add('chess' + ch, at(z, HALF + 3.2)); add('chess' + ch.toLowerCase(), at(z, -(HALF + 3.2))) })
+      for (const [dz, off] of [[-110, HALF + 9], [-140, -(HALF + 10)]]) { const zc = z0 + dz, lean = 0.38, half = Math.sin(lean) * 5, top = Math.cos(lean) * 5, yw = yawAt(zc)
+        for (let st = 0; st < 2; st++) for (let i = 0; i < 3 - st; i++) { const along = (i - (2 - st) / 2) * (half * 2 + 0.5), [x, zz] = side(zc + along, off), y = ground(x, zz) + st * (top + 0.1); const dx = Math.sin(yw) * half, dzz = Math.cos(yw) * half
+          const group = 's' + n + ':cards' + dz; add('card', { x: x - dx * 0 , y, z: zz + half, yaw: yw + Math.PI, tilt: lean, group }); add('card', { x, y, z: zz - half, yaw: yw, tilt: lean, group }); if (i < 2 - st) add('card', { x, y: y + top + 0.05, z: zz - half - 2.75 + 2.5, yaw: yw, tilt: Math.PI / 2, dy: 0, group }) } } } }
+  const field = createField({ kinds, perTile, stations }); S.add(field.object3d)
+  if ((Q.get('bitsMat') || 'clay') === 'clay') { // board-game pieces in the game's one clay material (kfb-clay.v1.1, profile for props), hand marks sized to a figure
+    const CL = await import('./game/src/vendor/clay/kfb-clay.v1.1.js'); let n = 0; for (const im of field.object3d.children) if (/^(dom|chip|die|crowd|chess)/.test(im.name)) { im.material = im.material.clone(); CL.applyClay(im, THREE, { profile: 'midground', seed: im.name, scaleRef: 1.8 }); n++ } info.clayOn = n }
+  // road ribbon and the two hems, rebuilt round the focus
+  const lane = (() => { const c = document.createElement('canvas'); c.width = 256; c.height = 256; const g = c.getContext('2d'); g.fillStyle = '#3b3a3d'; g.fillRect(0, 0, 256, 256); for (let i = 0; i < 2600; i++) { g.fillStyle = `rgba(${200 + Math.random() * 55 | 0},${200 + Math.random() * 55 | 0},${200 + Math.random() * 55 | 0},${Math.random() * 0.07})`; g.fillRect(Math.random() * 256, Math.random() * 256, 2, 2) } g.fillStyle = '#e9e2cf'; g.fillRect(8, 0, 6, 256); g.fillRect(242, 0, 6, 256); g.fillStyle = '#e8c44a'; g.fillRect(125, 20, 6, 120); const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t })()
+  const roadMat = new THREE.MeshStandardMaterial({ map: lane, roughness: 0.82 }), hemMat = world.fabrics.cotton('stripes', ['#27405e', '#eadfc8', 6, 0.5], { size: 0.5 }); let roadMesh = null, hem = null
+  function layRoad(fz) { const z0 = Math.round(fz) + 40, n = 170, pos = [], uv = [], idx = [], pts = [[], []]
+    for (let i = 0; i <= n; i++) { const z = z0 - i, sl = xc(z + 0.5) - xc(z - 0.5), k = 1 / Math.sqrt(1 + sl * sl), nx = k, nz = -sl * k, y = roadY(z) + 0.06; for (const sgn of [-1, 1]) { pos.push(xc(z) + sgn * HALF * nx, y, z + sgn * HALF * nz); uv.push(sgn < 0 ? 0 : 1, z / 9); pts[sgn < 0 ? 0 : 1].push(V(xc(z) + sgn * (HALF + 0.2) * nx, y - 0.02, z + sgn * (HALF + 0.2) * nz)) } if (i < n) { const a = i * 2; idx.push(a, a + 1, a + 3, a, a + 3, a + 2) } }
+    if (roadMesh) { S.remove(roadMesh); roadMesh.geometry.dispose(); S.remove(hem); hem.dispose() }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); g.computeVertexNormals(); roadMesh = new THREE.Mesh(g, roadMat); roadMesh.receiveShadow = true; S.add(roadMesh)
+    hem = new THREE.InstancedMesh(new THREE.CapsuleGeometry(0.17, 1, 1, 6), hemMat, n * 2); const M = new THREE.Matrix4(), q4 = new THREE.Quaternion(), up = V(0, 1, 0); let k = 0; for (const side of pts) for (let i = 0; i < n; i++) { const d = side[i + 1].clone().sub(side[i]), len = d.length(); q4.setFromUnitVectors(up, d.normalize()); hem.setMatrixAt(k++, M.compose(side[i].clone().add(side[i + 1]).multiplyScalar(0.5), q4, V(1, len, 1))) } hem.castShadow = hem.receiveShadow = true; S.add(hem) }
+  // car=race|diesel: WSA's measured profile (kfb.car-contact-profile/1) and a stand-in for the racer's owner port, so the props run exactly as they will be called there
+  const PROFILE = Q.get('car') ? await (await fetch('cars/CAR_TYPE_' + (Q.get('car') === 'diesel' ? 'DIESELPUNK' : 'RACE_CAR') + '.json')).json() : null
+  const speed = +(Q.get('speed') ?? (PROFILE ? PROFILE.speedRange.cruise_m_s : 22)); let sewnBefore = 0
+  // --- the car and its line. The car is a stand-in box (the racer is built elsewhere); it leaves the road wherever there is something to hit. ---
+  const bump = (zs, a, b, v) => v * sstep(a - 10, a, zs) * (1 - sstep(b, b + 10, zs))
+  const offAt = (z) => { if (!PHYS || Q.get('line') === 'road') return 0; const n = Math.floor(-z / 220), zs = -z - n * 220, m = ((n % 4) + 4) % 4; return bump(zs, 176, 208, -21) + (m === 0 ? bump(zs, 56, 78, -5.6) : m === 1 ? bump(zs, 34, 58, 9.5) + bump(zs, 90, 134, 6.7) : m === 3 ? bump(zs, 38, 100, +(Q.get('chessLine') ?? 6.5)) + bump(zs, 128, 142, 13.6) : 0) }
+  const posAt = (t) => { const z = -t * speed, [x, zz] = side(z, offAt(z)); return [x, Math.max(height(x, zz), rdist(x, zz) < HALF ? roadY(zz) : -99) + 0.08, zz] }
+  const carAt = (t) => { const a = posAt(t - 0.02), b = posAt(t + 0.02), p = posAt(t), vx = (b[0] - a[0]) / 0.04, vy = (b[1] - a[1]) / 0.04, vz = (b[2] - a[2]) / 0.04; return { x: p[0], y: p[1], z: p[2], yaw: Math.atan2(vx, vz), vx, vy, vz, speed: Math.hypot(vx, vz) } }
+  const car = { box: PROFILE ? { c: PROFILE.hull.c, h: PROFILE.hull.h } : { c: [0, 0.75, 0], h: [0.95, 0.62, 2.1] }, x: 0, y: 0, z: 0, yaw: Math.PI, vx: 0, vy: 0, vz: -speed }, carMesh = new THREE.Group()
+  if (PHYS) { const cm = new THREE.MeshStandardMaterial({ color: P.accent, roughness: 0.45 }), dk = new THREE.MeshStandardMaterial({ color: '#26242a', roughness: 0.7 }), add = (g, m, x, y, z) => { const o = new THREE.Mesh(g, m); o.position.set(x, y, z); o.castShadow = o.receiveShadow = true; o.userData.kfbPart = true; carMesh.add(o); return o }
+    if (PROFILE) for (const k of PROFILE.physicsColliders) add(new THREE.BoxGeometry(k.h[0] * 2, k.h[1] * 2, k.h[2] * 2), cm, ...k.c); else { add(new THREE.BoxGeometry(1.9, 0.62, 4.2), cm, 0, 0.7, 0); add(new THREE.BoxGeometry(1.6, 0.5, 1.9), cm, 0, 1.24, -0.35) } for (const [x, z] of [[-0.95, 1.35], [0.95, 1.35], [-0.95, -1.35], [0.95, -1.35]]) add(new THREE.CylinderGeometry(0.44, 0.44, 0.36, 16).rotateZ(Math.PI / 2), dk, x, 0.44, z); S.add(carMesh) }
+  // --- things that react: board-game pieces through kfbtoys (Rapier), trees and bushes through the game's rubber bend ---
+  const realNow = performance.now.bind(performance); let simT = 0, toys = null, bend = null
+  const classOf = (k) => (k.startsWith('dom') ? 'domino' : k.startsWith('chip') ? 'chip' : k.startsWith('die') ? (DICE[+k.slice(3)][0].startsWith('D6') ? 'die6' : 'dieN') : k.startsWith('crowd') ? (+k.slice(5) < 3 ? 'meeple' : 'pawn') : k.startsWith('chess') ? 'chess' : k === 'card' ? 'card' : null)
+  const PACE = +(Q.get('pace') ?? 2) * chainPace({ gravity: 13.5 }), fronts = (group) => { if (Q.get('run') === '0') return null; const n = +group.slice(1).split(':')[0], t0 = (n * 220 + 24 - 16) / speed; return simT > t0 ? (simT - t0) * PACE : null }   // the run starts falling when the car is 16 m short of its first tile
+  let hostWorld = null, port = null, link = null
+  if (PHYS && PROFILE) { await RAPIER.init?.(); hostWorld = new RAPIER.World({ x: 0, y: -9.81, z: 0 }); hostWorld.timestep = 1 / 60   // the stand-in host: one world, one step, 60 Hz, as in the handover
+    const subs = new Set(), log2 = { reports: 0, invalid: 0, lossApplied: 0 }; port = { subscribe: (fn) => { subs.add(fn); return () => subs.delete(fn) }, groundAt: (x, z) => ground(x, z), publish: (f) => { for (const fn of subs) fn(Object.freeze(f)) }, log: log2,
+      report: (e) => { const ok = e && (e.type === 'toy' || e.type === 'gummi') && typeof e.kind === 'string' && Number.isFinite(e.speed) && e.speed >= 0 && Number.isFinite(e.loss) && e.loss >= 0; if (ok) log2.reports++; else log2.invalid++; return { ok, requestOnly: true, lossApplied: 0 } } } }
+  if (PHYS) { toys = await createToys(THREE, RAPIER, { field, classOf, ground, fronts, now: realNow, carBody: Q.get('carBody') === '1', budgetMs: 4000, ...(hostWorld ? { world: hostWorld, step: false } : {}) }); S.add(toys.object3d)
+    if (Q.get('bend') !== '0') { bend = createBend({ field, kinds: { tree0: 'baum', tree1: 'baum', tree2: 'baum', tree3: 'baum', tree4: 'busch' } }); performance.now = () => simT * 1000 }   // the game's springs read the clock; here the clock is the film's
+    if (port) link = connectCar({ port, profiles: { [PROFILE.vehicleId]: PROFILE }, toys, bend, onFrame: (c) => Object.assign(car, c) }) }
+  for (const im of [...field.object3d.children, ...(toys ? toys.object3d.children : [])]) im.userData.kfbPart = true
+  const log = { hits: {}, bends: 0, maxAwake: 0, maxBodies: 0 }
+  function simTo(t) { if (!PHYS) return; if (t < simT) simT = t; while (simT < t - 1e-6) { const dt = Math.min(1 / 60, t - simT); simT += dt; Object.assign(car, carAt(simT)); const z = -simT * speed; field.update({ x: xc(z - 14), z: z - 14 })
+      if (port) { const c = carAt(simT); hostWorld.step(); port.publish({ x: c.x, y: c.y, z: c.z, yaw: c.yaw, vx: c.vx, vy: c.vy, vz: c.vz, speed: Math.hypot(c.vx, c.vy, c.vz), latV: 0, dt, vehicleId: PROFILE.vehicleId }); if (toys.live.size) field.update({ x: xc(z - 14), z: z - 14 }); continue }
+      for (const ev of toys.update(dt, { car })) log.hits[ev.kind] = (log.hits[ev.kind] || 0) + 1
+      if (bend) { const d = { x: car.x, y: car.y, z: car.z, yaw: car.yaw, speed: car.speed, latV: 0, events: [] }; bend.car(d, dt, car.box); log.bends += d.events.length; bend.tick(performance.now()) }
+      if (toys.live.size) field.update({ x: xc(z - 14), z: z - 14 }) } const r = toys.report(); log.maxAwake = Math.max(log.maxAwake, r.awake); log.maxBodies = Math.max(log.maxBodies, r.bodies); carMesh.position.set(car.x, car.y, car.z); carMesh.rotation.y = car.yaw }
+  // --- look switch: style=pencil|water|paint puts the website's style pass (own code, post2.js) over the finished picture ---
+  const STYLE = Q.get('style'), post = STYLE && STYLE !== '0' ? (await import('./post2.js')).createPost(THREE, R) : null, stage = { pencil: 1, water: 2, paint: 3 }[STYLE] || 3
+  if (post) { post.u.fin.bg.value.set(1e5, 2e5); post.u.fin.expo.value = +(Q.get('expo') ?? 1.15); post.u.fin.vig.value = 0.16; post.u.ao.limit.value = 400; post.u.ao.reach.value = 1.4; if (Q.get('lens') !== '1') post.u.focus.most.value = 0; if (Q.get('ink') === '0') post.u.fin.ink.value = 0 }
+  window.setTime = (t) => { const z = -t * speed; simTo(t); focus.x = xc(z - 14); focus.z = z - 14; let left = 1, rounds = 0; while (left > 0 && rounds++ < 400) left = world.update(focus); field.update(focus); layRoad(z)
+    const c = Q.get('cam') || (PHYS ? 'car' : 'chase'), fx = Math.sin(car.yaw), fz = Math.cos(car.yaw); if (Q.get('p')) { const p = Q.get('p').split(',').map(Number), l = Q.get('l').split(',').map(Number), [px, pz] = side(p[2], p[0]), [lx, lz] = side(l[2], l[0]); cam.position.set(px, roadY(p[2]) + p[1], pz); cam.lookAt(lx, roadY(l[2]) + l[1], lz) }
+    else if (c === 'car') { const [bk, up, sd] = (Q.get('rig') || '11,5,0').split(',').map(Number); cam.position.set(car.x - fx * bk + fz * sd, car.y + up, car.z - fz * bk - fx * sd); cam.lookAt(car.x + fx * 7, car.y + 1.2, car.z + fz * 7) }
+    else if (c === 'high') { cam.position.set(xc(z) + 26, roadY(z) + 30, z + 34); cam.lookAt(xc(z - 22), roadY(z), z - 22) } else if (c === 'side') { cam.position.set(xc(z - 8) + 9.5, roadY(z) + 1.5, z - 2); cam.lookAt(xc(z - 16) - 1, roadY(z) + 0.4, z - 16) } else { cam.position.set(xc(z), roadY(z) + 2.3, z); cam.lookAt(xc(z - 18), roadY(z - 18) + 1.0, z - 18) }
+    K.update(1 / 24, { scene: S, camera: cam }); if (post) post.render(S, cam, t, { steps: [0, 1, 2, 3].map((i) => ({ at: cam.position, t0: i < stage ? -1e5 : 1e9, speed: 1 })), focus: 14 }); else R.render(S, cam)
+    const rep = world.report(); info.t = t; info.metresDriven = Math.round(-z); info.tilesSewnSinceLast = rep.sewn - sewnBefore; sewnBefore = rep.sewn; info.report = rep; info.props = field.report(); info.drawCalls = R.info.render.calls; info.frameTris = R.info.render.triangles; if (toys) { info.toys = toys.report(); info.log = log; info.bend = bend?.info(); if (link) { info.port = { ...link.stats, lossAsked: +link.stats.lossAsked.toFixed(2), host: port.log, vehicle: PROFILE.vehicleId, speed } } } document.title = 'OK ' + JSON.stringify(info) }
+  { const S2 = new THREE.Scene(); S2.add(K.group); cam.position.set(0, 3, 0); for (let i = 0; i < 200; i++) { K.update(1 / 20, { scene: S2, camera: cam }); R.render(S2, cam); await new Promise((r) => setTimeout(r, 25)); if (i > 30 && K.ready()) break } S.add(K.group) }
+  if (Q.get('from')) simT = +Q.get('from')
+  window.setTime(+(Q.get('from') ?? 0))
+  if (Q.get('ts')) { const series = []; for (const t of Q.get('ts').split(',').map(Number)) { const t0 = realNow(); window.setTime(t); series.push({ t, sewn: info.tilesSewnSinceLast, ms: Math.round(realNow() - t0), calls: info.drawCalls, tris: info.frameTris }) } document.title = 'OK ' + JSON.stringify({ series, last: info.report, toys: info.toys, log: info.log, bend: info.bend }) }
+} catch (e) { document.title = 'ERR ' + (e.stack || e).toString().slice(0, 900) }
+</script></body></html>
