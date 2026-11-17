@@ -1,3 +1,17 @@
+## R0.7 · Playable private prototype · 17 November2026
+
+User authorized parallel research, simulations and online modular3D prototype; earlier paper-only gate superseded for this candidate. Existing owner/PR475 retained. [Play private Site](https://the-invisible-handshake.frizzlebob.chatgpt.site) · Site v1 source040b5b22f6bb6c93220e1d8a51c99658023499c7, deployment appgdep_6afc3d27bba081919727443237b63da1 succeeded. Browser live view reaches login; authenticated live canvas not observed. Local actual full6-seat demo and soloWindow turn tested.
+
+Delivered: solo and2–6 shared-screen humans/computer policies; complete56-slot mechanical set; original KFB dice on modular3D table; exclusive pyramid/window; English fictional institution copy; rules, save/resume and source reader. No remote multi-browser multiplayer, final card artwork or existingKFB rule/runtime change. StuntRace was read-only palette/declarative-scene reference; Git transport unavailable there, connector used.
+
+[Independent tests](r07/tests/TEST_REPORT.md):1800 complete synthetic games,51,200actions,90,539invariant checks,10fixtures. Same engine SHA c7bd234135545cc3d40ac67ed0a34aa4de7a9141261cdc4a42347ea0ab1b38c3. Six roles reach11 but unequal accessibility; final-seat advantage/raw-score ties remain. Lightweight bulk policies differ from Site chooser; no superiority/balance/fun claim. [Browser evidence](r07/tests/BROWSER_REPORT.md), [independent guard](r07/tests/CRITIC_GUARD.md), [provenance](r07/PROVENANCE.json).
+
+Research38source/findmittel records: Yurchak/Curtis/Overton, Hughes, Desmet, empirical persuasion/nudging/NLP/AI, historical operation distinctions. Also persisted in existing Atlas package influence-r07; no full Hughes video corpus/Desmetbook/Curtisfilm audit. Original/interpretation/fiction separate.
+
+One next gate: Georg plays one solo and one2-person round, checks whether dependencies and framing create worthwhile decisions; address endgame/seat-order issue before treating this as balanced. No merge/Live promotion.
+
+---
+
 ## Additive handoff · R0.6 RAF borromean pyramid and Atlas research · 2026-11-17
 
 **Outcome:** One **design candidate** for a tactile three-D6 R/A/F power pyramid; extended **source-critical WSA Research Atlas requirements**. Owner `georg-doc/kayfabizarro/games/invisible-handshake/`, branch `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475. No runtime/new game owner, no additional game currency or extra card; no Site/Cloudflare Stage (text-only design) and no new KFB Hub live tile.
