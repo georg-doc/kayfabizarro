@@ -1,3 +1,9 @@
+## R12 · Shorter claims and distinct dice actions · 17 November 2026
+
+Same owner, branch and draft PR 475. [Report and evidence](r12-hold-time/REPORT.md). 7,200 controlled holding runs plus 1,200 exploratory slot runs; independent timing/accounting review passed. Six-player mixed-policy trophies per player: full round 1.18, two opposing turns 3.21, one opposing turn 4.59. Resolved claims destroyed: 79.3%, 46.9%, 27.1%. Candidate: two opposing turns, capped at return to own turn. Three public cards per faction brought only modest measured gains.
+
+Safe +1 OR −1, random reroll, relocation and swapping are distinct proposed actions. This new choice menu is NOT covered by the holding simulations. Separate exhaustive swap probe is included. No human enjoyment, finite deck or faction balance established. No Site/runtime changes; current Site remains the older prototype. Next gate: paper-test the two-turn countdown, then compare one-action-per-turn options before implementation.
+
 ## R11 · Directed emotions / two-sided breaks · 17 November 2026
 
 Concept-only continuation, same owner/branch/PR475. [Candidate and evidence](r11-directed-fhh/REPORT.md). No Site/runtime edits or balance promotion. One public emotiondie each has location plus1..6 strength; oddactionroll redirectsselectedemotion, evenchanges±1. Commonclaim: ownsignaturehasatleastone3..5die,no1/6die; holdcontinuouslytoownnextstart.0/7replacesstory,noprize,resets trigger3; otherdicepersist. No signedaddition ofHopeandHate.

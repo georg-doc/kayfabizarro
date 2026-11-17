@@ -1,0 +1,404 @@
+{
+  "rounds": 18,
+  "seeds": 200,
+  "rows": [
+    {
+      "n": 2,
+      "k": 1,
+      "policy": "random",
+      "runs": 200,
+      "wins": 8.89,
+      "zero": 0,
+      "lost_rate": 0.18290441176470587,
+      "denial_when_possible": 0.7302752293577982
+    },
+    {
+      "n": 2,
+      "k": 1,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 8.835,
+      "zero": 0,
+      "lost_rate": 0.22312596174983512,
+      "denial_when_possible": 0.8795493934142115
+    },
+    {
+      "n": 2,
+      "k": 1,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 8.7025,
+      "zero": 0,
+      "lost_rate": 0.25587858058999574,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 3,
+      "k": 1,
+      "policy": "random",
+      "runs": 200,
+      "wins": 6.735000000000003,
+      "zero": 0,
+      "lost_rate": 0.2156444099378882,
+      "denial_when_possible": 0.7347883597883598
+    },
+    {
+      "n": 3,
+      "k": 1,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 7.073333333333334,
+      "zero": 0,
+      "lost_rate": 0.2619130434782609,
+      "denial_when_possible": 0.8620492272467086
+    },
+    {
+      "n": 3,
+      "k": 1,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 7.251666666666668,
+      "zero": 0,
+      "lost_rate": 0.3084869675778767,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 3,
+      "k": 2,
+      "policy": "random",
+      "runs": 200,
+      "wins": 5.331666666666666,
+      "zero": 0,
+      "lost_rate": 0.3702755905511811,
+      "denial_when_possible": 0.7307692307692307
+    },
+    {
+      "n": 3,
+      "k": 2,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 5.046666666666666,
+      "zero": 0,
+      "lost_rate": 0.44855217628847205,
+      "denial_when_possible": 0.8660337552742616
+    },
+    {
+      "n": 3,
+      "k": 2,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 4.678333333333335,
+      "zero": 0,
+      "lost_rate": 0.5161179107050509,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 4,
+      "k": 1,
+      "policy": "random",
+      "runs": 200,
+      "wins": 5.45625,
+      "zero": 0,
+      "lost_rate": 0.2041932543299909,
+      "denial_when_possible": 0.7044025157232704
+    },
+    {
+      "n": 4,
+      "k": 1,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 5.945,
+      "zero": 0,
+      "lost_rate": 0.2565264967953728,
+      "denial_when_possible": 0.860062893081761
+    },
+    {
+      "n": 4,
+      "k": 1,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 6.36875,
+      "zero": 0,
+      "lost_rate": 0.30281882868089766,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 4,
+      "k": 2,
+      "policy": "random",
+      "runs": 200,
+      "wins": 4.33,
+      "zero": 0,
+      "lost_rate": 0.36159233321046813,
+      "denial_when_possible": 0.7100977198697068
+    },
+    {
+      "n": 4,
+      "k": 2,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 4.19875,
+      "zero": 0,
+      "lost_rate": 0.4530206806709005,
+      "denial_when_possible": 0.8701908038786362
+    },
+    {
+      "n": 4,
+      "k": 2,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 3.9875,
+      "zero": 0,
+      "lost_rate": 0.5224550898203593,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 4,
+      "k": 3,
+      "policy": "random",
+      "runs": 200,
+      "wins": 3.38625,
+      "zero": 0,
+      "lost_rate": 0.4954367666232073,
+      "denial_when_possible": 0.7181425485961123
+    },
+    {
+      "n": 4,
+      "k": 3,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 2.9725,
+      "zero": 0,
+      "lost_rate": 0.6013411567476948,
+      "denial_when_possible": 0.8691543494063484
+    },
+    {
+      "n": 4,
+      "k": 3,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 2.50375,
+      "zero": 0,
+      "lost_rate": 0.6881519539156158,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 5,
+      "k": 1,
+      "policy": "random",
+      "runs": 200,
+      "wins": 4.557000000000002,
+      "zero": 0,
+      "lost_rate": 0.21458117890382628,
+      "denial_when_possible": 0.6974789915966386
+    },
+    {
+      "n": 5,
+      "k": 1,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 5.139000000000001,
+      "zero": 0,
+      "lost_rate": 0.26919795221843,
+      "denial_when_possible": 0.854627539503386
+    },
+    {
+      "n": 5,
+      "k": 1,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 5.5840000000000005,
+      "zero": 0,
+      "lost_rate": 0.3230694629652079,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 5,
+      "k": 2,
+      "policy": "random",
+      "runs": 200,
+      "wins": 3.6050000000000004,
+      "zero": 0,
+      "lost_rate": 0.3745662734212353,
+      "denial_when_possible": 0.6989316931045646
+    },
+    {
+      "n": 5,
+      "k": 2,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 3.6849999999999996,
+      "zero": 0,
+      "lost_rate": 0.4615721800116891,
+      "denial_when_possible": 0.8567941415785191
+    },
+    {
+      "n": 5,
+      "k": 2,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 3.522000000000001,
+      "zero": 0,
+      "lost_rate": 0.5435458786936236,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 5,
+      "k": 4,
+      "policy": "random",
+      "runs": 200,
+      "wins": 2.235000000000001,
+      "zero": 0,
+      "lost_rate": 0.6076882569773565,
+      "denial_when_possible": 0.7079754601226994
+    },
+    {
+      "n": 5,
+      "k": 4,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 1.9040000000000004,
+      "zero": 1,
+      "lost_rate": 0.7064899028826884,
+      "denial_when_possible": 0.8580790114210822
+    },
+    {
+      "n": 5,
+      "k": 4,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 1.432999999999999,
+      "zero": 1,
+      "lost_rate": 0.7977131564088086,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "policy": "random",
+      "runs": 200,
+      "wins": 3.905833333333334,
+      "zero": 0,
+      "lost_rate": 0.20666892349356805,
+      "denial_when_possible": 0.679465776293823
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 4.585000000000001,
+      "zero": 0,
+      "lost_rate": 0.27077534791252483,
+      "denial_when_possible": 0.850187265917603
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 5.240833333333335,
+      "zero": 0,
+      "lost_rate": 0.3240541702493551,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 6,
+      "k": 2,
+      "policy": "random",
+      "runs": 200,
+      "wins": 3.0549999999999984,
+      "zero": 0,
+      "lost_rate": 0.37525562372188137,
+      "denial_when_possible": 0.6922351461804463
+    },
+    {
+      "n": 6,
+      "k": 2,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 3.2116666666666687,
+      "zero": 0,
+      "lost_rate": 0.4687801516195727,
+      "denial_when_possible": 0.8605769230769231
+    },
+    {
+      "n": 6,
+      "k": 2,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 3.2033333333333336,
+      "zero": 0,
+      "lost_rate": 0.5553499132446501,
+      "denial_when_possible": 1.0
+    },
+    {
+      "n": 6,
+      "k": 5,
+      "policy": "random",
+      "runs": 200,
+      "wins": 1.4825000000000008,
+      "zero": 0,
+      "lost_rate": 0.6924273858921162,
+      "denial_when_possible": 0.7036191145467322
+    },
+    {
+      "n": 6,
+      "k": 5,
+      "policy": "mixed",
+      "runs": 200,
+      "wins": 1.1841666666666664,
+      "zero": 0,
+      "lost_rate": 0.7931285485514631,
+      "denial_when_possible": 0.8603916614024005
+    },
+    {
+      "n": 6,
+      "k": 5,
+      "policy": "deny",
+      "runs": 200,
+      "wins": 0.8341666666666664,
+      "zero": 1,
+      "lost_rate": 0.8730178865913992,
+      "denial_when_possible": 1.0
+    }
+  ],
+  "extra": [
+    {
+      "n": 2,
+      "slots_per": 1,
+      "wins": 8.835,
+      "lost_rate": 0.22312596174983512
+    },
+    {
+      "n": 2,
+      "slots_per": 3,
+      "wins": 9.565,
+      "lost_rate": 0.2652198962934511
+    },
+    {
+      "n": 4,
+      "slots_per": 1,
+      "wins": 4.19875,
+      "lost_rate": 0.4530206806709005
+    },
+    {
+      "n": 4,
+      "slots_per": 3,
+      "wins": 4.35375,
+      "lost_rate": 0.4762406015037594
+    },
+    {
+      "n": 6,
+      "slots_per": 1,
+      "wins": 3.2116666666666687,
+      "lost_rate": 0.4687801516195727
+    },
+    {
+      "n": 6,
+      "slots_per": 3,
+      "wins": 3.355833333333331,
+      "lost_rate": 0.48378413023971284
+    }
+  ]
+}
