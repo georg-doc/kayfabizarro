@@ -1,0 +1,254 @@
+
+> kfb-infiniterooms@0.1.0 build
+> vite build --configLoader native --config probes/patch-transfer-r1/vite.config.mjs && node scripts/promote.mjs
+
+vite v8.3.4 building client environment for production...
+transforming...
+
+new URL('./', import.meta.url) doesn't exist at build time, it will remain unchanged to be resolved at runtime. If this is intended, you can use the /* @vite-ignore */ comment to suppress this warning.
+
+new URL('./',import.meta.url) doesn't exist at build time, it will remain unchanged to be resolved at runtime. If this is intended, you can use the /* @vite-ignore */ comment to suppress this warning.
+✓ 952 modules transformed.
+rendering chunks...
+computing gzip size...
+probes/patch-transfer-r1/dist/tunnel-lab/index.html                                                3.90 kB │ gzip:     1.81 kB
+probes/patch-transfer-r1/dist/corner-lab/index.html                                                4.11 kB │ gzip:     1.84 kB
+probes/patch-transfer-r1/dist/patch-wall/index.html                                                4.22 kB │ gzip:     1.84 kB
+probes/patch-transfer-r1/dist/room-lab/index.html                                                  4.52 kB │ gzip:     1.97 kB
+probes/patch-transfer-r1/dist/blaster-lab/index.html                                               4.52 kB │ gzip:     1.94 kB
+probes/patch-transfer-r1/dist/onboarding/index.html                                                5.66 kB │ gzip:     2.52 kB
+probes/patch-transfer-r1/dist/assets/Muzzleflash-C1vZ3c4M.bin                                      5.82 kB
+probes/patch-transfer-r1/dist/assets/Muzzleflash_Long-BtYSuPdO.bin                                 5.82 kB
+probes/patch-transfer-r1/dist/index.html                                                           6.80 kB │ gzip:     2.80 kB
+probes/patch-transfer-r1/dist/assets/sword-BoAMk2lO.png                                           12.25 kB
+probes/patch-transfer-r1/dist/assets/FB_Body_Belly.r1-B2fQzQpn.png                                12.67 kB
+probes/patch-transfer-r1/dist/assets/fly_wings-CIJWlIuZ.png                                       13.48 kB
+probes/patch-transfer-r1/dist/assets/rogue_texture-DOVB4it0.png                                   15.02 kB
+probes/patch-transfer-r1/dist/assets/actionfigure_texture-DpFtTJ_3.png                            15.04 kB
+probes/patch-transfer-r1/dist/assets/fredoka-latin-700-normal-BOIZVyIN.woff2                      15.90 kB
+probes/patch-transfer-r1/dist/assets/punch-VoDfP7_2.png                                           16.00 kB
+probes/patch-transfer-r1/dist/assets/fredoka-latin-500-normal-B0JifZgm.woff2                      16.24 kB
+probes/patch-transfer-r1/dist/assets/gun-wxAs7WmE.png                                             16.32 kB
+probes/patch-transfer-r1/dist/assets/pause-Costa_ro.png                                           16.42 kB
+probes/patch-transfer-r1/dist/assets/fredoka-latin-600-normal-C4zohCW5.woff2                      16.46 kB
+probes/patch-transfer-r1/dist/assets/walk_boot-Be1vP7Tk.png                                       16.47 kB
+probes/patch-transfer-r1/dist/assets/play-7J7iM-Wr.png                                            16.53 kB
+probes/patch-transfer-r1/dist/assets/interact-Ptwr6D8f.png                                        16.86 kB
+probes/patch-transfer-r1/dist/assets/map-DNLSYmAc.png                                             17.07 kB
+probes/patch-transfer-r1/dist/assets/chat-DtfDk8xc.png                                            17.23 kB
+probes/patch-transfer-r1/dist/assets/kenney_arrow-rounded-BSnoKlzX.glb                            17.27 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0011_W-oo-DvvNwM_s.png        17.36 kB
+probes/patch-transfer-r1/dist/assets/next-DPbA0ONs.png                                            17.64 kB
+probes/patch-transfer-r1/dist/assets/interact-jmDY03Mx.png                                        18.19 kB
+probes/patch-transfer-r1/dist/assets/drive_car-BqeO1tKO.png                                       18.46 kB
+probes/patch-transfer-r1/dist/assets/sound_on-D6BOopnA.png                                        19.02 kB
+probes/patch-transfer-r1/dist/assets/sound_off-F1NrR-gz.png                                       19.07 kB
+probes/patch-transfer-r1/dist/assets/settings-DsDddR6y.png                                        19.10 kB
+probes/patch-transfer-r1/dist/assets/almanac-VRJTDSCZ.png                                         19.70 kB
+probes/patch-transfer-r1/dist/assets/backpack-DrxKKUrD.png                                        19.74 kB
+probes/patch-transfer-r1/dist/assets/fredoka-latin-700-normal-C8FeHd3X.woff                       19.81 kB
+probes/patch-transfer-r1/dist/assets/donut-Dyk4W6bQ.png                                           20.03 kB
+probes/patch-transfer-r1/dist/assets/fredoka-latin-500-normal-BL692wg7.woff                       20.18 kB
+probes/patch-transfer-r1/dist/assets/fredoka-latin-600-normal-CcrEjrB4.woff                       20.38 kB
+probes/patch-transfer-r1/dist/assets/bangers-latin-400-normal-BAEm-Pv0.woff                       20.74 kB
+probes/patch-transfer-r1/dist/assets/field-worker-DVZ76PCq.js                                     21.63 kB
+probes/patch-transfer-r1/dist/assets/T2_slop_klatsch_a-OOeNZFkg.mp3                               23.03 kB
+probes/patch-transfer-r1/dist/assets/T2_slop_klatsch_b-D8wmmtMF.mp3                               23.03 kB
+probes/patch-transfer-r1/dist/assets/T3_panzer_klonk_a-BeQK95zF.mp3                               23.03 kB
+probes/patch-transfer-r1/dist/assets/T3_panzer_klonk_b-DudtzpuT.mp3                               23.03 kB
+probes/patch-transfer-r1/dist/assets/bangers-latin-400-normal-DeHY8Ncq.woff2                      23.52 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0001_Neutral-BffqOYiv.png     23.85 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0002_M-C2jERf4u.png           24.49 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0010_F-BgsZLGHC.png           25.99 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0008_Oh-C_A3MX8l.png          26.23 kB
+probes/patch-transfer-r1/dist/assets/T1_pappe_knete_a-BMB1q_Rm.mp3                                26.79 kB
+probes/patch-transfer-r1/dist/assets/T1_pappe_knete_b-CQwqSTvi.mp3                                26.79 kB
+probes/patch-transfer-r1/dist/assets/bar_1-JciOg3ed.png                                           31.33 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0009_R-CC2smwFO.png           31.73 kB
+probes/patch-transfer-r1/dist/assets/slider3_knob-DXJZIB3m.png                                    31.98 kB
+probes/patch-transfer-r1/dist/assets/KFB_Tail_Bunny_A_rund.r1-Cn_RbIOO.glb                        33.72 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0003_D-nNPpz7LR.png           34.37 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0006_Uh-C8LHU1NW.png          36.38 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0012_L-D_JWX_zJ.png           36.90 kB
+probes/patch-transfer-r1/dist/assets/iron_phantom_hovercar-Cy07_UiM.png                           37.19 kB
+probes/patch-transfer-r1/dist/assets/bar_tile__lock-BGx0l6dK.png                                  37.71 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0004_S-BrGcm77w.png           37.80 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0005_Ee-CSKFyPMP.png          38.01 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0007_Ah-Cn9er8jA.png          38.04 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBobMouth_01_0000s_0001s_0000_Smile-Bwg9Fpco.png       38.34 kB
+probes/patch-transfer-r1/dist/assets/toggle3_off-DIjLmO9W.png                                     40.42 kB
+probes/patch-transfer-r1/dist/assets/toggle3_on-D7WAz-Ti.png                                      40.49 kB
+probes/patch-transfer-r1/dist/assets/rust_runner-DiG82krc.png                                     40.96 kB
+probes/patch-transfer-r1/dist/assets/rustfire_interceptor-DAst8PAC.png                            41.02 kB
+probes/patch-transfer-r1/dist/assets/crimson_flame_dragster-Pcbbg9wp.png                          41.58 kB
+probes/patch-transfer-r1/dist/assets/jetbound_roadster-COJiF6cM.png                               42.02 kB
+probes/patch-transfer-r1/dist/assets/pillow__grey-CdLIRBYO.png                                    44.32 kB
+probes/patch-transfer-r1/dist/assets/KFB_HeroMan_Blaster.k10-wDohwnKs.glb                         47.77 kB
+probes/patch-transfer-r1/dist/assets/r_pause_g-DyB50auk.png                                       49.27 kB
+probes/patch-transfer-r1/dist/assets/pillow__beige-MhPW9nQ0.png                                   50.31 kB
+probes/patch-transfer-r1/dist/assets/r_play_g-B6iJCK_7.png                                        50.56 kB
+probes/patch-transfer-r1/dist/assets/pillow__gold-Dz2g1om4.png                                    50.80 kB
+probes/patch-transfer-r1/dist/assets/r_pause-Dpe9wTul.png                                         51.03 kB
+probes/patch-transfer-r1/dist/assets/r_next_g-40JOLi5c.png                                        52.42 kB
+probes/patch-transfer-r1/dist/assets/r_play-DKhK8ndm.png                                          52.59 kB
+probes/patch-transfer-r1/dist/assets/rocket_launcher-ooCOt3f_.png                                 53.60 kB
+probes/patch-transfer-r1/dist/assets/r_next-B2vCBQvE.png                                          53.97 kB
+probes/patch-transfer-r1/dist/assets/r_sound_g-Dh8B_0k8.png                                       54.03 kB
+probes/patch-transfer-r1/dist/assets/r_mute_g-DPBCzonF.png                                        55.19 kB
+probes/patch-transfer-r1/dist/assets/r_sound-CS9Q5Mwy.png                                         55.29 kB
+probes/patch-transfer-r1/dist/assets/oo-BFFZzEfI.png                                              56.39 kB
+probes/patch-transfer-r1/dist/assets/wasteland_beetle-BuI0niUJ.png                                56.74 kB
+probes/patch-transfer-r1/dist/assets/bar_2-DFJ1ZdTZ.png                                           57.42 kB
+probes/patch-transfer-r1/dist/assets/r_mute-8sWjTrbm.png                                          57.63 kB
+probes/patch-transfer-r1/dist/assets/arrow_right-BTvclX_8.png                                     58.31 kB
+probes/patch-transfer-r1/dist/assets/arrow_left-1X8EILIj.png                                      59.19 kB
+probes/patch-transfer-r1/dist/assets/bar_tile__empty-BkNDFcQt.png                                 59.20 kB
+probes/patch-transfer-r1/dist/assets/cartoon_bomb-Bc8zkzmm.png                                    59.21 kB
+probes/patch-transfer-r1/dist/assets/rocket-DRitFhkk.png                                          63.47 kB
+probes/patch-transfer-r1/dist/assets/gatling-pHaIVs-q.png                                         63.79 kB
+probes/patch-transfer-r1/dist/assets/rocket-CgoAkbBy.png                                          66.12 kB
+probes/patch-transfer-r1/dist/assets/closed-B4xu_ceh.png                                          69.69 kB
+probes/patch-transfer-r1/dist/assets/charge_shot-BpRJRvE-.png                                     70.70 kB
+probes/patch-transfer-r1/dist/assets/KFB_Gun_Pistol.k10-BiegJXdi.glb                              70.92 kB
+probes/patch-transfer-r1/dist/assets/interact_free-DTnVPFWy.png                                   72.48 kB
+probes/patch-transfer-r1/dist/assets/spin-Dv62b_QX.png                                            73.00 kB
+probes/patch-transfer-r1/dist/assets/smile_closed-DEjiDT3P.png                                    73.34 kB
+probes/patch-transfer-r1/dist/assets/mbp-B78r5Z18.png                                             74.37 kB
+probes/patch-transfer-r1/dist/assets/chat_free-CpoK7aX6.png                                       76.39 kB
+probes/patch-transfer-r1/dist/assets/settings_free-DRcBerSj.png                                   77.80 kB
+probes/patch-transfer-r1/dist/assets/small_open-7M3_x5SN.png                                      79.85 kB
+probes/patch-transfer-r1/dist/assets/close-BkHjuAog.png                                           81.04 kB
+probes/patch-transfer-r1/dist/assets/uppercut-BIgmFsgp.png                                        81.35 kB
+probes/patch-transfer-r1/dist/assets/cape-Bt1BRpQ6.png                                            82.64 kB
+probes/patch-transfer-r1/dist/assets/slider3_fill-D7VZH3TN.png                                    83.21 kB
+probes/patch-transfer-r1/dist/assets/bar_3-Cyc13r74.png                                           83.79 kB
+probes/patch-transfer-r1/dist/assets/grenade-DepFg0SX.png                                         83.98 kB
+probes/patch-transfer-r1/dist/assets/get_out-DEdYSh8R.png                                         85.13 kB
+probes/patch-transfer-r1/dist/assets/btn_check-DzaG2bhA.png                                       85.27 kB
+probes/patch-transfer-r1/dist/assets/oh-CkBI9pk4.png                                              85.52 kB
+probes/patch-transfer-r1/dist/assets/cluster-DB_O-qUt.png                                         86.03 kB
+probes/patch-transfer-r1/dist/assets/btn_x-Bo-_9vhy.png                                           86.75 kB
+probes/patch-transfer-r1/dist/assets/teeth_small--QgY0q3y.png                                     87.65 kB
+probes/patch-transfer-r1/dist/assets/playlist_btn-Cf35gYKY.png                                    87.99 kB
+probes/patch-transfer-r1/dist/assets/almanac_free-By34bsqA.png                                    88.40 kB
+probes/patch-transfer-r1/dist/assets/land-DxuRz7K-.png                                            88.52 kB
+probes/patch-transfer-r1/dist/assets/bar_4-Det2_mc2.png                                           89.12 kB
+probes/patch-transfer-r1/dist/assets/jetpack-Cjh2pHCs.png                                         90.97 kB
+probes/patch-transfer-r1/dist/assets/backpack_free-C_4Z9jUx.png                                   92.69 kB
+probes/patch-transfer-r1/dist/assets/fluff2_comic-Bb1jFxOk.png                                    93.58 kB
+probes/patch-transfer-r1/dist/assets/fluff2_mystical-DE0d4-y6.png                                 94.04 kB
+probes/patch-transfer-r1/dist/assets/slider3_track-BMlNnpCH.png                                   94.38 kB
+probes/patch-transfer-r1/dist/assets/bar_5-CP4ALVms.png                                           94.39 kB
+probes/patch-transfer-r1/dist/assets/fluff2_tragic-3cPyNrPH.png                                   94.64 kB
+probes/patch-transfer-r1/dist/assets/fluff2_absurd-Bzf5o5W-.png                                   94.78 kB
+probes/patch-transfer-r1/dist/assets/fluff2_forbidden-BHtJTwmx.png                                94.86 kB
+probes/patch-transfer-r1/dist/assets/ah-kdQcJ95I.png                                              96.16 kB
+probes/patch-transfer-r1/dist/assets/fluff2_heroic-s-0V-mCS.png                                   96.44 kB
+probes/patch-transfer-r1/dist/assets/ee_wide-pWzVonwj.png                                         98.29 kB
+probes/patch-transfer-r1/dist/assets/bar_6-BomGFSVw.png                                           98.52 kB
+probes/patch-transfer-r1/dist/assets/th_tongue-CklPd1f_.png                                      101.17 kB
+probes/patch-transfer-r1/dist/assets/vbar3_fill-BHNsgiqy.png                                     102.19 kB
+probes/patch-transfer-r1/dist/assets/bar_7-1rrriDo4.png                                          102.51 kB
+probes/patch-transfer-r1/dist/assets/map_free-DvNp73Z2.png                                       104.71 kB
+probes/patch-transfer-r1/dist/assets/bar_8-C7SsqRli.png                                          105.71 kB
+probes/patch-transfer-r1/dist/assets/hbar4_fill-gSR4hSd7.png                                     109.71 kB
+probes/patch-transfer-r1/dist/assets/skin-worker-CtIzyDx3.js                                     112.46 kB
+probes/patch-transfer-r1/dist/assets/mobs2d_PLATZHALTER_atlas.r1-CTKL_kmy.webp                   133.38 kB
+probes/patch-transfer-r1/dist/assets/pistol-atlas-DFf_OZMH.webp                                  134.73 kB
+probes/patch-transfer-r1/dist/assets/combat-atlas-DdwmPQ9E.webp                                  158.92 kB
+probes/patch-transfer-r1/dist/assets/pill3_gold-BgFe-fug.png                                     174.90 kB
+probes/patch-transfer-r1/dist/assets/pill3_beige-DG_5c06I.png                                    174.96 kB
+probes/patch-transfer-r1/dist/assets/vbar3_empty-3pSHLVcn.png                                    198.69 kB
+probes/patch-transfer-r1/dist/assets/hbar4_empty-CM7Alz73.png                                    203.43 kB
+probes/patch-transfer-r1/dist/assets/TR_AMETHYST-3ped8nrq.png                                    212.42 kB
+probes/patch-transfer-r1/dist/assets/fassade.worker-BeGGV1po.js                                  219.92 kB
+probes/patch-transfer-r1/dist/assets/KFB_Jetpack_Diesel_gross.r2-BnLxbXDu.glb                    322.47 kB
+probes/patch-transfer-r1/dist/assets/KFB_Chicken_kfbeyes.k11c-Drvmfz0R.glb                       354.18 kB
+probes/patch-transfer-r1/dist/assets/KFB_Cyclops_kfbeyes.k11c-BV8d6FYf.glb                       379.87 kB
+probes/patch-transfer-r1/dist/assets/Rogue_Hooded-BGIB8gAO.glb                                   381.43 kB
+probes/patch-transfer-r1/dist/assets/KFB_Cactus_kfbeyes.k11c-BTc7gSFi.glb                        419.09 kB
+probes/patch-transfer-r1/dist/assets/KFB_Shirt_FB_Kit.r2-trFiLuDB.glb                            584.10 kB
+probes/patch-transfer-r1/dist/assets/FrizzleBob_Yellow-DZLKHrEj.gltf                             608.34 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_MovementBasic-BugizpeL.glb                       689.62 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_MovementAdvanced-BFjnsC5A.glb                    719.62 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_General.fb.r2-BXiZSVfQ.glb                       801.24 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_General-2TzhNLMO.glb                             828.24 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_Simulation-yuR66crM.glb                          855.90 kB
+probes/patch-transfer-r1/dist/assets/panel-CvsY30lC.png                                          906.32 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_Special-mBZ9nOY4.glb                             924.30 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_CombatMelee-DNBxeEaZ.glb                         999.41 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_CombatRanged.fb.r2-CI1HRSEX.glb                1,002.96 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_CombatRanged-DHnrIWu4.glb                      1,014.85 kB
+probes/patch-transfer-r1/dist/assets/KFB_Flight.r1h.RigMedium-D9kQP5DJ.glb                     1,083.84 kB
+probes/patch-transfer-r1/dist/assets/slop_atlas.r1.s4.sdf-CvyDvIc-.png                         1,587.43 kB
+probes/patch-transfer-r1/dist/assets/FB_TEMPLATE_LOOK_v5b-Cc7KGj1l.glb                         1,790.02 kB
+probes/patch-transfer-r1/dist/assets/slop_atlas.r1.s3.sdf-B9x_lgtI.png                         2,050.65 kB
+probes/patch-transfer-r1/dist/assets/slop_atlas.r1.sdf-DOU9W3vW.png                            2,107.04 kB
+probes/patch-transfer-r1/dist/assets/slop_atlas.r1.s2.sdf-DkW_gGNa.png                         2,114.27 kB
+probes/patch-transfer-r1/dist/assets/TUER_KERKER-HQd1EUDt.png                                  2,611.04 kB
+probes/patch-transfer-r1/dist/assets/slop_atlas.r1.s4-X9_SQgCa.webp                            3,023.68 kB
+probes/patch-transfer-r1/dist/assets/slop_atlas.r1.s3-CV7RnWbz.webp                            4,059.60 kB
+probes/patch-transfer-r1/dist/assets/slop_atlas.r1-C3FzMVNJ.webp                               4,519.97 kB
+probes/patch-transfer-r1/dist/assets/slop_atlas.r1.s2-mzWNO3d4.webp                            4,731.51 kB
+probes/patch-transfer-r1/dist/assets/FB_R8_probe_A11-BxGn3K_e.glb                              7,672.65 kB
+probes/patch-transfer-r1/dist/assets/card-dungeon-CCVxYDI5.css                                     0.88 kB │ gzip:     0.26 kB
+probes/patch-transfer-r1/dist/assets/onboarding-MDF_KILk.css                                       5.40 kB │ gzip:     1.79 kB
+probes/patch-transfer-r1/dist/assets/main-BfOpVF6W.css                                             5.42 kB │ gzip:     1.52 kB
+probes/patch-transfer-r1/dist/assets/actors-DC5G6xn6.js                                            0.05 kB │ gzip:     0.07 kB
+probes/patch-transfer-r1/dist/assets/frizzlebob.character-CG_u1z_Q.js                              0.06 kB │ gzip:     0.08 kB
+probes/patch-transfer-r1/dist/assets/tunnelLab-CuQxmYf3.js                                         0.56 kB │ gzip:     0.37 kB
+probes/patch-transfer-r1/dist/assets/modulepreload-polyfill-P2Xu9kJm.js                            0.67 kB │ gzip:     0.38 kB
+probes/patch-transfer-r1/dist/assets/cornerLab-B9aD3M2a.js                                         0.67 kB │ gzip:     0.42 kB
+probes/patch-transfer-r1/dist/assets/roomLab-CmhJyI2b.js                                           0.70 kB │ gzip:     0.43 kB
+probes/patch-transfer-r1/dist/assets/blasterLab-BwLq5aIn.js                                        1.06 kB │ gzip:     0.63 kB
+probes/patch-transfer-r1/dist/assets/main-YCUKr5MD.js                                              1.11 kB │ gzip:     0.66 kB
+probes/patch-transfer-r1/dist/assets/laser-panel-view-BQ6V3uGs.js                                  1.31 kB │ gzip:     0.84 kB
+probes/patch-transfer-r1/dist/assets/preload-helper-BLdHbfdN.js                                    1.51 kB │ gzip:     0.79 kB
+probes/patch-transfer-r1/dist/assets/RoundedBoxGeometry-DXbe-3-N.js                                1.70 kB │ gzip:     0.80 kB
+probes/patch-transfer-r1/dist/assets/surface-geometry-2UcI_F8F.js                                  2.21 kB │ gzip:     1.03 kB
+probes/patch-transfer-r1/dist/assets/layout-C4h2TjFQ.js                                            3.01 kB │ gzip:     1.55 kB
+probes/patch-transfer-r1/dist/assets/print-CzY_zi6m.js                                             3.04 kB │ gzip:     1.28 kB
+probes/patch-transfer-r1/dist/assets/graphics-start-BPc8GQDK.js                                    3.16 kB │ gzip:     1.55 kB
+probes/patch-transfer-r1/dist/assets/BufferGeometryUtils-DOSPWzjj.js                               4.75 kB │ gzip:     1.39 kB
+probes/patch-transfer-r1/dist/assets/terrain-host-CTAzdeAK.js                                      5.45 kB │ gzip:     2.35 kB
+probes/patch-transfer-r1/dist/assets/kfb-stage-light.v1.1-CuW2iiqw.js                              5.79 kB │ gzip:     2.66 kB
+probes/patch-transfer-r1/dist/assets/TR_AMETHYST-BtmQ1-AD.js                                       6.31 kB │ gzip:     2.85 kB
+probes/patch-transfer-r1/dist/assets/geometry-owner.baseline-kfwS_2Pl.js                           7.61 kB │ gzip:     3.53 kB
+probes/patch-transfer-r1/dist/assets/main-CDFNicFC.js                                              8.15 kB │ gzip:     4.01 kB
+probes/patch-transfer-r1/dist/assets/kfb-stage-light.v1.1-CbbX8Lja.js                              9.36 kB │ gzip:     4.16 kB
+probes/patch-transfer-r1/dist/assets/geometry-owner-4JNdRTRI.js                                    9.63 kB │ gzip:     4.22 kB
+probes/patch-transfer-r1/dist/assets/guide-IlOjQKUO.js                                             9.77 kB │ gzip:     4.43 kB
+probes/patch-transfer-r1/dist/assets/main-D4kKswoz.js                                             10.26 kB │ gzip:     4.97 kB
+probes/patch-transfer-r1/dist/assets/wall-study-CPK4d8lD.js                                       10.60 kB │ gzip:     4.99 kB
+probes/patch-transfer-r1/dist/assets/fracture-surfaces-CctqkEy3.js                                10.82 kB │ gzip:     4.31 kB
+probes/patch-transfer-r1/dist/assets/corner-BzT6AdEn.js                                           11.77 kB │ gzip:     5.29 kB
+probes/patch-transfer-r1/dist/assets/combat-atlas-D-ecS18I.js                                     16.41 kB │ gzip:     4.27 kB
+probes/patch-transfer-r1/dist/assets/main-D_tbBkkY.js                                             18.71 kB │ gzip:     8.36 kB
+probes/patch-transfer-r1/dist/assets/kfb-clay.v1.1-J6ZuckLN.js                                    18.74 kB │ gzip:     7.26 kB
+probes/patch-transfer-r1/dist/assets/laser-panel-B_7lLTvW.js                                      23.35 kB │ gzip:     9.90 kB
+probes/patch-transfer-r1/dist/assets/dungeon-shadows-BO4BNx8z.js                                  25.78 kB │ gzip:    11.25 kB
+probes/patch-transfer-r1/dist/assets/actors-1_gDHKAT.js                                           26.11 kB │ gzip:    10.69 kB
+probes/patch-transfer-r1/dist/assets/architecture-Ci33go72.js                                     27.91 kB │ gzip:    10.71 kB
+probes/patch-transfer-r1/dist/assets/onboarding-B2P600Ym.js                                       35.10 kB │ gzip:    14.07 kB
+probes/patch-transfer-r1/dist/assets/KFB_Jetpack_Diesel_gross.r2-BTsK93HG.js                      40.71 kB │ gzip:    16.80 kB
+probes/patch-transfer-r1/dist/assets/Rig_Medium_Special-B5PJw54k.js                               45.66 kB │ gzip:    13.70 kB
+probes/patch-transfer-r1/dist/assets/frizzlebob.character-DbcZ5U8J.js                             45.67 kB │ gzip:    14.50 kB
+probes/patch-transfer-r1/dist/assets/layout-DsI7m94e.js                                           64.91 kB │ gzip:    24.68 kB
+probes/patch-transfer-r1/dist/assets/perf-run-DOXDZG5a.js                                        227.44 kB │ gzip:    89.34 kB
+probes/patch-transfer-r1/dist/assets/m1-locoActor-jpbH8v0V.js                                    321.40 kB │ gzip:   118.32 kB
+probes/patch-transfer-r1/dist/assets/three.module-EbZSiq2t.js                                    365.18 kB │ gzip:    89.50 kB
+probes/patch-transfer-r1/dist/assets/three.core-BzkdaedF.js                                      377.45 kB │ gzip:   100.70 kB
+probes/patch-transfer-r1/dist/assets/debug-CVLVDgRU.js                                           533.57 kB │ gzip:   166.39 kB
+probes/patch-transfer-r1/dist/assets/main-Cpss7JTs.js                                            875.97 kB │ gzip:   388.76 kB
+probes/patch-transfer-r1/dist/assets/patchWall-DA57fjrQ.js                                     1,104.61 kB │ gzip:   354.68 kB
+probes/patch-transfer-r1/dist/assets/main-DPii5kR-.js                                          1,110.37 kB │ gzip:   345.61 kB
+probes/patch-transfer-r1/dist/assets/rapier-BBq4S2J9.js                                        2,234.47 kB │ gzip:   841.66 kB
+probes/patch-transfer-r1/dist/assets/spark.module-DlHaclzK.js                                  2,695.91 kB │ gzip:   954.49 kB
+probes/patch-transfer-r1/dist/assets/card-dungeon-yvUTz-Cl.js                                  4,150.00 kB │ gzip: 1,043.28 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 4.68s

@@ -1,0 +1,65 @@
+{
+  "preparationMs": 1015,
+  "runs": [
+    {
+      "mode": "tps",
+      "releases": 6,
+      "confirmed": 2,
+      "maxHostMs": 19.30000001192093
+    },
+    {
+      "mode": "fps",
+      "releases": 6,
+      "confirmed": 2,
+      "maxHostMs": 7
+    }
+  ],
+  "workerFinal": {
+    "pending": 0,
+    "generation": 2,
+    "error": null,
+    "trace": [
+      {
+        "metrics": {
+          "nodes": 39,
+          "edges": 55,
+          "faces": 17,
+          "impacts": 1
+        },
+        "computeMs": 408.20000000298023,
+        "latencyMs": 410.70000000298023
+      },
+      {
+        "metrics": {
+          "nodes": 84,
+          "edges": 119,
+          "faces": 37,
+          "impacts": 2
+        },
+        "computeMs": 109.5,
+        "latencyMs": 131.70000000298023
+      },
+      {
+        "metrics": {
+          "nodes": 45,
+          "edges": 66,
+          "faces": 22,
+          "impacts": 1
+        },
+        "computeMs": 6.299999997019768,
+        "latencyMs": 7.5
+      },
+      {
+        "metrics": {
+          "nodes": 91,
+          "edges": 133,
+          "faces": 44,
+          "impacts": 2
+        },
+        "computeMs": 9.599999994039536,
+        "latencyMs": 11.099999994039536
+      }
+    ]
+  },
+  "boundary": "Host CPU/render submission, not GPU or guaranteed FPS. Cold live traces retained separately. Native commands remain unchanged."
+}

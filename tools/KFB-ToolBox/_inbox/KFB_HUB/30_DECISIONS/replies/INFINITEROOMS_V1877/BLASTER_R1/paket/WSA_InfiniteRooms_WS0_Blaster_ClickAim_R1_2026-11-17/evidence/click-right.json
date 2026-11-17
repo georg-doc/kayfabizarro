@@ -1,0 +1,387 @@
+{
+  "ready": true,
+  "variant": "prepared-worker",
+  "preparationMs": 2190.3999999910593,
+  "source": "abe7bc24",
+  "mode": "fps",
+  "preset": null,
+  "clickAim": {
+    "enabled": true,
+    "turn": {
+      "id": 2,
+      "point": [
+        3.6646982381000943,
+        2.671069540923247,
+        0.7500001967199097
+      ],
+      "elapsed": 237.58740000001214,
+      "released": true
+    },
+    "lastSelection": {
+      "point": [
+        3.6646982381000943,
+        2.671069540923247,
+        0.7500001967199097
+      ],
+      "surface": "r0:north",
+      "position": [
+        3.2499489784240723,
+        0.7650997352600097,
+        4.399897575378418
+      ],
+      "centerErrorAtFire": 1.0472130877838961e-16
+    }
+  },
+  "shots": 2,
+  "blocked": 0,
+  "recording": null,
+  "recordedRuns": [],
+  "combat": {
+    "kaskadeRezept": null,
+    "nahkampfFx": null,
+    "kontaktImpuls": null,
+    "handLightning": null,
+    "propContact": null,
+    "materialContact": null,
+    "cascade": null,
+    "status": "OK",
+    "label": null,
+    "error": null,
+    "flash": "OK",
+    "active": "blaster",
+    "want": "blaster",
+    "shots": 2,
+    "releases": 2,
+    "boxing": null,
+    "katana": null,
+    "axe": null,
+    "club": null,
+    "sword": null,
+    "bow": null,
+    "wand": null,
+    "crossbow": null,
+    "spreadshot": null,
+    "contacts": 2,
+    "kills": 0,
+    "grenade": null,
+    "rocket": null,
+    "automatic": null,
+    "pose": null,
+    "ms": 0.05218101104709974,
+    "frozenMs": 0,
+    "hitStop": {
+      "activeParticipants": 0,
+      "rememberedEvents": 0,
+      "capMs": 150,
+      "cameraKick": false
+    },
+    "knetHits": 2,
+    "pops": 0,
+    "hitStops": 0,
+    "live": 0,
+    "weapons": [
+      {
+        "id": "pistol",
+        "status": "OK",
+        "sha": "96e8ef219631309cc8a1546866008f3582b4fd048daf89a4fb0c10912a8bd086",
+        "audit": "CONTRACT_PASS",
+        "auditScope": "weapon",
+        "propSha": null,
+        "error": null
+      },
+      {
+        "id": "blaster",
+        "status": "OK",
+        "sha": "640924f7c85bdfa0a9428db3ff8639039c2b7f0f36553e8ac047176e212e120c",
+        "audit": "CONTRACT_PASS",
+        "auditScope": "weapon",
+        "propSha": null,
+        "error": null
+      }
+    ]
+  },
+  "target": {
+    "received": 2,
+    "accepted": 2,
+    "rejected": 0,
+    "duplicates": 0,
+    "disposed": false,
+    "sourceCount": 1
+  },
+  "actor": {
+    "position": {
+      "x": 3.2499489784240723,
+      "y": 1.6700997352600098,
+      "z": 4.399897575378418
+    },
+    "grounded": true
+  },
+  "geometry": {
+    "commits": 2,
+    "profile": [
+      {
+        "reset": false,
+        "derive": 1.5,
+        "terrain": 2.3999999910593033,
+        "materials": 0.10000000894069672,
+        "fragments": 1.2000000029802322,
+        "total": 5.200000002980232,
+        "dirty": 1
+      },
+      {
+        "reset": false,
+        "derive": 0.9000000059604645,
+        "terrain": 1.7999999970197678,
+        "materials": 0.29999999701976776,
+        "fragments": 1.5,
+        "total": 4.5,
+        "dirty": 1
+      }
+    ],
+    "removed": 48,
+    "fragments": 0,
+    "spawned": 9,
+    "peakFragments": 6,
+    "terrain": {
+      "chunks": 60,
+      "colliders": 82,
+      "triangles": 40992,
+      "rebuilds": 65
+    },
+    "nativeFragmentBuilder": "cascade/r4/laser-panel-view.js dropLaserPanel; dynamics in existing host Rapier world"
+  },
+  "graph": {
+    "confirmedMessages": 2,
+    "surfaceCommits": 2,
+    "resets": 0,
+    "profile": [
+      {
+        "command": 0.5999999940395355,
+        "field": 0
+      },
+      {
+        "command": 0,
+        "field": 0
+      }
+    ],
+    "nativeGraph": "cascade/r4/fracture.mjs via createCore/syncField",
+    "autonomousQueries": 0,
+    "createdPhysicsWorlds": 0,
+    "createdRenderers": 0,
+    "fieldPipeline": {
+      "pending": 0,
+      "generation": 0,
+      "error": null,
+      "trace": [
+        {
+          "metrics": {
+            "nodes": 44,
+            "edges": 64,
+            "faces": 21,
+            "impacts": 1
+          },
+          "computeMs": 26.900000005960464,
+          "latencyMs": 29.099999994039536
+        },
+        {
+          "metrics": {
+            "nodes": 85,
+            "edges": 123,
+            "faces": 40,
+            "impacts": 2
+          },
+          "computeMs": 6.799999997019768,
+          "latencyMs": 8.5
+        }
+      ]
+    }
+  },
+  "renderer": {
+    "geometries": 86,
+    "textures": 50,
+    "calls": 1
+  },
+  "timing": {
+    "workMs": {
+      "n": 600,
+      "p95": 3.3999999910593033,
+      "max": 4.600000008940697
+    },
+    "rafMs": {
+      "n": 600,
+      "p95": 33.29999999998836,
+      "max": 41.70000000001164
+    },
+    "profile": []
+  },
+  "audio": {
+    "mode": "idle",
+    "contexts": 0,
+    "state": null,
+    "error": null,
+    "combatBudget": null,
+    "unlocked": false,
+    "volumes": {
+      "master": 0.9,
+      "music": 0.55,
+      "sfx": 0.9,
+      "atmo": 0.7,
+      "ui": 0.7,
+      "muted": false
+    },
+    "loads": {},
+    "errors": [],
+    "modules": {
+      "racer": false,
+      "combat": false,
+      "ambience": false,
+      "steps": false,
+      "music": false
+    },
+    "voices": {
+      "racerLoops": 0,
+      "racerOneShots": 0,
+      "combat": 0,
+      "ambience": 0,
+      "steps": 0,
+      "bank": 0,
+      "music": 0,
+      "oneShots": 0,
+      "total": 0
+    },
+    "perf": {
+      "frames": 0,
+      "avgMs": 0,
+      "p95Ms": 0,
+      "maxMs": 0,
+      "over1": 0,
+      "work": {},
+      "sections": {}
+    },
+    "duckDb": 0,
+    "combatActive": false,
+    "musicAudible": false,
+    "nowPlaying": null,
+    "music": null,
+    "host": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/33bcb759eaf4be31b9fd1c54501f907b323538b3/media/kfb-audio/r1/",
+    "hostFallbacks": 0,
+    "bank": {
+      "loaded": 0,
+      "plays": 0,
+      "drops": 0,
+      "deferred": 0,
+      "late": 0,
+      "stale": 0,
+      "evicted": 0,
+      "core": 0,
+      "bytesMib": 0,
+      "decodedMib": 0,
+      "lruMib": 0
+    },
+    "npcSteps": 0,
+    "npcStepDrops": 0,
+    "steps": 0,
+    "surface": null,
+    "mode2": "foot",
+    "tod": null,
+    "biome": null,
+    "ambience": {
+      "biome": "meadow",
+      "timeOfDay": "day",
+      "weather": "clear",
+      "wind": 0.22
+    },
+    "ambienceOverride": {},
+    "grains": null,
+    "ambienceActive": null,
+    "water": [],
+    "racer": null,
+    "voiceLast": null,
+    "asmr": {
+      "on": false,
+      "t": 0,
+      "plays": 0,
+      "drops": {},
+      "log": []
+    },
+    "presence": [],
+    "pulse": {
+      "bpm": 0,
+      "conf": 0,
+      "audible": 0,
+      "bass": 0
+    },
+    "reverb": null,
+    "rise": null,
+    "occluded": 0,
+    "flufferHealed": false,
+    "fluffers": {},
+    "speak": {
+      "on": false,
+      "log": []
+    },
+    "stepDb": -9,
+    "cues": [],
+    "ownSteps": null,
+    "chatter": {},
+    "drive": null,
+    "coast": false,
+    "outDb": null,
+    "events": []
+  },
+  "lastRelease": {
+    "shot": 2,
+    "weapon": "blaster",
+    "clipTime": 0.2852,
+    "muzzle": [
+      3.5172,
+      1.4777,
+      3.5208
+    ],
+    "dir": [
+      0.0488,
+      0.3951,
+      -0.9173
+    ],
+    "proj": [
+      3.5172,
+      1.4777,
+      3.5208
+    ],
+    "flashOn": 0,
+    "target": null,
+    "drawnGap": 0
+  },
+  "receipts": [
+    {
+      "surface": "r0:north",
+      "weapon": "blaster",
+      "color": "#d9ffff",
+      "commandId": "ir:1",
+      "kind": "shot",
+      "geometryChanged": true,
+      "geometryPending": false,
+      "t": 48.351000000000084
+    },
+    {
+      "surface": "r0:north",
+      "weapon": "blaster",
+      "color": "#d9ffff",
+      "commandId": "ir:2",
+      "kind": "shot",
+      "geometryChanged": true,
+      "geometryPending": false,
+      "t": 92.66130000000193
+    }
+  ],
+  "lastImpact": {
+    "at": [
+      3.664698250566261,
+      2.6710696417652913,
+      0.7499999625735632
+    ],
+    "id": "r0:north",
+    "weapon": "blaster"
+  },
+  "cascades": 2
+}

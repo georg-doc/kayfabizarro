@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-17",
+  "site": "https://kfb-infiniterooms.frizzlebob.chatgpt.site/blaster-lab/",
+  "siteCommit": "3e677e271927fd0dd226704db11821a858baef7d",
+  "nativeGameSource": "abe7bc24f02147dfcd785bf60feaae574aa13779",
+  "tests": {
+    "pass": 288,
+    "fail": 0
+  },
+  "live": {
+    "preparationMs": 1526.7999999970198,
+    "runs": [
+      {
+        "mode": "tps",
+        "nativeReleases": 6,
+        "confirmed": 2,
+        "maxHostCpuSubmissionMs": 10.200000002980232,
+        "maxRafMs": 41.900000000001455
+      },
+      {
+        "mode": "fps",
+        "nativeReleases": 6,
+        "confirmed": 3,
+        "maxHostCpuSubmissionMs": 5.700000002980232,
+        "maxRafMs": 41.60000000000218
+      }
+    ],
+    "worker": {
+      "error": null,
+      "generation": 2,
+      "pending": 0,
+      "trace": [
+        {
+          "computeMs": 16.299999997019768,
+          "latencyMs": 17.200000002980232,
+          "metrics": {
+            "edges": 58,
+            "faces": 19,
+            "impacts": 1,
+            "nodes": 40
+          }
+        },
+        {
+          "computeMs": 5.9000000059604645,
+          "latencyMs": 6.5999999940395355,
+          "metrics": {
+            "edges": 113,
+            "faces": 36,
+            "impacts": 2,
+            "nodes": 79
+          }
+        },
+        {
+          "computeMs": 4.0999999940395355,
+          "latencyMs": 5.0999999940395355,
+          "metrics": {
+            "edges": 5,
+            "faces": 0,
+            "impacts": 1,
+            "nodes": 6
+          }
+        },
+        {
+          "computeMs": 3.799999997019768,
+          "latencyMs": 4.200000002980232,
+          "metrics": {
+            "edges": 66,
+            "faces": 19,
+            "impacts": 2,
+            "nodes": 49
+          }
+        },
+        {
+          "computeMs": 3.700000002980232,
+          "latencyMs": 4.0999999940395355,
+          "metrics": {
+            "edges": 131,
+            "faces": 40,
+            "impacts": 3,
+            "nodes": 94
+          }
+        }
+      ]
+    }
+  },
+  "private": true,
+  "merged": false,
+  "liveClick": {
+    "runs": [
+      {
+        "mode": "tps",
+        "shots": 4,
+        "accepted": 4,
+        "maxHostMs": 6.200000002980232
+      },
+      {
+        "mode": "fps",
+        "shots": 4,
+        "accepted": 4,
+        "maxHostMs": 5.5999999940395355
+      }
+    ],
+    "selected": {
+      "centerErrorAtFire": 3.577865119038874e-16,
+      "point": [
+        5.749999954059335,
+        3.6290586309852326,
+        3.3140846174876524
+      ],
+      "position": [
+        3.249948024749756,
+        0.7650999736785888,
+        4.399999141693115
+      ],
+      "surface": "r0:east"
+    },
+    "actualImpact": {
+      "at": [
+        5.750000041217438,
+        3.6290587470573503,
+        3.314084570275119
+      ],
+      "id": "r0:east",
+      "weapon": "blaster"
+    },
+    "duplicates": 0,
+    "runtimeErrors": []
+  }
+}

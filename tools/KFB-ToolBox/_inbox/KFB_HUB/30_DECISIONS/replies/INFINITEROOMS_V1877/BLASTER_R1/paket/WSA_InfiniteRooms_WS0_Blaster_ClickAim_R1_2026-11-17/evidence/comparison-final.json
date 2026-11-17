@@ -1,0 +1,155 @@
+{
+  "runs": [
+    {
+      "variant": "baseline",
+      "mode": "tps",
+      "releases": 6,
+      "confirmed": 2,
+      "removed": 60,
+      "spawned": 9,
+      "mainCpuMs": {
+        "n": 600,
+        "p95": 5.4000000059604645,
+        "max": 185.90000000596046
+      },
+      "rafMs": {
+        "n": 600,
+        "p95": 25.5,
+        "max": 217.80000000000018
+      }
+    },
+    {
+      "variant": "baseline",
+      "mode": "fps",
+      "releases": 6,
+      "confirmed": 2,
+      "removed": 48,
+      "spawned": 18,
+      "mainCpuMs": {
+        "n": 600,
+        "p95": 2.2999999970197678,
+        "max": 58.5
+      },
+      "rafMs": {
+        "n": 600,
+        "p95": 25,
+        "max": 59.29999999999927
+      }
+    },
+    {
+      "variant": "candidate",
+      "mode": "tps",
+      "releases": 6,
+      "confirmed": 5,
+      "removed": 66,
+      "spawned": 9,
+      "mainCpuMs": {
+        "n": 600,
+        "p95": 5.4000000059604645,
+        "max": 18
+      },
+      "rafMs": {
+        "n": 600,
+        "p95": 25.099999999999454,
+        "max": 34.19999999999982
+      }
+    },
+    {
+      "variant": "candidate",
+      "mode": "fps",
+      "releases": 6,
+      "confirmed": 2,
+      "removed": 66,
+      "spawned": 14,
+      "mainCpuMs": {
+        "n": 600,
+        "p95": 2.7000000029802322,
+        "max": 4.4000000059604645
+      },
+      "rafMs": {
+        "n": 600,
+        "p95": 17.30000000000109,
+        "max": 26
+      }
+    }
+  ],
+  "preparationMs": 1216.8999999910593,
+  "boundary": "Host CPU and render submission, no GPU/hardware guarantee; native muzzle/impact seeds remain active, so confirmed-hit counts differ. Full original native geometry/mask equality covered by unit tests.",
+  "workerFinal": {
+    "pending": 0,
+    "generation": 2,
+    "error": null,
+    "trace": [
+      {
+        "metrics": {
+          "nodes": 4,
+          "edges": 3,
+          "faces": 0,
+          "impacts": 1
+        },
+        "computeMs": 15.200000002980232,
+        "latencyMs": 18.19999998807907
+      },
+      {
+        "metrics": {
+          "nodes": 42,
+          "edges": 61,
+          "faces": 19,
+          "impacts": 2
+        },
+        "computeMs": 19.599999994039536,
+        "latencyMs": 20.200000002980232
+      },
+      {
+        "metrics": {
+          "nodes": 46,
+          "edges": 64,
+          "faces": 19,
+          "impacts": 3
+        },
+        "computeMs": 37.69999998807907,
+        "latencyMs": 48.30000001192093
+      },
+      {
+        "metrics": {
+          "nodes": 51,
+          "edges": 69,
+          "faces": 19,
+          "impacts": 4
+        },
+        "computeMs": 4.800000011920929,
+        "latencyMs": 5.699999988079071
+      },
+      {
+        "metrics": {
+          "nodes": 88,
+          "edges": 122,
+          "faces": 36,
+          "impacts": 5
+        },
+        "computeMs": 3.3999999910593033,
+        "latencyMs": 6.9000000059604645
+      },
+      {
+        "metrics": {
+          "nodes": 34,
+          "edges": 50,
+          "faces": 16,
+          "impacts": 1
+        },
+        "computeMs": 2.5,
+        "latencyMs": 3.5999999940395355
+      },
+      {
+        "metrics": {
+          "nodes": 84,
+          "edges": 121,
+          "faces": 38,
+          "impacts": 2
+        },
+        "computeMs": 5.100000008940697,
+        "latencyMs": 5.4000000059604645
+      }
+    ]
+  }
+}

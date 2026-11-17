@@ -1,0 +1,62 @@
+{
+  "id": "infiniterooms.impact.v1",
+  "clock": "welt",
+  "from": "treffer",
+  "to": "ruhe",
+  "phases": [
+    {
+      "id": "treffer",
+      "t": [
+        0,
+        0.02
+      ]
+    },
+    {
+      "id": "bruch",
+      "t": [
+        0.02,
+        0.04
+      ]
+    },
+    {
+      "id": "truemmer",
+      "t": [
+        0.04,
+        0.12
+      ]
+    },
+    {
+      "id": "nachklang",
+      "t": [
+        0.12,
+        0.4
+      ]
+    }
+  ],
+  "tracks": {},
+  "markers": [
+    {
+      "id": "kontakt",
+      "t": 0
+    },
+    {
+      "id": "bruch",
+      "t": 0.02
+    },
+    {
+      "id": "truemmer",
+      "t": 0.04
+    },
+    {
+      "id": "staubTon",
+      "t": 0.12
+    }
+  ],
+  "owners": {
+    "kontakt": "combatPlayer",
+    "bruch": "infiniterooms/native fracture",
+    "truemmer": "viertel native fragment owner",
+    "staubTon": "combatPlayer/audio host"
+  },
+  "integrationNote": "Registration candidate for the existing host choreography owner. Geometry response is immediate; markers describe its cascade, never schedule duplicate damage or replay geometry. No new RAF/clock/FX/audio owner."
+}

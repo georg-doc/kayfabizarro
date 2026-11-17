@@ -1,0 +1,14 @@
+{
+  "weapon": "grenade",
+  "nativeCommandWeapon": "rocket",
+  "recipe": "infiniterooms.impact.v1",
+  "colorOwner": "combatPlayer/trefferKontext",
+  "material": "paper",
+  "surfaceOnly": false,
+  "source": "cascade/r4/runtime.js hitWorld + cascade/core.mjs; values remain with native owner",
+  "blastFallback": {
+    "threshold": 0.3,
+    "below": "gatling",
+    "source": "cascade/r4/runtime.js blastWorld"
+  }
+}

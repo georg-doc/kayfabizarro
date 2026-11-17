@@ -1,0 +1,125 @@
+{
+  "runs": [
+    {
+      "variant": "baseline",
+      "mode": "tps",
+      "releases": 6,
+      "confirmed": 2,
+      "removed": 60,
+      "spawned": 9,
+      "mainCpuMs": {
+        "n": 600,
+        "p95": 5.4000000059604645,
+        "max": 185.90000000596046
+      },
+      "rafMs": {
+        "n": 600,
+        "p95": 25.5,
+        "max": 217.80000000000018
+      }
+    },
+    {
+      "variant": "baseline",
+      "mode": "fps",
+      "releases": 6,
+      "confirmed": 2,
+      "removed": 48,
+      "spawned": 18,
+      "mainCpuMs": {
+        "n": 600,
+        "p95": 2.2999999970197678,
+        "max": 58.5
+      },
+      "rafMs": {
+        "n": 600,
+        "p95": 25,
+        "max": 59.29999999999927
+      }
+    },
+    {
+      "variant": "candidate",
+      "mode": "tps",
+      "releases": 6,
+      "confirmed": 2,
+      "removed": 54,
+      "spawned": 2,
+      "mainCpuMs": {
+        "n": 600,
+        "p95": 2.7000000029802322,
+        "max": 10.400000005960464
+      },
+      "rafMs": {
+        "n": 600,
+        "p95": 26,
+        "max": 40
+      }
+    },
+    {
+      "variant": "candidate",
+      "mode": "fps",
+      "releases": 6,
+      "confirmed": 2,
+      "removed": 48,
+      "spawned": 5,
+      "mainCpuMs": {
+        "n": 600,
+        "p95": 3.0999999940395355,
+        "max": 6
+      },
+      "rafMs": {
+        "n": 600,
+        "p95": 18.200000000000728,
+        "max": 27
+      }
+    }
+  ],
+  "boundary": "performance.now host update/render submission; not GPU timing or controlled hardware proof",
+  "workload": "same production bundle, seed1337, original blaster, TPS 6 releases / reset / FPS 6 releases, audio off, canvas capture 30fps, Chrome same viewport",
+  "workerFinal": {
+    "pending": 0,
+    "generation": 2,
+    "error": null,
+    "trace": [
+      {
+        "metrics": {
+          "nodes": 37,
+          "edges": 54,
+          "faces": 18,
+          "impacts": 1
+        },
+        "computeMs": 13.5,
+        "latencyMs": 15.300000011920929
+      },
+      {
+        "metrics": {
+          "nodes": 83,
+          "edges": 120,
+          "faces": 39,
+          "impacts": 2
+        },
+        "computeMs": 21.299999997019768,
+        "latencyMs": 21.799999997019768
+      },
+      {
+        "metrics": {
+          "nodes": 47,
+          "edges": 67,
+          "faces": 21,
+          "impacts": 1
+        },
+        "computeMs": 10.299999997019768,
+        "latencyMs": 11
+      },
+      {
+        "metrics": {
+          "nodes": 96,
+          "edges": 137,
+          "faces": 43,
+          "impacts": 2
+        },
+        "computeMs": 5,
+        "latencyMs": 5.5
+      }
+    ]
+  }
+}

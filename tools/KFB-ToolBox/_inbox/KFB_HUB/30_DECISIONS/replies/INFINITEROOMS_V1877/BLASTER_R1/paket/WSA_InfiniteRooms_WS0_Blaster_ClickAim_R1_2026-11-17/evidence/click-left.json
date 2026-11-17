@@ -1,0 +1,354 @@
+{
+  "ready": true,
+  "variant": "prepared-worker",
+  "preparationMs": 2190.3999999910593,
+  "source": "abe7bc24",
+  "mode": "fps",
+  "preset": null,
+  "clickAim": {
+    "enabled": true,
+    "turn": {
+      "id": 1,
+      "point": [
+        2.5723935743551274,
+        2.493265543832023,
+        0.7500001121848889
+      ],
+      "elapsed": 42.59069999999968,
+      "released": true
+    },
+    "lastSelection": {
+      "point": [
+        2.5723935743551274,
+        2.493265543832023,
+        0.7500001121848889
+      ],
+      "surface": "r0:north",
+      "position": [
+        3.2499489784240723,
+        0.7650997352600097,
+        4.399897575378418
+      ],
+      "centerErrorAtFire": 1.0383910038764551e-16
+    }
+  },
+  "shots": 1,
+  "blocked": 0,
+  "recording": null,
+  "recordedRuns": [],
+  "combat": {
+    "kaskadeRezept": null,
+    "nahkampfFx": null,
+    "kontaktImpuls": null,
+    "handLightning": null,
+    "propContact": null,
+    "materialContact": null,
+    "cascade": null,
+    "status": "OK",
+    "label": null,
+    "error": null,
+    "flash": "OK",
+    "active": "blaster",
+    "want": "blaster",
+    "shots": 1,
+    "releases": 1,
+    "boxing": null,
+    "katana": null,
+    "axe": null,
+    "club": null,
+    "sword": null,
+    "bow": null,
+    "wand": null,
+    "crossbow": null,
+    "spreadshot": null,
+    "contacts": 1,
+    "kills": 0,
+    "grenade": null,
+    "rocket": null,
+    "automatic": null,
+    "pose": null,
+    "ms": 0.0660178577184025,
+    "frozenMs": 0,
+    "hitStop": {
+      "activeParticipants": 0,
+      "rememberedEvents": 0,
+      "capMs": 150,
+      "cameraKick": false
+    },
+    "knetHits": 1,
+    "pops": 0,
+    "hitStops": 0,
+    "live": 0,
+    "weapons": [
+      {
+        "id": "pistol",
+        "status": "OK",
+        "sha": "96e8ef219631309cc8a1546866008f3582b4fd048daf89a4fb0c10912a8bd086",
+        "audit": "CONTRACT_PASS",
+        "auditScope": "weapon",
+        "propSha": null,
+        "error": null
+      },
+      {
+        "id": "blaster",
+        "status": "OK",
+        "sha": "640924f7c85bdfa0a9428db3ff8639039c2b7f0f36553e8ac047176e212e120c",
+        "audit": "CONTRACT_PASS",
+        "auditScope": "weapon",
+        "propSha": null,
+        "error": null
+      }
+    ]
+  },
+  "target": {
+    "received": 1,
+    "accepted": 1,
+    "rejected": 0,
+    "duplicates": 0,
+    "disposed": false,
+    "sourceCount": 1
+  },
+  "actor": {
+    "position": {
+      "x": 3.2499489784240723,
+      "y": 1.6700997352600098,
+      "z": 4.399897575378418
+    },
+    "grounded": true
+  },
+  "geometry": {
+    "commits": 1,
+    "profile": [
+      {
+        "reset": false,
+        "derive": 1.5,
+        "terrain": 2.3999999910593033,
+        "materials": 0.10000000894069672,
+        "fragments": 1.2000000029802322,
+        "total": 5.200000002980232,
+        "dirty": 1
+      }
+    ],
+    "removed": 24,
+    "fragments": 0,
+    "spawned": 3,
+    "peakFragments": 3,
+    "terrain": {
+      "chunks": 60,
+      "colliders": 80,
+      "triangles": 40912,
+      "rebuilds": 64
+    },
+    "nativeFragmentBuilder": "cascade/r4/laser-panel-view.js dropLaserPanel; dynamics in existing host Rapier world"
+  },
+  "graph": {
+    "confirmedMessages": 1,
+    "surfaceCommits": 1,
+    "resets": 0,
+    "profile": [
+      {
+        "command": 0.5999999940395355,
+        "field": 0
+      }
+    ],
+    "nativeGraph": "cascade/r4/fracture.mjs via createCore/syncField",
+    "autonomousQueries": 0,
+    "createdPhysicsWorlds": 0,
+    "createdRenderers": 0,
+    "fieldPipeline": {
+      "pending": 0,
+      "generation": 0,
+      "error": null,
+      "trace": [
+        {
+          "metrics": {
+            "nodes": 44,
+            "edges": 64,
+            "faces": 21,
+            "impacts": 1
+          },
+          "computeMs": 26.900000005960464,
+          "latencyMs": 29.099999994039536
+        }
+      ]
+    }
+  },
+  "renderer": {
+    "geometries": 86,
+    "textures": 50,
+    "calls": 1
+  },
+  "timing": {
+    "workMs": {
+      "n": 600,
+      "p95": 2,
+      "max": 4.0999999940395355
+    },
+    "rafMs": {
+      "n": 600,
+      "p95": 49.10000000000582,
+      "max": 71
+    },
+    "profile": []
+  },
+  "audio": {
+    "mode": "idle",
+    "contexts": 0,
+    "state": null,
+    "error": null,
+    "combatBudget": null,
+    "unlocked": false,
+    "volumes": {
+      "master": 0.9,
+      "music": 0.55,
+      "sfx": 0.9,
+      "atmo": 0.7,
+      "ui": 0.7,
+      "muted": false
+    },
+    "loads": {},
+    "errors": [],
+    "modules": {
+      "racer": false,
+      "combat": false,
+      "ambience": false,
+      "steps": false,
+      "music": false
+    },
+    "voices": {
+      "racerLoops": 0,
+      "racerOneShots": 0,
+      "combat": 0,
+      "ambience": 0,
+      "steps": 0,
+      "bank": 0,
+      "music": 0,
+      "oneShots": 0,
+      "total": 0
+    },
+    "perf": {
+      "frames": 0,
+      "avgMs": 0,
+      "p95Ms": 0,
+      "maxMs": 0,
+      "over1": 0,
+      "work": {},
+      "sections": {}
+    },
+    "duckDb": 0,
+    "combatActive": false,
+    "musicAudible": false,
+    "nowPlaying": null,
+    "music": null,
+    "host": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/33bcb759eaf4be31b9fd1c54501f907b323538b3/media/kfb-audio/r1/",
+    "hostFallbacks": 0,
+    "bank": {
+      "loaded": 0,
+      "plays": 0,
+      "drops": 0,
+      "deferred": 0,
+      "late": 0,
+      "stale": 0,
+      "evicted": 0,
+      "core": 0,
+      "bytesMib": 0,
+      "decodedMib": 0,
+      "lruMib": 0
+    },
+    "npcSteps": 0,
+    "npcStepDrops": 0,
+    "steps": 0,
+    "surface": null,
+    "mode2": "foot",
+    "tod": null,
+    "biome": null,
+    "ambience": {
+      "biome": "meadow",
+      "timeOfDay": "day",
+      "weather": "clear",
+      "wind": 0.22
+    },
+    "ambienceOverride": {},
+    "grains": null,
+    "ambienceActive": null,
+    "water": [],
+    "racer": null,
+    "voiceLast": null,
+    "asmr": {
+      "on": false,
+      "t": 0,
+      "plays": 0,
+      "drops": {},
+      "log": []
+    },
+    "presence": [],
+    "pulse": {
+      "bpm": 0,
+      "conf": 0,
+      "audible": 0,
+      "bass": 0
+    },
+    "reverb": null,
+    "rise": null,
+    "occluded": 0,
+    "flufferHealed": false,
+    "fluffers": {},
+    "speak": {
+      "on": false,
+      "log": []
+    },
+    "stepDb": -9,
+    "cues": [],
+    "ownSteps": null,
+    "chatter": {},
+    "drive": null,
+    "coast": false,
+    "outDb": null,
+    "events": []
+  },
+  "lastRelease": {
+    "shot": 1,
+    "weapon": "blaster",
+    "clipTime": 0.2752,
+    "muzzle": [
+      3.2519,
+      1.4777,
+      3.4737
+    ],
+    "dir": [
+      -0.2276,
+      0.3402,
+      -0.9124
+    ],
+    "proj": [
+      3.2519,
+      1.4777,
+      3.4737
+    ],
+    "flashOn": 0,
+    "target": null,
+    "drawnGap": 0
+  },
+  "receipts": [
+    {
+      "surface": "r0:north",
+      "weapon": "blaster",
+      "color": "#d9ffff",
+      "commandId": "ir:1",
+      "kind": "shot",
+      "geometryChanged": true,
+      "geometryPending": false,
+      "t": 48.351000000000084
+    }
+  ],
+  "lastImpact": {
+    "at": [
+      2.5723935475815733,
+      2.4932655838452957,
+      0.7500000048710509
+    ],
+    "id": "r0:north",
+    "weapon": "blaster"
+  },
+  "cascades": 1
+}

@@ -1,0 +1,24 @@
+{
+  "name": "kfb-infiniterooms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build --configLoader native --config probes/patch-transfer-r1/vite.config.mjs && node scripts/promote.mjs",
+    "test": "node --test probes/patch-transfer-r1/test*.mjs"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "0.19.2",
+    "@sparkjsdev/spark": "2.4.0",
+    "three": "0.186.1",
+    "react": "19.3.0",
+    "@fontsource/bangers": "5.3.0",
+    "@fontsource/fredoka": "5.3.0"
+  },
+  "devDependencies": {
+    "vite": "8.3.4",
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "4.5.1",
+    "@gltf-transform/functions": "4.5.1"
+  }
+}

@@ -1,0 +1,263 @@
+{
+ "id": "kfb_kenney_blaster_p_fb",
+ "origin": "kit-original",
+ "use": "target",
+ "source": {
+  "path": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/kenney/KFB_Kenney_blaster_p.r1b.glb",
+  "sha256": "d77c130c7ff7feaa703800d7aad8db57c787e68dec2cc40a2876b2152a09eb9e",
+  "private": true,
+  "kit": {
+   "name": "Kenney Blaster Kit 2.1 · blaster-p",
+   "file": "Models/GLB format/blaster-p.glb",
+   "sha256": "2ffc94c6d8f12d45410012b13169988b70929c7e6ae7d4f868a188265210e49a",
+   "licence": "CC0 1.0 (Kenney, kenney.nl)",
+   "private": false
+  },
+  "anchorReceipt": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/kenney/kenney_anker_r1b.json#modelle.blaster-p",
+  "change": "nur Ankerknoten KFB_Grip und KFB_Muzzle ergänzt; Geometrie/Material byte-gleich"
+ },
+ "instances": 1,
+ "axis": "kit",
+ "mount": {
+  "kind": "source-slot",
+  "slot": "handslot.r",
+  "scale": 1.92,
+  "scaleEvidence": "WS1 Waffenkammer R0 (docs/waffen/WAFFENKAMMER_R0.md: Kenney ×1,92 wie B40, Vorschläge 1,7–2,3)",
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_karten_fb/kenney_p_mount_measure.json (FB Web-Kanon r1j, Kit-Clips unverändert, KFB_Grip auf handslot.r) + dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/belege/WAFFEN_NACHWEIS_R1c_kenney_halterung_fb.jpg",
+  "slotOffset": {
+   "rotation": [
+    0,
+    -0.70710678,
+    0,
+    0.70710678
+   ],
+   "reason": "kit-axis-mismatch",
+   "rule": "V-581",
+   "evidence": "WS1 R0 (V-581 + 180°, Kenney-Lauf −Z) + dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/belege/WAFFEN_NACHWEIS_R1b_kenney_anker_r1b.jpg (Mündungspfeile nach vorn)",
+   "position": [
+    0.4596,
+    -0.0611,
+    0.0
+   ],
+   "positionReason": "visible-interpenetration",
+   "positionEvidence": "Griffanker statt Ursprung: WS1 R0 fand c, h, j, k, l bei ×1,92 im Körper; Lage = −(Drehung · 1,92 · KFB_Grip), dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_fb_uebersicht.json"
+  },
+  "families": {
+   "rule": "V-582",
+   "ruleText": "eine feste Halterung je Clip, nie je Bild; Versatz nur bei Durchstich (V-574)",
+   "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_karten_fb/kenney_p_mount_measure.json#clips.*.versatz_suche",
+   "perClip": {
+    "Ranged_2H_Aiming": {
+     "rotation": [
+      0,
+      -0.70710678,
+      0,
+      0.70710678
+     ],
+     "position": [
+      0.4596,
+      -0.0611,
+      0.03
+     ],
+     "versatz": [
+      0,
+      0,
+      0.03
+     ],
+     "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_karten_fb/kenney_p_mount_measure.json#clips.Ranged_2H_Aiming (Durchstich 0 Punkte, 0 mm)"
+    },
+    "Ranged_2H_Shoot": {
+     "rotation": [
+      0,
+      -0.70710678,
+      0,
+      0.70710678
+     ],
+     "position": [
+      0.4596,
+      -0.0611,
+      0.03
+     ],
+     "versatz": [
+      0,
+      0,
+      0.03
+     ],
+     "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_karten_fb/kenney_p_mount_measure.json#clips.Ranged_2H_Shoot (Durchstich 0 Punkte, 0 mm)"
+    },
+    "Ranged_2H_Shooting": {
+     "rotation": [
+      0,
+      -0.70710678,
+      0,
+      0.70710678
+     ],
+     "position": [
+      0.4596,
+      -0.0611,
+      0.0
+     ],
+     "versatz": [
+      0,
+      0,
+      0
+     ],
+     "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_karten_fb/kenney_p_mount_measure.json#clips.Ranged_2H_Shooting (Durchstich 0 Punkte, 0 mm)"
+    },
+    "Ranged_2H_Reload": {
+     "rotation": [
+      0,
+      -0.70710678,
+      0,
+      0.70710678
+     ],
+     "position": [
+      0.4596,
+      -0.2711,
+      0.0
+     ],
+     "versatz": [
+      0,
+      -0.21,
+      0
+     ],
+     "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_karten_fb/kenney_p_mount_measure.json#clips.Ranged_2H_Reload (Durchstich 0 Punkte, 0 mm)"
+    }
+   }
+  }
+ },
+ "modelUnchanged": true,
+ "nativeClipsUnchanged": true,
+ "perFrameWeaponRotation": false,
+ "perFrameArmPostPose": false,
+ "handCount": "source",
+ "grip": {
+  "node": "KFB_Grip",
+  "localTranslation": [
+   0,
+   0.0318,
+   0.2394
+  ],
+  "regel": "B40-Vorbild: auf der Laufachse über der Griffmitte; Griffmitte aus dem Sichtbeleg (data/kenney_griff_sicht.json)"
+ },
+ "muzzle": {
+  "kind": "source-anchor",
+  "node": "KFB_Muzzle",
+  "forwardLocal": [
+   0,
+   0,
+   1
+  ],
+  "localTranslation": [
+   0,
+   0.0318,
+   -0.431
+  ],
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/kenney/kenney_anker_r1b.json#modelle.blaster-p.KFB_Muzzle + dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_karten_fb/kenney_p_mount_measure.json#muzzle_anchor",
+  "variants": [],
+  "primary": {
+   "ref": "private:kaykit/6 - December 2023 - Action Figure/assets/gltf/Muzzleflash.gltf",
+   "sha256": "6f772ef7fd26f35abe5cac844e31defdbe12e54c1feca463fee53b5408bc05cd",
+   "private": true,
+   "asIs": true
+  },
+  "secondary": {
+   "ref": "private:kaykit/6 - December 2023 - Action Figure/assets/gltf/Muzzleflash_Long.gltf",
+   "sha256": "b8232b68245ccc2261f22d8f9172b142bd5fc6b49cec7a1fe1b8396aac0616e8",
+   "private": true,
+   "asIs": true
+  }
+ },
+ "projectileDirection": "muzzle",
+ "release": {
+  "clip": "Ranged_2H_Shoot",
+  "seconds": 0.2667,
+  "clipDuration": 1.0667,
+  "oncePerAction": true,
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/kenney_karten_fb/kenney_p_mount_measure.json#clips.Ranged_2H_Shoot.rueckstoss + gleicher Kit-Marker wie kfb_kit_gun_pistol_prototype bzw. kfb_kit_gun_rifle_fb (Ranged_2H_Shoot 0,2667 s)"
+ },
+ "clipMarkers": {
+  "Ranged_2H_Aiming": {
+   "clip": "Ranged_2H_Aiming",
+   "duration_s": 1.6,
+   "gier_deg": [
+    -15.58,
+    1.07
+   ],
+   "nicken_deg": [
+    -4.88,
+    0.73
+   ],
+   "durchstich": {
+    "innen": 0,
+    "tiefe_m": 0
+   }
+  },
+  "Ranged_2H_Shoot": {
+   "clip": "Ranged_2H_Shoot",
+   "duration_s": 1.0667,
+   "gier_deg": [
+    -15.58,
+    1.1
+   ],
+   "nicken_deg": [
+    -14.33,
+    9.14
+   ],
+   "durchstich": {
+    "innen": 0,
+    "tiefe_m": 0
+   }
+  },
+  "Ranged_2H_Shooting": {
+   "clip": "Ranged_2H_Shooting",
+   "duration_s": 1.0667,
+   "gier_deg": [
+    1.06,
+    1.06
+   ],
+   "nicken_deg": [
+    0.73,
+    0.73
+   ],
+   "durchstich": {
+    "innen": 0,
+    "tiefe_m": 0
+   }
+  },
+  "Ranged_2H_Reload": {
+   "clip": "Ranged_2H_Reload",
+   "duration_s": 1.6,
+   "gier_deg": [
+    -2.33,
+    1.35
+   ],
+   "nicken_deg": [
+    -18.15,
+    11.01
+   ],
+   "durchstich": {
+    "innen": 0,
+    "tiefe_m": 0
+   }
+  }
+ },
+ "actions": {
+  "aim": "Ranged_2H_Aiming",
+  "fire": "Ranged_2H_Shoot",
+  "fireLoop": "Ranged_2H_Shooting",
+  "reload": "Ranged_2H_Reload"
+ },
+ "klasse": {
+  "ws1_r0": "gewehr",
+  "hinweis": null
+ },
+ "figure": {
+  "id": "frizzlebob",
+  "rig": "Rig_Medium (FB_WEB_KANON r1j)",
+  "note": "Nur für FB gemessen"
+ },
+ "status": "SOURCE_PROFILE_NOT_GAMEPLAY_ACCEPTANCE",
+ "by": "WSB Waffen-Nachweis R1c",
+ "date": "2026-11-17"
+}

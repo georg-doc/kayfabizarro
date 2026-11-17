@@ -1,0 +1,6931 @@
+{
+  "actor": {
+    "grounded": true,
+    "position": {
+      "x": 3.249936103820801,
+      "y": 1.6700999736785889,
+      "z": 4.399993896484375
+    }
+  },
+  "audio": {
+    "ambience": {
+      "biome": "meadow",
+      "timeOfDay": "day",
+      "weather": "clear",
+      "wind": 0.22
+    },
+    "ambienceActive": null,
+    "ambienceOverride": {},
+    "asmr": {
+      "drops": {},
+      "log": [],
+      "on": false,
+      "plays": 0,
+      "t": 36.44
+    },
+    "bank": {
+      "bytesMib": 0,
+      "core": 0,
+      "decodedMib": 0,
+      "deferred": 0,
+      "drops": 0,
+      "evicted": 0,
+      "late": 0,
+      "loaded": 0,
+      "lruMib": 0,
+      "plays": 0,
+      "stale": 0
+    },
+    "biome": null,
+    "chatter": {},
+    "coast": false,
+    "combatActive": false,
+    "combatBudget": null,
+    "contexts": 1,
+    "cues": [],
+    "drive": null,
+    "duckDb": 0,
+    "error": null,
+    "errors": [],
+    "events": [],
+    "flufferHealed": false,
+    "fluffers": {},
+    "grains": null,
+    "host": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/33bcb759eaf4be31b9fd1c54501f907b323538b3/media/kfb-audio/r1/",
+    "hostFallbacks": 0,
+    "loads": {},
+    "mode": "idle",
+    "mode2": "foot",
+    "modules": {
+      "ambience": false,
+      "combat": false,
+      "music": false,
+      "racer": false,
+      "steps": false
+    },
+    "music": null,
+    "musicAudible": false,
+    "nowPlaying": null,
+    "npcStepDrops": 0,
+    "npcSteps": 0,
+    "occluded": 0,
+    "outDb": -120,
+    "ownSteps": null,
+    "perf": {
+      "avgMs": 0,
+      "frames": 0,
+      "maxMs": 0,
+      "over1": 0,
+      "p95Ms": 0,
+      "sections": {},
+      "work": {
+        "convSet": 11.2,
+        "impulseGen": 4
+      }
+    },
+    "presence": [],
+    "pulse": {
+      "audible": 0,
+      "bass": 0,
+      "bpm": 0,
+      "conf": 0
+    },
+    "racer": null,
+    "reverb": null,
+    "rise": null,
+    "speak": {
+      "log": [],
+      "on": false
+    },
+    "state": "running",
+    "stepDb": -9,
+    "steps": 0,
+    "surface": null,
+    "tod": null,
+    "unlocked": false,
+    "voiceLast": null,
+    "voices": {
+      "ambience": 0,
+      "bank": 0,
+      "combat": 0,
+      "music": 0,
+      "oneShots": 0,
+      "racerLoops": 0,
+      "racerOneShots": 0,
+      "steps": 0,
+      "total": 0
+    },
+    "volumes": {
+      "atmo": 0.7,
+      "master": 0.9,
+      "music": 0.55,
+      "muted": false,
+      "sfx": 0.9,
+      "ui": 0.7
+    },
+    "water": []
+  },
+  "blocked": 0,
+  "cascades": 8,
+  "clickAim": {
+    "enabled": true,
+    "lastSelection": {
+      "centerErrorAtFire": 2.8574902236393864e-16,
+      "point": [
+        5.749999891464872,
+        3.629568968206488,
+        3.3142801166434896
+      ],
+      "position": [
+        3.249936103820801,
+        0.7650999736785888,
+        4.399993896484375
+      ],
+      "surface": "r0:east"
+    },
+    "turn": {
+      "elapsed": 0.11670000000000072,
+      "id": 8,
+      "point": [
+        5.749999891464872,
+        3.629568968206488,
+        3.3142801166434896
+      ],
+      "released": true
+    }
+  },
+  "combat": {
+    "active": "blaster",
+    "automatic": null,
+    "axe": null,
+    "bow": null,
+    "boxing": null,
+    "cascade": null,
+    "club": null,
+    "contacts": 8,
+    "crossbow": null,
+    "error": null,
+    "flash": "OK",
+    "frozenMs": 0,
+    "grenade": null,
+    "handLightning": null,
+    "hitStop": {
+      "activeParticipants": 0,
+      "cameraKick": false,
+      "capMs": 150,
+      "rememberedEvents": 0
+    },
+    "hitStops": 0,
+    "kaskadeRezept": null,
+    "katana": null,
+    "kills": 0,
+    "knetHits": 8,
+    "kontaktImpuls": null,
+    "label": null,
+    "live": 0,
+    "materialContact": null,
+    "ms": 0.04824308935593671,
+    "nahkampfFx": null,
+    "pops": 0,
+    "pose": null,
+    "propContact": null,
+    "releases": 8,
+    "rocket": null,
+    "shots": 8,
+    "spreadshot": null,
+    "status": "OK",
+    "sword": null,
+    "wand": null,
+    "want": "blaster",
+    "weapons": [
+      {
+        "audit": "CONTRACT_PASS",
+        "auditScope": "weapon",
+        "error": null,
+        "id": "pistol",
+        "propSha": null,
+        "sha": "96e8ef219631309cc8a1546866008f3582b4fd048daf89a4fb0c10912a8bd086",
+        "status": "OK"
+      },
+      {
+        "audit": "CONTRACT_PASS",
+        "auditScope": "weapon",
+        "error": null,
+        "id": "blaster",
+        "propSha": null,
+        "sha": "640924f7c85bdfa0a9428db3ff8639039c2b7f0f36553e8ac047176e212e120c",
+        "status": "OK"
+      }
+    ]
+  },
+  "geometry": {
+    "commits": 10,
+    "fragments": 0,
+    "nativeFragmentBuilder": "cascade/r4/laser-panel-view.js dropLaserPanel; dynamics in existing host Rapier world",
+    "peakFragments": 11,
+    "profile": [
+      {
+        "derive": 0.5,
+        "dirty": 0,
+        "fragments": 0,
+        "materials": 0.09999999403953552,
+        "reset": true,
+        "terrain": 0,
+        "total": 0.5999999940395355
+      },
+      {
+        "derive": 1.8999999910593033,
+        "dirty": 0,
+        "fragments": 0.10000000894069672,
+        "materials": 0,
+        "reset": false,
+        "terrain": 0,
+        "total": 2
+      },
+      {
+        "derive": 1,
+        "dirty": 1,
+        "fragments": 1.7999999970197678,
+        "materials": 0.20000000298023224,
+        "reset": false,
+        "terrain": 3.1000000089406967,
+        "total": 6.100000008940697
+      },
+      {
+        "derive": 0.9000000059604645,
+        "dirty": 2,
+        "fragments": 1.5,
+        "materials": 0.09999999403953552,
+        "reset": false,
+        "terrain": 4.4000000059604645,
+        "total": 6.9000000059604645
+      },
+      {
+        "derive": 0.5999999940395355,
+        "dirty": 0,
+        "fragments": 0.10000000894069672,
+        "materials": 0,
+        "reset": false,
+        "terrain": 0,
+        "total": 0.7000000029802322
+      },
+      {
+        "derive": 0.5,
+        "dirty": 2,
+        "fragments": 0,
+        "materials": 0,
+        "reset": true,
+        "terrain": 1.7999999970197678,
+        "total": 2.299999997019768
+      },
+      {
+        "derive": 0.5999999940395355,
+        "dirty": 2,
+        "fragments": 0.5999999940395355,
+        "materials": 0.10000000894069672,
+        "reset": false,
+        "terrain": 2,
+        "total": 3.299999997019768
+      },
+      {
+        "derive": 0.6000000089406967,
+        "dirty": 0,
+        "fragments": 0,
+        "materials": 0.09999999403953552,
+        "reset": false,
+        "terrain": 0,
+        "total": 0.7000000029802322
+      },
+      {
+        "derive": 0.5999999940395355,
+        "dirty": 2,
+        "fragments": 0.5999999940395355,
+        "materials": 0.10000000894069672,
+        "reset": false,
+        "terrain": 1.2999999970197678,
+        "total": 2.5999999940395355
+      },
+      {
+        "derive": 0.7000000029802322,
+        "dirty": 0,
+        "fragments": 0,
+        "materials": 0,
+        "reset": false,
+        "terrain": 0,
+        "total": 0.7000000029802322
+      }
+    ],
+    "removed": 60,
+    "spawned": 16,
+    "terrain": {
+      "chunks": 60,
+      "colliders": 93,
+      "rebuilds": 72,
+      "triangles": 41032
+    }
+  },
+  "graph": {
+    "autonomousQueries": 0,
+    "confirmedMessages": 8,
+    "createdPhysicsWorlds": 0,
+    "createdRenderers": 0,
+    "fieldPipeline": {
+      "error": null,
+      "generation": 2,
+      "pending": 0,
+      "trace": [
+        {
+          "computeMs": 52.29999999701977,
+          "latencyMs": 58.599999994039536,
+          "metrics": {
+            "edges": 4,
+            "faces": 0,
+            "impacts": 1,
+            "nodes": 5
+          }
+        },
+        {
+          "computeMs": 7.399999991059303,
+          "latencyMs": 8.200000002980232,
+          "metrics": {
+            "edges": 74,
+            "faces": 23,
+            "impacts": 2,
+            "nodes": 53
+          }
+        },
+        {
+          "computeMs": 7.5,
+          "latencyMs": 8.099999994039536,
+          "metrics": {
+            "edges": 139,
+            "faces": 44,
+            "impacts": 3,
+            "nodes": 98
+          }
+        },
+        {
+          "computeMs": 4.5,
+          "latencyMs": 5.200000002980232,
+          "metrics": {
+            "edges": 144,
+            "faces": 44,
+            "impacts": 4,
+            "nodes": 104
+          }
+        },
+        {
+          "computeMs": 3,
+          "latencyMs": 3.8999999910593033,
+          "metrics": {
+            "edges": 64,
+            "faces": 20,
+            "impacts": 1,
+            "nodes": 45
+          }
+        },
+        {
+          "computeMs": 2.9000000059604645,
+          "latencyMs": 3.299999997019768,
+          "metrics": {
+            "edges": 70,
+            "faces": 20,
+            "impacts": 2,
+            "nodes": 52
+          }
+        },
+        {
+          "computeMs": 5,
+          "latencyMs": 6.5999999940395355,
+          "metrics": {
+            "edges": 58,
+            "faces": 19,
+            "impacts": 1,
+            "nodes": 40
+          }
+        },
+        {
+          "computeMs": 3.299999997019768,
+          "latencyMs": 4,
+          "metrics": {
+            "edges": 78,
+            "faces": 20,
+            "impacts": 3,
+            "nodes": 61
+          }
+        }
+      ]
+    },
+    "nativeGraph": "cascade/r4/fracture.mjs via createCore/syncField",
+    "profile": [
+      {
+        "command": 0.7999999970197678,
+        "field": 0
+      },
+      {
+        "command": 0,
+        "field": 0
+      },
+      {
+        "command": 0.10000000894069672,
+        "field": 0
+      },
+      {
+        "command": 0.09999999403953552,
+        "field": 0
+      },
+      {
+        "command": 0.10000000894069672,
+        "field": 0
+      },
+      {
+        "command": 0,
+        "field": 0
+      },
+      {
+        "command": 0.10000000894069672,
+        "field": 0
+      },
+      {
+        "command": 0,
+        "field": 0
+      }
+    ],
+    "resets": 2,
+    "surfaceCommits": 8
+  },
+  "lastImpact": {
+    "at": [
+      5.750000043056764,
+      3.62956917249381,
+      3.3142800330997675
+    ],
+    "id": "r0:east",
+    "weapon": "blaster"
+  },
+  "lastRelease": {
+    "clipTime": 0.2749,
+    "dir": [
+      0.5662,
+      0.763,
+      -0.312
+    ],
+    "drawnGap": 0,
+    "flashOn": 0,
+    "muzzle": [
+      4.1532,
+      1.4777,
+      4.1943
+    ],
+    "proj": [
+      4.1532,
+      1.4777,
+      4.1943
+    ],
+    "shot": 8,
+    "target": null,
+    "weapon": "blaster"
+  },
+  "mode": "fps",
+  "preparationMs": 1769.2000000029802,
+  "preset": null,
+  "ready": true,
+  "receipts": [
+    {
+      "reset": true,
+      "surface": "r0:floor",
+      "t": 20.185599999999877
+    },
+    {
+      "reset": true,
+      "surface": "r0:ceiling",
+      "t": 20.185599999999877
+    },
+    {
+      "color": "#d9ffff",
+      "commandId": "ir:5",
+      "geometryChanged": true,
+      "geometryPending": false,
+      "kind": "shot",
+      "surface": "r0:east",
+      "t": 21.468799999999835,
+      "weapon": "blaster"
+    },
+    {
+      "color": "#d9ffff",
+      "commandId": "ir:6",
+      "geometryChanged": true,
+      "geometryPending": false,
+      "kind": "shot",
+      "surface": "r0:east",
+      "t": 23.297899999999817,
+      "weapon": "blaster"
+    },
+    {
+      "color": "#d9ffff",
+      "commandId": "ir:7",
+      "geometryChanged": true,
+      "geometryPending": false,
+      "kind": "shot",
+      "surface": "r0:ceiling",
+      "t": 25.00889999999979,
+      "weapon": "blaster"
+    },
+    {
+      "color": "#d9ffff",
+      "commandId": "ir:8",
+      "geometryChanged": true,
+      "geometryPending": false,
+      "kind": "shot",
+      "surface": "r0:east",
+      "t": 26.81719999999976,
+      "weapon": "blaster"
+    }
+  ],
+  "recordedRuns": [
+    {
+      "accepted": 4,
+      "contacts": 4,
+      "frameProfile": [
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.9000000059604645,
+          "total": 3.299999997019768
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 1.8999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 2.200000002980232,
+          "total": 2.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.0999999940395355,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 3.5,
+          "total": 4
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 2.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 4.0999999940395355,
+          "total": 4.399999991059303
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 3,
+          "total": 3.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.5999999940395355,
+          "total": 3
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 3.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 3
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 3,
+          "total": 3.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 3,
+          "total": 3.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.299999997019768,
+          "total": 2.699999988079071
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 3,
+          "total": 3.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 3,
+          "total": 3.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 3.200000002980232,
+          "total": 3.700000002980232
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 3.0999999940395355,
+          "total": 4.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.700000002980232,
+          "total": 3.4000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.9000000059604645,
+          "total": 3.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.8999999910593033,
+          "total": 3.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 3.799999997019768,
+          "total": 5.700000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 3.299999997019768,
+          "total": 4
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.300000011920929,
+          "total": 3
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 3.700000002980232,
+          "total": 4.200000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 3.200000002980232,
+          "total": 3.800000011920929
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 3.6000000089406967,
+          "total": 4.200000002980232
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 3.800000011920929,
+          "total": 4.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 2.9000000059604645,
+          "total": 3.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.299999997019768,
+          "total": 2.799999997019768
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 3.299999997019768,
+          "total": 3.700000002980232
+        },
+        {
+          "combat": 3.5999999940395355,
+          "geometry": 0,
+          "render": 3.799999997019768,
+          "total": 7.900000005960464
+        },
+        {
+          "combat": 0.9000000059604645,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 3.799999997019768
+        },
+        {
+          "combat": 0.4000000059604645,
+          "geometry": 0,
+          "render": 3.299999997019768,
+          "total": 4.299999997019768
+        },
+        {
+          "combat": 0.30000001192092896,
+          "geometry": 0,
+          "render": 2.4000000059604645,
+          "total": 3.0999999940395355
+        },
+        {
+          "combat": 0.4000000059604645,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 3.199999988079071
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 2.9000000059604645,
+          "total": 3.5999999940395355
+        },
+        {
+          "combat": 4.399999991059303,
+          "geometry": 0,
+          "render": 3,
+          "total": 8.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 5.5,
+          "total": 6.300000011920929
+        },
+        {
+          "combat": 0.30000001192092896,
+          "geometry": 0,
+          "render": 2.4000000059604645,
+          "total": 3.1000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 2,
+          "render": 2.5,
+          "total": 5.200000002980232
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 3.0999999940395355
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 2.700000002980232,
+          "total": 3.4000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.3999999910593033,
+          "total": 3
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.799999997019768,
+          "total": 3.299999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.799999997019768,
+          "total": 3.299999997019768
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 2.799999997019768,
+          "total": 3.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.6000000089406967,
+          "total": 3.200000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.4000000059604645,
+          "total": 3
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 3.200000002980232,
+          "total": 3.799999997019768
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 2.6000000089406967,
+          "total": 3.299999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.4000000059604645,
+          "total": 2.9000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.299999997019768,
+          "total": 2.9000000059604645
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 3.199999988079071,
+          "total": 4.0999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 3.1000000089406967,
+          "total": 3.6000000089406967
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.5999999940395355,
+          "total": 3.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 2.299999997019768,
+          "total": 2.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 3.199999988079071,
+          "total": 3.799999997019768
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.8999999910593033,
+          "total": 3.700000002980232
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.700000002980232,
+          "total": 3.0999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 3
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.0999999940395355,
+          "total": 2.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.199999988079071,
+          "total": 2.699999988079071
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.299999997019768,
+          "total": 2.700000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.299999997019768,
+          "total": 2.799999997019768
+        },
+        {
+          "combat": 0.30000001192092896,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 3.299999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 3
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.3999999910593033,
+          "total": 3
+        },
+        {
+          "combat": 0.30000001192092896,
+          "geometry": 0,
+          "render": 2.200000002980232,
+          "total": 2.799999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.4000000059604645,
+          "total": 2.9000000059604645
+        },
+        {
+          "combat": 0.4000000059604645,
+          "geometry": 0,
+          "render": 2.5999999940395355,
+          "total": 3.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.4000000059604645,
+          "total": 2.800000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.8999999910593033,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 2.200000002980232,
+          "total": 2.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.200000002980232,
+          "total": 2.5
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.199999988079071,
+          "total": 2.699999988079071
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.8999999910593033,
+          "total": 2.199999988079071
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.200000002980232,
+          "total": 2.700000002980232
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.1000000089406967,
+          "total": 2.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.1000000089406967,
+          "total": 2.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.300000011920929,
+          "total": 2.700000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.5,
+          "total": 2.799999997019768
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 2.0999999940395355,
+          "total": 2.5
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0.10000000894069672,
+          "render": 2,
+          "total": 2.4000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.1000000089406967,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.699999988079071,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 1.8999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2,
+          "total": 3.1000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.800000011920929,
+          "total": 2.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.8999999910593033,
+          "total": 2.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.200000002980232,
+          "total": 2.6000000089406967
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.0999999940395355,
+          "total": 2.5999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2.300000011920929,
+          "total": 2.9000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.5,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.5
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.5
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.30000001192092896,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.4000000059604645
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.5
+        },
+        {
+          "combat": 0.9000000059604645,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 3.1000000089406967
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 6.100000008940697,
+          "render": 2.299999997019768,
+          "total": 9.5
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.700000002980232
+        },
+        {
+          "combat": 0.3999999910593033,
+          "geometry": 0,
+          "render": 2.200000002980232,
+          "total": 3.299999997019768
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.5999999940395355
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.5999999940395355
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.5
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 2.5999999940395355,
+          "total": 3.200000002980232
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.5999999940395355
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 2.299999997019768,
+          "total": 3
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.199999988079071
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2.300000011920929
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.699999988079071,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.800000011920929,
+          "total": 2.300000011920929
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.800000011920929,
+          "total": 2.300000011920929
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.700000002980232
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2.700000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.6000000089406967
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.699999988079071,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0.10000000894069672,
+          "render": 1.300000011920929,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 1.8999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.199999988079071
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.199999988079071
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0.10000000894069672,
+          "render": 1.5,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 2
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0.7999999970197678,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.700000002980232
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 7,
+          "render": 2,
+          "total": 9.899999991059303
+        },
+        {
+          "combat": 0.3999999910593033,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.300000011920929
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.8999999910593033,
+          "total": 2.799999997019768
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 2.199999988079071
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.699999988079071,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.300000011920929
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0.09999999403953552,
+          "render": 1.7000000029802322,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.7999999970197678,
+          "total": 2.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.199999988079071
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.299999997019768
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.6000000089406967
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.8999999910593033,
+          "total": 2.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.199999988079071
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 3.0999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.8999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.699999988079071,
+          "total": 2.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 2
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.8999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.7000000029802322,
+          "total": 2.1000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.8999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.7999999970197678,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0.7999999970197678,
+          "render": 0.9000000059604645,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0.10000000894069672,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.7000000029802322,
+          "total": 1.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.0999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7000000029802322,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.1000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.800000011920929,
+          "total": 1.1000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.0999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.800000011920929,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.199999988079071
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2,
+          "total": 2.9000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 3.5,
+          "total": 5.799999997019768
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.4000000059604645,
+          "total": 3.700000002980232
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.200000002980232,
+          "total": 3.800000011920929
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 2.8999999910593033,
+          "total": 4.799999997019768
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.2000000029802322
+        }
+      ],
+      "frames": [
+        32.60000000000218,
+        34,
+        25.19999999999709,
+        16.600000000002183,
+        58.29999999999927,
+        40.79999999999927,
+        33.400000000001455,
+        42.599999999998545,
+        58.400000000001455,
+        33.20000000000073,
+        33.39999999999782,
+        33.29999999999927,
+        33.30000000000291,
+        16.69999999999709,
+        33.20000000000073,
+        40.900000000001455,
+        42.39999999999782,
+        33.10000000000218,
+        33.599999999998545,
+        41.79999999999927,
+        33.20000000000073,
+        41.70000000000073,
+        33.29999999999927,
+        25,
+        33.400000000001455,
+        33.29999999999927,
+        25,
+        16.700000000000728,
+        25,
+        24.899999999997817,
+        25.100000000002183,
+        16.299999999999272,
+        25.400000000001455,
+        16.599999999998545,
+        25,
+        25,
+        16.299999999999272,
+        25.400000000001455,
+        25,
+        25,
+        33.29999999999927,
+        24.799999999999272,
+        33.5,
+        33.400000000001455,
+        24.899999999997817,
+        33.20000000000073,
+        25.200000000000728,
+        25,
+        25,
+        16.700000000000728,
+        16.700000000000728,
+        29.099999999998545,
+        16,
+        23.299999999999272,
+        16.100000000002183,
+        16.399999999997817,
+        15.700000000000728,
+        25,
+        25,
+        16.599999999998545,
+        16.700000000000728,
+        33.400000000001455,
+        16.599999999998545,
+        15.700000000000728,
+        25.700000000000728,
+        25.299999999999272,
+        25,
+        25,
+        24.900000000001455,
+        16.799999999999272,
+        24.899999999997817,
+        33.400000000001455,
+        24.900000000001455,
+        25,
+        41.69999999999709,
+        16.700000000000728,
+        15.799999999999272,
+        25.900000000001455,
+        16.599999999998545,
+        25,
+        15.80000000000291,
+        25.899999999997817,
+        16.600000000002183,
+        15.799999999999272,
+        17.5,
+        33.5,
+        16.599999999998545,
+        16.700000000000728,
+        25,
+        25,
+        25,
+        25,
+        25,
+        33.20000000000073,
+        25.099999999998545,
+        16.700000000000728,
+        33.29999999999927,
+        16.700000000000728,
+        24.900000000001455,
+        16.69999999999709,
+        16.700000000000728,
+        25,
+        16.600000000002183,
+        25.099999999998545,
+        16.599999999998545,
+        25,
+        16.700000000000728,
+        16.700000000000728,
+        15.700000000000728,
+        17.599999999998545,
+        16.400000000001455,
+        16.899999999997817,
+        25,
+        16.200000000000728,
+        25.5,
+        16.700000000000728,
+        25.099999999998545,
+        15.600000000002185,
+        17.599999999998545,
+        25,
+        24.100000000002183,
+        17.599999999998545,
+        24.400000000001455,
+        25.5,
+        16.799999999999272,
+        24.899999999997817,
+        16.700000000000728,
+        24,
+        17.700000000000728,
+        16.700000000000728,
+        15.700000000000728,
+        23.5,
+        24.19999999999709,
+        19.100000000002183,
+        17.200000000000728,
+        16.899999999997817,
+        15.900000000001455,
+        24.799999999999272,
+        17.099999999998545,
+        25.200000000000728,
+        33.70000000000073,
+        25,
+        25,
+        16.099999999998545,
+        25.5,
+        25.100000000002183,
+        24.899999999997817,
+        16.700000000000728,
+        25.100000000002183,
+        15.69999999999709,
+        17.600000000002183,
+        13.599999999998545,
+        24.200000000000728,
+        16.400000000001455,
+        16.5,
+        15.899999999997815,
+        17.400000000001455,
+        25.099999999998545,
+        15.799999999999272,
+        17.5,
+        18.900000000001455,
+        17.900000000001455,
+        17.299999999999272,
+        16.700000000000728,
+        25.099999999998545,
+        25,
+        25,
+        16.099999999998545,
+        17.200000000000728,
+        24.900000000001455,
+        24.200000000000728,
+        25.19999999999709,
+        17.400000000001455,
+        16.799999999999272,
+        16.600000000002183,
+        16.599999999998545,
+        25,
+        16.700000000000728,
+        16.599999999998545,
+        16.700000000000728,
+        15.900000000001455,
+        17.399999999997817,
+        16.600000000002183,
+        16.799999999999272,
+        32.39999999999782,
+        17.600000000002183,
+        16.599999999998545,
+        16.700000000000728,
+        16.700000000000728,
+        24.899999999997817,
+        16.100000000002183,
+        17.200000000000728,
+        16.799999999999272,
+        24.899999999997817,
+        16.700000000000728,
+        25,
+        16.700000000000728,
+        25,
+        25,
+        16.5,
+        25.099999999998545,
+        25.100000000002183,
+        16.599999999998545,
+        16.400000000001455,
+        16.899999999997817,
+        16.700000000000728,
+        24.5,
+        17.200000000000728,
+        16.700000000000728,
+        16.700000000000728,
+        16.599999999998545,
+        15.799999999999272,
+        17.5,
+        16.600000000002183,
+        16.69999999999709,
+        16.700000000000728,
+        25,
+        16,
+        17.299999999999272,
+        33.400000000001455,
+        24.900000000001455,
+        33.39999999999782,
+        16.600000000002183,
+        25.099999999998545,
+        25,
+        16,
+        25.700000000000728,
+        16.200000000000728,
+        17,
+        16.69999999999709,
+        16.700000000000728,
+        25,
+        8.400000000001455,
+        24.899999999997817,
+        25,
+        15.900000000001455,
+        17.5,
+        16.599999999998545,
+        16.700000000000728,
+        16,
+        25.700000000000728,
+        16.700000000000728,
+        16.599999999998545,
+        16.700000000000728,
+        16.599999999998545,
+        25,
+        24.80000000000291,
+        25.19999999999709,
+        16.700000000000728,
+        25,
+        25,
+        16.700000000000728,
+        25,
+        25,
+        16.700000000000728,
+        24.899999999997817,
+        16.200000000000728,
+        17.200000000000728,
+        25,
+        16.700000000000728,
+        25,
+        24.899999999997817,
+        15.80000000000291,
+        17.599999999998545,
+        24.599999999998545,
+        25.30000000000291,
+        16.799999999999272,
+        25,
+        25,
+        33.29999999999927,
+        24.900000000001455,
+        25,
+        25.099999999998545,
+        33.400000000001455,
+        24.899999999997817,
+        25,
+        16.600000000002183,
+        25.099999999998545,
+        25,
+        16.700000000000728,
+        24,
+        25.899999999997817,
+        25,
+        16.600000000002183,
+        16.799999999999272,
+        16.599999999998545,
+        24.600000000002183,
+        17.099999999998545,
+        8.299999999999272,
+        25,
+        33.30000000000291,
+        25,
+        15.899999999997815,
+        17.5,
+        25,
+        24.5,
+        25.5,
+        25,
+        24,
+        17.700000000000728,
+        16.599999999998545,
+        25.100000000002183,
+        15.799999999999272,
+        24.900000000001455,
+        17.5,
+        24.19999999999709,
+        16.80000000000291,
+        25.399999999997817,
+        16.600000000002183,
+        16.19999999999709,
+        25.900000000001455,
+        16,
+        33.400000000001455,
+        25.599999999998545,
+        24,
+        17.599999999998545,
+        25.100000000002183,
+        33.20000000000073,
+        33.39999999999782,
+        16.700000000000728,
+        24,
+        17.700000000000728,
+        16.5,
+        16.700000000000728,
+        16.69999999999709,
+        25.100000000002183,
+        8.200000000000728,
+        25.099999999998545,
+        16.599999999998545,
+        25,
+        16.700000000000728,
+        16.700000000000728,
+        25.099999999998545,
+        16.5,
+        16.700000000000728,
+        25,
+        25,
+        24.299999999999272,
+        17.400000000001455,
+        16.599999999998545,
+        25.100000000002183,
+        24.899999999997817,
+        25,
+        25.100000000002183,
+        16.599999999998545,
+        25.100000000002183,
+        15.69999999999709,
+        25.900000000001455,
+        16.599999999998545,
+        16.700000000000728,
+        16.299999999999272,
+        17.100000000002183,
+        16.599999999998545,
+        33.400000000001455,
+        16.599999999998545,
+        15.700000000000728,
+        16.700000000000728,
+        46.39999999999782,
+        25.400000000001455,
+        24.700000000000728,
+        33.70000000000073
+      ],
+      "geometry": {
+        "commits": 5,
+        "fragments": 6,
+        "nativeFragmentBuilder": "cascade/r4/laser-panel-view.js dropLaserPanel; dynamics in existing host Rapier world",
+        "peakFragments": 11,
+        "profile": [
+          {
+            "derive": 0.5,
+            "dirty": 0,
+            "fragments": 0,
+            "materials": 0.09999999403953552,
+            "reset": true,
+            "terrain": 0,
+            "total": 0.5999999940395355
+          },
+          {
+            "derive": 1.8999999910593033,
+            "dirty": 0,
+            "fragments": 0.10000000894069672,
+            "materials": 0,
+            "reset": false,
+            "terrain": 0,
+            "total": 2
+          },
+          {
+            "derive": 1,
+            "dirty": 1,
+            "fragments": 1.7999999970197678,
+            "materials": 0.20000000298023224,
+            "reset": false,
+            "terrain": 3.1000000089406967,
+            "total": 6.100000008940697
+          },
+          {
+            "derive": 0.9000000059604645,
+            "dirty": 2,
+            "fragments": 1.5,
+            "materials": 0.09999999403953552,
+            "reset": false,
+            "terrain": 4.4000000059604645,
+            "total": 6.9000000059604645
+          },
+          {
+            "derive": 0.5999999940395355,
+            "dirty": 0,
+            "fragments": 0.10000000894069672,
+            "materials": 0,
+            "reset": false,
+            "terrain": 0,
+            "total": 0.7000000029802322
+          },
+          {
+            "derive": 0.5,
+            "dirty": 2,
+            "fragments": 0,
+            "materials": 0,
+            "reset": true,
+            "terrain": 1.7999999970197678,
+            "total": 2.299999997019768
+          },
+          {
+            "derive": 0.5999999940395355,
+            "dirty": 2,
+            "fragments": 0.5999999940395355,
+            "materials": 0.10000000894069672,
+            "reset": false,
+            "terrain": 2,
+            "total": 3.299999997019768
+          },
+          {
+            "derive": 0.6000000089406967,
+            "dirty": 0,
+            "fragments": 0,
+            "materials": 0.09999999403953552,
+            "reset": false,
+            "terrain": 0,
+            "total": 0.7000000029802322
+          },
+          {
+            "derive": 0.5999999940395355,
+            "dirty": 2,
+            "fragments": 0.5999999940395355,
+            "materials": 0.10000000894069672,
+            "reset": false,
+            "terrain": 1.2999999970197678,
+            "total": 2.5999999940395355
+          },
+          {
+            "derive": 0.7000000029802322,
+            "dirty": 0,
+            "fragments": 0,
+            "materials": 0,
+            "reset": false,
+            "terrain": 0,
+            "total": 0.7000000029802322
+          }
+        ],
+        "removed": 84,
+        "spawned": 11,
+        "terrain": {
+          "chunks": 60,
+          "colliders": 88,
+          "rebuilds": 66,
+          "triangles": 41088
+        }
+      },
+      "mode": "tps",
+      "release": {
+        "clipTime": 0.2749,
+        "dir": [
+          0.3479,
+          0.4232,
+          -0.8366
+        ],
+        "drawnGap": 0,
+        "flashOn": 0,
+        "muzzle": [
+          3.7989,
+          1.4777,
+          3.6538
+        ],
+        "proj": [
+          3.7989,
+          1.4777,
+          3.6538
+        ],
+        "shot": 4,
+        "target": null,
+        "weapon": "blaster"
+      },
+      "shots": 4,
+      "work": [
+        3.299999997019768,
+        1.9000000059604645,
+        2.0999999940395355,
+        1.8999999910593033,
+        2.3999999910593033,
+        2.6000000089406967,
+        2.5,
+        4,
+        2.9000000059604645,
+        4.399999991059303,
+        3.3999999910593033,
+        3,
+        3.0999999940395355,
+        3,
+        3.5,
+        3.5,
+        2.699999988079071,
+        3.5,
+        3.4000000059604645,
+        3.700000002980232,
+        4.0999999940395355,
+        3.4000000059604645,
+        3.4000000059604645,
+        3.3999999910593033,
+        5.700000002980232,
+        4,
+        3,
+        4.200000002980232,
+        3.800000011920929,
+        4.200000002980232,
+        4.4000000059604645,
+        3.4000000059604645,
+        2.799999997019768,
+        3.700000002980232,
+        7.900000005960464,
+        3.799999997019768,
+        4.299999997019768,
+        3.0999999940395355,
+        3.199999988079071,
+        3.5999999940395355,
+        8.5,
+        6.300000011920929,
+        3.1000000089406967,
+        5.200000002980232,
+        3.0999999940395355,
+        3.4000000059604645,
+        3,
+        3.299999997019768,
+        3.299999997019768,
+        3.5,
+        3.200000002980232,
+        3,
+        3.799999997019768,
+        3.299999997019768,
+        2.9000000059604645,
+        2.9000000059604645,
+        4.0999999940395355,
+        3.6000000089406967,
+        3.5999999940395355,
+        2.9000000059604645,
+        3.799999997019768,
+        3.700000002980232,
+        3.0999999940395355,
+        3,
+        2.5,
+        2.699999988079071,
+        2.700000002980232,
+        2.799999997019768,
+        3.299999997019768,
+        3,
+        2.3999999910593033,
+        3,
+        2.799999997019768,
+        2.9000000059604645,
+        3.5,
+        2.800000011920929,
+        2.3999999910593033,
+        2.5,
+        2.5,
+        2.4000000059604645,
+        2.3999999910593033,
+        2.6000000089406967,
+        2.5,
+        2.299999997019768,
+        2.299999997019768,
+        2.299999997019768,
+        2.699999988079071,
+        2.4000000059604645,
+        2.199999988079071,
+        2.300000011920929,
+        2.700000002980232,
+        2.5,
+        2.6000000089406967,
+        2.700000002980232,
+        2.799999997019768,
+        2.4000000059604645,
+        2.5,
+        2.5,
+        2.4000000059604645,
+        2.5,
+        2,
+        2.0999999940395355,
+        1.9000000059604645,
+        2.299999997019768,
+        2.0999999940395355,
+        1.8999999910593033,
+        2.200000002980232,
+        3.1000000089406967,
+        2.200000002980232,
+        2.5,
+        2.300000011920929,
+        2.5,
+        2.6000000089406967,
+        2.299999997019768,
+        2.3999999910593033,
+        2.5999999940395355,
+        2.200000002980232,
+        2.200000002980232,
+        2.9000000059604645,
+        2.1000000089406967,
+        2.5,
+        2.5,
+        2.3999999910593033,
+        2.4000000059604645,
+        2.299999997019768,
+        2.0999999940395355,
+        2.5,
+        3.1000000089406967,
+        9.5,
+        2.5,
+        2.5,
+        2.3999999910593033,
+        2.5,
+        2.700000002980232,
+        3.299999997019768,
+        2.5,
+        2.5999999940395355,
+        2.3999999910593033,
+        2.5999999940395355,
+        2.5,
+        3.200000002980232,
+        2.5999999940395355,
+        3,
+        2.199999988079071,
+        2.299999997019768,
+        2.300000011920929,
+        2.200000002980232,
+        2.1000000089406967,
+        2.1000000089406967,
+        2.3999999910593033,
+        2,
+        2.300000011920929,
+        2,
+        2,
+        2.0999999940395355,
+        2.300000011920929,
+        2.5,
+        2.299999997019768,
+        2.700000002980232,
+        2.700000002980232,
+        2.6000000089406967,
+        2.299999997019768,
+        2.299999997019768,
+        2.5,
+        2.299999997019768,
+        2.3999999910593033,
+        2,
+        1.7000000029802322,
+        2.1000000089406967,
+        2,
+        2.0999999940395355,
+        2,
+        1.7000000029802322,
+        1.800000011920929,
+        1.7999999970197678,
+        1.7999999970197678,
+        1.9000000059604645,
+        1.9000000059604645,
+        1.7000000029802322,
+        1.6000000089406967,
+        1.7000000029802322,
+        1.800000011920929,
+        2,
+        1.9000000059604645,
+        1.8999999910593033,
+        2.0999999940395355,
+        1.7999999970197678,
+        2.3999999910593033,
+        2.199999988079071,
+        1.7999999970197678,
+        1.7999999970197678,
+        2.0999999940395355,
+        1.7000000029802322,
+        1.7000000029802322,
+        1.7000000029802322,
+        1.7000000029802322,
+        1.9000000059604645,
+        2,
+        1.7999999970197678,
+        1.7999999970197678,
+        1.5999999940395355,
+        2.299999997019768,
+        2.1000000089406967,
+        2.3999999910593033,
+        2.1000000089406967,
+        2.199999988079071,
+        2.200000002980232,
+        2.0999999940395355,
+        1.9000000059604645,
+        2,
+        1.9000000059604645,
+        2,
+        2.700000002980232,
+        9.899999991059303,
+        2.5,
+        2.6000000089406967,
+        2,
+        2.300000011920929,
+        2.799999997019768,
+        2.1000000089406967,
+        2.0999999940395355,
+        2.0999999940395355,
+        2.199999988079071,
+        1.7999999970197678,
+        2,
+        1.7999999970197678,
+        2.0999999940395355,
+        2.3999999910593033,
+        2,
+        2.300000011920929,
+        2.5,
+        2.299999997019768,
+        2.200000002980232,
+        2.299999997019768,
+        2.299999997019768,
+        2.5,
+        2.199999988079071,
+        2.299999997019768,
+        2.6000000089406967,
+        2.4000000059604645,
+        2,
+        2.200000002980232,
+        2.0999999940395355,
+        2.1000000089406967,
+        2.1000000089406967,
+        2.5999999940395355,
+        2,
+        2,
+        2.0999999940395355,
+        2.199999988079071,
+        3.0999999940395355,
+        2.8999999910593033,
+        2.6000000089406967,
+        2.5,
+        2.200000002980232,
+        2.200000002980232,
+        2.5999999940395355,
+        2.200000002980232,
+        2.5,
+        2.5,
+        2.200000002980232,
+        1.9000000059604645,
+        1.699999988079071,
+        1.7999999970197678,
+        2,
+        2.200000002980232,
+        1.8999999910593033,
+        2,
+        1.9000000059604645,
+        1.9000000059604645,
+        1.699999988079071,
+        2.0999999940395355,
+        1.7000000029802322,
+        1.5,
+        1.800000011920929,
+        1.699999988079071,
+        2.1000000089406967,
+        1.7000000029802322,
+        2,
+        1.5999999940395355,
+        1.7000000029802322,
+        2.0999999940395355,
+        1.7000000029802322,
+        1.7000000029802322,
+        1.7000000029802322,
+        1.5999999940395355,
+        1.699999988079071,
+        1.699999988079071,
+        1.5,
+        1.5,
+        1.8999999910593033,
+        2,
+        1.3999999910593033,
+        1.5,
+        1.9000000059604645,
+        1.5999999940395355,
+        1.6000000089406967,
+        2.3999999910593033,
+        2.200000002980232,
+        1.7000000029802322,
+        1.6000000089406967,
+        1.5999999940395355,
+        1.7999999970197678,
+        1.6000000089406967,
+        1.3999999910593033,
+        1.7000000029802322,
+        1.3999999910593033,
+        1.5,
+        1.6000000089406967,
+        1.9000000059604645,
+        1.6000000089406967,
+        1.7999999970197678,
+        1.5,
+        1.4000000059604645,
+        1.5,
+        1.2000000029802322,
+        1.5,
+        1.5,
+        1.3999999910593033,
+        1.0999999940395355,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.0999999940395355,
+        1.2000000029802322,
+        1.5,
+        1.2000000029802322,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.5,
+        1.5999999940395355,
+        1.2999999970197678,
+        1.2000000029802322,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.2000000029802322,
+        1.1000000089406967,
+        1.2000000029802322,
+        1.1000000089406967,
+        1.0999999940395355,
+        1.2000000029802322,
+        1.0999999940395355,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.300000011920929,
+        1.2999999970197678,
+        1.199999988079071,
+        1.2999999970197678,
+        2.9000000059604645,
+        1.4000000059604645,
+        1.5,
+        5.799999997019768,
+        1.5,
+        1.5,
+        3.700000002980232,
+        1.3999999910593033,
+        3.800000011920929,
+        1.2000000029802322,
+        4.799999997019768,
+        1.2000000029802322
+      ]
+    },
+    {
+      "accepted": 4,
+      "contacts": 4,
+      "frameProfile": [
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.800000011920929,
+          "total": 1.1000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0.10000000894069672,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.0999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.0999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0.09999999403953552,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.6000000089406967,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 2
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 3.299999997019768,
+          "render": 1.5,
+          "total": 5.200000002980232
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.6000000089406967,
+          "total": 2
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.5999999940395355,
+          "total": 2.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 2.0999999940395355,
+          "total": 2.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.0999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.800000011920929,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.5,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0.7000000029802322,
+          "render": 1.0999999940395355,
+          "total": 2.200000002980232
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.1000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.199999988079071
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.800000011920929,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 2.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.199999988079071
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 2.1000000089406967,
+          "total": 3.200000002980232
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 3.200000002980232,
+          "total": 3.799999997019768
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.5999999940395355,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 2
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 2.5999999940395355,
+          "render": 1.2999999970197678,
+          "total": 4.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.8999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0.10000000894069672,
+          "render": 1.199999988079071,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 2.800000011920929
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 0.7000000029802322,
+          "total": 1
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.29999999701976776,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.5,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0.7000000029802322,
+          "render": 1.199999988079071,
+          "total": 2.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.9000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.300000011920929,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.19999998807907104,
+          "geometry": 0,
+          "render": 1.3999999910593033,
+          "total": 1.8999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.699999988079071
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.7000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1.5,
+          "total": 1.7999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.8999999910593033,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.5
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.3999999910593033
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.4000000059604645,
+          "total": 1.800000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.2999999970197678,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.5
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.199999988079071,
+          "total": 1.5
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 0.7999999970197678,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.199999988079071
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.0999999940395355,
+          "total": 1.5999999940395355
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.300000011920929
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.1000000089406967,
+          "total": 1.4000000059604645
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 0.9000000059604645,
+          "total": 1.2000000029802322
+        },
+        {
+          "combat": 0.09999999403953552,
+          "geometry": 0,
+          "render": 1,
+          "total": 1.2999999970197678
+        },
+        {
+          "combat": 0.20000000298023224,
+          "geometry": 0,
+          "render": 1.2000000029802322,
+          "total": 1.6000000089406967
+        },
+        {
+          "combat": 0.10000000894069672,
+          "geometry": 0,
+          "render": 1.9000000059604645,
+          "total": 2.4000000059604645
+        }
+      ],
+      "frames": [
+        16.599999999998545,
+        24.200000000000728,
+        25.599999999998545,
+        17,
+        24.400000000001455,
+        17.099999999998545,
+        8.400000000001455,
+        16.700000000000728,
+        25.099999999998545,
+        8.200000000000728,
+        25,
+        8.299999999999272,
+        16.700000000000728,
+        16.700000000000728,
+        16.69999999999709,
+        33.30000000000291,
+        16.599999999998545,
+        16.700000000000728,
+        33.39999999999782,
+        24.900000000001455,
+        25.099999999998545,
+        25,
+        24.900000000001455,
+        33.400000000001455,
+        16.599999999998545,
+        16.599999999998545,
+        25.100000000002183,
+        16.599999999998545,
+        8.400000000001455,
+        24.899999999997817,
+        16.700000000000728,
+        25.100000000002183,
+        16.599999999998545,
+        15.900000000001455,
+        17.399999999997817,
+        25,
+        25,
+        16.700000000000728,
+        33.29999999999927,
+        25,
+        16.700000000000728,
+        16.700000000000728,
+        25,
+        16.599999999998545,
+        25,
+        25,
+        16.700000000000728,
+        16,
+        17.299999999999272,
+        16.700000000000728,
+        16.599999999998545,
+        16.700000000000728,
+        16.700000000000728,
+        16.5,
+        8.5,
+        16.599999999998545,
+        16.700000000000728,
+        25,
+        16.700000000000728,
+        8.299999999999272,
+        16.400000000001455,
+        17.099999999998545,
+        16.5,
+        16.700000000000728,
+        25,
+        16.599999999998545,
+        24.30000000000291,
+        17.299999999999272,
+        33.5,
+        24.5,
+        25.399999999997817,
+        25,
+        25,
+        16.80000000000291,
+        16.5,
+        25,
+        16.799999999999272,
+        16.599999999998545,
+        24.299999999999272,
+        25.5,
+        16.100000000002183,
+        17.5,
+        16.5,
+        16.700000000000728,
+        25.099999999998545,
+        16.700000000000728,
+        33.20000000000073,
+        16.69999999999709,
+        25,
+        16.700000000000728,
+        33.400000000001455,
+        24.899999999997817,
+        25.100000000002183,
+        24.899999999997817,
+        16.700000000000728,
+        24.200000000000728,
+        17.400000000001455,
+        16.69999999999709,
+        16.700000000000728,
+        16.700000000000728,
+        16.700000000000728,
+        24.899999999997817,
+        16.600000000002183,
+        16.5,
+        16.899999999997817,
+        25.100000000002183,
+        16.599999999998545,
+        15.900000000001455,
+        17.5,
+        33.20000000000073,
+        16.799999999999272,
+        24.899999999997817,
+        25.100000000002183,
+        33.29999999999927,
+        25,
+        16.599999999998545,
+        33.400000000001455,
+        24.099999999998545,
+        17.5,
+        16.700000000000728,
+        16.700000000000728,
+        16.099999999998545,
+        25.5,
+        16.700000000000728,
+        16.700000000000728,
+        25,
+        16.599999999998545,
+        16.700000000000728,
+        16.600000000002183,
+        25.099999999998545,
+        16.599999999998545,
+        16.600000000002183,
+        25.099999999998545,
+        33.29999999999927,
+        25,
+        25,
+        16.700000000000728,
+        24.600000000002183,
+        33.39999999999782,
+        25.299999999999272,
+        16.700000000000728,
+        14.100000000002185,
+        23.599999999998545,
+        16.5,
+        24.900000000001455,
+        8.399999999997817,
+        25,
+        16.600000000002183,
+        16.69999999999709,
+        15.80000000000291,
+        17.5,
+        33.29999999999927,
+        25.099999999998545,
+        32.400000000001455,
+        17.599999999998545,
+        24.100000000002183,
+        17.599999999998545,
+        33.29999999999927,
+        33.400000000001455,
+        25,
+        16.5,
+        25.099999999998545,
+        16.700000000000728,
+        8.299999999999272,
+        24.900000000001455,
+        16.700000000000728,
+        15.799999999999272,
+        17.599999999998545,
+        16.600000000002183,
+        16.19999999999709,
+        25.600000000002183,
+        16.5,
+        16.700000000000728,
+        8.399999999997817,
+        25,
+        15.700000000000728,
+        42.599999999998545,
+        24.200000000000728,
+        9.200000000000728,
+        24.900000000001455,
+        25.099999999998545,
+        15.700000000000728,
+        17.700000000000728,
+        41.5,
+        16.299999999999272,
+        17,
+        24.200000000000728,
+        16.69999999999709,
+        16.600000000002183,
+        16.599999999998545,
+        26,
+        15.700000000000728,
+        17.599999999998545,
+        16.700000000000728,
+        16.700000000000728,
+        24.900000000001455,
+        16.299999999999272,
+        16.5,
+        25.599999999998545,
+        25,
+        16.700000000000728,
+        41.599999999998545,
+        25,
+        25,
+        25,
+        25,
+        25,
+        16.700000000000728,
+        25,
+        25.100000000002183,
+        16.599999999998545,
+        16.599999999998545,
+        16.700000000000728,
+        16.700000000000728,
+        16.599999999998545,
+        15.900000000001455,
+        17.400000000001455,
+        16.799999999999272,
+        16.599999999998545,
+        25,
+        16.600000000002183,
+        33.29999999999927,
+        16.799999999999272,
+        33.29999999999927,
+        25,
+        25,
+        33.29999999999927,
+        16.80000000000291,
+        16.599999999998545,
+        16.599999999998545,
+        25.100000000002183,
+        16.099999999998545,
+        17.100000000002183,
+        16.69999999999709,
+        25,
+        16.700000000000728,
+        16.600000000002183,
+        16.69999999999709,
+        25,
+        16.700000000000728,
+        16.600000000002183,
+        25,
+        25.099999999998545,
+        24.900000000001455,
+        8.399999999997817,
+        25,
+        33.29999999999927,
+        16.600000000002183,
+        16.700000000000728,
+        33.19999999999709,
+        24.700000000000728,
+        17.200000000000728,
+        16.099999999998545,
+        8.80000000000291,
+        16.69999999999709,
+        25,
+        25,
+        16.400000000001455,
+        16.5,
+        17.099999999998545,
+        15.80000000000291,
+        17.5,
+        16.69999999999709,
+        16.400000000001455,
+        8.599999999998545,
+        16.700000000000728,
+        16.700000000000728,
+        24.900000000001455,
+        16.69999999999709,
+        16.700000000000728,
+        16.600000000002183,
+        24.5,
+        17.19999999999709,
+        24.200000000000728,
+        16.5,
+        34.29999999999927,
+        16.600000000002183,
+        16.700000000000728,
+        16.69999999999709,
+        16.700000000000728,
+        16.700000000000728,
+        16.599999999998545,
+        8,
+        17,
+        16.600000000002183,
+        16.799999999999272,
+        15.799999999999272,
+        17.400000000001455,
+        16.700000000000728,
+        16.69999999999709,
+        16.700000000000728,
+        16.100000000002183,
+        25.5,
+        33.39999999999782,
+        16.600000000002183,
+        25,
+        16.69999999999709,
+        25,
+        25,
+        25,
+        16.700000000000728,
+        16.700000000000728,
+        16.599999999998545,
+        16.600000000002183,
+        16.599999999998545,
+        16.900000000001455,
+        16.599999999998545,
+        16.700000000000728,
+        16.599999999998545,
+        15.900000000001455,
+        25.799999999999272,
+        24.900000000001455,
+        16.700000000000728,
+        16.799999999999272,
+        16.5,
+        33.39999999999782,
+        16.700000000000728,
+        16.700000000000728,
+        25,
+        16.599999999998545,
+        25,
+        16.700000000000728,
+        25,
+        16.600000000002183,
+        16.69999999999709,
+        16.600000000002183,
+        25,
+        16.200000000000728,
+        17.299999999999272,
+        16.599999999998545,
+        16.700000000000728,
+        16.599999999998545,
+        16.400000000001455,
+        16.799999999999272,
+        16.799999999999272,
+        16,
+        17.30000000000291,
+        16.69999999999709,
+        16.600000000002183,
+        25.099999999998545,
+        25,
+        25,
+        16.299999999999272,
+        25,
+        25.30000000000291,
+        25,
+        25,
+        16.69999999999709,
+        16.700000000000728,
+        16.100000000002183,
+        17.19999999999709,
+        16.700000000000728,
+        16.200000000000728,
+        16.299999999999272,
+        17.400000000001455,
+        16,
+        17.5,
+        16.599999999998545,
+        16.600000000002183,
+        16.69999999999709,
+        25,
+        16.600000000002183,
+        16.700000000000728,
+        25.099999999998545,
+        16.599999999998545,
+        16.700000000000728,
+        25,
+        16.600000000002183,
+        25,
+        33.39999999999782,
+        16.600000000002183,
+        33.29999999999927,
+        16,
+        16.5,
+        17.599999999998545,
+        16.5,
+        16.100000000002183,
+        25.69999999999709,
+        16.200000000000728,
+        17.100000000002183,
+        16.69999999999709,
+        16.600000000002183,
+        8.399999999997817,
+        16.600000000002183,
+        25,
+        8.399999999997817,
+        25,
+        8,
+        25.400000000001455,
+        16.599999999998545,
+        25,
+        25,
+        25,
+        25,
+        16.700000000000728,
+        25,
+        16.600000000002183,
+        33.39999999999782
+      ],
+      "geometry": {
+        "commits": 10,
+        "fragments": 3,
+        "nativeFragmentBuilder": "cascade/r4/laser-panel-view.js dropLaserPanel; dynamics in existing host Rapier world",
+        "peakFragments": 11,
+        "profile": [
+          {
+            "derive": 0.5,
+            "dirty": 0,
+            "fragments": 0,
+            "materials": 0.09999999403953552,
+            "reset": true,
+            "terrain": 0,
+            "total": 0.5999999940395355
+          },
+          {
+            "derive": 1.8999999910593033,
+            "dirty": 0,
+            "fragments": 0.10000000894069672,
+            "materials": 0,
+            "reset": false,
+            "terrain": 0,
+            "total": 2
+          },
+          {
+            "derive": 1,
+            "dirty": 1,
+            "fragments": 1.7999999970197678,
+            "materials": 0.20000000298023224,
+            "reset": false,
+            "terrain": 3.1000000089406967,
+            "total": 6.100000008940697
+          },
+          {
+            "derive": 0.9000000059604645,
+            "dirty": 2,
+            "fragments": 1.5,
+            "materials": 0.09999999403953552,
+            "reset": false,
+            "terrain": 4.4000000059604645,
+            "total": 6.9000000059604645
+          },
+          {
+            "derive": 0.5999999940395355,
+            "dirty": 0,
+            "fragments": 0.10000000894069672,
+            "materials": 0,
+            "reset": false,
+            "terrain": 0,
+            "total": 0.7000000029802322
+          },
+          {
+            "derive": 0.5,
+            "dirty": 2,
+            "fragments": 0,
+            "materials": 0,
+            "reset": true,
+            "terrain": 1.7999999970197678,
+            "total": 2.299999997019768
+          },
+          {
+            "derive": 0.5999999940395355,
+            "dirty": 2,
+            "fragments": 0.5999999940395355,
+            "materials": 0.10000000894069672,
+            "reset": false,
+            "terrain": 2,
+            "total": 3.299999997019768
+          },
+          {
+            "derive": 0.6000000089406967,
+            "dirty": 0,
+            "fragments": 0,
+            "materials": 0.09999999403953552,
+            "reset": false,
+            "terrain": 0,
+            "total": 0.7000000029802322
+          },
+          {
+            "derive": 0.5999999940395355,
+            "dirty": 2,
+            "fragments": 0.5999999940395355,
+            "materials": 0.10000000894069672,
+            "reset": false,
+            "terrain": 1.2999999970197678,
+            "total": 2.5999999940395355
+          },
+          {
+            "derive": 0.7000000029802322,
+            "dirty": 0,
+            "fragments": 0,
+            "materials": 0,
+            "reset": false,
+            "terrain": 0,
+            "total": 0.7000000029802322
+          }
+        ],
+        "removed": 60,
+        "spawned": 16,
+        "terrain": {
+          "chunks": 60,
+          "colliders": 93,
+          "rebuilds": 72,
+          "triangles": 41032
+        }
+      },
+      "mode": "fps",
+      "release": {
+        "clipTime": 0.2749,
+        "dir": [
+          0.5662,
+          0.763,
+          -0.312
+        ],
+        "drawnGap": 0,
+        "flashOn": 0,
+        "muzzle": [
+          4.1532,
+          1.4777,
+          4.1943
+        ],
+        "proj": [
+          4.1532,
+          1.4777,
+          4.1943
+        ],
+        "shot": 8,
+        "target": null,
+        "weapon": "blaster"
+      },
+      "shots": 4,
+      "work": [
+        1.2000000029802322,
+        1.2000000029802322,
+        1.2000000029802322,
+        1.2000000029802322,
+        1.2000000029802322,
+        1.5,
+        1.4000000059604645,
+        1.2999999970197678,
+        1.2000000029802322,
+        1.0999999940395355,
+        1.2000000029802322,
+        1.3999999910593033,
+        1.5999999940395355,
+        1.1000000089406967,
+        1.2000000029802322,
+        1.2999999970197678,
+        1.4000000059604645,
+        1.5,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.6000000089406967,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.2999999970197678,
+        1.4000000059604645,
+        1.6000000089406967,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.2000000029802322,
+        1.0999999940395355,
+        1.2999999970197678,
+        1.5,
+        1.300000011920929,
+        1.300000011920929,
+        1.3999999910593033,
+        1.0999999940395355,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.2000000029802322,
+        1.2000000029802322,
+        1.300000011920929,
+        1.3999999910593033,
+        1.4000000059604645,
+        1.3999999910593033,
+        1.300000011920929,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.2000000029802322,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.699999988079071,
+        1.6000000089406967,
+        1.3999999910593033,
+        1.699999988079071,
+        1.5999999940395355,
+        1.5,
+        1.6000000089406967,
+        1.5,
+        1.5999999940395355,
+        1.5999999940395355,
+        1.7000000029802322,
+        2,
+        5.200000002980232,
+        2,
+        1.5999999940395355,
+        1.5,
+        1.7000000029802322,
+        1.699999988079071,
+        1.4000000059604645,
+        1.7999999970197678,
+        1.7999999970197678,
+        1.5,
+        1.6000000089406967,
+        1.6000000089406967,
+        1.7999999970197678,
+        1.4000000059604645,
+        1.5,
+        1.3999999910593033,
+        2,
+        2.0999999940395355,
+        1.7999999970197678,
+        1.3999999910593033,
+        1.5,
+        1.5999999940395355,
+        1.3999999910593033,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.2999999970197678,
+        1.4000000059604645,
+        1.2999999970197678,
+        1.5999999940395355,
+        1.5,
+        1.5,
+        1.7000000029802322,
+        2.5,
+        1.7999999970197678,
+        1.2000000029802322,
+        1.5999999940395355,
+        1.5,
+        1.5,
+        1.5,
+        1.2999999970197678,
+        1.4000000059604645,
+        1.5,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.2999999970197678,
+        1.0999999940395355,
+        1.2999999970197678,
+        1.5,
+        1.5,
+        1.2000000029802322,
+        1.300000011920929,
+        1.4000000059604645,
+        1.2999999970197678,
+        1.6000000089406967,
+        1.5999999940395355,
+        1.2999999970197678,
+        1.2000000029802322,
+        1.4000000059604645,
+        1.6000000089406967,
+        1.2999999970197678,
+        1.6000000089406967,
+        1.4000000059604645,
+        1.3999999910593033,
+        1.3999999910593033,
+        1.2999999970197678,
+        1.5,
+        1.4000000059604645,
+        1.5,
+        1.4000000059604645,
+        1.5,
+        1.5999999940395355,
+        1.5,
+        1.5,
+        1.5,
+        1.5999999940395355,
+        1.7000000029802322,
+        1.7999999970197678,
+        1.800000011920929,
+        1.5999999940395355,
+        1.5,
+        1.9000000059604645,
+        1.4000000059604645,
+        1.7000000029802322,
+        1.5999999940395355,
+        1.7999999970197678,
+        2.200000002980232,
+        1.5,
+        1.3999999910593033,
+        1.2000000029802322,
+        1.2000000029802322,
+        1.3999999910593033,
+        1.5,
+        1.5999999940395355,
+        1.5,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.5,
+        1.6000000089406967,
+        1.5999999940395355,
+        1.7000000029802322,
+        1.2999999970197678,
+        1.5,
+        2,
+        1.5,
+        1.7000000029802322,
+        1.5,
+        1.5,
+        1.5999999940395355,
+        1.5,
+        1.4000000059604645,
+        1.3999999910593033,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.1000000089406967,
+        1.800000011920929,
+        1.3999999910593033,
+        1.3999999910593033,
+        1.5,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.6000000089406967,
+        1.4000000059604645,
+        1.5,
+        1.4000000059604645,
+        1.5,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.199999988079071,
+        1.3999999910593033,
+        1.5,
+        1.2000000029802322,
+        2.5,
+        1.2999999970197678,
+        1.199999988079071,
+        3.200000002980232,
+        1.4000000059604645,
+        1.4000000059604645,
+        3.799999997019768,
+        1.2999999970197678,
+        1.5,
+        1.5999999940395355,
+        1.3999999910593033,
+        1.5999999940395355,
+        1.7000000029802322,
+        1.2000000029802322,
+        1.3999999910593033,
+        1.3999999910593033,
+        1.5,
+        1.2999999970197678,
+        1.6000000089406967,
+        1.3999999910593033,
+        1.4000000059604645,
+        1.5,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.4000000059604645,
+        1.5,
+        1.6000000089406967,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.3999999910593033,
+        2,
+        4.5,
+        1.8999999910593033,
+        1.699999988079071,
+        1.9000000059604645,
+        1.5,
+        1.5,
+        1.9000000059604645,
+        1.5,
+        1.6000000089406967,
+        1.5,
+        1.7999999970197678,
+        1.5999999940395355,
+        1.2999999970197678,
+        1.800000011920929,
+        1.6000000089406967,
+        1.3999999910593033,
+        1.5999999940395355,
+        1.5,
+        1.6000000089406967,
+        1.2999999970197678,
+        1.7000000029802322,
+        1.5999999940395355,
+        1.6000000089406967,
+        1.4000000059604645,
+        1.5,
+        1.6000000089406967,
+        1.5,
+        1.5999999940395355,
+        1.800000011920929,
+        1.5999999940395355,
+        1.6000000089406967,
+        1.3999999910593033,
+        1.5,
+        1.5999999940395355,
+        1.6000000089406967,
+        1.5,
+        1.5999999940395355,
+        1.4000000059604645,
+        1.2999999970197678,
+        1.2000000029802322,
+        1.2999999970197678,
+        1.4000000059604645,
+        1.5,
+        1.5,
+        1.3999999910593033,
+        1.5999999940395355,
+        1.800000011920929,
+        1.5,
+        1.699999988079071,
+        1.3999999910593033,
+        1.5999999940395355,
+        1.2000000029802322,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.699999988079071,
+        1.300000011920929,
+        1.300000011920929,
+        1.6000000089406967,
+        1.5,
+        1.2999999970197678,
+        1.5,
+        1.3999999910593033,
+        1.2999999970197678,
+        1.300000011920929,
+        1.3999999910593033,
+        1.2999999970197678,
+        1.300000011920929,
+        1.2000000029802322,
+        2.800000011920929,
+        1.4000000059604645,
+        1.5,
+        1,
+        1.2999999970197678,
+        1.3999999910593033,
+        1.3999999910593033,
+        1.5,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.5999999940395355,
+        1.6000000089406967,
+        1.9000000059604645,
+        1.5,
+        1.5999999940395355,
+        1.2999999970197678,
+        1.5999999940395355,
+        1.300000011920929,
+        1.3999999910593033,
+        1.5,
+        1.4000000059604645,
+        1.5,
+        1.7000000029802322,
+        1.4000000059604645,
+        1.3999999910593033,
+        1.9000000059604645,
+        2.3999999910593033,
+        1.3999999910593033,
+        1.6000000089406967,
+        1.6000000089406967,
+        1.5999999940395355,
+        1.9000000059604645,
+        1.5999999940395355,
+        1.5999999940395355,
+        1.800000011920929,
+        1.5999999940395355,
+        1.7000000029802322,
+        1.5,
+        1.300000011920929,
+        1.5999999940395355,
+        1.5999999940395355,
+        1.699999988079071,
+        1.7999999970197678,
+        1.8999999910593033,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.5,
+        1.5999999940395355,
+        1.4000000059604645,
+        1.5999999940395355,
+        1.699999988079071,
+        1.5,
+        1.7000000029802322,
+        1.5999999940395355,
+        1.7999999970197678,
+        1.5,
+        1.7999999970197678,
+        1.5,
+        1.5999999940395355,
+        1.5,
+        1.4000000059604645,
+        1.4000000059604645,
+        1.3999999910593033,
+        1.4000000059604645,
+        1.2000000029802322,
+        1.2000000029802322,
+        1.5,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.4000000059604645,
+        1.5999999940395355,
+        1.300000011920929,
+        1.4000000059604645,
+        1.3999999910593033,
+        1.800000011920929,
+        1.2999999970197678,
+        1.2999999970197678,
+        1.5999999940395355,
+        1.5,
+        1.5,
+        1.5999999940395355,
+        1.5,
+        1.2000000029802322,
+        1.4000000059604645,
+        1.199999988079071,
+        1.2000000029802322,
+        1.5999999940395355,
+        1.2999999970197678,
+        1.2000000029802322,
+        1.300000011920929,
+        1.300000011920929,
+        1.4000000059604645,
+        1.2000000029802322,
+        1.2999999970197678,
+        1.6000000089406967,
+        2.4000000059604645
+      ]
+    }
+  ],
+  "recording": null,
+  "renderer": {
+    "calls": 1,
+    "geometries": 86,
+    "textures": 50
+  },
+  "shots": 8,
+  "source": "abe7bc24",
+  "target": {
+    "accepted": 8,
+    "disposed": false,
+    "duplicates": 0,
+    "received": 8,
+    "rejected": 0,
+    "sourceCount": 1
+  },
+  "timing": {
+    "profile": [],
+    "rafMs": {
+      "max": 41.80000000000291,
+      "n": 600,
+      "p95": 33.400000000001455
+    },
+    "workMs": {
+      "max": 6.299999997019768,
+      "n": 600,
+      "p95": 4
+    }
+  },
+  "variant": "prepared-worker"
+}
