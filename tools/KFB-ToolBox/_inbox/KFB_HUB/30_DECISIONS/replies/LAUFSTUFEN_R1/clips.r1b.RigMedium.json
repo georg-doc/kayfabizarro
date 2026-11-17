@@ -1,0 +1,80 @@
+{
+ "regel": "Wurzel still (Vorwärtsbewegung macht das Spiel); Schleife: letztes Bild = erstes Bild; Einmal-Clips halten das letzte Bild; spine-Skalierung = Cartoon-Dehnung, Kopf gegenskaliert; keine Ohren-Spuren (Laufzeit-Federn)",
+ "behaelter": "KFB_Flight.r1h.RigMedium.glb",
+ "clips": [
+  {
+   "clip": "kfb_lauf_turbo",
+   "boden_hub_welt_m": {
+    "max": 0.028,
+    "quelle": "p3b/messung_lauf_r1.json"
+   },
+   "frames": 9,
+   "fps": 30,
+   "dauer_s": 0.3,
+   "loop": true,
+   "dehnung": {
+    "min": 0.998,
+    "max": 1.095
+   },
+   "schritte_je_schleife": 2
+  },
+  {
+   "clip": "kfb_lauf_roadrunner",
+   "boden_hub_welt_m": {
+    "max": 0.001,
+    "quelle": "p3b/messung_lauf_r1.json"
+   },
+   "frames": 15,
+   "fps": 60,
+   "dauer_s": 0.25,
+   "loop": true,
+   "dehnung": {
+    "min": 1.085,
+    "max": 1.115
+   },
+   "schritte_je_schleife": 2
+  },
+  {
+   "clip": "kfb_lauf_start",
+   "boden_hub_welt_m": {
+    "max": 0.034,
+    "quelle": "p3b/messung_lauf_r1.json"
+   },
+   "frames": 18,
+   "fps": 30,
+   "dauer_s": 0.6,
+   "loop": false,
+   "dehnung": {
+    "min": 0.84,
+    "max": 1.15
+   },
+   "extreme_s": {
+    "ausholen": 0.18,
+    "antritt": 0.4
+   },
+   "haelt_letztes_bild": true,
+   "uebergang": "endet in kfb_lauf_turbo bei 0,225 s (Phase 0,75)"
+  },
+  {
+   "clip": "kfb_lauf_bremse",
+   "boden_hub_welt_m": {
+    "max": 0.026,
+    "quelle": "p3b/messung_lauf_r1.json"
+   },
+   "frames": 27,
+   "fps": 30,
+   "dauer_s": 0.9,
+   "loop": false,
+   "dehnung": {
+    "min": 0.86,
+    "max": 1.055
+   },
+   "extreme_s": {
+    "stemmen": 0.14,
+    "rutschen": 0.3,
+    "abfangen": 0.68
+   },
+   "haelt_letztes_bild": true
+  }
+ ]
+}
