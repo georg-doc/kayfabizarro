@@ -61,9 +61,9 @@ Every ordinary card may be displayed, shown, spun and sold, and its *position* d
 
 ### C1 · one nonnumeric Fear/Hope/Hate LENS icon per card (FIRST card-agency candidate)
 One clearly printed pictogram on each *future* narrative card, assigned editorially from card content (**NOT** random or calibrated numerical bonus). **One of three universal on-PUBLISH / on-REWRITE effects**:
-- **FEAR · ESCALATE:** raise the face of **one** legally positioned shared die by **exactly +1**, but stop at 6; the lens effect **cannot** cross 6→7 or score a trophy.
-- **HOPE · DE-ESCALATE:** lower one positioned die by **exactly −1**, stopping at 1; the lens effect **cannot** cross 1→0 or burn a card.
-- **HATE · REDIRECT:** MOVE **one** positioned die to another **occupied die-free** outer narrative slot, preserving value; if no target exists, do nothing.
+- **FEAR · ALARM:** raise the face of **one** legally positioned shared die by **exactly +1**, stopping at 6; a card effect **cannot** cross 6→7 or score a trophy.
+- **HOPE · PROMISE:** DRAW **one** ordinary narrative card from the common stock into your hand if stock remains and you have fewer than six hand cards. One PLAY/REWRITE from hand is still the main action, so the HOPE draw is an entry-effect refund, not a second chosen turn.
+- **HATE · HIJACK:** if you hold at least one card **after** playing the HATE card, choose another HUMAN with at least one card in hand. Fan their hand face-down; take **one uniformly random** card from it and give them **one card of your choice** from your own hand. Both hand sizes remain unchanged; the exchanged cards stay hidden to other players. If no legal human or own card, the effect fizzles. NPC factions have no hand and cannot be targeted.
 No per-card extra modifiers, unique text attacks, new tokens, permanent ongoing skills, fourth die, or faction power. If no legal die/action for the lens, the card still enters play but effect fizzles. Every effect is visible and short.
 
 **PLAY:** When human's own public position empty, they spend their one action playing any held card there and *may* invoke its lens ONCE during this same action; this is not an independent chosen D6 action while offstage. The lens makes re-entry tactically useful and supports distinct hand choices.
@@ -71,10 +71,10 @@ No per-card extra modifiers, unique text attacks, new tokens, permanent ongoing 
 **NPC card reveals and automatic edits do not invoke lens effects** in this first test (no chain of auto abilities from random public cards).
 **C1 distribution:** deliberately leave all 50 final icon assignments **unwritten** until a 6–12 proxy-card microtest; a roughly even split is a design hypothesis, not a balanced rule.
 
-**This is the minimum nonnumeric differentiation** that makes one drawn card tactically different from another. It still does not produce 50 distinct mechanics—and that is deliberate. Narrative-specific meanings come from its original art/copy and how PLAY/REWRITE contextualizes it with the common Focus.
+**This is the minimum nonnumeric differentiation** that makes one drawn card tactically different from another: FEAR influences a die, HOPE changes the card economy, HATE disrupts a rival human hand. It still does not produce 50 distinct mechanics—and that is deliberate. Narrative-specific meanings come from its original art/copy and how PLAY/REWRITE contextualizes it with the common Focus. If HATE's random swap creates frustration or requires too much explanation, test an openly chosen one-for-one exchange instead; do not adopt extra retaliations automatically.
 
 ## Steal / trade / recapture ideas — defer until C1 actually matters
-- **HIJACK RANDOM HAND CARD:** if both have an occupied own narrative, spend one action to take a face-down random card from a rival's hand and give a chosen one from yours. Hands conserve; introduces interpersonal bargaining but **means almost nothing without distinct lenses or another functional card identity**. Candidate only.
+- **STANDALONE HIJACK ACTION:** using the C1 HATE hand-exchange effect without playing/reframing a HATE card would make it a seventh independent action. **Defer**; test the one-time HATE on-entry version first. It means almost nothing under C0 without distinct card lenses.
 - **CAPTURE AS TROPHY OR TO HAND:** at high outer collapse actor could choose one public score card or capture card into hand to replay its Lens. This could change the win economy and counter 5→6 incentives, but requires explicit endgame scoring/hand-cap rules. **Not adopted.**
 - **SWAP TWO PUBLIC NARRATIVES:** possible but risks confusing contributor/faction ownership and Focus reward rights. Do not add until basic REWRITE is understood.
 - No single-effect card can create multiple free deck draws or chained collapses in C1; potential cascade rules are separate, not automatically accepted.
@@ -85,7 +85,7 @@ No per-card extra modifiers, unique text attacks, new tokens, permanent ongoing 
 
 ## Why it might work / why it might fail
 - More cards **actually enter and change the public table** through REWRITE and the chosen NPC pulse; the visible story changes without declaring a fourth resource.
-- Three familiar D6 colors become **qualitative card lenses**; players choose whether to risk a 5→6 preparation via card or take an existing deterministic 6→7/1→0 ADJUST as main action. **C1 cannot itself score/burn**. The old 5→6 gift still needs a separate test; do not imply it is fixed.
+- Three familiar emotion labels become **qualitative card lenses**, but importantly C1 does **not merely offer three more ways to move dice**: FEAR prepares a visible die, HOPE draws a real card and HATE exchanges a concealed card with a rival human. The existing 6→7/1→0 ADJUST alone decides an immediate trophy/burn. **C1 cannot itself score/burn**. The old 5→6 gift still needs a separate test; do not imply it is fixed.
 - Increased ability to REWRITE the card at one's own position may permit defense-by-replacement or repeat-icon cycles. The old narrative goes to discard, and held cards are finite, so that choice competes with DRAW. Every change remains visible.
 - Changing an NPC public card automatically each round can turn the stage into a rapid-news feed without the card's *meaning* changing its game mechanics if C0. C1 is recommended for the smallest semantic distinction.
 - No arbitrary NPC modifier dice roll, no extra NPC hand, no individual NPC turn per nonhuman faction. A predictable selection cursor and unpredictable shuffled cards offer deliberate tactical anticipation and uncertainty.
