@@ -1,0 +1,57 @@
+{
+  "results": [
+    {
+      "policy": "random",
+      "runs": 400,
+      "rounds": 18,
+      "wins_per_player": 1.4725,
+      "seat_means": [
+        1.5425,
+        1.4375,
+        1.5325,
+        1.4425,
+        1.3425,
+        1.5375
+      ],
+      "zero_runs": 0,
+      "low_breaks": 1049,
+      "high_breaks": 634
+    },
+    {
+      "policy": "build",
+      "runs": 400,
+      "rounds": 18,
+      "wins_per_player": 0.8116666666666666,
+      "seat_means": [
+        0.9125,
+        0.805,
+        0.8025,
+        0.75,
+        0.8025,
+        0.7975
+      ],
+      "zero_runs": 8,
+      "low_breaks": 1533,
+      "high_breaks": 613
+    },
+    {
+      "policy": "deny",
+      "runs": 400,
+      "rounds": 18,
+      "wins_per_player": 0.8116666666666666,
+      "seat_means": [
+        0.9125,
+        0.805,
+        0.8025,
+        0.75,
+        0.8025,
+        0.7975
+      ],
+      "zero_runs": 8,
+      "low_breaks": 1533,
+      "high_breaks": 613
+    }
+  ],
+  "boundary_tests": 5,
+  "pass": true
+}

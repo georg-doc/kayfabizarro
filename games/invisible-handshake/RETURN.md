@@ -1,3 +1,15 @@
+## R11 · Directed emotions / two-sided breaks · 17 November 2026
+
+Concept-only continuation, same owner/branch/PR475. [Candidate and evidence](r11-directed-fhh/REPORT.md). No Site/runtime edits or balance promotion. One public emotiondie each has location plus1..6 strength; oddactionroll redirectsselectedemotion, evenchanges±1. Commonclaim: ownsignaturehasatleastone3..5die,no1/6die; holdcontinuouslytoownnextstart.0/7replacesstory,noprize,resets trigger3; otherdicepersist. No signedaddition ofHopeandHate.
+
+1200sixactor/18round topologyruns plus5boundaryassertions; unlimitedreplacement, nofinite50cardhandsemantics, no2–6combinationvalidation. Randommean1.47 trophies/person; ownclaim/denialheuristicsboth0.81 (identicalresults, notdistinctevidence);8/400 heuristicrunsnoonewins. Randomvsheuristicrollstreamsnotpaired despiteequalinitialseeds. Humanfun/strategicbalanceunproven.
+
+Constructed18turntrace verified: BellclaimbreaksHope6, BelldiscardedHope7; AlienclaimbreaksHate2, signaturediscardedHate0; RoundTablewinsatturn8, Alienswinnewsignatureturn18. Reaching3againneverrevivesoldchip. Intentionalbreakcanhelpopponentnextturnbecause reset3opensnewclaim.
+
+Nextgate: pickone holding-window/eligibility adjustment before anyUIwork; currentfullroundholdingstillfragilewithsixactors. Keepmechanism/readabletrace, don'tclaimresolvedblockade.
+
+---
+
 ## R10 · Chip timing concept stress test · 17 November 2026
 
 Same owner/branch/PR475. No game/Site changes: R09 does not implement new FHH concept. [Report](r10-chip-test/REPORT.md), reproducible Python and full aggregate results persisted.50,000 bounded claim-system runs (400seeds/configuration,12rounds); NOT full56card/narrative simulations, finite deck/powers/player utility unmodeled. This test does not select a balanced finalgame.
