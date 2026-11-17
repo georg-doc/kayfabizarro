@@ -1,3 +1,11 @@
+## 2026-11-17 · THE INVISIBLE HANDSHAKE R0.6 · Borromean RAF Pyramid + Influence Research
+
+Georg proposed three native colored KFB D6 **R/A/F = Resonanz, Amplitude, Frequenz** as an adjustable three-corner Overton/HyperNormalisation Power Pyramid with an all-seeing eye, mechanically separate from R0.5's rectangular Market aperture. Verified KFB sources (Travel S60c coupled sky dice and original pinball audio drone) are reused for semantics, not copied as art/runtime. [R0.6 design](../../games/invisible-handshake/BORROMEAN_RAF_PYRAMID_R06_2026-11-17.md) defines a unique-high-face discourse focus vs contested tie, fixed 3 current power-channel corners, 0/1 FAVOR recruitment, and an optional one-Plot ±1 rotation or die-position swap. Current 56-card budget and 2–6 main player/Solo optional priority unchanged; user POI-specific triangle remains deferred research B.
+
+[Executable probe](../../games/invisible-handshake/BORROMEAN_RAF_PROBE_R06.js) and [test evidence](../../games/invisible-handshake/TEST_REPORT_R06_2026-11-17.md): independent Node enumerator verified **1,296** abstract states, **15,552** legal cost cases, **6,480** ±1 rotations and **3,888** swaps. No 8-round pyramid simulation, 0 human play, 0 actual dice art rendered/isolated, 0 Stage/Hub Live release. [Research Atlas R0.6 addendum](../../games/invisible-handshake/ATLAS_PSYCHOLOGICAL_INFLUENCE_ADDENDUM_R06_2026-11-17.md) extends existing owner request with exact Chase Hughes channel, official Mattias Desmet sources and critical empirical comparisons for PsyOps/propaganda, social psychology/mass formation, NLP/nudging/AI-mediated influence. **Research NOT run**, original Atlas PR #394 and MKULTRA/Monarch PR #408 untouched. [Owner Return](../../games/invisible-handshake/RETURN.md) updated. PR #475 stays Draft/unmerged. **One gate:** physical 2-player R0.5 vs R0.6 A/B, optional Solo turn and Georg A/B/FAIL.
+
+---
+
 ## 2026-11-17 · THE INVISIBLE HANDSHAKE R0.5 · Simulation and discourse candidate
 
 - Georg requested bot simulation, source comparisons with Junta!, Machiavelli, Sun Tzu and Hegel; added HyperNormalisation, PsyOps/False Flags, fictional "MKUltra 4.0", optional KFB Kayfabulieren ritual and a movable **Overton Window**.
