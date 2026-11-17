@@ -49,9 +49,20 @@ Eine zustandsseitige Serialisierung ist noch keine vollständige Wiederherstellu
 - [x] Wiederaufbau über denselben nativen Bruch-Besitzer; Shader-Maske und Rapier-Kollision geprüft. Folge-Treffer erzeugen bereits abgefallene Teile nicht erneut.
 - [x] Begrenzter, injizierter Residency-Besitzer: Laden/Entladen/Wiederkehr im Fünf-Adress-Funktionstest, echte Collider/Bodies werden freigegeben. Budgetüberschreitung hält den geladenen Raum statt gespeicherte Zerstörung still zu verwerfen.
 - [x] Privater Kartenraum: „Raumstand merken“ und „Zum Eingang & Wiederherstellen“. Speicherung nur in der laufenden Sitzung, nicht über einen Seiten-Neustart hinweg.
-- [ ] Den Residency-Besitzer in einen tatsächlich durchlaufbaren Mehrraum-Plan integrieren. Die fünf Testadressen sind keine fünf bereits verbundenen Spielräume.
+- [x] Residency-Besitzer in einen kontinuierlichen Fünf-Raum-Pfad integriert: echte nord-/südseitige Durchgänge, freie Rückreise und Guide auf demselben Plan, kein Portal. Übersichtsplan markiert geladene und besuchte Räume. Höchstens drei native Besitzer sind geladen.
 - [ ] Zweiten realen Deck-Kartensatz samt Quellenmanifest aufnehmen; im Site-Paket liegt derzeit nur `forget_utopia`. Keine Umbenennung desselben Decks als Ersatz.
-- [ ] Karten-/GPU-Ressourcenhaushalt, Sicht-/Geschwindigkeits-Vorladen, freie Rückwege und durchgehenden Guide live abnehmen. Der bestandene Headless-Physiktest ersetzt diese Prüfung nicht.
+- [x] Karten-Texturpool mit gemeinsam genutzten, referenzgezählten Texturen; höchstens drei geladene Räume, geschützter Rückweg, exakte Raumverschiebungen einschließlich Collider/Bruchstücke.
+- [ ] Sicht-/Geschwindigkeits-Vorladen, globale GPU-/Modellbudgets und kontrolliertes Langzeit-Plateau abnehmen. Der geladene Ausschnitt ist bisher fest auf unmittelbare Nachbarn begrenzt.
+
+#### Zwischenstand 2a.2 · Kontinuierliche Kartenreise
+
+Privater zusätzlicher Prüfstand: https://kfb-infiniterooms.frizzlebob.chatgpt.site/stream-lab/
+
+Fünf durchgehende Räume mit sechs unterschiedlichen Karten je Raum aus **einem** verifizierten Deck. Seed und Raumadresse bestimmen die Motivauswahl unabhängig von Besuchsreihenfolge; das räumliche Layout ist in diesem Prüfstand eine feste gerade Modulfolge, noch keine Anbindung des nativen Dungeon-Generators. Erkundung, Scroll-Guide und Übersicht beziehen sich auf dieselben Anschlüsse. Keine Portale und kein verpflichtender Kampf. Der echte HeroMan-Blaster lässt sich bei Bedarf aktivieren und verwendet den vorhandenen CombatPlayer samt Klick-Zielen.
+
+Ein 1,5 m breiter Bodenstreifen bleibt tragfähig; Wände, Decke und übriger Boden sind zerstörbar. Raumstände werden beim Entladen gespeichert und bei Rückkehr wiederhergestellt. Stücke und Kollisionen unterstützen jetzt reine Raumverschiebungen; gedrehte Räume und Schwerkraftwechsel sind weiterhin später.
+
+Grafikstart: begrenzte Shader-Vorbereitung statt endloser Warteanzeige; bei Fehlern wird der bestehende Grafikbesitzer freigegeben. „Sparsam“ wird nun im Blaster-Prüfstand tatsächlich an die Kontextwahl und die Schattenoption weitergegeben. Der neue Kartenreise-Prüfstand startet sparsam.
 
 Kurzlebige Trümmer werden beim Wiederladen nicht erneut ausgespielt. Abgelöste Bereiche bleiben als fehlendes Material erhalten. Native Felder werden ohne Waffen-VFX aus bestätigter Historie reproduziert; der native Algorithmus ist über die Checkpoint-Revision gebunden. Ein Versionswechsel braucht eine explizite Migration oder Ablehnung.
 
