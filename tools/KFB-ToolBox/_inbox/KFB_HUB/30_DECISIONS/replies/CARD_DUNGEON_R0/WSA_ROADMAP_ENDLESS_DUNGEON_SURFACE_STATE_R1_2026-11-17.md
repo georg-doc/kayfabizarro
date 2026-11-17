@@ -50,7 +50,7 @@ Eine zustandsseitige Serialisierung ist noch keine vollständige Wiederherstellu
 - [x] Begrenzter, injizierter Residency-Besitzer: Laden/Entladen/Wiederkehr im Fünf-Adress-Funktionstest, echte Collider/Bodies werden freigegeben. Budgetüberschreitung hält den geladenen Raum statt gespeicherte Zerstörung still zu verwerfen.
 - [x] Privater Kartenraum: „Raumstand merken“ und „Zum Eingang & Wiederherstellen“. Speicherung nur in der laufenden Sitzung, nicht über einen Seiten-Neustart hinweg.
 - [x] Residency-Besitzer in einen kontinuierlichen Fünf-Raum-Pfad integriert: echte nord-/südseitige Durchgänge, freie Rückreise und Guide auf demselben Plan, kein Portal. Übersichtsplan markiert geladene und besuchte Räume. Höchstens drei native Besitzer sind geladen.
-- [ ] Zweiten realen Deck-Kartensatz samt Quellenmanifest aufnehmen; im Site-Paket liegt derzeit nur `forget_utopia`. Keine Umbenennung desselben Decks als Ersatz.
+- [x] Zweiten realen Deck-Kartensatz aufgenommen: `ignore_dystopia`, 56 vollständige Kartenbilder. Manifest und sämtliche Bild-Dateihashes gegen den festgelegten GitHub-Stand `8799ce51e757ba30a9fa1ab2016a8e402d08f90e` geprüft.
 - [x] Karten-Texturpool mit gemeinsam genutzten, referenzgezählten Texturen; höchstens drei geladene Räume, geschützter Rückweg, exakte Raumverschiebungen einschließlich Collider/Bruchstücke.
 - [ ] Sicht-/Geschwindigkeits-Vorladen, globale GPU-/Modellbudgets und kontrolliertes Langzeit-Plateau abnehmen. Der geladene Ausschnitt ist bisher fest auf unmittelbare Nachbarn begrenzt.
 
@@ -58,7 +58,7 @@ Eine zustandsseitige Serialisierung ist noch keine vollständige Wiederherstellu
 
 Privater zusätzlicher Prüfstand: https://kfb-infiniterooms.frizzlebob.chatgpt.site/stream-lab/
 
-Fünf durchgehende Räume mit sechs unterschiedlichen Karten je Raum aus **einem** verifizierten Deck. Seed und Raumadresse bestimmen die Motivauswahl unabhängig von Besuchsreihenfolge; das räumliche Layout ist in diesem Prüfstand eine feste gerade Modulfolge, noch keine Anbindung des nativen Dungeon-Generators. Erkundung, Scroll-Guide und Übersicht beziehen sich auf dieselben Anschlüsse. Keine Portale und kein verpflichtender Kampf. Der echte HeroMan-Blaster lässt sich bei Bedarf aktivieren und verwendet den vorhandenen CombatPlayer samt Klick-Zielen.
+Fünf durchgehende Räume mit sechs unterschiedlichen Karten je Raum aus **zwei** verifizierten Decks: Raum 1–2 `forget_utopia`, Raum 3–5 `ignore_dystopia`. Die bisherigen ersten beiden Raumidentitäten und Motive bleiben erhalten. Seed und Raumadresse bestimmen die Motivauswahl unabhängig von Besuchsreihenfolge; das räumliche Layout ist in diesem Prüfstand eine feste gerade Modulfolge, noch keine Anbindung des nativen Dungeon-Generators. Erkundung, Scroll-Guide und Übersicht beziehen sich auf dieselben Anschlüsse. Keine Portale und kein verpflichtender Kampf. Der echte HeroMan-Blaster lässt sich bei Bedarf aktivieren und verwendet den vorhandenen CombatPlayer samt Klick-Zielen.
 
 Ein 1,5 m breiter Bodenstreifen bleibt tragfähig; Wände, Decke und übriger Boden sind zerstörbar. Raumstände werden beim Entladen gespeichert und bei Rückkehr wiederhergestellt. Stücke und Kollisionen unterstützen jetzt reine Raumverschiebungen; gedrehte Räume und Schwerkraftwechsel sind weiterhin später.
 
@@ -120,3 +120,7 @@ Aktuelle private Site: https://kfb-infiniterooms.frizzlebob.chatgpt.site/blaster
 Lokale Übergabe dieser Runde: `docs/handoffs/room-surface-state-r1/RETURN.md` in der Site-Quelle. Nach Abschluss folgt eine additive GitHub-Statusdatei mit Quell-Head, Belegen, Prüfergebnis und offenen Game-Anschlüssen; diese initiale Roadmap behauptet keine fertige Umsetzung.
 
 Audio-Ergänzung mit Shepard-/Drone-Einschätzung: `WSA_AUDIO_SLICE_INFINITEROOMS_R1_2026-11-17.md` im selben GitHub-Hub-Ordner. Abschließender Status dieser Stufe: `WSA_STATUS_ROOM_SURFACE_STATE_R1_2026-11-17.md`.
+
+### Zwei-Deck-Ergänzung
+
+Deck- und Karten-IDs werden gemeinsam aufgelöst; dieselbe Kartennummer in zwei Decks verwendet getrennte Bild-URLs und Raumzustände. Der bestehende Drei-Raum-Ladehaushalt, der freie Rückweg, Guide und sichere Mittelspur bleiben erhalten. Identische Bruchdaten werden nach Entladen und Rückkehr wiederhergestellt; ein Reset bleibt auf den aktuellen Raum begrenzt. Herkunft und Abnahme: `WSA_STATUS_TWO_DECK_ROUTE_R1_2026-11-17.md` im selben Hub-Ordner.
