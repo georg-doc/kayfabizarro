@@ -1,6 +1,8 @@
 # THE INVISIBLE HANDSHAKE · R15 concept candidates · Mandatory entry & shared Focus Narrative
 **Date:** 2026-11-17 · **Status:** UNTESTED DESIGN PROPOSAL / ADDITIVE ONLY · **owner:** `games/invisible-handshake/` · **branch:** `design/invisible-handshake-paper-r0-2026-11-17` · Draft PR #475. **Current tested core remains R14**; no merged rules, site update, official R15 revision, game art or new runtime.
 
+**Evidence:** [38/38 static entry/deck conservation fixtures](CENTRAL_FOCUS_R15_TEST_NOTES_2026-11-17.md), **not** played games or balance proof. 
+
 ## User correction: an empty own public narrative is not a voluntary contribution
 Georg explicitly states the own public narrative is the **ticket to participate in the arena**. Previous "why voluntarily play another own card?" economic framing ignored that intent.
 
