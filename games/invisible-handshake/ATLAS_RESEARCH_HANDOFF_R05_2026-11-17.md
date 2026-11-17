@@ -1,3 +1,11 @@
+## ADDITIVE R0.6 · Chase Hughes, Mattias Desmet, R/A/F dice & power-pyramid research (2026-11-17)
+
+Georg requested deeper and broader source-critical research into **Chase Hughes** (exact channel https://www.youtube.com/channel/UCUBj_5pwQZaoXfBrEQQbADw), **Mattias Desmet** (official https://mattiasdesmet.com/en/), PsyOps, false flags, propaganda, Neuro-Linguistic Programming vs computational Natural Language Processing, nudging, mass formation, behavioral influence, AI-powered message amplification and a game-native R/A/F dice/Overton triangle. The existing MKULTRA/Monarch/social psychology source lane PR #408 already contains Desmet and nearby social-identity/fear-appeal references; reuse rather than restate as newly verified research.
+
+**Full additional WSA work packages and exact output/evidence schema:** [ATLAS_PSYCHOLOGICAL_INFLUENCE_ADDENDUM_R06_2026-11-17.md](ATLAS_PSYCHOLOGICAL_INFLUENCE_ADDENDUM_R06_2026-11-17.md). **Actual game-design mechanic candidate:** [BORROMEAN_RAF_PYRAMID_R06_2026-11-17.md](BORROMEAN_RAF_PYRAMID_R06_2026-11-17.md), separate from the R0.5 four-slot window. WSA/Atlas tasks are **requirements only, NOT executed**, and historical/empirical/author-claimed/fictional status is mandatory for all outputs.
+
+---
+
 # THE INVISIBLE HANDSHAKE · WSA Research Atlas Intake Brief · R0.5
 **Date:** 2026-11-17 · **Status:** READY-TO-QUEUE RESEARCH REQUEST, **NOT** an executed Atlas job or verified Atlas write.
 **Requesting owner:** `games/invisible-handshake/` on `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475.
