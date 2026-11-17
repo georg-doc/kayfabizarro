@@ -1,0 +1,2059 @@
+{
+  "rounds": 18,
+  "rows": [
+    {
+      "n": 2,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 1.99,
+      "focal_wins": 1.92,
+      "zero": 17,
+      "lost_rate": 0.8862857142857142,
+      "used": {
+        "swap": 1618,
+        "move": 1649,
+        "adjust": 272,
+        "reroll": 61
+      },
+      "best": {
+        "adjust": 700,
+        "move": 3004,
+        "reroll": 132,
+        "swap": 2853
+      },
+      "unique": {
+        "move": 423,
+        "reroll": 32,
+        "swap": 564
+      },
+      "legal": {
+        "adjust": 3600,
+        "swap": 3188,
+        "reroll": 3600,
+        "move": 3600
+      }
+    },
+    {
+      "n": 2,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 2.32,
+      "focal_wins": 2.1,
+      "zero": 17,
+      "lost_rate": 0.8674285714285714,
+      "used": {
+        "swap": 1558,
+        "move": 1586,
+        "adjust": 286,
+        "flip": 113,
+        "reroll": 57
+      },
+      "best": {
+        "adjust": 799,
+        "flip": 423,
+        "move": 2974,
+        "reroll": 137,
+        "swap": 2776
+      },
+      "unique": {
+        "move": 412,
+        "reroll": 37,
+        "swap": 589
+      },
+      "legal": {
+        "move": 3600,
+        "flip": 3600,
+        "swap": 3213,
+        "adjust": 3600,
+        "reroll": 3600
+      }
+    },
+    {
+      "n": 2,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 1.825,
+      "focal_wins": 1.71,
+      "zero": 23,
+      "lost_rate": 0.8941108210037714,
+      "used": {
+        "swap": 1627,
+        "move": 1567,
+        "adjust": 345,
+        "reroll": 61
+      },
+      "best": {
+        "adjust": 768,
+        "move": 2884,
+        "reroll": 132,
+        "swap": 2802
+      },
+      "unique": {
+        "move": 349,
+        "reroll": 32,
+        "adjust": 54,
+        "swap": 630
+      },
+      "legal": {
+        "adjust": 3600,
+        "swap": 3171,
+        "reroll": 3600,
+        "move": 3600
+      }
+    },
+    {
+      "n": 2,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 1.77,
+      "focal_wins": 1.7,
+      "zero": 22,
+      "lost_rate": 0.8970331588132635,
+      "used": {
+        "swap": 1648,
+        "move": 1488,
+        "adjust": 328,
+        "flip": 79,
+        "reroll": 57
+      },
+      "best": {
+        "adjust": 773,
+        "flip": 327,
+        "move": 2801,
+        "reroll": 137,
+        "swap": 2814
+      },
+      "unique": {
+        "move": 311,
+        "reroll": 37,
+        "adjust": 62,
+        "swap": 700
+      },
+      "legal": {
+        "move": 3600,
+        "flip": 3600,
+        "swap": 3199,
+        "adjust": 3600,
+        "reroll": 3600
+      }
+    },
+    {
+      "n": 2,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 5.38,
+      "focal_wins": 5.38,
+      "zero": 0,
+      "lost_rate": 0.5673502211499799,
+      "used": {
+        "swap": 951,
+        "reroll": 626,
+        "move": 1063,
+        "adjust": 960
+      },
+      "best": {
+        "adjust": 1883,
+        "move": 2543,
+        "reroll": 724,
+        "swap": 2032
+      },
+      "unique": {
+        "reroll": 172,
+        "swap": 525,
+        "adjust": 273,
+        "move": 283
+      },
+      "legal": {
+        "adjust": 3600,
+        "swap": 3034,
+        "reroll": 3600,
+        "move": 3600
+      }
+    },
+    {
+      "n": 2,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 5.595,
+      "focal_wins": 5.65,
+      "zero": 0,
+      "lost_rate": 0.5374121537825548,
+      "used": {
+        "swap": 832,
+        "reroll": 556,
+        "flip": 479,
+        "move": 905,
+        "adjust": 828
+      },
+      "best": {
+        "adjust": 1842,
+        "flip": 1024,
+        "move": 2604,
+        "reroll": 829,
+        "swap": 2063
+      },
+      "unique": {
+        "reroll": 179,
+        "swap": 504,
+        "move": 303,
+        "adjust": 226
+      },
+      "legal": {
+        "move": 3600,
+        "flip": 3600,
+        "swap": 3038,
+        "adjust": 3600,
+        "reroll": 3600
+      }
+    },
+    {
+      "n": 2,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "adjust",
+      "seeds": 100,
+      "wins": 3.75,
+      "focal_wins": 6.01,
+      "zero": 21,
+      "lost_rate": 0.7852233676975945,
+      "used": {
+        "swap": 1189,
+        "move": 2261,
+        "adjust": 89,
+        "reroll": 61
+      },
+      "best": {
+        "move": 3133,
+        "reroll": 135,
+        "swap": 2077,
+        "adjust": 234
+      },
+      "unique": {
+        "move": 1390,
+        "reroll": 35,
+        "swap": 424,
+        "adjust": 8
+      },
+      "legal": {
+        "swap": 2806,
+        "reroll": 3600,
+        "move": 3600,
+        "adjust": 1800
+      }
+    },
+    {
+      "n": 2,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "reroll",
+      "seeds": 100,
+      "wins": 1.91,
+      "focal_wins": 1.89,
+      "zero": 14,
+      "lost_rate": 0.8893715609614827,
+      "used": {
+        "swap": 1567,
+        "move": 1642,
+        "adjust": 355,
+        "reroll": 36
+      },
+      "best": {
+        "adjust": 799,
+        "move": 2996,
+        "swap": 2773,
+        "reroll": 71
+      },
+      "unique": {
+        "move": 391,
+        "adjust": 48,
+        "swap": 535,
+        "reroll": 21
+      },
+      "legal": {
+        "adjust": 3600,
+        "swap": 3136,
+        "move": 3600,
+        "reroll": 1800
+      }
+    },
+    {
+      "n": 2,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "move",
+      "seeds": 100,
+      "wins": 0.825,
+      "focal_wins": 0.8,
+      "zero": 28,
+      "lost_rate": 0.9507021213026591,
+      "used": {
+        "swap": 2859,
+        "move": 259,
+        "reroll": 108,
+        "adjust": 374
+      },
+      "best": {
+        "adjust": 654,
+        "reroll": 182,
+        "swap": 3129,
+        "move": 555
+      },
+      "unique": {
+        "reroll": 82,
+        "swap": 2644,
+        "adjust": 201,
+        "move": 3
+      },
+      "legal": {
+        "adjust": 3600,
+        "swap": 3306,
+        "reroll": 3600,
+        "move": 1800
+      }
+    },
+    {
+      "n": 2,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "swap",
+      "seeds": 100,
+      "wins": 4.09,
+      "focal_wins": 1.46,
+      "zero": 3,
+      "lost_rate": 0.7406467977171846,
+      "used": {
+        "reroll": 70,
+        "swap": 161,
+        "adjust": 899,
+        "move": 2470
+      },
+      "best": {
+        "adjust": 1740,
+        "move": 3424,
+        "reroll": 133,
+        "swap": 308
+      },
+      "unique": {
+        "move": 1643,
+        "reroll": 33,
+        "adjust": 123,
+        "swap": 20
+      },
+      "legal": {
+        "adjust": 3600,
+        "reroll": 3600,
+        "move": 3600,
+        "swap": 992
+      }
+    },
+    {
+      "n": 3,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.17,
+      "focal_wins": 0.17,
+      "zero": 69,
+      "lost_rate": 0.9902392344497608,
+      "used": {
+        "swap": 2085,
+        "move": 3134,
+        "adjust": 117,
+        "reroll": 64
+      },
+      "best": {
+        "adjust": 325,
+        "move": 4440,
+        "reroll": 135,
+        "swap": 3267
+      },
+      "unique": {
+        "move": 1955,
+        "reroll": 35,
+        "adjust": 6,
+        "swap": 919
+      },
+      "legal": {
+        "adjust": 5400,
+        "swap": 5309,
+        "reroll": 5400,
+        "move": 5400
+      }
+    },
+    {
+      "n": 3,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.15666666666666668,
+      "focal_wins": 0.16,
+      "zero": 70,
+      "lost_rate": 0.9910047846889952,
+      "used": {
+        "swap": 1989,
+        "move": 3211,
+        "adjust": 115,
+        "flip": 24,
+        "reroll": 61
+      },
+      "best": {
+        "adjust": 309,
+        "flip": 113,
+        "move": 4586,
+        "reroll": 141,
+        "swap": 3209
+      },
+      "unique": {
+        "move": 2017,
+        "reroll": 41,
+        "swap": 769,
+        "adjust": 4
+      },
+      "legal": {
+        "move": 5400,
+        "flip": 5400,
+        "swap": 5300,
+        "adjust": 5400,
+        "reroll": 5400
+      }
+    },
+    {
+      "n": 3,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.16666666666666669,
+      "focal_wins": 0.15,
+      "zero": 68,
+      "lost_rate": 0.9902190923317684,
+      "used": {
+        "swap": 1742,
+        "move": 3417,
+        "adjust": 163,
+        "reroll": 78
+      },
+      "best": {
+        "adjust": 440,
+        "move": 4940,
+        "reroll": 190,
+        "swap": 3130
+      },
+      "unique": {
+        "move": 2065,
+        "reroll": 36,
+        "adjust": 24,
+        "swap": 399
+      },
+      "legal": {
+        "adjust": 5400,
+        "swap": 5231,
+        "reroll": 5400,
+        "move": 5400
+      }
+    },
+    {
+      "n": 3,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.16999999999999996,
+      "focal_wins": 0.18,
+      "zero": 69,
+      "lost_rate": 0.9900039200313603,
+      "used": {
+        "swap": 1711,
+        "move": 3431,
+        "adjust": 155,
+        "flip": 33,
+        "reroll": 70
+      },
+      "best": {
+        "adjust": 421,
+        "flip": 180,
+        "move": 4965,
+        "reroll": 201,
+        "swap": 3113
+      },
+      "unique": {
+        "move": 2083,
+        "reroll": 43,
+        "adjust": 21,
+        "swap": 370
+      },
+      "legal": {
+        "move": 5400,
+        "flip": 5400,
+        "swap": 5214,
+        "adjust": 5400,
+        "reroll": 5400
+      }
+    },
+    {
+      "n": 3,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 2.29,
+      "focal_wins": 2.05,
+      "zero": 1,
+      "lost_rate": 0.7974646226415094,
+      "used": {
+        "swap": 1507,
+        "adjust": 1150,
+        "move": 1948,
+        "reroll": 795
+      },
+      "best": {
+        "adjust": 1866,
+        "move": 4165,
+        "reroll": 675,
+        "swap": 2975
+      },
+      "unique": {
+        "move": 1456,
+        "reroll": 113,
+        "adjust": 252,
+        "swap": 812
+      },
+      "legal": {
+        "adjust": 5400,
+        "swap": 5092,
+        "reroll": 5400,
+        "move": 5400
+      }
+    },
+    {
+      "n": 3,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 2.5233333333333334,
+      "focal_wins": 2.44,
+      "zero": 0,
+      "lost_rate": 0.7772218952324897,
+      "used": {
+        "swap": 1284,
+        "adjust": 976,
+        "flip": 650,
+        "move": 1844,
+        "reroll": 646
+      },
+      "best": {
+        "adjust": 1847,
+        "flip": 851,
+        "move": 4264,
+        "reroll": 672,
+        "swap": 2894
+      },
+      "unique": {
+        "move": 1532,
+        "adjust": 201,
+        "swap": 718,
+        "reroll": 111
+      },
+      "legal": {
+        "move": 5400,
+        "flip": 5400,
+        "swap": 5095,
+        "adjust": 5400,
+        "reroll": 5400
+      }
+    },
+    {
+      "n": 3,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "adjust",
+      "seeds": 100,
+      "wins": 0.2333333333333333,
+      "focal_wins": 0.39,
+      "zero": 62,
+      "lost_rate": 0.9859353023909986,
+      "used": {
+        "swap": 1675,
+        "move": 3464,
+        "adjust": 140,
+        "reroll": 121
+      },
+      "best": {
+        "move": 4932,
+        "reroll": 281,
+        "swap": 3078,
+        "adjust": 359
+      },
+      "unique": {
+        "move": 2136,
+        "reroll": 64,
+        "adjust": 28,
+        "swap": 375
+      },
+      "legal": {
+        "swap": 5178,
+        "reroll": 5400,
+        "move": 5400,
+        "adjust": 3600
+      }
+    },
+    {
+      "n": 3,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "reroll",
+      "seeds": 100,
+      "wins": 0.17666666666666667,
+      "focal_wins": 0.2,
+      "zero": 65,
+      "lost_rate": 0.989696734059098,
+      "used": {
+        "swap": 1663,
+        "move": 3528,
+        "adjust": 154,
+        "reroll": 55
+      },
+      "best": {
+        "adjust": 407,
+        "move": 5065,
+        "swap": 3049,
+        "reroll": 127
+      },
+      "unique": {
+        "move": 2152,
+        "reroll": 35,
+        "adjust": 16,
+        "swap": 284
+      },
+      "legal": {
+        "adjust": 5400,
+        "swap": 5252,
+        "move": 5400,
+        "reroll": 3600
+      }
+    },
+    {
+      "n": 3,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "move",
+      "seeds": 100,
+      "wins": 0.26333333333333325,
+      "focal_wins": 0.01,
+      "zero": 52,
+      "lost_rate": 0.9793518034500784,
+      "used": {
+        "swap": 2349,
+        "move": 1209,
+        "adjust": 1480,
+        "reroll": 362
+      },
+      "best": {
+        "adjust": 2878,
+        "reroll": 895,
+        "swap": 3956,
+        "move": 2617
+      },
+      "unique": {
+        "reroll": 134,
+        "move": 305,
+        "swap": 1127,
+        "adjust": 479
+      },
+      "legal": {
+        "adjust": 5400,
+        "swap": 5097,
+        "reroll": 5400,
+        "move": 3600
+      }
+    },
+    {
+      "n": 3,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "swap",
+      "seeds": 100,
+      "wins": 0.16,
+      "focal_wins": 0.16,
+      "zero": 69,
+      "lost_rate": 0.9904,
+      "used": {
+        "reroll": 87,
+        "swap": 413,
+        "adjust": 204,
+        "move": 4696
+      },
+      "best": {
+        "adjust": 476,
+        "move": 5256,
+        "reroll": 195,
+        "swap": 810
+      },
+      "unique": {
+        "move": 4224,
+        "adjust": 47,
+        "swap": 51,
+        "reroll": 42
+      },
+      "legal": {
+        "adjust": 5400,
+        "reroll": 5400,
+        "move": 5400,
+        "swap": 3144
+      }
+    },
+    {
+      "n": 4,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.1175,
+      "focal_wins": 0.16,
+      "zero": 75,
+      "lost_rate": 0.9933134158486271,
+      "used": {
+        "swap": 1635,
+        "move": 5395,
+        "adjust": 120,
+        "reroll": 50
+      },
+      "best": {
+        "adjust": 347,
+        "move": 6622,
+        "reroll": 107,
+        "swap": 2857
+      },
+      "unique": {
+        "move": 4151,
+        "swap": 547,
+        "reroll": 29,
+        "adjust": 2
+      },
+      "legal": {
+        "adjust": 7200,
+        "swap": 7127,
+        "reroll": 7200,
+        "move": 7200
+      }
+    },
+    {
+      "n": 4,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.1325,
+      "focal_wins": 0.12,
+      "zero": 72,
+      "lost_rate": 0.9924587364826408,
+      "used": {
+        "swap": 1610,
+        "move": 5404,
+        "adjust": 119,
+        "reroll": 49,
+        "flip": 18
+      },
+      "best": {
+        "adjust": 352,
+        "flip": 89,
+        "move": 6651,
+        "reroll": 112,
+        "swap": 2829
+      },
+      "unique": {
+        "move": 4159,
+        "swap": 512,
+        "reroll": 34,
+        "adjust": 3
+      },
+      "legal": {
+        "move": 7200,
+        "flip": 7200,
+        "swap": 7132,
+        "adjust": 7200,
+        "reroll": 7200
+      }
+    },
+    {
+      "n": 4,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.1075,
+      "focal_wins": 0.12,
+      "zero": 75,
+      "lost_rate": 0.9938022484865956,
+      "used": {
+        "swap": 1571,
+        "move": 5436,
+        "adjust": 143,
+        "reroll": 50
+      },
+      "best": {
+        "adjust": 401,
+        "move": 6851,
+        "reroll": 109,
+        "swap": 2990
+      },
+      "unique": {
+        "move": 4011,
+        "swap": 310,
+        "reroll": 29,
+        "adjust": 10
+      },
+      "legal": {
+        "adjust": 7200,
+        "swap": 7070,
+        "reroll": 7200,
+        "move": 7200
+      }
+    },
+    {
+      "n": 4,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.1225,
+      "focal_wins": 0.1,
+      "zero": 72,
+      "lost_rate": 0.9929465956527997,
+      "used": {
+        "swap": 1561,
+        "move": 5431,
+        "adjust": 141,
+        "reroll": 49,
+        "flip": 18
+      },
+      "best": {
+        "adjust": 397,
+        "flip": 89,
+        "move": 6859,
+        "reroll": 113,
+        "swap": 2954
+      },
+      "unique": {
+        "move": 4029,
+        "swap": 297,
+        "reroll": 34,
+        "adjust": 10
+      },
+      "legal": {
+        "move": 7200,
+        "flip": 7200,
+        "swap": 7081,
+        "adjust": 7200,
+        "reroll": 7200
+      }
+    },
+    {
+      "n": 4,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 2.06,
+      "focal_wins": 1.99,
+      "zero": 0,
+      "lost_rate": 0.8110525108919973,
+      "used": {
+        "swap": 1780,
+        "adjust": 1430,
+        "move": 2997,
+        "reroll": 993
+      },
+      "best": {
+        "adjust": 2207,
+        "move": 5937,
+        "reroll": 751,
+        "swap": 3289
+      },
+      "unique": {
+        "move": 3044,
+        "adjust": 253,
+        "swap": 820,
+        "reroll": 72
+      },
+      "legal": {
+        "adjust": 7200,
+        "swap": 7032,
+        "reroll": 7200,
+        "move": 7200
+      }
+    },
+    {
+      "n": 4,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 2.4475,
+      "focal_wins": 2.41,
+      "zero": 0,
+      "lost_rate": 0.778657020122089,
+      "used": {
+        "swap": 1575,
+        "adjust": 1123,
+        "move": 2831,
+        "flip": 866,
+        "reroll": 805
+      },
+      "best": {
+        "adjust": 2089,
+        "flip": 1043,
+        "move": 6036,
+        "reroll": 682,
+        "swap": 3213
+      },
+      "unique": {
+        "move": 3151,
+        "swap": 794,
+        "reroll": 57,
+        "adjust": 170
+      },
+      "legal": {
+        "move": 7200,
+        "flip": 7200,
+        "swap": 7041,
+        "adjust": 7200,
+        "reroll": 7200
+      }
+    },
+    {
+      "n": 4,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "adjust",
+      "seeds": 100,
+      "wins": 0.1725,
+      "focal_wins": 0.32,
+      "zero": 69,
+      "lost_rate": 0.9900504686373468,
+      "used": {
+        "swap": 1575,
+        "move": 5441,
+        "adjust": 116,
+        "reroll": 68
+      },
+      "best": {
+        "move": 6808,
+        "reroll": 126,
+        "swap": 2873,
+        "adjust": 321
+      },
+      "unique": {
+        "move": 4128,
+        "swap": 338,
+        "reroll": 45,
+        "adjust": 9
+      },
+      "legal": {
+        "swap": 7079,
+        "reroll": 7200,
+        "move": 7200,
+        "adjust": 5400
+      }
+    },
+    {
+      "n": 4,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "reroll",
+      "seeds": 100,
+      "wins": 0.1225,
+      "focal_wins": 0.15,
+      "zero": 71,
+      "lost_rate": 0.9929323525169479,
+      "used": {
+        "swap": 1543,
+        "move": 5469,
+        "adjust": 146,
+        "reroll": 42
+      },
+      "best": {
+        "adjust": 415,
+        "move": 6889,
+        "swap": 2948,
+        "reroll": 82
+      },
+      "unique": {
+        "move": 4041,
+        "swap": 276,
+        "reroll": 24,
+        "adjust": 11
+      },
+      "legal": {
+        "adjust": 7200,
+        "swap": 7065,
+        "move": 7200,
+        "reroll": 5400
+      }
+    },
+    {
+      "n": 4,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "move",
+      "seeds": 100,
+      "wins": 0.1375,
+      "focal_wins": 0.0,
+      "zero": 63,
+      "lost_rate": 0.9896674807439414,
+      "used": {
+        "swap": 2974,
+        "move": 2467,
+        "adjust": 1506,
+        "reroll": 253
+      },
+      "best": {
+        "adjust": 3032,
+        "reroll": 741,
+        "swap": 4958,
+        "move": 4017
+      },
+      "unique": {
+        "move": 1432,
+        "swap": 1374,
+        "adjust": 476,
+        "reroll": 70
+      },
+      "legal": {
+        "adjust": 7200,
+        "swap": 6986,
+        "reroll": 7200,
+        "move": 5400
+      }
+    },
+    {
+      "n": 4,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "swap",
+      "seeds": 100,
+      "wins": 0.1225,
+      "focal_wins": 0.15,
+      "zero": 73,
+      "lost_rate": 0.9927749926275435,
+      "used": {
+        "reroll": 62,
+        "move": 6224,
+        "adjust": 198,
+        "swap": 716
+      },
+      "best": {
+        "adjust": 516,
+        "move": 7065,
+        "reroll": 141,
+        "swap": 1446
+      },
+      "unique": {
+        "move": 5417,
+        "swap": 76,
+        "reroll": 28,
+        "adjust": 29
+      },
+      "legal": {
+        "adjust": 7200,
+        "reroll": 7200,
+        "move": 7200,
+        "swap": 5004
+      }
+    },
+    {
+      "n": 5,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.034,
+      "focal_wins": 0.04,
+      "zero": 89,
+      "lost_rate": 0.9980795300497063,
+      "used": {
+        "swap": 1483,
+        "move": 7345,
+        "adjust": 146,
+        "reroll": 26
+      },
+      "best": {
+        "adjust": 386,
+        "move": 8748,
+        "reroll": 71,
+        "swap": 2939
+      },
+      "unique": {
+        "move": 5887,
+        "swap": 243,
+        "reroll": 9
+      },
+      "legal": {
+        "adjust": 9000,
+        "swap": 8895,
+        "reroll": 9000,
+        "move": 9000
+      }
+    },
+    {
+      "n": 5,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.04000000000000001,
+      "focal_wins": 0.04,
+      "zero": 85,
+      "lost_rate": 0.9977403683199638,
+      "used": {
+        "swap": 1490,
+        "move": 7320,
+        "adjust": 146,
+        "reroll": 25,
+        "flip": 19
+      },
+      "best": {
+        "adjust": 383,
+        "flip": 72,
+        "move": 8722,
+        "reroll": 74,
+        "swap": 2916
+      },
+      "unique": {
+        "move": 5900,
+        "swap": 266,
+        "reroll": 12
+      },
+      "legal": {
+        "move": 9000,
+        "flip": 9000,
+        "swap": 8890,
+        "adjust": 9000,
+        "reroll": 9000
+      }
+    },
+    {
+      "n": 5,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.034,
+      "focal_wins": 0.04,
+      "zero": 89,
+      "lost_rate": 0.9980655439235321,
+      "used": {
+        "swap": 1454,
+        "move": 7364,
+        "adjust": 156,
+        "reroll": 26
+      },
+      "best": {
+        "adjust": 409,
+        "move": 8873,
+        "reroll": 71,
+        "swap": 3005
+      },
+      "unique": {
+        "move": 5818,
+        "swap": 115,
+        "reroll": 9,
+        "adjust": 3
+      },
+      "legal": {
+        "adjust": 9000,
+        "swap": 8851,
+        "reroll": 9000,
+        "move": 9000
+      }
+    },
+    {
+      "n": 5,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.04000000000000001,
+      "focal_wins": 0.04,
+      "zero": 85,
+      "lost_rate": 0.9977220956719818,
+      "used": {
+        "swap": 1436,
+        "move": 7363,
+        "adjust": 156,
+        "reroll": 25,
+        "flip": 20
+      },
+      "best": {
+        "adjust": 409,
+        "flip": 72,
+        "move": 8883,
+        "reroll": 75,
+        "swap": 2987
+      },
+      "unique": {
+        "move": 5826,
+        "swap": 101,
+        "reroll": 12,
+        "adjust": 4
+      },
+      "legal": {
+        "move": 9000,
+        "flip": 9000,
+        "swap": 8841,
+        "adjust": 9000,
+        "reroll": 9000
+      }
+    },
+    {
+      "n": 5,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 1.93,
+      "focal_wins": 1.7,
+      "zero": 0,
+      "lost_rate": 0.8212300852167469,
+      "used": {
+        "swap": 2008,
+        "adjust": 1627,
+        "move": 4147,
+        "reroll": 1218
+      },
+      "best": {
+        "adjust": 2310,
+        "move": 7808,
+        "reroll": 782,
+        "swap": 3391
+      },
+      "unique": {
+        "move": 4807,
+        "swap": 764,
+        "adjust": 235,
+        "reroll": 38
+      },
+      "legal": {
+        "adjust": 9000,
+        "swap": 8897,
+        "reroll": 9000,
+        "move": 9000
+      }
+    },
+    {
+      "n": 5,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 2.1939999999999995,
+      "focal_wins": 2.2,
+      "zero": 0,
+      "lost_rate": 0.7974145891043398,
+      "used": {
+        "swap": 1734,
+        "adjust": 1372,
+        "move": 3860,
+        "flip": 1057,
+        "reroll": 977
+      },
+      "best": {
+        "adjust": 2347,
+        "flip": 1152,
+        "move": 7814,
+        "reroll": 715,
+        "swap": 3359
+      },
+      "unique": {
+        "move": 4824,
+        "adjust": 184,
+        "swap": 740,
+        "reroll": 37
+      },
+      "legal": {
+        "move": 9000,
+        "flip": 9000,
+        "swap": 8878,
+        "adjust": 9000,
+        "reroll": 9000
+      }
+    },
+    {
+      "n": 5,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "adjust",
+      "seeds": 100,
+      "wins": 0.05200000000000001,
+      "focal_wins": 0.06,
+      "zero": 85,
+      "lost_rate": 0.9970244907301442,
+      "used": {
+        "swap": 1456,
+        "move": 7368,
+        "adjust": 139,
+        "reroll": 37
+      },
+      "best": {
+        "move": 8805,
+        "reroll": 78,
+        "swap": 2865,
+        "adjust": 363
+      },
+      "unique": {
+        "move": 5961,
+        "swap": 173,
+        "reroll": 16,
+        "adjust": 6
+      },
+      "legal": {
+        "swap": 8871,
+        "reroll": 9000,
+        "move": 9000,
+        "adjust": 7200
+      }
+    },
+    {
+      "n": 5,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "reroll",
+      "seeds": 100,
+      "wins": 0.036000000000000004,
+      "focal_wins": 0.03,
+      "zero": 88,
+      "lost_rate": 0.9979533826037521,
+      "used": {
+        "swap": 1433,
+        "move": 7383,
+        "adjust": 161,
+        "reroll": 23
+      },
+      "best": {
+        "adjust": 409,
+        "move": 8899,
+        "swap": 2995,
+        "reroll": 59
+      },
+      "unique": {
+        "move": 5829,
+        "swap": 90,
+        "reroll": 8,
+        "adjust": 3
+      },
+      "legal": {
+        "adjust": 9000,
+        "swap": 8849,
+        "move": 9000,
+        "reroll": 7200
+      }
+    },
+    {
+      "n": 5,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "move",
+      "seeds": 100,
+      "wins": 0.024,
+      "focal_wins": 0.0,
+      "zero": 88,
+      "lost_rate": 0.9982272122913282,
+      "used": {
+        "swap": 3265,
+        "move": 4079,
+        "adjust": 1422,
+        "reroll": 234
+      },
+      "best": {
+        "adjust": 2874,
+        "reroll": 779,
+        "swap": 5349,
+        "move": 5562
+      },
+      "unique": {
+        "move": 3095,
+        "swap": 1704,
+        "adjust": 403,
+        "reroll": 22
+      },
+      "legal": {
+        "adjust": 9000,
+        "swap": 8832,
+        "reroll": 9000,
+        "move": 7200
+      }
+    },
+    {
+      "n": 5,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "swap",
+      "seeds": 100,
+      "wins": 0.034,
+      "focal_wins": 0.03,
+      "zero": 89,
+      "lost_rate": 0.9980593607305936,
+      "used": {
+        "reroll": 30,
+        "move": 8307,
+        "adjust": 164,
+        "swap": 499
+      },
+      "best": {
+        "adjust": 416,
+        "move": 8970,
+        "reroll": 81,
+        "swap": 1086
+      },
+      "unique": {
+        "move": 7663,
+        "adjust": 6,
+        "reroll": 9,
+        "swap": 15
+      },
+      "legal": {
+        "adjust": 9000,
+        "reroll": 9000,
+        "move": 9000,
+        "swap": 6654
+      }
+    },
+    {
+      "n": 6,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.018333333333333337,
+      "focal_wins": 0.01,
+      "zero": 90,
+      "lost_rate": 0.9989668451206912,
+      "used": {
+        "swap": 1464,
+        "move": 9172,
+        "adjust": 145,
+        "reroll": 19
+      },
+      "best": {
+        "adjust": 390,
+        "move": 10621,
+        "reroll": 53,
+        "swap": 2798
+      },
+      "unique": {
+        "move": 7793,
+        "reroll": 7,
+        "swap": 172
+      },
+      "legal": {
+        "adjust": 10800,
+        "swap": 10729,
+        "reroll": 10800,
+        "move": 10800
+      }
+    },
+    {
+      "n": 6,
+      "policy": "build",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.02333333333333333,
+      "focal_wins": 0.02,
+      "zero": 86,
+      "lost_rate": 0.9986843341791185,
+      "used": {
+        "swap": 1395,
+        "move": 9237,
+        "adjust": 143,
+        "reroll": 15,
+        "flip": 10
+      },
+      "best": {
+        "adjust": 386,
+        "flip": 51,
+        "move": 10613,
+        "reroll": 55,
+        "swap": 2704
+      },
+      "unique": {
+        "move": 7877,
+        "reroll": 9,
+        "swap": 178
+      },
+      "legal": {
+        "move": 10800,
+        "flip": 10800,
+        "swap": 10737,
+        "adjust": 10800,
+        "reroll": 10800
+      }
+    },
+    {
+      "n": 6,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.018333333333333337,
+      "focal_wins": 0.01,
+      "zero": 90,
+      "lost_rate": 0.998964705882353,
+      "used": {
+        "swap": 1477,
+        "move": 9153,
+        "adjust": 151,
+        "reroll": 19
+      },
+      "best": {
+        "adjust": 404,
+        "move": 10655,
+        "reroll": 53,
+        "swap": 2863
+      },
+      "unique": {
+        "move": 7726,
+        "reroll": 7,
+        "swap": 136,
+        "adjust": 2
+      },
+      "legal": {
+        "adjust": 10800,
+        "swap": 10714,
+        "reroll": 10800,
+        "move": 10800
+      }
+    },
+    {
+      "n": 6,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 0.02333333333333333,
+      "focal_wins": 0.02,
+      "zero": 86,
+      "lost_rate": 0.9986796189757616,
+      "used": {
+        "swap": 1395,
+        "move": 9228,
+        "adjust": 152,
+        "reroll": 15,
+        "flip": 10
+      },
+      "best": {
+        "adjust": 404,
+        "flip": 51,
+        "move": 10673,
+        "reroll": 55,
+        "swap": 2789
+      },
+      "unique": {
+        "move": 7789,
+        "reroll": 9,
+        "swap": 115,
+        "adjust": 3
+      },
+      "legal": {
+        "move": 10800,
+        "flip": 10800,
+        "swap": 10711,
+        "adjust": 10800,
+        "reroll": 10800
+      }
+    },
+    {
+      "n": 6,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 1.7633333333333332,
+      "focal_wins": 1.75,
+      "zero": 0,
+      "lost_rate": 0.8314749920356802,
+      "used": {
+        "swap": 2274,
+        "adjust": 1912,
+        "move": 5170,
+        "reroll": 1444
+      },
+      "best": {
+        "adjust": 2485,
+        "move": 9585,
+        "reroll": 841,
+        "swap": 3477
+      },
+      "unique": {
+        "move": 6537,
+        "swap": 775,
+        "adjust": 243,
+        "reroll": 22
+      },
+      "legal": {
+        "adjust": 10800,
+        "swap": 10705,
+        "reroll": 10800,
+        "move": 10800
+      }
+    },
+    {
+      "n": 6,
+      "policy": "mixed",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap",
+        "flip"
+      ],
+      "omit": null,
+      "seeds": 100,
+      "wins": 1.973333333333333,
+      "focal_wins": 1.96,
+      "zero": 0,
+      "lost_rate": 0.812954186413902,
+      "used": {
+        "swap": 1974,
+        "adjust": 1549,
+        "move": 4898,
+        "flip": 1221,
+        "reroll": 1158
+      },
+      "best": {
+        "adjust": 2476,
+        "flip": 1312,
+        "move": 9622,
+        "reroll": 799,
+        "swap": 3484
+      },
+      "unique": {
+        "move": 6529,
+        "swap": 766,
+        "adjust": 161,
+        "reroll": 23
+      },
+      "legal": {
+        "move": 10800,
+        "flip": 10800,
+        "swap": 10719,
+        "adjust": 10800,
+        "reroll": 10800
+      }
+    },
+    {
+      "n": 6,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "adjust",
+      "seeds": 100,
+      "wins": 0.04,
+      "focal_wins": 0.1,
+      "zero": 85,
+      "lost_rate": 0.9977405385049897,
+      "used": {
+        "swap": 1451,
+        "move": 9182,
+        "adjust": 145,
+        "reroll": 22
+      },
+      "best": {
+        "move": 10618,
+        "reroll": 56,
+        "swap": 2788,
+        "adjust": 360
+      },
+      "unique": {
+        "move": 7809,
+        "reroll": 10,
+        "swap": 169,
+        "adjust": 3
+      },
+      "legal": {
+        "swap": 10715,
+        "reroll": 10800,
+        "move": 10800,
+        "adjust": 9000
+      }
+    },
+    {
+      "n": 6,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "reroll",
+      "seeds": 100,
+      "wins": 0.021666666666666664,
+      "focal_wins": 0.01,
+      "zero": 88,
+      "lost_rate": 0.9987768159578472,
+      "used": {
+        "swap": 1467,
+        "move": 9164,
+        "adjust": 153,
+        "reroll": 16
+      },
+      "best": {
+        "adjust": 403,
+        "move": 10659,
+        "swap": 2853,
+        "reroll": 43
+      },
+      "unique": {
+        "move": 7732,
+        "reroll": 7,
+        "swap": 132,
+        "adjust": 2
+      },
+      "legal": {
+        "adjust": 10800,
+        "swap": 10723,
+        "move": 10800,
+        "reroll": 9000
+      }
+    },
+    {
+      "n": 6,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "move",
+      "seeds": 100,
+      "wins": 0.015,
+      "focal_wins": 0.0,
+      "zero": 91,
+      "lost_rate": 0.9989114658925979,
+      "used": {
+        "swap": 3326,
+        "move": 5740,
+        "adjust": 1482,
+        "reroll": 252
+      },
+      "best": {
+        "adjust": 3013,
+        "reroll": 956,
+        "swap": 5516,
+        "move": 7321
+      },
+      "unique": {
+        "move": 4723,
+        "swap": 1720,
+        "adjust": 387,
+        "reroll": 12
+      },
+      "legal": {
+        "adjust": 10800,
+        "swap": 10598,
+        "reroll": 10800,
+        "move": 9000
+      }
+    },
+    {
+      "n": 6,
+      "policy": "deny",
+      "kinds": [
+        "adjust",
+        "reroll",
+        "move",
+        "swap"
+      ],
+      "omit": "swap",
+      "seeds": 100,
+      "wins": 0.016666666666666666,
+      "focal_wins": 0.01,
+      "zero": 91,
+      "lost_rate": 0.9990554453575139,
+      "used": {
+        "reroll": 25,
+        "move": 9902,
+        "adjust": 171,
+        "swap": 702
+      },
+      "best": {
+        "adjust": 440,
+        "move": 10722,
+        "reroll": 74,
+        "swap": 1367
+      },
+      "unique": {
+        "move": 9166,
+        "swap": 67,
+        "reroll": 6,
+        "adjust": 5
+      },
+      "legal": {
+        "adjust": 10800,
+        "reroll": 10800,
+        "move": 10800,
+        "swap": 8523
+      }
+    }
+  ]
+}

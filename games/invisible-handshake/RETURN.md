@@ -1,3 +1,9 @@
+## R13 · Free actions reveal denial loop · 17 November 2026
+
+Same owner, design branch and draft PR475. [Report](r13-action-choice/REPORT.md), method, source, results and independent review saved. 5,000 games plus 5,000 illustrative snapshots. Free adjust/reroll/move/swap with min(2,n−1) hold: six-player denial policy uses move 84.8%, swap 13.7%; 99.9% of resolved claims destroyed, 90/100 games entirely scoreless. Mixed policy yields 1.76 trophies/player over 18 turns. All four actions have local uses, but the unrestricted menu is NOT accepted as balanced. Optional opposite-face flip does not repair the loop. Focal omissions reveal heuristic fragility, not optimal-strategy proof.
+
+User's draw-as-action and intentional-tipping reward ideas recorded as untested proposals. Next step: define and compare a stability-versus-tipping claim resolution with a coherent draw/play hand loop. No Site/runtime changes, merge or human acceptance. Existing Site remains older prototype.
+
 ## R12 · Shorter claims and distinct dice actions · 17 November 2026
 
 Same owner, branch and draft PR 475. [Report and evidence](r12-hold-time/REPORT.md). 7,200 controlled holding runs plus 1,200 exploratory slot runs; independent timing/accounting review passed. Six-player mixed-policy trophies per player: full round 1.18, two opposing turns 3.21, one opposing turn 4.59. Resolved claims destroyed: 79.3%, 46.9%, 27.1%. Candidate: two opposing turns, capped at return to own turn. Three public cards per faction brought only modest measured gains.
