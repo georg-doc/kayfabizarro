@@ -1,3 +1,5 @@
+> **2026-11-17 · R0.1 semantic TUNE (newer than this R0 text):** Georg prefers **INFLUENCE** instead of VOICE, explicitly including manipulation, blackmail, covert agreements and geopolitical leverage. **RESOURCES** instead of MONEY is a candidate to include finance, supply chains and infrastructure; **RULES** explicitly includes lawfare, selective enforcement and emergency exceptions. See [SEMANTICS_R01_2026-11-17.md](SEMANTICS_R01_2026-11-17.md). Existing R0 printed cards and examples below are historical baseline, **not** the retuned production wording. Mechanics and 56-slot budget unchanged; no human test yet.
+
 # THE INVISIBLE HANDSHAKE · Twelve-card paper prototype R0
 
 **Status:** CANDIDATE · text-only, original fictional game design · 2026-11-17. Not human-playtested. The title is working only.
