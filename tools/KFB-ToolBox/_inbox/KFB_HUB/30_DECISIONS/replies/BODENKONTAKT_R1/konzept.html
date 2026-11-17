@@ -1,0 +1,83 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#f4efe4;font:20px/1.32 -apple-system,Helvetica,sans-serif;color:#2a2622;width:1700px}
+.wrap{padding:26px 30px}
+h1{margin:0 0 4px;font-size:34px} h2{margin:22px 0 10px;font-size:26px}
+.sub{color:#6a5f55;font-size:19px}
+.box{background:#fff;border:3px solid #2a2622;border-radius:14px;padding:16px 18px}
+.row{display:flex;gap:18px;align-items:stretch}
+.col{flex:1}
+.pill{display:inline-block;border:2px solid #2a2622;border-radius:9px;padding:3px 9px;margin:3px 4px 3px 0;background:#fbf7ef;font-size:17px}
+.pill.k{background:#ffd84a}
+.mv{display:flex;gap:16px;align-items:flex-start}
+.mv img{width:300px;border-radius:10px;border:2px solid #2a2622;display:block}
+.still{position:relative;width:300px;flex:none}
+.still svg{position:absolute;left:0;top:0}
+.frames{display:flex;gap:8px;flex-wrap:nowrap}
+.fr{width:232px;text-align:center;font-size:15px;color:#4a4038}
+.fr svg{background:#fbf7ef;border:2px solid #2a2622;border-radius:8px;display:block;margin-bottom:4px}
+.note{font-size:16px;color:#6a5f55;margin-top:6px}
+.modes{display:flex;gap:12px;margin-top:10px}
+.mode{flex:1;border:2px solid #2a2622;border-radius:10px;padding:8px;background:#fbf7ef;font-size:16px;text-align:center}
+.mode svg{display:block;margin:0 auto 4px}
+</style></head><body><div class="wrap">
+<h1>Bodenkontakt R1 · ein System für alle Fortbewegungen</h1>
+<div class="sub">Konzept vor dem Bau (Georg 17.11., q754 TUNE). Laufen, Auto, Diesel, Hover und Jetpack bekommen denselben Motor; jede Fortbewegung sagt nur, wo sie den Boden berührt und wie breit.</div>
+
+<h2>A · Das Modell: was beim Kontakt mit dem Boden passiert</h2>
+<div class="row">
+ <div class="box col"><b>Je Kontaktpunkt und Bild kommt herein</b><br>
+  <span class="pill">Ort</span><span class="pill">Breite der Fläche</span><span class="pill">Druck (wie hart)</span><span class="pill k">Rutschen: Richtung und Stärke</span><span class="pill">Tempo</span><span class="pill k">Boden: Farbe und Material an genau dieser Stelle</span>
+  <div class="note">Rutschen ist der Kern: Wer antreibt, schiebt den Boden nach hinten. Wer bremst, schiebt ihn nach vorn. Wer driftet, schiebt ihn zur Außenseite. Wer landet, drückt ihn rundum weg.</div></div>
+ <div style="font-size:40px;align-self:center">→</div>
+ <div class="box col"><b>Daraus entstehen fünf Schichten, immer gleich gebaut</b><br>
+  <span class="pill">1 Staubfahne (fein, weht aus)</span><span class="pill">2 Körner und Steinchen (sparsam, fliegen gegen die Schubrichtung, bleiben liegen)</span><span class="pill">3 Spuren (Reifen, Fußabdruck, Furche)</span><span class="pill">4 Speedlines an festen Ankern</span><span class="pill">5 Ton aus demselben Auslöser</span>
+  <div class="note">Farbe kommt immer aus dem Boden darunter (Farbband, Asphalt, Gras), nie aus einer festen Staubfarbe. Größe und Menge wachsen mit der Fortbewegung: Fuß klein, Racer mittel, Diesel groß.</div></div>
+</div>
+<div class="modes">
+ <div class="mode"><svg width="150" height="70"><line x1="5" y1="60" x2="145" y2="60" stroke="#8a7d70" stroke-width="3"/><ellipse cx="55" cy="56" rx="16" ry="6" fill="#2a2622"/><ellipse cx="100" cy="56" rx="16" ry="6" fill="#2a2622"/><circle cx="64" cy="57" r="5" fill="#ffd84a"/><circle cx="91" cy="57" r="5" fill="#e0603a"/></svg><b>Zu Fuß</b><br>2 Punkte: Ballen beim Laufen, Ferse beim Bremsen</div>
+ <div class="mode"><svg width="150" height="70"><line x1="5" y1="60" x2="145" y2="60" stroke="#8a7d70" stroke-width="3"/><rect x="30" y="30" width="90" height="20" rx="6" fill="#c0392b"/><circle cx="45" cy="52" r="9" fill="#2a2622"/><circle cx="105" cy="52" r="9" fill="#2a2622"/></svg><b>Racer</b><br>4 Räder, mittlere Breite</div>
+ <div class="mode"><svg width="150" height="70"><line x1="5" y1="60" x2="145" y2="60" stroke="#8a7d70" stroke-width="3"/><rect x="20" y="22" width="110" height="26" rx="5" fill="#6b4f2a"/><circle cx="40" cy="50" r="11" fill="#2a2622"/><circle cx="110" cy="50" r="11" fill="#2a2622"/></svg><b>Diesel</b><br>4 breite Räder, am meisten Material</div>
+ <div class="mode"><svg width="150" height="70"><line x1="5" y1="60" x2="145" y2="60" stroke="#8a7d70" stroke-width="3"/><rect x="30" y="22" width="90" height="16" rx="8" fill="#5a7a9a"/><path d="M45 40 L38 58 M45 40 L52 58 M105 40 L98 58 M105 40 L112 58" stroke="#5a7a9a" stroke-width="2" stroke-dasharray="3 3"/></svg><b>Hover</b><br>4 Schwebepunkte: Luftstoß drückt Staub rundum</div>
+ <div class="mode"><svg width="150" height="70"><line x1="5" y1="60" x2="145" y2="60" stroke="#8a7d70" stroke-width="3"/><rect x="65" y="5" width="20" height="26" rx="5" fill="#8a6a3a"/><path d="M75 31 L68 56 M75 31 L82 56" stroke="#e0603a" stroke-width="3"/><path d="M50 58 Q75 50 100 58" fill="none" stroke="#b9ab9a" stroke-width="3"/></svg><b>Jetpack</b><br>Düse in Bodennähe: Ringstaub darunter</div>
+</div>
+
+<h2>B · Drei Bewegungen zu Fuß, je fünf Bilder</h2>
+<div class="box" style="margin-bottom:14px"><div class="mv">
+ <div class="still"><img src="_f_3.4.png"><svg width="300" height="281"><path d="M150 248 Q110 230 60 236" stroke="#e0603a" stroke-width="5" fill="none" marker-end="url(#a)"/><defs><marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#e0603a"/></marker></defs><text x="10" y="272" font-size="17" fill="#fff" stroke="#2a2622" stroke-width="3" paint-order="stroke">nach hinten</text></svg></div>
+ <div><b>1 · Aufsetzen beim schnellen Lauf</b> · der Ballen drückt den Boden nach hinten
+ <div class="frames">
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><ellipse cx="140" cy="70" rx="20" ry="8" fill="#2a2622"/><path d="M140 62 L150 20" stroke="#2a2622" stroke-width="6"/></svg>Fuß schwingt vor</div>
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><ellipse cx="125" cy="85" rx="20" ry="7" fill="#2a2622"/><path d="M125 78 L130 30" stroke="#2a2622" stroke-width="6"/><circle cx="118" cy="88" r="3" fill="#6b4f2a"/></svg>Ballen setzt auf</div>
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><ellipse cx="110" cy="85" rx="20" ry="7" fill="#2a2622"/><path d="M110 78 L95 30" stroke="#2a2622" stroke-width="6"/><circle cx="80" cy="80" r="3.5" fill="#6b4f2a"/><circle cx="70" cy="76" r="2.5" fill="#6b4f2a"/><circle cx="74" cy="84" r="3" fill="#4a3a20"/></svg>Abdruck: wenige Körner nach hinten-oben</div>
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><ellipse cx="90" cy="70" rx="20" ry="8" fill="#2a2622"/><circle cx="45" cy="66" r="3.5" fill="#6b4f2a"/><circle cx="35" cy="74" r="2.5" fill="#6b4f2a"/><circle cx="52" cy="80" r="3" fill="#4a3a20"/><path d="M60 88 Q30 80 5 84" stroke="#c9b48a" stroke-width="8" opacity="0.5" fill="none"/></svg>Körner fliegen flach, feiner Staub bleibt</div>
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><circle cx="20" cy="88" r="3" fill="#6b4f2a"/><circle cx="34" cy="88" r="2.5" fill="#4a3a20"/><path d="M80 86 Q40 70 0 76" stroke="#c9b48a" stroke-width="14" opacity="0.35" fill="none"/></svg>Körner liegen, Fahne weht aus</div>
+ </div><div class="note">Im Takt der Schritte, je schneller desto weiter. Sprint: kaum. Turbo: deutlich. Roadrunner: dichter Schweif. Nach vorn fast nichts.</div></div></div></div>
+
+<div class="box" style="margin-bottom:14px"><div class="mv">
+ <div class="still"><img src="_f_brems.png"><svg width="300" height="281"><path d="M195 250 L255 238" stroke="#e0603a" stroke-width="5" marker-end="url(#a)"/><path d="M195 252 L240 270" stroke="#e0603a" stroke-width="5" marker-end="url(#a)"/><text x="170" y="228" font-size="17" fill="#fff" stroke="#2a2622" stroke-width="3" paint-order="stroke">Keil nach vorn</text></svg></div>
+ <div><b>2 · Bremsen mit der Ferse</b> · die Ferse pflügt wie eine Schaufel
+ <div class="frames">
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><ellipse cx="100" cy="82" rx="20" ry="7" fill="#2a2622" transform="rotate(-20 100 82)"/></svg>Ferse stemmt sich ein</div>
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><ellipse cx="115" cy="84" rx="20" ry="7" fill="#2a2622" transform="rotate(-20 115 84)"/><path d="M135 88 L150 80 L160 88 Z" fill="#6b4f2a"/></svg>Wall baut sich vor der Ferse auf</div>
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><ellipse cx="130" cy="84" rx="20" ry="7" fill="#2a2622" transform="rotate(-20 130 84)"/><path d="M150 88 L168 76 L182 88 Z" fill="#6b4f2a"/><circle cx="185" cy="70" r="3" fill="#4a3a20"/><circle cx="195" cy="78" r="2.5" fill="#6b4f2a"/><path d="M70 90 L130 90" stroke="#4a3a20" stroke-width="5"/></svg>Steinchen nach vorn und seitlich, Furche dahinter</div>
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><ellipse cx="138" cy="84" rx="20" ry="7" fill="#2a2622"/><path d="M158 88 L172 80 L184 88 Z" fill="#6b4f2a"/><path d="M60 90 L138 90" stroke="#4a3a20" stroke-width="5"/><path d="M150 80 Q175 55 205 66" stroke="#c9b48a" stroke-width="12" opacity="0.4" fill="none"/></svg>Abfangen: Staub steigt vorn auf</div>
+  <div class="fr"><svg width="232" height="110"><line x1="0" y1="90" x2="232" y2="90" stroke="#8a7d70" stroke-width="3"/><path d="M158 88 L172 81 L184 88 Z" fill="#6b4f2a"/><path d="M60 90 L140 90" stroke="#4a3a20" stroke-width="5"/><circle cx="196" cy="88" r="3" fill="#4a3a20"/></svg>Wall und Furche bleiben, Staub setzt sich</div>
+ </div><div class="note">Dasselbe wie Handbremse beim Auto oder Vollbremsung beim Diesel, nur kleiner. Nach hinten fliegt nichts.</div></div></div></div>
+
+<div class="box"><div class="mv">
+ <div class="still"><img src="_f_5.6.png"><svg width="300" height="281"><circle cx="160" cy="232" r="34" fill="none" stroke="#ffd84a" stroke-width="4" stroke-dasharray="8 6"/><path d="M60 214 L130 220 M50 232 L128 236 M62 250 L132 250" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity="0.9"/></svg></div>
+ <div><b>3 · Wirbelbeine im Roadrunner</b> · die Beine bleiben echte Beine, die Bahn wird sichtbar
+ <div class="frames">
+  <div class="fr"><svg width="232" height="110"><circle cx="116" cy="60" r="34" fill="none" stroke="#b9ab9a" stroke-width="2" stroke-dasharray="4 5"/><path d="M116 26 L130 88" stroke="#2a2622" stroke-width="6"/><ellipse cx="132" cy="92" rx="12" ry="5" fill="#2a2622"/></svg>Turbo: echtes Bein, keine Hilfen</div>
+  <div class="fr"><svg width="232" height="110"><path d="M116 26 L100 88" stroke="#2a2622" stroke-width="6"/><path d="M116 26 L135 85" stroke="#2a2622" stroke-width="6" opacity="0.25"/><path d="M116 26 L150 70" stroke="#2a2622" stroke-width="6" opacity="0.12"/></svg>Mehrfach-Bein: zwei blasse Nachbilder</div>
+  <div class="fr"><svg width="232" height="110"><path d="M150 60 A34 34 0 1 1 116 26" fill="none" stroke="#2a2622" stroke-width="9" opacity="0.18"/><path d="M110 92 A34 34 0 0 1 82 60" fill="none" stroke="#2a2622" stroke-width="9" opacity="0.55"/><path d="M116 26 L108 90" stroke="#2a2622" stroke-width="6"/></svg>Wirbelkreis, am dunkelsten wo der Fuß ist</div>
+  <div class="fr"><svg width="232" height="110"><path d="M150 60 A34 34 0 1 1 116 26" fill="none" stroke="#2a2622" stroke-width="9" opacity="0.18"/><path d="M110 92 A34 34 0 0 1 82 60" fill="none" stroke="#2a2622" stroke-width="9" opacity="0.55"/><path d="M80 92 Q40 88 4 82 M78 70 Q40 66 6 62" stroke="#fff" stroke-width="3" fill="none"/><rect x="0" y="0" width="232" height="110" fill="none"/></svg>Speedlines an den Füßen, weich nach hinten</div>
+  <div class="fr"><svg width="232" height="110"><path d="M116 26 L130 88" stroke="#2a2622" stroke-width="6"/><ellipse cx="132" cy="92" rx="12" ry="5" fill="#2a2622"/><path d="M60 92 Q30 90 4 86" stroke="#fff" stroke-width="3" fill="none" opacity="0.4"/></svg>Langsamer: Kreis und Linien laufen aus, scharfes Bein</div>
+ </div><div class="note">Kein Drehen der Beine im Kreis. Speedlines nur an den zwei Fußankern, bauen sich hinter FB auf, eine durchgehende Linie ohne Kante, Stauchung oder Überlagerung (wie Tiny Skies). Sichtbarkeit und Länge wachsen mit der Stufe.</div></div></div></div>
+
+<h2>C · Vorbilder und Reihenfolge</h2>
+<div class="row">
+ <div class="box col"><b>Wie Trickfilm und Spiele es machen</b><br>Road Runner (Chuck Jones): Wirbelbeine als Kreis mit sichtbarem Fuß · Looney-Tunes-„Multiples“ und Smear-Bilder: Nachbilder statt Unschärfe · Rennspiele: Felgen-Scheibe mit Bewegungsstreifen, gewichtet nach Drehrichtung · Tiny Skies: Speedlines an Ankern, weich aufgebaut</div>
+ <div class="box col"><b>Bau nach deinem OK</b><br>1 Bodenkontakt-Kern mit Bodenfarbe, zuerst Laufen und der Dieselpunk-Wagen darauf (Fahne gleich gebaut, nur anders skaliert) · 2 Aufsetzen und Fersenbremse · 3 danach Racer, Hover, Jetpack · 4 eigene Runde: Wirbelbeine mit Speedlines (Kritiker vor dir)</div>
+</div>
+</div></body></html>
