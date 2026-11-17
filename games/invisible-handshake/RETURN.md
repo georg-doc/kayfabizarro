@@ -1,3 +1,19 @@
+## Additive handoff · R0.6 RAF borromean pyramid and Atlas research · 2026-11-17
+
+**Outcome:** One **design candidate** for a tactile three-D6 R/A/F power pyramid; extended **source-critical WSA Research Atlas requirements**. Owner `georg-doc/kayfabizarro/games/invisible-handshake/`, branch `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475. No runtime/new game owner, no additional game currency or extra card; no Site/Cloudflare Stage (text-only design) and no new KFB Hub live tile.
+
+**Design/source:** [R0.6 candidate](BORROMEAN_RAF_PYRAMID_R06_2026-11-17.md) reuses verified source/code donors `travel/travel-v16/terrain-v16/sky-dice.js` and legacy KFB Pinball R/A/F audio, without pretending a 3D source object/image has been isolated. Triangle corners current RESOURCES/RULES/INFLUENCE; three dice remain distinct R/A/F; highest die face foregrounds a corner, tie = central Eye contested; normal RECRUIT 0 or 1 FAVOR, and one optional PLOT may rotate ±1 or swap two cubes before recruiting. Future B issue/POI triangle and barycentric coordinates **deferred**. R0.5 aperture and R0.6 triad **A/B alternatives**, not combined. Existing 2–6 player priority and optional Solo untouched, 6+30+12+8=56 total intact.
+
+**Evidence:** [JS probe](BORROMEAN_RAF_PROBE_R06.js) committed and read back; **independent equivalent Node.js enumeration** recorded in [TEST_REPORT_R06_2026-11-17.md](TEST_REPORT_R06_2026-11-17.md) successfully checked **1,296** abstract states, **15,552** cost cases, **6,480** legal ±1 rotations and **3,888** legal swaps. Results are **NOT** full games or proof of balance. Actual human games 0, new print masters 0, actual source dice visually isolated 0, human Stage verification 0, autonomous research jobs 0.
+
+**Research handoff:** [R0.6 source-depth work packages](ATLAS_PSYCHOLOGICAL_INFLUENCE_ADDENDUM_R06_2026-11-17.md) extend the existing [WSA Atlas request](ATLAS_RESEARCH_HANDOFF_R05_2026-11-17.md), with user links to Chase Hughes's YouTube channel and Mattias Desmet's official website. Distinguish author/course claims, documented historical operations, empirical tests/meta-analyses, contested allegations and satirical game fiction. Existing Research Atlas PR #394 and MKULTRA/Monarch psychology donor PR #408 remain **read-only**, no commissioned/running job claim.
+
+**Unresolved:** die identity R/A/F is narrative in A (might lack mechanical differentiation), random scarcity of P04, whether three-channel focus represents a true Overton political-issue continuum, potential 74.54% 1-FAVOR cost among equally weighted abstract state/card samples, solo fairness and 5–6 player downtime. Current printed R0.4 PDF and R0 rules are not modified to R0.6.
+
+**One next gate:** two-person paper A/B using existing cross-sphere 12-card proxy set with a provisional P03↔P04 replacement: old R0.5 2/4 Market window versus R0.6 3-D6 Power Pyramid, optionally one Solo turn. Georg A/B/FAIL on narrative intelligibility and tactical agency before any full deck or illustrated pyramid. No auto-merge/Live.
+
+---
+
 ## Additive handoff · R0.5 Simulation + Overton/HyperNormalisation · 2026-11-17
 
 **Outcome:** Added a bounded, playable *proposal* for a shared movable Overton Window, separating objectively visible game-state from publicly asserted story, with Kayfabe/Bizarro, PsyOps/False Flags and fictional "MKUltra 4.0" as narrative skins on existing actions. Existing R0.4 2–6-player first, optional Solo remains product priority; no new owner, no fourth resource, no mandatory improv scoring.
