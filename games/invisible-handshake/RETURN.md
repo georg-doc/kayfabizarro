@@ -1,0 +1,35 @@
+# THE INVISIBLE HANDSHAKE · Bounded Paper Prototype R0 · Return
+
+**Date:** 2026-11-17
+**Outcome:** TEXT-ONLY PAPER PROTOTYPE READY FOR A FIRST MICROTEST · **NOT** a completed/accepted 56-card game.
+**Mode:** BOUNDED_SLICE · original analog game design, no runtime.
+**Existing source owner:** Research Atlas PR #394 on `research/hidden-cosmology-atlas-2026-10-13`; read-only donor.
+**Receiving owner:** `georg-doc/kayfabizarro` / `games/invisible-handshake` (separate game-design lane).
+**Working branch:** `design/invisible-handshake-paper-r0-2026-11-17`, review PR tracked on GitHub; do not merge without Georg.
+**Reference:** `skills/chat/research/hidden-cosmology-atlas/packages/historical-texts/GAME_MECHANICS_BRIEF.md`.
+**Actual owner branch head:** fetch `refs/heads/design/invisible-handshake-paper-r0-2026-11-17` immediately before review; the HEAD in a Return cannot cite the commit which writes the Return itself.
+
+## Delivered
+- [PROTOTYPE_R0.md](PROTOTYPE_R0.md): A/B comparison, English one-page Quickstart, 12 original textual cards, two adversarial turn dry runs + one deterministic solo example, 56-card/14-page budget, separate cover and source/compatibility limits.
+- [TEST_REPORT_R0.md](TEST_REPORT_R0.md): 4/4 player-count capacity calculations, 4/4 Plot allocation/turn-count calculations, 3/3 constructed-turn accounting checks, PDF structure/visual checks and unmeasured human gates.
+- **Printable PDFs prepared in current ChatGPT conversation only** (not GitHub binary assets): one English A4 Quickstart page and three A4 sheets with 12 cut-out original text cards, four per sheet. They are not published/KFB Stage surfaces.
+- Project additive changelog in this folder plus central router/changelog routing as candidate evidence.
+
+## Constraints honored
+A single future starter has 56 cards total: 6 Roles +30 Institutions +12 Plots +8 Events. Cover is separate fifteenth content page. KFB is a possible theme/source compatibility layer, **not** compulsory storytelling, performance or game-rules import. Power/Source/Claim provenance is not scored. English copy is fictional. Existing KFB main game, Deck Registry and Research Atlas site are unchanged. No images or unauthorized replacement logo were created. Dropbox accessed read-only to locate legacy rules; no Dropbox files changed.
+
+## Evidence status
+- 12 distinct printed card IDs, 3 A4 sheets and one A4 rules sheet verified by local PDF extraction; source PDFs rendered locally and visually inspected; **4/4 document pages**.
+- Capacity arithmetic checked for 1, 2, 4 and 6 players; no fictional hands or unbounded deck requirement.
+- 3 examples are **paper dry-run calculations**, not actual games.
+- Human gameplay: **0**. Timed turns: **0**. Independent critique: **not run**. Live browser Stage: **not published and not verified**. No valid `kayfabizarro.pages.dev` test URL; do not claim public live.
+- Official Illuminati/INWO direct PDFs returned 403; do not claim complete original rules comparison.
+
+## Unresolved / deferred
+Actual fun, completion time, six-player downtime, possible persistent veto stalemate, leader lock, kingmaking, score ceiling and solo difficulty. R03–R06 Roles, N07–N30 Institution names, P04–P12 and E02–E08 production copies remain conceptual slots. Full text/layout, art, licensed logos and QR links are deferred. Current printed card sheets are short-form mechanical test pages, **not** an Artscape asset pack.
+
+## Site/Hub handoff
+No browser product was built or published. As this is a text-only paper test, **no public Cloudflare Stage route and no playable KFB Hub tile were manufactured**. Hub and router must not suggest live availability. Update actual KFB Hub route only after a separately authorized publishable product milestone.
+
+## One next gate
+**Georg: physically play the printed 12-card microloop with 1–2 people and report KEEP / TUNE / FAIL on the decisions RECRUIT, POACH/VETO and the dependency scoring.** Only after that test consider mechanically numbered 56-slot proxies for complete 1/2/4/6-person eight-round timing; do not jump to final cards or Artscape.
