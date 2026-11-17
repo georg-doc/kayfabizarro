@@ -1,3 +1,13 @@
+## R10 · Chip timing concept stress test · 17 November 2026
+
+Same owner/branch/PR475. No game/Site changes: R09 does not implement new FHH concept. [Report](r10-chip-test/REPORT.md), reproducible Python and full aggregate results persisted.50,000 bounded claim-system runs (400seeds/configuration,12rounds); NOT full56card/narrative simulations, finite deck/powers/player utility unmodeled. This test does not select a balanced finalgame.
+
+Claimend/cashnextstart with onechip/card allows legal infinite zero-score attackloops at every2–6 count. Threecards becomes congested4–6; max(3,n)slots improves mixedbehavior throughput butnot deliberate denial. Sixhomepositions+randomNPCs breaks some patterns butadds overhead anddoesnotcure6humanlock. NPCwins excluded fromhumanthroughput. Attack-no-claim hypothesis FAILS asanti-lock: tested sixslots/free/block yields0humancashouts2–6; someNPCwins at2–3. Free ±1diechoice alwaysallowsstablemove, removingforcedbacklash; synthetic3cardmodifierhands do notcuredenial either.
+
+One next gate: choose an actual conflict incentive/restriction or capturetiming change beforeimplementing more UI. Scaling/publicchip intent is promising butnotapproved. ExistingSiteleftunchanged, noautomatic rulepromotion.
+
+---
+
 ## R0.9 · Restored power triangle and interactive first game · 17 November 2026
 
 Georg rejected R08 matrix and novice accessibility. Same owner games/invisible-handshake, same branch design/invisible-handshake-paper-r0-2026-11-17, Draft PR475. [R09 description and tests](r09/README.md). Implementation checkpoint f1f0e764760795ca5171a8cd8a4a2e8339a3189b;12 files exact-readback verified. R08 engine unchanged.

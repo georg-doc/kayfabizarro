@@ -1,3 +1,6 @@
+## R10 · 2026-11-17
+Tested publicchipend/nextstart capture2–6,three/scaled/sixNPC layouts,free vs syntheticfixed modifiers. Targeteddenial permitszero-scorecycle. Attack-no-claim doesnotrepair it. Concept evidence only; noSite/runtimechange. See r10-chip-test/REPORT.md.
+
 ## R0.9 · 2026-11-17
 Georg's R08 UI rejection addressed: restored functional R/A/F triangle and five-step real-engine onboarding. Same private Site v3, originaldice/engine retained. Independent lesson checks and actual browser traversal; novice comprehension still awaits Georg. See r09/README.md and RETURN.md.
 
