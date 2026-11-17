@@ -1,0 +1,33 @@
+{
+  "state": {
+    "ready": true,
+    "m1": true,
+    "m2": true,
+    "stage": true,
+    "t": 5.866666666666651,
+    "actor": {
+      "pool": true,
+      "card": null,
+      "player": "OK"
+    },
+    "errors": [],
+    "index": {
+      "ms": 93.7,
+      "ok": true,
+      "attempts": [
+        {
+          "root": "/@kfb-audio/",
+          "attempt": 1,
+          "timeoutMs": 6000,
+          "elapsedMs": 94,
+          "status": 200,
+          "ok": true,
+          "timedOut": false,
+          "retry": false
+        }
+      ],
+      "recoveredTimeouts": 0
+    }
+  },
+  "errors": []
+}
