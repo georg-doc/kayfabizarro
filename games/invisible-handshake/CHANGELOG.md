@@ -1,3 +1,6 @@
+## R0.9 · 2026-11-17
+Georg's R08 UI rejection addressed: restored functional R/A/F triangle and five-step real-engine onboarding. Same private Site v3, originaldice/engine retained. Independent lesson checks and actual browser traversal; novice comprehension still awaits Georg. See r09/README.md and RETURN.md.
+
 ## R0.8 · 2026-11-17
 Own-turn banking selected after1944 paired games;144 production-equivalence games. Functional selectable market matrix replaces ornamental triangle; camera controls and explicit confirmation. Existing private Site v2. Early-lead/graph/Frame-preview limits remain. See RETURN.md and r08/README.md.
 

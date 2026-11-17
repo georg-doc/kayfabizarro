@@ -1,3 +1,19 @@
+## R0.9 · Restored power triangle and interactive first game · 17 November 2026
+
+Georg rejected R08 matrix and novice accessibility. Same owner games/invisible-handshake, same branch design/invisible-handshake-paper-r0-2026-11-17, Draft PR475. [R09 description and tests](r09/README.md). Implementation checkpoint f1f0e764760795ca5171a8cd8a4a2e8339a3189b;12 files exact-readback verified. R08 engine unchanged.
+
+[Private game Site](https://the-invisible-handshake.frizzlebob.chatgpt.site) version3, source475642c78625d404a3add0b0be77abaebbbcc7b0, deployment appgdep_6afc677ecc0881918da2fd13ab443c5f succeeded; saved version provenance verified. Browser owner login remains required; authenticated live canvas not observed. Actual local same-source desktop/mobile opening and five-step traversal verified.
+
+Restored three corner fields, original R/A/F dice, contested/focus centre and selectable four-card market. Five-stage English learning flow uses actual engine actions: recruit, reversible Frame preview, explicit commit, animated connection/points receipt, continue actual round3 state or fresh Solo/2–6. Dark green/cream/gold paper theatre, readable primary action, reduced-motion support and text controls. Replay/Skip/reload preserved actual7-bank savedgame; explicit replacement label when continuing lesson over an existing save.
+
+Independent tester:10 fixtures,40 complete continuations,681 transitions, conservation and8 deposits each; lesson produces1 then6, bank7, legal human round3 continuation. Critic disposition CONTINUE bounded prototype, human acceptance open; final source fixes for eye contrast, preview retaining market, selection-before-confirm and replacement warning verified. Browser complete lesson + restored state checked by integrator; no human fun/comprehension claim.
+
+Known boundaries: curated two-player opening includes two disclosed opponent passes; not a balanced opening. Tutorial covers first decisions, not every Plot. Outside lesson dependencies remain textual. No full artwork or mathematical Borromean-topology claim, no new scoring rules, no second runtime, no KFB Hub routing change.
+
+One next gate: Georg tries Learn by playing without opening Rules and judges whether the triangle, first two decisions and reason to continue are understandable. No auto-merge or audience expansion.
+
+---
+
 ## R0.8 · End-turn scoring and market-board repair · 17 November 2026
 
 Owner/branch unchanged: georg-doc/kayfabizarro, design/invisible-handshake-paper-r0-2026-11-17, Draft PR475. Implementation checkpoint d90c34c04007d3e15368017ad09bf5dcba9c4325; all15 intended files fetched and byte-compared after write. Runtime remains r07/site/dist (version8), evidence r08/.
