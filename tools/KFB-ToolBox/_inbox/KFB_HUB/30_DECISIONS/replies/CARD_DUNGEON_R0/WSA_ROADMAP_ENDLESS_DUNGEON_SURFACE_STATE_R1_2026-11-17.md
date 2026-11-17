@@ -58,7 +58,7 @@ Eine zustandsseitige Serialisierung ist noch keine vollständige Wiederherstellu
 
 Privater zusätzlicher Prüfstand: https://kfb-infiniterooms.frizzlebob.chatgpt.site/stream-lab/
 
-Fünf durchgehende Räume mit sechs unterschiedlichen Karten je Raum aus **zwei** verifizierten Decks: Raum 1–2 `forget_utopia`, Raum 3–5 `ignore_dystopia`. Die bisherigen ersten beiden Raumidentitäten und Motive bleiben erhalten. Seed und Raumadresse bestimmen die Motivauswahl unabhängig von Besuchsreihenfolge; das räumliche Layout ist in diesem Prüfstand eine feste gerade Modulfolge, noch keine Anbindung des nativen Dungeon-Generators. Erkundung, Scroll-Guide und Übersicht beziehen sich auf dieselben Anschlüsse. Keine Portale und kein verpflichtender Kampf. Der echte HeroMan-Blaster lässt sich bei Bedarf aktivieren und verwendet den vorhandenen CombatPlayer samt Klick-Zielen.
+Fünf durchgehende Räume mit sechs unterschiedlichen Karten je Raum aus **zwei** verifizierten Decks: Raum 1–2 `forget_utopia`, Raum 3–5 `ignore_dystopia`. Die Motivauswahl bleibt aus demselben Inhalts-Seed abgeleitet; die neue Generator-Version erhält eigene Raumadressen, damit andere Anschluss-Topologien keine alten Checkpoints falsch laden. Seed und Raumadresse bestimmen die Motivauswahl unabhängig von Besuchsreihenfolge; das räumliche Layout verwendet jetzt die seed-basierten Raumanker und Verbindungen des vorhandenen nativen Dungeon-Generators. Fünf Kartenmodule werden über echte orthogonale Korridore mit Abzweigungen und Schleifen verbunden; die bisherige Gerade bleibt unter `?layout=linear` als Vergleich verfügbar. Erkundung, Scroll-Guide und Übersicht beziehen sich auf dieselben Anschlüsse. Keine Portale und kein verpflichtender Kampf. Der echte HeroMan-Blaster lässt sich bei Bedarf aktivieren und verwendet den vorhandenen CombatPlayer samt Klick-Zielen.
 
 Ein 1,5 m breiter Bodenstreifen bleibt tragfähig; Wände, Decke und übriger Boden sind zerstörbar. Raumstände werden beim Entladen gespeichert und bei Rückkehr wiederhergestellt. Stücke und Kollisionen unterstützen jetzt reine Raumverschiebungen; gedrehte Räume und Schwerkraftwechsel sind weiterhin später.
 
@@ -124,3 +124,14 @@ Audio-Ergänzung mit Shepard-/Drone-Einschätzung: `WSA_AUDIO_SLICE_INFINITEROOM
 ### Zwei-Deck-Ergänzung
 
 Deck- und Karten-IDs werden gemeinsam aufgelöst; dieselbe Kartennummer in zwei Decks verwendet getrennte Bild-URLs und Raumzustände. Der bestehende Drei-Raum-Ladehaushalt, der freie Rückweg, Guide und sichere Mittelspur bleiben erhalten. Identische Bruchdaten werden nach Entladen und Rückkehr wiederhergestellt; ein Reset bleibt auf den aktuellen Raum begrenzt. Herkunft und Abnahme: `WSA_STATUS_TWO_DECK_ROUTE_R1_2026-11-17.md` im selben Hub-Ordner.
+
+### Prozedurale Ergänzung · R1
+
+- [x] Native Raumanker und Kanten an die Zwei-Deck-Kartenreise angeschlossen. Ein Layout-Seed bestimmt Raumpositionen, Ports, echte Korridore, Übersicht und bidirektionalen Guide.
+- [x] Nord-/Ost-/Süd-/West-Durchgänge mit tatsächlicher Geometrie und Rapier-Kollision; geschützte Mittelspuren, je nach Anschlüssen als Kreuz.
+- [x] Maximal drei Raum-Besitzer mit Entfernungshysterese. Nach Entladen/Wiederkehr bleiben bestätigte Brüche erhalten; Reset schützt die Figur.
+- [x] Acht Layout-Seeds auf Erreichbarkeit und Reproduzierbarkeit geprüft; vollständiger echter Rapier-Kapsel-Rundweg mit Entladen, Wiederkehr und Reset bestanden.
+
+Der Adapter übernimmt native **Anker und Graph**, nicht sämtliche nativen Kachelformen oder deren ursprüngliche Korridorpolylinien. Die fünf Kartenräume behalten feste Abmessungen; der Adapter baut passende physische Korridore darum. Treffen Korridore aufeinander, gilt das tatsächliche Bodengitter als gemeinsamer Plan für Karte und Guide. Native Gegner-/Boss-Rollen sind nur Metadaten; es wird kein Kampf gespawnt.
+
+Das ist ein begrenzter Fünf-Raum-Prüfstand, noch kein endloser Generator. Korridore bleiben geladen und geschützt. Ihre sekundären Kartenflächen verwenden eine 448-Pixel-Darstellungsstufe, die Raumkarten weiter die Originalbilder. Der gemeinsame Texturhaushalt bleibt bei geschätzten 128 MiB. Noch offen: Sicht-/Geschwindigkeits-Vorladen, dynamisches Korridor-Streaming, Langzeit-Plateau, mehr Decks, Zerstörung zwischen Räumen, sechs Raumrichtungen und räumliches Audio. Persistenz gilt nur für die Sitzung.
