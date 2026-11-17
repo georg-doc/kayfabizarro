@@ -1,3 +1,7 @@
+## Publication receipt · Historical texts / game brief · 2026-11-17
+
+Content commit 53958929d0e7c66c41da9d91b222768f5129f53b: exact branch head and all 15 changed files fetched and byte-verified. Existing owner-private Site version 29 deployed successfully; source 542bd456ed257351b7ef602c8d627c4191bc5d6c; deployment appgdep_6afba2e2178c8191b99325f703697c41. Saved version/source read back. Routes: https://kfb-research-atlas.frizzlebob.chatgpt.site/history.html and https://kfb-research-atlas.frizzlebob.chatgpt.site/game-brief.html . Live browser reaches login; authenticated content not visually verified. Local source disclosure and brief navigation verified; 32 local links/anchors checked. Source checkout clean. No game code changed. Next executor: separate mechanics chat, use GAME_MECHANICS_BRIEF.md to build a small paper prototype; no automatic 56-card production.
+
 ## 2026-11-17 · Historische Texte und Mechanik-Handoff
 
 Owner: hidden-cosmology-atlas. Branch research/hidden-cosmology-atlas-2026-10-13 / Draft PR #394. Baseline 5af720c4444b7be6d9c3d6f4a2a56327b5fecb7f.
