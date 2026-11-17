@@ -1,3 +1,9 @@
+## 2026-11-17 · THE INVISIBLE HANDSHAKE · R0.1–R0.2 Media/Cultural Power TUNE
+
+Georg refined the separate analog card-game candidate: VOICE → **INFLUENCE** (media, propaganda, leverage, blackmail, covert alliances), MONEY → proposed **RESOURCES** (credit, logistics, infrastructure), and RULES includes lawfare. Added `games/invisible-handshake/SEMANTICS_R01_2026-11-17.md` and `MEDIA_ECOSYSTEM_R02_2026-11-17.md` with ten fictional media/culture institution *seeds*, re-themed existing plot effects and one unapproved event variant. **No new resource, 56-card budget change, second owner, code, human play, print master or Stage/Hub tile.** R0 PDFs have now outdated labels. The NATO ACT cognitive warfare concept and MKULTRA's historical source tier are distinguished from satirical extrapolation. [Owner Return](../../games/invisible-handshake/RETURN.md). Next single gate: Georg physical R0.2 terminology/podcast-POACH microtest KEEP/TUNE/FAIL; PR #475 remains draft/unmerged.
+
+---
+
 ## 2026-11-17 · THE INVISIBLE HANDSHAKE · Analog paper R0 candidate
 
 Separate game-design branch `design/invisible-handshake-paper-r0-2026-11-17` reuses Research Atlas v29 brief (PR #394) without changing its owner. See `games/invisible-handshake/{PROTOTYPE_R0.md,TEST_REPORT_R0.md,RETURN.md,CHANGELOG.md}`. Original English 12-card printable-paper experiment, not a 56-card finished game. Mechanical counts 4/4 player configurations; 3 constructed examples; no human play, no card illustration, no public KFB Stage or Hub tile, and no KFB rules/runtime change. Next gate: Georg 1–2-person physical microplay and KEEP/TUNE/FAIL. Preserve this as CANDIDATE.
