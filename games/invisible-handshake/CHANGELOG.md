@@ -1,5 +1,10 @@
 # The Invisible Handshake · Additive changelog
 
+## 2026-11-17 · R0.3 Power Spheres, Kayfabe & Bizarro · CANDIDATE
+
+Georg korrigiert die medienzentrierte Perspektive: Podcaster/Influencer sind kleine Knoten in sechs verflochtenen Machtfeldern. [R0.3 Design](POWER_SPHERES_KAYFABE_BIZARRO_R03_2026-11-17.md) entwirft 6×5 fiktive Institutionskandidaten über Kapital/Versorgung, Staat/Geopolitik, Intelligence/PsyOps, Medien/Plattformen, Kultur/Universitäten, Wissenschaft/KI/Space. Kayfabe (Fassade vs Anreiz) und Bizarro (doppelte Umkehrung) werden als Satirestruktur aufgenommen; Foucault, Derrida, Hartmann und weitere Ansätze als konkurrierende Deutungsangebote, nicht Wertungszahlen. [Testbericht](TEST_REPORT_R03_2026-11-17.md) = 8/8 statische Assertions, ein rechnerisches POACH-Beispiel mit 10-Punkte-Relativverschiebung als **offenes Balance-Risiko**. Daten- und Behauptungsstatus der GitHub-Spender/öffentlichen Quellen bleiben getrennt. Keine Menschen getestet, keine neuen Druckmaster/Art/Stage, 56 Slots und R0-Regelkern unverändert. **Next gate:** physischer 12-Proxy-Test über sechs Felder vor Kartenproduktion.
+
+
 ## 2026-11-17 · R0.1/R0.2 semantic and media landscape TUNE · CANDIDATE
 
 - **Georg feedback:** Voice is too narrow; replace VOICE with **INFLUENCE** (media, manipulation, kompromat, covert agreements). **RESOURCES** is a candidate for MONEY (credit, supply and energy); RULES now expressly includes lawfare.
