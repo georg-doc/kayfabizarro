@@ -1,0 +1,123 @@
+{
+  "native": {
+    "sourceCommit": "48fffaafe3cd5af08c9cc96a8435f4ea955f51d3",
+    "rawVideo": "kfb-pistol-game-camera-r1 (2).webm",
+    "confirmedHits": 4,
+    "vfx": {
+      "fire": 4,
+      "hit": 4,
+      "tracer": 8,
+      "dropped": 0,
+      "materials": {
+        "wood": 1,
+        "stone": 1,
+        "metal": 2
+      },
+      "last": {
+        "at": [
+          -322.850000000596,
+          -9.961236215196672,
+          300.4278711307954
+        ],
+        "normal": [
+          1,
+          0,
+          0
+        ],
+        "material": "metal"
+      },
+      "flashDraws": 8,
+      "traceDraws": 8,
+      "ready": true,
+      "active": 0,
+      "muzzleDraws": 1,
+      "source": "CGHEVEN barrel-jet crop",
+      "smokeAtMuzzle": false,
+      "drawClock": "host preDraw",
+      "time": 116.94999999999465
+    },
+    "camera": {
+      "position": [
+        -314.7636904114723,
+        -8.349935364700574,
+        296.3524748180082
+      ],
+      "fov": 55
+    },
+    "frameP50ms": 22.5,
+    "frameP95ms": 68.5,
+    "frameMaxms": 256.09999999403954,
+    "audioPeak": 0.9205989241600037,
+    "audioRms": 0.10510390996932983
+  },
+  "site": {
+    "build": "combat-stage-r2-c3-20261117",
+    "readyMs": 2235.300000011921,
+    "errors": [],
+    "audio": {
+      "mode": "full",
+      "contexts": 1,
+      "state": "running",
+      "loaded": 22,
+      "plays": 11,
+      "drops": 0,
+      "errors": [],
+      "capturePeakDecoded": 1.0702474117279053,
+      "captureRms": 0.1387319266796112,
+      "auditoryReview": false
+    }
+  },
+  "tests": {
+    "passing": 61,
+    "command": "node --experimental-vm-modules --test test/unit/{combatEventsR1,combatEventsHostR1,combatTargets,pistolReference,pistolGunshotR1}.mjs",
+    "wholeRepoAudioInventoryFailures": [
+      "musicCatalogIndexed",
+      "noAudioInRepo",
+      "siteCopyOnlyWithSite"
+    ],
+    "inventoryBaselineNotReproduced": true
+  },
+  "independentCritic": {
+    "C1": 46,
+    "C2": 53,
+    "recommended": false,
+    "C3NotRescored": true
+  },
+  "media": [
+    {
+      "name": "KFB-Pistole-C2-Spielkamera.mp4",
+      "bytes": 1516522,
+      "sha256": "a1b38ddf29e9bee8a3aeea47fd08e662d345ba28f05f95a9530e453960ecf3b0"
+    },
+    {
+      "name": "KFB-Pistole-C3-Muendung.mp4",
+      "bytes": 1659155,
+      "sha256": "e353a6b94fa15dbb2c308a318e1621febb8079e4826cc8743538f3da558f54c1"
+    },
+    {
+      "name": "KFB-Pistole-C3-Muendung.jpg",
+      "bytes": 18278,
+      "sha256": "d22e3d635c1b6bd367b1b14cda7e1c410defd47e6ad2d1f0ba1bc9053d2a8a27"
+    },
+    {
+      "name": "Combat-Insel-C3-Tag.jpg",
+      "bytes": 53186,
+      "sha256": "bb1bef67cf17386754a7175fe767461371db4a47cfaaf816d2ac6161e9ae5f0d"
+    },
+    {
+      "name": "Combat-Insel-C3-Nacht.jpg",
+      "bytes": 48471,
+      "sha256": "b51dddb265ec5322e7c42c7f37249c8754fade221c63810bd08199305ab13d97"
+    },
+    {
+      "name": "BLIND_CRITIC_REPORT_C1.md",
+      "bytes": 10519,
+      "sha256": "dea23accfd931232cb7debb6473265e74513ac1312b16875ca76d6f1ea61fa31"
+    },
+    {
+      "name": "BLIND_CRITIC_ADDENDUM_C2.md",
+      "bytes": 7467,
+      "sha256": "e80134fb01a688e3eda76e0af610df1a371e3698eaeec71ea99f7145db4eb107"
+    }
+  ]
+}
