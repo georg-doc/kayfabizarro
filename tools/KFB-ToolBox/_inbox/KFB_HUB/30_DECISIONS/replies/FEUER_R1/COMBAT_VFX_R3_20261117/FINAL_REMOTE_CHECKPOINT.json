@@ -1,0 +1,193 @@
+{
+  "repository": "georg-doc/KFB-Stunt-Car-Race",
+  "branch": "game/combat-vfx-aa-r3-20261117",
+  "head": "b66f32e912edee7345adf46e102a05a96105c444",
+  "tree": "9db6399825ac82dd2e77030162cf2ee75030e29f",
+  "parent": "e714a52b200becf2e8b90ea3c9f67ff828d43968",
+  "manifest": [
+    {
+      "path": "docs/combat-aa-r3/CHANGELOG.md",
+      "bytes": 1645,
+      "blob": "522e1835da84d908e995e0d79a0f0070ce7bd81c",
+      "sha256": "9b4a8d7995a268d117bf8c52f9da983568b71710c53d0161f1064505ce5ba84a"
+    },
+    {
+      "path": "docs/combat-aa-r3/FINAL_CHECKPOINT.json",
+      "bytes": 718,
+      "blob": "2f1910705c893f16a205b37a98d22e759bc907f8",
+      "sha256": "4c048dac3a6bd4df3965d886dfde5a239f039893bf770533dd687eeca95c3f5a"
+    },
+    {
+      "path": "docs/combat-aa-r3/HOST_CONTRACT.md",
+      "bytes": 14813,
+      "blob": "32f7095e02ad24c54b7eafa10c6c585152127845",
+      "sha256": "fffd7868d9082434783d8555f225463abc93db4e4f1557dee08f0e7bc8a86bfb"
+    },
+    {
+      "path": "docs/combat-aa-r3/RETURN.md",
+      "bytes": 8229,
+      "blob": "71e6d7365ef801fdd7d3c720c66c6747dcc08d73",
+      "sha256": "20d33c25b6f90c80e7ffc222b2b3e013ecdf898e11f01ab0c3c9800395b4cd12"
+    },
+    {
+      "path": "docs/combat-aa-r3/TEST_REPORT.md",
+      "bytes": 7268,
+      "blob": "a4132a5cb3434cd22c7d6215dcfdbe0313eccd16",
+      "sha256": "cdbfd18e4b3f68cb817481b3c657153eeea651e7600b5696b586f647dcbcba3e"
+    },
+    {
+      "path": "docs/combat-aa-r3/checkpoints/EVIDENCE_REMOTE_CHECKPOINT.json",
+      "bytes": 8961,
+      "blob": "986e4f6187ff1ef769be306ccbc3bf8aa2fba53e",
+      "sha256": "69640ce87714cf1ab2b57511b98b3908ebaf13d5b9615c9e958db553bb92ba58"
+    },
+    {
+      "path": "docs/pistol-gunshot-r1/RETURN.md",
+      "bytes": 11569,
+      "blob": "fbbd5f3c3fb015cd08bde1fc8902d65c9975c477",
+      "sha256": "edb08e6dde687111154fa5df13f277e909570e42e59a28d1c3d77c7e8d96015e"
+    },
+    {
+      "path": "scripts/pistol-gunshot/build-combat-site.mjs",
+      "bytes": 3774,
+      "blob": "3efad76cefea2259f42a274bc7222bdf1ad6dec3",
+      "sha256": "ee906faa4ea455d9f8382fdabd8cef1561cc0bf93d973359438e3c6cb28161f7"
+    },
+    {
+      "path": "src/combat-originals/index.html",
+      "bytes": 5710,
+      "blob": "81f0f0508eed6cb33d379a7b0e51b997dc1ec11f",
+      "sha256": "818a856e9e99f98157c6bf7a687e5944e2b0c78fbc0ac6bcce37a68bbee6e810"
+    },
+    {
+      "path": "src/combat-stage/combat.css",
+      "bytes": 1030,
+      "blob": "1d9237e2b58f5ae4ec8cc62a73cc86102e40532e",
+      "sha256": "6c85964284c99abb4ad205a0acc6b3a414fb3298c9a7f641772aa2fe6e53c3c1"
+    },
+    {
+      "path": "src/combat-stage/index.html",
+      "bytes": 5417,
+      "blob": "3c4467fd594668d06ca901f03e06f3e859d15043",
+      "sha256": "b3041207a8942d25e6a6e03b397a77ed10f47b9b129b937a5524bce5058e21e7"
+    }
+  ],
+  "changed": [
+    {
+      "path": "docs/combat-aa-r3/CHANGELOG.md",
+      "sha": "522e1835da84d908e995e0d79a0f0070ce7bd81c"
+    },
+    {
+      "path": "docs/combat-aa-r3/FINAL_CHECKPOINT.json",
+      "sha": "2f1910705c893f16a205b37a98d22e759bc907f8"
+    },
+    {
+      "path": "docs/combat-aa-r3/HOST_CONTRACT.md",
+      "sha": "32f7095e02ad24c54b7eafa10c6c585152127845"
+    },
+    {
+      "path": "docs/combat-aa-r3/RETURN.md",
+      "sha": "71e6d7365ef801fdd7d3c720c66c6747dcc08d73"
+    },
+    {
+      "path": "docs/combat-aa-r3/TEST_REPORT.md",
+      "sha": "a4132a5cb3434cd22c7d6215dcfdbe0313eccd16"
+    },
+    {
+      "path": "docs/combat-aa-r3/checkpoints/EVIDENCE_REMOTE_CHECKPOINT.json",
+      "sha": "986e4f6187ff1ef769be306ccbc3bf8aa2fba53e"
+    },
+    {
+      "path": "docs/pistol-gunshot-r1/RETURN.md",
+      "sha": "fbbd5f3c3fb015cd08bde1fc8902d65c9975c477"
+    },
+    {
+      "path": "scripts/pistol-gunshot/build-combat-site.mjs",
+      "sha": "3efad76cefea2259f42a274bc7222bdf1ad6dec3"
+    },
+    {
+      "path": "src/combat-originals/index.html",
+      "sha": "81f0f0508eed6cb33d379a7b0e51b997dc1ec11f"
+    },
+    {
+      "path": "src/combat-stage/combat.css",
+      "sha": "1d9237e2b58f5ae4ec8cc62a73cc86102e40532e"
+    },
+    {
+      "path": "src/combat-stage/index.html",
+      "sha": "3c4467fd594668d06ca901f03e06f3e859d15043"
+    }
+  ],
+  "readbacks": [
+    {
+      "path": "docs/combat-aa-r3/CHANGELOG.md",
+      "sha": "522e1835da84d908e995e0d79a0f0070ce7bd81c",
+      "ok": true
+    },
+    {
+      "path": "docs/combat-aa-r3/FINAL_CHECKPOINT.json",
+      "sha": "2f1910705c893f16a205b37a98d22e759bc907f8",
+      "ok": true
+    },
+    {
+      "path": "docs/combat-aa-r3/HOST_CONTRACT.md",
+      "sha": "32f7095e02ad24c54b7eafa10c6c585152127845",
+      "ok": true
+    },
+    {
+      "path": "docs/combat-aa-r3/RETURN.md",
+      "sha": "71e6d7365ef801fdd7d3c720c66c6747dcc08d73",
+      "ok": true
+    },
+    {
+      "path": "docs/combat-aa-r3/TEST_REPORT.md",
+      "sha": "a4132a5cb3434cd22c7d6215dcfdbe0313eccd16",
+      "ok": true
+    },
+    {
+      "path": "docs/combat-aa-r3/checkpoints/EVIDENCE_REMOTE_CHECKPOINT.json",
+      "sha": "986e4f6187ff1ef769be306ccbc3bf8aa2fba53e",
+      "ok": true
+    },
+    {
+      "path": "docs/pistol-gunshot-r1/RETURN.md",
+      "sha": "fbbd5f3c3fb015cd08bde1fc8902d65c9975c477",
+      "ok": true
+    },
+    {
+      "path": "scripts/pistol-gunshot/build-combat-site.mjs",
+      "sha": "3efad76cefea2259f42a274bc7222bdf1ad6dec3",
+      "ok": true
+    },
+    {
+      "path": "src/combat-originals/index.html",
+      "sha": "81f0f0508eed6cb33d379a7b0e51b997dc1ec11f",
+      "ok": true
+    },
+    {
+      "path": "src/combat-stage/combat.css",
+      "sha": "1d9237e2b58f5ae4ec8cc62a73cc86102e40532e",
+      "ok": true
+    },
+    {
+      "path": "src/combat-stage/index.html",
+      "sha": "3c4467fd594668d06ca901f03e06f3e859d15043",
+      "ok": true
+    }
+  ],
+  "verification": {
+    "refCommitTreeReadback": true,
+    "all11FilesFetchedAtExactCommitAndMatched": true,
+    "all11RestoredFromGitHubUTF8AndSHA256Matched": true,
+    "owningReturnFreshRemotePrefixPreserved": true,
+    "noUnexpectedChanges": true,
+    "noRemovals": true,
+    "shaderDiagnosticClosureNoteIncluded": true,
+    "noPR": true,
+    "noMerge": true,
+    "noQualityAcceptance": true
+  },
+  "restoration": "/private/tmp/kfb-final-checkpoint-r3/restored-from-github",
+  "state": "Original source proof preserved; user full-AA request NOT achieved; derived AA failed/quarantined; native body proof MISS, not proved.",
+  "next": "External handoff can record this verified final head; no guessed self-hash inside committed Return."
+}
