@@ -1,3 +1,15 @@
+## Influence / Discourse research return · 2026-11-17
+
+Bounded first research pass for The Invisible Handshake:38 source/findmittel rows in [influence-r07](packages/influence-r07/), including Hughes author/course claims, Desmet, independent empirical contrasts, Yurchak/Curtis/Overton, NLP/nudges/AI, and primary planning/execution distinctions. No full Hughes video corpus, full Desmetbook, Curtisfilm/timecodes, or exhaustive covert-operation network completed. Evidence, interpretation, conceptual connection and fictional mechanic kept separate.
+
+[Atlas reader](https://kfb-research-atlas.frizzlebob.chatgpt.site/influence.html) published on existing owner-private Site v30, source f2f7073c7f65d2308df72387813da0eb114a295d; deployment appgdep_6afc3da8c16481919143d222d1742242 succeeded; exact saved version readback confirmed. Preserved audience. GitHub content checkpoint8040760d95eeeea21b2e6473a6bea3d4491629a5; all11 files read back.
+
+Separate game owner remains games/invisible-handshake, PR475. [Playable private prototype](https://the-invisible-handshake.frizzlebob.chatgpt.site) v1, gameGitHub head9b5548333817e6a6df1917dfa1272c2894d5bf02. Solo/shared-screen2–6; no remote synchronized multiplayer.1800 computational games validate invariants, not balance/fun. Exact liveURL reaches login in verification browser; authenticated live canvas not visually observed. No main merge/public promotion.
+
+Next gate: Georg tests framing/dependency choices at the table; expand source corpus only for a named claim gap. No autonomous recurring research scheduled.
+
+---
+
 ## Publication receipt · Historical texts / game brief · 2026-11-17
 
 Content commit 53958929d0e7c66c41da9d91b222768f5129f53b: exact branch head and all 15 changed files fetched and byte-verified. Existing owner-private Site version 29 deployed successfully; source 542bd456ed257351b7ef602c8d627c4191bc5d6c; deployment appgdep_6afba2e2178c8191b99325f703697c41. Saved version/source read back. Routes: https://kfb-research-atlas.frizzlebob.chatgpt.site/history.html and https://kfb-research-atlas.frizzlebob.chatgpt.site/game-brief.html . Live browser reaches login; authenticated content not visually verified. Local source disclosure and brief navigation verified; 32 local links/anchors checked. Source checkout clean. No game code changed. Next executor: separate mechanics chat, use GAME_MECHANICS_BRIEF.md to build a small paper prototype; no automatic 56-card production.
