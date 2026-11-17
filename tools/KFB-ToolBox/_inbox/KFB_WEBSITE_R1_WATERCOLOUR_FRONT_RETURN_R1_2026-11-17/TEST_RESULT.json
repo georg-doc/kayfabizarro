@@ -1,0 +1,114 @@
+{
+ "wash": {
+  "statesDiffer": true,
+  "paintedComesBackExactly": true,
+  "originalComesBackExactly": true,
+  "programsAfter": 16,
+  "arrival": [
+   {
+    "x": 1.2,
+    "z": -7.6,
+    "owner": 1,
+    "map": 1.033
+   },
+   {
+    "x": 3.2,
+    "z": -10,
+    "owner": 2.202,
+    "map": 2.113
+   },
+   {
+    "x": 6.4,
+    "z": -8.4,
+    "owner": 3.024,
+    "map": 2.98
+   },
+   {
+    "x": -4.4,
+    "z": -10,
+    "owner": 3.343,
+    "map": 3.35
+   },
+   {
+    "x": -9.5,
+    "z": -14,
+    "owner": 5.795,
+    "map": 5.829
+   },
+   {
+    "x": 9.5,
+    "z": -15,
+    "owner": 5.277,
+    "map": 5.246
+   }
+  ],
+  "worstArrivalError": 0.089,
+  "followTwice": false,
+  "report": {
+   "on": false,
+   "switched": 5,
+   "materials": 3,
+   "skipped": 637,
+   "skippedWhy": [
+    "no hatch attribute: run prepare() in the prop step"
+   ],
+   "px": 3.333,
+   "now": 30,
+   "steps": 1
+  },
+  "glError": 0
+ },
+ "pencil": {
+  "pencilDiffersFromOriginal": true,
+  "originalComesBackExactly": true,
+  "pencilComesBackExactly": true,
+  "toggles": 6,
+  "programsBefore": 14,
+  "programsAfter": 14,
+  "pencilMaterials": [
+   3,
+   3
+  ],
+  "bentOutlineOriginal": {
+   "pixels": 327755,
+   "box": [
+    250,
+    0,
+    1279,
+    719
+   ]
+  },
+  "bentOutlinePencil": {
+   "pixels": 325589,
+   "box": [
+    250,
+    0,
+    1279,
+    719
+   ]
+  },
+  "bendState": [
+   {
+    "art": "baum",
+    "a": 1.017
+   }
+  ],
+  "pxDesktop": 3.333,
+  "pxMobile": 7.815,
+  "bufferMobile": [
+   780,
+   1688
+  ],
+  "glError": 0,
+  "report": {
+   "on": true,
+   "switched": 5,
+   "materials": 3,
+   "skipped": 637,
+   "skippedWhy": [
+    "no hatch attribute: run prepare() in the prop step"
+   ],
+   "px": 7.815
+  }
+ }
+}
