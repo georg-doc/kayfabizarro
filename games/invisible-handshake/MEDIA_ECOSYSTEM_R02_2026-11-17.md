@@ -45,6 +45,7 @@ Use **only existing actions**:
   - `THE COMPROMISING FILE` (BLACKMAIL) = R0 P02 BACKROOM BROKER effect, **POACH an exposed rival for 0 FAVOR; 1 FAVOR VETO or RECRUIT fallback**.
   - `EMERGENCY INJUNCTION` (LAWFARE) = R0 P01 PUBLIC AUDIT effect, **SUSPEND one institution until next round**, supplies 0, scores 0.
   - `THE SPONSORSHIP PACKAGE` (MEDIA BUY) = R0 P03 BAILOUT effect, **RECRUIT one market institution, then gain 1 FAVOR (max 3)**.
+- **Culture conditioning / anticipatory framing = fictional PLOT skin**: `THE CONDITIONING CAMPAIGN` may reuse **P02's POACH/VETO** effect to signify a sponsor-backed entertainment narrative that converts a public figure. It is an **alternative title/fictional premise for an existing Plot slot**, not evidence of a current historical MKULTRA program, not an eleventh test card, and not a new persuasion subsystem.
 - **Set a public frame = EVENT** with a one-round global effect. Candidate replacement for a duplicate existing `PUBLIC HEARING`: `THE FEED TURNS` = **This round, all institutions supplying INFLUENCE count as EXPOSED.** At most one normal POACH reaction per attack. No new marker, rating or phase. Do **not** lock this in until the R0 playtest shows that the event doesn't enable runaway flips.
 
 **Important:** "Narrative control" must change a visible network relation or an actionable vulnerability; otherwise it is merely a joke/title, not gameplay. The player must see exactly which card can now be poached or supplied.
