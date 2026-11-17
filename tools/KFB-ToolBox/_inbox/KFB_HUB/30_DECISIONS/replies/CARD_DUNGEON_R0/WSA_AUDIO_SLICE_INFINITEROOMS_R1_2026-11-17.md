@@ -29,6 +29,8 @@ Ein mögliches Rezept würde zunächst das Atmo-Bett verdichten, dann eine leise
 
 Eine kleine, feste Zahl oktavversetzter Sinusanteile wird unter einer spektralen Hüllkurve überblendet. Die Stimmen werden am Rand der Hüllkurve leise neu eingesetzt; Frequenz-/Phasenwechsel dürfen nicht klicken. Lautheits-/Energienormalisierung vermeidet ein bloßes Lauterwerden bei steigender Dichte. Die genaue Stimmenzahl und Registergrenzen sind erst nach Hör-/CPU-Prüfung festzulegen.
 
+Arbeitsmodell, noch keine musikalisch abgenommene Vorgabe: `f_k = f0 · 2^(k+φ)`, mit einer Hüllkurve über `log2(f_k)`, etwa `a_k = exp(-0,5 · ((log2(f_k)-μ)/σ)^2)`. Die Zielrate von `φ` steuert Auf-/Abwärtsbewegung; Stimmen am Rand werden weich umgesetzt. Eine Normierung über `sqrt(Σa_k²)` stabilisiert die rechnerische Energie, ersetzt aber keine Lautheitsabstimmung. Die endliche Stimmenbank braucht geeignete Fenster und Übergänge.
+
 Für einen ersten Anschluss eher eine begrenzte vorberechnete Loop-Familie oder eine begrenzte Synth-Stimme im vorhandenen Mixer vergleichen. Keine neue AudioContext-/Analyser-Instanz und keine Audio-Taktung per Renderbild. Bei Laufzeitsynthese plant der vorhandene Audio-Besitzer die Parameter auf seiner Audio-Uhr; Frame-Updates liefern nur geglättete Zielwerte. Deterministische Seeds sind für Muster möglich, der Musik-/Radio-Transport bleibt derselbe.
 
 ## Mischung statt unkontrollierter Überladung
