@@ -1,3 +1,13 @@
+## Additive handoff · R0.2 media ecosystem · 2026-11-17
+
+**Outcome:** Georg's requested media/cognitive-warfare layer documented as **design only, not accepted or game-tested**. [R0.1 taxonomy](SEMANTICS_R01_2026-11-17.md) replaces VOICE with INFLUENCE and proposes RESOURCES for MONEY; [R0.2 media ecosystem](MEDIA_ECOSYSTEM_R02_2026-11-17.md) includes sponsored podcasts, mainstream media, platforms, NGOs/front organizations, fact-checkers, cultural studios, covert influence, lawfare, public NATO ACT cognitive-warfare concepts and historical MKULTRA as clearly separated reference sources. No new rule owner or fourth resource; original R0 RECRUIT, POACH, VETO, PLOT and 0–3 FAVOR remain.
+
+**Evidence:** R0.1 and R0.2 design notes added, R0 SSOT cross-linked, owner/central changelogs routed. Ten institution **seeds** only, three existing Plot effect families re-themed, one **unapproved** Event alternative. R0 PDFs still say MONEY/VOICE and are not R0.2 print masters. **0 human games, 0 timed turns, 0 updated printed cards, 0 visual/playable Stage tests**. No Site/Cloudflare route or KFB Hub Live tile should be created for docs-only tuning; existing KFB, Atlas and Dropbox source owners unchanged. No merge or Live promotion.
+
+**Unresolved:** whether RESOURCES is the clearest label, balance of INFLUENCE flip play, possible runaway `THE FEED TURNS` event, six-person downtime. **One gate:** Georg's physical 1–2-person microtest using the new labels and the podcast POACH scenario, then KEEP/TUNE/FAIL; only thereafter update print masters and consider full slots. Owner/branch: `georg-doc/kayfabizarro` / `design/invisible-handshake-paper-r0-2026-11-17` / Draft PR #475; check exact branch head before execution.
+
+---
+
 # THE INVISIBLE HANDSHAKE · Bounded Paper Prototype R0 · Return
 
 **Date:** 2026-11-17
