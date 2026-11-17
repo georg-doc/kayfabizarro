@@ -1,0 +1,114 @@
+{
+ "id": "kfb_kit_spy_gun_silencer",
+ "origin": "kit-original",
+ "use": "target",
+ "source": {
+  "path": "dropbox:KFB_HUB/50_BLENDER/WSB_REIHE_R1/6_SPY/waffen/KFB_Spy_Gun.r1.glb",
+  "sha256": "b61f4f54fce1ceb7bc4a6f566a537d1acd1886a90637139ea2bce6c6802c55d5",
+  "private": true,
+  "kit": {
+   "name": "KayKit Spy",
+   "file": "Spy_Gun.gltf"
+  },
+  "change": "nur Ankerknoten ergänzt; Geometrie/Material/Textur unverändert"
+ },
+ "grip": {
+  "typ": "Einhand-Pistole mit Schalldämpfer",
+  "soHaeltManSie": "Wie die Pistole; der Schalldämpfer verlängert den Lauf, die Mündung springt an seine Spitze (KFB_Muzzle_Silencer).",
+  "regel": "WEAPON_GRIP_MODELS_R1"
+ },
+ "mount": {
+  "kind": "source-slot",
+  "slot": "handslot.r",
+  "slotOffset": {
+   "rotation": [
+    0,
+    0.70710678,
+    0,
+    0.70710678
+   ],
+   "reason": "kit-axis-mismatch",
+   "rule": "V-581",
+   "evidence": "KFB_HUB/50_BLENDER/WSB_REIHE_R1/6_SPY/proof/waffen (Lauf nach vorn) + data/muendung_ranged_*.json (Lauf-Gier im Zielen +1,06° (2H) bzw. +1,3° (1H))"
+  },
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/spygun_mount_measure.json#clips (handslot.r, slotOffset Ry +90°, FB Web-Kanon r1j, Ranged_1H_Aiming/Shoot/Shooting unverändert, Durchstich 0) + dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/spygun_silencer_mount_measure.json + dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/belege/WAFFEN_NACHWEIS_R1_halterung_fb.jpg"
+ },
+ "modelUnchanged": true,
+ "nativeClipsUnchanged": true,
+ "perFrameWeaponRotation": false,
+ "perFrameArmPostPose": false,
+ "muzzle": {
+  "kind": "source-anchor",
+  "node": "KFB_Muzzle",
+  "forwardLocal": [
+   0,
+   0,
+   1
+  ],
+  "localTranslation": [
+   0,
+   0.15,
+   0.511
+  ],
+  "rule": "V-579",
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/spygun_mount_measure.json#muzzle_anchor + #clips.Ranged_1H_Shoot (Abgang 0,2667 s; Lauf-Gier [-17.98, 3.85]°, Nicken [-21.55, 17.18]° über den Clip)",
+  "variants": [],
+  "primary": {
+   "ref": "private:kaykit/6 - December 2023 - Action Figure/assets/gltf/Muzzleflash.gltf",
+   "sha256": "6f772ef7fd26f35abe5cac844e31defdbe12e54c1feca463fee53b5408bc05cd",
+   "private": true,
+   "asIs": true
+  },
+  "secondary": {
+   "ref": "private:kaykit/6 - December 2023 - Action Figure/assets/gltf/Muzzleflash_Long.gltf",
+   "sha256": "b8232b68245ccc2261f22d8f9172b142bd5fc6b49cec7a1fe1b8396aac0616e8",
+   "private": true,
+   "asIs": true
+  },
+  "aufsatz": {
+   "id": "schalldaempfer",
+   "teil": "Silencer",
+   "node": "KFB_Muzzle_Silencer",
+   "parent": "Silencer",
+   "localTranslation_imTeil": [
+    0,
+    0,
+    0.597
+   ],
+   "localTranslation_imSpyGun": [
+    0,
+    0.15,
+    1.108
+   ],
+   "forwardLocal": [
+    0,
+    0,
+    1
+   ],
+   "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/spygun_silencer_mount_measure.json#muzzle_anchor",
+   "regel": "Mündung wandert mit dem Aufsatz (KFB_Muzzle ↔ KFB_Muzzle_Silencer, V-579). Vertrags-Anker ist KFB_Muzzle; WS1 schaltet zur Laufzeit um."
+  }
+ },
+ "release": {
+  "clip": "Ranged_1H_Shoot",
+  "seconds": 0.2667,
+  "clipDuration": 1.0667,
+  "evidence": "dropbox:KFB_HUB/50_BLENDER/WAFFEN_NACHWEIS_R1/data/spygun_mount_measure.json#clips.Ranged_1H_Shoot.abgang_s (wie kfb_kit_gun_pistol_prototype: Ranged_1H_Shoot 0,2667 s)",
+  "oncePerAction": true
+ },
+ "axis": "kit",
+ "projectileDirection": "muzzle",
+ "handCount": "source",
+ "instances": 1,
+ "status": "SOURCE_PROFILE_NOT_GAMEPLAY_ACCEPTANCE",
+ "by": "WSB Waffen-Nachweis R1",
+ "date": "2026-11-17",
+ "figure": {
+  "id": "frizzlebob",
+  "rig": "Rig_Medium (FB_WEB_KANON r1j)",
+  "note": "Nur für FB gemessen"
+ },
+ "notes": [
+  "Nachweis-Runde 17.11.: instances, mount.evidence, muzzle (KFB_Muzzle, Quellen, variants), Aufsatz-Mündung als Zusatzfeld. Halterung unverändert (Ry +90°)."
+ ]
+}
