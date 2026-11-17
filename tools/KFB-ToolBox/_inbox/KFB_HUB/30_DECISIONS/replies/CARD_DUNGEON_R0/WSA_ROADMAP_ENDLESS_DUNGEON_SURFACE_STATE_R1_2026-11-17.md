@@ -33,7 +33,7 @@ Karten, HyperNorm und Farbbänder sind Darstellungszustände desselben Raums. Je
 
 Eine zustandsseitige Serialisierung ist noch keine vollständige Wiederherstellung zerstörter Geometrie. Letztere gehört zu Schritt 2 und braucht bestätigte Delta-/Snapshot-Daten des vorhandenen Geometriebesitzers.
 
-### 2 · Kleiner gestreamter Dungeon mit zwei Decks — GEPLANT
+### 2 · Kleiner gestreamter Dungeon mit zwei Decks — IN ARBEIT
 
 - [ ] Stabile Raumadressen aus Welt-Seed, Deck-/Karten-IDs und Generator-Version. Layout hängt nicht von Besuchsreihenfolge ab.
 - [ ] Inhalts-, Layout- und Dekorationszufall getrennt halten.
@@ -42,6 +42,18 @@ Eine zustandsseitige Serialisierung ist noch keine vollständige Wiederherstellu
 - [ ] Raumzustand nach Entladen/Wiederladen identisch: Entdeckung, Loot-IDs, Abschluss, Oberflächenmaske und bestätigte Zerstörungs-Deltas.
 - [ ] Begrenzte jüngste Zerstörungszustände vorhalten; Rekonstruktion entfernter Räume nur nach expliziter Regel, nie sichtbar durch den Spieler hindurch.
 - [ ] Rückreise, Reset, Versionswechsel und längere Fahrt prüfen; Speicher erreicht ein Plateau statt weiter zu wachsen.
+
+#### Zwischenstand 2a · Wiederkehr zerstörter Räume
+
+- [x] Versionierter Checkpoint mit tatsächlichem Solid-/Air-Feld, bestätigter nativer Trefferhistorie, Ablösungen und bekannten Bruchflächen; Oberflächenzustand, Entdeckung und Audio-Rezept bleiben erhalten.
+- [x] Wiederaufbau über denselben nativen Bruch-Besitzer; Shader-Maske und Rapier-Kollision geprüft. Folge-Treffer erzeugen bereits abgefallene Teile nicht erneut.
+- [x] Begrenzter, injizierter Residency-Besitzer: Laden/Entladen/Wiederkehr im Fünf-Adress-Funktionstest, echte Collider/Bodies werden freigegeben. Budgetüberschreitung hält den geladenen Raum statt gespeicherte Zerstörung still zu verwerfen.
+- [x] Privater Kartenraum: „Raumstand merken“ und „Zum Eingang & Wiederherstellen“. Speicherung nur in der laufenden Sitzung, nicht über einen Seiten-Neustart hinweg.
+- [ ] Den Residency-Besitzer in einen tatsächlich durchlaufbaren Mehrraum-Plan integrieren. Die fünf Testadressen sind keine fünf bereits verbundenen Spielräume.
+- [ ] Zweiten realen Deck-Kartensatz samt Quellenmanifest aufnehmen; im Site-Paket liegt derzeit nur `forget_utopia`. Keine Umbenennung desselben Decks als Ersatz.
+- [ ] Karten-/GPU-Ressourcenhaushalt, Sicht-/Geschwindigkeits-Vorladen, freie Rückwege und durchgehenden Guide live abnehmen. Der bestandene Headless-Physiktest ersetzt diese Prüfung nicht.
+
+Kurzlebige Trümmer werden beim Wiederladen nicht erneut ausgespielt. Abgelöste Bereiche bleiben als fehlendes Material erhalten. Native Felder werden ohne Waffen-VFX aus bestätigter Historie reproduziert; der native Algorithmus ist über die Checkpoint-Revision gebunden. Ein Versionswechsel braucht eine explizite Migration oder Ablehnung.
 
 ### 2b · Räumliche Audio-Rezepte — GEPLANT, Datenanschluss in Schritt 1
 
