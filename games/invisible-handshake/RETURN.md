@@ -1,3 +1,19 @@
+## Additive handoff · R0.5 Simulation + Overton/HyperNormalisation · 2026-11-17
+
+**Outcome:** Added a bounded, playable *proposal* for a shared movable Overton Window, separating objectively visible game-state from publicly asserted story, with Kayfabe/Bizarro, PsyOps/False Flags and fictional "MKUltra 4.0" as narrative skins on existing actions. Existing R0.4 2–6-player first, optional Solo remains product priority; no new owner, no fourth resource, no mandatory improv scoring.
+
+**Implementation/design files:** [Overton/HyperNormalisation proposal](OVERTON_HYPERNORMALISATION_R05_2026-11-17.md) (Window spans 2/4 Market slots, 0 vs 1 FAVOR recruit, P04 shifts ±1 and recruits one card; experimental and NOT in R0.4 print rules); [exhaustive executable probe](OVER_TON_WINDOW_PROBE_R05.js); [bot simulation report](SIMULATION_R05_REPORT_2026-11-17.md), [compact machine results](SIM_R05_COMPACT_RESULTS.json); [WSA Research Atlas handoff](ATLAS_RESEARCH_HANDOFF_R05_2026-11-17.md) for Junta!, Machiavelli, Sun Tzu, Hegel, Overton, HyperNormalisation, psychology, institutional power, geopolitics, and source tiers. Source owner research Atlas PR #394 and MKULTRA/Monarch PR #408 are read-only; **Atlas research handoff NOT RUN** and not a new scheduled task.
+
+**Actual checks:** baseline R0.4 (without Overton change) Python bot simulation **3,500 complete eight-round games** over 14 × 250 seeded variants; main R0 model comparisons for 2/4/6 players and Solo; no human action/time measurement. Results: a 2-player always-VETO game yielded **5.6% successful POACH**, 4-player 18.6%, six-player 29.5%; changing opponent policy matters. Solo R0.4 System human wins **73.6%** with always-VETO and **23.6%** with human never-VETO (System still auto-VETOs): **not balance-approved**. All 56 slots are proxy, four role agendas missing and left neutral. Final PUBLIC HEARING probability 50% can harshly affect scoring. Overton independent probe: **48 legal affordability combinations, 24 free + 24 one-FAVOR, four valid shifts and eight shift+free-recruit pairs**, checked by Node.js; NOT a full-game Overton A/B simulation. Reproducible code/results exist as this chat's sandbox attachments; GitHub has the compact case summary and Overton source probe.
+
+**Public/test status:** no human games, no published new 12-card Overton/HyperNormalisation PDF, no art, no measured turn times, no browser Stage or Live route, no new KFB Hub tile. Existing printable R0.4 Quickstart and cards are unchanged, no silent rule promotion; single 56-card proposed shared deck remains 6+30+12+8.
+
+**Unresolved:** does a random 4-card Market row convey true political Overton acceptance or only an arbitrary attention tax? (Issue-spectrum B is alternate only.) Does window cost temper veto lock, how much does final-round suspension dominate, is Solo excessively easy/hard by veto policy, 5–6 player turn fatigue, paper-improv optionality, and real human fun.
+
+**One next gate:** 2-player physical A/B microtest with same 12 cross-sphere cards **WITHOUT vs WITH** movable window; observe POACH/VETO, discourse agency, last-round score shocks, Kayfabe/Bizarro description and optional one Solo System turn. Georg KEEP/TUNE/FAIL before adding 56 full texts, final visual assets, Overton cards or runtime. Branch/PR status must be re-fetched; do not merge/publish.
+
+---
+
 ## Additive Return · R0.4 Cross-Sphere / BGA donor audit / Solo optional · 2026-11-17
 
 **Outcome:** Text-only 12-card, six-sphere physical microtest candidate ready; **2–6 players are primary**, Solo is optional same-56-card sidecar. Exact owner remains `georg-doc/kayfabizarro` / `games/invisible-handshake/` · branch `design/invisible-handshake-paper-r0-2026-11-17` · Draft PR #475 · source donors Atlas PR #394 and MKULTRA research PR #408 read-only.
