@@ -1,3 +1,7 @@
+## Publication receipt · Physics · 2026-11-17
+
+Content commit: 3be3616a0cf7d9ba03f36879458c1b0fdc362d21, exact branch head and all 17 changed files fetched and byte-verified. Site version 28: source f36e9b17bf3551e3c660b3c6018919d6f57adf70, deployment appgdep_6afb9d4569e881918804f3cb574e8e5e succeeded. Route: https://kfb-research-atlas.frizzlebob.chatgpt.site/physics.html . Saved version/source read back. Owner-private audience unchanged. Live browser reaches the sign-in gate; authenticated live content not visually verified. Local page rendering and source disclosure verified. Site checkout clean. No game code changed. Next gate: Georg reviews physics package and proposed 56-card deck framing.
+
 ## 2026-11-17 · Physics foundations and 56-card handoff
 
 Owner: hidden-cosmology-atlas; branch research/hidden-cosmology-atlas-2026-10-13; baseline aded465e4b4704bc1a8a0a3800daa10c0291a242; draft PR #394.
