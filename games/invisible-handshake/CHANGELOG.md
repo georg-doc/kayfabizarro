@@ -23,6 +23,11 @@ One next gate: Georg plays one solo and one2-person round, checks whether depend
 ---
 # The Invisible Handshake · Additive changelog
 
+## 2026-11-17 · R15C six outer narratives even with two humans · USER CORRECTION
+
+Georg clarified **six face-up outer faction Narratives are dealt in every game**, with n humans and `6−n` randomly revealed NPC narratives; cards may be temporarily missing only after removal. **One Fear/Hope/Hate D6 maximum per occupied outer card**, all three normally occupy distinct outer cards; center Focus never holds dice. The previously proposed R15B `two other dice different slots` gating condition is tautological, **REJECTED**. Wrong earlier two-human "dice stack" rationale withdrawn. [Owner spatial correction](SIX_OUTER_NARRATIVES_SINGLE_DIE_R15C_2026-11-17.md), [test report](SIX_OUTER_SINGLE_DIE_TEST_REPORT_R15C_2026-11-17.md): 600 setups, 5,400 MOVE cases, 1,800 SWAP cases, 1,800 legal relocation choices; **not human or full-game play**. Corrected 50-card stock `43−3n` (37 at 2H+4NPC, 25 at 6H). NPC actions/refill and center compensation with NPC contributor explicitly still open. Historical R14/R15 tests are not current corrected simulations. Return, handoff, router update; no Stage/Hub or merge. One gate: explicit minimal NPC policy and 2H+4NPC versus 6H stress.
+
+
 ## 2026-11-17 · R15B Focus release after borromean outer collapse · CANDIDATE
 
 - Georg explicitly rejected putting Fear/Hope/Hate dice on the central Focus card. [New R15B design](FOCUS_COLLAPSE_R15B_CANDIDATE_2026-11-17.md): the center is a **systemic narrative**, released/reframed on an **outer** deterministic 6→7 / 1→0 collapse. Actor gets R14 outer trophy on upper collapse; different outer-card contributor may receive center as compensation; lower collapse burns outer and may cycle/discard center; same-actor self-harvest never yields a center double trophy.
