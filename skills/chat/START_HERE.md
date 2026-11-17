@@ -1,3 +1,9 @@
+## ADDITIVE GAME-DESIGN TUNE · 2026-11-17 · THE INVISIBLE HANDSHAKE R0.2 MEDIA POWER
+
+Georg refined the independent R0 paper-game candidate on existing owner `games/invisible-handshake/`, branch `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475. Read [R0.1 semantics](../../games/invisible-handshake/SEMANTICS_R01_2026-11-17.md) and [R0.2 media/culture ecosystem](../../games/invisible-handshake/MEDIA_ECOSYSTEM_R02_2026-11-17.md): **INFLUENCE** replaces VOICE; **RESOURCES** proposed for MONEY; RULES includes lawfare. Fictional podcasts, news, NGOs, platforms, fact-checking and cultural/strategic communication stay inside existing 56 slots and RECRUIT/POACH/VETO/PLOT. FAVOR remains the only spendable token. No human playtest, R0.2 print master, art, game code, Stage or Hub Live tile. Existing KFB and Atlas owners protected. [Owner Return](../../games/invisible-handshake/RETURN.md). **Gate:** Georg microtests with R0.2 terminology and one podcast-flip scenario; KEEP/TUNE/FAIL.
+
+---
+
 ## ADDITIVE GAME-DESIGN CANDIDATE · 2026-11-17 · THE INVISIBLE HANDSHAKE R0
 
 A separate **text-only, independent analog card-game** paper prototype is on `design/invisible-handshake-paper-r0-2026-11-17` (pending Draft PR), owner `games/invisible-handshake/`. Source brief: Research Atlas `packages/historical-texts/GAME_MECHANICS_BRIEF.md` on `research/hidden-cosmology-atlas-2026-10-13` / PR #394. Twelve original test cards, English Quickstart, 56-slot budget, four player-count capacity calculations and three written dry runs; **0 human playtests, 0 Stage publication**. KFB rules/runtime remain unchanged. Human gate: Georg tests the 12-card microloop (KEEP/TUNE/FAIL); do not create a new Hub live tile or full deck before that gate. [R0 Return](../../games/invisible-handshake/RETURN.md).
