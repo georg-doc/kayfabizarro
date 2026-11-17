@@ -1,3 +1,5 @@
+> **2026-11-17 · R0.6 borromean RAF pyramid alternative:** Georg proposed **three existing colored R/A/F D6** as a shared physical triangle, with faces 1–6 rotatable or dice positions swappable among RESOURCES/RULES/INFLUENCE corners. [R0.6 candidate](BORROMEAN_RAF_PYRAMID_R06_2026-11-17.md) and [static test](TEST_REPORT_R06_2026-11-17.md) are **a separate A/B alternative** to the 2/4 MARKET window described below. Do **not** stack costs or silently change R0.4 print rules. [R0.6 WSA research addendum](ATLAS_PSYCHOLOGICAL_INFLUENCE_ADDENDUM_R06_2026-11-17.md) is prepared, not executed.
+
 # THE INVISIBLE HANDSHAKE · R0.5 · Overton Window & HyperNormalisation
 **Date:** 2026-11-17 · **Status:** TUNE CANDIDATE / MECHANICS TEST ONLY · no human playtest.
 **Owner:** `games/invisible-handshake/` · **Branch:** `design/invisible-handshake-paper-r0-2026-11-17` · **Draft PR:** #475 · No auto merge, no game runtime, no public Stage, no new card art.
