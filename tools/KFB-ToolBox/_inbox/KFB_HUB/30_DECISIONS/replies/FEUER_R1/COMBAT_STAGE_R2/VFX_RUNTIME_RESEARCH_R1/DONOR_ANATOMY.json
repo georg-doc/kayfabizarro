@@ -1,0 +1,88 @@
+{
+  "quarks": {
+    "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+    "file": "packages/quarks.examples/muzzleFlashDemo.js",
+    "systems": [
+      "beam",
+      "muzzle1",
+      "muzzle2",
+      "flash",
+      "smoke",
+      "particles"
+    ],
+    "warning": "Beam is local static muzzle component, not a moving projectile. No material impact in this example."
+  },
+  "effekseer": {
+    "patchCommit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+    "path": "source/andrewfm/hit_eff.efkproj",
+    "bytes": 19204,
+    "nodes": [
+      [
+        "Impact Orientation",
+        50,
+        null
+      ],
+      [
+        "Small Flashes",
+        15,
+        3
+      ],
+      [
+        "Action Lines",
+        9,
+        2
+      ],
+      [
+        "Motion Sparks",
+        18,
+        6
+      ],
+      [
+        "Spark Sparkles",
+        30,
+        7
+      ],
+      [
+        "Glow",
+        12,
+        null
+      ],
+      [
+        "Big Flash",
+        9,
+        1
+      ]
+    ],
+    "fields": [
+      "name",
+      "lifeCenterFrames",
+      "explicitOffsetFrames"
+    ],
+    "nullMeaning": "not explicitly present, editor defaults not independently verified",
+    "sourceMeasurements": {
+      "redHit": {
+        "w": 5.697011947631836,
+        "h": 5.865812301635742,
+        "lifeFrames": 54,
+        "activeFrames": 18
+      },
+      "sparkHit": {
+        "w": 11.366531252861023,
+        "h": 13.571977615356445,
+        "lifeFrames": 120,
+        "activeFrames": 48
+      }
+    },
+    "measurementsBy": "Patch author bake; not rerun by this researcher"
+  },
+  "runtimeByteMeasurements": {
+    "source": "actual public patch mirror blobs",
+    "javascript": 168668,
+    "wasm": 1403622,
+    "gzipLocalJavascript": 37076,
+    "gzipLocalWasm": 372191,
+    "totalRaw": 1572290,
+    "totalLocalGzip": 409267,
+    "notIncluded": "effects, real HTTP content encoding/header/transfer/startup measurement"
+  }
+}

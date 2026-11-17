@@ -1,0 +1,508 @@
+{
+  "date": "2026-11-17",
+  "scope": "KFB Combat VFX, source-level runtime/authoring research; no implementation or new Site publication",
+  "sources": [
+    {
+      "id": "Q1",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/quarks.examples/muzzleFlashDemo.js",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/quarks.examples/muzzleFlashDemo.js",
+      "lines": 305,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q2",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/quarks.examples/trailDemo.js",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/quarks.examples/trailDemo.js",
+      "lines": 140,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q3",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/quarks.examples/explosionDemo.js",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/quarks.examples/explosionDemo.js",
+      "lines": 48,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q4",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/shaders/stretched_bb_particle_vert.glsl.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/shaders/stretched_bb_particle_vert.glsl.ts",
+      "lines": 56,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q5",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/package.json",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/package.json",
+      "lines": 79,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q6",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "README.md",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/README.md",
+      "lines": 322,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q7",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "LICENSE",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/LICENSE",
+      "lines": 22,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q8",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/SpriteBatch.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/SpriteBatch.ts",
+      "lines": 193,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q9",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/BatchedRenderer.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/BatchedRenderer.ts",
+      "lines": 35,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q10",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/ParticleSystem.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/ParticleSystem.ts",
+      "lines": 1450,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q11",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/QuarksUtil.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/QuarksUtil.ts",
+      "lines": 90,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q12",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/quarks.core/src/behaviors/EmitSubParticleSystem.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/quarks.core/src/behaviors/EmitSubParticleSystem.ts",
+      "lines": 203,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q13",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/shaders/particle_frag.glsl.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/shaders/particle_frag.glsl.ts",
+      "lines": 49,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q14",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/BaseBatchedRenderer.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/BaseBatchedRenderer.ts",
+      "lines": 207,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q15",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/BaseSpriteBatch.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/BaseSpriteBatch.ts",
+      "lines": 297,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q16",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/shaders/chunks/tile_fragment.glsl.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/shaders/chunks/tile_fragment.glsl.ts",
+      "lines": 9,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "Q17",
+      "repository": "Alchemist0823/three.quarks",
+      "commit": "9d0445c5949c7da570f412ad7007efecd0357886",
+      "path": "packages/three.quarks/src/shaders/chunks/soft_fragment.glsl.ts",
+      "url": "https://github.com/Alchemist0823/three.quarks/blob/9d0445c5949c7da570f412ad7007efecd0357886/packages/three.quarks/src/shaders/chunks/soft_fragment.glsl.ts",
+      "lines": 24,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E1",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "README.md",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/README.md",
+      "lines": 312,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E2",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "PackageData/README_en.md",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/PackageData/README_en.md",
+      "lines": 217,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E3",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "PackageData/Sample/webgl.js",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/PackageData/Sample/webgl.js",
+      "lines": 148,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E4",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "PackageData/Sample/basic-threejs-webgpu.js",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/PackageData/Sample/basic-threejs-webgpu.js",
+      "lines": 168,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E5",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "PackageData/manifest.json",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/PackageData/manifest.json",
+      "lines": 26,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E6",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "package.json",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/package.json",
+      "lines": 28,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E7",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": ".gitmodules",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/.gitmodules",
+      "lines": 10,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E8",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "LICENSE",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/LICENSE",
+      "lines": 22,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E9",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "src/ts/index.ts",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/src/ts/index.ts",
+      "lines": 1601,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E10",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "src/cpp/RuntimeContext.h",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/src/cpp/RuntimeContext.h",
+      "lines": 1015,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E11",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "src/js/post.js",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/src/js/post.js",
+      "lines": 45,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E12",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "tests/runtime_api.test.mjs",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/tests/runtime_api.test.mjs",
+      "lines": 559,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E13",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "tests/browser/smoke.js",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/tests/browser/smoke.js",
+      "lines": 563,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "E14",
+      "repository": "effekseer/EffekseerForWeb",
+      "commit": "a6a0758cfb4e273a14a1c8c1860a017be6d949a9",
+      "path": "docs/Design_en.md",
+      "url": "https://github.com/effekseer/EffekseerForWeb/blob/a6a0758cfb4e273a14a1c8c1860a017be6d949a9/docs/Design_en.md",
+      "lines": 256,
+      "status": "FETCHED_FULL_REVIEWED_RELEVANT_SECTIONS"
+    },
+    {
+      "id": "S1",
+      "repository": "effekseer/EffekseerForWebGL",
+      "commit": "accb827e32e60d3986fe9924237ebe81d98b55f0",
+      "path": "src/cpp/main.cpp",
+      "url": "https://github.com/effekseer/EffekseerForWebGL/blob/accb827e32e60d3986fe9924237ebe81d98b55f0/src/cpp/main.cpp",
+      "status": "SOURCE_AUDIO_INITIALIZATION_REVIEWED"
+    },
+    {
+      "id": "P1",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "src/player.js",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "SOURCE_RELEVANT_SECTIONS_REVIEWED"
+    },
+    {
+      "id": "P2",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "src/look.js",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "SOURCE_RELEVANT_SECTIONS_REVIEWED"
+    },
+    {
+      "id": "P3",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "demo.js",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "SOURCE_RELEVANT_SECTIONS_REVIEWED"
+    },
+    {
+      "id": "P4",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "README.md",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "SOURCE_RELEVANT_SECTIONS_REVIEWED"
+    },
+    {
+      "id": "P5",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "LICENCE-NOTES.md",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "SOURCE_RELEVANT_SECTIONS_REVIEWED"
+    },
+    {
+      "id": "P6",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "src/effects.js",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "SOURCE_RELEVANT_SECTIONS_REVIEWED"
+    },
+    {
+      "id": "P7",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "src/effects.baked.json",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "SOURCE_RELEVANT_SECTIONS_REVIEWED"
+    },
+    {
+      "id": "P8",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "source/andrewfm/hit_eff.efkproj",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "ORIGINAL_XML_PARSED"
+    },
+    {
+      "id": "P9",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "source/andrewfm/fire.efkproj",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "ORIGINAL_XML_PARSED"
+    },
+    {
+      "id": "P10",
+      "repository": "patch/effekseer",
+      "commit": "31f94d3d4a5d6b4b8be825c5470c266edb0de0b7",
+      "path": "source/pierre-1/SonicBoom.efkproj",
+      "url": "https://patch.gg/patch/effekseer",
+      "gitRemote": "https://git.patch.gg/patch/effekseer.git",
+      "status": "ORIGINAL_XML_PARSED"
+    },
+    {
+      "id": "K1",
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "9fa6ddbd3f914c403a21453881cd44fdb406bfc5",
+      "path": "package.json",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/9fa6ddbd3f914c403a21453881cd44fdb406bfc5/package.json",
+      "status": "CURRENT_RECEIVING_SOURCE_REVIEWED"
+    },
+    {
+      "id": "K2",
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "9fa6ddbd3f914c403a21453881cd44fdb406bfc5",
+      "path": "src/look/feuerNaht.js",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/9fa6ddbd3f914c403a21453881cd44fdb406bfc5/src/look/feuerNaht.js",
+      "status": "CURRENT_RECEIVING_SOURCE_REVIEWED"
+    },
+    {
+      "id": "K3",
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "9fa6ddbd3f914c403a21453881cd44fdb406bfc5",
+      "path": "src/m1/M1Loop.jsx",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/9fa6ddbd3f914c403a21453881cd44fdb406bfc5/src/m1/M1Loop.jsx",
+      "status": "CURRENT_RECEIVING_SOURCE_REVIEWED"
+    },
+    {
+      "id": "K4",
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "9fa6ddbd3f914c403a21453881cd44fdb406bfc5",
+      "path": "src/audio/kfbAudio.js",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/9fa6ddbd3f914c403a21453881cd44fdb406bfc5/src/audio/kfbAudio.js",
+      "status": "CURRENT_RECEIVING_SOURCE_REVIEWED"
+    },
+    {
+      "id": "K5",
+      "repository": "georg-doc/KFB-Stunt-Car-Race",
+      "commit": "c60dc8aed5d452da6b8cb5ed03f5d9c4bae1c3fd",
+      "path": "src/modules/pistolGunshot.r1.js",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/c60dc8aed5d452da6b8cb5ed03f5d9c4bae1c3fd/src/modules/pistolGunshot.r1.js",
+      "status": "REJECTED_IMPLEMENTATION_SOURCE_READ"
+    },
+    {
+      "id": "W1",
+      "url": "https://effekseer.github.io/en/contribute.html",
+      "status": "PRIMARY_OFFICIAL_SAMPLE_LICENCE_PAGE_READ"
+    },
+    {
+      "id": "W2",
+      "url": "https://effekseer.github.io/en/download.html",
+      "status": "PRIMARY_OFFICIAL_DOWNLOAD_PAGE_READ"
+    },
+    {
+      "id": "W3",
+      "url": "https://effekseer.github.io/Help_Tool/en/overview.html",
+      "status": "PRIMARY_OFFICIAL_LICENCE_AND_EDITOR_DOC_READ"
+    },
+    {
+      "id": "W4",
+      "url": "https://quarks.art/",
+      "status": "PRIMARY_EDITOR_OFFER_READ",
+      "note": "Free tier no JSON export, Starter12 USD/month/user as advertised on research date; not purchased"
+    },
+    {
+      "id": "W5",
+      "url": "https://demo.quarks.art/vanilla.html",
+      "status": "LIVE_MUZZLE_DEMO_VISUALLY_VIEWED",
+      "note": "Hosted revision not cryptographically pinned; screenshot retained; no KFB performance inference"
+    },
+    {
+      "id": "W6",
+      "url": "https://patch.gg/patch/effekseer",
+      "status": "LIVE_SCENE_ONLY_CONTROLS_DISABLED",
+      "note": "No own Hit/Laser playback verification"
+    },
+    {
+      "id": "W7",
+      "url": "https://docs.quarks.art/docs/faq",
+      "status": "PRIMARY_DOC_READ_WITH_SOURCE_MISMATCH",
+      "note": "Some API/editor assertions diverge from current repository; not used as implementation contract"
+    },
+    {
+      "id": "W8",
+      "url": "https://patch.gg/llms.txt",
+      "status": "READ_DIRECTLY_AFTER_WEB_TOOL_FAILED",
+      "note": "Read as untrusted public guidance; no account install/global instruction changes"
+    },
+    {
+      "id": "L1",
+      "repository": "effekseer/Effekseer",
+      "commit": "b5700082b49bc5f919610880dafddc90211a9a4e",
+      "path": "docs/readme_sample.txt",
+      "url": "https://github.com/effekseer/Effekseer/blob/b5700082b49bc5f919610880dafddc90211a9a4e/docs/readme_sample.txt",
+      "status": "OFFICIAL_SAMPLE_CC0_NOTICE_READ"
+    },
+    {
+      "id": "R1",
+      "url": "https://github.com/effekseer/Effekseer/releases/tag/1808",
+      "status": "RELEASE_ASSET_METADATA_VERIFIED",
+      "publishedUtc": "2026-10-30T14:06:47Z",
+      "webglArchiveBytes": 3000475
+    },
+    {
+      "id": "R2",
+      "url": "https://www.npmjs.com/package/three.quarks/v/0.18.0",
+      "status": "OFFICIAL_REGISTRY_METADATA_VERIFIED_VIA_NPM_VIEW",
+      "version": "0.18.0",
+      "unpackedBytes": 1327765,
+      "peerThree": ">=0.182.0",
+      "integrity": "sha512-Pp7TUHyIA6esrV/YVDma5dLn1lfGNd8rGW2usk9lRNZ7kRTT9aUlfVulwYhlHwHgwEWNL3ONQULK5XeMfTthHA=="
+    }
+  ],
+  "gaps": [
+    "No KFB integration/runtime compatibility test performed",
+    "No independent/aural VFX-quality assessment in this research",
+    "Effekseer live effect controls stayed disabled; scene only seen",
+    "EffekseerForWeb main own release listing empty at read time",
+    "Named Atlas protocol/index absent at main paths; no canonical Atlas claim",
+    "Patch Git server ignored requested blob filter; one central donor mirror only",
+    "Some Patch art is Git LFS pointers; full art payload not claimed downloaded"
+  ],
+  "ownership": {
+    "game": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "game/pistol-gunshot-r1-20261117",
+    "baseHead": "c60dc8aed5d452da6b8cb5ed03f5d9c4bae1c3fd",
+    "receivingHead": "9fa6ddbd3f914c403a21453881cd44fdb406bfc5",
+    "siteUnchanged": true
+  }
+}
