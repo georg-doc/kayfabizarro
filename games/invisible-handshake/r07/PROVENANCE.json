@@ -1,0 +1,22 @@
+{
+  "dice": {
+    "origin": "georg-doc/kayfabizarro/media/3D_Assets/dice_ugur_lowpoly.glb",
+    "blob": "537dcbcce6485714be8906e2dd60ebddd348b88b",
+    "sha256": "fe6925df41ed4d36253eaf2d5486725a51e735adda41c59808c6dd20fc073695",
+    "isolation": "Browser rendered unchanged model before recoloring/orientation.",
+    "adaptation": "Red yellow blue from Travel sky-dice.js; face normals computed from21 connected pip components."
+  },
+  "race_reference": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "files": [
+      "race/BASELINE.json",
+      "race/src/world.js",
+      "AGENTS.md"
+    ],
+    "adoption": "declarative scene ownership and earthy material palette only; no race geometry/code copied",
+    "git_transport": "existing mirror authentication unavailable; connector read used; no clone fallback"
+  },
+  "three": "0.170.0 MIT",
+  "owner": "games/invisible-handshake",
+  "site_id": "appgprj_6afc38fcfc5c8191beb9ffc978208e6c"
+}
