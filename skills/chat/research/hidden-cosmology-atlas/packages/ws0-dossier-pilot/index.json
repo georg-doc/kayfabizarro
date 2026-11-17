@@ -1,0 +1,49 @@
+{
+  "schema": "kfb.atlas.pilot-index.v1",
+  "owner": "Hidden Cosmology Atlas",
+  "status": "PILOT_ACCEPTED_V1258_PAUSED_UNTIL_POST_MVP",
+  "entries": [
+    {
+      "id": "WS0-01",
+      "title": "Surveillance: follow the access path",
+      "file": "entries/WS0-01.json",
+      "cardRefs": [
+        {
+          "cid": "cid:observation_underground:35",
+          "cardNumber": 35,
+          "registryPath": "registry/assets/v1/decks/observation_underground.json",
+          "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+          "joinStatus": "deckId/cardNumber verified in pinned registry; cid format follows existing manifest contract"
+        }
+      ]
+    },
+    {
+      "id": "WS0-02",
+      "title": "Roko’s Basilisk: a threat inside an argument",
+      "file": "entries/WS0-02.json",
+      "cardRefs": [
+        {
+          "cid": "cid:kayfabizarro_philosophy:30",
+          "cardNumber": 30,
+          "registryPath": "registry/assets/v1/decks/kayfabizarro_philosophy.json",
+          "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+          "joinStatus": "deckId/cardNumber verified in pinned registry; cid format follows existing manifest contract"
+        }
+      ]
+    },
+    {
+      "id": "WS0-03",
+      "title": "Hypernormalisation: find the seam in the sealed room",
+      "file": "entries/WS0-03.json",
+      "cardRefs": [
+        {
+          "cid": "cid:ignore_dystopia:41",
+          "cardNumber": 41,
+          "registryPath": "registry/assets/v1/decks/ignore_dystopia.json",
+          "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+          "joinStatus": "deckId/cardNumber verified in pinned registry; cid format follows existing manifest contract"
+        }
+      ]
+    }
+  ]
+}

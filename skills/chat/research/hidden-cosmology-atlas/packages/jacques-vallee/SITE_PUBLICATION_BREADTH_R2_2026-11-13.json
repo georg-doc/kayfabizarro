@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-13",
+  "contentCommit": "9d265298f9dade03cb9526660c05fab74c32e127",
+  "siteSourceCommit": "410892383665357c6d1a71cf15e3955b1997f2d9",
+  "deployment": {
+    "id": "appgdep_6af6541047f081919372f249c35b4691",
+    "project_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc",
+    "title": "KFB Research Atlas",
+    "version_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc~appgver_6bcf3324624081919caf941a32600ddf",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://kfb-research-atlas.frizzlebob.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae66f5da80c8191b5b130f20a47c2bc",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-13T00:04:44.955879+00:00"
+  },
+  "coverage": {
+    "themes": 24,
+    "sources": 42,
+    "comparisonCards": 8
+  },
+  "tests": [
+    "All 26 changed GitHub files fetched and matched after branch update",
+    "Remote branch head matched content commit",
+    "JSON parsed and rendered theme count checked",
+    "Local browser: SETI filter returned one theme; More expanded; source link opened V35 in source register"
+  ],
+  "limitations": [
+    "Hosted visual readback remains login-gated; deployment service reports succeeded.",
+    "Books and interviews have per-source reading scopes, not blanket full-reading claims."
+  ],
+  "nextGate": "Georg reviews breadth and comparative lenses; no automatic single-case investigation."
+}

@@ -1,0 +1,891 @@
+{
+  "researchRunId": "ATLAS_C03_JH3_2026-11-01",
+  "agentId": "/root/postwar_profiles",
+  "inputGitSha": "5a63096cb3de8fdef0b8cbae374127d4cb5ea716",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "status": "LOCAL_DRAFT_UNREVIEWED",
+  "independentReviewer": null,
+  "lastReadOriginal": "2026-11-01",
+  "consumerReadyFor": [
+    "EDITORIAL_REVIEW_ONLY"
+  ],
+  "githubWrites": 0,
+  "productionAcceptance": false,
+  "duplicateCheck": {
+    "inventory": "skills/chat/research/hidden-cosmology-atlas/authors/README.md",
+    "result": "18 masters in inspected inventory; three proposed author paths explicitly returned 404 at pinned head",
+    "scope": "Exact author-owner paths only; not proof of absence from all repository text"
+  },
+  "profiles": [
+    {
+      "authorId": "gary-webb",
+      "sourceIds": [
+        "JH3-S01",
+        "JH3-S02",
+        "JH3-S03"
+      ],
+      "fieldsOfSense": [
+        "Investigative journalism and evidentiary scope",
+        "Contra-era accountability",
+        "Drug-policy reporting and scale claims"
+      ],
+      "nextGate": "Read a specific 1996 Webb passage or book page and its cited case record before upgrading any historical claim.",
+      "entityId": "gary-webb",
+      "canonicalName": "Gary Webb",
+      "recordKind": "SOURCE_LEAD_DOSSIER"
+    },
+    {
+      "authorId": "robert-parry",
+      "sourceIds": [
+        "JH3-S04",
+        "JH3-S05",
+        "JH3-S03"
+      ],
+      "fieldsOfSense": [
+        "Investigative journalism and source transmission",
+        "Intelligence oversight and reporting rules",
+        "Institutional memory and retrospective narration"
+      ],
+      "nextGate": "Obtain readable original Parry reporting and the exact underlying report passages he cited; preserve coauthor attribution for Brian Barger.",
+      "entityId": "robert-parry",
+      "canonicalName": "Robert Parry",
+      "recordKind": "SOURCE_LEAD_DOSSIER"
+    },
+    {
+      "authorId": "seymour-hersh",
+      "sourceIds": [
+        "JH3-S06",
+        "JH3-S07",
+        "JH3-S08"
+      ],
+      "fieldsOfSense": [
+        "War reporting and detention accountability",
+        "Inquiry mandates and command responsibility",
+        "Document custody and testimony"
+      ],
+      "nextGate": "Inspect the actual Taguba report pages cited in the article and one separately sourced official inquiry before widening responsibility claims.",
+      "entityId": "seymour-hersh",
+      "canonicalName": "Seymour Hersh",
+      "recordKind": "SOURCE_LEAD_DOSSIER"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "JH3-S01",
+      "workId": "JH3-W01",
+      "title": "Dark Alliance: Movie Tie-In Edition",
+      "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+      "byline": "Gary Webb (book); publisher description unsigned",
+      "publisher": "Seven Stories Press",
+      "publicationDate": "2014-09-30",
+      "sourceKind": "PUBLISHER_BOOK_DESCRIPTION",
+      "readScope": "HTML lines 31\u201359, 76\u201392: edition metadata and promotional description. No book body.",
+      "accessStatus": "READ_HTML",
+      "accessedAt": "2026-11-01",
+      "independenceGroup": "seven-stories-dark-alliance",
+      "limits": "Edition date only; publisher praise is not an independent historical finding.",
+      "language": "en",
+      "audioMinutes": 0,
+      "bookPagesRead": 0,
+      "pdfPageImagesViewed": 0,
+      "originalCreator": "Gary Webb (book); Seven Stories Press (catalog description)",
+      "eventDate": null,
+      "releaseDate": "2014-09-30",
+      "copyrightNotes": "Link and concise paraphrase only; no full copyrighted work reproduced. Government text and hosting/custody roles remain separately identified.",
+      "readLimitations": [
+        "Edition date only; publisher praise is not an independent historical finding.",
+        "No book pages, audio/video minutes or PDF images inspected."
+      ]
+    },
+    {
+      "sourceId": "JH3-S02",
+      "workId": "JH3-W02",
+      "title": "The CIA-Contra-Crack Cocaine Controversy: Chapter XII Conclusions",
+      "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch12.htm",
+      "byline": "US Department of Justice Office of Inspector General",
+      "publisher": "DOJ OIG",
+      "publicationDate": null,
+      "sourceKind": "GOVERNMENT_INVESTIGATION",
+      "readScope": "HTML lines 0\u20137, opening conclusions including named exceptions.",
+      "accessStatus": "READ_HTML",
+      "accessedAt": "2026-11-01",
+      "independenceGroup": "doj-oig-contra-investigation",
+      "limits": "Report issue/release date not verified from this excerpt. Institutional findings are limited to investigation scope, not a universal adjudication.",
+      "language": "en",
+      "audioMinutes": 0,
+      "bookPagesRead": 0,
+      "pdfPageImagesViewed": 0,
+      "originalCreator": "US Department of Justice Office of Inspector General",
+      "eventDate": null,
+      "releaseDate": null,
+      "copyrightNotes": "Link and concise paraphrase only; no full copyrighted work reproduced. Government text and hosting/custody roles remain separately identified.",
+      "readLimitations": [
+        "Report issue/release date not verified from this excerpt. Institutional findings are limited to investigation scope, not a universal adjudication.",
+        "No book pages, audio/video minutes or PDF images inspected."
+      ]
+    },
+    {
+      "sourceId": "JH3-S03",
+      "workId": "JH3-W03",
+      "title": "The CIA-Contra-Crack Cocaine Controversy: Chapter I, prior investigations",
+      "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch01p2.htm",
+      "byline": "US Department of Justice Office of Inspector General",
+      "publisher": "DOJ OIG",
+      "publicationDate": null,
+      "sourceKind": "GOVERNMENT_RETROSPECTIVE_ACCOUNT",
+      "readScope": "HTML lines 5\u201340: summaries of prior inquiries.",
+      "accessStatus": "READ_HTML",
+      "accessedAt": "2026-11-01",
+      "independenceGroup": "doj-oig-contra-investigation",
+      "limits": "Underlying Kerry, DEA and other documents not inspected. Same report as S02, not independent corroboration.",
+      "language": "en",
+      "audioMinutes": 0,
+      "bookPagesRead": 0,
+      "pdfPageImagesViewed": 0,
+      "originalCreator": "US Department of Justice Office of Inspector General",
+      "eventDate": null,
+      "releaseDate": null,
+      "copyrightNotes": "Link and concise paraphrase only; no full copyrighted work reproduced. Government text and hosting/custody roles remain separately identified.",
+      "readLimitations": [
+        "Underlying Kerry, DEA and other documents not inspected. Same report as S02, not independent corroboration.",
+        "No book pages, audio/video minutes or PDF images inspected."
+      ]
+    },
+    {
+      "sourceId": "JH3-S04",
+      "workId": "JH3-W04",
+      "title": "Hear Parry and Webb Discuss Contra-Cocaine",
+      "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+      "byline": "Robert Parry (editor note)",
+      "publisher": "Consortium News",
+      "publicationDate": "2014-10-02",
+      "sourceKind": "AUTHOR_RETROSPECTIVE_NOTE",
+      "readScope": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard.",
+      "accessStatus": "INDEXED_ORIGINAL_TEXT_DIRECT_403",
+      "accessedAt": "2026-11-01",
+      "independenceGroup": "parry-consortium-retrospective",
+      "limits": "Original-publisher indexed text only; claims about earlier reporting remain author self-report.",
+      "language": "en",
+      "audioMinutes": 0,
+      "bookPagesRead": 0,
+      "pdfPageImagesViewed": 0,
+      "originalCreator": "Robert Parry (editor note)",
+      "eventDate": "1996-12",
+      "releaseDate": "2014-10-02",
+      "copyrightNotes": "Link and concise paraphrase only; no full copyrighted work reproduced. Government text and hosting/custody roles remain separately identified.",
+      "readLimitations": [
+        "Original-publisher indexed text only; claims about earlier reporting remain author self-report.",
+        "No book pages, audio/video minutes or PDF images inspected."
+      ],
+      "eventDateNote": "Month only, author retrospective self-report."
+    },
+    {
+      "sourceId": "JH3-S05",
+      "workId": "JH3-W05",
+      "title": "CIA Inspector General Report, Volume II: The Contra Story \u2014 Findings",
+      "url": "https://irp.fas.org/cia/product/cocaine2/findings.html",
+      "byline": "CIA Office of Inspector General",
+      "publisher": "CIA; HTML reproduction hosted by Federation of American Scientists",
+      "publicationDate": "1998-10-08",
+      "sourceKind": "GOVERNMENT_REPORT_REPRODUCTION",
+      "readScope": "Findings paragraphs 57\u201369 (HTML lines 135\u2013209); title/date checked on volume index.",
+      "accessStatus": "READ_HTML",
+      "accessedAt": "2026-11-01",
+      "independenceGroup": "cia-oig-96-0143-ig-volume-ii",
+      "limits": "Read report discussion of reporting rules, not exhibits themselves or all case findings. FAS is custody mirror, not another witness.",
+      "language": "en",
+      "audioMinutes": 0,
+      "bookPagesRead": 0,
+      "pdfPageImagesViewed": 0,
+      "originalCreator": "CIA Office of Inspector General",
+      "eventDate": null,
+      "releaseDate": "1998-10-08",
+      "copyrightNotes": "Link and concise paraphrase only; no full copyrighted work reproduced. Government text and hosting/custody roles remain separately identified.",
+      "readLimitations": [
+        "Read report discussion of reporting rules, not exhibits themselves or all case findings. FAS is custody mirror, not another witness.",
+        "No book pages, audio/video minutes or PDF images inspected."
+      ],
+      "eventDateNote": "Report examines historical reporting rules including 1982 and 1995; not one event date."
+    },
+    {
+      "sourceId": "JH3-S06",
+      "workId": "JH3-W06",
+      "title": "Torture at Abu Ghraib",
+      "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+      "byline": "Seymour M. Hersh",
+      "publisher": "The New Yorker",
+      "publicationDate": "2004-05-03",
+      "sourceKind": "ORIGINAL_REPORTING",
+      "readScope": "Article body HTML lines 46\u201349 and 83\u2013118; excluded generated summary. Displayed date May 3; print issue May 10.",
+      "accessStatus": "READ_HTML",
+      "accessedAt": "2026-11-01",
+      "independenceGroup": "hersh-abu-ghraib-taguba",
+      "limits": "Partial article text; no photographs inspected, no complete article reading asserted.",
+      "language": "en",
+      "audioMinutes": 0,
+      "bookPagesRead": 0,
+      "pdfPageImagesViewed": 0,
+      "originalCreator": "Seymour M. Hersh",
+      "eventDate": null,
+      "releaseDate": null,
+      "copyrightNotes": "Link and concise paraphrase only; no full copyrighted work reproduced. Government text and hosting/custody roles remain separately identified.",
+      "readLimitations": [
+        "Partial article text; no photographs inspected, no complete article reading asserted.",
+        "No book pages, audio/video minutes or PDF images inspected."
+      ],
+      "releaseDateNote": "Displayed date 2004-05-03; print issue 2004-05-10. Initial online release not independently resolved."
+    },
+    {
+      "sourceId": "JH3-S07",
+      "workId": "JH3-W07",
+      "title": "Review of Department of Defense Detention and Interrogation Operations, S. Hrg. 108-868",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+      "byline": "US Senate Armed Services Committee; testimony by Antonio Taguba",
+      "publisher": "US Government Printing Office / GovInfo",
+      "publicationDate": "2005",
+      "sourceKind": "OFFICIAL_HEARING_TRANSCRIPT",
+      "readScope": "Taguba opening statement on May 11, 2004, HTML lines 4511\u20134594; adjacent questions lines 4735\u20134768. HTML transcription only.",
+      "accessStatus": "READ_HTML",
+      "accessedAt": "2026-11-01",
+      "independenceGroup": "taguba-800th-mp-investigation",
+      "limits": "2005 is volume printing year, not testimony date. Shares Taguba inquiry root with S06; not independent witnesses confirming every article allegation.",
+      "language": "en",
+      "audioMinutes": 0,
+      "bookPagesRead": 0,
+      "pdfPageImagesViewed": 0,
+      "originalCreator": "US Senate Armed Services Committee; testimony by Antonio Taguba",
+      "eventDate": "2004-05-11",
+      "releaseDate": null,
+      "copyrightNotes": "Link and concise paraphrase only; no full copyrighted work reproduced. Government text and hosting/custody roles remain separately identified.",
+      "readLimitations": [
+        "2005 is volume printing year, not testimony date. Shares Taguba inquiry root with S06; not independent witnesses confirming every article allegation.",
+        "No book pages, audio/video minutes or PDF images inspected."
+      ],
+      "releaseDateNote": "Printed volume year 2005 only; exact release date unknown."
+    },
+    {
+      "sourceId": "JH3-S08",
+      "workId": "JH3-W08",
+      "title": "Article 15-6 Investigation of the 800th Military Police Brigade \u2014 catalog",
+      "url": "https://exhibit.apus.edu/items/show/1219",
+      "byline": "Antonio Taguba (cataloged creator)",
+      "publisher": "American Public University System archive",
+      "publicationDate": null,
+      "sourceKind": "ARCHIVE_CATALOG",
+      "readScope": "Catalog metadata HTML lines 16\u201346. Thumbnail link inspected as image URL; report body not read.",
+      "accessStatus": "READ_HTML",
+      "accessedAt": "2026-11-01",
+      "independenceGroup": "taguba-800th-mp-investigation",
+      "limits": "Catalog date is not established report completion date. Discovery/custody lead only.",
+      "language": "en",
+      "audioMinutes": 0,
+      "bookPagesRead": 0,
+      "pdfPageImagesViewed": 0,
+      "originalCreator": "APUS archive (catalog); Antonio Taguba (cataloged report)",
+      "eventDate": null,
+      "releaseDate": null,
+      "copyrightNotes": "Link and concise paraphrase only; no full copyrighted work reproduced. Government text and hosting/custody roles remain separately identified.",
+      "readLimitations": [
+        "Catalog date is not established report completion date. Discovery/custody lead only.",
+        "No book pages, audio/video minutes or PDF images inspected."
+      ],
+      "catalogDate": "2004-05-05",
+      "releaseDateNote": "Catalog date not treated as report release date."
+    }
+  ],
+  "claims": [
+    {
+      "claimId": "JH3-C01",
+      "authorId": "gary-webb",
+      "claimKind": "PUBLISHER_ATTRIBUTION",
+      "text": "Seven Stories presents Dark Alliance as vindicated by later government inquiries.",
+      "sourceIds": [
+        "JH3-S01"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Promotional characterization, not direct book passage or accepted Atlas conclusion.",
+      "attributedSpeaker": "Seven Stories Press",
+      "statementKind": "PUBLISHER_ATTRIBUTION",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S01",
+          "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+          "locator": "HTML lines 31\u201359, 76\u201392: edition metadata and promotional description. No book body."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [
+        "JH3-S02"
+      ],
+      "unknowns": [
+        "Promotional characterization, not direct book passage or accepted Atlas conclusion."
+      ],
+      "nextSourceTest": "Read a specific 1996 Webb passage or book page and its cited case record before upgrading any historical claim."
+    },
+    {
+      "claimId": "JH3-C02",
+      "authorId": "gary-webb",
+      "claimKind": "OFFICIAL_FINDING",
+      "text": "DOJ OIG rejected sweeping epidemic and systematic-protection allegations while recording specific troubling interventions.",
+      "sourceIds": [
+        "JH3-S02"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Do not turn this qualified conclusion into blanket exoneration or blanket vindication.",
+      "attributedSpeaker": "DOJ Office of Inspector General",
+      "statementKind": "OFFICIAL_FINDING",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S02",
+          "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch12.htm",
+          "locator": "HTML lines 0\u20137, opening conclusions including named exceptions."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [
+        "JH3-S01"
+      ],
+      "unknowns": [
+        "Do not turn this qualified conclusion into blanket exoneration or blanket vindication.",
+        "S01 is contrary publisher framing, not independently established contrary evidence."
+      ],
+      "nextSourceTest": "Read a specific 1996 Webb passage or book page and its cited case record before upgrading any historical claim."
+    },
+    {
+      "claimId": "JH3-C03",
+      "authorId": "robert-parry",
+      "claimKind": "AUTHOR_SELF_REPORT",
+      "text": "Parry recalled a December 1996 joint appearance with Webb and connected their reporting histories.",
+      "sourceIds": [
+        "JH3-S04"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Indexed editor note; recording not heard; no timestamp or independent event corroboration.",
+      "attributedSpeaker": "Robert Parry",
+      "statementKind": "AUTHOR_SELF_REPORT",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S04",
+          "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+          "locator": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Indexed editor note; recording not heard; no timestamp or independent event corroboration."
+      ],
+      "nextSourceTest": "Obtain readable original Parry reporting and the exact underlying report passages he cited; preserve coauthor attribution for Brian Barger."
+    },
+    {
+      "claimId": "JH3-C04",
+      "authorId": "robert-parry",
+      "claimKind": "OFFICIAL_REPORT_FINDING",
+      "text": "CIA OIG described narrower employee coverage and omission of narcotics offenses from required nonemployee reporting in the 1982 agreement, followed by expanded 1995 coverage.",
+      "sourceIds": [
+        "JH3-S05"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "This policy history alone proves neither trafficking participation nor responsibility for a particular epidemic.",
+      "attributedSpeaker": "CIA Office of Inspector General",
+      "statementKind": "OFFICIAL_REPORT_FINDING",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S05",
+          "url": "https://irp.fas.org/cia/product/cocaine2/findings.html",
+          "locator": "Findings paragraphs 57\u201369 (HTML lines 135\u2013209); title/date checked on volume index."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "This policy history alone proves neither trafficking participation nor responsibility for a particular epidemic."
+      ],
+      "nextSourceTest": "Obtain readable original Parry reporting and the exact underlying report passages he cited; preserve coauthor attribution for Brian Barger."
+    },
+    {
+      "claimId": "JH3-C05",
+      "authorId": "seymour-hersh",
+      "claimKind": "JOURNALIST_ASSERTION",
+      "text": "Hersh reported detainee abuse and drew on the Taguba inquiry.",
+      "sourceIds": [
+        "JH3-S06"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Only inspected passage; do not generalize to all Hersh reporting.",
+      "attributedSpeaker": "Seymour M. Hersh",
+      "statementKind": "JOURNALIST_ASSERTION",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S06",
+          "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+          "locator": "Article body HTML lines 46\u201349 and 83\u2013118; excluded generated summary. Displayed date May 3; print issue May 10."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Only inspected passage; do not generalize to all Hersh reporting.",
+        "S07 is scope-checking testimony sharing the Taguba inquiry root, not independent underlying corroboration."
+      ],
+      "nextSourceTest": "Inspect the actual Taguba report pages cited in the article and one separately sourced official inquiry before widening responsibility claims."
+    },
+    {
+      "claimId": "JH3-C06",
+      "authorId": "seymour-hersh",
+      "claimKind": "OFFICIAL_WITNESS_STATEMENT",
+      "text": "Taguba described a detention-focused inquiry, evidence implicating intelligence personnel, and a recommendation for separate investigation.",
+      "sourceIds": [
+        "JH3-S07"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Witness account of inquiry scope, not comprehensive determination of higher-command responsibility.",
+      "attributedSpeaker": "Antonio Taguba",
+      "statementKind": "OFFICIAL_WITNESS_STATEMENT",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S07",
+          "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+          "locator": "Taguba opening statement on May 11, 2004, HTML lines 4511\u20134594; adjacent questions lines 4735\u20134768. HTML transcription only."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Witness account of inquiry scope, not comprehensive determination of higher-command responsibility."
+      ],
+      "nextSourceTest": "Inspect the actual Taguba report pages cited in the article and one separately sourced official inquiry before widening responsibility claims."
+    },
+    {
+      "claimId": "JH3-C07",
+      "authorId": "gary-webb",
+      "claimKind": "PUBLISHER_AUTHORSHIP_METADATA",
+      "text": "Publisher metadata identifies Gary Webb as author of Dark Alliance: Movie Tie-In Edition.",
+      "sourceIds": [
+        "JH3-S01"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Book body unread; authorship metadata does not endorse publisher historical claims.",
+      "attributedSpeaker": "Seven Stories Press",
+      "statementKind": "PUBLISHER_AUTHORSHIP_METADATA",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S01",
+          "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+          "locator": "HTML lines 31\u201359, 76\u201392: edition metadata and promotional description. No book body."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Book body unread; authorship metadata does not endorse publisher historical claims."
+      ],
+      "nextSourceTest": "Read a specific 1996 Webb passage or book page and its cited case record before upgrading any historical claim."
+    },
+    {
+      "claimId": "JH3-C08",
+      "authorId": "robert-parry",
+      "claimKind": "PUBLISHER_BYLINE_METADATA",
+      "text": "The indexed Consortium News item identifies Robert Parry as the editor-note speaker.",
+      "sourceIds": [
+        "JH3-S04"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Direct page unavailable; metadata observed through indexed original text.",
+      "attributedSpeaker": "Robert Parry / Consortium News",
+      "statementKind": "PUBLISHER_BYLINE_METADATA",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S04",
+          "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+          "locator": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Direct page unavailable; metadata observed through indexed original text."
+      ],
+      "nextSourceTest": "Obtain readable original Parry reporting and the exact underlying report passages he cited; preserve coauthor attribution for Brian Barger."
+    },
+    {
+      "claimId": "JH3-C09",
+      "authorId": "seymour-hersh",
+      "claimKind": "PUBLISHER_BYLINE_METADATA",
+      "text": "The article byline identifies Seymour M. Hersh.",
+      "sourceIds": [
+        "JH3-S06"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Byline only; not validation of all article claims.",
+      "attributedSpeaker": "The New Yorker",
+      "statementKind": "PUBLISHER_BYLINE_METADATA",
+      "specificPassage": [
+        {
+          "sourceId": "JH3-S06",
+          "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+          "locator": "Article body HTML lines 46\u201349 and 83\u2013118; excluded generated summary. Displayed date May 3; print issue May 10."
+        }
+      ],
+      "independentSources": [],
+      "contrarySources": [],
+      "unknowns": [
+        "Byline only; not validation of all article claims."
+      ],
+      "nextSourceTest": "Inspect the actual Taguba report pages cited in the article and one separately sourced official inquiry before widening responsibility claims."
+    }
+  ],
+  "edges": [
+    {
+      "edgeId": "JH3-E01",
+      "fromId": "JH3-S01",
+      "toId": "JH3-S02",
+      "predicate": "EDITORIAL_SOURCE_COMPARISON",
+      "evidenceClass": "C_CONCEPTUAL_NONCAUSAL",
+      "causal": false,
+      "status": "PROPOSED_UNREVIEWED",
+      "reason": "Compare publisher vindication language with qualified official conclusions.",
+      "historicalControlFundingOrCrimeAssertion": false,
+      "sourceIds": [
+        "JH3-S01",
+        "JH3-S02"
+      ],
+      "claimIds": [
+        "JH3-C01",
+        "JH3-C02"
+      ],
+      "locators": [
+        {
+          "sourceId": "JH3-S01",
+          "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+          "locator": "HTML lines 31\u201359, 76\u201392: edition metadata and promotional description. No book body."
+        },
+        {
+          "sourceId": "JH3-S02",
+          "url": "https://oig.justice.gov/sites/default/files/archive/special/9712/ch12.htm",
+          "locator": "HTML lines 0\u20137, opening conclusions including named exceptions."
+        }
+      ],
+      "timeScope": {
+        "from": null,
+        "to": null,
+        "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+      },
+      "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap."
+    },
+    {
+      "edgeId": "JH3-E02",
+      "fromId": "JH3-S04",
+      "toId": "JH3-S05",
+      "predicate": "EDITORIAL_SOURCE_COMPARISON",
+      "evidenceClass": "C_CONCEPTUAL_NONCAUSAL",
+      "causal": false,
+      "status": "PROPOSED_UNREVIEWED",
+      "reason": "Test retrospective framing against a bounded government policy finding; direct citation not established.",
+      "historicalControlFundingOrCrimeAssertion": false,
+      "sourceIds": [
+        "JH3-S04",
+        "JH3-S05"
+      ],
+      "claimIds": [
+        "JH3-C03",
+        "JH3-C04"
+      ],
+      "locators": [
+        {
+          "sourceId": "JH3-S04",
+          "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+          "locator": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard."
+        },
+        {
+          "sourceId": "JH3-S05",
+          "url": "https://irp.fas.org/cia/product/cocaine2/findings.html",
+          "locator": "Findings paragraphs 57\u201369 (HTML lines 135\u2013209); title/date checked on volume index."
+        }
+      ],
+      "timeScope": {
+        "from": null,
+        "to": null,
+        "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+      },
+      "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap."
+    },
+    {
+      "edgeId": "JH3-E03",
+      "fromId": "JH3-S06",
+      "toId": "JH3-S07",
+      "predicate": "EDITORIAL_SOURCE_COMPARISON",
+      "evidenceClass": "C_CONCEPTUAL_NONCAUSAL",
+      "causal": false,
+      "status": "PROPOSED_UNREVIEWED",
+      "reason": "Compare reporting with later testimony, acknowledging shared Taguba inquiry root.",
+      "historicalControlFundingOrCrimeAssertion": false,
+      "sourceIds": [
+        "JH3-S06",
+        "JH3-S07"
+      ],
+      "claimIds": [
+        "JH3-C05",
+        "JH3-C06"
+      ],
+      "locators": [
+        {
+          "sourceId": "JH3-S06",
+          "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+          "locator": "Article body HTML lines 46\u201349 and 83\u2013118; excluded generated summary. Displayed date May 3; print issue May 10."
+        },
+        {
+          "sourceId": "JH3-S07",
+          "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+          "locator": "Taguba opening statement on May 11, 2004, HTML lines 4511\u20134594; adjacent questions lines 4735\u20134768. HTML transcription only."
+        }
+      ],
+      "timeScope": {
+        "from": null,
+        "to": null,
+        "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+      },
+      "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap."
+    },
+    {
+      "edgeId": "JH3-E04",
+      "fromId": "JH3-S07",
+      "toId": "JH3-S08",
+      "predicate": "EDITORIAL_SOURCE_COMPARISON",
+      "evidenceClass": "C_CONCEPTUAL_NONCAUSAL",
+      "causal": false,
+      "status": "PROPOSED_UNREVIEWED",
+      "reason": "Catalog helps locate report; neither catalog nor testimony is a read report scan.",
+      "historicalControlFundingOrCrimeAssertion": false,
+      "sourceIds": [
+        "JH3-S07",
+        "JH3-S08"
+      ],
+      "claimIds": [
+        "JH3-C06"
+      ],
+      "locators": [
+        {
+          "sourceId": "JH3-S07",
+          "url": "https://www.govinfo.gov/content/pkg/CHRG-108shrg96600/html/CHRG-108shrg96600.htm",
+          "locator": "Taguba opening statement on May 11, 2004, HTML lines 4511\u20134594; adjacent questions lines 4735\u20134768. HTML transcription only."
+        },
+        {
+          "sourceId": "JH3-S08",
+          "url": "https://exhibit.apus.edu/items/show/1219",
+          "locator": "Catalog metadata HTML lines 16\u201346. Thumbnail link inspected as image URL; report body not read."
+        }
+      ],
+      "timeScope": {
+        "from": null,
+        "to": null,
+        "note": "Editorial comparison created 2026-11-01; source dates remain separate, no continuous historical relationship asserted."
+      },
+      "nextFalsifier": "Read the exact underlying passage or document; remove or narrow comparison if source scopes do not overlap."
+    },
+    {
+      "edgeId": "JH3-E05",
+      "fromId": "gary-webb",
+      "toId": "JH3-W01",
+      "predicate": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+      "evidenceClass": "DOCUMENTARY_METADATA",
+      "causal": false,
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "reason": "Publisher metadata identifies Gary Webb as author of Dark Alliance: Movie Tie-In Edition.",
+      "historicalControlFundingOrCrimeAssertion": false,
+      "sourceIds": [
+        "JH3-S01"
+      ],
+      "claimIds": [
+        "JH3-C07"
+      ],
+      "locators": [
+        {
+          "sourceId": "JH3-S01",
+          "url": "https://www.sevenstories.com/books/3047-dark-alliance-movie-tie-in-edition",
+          "locator": "HTML lines 31\u201359, 76\u201392: edition metadata and promotional description. No book body."
+        }
+      ],
+      "timeScope": {
+        "fromDate": "2014-09-30",
+        "toDate": null,
+        "note": "Specific catalog edition or article date only; not author career span."
+      },
+      "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author."
+    },
+    {
+      "edgeId": "JH3-E06",
+      "fromId": "robert-parry",
+      "toId": "JH3-W04",
+      "predicate": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+      "evidenceClass": "DOCUMENTARY_METADATA",
+      "causal": false,
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "reason": "The indexed Consortium News item identifies Robert Parry as the editor-note speaker.",
+      "historicalControlFundingOrCrimeAssertion": false,
+      "sourceIds": [
+        "JH3-S04"
+      ],
+      "claimIds": [
+        "JH3-C08"
+      ],
+      "locators": [
+        {
+          "sourceId": "JH3-S04",
+          "url": "https://consortiumnews.com/2014/10/02/hear-parry-and-webb-discuss-contra-cocaine/",
+          "locator": "Search-indexed original-publisher short note; direct page returned 403. No linked recording heard."
+        }
+      ],
+      "timeScope": {
+        "fromDate": "2014-10-02",
+        "toDate": null,
+        "note": "Specific catalog edition or article date only; not author career span."
+      },
+      "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author."
+    },
+    {
+      "edgeId": "JH3-E07",
+      "fromId": "seymour-hersh",
+      "toId": "JH3-W06",
+      "predicate": "AUTHOR_OF_AS_IDENTIFIED_BY_PUBLISHER",
+      "evidenceClass": "DOCUMENTARY_METADATA",
+      "causal": false,
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "reason": "The article byline identifies Seymour M. Hersh.",
+      "historicalControlFundingOrCrimeAssertion": false,
+      "sourceIds": [
+        "JH3-S06"
+      ],
+      "claimIds": [
+        "JH3-C09"
+      ],
+      "locators": [
+        {
+          "sourceId": "JH3-S06",
+          "url": "https://www.newyorker.com/magazine/2004/05/10/torture-at-abu-ghraib",
+          "locator": "Article body HTML lines 46\u201349 and 83\u2013118; excluded generated summary. Displayed date May 3; print issue May 10."
+        }
+      ],
+      "timeScope": {
+        "fromDate": "2004-05-03",
+        "toDate": null,
+        "note": "Specific catalog edition or article date only; not author career span."
+      },
+      "nextFalsifier": "Inspect original edition title page or article byline; correct if publisher metadata identifies a different author."
+    }
+  ],
+  "accessExceptions": [
+    "Consortium original direct article returned 403; indexed original text used with explicit label.",
+    "Original Webb newspaper series/book body not read.",
+    "Taguba report catalog located but report body not read."
+  ],
+  "corrections": [
+    "2026-11-01: Added source-contract fields, scoped attribution/locators and three documentary author-work metadata relations. Six chains represent two claim types per work, not six distinct works. Catalog date separated from report publication date. No additional research."
+  ],
+  "nextFalsifier": "Independent reviewer checks each attributed statement against its exact read scope; no historical edge promotion in this draft.",
+  "sourceChains": [
+    {
+      "chainId": "JH3-CHAIN-01",
+      "authorId": "gary-webb",
+      "workId": "JH3-W01",
+      "sourceIds": [
+        "JH3-S01"
+      ],
+      "claimIds": [
+        "JH3-C07"
+      ],
+      "documentaryEdgeId": "JH3-E05",
+      "chainKind": "metadata",
+      "countercheckSourceIds": [],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Book body unread; authorship metadata does not endorse publisher historical claims."
+    },
+    {
+      "chainId": "JH3-CHAIN-02",
+      "authorId": "gary-webb",
+      "workId": "JH3-W01",
+      "sourceIds": [
+        "JH3-S01"
+      ],
+      "claimIds": [
+        "JH3-C01"
+      ],
+      "documentaryEdgeId": "JH3-E05",
+      "chainKind": "scoped-statement",
+      "countercheckSourceIds": [
+        "JH3-S02"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Promotional characterization, not direct book passage or accepted Atlas conclusion."
+    },
+    {
+      "chainId": "JH3-CHAIN-03",
+      "authorId": "robert-parry",
+      "workId": "JH3-W04",
+      "sourceIds": [
+        "JH3-S04"
+      ],
+      "claimIds": [
+        "JH3-C08"
+      ],
+      "documentaryEdgeId": "JH3-E06",
+      "chainKind": "metadata",
+      "countercheckSourceIds": [],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Direct page unavailable; metadata observed through indexed original text."
+    },
+    {
+      "chainId": "JH3-CHAIN-04",
+      "authorId": "robert-parry",
+      "workId": "JH3-W04",
+      "sourceIds": [
+        "JH3-S04"
+      ],
+      "claimIds": [
+        "JH3-C03"
+      ],
+      "documentaryEdgeId": "JH3-E06",
+      "chainKind": "scoped-statement",
+      "countercheckSourceIds": [
+        "JH3-S05"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Indexed editor note; recording not heard; no timestamp or independent event corroboration."
+    },
+    {
+      "chainId": "JH3-CHAIN-05",
+      "authorId": "seymour-hersh",
+      "workId": "JH3-W06",
+      "sourceIds": [
+        "JH3-S06"
+      ],
+      "claimIds": [
+        "JH3-C09"
+      ],
+      "documentaryEdgeId": "JH3-E07",
+      "chainKind": "metadata",
+      "countercheckSourceIds": [],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Byline only; not validation of all article claims."
+    },
+    {
+      "chainId": "JH3-CHAIN-06",
+      "authorId": "seymour-hersh",
+      "workId": "JH3-W06",
+      "sourceIds": [
+        "JH3-S06"
+      ],
+      "claimIds": [
+        "JH3-C05"
+      ],
+      "documentaryEdgeId": "JH3-E07",
+      "chainKind": "scoped-statement",
+      "countercheckSourceIds": [
+        "JH3-S07"
+      ],
+      "status": "SOURCE_SCOPED_UNREVIEWED",
+      "limits": "Only inspected passage; do not generalize to all Hersh reporting."
+    }
+  ]
+}

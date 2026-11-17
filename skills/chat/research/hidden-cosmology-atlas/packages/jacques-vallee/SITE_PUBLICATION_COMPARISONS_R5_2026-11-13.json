@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-13",
+  "scope": "Vallee / Bramley / Icke / Wann comparison R5",
+  "researchBranch": "research/hidden-cosmology-atlas-2026-10-13",
+  "researchContentCommit": "a7fe4ef850c3175d7dec56982efde5f8798283c0",
+  "siteSourceCommit": "bc51217b4334be7f1478013b0d6ed9c4c21d0dca",
+  "deployment": {
+    "id": "appgdep_6af65bdb0c7c8191902fee6f23f9de1b",
+    "project_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc",
+    "title": "KFB Research Atlas",
+    "version_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc~appgver_5f4aaf800850819191201f3f7f1b93f0",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://kfb-research-atlas.frizzlebob.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae66f5da80c8191b5b130f20a47c2bc",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-13T00:37:59.417841+00:00"
+  },
+  "tests": {
+    "files": 23,
+    "sources": 58,
+    "claims": 55,
+    "relations": 30,
+    "duplicateAnchors": [],
+    "brokenAnchors": [],
+    "missingSources": [],
+    "exactGitHubFileReadback": 23,
+    "exactBranchHead": true,
+    "localBrowser": "Six comparison rows and three detail cards present; Bramley source link expands register and shows edition/page locator and return link. Stale source-count label corrected to 58 before packaging."
+  },
+  "limits": [
+    "Five new sources; selected text only, no whole books or audio audited.",
+    "Bramley third-party OCR; Icke and Wann publisher transcripts with visible errors.",
+    "No authenticated live-host visual verification; successful Sites deployment confirmed."
+  ],
+  "nextGate": "Georg reviews breadth comparison; no automatic rabbit-hole research."
+}

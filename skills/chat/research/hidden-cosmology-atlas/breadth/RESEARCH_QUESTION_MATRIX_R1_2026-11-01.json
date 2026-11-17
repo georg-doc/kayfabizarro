@@ -1,0 +1,382 @@
+{
+  "schema": "kfb.atlas.questions/1",
+  "date": "2026-11-01",
+  "questions": [
+    {
+      "questionId": "AB01-Q01",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "question": "Which named recruit\u2019s admission decision can be compared with the 1946 screening exclusions?",
+      "sourceIds": [
+        "PW-S06",
+        "PW-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Dated personnel decision and original screening file",
+      "nextFalsifier": "A case identifier or decision that contradicts the proposed screening history.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q02",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "question": "Where do Jacobsen and Hunt rely on the same original recruitment file?",
+      "sourceIds": [
+        "PW-S01",
+        "PW-S05"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Exact book/article citations and underlying document",
+      "nextFalsifier": "Separate cited originals or a mistaken citation would revise the shared-source comparison.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q03",
+      "clusterId": "C01_POSTWAR_TRANSFER",
+      "question": "Which specific Neufeld objection survives comparison with Jacobsen\u2019s actual passage?",
+      "sourceIds": [
+        "PW-S03",
+        "PW-S01"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Review passage, book edition and cited original",
+      "nextFalsifier": "The exact passage or original supporting the author rather than the objection.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q04",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "question": "Which dated instrument transferred functions from OSS to SSU, CIG and CIA?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Contemporaneous executive and administrative orders",
+      "nextFalsifier": "A discontinuity or limited mandate defeats an uninterrupted-actor inference.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q05",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "question": "Which personnel recruitment assertion in Simpson is supported by a named declassified file?",
+      "sourceIds": [
+        "PW-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Book page plus individual file and recruitment date",
+      "nextFalsifier": "Different individual, chronology or non-recruitment role.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q06",
+      "clusterId": "C02_OSS_CIA_NETWORKS",
+      "question": "Which relationship does Peter Dale Scott actually assert between formal institutions and informal networks?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Scott original passage and its cited event record",
+      "nextFalsifier": "Different scope or chronology requires changing the attributed relation.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q07",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "question": "Which court record identifies a specific Lansky transaction and counterpart?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Case number, dated exhibit and uniquely identified parties",
+      "nextFalsifier": "Namesakes, missing counterpart or nonfinancial contact.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q08",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "question": "Which Roy Cohn\u2013organized-crime relationship is directly documented rather than inferred from representation?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Retainer, court record or contemporaneous attributed statement",
+      "nextFalsifier": "Legal representation without the alleged operational role.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q09",
+      "clusterId": "C03_ORGANIZED_CRIME_LEGAL_POLITICS",
+      "question": "Which Webb article distinguishes a documented Epstein contact from an allegation of participation?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Exact byline, passage, court exhibit and contrary record",
+      "nextFalsifier": "Contact-only evidence or an acquittal/correction changes the allegation assessment.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q10",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "question": "Does the private Five Star Trust narrative name the same legal entity as the ICIJ entry?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Jurisdiction, registration number, dates and parties",
+      "nextFalsifier": "Any identifier conflict defeats identity merger.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q11",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "question": "Which record distinguishes Mega Group from a company named Mega Corporation?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Constitutional/company records and exact dates",
+      "nextFalsifier": "Different legal identity, members or period.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q12",
+      "clusterId": "C04_COVERT_FINANCE_TRUSTS",
+      "question": "How do unsupported Solari adjustment totals reconcile with reversals and actual disbursements?",
+      "sourceIds": [
+        "SOL-S02",
+        "SOL-S04"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Original vouchers, ledger and recipient records",
+      "nextFalsifier": "Offsetting/repeated entries or timing adjustments defeat conversion to cash loss.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q13",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "question": "Which Iran-Contra document supports one named North\u2013Secord operational relationship?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Dated original testimony or exhibit",
+      "nextFalsifier": "Attribution correction or contrary contemporaneous record.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q14",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "question": "Which dated Epstein record supports a proposed Wexner relation and its precise legal nature?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Court/company record with dates and roles",
+      "nextFalsifier": "Different role, period or entity.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q15",
+      "clusterId": "C05_IRAN_CONTRA_EPSTEIN_WCC",
+      "question": "Can a proposed WCC\u2013Iran-Contra bridge be traced without merging BPF and Moneyrex?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Existing WCC R4 source IDs plus exact transaction/corporate document",
+      "nextFalsifier": "Distinct entity or unsupported bridge; preserve existing owner correction.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q16",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "question": "Which original Tesla specification is actually cited by a later extraordinary-energy narrative?",
+      "sourceIds": [
+        "BPS-S08",
+        "BPS-S09"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Later exact quotation plus patent original",
+      "nextFalsifier": "Omitted energy input or different device changes the comparison.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q17",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "question": "Which Brown device conditions are evaluated in the asymmetric-capacitor research?",
+      "sourceIds": [
+        "BPS-S05",
+        "BPS-S06",
+        "BPS-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Patent drawings, full paper and experiment conditions",
+      "nextFalsifier": "Different electrode, medium or force model defeats direct replication claim.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q18",
+      "clusterId": "C06_UFO_PSI_ALT_HISTORY",
+      "question": "Which Puharich statements and Swann statements concern the same perceptual mechanism?",
+      "sourceIds": [
+        "BPS-S01",
+        "BPS-S02"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Original author passages, not later introductions",
+      "nextFalsifier": "Different definitions or evidence classes prevent a shared mechanism assertion.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q19",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "question": "Which original Irvin publication supports each proposition in the private donor dossier?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Author publication with exact passage",
+      "nextFalsifier": "Donor-only invented phrasing must not be attributed.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q20",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "question": "Which Knowles work links a named symbol to a named media work?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Dated original essay/book passage",
+      "nextFalsifier": "Editorial association absent from original or different symbolic meaning.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q21",
+      "clusterId": "C07_MEDIA_INTERPRETATION",
+      "question": "Which Fitts\u2013Corbett proposition belongs to the guest and which to the host?",
+      "sourceIds": [
+        "SOL-S06"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Speaker-aligned original recording",
+      "nextFalsifier": "Audio or correction changes transcript attribution.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q22",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "question": "Which statutory powers accompany Reserve Bank member shares?",
+      "sourceIds": [
+        "BIN-S01",
+        "BIN-S02"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Dated Federal Reserve Act provisions and shareholder rules",
+      "nextFalsifier": "Specific limitations defeat ordinary-equity ownership inference.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q23",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "question": "Which BIS governance provision allocates a proposed decision right?",
+      "sourceIds": [
+        "BIN-S03"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Current statutes and dated decision record",
+      "nextFalsifier": "Advisory/cooperative role rather than binding authority.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q24",
+      "clusterId": "C08_MONETARY_CENTRAL_BANKS",
+      "question": "Which original source connects a Fitts monetary claim to an actual central-bank action?",
+      "sourceIds": [
+        "SOL-S06",
+        "BIN-S02"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Exact speaker passage plus decision or transaction",
+      "nextFalsifier": "Accounting rhetoric without the stated action or actor.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q25",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "question": "What transactions does the 2022 APSA constitution route through IOR?",
+      "sourceIds": [
+        "BIN-S05"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Article 219 and subsequent amendments",
+      "nextFalsifier": "Different scope/date or amended rule.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q26",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "question": "Which original record identifies the legal IOR entity in a proposed Ambrosiano link?",
+      "sourceIds": [
+        "BIN-S04"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Dated court/bank record and entity identifiers",
+      "nextFalsifier": "APSA substitution, namesake or unsupported role.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q27",
+      "clusterId": "C09_VATICAN_FINANCE",
+      "question": "What exact source connects IOR, Lansky and the Sovereign Military Order of Malta?",
+      "sourceIds": [],
+      "sourceChainStatus": "PRIMARY_PASSAGES_PENDING",
+      "nextOriginal": "Three independently identified endpoints and each original relation",
+      "nextFalsifier": "One missing or mismatched link keeps the triangle an open question.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q28",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "question": "Which legal body does a Theosophical membership or property assertion concern?",
+      "sourceIds": [
+        "BIN-S06",
+        "BIN-S08"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Local registration and dated governing instrument",
+      "nextFalsifier": "England/Adyar conflation or wrong incorporation date.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q29",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "question": "Who originally asserted continuity between a named mystery school and a modern author?",
+      "sourceIds": [
+        "BIN-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Original author claim and dated transmission records",
+      "nextFalsifier": "Symbolic similarity alone does not establish institutional continuity.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    },
+    {
+      "questionId": "AB01-Q30",
+      "clusterId": "C10_SECRET_SOCIETIES_MYSTERY_SCHOOLS",
+      "question": "Which source defines Mystery Schools as an author concept rather than a legal organization?",
+      "sourceIds": [
+        "BIN-S06",
+        "BIN-S07"
+      ],
+      "sourceChainStatus": "PARTIAL_SOURCE_CHAIN",
+      "nextOriginal": "Exact passage with author vocabulary",
+      "nextFalsifier": "A named legal entity requires separate identity; an umbrella cannot inherit its acts.",
+      "status": "OPEN_RESEARCH_QUESTION",
+      "causality": false
+    }
+  ]
+}

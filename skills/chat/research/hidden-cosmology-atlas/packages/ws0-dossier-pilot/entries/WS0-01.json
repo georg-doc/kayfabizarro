@@ -1,0 +1,144 @@
+{
+  "schema": "kfb.atlas.deck-dossier-pilot.v1",
+  "id": "WS0-01",
+  "title": "Surveillance: follow the access path",
+  "deckId": "observation_underground",
+  "cardRefs": [
+    {
+      "cid": "cid:observation_underground:35",
+      "cardNumber": 35,
+      "registryPath": "registry/assets/v1/decks/observation_underground.json",
+      "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+      "joinStatus": "deckId/cardNumber verified in pinned registry; cid format follows existing manifest contract"
+    }
+  ],
+  "derivedFrom": [
+    "WS0-S01",
+    "WS0-S04",
+    "WS0-S05",
+    "WS0-S09",
+    "WS0-S14"
+  ],
+  "layers": {
+    "card": {
+      "name": "NSA Surveillance Backdoor",
+      "lore": "The government doesn't need to crack your password when Big Tech leaves the back door wide open and the porch light on.",
+      "power": "Reads everything, regardless of your cute encryption.",
+      "status": "EXISTING_CREATIVE_TEXT_UNCHANGED",
+      "sourceId": "WS0-S01",
+      "visual": {
+        "field": "artworkPrompt",
+        "value": "Style: Kayfabizarro heist. Subject: government agent walking through open tech company back door, host waving cheerfully. Mood: consensual betrayal.",
+        "sourceUrl": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Observation_Underground_-_ADD_web.pdf.json",
+        "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+        "printedPage": 9,
+        "position": "lower left",
+        "printSource": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Observation_Underground%20-%20ADD%20web.pdf",
+        "inspection": "Printed: digging animal and sparking BIG TECH server. The approved waving-host line plays the JSON prompt."
+      }
+    },
+    "sources": [
+      "WS0-S01",
+      "WS0-S04",
+      "WS0-S05",
+      "WS0-S09",
+      "WS0-S14"
+    ],
+    "interpretation": {
+      "summary": "The card compresses different surveillance mechanisms into an all-seeing backdoor. That is a dramatic premise; the inspected report supports a narrower collection process. The NB01 infographic is useful as a question map, not proof of blanket access. Neither this report nor a product label establishes that every encrypted message is readable.",
+      "statuses": [
+        "card: satire/overstatement",
+        "report: narrowly documented process",
+        "universal access: not established"
+      ],
+      "counterposition": "Avoid both total-immunity promises and the claim that nothing helps. Protection depends on the data, adversary and access mechanism."
+    },
+    "brainfood": {
+      "voice": "FrizzleBob",
+      "text": "Three weeks I practiced that lockpick trick. Watch the host. He’s waving the agent in. The report’s going to say “no sign of forced entry.”",
+      "spokenDE": "Drei Wochen hab ich den Trick mit dem Dietrich geübt. Guck dir den Hausherrn an. Der winkt den Agenten rein. Im Protokoll steht nachher bloß: keine Einbruchsspuren.",
+      "status": "ACCEPTED_V1258",
+      "voiceBasis": "Printed: digging animal and sparking BIG TECH server. The approved waving-host line plays the JSON prompt."
+    },
+    "solutionWatch": {
+      "kind": "FEATURED_SOLUTION_WATCH",
+      "action": "Choose a weather app that lets you enter a city. Note its location permission. If enabled, turn it off and enter the city by hand. Does the forecast still load? Restore the setting if desired.",
+      "steps": [
+        "Choose a weather app that lets you enter a city.",
+        "Note its location permission.",
+        "If enabled, turn it off and enter the city by hand.",
+        "Does the forecast still load? Restore the setting if desired."
+      ],
+      "options": [
+        {
+          "name": "Keep the current device and review one unnecessary app permission",
+          "advantage": "No new hardware cost; bounded and reversible.",
+          "limit": "Does not remove every provider-held record or address every adversary."
+        },
+        {
+          "name": "Compare a different communication/service workflow against the same threat",
+          "advantage": "Tests whether a change actually addresses the chosen exposure.",
+          "limit": "Compatibility, contacts and migration effort matter; encryption and endpoints need separate review."
+        },
+        {
+          "name": "Consider alternative hardware/OS only after the threat comparison",
+          "advantage": "May fit particular needs.",
+          "limit": "Above Phone, Volla and other products are leads, not tested recommendations in this pilot; no promise of anonymity."
+        }
+      ],
+      "sourceIds": [
+        "WS0-S05"
+      ],
+      "checkedAt": "2026-11-03",
+      "funding": "No paid placement or affiliate links introduced.",
+      "successCheck": "You can explain one threat, one chosen mitigation and one remaining limitation.",
+      "notProvided": "No purchase verdict or individual legal/security guarantee.",
+      "limit": "This tests one feature on this phone. Previously stored data and provider disclosures are outside the test.",
+      "minutes": "5–10"
+    }
+  },
+  "claims": [
+    {
+      "id": "WS0-01-C1",
+      "statement": "The PCLOB2023 report describes downstream collection through identified selectors at service providers, distinct from upstream collection.",
+      "status": "DOCUMENTED_WITHIN_2023_REPORT_SCOPE",
+      "sourceIds": [
+        "WS0-S04"
+      ],
+      "reviewScope": "See exact source receipts; no assertion beyond read passages."
+    }
+  ],
+  "formats": [
+    {
+      "format": "short essay",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "existing card",
+      "status": "EXISTING_CARD_REFERENCE"
+    },
+    {
+      "format": "FrizzleBob tip",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "source-linked dialogue script",
+      "status": "SCRIPT_EXAMPLE_ONLY_NO_LLM_ENDPOINT"
+    }
+  ],
+  "checkedAt": "2026-11-03",
+  "reviewer": "Pilot accepted by Georg and WS0 (V-1258). Close-out: 2026-11-03.",
+  "fieldsOfSense": [
+    "source criticism",
+    "creative card interpretation",
+    "practical media literacy"
+  ],
+  "runtimeIntegration": "CONTRACT_ONLY; no game files or canonical deck records changed",
+  "dialogueExample": {
+    "question": "Can the NSA read everything?",
+    "answer": "That universal claim is not established here. The inspected PCLOB2023 passage describes selector-based downstream collection; other access mechanisms require separate sources.",
+    "sourceIds": [
+      "WS0-S04"
+    ]
+  }
+}

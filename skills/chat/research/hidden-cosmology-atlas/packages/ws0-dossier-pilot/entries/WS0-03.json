@@ -1,0 +1,132 @@
+{
+  "schema": "kfb.atlas.deck-dossier-pilot.v1",
+  "id": "WS0-03",
+  "title": "Hypernormalisation: find the seam in the sealed room",
+  "deckId": "ignore_dystopia",
+  "cardRefs": [
+    {
+      "cid": "cid:ignore_dystopia:41",
+      "cardNumber": 41,
+      "registryPath": "registry/assets/v1/decks/ignore_dystopia.json",
+      "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+      "joinStatus": "deckId/cardNumber verified in pinned registry; cid format follows existing manifest contract"
+    }
+  ],
+  "derivedFrom": [
+    "WS0-S03",
+    "WS0-S08",
+    "WS0-S11",
+    "WS0-S16",
+    "WS0-S13"
+  ],
+  "layers": {
+    "card": {
+      "name": "The Sealed Room",
+      "lore": "Hypernormalisation is treating fakeness as normal because alternatives seem unimaginable.",
+      "power": "Present the system as total, with absolutely no outside to step into.",
+      "status": "EXISTING_CREATIVE_TEXT_UNCHANGED",
+      "sourceId": "WS0-S03",
+      "visual": {
+        "field": "artworkPrompt",
+        "value": "Style: surrealist editorial. Subject: total system with all exits bricked over, fakeness labeled as reality. Mood: hypernormalized enclosure.",
+        "sourceUrl": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json",
+        "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+        "printedPage": 12,
+        "position": "upper left",
+        "printSource": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP%20web%20H.pdf",
+        "inspection": "Printed: the figure holds a cane inside a box lined with repeated city skylines. The line draws on the skyline and cane."
+      }
+    },
+    "sources": [
+      "WS0-S03",
+      "WS0-S08",
+      "WS0-S11",
+      "WS0-S16",
+      "WS0-S13"
+    ],
+    "interpretation": {
+      "summary": "In the late Soviet sequence Curtis describes economic planning sustained by public pretence. At 00:24:08–00:24:29 he links playing along to the difficulty of imagining an alternative and names hypernormalisation. This is the narrator’s historical interpretation.",
+      "statuses": [
+        "Curtis narration identified by timestamp",
+        "card: satire"
+      ],
+      "counterposition": "Ask which concrete institution, decision and alternative the account identifies. A claim of no outside must be tested against specific cases."
+    },
+    "brainfood": {
+      "voice": "FrizzleBob",
+      "text": "Nice skyline. Same rent on all four walls? Hand me that cane. I’d like to tap one of those buildings.",
+      "spokenDE": "Schicke Skyline. Auf allen vier Wänden dieselbe Miete? Gib mir mal den Stock. Ich würd gern gegen eins von den Häusern klopfen.",
+      "status": "V1258_FINAL_PASS",
+      "voiceBasis": "Printed: the figure holds a cane inside a box lined with repeated city skylines. The line draws on the skyline and cane."
+    },
+    "solutionWatch": {
+      "kind": "SMALL_ACTION_EXPERIMENT",
+      "action": "Watch 00:23:43–00:24:29 of Curtis’s film. Write down one thing the narrator says and one thing you can see in a frame. Mark which one supports the claim that people could imagine no alternative.",
+      "steps": [
+        "Watch 00:23:43–00:24:29 of Curtis’s film.",
+        "Write down one thing the narrator says and one thing you can see in a frame.",
+        "Mark which one supports the claim that people could imagine no alternative."
+      ],
+      "sourceIds": [
+        "WS0-S13"
+      ],
+      "limit": "A frame can show a public performance. It cannot establish what every person pictured believed.",
+      "checkedAt": "2026-11-03",
+      "minutes": "5–10"
+    }
+  },
+  "claims": [
+    {
+      "id": "WS0-03-C1",
+      "statement": "The existing Sealed Room card represents hypernormalisation as accepting evident falseness because alternatives feel unimaginable.",
+      "status": "CREATIVE_DEFINITION_AND_EDITORIAL_INTERPRETATION",
+      "sourceIds": [
+        "WS0-S03"
+      ],
+      "reviewScope": "See exact source receipts; no assertion beyond read passages."
+    },
+    {
+      "id": "WS0-03-C2",
+      "statement": "In the late Soviet sequence Curtis describes economic planning sustained by public pretence.",
+      "status": "ATTRIBUTED_SOURCE_PASSAGE",
+      "sourceIds": [
+        "WS0-S13"
+      ],
+      "reviewScope": "2016 film narration via archive subtitle track"
+    }
+  ],
+  "formats": [
+    {
+      "format": "short essay",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "existing card",
+      "status": "EXISTING_CARD_REFERENCE"
+    },
+    {
+      "format": "FrizzleBob tip",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "source-linked dialogue script",
+      "status": "SCRIPT_EXAMPLE_ONLY_NO_LLM_ENDPOINT"
+    }
+  ],
+  "checkedAt": "2026-11-03",
+  "reviewer": "Pilot accepted by Georg and WS0 (V-1258). Close-out: 2026-11-03.",
+  "fieldsOfSense": [
+    "source criticism",
+    "creative card interpretation",
+    "practical media literacy"
+  ],
+  "runtimeIntegration": "CONTRACT_ONLY; no game files or canonical deck records changed",
+  "dialogueExample": {
+    "question": "Who is the single actor behind hypernormalisation?",
+    "answer": "This packet does not establish one. The card and essay are interpretive/creative frames. A specific historical claim needs its own actors, documents and dates.",
+    "sourceIds": [
+      "WS0-S03",
+      "WS0-S11"
+    ]
+  }
+}

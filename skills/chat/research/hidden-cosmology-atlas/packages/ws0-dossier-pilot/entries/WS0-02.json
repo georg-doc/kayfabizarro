@@ -1,0 +1,139 @@
+{
+  "schema": "kfb.atlas.deck-dossier-pilot.v1",
+  "id": "WS0-02",
+  "title": "Roko’s Basilisk: a threat inside an argument",
+  "deckId": "kayfabizarro_philosophy",
+  "cardRefs": [
+    {
+      "cid": "cid:kayfabizarro_philosophy:30",
+      "cardNumber": 30,
+      "registryPath": "registry/assets/v1/decks/kayfabizarro_philosophy.json",
+      "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+      "joinStatus": "deckId/cardNumber verified in pinned registry; cid format follows existing manifest contract"
+    }
+  ],
+  "derivedFrom": [
+    "WS0-S02",
+    "WS0-S06",
+    "WS0-S07",
+    "WS0-S10",
+    "WS0-S15",
+    "WS0-S12"
+  ],
+  "layers": {
+    "card": {
+      "name": "The Basilisk's Naughty List",
+      "lore": "The moment you learn about the Basilisk, you are trapped. If you don't start helping it now, it will put you in a simulated torture chamber later.",
+      "power": "Information Hazard. Showing this card to an opponent permanently infects them. If they do not aid you, they lose 1 health every turn.",
+      "status": "EXISTING_CREATIVE_TEXT_UNCHANGED",
+      "sourceId": "WS0-S02",
+      "visual": {
+        "field": "artworkPrompt",
+        "value": "Style: conspiracy thriller cartoon. Subject: giant scroll with YOUR NAME visible while robotic snake looms overhead. Mood: paranoid doom.",
+        "sourceUrl": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Kayfabizarro_Philosophy_-_ADD_web.pdf.json",
+        "sourceRevision": "8799ce51e757ba30a9fa1ab2016a8e402d08f90e",
+        "printedPage": 9,
+        "position": "upper right",
+        "printSource": "https://github.com/georg-doc/kayfabizarro/blob/8799ce51e757ba30a9fa1ab2016a8e402d08f90e/media/kfb/Kayfabizarro_Philosophy%20-%20ADD%20web.pdf",
+        "inspection": "Printed: a mechanical hand holds a pen beside the checkbox for ‘You (The Reader)’ on a long paper roll."
+      }
+    },
+    "sources": [
+      "WS0-S02",
+      "WS0-S06",
+      "WS0-S07",
+      "WS0-S10",
+      "WS0-S15",
+      "WS0-S12"
+    ],
+    "interpretation": {
+      "summary": "Roko considers conditional punishment of informed potential donors by a hypothetical future singleton. This is one possibility in an argument about altruism. The printed card turns it into a game penalty.",
+      "statuses": [
+        "2010 argument recovered via archive",
+        "card: satire"
+      ],
+      "counterposition": "An emotionally forceful conditional does not establish its premises, the agent’s existence or an obligation to obey."
+    },
+    "brainfood": {
+      "voice": "FrizzleBob",
+      "text": "Look where the metal hand put the tick. ‘You (The Reader).’ Funny. I’ve read the whole list and that pen’s still in somebody else’s hand.",
+      "spokenDE": "Guck, wo die Metallhand ihr Häkchen setzt. »Du (der Leser).« Komisch. Ich hab die ganze Liste gelesen, und den Stift hält immer noch ein anderer.",
+      "status": "V1258_FINAL_PASS",
+      "voiceBasis": "Printed: a mechanical hand holds a pen beside the checkbox for ‘You (The Reader)’ on a long paper roll."
+    },
+    "solutionWatch": {
+      "kind": "ARGUMENT_CHECK",
+      "action": "Read the paragraph beginning ‘In this vein’ in Roko’s post. Underline the conditional verbs. Rewrite one sentence as an unconditional threat, then circle the assumption you had to add.",
+      "steps": [
+        "Read the paragraph beginning ‘In this vein’ in Roko’s post.",
+        "Underline the conditional verbs.",
+        "Rewrite one sentence as an unconditional threat, then circle the assumption you had to add."
+      ],
+      "sourceIds": [
+        "WS0-S12"
+      ],
+      "limit": "This tests a change in wording. It cannot establish the existence or intentions of a future AI.",
+      "checkedAt": "2026-11-03",
+      "minutes": "5–10"
+    }
+  },
+  "claims": [
+    {
+      "id": "WS0-02-C1",
+      "statement": "Bensinger describes the basilisk as a disputed thought experiment and says Roko’s argument opposed constructing the proposed threatening agent rather than asking people to finance it.",
+      "status": "ATTRIBUTED_RETROSPECTIVE_INTERPRETATION",
+      "sourceIds": [
+        "WS0-S07"
+      ],
+      "reviewScope": "See exact source receipts; no assertion beyond read passages."
+    },
+    {
+      "id": "WS0-02-C2",
+      "statement": "Roko considers conditional punishment of informed potential donors by a hypothetical future singleton.",
+      "status": "ATTRIBUTED_SOURCE_PASSAGE",
+      "sourceIds": [
+        "WS0-S12"
+      ],
+      "reviewScope": "Original author text via cache mirror"
+    }
+  ],
+  "formats": [
+    {
+      "format": "short essay",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "existing card",
+      "status": "EXISTING_CARD_REFERENCE"
+    },
+    {
+      "format": "existing song lead",
+      "status": "LOCATED_NOT_AUDIO_VERIFIED"
+    },
+    {
+      "format": "FrizzleBob tip",
+      "status": "TEXT_READY"
+    },
+    {
+      "format": "source-linked dialogue script",
+      "status": "SCRIPT_EXAMPLE_ONLY_NO_LLM_ENDPOINT"
+    }
+  ],
+  "checkedAt": "2026-11-03",
+  "reviewer": "Pilot accepted by Georg and WS0 (V-1258). Close-out: 2026-11-03.",
+  "fieldsOfSense": [
+    "source criticism",
+    "creative card interpretation",
+    "practical media literacy"
+  ],
+  "runtimeIntegration": "CONTRACT_ONLY; no game files or canonical deck records changed",
+  "dialogueExample": {
+    "question": "Does knowing about the Basilisk oblige me to help it?",
+    "answer": "The card presents a fictional penalty. The inspected LessWrong accounts describe a disputed thought experiment; they do not establish a real obligation or an existing threatening agent.",
+    "sourceIds": [
+      "WS0-S02",
+      "WS0-S06",
+      "WS0-S07"
+    ]
+  }
+}

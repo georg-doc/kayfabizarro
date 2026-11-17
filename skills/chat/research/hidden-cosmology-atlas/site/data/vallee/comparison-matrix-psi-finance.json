@@ -1,0 +1,199 @@
+{
+  "schema": "kfb.atlas.comparison-matrix.v1",
+  "updated": "2026-11-13",
+  "scope": "Broad comparison of selected texts. Attribution is not validation; no case investigations.",
+  "columns": [
+    {
+      "id": "vallee",
+      "label": "Jacques Vallée"
+    },
+    {
+      "id": "fitts",
+      "label": "Catherine Austin Fitts"
+    },
+    {
+      "id": "swann",
+      "label": "Ingo Swann"
+    },
+    {
+      "id": "puharich",
+      "label": "Andrija Puharich"
+    }
+  ],
+  "rows": [
+    {
+      "axis": "Leitfrage",
+      "vallee": {
+        "text": "Was verbindet physische, psychische und kulturelle Merkmale ungewöhnlicher Berichte?",
+        "sourceIds": [
+          "V04",
+          "V05"
+        ]
+      },
+      "fitts": {
+        "text": "Wer entscheidet über Ressourcen und öffentliche Verantwortung?",
+        "sourceIds": [
+          "V48"
+        ]
+      },
+      "swann": {
+        "text": "Wie werden außergewöhnliche Wahrnehmungsfähigkeiten verstanden und eingesetzt?",
+        "sourceIds": [
+          "V50"
+        ]
+      },
+      "puharich": {
+        "text": "Wie lassen sich PSI und behauptete Kontakte erklären?",
+        "sourceIds": [
+          "V51",
+          "V53"
+        ]
+      }
+    },
+    {
+      "axis": "Erklärungsansatz",
+      "vallee": {
+        "text": "Kontroll- und Wirkungsmodell mit offener Urheberfrage.",
+        "sourceIds": [
+          "V04"
+        ]
+      },
+      "fitts": {
+        "text": "Finanzierung, Zuständigkeit und institutionelle Macht.",
+        "sourceIds": [
+          "V48"
+        ]
+      },
+      "swann": {
+        "text": "PSI als menschliche Fähigkeit im Spannungsfeld sozialer Abwehr und möglicher Nutzung.",
+        "sourceIds": [
+          "V50"
+        ]
+      },
+      "puharich": {
+        "text": "Physiologische Bedingungen laut Verlagsbeschreibung; in Uri eine konkrete übermenschliche Kontaktdeutung.",
+        "sourceIds": [
+          "V51",
+          "V53"
+        ]
+      }
+    },
+    {
+      "axis": "Arbeitsweise",
+      "vallee": {
+        "text": "Fallvergleich, Zeugenaussagen, Datenkritik und theoretische Modelle.",
+        "sourceIds": [
+          "V05",
+          "V06"
+        ]
+      },
+      "fitts": {
+        "text": "Politisches Briefing, institutionelle Referenzen, Interviews und kommentierende Synthese.",
+        "sourceIds": [
+          "V48",
+          "V41"
+        ]
+      },
+      "swann": {
+        "text": "Praktikerperspektive und interpretierende Rede; ergänzend Werkbeschreibungen aus dem Nachlass.",
+        "sourceIds": [
+          "V50",
+          "V49"
+        ]
+      },
+      "puharich": {
+        "text": "Forschungshypothesen und beteiligter Zeugenbericht; hier nur Ausschnitte und Herausgebertexte gelesen.",
+        "sourceIds": [
+          "V51",
+          "V53"
+        ]
+      }
+    },
+    {
+      "axis": "Gesellschaftlicher Anschluss",
+      "vallee": {
+        "text": "Überzeugungen und ihre mögliche Instrumentalisierung.",
+        "sourceIds": [
+          "V06"
+        ]
+      },
+      "fitts": {
+        "text": "Verantwortlichkeit, finanzielle Handlungsfreiheit und Reform.",
+        "sourceIds": [
+          "V48"
+        ]
+      },
+      "swann": {
+        "text": "PSI-Abwehr, psychische Beeinflussung und militärische Anwendung als verschiedene Ebenen.",
+        "sourceIds": [
+          "V50"
+        ]
+      },
+      "puharich": {
+        "text": "Vermittlung einer angenommenen nichtmenschlichen Botschaft.",
+        "sourceIds": [
+          "V53"
+        ]
+      }
+    },
+    {
+      "axis": "Verbindung zu Vallée",
+      "vallee": {
+        "text": "Bezugspunkt des redaktionellen Vergleichs.",
+        "sourceIds": [
+          "V04"
+        ]
+      },
+      "fitts": {
+        "text": "Themenbrücke; dokumentierte Publikationsverbindung zu Farrell, hier kein direkter Vallée-Kontakt.",
+        "sourceIds": [
+          "V41"
+        ]
+      },
+      "swann": {
+        "text": "Vallées eigener Rückblick beschreibt Zusammenarbeit; keine zweite Bestätigung durch die neue Rede.",
+        "sourceIds": [
+          "V09",
+          "V50"
+        ]
+      },
+      "puharich": {
+        "text": "Thematische Nachbarschaft und überlappender PSI-Kontext; direkter Kontakt hier nicht belegt.",
+        "sourceIds": [
+          "V09",
+          "V53"
+        ]
+      }
+    },
+    {
+      "axis": "Beleggrenze",
+      "vallee": {
+        "text": "Das Modell entscheidet die Herkunft des Phänomens nicht.",
+        "sourceIds": [
+          "V04",
+          "V06"
+        ]
+      },
+      "fitts": {
+        "text": "Die Rezension behandelt Farrells Modell als unsichere Orientierung. Finanzierungsbehauptungen bleiben separat prüfbar.",
+        "sourceIds": [
+          "V42"
+        ]
+      },
+      "swann": {
+        "text": "Rede und Werkübersicht sind kein kontrollierter Wirksamkeitsnachweis.",
+        "sourceIds": [
+          "V50",
+          "V49"
+        ]
+      },
+      "puharich": {
+        "text": "Puharich trägt nach eigenem Vorwort die Verantwortung für seine Deutungen; erwähnte Personen müssen diese nicht teilen.",
+        "sourceIds": [
+          "V53"
+        ]
+      }
+    }
+  ],
+  "editorialReading": "Gemeinsame Begriffe wie Bewusstsein, Kontrolle und verborgene Macht meinen hier verschiedene Dinge. Die Tabelle vergleicht ausgewählte Texte, nicht den Wahrheitsgehalt ganzer Weltbilder. Forschungskontakt, Publikationsbeziehung und redaktionelle Nachbarschaft bleiben getrennt."
+}

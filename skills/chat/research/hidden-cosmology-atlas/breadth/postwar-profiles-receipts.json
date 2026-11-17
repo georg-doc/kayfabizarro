@@ -1,0 +1,666 @@
+{
+  "researchRunId": "ATLAS-BREADTH-B-POSTWAR-2026-11-01",
+  "executorAgentId": "/root/postwar_profiles",
+  "model": "not separately observed",
+  "inputGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+  "promptRef": "WSA_WORK_BREADTH_FIRST_AUTHOR_ATLAS_EXPANSION_BRIEF_R1_2026-11-01",
+  "reviewStatus": "UNREVIEWED",
+  "independentReviewer": null,
+  "githubWrites": 0,
+  "privateMaterialCopied": false,
+  "dedupChecks": [
+    {
+      "path": "skills/chat/research/hidden-cosmology-atlas/authors/annie-jacobsen.md",
+      "ref": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "result": "404_NOT_FOUND",
+      "scope": "exact path only"
+    },
+    {
+      "path": "skills/chat/research/hidden-cosmology-atlas/authors/linda-hunt.md",
+      "ref": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "result": "404_NOT_FOUND",
+      "scope": "exact path only"
+    },
+    {
+      "path": "skills/chat/research/hidden-cosmology-atlas/authors/christopher-simpson.md",
+      "ref": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "result": "404_NOT_FOUND",
+      "scope": "exact path only"
+    },
+    {
+      "path": "skills/chat/research/hidden-cosmology-atlas/authors/peter-dale-scott.md",
+      "ref": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "result": "404_NOT_FOUND",
+      "scope": "exact path only"
+    }
+  ],
+  "sourceCounts": {
+    "sources": 13,
+    "claims": 11,
+    "conceptualNoncausalRelations": 5,
+    "originalBookPagesRead": 0,
+    "originalArticlePagesRead": 0,
+    "pdfImagesViewed": 0,
+    "audioMinutes": 0
+  },
+  "sources": [
+    {
+      "sourceId": "PW-S01",
+      "title": "Operation Paperclip \u2014 Little, Brown publisher edition",
+      "url": "https://www.hbglibrary.com/titles/annie-jacobsen/operation-paperclip/9780316221030/",
+      "sourceKind": "PUBLISHER_CATALOG",
+      "publicationDate": "2015-01-20",
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "Title, edition details, description and author note; HTML lines 55\u2013131.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://www.hbglibrary.com/titles/annie-jacobsen/operation-paperclip/9780316221030/",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S02",
+      "title": "The Pentagon\u2019s Brain \u2014 Penguin NZ edition",
+      "url": "https://www.penguin.co.nz/books/the-pentagons-brain-9781804998830",
+      "sourceKind": "PUBLISHER_CATALOG",
+      "publicationDate": "2026-05-12",
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "Title, edition metadata, description; HTML lines 88\u2013139.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://www.penguin.co.nz/books/the-pentagons-brain-9781804998830",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S03",
+      "title": "Michael J. Neufeld review of Operation Paperclip, Quest 21(3)",
+      "url": "https://repository.si.edu/bitstreams/1c401522-1edc-466f-94b2-cd0cccd319e3/download",
+      "sourceKind": "ORIGINAL_ACADEMIC_REVIEW",
+      "publicationDate": "2014",
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "Parsed PDF text: contents names reviewer; partial review on printed p.51 / zero-based PDF page 2, lines 95\u2013156. No screenshot.",
+      "limits": "Partial original review text read; review criticism not independently adjudicated against book pages.",
+      "independenceGroup": "https://repository.si.edu/bitstreams/1c401522-1edc-466f-94b2-cd0cccd319e3/download",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S04",
+      "title": "Secret Agenda \u2014 Smithsonian catalog",
+      "url": "https://www.si.edu/object/siris_sil_411400",
+      "sourceKind": "INSTITUTIONAL_CATALOG",
+      "publicationDate": "1991",
+      "accessDate": "2026-11-01",
+      "accessStatus": "INDEXED_TEXT_ONLY_DIRECT_OPEN_FAILED",
+      "originalSourceScope": "Search-indexed title, author, publication year and physical-description metadata.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://www.si.edu/object/siris_sil_411400",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S05",
+      "title": "Linda Hunt, U.S. coverup of Nazi scientists",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/00963402.1985.11455944",
+      "sourceKind": "ORIGINAL_ARTICLE_ABSTRACT",
+      "publicationDate": "1985-04",
+      "accessDate": "2026-11-01",
+      "accessStatus": "INDEXED_ABSTRACT_ONLY_DIRECT_OPEN_403",
+      "originalSourceScope": "Publisher search-indexed byline, abstract, journal 41(4), pp.16\u201324 metadata. Direct request returned 403.",
+      "limits": "Article body not read; pages 16\u201324 are bibliographic range, NOT pages inspected. Online republication 2015-09-15 is distinct from 1985 issue date.",
+      "independenceGroup": "https://www.tandfonline.com/doi/abs/10.1080/00963402.1985.11455944",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S06",
+      "title": "Acting Secretary of State to President Truman, FRUS 1946 V, doc.448",
+      "url": "https://history.state.gov/historicaldocuments/frus1946v05/d448",
+      "sourceKind": "GOVERNMENT_DOCUMENT_EDITION",
+      "publicationDate": "1946-08-30",
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "HTML transcription, memorandum and initial enclosure clauses including screening rule 2(a)(5), lines 2\u201350.",
+      "limits": "Official edited transcription, not original image; establishes proposed policy and its wording, not individual enforcement.",
+      "independenceGroup": "https://history.state.gov/historicaldocuments/frus1946v05/d448",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S07",
+      "title": "NARA RG263 CIA Records \u2014 IWG",
+      "url": "https://www.archives.gov/iwg/declassified-records/rg-263-cia-records",
+      "sourceKind": "GOVERNMENT_ARCHIVE_INDEX",
+      "publicationDate": null,
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "Index introduction, release/file categories, explicit warning that file names do not establish connection with wrongdoing; HTML lines 47\u201377.",
+      "limits": "Underlying case files not opened; index is a custody/discovery lead, not proof of any named person\u2019s conduct.",
+      "independenceGroup": "https://www.archives.gov/iwg/declassified-records/rg-263-cia-records",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S08",
+      "title": "Christopher Simpson author catalog",
+      "url": "https://openroadmedia.com/contributor/christopher-simpson",
+      "sourceKind": "PUBLISHER_CATALOG",
+      "publicationDate": null,
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "Byline/author note and titles list; HTML lines 5\u201329.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://openroadmedia.com/contributor/christopher-simpson",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S09",
+      "title": "Blowback \u2014 publisher edition",
+      "url": "https://openroadmedia.com/ebook/blowback/9781497623064",
+      "sourceKind": "PUBLISHER_CATALOG",
+      "publicationDate": null,
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "HTML title and Christopher Simpson byline lines 7\u201317; remaining copy is series-wide promotion.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://openroadmedia.com/ebook/blowback/9781497623064",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S10",
+      "title": "Science of Coercion \u2014 publisher edition",
+      "url": "https://openroadmedia.com/ebook/science-of-coercion/9781497672703",
+      "sourceKind": "PUBLISHER_CATALOG",
+      "publicationDate": null,
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "Visible HTML title/byline lines 7\u201317 names Christopher Simpson. Browser title instead names Mark Crispin Miller; mismatch recorded.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://openroadmedia.com/ebook/science-of-coercion/9781497672703",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S11",
+      "title": "The Splendid Blond Beast \u2014 publisher edition",
+      "url": "https://openroadmedia.com/ebook/the-splendid-blond-beast/9781504043496",
+      "sourceKind": "PUBLISHER_CATALOG",
+      "publicationDate": null,
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "HTML title, byline and publisher description lines 13\u201330.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://openroadmedia.com/ebook/the-splendid-blond-beast/9781504043496",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S12",
+      "title": "The Road to 9/11 \u2014 UC Press",
+      "url": "https://www.ucpress.edu/books/the-road-to-9-11/paper",
+      "sourceKind": "PUBLISHER_CATALOG",
+      "publicationDate": "2007-09",
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "Title, edition metadata, publisher description, author note and contents; HTML lines 30\u2013105.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://www.ucpress.edu/books/the-road-to-9-11/paper",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    },
+    {
+      "sourceId": "PW-S13",
+      "title": "Deep Politics and the Death of JFK \u2014 UC Press paperback",
+      "url": "https://www.ucpress.edu/books/deep-politics-and-the-death-of-jfk/paper",
+      "sourceKind": "PUBLISHER_CATALOG",
+      "publicationDate": "1996-06",
+      "accessDate": "2026-11-01",
+      "accessStatus": "READ_TEXT",
+      "originalSourceScope": "HTML title and edition details lines 30\u201350; description, author note, contents lines 68\u2013119.",
+      "limits": "Book body not read; no historical event verification.",
+      "independenceGroup": "https://www.ucpress.edu/books/deep-politics-and-the-death-of-jfk/paper",
+      "originalBookPagesRead": 0,
+      "pdfImagesViewed": 0,
+      "audioMinutesListened": 0
+    }
+  ],
+  "claims": [
+    {
+      "claimId": "PW-C01",
+      "authorEntityId": "annie-jacobsen",
+      "statement": "Publisher presents Operation Paperclip as an investigation of postwar specialist recruitment and its ethical tradeoffs.",
+      "sourceIds": [
+        "PW-S01"
+      ],
+      "claimKind": "BIBLIOGRAPHIC_OR_PUBLISHER_ATTRIBUTION",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceLocator": null,
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C02",
+      "authorEntityId": "annie-jacobsen",
+      "statement": "Publisher presents The Pentagon\u2019s Brain as a history of DARPA; listed May 2026 date belongs to this edition.",
+      "sourceIds": [
+        "PW-S02"
+      ],
+      "claimKind": "BIBLIOGRAPHIC_OR_PUBLISHER_ATTRIBUTION",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceLocator": null,
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C03",
+      "authorEntityId": "annie-jacobsen",
+      "statement": "Neufeld criticizes accuracy, balance and notes while acknowledging readable presentation and newly developed sources; the review is not a book-wide disproof.",
+      "sourceIds": [
+        "PW-S03"
+      ],
+      "claimKind": "ORIGINAL_REVIEW_ATTRIBUTION",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceLocator": "Quest 21(3), partial printed p.51; PDF index2, parsed text",
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C04",
+      "authorEntityId": "linda-hunt",
+      "statement": "Publisher-indexed abstract attributes to Hunt the argument that records of Nazi activity and crimes were suppressed to enable immigration.",
+      "sourceIds": [
+        "PW-S05"
+      ],
+      "claimKind": "AUTHOR_ASSERTION",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceLocator": "Abstract only; no article pages inspected",
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C05",
+      "authorEntityId": "linda-hunt",
+      "statement": "Smithsonian catalog identifies Hunt as author of Secret Agenda (1991).",
+      "sourceIds": [
+        "PW-S04"
+      ],
+      "claimKind": "CATALOG_METADATA",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceLocator": "Search-indexed catalog metadata; direct access failed",
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C06",
+      "authorEntityId": "christopher-simpson",
+      "statement": "Open Road\u2019s visible author and book pages attribute Blowback, Science of Coercion and The Splendid Blond Beast to Christopher Simpson.",
+      "sourceIds": [
+        "PW-S08",
+        "PW-S09",
+        "PW-S10",
+        "PW-S11"
+      ],
+      "claimKind": "BIBLIOGRAPHIC_OR_PUBLISHER_ATTRIBUTION",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceLocator": null,
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C07",
+      "authorEntityId": "christopher-simpson",
+      "statement": "Publisher frames The Splendid Blond Beast as an argument connecting economic/state interests, genocide and postwar accountability.",
+      "sourceIds": [
+        "PW-S11"
+      ],
+      "claimKind": "BIBLIOGRAPHIC_OR_PUBLISHER_ATTRIBUTION",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceLocator": null,
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C08",
+      "authorEntityId": "peter-dale-scott",
+      "statement": "UC Press presents Deep Politics and the Death of JFK as Scott\u2019s challenge to prevailing assassination explanations and interpretation of surrounding policy structures.",
+      "sourceIds": [
+        "PW-S13"
+      ],
+      "claimKind": "BIBLIOGRAPHIC_OR_PUBLISHER_ATTRIBUTION",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceLocator": null,
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C09",
+      "authorEntityId": "peter-dale-scott",
+      "statement": "UC Press presents The Road to 9/11 through Scott\u2019s analysis of secrecy, private wealth and foreign policy.",
+      "sourceIds": [
+        "PW-S12"
+      ],
+      "claimKind": "BIBLIOGRAPHIC_OR_PUBLISHER_ATTRIBUTION",
+      "layer": "B_AUTHOR_ASSERTION",
+      "causality": false,
+      "sourceLocator": null,
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C10",
+      "authorEntityId": null,
+      "statement": "The August 1946 memorandum and enclosure describe recruitment policy and a Nazi-participation screening exclusion; they do not establish compliance for individual recruits.",
+      "sourceIds": [
+        "PW-S06"
+      ],
+      "claimKind": "DOCUMENT_TEXT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceLocator": "FRUS doc448 memorandum and enclosure2(a)(5)",
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    },
+    {
+      "claimId": "PW-C11",
+      "authorEntityId": null,
+      "statement": "NARA cautions that names appearing in released files do not establish involvement in wrongdoing.",
+      "sourceIds": [
+        "PW-S07"
+      ],
+      "claimKind": "ARCHIVE_INDEX_TEXT",
+      "layer": "A_DOCUMENTARY",
+      "causality": false,
+      "sourceLocator": "RG263 index introduction",
+      "reviewStatus": "UNREVIEWED",
+      "independentReviewer": null
+    }
+  ],
+  "relations": [
+    {
+      "edgeId": "PW-R01",
+      "fromEntityId": "annie-jacobsen",
+      "toEntityId": "linda-hunt",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Compare generations of Paperclip reporting and trace shared source roots rather than count retellings as independent witnesses.",
+      "claimIds": [
+        "PW-C01",
+        "PW-C03",
+        "PW-C04",
+        "PW-C05"
+      ],
+      "sourceIds": [
+        "PW-S01",
+        "PW-S03",
+        "PW-S04",
+        "PW-S05"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Inspect each author\u2019s precise notes against the same personnel files.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "PW-R02",
+      "fromEntityId": "linda-hunt",
+      "toEntityId": "christopher-simpson",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Compare specialist recruitment, intelligence recruitment and postwar accountability as distinct questions.",
+      "claimIds": [
+        "PW-C04",
+        "PW-C06",
+        "PW-C07"
+      ],
+      "sourceIds": [
+        "PW-S05",
+        "PW-S08",
+        "PW-S09",
+        "PW-S11"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Read Blowback and Secret Agenda passages before asserting overlap in specific actors.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "PW-R03",
+      "fromEntityId": "christopher-simpson",
+      "toEntityId": "peter-dale-scott",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Compare explanations of institutional secrecy and state/private interests without inferring a common command network.",
+      "claimIds": [
+        "PW-C07",
+        "PW-C08",
+        "PW-C09"
+      ],
+      "sourceIds": [
+        "PW-S11",
+        "PW-S12",
+        "PW-S13"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Identify one exact claim in each work and independently inspect its original records.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "PW-R04",
+      "fromEntityId": "annie-jacobsen",
+      "toEntityId": "source/PW-S06",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Compare publisher-described recruitment narrative with an official policy text; policy and practice may differ.",
+      "claimIds": [
+        "PW-C01",
+        "PW-C10"
+      ],
+      "sourceIds": [
+        "PW-S01",
+        "PW-S06"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Locate dated individual screening and employment files.",
+      "auditEventIds": []
+    },
+    {
+      "edgeId": "PW-R05",
+      "fromEntityId": "linda-hunt",
+      "toEntityId": "source/PW-S06",
+      "type": "CONCEPTUAL_COMPARISON",
+      "layer": "C_CONCEPTUAL_NONCAUSAL",
+      "causality": false,
+      "statement": "Use formal screening rules as a question against Hunt\u2019s reported circumvention thesis, not as proof that circumvention never occurred.",
+      "claimIds": [
+        "PW-C04",
+        "PW-C10"
+      ],
+      "sourceIds": [
+        "PW-S05",
+        "PW-S06"
+      ],
+      "sourceLocator": "See per-source read-scope receipts; no book-body locator claimed.",
+      "eventDate": null,
+      "publicationDate": null,
+      "identityStatus": "NAMED_AUTHOR_AND_DISTINCT_SOURCE_LEADS",
+      "originalSourceScope": "Publisher/catalog/abstract/review/policy text as individually scoped.",
+      "editor": "/root/postwar_profiles",
+      "independentReviewer": null,
+      "reviewStatus": "UNREVIEWED",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/",
+      "sourceGitSha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+      "counterEvidence": [
+        "Shared themes do not establish historical coordination or independent corroboration."
+      ],
+      "nextFalsifier": "Inspect before/after dossiers, signatories and dates for a named case.",
+      "auditEventIds": []
+    }
+  ],
+  "authors": [
+    {
+      "entityId": "annie-jacobsen",
+      "name": "Annie Jacobsen",
+      "fieldsOfSense": [
+        "Military science and research institutions \u2014 compare technologies with the administrative record.",
+        "Postwar recruitment and accountability \u2014 distinguish scientific contribution, personal conduct and recruitment decisions.",
+        "Historical narration and archival method \u2014 compare dramatic reconstruction with document-level warrants."
+      ],
+      "sourceIds": [
+        "PW-S01",
+        "PW-S02",
+        "PW-S03",
+        "PW-S06",
+        "PW-S07"
+      ],
+      "nextGate": "Inspect one precisely located Operation Paperclip passage, its cited original personnel record, and the corresponding Neufeld objection.",
+      "roleFacets": [
+        "RESEARCH_AUTHOR",
+        "SOURCE_DISCOVERY_DONOR"
+      ]
+    },
+    {
+      "entityId": "linda-hunt",
+      "name": "Linda Hunt",
+      "fieldsOfSense": [
+        "Postwar recruitment and vetting \u2014 compare eligibility rules with case-specific decisions.",
+        "Investigative source custody \u2014 distinguish FOIA-derived reporting from the released documents themselves.",
+        "Public memory and accountability \u2014 compare institutional narratives with investigative allegations."
+      ],
+      "sourceIds": [
+        "PW-S04",
+        "PW-S05",
+        "PW-S06",
+        "PW-S07"
+      ],
+      "nextGate": "Obtain the 1985 article from lawful publisher/library access and inspect one cited before/after personnel-file pair.",
+      "roleFacets": [
+        "RESEARCH_AUTHOR",
+        "SOURCE_DISCOVERY_DONOR"
+      ]
+    },
+    {
+      "entityId": "christopher-simpson",
+      "name": "Christopher Simpson",
+      "fieldsOfSense": [
+        "Postwar recruitment and accountability \u2014 separate intelligence recruitment from specialist recruitment.",
+        "Communication research and persuasion \u2014 a work-discovery field pending book-level reading.",
+        "Political economy and mass violence \u2014 compare explanations with case-specific institutional evidence."
+      ],
+      "sourceIds": [
+        "PW-S08",
+        "PW-S09",
+        "PW-S10",
+        "PW-S11",
+        "PW-S07"
+      ],
+      "nextGate": "Read one Blowback passage and its original archival file, while verifying the Science of Coercion title/copyright-page attribution.",
+      "roleFacets": [
+        "RESEARCH_AUTHOR",
+        "SOURCE_DISCOVERY_DONOR"
+      ]
+    },
+    {
+      "entityId": "peter-dale-scott",
+      "name": "Peter Dale Scott",
+      "fieldsOfSense": [
+        "Institutional secrecy and public accountability \u2014 track precisely attributed claims.",
+        "Foreign policy and historical interpretation \u2014 distinguish chronology from causation.",
+        "Deep politics as an explanatory concept \u2014 test definitions and alternative explanations rather than assume a hidden unified actor."
+      ],
+      "sourceIds": [
+        "PW-S12",
+        "PW-S13"
+      ],
+      "nextGate": "Select one narrow claim, read its book passage and source notes, then compare the exact contemporaneous original with the relevant official investigative finding.",
+      "roleFacets": [
+        "RESEARCH_AUTHOR",
+        "SOURCE_DISCOVERY_DONOR"
+      ]
+    }
+  ],
+  "validation": {
+    "sourceAndClaimReferences": "PASS",
+    "uniqueIds": "PASS",
+    "allComparisonEdgesNoncausal": "PASS",
+    "historicalFactValidation": "NOT_PERFORMED",
+    "sourceScopeReview": "SELF_REVIEW_ONLY"
+  },
+  "identityNormalization": "FRUS document alias frus-1946-v5-doc448 resolves to registered work source/PW-S06; source content unchanged."
+}

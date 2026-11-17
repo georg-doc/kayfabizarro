@@ -1,0 +1,344 @@
+{
+  "schema": "kfb.atlas.navigation-reconciliation/1",
+  "date": "2026-11-01",
+  "reviewer": "/root/postwar_profiles",
+  "inputGitSha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "mode": "READ_ONLY_AUDIT_LOCAL_DRAFT",
+  "newHistoricalClaims": 0,
+  "newSourceIds": 0,
+  "archiveOutreach": 0,
+  "githubWrites": 0,
+  "records": [
+    {
+      "registrationId": "REC-C02-01",
+      "label": "Moneyrex archive-access R4 within existing WCC/Samosa topic",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/RETURN.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/MONEYREX_ARCHIVE_ACCESS_R4_2026-10-31.md"
+      ],
+      "status": "ALREADY_REGISTERED_IN_LIVING_RETURN_AND_LEGACY_REGISTRY; MISSING_DIRECT_BREADTH_NAVIGATION",
+      "reuseSourceIds": [
+        "WC-S20",
+        "WC-S41",
+        "WC-S42",
+        "WC-S43",
+        "WC-S44",
+        "WC-S45",
+        "WC-S46"
+      ],
+      "reuseClaimIds": [
+        "WC-C45",
+        "WC-C46",
+        "WC-C47",
+        "WC-C48",
+        "WC-C49",
+        "WC-C50"
+      ],
+      "nextGate": "WCC_MONEYREX_ARCHIVE_ORIGINALS_RECEIPT_R1",
+      "earlierGateAlias": "WCC_MONEYREX_EQUITY_ORIGINAL_1981",
+      "accessState": "1981 letter catalog only; 1964–72 shareholder records not acquired; prepared requests not sent.",
+      "action": "Add pointer-only topic registration to existing breadth index, linked from WCC and Jason Samosa nodes; preserve original WC IDs, source scope and owner. Do not recreate sources or send requests."
+    },
+    {
+      "registrationId": "REC-C02-02",
+      "label": "Jorjani/Michels trilogy and Puharich 1984 recovery R2",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/RETURN.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/PUHARICH_1984_PRIMARY_SOURCE_RECOVERY_R2.md"
+      ],
+      "status": "ALREADY_REGISTERED_IN_LIVING_RETURN_AND_LEGACY_REGISTRY; BREADTH_HAS_PARTIAL_EXTERNAL_ID_REUSE",
+      "reuseSourceIds": [
+        "JM-S16",
+        "JM-S17",
+        "JM-S21"
+      ],
+      "reuseClaimIds": [
+        "JM-C19",
+        "JM-C21",
+        "JM-C22"
+      ],
+      "reuseRelationIds": [
+        "JM-H09",
+        "JM-H10",
+        "JM-W10"
+      ],
+      "nextGate": "PUHARICH_1984_AUDIO_AND_REMAINDER_ABDUCTION_CLAIM",
+      "accessState": "Topic Return reports publisher transcript indexing, 0 original audio minutes and unverified remainder claim; no primary external research in reconciliation.",
+      "action": "Give existing reusedExternalRecords a resolvable ownerPath and topic Return; connect Puharich/Jorjani/Michels without duplicating JM records."
+    },
+    {
+      "registrationId": "REC-C02-03",
+      "label": "TheWebb.io benchmark and external-provider gate",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/WEBB_IO_ARCHIVE_BENCHMARK_AND_EXTERNAL_MCP_GATE_R1_2026-11-01.md",
+      "documentPaths": [],
+      "status": "DOCUMENT_EXISTS; NO_EXACT_FILE_POINTER_IN_LIVING_RETURN_OR_BREADTH_INDEX",
+      "reuseSourceIds": [],
+      "reuseClaimIds": [],
+      "accessState": "Vendor/publisher discovery and design comparison; no provider/API/MCP integration verified.",
+      "action": "Add this existing document to an existing navigation section as benchmark/provider-gate pointer, distinct from Whitney Webb/Unlimited Hangout author intake. No new factual source IDs."
+    },
+    {
+      "registrationId": "REC-C02-04",
+      "label": "AB01 new author masters versus legacy 14-entry registry",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/ATLAS_ENTITY_REGISTRY_VIEW_R1_2026-10-31.json",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/site/registry.json",
+        "skills/chat/research/hidden-cosmology-atlas/breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json"
+      ],
+      "status": "LEGACY_REGISTRY_STALE_RELATIVE_TO_AB01; AUTHOR_MASTER_CREATION_ALREADY_REGISTERED_IN_LIVING_RETURN",
+      "reuseSourceIds": [],
+      "reuseClaimIds": [],
+      "accessState": "Puharich still says master not created; Swann/Brown/Tesla backlog despite AB01 source-lead masters. Four postwar masters absent from legacy entries.",
+      "action": "Prefer additive supersession/source-pointer to existing breadth index in legacy registry; preserve historical snapshot and downstream Site publication distinction. Do not create a third master index or claim hosted Site updated."
+    },
+    {
+      "registrationId": "REC-C02-05",
+      "label": "Journalism and creative cross-lens governance",
+      "ownerPath": "skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md",
+      "documentPaths": [
+        "skills/chat/research/hidden-cosmology-atlas/JOURNALISTIC_DONORS_MEDIA_TRIANGULATION_AND_PRIMARY_CUSTODY_CONTRACT_R1_2026-11-01.md",
+        "skills/chat/research/hidden-cosmology-atlas/CROSS_LENS_CREATIVE_DONOR_SOURCE_NETWORK_CONTRACT_R1_2026-11-01.md"
+      ],
+      "status": "ALREADY_REGISTERED_NO_NEW_RESEARCH_LEDGER",
+      "reuseSourceIds": [],
+      "reuseClaimIds": [],
+      "action": "Retain existing references; classify plans/contracts separately from completed source-led research."
+    }
+  ],
+  "exactNavigationChecks": {
+    "benchmarkLiving": false,
+    "benchmarkReturn": false,
+    "benchmarkIndex": false,
+    "wccIndex": false,
+    "jmIndex": false
+  },
+  "commitAudit": {
+    "scope": "20 exact first-parent ancestry positions pinnedSHA~0 through ~19; commit metadata and changed paths only, not every diff body.",
+    "commits": [
+      {
+        "n": 0,
+        "sha": "6f9fa0c512a85ebaa66100653a49ee06dc1907b2",
+        "message": "research(atlas): pin breadth navigation, verification evidence and next corpus gate",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/CHANGELOG.md",
+          "skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md",
+          "skills/chat/research/hidden-cosmology-atlas/RETURN.md",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/TEST_REPORT_R1_2026-11-01.md",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/validate_breadth.py"
+        ],
+        "error": false
+      },
+      {
+        "n": 1,
+        "sha": "267e2ea50cf333c1d87d55c4970ee6ac0ec72214",
+        "message": "research(atlas): add eight source-lead dossiers and reviewed breadth source packets",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/authors/README.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/andrija-puharich.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/annie-jacobsen.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/catherine-austin-fitts.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/christopher-simpson.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/daniel-liszt.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/ingo-swann.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/joseph-farrell.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/linda-hunt.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/nikola-tesla.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/peter-dale-scott.md",
+          "skills/chat/research/hidden-cosmology-atlas/authors/thomas-townsend-brown.md",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/RESEARCH_QUESTION_MATRIX_R1_2026-11-01.json",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/independent-review.md",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/institution-coverage.json",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/postwar-profiles-receipts.json",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/production-guard.md",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/psi-source-receipts.json",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/solari-intake.json",
+          "skills/chat/research/hidden-cosmology-atlas/breadth/solari-intake.md",
+          "skills/chat/research/hidden-cosmology-atlas/institutions/INSTITUTION_COVERAGE_C08_C10_R1_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 2,
+        "sha": "789c9aa37e5608d1fb23cb45e08ad756059048c5",
+        "message": "research(atlas): record breadth donor custody and dedup checkpoint",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/breadth/SOURCE_CUSTODY_INVENTORY_R1_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 3,
+        "sha": "7b9afcfb38993589c6110d77eeeb32cec89d54aa",
+        "message": "research: assess TheWebb.io as distinct Gary-Webb-named research platform and unverified MCP provider",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/WEBB_IO_ARCHIVE_BENCHMARK_AND_EXTERNAL_MCP_GATE_R1_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 4,
+        "sha": "543db7f1cfd9820d5b769f7003e8899c313c85f5",
+        "message": "research: update owning Atlas SSOT Return changelog with journalist donor provenance layer",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/RETURN.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 5,
+        "sha": "5ed19b92b6abb019a335d88340ce268982ce4937",
+        "message": "research: update owning Atlas SSOT Return changelog with journalist donor provenance layer",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/CHANGELOG.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 6,
+        "sha": "cb510be01a8aad22622bff77c1fd4d2befc41dc8",
+        "message": "research: update owning Atlas SSOT Return changelog with journalist donor provenance layer",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 7,
+        "sha": "9fddad125871edf9bb9b88d4f0b01f39e1a3932d",
+        "message": "research: record 35/35 R4 journalism source-chain structure tests and real source scope",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/ATLAS_JOURNALISTIC_DONOR_R4_TEST_REPORT_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 8,
+        "sha": "c1a51fa58099877e99bb5af8e9a342a708819fdf",
+        "message": "research: correct Patrik Baab name attribution wording in journalist census",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json"
+        ],
+        "error": false
+      },
+      {
+        "n": 9,
+        "sha": "1600c1493a01193a8e9d399a0af32b9c15f93eb7",
+        "message": "research: extend WSA dossier intake and existing Site with journalism donor source chains",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/RESEARCH_ATLAS_SITE_BREADTH_WIKI_NOTION_GRAPH_FOLLOWON_BRIEF_R1_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 10,
+        "sha": "68441231bfded4955bcad2640f144aefb61e5ca5",
+        "message": "research: extend WSA dossier intake and existing Site with journalism donor source chains",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/WSA_WORK_BREADTH_FIRST_AUTHOR_ATLAS_EXPANSION_BRIEF_R1_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 11,
+        "sha": "dc8b2678f65fdd009931f3e3f86b7b4ba9ab0c02",
+        "message": "research: define journalism donor source-chain audits and multi-perspective evidence triangulation",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/JOURNALISTIC_DONORS_MEDIA_TRIANGULATION_AND_PRIMARY_CUSTODY_CONTRACT_R1_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 12,
+        "sha": "0e2e92a56eb493820cd9b34682b667b3879d49a2",
+        "message": "research: extend Atlas census with journalist donors outlet comparison and original documents",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/ATLAS_BREADTH_CENSUS_AND_CLUSTER_SEEDS_R4_2026-11-01.json"
+        ],
+        "error": false
+      },
+      {
+        "n": 13,
+        "sha": "1d24bc43058dc5ec351b7bde3dd7e7b033db77ed",
+        "message": "research: register creative donor cross-lens source continuity and WSA handoff in owner SSOT",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/RETURN.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 14,
+        "sha": "1bd6bd2b3c3f299c7c1a552833708c80dcfa84c3",
+        "message": "research: register creative donor cross-lens source continuity and WSA handoff in owner SSOT",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/CHANGELOG.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 15,
+        "sha": "a008a2d63f1839f8cc7cd32d53c4a82a82eaeff5",
+        "message": "research: register creative donor cross-lens source continuity and WSA handoff in owner SSOT",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 16,
+        "sha": "c85440efe3c7dbf14d7d3431b8a35716388d306b",
+        "message": "research: record 30/30 cross-lens creative donor corpus QA with source access boundaries",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/ATLAS_CREATIVE_LENS_SOURCE_GRAPH_R3_TEST_REPORT_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 17,
+        "sha": "df89ad983c66161b65190feb849c209904eb4332",
+        "message": "research: extend existing Work and Site briefs for bidirectional creative donor lenses",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/RESEARCH_ATLAS_SITE_BREADTH_WIKI_NOTION_GRAPH_FOLLOWON_BRIEF_R1_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 18,
+        "sha": "bf56f0955c45eb440dd3c83062c24315452b3f2e",
+        "message": "research: extend existing Work and Site briefs for bidirectional creative donor lenses",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/WSA_WORK_BREADTH_FIRST_AUTHOR_ATLAS_EXPANSION_BRIEF_R1_2026-11-01.md"
+        ],
+        "error": false
+      },
+      {
+        "n": 19,
+        "sha": "e6bf6a2ff67c4ab07264a7a3578da13c911140af",
+        "message": "research: add cross-lens source/creative donor reversible research and NIE interface contract",
+        "files": [
+          "skills/chat/research/hidden-cosmology-atlas/CROSS_LENS_CREATIVE_DONOR_SOURCE_NETWORK_CONTRACT_R1_2026-11-01.md"
+        ],
+        "error": false
+      }
+    ],
+    "discardedMethod": "Empty-query search_commits returned default-branch history; not used as branch evidence."
+  },
+  "indexDiscovery": {
+    "pinnedResearchDirectory": "skills/chat/research contains only hidden-cosmology-atlas directory.",
+    "pinnedAtlasSubtree": "Full Atlas subtree inspected via tree SHA f683ddd99fd951729310c22ef4662547769ca117.",
+    "unlocatedNames": [
+      "KFB_RESEARCH_ATLAS_PROTOCOL_R1_2026-10-24.md",
+      "KFB_RESEARCH_ATLAS_INDEX_R1_2026-10-24.json"
+    ],
+    "limits": "No matching named file in inspected Atlas subtree or skills/chat directory; default-branch code search returned none. Main research path returned404. Not proof of repository-wide historical absence.",
+    "existingNavigationPaths": [
+      "skills/chat/research/hidden-cosmology-atlas/LIVING_HIDDEN_COSMOLOGY_ATLAS_v0.2.md",
+      "skills/chat/research/hidden-cosmology-atlas/ATLAS_ENTITY_REGISTRY_VIEW_R1_2026-10-31.json",
+      "skills/chat/research/hidden-cosmology-atlas/breadth/ATLAS_BREADTH_READONLY_INDEX_R1_2026-11-01.json",
+      "skills/chat/research/hidden-cosmology-atlas/RETURN.md"
+    ]
+  },
+  "integrationRule": "Add owner pointers to existing navigation. Existing ledger IDs and epistemic statuses remain unchanged; counts must not treat pointer registrations as newly researched records."
+}
