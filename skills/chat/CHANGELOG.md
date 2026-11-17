@@ -1,3 +1,9 @@
+## 2026-11-17 · THE INVISIBLE HANDSHAKE · Analog paper R0 candidate
+
+Separate game-design branch `design/invisible-handshake-paper-r0-2026-11-17` reuses Research Atlas v29 brief (PR #394) without changing its owner. See `games/invisible-handshake/{PROTOTYPE_R0.md,TEST_REPORT_R0.md,RETURN.md,CHANGELOG.md}`. Original English 12-card printable-paper experiment, not a 56-card finished game. Mechanical counts 4/4 player configurations; 3 constructed examples; no human play, no card illustration, no public KFB Stage or Hub tile, and no KFB rules/runtime change. Next gate: Georg 1–2-person physical microplay and KEEP/TUNE/FAIL. Preserve this as CANDIDATE.
+
+---
+
 ## 2026-11-04 · WS0 Black Ink Blob Sprite Family docs/intake candidate
 
 - Captured nine Georg-visual-PASS 12-character theme pairs into an 18-source-sheet SHA-256 intake ledger, 108 mechanical sprite candidates and reusable L0/L1/L2 footless-blob prompt/QA grammar.
