@@ -1,0 +1,475 @@
+{
+  "revision": "historical-texts-2026-11-17",
+  "baseline": "5af720c4444b7be6d9c3d6f4a2a56327b5fecb7f",
+  "scope": "Drei Textfelder, ausgewählte Passagen und Rezeptionsanschlüsse; keine Lokalisierungsexpedition oder vollständige Corpusprüfung.",
+  "sources": [
+    {
+      "id": "HT-S01",
+      "title": "Oxford ETCSL: Editionsgrundlagen",
+      "url": "https://etcsl.orinst.ox.ac.uk/edition2/general.php",
+      "kind": "EDITORIAL_METHOD",
+      "locator": "Aims; Publication history",
+      "read_scope": "HTML gelesen; zusammengesetzte Editionen aus fragmentarischen Tafeln, keine eigenen Keilschriftlesungen.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S02",
+      "title": "Enki und Ninmah · ETCSL 1.1.2",
+      "url": "https://etcsl.orinst.ox.ac.uk/section1/tr112.htm",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "Zeilen 1–37, 52–82",
+      "read_scope": "Englische Composite-Übersetzung und sichtbare Varianten gelesen; keine Tafelbilder oder eigene Übersetzung.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S03",
+      "title": "Inana und Enki · ETCSL 1.3.1",
+      "url": "https://etcsl.orinst.ox.ac.uk/section1/tr131.htm",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "Segmente C 27–30, D 1–27, E 1–36, F 1–13",
+      "read_scope": "Ausgewählte Übersetzungspassagen gelesen; me als göttliche Mächte/Fähigkeiten im Editionskontext, nicht als moderner Technikbegriff.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S04",
+      "title": "Die Fluterzählung · ETCSL 1.7.4",
+      "url": "https://etcsl.orinst.ox.ac.uk/section1/tr174.htm",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "Segmente B 6–18, C 1–27, D 1–11, E 3–11",
+      "read_scope": "Übersetzung der erhaltenen Passagen einschließlich markierter Lücken gelesen; kein vollständiger antiker Textzeuge.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S05",
+      "title": "Sumerische Königsliste · ETCSL 2.1.1",
+      "url": "https://etcsl.orinst.ox.ac.uk/section2/tr211.htm",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "Editorischer Vorspann; Zeilen 1–39 und 40–94",
+      "read_scope": "Anfang und Varianten gelesen; Zahlen folgen laut Edition überwiegend Handschrift WB, nicht allen Zeugen zugleich.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S06",
+      "title": "1 Henoch 6 · R. H. Charles",
+      "url": "https://sacred-texts.com/book/the-book-of-enoch/chapter-vi",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "1 Hen 6,1–8; digitale Wiedergabe der Charles-Übersetzung",
+      "read_scope": "HTML gelesen; neu formatierte Website, kein Manuskript und kein eigener Aramäisch-/Geʿez-Abgleich.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S07",
+      "title": "1 Henoch 8 · R. H. Charles",
+      "url": "https://sacred-texts.com/book/the-book-of-enoch/chapter-viii",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "1 Hen 8,1–3",
+      "read_scope": "Ausgewählte Übersetzungspassage zu Waffen, Metallbearbeitung, Schmuck und weiteren Lehren gelesen; keine technische Rekonstruktion.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S08",
+      "title": "1 Henoch 10 · R. H. Charles",
+      "url": "https://sacred-texts.com/book/the-book-of-enoch/chapter-x",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "1 Hen 10,1–12",
+      "read_scope": "Warnung, Gericht und Heilung in Übersetzung gelesen; theologische Handlung, kein archäologischer Ereignisbeweis.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S09",
+      "title": "IAA: 4Q Enoch, 4Q201",
+      "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q201-1",
+      "kind": "ARCHIVE_LOCATOR",
+      "locator": "Manuskriptkennung 4Q201-1; Seitentitel 4Q Enoch",
+      "read_scope": "Nur Archivseite/Titel zugänglich; keine Fragmentbilder, Transkription oder Datierung daraus neu verifiziert.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S10",
+      "title": "Ida Fröhlich: Mesopotamian Elements and the Watchers Traditions",
+      "url": "https://ms.augsburgfortress.org/downloads/9780800699789Chapter1.pdf",
+      "kind": "SCHOLARLY_INTERPRETATION",
+      "locator": "Kapitel 1, gedruckte S. 11–12 = PDF 1–2; Einleitung und Fußnoten 3–7",
+      "read_scope": "Ausgewählter PDF-Text gelesen. Fachliche Vergleichsthese zu apkallū/Enmeduranki und Henoch; kein eigener Handschriftenvergleich. Nicht das ganze 14-seitige Kapitel geprüft.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S11",
+      "title": "Platon: Timaios · Benjamin Jowett",
+      "url": "https://classics.mit.edu/Plato/timaeus.html",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "Atlantis-Erzählrahmen, traditionell 20d–25d; Absätze ab Crit. Then listen bis Flut/Untergang",
+      "read_scope": "Englische Übersetzung des Erzählrahmens gelesen; MIT-HTML ohne Stephanusnummern, deshalb zusätzlich Absatzanker in Worten. Kein griechischer Variantenapparat.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S12",
+      "title": "Platon: Kritias · Benjamin Jowett",
+      "url": "https://classics.mit.edu/Plato/critias.html",
+      "kind": "ANCIENT_TEXT_TRANSLATION",
+      "locator": "Beschreibung von Stadt, Königen und Schluss; traditionell 113c–121c",
+      "read_scope": "Ausgewählte Übersetzungspassagen gelesen, insbesondere zehn Könige, Gesetzessäule und moralischer Verfall; Schluss bricht vor Zeusrede ab. Keine Lokalisierungsrecherche.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S13",
+      "title": "Ignatius Donnelly: Atlantis, The Antediluvian World (1882)",
+      "url": "https://www.gutenberg.org/cache/epub/4032/pg4032-images.html",
+      "kind": "LATER_RECEPTION_PRIMARY_TEXT",
+      "locator": "Part I, Chapter I: The Purpose of the Book; Beginn Chapter II",
+      "read_scope": "Programmsätze der digitalen Buchtranskription gelesen, nicht der ganze Band; Gutenberg-Katalogzusammenfassung nicht als Beleg verwendet.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S14",
+      "title": "Tim Ventura / Joseph P. Farrell: Interview, 20. März 2007",
+      "url": "https://lust-for-life.org/Lust-For-Life/JosephFarrellInterview/JosephFarrellInterview.pdf",
+      "kind": "AUTHOR_INTERVIEW_MIRROR",
+      "locator": "PDF 2 und 16 = gedruckte American Antigravity S. 2 und 16, Einleitung und letzte Antwort zu The Cosmic War",
+      "read_scope": "Originalinterview auf Drittserver; ausgewählter PDF-Text. Farrell beschreibt selbst seine Verbindung moderner alternativer Physik mit alten Texten. Keine Prüfung der Bell-Nebenbehauptungen.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S15",
+      "title": "Dark Journalist / Farrell: Antarctica Atlantis, 28. Juli 2017",
+      "url": "https://www.darkjournalist.com/s-farrell19.php",
+      "kind": "PUBLISHER_EPISODE_DESCRIPTION",
+      "locator": "Abschnitte Antarctica Atlantis Connection und Cayce’s High Technology Version",
+      "read_scope": "Offizielle Episodenbeschreibung gelesen; kein Video/Audio gehört. Feuerkristall, Technik und Fraktionen werden dort Cayce zugeschrieben; keine Original-Cayce-Lesung geprüft.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S16",
+      "title": "Jason Reza Jorjani: The Rebels of Atlantis, 17. November 2025",
+      "url": "https://jasonrezajorjani.substack.com/p/the-rebels-of-atlantis",
+      "kind": "AUTHOR_ESSAY_PREVIEW",
+      "locator": "Untertitel sowie zwei frei sichtbare Einleitungsabsätze",
+      "read_scope": "Nur Vorschau gelesen: Cayce/Steiner-Kritik angekündigt, Atlantis als prometheische Gegen-Tradition gerahmt. Volltext und genaue Argumentation hinter Zugangsschranke nicht geprüft.",
+      "checked_at": "2026-11-17"
+    },
+    {
+      "id": "HT-S17",
+      "title": "Vallée/Bramley/Icke/Wann: vorhandener Atlas-Vergleich",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/5af720c4444b7be6d9c3d6f4a2a56327b5fecb7f/skills/chat/research/hidden-cosmology-atlas/site/data/vallee/COMPARISON_SYMBOLS_CONTROL.md",
+      "kind": "REUSED_ATLAS_EVIDENCE",
+      "locator": "V04, V05, V54–V58; direkte Bramley-Vallée-Rezeption bei V54",
+      "read_scope": "Bestehenden Vergleich und zugehörige Quellenrecords gelesen; Originalwerke nicht erneut vollständig geprüft. Verweise sind Rückgriff auf vorherige Sichtung, keine neue unabhängige Quelle.",
+      "checked_at": "2026-11-17"
+    }
+  ],
+  "claims": [
+    {
+      "id": "HT-C01",
+      "cluster": "sumer",
+      "title": "Edition ist nicht Tafel",
+      "layer": "ÜBERLIEFERUNG",
+      "statement": "ETCSL rekonstruiert literarische Kompositionen aus oft fragmentarischen Keilschriftzeugen. Die hier gelesenen englischen Texte sind wissenschaftlich bearbeitete Übersetzungen.",
+      "limit": "Kompositionszeit, Abschrift, Editionsdatum und erzählte Urzeit dürfen nicht als dasselbe Datum erscheinen.",
+      "source_ids": [
+        "HT-S01"
+      ]
+    },
+    {
+      "id": "HT-C02",
+      "cluster": "sumer",
+      "title": "Wer übernimmt die Arbeit?",
+      "layer": "TEXTBEFUND",
+      "statement": "Enki und Ninmah erzählt vom Arbeitskonflikt der Götter und der Gestaltung von Menschen aus Lehm, die Lasten übernehmen sollen.",
+      "limit": "Das Motiv trägt einen Vergleich über Arbeit und Herrschaft; es belegt weder außerirdische Herkunft noch einen Eingriff in DNA.",
+      "source_ids": [
+        "HT-S02"
+      ]
+    },
+    {
+      "id": "HT-C03",
+      "cluster": "sumer",
+      "title": "Wissen, Herrschaft und Handwerk",
+      "layer": "TEXTBEFUND",
+      "statement": "Inana erhält bei Enki gegensätzliche Fähigkeiten und Ordnungsformen: Handwerke und Weisheit, aber auch Täuschung, Streit und Plünderung. Anschließend bringt sie die göttlichen Mächte fort.",
+      "limit": "Eine moderne Datenbank-, Lizenz- oder Technologie-Metapher ist eine zusätzliche Deutung. Boat of Heaven allein ist kein Raumfahrtnachweis.",
+      "source_ids": [
+        "HT-S03"
+      ]
+    },
+    {
+      "id": "HT-C04",
+      "cluster": "sumer",
+      "title": "Flut und Herrschaftsfolge",
+      "layer": "TEXTBEFUND",
+      "statement": "Die Fluterzählung lässt Zi-ud-sura überleben. Die Königsliste gliedert Herrschaft vor und nach einer Flut und nennt extrem lange frühe Regierungszeiten.",
+      "limit": "Zwei verwandte literarische Überlieferungen sind nicht automatisch unabhängige Messungen einer globalen Katastrophe; Varianten und Textlücken bleiben sichtbar.",
+      "source_ids": [
+        "HT-S04",
+        "HT-S05"
+      ]
+    },
+    {
+      "id": "HT-C05",
+      "cluster": "enoch",
+      "title": "Welcher Henoch?",
+      "layer": "ÜBERLIEFERUNG",
+      "statement": "Dieses Paket meint 1 Henoch und darin besonders die Wächtererzählung. Der IAA-Eintrag 4Q201 liefert einen konkreten Archivanschluss; Charles bietet einen lesbaren Übersetzungszugang.",
+      "limit": "2 Henoch, 3 Henoch und Book of Giants werden nicht in diesen Text hineingemischt. Archivkennung vorhanden heißt nicht: Fragment neu gelesen.",
+      "source_ids": [
+        "HT-S06",
+        "HT-S09",
+        "HT-S10"
+      ]
+    },
+    {
+      "id": "HT-C06",
+      "cluster": "enoch",
+      "title": "Eid und Grenzüberschreitung",
+      "layer": "TEXTBEFUND",
+      "statement": "1 Henoch 6 erzählt von zweihundert himmlischen Wesen, ihrem gemeinsamen Eid und ihrem Abstieg zum Hermon, um Frauen zu nehmen.",
+      "limit": "Der Text belegt eine antike Erzählung über himmlische Akteure; die Identifikation als biologische Außerirdische ist eine spätere Hypothese.",
+      "source_ids": [
+        "HT-S06"
+      ]
+    },
+    {
+      "id": "HT-C07",
+      "cluster": "enoch",
+      "title": "Technik mit Folgen",
+      "layer": "TEXTBEFUND",
+      "statement": "Kapitel 8 verbindet vermittelte Fertigkeiten unter anderem mit Waffen, Metallbearbeitung und Schmuck. Kapitel 10 antwortet mit Gericht, einer Flutwarnung und der Heilung der Erde.",
+      "limit": "Nicht jede Form von Wissen wird damit pauschal verworfen. Eine Erzählung über verantwortete oder verbotene Lehre ersetzt keine Funddatierung von Technologie.",
+      "source_ids": [
+        "HT-S07",
+        "HT-S08"
+      ]
+    },
+    {
+      "id": "HT-C08",
+      "cluster": "enoch",
+      "title": "Ein historisch untersuchbarer Nachbar",
+      "layer": "FACHLICHE DEUTUNG",
+      "statement": "Fröhlich vergleicht die Henochüberlieferung mit mesopotamischen Weisheitsfiguren, insbesondere apkallū und Enmeduranki, und diskutiert Überlieferung im jüdischen Diasporakontext.",
+      "limit": "Das ist eine begründete literaturhistorische Vergleichsthese, keine Identitätsfeststellung von Wächtern, Anuna und modernen UAP-Akteuren.",
+      "source_ids": [
+        "HT-S10"
+      ]
+    },
+    {
+      "id": "HT-C09",
+      "cluster": "atlantis",
+      "title": "Eine Kette innerhalb des Dialogs",
+      "layer": "TEXTBEFUND",
+      "statement": "Im Timaios berichtet Kritias eine Familienüberlieferung über Solon und Priester in Sais. Der Dialog präsentiert sie als wahre alte Geschichte.",
+      "limit": "Wir besitzen hier Platons Darstellung dieser Kette, nicht zusätzlich Solons Bericht oder das behauptete ägyptische Archiv als unabhängigen Beleg.",
+      "source_ids": [
+        "HT-S11"
+      ]
+    },
+    {
+      "id": "HT-C10",
+      "cluster": "atlantis",
+      "title": "Machtordnung und Untergang",
+      "layer": "TEXTBEFUND",
+      "statement": "Timaios erzählt Krieg und Untergang. Kritias beschreibt Reichtum, Kanäle, zehn Könige und gemeinsame Gesetze; am Ende steht der Verlust von Tugend und Selbstbegrenzung.",
+      "limit": "Eine genaue Erzählung ist noch keine archäologische Identifikation. Das Paket entscheidet keine geografische Atlantis-Hypothese.",
+      "source_ids": [
+        "HT-S11",
+        "HT-S12"
+      ]
+    },
+    {
+      "id": "HT-C11",
+      "cluster": "atlantis",
+      "title": "Vom Dialog zur Weltursprungsthese",
+      "layer": "SPÄTERE DEUTUNG",
+      "statement": "Donnelly setzt 1882 programmatisch auf Atlantis als reale Geschichte und als Ausgangspunkt weitreichender Kulturverbindungen.",
+      "limit": "Seine vergleichende Synthese ist ein eigener neuzeitlicher Interpretationsschritt, kein zusätzliches antikes Zeugnis. Nicht alle späteren Autoren sind damit als direkte Donnelly-Leser nachgewiesen.",
+      "source_ids": [
+        "HT-S13"
+      ]
+    },
+    {
+      "id": "HT-C12",
+      "cluster": "atlantis",
+      "title": "Feuerkristall ist eine andere Quellenstufe",
+      "layer": "AUTORENREZEPTION",
+      "statement": "Die offizielle Liszt/Farrell-Episodenseite führt die hochtechnische Atlantis-Fassung auf Cayce zurück. Jorjanis sichtbare Essay-Einleitung rahmt Atlantis als prometheische Rebellion.",
+      "limit": "Episodenwerbung und Essay-Vorschau belegen die Rahmung; keine vollständige Interviewprüfung, kein Cayce-Originalbeleg und kein Techniknachweis.",
+      "source_ids": [
+        "HT-S15",
+        "HT-S16"
+      ]
+    }
+  ],
+  "author_lenses": [
+    {
+      "author": "Joseph P. Farrell",
+      "route": "index.html#author/joseph-farrell",
+      "topic": "Alte Texte und alternative Physik",
+      "statement": "Farrell beschreibt 2007 selbst, dass er moderne alternative Physik zur Untersuchung antiker Texte heranzieht.",
+      "method": "Technische Rückdeutung / spekulative Synthese",
+      "status": "DIRECT_SELF_DESCRIPTION",
+      "sources": [
+        "HT-S14"
+      ],
+      "boundary": "Das ist eine dokumentierte Methode, keine Bestätigung der so rekonstruierten Technik."
+    },
+    {
+      "author": "Daniel Liszt / Dark Journalist",
+      "route": "index.html#author/daniel-liszt",
+      "topic": "Atlantis, Cayce und Hochtechnologie",
+      "statement": "Die eigene Episodenbeschreibung verbindet Farrell, Cayce, Feuerkristalle und Atlantis.",
+      "method": "Interviewmontage / esoterische Rezeptionsgeschichte",
+      "status": "OFFICIAL_EPISODE_DESCRIPTION",
+      "sources": [
+        "HT-S15"
+      ],
+      "boundary": "Sprecheranteile und Zeitmarken fehlen; eine gemeinsame Sendung zählt nicht als zwei unabhängige Belege."
+    },
+    {
+      "author": "Jason Reza Jorjani",
+      "route": "index.html#author/jason-reza-jorjani",
+      "topic": "Atlantis als prometheische Gegen-Tradition",
+      "statement": "Die frei sichtbare Einleitung setzt Atlantis als frühere Form von Modernität und Rebellion gegen die Götter ein.",
+      "method": "Philosophische Umdeutung / Umwertung",
+      "status": "PREVIEW_ONLY",
+      "sources": [
+        "HT-S16"
+      ],
+      "boundary": "Keine Ausarbeitung des kostenpflichtigen Haupttexts behauptet. Die angekündigte Cayce/Steiner-Kritik ist noch kein vollständig gelesener Vergleich."
+    },
+    {
+      "author": "Jacques Vallée",
+      "route": "vallee.html",
+      "topic": "Wiederkehrende Motive und Offenheit der Erklärung",
+      "statement": "Als methodischer Nachbar lassen sich Berichtsform, kulturelle Wirkung und behaupteter Akteur getrennt prüfen.",
+      "method": "Motivvergleich / Quellenkritik",
+      "status": "EDITORIAL_NEIGHBOR",
+      "sources": [
+        "HT-S17"
+      ],
+      "boundary": "Kein Beleg, dass Vallée die hier ausgewählten sumerischen oder Henoch-Passagen benutzt; keine Gleichsetzung seiner Position mit einer Ancient-Aliens-These."
+    },
+    {
+      "author": "William Bramley",
+      "route": "index.html#author/william-bramley",
+      "topic": "Arbeit, Fremdherrschaft und Custodians",
+      "statement": "Seine vorhandene Kontrollhypothese lässt sich neben Enki und Ninmah legen: Der alte Text schildert Arbeitsteilung; die extraterrestrische Besitzerthese fügt eine Ursache hinzu.",
+      "method": "Historische Gesamtsynthese",
+      "status": "EDITORIAL_COMPARISON_WITH_REUSED_EVIDENCE",
+      "sources": [
+        "HT-S02",
+        "HT-S17"
+      ],
+      "boundary": "Keine direkte Benutzung genau dieser ETCSL-Komposition nachgewiesen. Frühere kreative Atlas-Persona-Texte sind keine Quellenbelege."
+    },
+    {
+      "author": "Icke / Wann / Pasulka",
+      "route": "vallee.html",
+      "topic": "Wirklichkeitsmodelle, Symbole und religiöse Technikdeutung",
+      "statement": "Mögliche nächste Vergleichslinsen, ohne hier spezifische Aussagen zu Henoch oder Atlantis zuzuschreiben.",
+      "method": "Nur Themenanschluss",
+      "status": "LEAD_NOT_VERIFIED",
+      "sources": [
+        "HT-S17"
+      ],
+      "boundary": "Keine neuen direkten Werkverbindungen erfasst; Pasulka-Anschluss bleibt ausdrücklich redaktioneller Vorschlag."
+    }
+  ],
+  "relations": [
+    {
+      "id": "HT-R01",
+      "from_id": "HT-S13",
+      "to_id": "HT-S11",
+      "type": "REINTERPRETS",
+      "rationale": "Donnelly nennt Platons Atlantis ausdrücklich als reale Geschichte.",
+      "source_ids": [
+        "HT-S13"
+      ],
+      "status": "TEXTUAL_RECEPTION",
+      "change_condition": "Neue direkte Textstelle, unabhängiger Textzeuge oder präzisere Editions-/Publikationsprüfung; Motivähnlichkeit allein genügt nicht."
+    },
+    {
+      "id": "HT-R02",
+      "from_id": "HT-S10",
+      "to_id": "HT-S06",
+      "type": "SCHOLARLY_COMPARISON",
+      "rationale": "Mesopotamische Weisheitsüberlieferung und Wächtertradition werden verglichen.",
+      "source_ids": [
+        "HT-S10"
+      ],
+      "status": "SCHOLARLY_ARGUMENT",
+      "change_condition": "Neue direkte Textstelle, unabhängiger Textzeuge oder präzisere Editions-/Publikationsprüfung; Motivähnlichkeit allein genügt nicht."
+    },
+    {
+      "id": "HT-R03",
+      "from_id": "joseph-farrell",
+      "to_id": "daniel-liszt",
+      "type": "FEATURED_WITH",
+      "rationale": "Gemeinsame Atlantis-Sendung offiziell angekündigt.",
+      "source_ids": [
+        "HT-S15"
+      ],
+      "status": "DOCUMENTED_PUBLICATION",
+      "change_condition": "Neue direkte Textstelle, unabhängiger Textzeuge oder präzisere Editions-/Publikationsprüfung; Motivähnlichkeit allein genügt nicht."
+    },
+    {
+      "id": "HT-R04",
+      "from_id": "HT-S15",
+      "to_id": "edgar-cayce",
+      "type": "ATTRIBUTES_TO",
+      "rationale": "Sender beschreibt die hochtechnische Fassung als Cayces Vision.",
+      "source_ids": [
+        "HT-S15"
+      ],
+      "status": "SECOND_ORDER_ATTRIBUTION",
+      "change_condition": "Neue direkte Textstelle, unabhängiger Textzeuge oder präzisere Editions-/Publikationsprüfung; Motivähnlichkeit allein genügt nicht."
+    },
+    {
+      "id": "HT-R05",
+      "from_id": "jason-reza-jorjani",
+      "to_id": "edgar-cayce",
+      "type": "ANNOUNCES_CRITIQUE",
+      "rationale": "Untertitel nennt Cayce und Steiner.",
+      "source_ids": [
+        "HT-S16"
+      ],
+      "status": "PREVIEW_ONLY",
+      "change_condition": "Neue direkte Textstelle, unabhängiger Textzeuge oder präzisere Editions-/Publikationsprüfung; Motivähnlichkeit allein genügt nicht."
+    },
+    {
+      "id": "HT-R06",
+      "from_id": "sumer",
+      "to_id": "enoch",
+      "type": "MOTIF_COMPARISON",
+      "rationale": "Wissen von übermenschlichen Vermittlern; Unterschiede in Funktion und Bewertung bleiben bestehen.",
+      "source_ids": [
+        "HT-S03",
+        "HT-S07"
+      ],
+      "status": "NON_CAUSAL",
+      "change_condition": "Neue direkte Textstelle, unabhängiger Textzeuge oder präzisere Editions-/Publikationsprüfung; Motivähnlichkeit allein genügt nicht."
+    },
+    {
+      "id": "HT-R07",
+      "from_id": "enoch",
+      "to_id": "atlantis",
+      "type": "MOTIF_COMPARISON",
+      "rationale": "Macht, Grenzüberschreitung und kollektive Katastrophe; keine nachgewiesene gemeinsame Ereignisgeschichte.",
+      "source_ids": [
+        "HT-S08",
+        "HT-S12"
+      ],
+      "status": "NON_CAUSAL",
+      "change_condition": "Neue direkte Textstelle, unabhängiger Textzeuge oder präzisere Editions-/Publikationsprüfung; Motivähnlichkeit allein genügt nicht."
+    }
+  ],
+  "review": {
+    "new_page_images_viewed": 0,
+    "new_audio_minutes": 0,
+    "method": "HTML-Übersetzungen und ausgewählte PDF-Textextrakte; keine eigene antike Sprachübersetzung.",
+    "limits": [
+      "IAA-Fragmentseite nur Findmittel",
+      "Jorjani nur freie Vorschau",
+      "Cayce-Originallesungen nicht eingesehen",
+      "Vallée/Bramley-Vergleich aus vorhandenem Atlas, nicht erneut unabhängig verifiziert",
+      "Keine neu geprüfte Atlantis-Archäologie; sumerisch/akkadisch und 1/2/3 Henoch nicht zusammenführen"
+    ]
+  }
+}

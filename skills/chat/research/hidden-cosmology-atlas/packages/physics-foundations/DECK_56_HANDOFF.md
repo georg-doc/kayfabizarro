@@ -1,3 +1,5 @@
+> Aktualisierung 17.11.2026: Das [neue Mechanik-Briefing](https://kfb-research-atlas.frizzlebob.chatgpt.site/game-brief.html) konkretisiert 1–6 Spieler und den gemeinsamen 56-Karten-Starter. KFB-Anschlüsse sind optional; diese frühere Fassung bleibt als Vorstufe erhalten.
+
 # KFB-Kartenspiel · Formatentscheidung und Artscape-Vorbereitung
 
 Stand:17.11.2026. Nutzerentscheidung zum Format; Spielmechanik und Gestaltung noch Entwurf.
