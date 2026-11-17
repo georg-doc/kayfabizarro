@@ -1,3 +1,17 @@
+## Additive R15B Return · central FOCUS only reacts to outer collapse · 2026-11-17
+
+**Georg correction:** the center is not a seventh narrative to occupy with dice. All three shared Fear/Hope/Hate dice stay on *outer, currently occupied player narratives*; the central FOCUS is one ordinary game card whose state changes through a boundary **COLLAPSE** elsewhere. [R15B design](FOCUS_COLLAPSE_R15B_CANDIDATE_2026-11-17.md) replaces the prior direct-center-dice R15 option B, documented as rejected (original proposal retained as history). Main product remains 2–6 players, 6 faction cards + 50 narrative cards, starting stock `49−4n` if central focus exists; Solo, mission goals, extra cards/tokens, art and site are deferred.
+
+**Two mutually exclusive candidate activation rules:** A = every deliberate outer 6→7/1→0 triggers the focus grammar; B = only when the other two non-triggering dice were on **distinct occupied outer narratives before the collapse**, including possible two-player setups. R14 6→7 actor takes outer trophy. A different **contributor** of the affected narrative can receive the central card as a distinct co-benefit; no center bonus when actor==contributor. R14 1→0 burns outer narrative; triggered center is also discarded/replaced, with no trophy. Center refills only from original stock; no die ever moves to the center. Prior unapproved empty-slot **PLAY/DRAW entry gate** remains assumed in both variants; its balance is not retroactively proven by R14.
+
+**Evidence:** [JS source probe](FOCUS_COLLAPSE_PROBE_R15B.js) committed/verified; [independent V8 static fixture run](FOCUS_COLLAPSE_R15B_TEST_REPORT_2026-11-17.md) checks **51 constructed scenarios and 149/149 explicit assertions** across 2–6, high/low, split/stacked survivors, actor-vs-contributor, self-harvest and exhausted-stock state. These are **NOT 51 complete games**; the committed script itself wasn't executed as a Node process in this report. No human play, no full R15B A/B simulation, no measured player time, no independent balance acceptance. R14 6,000 old sim games remain historical results, not proof of current center.
+
+**Critical risks:** bilateral trophy farming, recipient not necessarily the 5→6 preparer, repeated public-card loss/re-entry lockout, depleted focus/stock and missing endgame, accidental ownership confusion; neither model solves every R14 preparation case. Research Atlas and main KFB rules untouched. Owner `georg-doc/kayfabizarro/games/invisible-handshake/`, branch `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475; exact branch ref must be fetched before further implementation. **No Stage, GPT Site update, KFB Hub live tile, merge or Live promotion.**
+
+**One next gate:** paired R14-derived 2/6 player A-vs-B simulations with mandatory entry and identical policies/seeds, then 2-player physical table A/B/FAIL on payout clarity and tactical/moral ambiguity. Do not add secret missions or art yet.
+
+---
+
 ## Additive proposal · own-slot entry gate and central focus card · 2026-11-17
 
 **New Georg design clarification:** one own public narrative card is **mandatory to participate**, not an optional gift to rivals. The existing R14 game still allows empty-slot actors to manipulate dice, so [candidate R15 rule note](CENTRAL_FOCUS_ENTRY_GATE_R15_PROPOSAL_2026-11-17.md) adds a strict action gate: empty own slot → PLAY from hand; when hand empty → DRAW first; no Fear/Hope/Hate dice operations or harvest while empty. This must be *tested*, not retroactively treated as already present in R14.
