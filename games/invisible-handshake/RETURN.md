@@ -1,4 +1,16 @@
-undefined## Additive R16 Return · NPC editorial pulse and nonnumeric card agency · 2026-11-17
+## R17 Return · KFB causal three-card story and Focus role · 2026-11-18
+
+**User outcome:** Georg identified that public narrative cards still feel like interchangeable stickers; suggested fixed `Problem → Reaction → Solution` storytelling with the real three Fear/Hope/Hate dice and pointing physically at actual card titles (existing KFB Therefore/But and Finger Rule donors). [R17 design source](THREE_DIE_NARRATIVE_CHAIN_R17_2026-11-18.md) maps HATE to PROBLEM, FEAR to REACTION and HOPE to SOLUTION, irrespective of numeric face; one short causal spoken line, title-only novice fallback, no improv scoring or new game action. Six outer cards n humans+6−n NPC, one die/card, center die-free; same 6 faction +50 ordinary narrative cards, no fourth Quest die, existing R14 action economy. Original KFB source texts read on default branch: `media/prompts/KAYFABE_TIPS_corpus_v1.md`, `media/prompts/narrator/bunny_carny.md`.
+
+**Two unaccepted choices:** A guided causal narrative only, center stays context. B center payout follows the different HUMAN outer card carrying HOPE die on an outer positive collapse (not automatically the contributor of removed card); NPC Hope reframes center without NPC trophy, actor under Hope avoids double-payout; negative collapse discards/reframes Focus. If centre removed, next HUMAN round only replenishes from original stock, limiting center churn to one per round. R16 fixed printed Fear/Hope/Hate icons are separate design hypothesis and not stacked with dynamic die-position roles.
+
+**Evidence:** [R17 JS probe](THREE_DIE_NARRATIVE_CHAIN_R17_PROBE.js) committed and read back, [static report](THREE_DIE_NARRATIVE_CHAIN_R17_TEST_REPORT_2026-11-18.md) 14,400 deterministic legal 3-dice/actor/outer-collapse scenarios, **not full games**. Uniform positions imply serious optional B HOPE human payout bias: 2 humans 1/6 versus6 humans5/6. Actual full games 0, human narration timing 0, physical tests 0, stage/browser acceptance 0, published art 0. Previously measured R14 game uses obsolete layout and is not R17 balance evidence.
+
+**Next single gate:** a physical 2-human+4-NPC test of *actual named three-card pointing script* A first, B as optional challenger, brief six-human table; assess satirical image/title relevance, clarity, real choice on PLAY/REWRITE, one-turn burden and B count disparity. Georg KEEP/TUNE/FAIL, no automatic merge or Live. Existing repo `georg-doc/kayfabizarro`, branch `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475, no second owner. Existing KFB game, Atlas, Site and Hub untouched.
+
+---
+
+## Additive R16 Return · NPC editorial pulse and nonnumeric card agency · 2026-11-17
 
 **Outcome/design:** Georg requested thinking through actually useful NPC actions and the *complete round* of The Invisible Handshake, with optional KFB-style SHOW/SPIN/SELL and cards whose role is more than a pictorial die dock. [R16 design candidate](NPC_TURN_AND_NARRATIVE_CARDS_R16_2026-11-17.md) is saved in existing `games/invisible-handshake/`, branch `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475. It **does not override tested R14 or the corrected R15C physical six-outer/single-die invariant**. Six outer narrative cards normally always at setup (n human and 6−n randomly revealed NPC), one die-free Focus, human start 4 dealt/1 choose to publish/3 in hand, 3 shared F/H/H D6 on distinct cards; stock `43−3n`, from 50 original ordinary cards.
 
