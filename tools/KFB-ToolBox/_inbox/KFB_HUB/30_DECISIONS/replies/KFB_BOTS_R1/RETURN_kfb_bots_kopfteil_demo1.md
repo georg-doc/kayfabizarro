@@ -41,3 +41,11 @@
 - **Augen:** Die Bot-Bühne (vfx/einbau-r1 @0b7d9921) enthält den Stamm mit `src/look/augenKanon.js` (augenmatt=r1, @7c9c2b67) noch nicht. Für die Bilder sind die Kanon-Werte zur Laufzeit an Pupille und Augapfel gesetzt (4 + 4 Meshes). Pupillen sind jetzt dunkel mit weichem Glanz, der Augapfel ohne Leuchten.
   - Lider in Kopf-Knete (lidknete=r1) sind hier nicht nachgestellt.
 - **Geprüft:** vfx-buehne @0b7d9921 per Routing wie Demo 1. Beide OK, 0 Fehler, Höhe 2,08 / 2,12 m. Belege `belege/kopfteil_demo2/`.
+
+## Demo 3 (Georg, 18.11. spät): kein gebauter Hals
+- Georg: „Das sollen einfach nur die Köpfe von Hunky und Dory sein, ohne irgendeine Halskonstruktion. Der Hals ist die Kugel.“ Der Kopf sitzt so eng darauf, dass man noch etwas von der schwarzen Kugel sieht. Demo 2 (mit Hals) ist damit verworfen und nicht zu pushen.
+- **Geliefert:** `_privat_kauf_asset/KFB_q_xbot_hunky.demo3.glb`, `KFB_q_ybot_dory.demo3.glb` (Option `hals=0,hals_tief=0.02`).
+  - Die Schnittkante ist nur bündig geschlossen (flache Scheibe, Kopf-Material), es gibt keinen Hals und keine Kuppel.
+  - Die Unterseite steckt 2 cm in der Halskugel, darunter bleibt die Kugel sichtbar.
+  - Dory ist unter der Untertasse geschnitten (Knubbel weg), ihr Mund-Flicken hat keinen Rand. Körper in Kopffarbe, Augen-Kanon zur Laufzeit wie Demo 2.
+- **Geprüft:** vfx-buehne @0b7d9921 per Routing, beide OK, 0 Fehler, Höhe 2,01 / 2,04 m. Belege `belege/kopfteil_demo3/`.
