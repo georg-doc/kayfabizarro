@@ -24,3 +24,20 @@
 1. **Figuren-Variante** `kfb.figure-variant/1` je Figur (base lord_hunky / lady_dory, body.glb = Demo-GLB nach dem Push, mit sha256). Das ist der vorgesehene Weg, nur der Körper wird getauscht.
 2. **headpartActor:** Clips aus dem Körper-GLB bzw. der Bot-Bibliothek (Mixamo) statt `Rig_Medium_General.glb`, wenn der Körper `mixamorig` hat, dazu `clipsDazu`/`spiele` wie faceMountGlbActor, damit Gehen und Bibliothek laufen.
 3. Ob das Größenverhältnis passt, entscheidet Georg. Die Skala ist ein Zahlenwert im Skript (Adapter) bzw. headScale im Rezept.
+
+## Demo 2 (Georg, 18.11. spät)
+**Korrekturen von Georg:**
+- Doris unteren Knubbel weg, dazu ihre Delle am Mund (der Flicken wirkt zackig am Rand).
+- Beide Köpfe nicht direkt auf dem Körper, sondern auf einem kurzen Stück Hals.
+- Körperfarbe passend zum Kopf.
+- Augen nicht überstrahlt, aktuelles Augen-Rigging prüfen.
+
+**Geliefert:** `_privat_kauf_asset/KFB_q_xbot_hunky.demo2.glb`, `KFB_q_ybot_dory.demo2.glb`.
+- **Dory:** Kopf bei L z = 0,07 waagrecht abgeschnitten (bisect, Teil darunter entfernt). Der alte Lippen-Flicken (`LadyDory_Mund_Clay`, einfarbig, 2223 Flächen) bekommt das Kopf-Material mit einem Texturpunkt daneben und hat damit keinen Rand mehr.
+  - Glätten der Form am Bild verworfen: Es zieht den Flicken ein, das Mund-Decal flimmert durch (`belege/kopfteil_demo2/verworfen_flicken_geglaettet.jpg`).
+- **Hals statt Kuppel** (beide): Von der Schnittkante läuft eine gerundete Unterseite (Tiefe 0,35 × Radienunterschied) auf einen Hals mit Radius 4,2 cm (Hunky) bzw. 4,0 cm (Dory). 3,5 cm sind sichtbar, 3 cm stecken in der Halskugel.
+- **Körperfarbe:** Verschleiß-Bake neu mit Grundfarbe der Köpfe. Hunky Körper #147663, Gelenke #0a2f28. Dory Körper #e8703a (die Rezeptfarbe #fca840 wirkte neben der Kopftextur gelb), Gelenke #7a3412.
+  - `scripts/bot_verschleiss.py` hat dafür ein neues optionales Argument `koerper=…,gelenke=…`.
+- **Augen:** Die Bot-Bühne (vfx/einbau-r1 @0b7d9921) enthält den Stamm mit `src/look/augenKanon.js` (augenmatt=r1, @7c9c2b67) noch nicht. Für die Bilder sind die Kanon-Werte zur Laufzeit an Pupille und Augapfel gesetzt (4 + 4 Meshes). Pupillen sind jetzt dunkel mit weichem Glanz, der Augapfel ohne Leuchten.
+  - Lider in Kopf-Knete (lidknete=r1) sind hier nicht nachgestellt.
+- **Geprüft:** vfx-buehne @0b7d9921 per Routing wie Demo 1. Beide OK, 0 Fehler, Höhe 2,08 / 2,12 m. Belege `belege/kopfteil_demo2/`.
