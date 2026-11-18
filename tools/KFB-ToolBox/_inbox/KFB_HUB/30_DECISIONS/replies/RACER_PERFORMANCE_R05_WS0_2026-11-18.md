@@ -1,3 +1,5 @@
+**Aktualisierung ·18.11.2026:** PR142 ist jetzt mit Stamm84ae5f0 zusammengeführt und konfliktfrei, frische CI173/173 grün am Übergabe-Headac781084. WS0 kann den M4-Abgleich starten. [Aktuelle Rückgabe und Messauftrag](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/RACER_PR142_INTEGRATION_CI_M4_READY_WS0_2026-11-18.md). Der folgende Bericht bleibt der historische R05-Messstand.
+
 # WSA Racer → WS0 · R05 Langfahrt und bestehender Rekorder ·18.11.2026
 
 ## Geprüfter Kandidat
