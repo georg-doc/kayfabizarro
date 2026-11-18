@@ -1,3 +1,9 @@
+## Interrupted Webchat recovery · 18 November 2026
+
+[Recovery and resume point](RECOVERY_WEBCHAT_2026-11-18.md). User Google Doc describes R16 at09d7174; actual recovered branch head2f1cd5d59948a8e996a97ba3f8660bed36cc7311 already contains R17. Source readback confirms design and static reports are preserved; no demonstrated loss of the supplied R16 content. No claim to recover unexported chat text. R16 printed icons and R17 dynamic roles remain separate candidates; corrected six-outer/single-die/die-free-Focus layout overrides old R14 model. Static checks are not full games or human play.
+
+Recovery only: no new rules, simulation, research, Site update or merge. Resume at R17 A named-card narrative microtest, B separate challenger with player-count caveat; exact NPC policy must be explicit. All prior history below retained.
+
 ## R17 Return · KFB causal three-card story and Focus role · 2026-11-18
 
 **User outcome:** Georg identified that public narrative cards still feel like interchangeable stickers; suggested fixed `Problem → Reaction → Solution` storytelling with the real three Fear/Hope/Hate dice and pointing physically at actual card titles (existing KFB Therefore/But and Finger Rule donors). [R17 design source](THREE_DIE_NARRATIVE_CHAIN_R17_2026-11-18.md) maps HATE to PROBLEM, FEAR to REACTION and HOPE to SOLUTION, irrespective of numeric face; one short causal spoken line, title-only novice fallback, no improv scoring or new game action. Six outer cards n humans+6−n NPC, one die/card, center die-free; same 6 faction +50 ordinary narrative cards, no fourth Quest die, existing R14 action economy. Original KFB source texts read on default branch: `media/prompts/KAYFABE_TIPS_corpus_v1.md`, `media/prompts/narrator/bunny_carny.md`.
