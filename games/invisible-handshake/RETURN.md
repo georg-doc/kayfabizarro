@@ -1,4 +1,4 @@
-## Additive R16 Return · NPC editorial pulse and nonnumeric card agency · 2026-11-17
+undefined## Additive R16 Return · NPC editorial pulse and nonnumeric card agency · 2026-11-17
 
 **Outcome/design:** Georg requested thinking through actually useful NPC actions and the *complete round* of The Invisible Handshake, with optional KFB-style SHOW/SPIN/SELL and cards whose role is more than a pictorial die dock. [R16 design candidate](NPC_TURN_AND_NARRATIVE_CARDS_R16_2026-11-17.md) is saved in existing `games/invisible-handshake/`, branch `design/invisible-handshake-paper-r0-2026-11-17`, Draft PR #475. It **does not override tested R14 or the corrected R15C physical six-outer/single-die invariant**. Six outer narrative cards normally always at setup (n human and 6−n randomly revealed NPC), one die-free Focus, human start 4 dealt/1 choose to publish/3 in hand, 3 shared F/H/H D6 on distinct cards; stock `43−3n`, from 50 original ordinary cards.
 
