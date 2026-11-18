@@ -1,4 +1,4 @@
-## 2026-11-17 · R16 · NPC editorial pulses and cards with a real function · CANDIDATE
+undefined## 2026-11-17 · R16 · NPC editorial pulses and cards with a real function · CANDIDATE
 
 - Georg requested a real 2–6 player **round ceremony** (public six-faction stage, one shared Focus, optional SHOW/SPIN/SELL in an actually playable turn), NPC logic with variation but no complex autonomous actor, more narrative card turnover, and tactical use for 50 otherwise statless cards.
 - [R16 mechanics proposal](NPC_TURN_AND_NARRATIVE_CARDS_R16_2026-11-17.md): each human initially chooses 1 of 4 dealt cards to publish, keeps 3; remaining 6−n NPC factions each reveal random card, first human reveals die-free Focus. One human action per turn and **one combined NPC editorial pulse after complete human circuit**. NPC A replaces/refills one rotating NPC public narrative; NPC B on a die-bearing NPC position MOVEs the existing die clockwise to first occupied die-free outer position, otherwise replaces/refills. One die per card, no NPC full-turn AI/hand/trophy or invented random control die.
