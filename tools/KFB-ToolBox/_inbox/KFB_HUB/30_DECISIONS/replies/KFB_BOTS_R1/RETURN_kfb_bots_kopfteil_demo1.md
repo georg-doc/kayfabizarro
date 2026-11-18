@@ -49,3 +49,16 @@
   - Die Unterseite steckt 2 cm in der Halskugel, darunter bleibt die Kugel sichtbar.
   - Dory ist unter der Untertasse geschnitten (Knubbel weg), ihr Mund-Flicken hat keinen Rand. Körper in Kopffarbe, Augen-Kanon zur Laufzeit wie Demo 2.
 - **Geprüft:** vfx-buehne @0b7d9921 per Routing, beide OK, 0 Fehler, Höhe 2,01 / 2,04 m. Belege `belege/kopfteil_demo3/`.
+
+## Demo 4 (Georg, 18./19.11.): Köpfe wie ein Kugelgelenk, Doris Delle
+- **Georg:** Die Köpfe liegen oben auf, statt wie ein Kugelgelenk mindestens zu einem Drittel auf der Kugel zu stecken; dazu immer noch eine Delle in Doris Kopf.
+- **Geliefert:** `_privat_kauf_asset/KFB_q_xbot_hunky.demo4.glb`, `KFB_q_ybot_dory.demo4.glb`.
+  - Die Unterseite (bündig, ohne Hals) steckt 4 cm in der Halskugel (Durchmesser etwa 11 cm, also gut ein Drittel). Unten bleibt ein Teil der Kugel sichtbar.
+  - **Ursache der Delle:** Der alte Lippen-Flicken (einfarbig, eigene Dreiecke) bekam in Demo 3 einen einzigen Texturpunkt. Damit hatte die Normalenkarte des Kopfes keine Richtung (entartete Tangenten) und malte eine Mulde mit zackigem Rand.
+  - Jetzt hat der Flicken eine kleine Planprojektion um den Texturpunkt: gleiche Farbe, Normalen in Ordnung, keine Delle. Die Unterseite bekommt dieselbe Behandlung.
+  - **Verworfen** (am Bild geprüft): Flicken verschweißen und glätten (Strahlen), entfernen (Loch in den Kopf), neu füllen (Splitter-Topologie bricht), Dreiecke umlegen (zerknittert).
+- **Geprüft:** vfx-buehne @0b7d9921 per Routing, beide OK, 0 Fehler. Belege `belege/kopfteil_demo4/`.
+
+## Demo 5 (Georg, 19.11.): Doris Kopf tiefer
+- Georg: Doris Kopf sitzt immer noch zu hoch. `KFB_q_ybot_dory.demo5.glb`: die Unterseite steckt 7 cm statt 4 cm in der Halskugel, Dory sitzt direkt auf den Schultern, die Kugel ist gerade verdeckt. Hunky bleibt Demo 4.
+- Offen (Georg: „später bitte die Delle fixen“): Am Rand des alten Lippen-Flickens ist von der Seite noch eine kleine Kante zu sehen. Steht auf WSBs Liste.
