@@ -1,3 +1,13 @@
+## R18 Return · Seven-card Tarot Hex reading candidate · 19 November 2026
+
+**Outcome:** Georg's supplied seven-position “Spiral of Self-Mastery” card spread is mapped onto the already existing **six outer narratives + one die-free central Focus**, without adding a seventh faction, card, die, resource, runtime owner or new automatic payout. [R18 source](R18_TAROT_HEX_SEVEN_CARD_READING_2026-11-19.md): six hex vertices marked Returning Crisis / Mask / Resistance / Boundaries / Structure / Gift; center “Who defines reality?”. Existing R17 HATE=Problem → FEAR=Reaction → HOPE=Solution and one-action turn remain untouched. Upright/reversed are PUBLIC CLAIM/PRIVATE INCENTIVE reading lenses, not new cards or hidden powers. R17 A plain control compared to R18 B prompt overlay; optional **R17 B Focus payoff stays a separate, risky experiment**, not silently accepted.
+
+**Static proof:** [R18 probe](R18_TAROT_HEX_STATIC_PROBE.js) executed in V8 and source read back; [report](R18_TAROT_HEX_TEST_REPORT_2026-11-19.md): 600 legal die placement states over n=2–6, 5,400 legal MOVE outcomes, 1,800 SWAP outcomes, 1,800 post-collapse legal relocation checks, 720 six-faction seat permutations, 20 card conservation ledgers, 0 dice on Focus. Reconfirmed R17 B potential human eligibility 1/6 (2H) vs 5/6 (6H). **0 human tests, 0 full R18 games, 0 timed rounds, 0 published Stage/Site evidence.** No UI, art, original KFB game or Atlas changes.
+
+**Owner:** georg-doc/kayfabizarro · design/invisible-handshake-paper-r0-2026-11-17 · Draft PR #475. Return of R17 and all older trials preserved below. **Unresolved:** does location improve strategy/fun rather than merely offer more words; card identity; NPC replacement and 5→6 incentives; finite endgame and R17 B human-count bias. **Exactly one next gate:** same seven real named proxies at the table, compare R17 A vs R18 B with **2 humans+4 NPC (NPC editor A if used)**, then brief 6-human comprehension/time trace; Georg KEEP/TUNE/FAIL for the reading overlay. No merge or Live promotion.
+
+---
+
 ## Interrupted Webchat recovery · 18 November 2026
 
 [Recovery and resume point](RECOVERY_WEBCHAT_2026-11-18.md). User Google Doc describes R16 at09d7174; actual recovered branch head2f1cd5d59948a8e996a97ba3f8660bed36cc7311 already contains R17. Source readback confirms design and static reports are preserved; no demonstrated loss of the supplied R16 content. No claim to recover unexported chat text. R16 printed icons and R17 dynamic roles remain separate candidates; corrected six-outer/single-die/die-free-Focus layout overrides old R14 model. Static checks are not full games or human play.
