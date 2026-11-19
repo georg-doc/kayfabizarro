@@ -1,3 +1,9 @@
+## 2026-11-19 · R20 · Fast emotion-chain, numberless cards · NEW CANDIDATE
+
+Georg rejects R19's complexity for broad audiences and suggests fast UNO-style plays: justify why a played card provokes **HATE, FEAR or HOPE**, followed by a delayed realization of what the group constructed. [R20 KISS proposal](R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md): five hand cards, one played card and one causal clause per turn, forced HATE→FEAR→HOPE sequence, private motive revealed after the HOPE card, first empty hand wins. No card numbers, assigned suits or stat values; no R19 dice, capture, NPC or FOCUS mechanics carried over. Optional Tarot seven-card hex is a retrospective, not turn complexity. **Concept only; no actual games or new UI.** Next single gate: quick 2-player and 5–6-person paper timing test vs R19; Georg KEEP/TUNE/FAIL.
+
+---
+
 ## 2026-11-19 · R19 · Interactive seven-card setup–turn–resolution lab
 
 New [self-contained HTML round lab](r19-interactive-turn/turn-lab.html) and [test report](r19-interactive-turn/TEST_REPORT_R19_2026-11-19.md) in the existing game owner / Draft PR #475. Six outer faction narratives + die-free Focus, 2 humans / 4 NPCs, three different HATE/FEAR/HOPE dice and **50-card** stock/hand/trophy/discard conservation. Setup allows one of four public cards per human, then named-card causal narrative → one selected action → 6→7 claim / 1→0 burn or MOVE/SWAP/DRAW/REROLL resolution → second human → one R16 NPC A pulse → round summary and next-first-player rotation. Default R17 A center context; R17 B award opt-in with known bias. **38/38 browser assertions PASS**, viewport 1260px and 390px; 0 human games, 0 live Stage. No full 3–6 player runtime or accepted endgame. Hub metadata on the branch is candidate-only; no publication, merge or promoted game. One next gate: Georg interactively assesses meaning/tempo/reading clarity versus R17 A.
