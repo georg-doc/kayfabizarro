@@ -49,3 +49,36 @@
   - Fahrzeug-Eintrag `data/cabrio_skyline.kfb-vehicle.r1b.json` mit Farbliste.
   - Standardfarbe nach Georgs Wahl.
   - Die übrigen als Farbwahl, z. B. neben der Heldenfarbe, mit Grundbild-Tausch wie `virtual:kfb-v945`.
+
+## R1c/R1d (19.11.): FrizzleBob im Fahrersitz (Arbeitsstand)
+- **Georg:** Originaltextur als Standard, Farben als WIP, weiter mit dem Rigging. Aufteilung laut WS0: WSB Modell, Anker, Sitzposen, Ein- und Aussteigen als Rohclips; WS1 Einbau, Fahrdynamik, Ohren, VFX.
+- **Größe:**
+  - Bei Racer-Länge 8,08 u ist FB (1,78 u) kleiner als die Türkante (1,88 u); von außen sah man nur eine Ohrspitze (`belege/fb_r1b_racerlaenge_zu_klein_seite.png`). Die Racer sind so groß, weil FB dort auf dem Dach fährt.
+  - Das Cabrio ist deshalb auf **5,6 u** Länge gesetzt (`KFB_Cabrio_Skyline.r1c.glb`, Normalen wie r1b neu gebacken, Skript `cabrio_bau.py`, Variable `CAB_LAENGE`). Box h (1,67, 0,85, 2,80), Racer-Kamera mal 0,693.
+- **Fahrer FB (Medium):**
+  - Skript `scripts/cabrio_fit.py` (Kopie von TUB_R6 `tub_fit.py`): `kfb_interaction_driving_a` as-is, Wurzel in den Fahrzeug-Raum, Arme per 2-Knochen-IK an das Lenkrad, Griffe 9/3 Uhr.
+  - Becken auf der Fahrerbank an der Sitzkante (0,395, 0,884, 0,33). Der Fahr-Clip lässt die Beine hängen; in der Bankmitte steckten sie im Polster, deshalb an die Kante.
+  - IK-Abweichung höchstens 0,006 u. Clip `_privat_kauf_asset/KFB_Motion_cabrio_r1d.RigMedium.glb`, Fit `data/fit_medium_r1d.json`.
+- **Lenkrad:** Das eigene Cabrio-Lenkrad ist aus dem Netz gelöst (`part_steering_wheel`, 568 Flächen) und auf den Fit-Punkt versetzt, 0,45 u nach vorn und 0,33 u höher, weil FB die Hände im Fahr-Clip hoch hält.
+  - Datei `_privat_meshy/KFB_Cabrio_Skyline.r1d.glb` mit Sitz-Anker `KFB_Seat_Medium`, dazu Eintrag `data/cabrio_skyline.kfb-vehicle.r1d.json` (driver, seat, steering, Anker auf 5,6 u).
+- **Bild** (Blender-Licht, FB ohne Knete):
+  - `belege/fb_r1c_seite.png`: Kopf und Ohren über der Tür.
+  - `belege/fb_r1d_schnitt_seite.png`: Schnitt ohne Fahrertür, Sitzkante, Beine im Fußraum.
+  - `belege/fb_r1d_schraeg.png`: von schräg hinten verdeckt der Scheibenrahmen viel, man sieht vor allem die Ohren.
+- **Offen:**
+  - Georgs Wahl: mehr Figur zeigen durch ein höheres Sitzkissen (+0,2–0,3 u) oder das Auto noch kleiner.
+  - orc_brute (Large), Pedal-Anker, Ein- und Aussteigen.
+  - Sicht im Spiel (WS1).
+
+## R1e (Georg 19.11.): höher, weiter zurück, eigenes KFB-Lenkrad
+- **Georg:** FB nicht so tief hineindrücken (Kopf fast in der Scheibe, Nase im Armaturenbrett). Natürliche Fahrposition, höher und weiter zurück, Füße egal. Lenkrad = unser Aufsatz-Lenkrad von den Dieselpunk-Cars, schon in den Händen, mit Lenkbewegung, ohne Lenkstange. Wichtig: FB sitzt entspannt, sieht von der Seite cool aus und hat das Lenkrad in den Händchen.
+- **Sitz:** Becken (0,395, 1,10, −0,10), also 0,22 u höher und 0,43 u weiter zurück als r1d, mitten auf der Fahrerbank. Kopf und Schultern sind ganz über der Tür, mit Abstand zur Scheibe.
+- **Lenkrad:**
+  - `kfb_steering_wheel_metal_D.glb` (J7-Aufsatz) in Maßstab 1,5 wie auf den Racer-Dächern, ohne Säule, 35° Oberkante vom Fahrer weg, Griffe 9/3 Uhr.
+  - Mitte (0,395, 1,32, 0,20) vor der Brust, Kranz-Oberkante etwa auf Nasenhöhe; tiefer stößt er an die Oberschenkel (Abstand 0,026 u).
+  - Arme per IK an die Griffe, Abweichung höchstens 0,009 u.
+  - **Verworfen:** Höhe aus dem Fahr-Clip (Kranz vor dem Gesicht, `belege/fb_r1e_variante_clip_hoehe_verworfen.png`) und 1,45.
+- **Modell** `_privat_meshy/KFB_Cabrio_Skyline.r1e.glb`: das eigene Cabrio-Lenkrad ist entfernt. Dazu Anker `KFB_Cabrio_Steering` (Mitte, gekippt), `KFB_Wheel_Grip_L/R`, `KFB_Seat_Medium`, außerdem die Licht-, Düsen- und Schwebe-Anker. Das Spiel setzt den Aufsatz wie `KFB_roof_steering` und dreht ihn beim Lenken.
+- **Clip** `_privat_kauf_asset/KFB_Motion_cabrio_r1i.RigMedium.glb` (`kfb_cabrio_drive_ik`), Fit `data/fit_medium_r1i.json`, Eintrag `data/cabrio_skyline.kfb-vehicle.r1e.json`.
+- **Bilder** (Blender-Licht, FB ohne Knete und KFB-Augen; das schwarze Band im Gesicht ist FBs Original-Augenteil): `belege/fb_r1e_seite.png`, `fb_r1e_schnitt_seite.png`, `fb_r1e_schraeg.png`, `fb_r1e_oben.png`.
+- **Offen:** orc_brute (Large, gleiche Sitzlage), Ein- und Aussteigen, Prüfung im Spiel (WS1).
