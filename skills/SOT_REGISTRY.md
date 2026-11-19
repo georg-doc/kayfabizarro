@@ -3,7 +3,7 @@
 **Zweck:** EIN Nachschlag-Ort. Pro Ding: was ist die kanonische Datei, welche Version, wo liegt sie. Kein
 Datei-Verschieben (das macht nur Georg), nur der eine Lookup gegen das Zuwuchern.
 
-**Stand: 19.11.2026** (Cube-Pets R1 nachgetragen). Datum bei jeder Änderung mitziehen.
+**Stand: 19.11.2026** (Cube-Pets R1 und Mund-Generierung nachgetragen). Datum bei jeder Änderung mitziehen.
 **GitHub-Ziel dieser Datei:** Repo `georg-doc/kayfabizarro` (Vorschlag: Repo-Root oder `skills/`).
 
 ## Harte Regel
@@ -25,6 +25,7 @@ unsichtbarer Mund/Textur.)
 | **Pet-Stack** | `kfb-pets.js` + `kfb-pets.json` + `build/`-Module | Contract 1.2.x | GitHub `media/3D_Assets/` (WebGL 0.160) · **Legacy, bleibt gültig** (Rollercoaster, Travel, Pet Studio) |
 | **Pet-Bauanleitung** | `EMBED_CUBE_PET_FULL_v2.md` | v2 | `media/3D_Assets/GLB_cube-pets/` · Legacy; neueste Legacy-Fassung v2.2 |
 | **Cube-Pets R1 (neue Fassung)** | `CUBE_PETS_R1_HINWEIS.md` | R1 (2026-11-19) | `media/3D_Assets/GLB_cube-pets/`; gebackene `KFB_Pet_*.glb` + `kfb.figure/1`-Karten (EyeRig v6 + E2, R4-Mund, Block-Brauen); Übernahme über WS0 |
+| **Mund-Generierung (KI-Mundbögen)** | `skills/kfb-mouth-gen/README.md` (Spezifikation + Erfahrungen) + `PROMPT_*.md` | lebend (seit 2026-11-19) | `skills/kfb-mouth-gen/`; Werkzeuge und R4-Bögen im Hub `30_DECISIONS/replies/MOUTHS_GPT_R*` |
 | **Story-Modi (6 D6-Farben)** | `09_MODE_COLORS_canonical.md` / `kfb-table.v6.js` MODES | — | SSOT-Web: kayfabizarro.pages.dev/#kfb |
 | **Kartenformat** | PDF 745×416 · Rückseite 800×447 → **1.79** | — | in `rollercoaster-ride.v11.js` kanonisch |
 | **Terrain + Skydome** | `KFB Terrain + Skydome + 3D Glyphs v2` | **v2 (WebGPU) → v3 (WebGL) im Umbau** | `KFB VoxelWorld/…v2/session-v2/`; Briefs im `docs/` |
@@ -44,3 +45,4 @@ unsichtbarer Mund/Textur.)
 - Die **drei `postmortems.json`** auf den einen kanonischen Stand (`Graveyard_Slice1`) zusammenführen.
 - `pattern`-Feld in allen Graves nachtragen (Muster sichtbar machen).
 - **Cube-Pets R1:** Widersprüche alt/neu (Schema, Mund-Sätze, Brauen-Regel, Schielen, Wimpern unter E2) entscheiden – Liste in `CUBE_PETS_R1_HINWEIS.md`.
+- **PETS-M1:** eigener Cube-Pet-Mundsatz (Prompt `skills/kfb-mouth-gen/PROMPT_cute_pets_v1.md`), danach Einbau.
