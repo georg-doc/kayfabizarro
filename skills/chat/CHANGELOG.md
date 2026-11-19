@@ -1,3 +1,9 @@
+## 2026-11-19 · THE INVISIBLE HANDSHAKE R20 · Fast HATE/FEAR/HOPE UNO-style alternative
+
+Georg finds R19 interactive seven-card round too complicated for broad audiences; proposes rapid numberless card play and one-sentence explanations why played cards provoke Hate/Fear/Hope, with delayed realization of the collective causal story. [R20 separate rule candidate](../../games/invisible-handshake/R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md) drafts five-card hands, one card per action, one cause sentence, fixed HATE→FEAR→HOPE, HOPE private-incentive reread, first to empty hand. Does **not** stack R19 dice, Focus rewards, NPC loop or 7-position reading. Same game owner/branch/PR; zero R20 playtests, no implementation, Stage, Live or merge. Next: 2H and 5–6H paper test, Georg KEEP/TUNE/FAIL.
+
+---
+
 ## 2026-11-19 · THE INVISIBLE HANDSHAKE R19 · Interactive setup–turn–resolve artifact
 
 [Standalone R19 HTML](../../games/invisible-handshake/r19-interactive-turn/turn-lab.html) plus [browser report](../../games/invisible-handshake/r19-interactive-turn/TEST_REPORT_R19_2026-11-19.md) inside owner games/invisible-handshake/ on Draft PR #475. 2 humans +4 NPC complete human-round walkthrough with six exterior Tarot reading positions, one die-free central Focus, HATE/FEAR/HOPE dice, setup four-card selection, public/private text lens, narrative then single action, upper/lower capture/burn, legal die reposition, collective NPC A pulse, 50-card ledger and next-round first-human rotation. R17 B center Focus payout optional and flagged unbalanced; no new game rule acceptance. 38/38 browser assertions PASS, 390px viewport PASS, no full game/human acceptance/public Stage. Draft Hub metadata index only, not Live. One human KEEP/TUNE/FAIL gate; no auto-merge.
