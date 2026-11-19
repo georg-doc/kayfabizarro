@@ -1,6 +1,6 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-19.r20-rule-candidate",
+  "revision": "2026-11-19.r21-claim-candidate",
   "updatedAt": "2026-11-19T21:29:00+01:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
@@ -176,20 +176,21 @@
   "briefings": [
     {
       "id": "brief-invisible-handshake-r18-tarot-hex",
-      "title": "The Invisible Handshake · R20 Fast Emotion Chain (idea)",
-      "badge": "RULES PROPOSAL · NOT LIVE",
+      "title": "The Invisible Handshake · R21 Story-D6 Triplet / Seventh Card Claim",
+      "badge": "DESIGN CANDIDATE · NOT LIVE",
       "status": "hold",
       "provider": "Independent card game · Draft PR #475",
-      "desc": "Georg's rapid UNO-like alternative: lay one unnumbered narrative card, give one short cause for HATE/FEAR/HOPE, read the private motive after HOPE. Separate from the retained, browser-tested R19 tabletop; no R20 game test or publication.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md",
+      "desc": "Georg's short Problem→Reaction→Solution card chain uses original six-tone KFB Story D6 once per triplet. The third card triggers a central seventh-card claim; compare shared resolution A vs nonnumeric unique-symbol personal card win B. 27 static states, zero actual human games. R19 remains unchanged.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R21_STORY_D6_TRIPLET_SEVENTH_CARD_CLAIM_2026-11-19.md",
       "tags": [
         "invisible handshake",
-        "R20",
-        "UNO-like",
-        "emotion chain",
-        "concept only"
+        "R21",
+        "triplet",
+        "story d6",
+        "seventh card",
+        "not live"
       ],
-      "prompt": "Paper-test 2 humans and a 5–6 player speed trace with the existing 50 narrative card budget. R19 interactive earlier proof: https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/r19-interactive-turn/turn-lab.html . No live/published Stage."
+      "prompt": "Paper-test R21 shared seventh-card resolution vs the one-shape unique-match personal claim with 2 humans and 6 humans. Original R19 interactive lab remains retained in GitHub, no new published Stage."
     },
     {
       "id": "brief-island-hud-flight-r4-sources",
