@@ -1,3 +1,9 @@
+## 2026-11-19 · R18 · Seven-card Tarot Hex · SPATIAL READING CANDIDATE
+
+Georg supplied a 7-position “Spiral of Self-Mastery” Tarot image as a game-theory/satire/esoterics direction. [R18 proposal](R18_TAROT_HEX_SEVEN_CARD_READING_2026-11-19.md) maps **six outer** human/NPC narratives to hexagon vertices and the **seventh card to the existing die-free center Focus**, with readable prompts for repeated crisis, mask, resistance, authority, boundary, permanent structure and beneficiary. Upright=PUBLIC CLAIM, reversed=PRIVATE INCENTIVE. Maintains R17 HATE→FEAR→HOPE roles, 3 D6, 50 ordinary+6 faction cards and one existing action. Plain R17 A versus label-overlay R18 B; optional R17 B Focus payout is separate and remains imbalanced. [V8 static probe](R18_TAROT_HEX_STATIC_PROBE.js) and [report](R18_TAROT_HEX_TEST_REPORT_2026-11-19.md): 600 legal placements, 5,400 moves, 1,800 swaps, 1,800 relocation checks, 720 seat permutations, 20 conservation ledgers; **0 human R18 games**. No Site/Stage/Live, art, deck mass production or merge. Next single gate: paired 2H+4NPC A/B reading and short 6H comparison.
+
+---
+
 ## 2026-11-18 · R17 · Problem–Reaction–Solution via actual narrative cards · DESIGN CANDIDATE
 
 Georg's new direction: make players link real public narrative card titles/images and faction perspective, rather than relying on equivalent cards with generic symbols. [R17 game design](THREE_DIE_NARRATIVE_CHAIN_R17_2026-11-18.md) uses KFB donors Therefore/But and Finger Rule. Human points in fixed order HATE=Problem, FEAR=Reaction, HOPE=Solution to three distinct dice-bearing outer cards, says one causal one-line story or minimal title template. Single existing action then resolves; no performance judging, no fourth die, numeric card stats or secret goals. R15C six outer human+NPC slots and one die per card unchanged; R16's fixed printed F/H/H icons are a separate hypothesis.
