@@ -1,3 +1,11 @@
+## R20 Return · Fast UNO-style HATE/FEAR/HOPE chain · 19 November 2026
+
+**Georg feedback / new candidate:** R19 interactive tabletop is comprehensible but too complex for many players. He wants rapid UNO-like card play without printed numbers, where players explain in seconds why a particular card causes **HATE, FEAR or HOPE**, and discover only afterward the contradiction they jointly created. [R20 rules candidate](R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md) provides a **separate, simpler core**: five-card human hands, one common face-up trail, fixed HATE→FEAR→HOPE rotation, one specific causal sentence per card, automatic third-card PRIVATE INCENTIVE reveal and first to empty hand wins. No dice, capture, NPC, Focus payout or judged performance in R20's main loop. Optional seven-card Tarot hex only as postgame interpretation. Six faction identities +50 narratives retained as tentative shared content budget, not an obligation to keep R19 setup mechanics.
+
+**Evidence:** Written rule concept and example only. **0 R20 games, 0 R20 timing trials, no new runtime/browser implementation, no Stage/Live**. R19 38/38 browser checks remain historical evidence for *R19 only*, not R20. **One next gate:** short 2-human and 5–6-human paper timing microtest against R19 complexity, Georg KEEP/TUNE/FAIL on the simpler core. No automatic replacement, merge or promotion.
+
+---
+
 ## R19 Return · Interactive seven-card round lab · 19 November 2026
 
 **Actual result:** A self-contained, operable [R19 HTML tabletop](r19-interactive-turn/turn-lab.html) now demonstrates R18's six outer + central die-free Focus Tarot layout; 2 humans (Round Table, Technocracy), 4 NPCs, 3 D6, real named proxy cards, upright claim / reversed private incentive, setup choice from four cards per person, HATE→FEAR→HOPE spoken title chain, **exactly one action per human**, immediate 6→7 capture or 1→0 burn and die re-placement, **one** R16 NPC A editorial pulse per full human circuit, stock/hand/trophy/discard ledger, first-human rotation and later human re-entry. Standard 3/3/3 start and **clearly marked prepared** 6/4/3 and 3/1/3 examples. R17 A Focus is default; isolated R17 B award is opt-in **unbalanced** experiment, not new R18 canon. No finalized card art or extra tarot deck.
