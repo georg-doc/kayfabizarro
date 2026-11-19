@@ -6,7 +6,7 @@
 
 - **Was neu ist:** Gebackene Probe-Figuren `KFB_Pet_<id>.<rev>.glb` mit Figurenkarte `kfb.figure/1` für die KFB-Prüfbühne (N35) und das Spiel. Sie enthalten:
   - **Augen:** EyeRig v6 mit Knete-Lidern (E2), Lid in Hautfarbe, leicht abgedunkelt. Leichtes Schielen `converge 0.15`.
-  - **Mund:** Cartoon-Mund aus den R4-Sätzen als eigene Fläche `KFB_Mouth`, an die Haut angeschmiegt, mit Abstand für die Sprechformen.
+  - **Mund:** Cartoon-Mund aus den R4-Sätzen als eigene Fläche `KFB_Mouth`, an die Haut angeschmiegt. Seit r1w (Georg 19.11.) nur noch **an** bei Hase, Hase FB-Gelb, Katze und Schwein; bei den übrigen 21 Pets **aus** (Knoten bleibt, Schalter `mouth`, Karte `mouth.enabled: false`). Neue Cute-Pet-Münder: Backlog PETS-M1.
   - **Brauen:** Block-Brauen `KFB_Brow_L/R` mit Schalter `brows`, standardmäßig an.
   - **Kenney-Aufleger entfernt:** Augenscheiben, Pupillen, Mundlinien und Zunge sind im gebackenen GLB aus dem Index genommen. Panda-Flecken, Nasen und Schnauzen bleiben.
 - **Was bleibt:** Die Original-Kenney-Modelle `media/3D_Assets/GLB_cube-pets/animal-*.glb`, `media/3D_Assets/kfb-pets.json` (`kfb.pets/1` 1.2.8), `pet-LIBRARY.json`, `kfb-pets.js` und `build/` bleiben **unverändert**.
@@ -22,7 +22,7 @@
    - Die Kenney-Augen sind schon entfernt, und die Laufzeit würde ein zweites Augenpaar bauen.
    - Der richtige Weg ist der Kartenweg:
      - EyeRig v6 mit `clay-skin-attach` aus `card.eyeRig.settings`;
-     - Mund über `card.mouth` (`owner: original-mesh`, Knoten `KFB_Mouth`, anschmiegen);
+     - Mund über `card.mouth` (`owner: original-mesh`, Knoten `KFB_Mouth`, anschmiegen), nur wo `mouth.enabled` nicht `false` ist;
      - Brauen über den Knoten-Schalter `extras.kfb.toggle = 'brows'`.
 3. **Neue Daten nur additiv.** Vorschlag für `kfb-pets.json`: optionale Felder, die alte Lader ignorieren. Unbekannte Felder müssen den Round-Trip überstehen, wie in EMBED v2.3 §14 verlangt.
    - `pet.kfbFigure = { card, glb, rev }` verweist auf Karte und gebackenes GLB.
@@ -39,7 +39,7 @@
 | Schema | `kfb.pets/1` (Contract 1.3.0) | `kfb.figure/1`-Karten je Pet | Karte als eigene Datei; Verweis `pet.kfbFigure` |
 | Augen | EyeRig v5 zur Laufzeit, Schalen-Lider | EyeRig v6 + E2-Knete-Lider (N35/Spiel) | v5-Weg = Legacy; v6/E2 im Kartenweg |
 | Kenney-Augen | `stripEyes` zur Laufzeit (eyeShell z 0,635) | im GLB entfernt, Panda-Fleck bleibt | gebackene GLBs nur im Kartenweg |
-| Mund | pet-mouth.v1 PNG-Decals male/female/red; „Münder tragen keine Emotion“ | R4-Cartoon-Münder, eigene Fläche | `mouth.r4` additiv; Kanon-Satz klären |
+| Mund | pet-mouth.v1 PNG-Decals male/female/red; „Münder tragen keine Emotion“ | R4-Cartoon-Münder, eigene Fläche; bei 21 Pets aus | `mouth.r4` additiv; Kanon-Satz klären; neuer Satz PETS-M1 |
 | Brauen | v12 `pet.brow` = eine Kurve, „nie zwei Brauen“ | zwei Block-Knoten mit Schalter (Georg 19.11.) | `brow.style 'block'` als zweite Art |
 | Schielen | `converge 0`; Spiel `augenR2.schielen 0.45` | 0,15 (Georg 19.11.: 0,45 zu stark) | je Darstellungsweg eigener Wert |
 | Maße | Kenney-Einheiten, Studio-Maßstab 1,6 | Karten mit Spielmaßstab | Maßstab in der Karte, Daten in Kenney-Einheiten |
@@ -50,15 +50,16 @@
 - Cube-Pets (24) und Würfelmonster lassen sich konfigurieren und werden als Dramatis-Personae-Eintrag gespeichert. Dazu gehören Name, Eigenschaften, Backstory und bevorzugte Chatterbox-Triplets, zusammen mit der visuellen Konfiguration.
 - Die Nase ist wählbar: Originalnase oder Schnauze, oder eine vorhandene KFB-Nase wie die rote Knubbelnase.
 - Jedes Körperteil hat eine eigene Materialzone. Standard ist die Körpertextur; jede Zone lässt sich gezielt überschreiben, etwa cartoon-glänzend oder mit Knete.
-- Der Mund ist je Figur wählbar, zum Beispiel FB-Standardmund für den gelben Hasen.
+- Der Mund ist je Figur wählbar und abschaltbar, zum Beispiel FB-Standardmund für den gelben Hasen.
 
 ## Stand der Figuren (19.11.2026)
 
 - Es gibt 25 Probe-Figuren: alle 24 Kenney-Cube-Pets plus Hase in FB-Gelb. Alle bestehen die Prüfbühne N35. Beim Fisch schlägt nur G3 fehl, weil er 4 cm schwebt, wie in Kenneys Fisch-Pose.
 - **Kenney-Aufleger:** Augenscheiben, Pupillen, Mundlinien und Zunge sind entfernt. Panda-Flecken, Nasen und Nasenlöcher bleiben.
   - Bei der Krabbe liegt keine Haut hinter den Kenney-Augen. Dort sind sie in Hautfarbe umgefärbt statt gelöscht.
-- **Maßstab:** Der Grundwürfel ist bei allen Pets 1,25 Kenney-Einheiten groß. Die Mundgröße bezieht sich jetzt auf den Würfel und nicht mehr auf die Körperhöhe mit Ohren und Geweih.
-- **Offen** (Entscheidung Georg):
-  - Elefant: Der Mund liegt hinter dem Rüssel.
-  - Biber: Kenneys Zähne sind sein Mund.
-- **Bericht und Tabelle je Pet:** `KFB_HUB/50_BLENDER/PETS_R1/RETURN_pets_r1.md`, Abschnitte r1r–r1v.
+  - Beim Panda sind Augenweiß und Pupille in Fleckfarbe aufgefüllt; die KFB-Augen sitzen in geschlossenen Flecken.
+  - Bei Kuh und Schwein schwebten die Nasenloch-Plättchen vor der Schnauze und warfen einen Doppelschatten; sie sind knapp auf die Schnauze gesetzt.
+- **Maßstab:** Der Grundwürfel ist bei allen Pets 1,25 Kenney-Einheiten groß. Die Mundgröße bezieht sich auf den Würfel und nicht mehr auf die Körperhöhe mit Ohren und Geweih.
+- **Münder (r1w):** R4 passt nur bei etwa 20 % der Pets (Lippenfarbe, unbeleuchtet ohne Schatten, Minimund, Schnabeltiere). An bei Hase, Hase FB-Gelb, Katze, Schwein; sonst aus.
+- **Backlog PETS-M1:** eigener Mundsatz für Cube-Pets: breit, alle Sprechformen und Extremausdrücke, Lippen als eigene Graustufen-Ebene zum Einfärben (Mundinneres und Zunge fest), Variante ohne Lippen, Schnabeltiere eigener Ansatz, beleuchtetes Material. Datei: `KFB_HUB/50_BLENDER/PETS_R1/BACKLOG_PETS-M1_muender.md`.
+- **Bericht und Tabelle je Pet:** `KFB_HUB/50_BLENDER/PETS_R1/RETURN_pets_r1.md`, Abschnitte r1r–r1w.
