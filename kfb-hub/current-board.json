@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-19.r19-paper-candidate",
-  "updatedAt": "2026-11-19T19:48:45.785Z",
+  "revision": "2026-11-19.r20-rule-candidate",
+  "updatedAt": "2026-11-19T21:29:00+01:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -176,21 +176,20 @@
   "briefings": [
     {
       "id": "brief-invisible-handshake-r18-tarot-hex",
-      "title": "The Invisible Handshake · R19 Interactive Round Lab",
-      "badge": "BROWSER FIXTURE PASS · NOT LIVE",
+      "title": "The Invisible Handshake · R20 Fast Emotion Chain (idea)",
+      "badge": "RULES PROPOSAL · NOT LIVE",
       "status": "hold",
       "provider": "Independent card game · Draft PR #475",
-      "desc": "R18 seven-position Tarot lens demonstrated by a self-contained R19 two-human/four-NPC interactive tabletop (38/38 local browser checks). HTML is a source artifact, not an accepted Stage/Site or complete game; R17 B payout remains separate and unbalanced.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/r19-interactive-turn/turn-lab.html",
+      "desc": "Georg's rapid UNO-like alternative: lay one unnumbered narrative card, give one short cause for HATE/FEAR/HOPE, read the private motive after HOPE. Separate from the retained, browser-tested R19 tabletop; no R20 game test or publication.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md",
       "tags": [
         "invisible handshake",
-        "r19",
-        "tarot hex",
-        "interactive source",
-        "browser fixture",
-        "not live"
+        "R20",
+        "UNO-like",
+        "emotion chain",
+        "concept only"
       ],
-      "prompt": "Open local artifact from current conversation, run 2H+4NPC setup and full human circuit; compare R17 A plain center Focus with labeled R18 reading. Judge reading clarity and actual card-dependent decisions. GitHub HTML is source, not a human Stage test URL; no Cloudflare Stage exists."
+      "prompt": "Paper-test 2 humans and a 5–6 player speed trace with the existing 50 narrative card budget. R19 interactive earlier proof: https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/r19-interactive-turn/turn-lab.html . No live/published Stage."
     },
     {
       "id": "brief-island-hud-flight-r4-sources",
