@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-19.r18-paper-candidate",
-  "updatedAt": "2026-11-19T19:51:00+01:00",
+  "revision": "2026-11-19.r19-paper-candidate",
+  "updatedAt": "2026-11-19T19:48:45.785Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -176,21 +176,21 @@
   "briefings": [
     {
       "id": "brief-invisible-handshake-r18-tarot-hex",
-      "title": "The Invisible Handshake R18 · Seven-card Tarot Hex",
-      "badge": "DESIGN CANDIDATE · NOT LIVE",
+      "title": "The Invisible Handshake · R19 Interactive Round Lab",
+      "badge": "BROWSER FIXTURE PASS · NOT LIVE",
       "status": "hold",
       "provider": "Independent card game · Draft PR #475",
-      "desc": "Seven-position tarot reading over six existing outer narrative cards and one center Focus; same actions, 56-card budget and three dice. Structural tests only, no player acceptance or Stage.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R18_TAROT_HEX_SEVEN_CARD_READING_2026-11-19.md",
+      "desc": "R18 seven-position Tarot lens demonstrated by a self-contained R19 two-human/four-NPC interactive tabletop (38/38 local browser checks). HTML is a source artifact, not an accepted Stage/Site or complete game; R17 B payout remains separate and unbalanced.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/r19-interactive-turn/turn-lab.html",
       "tags": [
         "invisible handshake",
-        "seven-card",
+        "r19",
         "tarot hex",
-        "r18",
-        "not live",
-        "paper game"
+        "interactive source",
+        "browser fixture",
+        "not live"
       ],
-      "prompt": "Compare R17 A plain and R18 B positional reading on the same seven named paper cards with 2 humans+4 NPC, then a six-human comprehension/time trace. Do not launch this as a live game."
+      "prompt": "Open local artifact from current conversation, run 2H+4NPC setup and full human circuit; compare R17 A plain center Focus with labeled R18 reading. Judge reading clarity and actual card-dependent decisions. GitHub HTML is source, not a human Stage test URL; no Cloudflare Stage exists."
     },
     {
       "id": "brief-island-hud-flight-r4-sources",
