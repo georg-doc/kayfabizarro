@@ -1,3 +1,9 @@
+## 2026-11-19 · R21 · Problem/Reaction/Solution + KFB Story D6 + 7th Card claim
+
+Georg suggests preserving **three-card Problem → Reaction → Solution** and using the original six-face KFB Story-Mode die for *tonal stipulation*, then claiming the central seventh narrative card after Solution. [R21 candidate](R21_STORY_D6_TRIPLET_SEVENTH_CARD_CLAIM_2026-11-19.md) rolls existing D6 once per *triplet* (intentional adaptation), no number-bearing printed cards, 5-card hands, six outer slots as last two triplets and center FOCUS. A common story claim vs optional B objective personal **unique matching nonnumeric symbol** (no subjective judge, solver only triggers check). [Static report](R21_SEVENTH_CARD_CLAIM_TEST_REPORT_2026-11-19.md): 27 configurations/12 unique, 4 unique wins each role under uniform symbols, five opening and five after-claim stock invariants, automatic Solver winner seat lock demonstrated. Zero R21 games, no runtime, Stage/Live or merge. One gate: 2H/6H fast physical A/B trial; Georg KEEP/TUNE/FAIL.
+
+---
+
 ## 2026-11-19 · R20 · Fast emotion-chain, numberless cards · NEW CANDIDATE
 
 Georg rejects R19's complexity for broad audiences and suggests fast UNO-style plays: justify why a played card provokes **HATE, FEAR or HOPE**, followed by a delayed realization of what the group constructed. [R20 KISS proposal](R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md): five hand cards, one played card and one causal clause per turn, forced HATE→FEAR→HOPE sequence, private motive revealed after the HOPE card, first empty hand wins. No card numbers, assigned suits or stat values; no R19 dice, capture, NPC or FOCUS mechanics carried over. Optional Tarot seven-card hex is a retrospective, not turn complexity. **Concept only; no actual games or new UI.** Next single gate: quick 2-player and 5–6-person paper timing test vs R19; Georg KEEP/TUNE/FAIL.
