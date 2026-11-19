@@ -1,3 +1,9 @@
+## 2026-11-19 · THE INVISIBLE HANDSHAKE R21 · Existing Story D6 and seventh-card claim
+
+Georg extends fast R20 with **PROBLEM → REACTION → SOLUTION**, original six KFB Story D6 tones and a claim on seventh center narrative card triggered by Solution. [R21 design](../../games/invisible-handshake/R21_STORY_D6_TRIPLET_SEVENTH_CARD_CLAIM_2026-11-19.md) compares A communal resolved center against B objective personal win by unique matching nonnumeric proxy mark among the three played cards. One D6 roll/triplet is an intentional adaptation of KFB's roll/turn. [R21 structural proof](../../games/invisible-handshake/R21_SEVENTH_CARD_CLAIM_TEST_REPORT_2026-11-19.md): 27 symbolic states, 12 unique matches, 10 opening/claim stock checks; a solver-always-wins rule would lock wins to seats 3 (3H) / 3 and 6 (6H). Human games 0; no code runtime, Stage/Live or merge. One next gate: fast 2H/6H A/B paper test, Georg KEEP/TUNE/FAIL.
+
+---
+
 ## 2026-11-19 · THE INVISIBLE HANDSHAKE R20 · Fast HATE/FEAR/HOPE UNO-style alternative
 
 Georg finds R19 interactive seven-card round too complicated for broad audiences; proposes rapid numberless card play and one-sentence explanations why played cards provoke Hate/Fear/Hope, with delayed realization of the collective causal story. [R20 separate rule candidate](../../games/invisible-handshake/R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md) drafts five-card hands, one card per action, one cause sentence, fixed HATE→FEAR→HOPE, HOPE private-incentive reread, first to empty hand. Does **not** stack R19 dice, Focus rewards, NPC loop or 7-position reading. Same game owner/branch/PR; zero R20 playtests, no implementation, Stage, Live or merge. Next: 2H and 5–6H paper test, Georg KEEP/TUNE/FAIL.
