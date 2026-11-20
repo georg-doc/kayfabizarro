@@ -1,0 +1,371 @@
+{
+ "u": 1,
+ "breite": 1600,
+ "out": [
+  {
+   "art": "papier",
+   "x": 278,
+   "y": 30,
+   "w": 336,
+   "h": 76,
+   "name": "streifen_radio",
+   "klasse": "pp-box pp-radio",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "x": 622,
+   "y": 14,
+   "w": 580,
+   "h": 112,
+   "name": "streifen_fluff",
+   "klasse": "pp-box pp-fluff",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "x": 1372,
+   "y": 12,
+   "w": 206,
+   "h": 206,
+   "name": "karte_rund",
+   "klasse": "pp-box pp-karte",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "x": 1380,
+   "y": 222,
+   "w": 190,
+   "h": 34,
+   "name": "tag",
+   "klasse": "pp-box pp-zielbox",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "x": 1304,
+   "y": 20,
+   "w": 70,
+   "h": 70,
+   "name": "rund_klein",
+   "klasse": "pp-box pp-rund",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "x": 20,
+   "y": 300,
+   "w": 74,
+   "h": 330,
+   "name": "leiste_v",
+   "klasse": "pp-box pp-leiste",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "x": 1506,
+   "y": 300,
+   "w": 74,
+   "h": 330,
+   "name": "leiste_v",
+   "klasse": "pp-box pp-leiste",
+   "gespiegelt": true
+  },
+  {
+   "art": "papier",
+   "x": 24,
+   "y": 754,
+   "w": 176,
+   "h": 124,
+   "name": "flicken_links",
+   "klasse": "pp-box pp-inv",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "x": 1400,
+   "y": 754,
+   "w": 176,
+   "h": 124,
+   "name": "flicken_rechts",
+   "klasse": "pp-box pp-reise",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "x": 482,
+   "y": 736,
+   "w": 636,
+   "h": 150,
+   "name": "streifen_aktion",
+   "klasse": "pp-box pp-akt",
+   "gespiegelt": false
+  },
+  {
+   "art": "papier",
+   "name": "stapel_almanach",
+   "klasse": "almanac",
+   "x": 14,
+   "y": 14,
+   "w": 240,
+   "h": 193
+  },
+  {
+   "art": "portrait",
+   "x": 460,
+   "y": 732,
+   "w": 146,
+   "h": 146,
+   "name": "portrait_rund"
+  },
+  {
+   "art": "bild",
+   "x": 478,
+   "y": 750,
+   "w": 110,
+   "h": 110,
+   "name": "portrait_bild"
+  },
+  {
+   "art": "karte_canvas",
+   "x": 1389,
+   "y": 29,
+   "w": 172,
+   "h": 172,
+   "name": "minimap_bild"
+  },
+  {
+   "art": "nadel",
+   "x": 1461,
+   "y": 96,
+   "w": 28,
+   "h": 38,
+   "name": "nadel_mitte"
+  },
+  {
+   "art": "nadel",
+   "x": 1461.1,
+   "y": 191.9,
+   "w": 26.3,
+   "h": 46.2,
+   "name": "nadel_rand"
+  },
+  {
+   "art": "knopf",
+   "x": 650.2,
+   "y": 39,
+   "w": 75,
+   "h": 70.8,
+   "name": "fluff_1"
+  },
+  {
+   "art": "knopf",
+   "x": 729.3,
+   "y": 37,
+   "w": 69.7,
+   "h": 73.3,
+   "name": "fluff_2"
+  },
+  {
+   "art": "knopf",
+   "x": 801,
+   "y": 39.3,
+   "w": 70.7,
+   "h": 69.4,
+   "name": "fluff_3"
+  },
+  {
+   "art": "knopf",
+   "x": 876.2,
+   "y": 36,
+   "w": 73.4,
+   "h": 75.7,
+   "name": "fluff_4"
+  },
+  {
+   "art": "knopf",
+   "x": 944.5,
+   "y": 38.1,
+   "w": 77.1,
+   "h": 73.2,
+   "name": "fluff_5"
+  },
+  {
+   "art": "knopf",
+   "x": 1026,
+   "y": 37.1,
+   "w": 68,
+   "h": 72.9,
+   "name": "fluff_6"
+  },
+  {
+   "art": "knopf",
+   "x": 70,
+   "y": 772,
+   "w": 80,
+   "h": 80,
+   "name": "knopf_kmin-backpack-trigger"
+  },
+  {
+   "art": "knopf",
+   "x": 1448,
+   "y": 772,
+   "w": 80,
+   "h": 80,
+   "name": "knopf_kmin-travel-trigger"
+  },
+  {
+   "art": "knopf",
+   "x": 632,
+   "y": 760,
+   "w": 80,
+   "h": 80,
+   "name": "knopf_kmin-action-primary"
+  },
+  {
+   "art": "knopf",
+   "x": 764.3,
+   "y": 760,
+   "w": 80,
+   "h": 80,
+   "name": "knopf_kmin-action-throw"
+  },
+  {
+   "art": "knopf",
+   "x": 896.7,
+   "y": 760,
+   "w": 80,
+   "h": 80,
+   "name": "knopf_kmin-action-jump"
+  },
+  {
+   "art": "knopf",
+   "x": 1029,
+   "y": 760,
+   "w": 80,
+   "h": 80,
+   "name": "knopf_kmin-action-hand"
+  },
+  {
+   "art": "pfeil",
+   "x": 214,
+   "y": 171,
+   "w": 26,
+   "h": 26,
+   "name": "pfeil_1"
+  },
+  {
+   "art": "pfeil",
+   "x": 574,
+   "y": 55,
+   "w": 26,
+   "h": 26,
+   "name": "pfeil_2"
+  },
+  {
+   "art": "pfeil",
+   "x": 1152,
+   "y": 57,
+   "w": 26,
+   "h": 26,
+   "name": "pfeil_3"
+  },
+  {
+   "art": "pfeil",
+   "x": 1534,
+   "y": 174,
+   "w": 26,
+   "h": 26,
+   "name": "pfeil_4"
+  },
+  {
+   "art": "pfeil",
+   "x": 142,
+   "y": 832,
+   "w": 26,
+   "h": 26,
+   "name": "pfeil_5"
+  },
+  {
+   "art": "pfeil",
+   "x": 1520,
+   "y": 832,
+   "w": 26,
+   "h": 26,
+   "name": "pfeil_6"
+  },
+  {
+   "art": "pfeil",
+   "x": 673,
+   "y": 818,
+   "w": 26,
+   "h": 26,
+   "name": "pfeil_7"
+  },
+  {
+   "art": "pfeil",
+   "x": 805.3,
+   "y": 818,
+   "w": 26,
+   "h": 26,
+   "name": "pfeil_8"
+  },
+  {
+   "art": "knopf",
+   "x": 298,
+   "y": 47,
+   "w": 42,
+   "h": 42,
+   "name": "radio_kmin-radio-play"
+  },
+  {
+   "art": "knopf",
+   "x": 348,
+   "y": 47,
+   "w": 42,
+   "h": 42,
+   "name": "radio_kmin-radio-next"
+  },
+  {
+   "art": "knopf",
+   "x": 526,
+   "y": 47,
+   "w": 42,
+   "h": 42,
+   "name": "radio_kmin-radio-sound"
+  },
+  {
+   "art": "knopf",
+   "x": 1315,
+   "y": 31,
+   "w": 48,
+   "h": 48,
+   "name": "knopf_zahnrad"
+  },
+  {
+   "art": "knopf",
+   "x": 40,
+   "y": 34,
+   "w": 222,
+   "h": 145,
+   "name": "almanach_stapel"
+  },
+  {
+   "art": "leiste",
+   "x": 46,
+   "y": 344,
+   "w": 22,
+   "h": 216,
+   "name": "leben_roehre"
+  },
+  {
+   "art": "leiste",
+   "x": 1532,
+   "y": 344,
+   "w": 22,
+   "h": 216,
+   "name": "tempo_roehre"
+  }
+ ]
+}
