@@ -35,7 +35,7 @@ add "$L/CLAUDE.md" "$BASE/LAB_CLAUDE.md"
 for f in KFB_WORLDBUILDER_PLAN_R1.md PROJECT_STATE.md PHASE_C_DONORS_R1.md POSTMORTEM_JOYRIDE_REGRESS_R1.md POSTMORTEM_MVP1_STAGE1_R1.md BASELINE_ACCEPTED_R1.md ACCEPTANCE_INDEX.md ISLAND_ANATOMY_RULES.md SCALE_CONTRACT_K2.md; do add "$L/docs/$f" "$BASE/lab-docs/$f"; done
 for f in "$L"/docs/POSTMORTEM_*.md(N); do add "$f" "$BASE/lab-docs/${f:t}"; done
 for d in "$L"/docs/golden/candidates/*_2026-10-1[1-9](N/); do for f in "$d"/*(.N); do add "$f" "$BASE/lab-docs/golden/${d:t}/${f:t}"; done; done
-T=$(git write-tree)
+T=$(git write-tree --missing-ok)   # V-2000: Blobs des ganzen Repo-Baums nicht lokal nachladen (kostete je Lauf Minuten und GB)
 if [[ $T == $(git rev-parse "$PARENT^{tree}") ]]; then echo "no change"; exit 0; fi
 C=$(printf '%s\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n' "$MSG" | git commit-tree $T -p $PARENT)
 git push -q $REPO "${C}:refs/heads/${BR}" && echo "pushed ${C}"
