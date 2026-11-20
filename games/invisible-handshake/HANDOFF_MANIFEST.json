@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "status": "CONSOLIDATED_CANDIDATE_NOT_BALANCED",
   "repository": "georg-doc/kayfabizarro",
   "branch": "design/invisible-handshake-paper-r0-2026-11-17",
@@ -21,16 +21,16 @@
   "implemented_site_rules": "R09 historical prototype; not R14; host not reverified",
   "research_executed": false,
   "background_jobs_created": false,
-  "next_job": "Physical 2-human and 6-human quick paper comparison of R21 A communal claim versus B one-mark unique personal card win, timed, with original KFB Story D6 rolled once/triplet; Georg KEEP/TUNE/FAIL",
+  "next_job": "Physically trace 2H/4H/6H one-claim-per-beat accusation/retort/defense on six outer public cards + central Quest, compare A MOVE preserves face vs B every MOVE/SWAP advances pressure, measure claims and first tips. Georg KEEP/TUNE/FAIL.",
   "atlas_refs": {
     "main": "cf510373bb7290b182c3f3a5467c5766acfcb149",
     "psychology": "61c3a937077a52d3673845c27f69bcaafd0d805c"
   },
   "current_tested_model": "r14-open-harvest/test.py",
-  "current_proposal": "R21_STORY_D6_TRIPLET_SEVENTH_CARD_CLAIM_2026-11-19.md",
-  "current_proposal_test": "R21_SEVENTH_CARD_CLAIM_TEST_REPORT_2026-11-19.md",
-  "current_proposal_status": "R21 new triplet/Story D6/seventh Focus claim proposal, zero games; control communal claim vs uniquely matching nonnumeric mark personal card win; no solver seat-lock; R19 and R20 preserved",
-  "human_gate": "Georg KEEP/TUNE/FAIL on R21 seventh-card claim and nonnumeric objective symbol versus prior R20; no implementation or publishing",
+  "current_proposal": "R22_KAYFABE_ACCUSATION_DICE_BEATS_2026-11-20.md",
+  "current_proposal_test": "R22_KAYFABE_DICE_BEAT_TEST_REPORT_2026-11-20.md",
+  "current_proposal_status": "R22 new Georg-corrected fast dialogue: one concrete assertive blame/escalate/defend line directly executes SET/TURN/MOVE/SWAP HATE/FEAR/HOPE die on public faction card; test A vs pressure B; 25,920 structural fixture calls; no complete/human games",
+  "human_gate": "Georg KEEP/TUNE/FAIL on R22 direct physical accusation-die loop, before choosing Quest win/lose or NPC policy.",
   "superseded_mechanic": "FOCUS_COLLAPSE_R15B_CANDIDATE_2026-11-17.md survivor split B is REJECTED as tautological; prior two-human dice co-location and two outer cards incorrect; center remains die-free",
   "current_tested_model_warning": "R14 historical bot runs do not implement corrected six outer, three distinct die positions, NPCs, or R17 narrations.",
   "current_invariants": "6 outer narrative cards n human+6-n NPC; one F/H/H D6 per occupied outer card, each die on distinct card; 1 die-free Focus; 50 ordinary cards, stock 43-3n",
@@ -45,5 +45,7 @@
   "r19_stage": "NONE — current HTML is portable, not a deployed or publicly verified direct kayfabizarro.pages.dev route",
   "r19_browser_count": "38/38 Playwright browser assertions PASS; 390px responsive PASS; zero JS exceptions; not human play",
   "previous_interactive_candidate": "r19-interactive-turn/turn-lab.html",
-  "r21_stage": "NO STAGE OR LIVE — document-only mechanics candidate"
+  "r21_stage": "NO STAGE OR LIVE — document-only mechanics candidate",
+  "r22_stage": "NO R22 PUBLIC STAGE / SITE OR LIVE. Candidate document and structural test only.",
+  "last_r22_evidence": "25,920 static action fixtures, 4,320 TURN, 12,960 MOVE, 8,640 SWAP, 36 SET, legal 60 MOVE loop A no tip vs B nine tips"
 }
