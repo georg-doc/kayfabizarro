@@ -1,0 +1,13 @@
+# R09 · Learn by playing / restored R/A/F triangle
+
+Existing owner, branch and private Site retained. Runtime remains ../r07/site/dist. No scoring/engine change: R08 engine SHA256 c8107f181091d883ee95e39bf3ede4b09a9ff67e50b4127c5405f603d367af7f.
+
+The R08 matrix was rejected by Georg. Restored three functional corner fields Resources/Rules/Influence, original R/A/F dice and central contested/focus marker. A unique high die opens its corner; tied highs do not. Four market cards remain selectable below. R/A/F identity is independent of corner; Frame effects still require the existing Plot and a full action. Camera controls retained.
+
+Five-step animated, interactive English introduction: goal; legal first recruitment; reversible Frame preview and explicit commit; mutual dependency and 1+6=7 banked receipt; continue actual game or choose fresh Solo/2–6. Curated real engine fixture, no fabricated rule results. Committee deliberately passes twice, disclosed. Continue starts human round3 with two institutions and7 banked. Intro is available via Learn by playing. Existing saves untouched until explicitly replacing them; Skip/escape do not write game state. Repeat onboarding restarts only its isolated fixture. Old engine save remains version8.
+
+Design: dark green/cream/gold paper theatre, large editorial text, one primary action per lesson stage, visible progress, original3D dice with450ms orientation interpolation; entry/link animations disabled by prefers-reduced-motion. Keyboard button equivalent for every coached action, text instructions if WebGL fails. No extra paid assets, no new runtime owner, no replacement branding.
+
+Tests: independent10 fixtures and40 full legal continuations (681 transitions). Card/Plot conservation, actual Frame cost, production6/bank7, legal round3 continuation,8 credits each, no duplicate preview/replay points. Browser full5-step path, desktop1440 and narrow430 opening, explicit free-Frame preview, continuation state, replay/Skip/reload preservation observed. No independent screenreader or WebGL-failure browser test. Source-based critic separate from builder; no human newcomer comprehension/fun claim.
+
+Known limits: onboarding is a guided two-player opening, not a full tutorial of every Plot or every multiplayer timing rule. Continued practice game favors learner because Committee held position. Fresh Solo and2–6 are separate setup choices. Visual network layer outside lesson remains text-based. Mature KFB clay/art direction is not claimed; this is a clearer teaching prototype. One next gate: Georg opens Learn by playing without consulting Rules and judges whether the first two decisions explain the triangle and motivate the next turn.

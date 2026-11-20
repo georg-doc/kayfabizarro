@@ -1,3 +1,106 @@
+## 2026-11-20 · THE INVISIBLE HANDSHAKE R22 · Kayfabe accusation sets/turns/moves/swaps shared dice
+
+Georg rejects simplistic category phrases (“hate because information leaked”). The game must let the actor **blame a specific faction/card, escalate the threat, and counter/defend by directly manipulating the matching HATE/FEAR/HOPE die**. [R22 candidate](../../games/invisible-handshake/R22_KAYFABE_ACCUSATION_DICE_BEATS_2026-11-20.md): six outer public narrative positions and central Quest, repeated Problem→Reaction→Solution dialogue, SET die 1 / TURN / MOVE / SWAP as position-defined one action, Story D6 six original modes optional/non-punitive, fast 2H/4H/6H turns. Earlier R21 “unique matching symbol wins” and R19 complex menu do not automatically stack. [R22 static report](../../games/invisible-handshake/R22_KAYFABE_DICE_BEAT_TEST_REPORT_2026-11-20.md): 25,920 legal fixtures and clear indefinite movement stall in A, challenger B pressures active die on MOVE/SWAP. Unsettled Quest claim/tip scoring and NPC involvement; **0 human plays, no app/Stage/Live**. Single next gate: fast physical 2/4/6 A/B spoken accusation proof, Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-19 · THE INVISIBLE HANDSHAKE R21 · Existing Story D6 and seventh-card claim
+
+Georg extends fast R20 with **PROBLEM → REACTION → SOLUTION**, original six KFB Story D6 tones and a claim on seventh center narrative card triggered by Solution. [R21 design](../../games/invisible-handshake/R21_STORY_D6_TRIPLET_SEVENTH_CARD_CLAIM_2026-11-19.md) compares A communal resolved center against B objective personal win by unique matching nonnumeric proxy mark among the three played cards. One D6 roll/triplet is an intentional adaptation of KFB's roll/turn. [R21 structural proof](../../games/invisible-handshake/R21_SEVENTH_CARD_CLAIM_TEST_REPORT_2026-11-19.md): 27 symbolic states, 12 unique matches, 10 opening/claim stock checks; a solver-always-wins rule would lock wins to seats 3 (3H) / 3 and 6 (6H). Human games 0; no code runtime, Stage/Live or merge. One next gate: fast 2H/6H A/B paper test, Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-19 · THE INVISIBLE HANDSHAKE R20 · Fast HATE/FEAR/HOPE UNO-style alternative
+
+Georg finds R19 interactive seven-card round too complicated for broad audiences; proposes rapid numberless card play and one-sentence explanations why played cards provoke Hate/Fear/Hope, with delayed realization of the collective causal story. [R20 separate rule candidate](../../games/invisible-handshake/R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md) drafts five-card hands, one card per action, one cause sentence, fixed HATE→FEAR→HOPE, HOPE private-incentive reread, first to empty hand. Does **not** stack R19 dice, Focus rewards, NPC loop or 7-position reading. Same game owner/branch/PR; zero R20 playtests, no implementation, Stage, Live or merge. Next: 2H and 5–6H paper test, Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-19 · THE INVISIBLE HANDSHAKE R19 · Interactive setup–turn–resolve artifact
+
+[Standalone R19 HTML](../../games/invisible-handshake/r19-interactive-turn/turn-lab.html) plus [browser report](../../games/invisible-handshake/r19-interactive-turn/TEST_REPORT_R19_2026-11-19.md) inside owner games/invisible-handshake/ on Draft PR #475. 2 humans +4 NPC complete human-round walkthrough with six exterior Tarot reading positions, one die-free central Focus, HATE/FEAR/HOPE dice, setup four-card selection, public/private text lens, narrative then single action, upper/lower capture/burn, legal die reposition, collective NPC A pulse, 50-card ledger and next-round first-human rotation. R17 B center Focus payout optional and flagged unbalanced; no new game rule acceptance. 38/38 browser assertions PASS, 390px viewport PASS, no full game/human acceptance/public Stage. Draft Hub metadata index only, not Live. One human KEEP/TUNE/FAIL gate; no auto-merge.
+
+---
+
+## 2026-11-19 · THE INVISIBLE HANDSHAKE R18 · Tarot hex positional reading candidate
+
+Georg's supplied 7-spread Tarot reference maps to current R15C/R17's **six outer public narrative cards and one die-free center FOCUS** in a hexagon. [R18 source](../../games/invisible-handshake/R18_TAROT_HEX_SEVEN_CARD_READING_2026-11-19.md) describes seven institutional/satirical prompts, upright PUBLIC CLAIM vs reversed PRIVATE INCENTIVE, and an A/B physical readability test (plain R17 A vs R18 labeled overlay) on identical actions/payoffs. Current 56-card budget six faction +50 narrative, three D6 and single actions unchanged. [R18 V8 static report](../../games/invisible-handshake/R18_TAROT_HEX_TEST_REPORT_2026-11-19.md): 600 legal placements, 5,400 moves, 1,800 swaps, 1,800 relocations, 720 seat assignments, 20 stock ledgers, 0 human games. No acceptance, actual card art, Stage/Live, automated merge or new runtime. Optional R17 B center payoff and R16 qualitative icons remain separate unapproved candidates. One human gate: 2H+4NPC and quick 6H R17 A / R18 B comparison.
+
+---
+
+## 2026-11-18 · THE INVISIBLE HANDSHAKE R17 · Finger-chain causal storytelling
+
+Georg identified that previous C1 icon effects still leave the 50 unique narrative cards too interchangeable. [Current R17 proposal](../../games/invisible-handshake/THREE_DIE_NARRATIVE_CHAIN_R17_2026-11-18.md) uses actual KFB causal story source `media/prompts/KAYFABE_TIPS_corpus_v1.md`: point on real cards and tell one short **HATE=Problem → FEAR=Reaction → HOPE=Solution** line with THEREFORE and BUT, novice title-only fallback and no subjective jury. Card's temporary role comes from existing one-per-outer-card colored die, not a printed modifier or extra fourth die. Same six open faction narratives, n humans+6−n NPC, center die-free and same 56-card total. A narrative-only vs B HOPE-position Focus beneficiary on another person's positive outer collapse, NPC HOPE reframe and next-human-round Focus refill. [Static R17 test](../../games/invisible-handshake/THREE_DIE_NARRATIVE_CHAIN_R17_TEST_REPORT_2026-11-18.md) enumerated 14,400 **event fixtures** (not complete games), exposes major B human-count focus-award bias (1/6 with 2H vs5/6 with 6H under uniform states). Previous R16 fixed printed F/H/H icon effects deferred as alternate, no automatic integration. [Return](../../games/invisible-handshake/RETURN.md), owner state/handoff/manifest updated. No human tests, card art, Site/Stage/Hub/Live or PR merge. One human gate: 2H+4NPC physical storyline A/B and brief six-human session; Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE R16 · NPC Editorial Pulse + narrative card agency
+
+Georg requested concrete rounds and a KFB Kayfabe Show/Spin/Sell optional beat, no excessive NPC turns at 2–6 humans, more public card turnover and **tactical meaning for cards beyond only three dice** without introducing per-card numeric modifiers. On existing owner branch `design/invisible-handshake-paper-r0-2026-11-17` and Draft PR #475, [R16 design](../../games/invisible-handshake/NPC_TURN_AND_NARRATIVE_CARDS_R16_2026-11-17.md) defines 6 outer face-up faction narratives always (n humans+6−n randomly revealed NPC), 3 distinct one-per-card Fear/Hope/Hate D6, one die-free center focus, human choice of one from four initial cards and 3 held, stock `43−3n`. Human actions stay one per turn. NPC A **one shared editorial pulse per complete human round**, refresh/refill one NPC public card; NPC B chooses MOVE of an attached die to the first legal occupied die-free position (clockwise), else refresh. No extra NPC personal deck/hand or auto NPC trophies. Card C0 statless control vs optional C1 **one qualitative Fear/Hope/Hate icon**: Fear die+1 capped6, Hope draw one stock card to hand, Hate one random human opponent-hand exchange against chosen own card, only when human PLAY/REWRITE. No 50-card assignment accepted, no full sim.
+[Static R16 test](../../games/invisible-handshake/NPC_TURN_AND_NARRATIVE_CARDS_R16_TEST_REPORT_2026-11-17.md) and [source probe](../../games/invisible-handshake/NPC_TURN_AND_NARRATIVE_CARDS_R16_PROBE.js): **46 grouped scenarios, 51 grouped assertions PASS** in independently constructed V8 fixtures; not human play or measured game balance. [Owner Return](../../games/invisible-handshake/RETURN.md), CURRENT_STATE, Webchat, manifest and owner Changelog current. Original R14/older R15 non-six outer models retained historical. No KFB main game runtime, Research Atlas mutation, Site/Cloudflare Stage, KFB Hub Live tile or auto merge. One next gate = physical 2H+4NPC A/B editorial pulse and one C1 on-entry card-effect example, then 6H-only contrast, Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE R15C · Six outer NPC narratives / single dice occupancy
+
+Georg explicitly corrected previous assistant assumption: all **six outer faction Narrative cards are dealt** even for 2 humans; other `6−n` positions are randomly revealed **NPC factions**. Outer cards may become temporarily empty after capture/burn, but **no card holds more than one of the shared three Fear/Hope/Hate dice**. MOVE uses occupied die-free target, SWAP different dice-bearing positions; no centre dice. Earlier R15B "two other dice must be on different cards" center trigger is **tautologically always true in a legal fully placed state**, now **REJECTED**, as is previous 2-player die-stack rationale. New fixed 50-card stock `43−3n` (37 with 2H+4NPC / 25 with 6H). [Source correction](../../games/invisible-handshake/SIX_OUTER_NARRATIVES_SINGLE_DIE_R15C_2026-11-17.md), [static checks](../../games/invisible-handshake/SIX_OUTER_SINGLE_DIE_TEST_REPORT_R15C_2026-11-17.md) verify 600 legal setups, 5,400 MOVE, 1,800 SWAP and 1,800 post-removal relocation states. No full game/human balance and R14 old bot runs do not apply. [Owner Return](../../games/invisible-handshake/RETURN.md), current state, Webchat, manifest and historical R15B are crosslinked. NPC autonomous turns/refill and NPC contributor Focus payout **not specified by user**, left open. No new runtime, Stage/Hub or merge. Next gate: one explicit minimal NPC model, paired 2H+4NPC vs 6H+0NPC, physical 2-player trial.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE R15B · Die-free focus release
+
+Georg overrode the previously proposed R15 direct-center-dice target: **FOCUS is a neutral, die-free central narrative**. Under new [R15B proposal](../../games/invisible-handshake/FOCUS_COLLAPSE_R15B_CANDIDATE_2026-11-17.md), only **outer** Fear/Hope/Hate 6→7 / 1→0 collapses can affect it. A=every collapse; B=only if two other dice were on distinct occupied outer narratives before the collapse. Acting player retains R14 outer trophy at7; different contributor may receive central Focus as compensating co-benefit; at0 Focus may be discarded/refilled, no trophy. No center die, 57th card, new power stat, mission or Solo bot. Mandatory own-slot entry still unbalanced. [Static evidence](../../games/invisible-handshake/FOCUS_COLLAPSE_R15B_TEST_REPORT_2026-11-17.md) **51 scenarios/149 assertions** in independent V8 probe, not human or automated full games; no R14 baseline supersession. Old R15 center-die candidate rejected, existing docs preserved additively. [Return](../../games/invisible-handshake/RETURN.md), CURRENT_STATE, WEBCHAT_HANDOFF, manifest, owner changelog updated; PR #475 remains Draft/unmerged. No public stage/Hub tile. Next gate: paired 2/6-seat A/B baseline simulations, human 2-player comparison A/B/FAIL.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE · Compulsory narrative entry and central focus proposal
+
+Georg clarified the public-supply puzzle: a player **must have their own public narrative in the arena** to manipulate communal Fear/Hope/Hate dice; after a takeover/burn, one full PLAY action (or DRAW first when hand empty) is required to re-enter. Current R14 simulator did not enforce this gate, so it is a **new R15 design hypothesis**, not measured in earlier 6,000 R14 games. [R15 A/B concept](../../games/invisible-handshake/CENTRAL_FOCUS_ENTRY_GATE_R15_PROPOSAL_2026-11-17.md) places one common FOCUS card in the middle of six faction positions: A = story-only persistent centre, B = public collectible/burnable central prize with **centre-only auto refill**, using the same 50 narrative cards, three F/H/H dice, 2–6 actual players, n opening stock `49−4n`. No missions/hidden objectives, no 57th card or NPCs. [38/38 deterministic finite-deck fixtures](../../games/invisible-handshake/CENTRAL_FOCUS_R15_TEST_NOTES_2026-11-17.md), zero full games/human games with proposal, and no scoring-balance approval. Risk: repeated own-slot knockout, focus farming, dead re-entry at stock exhaustion, unresolved 5→6 preparation gift. [Owner Return](../../games/invisible-handshake/RETURN.md), [CURRENT_STATE](../../games/invisible-handshake/CURRENT_STATE.md), Webchat handoff and manifest updated. No Site/Hub/Stage deployment or merge. **Next gate:** two-seat A/B first, six-seat denial stress, Georg A/B/FAIL.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE R0.6 · Borromean RAF Pyramid + Influence Research
+
+Georg proposed three native colored KFB D6 **R/A/F = Resonanz, Amplitude, Frequenz** as an adjustable three-corner Overton/HyperNormalisation Power Pyramid with an all-seeing eye, mechanically separate from R0.5's rectangular Market aperture. Verified KFB sources (Travel S60c coupled sky dice and original pinball audio drone) are reused for semantics, not copied as art/runtime. [R0.6 design](../../games/invisible-handshake/BORROMEAN_RAF_PYRAMID_R06_2026-11-17.md) defines a unique-high-face discourse focus vs contested tie, fixed 3 current power-channel corners, 0/1 FAVOR recruitment, and an optional one-Plot ±1 rotation or die-position swap. Current 56-card budget and 2–6 main player/Solo optional priority unchanged; user POI-specific triangle remains deferred research B.
+
+[Executable probe](../../games/invisible-handshake/BORROMEAN_RAF_PROBE_R06.js) and [test evidence](../../games/invisible-handshake/TEST_REPORT_R06_2026-11-17.md): independent Node enumerator verified **1,296** abstract states, **15,552** legal cost cases, **6,480** ±1 rotations and **3,888** swaps. No 8-round pyramid simulation, 0 human play, 0 actual dice art rendered/isolated, 0 Stage/Hub Live release. [Research Atlas R0.6 addendum](../../games/invisible-handshake/ATLAS_PSYCHOLOGICAL_INFLUENCE_ADDENDUM_R06_2026-11-17.md) extends existing owner request with exact Chase Hughes channel, official Mattias Desmet sources and critical empirical comparisons for PsyOps/propaganda, social psychology/mass formation, NLP/nudging/AI-mediated influence. **Research NOT run**, original Atlas PR #394 and MKULTRA/Monarch PR #408 untouched. [Owner Return](../../games/invisible-handshake/RETURN.md) updated. PR #475 stays Draft/unmerged. **One gate:** physical 2-player R0.5 vs R0.6 A/B, optional Solo turn and Georg A/B/FAIL.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE R0.5 · Simulation and discourse candidate
+
+- Georg requested bot simulation, source comparisons with Junta!, Machiavelli, Sun Tzu and Hegel; added HyperNormalisation, PsyOps/False Flags, fictional "MKUltra 4.0", optional KFB Kayfabulieren ritual and a movable **Overton Window**.
+- One existing owner/branch, PR #475. [R0.5 note](../../games/invisible-handshake/OVERTON_HYPERNORMALISATION_R05_2026-11-17.md) tests a 2-of-4 public Market aperture rather than a true political idea axis; RECRUIT inside/outside proposed 0/1 FAVOR, one PLOT shifts frame ±1 then recruits. Existing R0.4 printed rules unaffected, no new numerical resource.
+- [Actual bot diagnostic](../../games/invisible-handshake/SIMULATION_R05_REPORT_2026-11-17.md) and [JSON summary](../../games/invisible-handshake/SIM_R05_COMPACT_RESULTS.json): **3,500 full eight-round simulated R0.4 proxy games / 14 scenarios**, no humans. Two-player always-VETO POACH success 5.6%; six-player 29.5%. Solo System policy-dependent and final-round suspension harsh. [Overton legality script](../../games/invisible-handshake/OVER_TON_WINDOW_PROBE_R05.js) passes 48 affordability combinations and 4 adjacent shifts; full-game Overton not tested.
+- [Atlas research request](../../games/invisible-handshake/ATLAS_RESEARCH_HANDOFF_R05_2026-11-17.md) is **prepared but not executed**, source status tiers preserved; no new Research Atlas owner, no false claim that "Problem Reaction Solution" is directly Hegel's text. [Owner Return](../../games/invisible-handshake/RETURN.md) updated. KFB Hub unchanged/no Live tile for text-only review. PR remains Draft/unmerged.
+- **Single gate:** 2-player same 12 cards without vs with Window; optional Solo turn; KEEP/TUNE/FAIL before full deck/visual Stage.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE R0.4: BGA donors, six-sphere microtest, optional solo
+
+Georg asked for 2–6 main mode and solo from the outset, plus Board Game Arena/Reddit design research. On existing analog game owner PR #475, added `games/invisible-handshake/PROXY_12_AND_SOLO_R04_2026-11-17.md` (12 unique original English text proxies; 6 spheres, all six directed channel pairs; deterministic Solo System B as alternative to historical market-denial Solo A); `BGA_MECHANICS_DONOR_AUDIT_R04_2026-11-17.md` (11 BGA game summaries including Pax Pamir, Watergate, Coup, Oriflamme, Hanamikoji, Libertalia, Innovation, Pax Renaissance, For Northwood!, Conspiracy, 7 Wonders Duel; no gameplay/asset reuse); and `TEST_REPORT_R04_2026-11-17.md` (8/8 static checks, five readable PDF pages generated/extracted/rendered). [Owner Return](../../games/invisible-handshake/RETURN.md) current. Existing rules 56 total, 0–3 FAVOR, RECRUIT/POACH/VETO/PLOT and no extra bot deck retained. 0 human play/6p timing proof, no new Site/Cloudflare Stage, Hub live tile or merge. **Next gate:** Georg 2p twelve-card physical test, optional Solo B turn, KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE · R0.3 SIX-SPHERE Kayfabe/Bizarro direction
+
+Georg's scope correction: old podcaster/modern-media emphasis was too narrow; networked capital, state, covert PsyOps, media/platforms, pop culture/universities and science/AI/space must all be playable as **one satirical power ecology**. New [R0.3 source](../../games/invisible-handshake/POWER_SPHERES_KAYFABE_BIZARRO_R03_2026-11-17.md) enumerates **6×5 fictional candidate institutional nodes**, balances six RESOURCES/RULES/INFLUENCE directed pairs (5 each), preserves old 6+30+12+8 budget and existing R0 action logic. Kayfabe exposes public/private interests; Bizarro turns critique against its own authority. Author/intelligence/industry claims remain distinct from sources and game-fiction. [R0.3 static evidence](../../games/invisible-handshake/TEST_REPORT_R03_2026-11-17.md): 8/8 structure checks, huge 9→4 and 4→9 possible POACH swing flagged as risk. [Owner Return](../../games/invisible-handshake/RETURN.md) and current START_HERE route revised. No human play, art, published Stage or Hub Live tile; existing owners and PR #475 protected. **One next gate:** physical 12-proxy microtest spanning the six spheres, then KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE · R0.1–R0.2 Media/Cultural Power TUNE
+
+Georg refined the separate analog card-game candidate: VOICE → **INFLUENCE** (media, propaganda, leverage, blackmail, covert alliances), MONEY → proposed **RESOURCES** (credit, logistics, infrastructure), and RULES includes lawfare. Added `games/invisible-handshake/SEMANTICS_R01_2026-11-17.md` and `MEDIA_ECOSYSTEM_R02_2026-11-17.md` with ten fictional media/culture institution *seeds*, re-themed existing plot effects and one unapproved event variant. **No new resource, 56-card budget change, second owner, code, human play, print master or Stage/Hub tile.** R0 PDFs have now outdated labels. The NATO ACT cognitive warfare concept and MKULTRA's historical source tier are distinguished from satirical extrapolation. [Owner Return](../../games/invisible-handshake/RETURN.md). Next single gate: Georg physical R0.2 terminology/podcast-POACH microtest KEEP/TUNE/FAIL; PR #475 remains draft/unmerged.
+
+---
+
+## 2026-11-17 · THE INVISIBLE HANDSHAKE · Analog paper R0 candidate
+
+Separate game-design branch `design/invisible-handshake-paper-r0-2026-11-17` reuses Research Atlas v29 brief (PR #394) without changing its owner. See `games/invisible-handshake/{PROTOTYPE_R0.md,TEST_REPORT_R0.md,RETURN.md,CHANGELOG.md}`. Original English 12-card printable-paper experiment, not a 56-card finished game. Mechanical counts 4/4 player configurations; 3 constructed examples; no human play, no card illustration, no public KFB Stage or Hub tile, and no KFB rules/runtime change. Next gate: Georg 1–2-person physical microplay and KEEP/TUNE/FAIL. Preserve this as CANDIDATE.
+
+---
+
 ## 2026-11-04 · WS0 Black Ink Blob Sprite Family docs/intake candidate
 
 - Captured nine Georg-visual-PASS 12-character theme pairs into an 18-source-sheet SHA-256 intake ledger, 108 mechanical sprite candidates and reusable L0/L1/L2 footless-blob prompt/QA grammar.

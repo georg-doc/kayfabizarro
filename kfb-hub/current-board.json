@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-04.1",
-  "updatedAt": "2026-11-04T02:37:00.196Z",
+  "revision": "2026-11-20.r22-accusation-candidate",
+  "updatedAt": "2026-11-20T07:30:00+01:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -174,6 +174,24 @@
     }
   ],
   "briefings": [
+    {
+      "id": "brief-invisible-handshake-r18-tarot-hex",
+      "title": "The Invisible Handshake · R22 Kayfabe Accusation Dice Beats",
+      "badge": "DESIGN CANDIDATE · NOT LIVE",
+      "status": "hold",
+      "provider": "Independent card game · Draft PR #475",
+      "desc": "Georg's new direction: accuse, counter-accuse or defend an actual public faction/card while setting, turning, moving or swapping the linked HATE/FEAR/HOPE die. Two physical pressure variants and 25,920 static fixtures; Quest scoring/NPCs unresolved, no human game. Older R19 browser lab remains separate.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R22_KAYFABE_ACCUSATION_DICE_BEATS_2026-11-20.md",
+      "tags": [
+        "invisible handshake",
+        "r22",
+        "kayfabe",
+        "accusation",
+        "three dice",
+        "not live"
+      ],
+      "prompt": "Run short physical 2H/4H/6H actual-card accuse/retort/defend one-gesture trial, compare stationary pressure A to advancing pressure B, and decide KEEP/TUNE/FAIL without auto-claiming Quest payout or publishing any Site."
+    },
     {
       "id": "brief-island-hud-flight-r4-sources",
       "title": "Island Lab · HUD Sprint R4-0 sources",

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "fixtures": 10,
+  "fixtureNames": [
+    "Curated initial state conserves30 institutions and12 plots",
+    "Recruit commits exactly1 base point and preserves original",
+    "prepareFrame equals two real Committee passes",
+    "Frame action is legal: A3→4 and free Peer Review Gate",
+    "Preview/undo/repeated previews do not commit points",
+    "Commit advances to human round3; two mutually supplied nodes yield6",
+    "Fresh lesson/replay deterministic; caller save unchanged",
+    "Save/load continuation equivalent at recruit, frame and continued-game boundaries",
+    "Forty legal continuations finish with8 credits each and valid conserved state",
+    "Source contract: learner has no storage writer; app saves only explicit accepted state"
+  ],
+  "continuationGames": 40,
+  "continuationTransitions": 681,
+  "sourceHashes": {
+    "engine.js": "c8107f181091d883ee95e39bf3ede4b09a9ff67e50b4127c5405f603d367af7f",
+    "learn-state.js": "21542d311e7f1e2456fdd4fe2b74d7a823e0e5634d0d84d4a778c87912d18675",
+    "learn.js": "b9bab462678187643aa97bfc5a2f568255e9123e46d089832371d9716e78b7a6",
+    "app.js": "775f85fbb966223351ab84dc3b58ec41ebe7dccf029d1c62b488cfd59ff6a2bb",
+    "board.js": "7a4785bafd60f8a5ebb38af611193ea7474822d1585ab348d2d0f9474c8b9f36",
+    "index.html": "481881728b136324cc1babc5fb3ae87e2ffa920a8d41d6dd6c13b4497321d015"
+  },
+  "limits": [
+    "No browser clicks/rendering measured by this test.",
+    "Storage/replay checks combine pure-state checks with explicit source-contract assertions; browser integration belongs to parent QA.",
+    "The curated lesson consumes two real Committee passes, not fabricated points."
+  ]
+}

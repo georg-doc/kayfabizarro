@@ -1,0 +1,144 @@
+{
+  "sample": 5000,
+  "unique_counts": {
+    "move": 1753,
+    "swap": 327,
+    "adjust": 303,
+    "reroll": 24
+  },
+  "examples": {
+    "move": {
+      "dice": [
+        [
+          3,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "actor": 0,
+      "chips": [
+        null,
+        null,
+        null,
+        2
+      ],
+      "best_actions": [
+        [
+          "move",
+          0,
+          0
+        ]
+      ],
+      "best_score": 7.5,
+      "other_best": 4.5
+    },
+    "swap": {
+      "dice": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "actor": 0,
+      "chips": [
+        null,
+        1,
+        null,
+        null
+      ],
+      "best_actions": [
+        [
+          "swap",
+          0,
+          1
+        ]
+      ],
+      "best_score": 8.0,
+      "other_best": 5.0
+    },
+    "adjust": {
+      "dice": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "actor": 0,
+      "chips": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_actions": [
+        [
+          "adjust",
+          0,
+          -1
+        ]
+      ],
+      "best_score": 3,
+      "other_best": 1.5
+    },
+    "reroll": {
+      "dice": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "actor": 1,
+      "chips": [
+        1,
+        null,
+        null,
+        null
+      ],
+      "best_actions": [
+        [
+          "reroll",
+          0,
+          null
+        ],
+        [
+          "reroll",
+          1,
+          null
+        ]
+      ],
+      "best_score": 4.666666666666667,
+      "other_best": 3
+    }
+  }
+}
