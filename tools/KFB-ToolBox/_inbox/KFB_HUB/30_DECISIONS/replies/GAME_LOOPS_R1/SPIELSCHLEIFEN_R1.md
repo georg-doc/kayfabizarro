@@ -83,3 +83,18 @@ Der Begriff „Fundstücke“ fällt weg.
 | 6 | WS0 (Umgebung) | Wegweiser-Bäume mit Knet-Schildern, Platzierung über den Ortsplan |
 | 7 | WS1-Theater | Lore Keeper mit Pult als Ort, Auftrag annehmen oder ablehnen über das Dialogfeld |
 | 8 | später | Minispiele (Abschnitt 5) |
+
+## 8 · Nachtrag 20.11. abends (Georg): Wollknäuel, Murmeln, Abspann
+
+- **Wollknäuel-Wesen (WS0 baut):**
+  - Ein gedrehtes Knäuel: die Fäden echt verdrillt aus 2–3 Strängen, keine glatten Röhren. Dazu KFB-Augen im Knäuel. Es tastet mit Tentakeln, zieht sich über den Boden, kullert und ordnet sich neu.
+  - Gegner und Spielzeug zugleich, an den Fäden ziehbar. Als Schlange im Theater.
+  - **HyperNorm-Infektion:** In der Nähe von Wahrzeichen (z. B. Kölner Dom) breiten sich Woll-Tentakel aus. Bei Kontakt klettern sie hoch, umwickeln und umspinnen das Modell und „übernehmen“ es. Es gibt ein gutes und ein böses Knäuel. Das wird Metanarrativ und Spielziel zugleich.
+- **Murmeln (Vorlage codevember 10-caustic):**
+  - Murmeln mit echter Kollision. Sie klicken und klackern, der Klang kommt aus ihrer Richtung. Zu Fuß, im Turbo oder im Fahrzeug läuft bzw. fährt man durch sie hindurch.
+  - **Rätsel:** Eine Murmel mit genug Wucht gegen den ersten Dominostein flitschen, wenn sich die Kette nicht einfach umschießen lässt. Murmeln können auch angreifen.
+  - **Würfel-Fassung** mit HyperNorm-Würfeln: Gebäude zerfallen und setzen sich selbst wieder zusammen.
+- **Meta-Minispiele:** Kombinationen aus diesen Modulen (Wollknäuel, Murmeln, Domino, Pendel, Scheinwerfer).
+- **Abspann und Credits:**
+  - Ein Agent sammelt alle Creators und Vorlagen (z. B. alle Codevember-Tage von Adam) mit Link, Bild bzw. 3D-Einbettung.
+  - Daraus wird ein animierter Abspann (Remotion) und eine anklickbare Credits-Seite.
