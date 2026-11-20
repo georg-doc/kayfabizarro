@@ -1,3 +1,15 @@
+## R22 Return · Assertive Kayfabe accusation moves with three shared dice · 2026-11-20
+
+**Georg's corrected play intent:** The R20/R21 example “Hate because information was leaked” is **not** a valid theatrical/gameplay move. A real player makes an **assertive, specific accusation, counter-accusation or defense**, points to the actual outer public faction/narrative card, and **physically modifies** the shared HATE/FEAR/HOPE die in the same action; the next player must continue, contradict or co-opt the preceding claim under Problem→Reaction→Solution. [R22 mechanics & real Kayfabe dialogue](R22_KAYFABE_ACCUSATION_DICE_BEATS_2026-11-20.md) keeps six existing public outer faction narratives, one central Quest/FOCUS and one shared emotion die per public outer card. Human turn order simply flows clockwise (2H A/B/A, 4H A/B/C then D/A/B, 6H A/B/C then D/E/F); NPC factions are public subjects, not additional human turns. Optional original Story D6 (Tragic/Comic/Absurd/Heroic/Mystical/Forbidden) is distinct and non-punitive.
+
+**Prototype alternatives:** A target position determines SET at 1, TURN same cube up one, MOVE to free card retaining face, or SWAP against another die preserving faces. B same actions but advances active die one face even on MOVE/SWAP, avoiding endless shuffle. **Quest resolution, first tilt winner/loser, inversion of cube, card renewal and NPC pulse are openly undecided**, not silently coupled to old R14/R17 rewards. R21's printed-symbol unique-match solution is separate/not adopted. No numbered card values or gag referee.
+
+**Static evidence:** [R22 report](R22_KAYFABE_DICE_BEAT_TEST_REPORT_2026-11-20.md) 25,920 in-session V8 action fixtures (4,320 TURN, 12,960 MOVE, 8,640 SWAP), 36 initial SET cases, all one-die-per-card invariant PASS. A constructed 60-MOVE loop had **0 TILT** in A versus **9** in B: progress defect of A is real. **0 human tests, 0 full matches, 0 published R22 Stage/Site**, no runtime/merge or new art. Existing R19 lab remains intact.
+
+**One next productive gate:** short physical six-outer+Quest 2H/4H/6H scripted Kayfabe accusation/counterclaim/defense demonstration comparing A and B; Georg KEEP/TUNE/FAIL on whether a concrete spoken allegation physically changing public blame is actually fast and fun. Then decide Quest win/lose without recreating 5→6 guaranteed gift.
+
+---
+
 ## R21 Return · Story-D6 triplet and seventh-card claim · 19 November 2026
 
 Georg's new direction: take R20 fast one-card turns but organize them in **PROBLEM → REACTION → SOLUTION** triplets, use the actual existing KFB **Tragic/Comic/Absurd/Heroic/Mystical/Forbidden Story D6** as a common emotional/tonal instruction, and let the Solution beat **trigger** the claim of the seventh center card. [R21 game candidate](R21_STORY_D6_TRIPLET_SEVENTH_CARD_CLAIM_2026-11-19.md) proposes one original D6 roll **per triplet** (an explicit simplification of the original once-per-turn KFB rule), six exterior spaces holding the latest two triads, one common FOCUS, and 5 human hand cards. No numeric stats/printed numbers, three additional dice, NPC turns or R19 capture economy.
