@@ -1,3 +1,16 @@
+## 2026-11-21 · FOLLOW-UP · PLAYER STYLE DNA / PERSONAL MUSIC BED (PROPOSAL ONLY)
+
+Georg proposed player-facing independent Funk/Classical/Pop/Death Metal influence sliders with simple, visual sound production, optional contextual adaptation and personal saved Sound DNA. **No slider UI, live style renderer or new sample files were built in this documentation-only follow-up.**
+
+Within existing Audio owner branch and Draft PR [#476](https://github.com/georg-doc/kayfabizarro/pull/476), the source/ownership/UX proposal and live-source/licence shortlist are recorded at:
+`tools/KFB-ToolBox/audio/runtime/STYLE_DNA_SLIDER_LIBRARY_R1_2026-11-21.md`.
+
+Core separation: stable WORLD motif + persistent opt-in PLAYER taste vector + transient CONTEXT arrangement; one dominant grammar and role-compatible secondary influence, never accidental layering of unrelated pitched stems. Current G/D/C/M/N/O mastered/stem source remains reference. Candidate external sources: Magenta GMD (CC BY 4.0 MIDI), VSCO2 CE/VCSL/FreePats specific guitar (CC0), GeneralUser GS after exact license check. External assets imported **0**; candidate music styles implemented **0**; actual hearing/browser QA **0**; no Site/Stage/Live write. Existing seed composer source is unchanged.
+
+**One next gate:** existing KFB Audio Site: audible same-seed 3-style solo and 2 blend proof in original MusicClock/SCORE bus, with source isolation, ducking and browser audio diagnostics; do not route to WS1 before proof.
+
+---
+
 ## 2026-11-21 · KFB PROCEDURAL PHRASES R1 · CANDIDATE (Audio PR #476)
 
 **Mode:** BOUNDED_SLICE · AUDIO SOURCE CANDIDATE ONLY; **NOT HEARD, NOT HOST-INTEGRATED, NOT PUBLISHED.**  
