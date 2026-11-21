@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {composePlace,PROFILES,nextTwoBarSeam,cueForEvent,mixForActivity} from './procedural-score.mjs';
+import {scheduleProceduralNote} from './procedural-voice.mjs';
+let pass=0;
+function check(name,fn) { try {fn();pass++;} catch(e) {console.error('FAIL',name,e);process.exitCode=1;} }
+const a=composePlace({placeId:'Utopia/Süd',profileId:'world.utopia'});
+check('same UTF8 seed',()=>assert.deepEqual(a,composePlace({placeId:'Utopia/Süd',profileId:'world.utopia'})));
+check('different island',()=>assert.notDeepEqual(a.notes,composePlace({placeId:'Utopia/Nord',profileId:'world.utopia'}).notes));
+check('eight bars',()=>{assert.equal(a.bars,8);assert.equal(a.ticksPerBar,16);});
+check('all notes within phrase',()=>a.notes.forEach(n=>{assert(n.step>=0&&n.step<128);assert(n.pitch>=24&&n.pitch<=100);assert(n.length>0&&n.length<=32);}));
+check('four two-bar chord changes',()=>assert.equal(a.notes.filter(n=>n.layer==='bed').length,12));
+check('groove on eighth offbeat',()=>assert(a.notes.filter(n=>n.layer==='groove').every(n=>n.step%4===2)));
+check('pentatonic lead',()=>assert(a.notes.filter(n=>n.layer==='lead').every(n=>[0,2,4,6,7].includes((n.pitch-a.rootMidi)%12))));
+check('all nine profiles compile',()=>Object.keys(PROFILES).forEach(profileId=>assert(composePlace({placeId:'x',profileId}).notes.length>0)));
+check('variation',()=>assert.notDeepEqual(a.notes,composePlace({placeId:'Utopia/Süd',profileId:'world.utopia',variation:1}).notes));
+check('night not a tempo change',()=>{const f=composePlace({placeId:'oak',profileId:'biome.forest',dayPhase:'day'});const n=composePlace({placeId:'oak',profileId:'biome.forest',dayPhase:'night'});assert.equal(f.bpm,n.bpm);assert.deepEqual(f.notes.filter(x=>x.layer!=='accent'),n.notes.filter(x=>x.layer!=='accent'));});
+check('two bar seams',()=>{assert.equal(nextTwoBarSeam(33),64);assert.equal(nextTwoBarSeam(64),64);assert.equal(nextTwoBarSeam(127),128);});
+check('cue quantization',()=>{assert.equal(cueForEvent('POI_DISCOVERED',33)[0].step,64);assert.equal(cueForEvent('RACE_START',65).length,4);});
+check('unknown cue ignored',()=>assert.equal(cueForEvent('UNLISTED',65).length,0));
+check('activity changes gain not tempo',()=>{assert(mixForActivity('DRIVE').groove>mixForActivity('STAY').groove);assert(!('bpm' in mixForActivity('DRIVE')));});
+check('no extra AudioContext or DOM',()=>{const s=fs.readFileSync(new URL('./procedural-score.mjs',import.meta.url),'utf8')+fs.readFileSync(new URL('./procedural-voice.mjs',import.meta.url),'utf8');assert(!/new\s+(?:AudioContext|webkitAudioContext)\s*\(/.test(s));assert(!/\bwindow\.|\bdocument\./.test(s));});
+check('schedule requires injected host',()=>assert.throws(()=>scheduleProceduralNote(null,null,{length:2},0,90),/required/));
+check('immutable output',()=>assert(Object.isFrozen(a)&&Object.isFrozen(a.notes)&&Object.isFrozen(a.notes[0])));
+check('reject missing profile',()=>assert.throws(()=>composePlace({placeId:'x',profileId:'missing'}),/unknown/));
+check('no speed-based tempo',()=>assert(!fs.readFileSync(new URL('./procedural-score.mjs',import.meta.url),'utf8').includes('speed01')));
+console.log(pass+'/19 PASS');

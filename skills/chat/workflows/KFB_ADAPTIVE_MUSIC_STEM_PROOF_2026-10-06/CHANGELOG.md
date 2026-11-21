@@ -1,3 +1,13 @@
+## 2026-11-21 · Procedural Phrases R1 · existing Audio owner / Draft PR #476
+
+- Added optional sampleless, library-free WebAudio phrase compiler + injected synth under existing Audio runtime package (four new files, including QA and owner contract). Location UTF-8 seed deterministic; 8-bar/16th grid; two-bar boundaries; modes, pentatonic melodic walk and KFB-profile proposals; event cues; activity changes layer gains without changing tempo.
+- Preserved existing MusicClock, SCORE bus, one-context/duck owner and authored radio/stems. No new transport, mixer, Site or World owner. Existing Audio Site v11 untouched.
+- Local equivalent Node checks 19/19 PASS; GitHub-source readback 4/4; exact branch Node run, real browser/WebAudio listening and CPU tests 0. No Stage/Live/merge; no human sonic acceptance.
+- Draft branch `feature/kfb-audio-procedural-phrases-r1-2026-11-21`, PR #476 targets current Audio owner PR #365 branch; current owner Return documents scope, evidence and one next gate.
+- Next: audio integrator proves two real location phrases + 2-bar change + cue + speech duck in existing Audio Site before proposing any World/WS1 consume.
+
+---
+
 ## 2026-10-13 · Existing Audio Site Triplet & Opener Studio / final v11
 
 - Added GitHub-reloaded opener/Beat pool, real registry Deck selection, title/Power/Lore side-by-side, compact/source-recital distinction, source evidence/retention, source-gated opener/fiction, local per-Deck save/undo/conflicts and portable JSON/consumer export.

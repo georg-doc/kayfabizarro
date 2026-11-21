@@ -1,3 +1,20 @@
+## 2026-11-21 · KFB PROCEDURAL PHRASES R1 · CANDIDATE (Audio PR #476)
+
+**Mode:** BOUNDED_SLICE · AUDIO SOURCE CANDIDATE ONLY; **NOT HEARD, NOT HOST-INTEGRATED, NOT PUBLISHED.**  
+**Owner:** existing KFB Audio / MusicClock / Mixer, Draft PR **#365**.  
+**Branch:** `feature/kfb-audio-procedural-phrases-r1-2026-11-21` · Draft PR [#476](https://github.com/georg-doc/kayfabizarro/pull/476), based on `web/kfb-adaptive-music-stem-proof-2026-10-06`.  
+**Implementation/docs checkpoint head:** `fcf395d544679831439ca26b1d8a3e20788972e4`.
+
+**Actual code:** `tools/KFB-ToolBox/audio/runtime/procedural-score.mjs`, `procedural-voice.mjs`, `qa-procedural.mjs`, `PROCEDURAL_SCORE_R1.md`. Original algorithm idea came as user-authored prose, no third-party source code. Stable UTF-8 place hash → eight bars / 16th-grid notes; per-profile scale and 2-bar chord changes; fixed pentatonic walk; optional bird; event cues; 2-bar change seam; activity-only gain maps. Native Web Audio voices require injected host context/SCORE bus: FM, additive partials, pluck/Karplus–Strong; no recorded samples or external library.
+
+**Protected:** existing Audio Site v11, real G/D/C/M/N/O stems, authored songs/radio, mixer, MusicClock, Speech Focus, World/WS1 gameplay owner. A second clock/context is **not** implemented. No changes to World/WS1, Hub, Cloudflare, Live or published Site.
+
+**Tests:** local candidate equivalent Node offline assertions **19/19 PASS**; branch files individually GitHub-fetched and blob-verified **4/4**. The GitHub-branch Node test itself was **NOT EXECUTED**. Browser audio/iOS listening/CPU/polyphony/real duck and crossfade evidence: **0**. The provisional profiles are NOT approved KFB sonic canon. This is **not an audio quality PASS**.
+
+**Next gate (one):** existing Audio integrator auditions and instruments two different source IDs via **existing MusicClock + SCORE bus** in the existing Audio Site, with 2-bar seam, movement/stillness, one cue and real TTS/Speech Focus; only after measured/visible browser evidence consider a World/WS1 consumer. No human approval gate created before an audible candidate exists.
+
+---
+
 ## 2026-10-13 · RETURN · Triplet & Opener Studio · existing Audio Site v11
 
 Status: **DEPLOYED_AND_VISIBLY_VERIFIED · CONTENT_HOT_RELOAD_PASS · PRODUCT_TUNE / HUMAN_LISTENING_PENDING**
