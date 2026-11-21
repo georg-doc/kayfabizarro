@@ -1,3 +1,19 @@
+## 2026-11-05 · Follow-up research · Claude/Remotion KFB Card Reels / Story-Stack video export
+
+- Added `skills/chat/research/KFB_STORY_STACKS_HYPERCARD_2026-11-05/CLAUDE_REMOTION_VIDEO_RESEARCH_2026-11-05.md` to existing planning Draft PR #470 / WS0 issue #471. **Research only**, not a new runtime, asset, clip or product authorization.
+- Vendor Remotion agent skills and Claude Code plugin inspected; Video Shotcraft shot library/workbench and Claude Video Skills transcript/brand pipeline classified as candidate donors. Official Prompt-to-Video timeline is a reference; generated filler assets and generic motion-preset branding rejected for KFB.
+- Community observations from five Reddit threads informed anti-slop QA: source-accurate original art, shot motives, KFB cartoon-motion hierarchy, reference-first art direction, isolated donor preview, sampled frames, independent critic, no default slideshow/stock/caption-kit.
+- Existing Card Registry/Almanac, ChatterBox, World/Quest, KFB Ink/Motion and Audio owners kept. DocCheck medical-case video path remains separate editorial/licensing gate. Current Remotion license is **not unrestricted open source**; commercial automation/organizational eligibility must be assessed before deployment.
+- Evidence: 8/8 intended KFB source refs resolved; exact report readback, 0 runtime/video/render/browser tests. One next gate: WS0 source-isolated true KFB Card + connected Story Stack and storyboard/cut-plan concept, only on separate execution go-ahead.
+
+## 2026-11-05 · KFB Living Cards / HyperCard Story Stacks — Georg-approved concept research
+
+- Georg approved the HyperCard-style card-stack/linked-storytelling principle for KFB **planning/conception**, plus a **separate DocCheck interactive-medical-case research line**; no runtime or third-party dependency approved.
+- Researched Ren'Py, Eliot Gardepe's CC BY-NC-SA Ren'Py Hypercard UI pack, original HyperCard concept, Twine, ink/inkjs, H5P Branching Scenario and Adapt with browser/license implications. **Preferred KFB UX donor:** Twine/HyperCard card-link authoring; **JS interpreter candidate:** inkjs; **no** Ren'Py/runtime/UI-pack adoption.
+- KFB source refs anchored to true Card Registry/Almanac, ChatterBox PR #305/#310, Four-Island Story Recovery and R4 FAIL. DocCheck research reuses existing `DC MicroLearning WS1` Living Doc; no cross-product runtime/brand.
+- Docs and evidence: `skills/chat/research/KFB_STORY_STACKS_HYPERCARD_2026-11-05/{RESEARCH,DOCHECK,WS0_MESSAGE,TEST_REPORT,RETURN}.md`. 10/10 existing internal source-path checks, 4/4 initial research/evidence doc readbacks, 0 runtime/browser/deployment tests.
+- Draft PR **#470** on `research/hypercard-story-stacks-kfb-doccheck-2026-11-05`; **WS0 handoff issue #471**. Next gate is WS0 concept intake (later one pinned source-card example), not a new KFB Runtime/Stage or DocCheck implementation authorization.
+
 ## 2026-11-04 · WS0 Black Ink Blob Sprite Family docs/intake candidate
 
 - Captured nine Georg-visual-PASS 12-character theme pairs into an 18-source-sheet SHA-256 intake ledger, 108 mechanical sprite candidates and reusable L0/L1/L2 footless-blob prompt/QA grammar.
