@@ -1,0 +1,1169 @@
+<meta charset="utf-8">
+<title>KFB HUD Claybound-Nachbau</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+@font-face{font-family:"Fredoka";src:url({{fredoka}}) format("truetype");font-weight:600;font-display:block}
+:root{color-scheme:dark;--page:#17130f;--fg:#efe4d0;--mut:#9b8f7c;
+--cream:#f4e6ca;--cream2:#ead6b1;--lip:#d3b78b;--ink:#4a2f1d;--ink2:#7a5638;
+--or:#df6437;--or2:#c24f27;--orlip:#9c3e1d}
+*{box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{background:#000;color:var(--fg);font:14px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif;margin:0}
+.wrap{max-width:1280px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+.nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.nav button{font:600 13px/1 "Fredoka",system-ui,sans-serif;background:#2a231c;color:var(--fg);border:1px solid #3d332a;border-radius:20px;padding:8px 14px;cursor:pointer}
+.nav button[aria-pressed=true]{background:var(--or);border-color:var(--or)}
+.nav span{color:var(--mut);font-size:12px;margin-left:auto}
+
+/* ---------- stage: 1600×900 design units ---------- */
+.stage{container-type:size;position:fixed;inset:0;overflow:hidden;background:#000;user-select:none;-webkit-user-select:none}
+.stage *{--u:min(100cqw/1600,100cqh/900)}
+.game{position:absolute;inset:0;transition:filter .35s ease,transform .35s ease}
+.game>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stage.menu .game{filter:blur(calc(10*var(--u))) saturate(.9) brightness(.92);transform:scale(1.03)}
+.veil{position:absolute;inset:0;background:rgba(60,35,20,.18);opacity:0;transition:opacity .3s;pointer-events:none}
+.stage.menu .veil{opacity:1}
+
+/* HUD — places from HUD_Papier_Vorlage_R2 (1600×900), freestanding objects, Claybound make */
+.hud{position:absolute;inset:0;pointer-events:none;--m0:calc(28*var(--u));--top:calc(66*var(--u));--sh:drop-shadow(0 calc(5*var(--u)) calc(5*var(--u)) rgba(20,10,0,.35))}
+.hud>*{position:absolute;pointer-events:auto}
+.hud button{border:0;padding:0;background:none;cursor:pointer}
+.alm{left:var(--m0);top:var(--m0);width:calc(270*var(--u));transform:rotate(-1.5deg)}
+.alm img{width:100%;display:block;border-radius:calc(6*var(--u));outline:calc(3*var(--u)) solid #2b1d14;outline-offset:calc(-1*var(--u));box-shadow:0 calc(10*var(--u)) calc(18*var(--u)) rgba(0,0,0,.35)}
+.radio{right:calc(28*var(--u) + 200*var(--u) + 24*var(--u) + 48*var(--u) + 22*var(--u));top:calc(var(--top) - 26*var(--u));display:flex}
+.hud .rk{width:calc(52*var(--u));height:calc(52*var(--u));border-radius:50%;display:grid;place-items:center;
+background:var(--cream) url({{ivory}}) center/calc(160*var(--u));
+box-shadow:inset 0 calc(3*var(--u)) calc(2*var(--u)) rgba(255,255,255,.75),inset 0 calc(-4*var(--u)) calc(4*var(--u)) rgba(120,80,40,.35),0 calc(4*var(--u)) 0 var(--lip),0 calc(7*var(--u)) calc(8*var(--u)) rgba(20,10,0,.35);transition:transform .1s}
+.rk:active{transform:translateY(calc(3*var(--u)))}
+.rk i{width:46%;height:46%;background:var(--ink);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.rk img{width:60%}
+.hud .rb{width:calc(48*var(--u));height:calc(48*var(--u));display:grid;place-items:center;filter:drop-shadow(0 calc(2*var(--u)) calc(2*var(--u)) rgba(30,15,5,.55)) drop-shadow(0 0 calc(6*var(--u)) rgba(30,15,5,.35))}
+.rb i{width:100%;height:100%;background:#fff4e2;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.fluff{left:calc(566*var(--u));top:calc(var(--top) - 32*var(--u));display:flex;gap:calc(10*var(--u))}
+.fb{position:relative;width:calc(64*var(--u));height:calc(64*var(--u));display:grid;place-items:center}
+.fb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:var(--sh)}
+.fb b{position:relative;font:600 calc(28*var(--u))/1 "Fredoka",sans-serif;color:#fff;text-shadow:0 0 calc(3*var(--u)) rgba(40,20,10,.55),0 calc(2*var(--u)) calc(4*var(--u)) rgba(40,20,10,.5)}
+.gear{right:calc(28*var(--u) + 200*var(--u) + 24*var(--u));top:calc(var(--top) - 24*var(--u))}
+.map{right:var(--m0);top:var(--m0);width:calc(200*var(--u));height:calc(200*var(--u));border-radius:50%;filter:drop-shadow(0 calc(6*var(--u)) calc(8*var(--u)) rgba(20,10,0,.35))}
+.mapart{width:100%;height:100%;display:block;border-radius:50%}
+.mapart .spin{transform-origin:100px 100px;animation:mapsway 14s ease-in-out infinite}
+@keyframes mapsway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+.map .me{position:absolute;left:50%;top:50%;width:calc(30*var(--u));transform:translate(-50%,-55%);filter:drop-shadow(0 calc(2*var(--u)) calc(2*var(--u)) rgba(0,0,0,.4))}
+.map .rim{position:absolute;inset:0;transform:rotate(var(--a));animation:rimsway 14s ease-in-out infinite}
+@keyframes rimsway{0%,100%{transform:rotate(calc(var(--a) - 7deg))}50%{transform:rotate(calc(var(--a) + 7deg))}}
+.map .rim img{position:absolute;left:50%;top:calc(-18*var(--u));width:calc(34*var(--u));transform:translateX(-50%);filter:drop-shadow(0 calc(2*var(--u)) calc(2*var(--u)) rgba(0,0,0,.4))}
+.map .north{position:absolute;left:50%;top:calc(3*var(--u));width:calc(14*var(--u));height:calc(10*var(--u));transform:translateX(-50%);background:var(--ink2);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.bar{top:calc(300*var(--u));width:calc(44*var(--u));height:calc(290*var(--u));border-style:solid;border-width:calc(22*var(--u)) 0;border-image:url({{bar_track}}) 48 0 fill / calc(22*var(--u)) 0 stretch;filter:drop-shadow(0 calc(4*var(--u)) calc(6*var(--u)) rgba(0,0,0,.3))}
+.bar.l{left:calc(38*var(--u))}.bar.r{right:calc(38*var(--u))}
+.bar i{position:absolute;left:calc(9*var(--u));right:calc(9*var(--u));bottom:calc(-13*var(--u));height:calc((100% + 26*var(--u))*var(--f));min-height:calc(26*var(--u));border-style:solid;border-width:calc(13*var(--u)) 0;border-image:var(--fi) 33 0 fill / calc(13*var(--u)) 0 stretch}
+.bar img{position:absolute;left:50%;top:calc(100% + 34*var(--u));width:calc(48*var(--u));transform:translateX(-50%)}
+.obj{bottom:var(--m0);width:calc(110*var(--u));height:calc(110*var(--u))}
+.obj img{width:100%;height:100%;object-fit:contain;filter:var(--sh);transition:transform .15s}
+.obj:hover img{transform:translateY(calc(-3*var(--u))) scale(1.04)}
+.bl{left:var(--m0)}.br{right:var(--m0)}
+.act{left:50%;bottom:var(--m0);transform:translateX(-50%);display:flex;align-items:flex-end;gap:calc(26*var(--u))}
+.por{width:calc(116*var(--u));height:calc(116*var(--u));margin-right:calc(8*var(--u));filter:var(--sh)}
+.por img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.fist{position:relative;width:calc(128*var(--u));height:calc(128*var(--u))}
+.fist img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:var(--sh)}
+.fist.r img{transform:scaleX(-1)}
+.fist.r .base{filter:grayscale(1) brightness(.62) contrast(.9) var(--sh);opacity:.9}
+.fist.r .fill{clip-path:inset(calc(100% - var(--cf)) 0 0 0);animation:charge 2.6s cubic-bezier(.5,0,.6,1) infinite}
+@keyframes charge{0%{--cf:0%;filter:var(--sh)}78%{--cf:100%;filter:var(--sh)}88%{--cf:100%;filter:drop-shadow(0 0 calc(14*var(--u)) #ffb03a) var(--sh)}100%{--cf:100%;filter:var(--sh)}}
+@property --cf{syntax:'<percentage>';inherits:false;initial-value:0%}
+
+/* chevrons, score, flyouts, map ring */
+.hud .chev{position:absolute;width:calc(36*var(--u));height:calc(36*var(--u));display:grid;place-items:center;filter:drop-shadow(0 calc(2*var(--u)) calc(1.5*var(--u)) rgba(30,12,2,.7)) drop-shadow(0 0 calc(5*var(--u)) rgba(30,12,2,.35))}
+.chev i{width:80%;height:80%;background:#fff1da;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;transition:transform .2s}
+.chev.open i{transform:rotate(180deg)}
+.almw{position:absolute;left:var(--m0);top:var(--m0)}
+.almw .alm{position:relative;left:0;top:0}
+.fscore{left:calc(542*var(--u));transform:translateX(-100%);top:calc(var(--top) - 36*var(--u));height:calc(72*var(--u));display:flex;align-items:center}
+.fscore img{height:calc(24*var(--u));filter:var(--sh)}
+.fscore b{font:600 calc(64*var(--u))/1 "Fredoka",sans-serif;letter-spacing:calc(-1*var(--u));color:#fff;text-shadow:0 0 calc(3*var(--u)) rgba(40,20,10,.55),0 calc(3*var(--u)) calc(5*var(--u)) rgba(40,20,10,.5)}
+.map{padding:calc(13*var(--u));background:var(--cream) url({{ivory}}) center/calc(260*var(--u));box-shadow:inset 0 calc(4*var(--u)) calc(3*var(--u)) rgba(255,255,255,.7),inset 0 calc(-5*var(--u)) calc(5*var(--u)) rgba(120,80,40,.35),0 calc(6*var(--u)) 0 var(--lip),0 calc(12*var(--u)) calc(18*var(--u)) rgba(0,0,0,.3)}
+.mapart{box-shadow:inset 0 0 calc(10*var(--u)) rgba(0,0,0,.35)}
+.map .rim{position:absolute;inset:0;animation:orbit 16s ease-in-out infinite;transform:none}
+@keyframes orbit{0%{transform:rotate(30deg)}25%{transform:rotate(95deg)}50%{transform:rotate(-20deg)}75%{transform:rotate(-80deg)}100%{transform:rotate(30deg)}}
+.map .wpa{position:absolute;left:50%;top:calc(-22*var(--u));width:calc(58*var(--u));transform:translateX(-50%);filter:drop-shadow(0 calc(4*var(--u)) calc(3*var(--u)) rgba(20,8,0,.55)) drop-shadow(0 0 calc(6*var(--u)) rgba(20,8,0,.35))}
+.map .wp{position:absolute;left:50%;top:calc(-14*var(--u));width:calc(30*var(--u));height:calc(36*var(--u));transform:translateX(-50%);background:#e8613a url({{kneaded}}) center/calc(120*var(--u));background-blend-mode:soft-light;clip-path:polygon(50% 0,100% 100%,50% 80%,0 100%);filter:drop-shadow(0 0 calc(1.5*var(--u)) #3a1a0c) drop-shadow(0 calc(3*var(--u)) calc(3*var(--u)) rgba(0,0,0,.4))}
+.objw{position:absolute;bottom:var(--m0);width:calc(110*var(--u));height:calc(110*var(--u))}
+.objw .obj{position:absolute;inset:0;bottom:auto}
+.fistw{position:relative}
+.por{width:calc(118*var(--u));height:auto;margin-right:calc(8*var(--u))}
+.por img{width:100%;height:auto;border-radius:0;display:block;-webkit-mask:linear-gradient(#000 80%,transparent);mask:linear-gradient(#000 80%,transparent);filter:drop-shadow(0 calc(4*var(--u)) calc(4*var(--u)) rgba(20,10,0,.35))}
+.fly{position:absolute;z-index:5;display:none;gap:calc(14*var(--u));padding:calc(18*var(--u));border-radius:calc(30*var(--u));
+background:var(--cream) url({{ivory}}) center/calc(300*var(--u));box-shadow:inset 0 calc(3*var(--u)) 0 rgba(255,255,255,.6),0 calc(7*var(--u)) 0 var(--lip),0 calc(16*var(--u)) calc(26*var(--u)) rgba(30,15,5,.35)}
+.fly.on{display:flex;animation:pop .22s cubic-bezier(.2,1.5,.4,1)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
+.fly .it,.fly .zi{width:calc(84*var(--u));height:calc(84*var(--u));border:0;padding:calc(10*var(--u));border-radius:calc(22*var(--u));background:rgba(255,250,238,.4);box-shadow:inset 0 0 0 calc(1.5*var(--u)) rgba(150,110,60,.18);cursor:pointer;display:grid;place-items:center}
+.fly .it img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 calc(3*var(--u)) calc(3*var(--u)) rgba(60,30,10,.25))}
+.fly .on{box-shadow:0 0 0 calc(4*var(--u)) var(--or)}
+.fly .zi{padding:0;overflow:hidden;border-radius:50%}
+.fly .zi img{width:100%;height:100%;object-fit:cover}
+#fly-alm{left:calc(40*var(--u));top:calc(200*var(--u));padding:calc(26*var(--u)) calc(40*var(--u))}
+.fan{position:relative;width:calc(460*var(--u));height:calc(170*var(--u))}
+.fan img{position:absolute;left:50%;top:0;width:calc(250*var(--u));transform:translateX(calc(-50% + var(--x))) rotate(var(--r));border-radius:calc(6*var(--u));outline:calc(3*var(--u)) solid #2b1d14;box-shadow:0 calc(8*var(--u)) calc(14*var(--u)) rgba(0,0,0,.3);transition:transform .2s}
+.fan img:hover{transform:translateX(calc(-50% + var(--x))) rotate(0) translateY(calc(-14*var(--u))) scale(1.06);z-index:2}
+#fly-craft{left:50%;top:calc(150*var(--u));transform:translateX(-50%);flex-direction:column}
+#fly-craft.on{animation:none}
+.rec{display:flex;align-items:center;gap:calc(18*var(--u));padding:calc(8*var(--u)) calc(16*var(--u));border-radius:calc(40*var(--u));background:rgba(255,250,238,.4);box-shadow:inset 0 0 0 calc(1.5*var(--u)) rgba(150,110,60,.18);cursor:pointer}
+.rec .cost{display:flex;gap:calc(4*var(--u))}.rec .cost img{width:calc(40*var(--u))}
+.rec .arr{width:calc(26*var(--u));height:calc(20*var(--u));background:var(--ink2);clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)}
+.rec .item{height:calc(64*var(--u))}
+#fly-ziele{right:calc(40*var(--u));top:calc(250*var(--u))}
+#fly-waffen{left:50%;bottom:calc(190*var(--u));transform:translateX(-50%)}
+#fly-waffen.on{animation:none}
+#fly-bag{left:calc(40*var(--u));bottom:calc(170*var(--u))}
+.bagg{display:grid;grid-template-columns:repeat(4,auto);gap:calc(12*var(--u))}
+#fly-radio{right:calc(280*var(--u));top:calc(110*var(--u))}
+.fly .ic i{width:56%;height:56%;background:var(--ink);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.fly .ic img{width:56%;filter:brightness(.35) sepia(.6)}
+#fly-reise{right:calc(40*var(--u));bottom:calc(170*var(--u))}
+
+/* LAYOUT R4: drei Gruppen oben, drei unten, gleicher Rand */
+.topc{left:50%;top:var(--m0);transform:translateX(-50%);display:flex;align-items:center;gap:calc(20*var(--u));height:calc(76*var(--u))}
+.topc .fscore,.topc .fluff{position:static;transform:none;left:auto;right:auto;top:auto}
+.tr{right:var(--m0);top:var(--m0);display:flex;flex-direction:column;align-items:center;gap:calc(18*var(--u))}
+.tr .map{position:relative;right:auto;top:auto}
+.trb{display:flex;align-items:center;gap:calc(22*var(--u))}
+.trb .rb,.trb .rk{position:relative;right:auto;top:auto}
+.stat{left:var(--m0);top:var(--m0);display:flex;flex-direction:column;gap:calc(14*var(--u))}
+.srow{display:flex;align-items:center;gap:calc(14*var(--u))}
+.srow img{width:calc(50*var(--u));height:calc(50*var(--u));object-fit:contain;filter:var(--sh)}
+.hbar{position:relative;width:calc(300*var(--u));height:calc(44*var(--u));border-style:solid;border-width:0 calc(22*var(--u));border-image:url({{bar_track_h}}) 0 48 fill / 0 calc(22*var(--u)) stretch;filter:drop-shadow(0 calc(4*var(--u)) calc(6*var(--u)) rgba(0,0,0,.3))}
+.hbar.s{width:calc(230*var(--u))}
+.hbar i{position:absolute;top:calc(9*var(--u));bottom:calc(9*var(--u));left:calc(-13*var(--u));width:calc((100% + 26*var(--u))*var(--f));min-width:calc(26*var(--u));border-style:solid;border-width:0 calc(13*var(--u));border-image:var(--fi) 0 33 fill / 0 calc(13*var(--u)) stretch}
+.bl2{left:var(--m0);bottom:var(--m0);display:flex;align-items:flex-end;gap:calc(30*var(--u))}
+.bl2 .almw{position:relative;left:auto;top:auto}
+.bl2 .alm{width:calc(250*var(--u))}
+.bl2 .bl2 .objw{position:relative;bottom:auto;left:auto}
+#fly-alm{left:calc(40*var(--u));top:auto;bottom:calc(220*var(--u))}
+#fly-bag{left:calc(300*var(--u))}
+#fly-radio{right:calc(40*var(--u));top:calc(330*var(--u))}
+#fly-ziele{right:calc(260*var(--u));top:calc(40*var(--u))}
+#fly-craft{top:calc(130*var(--u))}
+
+/* PFEIL-REGEL: ein Knete-Pfeil, mittig; oben unten am Element nach unten, unten oben am Element nach oben */
+.hud .chev{position:absolute;left:50%;width:calc(34*var(--u));height:calc(38*var(--u));padding:0;border:0;background:none;display:block;filter:drop-shadow(0 calc(3*var(--u)) calc(2*var(--u)) rgba(25,10,0,.6)) drop-shadow(0 0 calc(5*var(--u)) rgba(25,10,0,.3));z-index:2}
+.hud .chev img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .2s}
+.hud .chev.dn{top:calc(100% - 10*var(--u));transform:translateX(-50%)}
+.hud .chev.dn img{transform:rotate(180deg)}
+.hud .chev.up{bottom:calc(100% - 10*var(--u));transform:translateX(-50%)}
+.hud .chev.open img{transform:none}
+.hud .chev.dn.open img{transform:none}
+.hud .chev.up.open img{transform:rotate(180deg)}
+.cw,.bl2 .almw,.bl2 .objw,.fistw,.tr .map{position:relative}
+.fscore.cw{cursor:pointer}
+/* obere Zeile: Radio und Zahnrad auf der Mittellinie der Fluff-Reihe, links neben der Karte */
+.tr{flex-direction:row-reverse;align-items:flex-start;gap:calc(26*var(--u))}
+.topc .fscore{position:relative;height:calc(76*var(--u))}
+.trb .cw{height:calc(76*var(--u));display:flex;align-items:center}
+.trb .gear{height:calc(76*var(--u))}
+.hud .bl2 .objw{bottom:0;top:auto}
+.trb{height:calc(76*var(--u));gap:calc(22*var(--u))}
+/* untere Zeile: gleiche Höhe 120 */
+.bl2,.act{align-items:flex-end}
+.bl2 .alm{width:auto}.bl2 .alm img{height:calc(120*var(--u));width:auto}
+.objw{width:calc(120*var(--u));height:calc(120*var(--u))}
+.objw .obj{width:100%;height:100%}
+.por{width:auto;height:calc(120*var(--u))}.por img{height:100%;width:auto}
+.fist{width:calc(120*var(--u));height:calc(120*var(--u))}
+
+/* PAPER HUD 05 (GvW-Teile) */
+.pbar{position:relative;display:block}
+.pbar img{display:block;height:100%;width:auto;filter:drop-shadow(0 calc(3*var(--u)) calc(4*var(--u)) rgba(20,10,0,.3))}
+.pbar.hp{height:calc(92*var(--u))}.pbar.tp{height:calc(84*var(--u))}
+.pbar .leer{position:absolute;left:0;top:0;filter:grayscale(1) brightness(1.55) sepia(.25) contrast(.8)}
+.pbar.hp .leer{clip-path:inset(37% 7% 44% calc(30% + var(--f)*63%))}
+.pbar.tp .leer{clip-path:inset(30% 7% 39% calc(21% + var(--f)*72%))}
+.stat{gap:calc(4*var(--u))}
+.pfluff{position:relative;width:calc(560*var(--u))}
+.pfluff>img{width:100%;display:block;filter:drop-shadow(0 calc(3*var(--u)) calc(4*var(--u)) rgba(20,10,0,.3))}
+.pfluff>b{position:absolute;top:47%;transform:translate(-50%,-50%);font:600 calc(30*var(--u))/1 "Fredoka",sans-serif;color:#fff;text-shadow:0 0 calc(2*var(--u)) rgba(40,20,10,.7),0 calc(2*var(--u)) calc(3*var(--u)) rgba(40,20,10,.55)}
+.wimpel{position:absolute;left:50%;top:calc(100% - 14*var(--u));width:calc(300*var(--u));transform:translateX(-50%)}
+.wimpel img{width:100%;display:block;filter:drop-shadow(0 calc(3*var(--u)) calc(3*var(--u)) rgba(20,10,0,.3))}
+.wz{position:absolute;top:20%;width:17%;height:75%;transform:translateX(-50%);border:0;background:none;cursor:pointer}
+.topc{height:auto;align-items:flex-start}
+.topc .fscore{height:calc(148*var(--u));display:flex;align-items:center}
+.prad{width:calc(74*var(--u));height:calc(82*var(--u));border:0;background:none;padding:0;cursor:pointer}
+.prad img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 calc(3*var(--u)) calc(4*var(--u)) rgba(20,10,0,.35))}
+.trb .cw{height:calc(110*var(--u))}.trb .gear{height:calc(110*var(--u))}.trb{height:calc(110*var(--u))}
+.map.komp{width:calc(230*var(--u));height:calc(222*var(--u));padding:0;background:none;box-shadow:none;border-radius:0;filter:drop-shadow(0 calc(5*var(--u)) calc(7*var(--u)) rgba(20,10,0,.35))}
+.komp .kimg{width:100%;height:100%;display:block}
+.komp .rim{position:absolute;inset:calc(6*var(--u))}
+.komp .wpa{position:absolute;left:50%;top:calc(-30*var(--u));width:calc(52*var(--u));transform:translateX(-50%) rotate(-45deg);filter:drop-shadow(0 0 calc(1.5*var(--u)) #3a1a0c) drop-shadow(0 0 calc(1.5*var(--u)) #3a1a0c) drop-shadow(0 calc(4*var(--u)) calc(3*var(--u)) rgba(20,8,0,.6))}
+.komp .rim{animation:korbit 16s ease-in-out infinite}
+@keyframes korbit{0%{transform:rotate(50deg)}30%{transform:rotate(115deg)}60%{transform:rotate(165deg)}80%{transform:rotate(80deg)}100%{transform:rotate(50deg)}}
+.hud .chev{width:calc(40*var(--u));height:calc(26*var(--u))}
+.hud .chev.dn img{transform:none}.hud .chev.up img{transform:rotate(180deg)}
+.hud .chev.dn.open img{transform:rotate(180deg)}.hud .chev.up.open img{transform:none}
+.hud .chev.dn{top:calc(100% - 4*var(--u))}.hud .chev.up{bottom:calc(100% - 2*var(--u))}
+#fly-craft{top:calc(250*var(--u))}#fly-ziele{top:calc(290*var(--u));right:calc(40*var(--u))}#fly-radio{top:calc(160*var(--u));right:calc(300*var(--u))}
+
+/* R6: Score im Papier, Radio lesbar, Zahnrad in der Ecke, Minikarte im Kompass, Wegpunkt radial ueber NSWE, Pfeile ruhig */
+.pfluff .psc{position:absolute;left:9.5%;top:46%;transform:translate(-50%,-50%);font:600 calc(44*var(--u))/1 "Fredoka",sans-serif;color:#fff;text-shadow:0 0 calc(3*var(--u)) rgba(60,15,5,.8),0 calc(2*var(--u)) calc(4*var(--u)) rgba(60,15,5,.6)}
+.prad{position:relative}
+.prad .ri{position:absolute;left:47%;top:53%;width:62%;height:auto;transform:translate(-50%,-50%);filter:drop-shadow(0 calc(2*var(--u)) calc(2*var(--u)) rgba(40,20,5,.35))}
+.gearc{right:var(--m0);top:var(--m0);height:calc(110*var(--u));display:flex;align-items:center}
+.gearc .rb{position:relative;right:auto;top:auto}
+.tr{right:calc(28*var(--u) + 48*var(--u) + 24*var(--u))}
+.komp .mini{position:absolute;left:50%;top:50%;width:46%;height:46%;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;box-shadow:0 0 0 calc(4*var(--u)) #e9dcc0,0 0 0 calc(6*var(--u)) rgba(80,50,30,.5),0 calc(3*var(--u)) calc(6*var(--u)) rgba(0,0,0,.35)}
+.komp .mini .mapart{width:100%;height:100%;box-shadow:none;border-radius:50%}
+.komp .mini .me{position:absolute;left:50%;top:50%;width:calc(20*var(--u));transform:translate(-50%,-55%)}
+.komp .rim{inset:0;z-index:3}
+.komp .wpa{top:calc(-10*var(--u));width:calc(48*var(--u));transform:translateX(-50%) rotate(-38.1deg);transform-origin:50% 56%}
+.hud .chev img,.hud .chev{transition:none}
+.obj:hover img{transform:none}
+
+/* R6b: untere Reihe auf einer Grundlinie, gleiche Bildhoehe 112 */
+.bl2,.act,.hud>.objw{bottom:var(--m0)}
+.bl2 .alm img{height:calc(112*var(--u))}
+.objw,.fist{height:calc(112*var(--u))}
+.objw .obj img,.fist img{object-fit:contain;object-position:50% 100%}
+.por{height:calc(112*var(--u))}.por img{-webkit-mask:none;mask:none;height:100%}
+.act{gap:calc(30*var(--u))}
+
+/* R6c: oben gemeinsame Oberkante, Almanach gerade */
+.alm{transform:none!important}
+.trb,.trb .cw,.trb .gear,.gearc{height:auto!important;align-items:flex-start!important}
+.tr{align-items:flex-start}
+.gearc .rb{height:calc(56*var(--u));width:calc(56*var(--u))}
+.prad{height:calc(82*var(--u))}
+
+/* R6d: Fluff-Zaehler auf dem Fuji-Papier */
+.topc{gap:calc(14*var(--u))}
+.pfuji{position:relative;height:calc(80*var(--u))}
+.pfuji img{height:100%;width:auto;display:block;filter:drop-shadow(0 calc(3*var(--u)) calc(4*var(--u)) rgba(20,10,0,.3))}
+.pfuji b{position:absolute;left:34%;top:38%;transform:translate(-50%,-50%);font:600 calc(44*var(--u))/1 "Fredoka",sans-serif;color:#4a2f1d;text-shadow:0 calc(1*var(--u)) 0 rgba(255,250,235,.7)}
+.pfluff{width:calc(500*var(--u))}
+.pfluff>b{font-size:calc(27*var(--u))}
+
+/* R6e: Luft zwischen Fluff und Radio */
+.pfluff{width:calc(470*var(--u))}.pfluff>b{font-size:calc(25*var(--u))}
+.pfuji{height:calc(76*var(--u))}.pfuji b{font-size:calc(42*var(--u))}
+.map.komp{width:calc(210*var(--u));height:calc(203*var(--u))}
+
+/* R6f: Radio-Leiste unter dem Kompass */
+.pradio{right:calc(28*var(--u) + 48*var(--u) + 24*var(--u));top:calc(28*var(--u) + 203*var(--u) + 34*var(--u));width:calc(210*var(--u))}
+.pradio>img{width:100%;display:block;filter:drop-shadow(0 calc(3*var(--u)) calc(4*var(--u)) rgba(20,10,0,.3))}
+.rbtn{position:absolute;inset:14% 9% 18% 7%;display:flex;justify-content:space-around;align-items:center}
+.rbtn button{width:calc(34*var(--u));height:calc(34*var(--u));border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+.rbtn i{width:80%;height:80%;background:var(--ink);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.rbtn img{width:85%;filter:brightness(.3) sepia(.5)}
+
+/* R7: EIN Massstab fuer alle Papierteile (Originalbogen-Pixel x --ps), nichts einzeln skaliert */
+.hud{--ps:.72}
+.pbar.hp,.pbar.tp{height:auto}
+.pbar.hp img:first-child{width:calc(467*var(--ps)*var(--u));height:auto}
+.pbar.tp img:first-child{width:calc(481*var(--ps)*var(--u));height:auto}
+.pbar .leer{width:100%;height:100%}
+.pfuji{height:auto}.pfuji img{width:calc(367*var(--ps)*var(--u));height:auto}
+.pfuji b{font-size:calc(50*var(--u))}
+.pfluff{width:calc(670*var(--ps)*var(--u))}
+.pfluff>b{font-size:calc(26*var(--u))}
+.wimpel{width:calc(416*var(--ps)*var(--u))}
+.map.komp{width:calc(270*var(--ps)*var(--u));height:calc(261*var(--ps)*var(--u))}
+.hud .chev{width:calc(63*var(--ps)*var(--u));height:calc(40*var(--ps)*var(--u))}
+.komp .wpa{width:calc(59*var(--ps)*var(--u))}
+.pradio{right:var(--m0);top:calc(28*var(--u) + 56*var(--u) + 24*var(--u));width:calc(111*var(--ps)*var(--u))}
+.rbtn{inset:7% 16% 9% 18%;flex-direction:column}
+.tr{right:calc(28*var(--u) + 111*var(--ps)*var(--u) + 24*var(--u))}
+
+.gearc{right:calc(28*var(--u) + (111*var(--ps)*var(--u) - 56*var(--u))/2)}
+
+.komp .wpa{transform:translateX(-50%) rotate(-38.1deg)!important;transform-origin:54.6% 43.4%}
+
+/* R7b: sichtbare Oberkante (erste deckende Pixelreihe je Teil) auf eine Fluchtlinie */
+.pbar.hp{margin-top:calc(-14*var(--ps)*var(--u))}
+.pfuji{margin-top:calc(-2*var(--ps)*var(--u))}
+.pfluff{margin-top:calc(-15*var(--ps)*var(--u))}
+.gearc{top:calc(28*var(--u) - 56*var(--u)*45/512)}
+
+.komp .wpa{top:calc(4*var(--u))!important}
+
+/* R8: Wimpel einzeln, stecken hinter der Fluff-Leiste, fallen bei Hover federnd heraus; Kolben glueht wenn genug Fluff */
+.pfluff>img{position:relative;z-index:2}
+.pfluff>b{z-index:3}
+.wimpel{z-index:1;top:calc(100% - 26*var(--u));aspect-ratio:416/123}
+.wimpel img.schnur{position:absolute;left:0;top:0;width:100%;height:auto;transform:translateY(-60%);transition:transform .35s cubic-bezier(.34,1.6,.5,1)}
+.flag{position:absolute;padding:0;border:0;background:none;cursor:pointer;transform-origin:50% 0;transform:translateY(-82%);transition:transform .5s cubic-bezier(.34,1.7,.5,1);transition-delay:calc(var(--i)*45ms)}
+.flag img{width:100%;height:100%;display:block;filter:drop-shadow(0 calc(3*var(--u)) calc(3*var(--u)) rgba(20,10,0,.3))}
+.pfluff:hover .flag,.pfluff:focus-within .flag{transform:translateY(0)}
+.pfluff:hover .wimpel img.schnur,.pfluff:focus-within .wimpel img.schnur{transform:none}
+.pfluff:hover .flag:hover{transform:translateY(calc(4*var(--u))) rotate(-2deg)}
+.pfluff.ready .f-flask{transform:translateY(-38%)}
+.pfluff.ready .f-flask img{animation:glow 1.6s ease-in-out infinite}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 calc(2*var(--u)) #ffd66b) drop-shadow(0 0 calc(6*var(--u)) rgba(255,190,60,.7))}50%{filter:drop-shadow(0 0 calc(4*var(--u)) #fff1b0) drop-shadow(0 0 calc(14*var(--u)) rgba(255,190,60,.95))}}
+#fly-slops,#fly-beute,#fly-werk{left:50%;top:calc(250*var(--u));transform:translateX(-50%)}
+#fly-slops.on,#fly-beute.on,#fly-werk.on{animation:none}
+.fly .lk img{width:50%;opacity:.7}
+
+/* R8b: Fluffkugeln passgenau ueber den Papiermulden, Zahlen mittig; Fuji-Zaehler auf der Mittellinie der Fluff-Leiste */
+.pfluff .fk{position:absolute;transform:translate(-50%,-50%);z-index:3;filter:drop-shadow(0 calc(2*var(--u)) calc(2*var(--u)) rgba(40,20,5,.35))}
+.pfluff>b{z-index:4;top:auto}
+.pfluff>b[style]{transform:translate(-50%,-50%)}
+.pfuji{margin-top:calc(11*var(--ps)*var(--u))}
+
+/* R9: Pfeile nur bei Hover (sonst weder sichtbar noch klickbar), neues Pfeil-Icon; Minikarte gross; Kolben ganz sichtbar; Avatar neben Rucksack; Garderobe */
+.hud .chev{width:calc(40*var(--u));height:calc(40*var(--u));opacity:0;pointer-events:none;transition:opacity .15s}
+.hud .chev img{transform:none!important}
+.hud .chev.dn img{transform:rotate(180deg)!important}
+.hud .chev.dn{top:calc(100% - 6*var(--u))}.hud .chev.up{bottom:calc(100% - 4*var(--u))}
+.almw:hover .chev,.objw:hover .chev,.fistw:hover .chev,.map:hover .chev,.porw:hover .chev,.cw:hover .chev,.hud .chev.open{opacity:1;pointer-events:auto}
+.komp .mini{width:68%;height:68%}
+.komp .mini .me{width:calc(24*var(--u))}
+.pfluff.ready .f-flask{transform:translateY(0)}
+.porw{position:relative;height:calc(112*var(--u))}
+.porw .por{height:100%;margin:0}
+.slab.gard{width:calc(1240*var(--u));padding:calc(54*var(--u)) calc(56*var(--u));gap:calc(30*var(--u))}
+.grow{display:flex;flex-wrap:wrap;gap:calc(20*var(--u))}
+.gt{width:calc(130*var(--u));height:calc(130*var(--u));padding:0;border:0;border-radius:calc(26*var(--u));overflow:hidden;cursor:pointer;background:#e9dcc0;box-shadow:inset 0 0 0 calc(1.5*var(--u)) rgba(150,110,60,.25),0 calc(5*var(--u)) 0 var(--lip);transition:transform .12s}
+.gt:hover{transform:translateY(calc(-3*var(--u)))}
+.gt img{width:100%;height:100%;object-fit:cover;display:block}
+.gt.on{box-shadow:0 0 0 calc(5*var(--u)) var(--or),0 calc(5*var(--u)) 0 var(--lip)}
+.gt.lk img{object-fit:contain;width:40%;height:40%;margin:30%;opacity:.6}
+
+.slab.gard{width:calc(1440*var(--u));min-height:calc(700*var(--u));padding:calc(70*var(--u)) calc(70*var(--u));gap:calc(44*var(--u));justify-content:center}
+.grow{flex-wrap:nowrap;justify-content:center}
+.grow.g1 .gt{width:calc(230*var(--u));height:calc(230*var(--u))}
+.grow .gt{width:calc(148*var(--u));height:calc(148*var(--u))}
+
+/* R10: Handy quer (kfb.controls/1): groesserer Massstab, Joystick links, Aktionen im rechten Daumenbogen, Radio und Almanach ins Menue; Hochformat-Hinweis */
+.touch,.dreh{display:none}
+.stage.mobil *{--u:min(100cqw/1400,100cqh/700)}
+.stage.mobil .pfuji,.stage.mobil .pradio,.stage.mobil .bl2 .almw{display:none}
+.stage.mobil .pfluff::before{content:"55";position:absolute;left:9.5%;top:46%;transform:translate(-50%,-50%);z-index:5;font:600 calc(40*var(--u))/1 "Fredoka",sans-serif;color:#fff;text-shadow:0 0 calc(3*var(--u)) rgba(60,15,5,.8),0 calc(2*var(--u)) calc(4*var(--u)) rgba(60,15,5,.6)}
+.stage.mobil .topc{left:calc(50% + 46*var(--u))}
+.stage.mobil .tr{right:calc(28*var(--u) + 56*var(--u) + 20*var(--u))}
+.stage.mobil .gearc{right:var(--m0)}
+.stage.mobil .bl2{bottom:auto;top:calc(28*var(--u) + 200*var(--u));flex-direction:column;align-items:flex-start;gap:calc(20*var(--u))}
+.stage.mobil .bl2 .objw,.stage.mobil .porw{height:calc(96*var(--u));width:calc(96*var(--u))}
+.stage.mobil .hud>.objw{bottom:auto;top:calc(28*var(--u) + 203*0.72*var(--u) + 40*var(--u));right:var(--m0)}
+.stage.mobil .act{left:auto;right:calc(40*var(--u));bottom:calc(36*var(--u));transform:none;gap:calc(20*var(--u))}
+.stage.mobil .fist{width:calc(118*var(--u));height:calc(118*var(--u))}
+.stage.mobil .touch{display:block;position:absolute;inset:0;pointer-events:none;z-index:4}
+.stage.mobil .joy{position:absolute;left:calc(70*var(--u));bottom:calc(60*var(--u));width:calc(230*var(--u));height:calc(230*var(--u));border-radius:50%;background:rgba(244,230,202,.28);box-shadow:inset 0 0 0 calc(5*var(--u)) rgba(244,230,202,.55),0 calc(6*var(--u)) calc(16*var(--u)) rgba(0,0,0,.18)}
+.stage.mobil .joyk{position:absolute;left:50%;top:50%;width:42%;height:42%;transform:translate(-50%,-50%);border-radius:50%;background:var(--cream) url({{ivory}}) center/calc(200*var(--u));box-shadow:inset 0 calc(3*var(--u)) calc(2*var(--u)) rgba(255,255,255,.7),inset 0 calc(-4*var(--u)) calc(4*var(--u)) rgba(120,80,40,.35),0 calc(5*var(--u)) calc(8*var(--u)) rgba(0,0,0,.3)}
+.stage.mobil .tbtn{position:absolute;width:calc(104*var(--u));height:calc(104*var(--u));border-radius:50%;display:grid;place-items:center;background:rgba(244,230,202,.32);box-shadow:inset 0 0 0 calc(4*var(--u)) rgba(244,230,202,.6)}
+.stage.mobil .tbtn img{width:62%;filter:drop-shadow(0 calc(3*var(--u)) calc(3*var(--u)) rgba(0,0,0,.35))}
+.stage.mobil .tb-boost{right:calc(330*var(--u));bottom:calc(46*var(--u))}
+.stage.mobil .tb-jump{right:calc(70*var(--u));bottom:calc(200*var(--u))}
+.stage.hoch .dreh{display:grid;position:absolute;inset:0;z-index:20;place-items:center;background:rgba(30,18,10,.72)}
+.drehk{width:30vmin;height:30vmin;border-radius:50%;display:grid;place-items:center;background:var(--cream) url({{ivory}}) center/40vmin;animation:dreh 1.8s ease-in-out infinite}
+.drehk i{width:50%;height:50%;background:var(--ink);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+@keyframes dreh{0%,30%{transform:rotate(0)}60%,100%{transform:rotate(90deg)}}
+
+/* R10b: Radio-Icons als scharfe Vektoren in Tinte */
+.rbtn svg{width:72%;height:72%;fill:#3a2414;stroke:#3a2414;display:block}
+.rbtn button{width:calc(40*var(--u));height:calc(40*var(--u))}
+
+/* R10c: Fluff-Zaehler mittig auf dem Fuji-Papier, Kurzform bei grossen Werten */
+.pfuji{cursor:pointer}
+.pfuji b{left:50%!important;top:46.8%!important;transform:translate(-50%,-50%);white-space:nowrap;font-size:calc(50*var(--u))!important;color:#3a2414;text-shadow:0 0 calc(3*var(--u)) #fff6e4,0 0 calc(6*var(--u)) #fff6e4,0 0 calc(10*var(--u)) rgba(255,246,228,.9)}
+
+/* R10d: Lebens- und Tempoleiste: sichtbare Papierkante links buendig, sichtbare Laenge gleich (beide im Bogen-Massstab) */
+.pbar.hp{margin-left:calc(-24*var(--ps)*var(--u))}
+.pbar.tp{margin-left:calc(-14*var(--ps)*var(--u))}
+
+/* R11: Leisten sauber (HP: Ueberblendung nur auf dem roten Balken; Tempo: ganze Zellen), Knoepfe als Block (kein Zeilen-Unterlauf) */
+.hud button,.bl2 .alm,.fist,.obj,.prad{display:block}
+.fistw,.porw,.almw,.objw{display:block;line-height:0}
+.pbar .leer2,.pbar .zl{position:absolute;left:0;top:0;width:100%;height:100%;filter:none}
+.pbar .leer2{clip-path:inset(0 0 0 calc(29.550% + var(--f)*63.812%))}
+.pbar .zl.voll{display:none}
+
+/* R11b: FB nach Kopf bemessen (Kopf = Zeilenhoehe 112, Ohren ragen darueber), gemeinsame Grundlinie; Zahnrad im Papierton */
+.porw{width:calc(112*794/520*0.67*var(--u)*520/794 + 0px);width:calc(112/0.67*520/794*var(--u));overflow:visible}
+.porw .por{position:absolute;left:0;bottom:0;height:calc(112/0.67*var(--u));width:100%;margin:0}
+.porw .por img{height:100%;width:100%;object-fit:contain;object-position:50% 100%}
+.gearc .rb i{background:#d8c49e}
+.gearc .rb{filter:drop-shadow(0 calc(2*var(--u)) calc(2*var(--u)) rgba(40,20,5,.55))}
+
+/* R12: Papier-Fenster, Almanach-Stapel, neue untere Reihe, Radio, Zahnrad, Wegpunkt, Lebensfarbe, Mikro-Interaktionen */
+.pbar .hpc{position:absolute;left:0;top:0;width:100%;height:100%;display:none}
+.pbar.hp.c-gruen .gruen,.pbar.hp.c-gelb .gelb{display:block}
+.stackA{position:relative;width:calc(269*var(--u));height:calc(150*var(--u))}
+.acard{position:absolute;left:0;bottom:calc(var(--i)*7*var(--u));width:100%;padding:0;border:0;background:none;cursor:pointer;transform:rotate(var(--a));z-index:calc(5 - var(--i));transform-origin:50% 100%;transition:bottom .28s cubic-bezier(.3,1.45,.5,1),transform .22s ease}
+.acard.on{z-index:9}
+.acard img{width:100%;display:block;border-radius:calc(6*var(--u));outline:calc(3*var(--u)) solid #2b1d14;outline-offset:calc(-1*var(--u));box-shadow:0 calc(6*var(--u)) calc(12*var(--u)) rgba(0,0,0,.32)}
+.stackA:hover .acard{bottom:calc(var(--i)*160*var(--u));transform:rotate(calc(var(--a)*.4))}
+.bl2{gap:calc(34*var(--u))}
+.br2{right:var(--m0);bottom:var(--m0);display:flex;align-items:flex-end;gap:calc(30*var(--u))}
+.br2 .objw{position:relative;width:calc(112*var(--u));height:calc(112*var(--u))}
+.br2 .objw .obj{position:absolute;inset:0}
+.gearc .rb i{background:#efdcb5}
+.komp .wpa{width:calc(59*var(--ps)*1.5*var(--u))!important;top:calc(-6*var(--u))!important}
+/* Papier-Fenster aus Georgs Teilen */
+.slab{background:none!important;border-radius:0!important;box-shadow:none!important;border-style:solid;border-width:calc(44*var(--u));border-image:url({{pap_rahmen}}) 62 72 fill / calc(44*var(--u)) stretch;filter:drop-shadow(0 calc(12*var(--u)) calc(18*var(--u)) rgba(30,15,5,.4))}
+.slab .close{background:url({{pap_okt}}) center/contain no-repeat!important;box-shadow:none!important;width:calc(60*var(--u));height:calc(60*var(--u));top:calc(-18*var(--u));right:calc(-18*var(--u))}
+.pill{background:none!important;box-shadow:none!important;border-style:solid;border-width:calc(20*var(--u)) calc(26*var(--u));border-image:url({{pap_radiobar}}) 40 52 fill / calc(20*var(--u)) calc(26*var(--u)) stretch;filter:drop-shadow(0 calc(4*var(--u)) calc(4*var(--u)) rgba(30,15,5,.28))}
+.pill.or{border-width:calc(26*var(--u)) calc(60*var(--u));border-image:url({{pap_streifen}}) 50 140 fill / calc(26*var(--u)) calc(60*var(--u)) stretch;outline:none}
+.disc{background:url({{pap_feld0}}) center/contain no-repeat!important;box-shadow:none!important;border-radius:0!important}
+.row{background:none!important;box-shadow:none!important;border-style:solid;border-width:calc(14*var(--u)) calc(22*var(--u));border-image:url({{pap_radiobar}}) 34 46 fill / calc(14*var(--u)) calc(22*var(--u)) stretch}
+.ink,.row>i{display:block;width:calc(38*var(--u));height:calc(38*var(--u));background:#3a2414!important;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.inks{width:calc(42*var(--u));height:calc(42*var(--u));fill:#3a2414;stroke:#3a2414}
+.pill.or .inks{width:calc(50*var(--u));height:calc(50*var(--u))}
+.disc .ink{width:calc(26*var(--u));height:calc(26*var(--u))}
+.close .ink{width:calc(22*var(--u));height:calc(22*var(--u))}
+.sl .fl{background:#c8613a url({{kneaded}}) center/calc(300*var(--u))}
+/* Mikro-Interaktionen: Hover hebt, Druecken staucht, Klick federt (Cartoon-Deformer), aktiv leuchtet */
+.ix.on,.gt.on,.fist.on{filter:drop-shadow(0 0 calc(3*var(--u)) #ffd66b) drop-shadow(0 0 calc(10*var(--u)) rgba(255,190,60,.65))}
+/* ---------- clay slab panel ---------- */
+.layer{position:absolute;inset:0;display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.layer.on{opacity:1;pointer-events:auto}
+.slab{position:relative;width:calc(660*var(--u));padding:calc(44*var(--u));border-radius:calc(46*var(--u));
+background:var(--cream) url({{ivory}}) center/calc(360*var(--u)) repeat;
+box-shadow:inset 0 calc(3*var(--u)) 0 rgba(255,255,255,.55),inset 0 calc(-2*var(--u)) 0 rgba(160,120,70,.18),0 calc(10*var(--u)) 0 var(--lip),0 calc(26*var(--u)) calc(50*var(--u)) rgba(40,20,8,.38);
+display:flex;flex-direction:column;gap:calc(18*var(--u));transform:translateY(calc(16*var(--u))) scale(.97);transition:transform .3s cubic-bezier(.2,1.4,.4,1)}
+.layer.on .slab{transform:none}
+.close{position:absolute;top:calc(22*var(--u));right:calc(22*var(--u));width:calc(56*var(--u));height:calc(56*var(--u));border-radius:50%;border:0;cursor:pointer;
+background:var(--cream) url({{ivory}}) center/calc(200*var(--u));box-shadow:inset 0 calc(2*var(--u)) 0 rgba(255,255,255,.6),0 calc(4*var(--u)) 0 var(--lip),0 calc(6*var(--u)) calc(10*var(--u)) rgba(60,30,10,.18);display:grid;place-items:center}
+.close img{width:54%}
+
+/* pills */
+.pill{position:relative;border:0;cursor:pointer;display:grid;place-items:center;height:calc(72*var(--u));border-radius:calc(36*var(--u));
+background:var(--cream) url({{ivory}}) center/calc(300*var(--u));
+box-shadow:inset 0 calc(3*var(--u)) 0 rgba(255,255,255,.6),inset 0 0 0 calc(1.5*var(--u)) rgba(150,110,60,.18),0 calc(6*var(--u)) 0 var(--lip),0 calc(9*var(--u)) calc(12*var(--u)) rgba(60,30,10,.16);transition:transform .12s, box-shadow .12s}
+.pill img{height:calc(44*var(--u));filter:drop-shadow(0 calc(2*var(--u)) calc(1*var(--u)) rgba(60,30,10,.15))}
+.pill:hover{transform:translateY(calc(-2*var(--u)))}
+.pill:active{transform:translateY(calc(5*var(--u)));box-shadow:inset 0 calc(3*var(--u)) 0 rgba(255,255,255,.6),inset 0 0 0 calc(1.5*var(--u)) rgba(150,110,60,.18),0 calc(1*var(--u)) 0 var(--lip)}
+.pill.or{height:calc(88*var(--u));border-radius:calc(44*var(--u));background:var(--or) url({{kneaded}}) center/calc(420*var(--u));background-blend-mode:soft-light;
+box-shadow:inset 0 calc(4*var(--u)) 0 rgba(255,220,190,.45),inset 0 calc(-3*var(--u)) 0 rgba(120,40,10,.25),0 calc(7*var(--u)) 0 var(--orlip),0 calc(12*var(--u)) calc(16*var(--u)) rgba(120,40,10,.25)}
+.pill.or.focus{outline:calc(5*var(--u)) solid #fff6e4;outline-offset:calc(4*var(--u))}
+.pill.or img{height:calc(46*var(--u));filter:brightness(0) invert(.97) sepia(.15) drop-shadow(0 calc(2*var(--u)) 0 rgba(120,40,10,.35))}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:calc(16*var(--u)) calc(16*var(--u))}
+.rowr{display:flex;justify-content:center;gap:calc(16*var(--u));margin-top:calc(6*var(--u))}
+.disc{width:calc(56*var(--u));height:calc(56*var(--u));border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;
+background:var(--cream) url({{ivory}}) center/calc(200*var(--u));box-shadow:inset 0 calc(2*var(--u)) 0 rgba(255,255,255,.6),0 calc(4*var(--u)) 0 var(--lip),0 calc(6*var(--u)) calc(10*var(--u)) rgba(60,30,10,.16)}
+.disc img{width:52%}
+.disc i{width:46%;height:46%;background:var(--ink2);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+
+/* settings rows */
+.set{gap:calc(14*var(--u))}
+.row{display:flex;align-items:center;gap:calc(22*var(--u));min-height:calc(80*var(--u));padding:0 calc(26*var(--u));border-radius:calc(40*var(--u));
+background:rgba(255,250,238,.35);box-shadow:inset 0 0 0 calc(1.5*var(--u)) rgba(150,110,60,.22),inset 0 calc(2*var(--u)) 0 rgba(255,255,255,.5),0 calc(3*var(--u)) 0 rgba(200,170,120,.45)}
+.row>img{height:calc(40*var(--u));width:calc(44*var(--u));object-fit:contain;flex:none}
+.row>i{width:calc(36*var(--u));height:calc(36*var(--u));flex:none;margin:0 calc(4*var(--u));background:var(--or);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.sl{position:relative;flex:1;height:calc(46*var(--u));cursor:pointer;touch-action:none}
+.sl .tk{position:absolute;left:0;right:0;top:50%;height:calc(22*var(--u));transform:translateY(-50%);border-radius:calc(11*var(--u));background:#ead8b6;box-shadow:inset 0 calc(3*var(--u)) calc(4*var(--u)) rgba(120,80,40,.28),0 calc(1*var(--u)) 0 rgba(255,255,255,.6)}
+.sl .fl{position:absolute;left:0;top:50%;height:calc(22*var(--u));transform:translateY(-50%);border-radius:calc(11*var(--u));background:var(--or) url({{kneaded}}) center/calc(300*var(--u));background-blend-mode:soft-light;box-shadow:inset 0 calc(3*var(--u)) 0 rgba(255,220,190,.4),inset 0 calc(-2*var(--u)) 0 rgba(120,40,10,.25)}
+.sl .kn{position:absolute;top:50%;width:calc(50*var(--u));height:calc(50*var(--u));transform:translate(-50%,-50%);filter:drop-shadow(0 calc(4*var(--u)) calc(3*var(--u)) rgba(90,40,10,.35))}
+.tg{width:calc(88*var(--u));height:calc(44*var(--u));border-radius:calc(22*var(--u));margin-left:auto;position:relative;cursor:pointer;border:0;padding:0;
+background:#ead8b6;box-shadow:inset 0 calc(3*var(--u)) calc(4*var(--u)) rgba(120,80,40,.28);transition:background .2s}
+.tg img{position:absolute;top:50%;left:calc(4*var(--u));width:calc(36*var(--u));height:calc(36*var(--u));transform:translateY(-50%);transition:left .22s cubic-bezier(.3,1.5,.5,1),filter .2s;filter:grayscale(.9) brightness(1.35) sepia(.3) drop-shadow(0 calc(2*var(--u)) calc(2*var(--u)) rgba(90,40,10,.3))}
+.tg.on{background:var(--or) url({{kneaded}}) center/calc(240*var(--u));background-blend-mode:soft-light;box-shadow:inset 0 calc(3*var(--u)) 0 rgba(255,220,190,.4),inset 0 calc(-2*var(--u)) 0 rgba(120,40,10,.3)}
+.tg.on img{left:calc(48*var(--u));filter:drop-shadow(0 calc(2*var(--u)) calc(2*var(--u)) rgba(90,40,10,.4)) brightness(1.08)}
+.rad{margin-left:auto;display:flex;align-items:center;gap:calc(18*var(--u))}
+.rad button{flex:none;width:calc(30*var(--u));height:calc(30*var(--u));border-radius:50%;border:0;padding:0;cursor:pointer;background:#ead8b6;box-shadow:inset 0 calc(2*var(--u)) calc(3*var(--u)) rgba(120,80,40,.3);display:grid;place-items:center}
+.rad button img{width:120%;height:120%;opacity:0;transform:scale(.4);transition:opacity .15s,transform .2s cubic-bezier(.3,1.6,.5,1)}
+.rad button.on img{opacity:1;transform:none}
+.rad.lang button{width:auto;height:calc(40*var(--u));padding:0 calc(14*var(--u));border-radius:calc(20*var(--u));font:600 calc(18*var(--u))/1 "Fredoka",sans-serif;color:var(--ink2);background:transparent;box-shadow:none}
+.rad.lang button.on{color:#fff;background:var(--or) url({{kneaded}}) center/calc(200*var(--u));background-blend-mode:soft-light;box-shadow:inset 0 calc(2*var(--u)) 0 rgba(255,220,190,.4),0 calc(3*var(--u)) 0 var(--orlip)}
+
+/* places */
+.slab.wide{width:calc(840*var(--u));padding:calc(34*var(--u));gap:calc(16*var(--u))}
+.place{position:relative;display:flex;align-items:center;height:calc(112*var(--u));border-radius:calc(56*var(--u));overflow:hidden;cursor:pointer;
+background:var(--c) url({{kneaded}}) center/calc(420*var(--u));background-blend-mode:soft-light;
+box-shadow:inset 0 calc(4*var(--u)) 0 rgba(255,255,255,.28),inset 0 calc(-3*var(--u)) 0 rgba(0,0,0,.14),0 calc(6*var(--u)) 0 var(--cl),0 calc(10*var(--u)) calc(14*var(--u)) rgba(60,30,10,.18);transition:transform .12s}
+.place:hover{transform:translateY(calc(-2*var(--u)))}
+.place .art{position:absolute;left:0;top:0;bottom:0;width:calc(250*var(--u));background:var(--img) center/cover;-webkit-mask:linear-gradient(90deg,#000 45%,transparent);mask:linear-gradient(90deg,#000 45%,transparent);opacity:.9}
+.place .med{position:relative;margin-left:calc(18*var(--u));width:calc(82*var(--u));height:calc(82*var(--u));display:grid;place-items:center;flex:none}
+.place .med img{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 calc(3*var(--u)) calc(3*var(--u)) rgba(0,0,0,.35))}
+.place .med b{position:relative;font:600 calc(30*var(--u))/1 "Fredoka",sans-serif;color:#fff;text-shadow:0 0 calc(2*var(--u)) rgba(40,20,10,.7),0 calc(2*var(--u)) calc(4*var(--u)) rgba(40,20,10,.5)}
+.place .nm{position:relative;margin-left:calc(170*var(--u));font:600 calc(32*var(--u))/1 "Fredoka",sans-serif;color:#fff8ec;text-shadow:0 calc(2*var(--u)) calc(3*var(--u)) rgba(40,20,10,.35)}
+.place .st{position:relative;margin-left:auto;margin-right:calc(22*var(--u))}
+.place.lock .nm{color:rgba(255,248,236,.8)}
+
+.slab .pill:not(.or){border-style:solid!important;border-width:calc(20*var(--u)) calc(26*var(--u))!important;border-image:url({{pap_radiobar}}) 40 52 fill / calc(20*var(--u)) calc(26*var(--u)) stretch!important}
+.slab .pill.or{border-style:solid!important;border-width:calc(26*var(--u)) calc(60*var(--u))!important;border-image:url({{pap_streifen}}) 50 140 fill / calc(26*var(--u)) calc(60*var(--u)) stretch!important}
+.slab .pill{transition:translate .2s cubic-bezier(.3,1.6,.5,1),scale .2s cubic-bezier(.3,1.6,.5,1)!important}
+.slab .pill:hover{transform:none}
+.slab .pill.or.focus{outline:none!important}
+
+/* R13: Truhe, Wahl aus drei (Rewards R1: REVEAL > INSPECT > SELECT > COMMIT > ABSORB > RETURN) */
+.slab.truhe{width:calc(1180*var(--u));padding:calc(30*var(--u)) calc(40*var(--u)) calc(40*var(--u));align-items:center;gap:calc(10*var(--u))}
+.tchest{height:calc(110*var(--u));display:grid;place-items:center}
+.tchest img{height:100%;filter:drop-shadow(0 calc(6*var(--u)) calc(6*var(--u)) rgba(40,20,5,.35));transform-origin:50% 100%}
+#v-truhe.reveal .tchest img{animation:kiste .55s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes kiste{0%{scale:.6 .6;rotate:-8deg}45%{scale:1.15 .85;rotate:4deg}70%{scale:.95 1.08;rotate:-2deg}100%{scale:1;rotate:0}}
+.offers{display:flex;gap:calc(46*var(--u));justify-content:center}
+.offer{position:relative;width:calc(300*var(--u));height:calc(300*var(--u));padding:0;border:0;background:none;cursor:pointer;opacity:0}
+#v-truhe.reveal .offer{animation:auf .5s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(.25s + var(--k)*.14s)}
+@keyframes auf{0%{opacity:0;translate:0 calc(40*var(--u));scale:.7}100%{opacity:1;translate:0 0;scale:1}}
+.offer .bed{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 calc(8*var(--u)) calc(10*var(--u)) rgba(40,20,5,.3))}
+.offer .obj{position:absolute;left:50%;top:44%;width:58%;height:58%;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(0 calc(8*var(--u)) calc(6*var(--u)) rgba(30,15,5,.4));animation:schweb 2.6s ease-in-out infinite;animation-delay:calc(var(--k)*-.7s)}
+.offer .obj.card{width:66%;height:auto;border-radius:calc(5*var(--u));outline:calc(3*var(--u)) solid #2b1d14}
+@keyframes schweb{0%,100%{translate:0 0;rotate:-2deg}50%{translate:0 calc(-8*var(--u));rotate:2deg}}
+.offer .rar{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);font:600 calc(30*var(--u))/1 "Fredoka",sans-serif;color:#3a2414;letter-spacing:calc(4*var(--u))}
+.offer .dest{position:absolute;right:14%;bottom:14%;width:calc(30*var(--u));height:calc(30*var(--u))}
+.offer:hover,.offer:focus-visible{outline:none}
+.offer:hover .bed,.offer.fokus .bed{filter:drop-shadow(0 0 calc(4*var(--u)) #ffd66b) drop-shadow(0 0 calc(14*var(--u)) rgba(255,190,60,.7)) drop-shadow(0 calc(8*var(--u)) calc(10*var(--u)) rgba(40,20,5,.3))}
+#v-truhe .offer.weg{animation:weg .35s ease-in both!important}
+@keyframes weg{to{opacity:0;scale:.6;translate:0 calc(30*var(--u))}}
+#v-truhe .offer.chosen .obj{visibility:hidden}
+.flieg{position:fixed;z-index:50;pointer-events:none;object-fit:contain;filter:drop-shadow(0 calc(10*var(--u)) calc(8*var(--u)) rgba(30,15,5,.45))}
+.angekommen{animation:ankunft .5s cubic-bezier(.3,1.5,.5,1)!important;filter:drop-shadow(0 0 calc(4*var(--u)) #ffd66b) drop-shadow(0 0 calc(14*var(--u)) rgba(255,190,60,.8))!important}
+.br2 .objw .obj{top:0!important;bottom:0!important;left:0;right:0}
+.br2 .objw{bottom:auto!important;top:auto!important}
+.porw{width:calc(112/0.60*520/737*var(--u))!important}
+.porw .por{height:calc(112/0.60*var(--u))!important}
+
+/* R14: ein gemeinsamer Schatten - Papier und Icons liegen leicht ueber der Buehne */
+.hud{--papsh:drop-shadow(0 calc(1.5*var(--u)) calc(1.2*var(--u)) rgba(20,10,0,.3)) drop-shadow(0 calc(6*var(--u)) calc(7*var(--u)) rgba(20,10,0,.34));--sh:var(--papsh)}
+.pbar>img:first-child,.pfuji img,.pfluff>img,.pradio>img,.flag img,.wimpel img.schnur,.map.komp,.pfluff .fk{filter:var(--papsh)!important}
+.gearc .rb{filter:var(--papsh)!important}
+.acard img{box-shadow:0 calc(1.5*var(--u)) calc(1.5*var(--u)) rgba(20,10,0,.3),0 calc(7*var(--u)) calc(9*var(--u)) rgba(20,10,0,.34)}
+.ix.on,.fist.on{filter:var(--papsh) drop-shadow(0 0 calc(3*var(--u)) #ffd66b) drop-shadow(0 0 calc(10*var(--u)) rgba(255,190,60,.65))!important}
+.acard.on,.acard.ix.on{filter:none!important}
+@keyframes ankunft{0%{scale:1.16 .82}35%{scale:.9 1.12}65%{scale:1.05 .96}100%{scale:1 1}}
+
+.acard img{outline-width:calc(5*var(--u))!important;outline-offset:calc(-2*var(--u))!important}
+.komp .wpa{width:calc(59*var(--ps)*1.2*var(--u))!important;top:calc(-8*var(--u))!important}
+
+/* R16: Lebensleiste ohne Dehnung, kein Kamera-Zoom beim Fenster, Radio tiefer + schaltbar, Ziel-Band unter dem Kompass */
+.pbar{width:max-content}
+.stage.menu .game{transform:none!important}
+.rbtn{inset:13% 16% 6% 18%!important}
+.zband{position:absolute;right:calc(28*var(--u) + 111*var(--ps)*var(--u) + 24*var(--u) + (270 - 263)*var(--ps)*var(--u)/2);top:calc(28*var(--u) + 261*var(--ps)*var(--u) + 14*var(--u));width:calc(263*var(--ps)*var(--u));padding:0;border:0;background:none;cursor:pointer}
+.zband .zb{width:100%;display:block;filter:var(--papsh)}
+.zband .zo{position:absolute;left:12%;top:48%;width:calc(30*var(--u));height:calc(30*var(--u));border-radius:50%;object-fit:cover;transform:translate(-50%,-50%);box-shadow:0 0 0 calc(2*var(--u)) #3a2414}
+.zband b{position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);font:600 calc(24*var(--u))/1 "Fredoka",sans-serif;color:#3a2414;white-space:nowrap}
+#fly-ziele{top:calc(320*var(--u))!important}
+.zband .zo{left:21%!important}
+.zband b{left:58%!important}
+
+/* R17: Almanach-Banner (Gesamtzahl) buendig ueber dem Stapel, Klick = Fractal Almanac XL; Klick auf Karte = diese Karte im Almanach */
+.aband{position:absolute;left:50%;bottom:calc(150*var(--u) + 14*var(--u) + 6*var(--u));width:calc(256*var(--u));transform:translateX(-50%);padding:0;border:0;background:none;cursor:pointer;z-index:10;transition:bottom .28s cubic-bezier(.3,1.45,.5,1)}
+.aband img{width:100%;display:block;filter:var(--papsh)}
+.aband b{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);font:600 calc(16*var(--u))/1 "Fredoka",sans-serif;color:#3a2414;white-space:nowrap}
+.stackA:hover .aband{bottom:calc(2*160*var(--u) + 150*var(--u) + 8*var(--u))}
+.slab.alm-xl{width:calc(1460*var(--u));min-height:calc(780*var(--u));padding:calc(50*var(--u)) calc(60*var(--u));justify-content:center;position:relative}
+.agrid{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(30*var(--u)) calc(34*var(--u))}
+.atile{padding:0;border:0;background:none;cursor:pointer}
+.atile img{width:100%;display:block;border-radius:calc(6*var(--u));outline:calc(4*var(--u)) solid #2b1d14;outline-offset:calc(-2*var(--u));box-shadow:0 calc(2*var(--u)) calc(2*var(--u)) rgba(20,10,0,.3),0 calc(8*var(--u)) calc(12*var(--u)) rgba(20,10,0,.3)}
+.afokus{position:absolute;inset:0;display:none;place-items:center}
+.alm-xl.fokus .afokus{display:grid}
+.alm-xl.fokus .agrid{visibility:hidden}
+.aback{position:absolute;inset:0;border:0;background:none;cursor:zoom-out}
+.abig{position:relative;width:calc(1000*var(--u));border-radius:calc(10*var(--u));outline:calc(6*var(--u)) solid #2b1d14;outline-offset:calc(-3*var(--u));box-shadow:0 calc(14*var(--u)) calc(30*var(--u)) rgba(20,10,0,.45);animation:auf .32s cubic-bezier(.3,1.5,.5,1) both;pointer-events:none}
+
+/* R17b: Auf-/Zuklappen weich: eine Kurve, laengere Dauer, leichte Staffelung (auf: unten zuerst, zu: oben zuerst) */
+.acard{transition:bottom .5s cubic-bezier(.25,1.15,.4,1) calc((2 - var(--i))*45ms),transform .5s cubic-bezier(.25,1.15,.4,1) calc((2 - var(--i))*45ms)!important;will-change:bottom,transform}
+.stackA:hover .acard{transition-delay:calc(var(--i)*45ms)!important}
+.aband{transition:bottom .5s cubic-bezier(.25,1.15,.4,1) 0ms!important;will-change:bottom}
+.stackA:hover .aband{transition-delay:90ms!important}
+
+/* R17c: Fenster auf/zu weich: Opacity und Slab auf derselben Kurve; zu etwas schneller als auf */
+.layer{transition:opacity .38s cubic-bezier(.25,.8,.35,1)!important}
+.slab{transition:transform .46s cubic-bezier(.22,1.12,.36,1)!important;transform:translateY(calc(22*var(--u))) scale(.96)}
+.layer:not(.on) .slab{transition-duration:.3s!important}
+.layer:not(.on){transition-duration:.26s!important}
+.abig{animation:auf .42s cubic-bezier(.22,1.12,.36,1) both!important}
+
+/* R18: eine Info-Schriftgroesse fuer Infokarten (Banner, Zielband); Banner = exakt Kartenbreite; Zielband ohne Icon, zweizeilig im Bandkoerper */
+.hud{--info:calc(17*var(--u))}
+.aband{width:calc(269*var(--u))!important;bottom:calc(150*var(--u) + 14*var(--u) + 4*var(--u))!important}
+.stackA:hover .aband{bottom:calc(2*160*var(--u) + 150*var(--u) + 6*var(--u))!important}
+.aband b{font-size:var(--info)!important;top:41%!important}
+.zband .zo{display:none!important}
+.zband b{left:calc((22 + 250)/2/263*100%)!important;top:calc(25/57*100%)!important;font-size:var(--info)!important;line-height:.98!important;display:flex;flex-direction:column;align-items:center;gap:0}
+.zband b i{font-style:normal;display:block}
+.zband b i+i{font-weight:500;opacity:.85}
+
+/* R19: Infokarten: Bandkoerper = Flucht (Almanach = Kartenbreite 269u, Zielband = Kompassbreite 194u), Zipfel stehen ueber.
+   Original-Band per border-image: Zipfel-Spalten unveraendert im Zuschnitt, Koerper dehnt sich auf die Flucht. Info-Schrift 22u mit Innenabstand. */
+.hud{--info:calc(22*var(--u))}
+.aband{width:calc(269*var(--u) + 2*18*var(--u))!important;height:calc(66*var(--u));left:calc(-18*var(--u))!important;transform:none!important;bottom:calc(150*var(--u) + 14*var(--u) + 4*var(--u))!important}
+.aband img,.zband .zb{display:none!important}
+.aband::before,.zband::before{content:"";position:absolute;inset:0;border-style:solid;border-color:transparent;filter:var(--papsh)}
+.aband::before{border-width:0 calc(18*var(--u));border-image:url({{band_almanach}}) 0 29 0 28 fill / 0 calc(18*var(--u)) stretch}
+.aband b{top:calc(21/55*100%)!important;left:50%!important;font-size:var(--info)!important;line-height:1!important;z-index:1}
+.zband{width:calc(194*var(--u) + 34*var(--u) + 10*var(--u))!important;height:calc(66*var(--u));right:calc(28*var(--u) + 111*var(--ps)*var(--u) + 24*var(--u) - 10*var(--u))!important}
+.zband::before{border-width:0 calc(10*var(--u)) 0 calc(34*var(--u));border-image:url({{band_blau}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(34*var(--u)) stretch}
+.zband b{left:calc(34*var(--u) + 97*var(--u))!important;top:calc(25.5/57*100%)!important;font-size:var(--info)!important;line-height:1.02!important;z-index:1;padding:0 calc(12*var(--u))}
+
+/* R20: Fluff-Score weiss; alle weissen Zahlen: weicher Rand + harter Schatten unten/rechts (ein Satz fuer alle) */
+.hud{--zsh:0 0 calc(2*var(--u)) rgba(40,20,10,.6),calc(2*var(--u)) calc(2.5*var(--u)) 0 rgba(40,20,10,.62)}
+.pfuji b{color:#fff!important}
+.pfuji b,.fb b,.fscore b,.pfluff>b,.pfluff .psc,.place .med b,.stage.mobil .pfluff::before{text-shadow:var(--zsh)!important}
+
+/* R21: gemeinsame Grundlinie Fluff-Score und Fluff-Kugel-Zahlen (gemessen 1600x900: Score 101,1 / Kugeln 91,7) */
+.pfuji b{margin-top:calc(-9.4*var(--u))}
+
+/* R22b: Schliessen-Knopf in allen Fenstern innen mit Abstand (nicht auf der Papierkante); Gegenstaende im Kistenfenster schweben im Gleichtakt auf einer Linie */
+.slab .close{top:calc(4*var(--u))!important;right:calc(4*var(--u))!important;width:calc(46*var(--u))!important;height:calc(46*var(--u))!important}
+.offer .obj{animation-delay:0s!important}
+
+/* R23 (Georg 21.11.): Radio unter HP/Tempo; Herz und Blitz visuell fuehrend (Glyphen-Mitten auf einer Senkrechten);
+   HP in der Mitte minimal verlaengert (Herz und Enden unveraendert, nur die Leistenmitte gedehnt), Schlitz-Enden beider Leisten buendig;
+   Kompass gross in der rechten Ecke (oben buendig mit der Fluff-Leiste, rechts mit dem Stiefel), Zahnrad in der Ecke ueber dem Kompassrand,
+   Wegpunkt-Pfeil immer obenauf; mehrere Wegpunkte als Laschen-Stapel: aktiv oben, darunter nach zuletzt gewaehlt, leicht unregelmaessig */
+.pbar.hp{width:calc(497*var(--ps)*var(--u));height:calc(129*var(--ps)*var(--u));margin-left:calc(-19*var(--ps)*var(--u))!important}
+.pbar.hp .hl{position:absolute;inset:0;border-style:solid;border-color:transparent;border-width:0 calc(47*var(--ps)*var(--u)) 0 calc(160*var(--ps)*var(--u))}
+.pbar.hp .base{border-image:url({{pap_hp}}) 0 47 0 160 fill / 0 calc(47*var(--ps)*var(--u)) 0 calc(160*var(--ps)*var(--u)) stretch;filter:var(--papsh)}
+.pbar.hp .gruen{border-image:url({{hp_gruen}}) 0 47 0 160 fill / 0 calc(47*var(--ps)*var(--u)) 0 calc(160*var(--ps)*var(--u)) stretch}
+.pbar.hp .gelb{border-image:url({{hp_gelb}}) 0 47 0 160 fill / 0 calc(47*var(--ps)*var(--u)) 0 calc(160*var(--ps)*var(--u)) stretch}
+.pbar.hp .leer2{border-image:url({{hp_leer}}) 0 47 0 160 fill / 0 calc(47*var(--ps)*var(--u)) 0 calc(160*var(--ps)*var(--u)) stretch;clip-path:inset(0 0 0 calc((138 + var(--f)*327)/497*100%))!important}
+.pbar.tp{margin-left:calc(9*var(--ps)*var(--u))!important}
+.stat .pradio{position:relative!important;left:auto!important;right:auto!important;top:auto!important;width:calc(420*var(--ps)*var(--u))!important;margin:calc(10*var(--u)) 0 0 calc(-3*var(--ps)*var(--u))}
+.stat .pradio .rbtn{inset:14% 9% 18% 7%!important;flex-direction:row!important}
+.gearc{display:none!important}
+.tr{right:calc(var(--m0) + var(--kr,0px))!important;top:calc(var(--m0) - 1*var(--u))!important;gap:calc(10*var(--u))!important;flex-direction:column!important;align-items:center!important}
+.map.komp{width:calc(270*var(--u))!important;height:calc(261*var(--u))!important}
+.komp .kimg{position:relative;z-index:1}
+.komp .kgear{position:absolute!important;right:0;top:calc(1*var(--u));width:calc(62*var(--u))!important;height:calc(62*var(--u))!important;z-index:2}
+.komp .mini{z-index:1}
+.komp .rim{z-index:3!important}
+.komp .wpa{width:calc(59*var(--u))!important}
+.zband{display:none!important}
+.zstack{display:flex;flex-direction:column;align-items:center;margin-top:calc(6*var(--u))}
+.zw{position:relative;width:calc(270*var(--u) + 30*var(--u));height:calc(62*var(--u));margin-top:calc(-8*var(--u));padding:0;border:0;background:none;cursor:pointer;rotate:var(--rot);translate:calc(var(--dx)*var(--u)) 0;transition:translate .3s cubic-bezier(.3,1.4,.5,1)}
+.zw:first-child{margin-top:0}
+.zw::before{content:"";position:absolute;inset:0;border-style:solid;border-color:transparent;border-width:0 calc(10*var(--u)) 0 calc(20*var(--u));filter:var(--papsh)}
+.zw[data-band=blau]::before{border-image:url({{band_blau}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(20*var(--u)) stretch}
+.zw[data-band=gelb]::before{border-image:url({{band_gelb}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(20*var(--u)) stretch}
+.zw[data-band=rot]::before{border-image:url({{band_rot}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(20*var(--u)) stretch}
+.zw[data-band=gruen]::before{border-image:url({{band_gruen}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(20*var(--u)) stretch}
+.zw[data-band=koralle]::before{border-image:url({{band_koralle}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(20*var(--u)) stretch}
+.zw b{position:absolute;left:calc(20*var(--u) + 135*var(--u));top:46%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;font:600 var(--info)/1 "Fredoka",sans-serif;color:#3a2414;white-space:nowrap;z-index:1}
+.zw b i{font-style:normal}.zw b i+i{font-weight:500;opacity:.85}
+.zw:not(.on){scale:.9;opacity:.94}
+.zw:not(.on) b{flex-direction:row;gap:calc(10*var(--u))}
+.zw:not(.on){height:calc(50*var(--u))}
+
+.tr{align-items:flex-end!important}
+.zstack{align-self:flex-end;margin-right:calc(-10*var(--u))}
+
+/* R24 (Georg 21.11.): Radio wieder senkrechte Leiste, links unter den Leisten; alle Wegpunkt-Laschen gleich gross, Entfernung darunter;
+   Faehnchen in Bogengroesse (416 px, nicht hochgezogen) ueber die Breite der Fluff-Leiste; aktives Faehnchen mit ruhigem Belohnungs-Schein
+   und langsamem Lichtstreif (nur auf dem Faehnchen, ueber seine eigene Form maskiert) */
+.stat .pradio{width:calc(111*var(--ps)*var(--u))!important;margin:calc(12*var(--u)) 0 0 calc(-1*var(--ps)*var(--u))!important}
+.stat .pradio .rbtn{inset:13% 16% 6% 18%!important;flex-direction:column!important}
+.zw:not(.on){scale:1!important;opacity:1!important;height:calc(62*var(--u))!important}
+.zw:not(.on) b{flex-direction:column!important;gap:0!important}
+.zw{margin-top:calc(-6*var(--u))!important}
+.zw:first-child{margin-top:0!important}
+.wimpel{width:calc(416*var(--u))!important}
+.flag .fsw{position:absolute;inset:0;pointer-events:none;opacity:0;z-index:2;-webkit-mask:var(--fm) center/100% 100% no-repeat;mask:var(--fm) center/100% 100% no-repeat;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,248,215,.85) 50%,transparent 65%) no-repeat;background-size:250% 100%;background-position:120% 0}
+.flag.aktiv,.pfluff.ready .f-flask{animation:rglow 2.8s ease-in-out infinite}
+.flag.aktiv .fsw,.pfluff.ready .f-flask .fsw{opacity:1;animation:rsweep 3.6s cubic-bezier(.45,0,.25,1) infinite}
+@keyframes rglow{0%,100%{filter:drop-shadow(0 0 calc(2*var(--u)) rgba(255,214,107,.75)) drop-shadow(0 0 calc(7*var(--u)) rgba(255,186,64,.35))}50%{filter:drop-shadow(0 0 calc(3*var(--u)) rgba(255,230,150,.95)) drop-shadow(0 0 calc(13*var(--u)) rgba(255,190,70,.55))}}
+@keyframes rsweep{0%,45%{background-position:120% 0}80%,100%{background-position:-20% 0}}
+
+/* R24b: Zahnrad im Kompass in Papierton wie zuvor (nicht weiss), Papierschatten */
+.komp .kgear i{background:#efdcb5!important}
+.komp .kgear{filter:var(--papsh)!important}
+/* R25 (Georg 21.11.): Klickflaechen frei (Kompassrand, Fluff-Kugeln, Kopfbild verdeckten Knoepfe), Radio-Knoepfe groessere Trefferflaeche;
+   Playlist-Flyout; Settings als XXL-Fenster mit allen Reitern des Spiels (Game, Character, World, Sound, Controls, Accessibility), Reiter = Laschen;
+   Kayfabricate (Fluff -> Dinge) im selben Drei-Karten-Fenster wie die Truhe, Preis in Fluff-Kugeln; Titel und Text auf den Karten, Sterne groesser */
+.komp .rim{pointer-events:none!important}
+.pfluff .fk,.pfluff>img,.pfluff>b{pointer-events:none}
+.chev{z-index:7!important}
+.rbtn button{width:calc(56*var(--u))!important;height:calc(56*var(--u))!important;margin:calc(-8*var(--u)) 0}
+.rbtn svg{width:calc(28*var(--u))!important;height:calc(28*var(--u))!important}
+#fly-playlist{left:calc(var(--m0) + 111*var(--ps)*var(--u) + 18*var(--u));top:calc(28*var(--u) + 208*var(--u));flex-direction:column;gap:calc(4*var(--u));padding:calc(22*var(--u)) calc(26*var(--u));background:none!important;box-shadow:none!important;border-radius:0!important;border-style:solid;border-width:calc(30*var(--u));border-image:url({{pap_rahmen}}) 62 72 fill / calc(30*var(--u)) stretch;filter:var(--papsh)}
+.song{display:flex;align-items:center;gap:calc(12*var(--u));padding:calc(8*var(--u)) calc(10*var(--u));border:0;background:none;cursor:pointer;font:600 var(--info)/1 "Fredoka",sans-serif;color:#3a2414;white-space:nowrap;text-align:left;border-radius:calc(10*var(--u))}
+.song .eq{display:flex;align-items:flex-end;gap:calc(2*var(--u));width:calc(18*var(--u));height:calc(16*var(--u));opacity:.25}
+.song .eq b{flex:1;background:#3a2414;height:40%;border-radius:1px}
+.song.on{background:rgba(255,214,107,.35)}
+.song.on .eq{opacity:1}.song.on .eq b{animation:eqb .9s ease-in-out infinite}.song.on .eq b:nth-child(2){animation-delay:-.3s}.song.on .eq b:nth-child(3){animation-delay:-.6s}
+@keyframes eqb{0%,100%{height:30%}50%{height:100%}}
+.slab.setxl{width:calc(1240*var(--u));min-height:calc(700*var(--u));padding:calc(30*var(--u)) calc(44*var(--u))!important;display:flex;flex-direction:column;gap:calc(22*var(--u))}
+.stabs{display:flex;gap:calc(6*var(--u));justify-content:center;flex-wrap:wrap}
+.stab{position:relative;width:calc(164*var(--u));height:calc(56*var(--u));border:0;background:none;padding:0;cursor:pointer;opacity:.82;translate:0 calc(4*var(--u))}
+.stab::before{content:"";position:absolute;inset:0;border-style:solid;border-color:transparent;border-width:0 calc(10*var(--u)) 0 calc(18*var(--u));filter:var(--papsh)}
+.stab[data-band=blau]::before{border-image:url({{band_blau}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(18*var(--u)) stretch}
+.stab[data-band=gelb]::before{border-image:url({{band_gelb}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(18*var(--u)) stretch}
+.stab[data-band=gruen]::before{border-image:url({{band_gruen}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(18*var(--u)) stretch}
+.stab[data-band=koralle]::before{border-image:url({{band_koralle}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(18*var(--u)) stretch}
+.stab[data-band=rot]::before{border-image:url({{band_rot}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(18*var(--u)) stretch}
+.stab b{position:absolute;left:calc(18*var(--u) + 68*var(--u));top:46%;transform:translate(-50%,-50%);font:600 var(--info)/1 "Fredoka",sans-serif;color:#3a2414;white-space:nowrap;z-index:1}
+.stab.on{opacity:1;translate:0 0;animation:rglow 2.8s ease-in-out infinite}
+.spane{display:none;flex-direction:column;gap:calc(10*var(--u))}.spane.on{display:flex}
+.srow{display:flex;align-items:center;gap:calc(26*var(--u));min-height:calc(72*var(--u));padding:0 calc(30*var(--u));border-style:solid;border-width:calc(12*var(--u)) calc(20*var(--u));border-image:url({{pap_radiobar}}) 34 46 fill / calc(12*var(--u)) calc(20*var(--u)) stretch}
+.srow .sl-l{width:calc(260*var(--u));font:600 var(--info)/1.1 "Fredoka",sans-serif;color:#3a2414}
+.srow .sl{flex:1}.srow .rad,.srow .tg{margin-left:auto}
+.keys{display:grid;grid-template-columns:1fr 1fr;gap:calc(12*var(--u)) calc(40*var(--u));padding:calc(10*var(--u)) calc(30*var(--u))}
+.key{display:flex;align-items:center;gap:calc(18*var(--u));font:600 var(--info)/1 "Fredoka",sans-serif;color:#3a2414}
+.key kbd{min-width:calc(110*var(--u));padding:calc(10*var(--u)) calc(14*var(--u));text-align:center;font:600 calc(18*var(--u))/1 "Fredoka",sans-serif;background:#efdcb5;border-radius:calc(10*var(--u));box-shadow:0 calc(3*var(--u)) 0 #b99a6a}
+.offers{padding-bottom:calc(96*var(--u))}
+.offer .ot{position:absolute;left:50%;top:calc(100% + 10*var(--u));transform:translateX(-50%);font:600 calc(26*var(--u))/1 "Fredoka",sans-serif;color:#3a2414;white-space:nowrap}
+.offer .oc{position:absolute;left:50%;top:calc(100% + 44*var(--u));transform:translateX(-50%);width:calc(280*var(--u));font:500 calc(18*var(--u))/1.25 "Fredoka",sans-serif;color:#5a3d26;text-align:center}
+.offer .rar{font-size:calc(42*var(--u))!important;color:#e0a01e!important;text-shadow:calc(1.5*var(--u)) calc(2*var(--u)) 0 #3a2414;letter-spacing:calc(2*var(--u))!important}
+.offer .cost{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);display:flex;gap:calc(4*var(--u))}
+.offer .cost img{width:calc(30*var(--u));height:calc(30*var(--u))}
+
+/* R25b: Kayfabricate nutzt dieselben Zustaende wie die Truhe (Einblenden, Wahl, Wegfliegen) */
+#v-kayfab.reveal .tchest img{animation:kiste .55s cubic-bezier(.3,1.6,.5,1) both}
+#v-kayfab.reveal .offer{animation:auf .5s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(.25s + var(--k)*.14s)}
+#v-kayfab .offer.weg{animation:weg .35s ease-in both!important}
+#v-kayfab .offer.chosen .obj{visibility:hidden}
+.stabs{flex-wrap:nowrap!important}.stab{width:auto!important;flex:1 1 0;min-width:0}
+.stab b{left:calc(18*var(--u) + (100% - 28*var(--u))/2)!important}
+.stabs{padding-right:calc(58*var(--u))}
+
+/* R26 (Georg 21.11.): Playlist sauber in der Laschen-Sprache der Wegpunkte (eine Lasche je Titel, gleiche Groesse, kein gezogener Fensterrahmen,
+   keine Verzierung unter Text), aktiver Titel = gelbe Lasche mit ruhigem Belohnungs-Schein und Equalizer; Info-Schrift und Zahlen-Schatten fuer
+   alle Ebenen (auch Flyouts und Fenster ausserhalb der HUD-Leiste); kein Browser-Fokusrahmen */
+.stage *{--info:calc(22*var(--u));--ps:.72;--m0:calc(28*var(--u));--zsh:0 0 calc(2*var(--u)) rgba(40,20,10,.6),calc(2*var(--u)) calc(2.5*var(--u)) 0 rgba(40,20,10,.62)}
+button:focus,button:focus-visible{outline:none}
+#fly-playlist{left:calc(var(--m0) + 111*var(--ps)*var(--u) + 14*var(--u))!important;top:calc(28*var(--u) + 190*var(--u))!important;padding:0!important;border:0!important;border-image:none!important;filter:none!important;background:none!important;gap:0!important;align-items:flex-start}
+#fly-playlist .song{position:relative;width:calc(330*var(--u));height:calc(56*var(--u));margin-top:calc(-6*var(--u));padding:0 0 0 calc(34*var(--u));background:none!important;border-radius:0;font:600 var(--info)/1 "Fredoka",sans-serif;color:#3a2414}
+#fly-playlist .song:first-child{margin-top:0}
+#fly-playlist .song::before{content:"";position:absolute;inset:0;border-style:solid;border-color:transparent;border-width:0 calc(10*var(--u)) 0 calc(20*var(--u));border-image:url({{band_blau}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(20*var(--u)) stretch;filter:var(--papsh);z-index:-1}
+#fly-playlist .song.on::before{border-image:url({{band_gelb}}) 0 22 0 30 fill / 0 calc(10*var(--u)) 0 calc(20*var(--u)) stretch}
+#fly-playlist .song.on{animation:none}
+#fly-playlist .song span,#fly-playlist .song .eq{position:relative;z-index:1}
+#fly-playlist .song:nth-child(2n){translate:calc(4*var(--u)) 0}
+#fly-playlist .song:nth-child(3n){translate:calc(-3*var(--u)) 0}
+/* R27 (Georg 21.11.): HARTE REGELN · (1) kein Teil ueber Originalgroesse (u hoechstens 1 px je Bogenpixel), (2) immer 1:1-Seitenverhaeltnis, kein Dehnen,
+   (3) kein Element in fremdem Zusammenhang (Laschen nur Wegpunkte, Radioleiste nur Radio; gemeinsam nur der Papiergrund grosser Fenster),
+   (4) nie zwei Fenster/Paletten zugleich, (5) keine Ueberlagerung von Raendern/Verzierungen mit Icons, Kugeln, Text; keine Mini-Symbole */
+.stage *{--u:min(100cqw/1600,100cqh/900,1px)}
+.stage.mobil *{--u:min(100cqw/1400,100cqh/700,1px)}
+/* Fenster: gemeinsamer Papiergrund (Kachel 1:1, nicht gezogen), kein gedehnter Rahmen mehr; eigener Fensterrahmen folgt (ChatGPT-Auftrag) */
+.slab{border:0!important;border-image:none!important;background:#f3e6cc url({{ivory}}) 0 0/calc(640*var(--u)) repeat!important;border-radius:calc(22*var(--u))!important;
+  box-shadow:inset 0 0 0 calc(3*var(--u)) rgba(150,110,60,.28),0 calc(14*var(--u)) calc(30*var(--u)) rgba(30,15,5,.42)!important;filter:none!important;padding:calc(48*var(--u)) calc(56*var(--u))!important}
+.slab .close{top:calc(18*var(--u))!important;right:calc(18*var(--u))!important}
+/* Playlist: kleines Fenster aus demselben Papiergrund, Titel als Text, aktiver Titel mit Equalizer und Tinten-Unterstrich, keine geliehenen Laschen */
+#fly-playlist{background:#f3e6cc url({{ivory}}) 0 0/calc(640*var(--u)) repeat!important;border-radius:calc(18*var(--u))!important;padding:calc(16*var(--u)) calc(22*var(--u))!important;
+  box-shadow:inset 0 0 0 calc(3*var(--u)) rgba(150,110,60,.28),0 calc(10*var(--u)) calc(22*var(--u)) rgba(30,15,5,.38)!important;gap:calc(2*var(--u))!important}
+#fly-playlist .song{width:auto!important;height:auto!important;margin:0!important;padding:calc(9*var(--u)) calc(10*var(--u))!important;translate:none!important}
+#fly-playlist .song::before{content:none!important}
+#fly-playlist .song.on span{box-shadow:0 calc(3*var(--u)) 0 #3a2414}
+/* Settings: Reiter als Text, aktiver mit Tinten-Unterstrich; Zeilen ohne geliehene Radioleiste */
+.stab{width:auto!important;flex:0 0 auto!important;height:auto!important;padding:calc(8*var(--u)) calc(14*var(--u))!important;opacity:.6!important;translate:none!important;animation:none!important}
+.stab::before{content:none!important}
+.stab b{position:static!important;transform:none!important}
+.stab.on{opacity:1!important}.stab.on b{box-shadow:0 calc(4*var(--u)) 0 #3a2414}
+.stabs{justify-content:flex-start!important;gap:calc(18*var(--u))!important;padding-right:calc(60*var(--u))!important;border-bottom:calc(2*var(--u)) solid rgba(58,36,20,.18);padding-bottom:calc(10*var(--u))}
+.srow{border:0!important;border-image:none!important;min-height:calc(64*var(--u))!important;padding:0 calc(8*var(--u))!important}
+/* Wegpunkt-Laschen 1:1: Hoehe fest, Breite aus dem Seitenverhaeltnis jeder Lasche */
+.zw{width:auto!important;height:calc(61*var(--u))!important;aspect-ratio:var(--ar)}
+.zw::before{border:0!important;border-image:none!important;background:var(--bi) center/100% 100% no-repeat}
+.zw[data-band=blau]{--bi:url({{band_blau}});--ar:263/57}.zw[data-band=gelb]{--bi:url({{band_gelb}});--ar:274/57}.zw[data-band=rot]{--bi:url({{band_rot}});--ar:284/55}
+.zw[data-band=gruen]{--bi:url({{band_gruen}});--ar:277/56}.zw[data-band=koralle]{--bi:url({{band_koralle}});--ar:267/53}
+.zw b{left:54%!important}
+.zstack{margin-right:0!important;align-items:flex-end!important}
+/* Almanach-Banner 1:1, 1,5-fach, mittig ueber dem Stapel (Zipfel bleiben im Bild) */
+.aband{width:calc(201*1.5*var(--u))!important;height:calc(55*1.5*var(--u))!important;left:calc((269 - 301.5)/2*var(--u))!important}
+.aband::before{border:0!important;border-image:none!important;background:url({{band_almanach}}) center/100% 100% no-repeat}
+.aband b{top:calc(21/55*100%)!important}
+/* HP gleichmaessig skaliert (k = 1,087), Herz-Mitte ueber Blitz-Mitte, Schlitz-Enden buendig; kein Dehnen der Mitte */
+.pbar.hp{width:calc(467*1.087*var(--ps)*var(--u))!important;height:calc(129*1.087*var(--ps)*var(--u))!important;margin-left:calc(-19*1.087*var(--ps)*var(--u))!important}
+.pbar.hp .hl{border:0!important;border-image:none!important;background:var(--hi) center/100% 100% no-repeat}
+.pbar.hp .base{--hi:url({{pap_hp}})}.pbar.hp .gruen{--hi:url({{hp_gruen}})}.pbar.hp .gelb{--hi:url({{hp_gelb}})}.pbar.hp .leer2{--hi:url({{hp_leer}});clip-path:inset(0 0 0 calc((138 + var(--f)*297)/467*100%))!important}
+.pbar.tp{margin-left:calc((72*1.087 - 63)*var(--ps)*var(--u))!important}
+/* Angebots-Karten (Truhe, Kayfabricate): Papierfeld in Originalgroesse, Gegenstand in fester Box, Preis/Sterne UNTER dem Feld (nie auf dem Rand),
+   keine Mini-Ziel-Symbole; Titel und Text darunter */
+.offer{height:calc(160*var(--u))!important;width:auto!important}
+.offer .bed{position:static!important;display:block!important;height:100%!important;width:auto!important}
+.offer .obj{width:calc(118*var(--u))!important;height:calc(88*var(--u))!important;top:46%!important;left:50%!important}
+.offer .dest{display:none!important}
+.offer .rar,.offer .cost{top:calc(100% + 8*var(--u))!important;bottom:auto!important;left:50%!important}
+.offer .rar{font-size:calc(34*var(--u))!important;line-height:1}
+.offer .cost img{width:calc(32*var(--u))!important;height:calc(32*var(--u))!important}
+.offer .ot{top:calc(100% + 52*var(--u))!important}
+.offer .oc{top:calc(100% + 86*var(--u))!important;width:calc(250*var(--u))!important}
+.offers{gap:calc(70*var(--u))!important;padding-bottom:calc(140*var(--u))!important}
+/* Faehnchen-Schein ohne Filter (Filter rasterte das animierte Faehnchen, es pixelte): weicher Goldhof dahinter + Lichtstreif */
+.flag.aktiv,.pfluff.ready .f-flask{animation:none!important;isolation:isolate}
+.flag.aktiv::before,.pfluff.ready .f-flask::before{content:"";position:absolute;inset:-14% -22%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,222,130,.85),rgba(255,196,80,.35) 55%,transparent);animation:fgl 2.8s ease-in-out infinite}
+@keyframes fgl{0%,100%{opacity:.55;scale:.92}50%{opacity:1;scale:1.04}}
+/* R27b: kein oranger Ring um aktive Eintraege in Paletten (wirkte wie fremde Outline); aktiv = warmer Papiergrund, Titel = Unterstrich */
+.fly .on{box-shadow:none!important}
+.fly .it.on,.fly .zi.on{background:rgba(255,214,107,.42)!important}
+#fly-playlist .song.on{background:none!important}
+/* R27c: Heldenkarten-Schrift gross (Titel 40u, Text 25u), Abstaende danach */
+.offer .ot{font-size:calc(40*var(--u))!important;top:calc(100% + 54*var(--u))!important}
+.offer .oc{font-size:calc(25*var(--u))!important;line-height:1.2!important;width:calc(300*var(--u))!important;top:calc(100% + 104*var(--u))!important}
+.offers{gap:calc(90*var(--u))!important;padding-bottom:calc(190*var(--u))!important}
+/* R27d: Truhe ohne Kisten-Icon (Riesen-Icon gestrichen, R22), jede Karte so breit wie ihr Text, Papierfeld mittig */
+.tchest{display:none!important}
+.offer{width:calc(310*var(--u))!important;display:flex!important;justify-content:center}
+.offers{gap:calc(40*var(--u))!important}
+
+/* R28: Pause-Knoepfe mit Ziel: Restart (Rueckfrage im selben Fenster), Almanac, Title screen (Neustart der Seite = Titel), Controls (Settings › Controls), Fullscreen */
+.frage{display:flex;flex-direction:column;align-items:center;gap:calc(14*var(--u))}
+.frage[hidden]{display:none!important}
+.frage b{font:600 calc(30*var(--u))/1 "Fredoka",sans-serif;color:#3a2414}
+.fja{display:flex;gap:calc(18*var(--u))}
+/* R29 (Georg 21.11.): Teile aus der Leit-Serie „Washi-1448“ (KFB Paper HUD 05.psd, Ebenen 38/40/23, pixelgenau exportiert), alle im Papiermassstab ps, 1:1:
+   Fachplatten fuer Paletten (leer / aktiv = gelber Rand), Schliessen-X, Ausklapp-Pfeil, Zahnrad mit Platte, Ein/Aus-Schalter, Portraetring */
+.fly{background:none!important;box-shadow:none!important;padding:0!important;gap:calc(4*var(--u))!important;border-radius:0!important}
+.fly .it,.fly .zi{width:calc(102*var(--ps)*var(--u))!important;height:calc(105*var(--ps)*var(--u))!important;padding:calc(12*var(--u))!important;border-radius:0!important;box-shadow:none!important;
+  background:url({{w_slot_leer}}) center/100% 100% no-repeat!important;filter:var(--papsh)}
+.fly .it.on,.fly .zi.on{background-image:url({{w_slot_aktiv}})!important}
+.fly .it img,.fly .zi img{max-width:100%;max-height:100%}
+.slab .close{background:url({{w_x}}) center/100% 100% no-repeat!important;width:calc(72*var(--ps)*var(--u))!important;height:calc(64*var(--ps)*var(--u))!important;border-radius:0!important;box-shadow:none!important;filter:var(--papsh)}
+.slab .close i,.slab .close img{display:none!important}
+.hud .chev{width:calc(70*var(--ps)*var(--u))!important;height:calc(64*var(--ps)*var(--u))!important;filter:var(--papsh)!important}
+.hud .chev img{content:url({{w_pfeil_ab}});transform:none!important}
+.hud .chev.up img{content:url({{w_pfeil_auf}})}
+.hud .chev.open img{content:url({{w_pfeil_auf}})}.hud .chev.up.open img{content:url({{w_pfeil_ab}})}
+.komp .kgear{width:calc(134*var(--ps)*var(--u))!important;height:calc(125*var(--ps)*var(--u))!important;background:url({{w_zahnrad}}) center/100% 100% no-repeat!important;right:calc(-6*var(--u))!important;top:calc(-6*var(--u))!important}
+.komp .kgear i{display:none!important}
+.tg{width:calc(93*var(--ps)*var(--u))!important;height:calc(46*var(--ps)*var(--u))!important;background:url({{w_schalter_aus}}) center/100% 100% no-repeat!important;box-shadow:none!important;border-radius:0!important}
+.tg.on{background-image:url({{w_schalter_an}})!important}
+.tg::before,.tg::after{content:none!important}
+.porw{position:relative}
+.porw::before{content:"";position:absolute;left:50%;top:50%;width:calc(164*var(--ps)*var(--u));aspect-ratio:1;translate:-50% -50%;background:url({{w_portraitring}}) center/100% 100% no-repeat;filter:var(--papsh);z-index:-1}
+
+/* R29b: Paletten oeffnen direkt an ihrem Knopf (Kritik: Rucksack oeffnete weit weg); Portraetring sichtbar hinter dem Kopf */
+#fly-bag{left:auto!important;right:calc(var(--m0) + 70*var(--u))!important;bottom:calc(28*var(--u) + 112*var(--u) + 30*var(--u))!important;max-width:calc(4*78*var(--u));flex-wrap:wrap;justify-content:flex-end}
+#fly-reise{right:var(--m0)!important;bottom:calc(28*var(--u) + 112*var(--u) + 30*var(--u))!important;flex-direction:column}
+#fly-waffen{bottom:calc(28*var(--u) + 112*var(--u) + 30*var(--u))!important}
+.bagg{display:flex;flex-wrap:wrap;gap:calc(4*var(--u));justify-content:flex-end}
+.porw{isolation:isolate}
+/* R29c: Portraetring entfaellt (im Papiermassstab kleiner als der Kopf; nicht hochziehen) -> groesserer Ring im ChatGPT-Auftrag */
+.porw::before{content:none!important}
+
+/* R30: Jukebox-Licht hinter der Radioleiste: weicher Farbhof im Takt (Farbe und Staerke aus hudReakt: --puls-farbe, --puls-glow), keine Outline */
+.stat .pradio{isolation:isolate}
+.stat .pradio::before{content:"";position:absolute;inset:-18% -40%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,var(--puls-farbe,transparent),transparent);opacity:calc(var(--puls-glow,0)*.9);pointer-events:none}
+/* Wegpunkt-Karten: eigene Farbe je Art, alle 263x53 1:1 (Mitte gekürzt, nie gedehnt) */
+.zstack .zw{--ar:263/53!important;height:calc(53*var(--u))!important;width:calc(263*var(--u))!important;aspect-ratio:auto!important}
+.zstack .zw[data-band=blau]{--bi:url(teile3/wp_blau.webp)!important}.zstack .zw[data-band=gelb]{--bi:url(teile3/wp_gelb.webp)!important}.zstack .zw[data-band=rot]{--bi:url(teile3/wp_rot.webp)!important}.zstack .zw[data-band=gruen]{--bi:url(teile3/wp_gruen.webp)!important}.zstack .zw[data-band=koralle]{--bi:url(teile3/wp_koralle.webp)!important}
+
+/* Kompass-Minimap: rund 1:1 genau im Innenfeld des Kompass-Teils (Radius 80 von 270), ohne eigenen Ring, nichts über N/S/W/E */
+.komp .mini{width:59.3%!important;height:auto!important;aspect-ratio:1/1!important;top:50.2%!important;box-shadow:none!important}
+
+/* Punktzahl links im freien Papier, nicht über dem Fuji-Gipfel (Grundlinie bleibt) */
+.pfuji b{left:30%!important}
+
+/* q809 TUNE: Wegpunkt-Text mit Innenabstand nur in der Papierfläche (Papier innen x 43–232, y 6–43 von 263x53; Rand 8 seitlich, 4 oben/unten) */
+.zstack .zw b{left:52.3%!important;top:46%!important;font-size:calc(15*var(--u))!important;line-height:1!important;gap:calc(1*var(--u));max-width:calc(173*var(--u))}
+.zstack .zw b i{display:block;max-width:calc(173*var(--u));overflow:hidden;text-overflow:ellipsis}
+.zstack .zw b i+i{font-size:calc(13*var(--u))}
+/* q809 TUNE: Schließen = eigenständiges X aus dem Spiel-HUD (hudkit i_close), ohne Knopfplatte, innen in der Ecke, nichts über dem Rand */
+.slab .close{background:url(teile3/i_close.webp) center/contain no-repeat!important;width:calc(40*var(--u))!important;height:calc(40*var(--u))!important;top:calc(22*var(--u))!important;right:calc(22*var(--u))!important;border:0!important;border-radius:0!important;box-shadow:none!important;outline:0!important;filter:none!important;padding:0!important}
+.slab .close::before,.slab .close::after{display:none!important}
+/* b516 Lieferung (KFB Paperart 06 HUD, Bogen 21.11. 17_20_31): Fensterrahmen aus Ecken + gekachelten Kanten + Füllung, 1:1 im Papiermaßstab ps, nie gedehnt (repeat) */
+.slab{border-style:solid!important;border-width:calc(58*var(--u))!important;border-image:url(teile3/pa06_fenster.webp) 162 161 153 161 fill / calc(162*var(--ps)*var(--u)) calc(161*var(--ps)*var(--u)) calc(153*var(--ps)*var(--u)) calc(161*var(--ps)*var(--u)) repeat!important}
+</style>
+
+
+<div class="stage" id="st">
+<div class="game">
+<img class="bg" src="{{spiel}}" alt="">
+<div class="hud">
+
+<div class="topc"><div class="pfuji" id="fscore" title=""><img src="{{pap_fuji}}" alt=""><b>55</b></div><div class="pfluff ready"><img src="{{pap_fluff}}" alt=""><img class="fk" src="{{fl0}}" alt="" style="left:23.69%;top:51.02%;width:11.94%"><img class="fk" src="{{fl1}}" alt="" style="left:36.01%;top:51.02%;width:11.94%"><img class="fk" src="{{fl2}}" alt="" style="left:48.34%;top:51.02%;width:11.94%"><img class="fk" src="{{fl3}}" alt="" style="left:60.67%;top:51.02%;width:11.94%"><img class="fk" src="{{fl4}}" alt="" style="left:73.00%;top:51.02%;width:11.94%"><img class="fk" src="{{fl5}}" alt="" style="left:85.33%;top:51.02%;width:11.94%"><b style="left:23.69%;top:51.02%">12</b><b style="left:36.01%;top:51.02%">4</b><b style="left:48.34%;top:51.02%">27</b><b style="left:60.67%;top:51.02%">0</b><b style="left:73.00%;top:51.02%">9</b><b style="left:85.33%;top:51.02%">3</b><div class="wimpel"><img class="schnur" src="{{wim_schnur}}" alt=""><button class="flag f-skull" data-fly="slops" style="left:3.85%;top:14.63%;width:18.75%;height:85.37%;--i:0" aria-label="slops" data-fm="1"><i class="fsw" style="--fm:url({{wim_skull}})"></i><img src="{{wim_skull}}" alt=""></button><button class="flag f-star" data-go="truhe" style="left:23.80%;top:14.63%;width:18.51%;height:85.37%;--i:1" aria-label="beute" data-fm="1"><i class="fsw" style="--fm:url({{wim_star}})"></i><img src="{{wim_star}}" alt=""></button><button class="flag f-wrench" data-fly="werk" style="left:43.51%;top:14.63%;width:17.31%;height:85.37%;--i:2" aria-label="werk" data-fm="1"><i class="fsw" style="--fm:url({{wim_wrench}})"></i><img src="{{wim_wrench}}" alt=""></button><button class="flag f-flask" data-go="kayfab" style="left:62.02%;top:14.63%;width:17.55%;height:85.37%;--i:3" aria-label="craft" data-fm="1"><i class="fsw" style="--fm:url({{wim_flask}})"></i><img src="{{wim_flask}}" alt=""></button><button class="flag f-pin" data-fly="ziele" style="left:80.77%;top:14.63%;width:16.83%;height:85.37%;--i:4" aria-label="ziele" data-fm="1"><i class="fsw" style="--fm:url({{wim_pin}})"></i><img src="{{wim_pin}}" alt=""></button></div></div></div>
+
+
+
+<div class="tr"><div class="map komp" aria-label="Kompass"><img class="kimg" src="{{pap_kompass}}" alt=""><button class="rb gear kgear" aria-label="Settings" data-go="set"><i style="--m:url({{sky_settings}})"></i></button><div class="mini"><svg class="mapart" viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="mc"><circle cx="100" cy="100" r="100"/></clipPath>
+<filter id="mrough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs>
+<g clip-path="url(#mc)"><g class="spin">
+<rect x="-40" y="-40" width="280" height="280" fill="#e6b84a"/>
+<g filter="url(#mrough)" fill="none" stroke-linecap="round">
+<path d="M-30 150 C 30 120, 70 175, 120 140 S 200 120, 240 150" stroke="#8b5ea7" stroke-width="34"/>
+<path d="M-30 205 C 40 180, 90 215, 150 190 S 220 185, 240 200" stroke="#4f9d93" stroke-width="30"/>
+<path d="M-20 70 C 30 95, 60 40, 110 70 S 190 95, 230 60" stroke="#4f9d93" stroke-width="22"/>
+<path d="M-20 20 C 40 40, 90 0, 140 25 S 210 30, 240 10" stroke="#8b5ea7" stroke-width="26"/>
+<path d="M40 110 C 70 100, 95 120, 130 105" stroke="#d98a3a" stroke-width="12"/>
+</g>
+<path d="M100 104 C 100 85, 108 70, 112 52" fill="none" stroke="#fff6e4" stroke-width="4" stroke-dasharray="2 7" stroke-linecap="round"/>
+<g transform="translate(114 44)"><circle r="17" fill="#b8572f"/><circle r="17" fill="none" stroke="#7a3518" stroke-width="3"/><circle r="9" fill="#d9412e"/><path d="M-12 -4 a12 12 0 0 1 24 0" fill="none" stroke="#f0c98a" stroke-width="3"/></g>
+<circle cx="40" cy="160" r="7" fill="#fff6e4" opacity=".8"/><circle cx="168" cy="130" r="7" fill="#fff6e4" opacity=".8"/>
+</g></g></svg><img class="me" src="{{nadel_mitte}}" alt=""></div><div class="rim"><img class="wpa" src="{{pap_wp}}" alt=""></div>
+
+</div><div class="zstack"><button class="zw on" data-band="blau" data-art="ort" style="--rot:-.8deg;--dx:0"><b><i>Amphitheater</i><i>240 m</i></b></button><button class="zw" data-band="gelb" data-art="quest" style="--rot:1.1deg;--dx:6"><b><i>Lorekeeper</i><i>610 m</i></b></button><button class="zw" data-band="rot" data-art="markierung" style="--rot:-.4deg;--dx:-4"><b><i>Fold</i><i>1,2 km</i></b></button></div>
+</div>
+<div class="stat"><div class="pbar hp" style="--f:.76"><i class="hl base"></i><i class="hl hpc gruen"></i><i class="hl hpc gelb"></i><i class="hl leer2"></i></div><div class="pbar tp" data-zellen="7" style="--f:.43"><img src="{{pap_tempo}}" alt=""><img class="zl" data-i="0" src="{{tempo_leer0}}" alt=""><img class="zl" data-i="1" src="{{tempo_leer1}}" alt=""><img class="zl" data-i="2" src="{{tempo_leer2}}" alt=""><img class="zl" data-i="3" src="{{tempo_leer3}}" alt=""><img class="zl" data-i="4" src="{{tempo_leer4}}" alt=""><img class="zl" data-i="5" src="{{tempo_leer5}}" alt=""><img class="zl" data-i="6" src="{{tempo_leer6}}" alt=""></div><div class="pradio"><img src="{{pap_radiobar_v}}" alt=""><div class="rbtn"><button aria-label="Pause" class="r-pause"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1.6"/><rect x="14" y="4" width="5" height="16" rx="1.6"/></svg></button><button aria-label="Weiter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 5.6v12.8c0 .9 1 1.4 1.7.9l7-5.4c.6-.4.6-1.3 0-1.8l-7-5.4c-.7-.5-1.7 0-1.7.9z"/><path d="M13 5.6v12.8c0 .9 1 1.4 1.7.9l7-5.4c.6-.4.6-1.3 0-1.8l-7-5.4c-.7-.5-1.7 0-1.7.9z"/></svg></button><button aria-label="Playlist" data-fly="playlist"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.2" width="18" height="2.6" rx="1.3"/><rect x="3" y="10.7" width="18" height="2.6" rx="1.3"/><rect x="3" y="17.2" width="18" height="2.6" rx="1.3"/></svg></button><button aria-label="Ton" class="r-ton"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.2v5.6c0 .6.4 1 1 1h3.2l4.4 3.7c.6.5 1.4.1 1.4-.7V5.2c0-.8-.8-1.2-1.4-.7L7.2 8.2H4c-.6 0-1 .4-1 1z"/><path d="M16 8.5c1.1 1 1.7 2.2 1.7 3.5s-.6 2.5-1.7 3.5" fill="none" stroke-width="2.2" stroke-linecap="round"/><path d="M18.6 5.8c1.8 1.7 2.8 3.8 2.8 6.2s-1 4.5-2.8 6.2" fill="none" stroke-width="2.2" stroke-linecap="round"/></svg></button></div></div></div>
+
+<div class="bl2"><div class="almw stackA"><button class="aband" aria-label="Fractal Almanac"><img src="{{band_almanach}}" alt=""><b>42 Cards · 35 Decks</b></button><button class="acard" data-k="6" style="--i:2;--a:2.4deg"><img src="{{card}}" alt=""></button><button class="acard" data-k="0" style="--i:1;--a:-2.8deg"><img src="{{card_glossy}}" alt=""></button><button class="acard on" data-k="1" style="--i:0;--a:0deg"><img src="{{card_finished}}" alt=""></button></div><div class="porw cw"><div class="por"><img src="{{fb_kopf_h}}" alt=""></div><button class="chev up" data-go="garderobe" aria-label="Garderobe"><img src="{{chev2}}" alt=""></button></div></div>
+<div class="act">
+
+<div class="fistw"><button class="fist l" aria-label="Linke Faust"><img src="{{fist_t}}" alt=""></button><button class="chev up" data-fly="waffen" aria-label="Mehr"><img src="{{chev2}}" alt=""></button></div>
+<button class="fist r charge" aria-label="Rechte Faust, aufladen"><img class="base" src="{{fist_t}}" alt=""><img class="fill" src="{{fist_t}}" alt=""></button>
+</div>
+<div class="br2"><div class="objw"><button class="obj" data-fly="bag" aria-label="Rucksack"><img src="{{backpack_t}}" alt=""></button><button class="chev up" data-fly="bag" aria-label="Mehr"><img src="{{chev2}}" alt=""></button></div><div class="objw"><button class="obj" data-fly="reise" aria-label="Reisen"><img src="{{boot_t}}" alt=""></button><button class="chev up" data-fly="reise" aria-label="Mehr"><img src="{{chev2}}" alt=""></button></div></div>
+</div>
+</div>
+
+<div class="fly" id="fly-craft"><div class="rec"><span class="cost"><img src="{{fl2}}" alt=""><img src="{{fl2}}" alt=""><img src="{{fl2}}" alt=""></span><span class="arr"></span><img class="item" src="{{x_hero_grenade}}" alt=""></div><div class="rec"><span class="cost"><img src="{{fl4}}" alt=""><img src="{{fl4}}" alt=""><img src="{{fl0}}" alt=""><img src="{{fl0}}" alt=""></span><span class="arr"></span><img class="item" src="{{x_hero_bomb}}" alt=""></div><div class="rec"><span class="cost"><img src="{{fl5}}" alt=""><img src="{{fl5}}" alt=""><img src="{{fl1}}" alt=""></span><span class="arr"></span><img class="item" src="{{x_hero_blaster}}" alt=""></div></div>
+<div class="fly" id="fly-ziele"><button class="zi on"><img src="{{o1}}" alt=""></button><button class="zi"><img src="{{o2}}" alt=""></button><button class="zi"><img src="{{o3}}" alt=""></button></div>
+<div class="fly" id="fly-waffen"><button class="it on"><img src="{{fist}}" alt=""></button><button class="it"><img src="{{x_hero_blaster}}" alt=""></button><button class="it"><img src="{{x_sword}}" alt=""></button><button class="it"><img src="{{x_gatling}}" alt=""></button><button class="it"><img src="{{x_rocket_launcher}}" alt=""></button><button class="it"><img src="{{x_hero_grenade}}" alt=""></button></div>
+<div class="fly" id="fly-bag"><div class="bagg"><button class="it"><img src="{{x_hero_grenade}}" alt=""></button><button class="it"><img src="{{x_hero_bomb}}" alt=""></button><button class="it"><img src="{{x_sword}}" alt=""></button><button class="it"><img src="{{i_chest}}" alt=""></button><button class="it"><img src="{{card}}" alt=""></button><button class="it"><img src="{{fl2}}" alt=""></button><button class="it"></button><button class="it"></button></div></div>
+<div class="fly" id="fly-radio"><button class="it ic"><i style="--m:url({{sky_pause}})"></i></button><button class="it ic"><img src="{{i_next}}" alt=""></button><button class="it ic"><i style="--m:url({{sky_bars}})"></i></button><button class="it ic"><i style="--m:url({{sky_volume_full}})"></i></button></div>
+<div class="fly" id="fly-playlist"><button class="song on"><i class="eq"><b></b><b></b><b></b></i><span>Submarine Chase</span></button><button class="song"><i class="eq"><b></b><b></b><b></b></i><span>Underwater Heist</span></button><button class="song"><i class="eq"><b></b><b></b><b></b></i><span>Psychedelic Groove Gun</span></button><button class="song"><i class="eq"><b></b><b></b><b></b></i><span>Neptune's Rebellion</span></button><button class="song"><i class="eq"><b></b><b></b><b></b></i><span>Synth Blob Beat</span></button><button class="song"><i class="eq"><b></b><b></b><b></b></i><span>Reverberating Honkytonk</span></button><button class="song"><i class="eq"><b></b><b></b><b></b></i><span>Rubbish Groove</span></button></div><div class="fly" id="fly-slops"><button class="it lk"><img src="{{i_lock}}" alt=""></button><button class="it lk"><img src="{{i_lock}}" alt=""></button><button class="it lk"><img src="{{i_lock}}" alt=""></button><button class="it lk"><img src="{{i_lock}}" alt=""></button></div>
+<div class="fly" id="fly-beute"><button class="it"><img src="{{i_chest}}" alt=""></button><button class="it"><img src="{{x_hero_grenade}}" alt=""></button><button class="it"><img src="{{fl2}}" alt=""></button></div>
+<div class="fly" id="fly-werk"><button class="it"><img src="{{x_craft}}" alt=""></button><button class="it"><img src="{{x_sword}}" alt=""></button><button class="it"><img src="{{x_rust_runner}}" alt=""></button></div>
+<div class="fly" id="fly-reise"><button class="it on"><img src="{{boot_t}}" alt=""></button><button class="it"><img src="{{x_rust_runner}}" alt=""></button><button class="it"><img src="{{x_crimson_flame_dragster}}" alt=""></button><button class="it"><img src="{{x_jetpack}}" alt=""></button></div>
+<div class="touch" aria-hidden="true">
+<div class="joy"><div class="joyk"></div></div>
+<div class="tbtn tb-boost"><img src="{{g_boost}}" alt=""></div>
+<div class="tbtn tb-jump"><img src="{{g_jump}}" alt=""></div>
+</div>
+<div class="dreh"><div class="drehk"><i style="--m:url({{sky_arrows_expand}})"></i></div></div>
+<div class="veil"></div>
+
+<!-- PAUSE -->
+<div class="layer" id="v-pause">
+<div class="slab">
+<button class="close" data-go="spiel" aria-label="Weiter"><i class="ink" style="--m:url({{sky_close_x}})"></i></button>
+<div style="height:calc(44*var(--u))"></div>
+<button class="pill or focus" data-go="spiel" aria-label="Weiterspielen"><svg class="inks" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8c0 .9 1 1.5 1.8 1l11.4-7.4c.7-.5.7-1.5 0-2L8.8 3.6C8 3.1 7 3.7 7 4.6z"/></svg></button>
+<div class="grid2">
+<button class="pill" aria-label="Restart" data-act="neu"><svg class="inks" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a7.5 7.5 0 1 1-7.1 5.1" fill="none" stroke-width="2.8" stroke-linecap="round"/><path d="M3.2 4.2l1.3 6.3 6.2-1.6z"/></svg></button>
+<button class="pill" data-go="orte" aria-label="Orte"><i class="ink" style="--m:url({{sky_map_marker}})"></i></button>
+<button class="pill" aria-label="Almanac" data-go="almanach"><i class="ink" style="--m:url({{sky_book}})"></i></button>
+<button class="pill" data-go="set" aria-label="Einstellungen"><i class="ink" style="--m:url({{sky_settings}})"></i></button>
+</div>
+<div class="frage" hidden><b>Restart this run?</b><div class="fja"><button class="pill or" data-act="neu-ja" aria-label="Yes"><svg class="inks" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5 11-11" fill="none" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="pill" data-act="neu-nein" aria-label="No"><svg class="inks" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke-width="3.4" stroke-linecap="round"/></svg></button></div></div>
+<div class="rowr">
+<button class="disc" aria-label="Title screen" data-act="titel"><i class="ink" style="--m:url({{sky_home}})"></i></button>
+<button class="disc" aria-label="Controls" data-act="steuerung"><i class="ink" style="--m:url({{sky_info_question}})"></i></button>
+<button class="disc" aria-label="Fullscreen" data-act="vollbild"><i style="--m:url({{sky_arrows_expand}})"></i></button>
+</div>
+</div>
+</div>
+
+<!-- SETTINGS -->
+<!-- SETTINGS XXL -->
+<div class="layer" id="v-set">
+<div class="slab setxl">
+<button class="close" data-go="spiel" aria-label="Close"><i class="ink" style="--m:url({{sky_close_x}})"></i></button>
+<div class="stabs"><button class="stab on" data-tab="game" data-band="blau"><b>Game</b></button><button class="stab" data-tab="character" data-band="gelb"><b>Character</b></button><button class="stab" data-tab="world" data-band="gruen"><b>World</b></button><button class="stab" data-tab="audio" data-band="koralle"><b>Sound</b></button><button class="stab" data-tab="controls" data-band="rot"><b>Controls</b></button><button class="stab" data-tab="access" data-band="blau"><b>Accessibility</b></button></div>
+<div class="spanes"><div class="spane on" data-pane="game"><div class="srow"><span class="sl-l">Mode</span><div class="rad lang"><button class="on">WALK</button><button>DRIVE</button><button>FLY</button></div></div><div class="srow"><span class="sl-l">Game</span><div class="rad lang"><button class="on">GAME</button><button>GOD</button></div></div><div class="srow"><span class="sl-l">Speed lines</span><button class="tg on" aria-label="toggle"></button></div><div class="srow"><span class="sl-l">Travel speed</span><div class="sl" data-v=".4"><div class="tk"></div><div class="fl"></div><img class="kn" src="{{knob}}" alt=""></div></div><div class="srow"><span class="sl-l">HUD size</span><div class="sl" data-v=".67"><div class="tk"></div><div class="fl"></div><img class="kn" src="{{knob}}" alt=""></div></div><div class="srow"><span class="sl-l">Developer info</span><button class="tg" aria-label="toggle"></button></div></div><div class="spane" data-pane="character"><div class="srow"><span class="sl-l">Character</span><div class="rad lang"><button class="on">FRIZZLEBOB</button><button>BIG VEGAS</button><button>ORTIZ</button><button>MICHELLE</button></div></div><div class="srow"><span class="sl-l">Outfit</span><div class="rad lang"><button class="on">SHIRT</button><button>AGENT</button><button>SPY</button></div></div><div class="srow"><span class="sl-l">Outfit jetpack</span><div class="rad lang"><button class="on">STANDARD</button><button>MATCHING</button></div></div><div class="srow"><span class="sl-l">Game mode</span><div class="rad lang"><button>CHILL</button><button class="on">NORMAL</button><button>HARD</button></div></div><div class="srow"><span class="sl-l">KFB God Mode</span><button class="tg" aria-label="toggle"></button></div><div class="srow"><span class="sl-l">Cube monsters</span><button class="tg on" aria-label="toggle"></button></div></div><div class="spane" data-pane="world"><div class="srow"><span class="sl-l">Time of day</span><div class="sl" data-v=".5"><div class="tk"></div><div class="fl"></div><img class="kn" src="{{knob}}" alt=""></div></div><div class="srow"><span class="sl-l">Weather</span><div class="rad lang"><button class="on">CLEAR</button><button>CLOUDS</button><button>RAIN</button><button>FOG</button><button>WIND</button></div></div><div class="srow"><span class="sl-l">Colour flow</span><div class="sl" data-v=".35"><div class="tk"></div><div class="fl"></div><img class="kn" src="{{knob}}" alt=""></div></div><div class="srow"><span class="sl-l">Seed</span><div class="rad lang"><button>NEW SEED</button></div></div></div><div class="spane" data-pane="audio"><div class="srow"><span class="sl-l">Sound</span><button class="tg on" aria-label="toggle"></button></div><div class="srow"><span class="sl-l">Master</span><div class="sl" data-v=".9"><div class="tk"></div><div class="fl"></div><img class="kn" src="{{knob}}" alt=""></div></div><div class="srow"><span class="sl-l">Music</span><div class="sl" data-v=".55"><div class="tk"></div><div class="fl"></div><img class="kn" src="{{knob}}" alt=""></div></div><div class="srow"><span class="sl-l">Effects</span><div class="sl" data-v=".9"><div class="tk"></div><div class="fl"></div><img class="kn" src="{{knob}}" alt=""></div></div><div class="srow"><span class="sl-l">Ambience</span><div class="sl" data-v=".7"><div class="tk"></div><div class="fl"></div><img class="kn" src="{{knob}}" alt=""></div></div><div class="srow"><span class="sl-l">Radio skin</span><div class="rad lang"><button class="on">PAPER</button><button>REACTOR</button><button>SLIME</button><button>HAZARD</button></div></div></div><div class="spane" data-pane="controls"><div class="keys"><div class="key"><kbd>W A S D</kbd><span>Move</span></div><div class="key"><kbd>Space</kbd><span>Jump</span></div><div class="key"><kbd>Shift</kbd><span>Run</span></div><div class="key"><kbd>I</kbd><span>Interact</span></div><div class="key"><kbd>Mouse</kbd><span>Look</span></div><div class="key"><kbd>P</kbd><span>Settings</span></div><div class="key"><kbd>Esc</kbd><span>Pause</span></div></div></div><div class="spane" data-pane="access"><div class="srow"><span class="sl-l">Reduce motion</span><button class="tg" aria-label="toggle"></button></div><div class="srow"><span class="sl-l">Camera shake</span><button class="tg on" aria-label="toggle"></button></div><div class="srow"><span class="sl-l">Subtitles</span><button class="tg on" aria-label="toggle"></button></div></div></div>
+</div>
+</div>
+
+<div class="layer" id="v-garderobe">
+<div class="slab gard">
+<button class="close" data-go="spiel" aria-label="Zurück"><i class="ink" style="--m:url({{sky_close_x}})"></i></button>
+<div class="grow g1"><button class="gt on"><img src="{{fb_kopf_h}}" alt=""></button><button class="gt"><img src="{{g_fb_agent}}" alt=""></button><button class="gt"><img src="{{g_fb_mib}}" alt=""></button><button class="gt"><img src="{{g_fb_shirt}}" alt=""></button></div>
+<div class="grow"><button class="gt"><img src="{{g_big_vegas}}" alt=""></button><button class="gt"><img src="{{g_ortiz}}" alt=""></button><button class="gt"><img src="{{g_michelle}}" alt=""></button><button class="gt"><img src="{{g_the_boss}}" alt=""></button><button class="gt"><img src="{{g_hunky}}" alt=""></button><button class="gt"><img src="{{g_dory}}" alt=""></button><button class="gt lk"><img src="{{i_lock}}" alt=""></button><button class="gt lk"><img src="{{i_lock}}" alt=""></button></div>
+</div>
+</div>
+<div class="layer" id="v-truhe">
+<div class="slab truhe">
+<button class="close" data-go="spiel" aria-label="Später"><i class="ink" style="--m:url({{sky_close_x}})"></i></button>
+<div class="tchest"><img src="{{i_chest}}" alt=""></div>
+<div class="offers">
+<button class="offer" style="--k:0" data-ziel=".fistw" aria-label="1"><img class="bed" src="{{pap_feld}}" alt=""><img class="obj" src="{{x_hero_blaster}}" alt=""><span class="ot">Hero Blaster</span><span class="oc">Rapid purple bolts. Fits the fist slot.</span><span class="rar">★★</span><i class="ink dest" style="--m:url({{sky_sword}})"></i></button>
+<button class="offer" style="--k:1" data-ziel=".br2 .objw:last-child" aria-label="2"><img class="bed" src="{{pap_feld2}}" alt=""><img class="obj" src="{{x_jetpack}}" alt=""><span class="ot">Jetpack</span><span class="oc">Hover, boost and barrel rolls.</span><span class="rar">★★★</span><i class="ink dest" style="--m:url({{sky_rocket}})"></i></button>
+<button class="offer" style="--k:2" data-ziel=".stackA" aria-label="3"><img class="bed" src="{{pap_feld0}}" alt=""><img class="obj card" src="{{card_glossy}}" alt=""><span class="ot">The Glossy Horizon</span><span class="oc">New card for the almanac.</span><span class="rar">★</span><i class="ink dest" style="--m:url({{sky_book}})"></i></button>
+</div>
+</div>
+</div>
+<div class="layer" id="v-kayfab">
+<div class="slab truhe">
+<button class="close" data-go="spiel" aria-label="Later"><i class="ink" style="--m:url({{sky_close_x}})"></i></button>
+<div class="offers">
+<button class="offer" style="--k:0" data-ziel=".br2 .objw:first-child" aria-label="1"><img class="bed" src="{{pap_feld}}" alt=""><img class="obj" src="{{x_hero_grenade}}" alt=""><span class="cost"><img src="{{fl2}}" alt=""><img src="{{fl2}}" alt=""><img src="{{fl2}}" alt=""></span><i class="ink dest" style="--m:url({{sky_bolt}})"></i><span class="ot">Fluff Grenade</span><span class="oc">Three yellow fluff. Goes to the backpack.</span></button>
+<button class="offer" style="--k:1" data-ziel=".br2 .objw:first-child" aria-label="2"><img class="bed" src="{{pap_feld2}}" alt=""><img class="obj" src="{{x_hero_bomb}}" alt=""><span class="cost"><img src="{{fl4}}" alt=""><img src="{{fl4}}" alt=""><img src="{{fl0}}" alt=""><img src="{{fl0}}" alt=""></span><i class="ink dest" style="--m:url({{sky_bolt}})"></i><span class="ot">Clown Bomb</span><span class="oc">Big bang, confetti, wobbly slops.</span></button>
+<button class="offer" style="--k:2" data-ziel=".fistw" aria-label="3"><img class="bed" src="{{pap_feld0}}" alt=""><img class="obj" src="{{x_hero_blaster}}" alt=""><span class="cost"><img src="{{fl5}}" alt=""><img src="{{fl5}}" alt=""><img src="{{fl1}}" alt=""></span><i class="ink dest" style="--m:url({{sky_sword}})"></i><span class="ot">Blaster Upgrade</span><span class="oc">Faster bolts for the hero blaster.</span></button>
+</div>
+</div>
+</div>
+<div class="layer" id="v-almanach">
+<div class="slab alm-xl">
+<button class="close" data-go="spiel" aria-label="Zurück"><i class="ink" style="--m:url({{sky_close_x}})"></i></button>
+<div class="agrid"><button class="atile" data-k="0"><img src="{{card_glossy}}" alt=""></button><button class="atile" data-k="1"><img src="{{card_finished}}" alt=""></button><button class="atile" data-k="2"><img src="{{card_vanishing}}" alt=""></button><button class="atile" data-k="3"><img src="{{card_signature}}" alt=""></button><button class="atile" data-k="4"><img src="{{card_p3a}}" alt=""></button><button class="atile" data-k="5"><img src="{{card_p3b}}" alt=""></button><button class="atile" data-k="6"><img src="{{card}}" alt=""></button><button class="atile" data-k="7"><img src="{{card_p3d}}" alt=""></button></div>
+<div class="afokus"><button class="aback" aria-label="Zur Übersicht"></button><img class="abig" alt=""></div>
+</div>
+</div>
+<!-- PLACES -->
+<div class="layer" id="v-orte">
+<div class="slab wide">
+<button class="close" data-go="pause" aria-label="Zurück" style="top:calc(-20*var(--u));right:calc(-20*var(--u))"><i class="ink" style="--m:url({{sky_close_x}})"></i></button>
+<div class="place" style="--c:#d99a2b;--cl:#a8721c;--img:url({{o1}})"><div class="art"></div><div class="med"><img src="{{fl2}}" alt=""><b>01</b></div><div class="nm">Amphitheater</div><div class="st"><span class="disc"><svg class="inks" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8c0 .9 1 1.5 1.8 1l11.4-7.4c.7-.5.7-1.5 0-2L8.8 3.6C8 3.1 7 3.7 7 4.6z"/></svg></span></div></div>
+<div class="place" style="--c:#7b55b8;--cl:#5a3c8c;--img:url({{o2}})"><div class="art"></div><div class="med"><img src="{{fl4}}" alt=""><b>02</b></div><div class="nm">Theater</div><div class="st"><span class="disc"><svg class="inks" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.6v14.8c0 .9 1 1.5 1.8 1l11.4-7.4c.7-.5.7-1.5 0-2L8.8 3.6C8 3.1 7 3.7 7 4.6z"/></svg></span></div></div>
+<div class="place lock" style="--c:#4f8a3a;--cl:#386428;--img:url({{o3}})"><div class="art"></div><div class="med"><img src="{{fl1}}" alt=""><b>03</b></div><div class="nm">Fold</div><div class="st"><span class="disc"><img src="{{i_lock}}" alt=""></span></div></div>
+<div class="place lock" style="--c:#2f6cb8;--cl:#214e88;--img:url({{o4}})"><div class="art"></div><div class="med"><img src="{{fl0}}" alt=""><b>04</b></div><div class="nm">Unterwasser</div><div class="st"><span class="disc"><img src="{{i_lock}}" alt=""></span></div></div>
+<div class="place lock" style="--c:#a2573a;--cl:#7a3f28;--img:url({{o5}})"><div class="art"></div><div class="med"><img src="{{fl3}}" alt=""><b>05</b></div><div class="nm">Aquarium</div><div class="st"><span class="disc"><img src="{{i_lock}}" alt=""></span></div></div>
+</div>
+</div>
+</div>
+
+<script>
+const st=document.getElementById('st');
+function go(v){
+  st.classList.toggle('menu',v!=='spiel');
+  document.querySelectorAll('.layer').forEach(l=>l.classList.toggle('on',l.id==='v-'+v));
+  }
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();go(b.dataset.go)}));
+document.querySelectorAll('.sl').forEach(s=>{
+  const fl=s.querySelector('.fl'),kn=s.querySelector('.kn');
+  const set=v=>{v=Math.max(0,Math.min(1,v));s.dataset.v=v;const p=`calc(25*var(--u) + (100% - 50*var(--u))*${v})`;kn.style.left=p;fl.style.width=p};
+  set(+s.dataset.v);
+  const mv=e=>{const r=s.getBoundingClientRect();const k=r.height*0.54;set((e.clientX-r.left-k)/(r.width-2*k))};
+  s.addEventListener('pointerdown',e=>{s.setPointerCapture(e.pointerId);mv(e);s.onpointermove=mv});
+  s.addEventListener('pointerup',()=>{s.onpointermove=null});
+});
+document.querySelectorAll('.tg').forEach(t=>t.addEventListener('click',()=>t.classList.toggle('on')));
+document.querySelectorAll('.rad').forEach(r=>r.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{r.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b))})));
+
+document.querySelectorAll('[data-fly]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();const id='fly-'+b.dataset.fly,f=document.getElementById(id),open=!f.classList.contains('on');
+  document.querySelectorAll('.fly').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.chev').forEach(c=>c.classList.remove('open'));
+  if(open){f.classList.add('on');document.querySelectorAll('.chev[data-fly="'+b.dataset.fly+'"]').forEach(c=>c.classList.add('open'))}}));
+document.addEventListener('click',e=>{if(!e.target.closest('.fly')){document.querySelectorAll('.fly').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.chev').forEach(c=>c.classList.remove('open'))}});
+document.querySelectorAll('.fly .it,.fly .zi').forEach(b=>b.addEventListener('click',()=>{b.parentNode.querySelectorAll('.it,.zi').forEach(x=>x.classList.toggle('on',x===b))}));
+document.querySelectorAll('.gt').forEach(b=>b.addEventListener('click',()=>{b.parentNode.querySelectorAll('.gt').forEach(x=>x.classList.toggle('on',x===b))}));
+
+function geraet(){const touch=matchMedia('(pointer:coarse)').matches||/mobil/.test(location.search+location.hash);const quer=innerWidth>=innerHeight;st.classList.toggle('mobil',touch&&quer);st.classList.toggle('hoch',touch&&!quer)}
+geraet();addEventListener('resize',geraet);
+
+function fluffKurz(n){const f=(v,e)=>{const x=v/e;const s=x>=100?Math.round(x):x>=10?Math.round(x*10)/10:Math.round(x*100)/100;return String(s).replace('.',',')};return n<1e4?String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'\u202f'):n<1e6?f(n,1e3)+'\u202fK':n<1e9?f(n,1e6)+'\u202fM':f(n,1e9)+'\u202fB'}
+(()=>{const el=document.querySelector('#fscore b'),demo=[55,4200,420000,1234567,987654321,42000000000];let i=0;el.textContent=fluffKurz(demo[0]);document.getElementById('fscore').addEventListener('click',e=>{e.stopPropagation();i=(i+1)%demo.length;el.textContent=fluffKurz(demo[i])})})();
+
+document.querySelectorAll('.pbar[data-zellen]').forEach(p=>{const n=+p.dataset.zellen,f=parseFloat(getComputedStyle(p).getPropertyValue('--f'))||0,k=Math.round(f*n);p.querySelectorAll('.zl').forEach(z=>z.classList.toggle('voll',+z.dataset.i<k))});
+
+(()=>{const hp=document.querySelector('.pbar.hp');const f=parseFloat(getComputedStyle(hp).getPropertyValue('--f'))||0;hp.classList.toggle('c-gruen',f>=.75);hp.classList.toggle('c-gelb',f>=.25&&f<.75)})();
+document.querySelectorAll('.acard').forEach(c=>c.addEventListener('click',()=>document.querySelectorAll('.acard').forEach(x=>x.classList.toggle('on',x===c))));
+
+['truhe','kayfab'].forEach(ID=>{const L=document.getElementById('v-'+ID);if(!L)return;let busy=false;
+ const open0=window.go;window.go=function(v){open0(v);if(v===ID){busy=false;L.classList.remove('reveal');L.querySelectorAll('.offer').forEach(o=>o.classList.remove('chosen','weg','fokus'));void L.offsetWidth;L.classList.add('reveal')}};
+ function waehle(o){if(busy)return;busy=true;const img=o.querySelector('.obj'),r=img.getBoundingClientRect();
+  L.querySelectorAll('.offer').forEach(x=>{if(x!==o)x.classList.add('weg')});o.classList.add('chosen');
+  const c=img.cloneNode();c.className='flieg';Object.assign(c.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});document.body.append(c);
+  setTimeout(()=>{window.go('spiel');const tg=document.querySelector(o.dataset.ziel);const t=tg.getBoundingClientRect();const dx=t.left+t.width/2-(r.left+r.width/2),dy=t.top+t.height/2-(r.top+r.height/2),s=Math.max(.2,Math.min(t.width/r.width,t.height/r.height));
+   const a=c.animate([{transform:'translate(0,0) scale(1.12,.9)'},{transform:`translate(${dx*.45}px,${dy*.45-160}px) scale(${(1+s)/2}) rotate(-12deg)`,offset:.5},{transform:`translate(${dx}px,${dy}px) scale(${s}) rotate(0deg)`}],{duration:650,easing:'cubic-bezier(.45,0,.3,1)',fill:'forwards'});
+   a.onfinish=()=>{c.remove();tg.classList.remove('angekommen');void tg.offsetWidth;tg.classList.add('angekommen');setTimeout(()=>tg.classList.remove('angekommen'),900)}},380)}
+ L.querySelectorAll('.offer').forEach(o=>o.addEventListener('click',e=>{e.stopPropagation();waehle(o)}));
+ addEventListener('keydown',e=>{if(!L.classList.contains('on'))return;const i=['1','2','3'].indexOf(e.key);const os=[...L.querySelectorAll('.offer')];if(i>=0){waehle(os[i])}else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){let f=os.findIndex(o=>o.classList.contains('fokus'));f=(f+(e.key==='ArrowRight'?1:os.length-1))%os.length;os.forEach((o,j)=>o.classList.toggle('fokus',j===f))}else if(e.key==='Enter'){const f=os.find(o=>o.classList.contains('fokus'));if(f)waehle(f)}});
+});
+
+/* Cartoon-Deformer = src/hud/hudMotion.js + src/data/hud/hud-motion.r1.json (N-190/N-196.2), 1:1; als translate/scale/rotate, damit Lage-Transforms bleiben */
+(()=>{const P={lift:{rest:[0,0,1,0],hover:[0,-3,1.08,0],press:[0,2,.9,0]},icon:{rest:[0,0,1,0],hover:[0,-4,1.12,0],press:[0,3,.88,0]},spin:{rest:[0,0,1,0],hover:[0,0,1.14,90],press:[0,0,.86,90]}};
+ const T={hover:'.34s cubic-bezier(.34,1.7,.6,1)',press:'.08s cubic-bezier(.3,0,.6,1)',release:'.42s cubic-bezier(.3,2.1,.55,1)',out:'.26s cubic-bezier(.4,0,.3,1)'};
+ const SEL='.hud button,.fly button,.slab button,.flag,.gt,.place,.rbtn button,.acard,.prad,.offer,.wz';
+ const pose=e=>e.dataset.pose||(e.matches('.gear,.rb.gear')?'spin':e.matches('.fist,.obj,.rbtn button,.chev,.close,.disc,.it,.zi,.flag,.prad,.rb')?'icon':'lift');
+ const U=()=>{const r=st.getBoundingClientRect();return Math.min(r.width/1600,r.height/900)};
+ const set=(e,wie,tr)=>{if(e.classList.contains('off')&&wie!=='rest')return;const [x,y,s,r]=P[pose(e)][wie],u=U();const d=T[tr];e.style.transition=`translate ${d},scale ${d},rotate ${d}`;e.style.translate=`${x*u}px ${y*u}px`;e.style.scale=String(s);e.style.rotate=r+'deg'};
+ const ziel=ev=>ev.target?.closest?.(SEL);
+ st.addEventListener('pointerover',ev=>{const e=ziel(ev);if(e&&!e.contains(ev.relatedTarget))set(e,'hover','hover')},true);
+ st.addEventListener('pointerout',ev=>{const e=ziel(ev);if(e&&!e.contains(ev.relatedTarget))set(e,'rest','out')},true);
+ st.addEventListener('pointerdown',ev=>{const e=ziel(ev);if(!e)return;if(e.classList.contains('off')||e.classList.contains('lk')){e.animate([{translate:'0 0'},{translate:'-4px 0',rotate:'-3deg'},{translate:'4px 0',rotate:'3deg'},{translate:'-2px 0'},{translate:'0 0'}],{duration:260,easing:'ease-out'});return}set(e,'press','press')},true);
+ st.addEventListener('pointerup',ev=>{const e=ziel(ev);if(e)set(e,e.matches(':hover')?'hover':'rest','release')},true);
+ document.querySelectorAll(SEL).forEach(e=>e.classList.add('ix'));
+})();
+
+(()=>{const p=document.querySelector('.r-pause'),v=document.querySelector('.r-ton');const PAUSE=p.innerHTML,PLAY='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.6v14.8c0 .9 1 1.5 1.8 1l11.4-7.4c.7-.5.7-1.5 0-2L7.8 3.6C7 3.1 6 3.7 6 4.6z"/></svg>';const LAUT=v.innerHTML,STUMM='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.2v5.6c0 .6.4 1 1 1h3.2l4.4 3.7c.6.5 1.4.1 1.4-.7V5.2c0-.8-.8-1.2-1.4-.7L7.2 8.2H4c-.6 0-1 .4-1 1z"/><path d="M16 9l5 6M21 9l-5 6" fill="none" stroke-width="2.4" stroke-linecap="round"/></svg>';
+ p.addEventListener('click',()=>{p.classList.toggle('aus');p.innerHTML=p.classList.contains('aus')?PLAY:PAUSE});
+ v.addEventListener('click',()=>{v.classList.toggle('aus');v.innerHTML=v.classList.contains('aus')?STUMM:LAUT});})();
+
+(()=>{const L=document.querySelector('#v-almanach .alm-xl'),big=L.querySelector('.abig'),tiles=[...L.querySelectorAll('.atile')];
+ const fokus=k=>{if(k==null){L.classList.remove('fokus');return}big.src=tiles[k].querySelector('img').src;L.classList.remove('fokus');void L.offsetWidth;L.classList.add('fokus')};
+ document.querySelector('.aband').addEventListener('click',e=>{e.stopPropagation();fokus(null);go('almanach')});
+ document.querySelectorAll('.acard').forEach(c=>c.addEventListener('click',e=>{e.stopPropagation();go('almanach');fokus(+c.dataset.k)}));
+ tiles.forEach(t=>t.addEventListener('click',()=>fokus(+t.dataset.k)));
+ L.querySelector('.aback').addEventListener('click',()=>fokus(null));})();
+
+(()=>{const st=document.querySelector('.zstack');if(!st)return;
+ st.addEventListener('click',e=>{const b=e.target.closest('.zw');if(!b)return;e.stopPropagation();
+  if(b.classList.contains('on')){const f=document.getElementById('fly-ziele');f&&f.classList.toggle('on');return}
+  const first=[...st.children].map(x=>[x,x.getBoundingClientRect().top]);
+  st.querySelector('.zw.on')?.classList.remove('on');b.classList.add('on');st.prepend(b);
+  first.forEach(([x,y0])=>{const dy=y0-x.getBoundingClientRect().top;x.animate([{transform:`translateY(${dy}px)`},{transform:'none'}],{duration:320,easing:'cubic-bezier(.3,1.3,.5,1)'})})});})();
+document.querySelectorAll('.stab').forEach(b=>b.addEventListener('click',()=>{const L=b.closest('.slab');L.querySelectorAll('.stab').forEach(x=>x.classList.toggle('on',x===b));L.querySelectorAll('.spane').forEach(p=>p.classList.toggle('on',p.dataset.pane===b.dataset.tab))}));
+document.querySelectorAll('#fly-playlist .song').forEach(s=>s.addEventListener('click',e=>{e.stopPropagation();s.parentNode.querySelectorAll('.song').forEach(x=>x.classList.toggle('on',x===s))}));
+addEventListener('keydown',e=>{if(e.key==='Escape')go(st.classList.contains('menu')?'spiel':'pause')});
+/* R27: nie zwei Fenster/Paletten zugleich */
+(()=>{const g0=window.go;window.go=function(v){document.querySelectorAll('.fly.on').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.chev.open').forEach(c=>c.classList.remove('open'));g0(v)};
+ document.querySelectorAll('[data-fly]').forEach(b=>b.addEventListener('click',()=>{if(document.querySelector('.layer.on'))window.go('spiel')},true));})();
+
+/* R28: Pause-Aktionen */
+document.querySelectorAll('[data-act]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();const a=b.dataset.act,P=document.getElementById('v-pause'),F=P.querySelector('.frage');
+ if(a==='neu'){F.hidden=false;P.querySelectorAll('.grid2,.rowr,.pill.focus').forEach(x=>x.hidden=true)}
+ if(a==='neu-nein'){F.hidden=true;P.querySelectorAll('.grid2,.rowr,.pill.focus').forEach(x=>x.hidden=false)}
+ if(a==='neu-ja'||a==='titel'){location.reload()}
+ if(a==='steuerung'){go('set');const s=document.querySelector('.stab[data-tab=controls]');s&&s.click()}
+ if(a==='vollbild'){const d=document.documentElement;(document.fullscreenElement?document.exitFullscreen():d.requestFullscreen?.())?.catch?.(()=>{})}}));
+
+/* R30 (Georg 21.11.): lebendes HUD = hudReakt aus dem Stamm (src/hud/hudReakt.js @12e09fcd, unveraendert eingebettet) mit Skin dc-radio.r1 (puls, traege).
+   Im Prototyp gibt es weder Musik noch Spielfigur: Takt-Probe 100 bpm, solange das Radio spielt und Ton an ist; Bewegung mit W A S D (Gas, Bremse, Kurve) als Ersatz
+   fuer motionSignal() des Spiels. Radio = Jukebox, uebrige Gruppen = leicht und traege (Masse je Gruppe). Teile mit eigenem CSS-Transform bleiben aussen vor. */
+(()=>{
+const hex = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255] }
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v))
+
+function createHudReakt({ skin } = {}) {
+  const P = skin.puls, TR = skin.traege, PAL = P.palette.map(hex)
+  const rm = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false }
+  const teile = []
+  const S = { t: 0, drama: 0, k: 0, drehung: 0, lastBeat: 0, signale: null }
+
+  function farbe(pos) {
+    const n = PAL.length, i = Math.floor(pos) % n, f = pos - Math.floor(pos), a = PAL[(i + n) % n], b = PAL[(i + 1) % n]
+    const c = a.map((v, j) => Math.round(v + (b[j] - v) * f)); return `rgb(${c[0]},${c[1]},${c[2]})`
+  }
+
+  function add(el, { art = 'leicht', masse = 1, traege = true, ursprung = '50% 50%' } = {}) {
+    const t = { el, art, masse, traege, s: 0, sv: 0, kipp: 0, kv: 0, ox: 0, oy: 0, vx: 0, vy: 0, rot: 0, rv: 0 }
+    el.style.transformOrigin = ursprung; teile.push(t); return () => { const i = teile.indexOf(t); if (i >= 0) teile.splice(i, 1); el.style.transform = '' }
+  }
+
+  function update(dt, { pulse = null, motion = null } = {}) {
+    dt = clamp(dt, 0, 0.05); S.t += dt
+    const p = pulse || { audible01: 0, kick: false, bass: 0, mid: 0, high: 0, transport: {}, energy: {} }, tr = p.transport || {}, en = p.energy || {}
+    const au = p.audible01 || 0, bass = p.bass || 0, mid = p.mid || 0, high = p.high || 0, schlag = (tr.beatPulse01 || 0) * au, bpm = tr.bpm || 0
+    // Farbe: mit erkanntem Takt über die Phrase (16 Schläge), sonst langsam nach Zeit
+    const pos = bpm && (tr.confidence01 || 0) > 0.2 ? (tr.phrasePhase01 || 0) * PAL.length : S.t * 0.08
+    const glow = rm.matches ? au * 0.3 : au * (P.glow.grund + P.glow.bass * bass + P.glow.schlag * schlag)
+    // Drama: lauter, schneller, rhythmischer Titel über ein paar Sekunden gemittelt
+    const roh = au * (0.45 * bass + 0.25 * high + 0.3 * (en.rhythm01 || 0)) * (bpm >= P.drama.bpm_ab ? 1.25 : 0.85)
+    S.drama += (roh - S.drama) * clamp(dt / P.drama.fenster_s)
+    S.k = clamp((S.drama - P.drama.schwelle * 0.5) / (P.drama.schwelle * 0.9))
+    if (p.kick) S.drehung += P.rand.drehung_je_schlag * 360
+    S.drehung += dt * (20 + 90 * au)
+    const down = (tr.downbeatPulse01 || 0) > 0.9 && S.t - S.lastBeat > 0.3; if (down) S.lastBeat = S.t
+    const m = motion || { ax: 0, ay: 0, bank: 0, speed: 0 }
+    S.signale = { farbe: farbe(pos), glow, schlag, drama: S.k, bpm }
+
+    const vars = {
+      '--puls-farbe': S.signale.farbe, '--puls-farbe2': farbe(pos + 2), '--puls-farbe3': farbe(pos + 4),
+      '--puls-glow': glow.toFixed(3), '--puls-schlag': schlag.toFixed(3), '--puls-bass': (bass * au).toFixed(3), '--puls-mid': (mid * au).toFixed(3),
+      '--puls-hoch': (high * au).toFixed(3), '--puls-pegel': (au * (0.5 * bass + 0.3 * mid + 0.2 * high)).toFixed(3), '--puls-drehung': (S.drehung % 360).toFixed(1) + 'deg',
+      '--puls-drama': S.k.toFixed(3),
+    }
+    for (const t of teile) {
+      const st = t.el.style
+      if (t.art === 'jukebox') for (const k in vars) st.setProperty(k, vars[k])
+      else { st.setProperty('--puls-farbe', vars['--puls-farbe']); st.setProperty('--puls-glow', (glow * P.leicht.glow).toFixed(3)); st.setProperty('--puls-schlag', vars['--puls-schlag']) }
+      if (rm.matches) { st.transform = ''; continue }
+      // Knete: Kick stößt die Feder an (nur Jukebox und nur bei Drama), Takt-Eins kippt kurz
+      const K = P.knete
+      if (t.art === 'jukebox') {
+        if (p.kick) t.sv += (8 + 10 * bass) * S.k   // Spitze ≈ knete.max bei vollem Bass
+        if (down) t.kv += (t.kipp > 0 ? -1 : 1) * 6 * S.k
+        t.sv += (-K.feder * t.s - K.daempfung * t.sv) * dt; t.s += t.sv * dt
+        t.kv += (-K.feder * 0.6 * t.kipp - K.daempfung * 0.8 * t.kv) * dt; t.kipp += t.kv * dt
+      }
+      // Träge: Ziel-Versatz gegen die Beschleunigung, Kippen mit der Schräglage; schwerere Teile hängen länger nach
+      if (t.traege) {
+        const zx = clamp(-m.ax * TR.schub_px * t.masse, -TR.max_px, TR.max_px), zy = clamp(-m.ay * TR.schub_px * t.masse, -TR.max_px, TR.max_px), zr = (m.bank || 0) * TR.kipp_grad * t.masse
+        const f = TR.feder / t.masse, d = TR.daempfung / Math.sqrt(t.masse)
+        t.vx += (f * (zx - t.ox) - d * t.vx) * dt; t.ox += t.vx * dt
+        t.vy += (f * (zy - t.oy) - d * t.vy) * dt; t.oy += t.vy * dt
+        t.rv += (f * (zr - t.rot) - d * t.rv) * dt; t.rot += t.rv * dt
+      }
+      const lei = t.art === 'leicht' ? 1 + P.leicht.skala * schlag : 1
+      const a = t.art === 'jukebox' ? clamp(t.s * K.max, -K.max * 1.6, K.max * 1.6) : 0, tempo = 1 + TR.tempo_stauch * (m.speed || 0) * (t.traege ? 1 : 0)
+      const sx = lei * (1 + a * 0.85) * tempo, sy = lei * (1 - a) / tempo, rot = t.rot + t.kipp * K.kippen_grad / 6
+      st.transform = `translate3d(${t.ox.toFixed(2)}px,${t.oy.toFixed(2)}px,0) rotate(${rot.toFixed(2)}deg) scale(${sx.toFixed(4)},${sy.toFixed(4)})`
+    }
+    return S.signale
+  }
+
+  return { add, update, signale: () => S.signale }
+}
+
+const SKIN={"puls": {"_doc": "Jukebox: Farben laufen über 16 Schläge durch die Palette und springen auf der Takt-Eins weiter; Leuchten nach Bass und Schlag; Knete-Stauchung nur bei schnellen, lauten, dramatischen Titeln.", "palette": ["#3ff0ff", "#ff4fd8", "#ffc93c", "#7dff6a", "#9b6bff", "#ff7a3c"], "glow": {"grund": 0.25, "bass": 0.55, "schlag": 0.45, "unschaerfe_px": 12}, "rand": {"breite_px": 5, "drehung_je_schlag": 0.25}, "drama": {"fenster_s": 4, "schwelle": 0.42, "bpm_ab": 112}, "knete": {"max": 0.07, "feder": 220, "daempfung": 13, "kippen_grad": 2.2}, "leicht": {"skala": 0.022, "glow": 0.35}}, "traege": {"_doc": "HUD-Teile hängen träge nach: Feder mit Masse je Teil. Beschleunigung schiebt gegen die Richtung, Schräglage kippt mit.", "feder": 38, "daempfung": 7.5, "schub_px": 22, "kipp_grad": 6, "tempo_stauch": 0.04, "max_px": 26}};
+const hud=createHudReakt({skin:SKIN});
+const ziel=[['.stat .pradio','jukebox',1.0],['.pbar.hp','leicht',0.8],['.pbar.tp','leicht',0.8],['.pfuji','leicht',1.0],['.pfluff','leicht',1.1],['.map.komp','leicht',1.4],['.zstack','leicht',1.2],['.bl2','leicht',1.2],['.br2','leicht',1.0]];
+for(const [s,art,masse] of ziel){const e=document.querySelector(s);if(e&&getComputedStyle(e).transform==='none')hud.add(e,{art,masse})}
+const P=document.querySelector('.r-pause'),V=document.querySelector('.r-ton'),keys={};
+addEventListener('keydown',e=>{keys[e.key.toLowerCase()]=1});addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=0});
+const M={v:0,yaw:0,pv:0,pyaw:0},bpm=100;let t=0,last=performance.now(),prevBeat=0;
+function puls(spielt){const b=t*bpm/60,ph=b-Math.floor(b),beat=Math.floor(b),kick=spielt&&beat!==prevBeat;prevBeat=beat;const env=Math.exp(-ph*5);
+ return {audible01:spielt?1:0,kick,bass:spielt?.35+.55*env:0,mid:spielt?.4:0,high:spielt?.3+.2*env:0,transport:{bpm,confidence01:spielt?.9:0,beatPhase01:ph,beatPulse01:env,downbeatPulse01:beat%4===0?env:0,barPhase01:((beat%4)+ph)/4,phrasePhase01:((beat%16)+ph)/16},energy:{rhythm01:spielt?.6:0}}}
+function bewegung(dt){const gas=(keys.w?1:0)-(keys.s?1:0),dreh=(keys.a?1:0)-(keys.d?1:0);M.v=Math.max(0,Math.min(28,M.v+gas*18*dt-(gas?0:6*dt)));M.yaw+=dreh*1.6*dt*Math.min(1,M.v/6);
+ const ax=Math.max(-1,Math.min(1,(M.v-M.pv)/Math.max(dt,1e-3)/22)),ay=Math.max(-1,Math.min(1,-M.v*(M.yaw-M.pyaw)/Math.max(dt,1e-3)/16));M.pv=M.v;M.pyaw=M.yaw;return {ax,ay,bank:ay,speed:M.v/28}}
+function tick(now){const dt=Math.min(.05,(now-last)/1000);last=now;t+=dt;const spielt=!P.classList.contains('aus')&&!V.classList.contains('aus');hud.update(dt,{pulse:puls(spielt),motion:bewegung(dt)});requestAnimationFrame(tick)}
+requestAnimationFrame(tick);window.__hudReakt=hud})();
+</script>
