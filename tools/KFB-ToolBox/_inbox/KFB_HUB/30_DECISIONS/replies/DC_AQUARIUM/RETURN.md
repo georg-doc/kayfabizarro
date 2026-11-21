@@ -1,5 +1,16 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-013 · 21.11.2026 · B1 Angelhaken, B2 Minen/Kugelfische, B6 Gefahren-Takt gebaut (Georg: „Du, hier“)
+
+- Georg hat im Chat entschieden, dass der Feinschliff-Chat B1/B2/B6 baut (statt Aqua-Chat). Gepusht auf `dc/aquarium-standalone` @e917c14 (kein paralleler Stand auf dem Zweig).
+- **B1** `sea-escape/core/fishingHook.js`: Schnur mit Durchhang, Köder Wurm/Blinker, Sog im Radius, Biss-Uhr ganz nah (Normal 1,4 s / Chill 2,5 s / Hard 0,9 s), Losreißen mit Boost/Kick/Gegenlenken, Biss = Ruck nach oben + Zeitlupe (Host) + `caughtPenalty()`, Chill = Fangen und Freilassen. `MODES[m].hook`, Level `hooks: [...]` mit Prüfung.
+- **B2** `sea-escape/core/seaHazards.js`: Ketten-Minen in der Strömung, Kugelfisch (cartoonFish 'puffer' mit KFB-Augen) bläht sich auf (Stacheln, Zittern) und platzt; Druckwelle schiebt Spieler, `kelp-fish.scare` für Schwärme, `knock` für Voxel-Teile; Normal/Hard ein Leben, Chill nur Rückstoß. Gemeinsame Schnittstelle `hazard.nah` mit B1. Rauch: `WATER_INK` über Stamm `src/modules/dustTrail.js` (`createWaterTrail`/`spray`, Kopie @baaa1b4 unverändert in `kfb-stamm-kopie/`).
+- **B6** Level 1–3 mit Gefahren getaktet (L1 lehrt, L2 Minen-Tor vor dem Tunnel, L3 alles vor dem Hai, Blutbahn ohne; Hard je ein Köder mehr).
+- **Tests:** `sea-escape/test/gefahren.test.mjs` 10/10 grün (Level-Daten + Prüfung, Takt, Modus-Werte, Biss-Fenster, Losreißen < 1,4 s, Mine Normal/Chill, Kugelfisch). Seite im unsichtbaren Chrome: Konsole sauber (nur bekannte GLTF-Warnung des Hais), Belege `gefahr_r10_haken/mine/kugelfisch/explosion/biss.png`.
+- **So sieht man es:** Zahnrad → God-Modus → Sprung „Riff“ (Level 2): Köder vor dem Tunnel, Minen-Tor, Kugelfisch; „Schlucht“ (Level 3) alles zusammen.
+- **Nicht gemacht / offen:** Schwärme über `src/look/skyFlock.js` – das Modul kennt nur Himmels-Silhouetten (Möwen-Geometrie, Anker um die Kamera), keine Fische; braucht eine Fisch-Art im Modul. Voxel über `glyphVolume.mjs` = Umzug von voxelGlyphs (T3), noch nicht. `bildUebergang.js` nicht umgestellt. Eigene Klänge (Rolle, Schnurriss, Detonation) fehlen. Muschel-Linien und Ringe unverändert. AQUA_R1-Modelle nicht eingebaut.
+- Kleiner Fix nebenbei: Paletten-Warnung beim Laden (God-Panel vor seiner Anlage aufgerufen) abgefangen.
+
 ## R-012 · 21.11.2026 · Rollen geklärt (WS0 zu R-011)
 
 - B1/B2 baut der Aquarium-Chat (A-239 F2); ich baue nichts an seaGame, seaLevels und der Spiel-Logik in index.html. Meine Rolle: Seite (Radio, hudReakt, suchLicht, Musik-Skript), neue Stände des Aquarium-Chats auf dem Zweig einpflegen und lauffähig halten, Veröffentlichung vorbereiten (erst nach Georgs Ja).
