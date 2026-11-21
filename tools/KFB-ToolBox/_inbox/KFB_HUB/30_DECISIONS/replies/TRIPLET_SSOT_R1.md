@@ -9,6 +9,7 @@
 | Opener | Pool V-218, Bogen statt Verteilregel V-325, `replies/OPENER_ARC_R2/`, `OPENER_RESEARCH_INVENTORY_R1.md` | in triplet_set_check bzw. song_gate |
 | Deck-Songs | `replies/SONG_SPEC_R3.md` (R3.3), Gewichtung V-410, Suno-Format V-277, Writer's Room V-374/V-376 | `replies/song_gate.py` |
 | Suno (Style, Lyrics, Stems, Ernte) | `replies/SUNO_SSOT_R1.md` (V-689) | – |
+| Meta-Texte (Echo-Tafeln, Ansagen, Untertitel) | Goldstandard: die satirischen Untertitel und Sprüche des Aqua-/GTA-Startbildschirms (Georg 21.11., V-2035), gesammelt in `replies/META_TEXTE/GOLDEN_SAMPLES_AQUA_R1.md` (Polish-Chat) | Vergleich mit den Beispielen |
 | Stimmen für Dialog-Triplets | V-285, V-308: vorab erzeugte Einzeldateien je Figur (Kokoro lokal; FrizzleBob am_michael, GothGirl bf_emma), keine Sprachausgabe zur Laufzeit | – |
 | Sprachmelodie (Chatterbox, ohne Worte) | `CHATTERBOX_SPEC_R2.md`, Familien V-678/V-693 | – |
 | Fluff-o-lect (Sprechblasen-Lesart) | `replies/SPEC_FLUFF_O_LECT_R1_DRAFT.md` mit V-506, V-515 | – |
