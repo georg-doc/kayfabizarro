@@ -112,3 +112,13 @@ Public Stage publication is still pending at this checkpoint. No public or human
 - Acceptance covers the current mix/ducking direction, not blanket approval of every raw sound asset.
 - Remaining audio backlog: crowd/weather/traffic/friction source-bank curation, character voice-profile metadata, and later owner-specific adoption.
 - No PR merge or automatic consumer integration performed.
+
+
+## 2026-10-06 · Adaptive real-stem proof routed on PR #365
+
+- New bounded adaptive-music proof uses the fresh C/D/G/J/L upload line without replacing the KFB Audio owner.
+- First implementation pair: G Cosmic Roadtrip Orchestral (vertical orchestration) + D Conversation Base (Speech Focus).
+- One MusicClock contract and existing-AudioContext injection seam added on Draft PR #365.
+- Source/contract checks: 18/18 PASS; G+D exact master/stem presence: 22/22 PASS.
+- WebAudio decode, stem alignment, audible transition/listening and GPT Site publication remain NOT RUN in ChatGPT Web Chat.
+- Existing KFB Audio Site remains the only product Site; next gate is Sites-capable integration/verification. No Cloudflare substitution.

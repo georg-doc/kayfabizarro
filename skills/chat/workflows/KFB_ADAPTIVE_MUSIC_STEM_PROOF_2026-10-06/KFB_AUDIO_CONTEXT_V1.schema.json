@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kfb.audio.context.v1",
+  "title": "KFB Audio Context v1",
+  "type": "object",
+  "required": ["schema", "seq", "timestampMs", "world", "environment", "movement", "social", "activity"],
+  "additionalProperties": true,
+  "properties": {
+    "schema": { "const": "kfb.audio.context.v1" },
+    "seq": { "type": "integer", "minimum": 0 },
+    "timestampMs": { "type": "number", "minimum": 0 },
+    "world": {
+      "type": "object",
+      "required": ["worldId"],
+      "additionalProperties": true,
+      "properties": {
+        "worldId": { "type": "string", "minLength": 1 },
+        "clusterId": { "type": ["string", "null"] },
+        "biomeId": { "type": ["string", "null"] },
+        "zoneId": { "type": ["string", "null"] },
+        "deckId": { "type": ["string", "null"] }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "timeOfDay01": { "type": "number", "minimum": 0, "maximum": 1 },
+        "dayPhase": { "type": ["string", "null"] },
+        "weatherId": { "type": ["string", "null"] },
+        "weatherIntensity01": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "movement": {
+      "type": "object",
+      "required": ["mode", "speed01", "drive", "airborne"],
+      "additionalProperties": true,
+      "properties": {
+        "mode": { "type": "string", "enum": ["IDLE", "WALK", "RUN", "SPRINT", "DRIVE", "AIRBORNE", "OTHER"] },
+        "speed01": { "type": "number", "minimum": 0, "maximum": 1 },
+        "drive": { "type": "boolean" },
+        "airborne": { "type": "boolean" },
+        "verticality01": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "social": {
+      "type": "object",
+      "required": ["dialogueActive", "sourceType", "intensity01"],
+      "additionalProperties": true,
+      "properties": {
+        "dialogueActive": { "type": "boolean" },
+        "sourceType": { "type": "string", "enum": ["NONE", "RESIDENT", "BILLBOARD", "NARRATOR", "PLAYER_UI", "OTHER"] },
+        "sourceId": { "type": ["string", "null"] },
+        "intensity01": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "activity": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "action01": { "type": "number", "minimum": 0, "maximum": 1 },
+        "race01": { "type": "number", "minimum": 0, "maximum": 1 },
+        "threat01": { "type": "number", "minimum": 0, "maximum": 1 },
+        "work01": { "type": "number", "minimum": 0, "maximum": 1 },
+        "crowd01": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "poi": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "type": { "type": ["string", "null"] },
+        "proximity01": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  }
+}

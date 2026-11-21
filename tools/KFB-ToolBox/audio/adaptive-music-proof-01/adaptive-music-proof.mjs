@@ -1,0 +1,40 @@
+import { MusicClock, BOUNDARIES } from './music-clock.mjs';
+
+const ROOT_URL = new URL('../../../../', location.href);
+const $ = (s) => document.querySelector(s);
+let manifest=null,ctx=null,current=null;
+const host={injected:false,destination:null};
+const state={contextCount:0,deckId:'G',boundary:'NEXT_BAR',pending:null,speechFocus:false,errors:[],alignment:null};
+
+function assetURL(rel){return new URL(rel,ROOT_URL).href}
+function configureHost({audioContext,destination}={}){
+  if(!audioContext)return false;
+  if(current&&ctx&&ctx!==audioContext)throw new Error('Cannot replace AudioContext while proof deck is running');
+  ctx=audioContext;host.injected=true;host.destination=destination||audioContext.destination;return true;
+}
+function setParam(param,value,when,tau=.08){const t=Math.max(ctx.currentTime,Number(when)||ctx.currentTime);param.cancelScheduledValues(t);param.setTargetAtTime(Math.max(.0001,Number(value)||0),t,tau)}
+async function loadManifest(){if(manifest)return manifest;const r=await fetch('./SOURCE.json',{cache:'no-store'});if(!r.ok)throw new Error('SOURCE.json HTTP '+r.status);manifest=await r.json();return manifest}
+async function decode(rel){const r=await fetch(assetURL(rel),{cache:'force-cache'});if(!r.ok)throw new Error(rel+' HTTP '+r.status);return ctx.decodeAudioData(await r.arrayBuffer())}
+function stemPath(deck,stem){return deck.folder+'/'+stem.file}
+async function ensureContext(){if(ctx){if(ctx.state==='suspended')await ctx.resume();return ctx}const C=window.AudioContext||window.webkitAudioContext;if(!C)throw new Error('Web Audio unavailable');ctx=new C({latencyHint:'interactive'});host.injected=false;host.destination=ctx.destination;state.contextCount++;if(ctx.state!=='running')await ctx.resume();return ctx}
+function createGraph(){const master=ctx.createGain(),compressor=ctx.createDynamicsCompressor(),speechEq=ctx.createBiquadFilter(),musicBus=ctx.createGain();speechEq.type='peaking';speechEq.frequency.value=2200;speechEq.Q.value=.85;speechEq.gain.value=0;musicBus.gain.value=.86;musicBus.connect(speechEq);speechEq.connect(compressor);compressor.connect(master);master.connect(host.destination||ctx.destination);return{master,compressor,speechEq,musicBus}}
+
+async function buildDeck(deckId){
+  await loadManifest();await ensureContext();const deck=manifest.decks[deckId];if(!deck)throw new Error('Unknown deck '+deckId);if(current)stopDeck();
+  const graph=createGraph();const loaded=await Promise.all(deck.stems.map(async stem=>({stem,buffer:await decode(stemPath(deck,stem))})));
+  const durations=loaded.map(x=>x.buffer.duration),min=Math.min(...durations),max=Math.max(...durations),alignmentDeltaMs=(max-min)*1000;
+  const startAt=ctx.currentTime+.18,clock=new MusicClock({bpm:deck.bpm,beatsPerBar:deck.beatsPerBar,phraseBars:deck.phraseBars,epoch:startAt}),voices=new Map();
+  for(const {stem,buffer} of loaded){const gain=ctx.createGain();gain.gain.value=Math.max(.0001,stem.default||0);gain.connect(graph.musicBus);const src=ctx.createBufferSource();src.buffer=buffer;src.loop=true;src.connect(gain);src.start(startAt);voices.set(stem.role,{stem,buffer,gain,src})}
+  current={deckId,deck,clock,graph,voices,startAt,alignmentDeltaMs,durations};state.deckId=deckId;state.alignment={min,max,deltaMs:alignmentDeltaMs,count:durations.length};state.speechFocus=false;render();return snapshot();
+}
+function stopDeck(){if(!current)return;for(const v of current.voices.values()){try{v.src.stop();v.src.disconnect();v.gain.disconnect()}catch{}}try{current.graph.musicBus.disconnect();current.graph.speechEq.disconnect();current.graph.compressor.disconnect();current.graph.master.disconnect()}catch{}current=null;state.pending=null}
+function boundaryTime(mode=state.boundary){if(!current)return ctx?.currentTime||0;return current.clock.nextBoundary(ctx.currentTime,mode,.06)}
+function scheduleTargets(targets,{mode=state.boundary,tau=.10,label='mix'}={}){if(!current)return null;const when=boundaryTime(mode);for(const [role,voice] of current.voices)if(Object.hasOwn(targets,role))setParam(voice.gain.gain,targets[role],when,tau);state.pending={label,mode,when};render();setTimeout(()=>{if(state.pending?.when===when){state.pending=null;render()}},Math.max(0,(when-ctx.currentTime)*1000)+180);return when}
+function setPreset(name){const targets=current?.deck.presets?.[name]||{};return Object.keys(targets).length?scheduleTargets(targets,{label:name}):null}
+function setSpeechFocus(on){if(!current||current.deckId!=='D')return null;const cfg=current.deck.speechFocus,when=boundaryTime(state.boundary==='NEXT_PHRASE'?'NEXT_BAR':state.boundary);state.speechFocus=!!on;const targets=Object.fromEntries(current.deck.stems.map(s=>[s.role,s.default||0]));if(on)for(const [role,m] of Object.entries(cfg.roleMultipliers||{}))if(Object.hasOwn(targets,role))targets[role]*=m;for(const [role,voice] of current.voices)if(Object.hasOwn(targets,role))setParam(voice.gain.gain,targets[role],when,.12);setParam(current.graph.musicBus.gain,on?cfg.musicGain:.86,when,.16);current.graph.speechEq.frequency.setValueAtTime(cfg.eqHz,when);current.graph.speechEq.Q.setValueAtTime(cfg.eqQ,when);current.graph.speechEq.gain.setTargetAtTime(on?cfg.eqGainDb:0,when,.14);state.pending={label:on?'SPEECH_FOCUS_ON':'SPEECH_FOCUS_OFF',mode:state.boundary,when};render();return when}
+function setBoundary(mode){if(BOUNDARIES[mode])state.boundary=mode;render()}
+function snapshot(){const now=ctx?.currentTime||0,clock=current?.clock.snapshot(now)||null;return{build:manifest?.build||null,hostMode:host.injected?'INJECTED_EXISTING_CONTEXT':'STANDALONE_PROOF_CONTEXT',contextCount:state.contextCount,contextState:ctx?.state||'none',deckId:current?.deckId||null,boundary:state.boundary,pending:state.pending,speechFocus:state.speechFocus,alignment:state.alignment,clock,gains:current?Object.fromEntries([...current.voices].map(([role,v])=>[role,Number(v.gain.gain.value.toFixed(4))])):{},errors:[...state.errors]}}
+function render(){const s=snapshot();$('#status').textContent=current?current.deck.id+' · '+current.deck.bpm+' BPM':'STOPPED';$('#clock').textContent=s.clock?'P'+(s.clock.phraseIndex+1)+' · B'+(s.clock.barInPhrase+1)+'/'+s.clock.phraseBars+' · beat '+(s.clock.beatInBar+1)+'/'+s.clock.beatsPerBar:'—';$('#alignment').textContent=s.alignment?s.alignment.count+' stems · duration delta '+s.alignment.deltaMs.toFixed(1)+' ms':'not measured';$('#pending').textContent=s.pending?s.pending.label+' @ '+s.pending.mode+' in '+Math.max(0,s.pending.when-(ctx?.currentTime||0)).toFixed(2)+'s':'none';$('#diagnostics').textContent=JSON.stringify(s,null,2);document.body.dataset.deck=current?.deckId||'none';document.body.dataset.speech=state.speechFocus?'on':'off'}
+function bind(){$('#startG').addEventListener('click',()=>buildDeck('G').catch(e=>{state.errors.push(e.message);render()}));$('#startD').addEventListener('click',()=>buildDeck('D').catch(e=>{state.errors.push(e.message);render()}));$('#stop').addEventListener('click',()=>{stopDeck();render()});document.querySelectorAll('[data-boundary]').forEach(b=>b.addEventListener('click',()=>setBoundary(b.dataset.boundary)));document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>setPreset(b.dataset.preset)));$('#speechOn').addEventListener('click',()=>setSpeechFocus(true));$('#speechOff').addEventListener('click',()=>setSpeechFocus(false));setInterval(render,250)}
+window.__KFB_ADAPTIVE_MUSIC_PROOF__={configureHost,buildDeck,stopDeck,setPreset,setSpeechFocus,setBoundary,snapshot};
+loadManifest().then(()=>{bind();render()}).catch(e=>{state.errors.push(e.message);bind();render()});
