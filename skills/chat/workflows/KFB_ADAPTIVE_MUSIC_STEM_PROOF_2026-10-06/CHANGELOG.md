@@ -1,3 +1,12 @@
+## 2026-11-21 · Additive Style DNA / context-personalized soundbed design
+
+- Georg's new UX direction: independent style-influence sliders (Funk/Classical/Pop/Death Metal), saved personal Sound DNA, context/environment adaptation and visually simple sound-producing interactions. Documented in `tools/KFB-ToolBox/audio/runtime/STYLE_DNA_SLIDER_LIBRARY_R1_2026-11-21.md` on Draft PR #476, stacked on Audio PR #365.
+- Defined three identity layers (world motif, persistent player taste, ephemeral gameplay context), role-aware structural style blending rather than incompatible audio-stem stacking; maintain one host MusicClock/SCORE and original KFB songs/radio.
+- Source/licence shortlist checked: existing KFB stems G/D/C/M/N/O; Google Magenta GMD CC BY 4.0; VSCO2 CE and VCSL CC0; FreePats CC0 electric guitar; GeneralUser GS (exact licence check still needed). No third-party assets imported, UI code 0, sound audition tests 0, no Site/Stage/Live work.
+- One gate: source-isolated, audible 3-style solo and 2-blend same-seed proof in existing Audio Site, including speech duck and browser/CPU/polyphony evidence.
+
+---
+
 ## 2026-11-21 · Procedural Phrases R1 · existing Audio owner / Draft PR #476
 
 - Added optional sampleless, library-free WebAudio phrase compiler + injected synth under existing Audio runtime package (four new files, including QA and owner contract). Location UTF-8 seed deterministic; 8-bar/16th grid; two-bar boundaries; modes, pentatonic melodic walk and KFB-profile proposals; event cues; activity changes layer gains without changing tempo.
