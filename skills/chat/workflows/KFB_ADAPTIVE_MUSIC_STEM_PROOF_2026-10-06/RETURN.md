@@ -1,3 +1,33 @@
+## 2026-11-21 · FOLLOW-UP · PLAYER STYLE DNA / PERSONAL MUSIC BED (PROPOSAL ONLY)
+
+Georg proposed player-facing independent Funk/Classical/Pop/Death Metal influence sliders with simple, visual sound production, optional contextual adaptation and personal saved Sound DNA. **No slider UI, live style renderer or new sample files were built in this documentation-only follow-up.**
+
+Within existing Audio owner branch and Draft PR [#476](https://github.com/georg-doc/kayfabizarro/pull/476), the source/ownership/UX proposal and live-source/licence shortlist are recorded at:
+`tools/KFB-ToolBox/audio/runtime/STYLE_DNA_SLIDER_LIBRARY_R1_2026-11-21.md`.
+
+Core separation: stable WORLD motif + persistent opt-in PLAYER taste vector + transient CONTEXT arrangement; one dominant grammar and role-compatible secondary influence, never accidental layering of unrelated pitched stems. Current G/D/C/M/N/O mastered/stem source remains reference. Candidate external sources: Magenta GMD (CC BY 4.0 MIDI), VSCO2 CE/VCSL/FreePats specific guitar (CC0), GeneralUser GS after exact license check. External assets imported **0**; candidate music styles implemented **0**; actual hearing/browser QA **0**; no Site/Stage/Live write. Existing seed composer source is unchanged.
+
+**One next gate:** existing KFB Audio Site: audible same-seed 3-style solo and 2 blend proof in original MusicClock/SCORE bus, with source isolation, ducking and browser audio diagnostics; do not route to WS1 before proof.
+
+---
+
+## 2026-11-21 · KFB PROCEDURAL PHRASES R1 · CANDIDATE (Audio PR #476)
+
+**Mode:** BOUNDED_SLICE · AUDIO SOURCE CANDIDATE ONLY; **NOT HEARD, NOT HOST-INTEGRATED, NOT PUBLISHED.**  
+**Owner:** existing KFB Audio / MusicClock / Mixer, Draft PR **#365**.  
+**Branch:** `feature/kfb-audio-procedural-phrases-r1-2026-11-21` · Draft PR [#476](https://github.com/georg-doc/kayfabizarro/pull/476), based on `web/kfb-adaptive-music-stem-proof-2026-10-06`.  
+**Implementation/docs checkpoint head:** `fcf395d544679831439ca26b1d8a3e20788972e4`.
+
+**Actual code:** `tools/KFB-ToolBox/audio/runtime/procedural-score.mjs`, `procedural-voice.mjs`, `qa-procedural.mjs`, `PROCEDURAL_SCORE_R1.md`. Original algorithm idea came as user-authored prose, no third-party source code. Stable UTF-8 place hash → eight bars / 16th-grid notes; per-profile scale and 2-bar chord changes; fixed pentatonic walk; optional bird; event cues; 2-bar change seam; activity-only gain maps. Native Web Audio voices require injected host context/SCORE bus: FM, additive partials, pluck/Karplus–Strong; no recorded samples or external library.
+
+**Protected:** existing Audio Site v11, real G/D/C/M/N/O stems, authored songs/radio, mixer, MusicClock, Speech Focus, World/WS1 gameplay owner. A second clock/context is **not** implemented. No changes to World/WS1, Hub, Cloudflare, Live or published Site.
+
+**Tests:** local candidate equivalent Node offline assertions **19/19 PASS**; branch files individually GitHub-fetched and blob-verified **4/4**. The GitHub-branch Node test itself was **NOT EXECUTED**. Browser audio/iOS listening/CPU/polyphony/real duck and crossfade evidence: **0**. The provisional profiles are NOT approved KFB sonic canon. This is **not an audio quality PASS**.
+
+**Next gate (one):** existing Audio integrator auditions and instruments two different source IDs via **existing MusicClock + SCORE bus** in the existing Audio Site, with 2-bar seam, movement/stillness, one cue and real TTS/Speech Focus; only after measured/visible browser evidence consider a World/WS1 consumer. No human approval gate created before an audible candidate exists.
+
+---
+
 ## 2026-10-13 · RETURN · Triplet & Opener Studio · existing Audio Site v11
 
 Status: **DEPLOYED_AND_VISIBLY_VERIFIED · CONTENT_HOT_RELOAD_PASS · PRODUCT_TUNE / HUMAN_LISTENING_PENDING**
