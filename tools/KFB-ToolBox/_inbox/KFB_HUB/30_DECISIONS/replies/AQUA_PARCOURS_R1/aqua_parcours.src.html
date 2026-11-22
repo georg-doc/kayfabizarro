@@ -120,7 +120,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 __LEVELS__
 const STATIONEN = [
   { i: 0, name: 'Becken', rolle: 'Prolog · Urteil, Trübung, 4711-Luke', farbe: '#2ec4c9' },
-  { i: 'ride', name: 'Ride „Cartoon Chase“', rolle: 'direkt nach der Luke · Songlänge oder „Exit Now!“', farbe: '#f2c230', plan: true },
+  { i: 'ride', name: 'Ride „Cartoon Chase“', rolle: 'erstes Highlight · Action, Fun, Screamo, Onboarding · Songlänge oder „Exit Now!“', farbe: '#f2c230', plan: true },
   { i: 1, name: 'Kelp Garden', rolle: 'Lernen · je eine Gefahr', farbe: '#56d39a' },
   { i: 2, name: 'Riff', rolle: 'Steigern · Minen-Tor, Tunnel mit 6 Ringen', farbe: '#2ec4c9' },
   { i: 3, name: 'Augenfeld', rolle: 'Grusel-Ruhe · 13 Augen, keine Scheinwerfer', farbe: '#b98cff' },
@@ -203,10 +203,11 @@ function zeichneSumme() {
 }
 function zeichneKurve() {
   const svg = document.getElementById('kurve'); svg.replaceChildren(); const n = STATIONEN.length, cw = 980 / n
-  const werte = STATIONEN.map((st) => { const z = zaehle(level(st.i)); return { s: st.i === 'ride' ? 6 : st.i === 0 ? 5 : spannung(z, level(st.i)), m: z.muscheln, st } }), smax = Math.max(...werte.map((w) => w.s), 1), mmax = Math.max(...werte.map((w) => w.m), 1)
+  const roh = STATIONEN.map((st) => spannung(zaehle(level(st.i)), level(st.i))), hoch = Math.max(...roh, 1)
+  const werte = STATIONEN.map((st, k) => { const z = zaehle(level(st.i)); return { s: st.i === 'ride' ? hoch * 0.92 : st.i === 0 ? 5 : roh[k], m: z.muscheln, st } }), smax = Math.max(...werte.map((w) => w.s), 1), mmax = Math.max(...werte.map((w) => w.m), 1)
   for (let k = 0; k <= 4; k++) svg.appendChild(el('line', { x1: 0, x2: 980, y1: 30 + k * 40, y2: 30 + k * 40, stroke: '#1d4a5e', 'stroke-width': 1 }))
   let d = ''
-  werte.forEach((w, k) => { const x = k * cw + cw * 0.2, h = (w.s / smax) * 150; svg.appendChild(el('rect', { x, y: 190 - h, width: cw * 0.6, height: h, rx: 6, fill: w.st.farbe, opacity: w.st.plan ? 0.45 : 0.85 }))
+  werte.forEach((w, k) => { const x = k * cw + cw * 0.2, h = (w.s / smax) * 150; svg.appendChild(el('rect', { x, y: 190 - h, width: cw * 0.6, height: h, rx: 6, fill: w.st.farbe, opacity: w.st.plan ? 0.7 : 0.85 }))
     const t = el('text', { x: k * cw + cw / 2, y: 210, 'text-anchor': 'middle', fill: '#8fb3bd', 'font-size': 12, 'font-family': 'Inter' }); t.textContent = w.st.name.replace(' „Cartoon Chase“', ''); svg.appendChild(t)
     const cx = k * cw + cw / 2, cy = 190 - (w.m / mmax) * 150; d += (k ? ' L' : 'M') + cx + ',' + cy; svg.appendChild(el('circle', { cx, cy, r: 4.5, fill: '#f2c230' })) })
   svg.appendChild(el('path', { d, fill: 'none', stroke: '#f2c230', 'stroke-width': 2.5 }))
