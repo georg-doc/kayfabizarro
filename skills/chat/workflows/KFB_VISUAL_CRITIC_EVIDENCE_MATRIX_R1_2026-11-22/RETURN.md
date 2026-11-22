@@ -35,3 +35,18 @@ Aquarium ideal path file/source, actual current Game Site and executable route; 
 
 ## One next gate
 **`KFB_VISUAL_REPLAY_CAPTURE_01`** – existing game owner picks a real source-backed 10–30s beat (or known Race Diorama fall-back), captures same-release ideal + one deviation including a traceable VFX/renderer/input event and real media/metadata; independent critic then inspects a genuine follow-up capture and returns one source-bound defect. No new Georg question is required to prepare that technical proof.
+
+## 2026-11-22 · Additive R1a Return — embedded Webchat Review Session
+**Status:** `PROPOSAL + MACHINE-SCHEMA SMOKE`, not installed plugin, not deployed MCP App, not a runtime capture. Existing R1 evidence contract remains intact.
+
+**New source:** `REVIEW_SESSION_UI_R1.md` (13.7k chars), `review-session.schema.json`, `SESSION_EXAMPLE_NOT_A_TEST.json`. Existing `TEST_REPORT.md` and `CHANGELOG.md` each appended additively. The proposed role/permissions/toolset is the UI/approval layer over `kfb.visual-replay/0.1` rather than a second data/capture owner.
+
+**Target UI:** minimal in-chat check-in with three biggest source-backed defect cards → before/target/actual compare + marked region/timecode → alternatives (images, VFX animation strip, sound timing) → explicit `KEEP/REGENERATE/APPROVE/NO_FIX` → preview packet → separate explicit authorized GitHub commit + exact file/head readback → Claude Code owner fix → independent fresh capture. No fake evidence when the original media is absent.
+
+**Platform facts:** MCP Apps support embedded HTML, interactive views and `ui/update-model-context` structured state; web-host image content through that context extension is unsupported per current OpenAI spec, hence file attachments/media transfer and ImageGen bytes need actual proof. Free client-side inspection should not be confused with unlimited zero-cost model/hosting operations.
+
+**Checks:** **9/9 PASS** custom limited schema positive/negative structural tests; earlier evidence schema **8/8 PASS** retained. **0** browser UI tests, **0** plugin installations, **0** actual ImageGen/audio output bytes, **0** GitHub commits initiated from an MCP App, **0** new game traces; no public Stage or Site. New example remains `EXAMPLE_NOT_A_TEST`.
+
+**Protection:** GitHub app and current game owner remain only authorized respective repository writers; approval != commit != implementation != independent acceptance. Event log/target Golden immutable; no auto-merge/Live. This Draft PR `#480` is still the routing surface; no Hub or new GPT Site updated for a research-only design.
+
+**Single next gate:** `KFB_WEBCHAT_SESSION_CHECKIN_POC_01` — one real KFB capture, one read-only embedded MCP App finding with selected source refs visible to the Webchat model, followed by a separate real image-asset/explicit approval-to-GitHub readback. If host image/attachment access is unavailable, preserve source and use a documented attachment handoff rather than inventing support.
