@@ -1,3 +1,10 @@
+## 2026-11-22 · REALITY REMIX COMMONS DISCOVERY + COMMUNITY FORKS · routed to game owner Draft PR #155
+
+- Current game repo `georg-doc/KFB-Stunt-Car-Race` Draft PR #155 has 4 new owner planning docs: live in-game Asset Librarian/External 3D/Patch source discovery, isolated preview and native model/FX replacements; contributor-owned code/media licenses with fork/upstream consent; opt-in, versioned Community Evolution Loop.
+- Existing KFB Asset Librarian external search implementation and source-verified CC0 pine preview was inspected as historical donor evidence, NOT a new in-game integration PASS. Current KFB Registry and game runtime remain distinct owners.
+- Real source Credits, licensing evidence and transitive notices remain required in any public Creator Pack; no blanket Creative Commons license or distribution of Patch-only/private data. 20 new planned QA cases NOT_RUN, no stage.
+- First next gate unchanged: existing WS0/Integration-R2 game writer proves one native event→HyperNorm persisted/reversible effect in actual browser, only then Creator S0.
+
 ## 2026-11-22 · CREATOR CREDITS / PROVENANCE ADDENDUM · Existing game owner / Draft PR #155
 
 - Georg: all creators/CC/public-domain/third-party dependencies honored in modular KFB ending roll and searchable source inspector. Every player-created shared world carries actual relevant source/attribution/license notices, independent of optional visual credit-roll visibility.

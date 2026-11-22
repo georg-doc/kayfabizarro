@@ -159,3 +159,8 @@ Current implementing owner: `georg-doc/KFB-Stunt-Car-Race`, target `game/integra
 
 ### 2026-11-22 · CREATOR CREDITS / PROVENANCE ADDENDUM
 The existing [KFB Creator Kit / Reality Remix Draft PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155) now also documents dynamic in-game Creator Credits, portable `CREDITS.json`/`ATTRIBUTION.md`/third-party notices and rights-scoped public export. 15/15 legacy editorial credits indexed by ID, seven sourced pilot records (not publicly ready assets), 16 proposed tests. The original game credits file, individual vendor LICENSE/NOTICE and audio evidence stay the source; Hub is only the routing entry. No playable/demo public acceptance route, no automatic license release.
+
+
+### 2026-11-22 · REALITY REMIX COMMONS DISCOVERY + COMMUNITY FORKS · GitHub routing only
+
+New per-player source search, licensed community contributions and optional evidence-backed official adoption documented inside the existing KFB game [Draft PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155), under `docs/konzepte/reality-remix-r0/`. The canonical internal Asset Librarian + its external-search federation are reused as discovery owners, not reproduced in the Hub. Latest planning checkpoint head `4e9b63efd0ed87596b4fdb9467292250bb75a208`. Docs-only; no imported model, gameplay runtime, browser proof, Stage/Live publication or universal CC license granted. No new human gate before current R0 event→HyperNorm test.
