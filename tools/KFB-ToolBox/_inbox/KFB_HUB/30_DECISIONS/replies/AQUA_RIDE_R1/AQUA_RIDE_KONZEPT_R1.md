@@ -66,6 +66,17 @@
 - **Zwischen den Ringen:**
   - wahlweise die Unterwasserwelt;
   - oder die strahlförmigen Hyperraum-Linien aus dem Portal, für Wasser angepasst (weicher, Blasenschlieren). Ihre Farbe changiert leicht und wechselt auf den Abschnittsgrenzen, ihr Tempo folgt dem Takt.
+- **Georgs 12 Ringe (22.11.):** `KFB Claymation Reference/KFB CheckPoint Portal Rings/` (PNG 1254² mit Alpha). 1–6 überwiegend blau, 7–12 überwiegend gold. Ein Ringtyp wiederholt sich, bis der nächste kommt; die Farbe läuft dramaturgisch von Blau nach Gold, das Ende ist golden.
+  - Zuordnung zur Songkarte:
+    - Kelp-Röhre: 1, ab dem ersten Tor 2;
+    - Zeitlupe: 3;
+    - Looping: 4;
+    - Ringe: 5, ab der Mitte 6;
+    - Glaskugel: 7, der erste goldene, ist das Tor in die Kugel;
+    - Jagd: 8, 9, 10, je ein Drittel;
+    - Höhepunkt und Auslauf: 11;
+    - Schlussschlag: 12 als goldenes Tor in die HyperNorm-Röhre.
+  - Bauweise: Die Vorderseite ist Georgs Bild mit eigenem Licht (nicht neu beleuchtet), der Körper wird aus der Alpha-Kontur extrudiert, die Seitenwand nimmt die Randfarbe. Glow als Hülle. Die Ränder außen, wenn es flüssig läuft auch innen, bekommen den Geometry-Painter-Effekt.
 - **Technik:** Der Geometry Painter läuft nur mit WebGPU. Spiel, Aqua und Effekseer zeichnen mit WebGL, deshalb portiert WS0 die Modi Reef, Molten cracks und Aurora silk als ein WebGL-Modul mit „Malen per Code“.
 - **Offen:** der Effekt aus den ersten HyperNorm-Destruction-Slices (Brandlöcher, Energieblitze). Georg sucht ihn heraus.
 
