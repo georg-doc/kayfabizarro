@@ -31,3 +31,10 @@ Race: `src/flags.js`, `src/siteHash.js`, `test/criticShots.mjs`, `scripts/ir2/pr
 - Earlier actual structural tests remain **8/8** (replay) and **9/9** (session). Combined custom structural checks: **28/28** across three schemas, **not** full JSON Schema 2020-12 implementation validation.
 - **0** real GitHub webhook/Actions pushes, **0** MCP Events subscriptions/deliveries, **0** installed KFB plugin, **0** dormant chat executions, **0** Claude dispatch tests, **0** actual multimedia generated or captured by this research slice.
 - Verified current provider architecture references (2026-11-22): https://developers.openai.com/plugins/build/mcp-events (Work chats on web, desktop Cloud Work chats and dots; subscription needed); https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows (issues and issue_comment events on default-branch workflow). Free Webchat itself is not a guaranteed event-triggered autonomous listener.
+
+## 2026-11-22 · R1c Webchat Priority / WS0 queue matrix
+- Added `PRIORITY_QUEUE_R1.md`, `priority-update.schema.json`, `PRIORITY_EXAMPLE_NOT_A_TEST.json`.
+- **11/11 PASS** on limited custom JS schema subset validation using exact GitHub-readback JSON: parse, 10 required root keys, positive synthetic example, reject misleading GREEN status, invalid owner, invalid effective priority, negative queue revision, missing requested priority, missing GitHub readback, invalid commit hash, invalid impact.
+- Earlier 8/8 replay, 9/9 review session, 11/11 job intake remain recorded; across the four limited suites **39/39 PASS**. This is not full JSON Schema compliance or an operational plugin test.
+- **0** actual Webchat buttons/plugin UI tests, **0** cross-chat priority readback tests, **0** live WS0 queue dispatch/automation, **0** real scene review/visual scores and **0** public deployments. The JSON example is not an actual user approval.
+- UX decision: P0 critical red, P1 high amber, P2 scheduled blue/neutral, P3 later gray, UNTRIAGED neutral; workflow state is orthogonal. Queue sort records human user priority vs WS0 effective schedule with rationale.
