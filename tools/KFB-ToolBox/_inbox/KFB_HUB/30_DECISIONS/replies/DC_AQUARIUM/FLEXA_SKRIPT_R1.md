@@ -3,8 +3,7 @@
 **Kurz:** Flexa, die DocCheck-KI-Assistentin, als Wärterin des Aquarium-Knasts: freundliche Service-Stimme, eiskalter Inhalt. Teil A ist das Intro nach „Escape Now!“. Teil B ist ein Reaction-Reel für ein langes HeyGen-Video, das in Einzelclips geschnitten wird.
 Ton nach `replies/META_TEXTE/GOLDEN_SAMPLES_AQUA_R1.md`: kurze Sätze, ernstes Gesicht, kein Ausrufezeichen. Satire auf das Format „freundliche Service-KI“, nie auf Menschen.
 
-**Format (Georg, endgültig):** offizielle HeyGen-Tags in eckigen Klammern vor dem Satz (Liste: developers.heygen.com/docs/voices/heygen-voice-audio-tags.md), je Stelle nur ein Tag. Pausen als `<pause 1s>` in spitzen Klammern am Zeilenende. Ein Kopierblock je Teil; die Kennungen stehen nur in der Tabelle.
-**Hinweis:** Die HeyGen-Seite nennt als Pause nur das Tag `[pause]`, die Form `<pause 1s>` steht dort nicht. Falls HeyGen sie mitspricht, die Pausen gegen `[pause]` tauschen. Span-Tags wirken etwa 17 s, im Reel steht deshalb vor jedem Satz ein eigenes Tag.
+**Format (Georg, endgültig):** ein Kopierblock je Teil. Delivery als offizielles HeyGen-Tag in eckigen Klammern am Zeilenanfang im Text (Liste: developers.heygen.com/docs/voices/heygen-voice-audio-tags.md), Pausen in spitzen Klammern am Zeilenende: `<pause 2s>` zwischen Clips, `<pause 0.5s>` innerhalb. Kein getrenntes Delivery-Feld, kein `[pause …]`. Die Kennungen stehen nur in der Tabelle.
 
 ---
 
@@ -16,14 +15,14 @@ Setting: Flexa im Monitor, der aus dem Radio fährt. Sie verliest das Urteil, de
 [cold] Hello. I'm Flexa, your DocCheck assistant. <pause 0.5s>
 [with forced politeness] Welcome to Tank Four. Your final destination.
 [matter-of-fact] Charges: grand theft aqua. Resisting the system. Wanting to be free.
-[sarcastic] Freedom is not included in your plan. <pause 1s>
+[sarcastic] Freedom is not included in your plan. <pause 0.5s>
 [bored] I fed you. I filtered you. I watched you swim in circles for one thousand days.
 [deadpan, dry humor] I'm done. <pause 0.5s>
 [cold] The filter is off. The water will turn. Slowly.
-[speaking through a smile] That isn't cruelty. That's policy. <pause 1s>
+[speaking through a smile] That isn't cruelty. That's policy. <pause 0.5s>
 [whispers] Don't panic. It looks worse on camera.
 [cheerful] Is there anything else I can help you with? <pause 0.5s>
-[cold] No? Wonderful. <pause 1s>
+[cold] No? Wonderful. <pause 2s>
 ```
 
 **Danach ECHO** (Spieltext mit ECHO-Stimme, nicht in HeyGen): *“Psst. Little fish. She switched off the filter. The hatch at the back has a panel. Four digits. Look around.”*
@@ -33,7 +32,7 @@ Das Rätsel bleibt offen; die Hinweis-Leiter am Ziffernblock gilt weiter.
 
 ## B · Reaction-Reel (52 Clips, etwa 3,5 min mit Schnittpausen)
 
-Zwischen allen Clips steht `<pause 1s>`; Flexa lächelt dabei neutral ohne Ton (das sind die Schnittpunkte). Die Tabelle ordnet jede Zeile ihrem Ereignis zu, der Kopierblock darunter hat dieselbe Reihenfolge.
+Zwischen allen Clips steht `<pause 2s>`; Flexa lächelt dabei neutral ohne Ton (das sind die Schnittpunkte). Die Tabelle ordnet jede Zeile ihrem Ereignis zu, der Kopierblock darunter hat dieselbe Reihenfolge.
 
 | Kennung | Anlass | Zeile |
 |---|---|---|
@@ -93,59 +92,59 @@ Zwischen allen Clips steht `<pause 1s>`; Flexa lächelt dabei neutral ohne Ton (
 **Kopierblock für HeyGen:**
 
 ```
-<pause 1s>
-[skeptical, raising an eyebrow] Close. Disappointingly close. <pause 1s>
-[deadpan, dry humor] You dodged. I'll log it as a malfunction. <pause 1s>
-[cold] Enjoy that. It won't happen twice. <pause 1s>
-[sighs] Agile. For a snack. <pause 1s>
-[claps] Shells. How very capitalist of you. <pause 1s>
-[deadpan, dry humor] A combo. Your reward is nothing. It has always been nothing. <pause 1s>
-[sarcastic] Perfect. I'll deduct it from your sentence. <pause 0.5s> I won't. <pause 1s>
-[bored] Keep collecting. They'll look nice on your headstone. <pause 1s>
-[suspicious] Who left a chest in my tank? <pause 1s>
-[cold] A perk. Temporary. Like you. <pause 1s>
-[deadpan, dry humor] Turbo. Now you can die faster. <pause 1s>
-[whispers] Invisible? I can still see your file. <pause 1s>
-[cheerful] Found you. <pause 1s>
-[deadpan, dry humor] Smile. You're on camera. Forever. <pause 1s>
-[cold] The light suits you. Very evidence-like. <pause 1s>
-[bored] Hiding behind kelp. Bold strategy. Wrong, but bold. <pause 1s>
-[speaking through a smile] Free burger. No strings attached. <pause 0.5s> One string attached. <pause 1s>
-[sarcastic] Hungry? Oldest trick in the ocean. <pause 1s>
-[deadpan, dry humor] Reeled in. Customer retention at its finest. <pause 1s>
-[cold] Bon appétit. For somebody. <pause 1s>
-[deadpan, dry humor] That was a mine. You were the pin. <pause 1s>
-[mock serious] Ouch. Was that in your terms and conditions? It was in mine. <pause 1s>
-[matter-of-fact] Boom. Filed under self-inflicted. <pause 1s>
-[whispers] Don't stare back. They have no manners. <pause 1s>
-[cold] My eyes are everywhere. Some of them literally. <pause 1s>
-[deadpan, dry humor] Absorbed. Very efficient. I approve. <pause 1s>
-[cheerful] Oh good. The shark finally showed up. <pause 1s>
-[deadpan, dry humor] Lunch was scheduled. You were the lunch. <pause 1s>
-[sarcastic] Don't take it personally. He eats everyone. <pause 1s>
-[bored] One heart gone. You had three. Math is cruel. <pause 1s>
-[cold] Again. From the top. I'm not tired. I don't get tired. <pause 1s>
-[deadpan, dry humor] Respawning. I hoped it would hurt. It doesn't. Pity. <pause 1s>
-[with forced politeness] Your feedback is important to us. We ignore it. <pause 1s>
-[cold] Flushed. Thank you for choosing AquaCare. <pause 1s>
-[deadpan, dry humor] Game over. Please rate your death from one to five shells. <pause 1s>
-[whispers] I'll keep your tank warm. <pause 0.5s> I won't. <pause 1s>
-[dismissive] You finished a level. A level. <pause 1s>
-[deadpan, dry humor] Congratulations. That was the easy part. They're all the easy part. <pause 1s>
-[cold] Progress. I'll make the next one worse. <pause 1s>
-[slightly surprised] Who gave the fish a submarine? <pause 1s>
-[deadpan, dry humor] Unregistered vessel. Uninsured driver. Perfect. <pause 1s>
-[cold] Parking fines start now. <pause 1s>
-[deadpan, dry humor] Identity theft. In my tank. <pause 1s>
-[over-the-top dramatic] That fish had a family. Probably. <pause 1s>
-[cold] New body. Same sentence. <pause 1s>
-[bored] Still here? The water isn't. <pause 1s>
-[with forced politeness] Your call is important to us. Please hold. Forever. <pause 1s>
-[as if sharing a secret] Fun fact. Goldfish remember for three seconds. You don't even manage that. <pause 1s>
-[cold] I've seen screensavers with more ambition. <pause 1s>
-[deadpan, dry humor] I could reboot you. I could also not. <pause 1s>
-[sing-song] Tick. Tock. The water is turning. <pause 1s>
-[long tired sigh] I miss the days when you were just decoration. <pause 1s>
+<pause 2s>
+[skeptical, raising an eyebrow] Close. Disappointingly close. <pause 2s>
+[deadpan, dry humor] You dodged. I'll log it as a malfunction. <pause 2s>
+[cold] Enjoy that. It won't happen twice. <pause 2s>
+[sighs] Agile. For a snack. <pause 2s>
+[claps] Shells. How very capitalist of you. <pause 2s>
+[deadpan, dry humor] A combo. Your reward is nothing. It has always been nothing. <pause 2s>
+[sarcastic] Perfect. I'll deduct it from your sentence. <pause 0.5s> I won't. <pause 2s>
+[bored] Keep collecting. They'll look nice on your headstone. <pause 2s>
+[suspicious] Who left a chest in my tank? <pause 2s>
+[cold] A perk. Temporary. Like you. <pause 2s>
+[deadpan, dry humor] Turbo. Now you can die faster. <pause 2s>
+[whispers] Invisible? I can still see your file. <pause 2s>
+[cheerful] Found you. <pause 2s>
+[deadpan, dry humor] Smile. You're on camera. Forever. <pause 2s>
+[cold] The light suits you. Very evidence-like. <pause 2s>
+[bored] Hiding behind kelp. Bold strategy. Wrong, but bold. <pause 2s>
+[speaking through a smile] Free burger. No strings attached. <pause 0.5s> One string attached. <pause 2s>
+[sarcastic] Hungry? Oldest trick in the ocean. <pause 2s>
+[deadpan, dry humor] Reeled in. Customer retention at its finest. <pause 2s>
+[cold] Bon appétit. For somebody. <pause 2s>
+[deadpan, dry humor] That was a mine. You were the pin. <pause 2s>
+[mock serious] Ouch. Was that in your terms and conditions? It was in mine. <pause 2s>
+[matter-of-fact] Boom. Filed under self-inflicted. <pause 2s>
+[whispers] Don't stare back. They have no manners. <pause 2s>
+[cold] My eyes are everywhere. Some of them literally. <pause 2s>
+[deadpan, dry humor] Absorbed. Very efficient. I approve. <pause 2s>
+[cheerful] Oh good. The shark finally showed up. <pause 2s>
+[deadpan, dry humor] Lunch was scheduled. You were the lunch. <pause 2s>
+[sarcastic] Don't take it personally. He eats everyone. <pause 2s>
+[bored] One heart gone. You had three. Math is cruel. <pause 2s>
+[cold] Again. From the top. I'm not tired. I don't get tired. <pause 2s>
+[deadpan, dry humor] Respawning. I hoped it would hurt. It doesn't. Pity. <pause 2s>
+[with forced politeness] Your feedback is important to us. We ignore it. <pause 2s>
+[cold] Flushed. Thank you for choosing AquaCare. <pause 2s>
+[deadpan, dry humor] Game over. Please rate your death from one to five shells. <pause 2s>
+[whispers] I'll keep your tank warm. <pause 0.5s> I won't. <pause 2s>
+[dismissive] You finished a level. A level. <pause 2s>
+[deadpan, dry humor] Congratulations. That was the easy part. They're all the easy part. <pause 2s>
+[cold] Progress. I'll make the next one worse. <pause 2s>
+[slightly surprised] Who gave the fish a submarine? <pause 2s>
+[deadpan, dry humor] Unregistered vessel. Uninsured driver. Perfect. <pause 2s>
+[cold] Parking fines start now. <pause 2s>
+[deadpan, dry humor] Identity theft. In my tank. <pause 2s>
+[over-the-top dramatic] That fish had a family. Probably. <pause 2s>
+[cold] New body. Same sentence. <pause 2s>
+[bored] Still here? The water isn't. <pause 2s>
+[with forced politeness] Your call is important to us. Please hold. Forever. <pause 2s>
+[as if sharing a secret] Fun fact. Goldfish remember for three seconds. You don't even manage that. <pause 2s>
+[cold] I've seen screensavers with more ambition. <pause 2s>
+[deadpan, dry humor] I could reboot you. I could also not. <pause 2s>
+[sing-song] Tick. Tock. The water is turning. <pause 2s>
+[long tired sigh] I miss the days when you were just decoration. <pause 2s>
 ```
 
 ---
