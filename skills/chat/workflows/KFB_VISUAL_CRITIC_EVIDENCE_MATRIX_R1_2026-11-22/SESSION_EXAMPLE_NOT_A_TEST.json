@@ -1,0 +1,64 @@
+{
+  "schema": "kfb.visual-session/0.1",
+  "status": "EXAMPLE_NOT_A_TEST",
+  "session_id": "EXAMPLE-SESSION-R1",
+  "session_revision": 0,
+  "source": {
+    "run_id": "UNVERIFIED_EXAMPLE_RUN",
+    "review_manifest_ref": "EXAMPLE_NOT_A_TEST.json",
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "game/integration-r2",
+    "head": "UNVERIFIED",
+    "privacy": "PRIVATE",
+    "actual_media_ids": []
+  },
+  "actor": {
+    "identity_status": "UNVERIFIED",
+    "approval_actor_ref": null
+  },
+  "findings": [
+    {
+      "finding_id": "EXAMPLE-FINDING-01",
+      "priority": "P1",
+      "evidence_ids": [],
+      "description": "Sample only: a potential speedline VFX anchoring issue; no footage reviewed",
+      "owner_seam": null,
+      "confidence": null,
+      "status": "OPEN",
+      "chosen_variant_id": null
+    },
+    {
+      "finding_id": "EXAMPLE-FINDING-02",
+      "priority": "P2",
+      "evidence_ids": [],
+      "description": "Sample only: proposed visual transition material band inconsistency; no screenshot reviewed",
+      "owner_seam": null,
+      "confidence": null,
+      "status": "OPEN",
+      "chosen_variant_id": null
+    }
+  ],
+  "choices": [
+    {
+      "variant_id": "EXAMPLE-VARIANT-01",
+      "finding_id": "EXAMPLE-FINDING-01",
+      "parent_variant_id": null,
+      "media_id": null,
+      "media_sha256": null,
+      "kind": "GENERATED_TARGET",
+      "artifact_status": "REQUESTED",
+      "human_decision": "NONE"
+    }
+  ],
+  "handoff": {
+    "state": "NOT_REQUESTED",
+    "selected_finding_ids": [],
+    "expected_session_revision": null,
+    "expected_head": null,
+    "commit_sha": null,
+    "verified_readback": false,
+    "destination_repo": null,
+    "destination_branch": null
+  },
+  "audit_events": []
+}
