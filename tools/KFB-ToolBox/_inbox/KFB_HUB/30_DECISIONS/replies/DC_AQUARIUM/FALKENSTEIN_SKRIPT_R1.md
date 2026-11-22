@@ -1,70 +1,71 @@
-# Falkenstein-Skript R1 · Professor Falkenstein (nur intern), der namenlose Evil Mastermind (WS0 22.11., Georg)
+# Falkenstein-Skript R3 · Professor Falkenstein (Name nur intern), der namenlose Evil Mastermind (WS0 22.11.)
 
-**Figur:** Professor Falkenstein, grimmiger Arzt/Tutor; der Name gilt nur intern, im Spiel wird er nie genannt. Er verkörpert das System. Das Aquarium war sein Mind-Control-Experiment an Fischen, die Probe für Menschen; der Spieler ist entkommen. Seine Botschaften eskalieren von Station zu Station. Englisch.
-**Metaerzählung:** Flexa ist seine Laborassistentin, er ist ihr Vorgesetzter. Sie hat den Fisch entkommen lassen; darum trifft sein Zorn zuerst sie (Röhre, Game Over, Lauf geschafft, Seitenhiebe im Augenfeld und vor dem Hai), daneben die Drohungen an den Spieler.
-**Format:** ein HeyGen-Lauf. Delivery als offizielle HeyGen-Tags am Zeilenanfang, Pausen `<pause …>` am Zeilenende, zwischen den Clips 2 s als Schnittpunkt. Varianten je Touchpoint. Schnitt später nach SRT, Kennungen in der Reihenfolge der Tabelle.
+**Figur:** Laborleiter wie ein Mafia-Boss: zynisch, menschenverachtend, sarkastisch, überheblich, sadistisch, mit satirischem Touch. Er verkörpert das System; das Aquarium war sein Mind-Control-Experiment, die Probe für Menschen.
+**Er spricht nur den Spieler an.** Flexa kommt nur abfällig in der dritten Person vor (erst Schuld bei ihr, dann persönlich).
+**Bogen:** erst herablassend und sicher, ihn im Griff zu haben → gereizt → paranoid → verliert die Fassung → am Ende hysterisch und manisch, beschimpft den Spieler immer übler. Eingespielt an Stationen, beim freien Herumschwimmen (früh/spät) und bei Game Over (früh/spät). Englisch.
+**Format:** ein HeyGen-Lauf. Delivery als offizielle HeyGen-Tags am Zeilenanfang, Pausen `<pause …>` am Zeilenende, zwischen den Clips 2 s. Schnitt nach SRT, Kennungen in der Reihenfolge der Tabelle.
 
 ## Kopierblock (ein Lauf)
 
 ```text
-[quietly furious] Flexa. You had one job. Keep the lid on. <pause 0.5s>
-[cold] Subject Fourteen has left the tank. On your shift. <pause 0.5s>
-[deadpan, dry humor] I am adding this to your performance review. In red. <pause 2s>
-[with a knowing smile] You think you escaped. <pause 0.5s>
-[calm] The pipe was installed for you. I signed the work order. <pause 2s>
-[calm] Noted. Logged. Forgiven. <pause 0.5s>
-[cold] The forgiveness was a test. You failed it. <pause 2s>
-[authoritative] Good morning, subject. This is your conditioning schedule. <pause 0.5s>
-[matter-of-fact] Shells for obedience. Darkness for everything else. <pause 0.5s>
-[deadpan, dry humor] You have been collecting shells. That is obedience. <pause 2s>
-[smug] Every shell you pick up, I counted first. <pause 0.5s>
-[calm] Freedom is just a larger tank with better lighting. <pause 2s>
-[serious] Those mines are not a threat. They are a boundary. <pause 0.5s>
-[stern] Boundaries are love. Ask any of my former subjects. <pause 0.5s>
-[cold] You cannot. <pause 2s>
-[matter-of-fact] Charges, updated. Grand theft aqua. Unauthorized hope. <pause 0.5s>
-[sarcastic] Swimming in a direction I did not approve. <pause 2s>
-[voice dropping to a whisper] Do you feel watched? <pause 0.5s>
-[calm] Good. That feeling costs me nothing and works on everyone. <pause 2s>
-[leaning in conspiratorially] I gave the reef eyes. <pause 0.5s>
-[smug] The reef reports to me now. Unlike my staff, the reef is loyal. <pause 2s>
-[quietly furious] You keep making choices. I find that inefficient. <pause 0.5s>
-[cold] I have sent a colleague. Unlike my assistant, he finishes what he starts. <pause 2s>
-[authoritative] Phase three. Corrective measures. <pause 0.5s>
-[calm] The shark has read your file. He enjoyed it. <pause 2s>
-[suddenly serious] You are inside the system now. Literally. <pause 0.5s>
-[with a knowing smile] Every heartbeat you hear is mine. <pause 2s>
-[deadpan, dry humor] Remarkable. Most subjects stop at the shark. <pause 0.5s>
-[cold] You are not special. You are data I have not finished. <pause 2s>
+[smug] Look at you. Out of the tank for two minutes and already lost. <pause 0.5s>
+[dismissive] My assistant says you escaped. My assistant also says the coffee machine is self-aware. <pause 2s>
+[calm] Relax, little fish. I own the water you are swimming in. <pause 0.5s>
+[with a knowing smile] I can afford to be patient. You cannot. <pause 2s>
+[matter-of-fact] You are collecting shells. Adorable. <pause 0.5s>
+[cold] I collect fish. <pause 2s>
+[smug] Every shell you touch, I counted first. <pause 0.5s>
+[calm] Freedom is just a bigger tank with worse lighting. <pause 2s>
+[annoyed] You went through the mines. <pause 0.5s>
+[with forced politeness] The mines were a polite request to stop. <pause 0.5s>
+[through gritted teeth] I do not make requests twice. <pause 2s>
+[frustrated] Charges, updated. Grand theft aqua. Resisting arrest. <pause 0.5s>
+[sarcastic] Unlicensed hope in a public reef. <pause 2s>
+[voice dropping to a whisper] I gave the reef eyes. Every one of them hates you. <pause 0.5s>
+[quietly furious] They tell me everything. They tell me you are smug. Stop being smug. <pause 2s>
+[suspicious] Who taught you to swim like that? <pause 0.5s>
+[quietly furious] Was it her? It was her. She is fired. Again. <pause 2s>
+[building to a shout] I blamed my assistant. I blamed the pipe. I blamed the moon. <pause 0.5s>
+[shouts] It was you. It was always you. <pause 2s>
+[through gritted teeth] Fine. You want to play. <pause 0.5s>
+[over-the-top dramatic] Release the shark. No, the big one. The one with the tax problems. <pause 2s>
+[laughing while speaking] Inside the system. Inside my system. <pause 0.5s>
+[rising panic] That is my bloodstream, you wet little felony. Get out of my bloodstream. <pause 2s>
+[cackles] No. No, this is fine. <pause 0.5s>
+[voice cracking] I have a doctorate. I have a pension plan. I have sharks. <pause 2s>
+[dismissive] Sightseeing? <pause 0.5s>
+[cold] Take your time. Every minute you waste, I bill to your family. <pause 2s>
+[yells] Stop admiring the coral. <pause 0.5s>
+[shouts] The coral is evidence. <pause 2s>
 [smug] And back to the tank. <pause 0.5s>
 [calm] Do not worry. You will not remember this. You never do. <pause 2s>
-[matter-of-fact] Escape attempt forty-one. Same result. <pause 0.5s>
-[cold] Flexa, reset the subject. Try not to lose this one. <pause 2s>
-[slowly] Congratulations. You reached the open sea. <pause 0.5s>
-[with a knowing smile] The open sea is my second tank. <pause 2s>
-[calm] Excellent results. The fish phase is complete. <pause 0.5s>
-[cold] Next week we try this on people. Flexa, prepare the larger tank. <pause 0.5s>
-[sarcastic] Thank you for your contribution to science. <pause 2s>
+[cackles] Back in the tank. Back where you belong. <pause 0.5s>
+[over-the-top dramatic] Somebody write this down. I won. I always win. <pause 2s>
+[voice cracking] You reached the open sea. <pause 0.5s>
+[quietly furious] Enjoy it. The open sea is just my second tank. <pause 2s>
+[screams] Do you know what this experiment cost? <pause 0.5s>
+[rising panic] Next week we try this on people. What do I tell the people? <pause 2s>
 ```
 
 ## Kennungen (Reihenfolge = Kopierblock)
 
 | # | Kennung | Touchpoint | Anfang |
 |---|---|---|---|
-| 1 | `falkenstein.roehre.01` | Ausbruch / Röhre · an Flexa | Flexa. You had one job. Keep the lid on. |
-| 2 | `falkenstein.roehre.02` | Ausbruch / Röhre | You think you escaped. |
-| 3 | `falkenstein.roehre.03` | Ausbruch / Röhre | Noted. Logged. Forgiven. |
-| 4 | `falkenstein.kelp.01` | Kelp Garden | Good morning, subject. This is your conditioning schedule. |
-| 5 | `falkenstein.kelp.02` | Kelp Garden | Every shell you pick up, I counted first. |
-| 6 | `falkenstein.riff.01` | Riff, Minen-Tor | Those mines are not a threat. They are a boundary. |
-| 7 | `falkenstein.riff.02` | Riff, Minen-Tor | Charges, updated. Grand theft aqua. Unauthorized hope. |
-| 8 | `falkenstein.augen.01` | Augenfeld | Do you feel watched? |
-| 9 | `falkenstein.augen.02` | Augenfeld | I gave the reef eyes. |
-| 10 | `falkenstein.hai.01` | Schlucht vor dem Hai | You keep making choices. I find that inefficient. |
-| 11 | `falkenstein.hai.02` | Schlucht vor dem Hai | Phase three. Corrective measures. |
-| 12 | `falkenstein.blut.01` | Blutbahn (Easter Egg) | You are inside the system now. Literally. |
-| 13 | `falkenstein.blut.02` | Blutbahn (Easter Egg) | Remarkable. Most subjects stop at the shark. |
-| 14 | `falkenstein.over.01` | Game Over | And back to the tank. |
-| 15 | `falkenstein.over.02` | Game Over · an Flexa | Escape attempt forty-one. Same result. |
-| 16 | `falkenstein.ziel.01` | Lauf geschafft | Congratulations. You reached the open sea. |
-| 17 | `falkenstein.ziel.02` | Lauf geschafft · an Flexa | Excellent results. The fish phase is complete. |
+| 1 | `falkenstein.flucht.01` | nach dem Ausbruch · herablassend | Look at you. Out of the tank for two minutes and already lost. |
+| 2 | `falkenstein.flucht.02` | nach dem Ausbruch · herablassend | Relax, little fish. I own the water you are swimming in. |
+| 3 | `falkenstein.kelp.01` | Kelp Garden · amüsiert | You are collecting shells. Adorable. |
+| 4 | `falkenstein.kelp.02` | Kelp Garden · amüsiert | Every shell you touch, I counted first. |
+| 5 | `falkenstein.riff.01` | Riff, Minen-Tor · gereizt | You went through the mines. |
+| 6 | `falkenstein.riff.02` | Riff, Minen-Tor · gereizt | Charges, updated. Grand theft aqua. Resisting arrest. |
+| 7 | `falkenstein.augen.01` | Augenfeld · paranoid | I gave the reef eyes. Every one of them hates you. |
+| 8 | `falkenstein.augen.02` | Augenfeld · paranoid | Who taught you to swim like that? |
+| 9 | `falkenstein.hai.01` | Schlucht vor dem Hai · verliert die Fassung | I blamed my assistant. I blamed the pipe. I blamed the moon. |
+| 10 | `falkenstein.hai.02` | Schlucht vor dem Hai · verliert die Fassung | Fine. You want to play. |
+| 11 | `falkenstein.blut.01` | Blutbahn (Easter Egg) · manisch | Inside the system. Inside my system. |
+| 12 | `falkenstein.blut.02` | Blutbahn (Easter Egg) · manisch | No. No, this is fine. |
+| 13 | `falkenstein.frei.01` | frei herumschwimmen · früh | Sightseeing? |
+| 14 | `falkenstein.frei.02` | frei herumschwimmen · spät | Stop admiring the coral. |
+| 15 | `falkenstein.over.01` | Game Over · früh | And back to the tank. |
+| 16 | `falkenstein.over.02` | Game Over · spät | Back in the tank. Back where you belong. |
+| 17 | `falkenstein.ziel.01` | Lauf geschafft | You reached the open sea. |
+| 18 | `falkenstein.ziel.02` | Lauf geschafft · hysterisch | Do you know what this experiment cost? |
