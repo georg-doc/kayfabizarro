@@ -1,5 +1,12 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-015 · 22.11.2026 · Critic-Reihe 1–6 (Georg q822 über WS0)
+
+- Gepusht @c75ca2a, Artefakt v14, Details sea-escape/CHANGELOG.md r15.
+- Hai-Shot-Liste, Röhre mit Schnitten + Ruck je Ring, Ankunft-Reveal + Titel 48 px auf Band, Kapern als Moment, HUD-Anker + größere Herzen/Muscheln, Radio als kompakte Pille.
+- Belege: hai_shotliste_r1.mp4, roehre_schnitte_r1.mp4, ankunft_reveal_r1.png.
+- Offen: Kran-Blick bei der Ankunft noch im Tang; „I take over“-Pille noch statt Glanzlicht; ECHO-Tafeln teils als Spiegelschrift vor der Kamera.
+
 ## R-014 · 22.11.2026 · Augenfeld (Schalter), Radio Stopp/Ton global, Beta-Höhe
 
 - Gepusht auf `dc/aquarium-standalone` @f06a687, Artefakt v13. Details in sea-escape/CHANGELOG.md r14.
