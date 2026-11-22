@@ -1,5 +1,20 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-024 · 22.11.2026 · Startbild-Fix (Georg direkt) + Flexa-Reel im Spiel · Artefakt v29
+
+**Startbild (Georg: „bitte endlich fixen“, Illustrationen fehlten):**
+- Die neun Hintergrund-Illustrationen laufen wieder bildfüllend durch (Diashow wie vorher). Die Kelp-Startwelt gibt es nur noch auf Wunsch (`?bg=kelp` oder `?bg=b`).
+- Becken im schmalen Fenster: neben dem Logo nur noch mit Rand fürs Schwenken; hochkant steht es unter dem Knopf, ganz sichtbar. Unten bleibt Rand frei, weil das App-Fenster dort bis 90 px abschneidet.
+- Beleg: `startbild_illustrationen_r2.png` (529×815, oben 725 sichtbar wie in Georgs Fenster). Geprüft auch 390×844, 600×800, 844×390, 1280×720.
+
+**Flexa-Reel (52 Clips):**
+- Kleines Bullauge fährt unter dem Radio aus, Satz darunter rot auf Weiß. Nie zwei Clips zugleich, mindestens 20 s dazwischen, je Gruppe eigene Abklingzeit, Leerlauf erst nach 30 s ohne Ereignis.
+- Wartet, solange ein Banner steht oder ein ECHO-Rätselhinweis läuft (Tastenfeld, Trübung); Hinweise brechen einen laufenden Clip ab.
+- Ohne Ton oder bei stummem Radio läuft der Clip stumm mit Untertitel.
+- Zuordnung: Truhe (mit Perk: Turbo/Tarnung), Licht entdeckt, Haken nah/Biss, Haken entkommen + Licht knapp vorbei = knapp, Mine, Augen (Griff = augen.03), Hai (Auftritt, gefressen), Tod (Haken, zu spät), Game Over, Level geschafft, U-Boot einsteigen, Kapern, 7er-Kombo, Leerlauf (leer.06 bei der Trübung).
+- Modul `js/flexa-reel.js`, Test `dc-aquarium-radio/scripts/pruef-reel.mjs` (alle Sperren grün). Beleg: `flexa_reel_truhe_r1.png`.
+
+**Nächster Schritt:** Monitore mit HyperNorm, dann schwebende Billboards.
 ## R-015 · 22.11.2026 · Critic-Reihe 1–6 (Georg q822 über WS0)
 
 - Gepusht @c75ca2a, Artefakt v14, Details sea-escape/CHANGELOG.md r15.
