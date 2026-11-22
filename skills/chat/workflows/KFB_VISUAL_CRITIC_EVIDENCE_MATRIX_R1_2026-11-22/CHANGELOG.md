@@ -16,3 +16,10 @@
 - Distinguishes **client selection**, **Webchat design output**, **Georg approval**, **GitHub evidence commit**, **Claude Code implementation**, **independent retest** and **Georg product acceptance**. No silent auto-commit, pseudo-Golden, or Site version rollback.
 - No actual app/plugin image passing, generated picture, UI browser test or live Stage performed. All UX/layout examples are proposal only.
 - **Next single gate:** `KFB_WEBCHAT_SESSION_CHECKIN_POC_01`: source-backed in-chat MCP App selection + verified model-context transfer; only then image-bytes and approval→GitHub roundtrip.
+
+## 2026-11-22 · R1b · One-turn Webchat job intake + push routing (proposal)
+- Georg requested reporting incomplete or fragmented loops/effects, actionably versioning selected fixes/paintovers with minimal chat messages, and pushing them to WS0 Lead and existing Claude Code implementers **without model-based periodic polling**.
+- Added `ASYNC_JOB_INTAKE_PUSH_R1.md`, `job-intake.schema.json`, `JOB_EXAMPLE_NOT_A_TEST.json` (sample is fake and **unsubmitted**).
+- Three honest dispatch levels: GitHub queued issue + human/agent resume; deterministic GitHub Actions/webhook; optional subscribed MCP Events to Work/Dot (not ordinary dormant Webchat); no unverified push into arbitrary open Claude chats.
+- 11/11 limited schema checks PASS, no actual automated event subscriptions/deliveries. Existing 8/8 + 9/9 structural results retained.
+- Repo/Runtime owners unchanged, no merge or publish. Current single next gate: `KFB_WEBCHAT_JOB_PUSH_POC_01`, a 1-job readback plus WS0 routing proof.
