@@ -1,3 +1,18 @@
+## CURRENT ADDITIVE R2 RETURN · 2026-11-22 · SHAREABLE GAME SCENE CONFIGURATION / WS0 TASK
+
+**Outcome:** WS0 has a complete new GitHub research/work order to make safe shareable deep links to existing Game-site Scenelets: **Book Processor for Georg's cousin** and **satirical aquarium/game module for a colleague**. The feature is planned **only**; there are **no live scene links**, no verified primary Game Site module ID, no new login system and no deployed/implemented serializer.
+
+**Binding work order:** `skills/chat/concepts/KFB_SHAREABLE_GAME_SCENES_WS0_RESEARCH_AND_WORK_ORDER_R1_2026-11-22.md` and GitHub **Issue #478** (current active WS0 assignment). Existing book-module child brief now additionally specifies a safe typed `sceneletId/startPhase/shot/lookId/seed` inbound seam, not a second URL/router owner.
+
+**Grounded technical donors:** existing `kfb-hub/stunt-race/track-environment-lab/boot.mjs` uses `URLSearchParams(world,seed)` + `history.replaceState`; existing Deck Viewer v5 candidate `?deck=&card=` and `?deck=&page=`; existing Site/God Mode architecture has versioned module/recipe/manifest + separate Player Save. The working Game GPT Site's actual parameter forwarding and Aquarium source are **NOT VERIFIED** by current main repo code search. No fake module ID, fake Site URL or source-less scene fixture.
+
+**External platform research:** official OpenAI ChatGPT Sites help confirms private named external viewers where permitted, sign-in with invited ChatGPT account, and public sites where supported. These are permission mechanisms **separate** from a scene URL; query preservation across a login redirect is untested and an explicit WS0 proof target. Custom own-login identity, including user's `HTX` reference, is not currently established/required. Cloudflare Access PIN is only an option for a separately supported, actually configured domain/host route.
+
+**QA truth:** source inventory/research and GitHub file readbacks only. **0** code changes, **0** scene-link roundtrip tests, **0** invited-viewer access tests, **0** primary Game GPT Site browser checks, **0** Stage/Live publications, **0** screenshots. Existing R4 STOP/NO MVP and WSB/WS0 child routing stay intact. Hub/main router unchanged because no new public/review route exists.
+
+**One next gate:** **WS0 identifies the exact current Game GPT Site, existing source-backed switches and real Aquarium module ID**, and returns the allowlisted two-scene link/preset contract. Later implementation requires existing owner authority and actual non-owner proof.
+
+---
 ## CURRENT ADDITIVE R1 RETURN · 2026-11-22 · GEORG PRODUCTION / ART DECISION
 
 **Outcome:** Preparation complete; WSB is assigned original-book 3D creation through **Blender MCP**, WS0 Lead is assigned to **spawn one separate Claude chat** that builds the complete Book Processor module. **Neither executor was actually started/spawned in this slice.** Current game owner remains WB2 WorldBuilder (future integration only via existing WSA), source cards remain existing Card/Deck Viewer/Registry, KFB Clay and Audio retain their owners.
