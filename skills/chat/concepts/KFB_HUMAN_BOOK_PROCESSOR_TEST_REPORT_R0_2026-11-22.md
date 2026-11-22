@@ -2,7 +2,7 @@
 
 **Class:** DOCUMENTATION AND SOURCE RECON ONLY · no code / visual / Stage acceptance.
 
-## Verified by live connector readback (8 source checks)
+## Verified by live connector readback (9 source checks)
 
 1. **Book bibliographic source:** Westend Verlag lists authors Andreas & Georg von Westphalen, 248 pages, paperback, release 2024-09-02, ISBN 9783864893759; author/Substack overview also inspected.
 2. **KFB card index:** `media/kfb/index.json` parses and lists `help_i_am_a_human` as 56 cards / 15 PDF pages.
@@ -13,11 +13,13 @@
 7. **License:** Root donor `LICENSE` is MIT 2026 Adam Chernick. Third-party constellation graphics carry separate notice in `06-orrery/d3-celestial-LICENSE.txt`; donor plan does not reuse constellation assets.
 8. **KFB project recovery:** `START_HERE.md`, Stage workflow, Fresh Chat Slice Protocol, `KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md`, `KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md`, and `DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md` inspected. Island R4 remains STOP/NO MVP; concept does not authorize runtime work.
 
+9. **Existing author-story narrative:** `index.html` main section `VI · The Death of the Author / Der Tod des Autors` actually narrates the book cut into panels, loss of positional authority and section VII Fractal Almanac; this is a direct existing story donor. Note number conflict: website says 40 questions, publisher says 42, so exact count NOT reconciled.
+
 ## Actual checks performed
 
 | Check | Result |
 | --- | --- |
-| GitHub / publisher source inspection | **8/8 source classes reviewed** (not automated test assertions) |
+| GitHub / publisher source inspection | **9/9 source classes reviewed** (not automated test assertions) |
 | New Source JSON parse/readback | **1/1 PASS** |
 | Existing game code changes | **0 files** |
 | Code unit/integration test runs | **0** |
