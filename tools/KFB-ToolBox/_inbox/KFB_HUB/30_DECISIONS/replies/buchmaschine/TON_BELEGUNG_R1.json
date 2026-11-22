@@ -4,16 +4,119 @@
   "quelle": "data/audio/atlas-r1/sound-atlas.r1.json (Stamm), IDs = atlas file id",
   "stil": "Uhrwerk-Tick als Grund, Dampf und Wusch zu den Umbauten, Knistern mit Rascheln in der Zerstörung (Moderne Zeiten, Retro-Mechanik)",
   "ereignisse": {
-    "zahn": { "ids": ["36bd60f4f2de19888796", "ea9cb4689784aaa67ece"], "wechsel": "tick/tock abwechselnd", "hoerbar": "jeder 2. Zahn", "pegel": 0.35, "tonhoehe": [0.92, 1.08], "rueckwaerts": "tock zuerst, Tonhöhe 0.9" },
-    "einrasten": { "ids": ["b28612120188baba28e2", "f53841d58d63f154d538", "8d3e17afa0b878e5b687", "e20f8ffffcce8b7ded42", "90d847291c403458b5fc"], "je_schub": 10, "verteilung_s": 0.6, "tonhoehe_nach_groesse": [0.7, 1.25], "pegel": 0.5 },
-    "schlag": { "ids": ["c27f5be417fcd053d197", "4c777a9d19825fd4d31a", "5eef503adad36d25d631", "bde3e208da1da1a95561"], "pegel_aus": "staerke", "pegel_max": 0.9, "nachfedern": "zweiter Schlag 40 % leiser nach 0.12 s" },
-    "dampf": { "ids": ["fe4a4665ad8365f42596"], "kraeftig": { "pegel": 0.8, "dauer_s": 1.2 }, "gelenk": { "pegel": 0.25, "dauer_s": 0.4, "tonhoehe": [1.1, 1.4] } },
-    "umbau": { "ids": ["f22b681bbb5090573646", "378527a3df4bea45e6c1"], "pegel": 0.6, "unterlage": { "ids": ["39f9b7726a1caa85f03d"], "pegel": 0.3 } },
-    "blitz": { "ids": ["2380350c96a302eaf268", "3521463dbd6ccd73aea5", "0487c40e81f04dc87797", "a8af0bccbce601ad1065"], "knall": "ZapHard bei staerke > 0.7", "pegel": 0.45, "max_gleichzeitig": 3 },
-    "kantenblitz": { "ids": [], "hinweis": "geht im Knistern von blitz auf, kein eigener Klang" },
-    "schaelen": { "ids": ["abb3925a52b5b1d8cd42", "e218ae9fa774806bad8d"], "pegel": 0.4, "tonhoehe": [0.9, 1.2] },
-    "rascheln": { "ids": ["2c8a8893f0e0411041b5", "df34bc1563313f9a7659", "49e56ebd852c6de48ca4"], "schicht": true, "pegel_aus": "staerke", "pegel_max": 0.5 }
+    "zahn": {
+      "ids": [
+        "36bd60f4f2de19888796",
+        "ea9cb4689784aaa67ece"
+      ],
+      "wechsel": "tick/tock abwechselnd",
+      "hoerbar": "jeder 2. Zahn",
+      "pegel": 0.35,
+      "tonhoehe": [
+        0.92,
+        1.08
+      ],
+      "rueckwaerts": "tock zuerst, Tonhöhe 0.9"
+    },
+    "einrasten": {
+      "ids": [
+        "b28612120188baba28e2",
+        "f53841d58d63f154d538",
+        "8d3e17afa0b878e5b687",
+        "e20f8ffffcce8b7ded42",
+        "90d847291c403458b5fc"
+      ],
+      "je_schub": 10,
+      "verteilung_s": 0.6,
+      "tonhoehe_nach_groesse": [
+        0.7,
+        1.25
+      ],
+      "pegel": 0.5
+    },
+    "schlag": {
+      "ids": [
+        "c27f5be417fcd053d197",
+        "4c777a9d19825fd4d31a",
+        "5eef503adad36d25d631",
+        "bde3e208da1da1a95561"
+      ],
+      "pegel_aus": "staerke",
+      "pegel_max": 0.9,
+      "nachfedern": "zweiter Schlag 40 % leiser nach 0.12 s"
+    },
+    "dampf": {
+      "ids": [
+        "fe4a4665ad8365f42596"
+      ],
+      "kraeftig": {
+        "pegel": 0.8,
+        "dauer_s": 1.2
+      },
+      "gelenk": {
+        "pegel": 0.25,
+        "dauer_s": 0.4,
+        "tonhoehe": [
+          1.1,
+          1.4
+        ]
+      }
+    },
+    "umbau": {
+      "ids": [
+        "f22b681bbb5090573646",
+        "378527a3df4bea45e6c1"
+      ],
+      "pegel": 0.6,
+      "unterlage": {
+        "ids": [
+          "7fb89dff19787430a568",
+          "39514b0562a464369a77"
+        ],
+        "pfad": "src/vendor/patch-car/audio/gear-heavy-0.ogg, gear-heavy-1.ogg (Stamm)",
+        "pegel": 0.3
+      }
+    },
+    "blitz": {
+      "ids": [
+        "2380350c96a302eaf268",
+        "3521463dbd6ccd73aea5",
+        "0487c40e81f04dc87797",
+        "a8af0bccbce601ad1065"
+      ],
+      "knall": "ZapHard bei staerke > 0.7",
+      "pegel": 0.45,
+      "max_gleichzeitig": 3
+    },
+    "kantenblitz": {
+      "ids": [],
+      "hinweis": "geht im Knistern von blitz auf, kein eigener Klang"
+    },
+    "schaelen": {
+      "ids": [
+        "abb3925a52b5b1d8cd42",
+        "e218ae9fa774806bad8d"
+      ],
+      "pegel": 0.4,
+      "tonhoehe": [
+        0.9,
+        1.2
+      ]
+    },
+    "rascheln": {
+      "ids": [
+        "2c8a8893f0e0411041b5",
+        "df34bc1563313f9a7659",
+        "49e56ebd852c6de48ca4"
+      ],
+      "schicht": true,
+      "pegel_aus": "staerke",
+      "pegel_max": 0.5
+    }
   },
-  "kappe": { "sfx_je_s": 14, "gleichzeitig": 10 },
+  "kappe": {
+    "sfx_je_s": 14,
+    "gleichzeitig": 10
+  },
   "offen": "Alles aus dem Bestand; Feinschliff nach erstem Hörtest mit Georg."
 }
