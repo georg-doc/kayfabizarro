@@ -78,3 +78,9 @@ Felder für `data/fisch_akten.json`: `id`, `rolle`, `alias`, `akte`, `kopfgeld`,
 - *Heist in E Minor* (Künstler „Root Access“) muss erst aus `suno_tests/mixer_screamcore` ins Radio geholt werden.
 - Songs kommen aus Bubble FM (`radio/data/songs.meta.json`). Der deutsche Künstlername „Kühlwasser“ heißt jetzt „The Coolant Line“ (Radio-Manifest und Quelle).
 - Wählt man einen Fisch, wird sein Song Standard in Bubble FM. Kapert man einen anderen, wechselt der Sender.
+
+## Nachtrag 22.11. (Georg direkt)
+- **Neu spielbar: Bullion (gold), Accountant.** Goldfisch nach Goldfisch-Anatomie (runder Körper, Doppel-Schleierschwanz, hohe Rückenflosse), KFB-Cartoon-Augen, goldgelber Schuppenschimmer unter der Bloom-Schwelle.
+  - Rap sheet: "Keeps the crew’s books. Two sets, obviously. Wears more gold than the treasure chest and calls it a pension plan. Bounty: 24,000 shells, freshly laundered."
+  - Strength: "Every fourth shell pays double." Song: *Golden Gleam of the Treasure Chest* – Doubloon Dreams.
+- **Weiblich gelesen:** FlexiFish (Cat Burglar) und Placebo (Smuggler), über das Pronomen „she“ im Rap Sheet, sonst unverändert.
