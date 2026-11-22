@@ -1,0 +1,46 @@
+{
+  "schema": "kfb.priority-event/0.1",
+  "priority_event_id": "EXAMPLE-NOT-WRITTEN",
+  "job_id": "EXAMPLE-JOB",
+  "created_utc": null,
+  "actor": {
+    "role": "GEORG",
+    "identity_verified": false
+  },
+  "authority": "USER_REQUEST",
+  "priority": {
+    "old": "UNTRIAGED",
+    "requested": "P1",
+    "effective": "UNTRIAGED",
+    "rationale": "Illustrative example: a visually significant tube transition would be prioritized after source verification",
+    "is_human_override": false
+  },
+  "assessment": {
+    "severity": "UNTRIAGED",
+    "impact": null,
+    "frequency": null,
+    "effort": null,
+    "confidence": null,
+    "regression_risk": null,
+    "readiness": "IDEA_ONLY",
+    "workflow_status": "DRAFT_IN_CHAT",
+    "blockers": [
+      "Unverified Aquarium source/path"
+    ],
+    "dependencies": []
+  },
+  "routing": {
+    "coordination_owner": "WS0",
+    "receiving_owner": null,
+    "target_milestone": null,
+    "queue_revision": 0,
+    "previous_event_id": null,
+    "idempotency_key": null
+  },
+  "github": {
+    "canonical_issue_url": null,
+    "priority_comment_url": null,
+    "head": null,
+    "readback_verified": false
+  }
+}
