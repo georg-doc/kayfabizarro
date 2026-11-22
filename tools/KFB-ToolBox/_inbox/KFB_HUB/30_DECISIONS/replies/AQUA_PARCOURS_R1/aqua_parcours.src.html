@@ -62,7 +62,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
     </div>
     <div class="ctl">
       <span class="seg" role="group" aria-label="Modus" id="modus">
-        <button id="m-chill" data-m="chill">chill</button><button id="m-normal" data-m="normal" aria-pressed="true">normal</button><button id="m-hard" data-m="hard">hard</button>
+        <button id="m-chill" data-m="chill">chill</button><button id="m-normal" data-m="normal" aria-pressed="true">trouble</button><button id="m-hard" data-m="hard">gangster</button>
       </span>
       <label class="k" for="fisch">Fisch <select id="fisch"></select></label>
       <label class="k" for="kombo">Kombo <input id="kombo" type="range" min="0" max="100" value="70"> <span id="kombo-w" class="small">70 %</span></label>
@@ -102,15 +102,16 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
   </div>
 
   <div class="q">
-    <h3>Offen für die Konzeptrunde</h3>
+    <h3>Entschieden in der Konzeptrunde (Georg 22.11.)</h3>
     <ol>
-      <li>Scoring: nur Muscheln, oder auch Zeit, Ringe, unentdeckt bleiben und übrige Leben? Eine Zahl oder eine Heist-Wertung mit Sternen?</li>
-      <li>Rangliste: gemeinsam für alle Kollegen (mit Claude-Login) oder nur die eigene Bestleistung?</li>
-      <li>Fische: genau eine klare Stärke je Fisch (schnell, getarnt, Muschel-Magnet)?</li>
-      <li>Perks: Turbo und Tarnung, oder dazu Magnet, Extraleben, Kombo-Verdoppler mit Risiko?</li>
-      <li>Länge und Ride: wie lang soll ein Lauf dauern; Ride nach der Luke oder als Finale vor der Blutbahn?</li>
-      <li>Leben: drei für den ganzen Lauf oder je Station?</li>
-      <li>Editor: nur ansehen und rechnen, oder auch Muscheln, Ringe, Truhen verschieben und zurück ins Spiel geben?</li>
+      <li>Scoring: alles wird erfasst (Zeit, Ringe, unentdeckt, übrige Leben) und nach dem Game Over in einer Statistik-Tafel im HUD-Design gezeigt; die Punktzahl selbst bleibt für Aqua die Muschelzahl.</li>
+      <li>Rangliste: später eine gemeinsame „Hall of Bubble Fame“ für alle Kollegen.</li>
+      <li>Fische: genau eine klare Stärke je Fisch (schnell, getarnt, Muschel-Magnet …).</li>
+      <li>Perks: Turbo und Tarnung, dazu Magnet, Extraleben und Kombo-Verdoppler mit Risiko.</li>
+      <li>Ride: direkt nach der Luke; endet nach Songlänge oder über den „Exit Now!“-Knopf (Animation und Position wie auf dem Startbild).</li>
+      <li>Blutbahn: erst einmal als Easter Egg nach dem Hai-Angriff.</li>
+      <li>Leben nach Modus: chill 3 je Station (am Ziel-Ring wieder voll), trouble 3 für den ganzen Lauf mit Extraleben aus Truhen, gangster 3 für den ganzen Lauf ohne Extraleben.</li>
+      <li>Offen: Editor nur ansehen oder auch verschieben.</li>
     </ol>
   </div>
 </div>
@@ -119,12 +120,12 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 __LEVELS__
 const STATIONEN = [
   { i: 0, name: 'Becken', rolle: 'Prolog · Urteil, Trübung, 4711-Luke', farbe: '#2ec4c9' },
-  { i: 'ride', name: 'Ride „Cartoon Chase“', rolle: 'Glasröhre im Song-Takt · geplant', farbe: '#f2c230', plan: true },
+  { i: 'ride', name: 'Ride „Cartoon Chase“', rolle: 'direkt nach der Luke · Songlänge oder „Exit Now!“', farbe: '#f2c230', plan: true },
   { i: 1, name: 'Kelp Garden', rolle: 'Lernen · je eine Gefahr', farbe: '#56d39a' },
   { i: 2, name: 'Riff', rolle: 'Steigern · Minen-Tor, Tunnel mit 6 Ringen', farbe: '#2ec4c9' },
   { i: 3, name: 'Augenfeld', rolle: 'Grusel-Ruhe · 13 Augen, keine Scheinwerfer', farbe: '#b98cff' },
   { i: 4, name: 'Schlucht', rolle: 'Alles zusammen · dann der Hai', farbe: '#ff8a4f' },
-  { i: 5, name: 'Blutbahn', rolle: 'Ausklang · Strömung im Herzschlag', farbe: '#c2394b' },
+  { i: 5, name: 'Blutbahn', rolle: 'Easter Egg nach dem Hai · Strömung im Herzschlag', farbe: '#c2394b' },
 ]
 const FISCHE = [
   { id: 'docfish', name: 'DocFish · The Specialist', perk: 'Second Opinion: erster Fang je Station kostet kein Herz' },
@@ -198,7 +199,7 @@ function zeichneSumme() {
   let m = 0, t = 0; LEVELS.forEach((L) => { const p = punkte(L); m += p.muscheln; t += p.truhen })
   document.getElementById('gesamt').textContent = (m + t).toLocaleString('de-DE')
   const f = FISCHE.find((x) => x.id === S.fisch)
-  document.getElementById('aufschl').innerHTML = `<dt>Muscheln</dt><dd>${m}</dd><dt>Truhen</dt><dd>${t}</dd><dt>Modus</dt><dd>${S.modus}</dd><dt>Kombo-Anteil</dt><dd>${S.kombo} %</dd><dt>Perk</dt><dd style="font-family:var(--body)">${f.perk}</dd>`
+  document.getElementById('aufschl').innerHTML = `<dt>Muscheln</dt><dd>${m}</dd><dt>Truhen</dt><dd>${t}</dd><dt>Modus</dt><dd>${{ chill: 'chill', normal: 'trouble', hard: 'gangster' }[S.modus]}</dd><dt>Kombo-Anteil</dt><dd>${S.kombo} %</dd><dt>Perk</dt><dd style="font-family:var(--body)">${f.perk}</dd>`
 }
 function zeichneKurve() {
   const svg = document.getElementById('kurve'); svg.replaceChildren(); const n = STATIONEN.length, cw = 980 / n
