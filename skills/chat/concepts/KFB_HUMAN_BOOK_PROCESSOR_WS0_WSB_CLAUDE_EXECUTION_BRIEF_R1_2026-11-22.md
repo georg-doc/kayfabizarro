@@ -7,6 +7,16 @@
 **Final game receiver:** existing WB2 / KFB WorldBuilder owns scene/world integration and placement, with WSA as existing technical integrator when activated. Do not spawn a parallel scene runtime or replace WorldBuilder.  
 **Protected:** Island MVP R4 STOP/NO MVP; no R5 or world geometry/Stage authorization from this document. No new Card/PDF, Audio, Clay material or camera/input owners. Stage route = NONE while brief-only.
 
+## ADDITIVE R1B · 2026-11-22 · Shareable scene launch seam (WS0 Issue #478)
+
+Georg also wants the Book Processor **and the separate aquarium/satirical driving experience** to be opened through configured share links on the **existing KFB GPT Site**. WS0 owns the cross-product research and source map; the book-module Claude child **does not** build a general link/router/auth runtime. Binding work order: `skills/chat/concepts/KFB_SHAREABLE_GAME_SCENES_WS0_RESEARCH_AND_WORK_ORDER_R1_2026-11-22.md`; [Issue #478](https://github.com/georg-doc/kayfabizarro/issues/478).
+
+**Module-consumer contract to prepare, only after actual source is built:** accept a *typed, validated* request from the existing WB2/World Studio owner for (a) `sceneletId` / authored world anchor, (b) `startPhase`: `idle-display`, `opening`, `page-feed` or `reader` **if implemented**, (c) named `shot`: cover/front or reading spread, (d) `lookId` from existing KFB clay/material presets, (e) deterministic `seed` where already supported, and (f) safe return/exit action. Keep camera, input, world placement, PDF/Card viewer, audio and saves owned by existing modules. The child exposes no direct external URL parsing or login credentials.
+
+**No premature release assumption:** Book scenes are NOT yet built, and no ChatGPT Game Site link for them is presently proven. The first child test should take an internal validated preset object and start the actual book module at a chosen phase; only a later authorized owner integration will resolve URL→preset and publish it.
+
+**Next gate remains source-first book/gear isolation**; WS0's Issue #478 separately inventories current Site switch owners and the aquarium source before implementing any share URL. No new runtime owner, no Stage / Live promotion.
+
 ## 1. Creative direction confirmed by Georg (2026-11-22)
 
 The `06-orrery` example provides **gear/kinematic mechanics, not visual styling**. Its polished shiny golden brass finish and luxury antique-planetarium presentation are explicitly **REJECTED as KFB target styling**.
