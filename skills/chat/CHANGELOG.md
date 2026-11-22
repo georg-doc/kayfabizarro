@@ -1,3 +1,11 @@
+## 2026-11-22 · GEORG DECISION · Book Processor R1 · WSB/Blender + WS0→Claude + DIY Clay materials
+
+- **Production ownership:** WSB / Blender MCP builds the exact real book model/rig from original print files; WS0 Lead will spawn one separate dedicated Claude chat to build the complete book-processing Scenelet module. WSA/WB2 remains the sole existing receiving world/runtime integrator. No Claude spawn / Blender creation in this documentation slice.
+- **Art direction:** Codevember 06-Orrery is a **mechanism-only donor**; its smooth shiny golden brass aesthetic is rejected. Use worn matte rusty DIY salvage and purposeful mixed toy-like hard rubber, clay-bodied gears, irregular painted metal, visible repair and mild handmade skew. Functional meshing tooth geometry/axles/phase/ratios stay valid; cartoon asymmetry belongs to non-contact structure and finish.
+- **Additive execution brief:** `skills/chat/concepts/KFB_HUMAN_BOOK_PROCESSOR_WS0_WSB_CLAUDE_EXECUTION_BRIEF_R1_2026-11-22.md`; R0 concept, machine-readable source, evidence report and Return updated. Read existing WSB status and KFB Clay/Style/visual anti-slop SSOTs, no replacement material owner.
+- **Evidence:** 1/1 revised source JSON parse/readback, changed docs re-fetched; **0** physical book renders, **0** Orrery screenshots, **0** module builds/mesh tests, **0** browser/Stage checks. Draft PR #477; no new Stage route/Hub card/main router change at concept-only gate.
+- **One next gate:** source-isolate genuine WSB book and original Orrery gear drive, then A/B/C salvage material proof on one mechanically engaged pair before assembly. Existing Island R4 STOP/NO MVP unchanged; no merge/Live.
+
 ## 2026-11-22 · PROPOSAL · *Hilfe, ich bin ein Mensch!* Human Nature Book Processor Scenelet R0
 
 - New source-grounded **concept only** on `planning/kfb-human-nature-book-processor-scenelet-r0-2026-11-22`; no WorldBuilder / Card / Audio / physics code or Stage/Live deployment.
