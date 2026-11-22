@@ -1,0 +1,126 @@
+{
+  "schema": "kfb.visual-replay/0.1",
+  "status": "EXAMPLE_NOT_A_TEST",
+  "run_id": "EXAMPLE-REVIEW-0001",
+  "capture_kind": "LINEAR_IDEAL",
+  "provenance": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "game/integration-r2",
+    "head": "UNVERIFIED",
+    "bundle_sha256": null,
+    "asset_manifest_sha256": null,
+    "deployment_status": "NOT_VERIFIED"
+  },
+  "scenario": {
+    "scene_id": "SOURCE_ID_PENDING",
+    "beat_id": "BEAT_TUBE_EXAMPLE",
+    "path_source_ref": null,
+    "path_status": "PLANNED_NOT_EXECUTABLE",
+    "expected_event": "EXAMPLE speedlines synchronize to tube acceleration",
+    "observed_event": null
+  },
+  "clock": {
+    "utc_start": null,
+    "monotonic_origin_ms": null,
+    "sim_tick": null,
+    "sim_time_ms": null,
+    "frame_id": "EXAMPLE-FRAME-0001",
+    "media_pts_ms": null,
+    "sync_error_ms": null
+  },
+  "configuration": {
+    "flag_pairs": {
+      "rec": "1",
+      "world": "endless"
+    },
+    "flag_hash": null,
+    "world_seed": null,
+    "game_state_id": null,
+    "camera": {
+      "position": null,
+      "quaternion": null,
+      "fov_deg": null,
+      "exposure": null
+    },
+    "player": null,
+    "controls": [
+      {
+        "at_ms": 0,
+        "action": "EXAMPLE_FORWARD",
+        "state": "PROPOSED_NOT_RECORDED"
+      }
+    ],
+    "event_chain": [
+      "EXAMPLE-EVENT-0001"
+    ]
+  },
+  "device": {
+    "test_rig": "UNTESTED_DEVICE",
+    "os": null,
+    "browser": null,
+    "gpu": null,
+    "renderer_api": null,
+    "viewport_css": {
+      "width": 1280,
+      "height": 720
+    },
+    "render_pixels": {
+      "width": 1280,
+      "height": 720
+    },
+    "dpr": null,
+    "graphics_preset": null,
+    "gpu_contention": "UNKNOWN"
+  },
+  "graphics": {
+    "scene_revision": null,
+    "renderer_version": null,
+    "tone_mapping": null,
+    "color_space": null,
+    "shadow_mode": null,
+    "lighting_state": null,
+    "shader_materials": [
+      {
+        "material_id": "EXAMPLE-MAT-PLACEHOLDER",
+        "source_asset_id": null,
+        "shader_sha256": null,
+        "texture_refs": [],
+        "uniforms_relevant": {}
+      }
+    ],
+    "vfx_emitters": [],
+    "load_events": []
+  },
+  "media": [],
+  "events": [
+    {
+      "event_id": "EXAMPLE-EVENT-0001",
+      "frame_id": "EXAMPLE-FRAME-0001",
+      "media_pts_ms": null,
+      "sim_tick": null,
+      "type": "SIMULATED_EVENT_ONLY",
+      "cause_event_ids": [],
+      "state_snapshot_id": null,
+      "capture_refs": []
+    }
+  ],
+  "metrics": {
+    "capture_overhead": "UNMEASURED",
+    "frame_p50_ms": null,
+    "frame_p95_ms": null,
+    "frame_p99_ms": null,
+    "frame_max_ms": null,
+    "draw_calls": null,
+    "triangles": null,
+    "cpu_gpu_sampling": "UNAVAILABLE"
+  },
+  "review": {
+    "critic_mode": "NO_REVIEW",
+    "rubric_revision": "R1_PROPOSAL",
+    "target_fidelity": null,
+    "dimensions": [],
+    "findings": [],
+    "golden_ref": null,
+    "human_acceptance": "NOT_REQUESTED"
+  }
+}
