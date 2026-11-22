@@ -1,5 +1,46 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-026 · 22.11.2026 · Georgs Hub-Liste (q827–q835) + Parcours-Runde + Modi · Artefakt v31
+
+Je Punkt ein Beleg in diesem Ordner.
+
+1. **Startbild (q832/q833):** Die Illustrationen rotieren bildfüllend wie vorher, das Becken liegt davor.
+   - Vorn stehen echte Riesentang-Pflanzen aus `kelp-forest` an den Rändern und wiegen sich im Strom.
+   - Die Seite sucht sich dafür zwei vorhandene Pflanzen und stellt den Blick so, dass Mitte, Logo und Becken frei bleiben. Gezeichnet wird nur der Tang, kein Boden.
+   - Der leere Echo-Monitor ist im Startbild ausgeblendet.
+   - Beleg: `startbild_tang_ecken_r1.png` (529×815, 1280×720, 844×390).
+2. **KFB-Auge (q829/q834):** Ursache war der Klarlack-Glanz der Augäpfel über der Bloom-Schwelle; außerdem spiegelte die schwarze Pupille die roten Scheinwerfer und das Truhenlicht.
+   - Die Seite zähmt den Glanz nach dem Einsetzen: wenig Klarlack, matte Pupille, schwache Umgebungsspiegelung, kein Leuchten. Der Stamm bleibt unverändert.
+   - Weil die Augen teils erst nach dem Aufbau kommen, läuft das alle 1,5 s nach.
+   - Nahaufnahme an der Truhe: überstrahlte Pixel am Auge von bis zu 62 auf 0.
+   - Beleg: `auge_glanz_r1.png` (vorher/jetzt). Vergleich mit dem alten Glanz über `?glanz=1`.
+3. **Fisch-Akten R2 (q830):** `FISCH_AKTEN_R2.md` als Heist-Crew mit Wheelman, Cat Burglar, Hacker (Prof. MaBi), Con Artist, Muscle, Smuggler, Informant und Getaway-Sub.
+   - Je Fisch genau eine Stärke (auch aus der Parcours-Runde). Alles Englisch, kein Medizin- und kein DocCheck-Witz.
+   - Ein blinder Gegenleser, danach eine Überarbeitung: Ladebildschirm-Sprüche um konkrete absurde Fakten statt Schablonen gebaut.
+   - „Kühlwasser“ heißt jetzt „The Coolant Line“ (Radio-Manifest, Metadaten, Radio-Quelle).
+4. **Hai (q827):** WSBs reparierter `KFB_Shark_white.kfb.r1.glb` (assets/private, Standard-PBR, KFB-Augen-Anker) privat in `models/privat/hai/`.
+   - Die alte Kopie lief auf Specular-Glossiness und bleibt nur als öffentlicher Rückfall.
+   - Beleg: `hai_repariert_r1.png`.
+5. **Röhre (q827):** Georgs 12 Ringe aus der Alpha-Kontur extrudiert (neues gemeinsames Modul `js/bild-koerper.js`, auch für die Monitore). Leuchtend, Blau 1–6 zu Beginn, Gold 7–12 zum Ende, je Abschnitt (4 Ringe) ein Typ, wiederholt.
+   - Beleg: `roehre_ringe_r1.png`.
+6. **U-Boot (q835):** Silber ist Standard, Rauchglas ist raus (Datei, Schalter, Artefakt).
+7. **Modi:** chill / trouble / gangster (alte Speicherstände werden umgeschrieben).
+   - chill: 3 Leben je Station, beim Stationswechsel wieder voll mit kurzem Aufleuchten.
+   - trouble: 3 Leben für den Lauf, Extraleben möglich.
+   - gangster: 3 Leben für den Lauf, kein Extraleben, Gefahren wie bisher hard.
+   - In der Modus-Wahl steht je Modus eine Zeile: „3 lives per station“ / „3 lives, that's it“ / „3 lives. No refunds.“
+   - Game Over: in trouble/gangster neuer Lauf ab Becken, in chill zurück an den Stationsanfang.
+   - Level-Daten und Tests umgestellt, 10/10 grün.
+8. **Truhen-Boni:** Turbo und Tarnung bleiben. Neu, mit Banner und Symbol mit ablaufendem Ring aus vorhandenen HUD-Teilen:
+   - Magnet (10 s, Muscheln kommen zum Fisch);
+   - Extraleben (nicht in gangster, höchstens +2);
+   - Kombo-Verdoppler „Double or Nothing“ (20 s doppelt; der erste Treffer beendet ihn und nimmt den Verdoppler-Gewinn wieder weg).
+9. **Statistik:** Je Lauf ein Datensatz `kfb.aqua-lauf/1` mit Muscheln (Punktzahl), Zeit, Ringen, unentdeckten Stationen, übrigen Leben, Toden nach Ursache, Modus und Fisch. Vorerst im Browser des Spielers gespeichert, letzte 50 Läufe, als Vorbereitung für die Hall of Bubble Fame.
+   - Tafel aus `panel_tall` und HUD-Symbolen nach Game Over („Rap Sheet“) und am Ende („Heist Report“).
+   - Beleg: `game_over_statistik_r1(_schmal).png`.
+10. **Blutbahn:** Der Hauptpfad endet mit dem Hai-Angriff, der Lauf zählt dort als geschafft. Die Blutbahn läuft danach als „Bonus round“, keine Pflicht.
+
+**Noch offen:** HyperNorm auf den Monitoren; Billboards im Meer; die eine Stärke je Fisch im Spiel (nach Georgs Abnahme von R2); Ride mit „Exit Now!“ baut WS0, die Röhre mit den Ringen bleibt bis dahin.
 ## R-025 · 22.11.2026 · Flexa im Arch-Rahmen, Monitor-Modul, Echo-Monitor im Becken, Game Over neu, Fisch-Leben · Artefakt v30
 
 **Flexa (WS0-Punkt 1):**
