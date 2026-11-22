@@ -1,5 +1,32 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-028 · 22.11.2026 · HyperNorm-Monitore, Glitch-Loop, Rahmenwechsel, Billboards im Meer · Artefakt v33
+
+**HyperNorm:** Der Stamm-Kern `engine/hypernorm` liegt unverändert in `kfb-stamm-kopie/engine/hypernorm` (Stand @e3552a67, `HERKUNFT.txt`).
+- Eine Fläche rechnet im Worker (gemessen etwa 12 ms je Bild, Hauptfaden frei) und malt in eine stabile Textur, die alle Monitore teilen.
+- Palette und Seed je Station (Becken, Tang, Riff, Augenfeld, Schlucht, Blut). Beim Stationswechsel kommt eine neue Fläche, das Material bleibt geladen.
+- Bubble FM treibt die Farbe (Bass/Beat → `setFarbe`). Die Fläche läuft nur, solange ein Monitor zu sehen ist, sonst ist sie pausiert.
+- Material: Auszug von 22 Bildern aus dem HyperNorm-Pool (Kosmos, Holzschnitt, Karten, Plakate, Jugendstil; keine Anatomie) in `media/hypernorm/pool`.
+
+**Monitore:**
+- HyperNorm liegt unter dem Text. Echo in Bernstein glitcht über den Loop rein (RGB-Versatz und Zeilenriss), steht klar auf dunkler Unterlage, glitcht raus, dann bleibt kurz nur HyperNorm.
+- Jede neue Echo-Nachricht bekommt einen anderen Rahmen der Serie „breit“, nie zweimal denselben hintereinander.
+- Der alte Platzhalter-Bildschirm im Becken ist raus; Echo läuft im Becken nur noch auf dem Monitor an der Luke.
+
+**Billboards im Meer:** Die Bildwände der Stationen sind jetzt Monitore der Serie „karte“ mit den acht Teaser-Karten (randlos, 1,74 : 1 mittig).
+- Bei den breiteren Rahmen 01/02/05 laufen in den Seitenstreifen HyperNorm.
+- Sie treiben sanft im Strom und drehen sich zur Kamera. Spricht Echo, glitcht der Satz über die Karte.
+- Der Kern bekommt sie über eine Monitor-Fabrik (`createGame({ monitor })`), ohne Fabrik bleibt die schlichte Bildwand.
+- Karten nur aus `teaser_karten_r1`, nichts aus Decks gezogen.
+
+**Dateigrenze:** Die 122 Echo-Sprachdateien sind jetzt zwei, je Stimme eine (`audio/echo/<stimme>_alle.mp4`, Startzeiten im Manifest, Wiedergabe über WebAudio auf dem Spiel-Bus).
+- Erzeugt mit dem neuen Skript `scripts/dc_aquarium/echo_sprite.py` nach `echo_stimmen.py`. Die Einzeldateien liegen als Quelle in `audio/echo_quelle`, außerhalb des Artefakts.
+- Das Artefakt hat jetzt 423 Dateien statt 490, trotz Engine, Pool und Karten.
+
+**Geprüft:** Intro (529×815), Reel, Game Over, Startbild, Billboards (Station 1) und Echo-Sprites, alle Konsolen ohne Fehler. Die Kern-Tests sind 10/10.
+- **Nicht geprüft:** ob der HyperNorm-Worker in der Claude-App startet. Fällt er aus, rechnet der Kern selbst im Hauptfaden weiter (langsamer).
+
+**Belege:** `hypernorm_monitor_r1.png` (Becken: Text, nur HyperNorm, neuer Rahmen), `billboards_meer_r1.png`.
 ## R-027 · 22.11.2026 · Leben als Seitenansicht des Fisches (WS0-Korrektur) · Artefakt v32
 - Die Leben zeigen jetzt die Seitenansicht des gerade gespielten Fisches: einmal je Fischart aus dem echten Modell gerendert, Profil von der Seite mit KFB-Auge, Kopf nach rechts, eng zugeschnitten.
 - Verlorene Leben sind eine dunkle Silhouette derselben Form.
