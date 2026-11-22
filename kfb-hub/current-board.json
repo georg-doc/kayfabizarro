@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-04.1",
-  "updatedAt": "2026-11-04T02:37:00.196Z",
+  "revision": "2026-11-22.1",
+  "updatedAt": "2026-11-22T19:29:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -174,6 +174,25 @@
     }
   ],
   "briefings": [
+    {
+      "id": "brief-kfb-reality-remix-r0-2026-11-22",
+      "title": "KFB Reality Remix R0 · Hackable Multiverse",
+      "badge": "PRODUCT DIRECTION · DOCS ONLY",
+      "status": "ready",
+      "provider": "KFB-Stunt-Car-Race · WS0/Integration R2",
+      "desc": "Explore/Play/Create/Remix/Share ohne Pflicht-Gates; pro Spielaktion persistente, teilbare, systemisch/narrativ reagierende Welt. Reuse MiB/NPC/Chronik/HyperNorm. R0 noch NICHT gebaut.",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155",
+      "tags": [
+        "kfb",
+        "reality remix",
+        "sandbox",
+        "player hacks",
+        "multiverse",
+        "hypernorm",
+        "docs"
+      ],
+      "prompt": "Owner-Brief in Draft PR #155 lesen. Nur WS0/Integration-R2-Stammschreiber: realen Event an bestehenden HyperNorm-Host hängen, mit Schalter speichern/abschalten und Browser-Reload belegen. Keine zweite Runtime, keine Stage/Live-Behauptung."
+    },
     {
       "id": "brief-island-hud-flight-r4-sources",
       "title": "Island Lab · HUD Sprint R4-0 sources",
@@ -401,6 +420,11 @@
     }
   ],
   "quickLinks": [
+    {
+      "title": "Reality Remix Multiverse R0 · WS0 Draft PR #155",
+      "summary": "Georgs hackable KFB Play/Create/Remix/Share-Richtung, bestehende Modul-Owner, Event→HyperNorm-Slice, 12 vorgeschlagene Tests. Docs only; no Stage/Live.",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155"
+    },
     {
       "title": "Island Worldbuilder Lab · Project state",
       "summary": "Newest-first owner status, accepted inputs, current open seams and next Lab step.",

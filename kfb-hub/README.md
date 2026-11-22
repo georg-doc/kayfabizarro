@@ -150,3 +150,8 @@ After that one-time Site shell migration:
 
 See:
 `skills/chat/HUB_LIVE_BOARD_OPERATING_MODEL_2026-10-06.md`
+
+
+### KFB REALITY REMIX / HACKABLE MULTIVERSE · 2026-11-22 · project routing only
+
+Current implementing owner: `georg-doc/KFB-Stunt-Car-Race`, target `game/integration-r2`, [Draft PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155). The PR is **docs-only**: KFB player-modifiable Reality Remix concept, 6 voluntary playstyle funnels, system/men-in-black/NPC emergence, crossovers, BYOM/CodePen-as-source, and an existing-owner R0 event→HyperNorm test plan. Canonical Return: `docs/konzepte/reality-remix-r0/RETURN.md` in PR branch. The Hub links the current owner; it is not the R0 implementation SSOT. **No public Stage/Live route is claimed**; WB2 R4 status remains STOPPED separately. See central `skills/chat/START_HERE.md` for routing.

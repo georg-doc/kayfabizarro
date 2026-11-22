@@ -1,3 +1,9 @@
+## KFB REALITY REMIX / HACKABLE MULTIVERSE · 2026-11-22 · WS0 product direction, docs-only intake
+
+- Georg: Pull, Don't Gate extended to Explore/Play/Create/Remix/Share for all voluntary player styles including free roaming, destruction, social play, absurd system-hacking and player-created/crossover game realities.
+- Current KFB-Stunt-Car-Race owner `game/integration-r2` receives [Draft PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155) on `planning/reality-remix-multiverse-r0-2026-11-22`: product BRIEF, technical CONTRACT, TEST_PLAN (R0-01..12), RETURN, additive CHANGELOG; older WS0 ideas and playloops linked, no code changes.
+- Programmatic evidence: exact PR branch/file read-back; runtime tests **0**, Stage **none**, merge **none**. One next gate: existing game owner connects one genuine gameplay event to existing HyperNorm output and persists a reversible remix; browser/reload proof before promotion. WB2 R4 remains separately stopped.
+
 ## 2026-11-04 · WS0 Black Ink Blob Sprite Family docs/intake candidate
 
 - Captured nine Georg-visual-PASS 12-character theme pairs into an 18-source-sheet SHA-256 intake ledger, 108 mechanical sprite candidates and reusable L0/L1/L2 footless-blob prompt/QA grammar.

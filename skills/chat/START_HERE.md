@@ -1,3 +1,12 @@
+## CURRENT ADDITIVE KFB PRODUCT DIRECTION · 2026-11-22 · REALITY REMIX MULTIVERSE
+
+Georg extends **PULL, DON'T GATE** to a freely hackable, persistent, shareable game-world: **Explore → Play → Create → Remix → Share → Explore**. No mandatory funnels/unlock gates. Real player acts trigger emergent NPC/social/system/media responses; voluntary forks/crossovers may mix incompatible source worlds. Reuse existing game and source owners; no second runtime or invented canon. Current **KFB-Stunt-Car-Race** owner, target `game/integration-r2`, Draft PR [#155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155), work branch `planning/reality-remix-multiverse-r0-2026-11-22`:
+`docs/konzepte/reality-remix-r0/{BRIEF,CONTRACT,TEST_PLAN,RETURN,CHANGELOG}.md`.
+
+State: **GEORG PRODUCT DIRECTION CAPTURED · DESIGN/CONTRACT ONLY · NO IMPLEMENTATION/TESTS/STAGE**. First gate to WS0/Integration-R2 single writer: one real gameplay event → existing HyperNorm host → reversible persistent interpretation + native browser/reload evidence. Existing MiB event/world event gate, Save/Chronik/NPC-Memory, Cards, HyperNorm and script/asset owners retained. This does not revise or restart the separate Four-Island WB2 R4 STOP/NO MVP state.
+
+---
+
 ## ADDITIVE WS0 INTAKE · 2026-11-04 · BLACK INK BLOB SERIES (DOCS/PROVENANCE ONLY)
 
 Georg visually accepted 18 Black Ink Blob PNG sheets (nine 12-character series). WS0 owns prompt/character curation; verified current WS1 `game/inkblobs-r1` / private atlas (72 actors) remains runtime recipient. Candidate contract: `media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/README.md`; intake issue **#466**. 18 original PNG bytes were locally inspected but **NOT committed**; 108 sprite crops are review candidates with 48 boundary-risk flags. One real source character was visually isolated. Next gate: WS0/Asset Librarian import **one** safe six-pack and WS1 show one actual hit/bounce/ink collision proof. No new renderer/runtime owner, no auto-merge, no Stage/Live claim. The WS0 DECISIONS register remains the V-number authority.
