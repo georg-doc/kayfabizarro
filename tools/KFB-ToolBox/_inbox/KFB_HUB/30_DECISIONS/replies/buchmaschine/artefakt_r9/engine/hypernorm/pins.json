@@ -1,0 +1,22 @@
+{
+ "schema": "kfb.hn-pins/1",
+ "_doc": "Erzeugt von scripts/ir2/hn-pins.mjs bei grünem listen-check 18; nicht von Hand ändern. Der Kern liest nur gepinnte Manifeste.",
+ "pins": [
+  {
+   "set": "hypernorm-films",
+   "revision": "r1",
+   "manifest": "engine/hypernorm/schema/beispiel.hn-media.json",
+   "commit": "f79217b09f3e1b6a7a70f96e5da029d72b8e50f6",
+   "sha256": "e55666b11aba43340cad66a86f8e61d4e2b391e1d3fb191932cda82ccb12a46d",
+   "eintraege": 2
+  },
+  {
+   "set": "help-deck-k3",
+   "revision": "r1",
+   "manifest": "engine/hypernorm/test/daten/help-deck.hn-media.json",
+   "commit": "4a35f78f913d00962423561f12235d58ea3cb587",
+   "sha256": "4979e45a252a6ce7dea5e26641ff2a0e26bcf5c08e46ad0b0528cdb487ef231e",
+   "eintraege": 9
+  }
+ ]
+}

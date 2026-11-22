@@ -1,3 +1,5 @@
+> **Einstieg seit 23.11.2026: `KFB_SOP_R1.md` (V-2097).** Diese Datei ist Hintergrund; bei Widerspruch gilt die SOP.
+
 # KFB Arbeitsregeln R1 · Was sich bewährt hat (14.10.2026)
 
 → Webchat-Regel „Intent First · Solution Open“ (V-690): siehe `replies/WEBCHAT_INTENT_FIRST_SOLUTION_OPEN_R1_2026-10-23.md`.

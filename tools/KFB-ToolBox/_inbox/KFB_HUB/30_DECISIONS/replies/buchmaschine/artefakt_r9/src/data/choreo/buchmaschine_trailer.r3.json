@@ -1,0 +1,972 @@
+{
+ "id": "buchmaschine.trailer.r3",
+ "quelle": "Buchmaschine R9 (Georg 22.11.): 45 s, mehr Geduld fürs Buch. Cover ruhig halten, Deckel auf und Klappe aus (Innenmotiv), der Hebel blättert drei Mal um bis zur Doppelseite, die später zerstört wird; danach der Ablauf aus R8 (Rezept r2) zeitversetzt, Karten-Insert länger. Buchmaschine R8 (Georg 22.11.): 30-s-Trailer-Loop als Game-Piece. Buch fällt zu auf die Scheibe, Hebel öffnet den Deckel, Klammern spannen, Orrery läuft an, Ausholen, Umbau in drei Gruppen, Hydraulik hängt das Buch, lesen, Blitz-Kette (Aufladen → Bogen → Treffer → Schälwelle), Relief wächst ohne Blitze, Finale (alle Planeten), Zerfall auf den Boden, Stille, zwei KFB-Karten fliegen auf den Stapel, Rückbau, Hebel wirft das leere Buch aus, leere Scheibe = Anfangsbild. Kamera: halten, halten, schneiden (Kritik R7). Bots tragen die Karten in den Nachbarraum (eigene Zeitleiste, periodisch).",
+ "laenge": 45.0,
+ "phases": [
+  {
+   "id": "einwurf",
+   "t": [
+    0,
+    1.6
+   ]
+  },
+  {
+   "id": "cover",
+   "t": [
+    1.6,
+    5.0
+   ]
+  },
+  {
+   "id": "aufklappen",
+   "t": [
+    5.0,
+    9.0
+   ]
+  },
+  {
+   "id": "blaettern",
+   "t": [
+    9.0,
+    16.2
+   ]
+  },
+  {
+   "id": "spannen",
+   "t": [
+    16.2,
+    17.0
+   ]
+  },
+  {
+   "id": "anlauf",
+   "t": [
+    17.0,
+    19.6
+   ]
+  },
+  {
+   "id": "ausholen",
+   "t": [
+    19.6,
+    20.1
+   ]
+  },
+  {
+   "id": "umbau",
+   "t": [
+    20.1,
+    22.6
+   ]
+  },
+  {
+   "id": "haengen",
+   "t": [
+    22.6,
+    23.6
+   ]
+  },
+  {
+   "id": "lesen",
+   "t": [
+    23.6,
+    24.9
+   ]
+  },
+  {
+   "id": "blitze",
+   "t": [
+    24.9,
+    28.9
+   ]
+  },
+  {
+   "id": "relief",
+   "t": [
+    28.9,
+    30.9
+   ]
+  },
+  {
+   "id": "finale",
+   "t": [
+    30.9,
+    33.1
+   ]
+  },
+  {
+   "id": "stille",
+   "t": [
+    33.1,
+    33.8
+   ]
+  },
+  {
+   "id": "karten",
+   "t": [
+    33.8,
+    37.3
+   ]
+  },
+  {
+   "id": "rueckbau",
+   "t": [
+    37.3,
+    40.9
+   ]
+  },
+  {
+   "id": "auswurf",
+   "t": [
+    40.9,
+    42.9
+   ]
+  },
+  {
+   "id": "leer",
+   "t": [
+    42.9,
+    45.0
+   ]
+  }
+ ],
+ "markers": [
+  {
+   "id": "fallen",
+   "t": 0.15
+  },
+  {
+   "id": "deckel",
+   "t": 5.0
+  },
+  {
+   "id": "blatt1",
+   "t": 9.0
+  },
+  {
+   "id": "blatt2",
+   "t": 11.4
+  },
+  {
+   "id": "blatt3",
+   "t": 13.8
+  },
+  {
+   "id": "klammer1",
+   "t": 16.3
+  },
+  {
+   "id": "klammer2",
+   "t": 16.45
+  },
+  {
+   "id": "ausholen",
+   "t": 19.6
+  },
+  {
+   "id": "umbau",
+   "t": 20.1
+  },
+  {
+   "id": "klammern_auf",
+   "t": 22.2
+  },
+  {
+   "id": "haengen",
+   "t": 22.6
+  },
+  {
+   "id": "laden_an",
+   "t": 23.6
+  },
+  {
+   "id": "schaelen",
+   "span": [
+    24.9,
+    28.9
+   ]
+  },
+  {
+   "id": "relief1",
+   "t": 28.95
+  },
+  {
+   "id": "relief2",
+   "t": 30.1
+  },
+  {
+   "id": "stille",
+   "t": 30.5
+  },
+  {
+   "id": "finale_laden",
+   "t": 30.9
+  },
+  {
+   "id": "finale",
+   "t": 31.3
+  },
+  {
+   "id": "zerfall2",
+   "t": 32.2
+  },
+  {
+   "id": "karte1",
+   "t": 34.0
+  },
+  {
+   "id": "karte2",
+   "t": 34.5
+  },
+  {
+   "id": "rueckbau",
+   "t": 37.3
+  },
+  {
+   "id": "auswurf",
+   "t": 41.2
+  },
+  {
+   "id": "reset",
+   "t": 42.6
+  }
+ ],
+ "tracks": {
+  "tempo": {
+   "keys": [
+    [
+     0,
+     0
+    ],
+    [
+     17.0,
+     0
+    ],
+    [
+     18.0,
+     1
+    ],
+    [
+     19.4,
+     1.4
+    ],
+    [
+     19.6,
+     2.6
+    ],
+    [
+     19.85,
+     0.1
+    ],
+    [
+     20.1,
+     1.6
+    ],
+    [
+     22.6,
+     1
+    ],
+    [
+     23.6,
+     1.6
+    ],
+    [
+     24.8,
+     2.6
+    ],
+    [
+     24.9,
+     0.3
+    ],
+    [
+     28.9,
+     0.6
+    ],
+    [
+     30.75,
+     0.6
+    ],
+    [
+     30.8,
+     0
+    ],
+    [
+     31.5,
+     0
+    ],
+    [
+     33.1,
+     0.3
+    ],
+    [
+     37.3,
+     1.2
+    ],
+    [
+     40.9,
+     0.6
+    ],
+    [
+     42.9,
+     0
+    ],
+    [
+     45.0,
+     0
+    ]
+   ]
+  },
+  "blitze": {
+   "keys": [
+    [
+     0,
+     0
+    ],
+    [
+     24.89,
+     0
+    ],
+    [
+     24.9,
+     1
+    ],
+    [
+     28.8,
+     1
+    ],
+    [
+     28.85,
+     0
+    ],
+    [
+     45.0,
+     0
+    ]
+   ]
+  },
+  "reiz": {
+   "keys": [
+    [
+     0,
+     1
+    ],
+    [
+     24.9,
+     1.4
+    ],
+    [
+     27.1,
+     2.4
+    ],
+    [
+     28.9,
+     1
+    ],
+    [
+     45.0,
+     1
+    ]
+   ]
+  },
+  "wand": {
+   "keys": [
+    [
+     0,
+     0.1
+    ],
+    [
+     17.0,
+     0.1
+    ],
+    [
+     20.1,
+     0.12
+    ],
+    [
+     22.6,
+     0.08
+    ],
+    [
+     23.6,
+     0.05
+    ],
+    [
+     28.9,
+     0.05
+    ],
+    [
+     30.9,
+     0.06
+    ],
+    [
+     31.3,
+     0.15
+    ],
+    [
+     33.1,
+     0.06
+    ],
+    [
+     37.3,
+     0.12
+    ],
+    [
+     42.9,
+     0.1
+    ],
+    [
+     45.0,
+     0.1
+    ]
+   ]
+  },
+  "licht": {
+   "keys": [
+    [
+     0,
+     0.7
+    ],
+    [
+     17.0,
+     1.0
+    ],
+    [
+     23.6,
+     0.8
+    ],
+    [
+     31.2,
+     0.8
+    ],
+    [
+     31.35,
+     1.25
+    ],
+    [
+     33.1,
+     0.8
+    ],
+    [
+     37.3,
+     1.0
+    ],
+    [
+     42.9,
+     0.7
+    ],
+    [
+     45.0,
+     0.7
+    ]
+   ]
+  },
+  "buchlicht": {
+   "keys": [
+    [
+     0,
+     3.4
+    ],
+    [
+     16.2,
+     3.0
+    ],
+    [
+     17.0,
+     0.9
+    ],
+    [
+     22.6,
+     1.5
+    ],
+    [
+     28.9,
+     1.5
+    ],
+    [
+     31.2,
+     1.0
+    ],
+    [
+     33.1,
+     0.55
+    ],
+    [
+     37.3,
+     0.7
+    ],
+    [
+     42.9,
+     3.4
+    ],
+    [
+     45.0,
+     3.4
+    ]
+   ]
+  },
+  "boden": {
+   "keys": [
+    [
+     0,
+     0
+    ],
+    [
+     31.0,
+     0
+    ],
+    [
+     31.35,
+     1
+    ],
+    [
+     34.6,
+     0.7
+    ],
+    [
+     38.8,
+     0.2
+    ],
+    [
+     45.0,
+     0
+    ]
+   ]
+  },
+  "stapel": {
+   "keys": [
+    [
+     0,
+     0.4
+    ],
+    [
+     33.4,
+     0.4
+    ],
+    [
+     33.8,
+     1.0
+    ],
+    [
+     40.9,
+     1.0
+    ],
+    [
+     42.4,
+     0.4
+    ],
+    [
+     45.0,
+     0.4
+    ]
+   ]
+  }
+ },
+ "kamera": {
+  "feder": {
+   "k": 9,
+   "daempfung": 1.0
+  },
+  "schuesse": {
+   "einwurf": {
+    "art": "ruhe",
+    "ziel": [
+     0.38,
+     0,
+     0.04
+    ],
+    "versatz": [
+     0.2,
+     -1.4,
+     2.9
+    ],
+    "bis": [
+     0.05,
+     -1.0,
+     2.2
+    ],
+    "dauer": 5.0,
+    "fov": 36
+   },
+   "oeffnen": {
+    "art": "ruhe",
+    "ziel": [
+     0,
+     0,
+     0.05
+    ],
+    "versatz": [
+     0,
+     -1.7,
+     2.3
+    ],
+    "fov": 38
+   },
+   "totale": {
+    "art": "fix",
+    "pos": [
+     5.0,
+     5.4,
+     6.8
+    ],
+    "blick": [
+     0.2,
+     3.1,
+     0
+    ],
+    "fov": 38
+   },
+   "kurbel": {
+    "art": "fix",
+    "pos": [
+     3.4,
+     5.3,
+     4.4
+    ],
+    "blick": [
+     0,
+     4.1,
+     0
+    ],
+    "fov": 38
+   },
+   "weit": {
+    "art": "fix",
+    "pos": [
+     6.8,
+     5.2,
+     8.8
+    ],
+    "blick": [
+     0,
+     2.9,
+     0
+    ],
+    "fov": 40
+   },
+   "halter": {
+    "art": "folge",
+    "abstand": 5.6,
+    "hoehe": 1.3,
+    "azimut": 0.45,
+    "fov": 38
+   },
+   "lesen": {
+    "art": "folge",
+    "abstand": 2.9,
+    "hoehe": 0.15,
+    "azimut": 0.0,
+    "fov": 34
+   },
+   "blitzA": {
+    "art": "folge",
+    "abstand": 3.7,
+    "hoehe": 0.55,
+    "azimut": 0.6,
+    "fov": 36
+   },
+   "blitzB": {
+    "art": "folge",
+    "abstand": 6.0,
+    "hoehe": 0.2,
+    "azimut": -0.55,
+    "fov": 38
+   },
+   "relief": {
+    "art": "folge",
+    "abstand": 2.7,
+    "hoehe": 0.35,
+    "azimut": -0.95,
+    "azimutBis": -1.3,
+    "dauer": 2.0,
+    "fov": 34
+   },
+   "finale": {
+    "art": "quelle",
+    "abstand": 6.0,
+    "hoehe": 0.6,
+    "azimut": -0.15,
+    "anteil": 0.4,
+    "fov": 44,
+    "halten": true
+   },
+   "boden": {
+    "art": "boden",
+    "azimut": -1.2,
+    "abstand": 4.5,
+    "hoehe": 0.8,
+    "blickHoehe": 1.2,
+    "fov": 50
+   },
+   "stille": {
+    "art": "folge",
+    "abstand": 2.7,
+    "hoehe": 0.1,
+    "azimut": 0.0,
+    "fov": 34
+   },
+   "karten": {
+    "art": "fix",
+    "pos": [
+     -1.0,
+     2.9,
+     7.4
+    ],
+    "blick": [
+     -3.3,
+     1.5,
+     1.1
+    ],
+    "fov": 40
+   },
+   "rueck": {
+    "art": "fix",
+    "pos": [
+     7.6,
+     4.6,
+     9.6
+    ],
+    "blick": [
+     0.6,
+     2.2,
+     0.4
+    ],
+    "fov": 40
+   },
+   "auswurf": {
+    "art": "ruhe",
+    "ziel": [
+     0,
+     0,
+     0.3
+    ],
+    "versatz": [
+     0.4,
+     -1.6,
+     3.2
+    ],
+    "fov": 42
+   },
+   "leer": {
+    "art": "ruhe",
+    "ziel": [
+     0.38,
+     0,
+     0.04
+    ],
+    "versatz": [
+     0.3,
+     -1.5,
+     3.4
+    ],
+    "bis": [
+     0.2,
+     -1.4,
+     2.9
+    ],
+    "dauer": 2.1,
+    "fov": 36
+   },
+   "quelle": {
+    "art": "quelle",
+    "abstand": 5.2,
+    "hoehe": 0.9,
+    "azimut": 0.25,
+    "anteil": 0.45,
+    "fov": 44,
+    "halten": true
+   },
+   "zwischen": {
+    "art": "zwischen",
+    "anteil": 0.55,
+    "versatz": [
+     2.6,
+     0.6,
+     6.4
+    ],
+    "fov": 46,
+    "halten": true
+   },
+   "karteNah": {
+    "art": "karte",
+    "versatz": [
+     0.55,
+     1.25,
+     1.1
+    ],
+    "fov": 34
+   },
+   "innen": {
+    "art": "ruhe",
+    "ziel": [
+     -0.25,
+     0,
+     0.05
+    ],
+    "versatz": [
+     0.05,
+     -0.85,
+     2.3
+    ],
+    "bis": [
+     0.0,
+     -0.75,
+     2.0
+    ],
+    "dauer": 4.0,
+    "fov": 42
+   },
+   "blaettern": {
+    "art": "ruhe",
+    "ziel": [
+     0.0,
+     0,
+     0.05
+    ],
+    "versatz": [
+     0.3,
+     -1.55,
+     2.3
+    ],
+    "bis": [
+     -0.1,
+     -1.35,
+     2.35
+    ],
+    "dauer": 7.2,
+    "fov": 40
+   },
+   "spannen": {
+    "art": "ruhe",
+    "ziel": [
+     0,
+     0,
+     0
+    ],
+    "versatz": [
+     1.3,
+     -2.3,
+     1.5
+    ],
+    "fov": 40
+   }
+  },
+  "folge": [
+   [
+    0,
+    "einwurf"
+   ],
+   [
+    5.0,
+    "innen"
+   ],
+   [
+    9.0,
+    "blaettern"
+   ],
+   [
+    16.2,
+    "spannen"
+   ],
+   [
+    17.0,
+    "totale"
+   ],
+   [
+    19.6,
+    "kurbel"
+   ],
+   [
+    20.1,
+    "weit"
+   ],
+   [
+    22.6,
+    "halter"
+   ],
+   [
+    23.6,
+    "lesen"
+   ],
+   [
+    24.9,
+    "quelle"
+   ],
+   [
+    28.9,
+    "relief"
+   ],
+   [
+    30.8,
+    "finale"
+   ],
+   [
+    31.55,
+    "boden"
+   ],
+   [
+    33.1,
+    "stille"
+   ],
+   [
+    33.8,
+    "zwischen"
+   ],
+   [
+    35.8,
+    "karteNah"
+   ],
+   [
+    37.7,
+    "rueck"
+   ],
+   [
+    40.9,
+    "auswurf"
+   ],
+   [
+    42.9,
+    "leer"
+   ]
+  ],
+  "ruck": {
+   "aufprall": 0.06,
+   "finale": 0.16,
+   "karte": 0.02,
+   "umbau": 0.05,
+   "klick": 0.02
+  },
+  "abklingen": 7
+ },
+ "bots": {
+  "tempo": 1.1,
+  "trageTempo": 1.6,
+  "stapel": [
+   -3.4,
+   0,
+   1.2
+  ],
+  "tuer": [
+   -12.85,
+   0,
+   2.6
+  ],
+  "warte": [
+   [
+    -2.5,
+    0,
+    2.3
+   ],
+   [
+    -4.4,
+    0,
+    2.2
+   ]
+  ],
+  "abholen": [
+   38.4,
+   39.2
+  ],
+  "heben": 1.0,
+  "rueckDauer": 10.5
+ }
+}

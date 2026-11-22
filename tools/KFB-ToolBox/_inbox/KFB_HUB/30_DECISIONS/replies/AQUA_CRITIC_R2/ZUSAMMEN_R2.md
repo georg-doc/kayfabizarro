@@ -2,6 +2,8 @@
 
 **Kurz:** Zwei unabhängige Kritiker, A (Gameplay, Bedienung, Technik) und B (Design, Effekte, Ton, Story, Texte), haben 138 Belegbilder geprüft: 3 Modi × Desktop und Handy quer. A hat 25 Befunde, B 26; 16 davon decken sich. Unten stehen 34 Punkte, sortiert nach Wirkung und dann nach Aufwand.
 **Stand:** Behoben sind das Figurenblatt (B1), das Prompt (A9) und in r40 die Punkte 1–8, 17 und 21; die Pause (10) teilweise. Der Mixer-Pegel (B24) ist im Stamm gesenkt und wird übernommen. Die meisten hohen Punkte sind klein und gehören dem Aqua-Chat.
+**Stand r48 (22.11. spät, Aqua-Chat):** Erledigt ist 16 (Timer, r42). Vor dem Termin erledigt der Aqua-Chat q847 Ente, 31, 32, 30, 20, 18, 26. Nach dem Termin folgen 10 Pausenmenü, 11 Kit-Rahmen, 19, 24, 25 sowie 15 und 22 (Texte, Georg entscheidet).
+**Stand r49 (Artefakt v68, WS0 geprüft):** erledigt q847 Ente, 18, 20, 26, 31; 30 Künstler doppelt behoben, Laufschrift bleibt; 32 über Clip-Auswahl gelöst (eingesprochene Clips nur im Becken). Weiter mit Erfassung für Aqua 1.0 (V-2096).
 **Zu prüfen:** Georg entscheidet die Ente (A16), Falkenstein (B4) und die Texte, die er selbst einspricht (B16, B18, B20). B2 widerspricht Georgs Vorgabe vom 22.11. und wird nicht umgesetzt.
 
 Einzelberichte: `KRITIKER_A_GAMEPLAY_TECHNIK.md`, `KRITIKER_B_DESIGN_SOUND_STORY.md`. Belege: `belege/<modus>_<geraet>/`.

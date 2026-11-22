@@ -1,0 +1,334 @@
+{
+ "schema": "kfb.cue-belegung/1",
+ "modul": "buchmaschine",
+ "quelle": "data/audio/atlas-r1/sound-atlas.r1.json (Stamm), IDs = atlas file id",
+ "stil": "Uhrwerk-Tick als Grund, Dampf und Wusch zu den Umbauten, Knistern mit Rascheln in der Zerstörung (Moderne Zeiten, Retro-Mechanik)",
+ "ereignisse": {
+  "zahn": {
+   "ids": [
+    "36bd60f4f2de19888796",
+    "ea9cb4689784aaa67ece"
+   ],
+   "wechsel": "tick/tock abwechselnd",
+   "hoerbar": "jeder 2. Zahn",
+   "pegel": 0.35,
+   "tonhoehe": [
+    0.92,
+    1.08
+   ],
+   "rueckwaerts": "tock zuerst, Tonhöhe 0.9"
+  },
+  "einrasten": {
+   "ids": [
+    "b28612120188baba28e2",
+    "f53841d58d63f154d538",
+    "8d3e17afa0b878e5b687",
+    "e20f8ffffcce8b7ded42",
+    "90d847291c403458b5fc"
+   ],
+   "je_schub": 10,
+   "verteilung_s": 0.6,
+   "tonhoehe_nach_groesse": [
+    0.7,
+    1.25
+   ],
+   "pegel": 0.5
+  },
+  "schlag": {
+   "ids": [
+    "c27f5be417fcd053d197",
+    "4c777a9d19825fd4d31a",
+    "5eef503adad36d25d631",
+    "bde3e208da1da1a95561"
+   ],
+   "pegel_aus": "staerke",
+   "pegel_max": 0.9,
+   "nachfedern": "zweiter Schlag 40 % leiser nach 0.12 s"
+  },
+  "dampf": {
+   "ids": [
+    "fe4a4665ad8365f42596"
+   ],
+   "kraeftig": {
+    "pegel": 0.8,
+    "dauer_s": 1.2
+   },
+   "gelenk": {
+    "pegel": 0.25,
+    "dauer_s": 0.4,
+    "tonhoehe": [
+     1.1,
+     1.4
+    ]
+   }
+  },
+  "umbau": {
+   "ids": [
+    "f22b681bbb5090573646",
+    "378527a3df4bea45e6c1"
+   ],
+   "pegel": 0.6,
+   "unterlage": {
+    "ids": [
+     "7fb89dff19787430a568",
+     "39514b0562a464369a77"
+    ],
+    "pfad": "src/vendor/patch-car/audio/gear-heavy-0.ogg, gear-heavy-1.ogg (Stamm)",
+    "pegel": 0.3
+   }
+  },
+  "blitz": {
+   "ids": [
+    "BM02_blitz_a",
+    "BM02_blitz_b",
+    "BM02_blitz_c",
+    "BM02_blitz_d"
+   ],
+   "knall": "ZapHard bei staerke > 0.7",
+   "pegel": 0.5,
+   "max_gleichzeitig": 3,
+   "vorher_atlas": [
+    "2380350c96a302eaf268",
+    "3521463dbd6ccd73aea5",
+    "0487c40e81f04dc87797",
+    "a8af0bccbce601ad1065"
+   ]
+  },
+  "kantenblitz": {
+   "ids": [],
+   "hinweis": "geht im Knistern von blitz auf, kein eigener Klang"
+  },
+  "schaelen": {
+   "ids": [
+    "abb3925a52b5b1d8cd42",
+    "e218ae9fa774806bad8d"
+   ],
+   "pegel": 0.4,
+   "tonhoehe": [
+    0.9,
+    1.2
+   ]
+  },
+  "rascheln": {
+   "ids": [
+    "2c8a8893f0e0411041b5",
+    "df34bc1563313f9a7659",
+    "49e56ebd852c6de48ca4"
+   ],
+   "schicht": true,
+   "pegel_aus": "staerke",
+   "pegel_max": 0.5
+  },
+  "landen": {
+   "ids": [
+    "BM06_landen_a",
+    "BM06_landen_b"
+   ],
+   "pegel": 0.8,
+   "hinweis": "Buch setzt auf der Scheibe auf (mit schlag)",
+   "vorher_atlas": [
+    "c037a50a2ab11e038570"
+   ]
+  },
+  "servo": {
+   "ids": [
+    "BM07_servo_a",
+    "BM07_servo_b",
+    "BM07_servo_c"
+   ],
+   "pegel": 0.45,
+   "tonhoehe": [
+    0.95,
+    1.08
+   ],
+   "hinweis": "Hebel, Klammern, Bots",
+   "vorher_atlas": [
+    "66e75f82f10e3ab10f6c",
+    "b9fc9ad24f13d2f5abee"
+   ]
+  },
+  "klick": {
+   "ids": [
+    "BM08_klick_a",
+    "BM08_klick_b",
+    "BM08_klick_c"
+   ],
+   "pegel": 0.6,
+   "tonhoehe": [
+    0.95,
+    1.05
+   ],
+   "hinweis": "eine Gruppe rastet ein / Klammer schnappt (Kritik R7: wenige klare Klicks statt Rauschen)",
+   "vorher_atlas": [
+    "b28612120188baba28e2",
+    "f53841d58d63f154d538",
+    "8d3e17afa0b878e5b687"
+   ]
+  },
+  "hydraulik_ab": {
+   "ids": [
+    "BM09_hydraulik_ab"
+   ],
+   "pegel": 0.5,
+   "vorher_atlas": [
+    "d2a06058fe5405d3d8fc"
+   ]
+  },
+  "hydraulik_auf": {
+   "ids": [
+    "BM09_hydraulik_auf"
+   ],
+   "pegel": 0.45,
+   "vorher_atlas": [
+    "570e5c466af6f9ff5481"
+   ]
+  },
+  "laden": {
+   "ids": [
+    "BM01_laden_a",
+    "BM01_laden_b",
+    "BM01_laden_c"
+   ],
+   "pegel": 0.4,
+   "tonhoehe": [
+    0.95,
+    1.05
+   ],
+   "hinweis": "Planet lädt auf, kommt vor dem Bogen",
+   "vorher_atlas": [
+    "0268a23cd68768b28030",
+    "09b1f57514457d0341d9"
+   ]
+  },
+  "brumm": {
+   "ids": [
+    "BM03_brumm"
+   ],
+   "pegel": 0.55,
+   "hinweis": "Spannung vor dem Finale",
+   "vorher_atlas": [
+    "579ece0222a6e593e13e"
+   ]
+  },
+  "wuerfel": {
+   "ids": [
+    "BM05_wuerfel_a",
+    "BM05_wuerfel_b",
+    "BM05_wuerfel_c",
+    "BM05_wuerfel_d"
+   ],
+   "pegel": 0.5,
+   "tonhoehe": [
+    0.92,
+    1.08
+   ],
+   "hinweis": "Würfel klacken auf dem Boden (Holz/Kunststoff)",
+   "vorher_atlas": [
+    "5571425c3a0becd579dc",
+    "50c821a0affa5d3540d0",
+    "2ba79e3fe2d1681c19b5"
+   ]
+  },
+  "karte": {
+   "ids": [
+    "BM11_karte_a",
+    "BM11_karte_b"
+   ],
+   "pegel": 0.75,
+   "tonhoehe": [
+    0.9,
+    1.05
+   ],
+   "vorher_atlas": [
+    "b72485f1db47a6afbb64",
+    "93ab98b1f0115da5e2f1"
+   ]
+  },
+  "auswurf": {
+   "ids": [
+    "BM10_auswurf_karte_a",
+    "BM10_auswurf_karte_b"
+   ],
+   "pegel": 0.6,
+   "vorher_atlas": [
+    "20d75b7d8ca677f06d24"
+   ]
+  },
+  "schritt": {
+   "ids": [
+    "BM12_schritt_a",
+    "BM12_schritt_b",
+    "BM12_schritt_c",
+    "BM12_schritt_d"
+   ],
+   "pegel": 0.16,
+   "tonhoehe": [
+    0.94,
+    1.06
+   ],
+   "vorher_atlas": [
+    "ba014ac3845b729939ac"
+   ]
+  },
+  "tuer": {
+   "ids": [
+    "BM13_tuer"
+   ],
+   "pegel": 0.35,
+   "vorher_atlas": [
+    "7960777294bc9de7a918"
+   ]
+  },
+  "relief": {
+   "ids": [
+    "BM04_relief_loop"
+   ],
+   "vorher_atlas": [],
+   "pegel": 0.45,
+   "hinweis": "Relief wächst: Knistern (2,25 s, zweimal gespielt)"
+  },
+  "auswurf_buch": {
+   "ids": [
+    "BM10_auswurf_buch"
+   ],
+   "vorher_atlas": [],
+   "pegel": 0.7
+  },
+  "stille": {
+   "ids": [
+    "BM15_stille"
+   ],
+   "vorher_atlas": [],
+   "pegel": 0.5,
+   "hinweis": "Nachklang vor dem Finale"
+  },
+  "kammer": {
+   "ids": [
+    "BM14_kammer_drone_loop"
+   ],
+   "schicht": true,
+   "pegel": 0.6,
+   "hinweis": "Grundton der Kammer, 30 s = eine Rezeptlänge, läuft als Schleife ab Rezeptzeit 0"
+  },
+  "blatt": {
+   "ids": [
+    "2c8a8893f0e0411041b5",
+    "df34bc1563313f9a7659",
+    "49e56ebd852c6de48ca4"
+   ],
+   "pegel": 0.4,
+   "tonhoehe": [
+    1.0,
+    1.2
+   ],
+   "dauer_s": 0.7,
+   "hinweis": "R9: Hebel blättert um (Papier aus der Rascheln-Gruppe, kurz)"
+  }
+ },
+ "kappe": {
+  "sfx_je_s": 14,
+  "gleichzeitig": 10
+ },
+ "offen": "R8: neue Ereignisse aus dem Bestand (Atlas-IDs von WS0 22.11.); fehlende Klänge gehen als Liste an WS0 (ElevenLabs).",
+ "quelle_r8b": "Georg 22.11.: Wunschklänge von WS0 mit ElevenLabs (40_AUDIO/elevenlabs_r1/buchmaschine_r1, assets/private). Noch nicht im Atlas: Einträge als Dateipfade in ton_karte.json (Schlüssel = Dateiname). Pegel mit tools/angleichen.py angeglichen (RMS −20 dBFS, Schleifen −26 dBFS, Spitze −1 dBFS)."
+}

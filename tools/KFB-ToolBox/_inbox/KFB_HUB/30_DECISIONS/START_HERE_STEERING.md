@@ -1,3 +1,5 @@
+> **Einstieg seit 23.11.2026: `KFB_SOP_R1.md` (V-2097).** Diese Datei ist Hintergrund; bei Widerspruch gilt die SOP.
+
 > **ARCHIV (14.10.2026, V-228):** abgelöst. Maßgeblich sind `ARCHITECTURE_R1.md` und `DECISIONS.md`.
 
 # START HERE · KFB Steuerung (für jede Sitzung: Claude Code, WSA, Blender-Coworker, Webchats)

@@ -1,0 +1,531 @@
+{
+ "konfiguration": {
+  "modus": "chill",
+  "geraet": "desktop",
+  "groesse": "1280x720",
+  "ladezeit_s": 6.1,
+  "fps": {
+   "startbild": 43.7,
+   "becken": 39.5,
+   "ride": 60.2,
+   "meer": 29.7
+  },
+  "datum": "2026-11-22T23:00:17.984Z",
+  "speicher": {
+   "adapter": "lokal",
+   "geteilt": false,
+   "preset": "aqua",
+   "hinweis": "This browser only"
+  },
+  "fisch": "crimson"
+ },
+ "szenen": [
+  {
+   "nr": 1,
+   "name": "tuer",
+   "beginn_s": 0,
+   "dateien": [
+    "01_tuer.png"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 1.9,
+   "lage": {
+    "place": "tank",
+    "leben": null,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 2,
+   "name": "startbild",
+   "beginn_s": 0,
+   "dateien": [
+    "02_startbild.png"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 6.2,
+   "lage": {
+    "place": "tank",
+    "leben": null,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 3,
+   "name": "radio_playlist",
+   "beginn_s": 0,
+   "dateien": [
+    "03_radio_playlist.png"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 1.7,
+   "lage": {
+    "place": "tank",
+    "leben": null,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 4,
+   "name": "fischwahl",
+   "beginn_s": 0,
+   "dateien": [
+    "04_fischwahl.png"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 2.2,
+   "lage": {
+    "place": "tank",
+    "leben": null,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 5,
+   "name": "figurenblatt",
+   "beginn_s": 0,
+   "dateien": [
+    "05_figurenblatt.png"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 2.2,
+   "lage": {
+    "place": "tank",
+    "leben": null,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 6,
+   "name": "flexa_intro",
+   "beginn_s": 0,
+   "dateien": [
+    "06_flexa_intro.png",
+    "06_flexa_intro.mp4"
+   ],
+   "ereignisse": [
+    "18.12s spiel:sea.level @tank",
+    "33.96s spiel:sea.echo @tank"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "video_s": 9.4,
+   "video_fps": 41.8,
+   "dauer_s": 18.4,
+   "lage": {
+    "place": "tank",
+    "leben": 3,
+    "untertitel": [
+     "I\nOpen hatch"
+    ]
+   }
+  },
+  {
+   "nr": 7,
+   "name": "becken",
+   "beginn_s": 0,
+   "dateien": [
+    "07_becken.png"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 2.9,
+   "lage": {
+    "place": "tank",
+    "leben": 3,
+    "untertitel": [
+     "I\nOpen hatch"
+    ]
+   }
+  },
+  {
+   "nr": 8,
+   "name": "schleuse",
+   "beginn_s": 0,
+   "dateien": [
+    "08_schleuse_tippen.png",
+    "08_schleuse_falsch.png"
+   ],
+   "ereignisse": [
+    "43.67s spiel:sea.echo @tank",
+    "43.69s spiel:sea.echo @tank"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 5.9,
+   "lage": {
+    "place": "tank",
+    "leben": 3,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 9,
+   "name": "flucht_luke",
+   "beginn_s": 0,
+   "dateien": [
+    "09_flucht_luke_ausholung.png",
+    "09_flucht_luke_aufprall.png",
+    "09_flucht_luke.mp4"
+   ],
+   "ereignisse": [
+    "46.5s szene:luke.zap @tank",
+    "46.79s spiel:sea.echo @tank",
+    "46.82s spiel:sea.echo @tank",
+    "47.59s szene:luke.bruch @tank",
+    "49.69s spiel:sea.echo @pipe"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "video_s": 5.6,
+   "video_fps": 42.9,
+   "dauer_s": 10.1,
+   "lage": {
+    "place": "pipe",
+    "leben": 3,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 10,
+   "name": "ride",
+   "beginn_s": 0,
+   "dateien": [
+    "10_ride.png",
+    "10_ride.mp4",
+    "10_ride_exit_knopf.png",
+    "10_ride_ankunft.png"
+   ],
+   "ereignisse": [
+    "74.87s spiel:sea.level @sea",
+    "74.88s spiel:sea.echo @sea"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "video_s": 8.9,
+   "video_fps": 58.1,
+   "dauer_s": 26.9,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": [
+     "ECHO://If you feel sick, that is the pipe. Or the economy."
+    ]
+   }
+  },
+  {
+   "nr": 11,
+   "name": "kelp_garden",
+   "beginn_s": 0,
+   "dateien": [
+    "11_kelp_garden.png"
+   ],
+   "ereignisse": [
+    "80.41s spiel:sea.echo @sea",
+    "80.43s spiel:sea.echo @sea"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 5.5,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": [
+     "ECHO://Swim it off. The open sea does not wait."
+    ]
+   }
+  },
+  {
+   "nr": 12,
+   "name": "kapern",
+   "beginn_s": 0,
+   "dateien": [
+    "12_kapern_ausholung.png",
+    "12_kapern_aufprall.png",
+    "12_kapern.mp4"
+   ],
+   "ereignisse": [
+    "81.01s spiel:sea.level @sea",
+    "86.79s szene:kapern.treffer @sea"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "video_s": 3.5,
+   "video_fps": 34.3,
+   "dauer_s": 12.6,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": [
+     "ECHO://Swim it off. The open sea does not wait."
+    ]
+   }
+  },
+  {
+   "nr": 13,
+   "name": "riff_minen",
+   "beginn_s": 0,
+   "dateien": [
+    "13_riff_minen.png"
+   ],
+   "ereignisse": [
+    "93.15s spiel:sea.level @sea"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 7,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": [
+     "ECHO://Swim it off. The open sea does not wait."
+    ]
+   }
+  },
+  {
+   "nr": 14,
+   "name": "augenfeld",
+   "beginn_s": 0,
+   "dateien": [
+    "14_augenfeld.png"
+   ],
+   "ereignisse": [
+    "99.9s spiel:sea.level @sea",
+    "103.41s spiel:sea.augen.sieht @sea",
+    "105.6s spiel:sea.augen.alarm @sea",
+    "105.61s spiel:sea.augen.kippt @sea",
+    "106.3s spiel:sea.augen.kippt @sea",
+    "106.3s spiel:sea.augen.kippt @sea"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 7.3,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": [
+     "ECHO://Swim it off. The open sea does not wait."
+    ]
+   }
+  },
+  {
+   "nr": 15,
+   "name": "schlucht",
+   "beginn_s": 0,
+   "dateien": [
+    "15_schlucht.png"
+   ],
+   "ereignisse": [
+    "106.38s spiel:sea.augen.kippt @sea",
+    "106.43s spiel:sea.level @sea"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 7.2,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": [
+     "ECHO://Swim it off. The open sea does not wait."
+    ]
+   }
+  },
+  {
+   "nr": 16,
+   "name": "hai_angriff",
+   "beginn_s": 0,
+   "dateien": [
+    "16_hai_angriff_naehe.png",
+    "16_hai_angriff_ausholung.png",
+    "16_hai_angriff_aufprall.png",
+    "16_hai_angriff.mp4"
+   ],
+   "ereignisse": [
+    "112.73s spiel:sea.level @sea",
+    "115.41s hai:shot @sea",
+    "115.41s hai:schatten @sea",
+    "115.46s spiel:sea.echo @sea",
+    "116.68s hai:shot @sea",
+    "116.68s hai:naehe @sea",
+    "116.78s hai:blasen @sea",
+    "116.99s hai:blasen @sea",
+    "117.21s hai:blasen @sea",
+    "117.39s hai:blasen @sea",
+    "117.58s hai:stille @sea",
+    "117.58s hai:blasen @sea",
+    "117.78s hai:shot @sea",
+    "117.78s hai:angriff @sea",
+    "117.78s hai:blasen @sea",
+    "118.01s hai:blasen @sea",
+    "118.04s hai:schrei @sea",
+    "118.08s spiel:sea.echo @sea",
+    "118.11s spiel:sea.echo @sea",
+    "118.19s hai:blasen @sea",
+    "118.41s hai:shot @sea",
+    "118.41s hai:biss @sea",
+    "118.41s hai:schwarz @sea",
+    "118.41s hai:blasen @sea",
+    "118.59s hai:blasen @sea",
+    "118.79s hai:shot @sea",
+    "118.79s hai:schwarzAus @sea",
+    "118.79s hai:blasen @sea",
+    "118.98s hai:blasen @sea",
+    "119.18s hai:blasen @sea",
+    "119.39s hai:blasen @sea",
+    "119.53s hai:aufprall @sea",
+    "119.58s hai:blasen @sea",
+    "119.78s hai:blasen @sea",
+    "119.88s hai:dunkel @sea",
+    "120.19s hai:wechsel @sea",
+    "120.19s spiel:sea.level @sea",
+    "120.29s hai:erwachen @sea",
+    "122.11s spiel:sea.echo @sea",
+    "122.16s spiel:sea.echo @sea",
+    "122.79s hai:ende @sea",
+    "125.14s spiel:sea.echo @sea",
+    "125.17s spiel:sea.echo @sea",
+    "130.09s spiel:sea.echo @sea"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "video_s": 11.2,
+   "video_fps": 23.9,
+   "dauer_s": 23.8,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 17,
+   "name": "blutbahn",
+   "beginn_s": 0,
+   "dateien": [
+    "17_blutbahn.png",
+    "17_blutbahn.mp4"
+   ],
+   "ereignisse": [
+    "135.12s spiel:sea.level @sea"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "video_s": 9.1,
+   "video_fps": 23.1,
+   "dauer_s": 23.3,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 18,
+   "name": "game_over",
+   "beginn_s": 0,
+   "dateien": [
+    "18_game_over_fall.png",
+    "18_game_over.png",
+    "18_game_over.mp4"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "video_s": 8.2,
+   "video_fps": 31.5,
+   "dauer_s": 22.8,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 19,
+   "name": "neustart",
+   "beginn_s": 0,
+   "dateien": [
+    "19_neustart.png"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 4.8,
+   "lage": {
+    "place": "sea",
+    "leben": 3,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 20,
+   "name": "game_over_menu",
+   "beginn_s": 0,
+   "dateien": [
+    "20_game_over_menu.png",
+    "20_game_over_menu_menue.png"
+   ],
+   "ereignisse": [
+    "186.21s spiel:sea.level @tank"
+   ],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 13,
+   "lage": {
+    "place": "tank",
+    "leben": 3,
+    "untertitel": []
+   }
+  },
+  {
+   "nr": 21,
+   "name": "einstellungen",
+   "beginn_s": 0,
+   "dateien": [
+    "21_einstellungen.png"
+   ],
+   "ereignisse": [],
+   "konsole": [],
+   "fehler": [],
+   "notiz": [],
+   "dauer_s": 1.6,
+   "lage": {
+    "place": "tank",
+    "leben": 3,
+    "untertitel": []
+   }
+  }
+ ],
+ "konsole_gesamt": []
+}

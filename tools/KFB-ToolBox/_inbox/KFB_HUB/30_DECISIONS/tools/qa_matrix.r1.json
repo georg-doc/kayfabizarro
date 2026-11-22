@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.qa-matrix/1",
+  "version": "r1",
+  "pass": { "min_axis": 7, "min_mean": 8, "gates_green": ["A", "B"] },
+  "max_rounds": 5,
+  "stop_after_no_improvement": 2,
+  "axes": [
+    { "id": "A", "name": "Absicht", "bands": ["Star/Geschichte nicht erkennbar", "erkennbar, aber verwässert", "klar, jede Szene dient ihr", "sofort und mit Witz lesbar"] },
+    { "id": "B", "name": "Ziel-Treue", "bands": ["widerspricht dem Ziel", "Richtung stimmt, Details fehlen", "entspricht dem Ziel", "im Blindvergleich kaum vom Ziel zu trennen"] },
+    { "id": "C", "name": "Handwerk", "bands": ["verzerrte/geflickte Teile, Clipping", "einzelne Ausrutscher", "sauber", "makellos, Detailpflege sichtbar"] },
+    { "id": "D", "name": "Bewegung & Timing", "bands": ["linear, ruckelig, tot", "Grundprinzipien teilweise", "Ausholung, Ease, Holds, Bögen", "lebendig, cartoonig, pointiert"] },
+    { "id": "E", "name": "Lesbarkeit & Hierarchie", "bands": ["Blick findet nichts", "überladen oder zu klein", "klare Reihenfolge, lesbar am Handy", "sofort klar, elegant"] },
+    { "id": "F", "name": "Spielschleife / Ablauf", "bands": ["Sackgassen, unklares Ziel", "Ziel da, Übergänge holprig", "Ziel, Scheitern, Retry, Menü klar", "Sog, man will nochmal"] },
+    { "id": "G", "name": "Ton", "bands": ["stört oder fehlt", "passt teilweise", "stützt Lage und Rhythmus", "erzählt mit"] },
+    { "id": "H", "name": "Technik", "bands": ["Fehler, Abstürze, Ruckeln", "gelegentliche Fehler", "fehlerfrei auf Desktop und Handy", "dazu schnell geladen"] }
+  ],
+  "band_ranges": [[0, 3], [4, 6], [7, 8], [9, 10]],
+  "output": {
+    "verdict": "PASS | FAIL",
+    "scores": { "A": "0-10 | n/a", "B": "…", "C": "…", "D": "…", "E": "…", "F": "…", "G": "…", "H": "…" },
+    "findings": [{ "axis": "C", "scene": "07_becken", "file": "pfad", "time_s": 0, "befund": "…", "fix": "…" }]
+  }
+}
