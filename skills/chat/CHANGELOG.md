@@ -1,3 +1,13 @@
+## 2026-11-22 · WS0 WORK ORDER · Shareable KFB Game Scenes / Deep-Link Presets R1
+
+- Georg requests **Copy scene link** for existing KFB Game switch configurations, opening a chosen Scenelet, shot, light/look, gameplay sequence and soundbed directly in the **existing GPT Game Site**; initial invitations are for *Hilfe, ich bin ein Mensch!* Book Processor (cousin) and a currently authored satirical aquarium/GTA-style module (colleague).
+- Created [WS0 task #478](https://github.com/georg-doc/kayfabizarro/issues/478) and `skills/chat/concepts/KFB_SHAREABLE_GAME_SCENES_WS0_RESEARCH_AND_WORK_ORDER_R1_2026-11-22.md` on existing Draft PR #477; corresponding Book module Claude brief, Return and evidence report updated additively.
+- Verified source-level donors: existing Race Environment `?world=` / `?seed=` URL round-trip; Deck Viewer v5 candidate `?deck=&card=` / `?deck=&page=`; WB2/God Mode versioned module/manifest and separate Player Save contract. No existing generic share-link adapter/runtime was proven.
+- Design proposal `kfb.scene-link/0.1`: safe allowlisted named preset ID + immutable revision mapped to published compatible manifest + optional bounded `shot/phase/look/seed`; owner-validated entry rather than new world/camera/Card/Audio runtime, savegame override, URL editor powers or custom IdP.
+- OpenAI Sites official sharing research: named external viewer sign-in to invited ChatGPT account where enabled; host permission separate from scene URL. Real primary Game Site identity, exact Aquarium module/flags and post-login query persistence **unverified**. `HTX` as IdP remains unconfirmed. Cloudflare Access OTP later only for a separately supported explicitly configured host.
+- Actual tests: new docs/Issue readbacks, no module code, no link roundtrip/browser login test, no Stage deployment or screenshot. R4 STOP/NO MVP preserved; no new Hub route; no merge/Live.
+- **One next gate:** WS0 recovers actual Game GPT Site + switch schema + Aquarium source and produces a source-backed 2-scene preset contract before any implementation or publication.
+
 ## 2026-11-22 · GEORG DECISION · Book Processor R1 · WSB/Blender + WS0→Claude + DIY Clay materials
 
 - **Production ownership:** WSB / Blender MCP builds the exact real book model/rig from original print files; WS0 Lead will spawn one separate dedicated Claude chat to build the complete book-processing Scenelet module. WSA/WB2 remains the sole existing receiving world/runtime integrator. No Claude spawn / Blender creation in this documentation slice.
