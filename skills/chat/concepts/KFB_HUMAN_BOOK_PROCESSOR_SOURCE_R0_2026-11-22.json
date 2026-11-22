@@ -1,0 +1,75 @@
+{
+  "schema": "kfb.scenelet-source-recon/0.1",
+  "version": "R0",
+  "date": "2026-11-22",
+  "status": "PROPOSAL_SOURCE_ONLY",
+  "owner": {
+    "receiving": "KFB WorldBuilder / WB2 existing open-world owner",
+    "assetTruth": "KFB Asset Librarian / existing author-provided book source",
+    "cardTruth": "media/kfb/index.json and existing Card Builder/Viewer",
+    "audioTruth": "KFB Audio existing mix owner"
+  },
+  "book": {
+    "title": "Hilfe, ich bin ein Mensch!",
+    "authors": [
+      "Andreas von Westphalen",
+      "Georg von Westphalen"
+    ],
+    "publisher": "Westend Verlag",
+    "publicationDate": "2024-09-02",
+    "pages": 248,
+    "isbn": "9783864893759",
+    "publisherUrl": "https://westendverlag.de/Hilfe-ich-bin-ein-Mensch/1590",
+    "authorPage": "https://protopians.substack.com/p/hilfe-ich-bin-ein-mensch",
+    "printAtlasStatus": "NOT_SUPPLIED_IN_THIS_SLICE",
+    "spreadPdfStatus": "NOT_SUPPLIED_IN_THIS_SLICE",
+    "chapterCountFromUser": 8,
+    "chapterMappingStatus": "UNVERIFIED"
+  },
+  "decks": [
+    {
+      "id": "help_i_am_a_human",
+      "cardCount": 56,
+      "pageCount": 15,
+      "source": "media/kfb/Help_I_Am_A_Human_-_ADD_web.pdf.json",
+      "registry": "registry/assets/v1/decks/help_i_am_a_human.json",
+      "mappingStatus": "UNVERIFIED",
+      "selection": "CANDIDATE"
+    },
+    {
+      "id": "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+      "cardCount": 56,
+      "pageCount": 15,
+      "source": "media/kfb/Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch_-_ADD_web.pdf.json",
+      "selection": "ALTERNATE"
+    },
+    {
+      "id": "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc",
+      "cardCount": 36,
+      "source": "media/kfb/The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch_-_ADD_web.pdf.json",
+      "selection": "RELATED_DISTINCT"
+    }
+  ],
+  "donor": {
+    "repository": "acher249/codevember-2026",
+    "path": "06-orrery",
+    "license": "MIT",
+    "licenseSha": "1c5399ae90e214fc9ffd09cb64ac14d7d8cc2e17",
+    "readmeSha": "127436101b87771194141f15709f65688e0127e8",
+    "gearsSha": "35f8e92bc16c99eec4a3a9c12530694433e73b57",
+    "trainSha": "88ef8c0986c46ed1abfa1ae989e810d26d0f18e6",
+    "typedReuse": "MECHANISM_ONLY",
+    "sourceVisualIsolated": false,
+    "integrated": false,
+    "repoUrl": "https://github.com/acher249/codevember-2026/tree/main/06-orrery"
+  },
+  "evidence": {
+    "codeRuntimeTests": 0,
+    "browserTests": 0,
+    "sourceVisualIsolation": 0,
+    "cardCropVerification": 0,
+    "StagePublicChecks": 0,
+    "kind": "source files and authoritative page references inspected; proposal no runtime or product proof"
+  },
+  "nextGate": "SOURCE-PROVEN BOOK ASSET + ORRERY ISOLATION, VISUAL-ONLY"
+}
