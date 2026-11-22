@@ -1,0 +1,246 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buchmaschine R4 · Rost-Basis, Kantenblitze</title>
+<style>html,body{margin:0;height:100%;background:#2a2622;overflow:hidden;font:14px system-ui}canvas{display:block}
+#ui{position:fixed;left:12px;bottom:12px;display:flex;gap:8px;align-items:center;background:#0007;color:#eee;padding:8px 10px;border-radius:8px}
+button,select{font:inherit;padding:6px 10px;border-radius:6px;border:1px solid #777;background:#333;color:#eee;cursor:pointer}button.on{background:#7a5a2a}</style>
+<script type="importmap">{"imports":{"three":"../gateA/vendor/three-build/three.module.js","three/addons/":"../gateA/vendor/addons/"}}</script></head><body>
+<div id="ui"><button id="rw">◀ rückwärts</button><button id="st0">❚❚ halt</button><button id="fw" class="on">vorwärts ▶</button><select id="sb"><option value="orrery">Orrery</option></select><button id="au" class="on">Ablauf</button></div>
+<script type="module">
+// Buchmaschine R3 (Georg 22.11.): Orrery unverändert; Look = Rost der Seemine mit Lack als Farbcode und Chrom-Kanten (rostLook);
+// das Buch liegt oben auf einer Drehscheibe (mit der Merkur-Röhre gekoppelt) und federt weich nach (Feder + Pendel aus der Beschleunigung);
+// im Sternbild hängt es unter dem hellsten Stern, nur dort schälen sich die Seiten ab und fallen nach unten; Tesla-Bögen (energy-arc VOLTAGE_FILAMENT)
+// springen von Planeten zum Buch. Licht, Boden und Spiegelumgebung gehören nur zur Probebühne.
+import * as THREE from 'three'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { buildParts, makeMaterials } from '../gateA/donor/parts.js'
+import { shaftAngle } from '../gateA/donor/train.js'
+import { applyClay } from '../kfbsrc/vendor/clay/kfb-clay.v1.2.js'
+import { createSchaelen } from '../gateD/schaelen.js'
+import { arrangeSign, BLEND, SPREAD, easeInOut } from '../gateA/donor/arrange.js'
+import { SIGNS } from '../gateA/donor/signs.js'
+import { pointHash } from '../gateA/donor/random.js'
+import { rostLook, verlaufUmgebung } from './rostLook.js'
+import * as Bogen from './vfx/energy-arc.r1.js'
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
+renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(innerWidth, innerHeight)
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.outputColorSpace = THREE.SRGBColorSpace
+document.body.appendChild(renderer.domElement)
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#121418')
+const camera = new THREE.PerspectiveCamera(36, innerWidth / innerHeight, 0.05, 120)
+const controls = new OrbitControls(camera, renderer.domElement)
+const CAMS = { totale: { pos: [8.4, 7.6, 9.6], target: [0, 2.8, 0] }, nah: { pos: [2.4, 7.4, 3.6], target: [0, 4.4, 0] }, weit: { pos: [10.5, 6.8, 13.5], target: [0, 3.0, 0] } }
+const setCam = (n) => { camera.position.set(...CAMS[n].pos); controls.target.set(...CAMS[n].target); controls.update() }
+setCam('totale')
+
+// Probebühne: Tag-Anker aus stageLight (wie Gate b), dunkler Werkstatt-Hintergrund, Spiegelumgebung wie im Fahrzeug-Look
+const DAY = { sun: '#fff4e6', sunI: 2.9, hemiSky: '#eef4fa', hemiGround: '#9a8a78', hemiI: 1.05, back: '#ffe6d6', backI: 0.6, elev: 48.99, az: -53.13 }
+const e = DAY.elev * Math.PI / 180, a = DAY.az * Math.PI / 180, sunDir = new THREE.Vector3(Math.cos(e) * Math.sin(a), Math.sin(e), Math.cos(e) * Math.cos(a))
+scene.add(new THREE.HemisphereLight(DAY.hemiSky, DAY.hemiGround, DAY.hemiI * 0.4))   // dunkler Raum (Georg 22.11.), nur Probebühne
+const sun = new THREE.DirectionalLight(DAY.sun, DAY.sunI * 0.6); sun.position.copy(sunDir).multiplyScalar(16); sun.castShadow = true
+sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -7, right: 7, top: 7, bottom: -7, near: 2, far: 40 }); sun.shadow.bias = -0.0003; sun.shadow.normalBias = 0.01
+scene.add(sun, sun.target)
+const back = new THREE.DirectionalLight('#9fb4ff', DAY.backI * 0.9); back.position.copy(sunDir).multiplyScalar(-12).setY(6); scene.add(back)
+const env = verlaufUmgebung(renderer)
+const composer = new EffectComposer(renderer); composer.addPass(new RenderPass(scene, camera))
+const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), 0.75, 0.45, 0.82); composer.addPass(bloom); composer.addPass(new OutputPass())
+const BODEN = -0.45
+const floor = new THREE.Mesh(new THREE.CircleGeometry(16, 64).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#33363b', roughness: 1 }))
+floor.position.y = BODEN; floor.receiveShadow = true; floor.name = 'boden'; scene.add(floor)
+applyClay(floor, THREE, { profile: 'background', seed: 'buch-boden', scaleRef: 1.6 })
+
+const ladeBild = (src) => new Promise((ok) => { const im = new Image(); im.onload = () => ok(im); im.src = src })
+const texVon = (im, srgb) => { const t = new THREE.Texture(im); t.wrapS = t.wrapT = THREE.RepeatWrapping; if (srgb) t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; t.needsUpdate = true; return t }
+const [imD, imA] = await Promise.all([ladeBild('rost/rost_diff.jpg'), ladeBild('rost/rost_arm.jpg')])
+const ROST = { diff: texVon(imD, true), arm: texVon(imA, false) }
+
+// Farbkonzept: Rost ist der Grund für alles. Lack nur als Code nach Funktion: Antrieb (große Räder) Oxidrot, Träger (Platten, Scheibe) Petrol,
+// Arme Creme; kleine Räder Hartgummi; Wellen und Stangen blankes Rosteisen; Chrom an abgegriffenen Kanten. Farbe kommt von Planeten und Buch.
+// Grundfassung (Georg 22.11.: erst eine Basis, dann farbig abstufen): alles im Rost der Seemine, keine Lackfarben.
+// Stufen nur über Helligkeit und Graugehalt: Antrieb voller Rost, Träger dunkler, Arme heller und grauer (abgegriffen), Wellen dunkles Eisen.
+const ROLLEN = {
+  antrieb: { ton: 1.0, grau: 0.0, kante: 0.35 }, traeger: { ton: 0.68, grau: 0.1, kante: 0.3 }, arm: { ton: 1.18, grau: 0.45, kante: 0.4 },
+  eisen: { ton: 0.8, grau: 0.35, kante: 0.4 }, gummi: null, knauf: { ton: 0.9, grau: 0.0, kante: 0.3 },
+}
+const { parts, train } = buildParts(makeMaterials(), 5)
+const machine = new THREE.Group(); machine.name = 'orrery'; scene.add(machine)
+const mat = (color, roughness = 0.8) => new THREE.MeshStandardMaterial({ color, roughness, metalness: 0 })
+const rolle = new Map()
+for (const p of parts) {
+  machine.add(p.mesh)
+  if (p.id === 'sun') { p.mesh.visible = false; continue }
+  let r = null
+  if (p.kind === 'gear') r = train.gears.get(p.id).teeth >= 36 ? 'antrieb' : 'gummi'
+  else if (p.kind === 'plate') r = 'traeger'
+  else if (p.kind === 'bar') r = /Arm$|Bracket$/.test(p.id) ? 'arm' : 'eisen'
+  else if (p.id === 'crankKnob') r = 'knauf'
+  if (r) { p.mesh.material = mat(r === 'gummi' ? '#262422' : '#8a8580', r === 'gummi' ? 0.95 : 0.8); rolle.set(p.mesh, r) }
+  else { const c = p.mesh.material.color?.getHex?.() ?? 0xcccccc; p.mesh.material = mat(c, 0.7) }
+}
+// Drehscheibe oben auf der Sonnenwelle, Buch darauf (von unten verschraubt)
+const SCHEIBE_Y = 4.24
+const scheibe = new THREE.Mesh(new THREE.CylinderGeometry(1.05, 1.1, 0.07, 48), mat('#8a8580')); scheibe.name = 'drehscheibe'; scheibe.castShadow = scheibe.receiveShadow = true
+const nabe = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.18, 0.12, 20), mat('#8a8580')); nabe.position.y = -0.08; scheibe.add(nabe)
+for (let i = 0; i < 6; i++) { const b = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.03, 8), mat('#8a8580')); const t = i / 6 * Math.PI * 2; b.position.set(Math.cos(t) * 0.9, 0.045, Math.sin(t) * 0.9); scheibe.add(b) }
+scheibe.position.y = SCHEIBE_Y; machine.add(scheibe)
+for (const m of [scheibe, nabe, ...scheibe.children]) rolle.set(m, m === scheibe ? 'traeger' : 'eisen')
+applyClay(machine, THREE, { profile: 'midground', seed: 'buchmaschine-orrery', scaleRef: 1.6 })
+for (const [mesh, r] of rolle) { const R = ROLLEN[r]; if (!R) continue; rostLook(mesh.material, { tex: ROST, lack: null, kante: R.kante, skala: 1.3, ton: R.ton, grau: R.grau, bump: 0.5 }); mesh.material.envMap = env; mesh.material.envMapIntensity = 0.5 }
+
+// Buch (Platzhalter bis WSB): Deckel, Seitenblock, Schälhaut mit den Doppelseiten der Leseprobe
+const BREITE = 1.6, HOEHE = BREITE * 714 / 1024
+const buch = new THREE.Group(); buch.name = 'buch'; scene.add(buch)
+const buchInnen = new THREE.Group(); buch.add(buchInnen)
+const deckel = new THREE.Mesh(new THREE.BoxGeometry(BREITE + 0.12, HOEHE + 0.1, 0.05), mat('#b8322a')); deckel.position.z = -0.085
+const block = new THREE.Mesh(new THREE.BoxGeometry(BREITE + 0.02, HOEHE + 0.02, 0.07), mat('#efe7d6', 0.95)); block.position.z = -0.036
+for (const m of [deckel, block]) { m.castShadow = m.receiveShadow = true; buchInnen.add(m) }
+applyClay(buchInnen, THREE, { profile: 'midground', seed: 'buch-platzhalter', scaleRef: 1.6 })
+const bilder = await Promise.all([1, 2, 3, 4, 5, 6, 7, 8].map((i) => ladeBild(`../gateD/pages/s${i}.jpg`)))
+const cv = document.createElement('canvas'); cv.width = 4096; cv.height = 714 * 2; const g2 = cv.getContext('2d')
+bilder.forEach((im, i) => g2.drawImage(im, (i % 4) * 1024, Math.floor(i / 4) * 714, 1024, 714))
+const atlas = new THREE.CanvasTexture(cv); atlas.colorSpace = THREE.SRGBColorSpace; atlas.anisotropy = 8
+const rng = (() => { let s = 20261122; return () => { s = (s + 0x6d2b79f5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296 } })()
+const haut = createSchaelen({ THREE, atlas, breite: BREITE, hoehe: HOEHE, spalten: 22, zeilen: 15, rng })
+buchInnen.add(haut.gruppe); scene.add(haut.flocken)
+const buchMitte = new THREE.Object3D(); buchInnen.add(buchMitte)
+
+// Tesla-Bögen (energy-arc VOLTAGE_FILAMENT, nur Werte angepasst): Planeten schlagen an Ecken, Kantenmitten und Rücken des Buchs ein, nie in die Mitte;
+// vom Einschlag laufen Blitze den Umriss entlang (Bögen zwischen den Randpunkten, Wölbung aus der Seite heraus). Hängt das Buch, beginnt am Einschlag das Schälen.
+const VF = Bogen.presets.find((p) => p.id === 'VOLTAGE_FILAMENT')
+const TESLA = { ...VF, shape: { ...VF.shape, ribbonWidthWorld: 0.075, strandCount: 6 }, visual: { ...VF.visual, emissiveGain: 2.4, haloWidthFactor: 2.8 } }
+const KANTE = { ...VF, shape: { ...VF.shape, archHeightRatio: 0.07, ribbonWidthWorld: 0.035, strandCount: 3, fan: 0.08 }, visual: { ...VF.visual, emissiveGain: 2.2, haloWidthFactor: 2.4 } }
+const RAND = [[-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0]].map(([x, y]) => { const o = new THREE.Object3D(); o.position.set(x * BREITE / 2, y * HOEHE / 2, 0.02); buchInnen.add(o); return { o, u: (x + 1) / 2, v: (y + 1) / 2 } })
+const buchNormal = new THREE.Vector3(0, 0, 1)
+const planet = (id) => parts.find((p) => p.id === id).mesh
+const BOEGEN = ['jupiter', 'saturn', 'earth', 'mars'].map((id) => { const ziel = new THREE.Object3D(); buchInnen.add(ziel); const b = Bogen.create({ a: planet(id), b: ziel, preset: TESLA }); scene.add(b.object3d); return { b, ziel, an: 0, warte: 0.5 + rng() * 2, k: 0, k2: 1 } })
+// Umriss: 8 Kanten-Abschnitte rundum und der Rücken (oben Mitte → unten Mitte)
+const ABSCHNITTE = [...RAND.map((_, i) => [i, (i + 1) % 8]), [1, 5]].map(([i, j]) => { const b = Bogen.create({ a: RAND[i].o, b: RAND[j].o, preset: KANTE, up: buchNormal }); scene.add(b.object3d); return { b, an: 0, ab: 0 } })
+const lauf = []   // geplante Kanten-Blitze: { t, seg, dauer }
+function einschlag(k, jetzt) {
+  for (let s = 0; s < 5; s++) { lauf.push({ t: jetzt + s * 0.07, seg: (k + s) % 8, dauer: 0.22 }); lauf.push({ t: jetzt + s * 0.07, seg: (k - 1 - s + 16) % 8, dauer: 0.22 }) }
+  if (k === 1 || k === 5) lauf.push({ t: jetzt + 0.05, seg: 8, dauer: 0.3 })
+  else lauf.push({ t: jetzt + 0.2, seg: 8, dauer: 0.2 })
+}
+let blitzZeit = 0
+
+// Antrieb und Ablauf
+let drive = 0, speed = 0.08
+const setDir = (s, id) => { speed = s; for (const b of ['rw', 'st0', 'fw']) document.getElementById(b).classList.toggle('on', b === id) }
+rw.onclick = () => setDir(-0.08, 'rw'); st0.onclick = () => setDir(0, 'st0'); fw.onclick = () => setDir(0.08, 'fw')
+const sunPart = parts.find((p) => p.id === 'sun')
+const cur = parts.map(() => ({ p: new THREE.Vector3(), q: new THREE.Quaternion() }))
+const from = parts.map(() => ({ p: new THREE.Vector3(), q: new THREE.Quaternion(), s: new THREE.Vector3(1, 1, 1) }))
+const delay = parts.map((_, i) => pointHash(i, 7) * SPREAD)
+let mode = 'mechanism', formen = new Map(), uhr = BLEND + SPREAD, wechselPuls = 0
+const scheibeVon = { p: new THREE.Vector3(0, SCHEIBE_Y, 0), q: new THREE.Quaternion(), s: 1 }
+let haengeQ = new THREE.Quaternion()
+function go(m, zeichen) {
+  if (m === 'form') formen = arrangeSign(parts, zeichen, camera.position)
+  mode = m; uhr = 0; wechselPuls = 1
+  parts.forEach((p, i) => { from[i].p.copy(cur[i].p); from[i].q.copy(cur[i].q); from[i].s.copy(p.mesh.scale) })
+  scheibeVon.p.copy(scheibe.position); scheibeVon.q.copy(scheibe.quaternion); scheibeVon.s = scheibe.scale.x
+  const n = camera.position.clone().sub(new THREE.Vector3(0, 3.1, 0)).setY(0).normalize(), m4 = new THREE.Matrix4().lookAt(new THREE.Vector3(), n, new THREE.Vector3(0, 1, 0))
+  haengeQ.setFromRotationMatrix(m4).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI))
+  // Ausholen (Anticipation): ein Ruck gegen die kommende Bewegung
+  feder.w.add(new THREE.Vector3(rng() - 0.5, 0, rng() - 0.5).multiplyScalar(4))
+}
+SIGNS.forEach((z) => { const o = document.createElement('option'); o.value = z.name; o.textContent = z.label; sb.appendChild(o) })
+let auto = true, ablaufZeit = 0, ablaufSchritt = 0, zeichenNr = 4
+sb.onchange = () => { auto = false; au.classList.remove('on'); sb.value === 'orrery' ? go('mechanism') : go('form', sb.value) }
+au.onclick = () => { auto = !auto; au.classList.toggle('on', auto) }
+const ABLAUF = [{ m: 'mechanism', t: 9 }, { m: 'form', t: 10 }]
+
+// Weiches Buch: Ort folgt dem Ziel über eine unterkritisch gedämpfte Feder (Überschwingen, Einpendeln); Drehung über eine Winkelfeder,
+// dazu Pendel-Drehmoment aus der Beschleunigung der Aufhängung (lose Aufhängung) und ein leichtes Stauchen beim Abbremsen.
+const feder = { p: new THREE.Vector3(0, SCHEIBE_Y + 0.12, 0), v: new THREE.Vector3(), q: new THREE.Quaternion(), w: new THREE.Vector3(), zielAlt: null, vZiel: new THREE.Vector3(), stauch: 0, sv: 0 }
+const tmpV = new THREE.Vector3(), tmpQ = new THREE.Quaternion(), achse = new THREE.Vector3(), UPV = new THREE.Vector3(0, 1, 0)
+function federSchritt(dt, zielP, zielQ, zielS) {
+  if (!feder.zielAlt) { feder.zielAlt = zielP.clone(); feder.p.copy(zielP); feder.q.copy(zielQ) }
+  const vz = tmpV.subVectors(zielP, feder.zielAlt).divideScalar(Math.max(dt, 1e-4)), acc = vz.clone().sub(feder.vZiel).divideScalar(Math.max(dt, 1e-4)).clampLength(0, 60)
+  feder.vZiel.copy(vz); feder.zielAlt.copy(zielP)
+  const k = 70, c = 2 * Math.sqrt(k) * 0.42
+  feder.v.addScaledVector(tmpV.subVectors(zielP, feder.p).multiplyScalar(k).addScaledVector(feder.v, -c), dt); feder.p.addScaledVector(feder.v, dt)
+  // Winkelfeder: Rest-Drehung zum Ziel als Achse·Winkel
+  tmpQ.copy(zielQ).multiply(feder.q.clone().invert()); if (tmpQ.w < 0) { tmpQ.x *= -1; tmpQ.y *= -1; tmpQ.z *= -1; tmpQ.w *= -1 }
+  const ang = 2 * Math.acos(Math.min(1, tmpQ.w)), s = Math.sqrt(Math.max(1e-8, 1 - tmpQ.w * tmpQ.w)); achse.set(tmpQ.x / s, tmpQ.y / s, tmpQ.z / s).multiplyScalar(ang)
+  const ka = 38, ca = 2 * Math.sqrt(ka) * 0.32
+  feder.w.addScaledVector(achse.multiplyScalar(ka).addScaledVector(feder.w, -ca), dt)
+  feder.w.addScaledVector(new THREE.Vector3().crossVectors(UPV, acc).multiplyScalar(-0.035), dt * 60 * dt)   // Pendel: kippt gegen die Beschleunigung
+  const wl = feder.w.length(); if (wl > 1e-6) feder.q.premultiply(tmpQ.setFromAxisAngle(achse.copy(feder.w).divideScalar(wl), wl * dt))
+  // Stauchen: senkrechte Beschleunigung drückt das Buch zusammen, es federt zurück
+  feder.sv += (-acc.y * 0.004 - feder.stauch * 90 - feder.sv * 9) * dt; feder.stauch += feder.sv * dt; feder.stauch = THREE.MathUtils.clamp(feder.stauch, -0.18, 0.18)
+  buch.position.copy(feder.p); buch.quaternion.copy(feder.q)
+  buch.scale.set(zielS * (1 - feder.stauch * 0.5), zielS * (1 - feder.stauch * 0.5), zielS * (1 + feder.stauch))
+}
+
+const pos = new THREE.Vector3(), quat = new THREE.Quaternion(), spinQ = new THREE.Quaternion()
+for (const [i, p] of parts.entries()) { p.pose(0, pos, quat); cur[i].p.copy(pos); cur[i].q.copy(quat) }
+const LIEGEN = new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI / 2 + 0.18, 0, 0))   // Buch liegt offen auf der Scheibe, leicht angehoben
+let naechsteWelle = 0
+function schritt(dt) {
+  drive += speed * dt; uhr += dt; wechselPuls = Math.max(0, wechselPuls - dt * 0.6)
+  if (auto) { ablaufZeit += dt; if (ablaufZeit > ABLAUF[ablaufSchritt].t) { ablaufZeit = 0; ablaufSchritt = (ablaufSchritt + 1) % ABLAUF.length
+    const a = ABLAUF[ablaufSchritt]; if (a.m === 'form') { const z = SIGNS[zeichenNr++ % SIGNS.length].name; sb.value = z; go('form', z) } else { sb.value = 'orrery'; go('mechanism') } } }
+  const D = drive * Math.PI * 2
+  parts.forEach((p, i) => {
+    p.pose(D, pos, quat); let sc = 1, zq = quat
+    if (mode === 'form') { const t = formen.get(p); if (t) { pos.copy(t.position); sc = t.scale; if (t.faced) { spinQ.setFromAxisAngle(UPV, p.spin(D)); zq = t.quaternion.clone().multiply(spinQ) } else zq = t.quaternion } }
+    const ts = typeof sc === 'number' ? new THREE.Vector3(sc, sc, sc) : sc
+    const k = easeInOut(THREE.MathUtils.clamp((uhr - delay[i]) / BLEND, 0, 1))
+    if (k >= 1) { cur[i].p.copy(pos); cur[i].q.copy(zq); p.mesh.scale.copy(ts) }
+    else { cur[i].p.lerpVectors(from[i].p, pos, k); cur[i].p.y += Math.sin(Math.PI * k) * Math.min(1.2, from[i].p.distanceTo(pos) * 0.12); cur[i].q.copy(from[i].q).slerp(zq, k); p.mesh.scale.lerpVectors(from[i].s, ts, k) }
+    p.mesh.position.copy(cur[i].p); p.mesh.quaternion.copy(cur[i].q)
+  })
+  // Scheibe: im Orrery oben auf der Sonnenwelle, dreht mit der Merkur-Röhre; im Sternbild wird sie zum Haken über dem hellsten Stern
+  const si = parts.indexOf(sunPart), kb = easeInOut(THREE.MathUtils.clamp((uhr - delay[si]) / BLEND, 0, 1))
+  const scheibeDreh = shaftAngle(train, 'mercury', D)
+  const zielScheibeP = mode === 'form' ? sunPart.mesh.position.clone().add(new THREE.Vector3(0, 0.55, 0)) : new THREE.Vector3(0, SCHEIBE_Y, 0)
+  const zielScheibeS = mode === 'form' ? 0.45 : 1
+  scheibe.position.lerpVectors(scheibeVon.p, zielScheibeP, kb); scheibe.position.y += Math.sin(Math.PI * kb) * 0.8
+  scheibe.scale.setScalar(THREE.MathUtils.lerp(scheibeVon.s, zielScheibeS, kb)); scheibe.quaternion.setFromAxisAngle(UPV, scheibeDreh)
+  // Buch-Ziel: liegt auf der Scheibe und dreht mit ihr; im Sternbild hängt es an der Scheibe, Seite zur Kamera
+  let zielP, zielQ, zielS
+  if (mode === 'form' && kb > 0.5) { zielS = 0.75; zielP = scheibe.position.clone().add(new THREE.Vector3(0, -0.12 - HOEHE * zielS * 0.5, 0)); zielQ = haengeQ.clone() }
+  else { zielS = 1; zielP = scheibe.position.clone().add(new THREE.Vector3(0, 0.05 + 0.1 * scheibe.scale.x, 0)); zielQ = new THREE.Quaternion().setFromAxisAngle(UPV, scheibeDreh).multiply(LIEGEN) }
+  federSchritt(dt, zielP, zielQ, zielS)
+  // Schälen nur, wenn das Buch hängt: Kacheln lösen sich und fallen nach unten
+  const haengt = mode === 'form' && uhr > BLEND + 0.8, laufen = Math.abs(speed) / 0.08
+  buch.updateMatrixWorld(true)
+  haut.update(dt, { welt: haut.gruppe, boden: BODEN + 0.01, laufen: haengt ? laufen : laufen })
+  // Blitze: Schläge auf Randpunkte, Lauffeuer den Umriss entlang; hängt das Buch, startet dort eine Schäl-Welle
+  blitzZeit += dt
+  buchNormal.set(0, 0, 1).applyQuaternion(buch.quaternion)
+  const reiz = 0.7 + wechselPuls * 2.5 + (haengt ? 1.4 : 0)
+  for (const B of BOEGEN) {
+    if (B.an > 0) { B.an -= dt; const f = 1 - Math.max(0, B.an) / B.dauer; B.ziel.position.lerpVectors(RAND[B.k].o.position, RAND[B.k2].o.position, f * 0.6)   // der Einschlag rutscht die Kante entlang
+      if (B.an <= 0) B.warte = (0.4 + rng() * 1.6) / reiz }
+    else { B.warte -= dt; if (B.warte <= 0) { B.dauer = B.an = 0.25 + rng() * 0.5; B.k = Math.floor(rng() * 8); B.k2 = (B.k + (rng() < 0.5 ? 1 : 7)) % 8; B.ziel.position.copy(RAND[B.k].o.position); einschlag(B.k, blitzZeit)
+      if (haengt && laufen > 0) haut.welle(RAND[B.k].u, RAND[B.k].v, { tempo: 1.1 + rng() * 0.5, reichweite: 0.3 + rng() * 0.3 }) } }
+    B.b.update(dt, { camera, opacity: B.an > 0 ? 0.6 + 0.4 * Math.abs(Math.sin(performance.now() * 0.05 + B.warte)) : 0 }); B.b.object3d.visible = B.an > 0
+  }
+  for (let i = lauf.length - 1; i >= 0; i--) { const L = lauf[i]; if (blitzZeit >= L.t) { ABSCHNITTE[L.seg].an = Math.max(ABSCHNITTE[L.seg].an, L.dauer); lauf.splice(i, 1) } }
+  for (const A of ABSCHNITTE) { if (A.an > 0) A.an -= dt; A.b.update(dt, { camera, opacity: A.an > 0 ? 0.7 + 0.3 * Math.abs(Math.sin(blitzZeit * 40 + A.an * 9)) : 0 }); A.b.object3d.visible = A.an > 0 }
+}
+let live = true
+const clock = new THREE.Clock()
+function frame() { const dt = Math.min(0.05, clock.getDelta()); if (live) { schritt(dt); controls.update(); composer.render() } requestAnimationFrame(frame) }
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); composer.setSize(innerWidth, innerHeight) })
+window.__record = async ({ dir, frames, cam = 'totale', w = 1280, h = 720, vorlauf = 0 }) => {
+  live = false; renderer.setPixelRatio(1); renderer.setSize(w, h, false); composer.setPixelRatio(1); composer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix(); if (CAMS[cam]) setCam(cam)
+  for (let i = 0; i < vorlauf; i++) schritt(1 / 30)
+  // Kamera am hängenden Buch: fest vor der Seite, auf Höhe des Buchs
+  if (cam === 'buch') { const n = new THREE.Vector3(0, 0, 1).applyQuaternion(haengeQ); camera.position.copy(buch.position).addScaledVector(n, 3.4).add(new THREE.Vector3(0, 0.6, 0)); camera.lookAt(buch.position.clone().add(new THREE.Vector3(0, -0.3, 0))) }
+  for (let i = 0; i < frames; i++) {
+    schritt(1 / 30); if (cam !== 'buch') controls.update(); composer.render()
+    await fetch(`/save?f=${dir}/${String(i).padStart(4, '0')}.png`, { method: 'POST', body: renderer.domElement.toDataURL('image/png') })
+  }
+  return { frames, lose: haut.lose, mode }
+}
+window.__info = () => ({ lose: haut.lose, calls: renderer.info.render.calls, tris: renderer.info.render.triangles, mode })
+frame()
+</script></body></html>
