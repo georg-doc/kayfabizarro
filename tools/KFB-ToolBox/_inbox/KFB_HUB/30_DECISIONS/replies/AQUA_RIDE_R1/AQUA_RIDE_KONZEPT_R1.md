@@ -56,6 +56,19 @@
 | 103–104 | Röhre wird durchsichtig, die Welt verschwindet ins Weiß | Drums weg | hinter der Figur |
 | D 105– | Schlussschlag = Schnitt in die HyperNorm-Röhre: Infinite Room, Typo-Zeilen und KFB-Karten fliegen vorbei, Schnitte im Takt. Danach endlos, bis man den Exit drückt | Schlussschlag, dann der neue Titeltrack „Grand Theft Aqua“ | Musikvideo-Schnitt |
 
+## Röhrenringe und Linien (Georg 22.11., Nachtrag)
+
+- **Ringe:** Georg baut sechs eigene Ringe (2D).
+  - Sie bekommen Volumen (aus der Kontur extrudiert, gerundete Kante) und behalten ihren Glow, der um den 3D-Ring gelegt wird.
+  - Am äußeren Rand sitzt der Geometry-Painter-Effekt (patch.gg, MIT), z. B. „Glowing reef“. Welcher Modus und wie stark, hängt ab von Level, Spielmodus und Zahl der durchschwommenen Ringe.
+  - Die Ringe machen den Verlauf der Röhre lesbar und sind die Staccato-Schläge.
+  - Dieselben Ringe sind später die Durchschwimm-Ringe im Spiel.
+- **Zwischen den Ringen:**
+  - wahlweise die Unterwasserwelt;
+  - oder die strahlförmigen Hyperraum-Linien aus dem Portal, für Wasser angepasst (weicher, Blasenschlieren). Ihre Farbe changiert leicht und wechselt auf den Abschnittsgrenzen, ihr Tempo folgt dem Takt.
+- **Technik:** Der Geometry Painter läuft nur mit WebGPU. Spiel, Aqua und Effekseer zeichnen mit WebGL, deshalb portiert WS0 die Modi Reef, Molten cracks und Aurora silk als ein WebGL-Modul mit „Malen per Code“.
+- **Offen:** der Effekt aus den ersten HyperNorm-Destruction-Slices (Brandlöcher, Energieblitze). Georg sucht ihn heraus.
+
 ## Exit jederzeit
 
 - Knopf oben mittig, Form und Typo wie „Escape Now“. Er pulsiert auf jedem Viertel, auf jedem Takt-Eins stärker.
