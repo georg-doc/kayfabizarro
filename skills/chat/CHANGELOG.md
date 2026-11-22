@@ -1,3 +1,9 @@
+## 2026-11-22 · KFB REALITY REMIX COMPLETE WS0 CHAT META HANDOFF · Main hub routing updated
+
+- Complete chat meta-handoff persisted in the game owner Draft PR #155 as `META_HANDOFF_WS0_2026-11-22.md`, `WS0_EXECUTION_PROMPT_2026-11-22.md`, and `SOURCE_EVIDENCE_INDEX_2026-11-22.md` alongside 17 prior scoped docs. Covers Gray Swan KFB adversarial QA idea, player-selected gameplay loops and dynamic MiB/NPC/system state, modular No-Code/Git/MCP, Asset Librarian/Patch discovery, license-aware Credits, social forks/crossovers and opt-in verified Community Evolution. Source pin `0b364921358257286b4bbe6531807fa62d1ee178`.
+- Current KFB game integration HEAD at handoff `9cfd61a6e83d9786b379ec35ad5591fa597763df`, not the older original PR base SHA. WS0 re-fetches at execution.
+- All new work **docs only**; 63 test cases for future phases remain planned/not-run, 0 R0 runtime/browser tests, no Stage or public release. One next gate remains existing event→HyperNorm→save/reload/undo browser proof. Hub routes to correct existing owner, not a new runtime or licensing authority.
+
 ## 2026-11-22 · REALITY REMIX COMMONS DISCOVERY + COMMUNITY FORKS · routed to game owner Draft PR #155
 
 - Current game repo `georg-doc/KFB-Stunt-Car-Race` Draft PR #155 has 4 new owner planning docs: live in-game Asset Librarian/External 3D/Patch source discovery, isolated preview and native model/FX replacements; contributor-owned code/media licenses with fork/upstream consent; opt-in, versioned Community Evolution Loop.

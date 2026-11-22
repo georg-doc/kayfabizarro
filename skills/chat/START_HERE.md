@@ -1,3 +1,14 @@
+## 2026-11-22 · KFB REALITY REMIX COMPLETE WS0 CHAT META HANDOFF
+
+Georg's whole Reality Remix / Hackable Multiverse / Creator Commons conversation is consolidated in the current game owner **Draft [PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155)**, review branch `planning/reality-remix-multiverse-r0-2026-11-22`:
+- [Full WS0 Meta Summary](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/reality-remix-multiverse-r0-2026-11-22/docs/konzepte/reality-remix-r0/META_HANDOFF_WS0_2026-11-22.md) — product vision, Gray Swan/adversarial QA angle, playstyle loops, MiB/NPC/world reactions, no-code/MCP/Git, external/Patch asset search, CC/credits, versions, community forks, additional proposals and R0-first roadmap;
+- [Direct WS0 Start Prompt](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/reality-remix-multiverse-r0-2026-11-22/docs/konzepte/reality-remix-r0/WS0_EXECUTION_PROMPT_2026-11-22.md);
+- [Source/Evidence Index](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/reality-remix-multiverse-r0-2026-11-22/docs/konzepte/reality-remix-r0/SOURCE_EVIDENCE_INDEX_2026-11-22.md).
+
+Owner documentation is in `georg-doc/KFB-Stunt-Car-Race/docs/konzepte/reality-remix-r0/`. Current integration branch snapshot as of this handoff: `game/integration-r2 @ 9cfd61a6e83d9786b379ec35ad5591fa597763df` (**re-fetch** before execution); PR docs checkpoint `0b364921358257286b4bbe6531807fa62d1ee178`. This is **DOCS_ONLY**: R0 Runtime/browser tests 0, no screenshots, no Stage/Live, no merge, no global CC license. **One next gate:** named existing WS0/Integration-R2 writer proves real Gameplay event → existing HyperNorm visual interpretation → persistent/reversible Save/Reload/browser evidence. The separate WB2 R4 NO MVP/STOP is unchanged; no new owner or additional human gate for this transfer.
+
+---
+
 ## 2026-11-22 · REALITY REMIX COMMONS DISCOVERY + COMMUNITY FORKS
 
 Georg extends [KFB Reality Remix Draft PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155): searchable KFB Asset Librarian + external Patch/3D candidate previews and native gameplay replacements, player-owned per-component media/code licensing, automatically inherited creator credits, optional share/fork/upstream permissions, opt-in community versions that may become curated KFB defaults ONLY after source/CI/owner/human gates. See `docs/konzepte/reality-remix-r0/{CREATOR_DISCOVERY_PATCH_LIBRARIAN_R0,CONTRIBUTOR_COMMONS_LICENSES_R0,COMMUNITY_EVOLUTION_LOOP_R0,DISCOVERY_COMMUNITY_QA_PLAN_R0}.md` on game review branch `planning/reality-remix-multiverse-r0-2026-11-22` at verified head `4e9b63efd0ed87596b4fdb9467292250bb75a208`. Docs-only, NO runtime, NO release, NO public CC license, 20 proposed new QA cases all NOT_RUN. Current gameplay→HyperNorm persistence proof gate unchanged; no new Registry/runtime owner.

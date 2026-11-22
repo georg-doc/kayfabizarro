@@ -1,6 +1,6 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-22.3",
+  "revision": "2026-11-22.4",
   "updatedAt": "2026-11-22T19:29:00Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
@@ -180,7 +180,7 @@
       "badge": "PRODUCT DIRECTION · DOCS ONLY",
       "status": "ready",
       "provider": "KFB-Stunt-Car-Race · WS0/Integration R2",
-      "desc": "Explore/Play/Create/Remix/Share ohne Pflicht-Gates; Creator Credits plus In-Game-Suche über bestehende KFB/External/Patch-Quellen, 3D-Preview, pro Beitrag wählbare Lizenzen und opt-in Community-Forks als QA-geprüfte künftige Defaults. DOCS ONLY: 0 Runtime-Tests, kein Stage/Live, R0-Event→HyperNorm offen.",
+      "desc": "WS0 vollständig übergabefähig: gesamte KFB Reality Remix / Creator Commons / Credits / Patch Asset Discovery / Community Evolution Vision plus KI-/CI-/Lizenz-/Runtime-Quellen und ein R0 Event→HyperNorm-Gate. Meta-Handoff in Draft PR #155. DOCS ONLY; keine Runtime-/Browser-Tests oder Stage.",
       "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155",
       "tags": [
         "kfb",
@@ -191,7 +191,7 @@
         "hypernorm",
         "docs"
       ],
-      "prompt": "Owner-Brief in Draft PR #155 lesen. Nur WS0/Integration-R2-Stammschreiber: realen Event an bestehenden HyperNorm-Host hängen, mit Schalter speichern/abschalten und Browser-Reload belegen. Keine zweite Runtime, keine Stage/Live-Behauptung."
+      "prompt": "Lies zuerst das verlinkte Meta-Handoff und den WS0_EXECUTION_PROMPT_2026-11-22.md in Draft PR #155. Danach nur im aktuellen game/integration-r2 mit einem Writer eine echte Gameplay Event→HyperNorm Save/Reload/Undo Browser-Naht liefern. Kein zweiter Core, keine Showcase-Fakes, keine Stage/Live-Behauptung."
     },
     {
       "id": "brief-island-hud-flight-r4-sources",
@@ -420,9 +420,10 @@
     }
   ],
   "quickLinks": [
+    {"title":"WS0 · Reality Remix Full Chat Meta Handoff 22.11.2026","summary":"Direktes vollständig referenziertes Übergabeprotokoll: Vision, 17 Fachbriefings, Game-/License-/Asset-Belege, neuer WS0-Ausführungsauftrag. Draft PR #155, docs only, kein Stage.","url":"https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/reality-remix-multiverse-r0-2026-11-22/docs/konzepte/reality-remix-r0/META_HANDOFF_WS0_2026-11-22.md"},
     {
       "title": "Reality Remix Multiverse R0 · WS0 Draft PR #155",
-      "summary": "KFB Reality Remix / Creator Kit / Credits + In-Game Asset Search, Patch-Kandidaten, per-Komponente Contributor-Lizenzen und opt-in Community Evolution Loop. Draft PR #155, docs only, keine Stage.",
+      "summary": "Draft PR #155 enthält jetzt die vollständige WS0-Chat-Meta-Summary, direkten Execution Prompt und Source-/Evidence Index; 17 frühere Fachbriefings bleiben, keine Runtime/Stage.",
       "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155"
     },
     {
