@@ -207,3 +207,23 @@ The current Game Dev Studio page still selects `catalog.packages[0]`. This turn 
 
 ### HUMAN
 Pending.
+
+
+## 2026-11-22 · GDS-08 · LATO.2 Mac-first mesh research / visual pilot proposal
+
+### SOURCE REVIEW / FEASIBILITY
+- Verified LATO.2 repo `LoHhhha/LATO.2` master @ `650b48fb1257c83ec1358f0c9f1d95d5cb9c7468`: CUDA 12.4/`nvcc` extension build, checkpoint-driven V-Flow and T-Flow, mesh and image conditioning, targeted 200–5,000 verts, geometry-only output and documented connectivity limitations.
+- No official MPS/macOS/CPU-only LATO path proven. Mac M1 Max 32 GB is suitable for Blender and preview, not a drop-in CUDA replacement. Official NVIDIA VRAM claim ~8 GB, no Mac performance claim.
+- Mac-native **alternative models** pinned for future comparison: `sanchez-kim/trellis-silicon` @ `eaae74ab54e355653c4ab8cc10c27e7461857564`; `lyonsno/trellis2mlx` @ `449bfbc011401fe03d684a01f0b1068bfe8f6ceb`. Neither is a port of LATO.2.
+- No new training required: published pretrained weights. Wrapper, model-weight, input-source and dependency licenses must each remain explicit.
+
+### DELIVERED
+- Additive authoring/visual pilot brief: `tools/game-dev-studio/research/LATO2_MAC_MESH_PILOT_2026-11-22.md`.
+- Proposed one-source-isolated KFB asset comparison in the **existing** Game Dev Studio viewer: original / Blender Decimate / LATO candidate; 500/2000/5000 target counts only where actually generated; geo QA, screenshots, GLB conversion and measured outcome.
+
+### TEST STATUS / BOUNDARY
+- GitHub source and documentation checked; 0 meshes generated, 0 local inference or CUDA executions, 0 real browser screenshots, 0 public Stage checks, 0 runtime files changed.
+- Existing Pilot 01 / Curtain / Eumel, Asset Registry ownership and Race production unchanged. No auto-merge or new human gate.
+
+### ONE NEXT GATE
+`GDS_LATO2_ONE_ASSET_VISUAL_COMPARISON_POC` — real isolated source + derived LATO and decimated models, verified fixed-view visual comparison and package QA. See linked research brief.
