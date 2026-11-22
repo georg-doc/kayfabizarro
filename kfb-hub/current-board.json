@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-20.r22-accusation-candidate",
-  "updatedAt": "2026-11-20T07:30:00+01:00",
+  "revision": "2026-11-22.r23-karaoke-candidate",
+  "updatedAt": "2026-11-22T15:55:04.710Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -176,21 +176,21 @@
   "briefings": [
     {
       "id": "brief-invisible-handshake-r18-tarot-hex",
-      "title": "The Invisible Handshake · R22 Kayfabe Accusation Dice Beats",
-      "badge": "DESIGN CANDIDATE · NOT LIVE",
+      "title": "The Invisible Handshake · R23 Milners Kindergarten Karaoke",
+      "badge": "R23 DESIGN CANDIDATE · NOT LIVE",
       "status": "hold",
       "provider": "Independent card game · Draft PR #475",
-      "desc": "Georg's new direction: accuse, counter-accuse or defend an actual public faction/card while setting, turning, moving or swapping the linked HATE/FEAR/HOPE die. Two physical pressure variants and 25,920 static fixtures; Quest scoring/NPCs unresolved, no human game. Older R19 browser lab remains separate.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R22_KAYFABE_ACCUSATION_DICE_BEATS_2026-11-20.md",
+      "desc": "Six public faction narratives + central die-free Focus. Human speakers introduce cards SHOW/SPIN/SELL, then SET HATE/FEAR/HOPE at face1 as Problem/Reaction/Solution; each later spoken accusation/retort physically MOVEs the active die to a different die-free occupied outer card and TURNs it +1. Node static 120 starts/5,400 legal destinations; first TILT always HATE at beat19. Personal Claim/Quest payout unresolved; 0 human games, no public browser.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R23_MILNERS_KINDERGARTEN_KARAOKE_2026-11-22.md",
       "tags": [
         "invisible handshake",
-        "r22",
-        "kayfabe",
-        "accusation",
-        "three dice",
+        "r23",
+        "milners kindergarten",
+        "karaoke",
+        "move turn",
         "not live"
       ],
-      "prompt": "Run short physical 2H/4H/6H actual-card accuse/retort/defend one-gesture trial, compare stationary pressure A to advancing pressure B, and decide KEEP/TUNE/FAIL without auto-claiming Quest payout or publishing any Site."
+      "prompt": "Physically test 2H/4H/6H six named narrative cards + one central FOCUS: SHOW/SPIN/SELL, one assertive Kayfabe claim as each SET/MOVE+TURN gesture. Assess actual card meaning, one-line continuity, time, first TILT and optional costly Claim desire; Georg KEEP/TUNE/FAIL. No Stage/Live claim."
     },
     {
       "id": "brief-island-hud-flight-r4-sources",
