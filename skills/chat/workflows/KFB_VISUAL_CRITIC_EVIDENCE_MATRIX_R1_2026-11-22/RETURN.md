@@ -73,3 +73,8 @@ Aquarium ideal path file/source, actual current Game Site and executable route; 
 **Protected:** No second runtime owner, no fake cross-chat sync, no silent P0 downgrade, no score inflation, no automatic code merges/Live. No public game screenshots from private asset inventories.
 
 **Single next technical gate:** `KFB_WEBCHAT_PRIORITY_ROUNDTRIP_01` — one source-backed job from an actual Webchat, one named-priority approval → GitHub priority event/readback → WS0 queue projection/acknowledgement → second chat independently reads same event. The earlier Webchat Job Push gate is covered within this proof and not a competing gate.
+
+### 2026-11-22 · WS0 owner intake receipt
+- An actual WS0-facing **open GitHub Issue [KFB-Stunt-Car-Race #153](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/153)** was created with the priority matrix and explicit source-owner route. Its title, body, open state and next gate were read back. This means **GITHUB_QUEUED_VERIFIED**, not `WS0_TRIAGED` or `CLAUDE_EXECUTOR_STARTED`.
+- Race `game/integration-r2` was **read-only** in this slice and may continue advancing; no race runtime commit, branch write, Stage or Live claim.
+- Central coordination Issue #479 and Draft PR #480 remain the single design/review-packet owner. No generic replacement site, no parallel WS0 backlog runtime.
