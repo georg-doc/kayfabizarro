@@ -102,6 +102,10 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Underwater Heist (21.11.) | 85,1 | G Moll | 143 eigenständig (148 roh; synth 56, strings 35, guitar 26, keyboard 16) |
 | Cartoon Chase (Fahrt-Song für den Aquarium-Ride (Georg 22.11.), 22.11.) | 127,2 | E Dur | 17 eigenständig (26 roh; guitar 10, synth 5, keyboard 1, woodwinds 1) |
 | Grand Theft Aqua (Titeltrack Aqua-Startbild und Aquarium (Georg 22.11.): Grand Theft Aqua - Return of DJ Aquarius, 22.11.) | 119,1 | G Moll | 40 eigenständig (40 roh; lead_vocals 25, synth 11, guitar 4) |
+| The Great Heist (Style Mixer R2 · Funk, 22.11.) | 108 | E Moll | 18 eigenständig (19 roh; guitar 10, brass 7, synth 1) |
+| The Silent Vault (Style Mixer R2 · Klassik, 22.11.) | 112 | E Moll | 82 eigenständig (82 roh; brass 74, strings 7, woodwinds 1) |
+| Night Drive (Style Mixer R2 · Pop, 22.11.) | 114 | E Moll | 23 eigenständig (33 roh; synth 19, keyboard 4) |
+| Heist in E Minor (Style Mixer R2 · GTA meets Screamcore, 22.11.) | 111 | E Dur | 41 eigenständig (42 roh; keyboard 23, strings 13, brass 3, synth 2) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
