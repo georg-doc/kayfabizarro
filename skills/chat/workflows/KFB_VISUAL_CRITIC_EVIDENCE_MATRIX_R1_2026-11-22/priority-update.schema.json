@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KFB Webchat Priority Change R1",
+  "description": "Additive priority event sidecar for job-intake.schema.json; proposal only, not a running WS0 queue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "priority_event_id",
+    "job_id",
+    "created_utc",
+    "actor",
+    "authority",
+    "priority",
+    "assessment",
+    "routing",
+    "github"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.priority-event/0.1"
+    },
+    "priority_event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_utc": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "identity_verified"
+      ],
+      "properties": {
+        "role": {
+          "enum": [
+            "GEORG",
+            "WS0",
+            "CRITIC",
+            "SYSTEM"
+          ]
+        },
+        "identity_verified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "authority": {
+      "enum": [
+        "USER_REQUEST",
+        "WS0_TRIAGE",
+        "CRITIC_SUGGESTION"
+      ]
+    },
+    "priority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "old",
+        "requested",
+        "effective",
+        "rationale",
+        "is_human_override"
+      ],
+      "properties": {
+        "old": {
+          "$ref": "#/$defs/tier"
+        },
+        "requested": {
+          "$ref": "#/$defs/tier"
+        },
+        "effective": {
+          "$ref": "#/$defs/tier"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "is_human_override": {
+          "type": "boolean"
+        }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "severity",
+        "impact",
+        "frequency",
+        "effort",
+        "confidence",
+        "regression_risk",
+        "readiness",
+        "workflow_status",
+        "blockers",
+        "dependencies"
+      ],
+      "properties": {
+        "severity": {
+          "$ref": "#/$defs/tier"
+        },
+        "impact": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 5
+        },
+        "frequency": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 5
+        },
+        "effort": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 5
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "regression_risk": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 5
+        },
+        "readiness": {
+          "enum": [
+            "IDEA_ONLY",
+            "OWNER_UNRESOLVED",
+            "SOURCE_BACKED_FRAGMENT",
+            "PLAYABLE_UNCAPTURED",
+            "CAPTURED",
+            "VERIFIED"
+          ]
+        },
+        "workflow_status": {
+          "enum": [
+            "DRAFT_IN_CHAT",
+            "USER_APPROVED_FOR_QUEUE",
+            "QUEUED_GITHUB_VERIFIED",
+            "WS0_TRIAGED",
+            "OWNER_ASSIGNED",
+            "IMPLEMENTING",
+            "EVIDENCE_READY",
+            "INDEPENDENT_CRITIC",
+            "REPAIR",
+            "DEFER",
+            "CLOSED"
+          ]
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coordination_owner",
+        "receiving_owner",
+        "target_milestone",
+        "queue_revision",
+        "previous_event_id",
+        "idempotency_key"
+      ],
+      "properties": {
+        "coordination_owner": {
+          "const": "WS0"
+        },
+        "receiving_owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_milestone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "queue_revision": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "previous_event_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "idempotency_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "github": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_issue_url",
+        "priority_comment_url",
+        "head",
+        "readback_verified"
+      ],
+      "properties": {
+        "canonical_issue_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "priority_comment_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "head": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "readback_verified": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "tier": {
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3",
+        "UNTRIAGED"
+      ]
+    }
+  }
+}
