@@ -1,5 +1,35 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-025 · 22.11.2026 · Flexa im Arch-Rahmen, Monitor-Modul, Echo-Monitor im Becken, Game Over neu, Fisch-Leben · Artefakt v30
+
+**Flexa (WS0-Punkt 1):**
+- `tex/hud/frame_arch.webp` direkt unter dem Radio, kein weißer Grund mehr, die Szene bleibt sichtbar.
+- Video im Querformat neu geschnitten (Intro und alle 52 Clips aus den 1080p-Quellen), auf die Öffnung zugeschnitten, ohne Rundmaske. Die drei Lampen leuchten, solange sie spricht.
+- Rahmen austauschbar über `FLEXA_RAHMEN` (Bild, Öffnung, Lampen in Anteilen).
+- Intro-Sätze laufen rot (#d8002f) synchron auf dem Monitor. Während des Intros schwebt der Monitor direkt unter Flexa (in jeder Fenstergröße im Blick) und gleitet danach neben die Luke. Dort folgt Echo in Bernstein, erst dann läuft die Trübungsuhr. Überspringen bleibt.
+- Reel-Clips nutzen denselben Rahmen. Alle 52 Clips liegen jetzt in einer Datei (`reel_alle.mp4` + Startzeiten), das spart 51 Dateien im Artefakt.
+
+**Monitor-Modul `js/monitor-tafel.js`:**
+- Rahmen aus der Alpha-Kontur extrudiert, 7 % der Breite tief, Seitenwand in der Randfarbe.
+- Schwarze Innenfläche leicht zurückgesetzt, unbeleuchtet (kein Nebel, kein Wasser-Shader). Rückseite gespiegelt mit eigener Fläche.
+- Text in Share Tech Mono (Rückfall IBM Plex Mono), Echo #FFB000, Flexa #d8002f, 2 px Schein, 1,3 Zeilenabstand, Tipp-Animation mit Cursor.
+- Option `drehen` (zum Spieler), sanftes Schweben. Rahmen-Daten: `tex/monitor/monitore.json` (alle 12 Rahmen als WebP 1024).
+- Im Becken: `monitor_breit_02` (Kuppel, passt zum U-Boot-Design) neben der Luke, alle Echo-Sätze im Becken laufen dort.
+
+**Game Over (Punkt 2):**
+- Fisch sinkt weg, Kamera bleibt stehen, das Bild dunkelt nach unten ab, die Welt bleibt schwach sichtbar, Blasen steigen.
+- Das Schild schwimmt als Objekt in der Szene von links unten herein, treibt mittig unter Flexas Rahmen und kippt leicht, Blasen am Rand.
+- Auswahl: Haken → 02, Mine → 04, sonst zufällig 01/03/05/06, nie zweimal dasselbe.
+- „Play again“ im CTA-Stil genau an der Stelle von „Escape Now!“ (gemessen beim Start), darunter klein „One more heist“.
+- Im Meer greift es jetzt beim letzten Leben, statt wortlos zum Levelanfang zu springen. Play again startet dort am Levelanfang, im Becken neu.
+
+**Leben (Punkt 3):** `fish_full`/`fish_empty` statt Herzen, eingefärbt (Farbton der kräftigsten Fischfarbe, Helligkeit des Symbols bleibt). Beim Kapern wechselt die Farbe, der Stand bleibt.
+
+**Geprüft:** 1280×720, 529×815 (Georgs Fenster), 390×844, 844×390. Tests pruef-flexa, pruef-reel, pruef-gameover, pruef-leben, alle ohne Fehler. Tablet-Größen nur über die gleichen Regeln, nicht eigens fotografiert.
+
+**Belege:** flexa_intro_arch_r2(_schmal).png, echo_monitor_becken_r1.png, game_over_schild_r1(_schmal).png, leben_fische_r1.png, flexa_reel_truhe_r2.png.
+
+**Offen:** HyperNorm auf den Monitoren und schwebende Billboards im Meer. Das Modul ist dafür vorbereitet (eigene Innenfläche).
 ## R-024 · 22.11.2026 · Startbild-Fix (Georg direkt) + Flexa-Reel im Spiel · Artefakt v29
 
 **Startbild (Georg: „bitte endlich fixen“, Illustrationen fehlten):**
