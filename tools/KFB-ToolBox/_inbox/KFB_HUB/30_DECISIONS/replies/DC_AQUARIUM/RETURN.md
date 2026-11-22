@@ -1,5 +1,13 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-030 · 22.11.2026 · Startbild Hochformat neu (Georg direkt, sehr verärgert) · Artefakt v39
+- **Ursache:** Bei 529 × 725 (Georgs Fenster) griff die Höhenschwelle „Knopf in den oberen 62 %“ nicht. Das Becken wanderte deshalb in den schmalen Rest rechts oben. Im Test lief nur 529 × 815, dort griff die Schwelle zufällig.
+- **Georgs Vorgabe jetzt fest fürs Hochformat:** Logo und Unterzeile oben, das Becken groß in der Mitte, darunter „Escape Now!“ in normaler Größe (200 px statt 216 px und größer), mittig, mit Abstand zum unteren Rand.
+- Die unsichtbare Fisch-Kachel und die Seitenauswahl belegen im Startbild keinen Platz mehr.
+- Die Beta-Plakette sitzt tiefer, mit der Oberkante auf Höhe von „Game“, und ist weniger gekippt.
+- Querformat und Desktop bleiben unverändert (in der App bei 1456 × 816 nachgesehen).
+- **Beleg:** `startbild_hochformat_r3.png` mit 529×725, 390×844, 600×900 und 529×815.
+- **Für mich:** Layout-Prüfungen ab jetzt immer auch bei 529×725.
 ## R-029 · 22.11.2026 · Becken-Monitor größer, zweite Tafel, HyperNorm in der Claude-App geprüft · Artefakt v38
 
 - **Zweite Tafel:** Sie war der alte Platzhalter-Bildschirm aus dem Kern. Das Belegbild `hypernorm_monitor_r1.png` stammte noch von vor dem Ausbau (R-028). Auf dem neuen Beleg `becken_monitor_r2.png` ist nur noch der Monitor an der Luke zu sehen.
