@@ -56,3 +56,8 @@ After each substantive Game Dev Studio turn:
 6. report implementation, automated/browser evidence, public deployment and Georg acceptance separately.
 
 Ordinary package additions should require **catalog/data changes, not a redesign of the site**.
+
+
+## Research intake · LATO.2 Mac-first mesh pilot (2026-11-22)
+
+[Mac / GPU feasibility and one-asset visual comparison brief](research/LATO2_MAC_MESH_PILOT_2026-11-22.md): pinned upstream facts, M1 Max/M4 workstation limits, pretrained inference instead of training, Mac-native TRELLIS alternatives, and one actual donor-vs-Decimate-vs-LATO 3D package proof. **RESEARCH / BRIEF ONLY; no candidate mesh, no Stage, no new runtime.** This additive experiment does not supersede active Game Dev Studio Pilot 01 or its existing gates.
