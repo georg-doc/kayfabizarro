@@ -1,5 +1,13 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-014 · 22.11.2026 · Augenfeld (Schalter), Radio Stopp/Ton global, Beta-Höhe
+
+- Gepusht auf `dc/aquarium-standalone` @f06a687, Artefakt v13. Details in sea-escape/CHANGELOG.md r14.
+- Augenfeld: core/eyeField.js (Stamm-Augen + eye-goo + Effekseer Herald unverändert), nur hinter Schalter (God-Panel „Eye field“ / `#augen`); Ort entscheidet Georg.
+- Radio: Stopp = Stille, Ton aus = alle Spielgeräusche + ECHO stumm.
+- Beleg: `augenfeld_r1.mp4`. Offen: Herald im echten Artefakt ungeprüft; Prüfserver fällt ab und zu aus.
+- Als Nächstes (Georg): Suchscheinwerfer als rote Shader-Kegel mit Bodenzone; Startbild-Aquarium als Musik-Visualizer mit Blasen und Algen im Vordergrund.
+
 ## R-013 · 21.11.2026 · B1 Angelhaken, B2 Minen/Kugelfische, B6 Gefahren-Takt gebaut (Georg: „Du, hier“)
 
 - Georg hat im Chat entschieden, dass der Feinschliff-Chat B1/B2/B6 baut (statt Aqua-Chat). Gepusht auf `dc/aquarium-standalone` @e917c14 (kein paralleler Stand auf dem Zweig).

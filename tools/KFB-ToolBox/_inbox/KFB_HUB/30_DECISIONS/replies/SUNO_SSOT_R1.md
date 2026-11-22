@@ -100,6 +100,8 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | Psychedelic Groove Gun (14.11.) | 128,6 | E Moll | 14 eigenständig (14 roh; brass 10, synth 2, woodwinds 2) |
 | Submarine Chase (21.11.) | 147,6 | B Moll | 180 eigenständig (193 roh; guitar 60, lead_vocals 51, synth 30, backing_vocals 15) |
 | Underwater Heist (21.11.) | 85,1 | G Moll | 143 eigenständig (148 roh; synth 56, strings 35, guitar 26, keyboard 16) |
+| Cartoon Chase (Fahrt-Song für den Aquarium-Ride (Georg 22.11.), 22.11.) | 127,2 | E Dur | 17 eigenständig (26 roh; guitar 10, synth 5, keyboard 1, woodwinds 1) |
+| Grand Theft Aqua (Titeltrack Aqua-Startbild und Aquarium (Georg 22.11.): Grand Theft Aqua - Return of DJ Aquarius, 22.11.) | 119,1 | G Moll | 40 eigenständig (40 roh; lead_vocals 25, synth 11, guitar 4) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
