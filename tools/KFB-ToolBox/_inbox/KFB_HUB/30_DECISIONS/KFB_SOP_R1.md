@@ -82,7 +82,7 @@ Maschinenlesbar in `tools/qa_matrix.r1.json`, Prompt in `tools/CRITIC_BLIND_PROM
 ## 6 · Rollen
 - **WS0:** Gesamtabsicht, Briefings in dieser Form, Ziele beschaffen (auch Webchat), Endprüfung, Register, Merges. Reicht keine Zwischenstände weiter.
 - **Owner-Chat:** Bestand, Absicht spiegeln, bauen, Gates, stille Schleife, eine Meldung mit Belegen.
-- **WSB:** Modelle und Clips nach Auftrag; liefert Bundles nur additiv mit Vergleichsbild.
+- **WSB:** Modelle und Clips nach Auftrag; erzeugt fehlende Modelle über Meshy MCP (`replies/TOOLS/MESHY_MCP_WORKFLOW_R1.md`); liefert Bundles nur additiv mit Vergleichsbild.
 - **Webchat (Bildgenerierung):** Zielbilder nur, wo ein Look fehlt; bedient von WS0.
 - **Kritiker:** blind, nur Matrix und Belege, ein Kritiker pro Runde.
 - **Georg:** Absicht, Freigabe der Zielbilder, Endabnahme.
