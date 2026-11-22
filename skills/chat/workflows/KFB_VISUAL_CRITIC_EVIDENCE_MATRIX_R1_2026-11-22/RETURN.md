@@ -62,3 +62,14 @@ Aquarium ideal path file/source, actual current Game Site and executable route; 
 **Protected:** no guessed Aquarium owner, no fabricated screenshots/videos or staged performance. Source Goldens unchanged; no second Runtime/asset owner; no auto-merge/Live; private media only permissioned storage; plugin must not auto-approve designs.
 
 **Current one next gate (replaces earlier prospective sequence only for this job-input slice):** `KFB_WEBCHAT_JOB_PUSH_POC_01`: one real user-authored short job, one authorized GitHub Issue and exact readback, then a verified WS0 Lead queue receipt. If a subscribed Work/Dot exists, optionally prove a real MCP Event; otherwise report `GITHUB_QUEUE_ONLY` without promising chat-to-chat push. This gate consumes the same KFB Visual Studio UI and replay evidence contracts, not a new product.
+
+## 2026-11-22 · Additive R1c Return — explicit Georg Webchat priority & WS0 intake proposal
+**Delivered:** `PRIORITY_QUEUE_R1.md`, `priority-update.schema.json`, `PRIORITY_EXAMPLE_NOT_A_TEST.json`; `TEST_REPORT.md` and `CHANGELOG.md` appended, parent Draft PR #480 retained. Proposal gives cross-chat priority decisions `P0 CRITICAL / P1 HIGH / P2 SCHEDULED / P3 LATER / UNTRIAGED` without misleading green, and an append-only priority event separate from workflow/readiness/design approval. Per-user requested priority is immutable historical decision; WS0 effective queue scheduling may differ transparently due to blocked sources and current owner dependencies.
+
+**Cross-chat queue:** GitHub issues and event comments remain canonical; current Webchat selection can append the next priority event after authenticated authorization and readback, subject to optimistic revision/idempotency. No chat-only score becomes owner scheduling truth. WS0 will receive an explicitly linked intake request rather than relying on speculative direct delivery to dormant Claude sessions. A queue item does not imply active autonomous execution.
+
+**Tests actually run:** 11/11 limited schema structural checks PASS, replay schema 8/8, session schema 9/9, job schema 11/11, total 39/39. No real Webchat App UI/priority clicks, no real WS0 queue/Claude dispatch, no image generation, no Stage/Live. A full JSON Schema validator and actual live integration are outstanding.
+
+**Protected:** No second runtime owner, no fake cross-chat sync, no silent P0 downgrade, no score inflation, no automatic code merges/Live. No public game screenshots from private asset inventories.
+
+**Single next technical gate:** `KFB_WEBCHAT_PRIORITY_ROUNDTRIP_01` — one source-backed job from an actual Webchat, one named-priority approval → GitHub priority event/readback → WS0 queue projection/acknowledgement → second chat independently reads same event. The earlier Webchat Job Push gate is covered within this proof and not a competing gate.
