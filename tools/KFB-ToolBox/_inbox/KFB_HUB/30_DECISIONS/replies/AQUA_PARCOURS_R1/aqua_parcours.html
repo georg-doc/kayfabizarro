@@ -1,0 +1,221 @@
+<title>Aqua Parcours</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: Steuerleiste oben, links Draufsicht der Strecke, rechts Station + Punkte, darunter Stationsband und Spannungskurve. Eine Unterwasser-Welt, bewusst nur dunkel. */
+:root{
+  --abyss:#06141d; --deep:#0b2533; --panel:#0f3040; --line:#1d4a5e;
+  --fg:#e6f4f6; --muted:#8fb3bd; --teal:#2ec4c9; --sub:#f2c230; --danger:#ff5a4f; --blood:#c2394b; --eye:#b98cff;
+  --display:'Bungee','Impact',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(120% 80% at 70% -10%,#0f3a4d 0%,var(--abyss) 60%);background-color:var(--abyss);color:var(--fg);font:14px/1.5 var(--body);min-height:100%}
+.wrap{max-width:1280px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:16px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+h1{font:400 clamp(26px,4vw,40px)/1 var(--display);margin:0;color:var(--sub);letter-spacing:.02em;text-shadow:0 2px 0 #7a5a00}
+.sub{color:var(--muted);margin:6px 0 0;font-size:13px}
+.ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{background:transparent;color:var(--muted);border:0;padding:6px 12px;font:600 12px var(--body);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--teal);color:#032027}
+select,input[type=range]{accent-color:var(--teal)}
+select{background:var(--deep);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:500 13px var(--body)}
+label.k{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;align-items:center}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--sub);outline-offset:2px}
+.main{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){.main{grid-template-columns:1fr}}
+.map{background:linear-gradient(180deg,#0a2a39,#071c27);border:1px solid var(--line);border-radius:14px;padding:10px;min-width:0}
+.map svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted);padding:6px 4px 0}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.side{display:grid;gap:12px;align-content:start;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.card h2{font:400 18px/1.1 var(--display);margin:0 0 4px;color:var(--fg)}
+.role{color:var(--teal);font-weight:600;font-size:13px;margin:0 0 10px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.kv dt{color:var(--muted)} .kv dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.score{font:400 40px/1 var(--display);color:var(--sub)}
+.small{font-size:12px;color:var(--muted)}
+.band{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;overflow-x:auto}
+@media (max-width:860px){.band{grid-template-columns:repeat(7,150px)}}
+.st{background:var(--deep);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:left;color:var(--fg);cursor:pointer;font:inherit;display:grid;gap:4px;min-width:0}
+.st[aria-pressed=true]{border-color:var(--sub);box-shadow:0 0 0 1px var(--sub) inset}
+.st .n{font:600 11px var(--mono);color:var(--muted)} .st b{font:400 14px/1.15 var(--display)} .st .p{font:600 12px var(--mono);color:var(--sub)}
+.st.plan{border-style:dashed;opacity:.85}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;overflow-x:auto}
+.chart svg{width:100%;min-width:640px;height:auto;display:block}
+.q{background:var(--deep);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.q h3{margin:0 0 8px;font:400 16px var(--display);color:var(--teal)}
+.q ol{margin:0;padding-left:20px;display:grid;gap:6px;max-width:80ch}
+.chip{display:inline-block;font:600 11px var(--mono);padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin:2px 4px 0 0}
+.chip.h{color:var(--danger);border-color:#5a2420} .chip.e{color:var(--eye);border-color:#3b2a5a} .chip.c{color:var(--sub);border-color:#5a4a10}
+@media (prefers-reduced-motion:no-preference){.pulse{animation:p 2.4s ease-in-out infinite}@keyframes p{50%{opacity:.55}}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Aqua Parcours</h1>
+      <p class="sub">Hauptpfad von AquaCare · Grand Theft Aqua · Stationen, Gefahren und Punkte aus den Level-Daten des Spiels (Stand r21)</p>
+    </div>
+    <div class="ctl">
+      <span class="seg" role="group" aria-label="Modus" id="modus">
+        <button id="m-chill" data-m="chill">chill</button><button id="m-normal" data-m="normal" aria-pressed="true">normal</button><button id="m-hard" data-m="hard">hard</button>
+      </span>
+      <label class="k" for="fisch">Fisch <select id="fisch"></select></label>
+      <label class="k" for="kombo">Kombo <input id="kombo" type="range" min="0" max="100" value="70"> <span id="kombo-w" class="small">70 %</span></label>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="map">
+      <svg id="karte" viewBox="0 0 800 640" role="img" aria-label="Draufsicht der Strecke mit allen Stationen"></svg>
+      <div class="legend">
+        <span><i style="background:var(--sub)"></i>Muschel-Linie</span>
+        <span><i style="background:none;border:2px solid var(--teal)"></i>Ring · Ziel</span>
+        <span><i style="background:#c98a3a;border-radius:2px"></i>Truhe</span>
+        <span><i style="background:var(--danger)"></i>Mine</span>
+        <span><i style="background:#ffb36b"></i>Köder-Haken</span>
+        <span><i style="background:#f5e663"></i>Kugelfisch</span>
+        <span><i style="background:var(--eye)"></i>Auge</span>
+        <span><i style="background:rgba(255,90,79,.35)"></i>Scheinwerfer-Zone</span>
+      </div>
+    </div>
+    <div class="side">
+      <div class="card" id="station"></div>
+      <div class="card">
+        <div class="small">Punkte im ganzen Lauf, geschätzt</div>
+        <div class="score" id="gesamt">0</div>
+        <dl class="kv" id="aufschl" style="margin-top:8px"></dl>
+        <p class="small" style="margin:10px 0 0">So zählt das Spiel heute: eine Muschel bringt 1 bis 4 Punkte, je länger die Kette (alle 4 Muscheln +1). Jede achte Muschel in Folge gibt +5. Jede Truhe schüttet 50 Muscheln aus, mit 25 % Chance zusätzlich einen Perk (Turbo oder Tarnung, je 8 s). Drei Leben, danach Game Over.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band" id="band"></div>
+
+  <div class="chart">
+    <div class="small" style="margin-bottom:6px">Dramaturgie über den Lauf: Spannung (Balken, aus Gefahren je Station) und Muscheln (Linie)</div>
+    <svg id="kurve" viewBox="0 0 980 220" role="img" aria-label="Spannungskurve und Muscheln je Station"></svg>
+  </div>
+
+  <div class="q">
+    <h3>Offen für die Konzeptrunde</h3>
+    <ol>
+      <li>Scoring: nur Muscheln, oder auch Zeit, Ringe, unentdeckt bleiben und übrige Leben? Eine Zahl oder eine Heist-Wertung mit Sternen?</li>
+      <li>Rangliste: gemeinsam für alle Kollegen (mit Claude-Login) oder nur die eigene Bestleistung?</li>
+      <li>Fische: genau eine klare Stärke je Fisch (schnell, getarnt, Muschel-Magnet)?</li>
+      <li>Perks: Turbo und Tarnung, oder dazu Magnet, Extraleben, Kombo-Verdoppler mit Risiko?</li>
+      <li>Länge und Ride: wie lang soll ein Lauf dauern; Ride nach der Luke oder als Finale vor der Blutbahn?</li>
+      <li>Leben: drei für den ganzen Lauf oder je Station?</li>
+      <li>Editor: nur ansehen und rechnen, oder auch Muscheln, Ringe, Truhen verschieben und zurück ins Spiel geben?</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+const LEVELS = [{"place":"tank","screens":[{"at":[-2.6,7.2,-0.7],"face":0,"w":2.4,"h":1.15}],"echo":[]},{"place":"sea","shells":{"path":[[1.4,6,0.5],[1.9,4,0.9],[1,1.4,1.7],[-0.8,-0.6,2.3],[-2.4,-2.6,1.3],[-1.8,-5,2.2],[-0.5,-7.2,3]],"n":20,"size":0.1},"rings":[{"at":[0.95,1,1.8],"r":0.6},{"at":[-2.6,-3.2,1.25],"r":0.6},{"at":[-0.4,-7.6,3],"r":0.7,"final":true}],"chests":[{"at":[-1.5,-1.3],"kind":"turbo"}],"beams":{"origin":[-0.5,6.8,-1.5],"spread":[4.5,4.5],"aim":[-0.5,-1.5],"aimSpread":[3.2,4.5],"len":9.5,"ang":0.2},"screens":[{"at":[2.6,1.5,4.4],"face":-2.6,"w":1.1,"h":0.55},{"at":[-3.6,2.2,-4.2],"face":0.9,"w":1.1,"h":0.55}],"echo":[{"at":[-2.4,-2.6],"r":2.2,"key":"combo"}],"hooks":[{"at":[-1.35,-1.5,1.5],"bait":"donut_pink"},{"at":[-2.1,-4.3,1.9],"bait":"cupcake","modes":["hard"]}],"puffers":[{"at":[-1.1,-6.1,2.5],"modes":["normal","hard"]}]},{"place":"sea","shells":{"path":[[-0.4,-7.6,3],[1.4,-9.4,2.2],[2.4,-10.7,1.8],[4,-12,1.3],[5,-13.3,1.4],[6.2,-15,2],[7.4,-16.8,2.6],[8.6,-18.6,2.8],[9.3,-20,3]],"n":30,"size":0.1},"rings":[{"at":[2.4,-10.7,1.8],"r":0.45},{"along":0.55,"r":0.42,"tunnel":true},{"along":0.615,"r":0.42,"tunnel":true},{"along":0.68,"r":0.42,"tunnel":true},{"along":0.7450000000000001,"r":0.42,"tunnel":true},{"along":0.81,"r":0.42,"tunnel":true},{"along":0.875,"r":0.42,"tunnel":true},{"at":[9.3,-20,3],"r":0.6,"final":true}],"chests":[{"at":[3.5,-11.9],"kind":"cloak"}],"beams":{"origin":[5,7,-14],"spread":[6,5.5],"aim":[5,-14],"aimSpread":[4.5,6],"len":10,"ang":0.22},"screens":[{"at":[0.6,2.6,-9.8],"face":-2.4,"w":1.2,"h":0.6},{"at":[10.4,3.4,-18.6],"face":-1.1,"w":1.2,"h":0.6}],"echo":[{"at":[5,-13.3],"r":1.8,"key":"tunnel"}],"hooks":[{"at":[1.9,-8.4,2.3],"bait":"burger"},{"at":[3.2,-11.1,1.6],"bait":"croissant"},{"at":[7,-16.2,3.4],"bait":"cake_slice_strawberry","modes":["hard"]}],"mines":[{"at":[3.55,-12.65,1]},{"at":[4.75,-12.35,1.95]},{"at":[9.9,-19.3,2],"modes":["normal","hard"]}],"puffers":[{"at":[2,-9.9,2.7]},{"at":[8.1,-19.7,3.3],"modes":["hard"]}],"augenTest":[{"at":[3,-13.6,2.4],"s":0.16},{"at":[5.9,-12.2,2.9],"s":0.21000000000000002},{"at":[6.8,-14.4,1.2],"s":0.26},{"at":[4.3,-15.2,3.1],"s":0.16},{"at":[7.9,-16,3.4],"s":0.21000000000000002},{"at":[5.6,-17.4,1.6],"s":0.26},{"at":[9.4,-17,2],"s":0.16},{"at":[7,-19,3],"s":0.21000000000000002},{"at":[10.2,-19.2,1.4],"s":0.26},{"at":[8.4,-21,2.6],"s":0.16},{"at":[11,-21.4,3.2],"s":0.21000000000000002},{"at":[9.9,-22.6,1.2],"s":0.26}]},{"place":"sea","shells":{"path":[[9.3,-20,3],[7.6,-17.4,2.4],[5.4,-15.6,1.8],[3.4,-13.2,2.6],[5.2,-11.6,3.2],[8.4,-13.4,2.2],[10.6,-16.2,2.8],[9.6,-19.4,3]],"n":28,"size":0.1},"rings":[{"at":[5.4,-15.6,1.8],"r":0.45},{"at":[5.2,-11.6,3.2],"r":0.45},{"at":[10.6,-16.2,2.8],"r":0.45},{"at":[9.6,-19.4,3],"r":0.6,"final":true}],"chests":[{"at":[3,-12.4],"kind":"cloak"}],"screens":[{"at":[11.6,2.8,-18.2],"face":-1.6,"w":1.2,"h":0.6}],"echo":[{"at":[7.6,-17.4],"r":2,"key":"augen"}],"augen":[{"at":[6,-18.8,2.9],"s":0.16},{"at":[8.9,-16.6,1.4],"s":0.21000000000000002},{"at":[4.2,-16.8,2.6],"s":0.26},{"at":[6.8,-14.6,3.3],"s":0.16},{"at":[2.2,-14.4,1.6],"s":0.21000000000000002},{"at":[4,-11,1.8],"s":0.26},{"at":[6.6,-10.8,2.6],"s":0.16},{"at":[7,-12.4,3.6],"s":0.21000000000000002},{"at":[9.8,-12.6,2.8],"s":0.26},{"at":[11.8,-14.6,1.6],"s":0.16},{"at":[12,-17.6,3.2],"s":0.21000000000000002},{"at":[8.2,-20.8,1.8],"s":0.26},{"at":[10.8,-21,3],"s":0.16},{"at":[3,-15.6,3.6],"s":0.21000000000000002}]},{"place":"sea","shells":{"path":[[9.3,-20,3],[11.6,-22.6,2.2],[13.4,-26,1.4],[12.4,-29.6,2.4],[9.2,-32.2,3.2],[5.6,-31.4,2],[3.2,-28.4,1.2],[2.2,-25,2.6]],"n":32,"size":0.1},"rings":[{"at":[13.4,-26,1.4],"r":0.42},{"at":[9.2,-32.2,3.2],"r":0.45},{"at":[3.2,-28.4,1.2],"r":0.42},{"at":[2.2,-25,2.6],"r":0.6,"final":true}],"chests":[{"at":[11,-30.6],"kind":"turbo"}],"beams":{"origin":[8,7.2,-27],"spread":[6.5,5],"aim":[8,-28],"aimSpread":[5.5,4.5],"len":10.5,"ang":0.22},"screens":[{"at":[12.2,2.4,-21.6],"face":0,"w":1.2,"h":0.6},{"at":[4.2,2.6,-33.2],"face":0,"w":1.2,"h":0.6}],"echo":[{"at":[12.4,-29.6],"r":2,"key":"canyon"}],"hold":"predator","hooks":[{"at":[11,-30.8,1.4],"bait":"waffle"},{"at":[4.4,-30,1.9],"bait":"veggie_burger"},{"at":[12,-23.6,2.8],"bait":"donut_chocolate","modes":["hard"]}],"mines":[{"at":[12.3,-24.4,1.7]},{"at":[13.1,-28.1,1.5]},{"at":[7.4,-32,2.6]},{"at":[6.4,-30.8,1.4],"modes":["normal","hard"]}],"puffers":[{"at":[10.5,-23.3,2.7]},{"at":[3.9,-26.4,2.1]},{"at":[12.9,-30.7,2.8],"modes":["hard"]}]},{"place":"sea","look":"blood","shells":{"path":[[2.2,-25,2.6],[0.4,-22,2],[-1.6,-18.6,2.8],[-3.4,-15.2,1.8],[-2.6,-11.6,2.4],[-0.8,-8.6,3],[1,-5.4,2.2]],"n":30,"size":0.1},"rings":[{"at":[-1.6,-18.6,2.8],"r":0.55},{"at":[-2.6,-11.6,2.4],"r":0.55},{"at":[1,-5.4,2.2],"r":0.7,"final":true}],"screens":[{"at":[3.4,2.8,-23.6],"face":0,"w":1.2,"h":0.6},{"at":[-4.2,2.8,-13.4],"face":0,"w":1.2,"h":0.6}],"echo":[{"at":[-3.4,-15.2],"r":2,"key":"cells"}]}];
+const STATIONEN = [
+  { i: 0, name: 'Becken', rolle: 'Prolog · Urteil, Trübung, 4711-Luke', farbe: '#2ec4c9' },
+  { i: 'ride', name: 'Ride „Cartoon Chase“', rolle: 'Glasröhre im Song-Takt · geplant', farbe: '#f2c230', plan: true },
+  { i: 1, name: 'Kelp Garden', rolle: 'Lernen · je eine Gefahr', farbe: '#56d39a' },
+  { i: 2, name: 'Riff', rolle: 'Steigern · Minen-Tor, Tunnel mit 6 Ringen', farbe: '#2ec4c9' },
+  { i: 3, name: 'Augenfeld', rolle: 'Grusel-Ruhe · 13 Augen, keine Scheinwerfer', farbe: '#b98cff' },
+  { i: 4, name: 'Schlucht', rolle: 'Alles zusammen · dann der Hai', farbe: '#ff8a4f' },
+  { i: 5, name: 'Blutbahn', rolle: 'Ausklang · Strömung im Herzschlag', farbe: '#c2394b' },
+]
+const FISCHE = [
+  { id: 'docfish', name: 'DocFish · The Specialist', perk: 'Second Opinion: erster Fang je Station kostet kein Herz' },
+  { id: 'flexi', name: 'FlexiFish · The Contortionist', perk: 'Bend: engere Kurven' },
+  { id: 'mabi', name: 'Prof. MaBi · Architect of AquaCare', perk: 'Loop the Cameras: Scheinwerfer je Station 3 s aus' },
+  { id: 'humoral', name: 'Prof. Humoral · Clinic Clown', perk: 'Comic Relief: Scheinwerfer entdecken ihn später' },
+  { id: 'tetro', name: 'Tetro · Highly Toxic', perk: 'Inflate: Stoß drückt Haken und Augen weg' },
+  { id: 'placebo', name: 'Placebo · Works Because You Believe', perk: 'Marketing: Truhen geben 25 % mehr Muscheln', truhe: 1.25 },
+  { id: 'endo', name: 'Endo · Technically a Vessel', perk: 'Imaging: Sonar zeigt auch Truhen' },
+]
+const S = { modus: 'normal', fisch: 'docfish', kombo: 70, sel: 2 }
+try { const g = JSON.parse(localStorage.getItem('aqua-parcours') || '{}'); Object.assign(S, g) } catch {}
+const merk = () => { try { localStorage.setItem('aqua-parcours', JSON.stringify(S)) } catch {} }
+const imModus = (e) => !e.modes || e.modes.includes(S.modus)
+const level = (i) => (typeof i === 'number' ? LEVELS[i] : null)
+function zaehle(L) {
+  if (!L || L.place !== 'sea') return { muscheln: 0, ringe: 0, truhen: 0, minen: 0, haken: 0, kugel: 0, augen: 0, licht: 0, hai: 0 }
+  return { muscheln: L.shells?.n || 0, ringe: (L.rings || []).length, truhen: (L.chests || []).length, minen: (L.mines || []).filter(imModus).length, haken: (L.hooks || []).filter(imModus).length, kugel: (L.puffers || []).filter(imModus).length, augen: (L.augen || []).length, licht: L.beams ? 1 : 0, hai: L.hold === 'predator' ? 1 : 0 }
+}
+const spannung = (z, L) => z.minen * 3 + z.haken * 1.5 + z.kugel * 2 + z.licht * 4 + z.augen * 0.6 + z.hai * 8 + (L?.look === 'blood' ? 3 : 0)
+function kettenPunkte(n) { let p = 0; for (let k = 1; k <= n; k++) { p += Math.min(4, 1 + Math.floor((k - 1) / 4)); if (k % 8 === 0) p += 5 } return p }
+function punkte(L) {
+  const z = zaehle(L); if (!z.muscheln && !z.truhen) return { muscheln: 0, truhen: 0, summe: 0 }
+  const kette = Math.round(z.muscheln * S.kombo / 100), einzeln = z.muscheln - kette
+  const f = FISCHE.find((x) => x.id === S.fisch), tm = f?.truhe || 1
+  const m = kettenPunkte(kette) + einzeln, t = Math.round(z.truhen * 50 * tm)
+  return { muscheln: m, truhen: t, summe: m + t }
+}
+// Karte: alle Meeres-Stationen teilen ein Koordinatensystem [x, z] in Metern
+const SEA = LEVELS.map((L, i) => ({ L, i })).filter((o) => o.L.place === 'sea')
+const pts = []; SEA.forEach(({ L }) => { (L.shells?.path || []).forEach((p) => pts.push(p)); (L.augen || []).forEach((a) => pts.push(a.at)); if (L.beams) pts.push([L.beams.aim[0], L.beams.aim[1]]) })
+const xs = pts.map((p) => p[0]), zs = pts.map((p) => p[1]), x0 = Math.min(...xs) - 3, x1 = Math.max(...xs) + 3, z0 = Math.min(...zs) - 3, z1 = Math.max(...zs) + 3
+const W = 800, H = 640, sk = Math.min(W / (x1 - x0), H / (z1 - z0)), ox = (W - (x1 - x0) * sk) / 2, oz = (H - (z1 - z0) * sk) / 2
+const P = (x, z) => [ox + (x - x0) * sk, oz + (z1 - z) * sk]
+function entlang(path, f) { const seg = []; let tot = 0; for (let k = 1; k < path.length; k++) { const d = Math.hypot(path[k][0] - path[k - 1][0], path[k][1] - path[k - 1][1]); seg.push(d); tot += d } let r = f * tot; for (let k = 0; k < seg.length; k++) { if (r <= seg[k]) { const t = r / seg[k]; return [path[k][0] + (path[k + 1][0] - path[k][0]) * t, path[k][1] + (path[k + 1][1] - path[k][1]) * t] } r -= seg[k] } return path[path.length - 1] }
+const NS = 'http://www.w3.org/2000/svg', el = (n, a = {}, kids = []) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); kids.forEach((c) => e.appendChild(c)); return e }
+function kurve(path) { const q = path.map((p) => P(p[0], p[1])); let d = `M${q[0][0]},${q[0][1]}`; for (let k = 1; k < q.length; k++) { const a = q[k - 1], b = q[k], c = q[k + 1] || b, z = q[k - 2] || a; const c1 = [a[0] + (b[0] - z[0]) / 6, a[1] + (b[1] - z[1]) / 6], c2 = [b[0] - (c[0] - a[0]) / 6, b[1] - (c[1] - a[1]) / 6]; d += ` C${c1},${c2},${b}` } return d }
+function zeichneKarte() {
+  const svg = document.getElementById('karte'); svg.replaceChildren()
+  for (let gx = Math.ceil(x0 / 5) * 5; gx <= x1; gx += 5) { const [a] = P(gx, 0); svg.appendChild(el('line', { x1: a, y1: 0, x2: a, y2: H, stroke: '#123848', 'stroke-width': 1 })) }
+  for (let gz = Math.ceil(z0 / 5) * 5; gz <= z1; gz += 5) { const [, b] = P(0, gz); svg.appendChild(el('line', { x1: 0, y1: b, x2: W, y2: b, stroke: '#123848', 'stroke-width': 1 })) }
+  const [sx, sy] = P(x0 + 1, z0 + 1.2); const bar = el('g', {}, [el('line', { x1: sx, y1: sy, x2: sx + 5 * sk, y2: sy, stroke: '#8fb3bd', 'stroke-width': 2 })]); const t = el('text', { x: sx, y: sy - 6, fill: '#8fb3bd', 'font-size': 11, 'font-family': 'JetBrains Mono' }); t.textContent = '5 m'; bar.appendChild(t); svg.appendChild(bar)
+  SEA.forEach(({ L, i }) => {
+    const st = STATIONEN.find((s) => s.i === i), an = S.sel === i, g = el('g', { opacity: S.sel == null || an ? 1 : 0.28, style: 'cursor:pointer' }); g.addEventListener('click', () => waehle(i))
+    if (L.beams) { const B = L.beams, [ax, ay] = P(B.aim[0], B.aim[1]); g.appendChild(el('ellipse', { cx: ax, cy: ay, rx: B.aimSpread[0] * sk, ry: B.aimSpread[1] * sk, fill: 'rgba(255,90,79,.13)', stroke: 'rgba(255,90,79,.5)', 'stroke-dasharray': '4 4' })) }
+    ;(L.echo || []).forEach((e) => { const [ex, ey] = P(e.at[0], e.at[1]); g.appendChild(el('circle', { cx: ex, cy: ey, r: e.r * sk, fill: 'none', stroke: 'rgba(46,196,201,.35)', 'stroke-dasharray': '2 5' })) })
+    if (L.shells) { const col = L.look === 'blood' ? '#c2394b' : st.farbe; g.appendChild(el('path', { d: kurve(L.shells.path), fill: 'none', stroke: col, 'stroke-width': an ? 5 : 3.5, 'stroke-linecap': 'round', opacity: 0.9 })); g.appendChild(el('path', { d: kurve(L.shells.path), fill: 'none', stroke: '#f2c230', 'stroke-width': 1.6, 'stroke-dasharray': '1 9', 'stroke-linecap': 'round' })) }
+    ;(L.augen || []).forEach((a) => { const [x, y] = P(a.at[0], a.at[1]); g.appendChild(el('circle', { cx: x, cy: y, r: 5, fill: '#efe6ff', stroke: '#b98cff', 'stroke-width': 2 })); g.appendChild(el('circle', { cx: x + 1, cy: y, r: 2, fill: '#2a1446' })) })
+    ;(L.mines || []).filter(imModus).forEach((m) => { const [x, y] = P(m.at[0], m.at[1]); g.appendChild(el('circle', { cx: x, cy: y, r: 6, fill: '#ff5a4f', stroke: '#3a0c08', 'stroke-width': 2, class: 'pulse' })) })
+    ;(L.hooks || []).filter(imModus).forEach((h) => { const [x, y] = P(h.at[0], h.at[1]); g.appendChild(el('path', { d: `M${x},${y - 7} v9 a4,4 0 1 1 -6,-3`, fill: 'none', stroke: '#ffb36b', 'stroke-width': 2.2, 'stroke-linecap': 'round' })) })
+    ;(L.puffers || []).filter(imModus).forEach((f) => { const [x, y] = P(f.at[0], f.at[1]); g.appendChild(el('circle', { cx: x, cy: y, r: 5.5, fill: '#f5e663', stroke: '#6b5a00', 'stroke-width': 1.5, 'stroke-dasharray': '2 2' })) })
+    ;(L.chests || []).forEach((c) => { const [x, y] = P(c.at[0], c.at[1]); g.appendChild(el('rect', { x: x - 7, y: y - 5, width: 14, height: 10, rx: 2, fill: '#c98a3a', stroke: '#f2c230', 'stroke-width': 1.5 })) })
+    ;(L.rings || []).forEach((r) => { const at = r.at || entlang(L.shells.path, r.along); const [x, y] = P(at[0], at[1]); g.appendChild(el('circle', { cx: x, cy: y, r: Math.max(5, r.r * sk * 0.9), fill: 'none', stroke: r.final ? '#f2c230' : '#2ec4c9', 'stroke-width': r.final ? 3 : 2 })) })
+    const s0 = L.shells.path[Math.floor(L.shells.path.length / 2)], [lx, ly] = P(s0[0], s0[1]); const lab = el('text', { x: lx + 10, y: ly - 10, fill: st.farbe, 'font-size': 13, 'font-family': 'Bungee, Impact, sans-serif' }); lab.textContent = `${i} ${st.name}`; g.appendChild(lab)
+    svg.appendChild(g)
+  })
+}
+function zeichneBand() {
+  const b = document.getElementById('band'); b.replaceChildren()
+  STATIONEN.forEach((st) => { const L = level(st.i), z = zaehle(L), p = punkte(L), btn = document.createElement('button'); btn.className = 'st' + (st.plan ? ' plan' : ''); btn.id = 'st-' + st.i; btn.setAttribute('aria-pressed', String(S.sel === st.i))
+    btn.innerHTML = `<span class="n">${st.i === 'ride' ? 'Ride' : 'Station ' + st.i}</span><b>${st.name}</b><span class="small">${st.rolle}</span><span class="p">${z.muscheln ? z.muscheln + ' Muscheln · ' + p.summe + ' P' : st.plan ? 'Ringe im Takt, kein Scheitern' : 'keine Muscheln'}</span>`
+    btn.addEventListener('click', () => waehle(st.i)); b.appendChild(btn) })
+}
+function zeichneStation() {
+  const st = STATIONEN.find((s) => s.i === S.sel) || STATIONEN[2], L = level(st.i), z = zaehle(L), p = punkte(L), c = document.getElementById('station')
+  const chips = []; if (z.licht) chips.push('<span class="chip h">Scheinwerfer</span>'); if (z.minen) chips.push(`<span class="chip h">${z.minen} Minen</span>`); if (z.haken) chips.push(`<span class="chip h">${z.haken} Haken</span>`); if (z.kugel) chips.push(`<span class="chip h">${z.kugel} Kugelfische</span>`); if (z.augen) chips.push(`<span class="chip e">${z.augen} Augen</span>`); if (z.hai) chips.push('<span class="chip h">Hai am Ende</span>'); (L?.chests || []).forEach((t) => chips.push(`<span class="chip c">Truhe · ${t.kind === 'turbo' ? 'Turbo' : 'Tarnung'}</span>`))
+  const extra = st.i === 0 ? '<p class="small">Flexa spricht das Urteil, das Wasser trübt in drei Stufen, Echo flüstert vom Panel. Code 4711 öffnet die Luke, zu spät heißt grüne Flut und ein Leben weniger.</p>' : st.i === 'ride' ? '<p class="small">Glasröhre durch den Kelp, synchron zu „Cartoon Chase“ (127 BPM, 3:22). Deine 12 Ringe von Blau nach Gold, zwei Zeitlupen in den leisen Stellen, Exit-Knopf jederzeit, am Ende die HyperNorm-Röhre. Noch nicht gebaut.</p>' : ''
+  c.innerHTML = `<h2>${st.name}</h2><p class="role">${st.rolle}</p>${extra}<dl class="kv"><dt>Muscheln</dt><dd>${z.muscheln}</dd><dt>Ringe</dt><dd>${z.ringe}</dd><dt>Punkte (geschätzt)</dt><dd>${p.summe} = ${p.muscheln} Muscheln + ${p.truhen} Truhe</dd></dl><div style="margin-top:8px">${chips.join('') || '<span class="small">keine Gefahren</span>'}</div>`
+}
+function zeichneSumme() {
+  let m = 0, t = 0; LEVELS.forEach((L) => { const p = punkte(L); m += p.muscheln; t += p.truhen })
+  document.getElementById('gesamt').textContent = (m + t).toLocaleString('de-DE')
+  const f = FISCHE.find((x) => x.id === S.fisch)
+  document.getElementById('aufschl').innerHTML = `<dt>Muscheln</dt><dd>${m}</dd><dt>Truhen</dt><dd>${t}</dd><dt>Modus</dt><dd>${S.modus}</dd><dt>Kombo-Anteil</dt><dd>${S.kombo} %</dd><dt>Perk</dt><dd style="font-family:var(--body)">${f.perk}</dd>`
+}
+function zeichneKurve() {
+  const svg = document.getElementById('kurve'); svg.replaceChildren(); const n = STATIONEN.length, cw = 980 / n
+  const werte = STATIONEN.map((st) => { const z = zaehle(level(st.i)); return { s: st.i === 'ride' ? 6 : st.i === 0 ? 5 : spannung(z, level(st.i)), m: z.muscheln, st } }), smax = Math.max(...werte.map((w) => w.s), 1), mmax = Math.max(...werte.map((w) => w.m), 1)
+  for (let k = 0; k <= 4; k++) svg.appendChild(el('line', { x1: 0, x2: 980, y1: 30 + k * 40, y2: 30 + k * 40, stroke: '#1d4a5e', 'stroke-width': 1 }))
+  let d = ''
+  werte.forEach((w, k) => { const x = k * cw + cw * 0.2, h = (w.s / smax) * 150; svg.appendChild(el('rect', { x, y: 190 - h, width: cw * 0.6, height: h, rx: 6, fill: w.st.farbe, opacity: w.st.plan ? 0.45 : 0.85 }))
+    const t = el('text', { x: k * cw + cw / 2, y: 210, 'text-anchor': 'middle', fill: '#8fb3bd', 'font-size': 12, 'font-family': 'Inter' }); t.textContent = w.st.name.replace(' „Cartoon Chase“', ''); svg.appendChild(t)
+    const cx = k * cw + cw / 2, cy = 190 - (w.m / mmax) * 150; d += (k ? ' L' : 'M') + cx + ',' + cy; svg.appendChild(el('circle', { cx, cy, r: 4.5, fill: '#f2c230' })) })
+  svg.appendChild(el('path', { d, fill: 'none', stroke: '#f2c230', 'stroke-width': 2.5 }))
+}
+function waehle(i) { S.sel = i; merk(); alles() }
+function alles() { zeichneKarte(); zeichneBand(); zeichneStation(); zeichneSumme(); zeichneKurve()
+  document.querySelectorAll('#modus button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.m === S.modus))); document.getElementById('kombo').value = S.kombo; document.getElementById('kombo-w').textContent = S.kombo + ' %' }
+const fs = document.getElementById('fisch'); FISCHE.forEach((f) => { const o = document.createElement('option'); o.value = f.id; o.textContent = f.name; fs.appendChild(o) }); fs.value = S.fisch
+fs.addEventListener('change', () => { S.fisch = fs.value; merk(); alles() })
+document.querySelectorAll('#modus button').forEach((b) => b.addEventListener('click', () => { S.modus = b.dataset.m; merk(); alles() }))
+document.getElementById('kombo').addEventListener('input', (e) => { S.kombo = +e.target.value; merk(); alles() })
+alles()
+</script>
