@@ -1,5 +1,34 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-031 · 22.11.2026 · Abschlussrunde: Startbild wie früher, Echo-Text scharf, Fish Files im Spiel · Artefakt v41
+
+**1) Startbild (Georg direkt: „wir hatten das am Anfang schon richtig“):**
+- Den früheren Stand r16 (vor r18b) habe ich aus der Versionsgeschichte geholt und bei 529 × 725 fotografiert.
+- Damals war das Becken groß als Hero zu sehen und der Knopf stand unten. Mit r18b hatte ich den Knopf wegen des abgeschnittenen App-Rands nach oben gezogen und später unten viel Rand gelassen. Dadurch schrumpfte das Becken: Regress meinerseits.
+- Jetzt im Hochformat wieder wie r16: Logo und Spruch oben, Becken groß in der Mitte, Knopf unten mit kleinem Rand. Der Knopf ist kleiner (176 px), die Schrift darin größer (Georgs Nachtrag).
+- Desktop und Querformat sind unverändert. Den Umbau nach WS0-Punkt 4 (Bodenkontakt) habe ich bewusst nicht gemacht, um nicht wieder etwas umzustellen, das Georg nicht beanstandet hat.
+- Belege: `startbild_r16_vs_jetzt.png`, `startbild_529x725_r4.png`.
+
+**2) Echo-Text (q840):**
+- Der Text ist jetzt eine HTML-Ebene, perspektivisch genau auf die Bildfläche des Monitors gelegt (vier Ecken projiziert, `matrix3d`). Damit gibt es keinen Wasser-Shader, keine Kaustik, kein Bloom und keine Unschärfe.
+- Die Schrift hat eine feste Größe in Bildschirm-Pixeln (1,55 % der Fensterbreite, bei 1280 × 720 genau 20 px) für alle Sätze und Rahmen. Lange Sätze laufen auf Seiten weiter (Anzeige 1/2, 2/2), nichts wird kleiner gesetzt.
+- Der Text steht nur einmal, im Monitor. Der Untertitel unten bleibt aus, solange ein Monitor mit Text im Bild ist.
+- Der Becken-Monitor ist größer und näher an der Kamera. Neues Modul `js/monitor-text.js`, auch für Billboards und Flexas rote Intro-Sätze.
+- Belege ohne Verkleinerung: `echo_text_vollbild_1280_r2.png` (1280 × 720) und `echo_text_ausschnitt_100_r2.png` (100 %).
+
+**3) Fish Files (q838):**
+- Rollen ohne „The“: Wheelman, Cat Burglar, Hacker (Prof. MaBi statt Tachy), Con Artist, Muscle, Smuggler, Informant.
+- Rap Sheet und Kopfgeld stehen als Text; alles im Spiel ist Englisch, auch wenn Deutsch eingestellt ist.
+- Je eine Stärke, sichtbar als Zeile „Strength“ in der Auswahl und im Spiel wirksam:
+  - Wheelman: +15 % Tempo
+  - Cat Burglar: +30 % Wendigkeit
+  - Hacker: Scheinwerfer erfassen 40 % langsamer
+  - Con Artist: Truhen 75 statt 50 Muscheln
+  - Muscle: ein freier Treffer je Level
+  - Smuggler: Muscheln aus 1,9-fachem Umkreis
+  - Informant (Endo): Sonar sieht doppelt so weit, Truhen und Muscheln inklusive (das Sonar zeigt beides schon für alle)
+- Signature-Song: Mit dem gespielten Fisch wechselt Bubble FM auf seinen Song, auch beim Kapern. Für Prof. MaBi läuft vorerst *Talkbox in a Fishbowl*, bis *Heist in E Minor* im Radio ist.
+- Beleg: `fish_files_auswahl_r1.png`.
 ## R-030 · 22.11.2026 · Startbild Hochformat neu (Georg direkt, sehr verärgert) · Artefakt v39
 - **Ursache:** Bei 529 × 725 (Georgs Fenster) griff die Höhenschwelle „Knopf in den oberen 62 %“ nicht. Das Becken wanderte deshalb in den schmalen Rest rechts oben. Im Test lief nur 529 × 815, dort griff die Schwelle zufällig.
 - **Georgs Vorgabe jetzt fest fürs Hochformat:** Logo und Unterzeile oben, das Becken groß in der Mitte, darunter „Escape Now!“ in normaler Größe (200 px statt 216 px und größer), mittig, mit Abstand zum unteren Rand.
