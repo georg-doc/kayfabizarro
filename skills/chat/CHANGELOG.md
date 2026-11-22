@@ -1,3 +1,9 @@
+## 2026-11-22 · CREATOR CREDITS / PROVENANCE ADDENDUM · Existing game owner / Draft PR #155
+
+- Georg: all creators/CC/public-domain/third-party dependencies honored in modular KFB ending roll and searchable source inspector. Every player-created shared world carries actual relevant source/attribution/license notices, independent of optional visual credit-roll visibility.
+- `georg-doc/KFB-Stunt-Car-Race` Draft [PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155) now contains four Credits/Provenance docs and a partial source index pointing to 15/15 R1 editorial IDs plus seven evidence-scoped entries. No whole-game CC release, private-bin export or novel asset owner. 16 proposed tests remain NOT_RUN, no Stage.
+- One next executor gate unchanged: existing WS0/Integration-R2 writer produces real Event→HyperNorm visual/persistence proof, followed by Creator-S0 portable credits export closure. Central Hub JSON card links the PR, not a new live play route.
+
 ## KFB REALITY REMIX / HACKABLE MULTIVERSE · 2026-11-22 · WS0 product direction, docs-only intake
 
 - Georg: Pull, Don't Gate extended to Explore/Play/Create/Remix/Share for all voluntary player styles including free roaming, destruction, social play, absurd system-hacking and player-created/crossover game realities.

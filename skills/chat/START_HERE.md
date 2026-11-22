@@ -1,3 +1,9 @@
+## 2026-11-22 · CREATOR CREDITS / PROVENANCE ADDENDUM · SAME KFB REALITY REMIX OWNER
+
+Georg extends [KFB Reality Remix Draft PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155) with an automatic Creator Credits / Licenses / Provenance design: all **15** existing `src/data/credits/kfb-credits.r1.json` editorial entries are referenced, **seven source-scoped** CC0/MIT/mixed/private/idea evidence records are indexed, and Creator-Pack export carries pertinent full notices even when the player opts to hide the visual ending credits. Existing source Credits, Audio License Evidence and third-party NOTICE/Licenses remain authoritative; no false redistributable status for private or unclear assets. Source files on same game branch under `docs/konzepte/reality-remix-r0/CREDITS_*.{md,json}`. 16 proposed provenance tests NOT_RUN. No new runtime owner, no public CC license, no Stage/Live claim. Next gate **unchanged**: existing game event → HyperNorm persistent/reversible browser proof; then Creator-S0 exported credits test. Do not confuse this game with the separately stopped Four-Island WB2 R4.
+
+---
+
 ## CURRENT ADDITIVE KFB PRODUCT DIRECTION · 2026-11-22 · REALITY REMIX MULTIVERSE
 
 Georg extends **PULL, DON'T GATE** to a freely hackable, persistent, shareable game-world: **Explore → Play → Create → Remix → Share → Explore**. No mandatory funnels/unlock gates. Real player acts trigger emergent NPC/social/system/media responses; voluntary forks/crossovers may mix incompatible source worlds. Reuse existing game and source owners; no second runtime or invented canon. Current **KFB-Stunt-Car-Race** owner, target `game/integration-r2`, Draft PR [#155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155), work branch `planning/reality-remix-multiverse-r0-2026-11-22`:

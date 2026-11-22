@@ -155,3 +155,7 @@ See:
 ### KFB REALITY REMIX / HACKABLE MULTIVERSE · 2026-11-22 · project routing only
 
 Current implementing owner: `georg-doc/KFB-Stunt-Car-Race`, target `game/integration-r2`, [Draft PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155). The PR is **docs-only**: KFB player-modifiable Reality Remix concept, 6 voluntary playstyle funnels, system/men-in-black/NPC emergence, crossovers, BYOM/CodePen-as-source, and an existing-owner R0 event→HyperNorm test plan. Canonical Return: `docs/konzepte/reality-remix-r0/RETURN.md` in PR branch. The Hub links the current owner; it is not the R0 implementation SSOT. **No public Stage/Live route is claimed**; WB2 R4 status remains STOPPED separately. See central `skills/chat/START_HERE.md` for routing.
+
+
+### 2026-11-22 · CREATOR CREDITS / PROVENANCE ADDENDUM
+The existing [KFB Creator Kit / Reality Remix Draft PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155) now also documents dynamic in-game Creator Credits, portable `CREDITS.json`/`ATTRIBUTION.md`/third-party notices and rights-scoped public export. 15/15 legacy editorial credits indexed by ID, seven sourced pilot records (not publicly ready assets), 16 proposed tests. The original game credits file, individual vendor LICENSE/NOTICE and audio evidence stay the source; Hub is only the routing entry. No playable/demo public acceptance route, no automatic license release.
