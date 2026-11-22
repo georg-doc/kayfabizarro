@@ -84,5 +84,45 @@
     "sourceVisualIsolation": "still unperformed",
     "stageRoute": null,
     "brief": "skills/chat/concepts/KFB_HUMAN_BOOK_PROCESSOR_WS0_WSB_CLAUDE_EXECUTION_BRIEF_R1_2026-11-22.md"
+  },
+  "shareableSceneLinkResearchR1": {
+    "date": "2026-11-22",
+    "status": "WS0_WORK_ORDER_ONLY",
+    "issue": 478,
+    "brief": "skills/chat/concepts/KFB_SHAREABLE_GAME_SCENES_WS0_RESEARCH_AND_WORK_ORDER_R1_2026-11-22.md",
+    "proposalSchema": "kfb.scene-link/0.1",
+    "suggestedParameter": "kfbScene",
+    "requiresPublishedCompatibleManifest": true,
+    "bookDemo": {
+      "intendedAudience": "named external viewer / cousin",
+      "moduleSource": "WSB book asset + WS0 spawned Claude Book Processor",
+      "status": "NOT_BUILT",
+      "presetNameCandidate": "human-book-processor"
+    },
+    "aquariumDemo": {
+      "intendedAudience": "named external viewer / colleague",
+      "sourceStatus": "CURRENT_GAME_SITE_SOURCE_REQUIRED",
+      "moduleId": "UNVERIFIED",
+      "presetNameCandidate": "aquarium-satire-demo"
+    },
+    "gptSite": {
+      "actualCurrentGameSiteUrl": "UNVERIFIED",
+      "hostLevelExternalInvite": "PLATFORM_DOCUMENTED_ACCOUNT_ELIGIBILITY_UNVERIFIED",
+      "preservesQueryAfterSignIn": "UNTESTED"
+    },
+    "auth": {
+      "privateNamedViewerPreferred": true,
+      "customProviderHTX": "UNCONFIRMED",
+      "shareLinkGrantsAccess": false
+    },
+    "tests": {
+      "sourceReadback": 1,
+      "gameRuntime": 0,
+      "deepLinkRoundtrip": 0,
+      "externalViewer": 0,
+      "siteBrowser": 0,
+      "stage": 0
+    },
+    "nextGate": "WS0 identify exact current Game GPT Site/switch map/Aquarium source and produce source-backed two-scene preset map"
   }
 }
