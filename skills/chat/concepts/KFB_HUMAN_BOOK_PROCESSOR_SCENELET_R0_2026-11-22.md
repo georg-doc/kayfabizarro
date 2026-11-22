@@ -35,6 +35,14 @@ Canonical `media/kfb/index.json` currently includes:
 - The U.S. 2025 `Bartz v. Anthropic` ruling documents destructive scanning of purchased print books: bindings stripped, pages cut and scanned, originals discarded. See original order, and accounts at https://arstechnica.com/ai/2025/06/anthropic-destroyed-millions-of-print-books-to-build-its-ai-models/ and https://www.wipo.int/wipolex/en/text/600719 ; 2026 reporting calls the program Project Panama. Distinguish **verified destructive scanning**, **specific unproven claims about rare/antiquarian cultural objects**, **legal holding** and **KFB satire/philosophical thesis**. Do not claim rare antiquarian books were proven destroyed.
 - Philosophical premise is AUTHORIAL SATIRE: reduction of humans to indexed parts may fail to grasp meaning/context. This is not a scientifically demonstrated theorem that all physical explanation is false.
 
+### Already-authored KFB narrative connection — DO NOT REINVENT
+
+The **current main `index.html`** already contains section VI **“The Death of the Author” / “Der Tod des Autors”**, explicitly describing *Hilfe, ich bin ein Mensch!*, a cutter separating its pages, loss of dialogue adjacency / editorial framing and section VII **“The Fractal Almanac”**, in which the loose panels become recombinable evidence. This is the closest existing story donor for the machine and is stronger than a generic AI-commentary premise. **Reuse this concrete narrative and its panel/gutter/closure logic rather than inventing a second origin story.** The machine may be an in-world literalization/antagonist of that Cut&Play moment.
+
+Source: `index.html` at main blob `7347135927c2ca7d67693a5cb1ed6ccfc04c4a84`, anchors `#alm-author` / `#alm-author-de` and adjacent Almanac section.
+
+**Count discrepancy:** publisher's public description lists **42 questions and seven excursions**; current KFB `index.html` narrates **eight chapters, forty questions**. Eight chapters is additionally confirmed by Georg in this request. Treat the exact *question* count as SOURCE CONFLICT, not a 40/42 gameplay requirement. Preserve both attributions and resolve from actual print edition before making a public numeric claim.
+
 ## 2. Experience: autonomous readable micro-story
 
 **Creative core:** An absurd machine disassembles a human-nature book to discover what a human is. It successfully extracts more data but gives increasingly impoverished or contradictory explanations. Player can recombine the relationships that were cut away.
