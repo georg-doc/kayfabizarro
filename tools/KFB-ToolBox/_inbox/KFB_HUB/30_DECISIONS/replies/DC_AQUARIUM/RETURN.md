@@ -1,5 +1,17 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-029 · 22.11.2026 · Becken-Monitor größer, zweite Tafel, HyperNorm in der Claude-App geprüft · Artefakt v38
+
+- **Zweite Tafel:** Sie war der alte Platzhalter-Bildschirm aus dem Kern. Das Belegbild `hypernorm_monitor_r1.png` stammte noch von vor dem Ausbau (R-028). Auf dem neuen Beleg `becken_monitor_r2.png` ist nur noch der Monitor an der Luke zu sehen.
+- **Monitor:** 1,3-fach größer (Breite 3,65 statt 2,8) und etwas näher zur Kamera.
+- **HyperNorm in der Claude-App, drei Ursachen behoben:**
+  1. Der abgeschottete Rahmen hat eine eigene Herkunft, der Kern lädt nur freigegebene Herkünfte.
+  2. Der Bildabruf im Worker scheiterte dort; das Material wird jetzt im Hauptfaden geladen und dem Worker fertig übergeben (vom Kern so vorgesehen).
+  3. Der Kern holt Bilder mit `credentials: 'omit'`, das private Artefakt liefert dann 403. Für die eigene Herkunft gehen die Cookies jetzt mit.
+  - Der Stamm bleibt unverändert.
+- **Ergebnis in der App (Chrome, Version 38):** „HN worker · Pool 22 · Schriften 9 · Bilder 235 · 25 ms“. Der Worker läuft, der Hauptfaden bleibt frei. Beleg: `hypernorm_claude_app_r1.jpg`.
+- **Prüfanzeige:** `#hninfo` an den Artefakt-Link hängen; unten links stehen dann Modus, Pool, Bilder und ein kurzer Abruftest.
+- **Für WS1 und den Stamm:** Wer HyperNorm in einem Claude-Artefakt nutzt, braucht dieselben drei Anpassungen. Im Stamm wäre `credentials` als Option von `loadMaterial` die saubere Lösung.
 ## R-028 · 22.11.2026 · HyperNorm-Monitore, Glitch-Loop, Rahmenwechsel, Billboards im Meer · Artefakt v33
 
 **HyperNorm:** Der Stamm-Kern `engine/hypernorm` liegt unverändert in `kfb-stamm-kopie/engine/hypernorm` (Stand @e3552a67, `HERKUNFT.txt`).
