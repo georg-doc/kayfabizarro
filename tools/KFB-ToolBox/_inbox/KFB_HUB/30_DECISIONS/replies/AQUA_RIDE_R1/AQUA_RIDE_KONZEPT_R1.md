@@ -101,6 +101,12 @@ Dieselbe HyperNorm-Engine wie auf den Echo-Monitoren (`engine/hypernorm`, live, 
 - Die Plasma-Kugel in C ist dieselbe wie im Portal (`plasmaKugel.js`).
 - Effekte über `effekseerSchicht.js` (Phantasm, Feather).
 
+## Andockpunkt im Aqua-Build (Polish-Chat 22.11., r32)
+
+- Schleuse 1 nach Georgs Vorgabe: I an der Luke → Kamera-Zoom → Ziffernblock 4711 (Maus oder Tastatur) → Energie-Barriere fällt → Effekseer „phantasm“ → `tank.open()` → Sog → bisherige Rohrfahrt.
+- Der Ride dockt in `openHatch()` in `index.html` an (nach `barrier.collapse` und FX). Abschnitt A (Einsaugen) beginnt dort; der Code-Teil aus der Shot-Liste ist damit schon gebaut.
+- Der alte Ring in dcTank ist per `alteLuke:false` aus (DC-Marke, kein Stammcode). Am Stamm ändert der Polish-Chat nichts.
+
 ## Was ich von Georg brauche
 
 Eine Hub-Frage: Stimmt die Songkarte mit den Abschnitten A bis D und die Lage der zwei Bullet-Time-Pausen? Danach baue ich den Ride als Modul und zeige zuerst Abschnitt B1 als Video.
