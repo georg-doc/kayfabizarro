@@ -1,3 +1,11 @@
+## Additive R1 brief/evidence update · 2026-11-22
+
+Georg clarified two production assignments and a concrete visual requirement. Checked the **current** `media/3D_Assets/WSB_BLENDER/STATUS.md`, `skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md`, `skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md`, and `skills/chat/ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` before writing the R1 execution brief. Brief persists WS0/WSB/Claude ownership split and a testable functional-mesh vs visual-asymmetry rule.
+
+**Actually executed R1:** GitHub original-file source readbacks and 1/1 revised JSON parse/readback; no Blender action, no Claude child spawn, no isolated material A/B/C render, no gear animation or mesh tests, no code-runtime test, no browser/Stage result. No fabricated image/visual PASS. Source-first donor isolation remains next.
+
+**New material/functional acceptance to test later:** actual meshing and reverse ratios, contact/phase with deformable-looking noncontact shells; authentic original donor isolated first; A/B/C material comparisons with matte rusty DIY, rubber/toy/clay component mix. Details in `KFB_HUMAN_BOOK_PROCESSOR_WS0_WSB_CLAUDE_EXECUTION_BRIEF_R1_2026-11-22.md`.
+
 # Human Nature Book Processor R0 · Source/Evidence Report · 2026-11-22
 
 **Class:** DOCUMENTATION AND SOURCE RECON ONLY · no code / visual / Stage acceptance.
