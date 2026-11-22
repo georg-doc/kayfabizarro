@@ -106,6 +106,10 @@ Alle mit STYLE und LYRICS in `replies/SUNO_SSOT_PROMPTS/SUNO_SOLO_TESTS_R1.md` (
 | The Silent Vault (Style Mixer R2 · Klassik, 22.11.) | 112 | E Moll | 82 eigenständig (82 roh; brass 74, strings 7, woodwinds 1) |
 | Night Drive (Style Mixer R2 · Pop, 22.11.) | 114 | E Moll | 23 eigenständig (33 roh; synth 19, keyboard 4) |
 | Heist in E Minor (Style Mixer R2 · GTA meets Screamcore, 22.11.) | 111 | E Dur | 41 eigenständig (42 roh; keyboard 23, strings 13, brass 3, synth 2) |
+| Motorik in E Minor (Style Mixer R3 · Krautrock, 22.11.) | 109 | D Dur | 16 eigenständig (16 roh; guitar 12, synth 4) |
+| E-Minor Drive (Style Mixer R3 · Deep House / Techno, 22.11.) | 112 | C Dur | 8 eigenständig (9 roh; synth 6, brass 2) |
+| Dusty Highway Blues (Style Mixer R3 · Surf Noir / Rockabilly, 22.11.) | 107 | E Moll | 160 eigenständig (186 roh; guitar 89, brass 36, woodwinds 18, keyboard 12) |
+| Stomp and Shout (Style Mixer R3 · Glam Rock, 22.11.) | 111 | A Dur | 130 eigenständig (178 roh; woodwinds 62, brass 36, keyboard 23, guitar 6) |
 
 **Advanced Split, Ergebnis 23.10.:** Flute, Oboe, Clarinet, Trumpet und Violin tragen (rund 50 % einstimmig). Tuba, Cello und Harp liefern fast nichts, French Horn und Trombone wenig. Beim E-Funk bringt Advanced Split nichts (Synth Voice 7, Synth Bass 0 Phrasen); ein Ersatz-Instrument, das nicht spielt (Clarinet statt Clavinet), liefert nur Übersprechen. Doppelte entfernt `40_AUDIO/chatterbox_r1/dedupe_harvest.py <song_dir>`: gleicher Einsatz unter 0,05 s und Grundton unter 5 Hz in zwei Stems, die klarere Phrase bleibt.
 
