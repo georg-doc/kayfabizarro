@@ -80,6 +80,14 @@
 - **Technik:** Der Geometry Painter läuft nur mit WebGPU. Spiel, Aqua und Effekseer zeichnen mit WebGL, deshalb portiert WS0 die Modi Reef, Molten cracks und Aurora silk als ein WebGL-Modul mit „Malen per Code“.
 - **Offen:** der Effekt aus den ersten HyperNorm-Destruction-Slices (Brandlöcher, Energieblitze). Georg sucht ihn heraus.
 
+## HyperNorm-Engine in der Röhre (Georg 22.11.)
+
+Dieselbe HyperNorm-Engine wie auf den Echo-Monitoren (`engine/hypernorm`, live, musikreaktiv, Palette aus Biom und Seed), hier auf der Röhrenwand:
+- **Abschnitt D (HyperNorm-Röhre):** Die Engine füllt die ganze Wand als Endlos-Raum, auf „Cartoon Chase“ bzw. danach den Titeltrack gekoppelt. Die Typo-Zeilen und KFB-Karten fliegen davor vorbei.
+- **Abschnitte B und C:** nur als dezente Schicht im Glas, z. B. in den Ringen oder als Schimmer, damit der Kelp lesbar bleibt.
+- **Skalierung für den besten Effekt:** Die Kachelgröße des Motivs wird an Röhrenumfang und Fahrtempo gekoppelt, sodass ein Motiv-Zyklus etwa einem Takt Fahrstrecke entspricht. Dann rollen die Muster im Takt auf den Spieler zu, statt zu flimmern. Am Rand gibt es keine sichtbaren Kachelnähte (Lehre aus q601: ein durchgehendes Bild).
+- Eine Engine-Instanz rendert in eine Textur, die Röhre und Monitore teilen.
+
 ## Exit jederzeit
 
 - Knopf oben mittig, Form und Typo wie „Escape Now“. Er pulsiert auf jedem Viertel, auf jedem Takt-Eins stärker.
