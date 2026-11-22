@@ -1,3 +1,15 @@
+## R24 Return · 3D tabletop / boardgame scene briefing · 22 November 2026
+
+**Georg authorization:** Create a reusable physical **KFP cutting-mat tabletop scene** for R23's six-faction hex and center black eye-tower, with landscape 1.74:1 cards, standees/slots, red/yellow/blue six-sided clay Domination dice, subtle eye tracking/energy paths and **actual Alpha/Omega** robot die manipulation for tutorial/karaoke. **WS0 coordinates; WSG (Claude Design) visualizes; WSB (Blender MCP) implements — NOT WSP.** This is scene production planning, **not** acceptance of new rules or a second game runtime.
+
+[Complete R24 WS0→WSG→WSB brief](WS0_WSG_WSB_BOARDGAME_SCENE_BLENDER_MCP_BRIEF_R24_2026-11-22.md) and [source audit](R24_3D_BOARDGAME_SCENE_SOURCE_AUDIT_2026-11-22.md) are on the existing game branch/PR. Verified actual repo inventory includes KayKit BoardGameBits `playerstand` and `D6_A_red/yellow/blue.gltf` sources, plus a known generic boardgame marker consumer. **NOT verified**: original KFP cutting mat source, black emblem eye tower, Alpha/Omega original **3D rigs**, actual Patch geometric FX source/licensing; mandatory source-isolated screenshots before integration. No placeholder substitutes, cloned visual canon, or raw Mixamo FBX in public repo.
+
+**Evidence/status:** two docs authored and GitHub read-back verified; source filenames checked; **0 Blender renders, 0 GLB exported, 0 source visual isolation proofs, 0 R24 automated scene tests, 0 human games, 0 public Stage/browser verification**. Existing R23 mechanism, R19 HTML, runtime and Site untouched. No fresh Cloudflare Stage route; proposed direct `https://kayfabizarro.pages.dev/games/invisible-handshake/boardgame-scene/` **NOT DEPLOYED**. Existing owner and Draft PR #475 retained, no merge.
+
+**ONE NEXT GATE:** WS0 locates and isolates the KFP mat, original eye tower, the two bots and one Patch effect; WSG produces verified 3D composition; WSB returns one source-faithful Blender/GLB scene candidate with animation and camera proof for later human KEEP/TUNE/FAIL; do not change R23 scoring.
+
+---
+
 ## R23 Return · Milners Kindergarten Karaoke · 22 November 2026
 
 **User intent / proposed mechanism:** the six faction outer narrative cards are publicly introduced in SHOW/SPIN/SELL style; the central FOCUS is the shared case/end panel. Consecutive humans SET Problem/HATE, Reaction/FEAR, Solution/HOPE to1 on separate outer narratives while speaking an **assertive specific in-character accusation/retort/claim**. Thereafter each human speaker must connect to the immediately prior story beat and MOVE the corresponding die to a different occupied die-free outer card **while TURNing its visible face +1** in the same action. This is [R23's new stripped-down candidate](R23_MILNERS_KINDERGARTEN_KARAOKE_2026-11-22.md), not a silent R22 or R19 replacement. No compulsory recital of every historical sentence, no SWAP in first baseline, and no new die on Focus.
