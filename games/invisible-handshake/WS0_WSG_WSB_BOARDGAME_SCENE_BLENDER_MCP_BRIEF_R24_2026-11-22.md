@@ -1,3 +1,5 @@
+> **ACTUAL EXECUTION ROUTE CORRECTION · Georg · 22 November 2026:** Georg has now submitted the R24 briefing **directly to his existing Claude Design chat**, which already created many elements. **WSB has NOT been assigned**; do not automatically delegate to Blender MCP. The original WS0→WSG→WSB route below is preserved as an earlier proposed plan, **not current executed assignment**. Claude Design should first reuse verified completed modules and isolated real sources; Blender/WSB is a conditional helper **only if a measured missing 3D asset/animation gap requires it and the existing owner authorizes it**. Existing KFP/Game runtime authority and source-isolation requirements are unchanged. R25 game mechanics are developed separately under `games/invisible-handshake/R25_NARRATIVE_CAPTURE_SUM_PRESSURE_CARD_ECONOMY_2026-11-22.md` and must not be imported into the 3D scene as accepted rules.
+
 # KFB · THE INVISIBLE HANDSHAKE · R24 · 3D Table Diorama / Boardgame Scene · WS0 → WSG → WSB
 
 **22 November 2026 · GEORG VISUAL/IMPLEMENTATION BRIEF · DESIGN+BUILD PREPARATION, NOT GAME-RULE ACCEPTANCE.**
