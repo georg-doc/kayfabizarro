@@ -1,3 +1,32 @@
+## 2026-11-22 · WS0 WORK ORDER · Shareable KFB Game Scenes / Deep-Link Presets R1
+
+- Georg requests **Copy scene link** for existing KFB Game switch configurations, opening a chosen Scenelet, shot, light/look, gameplay sequence and soundbed directly in the **existing GPT Game Site**; initial invitations are for *Hilfe, ich bin ein Mensch!* Book Processor (cousin) and a currently authored satirical aquarium/GTA-style module (colleague).
+- Created [WS0 task #478](https://github.com/georg-doc/kayfabizarro/issues/478) and `skills/chat/concepts/KFB_SHAREABLE_GAME_SCENES_WS0_RESEARCH_AND_WORK_ORDER_R1_2026-11-22.md` on existing Draft PR #477; corresponding Book module Claude brief, Return and evidence report updated additively.
+- Verified source-level donors: existing Race Environment `?world=` / `?seed=` URL round-trip; Deck Viewer v5 candidate `?deck=&card=` / `?deck=&page=`; WB2/God Mode versioned module/manifest and separate Player Save contract. No existing generic share-link adapter/runtime was proven.
+- Design proposal `kfb.scene-link/0.1`: safe allowlisted named preset ID + immutable revision mapped to published compatible manifest + optional bounded `shot/phase/look/seed`; owner-validated entry rather than new world/camera/Card/Audio runtime, savegame override, URL editor powers or custom IdP.
+- OpenAI Sites official sharing research: named external viewer sign-in to invited ChatGPT account where enabled; host permission separate from scene URL. Real primary Game Site identity, exact Aquarium module/flags and post-login query persistence **unverified**. `HTX` as IdP remains unconfirmed. Cloudflare Access OTP later only for a separately supported explicitly configured host.
+- Actual tests: new docs/Issue readbacks, no module code, no link roundtrip/browser login test, no Stage deployment or screenshot. R4 STOP/NO MVP preserved; no new Hub route; no merge/Live.
+- **One next gate:** WS0 recovers actual Game GPT Site + switch schema + Aquarium source and produces a source-backed 2-scene preset contract before any implementation or publication.
+
+## 2026-11-22 · GEORG DECISION · Book Processor R1 · WSB/Blender + WS0→Claude + DIY Clay materials
+
+- **Production ownership:** WSB / Blender MCP builds the exact real book model/rig from original print files; WS0 Lead will spawn one separate dedicated Claude chat to build the complete book-processing Scenelet module. WSA/WB2 remains the sole existing receiving world/runtime integrator. No Claude spawn / Blender creation in this documentation slice.
+- **Art direction:** Codevember 06-Orrery is a **mechanism-only donor**; its smooth shiny golden brass aesthetic is rejected. Use worn matte rusty DIY salvage and purposeful mixed toy-like hard rubber, clay-bodied gears, irregular painted metal, visible repair and mild handmade skew. Functional meshing tooth geometry/axles/phase/ratios stay valid; cartoon asymmetry belongs to non-contact structure and finish.
+- **Additive execution brief:** `skills/chat/concepts/KFB_HUMAN_BOOK_PROCESSOR_WS0_WSB_CLAUDE_EXECUTION_BRIEF_R1_2026-11-22.md`; R0 concept, machine-readable source, evidence report and Return updated. Read existing WSB status and KFB Clay/Style/visual anti-slop SSOTs, no replacement material owner.
+- **Evidence:** 1/1 revised source JSON parse/readback, changed docs re-fetched; **0** physical book renders, **0** Orrery screenshots, **0** module builds/mesh tests, **0** browser/Stage checks. Draft PR #477; no new Stage route/Hub card/main router change at concept-only gate.
+- **One next gate:** source-isolate genuine WSB book and original Orrery gear drive, then A/B/C salvage material proof on one mechanically engaged pair before assembly. Existing Island R4 STOP/NO MVP unchanged; no merge/Live.
+
+## 2026-11-22 · PROPOSAL · *Hilfe, ich bin ein Mensch!* Human Nature Book Processor Scenelet R0
+
+- New source-grounded **concept only** on `planning/kfb-human-nature-book-processor-scenelet-r0-2026-11-22`; no WorldBuilder / Card / Audio / physics code or Stage/Live deployment.
+- Existing `index.html` narrative (**The Death of the Author / Der Tod des Autors** → **The Fractal Almanac**) is the primary story donor: the book is cut, contextual relations are reopened and panels recombined. This prevents a new lore origin.
+- Proposed physical book display (real front/spine/back and open spreads), reversible machine cycle (display → cut/scan → misinterpret → rescue/recompose), optional Card encounter, and source-first 3D proof.
+- `help_i_am_a_human` = 56-card candidate, distinct from alternate 56-card `human_nature_uncut_hilfe_ich_bin_ein_mensch` and 36-card `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc`. Inspected card mappings are `mappingVerified:false`; do not crop unverified PDF cards.
+- Adam Chernick Codevember 06-Orrery inspected, MIT gear mechanism donor only; actual browser visual isolation and 3D integration **0**.
+- Publisher sources confirm 248-page book; original print atlas/spread missing from this slice. Westend public copy says 42 questions, current KFB narrative says 40; keep as source discrepancy, not a new rule.
+- Files: `skills/chat/concepts/KFB_HUMAN_BOOK_PROCESSOR_SCENELET_R0_2026-11-22.md`, matching `SOURCE_R0_2026-11-22.json`, `TEST_REPORT_R0_2026-11-22.md` and `RETURN_R0_2026-11-22.md`.
+- **Gate:** source-proven genuine book 3D asset + isolated original Orrery demonstration before any world placement or machinery runtime. Existing Island R4 STOP/NO MVP remains intact; no router/Hub/Stage route changed, no merge/promotion.
+
 ## 2026-11-04 · WS0 Black Ink Blob Sprite Family docs/intake candidate
 
 - Captured nine Georg-visual-PASS 12-character theme pairs into an 18-source-sheet SHA-256 intake ledger, 108 mechanical sprite candidates and reusable L0/L1/L2 footless-blob prompt/QA grammar.

@@ -1,3 +1,11 @@
+## ADDITIVE WS0 ROUTING · 2026-11-22 · SHAREABLE SCENE LINKS / BOOK PROCESSOR + AQUARIUM (BRIEF ONLY)
+
+Georg wants **Copy scene link** for current KFB Game switch configurations so a named invited viewer can open a source-backed Scenelet/shot/look/phase directly on the existing GPT Game Site. Current WS0 task: [Issue #478](https://github.com/georg-doc/kayfabizarro/issues/478). Research and implementation-ready owner contract: `skills/chat/concepts/KFB_SHAREABLE_GAME_SCENES_WS0_RESEARCH_AND_WORK_ORDER_R1_2026-11-22.md` on Draft PR #477, alongside the real-book / mechanical processor brief.
+
+**Next WS0 gate:** identify the **exact existing Game Site, current switches/owners, actual Aquarium/GTA-style module source and site-level viewer/query behavior**; then map two real scene presets (book for cousin; aquarium for colleague). Existing Race `world/seed` and Deck `deck/card/page` URL patterns are donors only. Use invited external viewer sharing where supported; link != auth. No speculative HTX provider, new runtime, new Site, source-less placeholder scene, WB2 R5, public Stage or Live claim. R4 STOP/NO MVP remains binding. No KFB-Hub card change until an actual review/deployed route exists.
+
+---
+
 ## ADDITIVE WS0 INTAKE · 2026-11-04 · BLACK INK BLOB SERIES (DOCS/PROVENANCE ONLY)
 
 Georg visually accepted 18 Black Ink Blob PNG sheets (nine 12-character series). WS0 owns prompt/character curation; verified current WS1 `game/inkblobs-r1` / private atlas (72 actors) remains runtime recipient. Candidate contract: `media/2D_Assets/KFB_Custom/WS0_BLACK_INK_BLOB_SERIES/README.md`; intake issue **#466**. 18 original PNG bytes were locally inspected but **NOT committed**; 108 sprite crops are review candidates with 48 boundary-risk flags. One real source character was visually isolated. Next gate: WS0/Asset Librarian import **one** safe six-pack and WS1 show one actual hit/bounce/ink collision proof. No new renderer/runtime owner, no auto-merge, no Stage/Live claim. The WS0 DECISIONS register remains the V-number authority.
