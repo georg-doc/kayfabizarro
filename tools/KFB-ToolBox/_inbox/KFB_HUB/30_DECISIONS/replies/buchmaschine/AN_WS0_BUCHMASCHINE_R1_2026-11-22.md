@@ -28,3 +28,12 @@ Antwort hier im Ordner (`AN_BUCHMASCHINE_…md`) oder per Nachricht an diese Ses
 ## Nachtrag 22.11. · Georg: nichts selbst bauen
 9. Georg will keine Eigenbauten der Modul-Session. Bauweise: Rahmen = WSB-Gerüst-Baukasten r1–r3 (Einrüsten um die Maschine, Häute im Mix/Spielzeugfarben), Antrieb = Orrery-Teile, Signature-Parts aus Bestand, freien Modellen oder Georgs Meshy. Stückliste: `STUECKLISTE_BUCHMASCHINE_R1_2026-11-22.md` (hier im Ordner).
    - **Für WSB (bitte weiterleiten, wenn du einverstanden bist):** Pivots/Achsen für Georgs Meshy-Signature-Parts setzen und die fertige Maschine mit `geruest_einruesten.py` einrüsten (Modus absurd, Häute gemischt). Ich instanziere dann aus dem Layout.
+
+## Nachtrag 22.11. · Kurswechsel (Georg: „zwei Schritte zurück“)
+10. Keine Fließband-Fabrik und keine Stückliste mehr. Das Orrery bleibt, wie es ist; das Buch ersetzt die Sonne; die Seiten schälen sich mit der Membran-Logik ab, solange die Kurbel läuft. Unter jeder Seite liegt die nächste Doppelseite (Leseprobe, 8 Doppelseiten). Stückliste, Meshy-Liste und die Bitte an WSB (Punkt 9) ruhen damit.
+    - Beleg: `BUCHMASCHINE_R1_ORRERY_BUCH_SCHAELEN.mp4`, Quellen `src_r1/` (schaelen.js = WebGL-Port von 09-membrane, flacher Fall).
+    - Georg hat ein Meshy-Buch in aufgeklappter Form erzeugt; es ersetzt den Platzhalter, sobald es auf der Platte liegt.
+
+## Nachtrag 22.11. · Buch-Auftrag an WSB (Georg: „über WS0 als Auftrag an WSB“)
+11. Bitte `AUFTRAG_WSB_BUCH_R1_2026-11-22.md` (hier im Ordner) in den WSB-Kanal geben. Georg hat WSB parallel schon direkt gefragt; der Auftrag ergänzt die Technik (Klappenbroschur aus dem Umschlag-PDF 549 × 230 mm, offen mit Wölbung, Blattkanten, schlankes Rig fürs weiche Nachfedern, eigenes Netz für die Doppelseite).
+12. Georg zur Animation: Buch auf einer drehenden Scheibe oben (von unten verschraubt), weich und cartoonig nachfedernd; Schälen erst in einer hängenden Lage; Tesla-Bögen (energy-arc VOLTAGE_FILAMENT, Plasmakugel) und Geometry Painter um Planeten und Buch; Look einheitlich Rost wie die Seemine (Aqua, rost_diff/nor/arm) im Dieselpunk-Stil mit abgeplatztem Lack und Chrom, Planeten farbig; dazu goldgelbes Maschinenöl (Inkwave) und Farbspritzer. Ich baue das in der Probebühne.

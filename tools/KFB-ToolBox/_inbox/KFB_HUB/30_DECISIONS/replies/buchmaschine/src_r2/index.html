@@ -1,0 +1,157 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buchmaschine R1 · Orrery mit Buch</title>
+<style>html,body{margin:0;height:100%;background:#cfc6b8;overflow:hidden;font:14px system-ui}canvas{display:block}
+#ui{position:fixed;left:12px;bottom:12px;display:flex;gap:8px;align-items:center;background:#0007;color:#eee;padding:8px 10px;border-radius:8px}
+button{font:inherit;padding:6px 10px;border-radius:6px;border:1px solid #777;background:#333;color:#eee;cursor:pointer}button.on{background:#7a5a2a}</style>
+<script type="importmap">{"imports":{"three":"../gateA/vendor/three-build/three.module.js","three/addons/":"../gateA/vendor/addons/"}}</script></head><body>
+<div id="ui"><button id="rw">◀ rückwärts</button><button id="st0">❚❚ halt</button><button id="fw" class="on">vorwärts ▶</button><button id="wl">Welle</button><select id="sb"><option value="orrery">Orrery</option></select><button id="au" class="on">Ablauf</button></div>
+<script type="module">
+// Buchmaschine R1 (Georg 22.11.: „zwei Schritte zurück“): das Orrery bleibt, wie es ist (Mechanik aus Gate a, Look Mix aus Gate b),
+// an die Stelle der Sonne kommt das Buch (Platzhalter nur in dieser Bühne, bis Georgs Meshy-Buch da ist), die Seiten schälen sich
+// mit der Membran-Logik ab, solange die Kurbel läuft. Unter jeder Seite liegt die nächste Doppelseite der Leseprobe.
+import * as THREE from 'three'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { buildParts, makeMaterials } from '../gateA/donor/parts.js'
+import { applyClay } from '../kfbsrc/vendor/clay/kfb-clay.v1.2.js'
+import { waffenLook, setzeWaffenLook, lookSkala } from '../kfbsrc/look/waffenLook.r1.js'
+import { createSchaelen } from './schaelen.js'
+import { arrangeSign, BLEND, SPREAD, easeInOut } from '../gateA/donor/arrange.js'
+import { SIGNS } from '../gateA/donor/signs.js'
+import { pointHash } from '../gateA/donor/random.js'
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
+renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(innerWidth, innerHeight)
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.outputColorSpace = THREE.SRGBColorSpace
+document.body.appendChild(renderer.domElement)
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#cfc6b8')
+const camera = new THREE.PerspectiveCamera(36, innerWidth / innerHeight, 0.05, 100)
+const controls = new OrbitControls(camera, renderer.domElement)
+const CAMS = { totale: { pos: [8.4, 7.4, 9.6], target: [0, 2.6, 0] }, nah: { pos: [2.6, 6.6, 3.4], target: [0, 4.45, 0] }, seite: { pos: [-6.5, 4.2, 6.5], target: [0, 2.8, 0] }, weit: { pos: [10.5, 6.8, 13.5], target: [0, 3.0, 0] } }
+const setCam = (n) => { camera.position.set(...CAMS[n].pos); controls.target.set(...CAMS[n].target); controls.update() }
+setCam('totale')
+
+// Licht der Probebühne = Tag-Anker aus src/stageLight.js (wie Gate b); das Modul selbst bringt kein Licht mit
+const DAY = { sun: '#fff4e6', sunI: 2.9, hemiSky: '#eef4fa', hemiGround: '#9a8a78', hemiI: 1.05, back: '#ffe6d6', backI: 0.6, elev: 48.99, az: -53.13 }
+const e = DAY.elev * Math.PI / 180, a = DAY.az * Math.PI / 180, sunDir = new THREE.Vector3(Math.cos(e) * Math.sin(a), Math.sin(e), Math.cos(e) * Math.cos(a))
+scene.add(new THREE.HemisphereLight(DAY.hemiSky, DAY.hemiGround, DAY.hemiI))
+const sun = new THREE.DirectionalLight(DAY.sun, DAY.sunI); sun.position.copy(sunDir).multiplyScalar(16); sun.castShadow = true
+sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -6.5, right: 6.5, top: 6.5, bottom: -6.5, near: 2, far: 40 }); sun.shadow.bias = -0.0003; sun.shadow.normalBias = 0.01
+scene.add(sun, sun.target)
+const back = new THREE.DirectionalLight(DAY.back, DAY.backI); back.position.copy(sunDir).multiplyScalar(-12).setY(6); scene.add(back)
+const BODEN = -0.45
+const floor = new THREE.Mesh(new THREE.CircleGeometry(14, 64).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#b9ad9a', roughness: 1 }))
+floor.position.y = BODEN; floor.receiveShadow = true; floor.name = 'boden'; scene.add(floor)
+applyClay(floor, THREE, { profile: 'background', seed: 'buch-boden', scaleRef: 1.6 })
+
+// Orrery mit Look „Mix“ (Gate b): große Räder abwechselnd altes Grün (Eisen), Ziegelrot (Knete), nacktes Eisen; kleine Räder Hartgummi;
+// Wellen, Röhren, Stangen Eisen; Arme Senfgelb-Knete; Platten altes Ocker auf Eisen; Planeten in ihren Farben als Knete
+const { parts, train } = buildParts(makeMaterials(), 5)
+const machine = new THREE.Group(); machine.name = 'orrery'; scene.add(machine)
+const mat = (color, roughness = 0.8) => new THREE.MeshStandardMaterial({ color, roughness, metalness: 0 })
+const LOOK = { gruen: ['#4f8a4a', 0.45], rot: ['#c4553c', null], eisen: ['#6e6c66', 0.7], gummi: ['#2d2b29', null], senf: ['#d6a43c', null], ocker: ['#a8863a', 0.45] }
+const rolle = new Map()
+let gi = 0
+for (const p of parts) {
+  machine.add(p.mesh)
+  if (p.id === 'sun') { p.mesh.visible = false; continue }
+  let r = null
+  if (p.kind === 'gear') { const g = train.gears.get(p.id); r = g.teeth >= 36 ? ['gruen', 'rot', 'eisen'][gi++ % 3] : 'gummi' }
+  else if (p.kind === 'plate') r = 'ocker'
+  else if (p.kind === 'bar') r = /Arm$|Bracket$/.test(p.id) ? 'senf' : 'eisen'
+  else if (p.id === 'crankKnob') r = 'rot'
+  if (r) { p.mesh.material = mat(LOOK[r][0], r === 'gummi' ? 0.95 : 0.8); rolle.set(p.mesh, r) }
+  else { const c = p.mesh.material.color?.getHex?.() ?? 0xcccccc; p.mesh.material = mat(c) }
+}
+applyClay(machine, THREE, { profile: 'midground', seed: 'buchmaschine-orrery', scaleRef: 1.6 })
+for (const [mesh, r] of rolle) if (LOOK[r][1] !== null) { const U = waffenLook(mesh.material, { akzent: LOOK[r][0] }); setzeWaffenLook(U, 'diesel'); U.uLookSkala.value = lookSkala(mesh); U.uLookRost.value = LOOK[r][1] }
+
+// Buch an der Stelle der Sonne: Platzhalter (Deckel + Seitenblock), Seitenfläche = Schälhaut mit den Doppelseiten der Leseprobe
+const BREITE = 1.8, HOEHE = BREITE * 714 / 1024
+const buch = new THREE.Group(); buch.name = 'buch'; buch.position.set(0, 4.55, 0); buch.rotation.set(-0.95, 0.72, 0, 'YXZ'); scene.add(buch)
+const deckel = new THREE.Mesh(new THREE.BoxGeometry(BREITE + 0.12, HOEHE + 0.1, 0.05), mat('#b8322a')); deckel.position.z = -0.085
+const block = new THREE.Mesh(new THREE.BoxGeometry(BREITE + 0.02, HOEHE + 0.02, 0.07), mat('#efe7d6', 0.95)); block.position.z = -0.036
+const ruecken = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, HOEHE + 0.1, 16, 1, false, 0, Math.PI), mat('#b8322a')); ruecken.rotation.z = 0; ruecken.position.set(0, 0, -0.11); ruecken.rotation.y = Math.PI
+for (const m of [deckel, block, ruecken]) { m.castShadow = m.receiveShadow = true; buch.add(m) }
+applyClay(buch, THREE, { profile: 'midground', seed: 'buch-platzhalter', scaleRef: 1.6 })
+
+const bilder = await Promise.all([1, 2, 3, 4, 5, 6, 7, 8].map((i) => new Promise((ok) => { const im = new Image(); im.onload = () => ok(im); im.src = `pages/s${i}.jpg` })))
+const cv = document.createElement('canvas'); cv.width = 4096; cv.height = 714 * 2; const g2 = cv.getContext('2d')
+bilder.forEach((im, i) => g2.drawImage(im, (i % 4) * 1024, Math.floor(i / 4) * 714, 1024, 714))
+const atlas = new THREE.CanvasTexture(cv); atlas.colorSpace = THREE.SRGBColorSpace; atlas.anisotropy = 8
+// fester Zufall, damit Aufnahmen gleich ausfallen
+const rng = (() => { let s = 20261122; return () => { s = (s + 0x6d2b79f5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296 } })()
+const haut = createSchaelen({ THREE, atlas, breite: BREITE, hoehe: HOEHE, rng })
+haut.gruppe.position.z = 0.0; buch.add(haut.gruppe); scene.add(haut.flocken)
+
+// Antrieb: Kurbel treibt alles; die Seiten schälen nur, solange sie läuft (Tempo = Kurbeltempo)
+let drive = 0, speed = 0.08, naechsteWelle = 0.6
+const setDir = (s, id) => { speed = s; for (const b of ['rw', 'st0', 'fw']) document.getElementById(b).classList.toggle('on', b === id) }
+rw.onclick = () => setDir(-0.08, 'rw'); st0.onclick = () => setDir(0, 'st0'); fw.onclick = () => setDir(0.08, 'fw'); wl.onclick = () => haut.welle(rng(), rng(), { tempo: 1.6, reichweite: 0.35 })
+// Sternbild-Modus aus dem Orrery (arrangeSign unverändert): die Maschine ordnet sich zum Tierkreiszeichen, das Buch sitzt wie die Sonne auf dem hellsten Stern
+const sunPart = parts.find((p) => p.id === 'sun')
+const cur = parts.map(() => ({ p: new THREE.Vector3(), q: new THREE.Quaternion(), s: new THREE.Vector3(1, 1, 1) }))
+const from = parts.map(() => ({ p: new THREE.Vector3(), q: new THREE.Quaternion(), s: new THREE.Vector3(1, 1, 1) }))
+const delay = parts.map((_, i) => pointHash(i, 7) * SPREAD)
+let mode = 'mechanism', formen = new Map(), uhr = BLEND + SPREAD
+const BUCH_Q = buch.quaternion.clone(), BUCH_Y = -0.17, BUCH_FAKTOR = 0.6 * 1.3 / 0.96
+const buchVon = { p: new THREE.Vector3(), q: new THREE.Quaternion(), s: 1 }, buchZiel = { q: new THREE.Quaternion() }
+function go(m, zeichen) {
+  if (m === 'form') formen = arrangeSign(parts, zeichen, camera.position)
+  mode = m; uhr = 0
+  parts.forEach((p, i) => { from[i].p.copy(cur[i].p); from[i].q.copy(cur[i].q); from[i].s.copy(p.mesh.scale) })
+  buchVon.p.copy(buch.position); buchVon.q.copy(buch.quaternion); buchVon.s = buch.scale.x
+  // Buch im Sternbild: zur Kamera gedreht
+  const n = camera.position.clone().sub(new THREE.Vector3(0, 3.1, 0)).normalize(), m4 = new THREE.Matrix4().lookAt(new THREE.Vector3(), n, new THREE.Vector3(0, 1, 0))
+  buchZiel.q.setFromRotationMatrix(m4).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI))
+}
+SIGNS.forEach((z) => { const o = document.createElement('option'); o.value = z.name; o.textContent = z.label; sb.appendChild(o) })
+sb.onchange = () => { auto = false; au.classList.remove('on'); sb.value === 'orrery' ? go('mechanism') : go('form', sb.value) }
+let auto = true, ablaufZeit = 0, ablaufSchritt = 0, zeichenNr = 4
+au.onclick = () => { auto = !auto; au.classList.toggle('on', auto) }
+const ABLAUF = [{ m: 'mechanism', t: 8 }, { m: 'form', t: 8 }]
+const pos = new THREE.Vector3(), quat = new THREE.Quaternion(), spinQ = new THREE.Quaternion(), UPV = new THREE.Vector3(0, 1, 0)
+for (const [i, p] of parts.entries()) { p.pose(0, pos, quat); cur[i].p.copy(pos); cur[i].q.copy(quat) }
+function schritt(dt) {
+  drive += speed * dt; uhr += dt
+  if (auto) { ablaufZeit += dt; if (ablaufZeit > ABLAUF[ablaufSchritt].t) { ablaufZeit = 0; ablaufSchritt = (ablaufSchritt + 1) % ABLAUF.length
+    const a = ABLAUF[ablaufSchritt]; if (a.m === 'form') { const z = SIGNS[zeichenNr++ % SIGNS.length].name; sb.value = z; go('form', z) } else { sb.value = 'orrery'; go('mechanism') } } }
+  const D = drive * Math.PI * 2
+  parts.forEach((p, i) => {
+    p.pose(D, pos, quat); let sc = 1, zq = quat
+    if (mode === 'form') { const t = formen.get(p); if (t) { pos.copy(t.position); sc = t.scale; if (t.faced) { spinQ.setFromAxisAngle(UPV, p.spin(D)); zq = t.quaternion.clone().multiply(spinQ) } else zq = t.quaternion } }
+    const k = easeInOut(THREE.MathUtils.clamp((uhr - delay[i]) / BLEND, 0, 1))
+    if (k >= 1) { cur[i].p.copy(pos); cur[i].q.copy(zq); p.mesh.scale.copy(typeof sc === 'number' ? new THREE.Vector3(sc, sc, sc) : sc) }
+    else { cur[i].p.lerpVectors(from[i].p, pos, k); cur[i].p.y += Math.sin(Math.PI * k) * Math.min(1.2, from[i].p.distanceTo(pos) * 0.12); cur[i].q.copy(from[i].q).slerp(zq, k)
+      const ts = typeof sc === 'number' ? new THREE.Vector3(sc, sc, sc) : sc; p.mesh.scale.lerpVectors(from[i].s, ts, k) }
+    p.mesh.position.copy(cur[i].p); p.mesh.quaternion.copy(cur[i].q)
+  })
+  // Buch folgt der (unsichtbaren) Sonne: Ort und Größe, eigene Drehung
+  const si = parts.indexOf(sunPart), kb = easeInOut(THREE.MathUtils.clamp((uhr - delay[si]) / BLEND, 0, 1))
+  const zielS = mode === 'form' ? THREE.MathUtils.clamp(sunPart.mesh.scale.x * BUCH_FAKTOR * 1.8, 0.55, 0.85) : 1, zielQ = mode === 'form' ? buchZiel.q : BUCH_Q
+  buch.position.copy(sunPart.mesh.position).add(new THREE.Vector3(0, BUCH_Y * zielS, 0))
+  buch.quaternion.copy(buchVon.q).slerp(zielQ, kb); buch.scale.setScalar(THREE.MathUtils.lerp(buchVon.s, zielS, kb))
+  const laufen = Math.abs(speed) / 0.08
+  if (laufen > 0) { naechsteWelle -= dt * laufen; if (naechsteWelle <= 0) { haut.welle(0.12 + rng() * 0.76, 0.15 + rng() * 0.7, { tempo: 1.6 + rng() * 0.8, reichweite: 0.22 + rng() * 0.2 }); naechsteWelle = 2.6 + rng() * 2.2 } }
+  buch.updateMatrixWorld(true)
+  haut.update(dt, { welt: haut.gruppe, boden: BODEN + 0.01, laufen })
+}
+let live = true
+const clock = new THREE.Clock()
+function frame() { const dt = Math.min(0.05, clock.getDelta()); if (live) { schritt(dt); controls.update(); renderer.render(scene, camera) } requestAnimationFrame(frame) }
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight) })
+// Belegaufnahme: feste Schrittweite, fester Zufall
+window.__record = async ({ dir, frames, cam = 'totale', w = 1280, h = 720, vorlauf = 0, tempo, ablauf }) => {
+  if (ablauf) { ablaufZeit = ablauf.zeit ?? ablaufZeit; if (ablauf.zeichen !== undefined) zeichenNr = ablauf.zeichen }
+  live = false; renderer.setPixelRatio(1); renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); setCam(cam)
+  if (tempo !== undefined) speed = tempo
+  for (let i = 0; i < vorlauf; i++) schritt(1 / 30)
+  for (let i = 0; i < frames; i++) {
+    schritt(1 / 30); renderer.render(scene, camera)
+    await fetch(`/save?f=${dir}/${String(i).padStart(4, '0')}.png`, { method: 'POST', body: renderer.domElement.toDataURL('image/png') })
+  }
+  return { frames, lose: haut.lose }
+}
+window.__info = () => ({ kacheln: haut.anzahl, lose: haut.lose, calls: renderer.info.render.calls, tris: renderer.info.render.triangles })
+frame()
+</script></body></html>
