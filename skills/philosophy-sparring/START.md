@@ -1,4 +1,4 @@
-# Gesprächsraum · START
+# Denkraum · START
 
 Version: R9-URL-5 · 2026-11-22
 Lesemarker: GESPRECHSRAUM-R9-URL-5

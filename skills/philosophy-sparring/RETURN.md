@@ -1,3 +1,17 @@
+## 2026-11-22 · Denkraum · fragende Stringenzprüfung · R9-URL-5
+
+Owner philosophy-sparring; repo georg-doc/kayfabizarro; branch planning/philosophy-sparring-webchat-mvp-2026-10-31; PR #463 remains unmerged. Implementation milestone 520592d5550b3ab41fbb8ec6c430b9b512d158d0; exact remote head and 8/8 changed files read back. Final rename/Return commit follows this entry; retrieve branch head for its exact SHA.
+
+Default: informed question-led coherence checking, strongest plausible reconstruction, one material seam rather than compulsory disagreement. Every answer ends with 1–3 concrete numbered continuations; plain number selects within same conversation. Both START and full starter updated. Corrected pre-existing supplemental branch links. Visible name Denkraum; canonical URL unchanged: https://philosophie-leseraum.frizzlebob.chatgpt.site/ . Ten original texts byte-identical; private speech/letters remain excluded.
+
+Tests: build passed; git diff whitespace check passed. Public R9-URL-5 landing seen in browser; ChatGPT button populated full intended prompt, Dictation button visible. Browser unauthenticated, Send disabled: fresh model-response, number-selection and live microphone tests NOT completed. No claim of father's-account verification. ChatGPT native dictation is the supported voice-input path, not a new speech service on reader Site.
+
+Clickable continuation controls remain UNIMPLEMENTED. Numbered prose is an interim fallback, not fulfillment of requested clicks. Static reader cannot control the native ChatGPT response UI. Father's free plan confirmed in conversation; no paid API configured. Official SIWC docs describe plan-backed inference for eligible plans and separately approved remotely hosted apps; ordinary Sites sign-in does not supply that inference permission. No microphone permissions changed, no recordings made. Perplexity corpus-fetch limitation remains unresolved.
+
+Next gate: choose an authorized AI runtime for own clickable chat interface if clicks remain mandatory; otherwise sign in to ChatGPT and run the actual response/number-selection test. Do not claim full interaction acceptance before either passes.
+
+---
+
 ## 2026-11-01 · S10 öffentlich · R9-URL-4
 
 Zehn Originaltexte. S10 Wissen und Glaubensgewissheit als DOC-Textauszug veröffentlicht. START ergänzt Zweifel/Korrigierbarkeit und die säkulare/theologische Begründung der Menschenwürde. Öffentlicher Leseraum https://philosophie-leseraum.frizzlebob.chatgpt.site/ Version 2. Implementierung 18c55df84ac304a616b728c2c481057ab88cc2c8. Alle zehn geänderten Dateien über den Branch zurückgelesen. Öffentlicher S10-Download bytegleich mit Extraktion. ChatGPT über den öffentlichen Startknopf geöffnet, vorbereiteten Auftrag um eine Blindfrage ergänzt und gesendet. Version und beide Marker korrekt. Abschnitt 26: Suppenwürfel, Koch in der Küche und Physiker im Teilchenbeschleuniger korrekt identifiziert. Im angemeldeten Testkonto geprüft. Nächster unabhängiger Praxistest: Gespräch zu Zweifel oder Menschenwürde mit dem Autor.
