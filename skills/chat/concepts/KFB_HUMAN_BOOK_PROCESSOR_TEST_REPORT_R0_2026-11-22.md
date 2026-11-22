@@ -1,3 +1,18 @@
+## Additive R2 · shareable game scenes / Sites source research · 2026-11-22
+
+**Files and sources actually inspected for this design:** 
+- `skills/chat/START_HERE.md`, `CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, `FRESH_CHAT_SLICE_PROTOCOL.md`, `KFB_SITES_FIRST_DELIVERY_POLICY_2026-10-04.md`, `KFB_SITE_SURFACE_REGISTRY_2026-10-04.json`.
+- `skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/SITE_GODMODE_LEAN_MEMORY_ARCHITECTURE_2026-10-04.md` and adjacent Golden Journey/One Shot preflight, `skills/chat/KFB_SURFACE_HIERARCHY_CURRENT_2026-10-06.md`.
+- `kfb-hub/stunt-race/track-environment-lab/boot.mjs` contains actual `world`/`seed` URLSearchParams parse and history.replaceState round-trip implementation; it is **source proof**, not a run in this task.
+- Deck Viewer v5 Return documents `deck`/`card` or `deck`/`page`; viewer v5 is candidate, no new visual proof from this task.
+- Repository-scoped Github search for `aquarium` / `GTA VI` did **not** locate an authoritative game Aquarium module/route in `kayfabizarro`; similarly limited search in `KFB-Stunt-Car-Race` found no matching indexed module. **Absence in search is not proof module does not exist**; exact Claude/Site current source must be recovered by WS0.
+- OpenAI Help Center `https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites`: private sharing with named external viewer account where available, public when enabled; login and link are different security concerns.
+- OpenAI `https://help.openai.com/en/articles/20001410-sign-in-with-chatgpt`, Cloudflare Access `https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/` and OTP `https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/one-time-pin/`; OWASP redirect cheat sheet reviewed as identity/deep-link safety guidance.
+
+**Actual result:** 1 new WS0 work order read back on current branch; 1 GitHub Issue #478 created + read back; existing Book module brief and Return updated + read back. **Automated runtime tests 0; scene-link resolver tests 0; fresh viewer-site/browser tests 0; external invited-login tests 0; copied-link roundtrips 0; screenshots 0; public Stage checks 0.** No auth/login feature was implemented. This is source-grounded prep.
+
+**One next gate:** WS0 exact site/switch/aquarium census → source-backed two-preset contract. No visual/game PASS.
+
 ## Additive R1 brief/evidence update · 2026-11-22
 
 Georg clarified two production assignments and a concrete visual requirement. Checked the **current** `media/3D_Assets/WSB_BLENDER/STATUS.md`, `skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md`, `skills/chat/KFB_STYLE_REFERENCE_ROUTER_2026-10-07.md`, and `skills/chat/ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` before writing the R1 execution brief. Brief persists WS0/WSB/Claude ownership split and a testable functional-mesh vs visual-asymmetry rule.
