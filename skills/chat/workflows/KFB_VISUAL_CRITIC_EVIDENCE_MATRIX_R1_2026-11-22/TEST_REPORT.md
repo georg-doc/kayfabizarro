@@ -17,3 +17,10 @@ Race: `src/flags.js`, `src/siteHash.js`, `test/criticShots.mjs`, `scripts/ir2/pr
 - `SOURCE.json` pins source observations for this planning slice only; current game HEAD must be re-fetched when executed.
 
 **Next single gate:** `KFB_VISUAL_REPLAY_CAPTURE_01` – a real 10–30-second, source-backed beat with one full metadata snapshot and one independent deviation/critic record.
+
+## 2026-11-22 · Interactive Webchat Session R1 additive schema smoke
+- New files: `REVIEW_SESSION_UI_R1.md`, `review-session.schema.json`, `SESSION_EXAMPLE_NOT_A_TEST.json`.
+- **9/9 PASS** custom JavaScript limited subset validation against exact GitHub-readback JSON schema/example: parse, 10/10 required fields, positive fixture, rejection of fake auto-approval, negative revision, missing handoff, bad SHA, invalid finding status, invalid privacy.
+- Not a full JSON Schema 2020-12 engine; **0** actual HTML/MCP App implementations and Webchat UI/browser tests, **0** image or audio generation integration runs, **0** authenticated GitHub commit-from-App tests, **0** live deployed Site/UI observations.
+- Important platform check: MCP Apps can render embedded HTML and update structured context; OpenAI Extensions report **Web image blocks in `ui/update-model-context` unsupported**, so generated image/GitHub bytes require a separate real end-to-end test. See https://github.com/openai/mcp-extensions/blob/main/docs/spec.md and `REVIEW_SESSION_UI_R1.md`.
+- The example is synthetic and explicitly `EXAMPLE_NOT_A_TEST`; it is not an Aquarium assessment and has no real media or approval.
