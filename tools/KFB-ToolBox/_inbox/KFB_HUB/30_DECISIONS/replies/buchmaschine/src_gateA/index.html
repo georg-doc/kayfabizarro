@@ -1,0 +1,95 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gate A · Orrery WebGL</title>
+<style>html,body{margin:0;height:100%;background:#1d1b19;color:#eee;font:14px system-ui;overflow:hidden}canvas{display:block}
+#ui{position:fixed;left:12px;bottom:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#0008;padding:8px 10px;border-radius:8px}
+button{font:inherit;padding:6px 10px;border-radius:6px;border:1px solid #777;background:#333;color:#eee;cursor:pointer}button.on{background:#7a5a2a}
+#st{position:fixed;left:12px;top:10px;background:#0008;padding:6px 10px;border-radius:8px}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three-build/three.module.js","three/addons/":"./vendor/addons/"}}</script></head><body>
+<div id="st">06-orrery · Mechanik unverändert · WebGL</div>
+<div id="ui"><button id="rw">◀ rückwärts</button><button id="st0">❚❚ halt</button><button id="fw" class="on">vorwärts ▶</button>
+<label>Zerlegen <input id="ex" type="range" min="0" max="1" step="0.01" value="0"></label><span id="mesh"></span></div>
+<script type="module">
+import * as THREE from 'three'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { buildParts, makeMaterials } from './donor/parts.js'
+import { meshError } from './donor/train.js'
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
+renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(innerWidth, innerHeight)
+renderer.shadowMap.enabled = true; renderer.toneMapping = THREE.ACESFilmicToneMapping
+document.body.appendChild(renderer.domElement)
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#1d1b19')
+const camera = new THREE.PerspectiveCamera(38, innerWidth / innerHeight, 0.05, 100)
+camera.position.set(7.6, 6.2, 8.8)
+const controls = new OrbitControls(camera, renderer.domElement); controls.target.set(0, 2.3, 0); controls.update()
+// Licht nur in dieser Probebühne (das spätere Modul bekommt Licht vom Host)
+scene.add(new THREE.HemisphereLight('#fff6e8', '#2a2420', 1.1))
+const key = new THREE.DirectionalLight('#fff1dc', 2.4); key.position.set(4, 8, 5); key.castShadow = true
+key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, { left: -6, right: 6, top: 6, bottom: -6 }); scene.add(key)
+const floor = new THREE.Mesh(new THREE.CircleGeometry(9, 64).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#3a3430', roughness: 0.9 }))
+floor.position.y = -0.45; floor.receiveShadow = true; scene.add(floor)
+
+const { parts, train } = buildParts(makeMaterials(), 5)
+for (const p of parts) scene.add(p.mesh)
+
+// Eingriffsprüfung mit der Funktion des Spenders: alle Paare über viele Kurbelstellungen
+let worst = 0
+for (let d = -3; d <= 3; d += 0.0137) for (const m of train.meshes) worst = Math.max(worst, meshError(train, m.driver, m.driven, d))
+window.__meshWorst = worst; window.__pairs = train.meshes.length; window.__gears = train.gears.size
+document.getElementById('mesh').textContent = worst < 1e-6 ? `Eingriff: alle ${train.meshes.length} Paare sitzen` : 'Eingriff: FEHLER'
+
+let drive = 0, speed = 0.08, explode = 0
+const setDir = (s, id) => { speed = s; for (const b of ['rw', 'st0', 'fw']) document.getElementById(b).classList.toggle('on', b === id) }
+rw.onclick = () => setDir(-0.08, 'rw'); st0.onclick = () => setDir(0, 'st0'); fw.onclick = () => setDir(0.08, 'fw')
+ex.oninput = () => (explode = +ex.value)
+window.__set = (o) => { if ('drive' in o) drive = o.drive; if ('speed' in o) speed = o.speed; if ('explode' in o) { explode = o.explode; ex.value = explode } }
+
+// Drehen mit der Hand: jedes Teil mit "turn" lässt sich um seine Achse ziehen (wie im Spender)
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), plane = new THREE.Plane(), hit = new THREE.Vector3()
+let grab = null
+const planAngle = (t, p) => Math.atan2(-p.z - t.y, p.x - t.x)
+renderer.domElement.addEventListener('pointerdown', (e) => {
+  ndc.set((e.clientX / innerWidth) * 2 - 1, -(e.clientY / innerHeight) * 2 + 1); ray.setFromCamera(ndc, camera)
+  const h = ray.intersectObjects(parts.map((p) => p.mesh))[0]; const part = h && parts.find((p) => p.mesh === h.object)
+  if (!part?.turn) return
+  plane.set(new THREE.Vector3(0, 1, 0), -h.point.y); grab = { t: part.turn, a: planAngle(part.turn, h.point), held: speed }
+  speed = 0; controls.enabled = false
+})
+addEventListener('pointermove', (e) => {
+  if (!grab) return
+  ndc.set((e.clientX / innerWidth) * 2 - 1, -(e.clientY / innerHeight) * 2 + 1); ray.setFromCamera(ndc, camera)
+  if (!ray.ray.intersectPlane(plane, hit)) return
+  const a = planAngle(grab.t, hit); let da = a - grab.a; da = Math.atan2(Math.sin(da), Math.cos(da)); grab.a = a
+  drive += da / (2 * Math.PI * grab.t.speed)
+})
+addEventListener('pointerup', () => { if (grab) { speed = grab.held; grab = null; controls.enabled = true } })
+
+const pos = new THREE.Vector3(), quat = new THREE.Quaternion(), clock = new THREE.Clock()
+let live = true
+function frame() {
+  const dt = Math.min(0.05, clock.getDelta())
+  if (live) { drive += speed * dt; place(); controls.update(); renderer.render(scene, camera) }
+  requestAnimationFrame(frame)
+}
+function place() {
+  for (const p of parts) {
+    p.pose(drive * Math.PI * 2, pos, quat)
+    // Zerlegen: jedes Teil fährt entlang seiner Höhe und nach außen, die Stellungen bleiben (keine Physik)
+    const k = explode * explode
+    p.mesh.position.set(pos.x * (1 + k * 0.6), pos.y + (pos.y - 0.2) * k * 1.4, pos.z * (1 + k * 0.6)); p.mesh.quaternion.copy(quat)
+  }
+}
+// Belegaufnahme: feste Bildgröße, feste Kurbelstellungen, Bilder gehen an den Probeserver (frames/<ordner>/)
+window.__record = async ({ dir, frames, from, to, explode: exFrom = 0, exTo = exFrom, cam, target, w = 960, h = 720 }) => {
+  live = false; renderer.setPixelRatio(1); renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix()
+  if (cam) camera.position.set(...cam); if (target) controls.target.set(...target); controls.update()
+  for (let i = 0; i < frames; i++) {
+    const u = frames > 1 ? i / (frames - 1) : 0; drive = from + (to - from) * u; explode = exFrom + (exTo - exFrom) * u
+    place(); renderer.render(scene, camera)
+    await fetch(`/save?f=${dir}/${String(i).padStart(4, '0')}.png`, { method: 'POST', body: renderer.domElement.toDataURL('image/png') })
+  }
+  return frames
+}
+addEventListener('resize',() => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight) })
+frame()
+</script></body></html>

@@ -1,0 +1,126 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gate B · Zahnradpaar drei Materialien</title>
+<style>html,body{margin:0;height:100%;background:#cfc6b8;color:#222;font:14px system-ui;overflow:hidden}canvas{display:block}
+#lab{position:fixed;left:0;right:0;top:8px;display:flex;pointer-events:none}#lab div{flex:1;text-align:center;font-weight:600;text-shadow:0 1px 0 #fff8}</style>
+<script type="importmap">{"imports":{"three":"../gateA/vendor/three-build/three.module.js","three/addons/":"../gateA/vendor/addons/"}}</script></head><body>
+<div id="lab"><div>A · Schrott-Eisen, alte Farbe</div><div>B · Hartgummi + Eisen</div><div>C · Knet-Spielzeug</div></div>
+<script type="module">
+// Gate B: EIN Zahnradpaar aus dem Orrery (layToMars 33 Zähne auf marsWheel 63 Zähne), Geometrie, Achsabstand und Phase unverändert aus dem Spender.
+// Drei Materialrichtungen, gleiche Kamera, gleiches Licht. Alles läuft über die eine KFB-Knete (kfb-clay v1.2, vendor byte-gleich), die Metallrichtung
+// zusätzlich über den freigegebenen Diesel-Look der Waffen (waffenLook.r1, Variante diesel). Knete verändert nur Normalen, nie die Zahnform.
+import * as THREE from 'three'
+import { gearGeometry, collarGeometry } from '../gateA/donor/gears.js'
+import { buildTrain, shaftAngle, meshError, MODULE } from '../gateA/donor/train.js'
+import { applyClay } from '../kfbsrc/vendor/clay/kfb-clay.v1.2.js'
+import { waffenLook, setzeWaffenLook, lookSkala } from '../kfbsrc/look/waffenLook.r1.js'
+
+const W = () => innerWidth, H = () => innerHeight
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
+renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(W(), H())
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.setScissorTest(true)
+document.body.appendChild(renderer.domElement)
+
+// Licht der Probebühne = Tag-Anker aus src/stageLight.js (J17): Sonne, Hemisphäre, Gegenlicht. Nur hier, das Modul selbst bringt kein Licht mit.
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#cfc6b8')
+const DAY = { sun: '#fff4e6', sunI: 2.9, hemiSky: '#eef4fa', hemiGround: '#9a8a78', hemiI: 1.05, back: '#ffe6d6', backI: 0.6, elev: 48.99, az: -53.13 }
+const e = DAY.elev * Math.PI / 180, a = DAY.az * Math.PI / 180, sunDir = new THREE.Vector3(Math.cos(e) * Math.sin(a), Math.sin(e), Math.cos(e) * Math.cos(a))
+scene.add(new THREE.HemisphereLight(DAY.hemiSky, DAY.hemiGround, DAY.hemiI))
+const sun = new THREE.DirectionalLight(DAY.sun, DAY.sunI); sun.position.copy(sunDir).multiplyScalar(12); sun.castShadow = true
+sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -2.2, right: 2.2, top: 2.2, bottom: -2.2, near: 2, far: 25 })
+sun.shadow.bias = -0.0002; sun.shadow.normalBias = 0.004; scene.add(sun, sun.target)
+const back = new THREE.DirectionalLight(DAY.back, DAY.backI); back.position.copy(sunDir).multiplyScalar(-10).setY(4); scene.add(back)
+
+// Boden: Knete, ruhig
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(8, 8).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#b9ad9a', roughness: 1 }))
+floor.name = 'boden'; floor.receiveShadow = true; scene.add(floor)
+applyClay(floor, THREE, { profile: 'background', seed: 'gateB-boden', scaleRef: 1.6 })
+
+// Das Paar aus dem Spender: Achsen lay und mars, Zahnräder layToMars / marsWheel mit ihren Phasen
+const train = buildTrain(Date.UTC(2026, 10, 22))
+const gA = train.gears.get('layToMars'), gB = train.gears.get('marsWheel')
+const sA = train.shafts.get('lay'), sB = train.shafts.get('mars')
+const mid = { x: (sA.x + sB.x) / 2, y: (sA.y + sB.y) / 2 }
+const H0 = 0.32 // Höhe der Radebene über dem Boden
+const geoA = gearGeometry(gA.teeth, 0.09, 0.045, Math.max(0.095, Math.min(0.16, MODULE * gA.teeth / 2 * 0.45)), 5)
+const geoB = gearGeometry(gB.teeth, 0.09, 0.16, Math.max(0.21, Math.min(0.16, MODULE * gB.teeth / 2 * 0.45)), 5)
+const shaftGeo = new THREE.CylinderGeometry(0.042, 0.042, H0 + 0.12, 18)
+const footGeo = collarGeometry(0.11, 0.001, 0.04, 22)
+const tubeGeo = new THREE.CylinderGeometry(0.155, 0.155, H0 + 0.1, 28)
+
+function makePair(name) {
+  const g = new THREE.Group(); g.name = name
+  const place = (geo, s, h) => { const m = new THREE.Mesh(geo); m.position.set(s.x - mid.x, h, -(s.y - mid.y)); m.castShadow = m.receiveShadow = true; g.add(m); return m }
+  const big = place(geoB, sB, H0), small = place(geoA, sA, H0)
+  big.name = 'rad-gross'; small.name = 'rad-klein'
+  const pinA = place(shaftGeo, sA, (H0 + 0.12) / 2); pinA.name = 'achse-klein'
+  const pinB = place(tubeGeo, sB, (H0 + 0.1) / 2); pinB.name = 'achse-gross'
+  const fA = place(footGeo, sA, 0.02), fB = place(footGeo, sB, 0.02); fA.name = 'fuss-klein'; fB.name = 'fuss-gross'
+  fB.scale.set(1.9, 1, 1.9)
+  scene.add(g); return { g, big, small, pins: [pinA, pinB, fA, fB] }
+}
+const mat = (color, roughness = 0.8) => new THREE.MeshStandardMaterial({ color, roughness, metalness: 0 })
+// Knete auf eine Gruppe, danach optional Diesel-Look je Netz (Farbrolle aus der Grundfarbe, Rost an Kanten und Nähten, matt)
+function clayAll(obj, profile, seed) { return applyClay(obj, THREE, { profile, seed, scaleRef: 1.6 }) }
+function diesel(mesh, akzent, rost = 1) {
+  const U = waffenLook(mesh.material, { akzent }); setzeWaffenLook(U, 'diesel'); U.uLookSkala.value = lookSkala(mesh); U.uLookRost.value = rost; return U
+}
+
+const P = [makePair('A'), makePair('B'), makePair('C')]
+// A · Schrott-Eisen mit verblichener Farbe: großes Rad altes Signalgrün, kleines Rad altes Ocker (Blau wäre im Diesel-Look ein Glühteil), Achsen nacktes Eisen
+P[0].big.material = mat('#4f8a4a'); P[0].small.material = mat('#a8863a'); for (const m of P[0].pins) m.material = mat('#6c6a64')
+clayAll(P[0].g, 'midground', 'gateB-A')
+diesel(P[0].big, '#4f8a4a', 0.45); diesel(P[0].small, '#a8863a', 0.45); for (const m of P[0].pins) diesel(m, '#6c6a64')
+// B · Hartgummi + Eisen: großes Rad nacktes rostiges Eisen, kleines Rad matter anthrazitfarbener Hartgummi
+P[1].big.material = mat('#6e6c66'); P[1].small.material = mat('#2d2b29', 0.95); for (const m of P[1].pins) m.material = mat('#6c6a64')
+clayAll(P[1].g, 'midground', 'gateB-B')
+diesel(P[1].big, '#6e6c66', 0.7); for (const m of P[1].pins) diesel(m, '#6c6a64')
+// C · Knet-Spielzeug: Räder aus bunter Knete (Ziegelrot, Senfgelb), Achsen Eisen
+P[2].big.material = mat('#c4553c'); P[2].small.material = mat('#d6a43c'); for (const m of P[2].pins) m.material = mat('#6c6a64')
+clayAll(P[2].g, 'character', 'gateB-C')
+for (const m of P[2].pins) diesel(m, '#6c6a64')
+
+// Eingriffsprüfung des Paares (Spender-Funktion)
+let worst = 0; for (let d = -10; d <= 10; d += 0.0071) worst = Math.max(worst, meshError(train, 'layToMars', 'marsWheel', d))
+window.__meshWorst = worst
+
+const camera = new THREE.PerspectiveCamera(36, 1, 0.05, 60)
+const CAMS = { totale: { pos: [0.0, 3.5, 3.9], target: [0, 0.15, 0.05] }, nah: { pos: [0.55, 0.62, 0.95], target: [0.06, 0.3, 0.0] } }
+let drive = 0, speed = 0.06, view = 'totale'
+const contact = new THREE.Vector3()
+function pose() {
+  for (const p of P) {
+    p.small.rotation.y = shaftAngle(train, 'lay', drive * Math.PI * 2) + gA.offset
+    p.big.rotation.y = shaftAngle(train, 'mars', drive * Math.PI * 2) + gB.offset
+  }
+}
+// Kontaktpunkt des Paares (für die Nahkamera): auf der Mittellinie, im Wälzkreis des kleinen Rads
+{ const rA = MODULE * gA.teeth / 2, dx = sB.x - sA.x, dy = sB.y - sA.y, l = Math.hypot(dx, dy); contact.set(sA.x - mid.x + dx / l * rA, H0, -(sA.y - mid.y + dy / l * rA)); window.__contact = contact.toArray() }
+
+function renderAll(w, h, camName = view) {
+  const c = CAMS[camName], pw = Math.floor(w / 3)
+  camera.aspect = pw / h; camera.updateProjectionMatrix()
+  const t = camName === 'nah' ? contact.clone().add(new THREE.Vector3(...c.target).sub(new THREE.Vector3(0.06, 0.3, 0))) : new THREE.Vector3(...c.target)
+  const off = camName === 'nah' ? contact.clone().add(new THREE.Vector3(...c.pos).sub(new THREE.Vector3(0.06, 0.3, 0))) : new THREE.Vector3(...c.pos)
+  camera.position.copy(off); camera.lookAt(t)
+  for (let i = 0; i < 3; i++) {
+    P.forEach((p, k) => (p.g.visible = k === i))
+    renderer.setViewport(i * pw, 0, pw, h); renderer.setScissor(i * pw, 0, pw, h); renderer.render(scene, camera)
+  }
+}
+let live = true
+const clock = new THREE.Clock()
+function frame() { const dt = Math.min(0.05, clock.getDelta()); if (live) { drive += speed * dt; pose(); renderAll(W(), H()) } requestAnimationFrame(frame) }
+addEventListener('resize', () => renderer.setSize(W(), H()))
+addEventListener('keydown', (ev) => { if (ev.key === 'n') view = view === 'nah' ? 'totale' : 'nah'; if (ev.key === 'r') speed = -speed; if (ev.key === ' ') speed = speed ? 0 : 0.06 })
+window.__record = async ({ dir, frames, from, to, cam = 'totale', w = 1920, h = 600 }) => {
+  live = false; renderer.setPixelRatio(1); renderer.setSize(w, h, false); document.getElementById('lab').style.display = 'none'
+  for (let i = 0; i < frames; i++) {
+    const u = frames > 1 ? i / (frames - 1) : 0; drive = from + (to - from) * u; pose(); renderAll(w, h, cam)
+    await fetch(`/save?f=${dir}/${String(i).padStart(4, '0')}.png`, { method: 'POST', body: renderer.domElement.toDataURL('image/png') })
+  }
+  return frames
+}
+window.__info = () => ({ worst, pair: [gA.teeth, gB.teeth], gl: renderer.getContext().getParameter(renderer.getContext().VERSION) })
+frame()
+</script></body></html>

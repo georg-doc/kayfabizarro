@@ -1,0 +1,322 @@
+<title>Buchmaschine Storyboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: Comic-Storyboard, Panels mit Tuschekante (Karte = Comic-Panel), ein durchgehendes Maschinen-Schema pro Panel, aktive Station hervorgehoben */
+:root{
+  --bg:#d9d2c6; --paper:#efe9df; --ink:#1d1a17; --muted:#5b544b; --line:#b9b0a2;
+  --kraft:#1f9e8f; --schaden:#e2582b; --sinn:#b04fc9; --book:#f1b21f; --book2:#d23d2c;
+  --iron:#6c6a64; --rubber:#2d2b29; --clay:#c4553c; --clay2:#d6a43c; --bot:#8fb4c9;
+  --display:'Fredoka',ui-rounded,system-ui,sans-serif; --text:'Inter',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1c19;--paper:#2b2723;--ink:#f1ebe2;--muted:#b3aa9d;--line:#4a443d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1f1c19;--paper:#2b2723;--ink:#f1ebe2;--muted:#b3aa9d;--line:#4a443d;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--text)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,4.4vw,46px);font-weight:700}
+h2{font-size:22px;font-weight:600}
+h3{font-size:18px;font-weight:600}
+p{margin:0;max-width:68ch}
+.lead{font-size:17px;color:var(--muted)}
+.eyebrow{font:600 12px/1 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ioband{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.io{background:var(--paper);border:2.5px solid var(--ink);padding:14px 16px;display:grid;gap:6px;min-width:0}
+.io b{font-family:var(--display);font-size:17px}
+.model{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.fx{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:start;background:var(--paper);border:2.5px solid var(--ink);padding:14px 16px;min-width:0}
+.dot{width:16px;height:16px;border-radius:50%;margin-top:4px;border:2px solid var(--ink)}
+.fx small{grid-column:2;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.panel{background:var(--paper);border:3px solid var(--ink);display:grid;grid-template-rows:auto 1fr;min-width:0}
+.panel svg{display:block;width:100%;height:auto;border-bottom:3px solid var(--ink);background:var(--paper)}
+.pbody{padding:12px 14px 14px;display:grid;gap:8px;align-content:start}
+.ptitle{display:flex;gap:10px;align-items:baseline}
+.ptitle .n{font:700 14px/1 var(--display);background:var(--ink);color:var(--paper);border-radius:999px;padding:4px 8px;font-variant-numeric:tabular-nums}
+.card{border:2px solid var(--ink);padding:6px 9px;background:var(--bg);font-size:13.5px}
+.card b{font-family:var(--display);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:600 12px/1 var(--text);padding:5px 8px;border-radius:999px;border:1.5px solid var(--ink)}
+.tag.kraft{background:color-mix(in srgb,var(--kraft) 22%,transparent)}
+.tag.schaden{background:color-mix(in srgb,var(--schaden) 22%,transparent)}
+.tag.sinn{background:color-mix(in srgb,var(--sinn) 22%,transparent)}
+.tag.ruhe{background:transparent}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{background:var(--paper);border:2.5px solid var(--ink);padding:16px 18px;display:grid;gap:8px;min-width:0}
+.box ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.decide{background:var(--ink);color:var(--paper);padding:18px 20px;display:grid;gap:6px}
+.decide h2{color:var(--paper)}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.model,.ioband{grid-template-columns:1fr}}
+@media (max-width:600px){.grid,.two{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:10px">
+    <span class="eyebrow">Gate (c) · Storyboard · Buchmaschine für „Hilfe, ich bin ein Mensch!“</span>
+    <h1>Die Buchmaschine: eine Schleife in zwölf Bildern</h1>
+    <p class="lead">Eine gebrauchte Spielzeug-Maschine mit Kurbel und Uhrwerk frisst das Buch Seite für Seite, scannt es, ritzt es und schält es in Locken ab. Ein Eingriff kehrt die Maschine um: Aus den Schnipseln klebt sie gerettete KFB-Karten. Danach heilt das Buch, und die Schleife beginnt mit dem nächsten Kapitel.</p>
+  </header>
+
+  <section class="ioband" aria-label="Was reingeht, was passiert, was rauskommt">
+    <div class="io"><span class="eyebrow">Was reingeht</span><b>Das echte Buch</b><p>Originalgrafik, Kapitel für Kapitel. Je Runde eine echte Doppelseite.</p></div>
+    <div class="io"><span class="eyebrow">Was passiert</span><b>Digitalisieren, schneiden, verwursten</b><p>Scan an die Wände, Schere ritzt, Walze schält die Seite in Locken, Brei aus der Tülle. Bis jemand „Blödsinn!“ drückt.</p></div>
+    <div class="io"><span class="eyebrow">Was rauskommt</span><b>Gerettete KFB-Karten</b><p>Zeitkapseln aus dem Deck zum Buch. Sie landen auf einem Stapel, die Bots tragen sie weiter.</p></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>Ein Modell für alle Effekte</h2>
+    <p>Effekte zeigen nur drei Dinge und nie Deko. So kann die Maschine stundenlang laufen und bleibt lesbar.</p>
+    <div class="model">
+      <div class="fx"><span class="dot" style="background:var(--kraft)"></span><b>Kraft</b><small>Ein Puls wandert von der Kurbel durch das Uhrwerk zur Station, die gerade arbeitet. Patch: Glowing reef.</small></div>
+      <div class="fx"><span class="dot" style="background:var(--schaden)"></span><b>Zerstörung</b><small>Glühende Risse nur dort, wo Klinge oder Schredder das Papier berühren. Patch: Molten cracks.</small></div>
+      <div class="fx"><span class="dot" style="background:var(--sinn)"></span><b>Bedeutung</b><small>Seidiges Leuchten, wo etwas gerettet wird oder Sinn entsteht: Leim, Karte, Lesen, Sternbild. Patch: Aurora silk.</small></div>
+    </div>
+  </section>
+
+
+  <section style="display:grid;gap:12px">
+    <h2>Das Schälwerk: warum die Zerstörung endlos laufen darf</h2>
+    <p>Vorbild ist die Membran von Adam Chernick (Codevember 09, gleiche Sammlung wie das Orrery, MIT): Unter jeder Haut liegt schon die nächste, eine abgeschälte Kachel wird einfach zur Schicht darunter. Übertragen auf das Buch ist jede abgeschälte Seite schon mit der nächsten Seite bedruckt. Die Maschine kann deshalb immer weiter schälen, ohne dass es unlogisch wird, und das Buch geht nie aus.</p>
+    <div class="model">
+      <div class="fx"><span class="dot" style="background:var(--paper)"></span><b>Schicht 1 · Seite</b><small>Die echte Buchseite als Kacheln auf der Walze, Vorderseite Originalgrafik, darunter schon die nächste Seite.</small></div>
+      <div class="fx"><span class="dot" style="background:var(--schaden)"></span><b>Schicht 2 · Ritzen und Schälen</b><small>Die Schere ritzt das Kachelraster, das Messer setzt an. Glühen nur an den Schnittlinien und an der Falzkante.</small></div>
+      <div class="fx"><span class="dot" style="background:var(--kraft)"></span><b>Schicht 3 · Locken und Laub</b><small>Kacheln rollen sich ein, werden auf der Rückseite grau, flattern wie Laub in den Trichter. Läuft rückwärts genauso sauber.</small></div>
+    </div>
+    <p>Die Mechanik des Spenders läuft nur unter WebGPU. Das Einrollen ist aber reine Rechnung im Vertex-Shader und lässt sich nach WebGL übertragen, so wie beim Orrery. Messertempo der Maschine ersetzt das Wischen mit der Hand. Tippt ein Bot die Walze an, läuft eine langsame Welle hindurch (wie der Klick im Original).</p>
+  </section>
+
+  <section style="display:grid;gap:14px">
+    <h2>Die Schleife</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="two">
+    <div class="box">
+      <h3>Bildschirmschoner: jede Runde anders</h3>
+      <ul>
+        <li>Kapitel wechselt: andere Doppelseite, andere Karten, andere Wandfarbe.</li>
+        <li>Wer „Blödsinn!“ drückt, wechselt: Spieler, Bot stolpert drauf, Bot drückt aus Protest.</li>
+        <li>Die Wände zeigen HyperNorm-Echos oder die Karten des Decks.</li>
+        <li>Zwischen zwei Runden schaltet das Uhrwerk in den Sternzeichen-Modus wie im Orrery-Original.</li>
+        <li>Feste Kamera je Phase, Schnitt nur an Phasengrenzen.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Einstellbar im Flyout des Scenelets</h3>
+      <ul>
+        <li>Look: Mix (Start), Schrott-Eisen, Hartgummi + Eisen, Knet-Spielzeug.</li>
+        <li>Kapitel: fest oder rotierend.</li>
+        <li>Wände: HyperNorm oder Karten.</li>
+        <li>Sternzeichen-Modus an oder aus.</li>
+        <li>Kurbel von Hand drehen, auch rückwärts. „Blödsinn!“ auf I.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>Woraus die Maschine gebaut wird</h2>
+    <p>Nichts wird selbst modelliert. Rahmen, Antrieb, Bediener, Karten und Brettspiel-Teile gibt es schon. Nur die Teile, die die Gags tragen, kommen neu dazu, am besten von dir aus Meshy.</p>
+    <div class="two">
+      <div class="box"><h3>Schon vorhanden</h3><ul>
+        <li>Rahmen: WSB-Gerüst-Baukasten in drei Häuten (Holz, Dieselpunk-Metall, Brettspiel), rüstet jedes Modell automatisch ein, auf Wunsch absurd oder grotesk verbogen.</li>
+        <li>Antrieb: das Orrery-Getriebe mit Kurbel, Uhrwerk als Krone mit Sternzeichen.</li>
+        <li>Bediener: die beiden Bots aus dem Pendel-Theater mit ihren Clips.</li>
+        <li>Karten: die KFB-Karten aus dem Deck zum Buch.</li>
+        <li>Brettspiel-Witz: Meeple, Domino, Würfel, Poker-Chips, Kartenhaus aus dem Baukasten.</li>
+        <li>Kleinteile: Förderband, Rollen, Schere, Schredder, Linse aus freien Sammlungen.</li>
+      </ul></div>
+      <div class="box"><h3>Neu, Vorschlag Meshy</h3><ul>
+        <li>Buchklemme mit Blätterfingern</li>
+        <li>Schälwalze mit Schälmesser</li>
+        <li>Trichter mit Tülle und Eimer</li>
+        <li>Leimpresse mit Riesen-Klebestift und Kartenschlitz</li>
+        <li>Control-Panel mit Blödsinn-Taster</li>
+        <li>Scannerkopf mit großer Linse</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="two">
+    <div class="box">
+      <h3>Wo es läuft</h3>
+      <ul>
+        <li>Hauptbühne: große Kammer im Infinite Room, Wände, Decke und Boden als Projektionsfläche. Über Dungeon-Wege erreichbar.</li>
+        <li>Auch als Scenelet in der Open World und in Aqua. Das Licht kommt immer vom Ort.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Was das Modul macht und was nicht</h3>
+      <ul>
+        <li>Macht: Maschine, Mechanik, Buchseiten, Karten-Auswurf, Phasen.</li>
+        <li>Meldet: Phase, Seite eingezogen, Schnitt, Karte ausgeworfen.</li>
+        <li>Macht nicht: Raum, Kartenstapel-Logik, Bot-Wege, Wandprojektion, Menü, Ton. Die gehören dem Raum.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="decide">
+    <h2>Deine Entscheidung</h2>
+    <p>Trägt diese Schleife als Grundlage für den Bau? PASS, TUNE (welche Bilder ändern) oder FAIL.</p>
+  </section>
+</div>
+
+<script>
+const P = [
+  { t:'Ruhe', fx:'ruhe', act:[], book:'zu', bots:['schlaf','putz'], wall:'leer', dome:'still',
+    txt:'Die Kammer ist dunkel. Das Buch liegt geschlossen in der Klemme, das Uhrwerk dreht im Leerlauf. Ein Bot döst auf dem Kartenstapel, der andere poliert ein Zahnrad.',
+    card:['Kayfabizarro','Es ist gespielt, aber das Gefühl ist echt. Die ganze Maschine ist Theater.'] },
+  { t:'Ankurbeln', fx:'kraft', act:['kurbel','uhr'], book:'zu', bots:['kurbel','putz'], wall:'leer', dome:'still', pulse:'uhr',
+    txt:'Ein Bot kurbelt mit voller Hingabe. Die Räder laufen in echten Übersetzungen an, ein Kraftpuls wandert durch das Uhrwerk zur Klemme.',
+    card:['Bullshit Jobs','Arbeit ohne Zweck. Der Bot kurbelt, als hinge die Welt daran.'] },
+  { t:'Aufschlagen', fx:'kraft', act:['klemme'], book:'auf', bots:['kurbel','schau'], wall:'leer', dome:'still', pulse:'klemme',
+    txt:'Hartgummi-Finger heben den Deckel, Blätterfinger suchen die Seite des Kapitels. Das Buch bleibt Originalgrafik, gut erkennbar.',
+    card:['Homo Hapticus','Ohne Berührung geht es nicht. Die Maschine berührt das Buch als Einzige.'] },
+  { t:'Einzug', fx:'kraft', act:['einzug'], book:'auf', bots:['kurbel','glaett'], wall:'leer', dome:'still', pulse:'einzug', page:'einzug',
+    txt:'Zwei Hartgummiwalzen ziehen eine echte Doppelseite ein. Der zweite Bot glättet sie mit einem Spielzeug-Nudelholz.',
+    card:['The Nudge','Ein kleiner Schubs, und alles läuft in die gewünschte Richtung.'] },
+  { t:'Scannen', fx:'kraft', act:['scan'], book:'auf', bots:['starr','starr'], wall:'echo', dome:'still', pulse:'scan', page:'scan',
+    txt:'Eine Linse fährt über die Seite. Ihr Bild springt an Wände und Decke, vervielfacht und verzerrt. Beide Bots starren auf die Wände statt auf die Seite.',
+    card:['The Filter Bubble','Wir sehen nur, was der Algorithmus uns zeigt. Dazu Digital Distraction: allein zusammen.'] },
+  { t:'Ritzen', fx:'schaden', act:['schere'], book:'auf', bots:['starr','starr'], wall:'echo', dome:'still', page:'walze', score:true,
+    txt:'Die Seite legt sich um die Schälwalze. Eine riesige Spielzeugschere ritzt ein Kachelraster hinein, und die Schnittlinien glühen genau dort, wo die Klinge das Papier trifft.',
+    card:['The Scissors','Karte in der Mitte durchschneiden, für immer zerstört.'] },
+  { t:'Schälen', fx:'schaden', act:['schere','schredder'], book:'auf', bots:['eimer','starr'], wall:'echo', dome:'still', page:'walze', peel:true,
+    txt:'Das Schälmesser löst die Kacheln wie Furnier. Sie rollen sich ein und flattern wie Laub in den Trichter. Darunter liegt schon die nächste Seite, deshalb geht der Maschine nie das Buch aus. Unten quillt Brei aus der Tülle.',
+    card:['Veneer Theory','Der Mythos, Kultur sei nur ein dünner Lack über dem Biest. Unter dem Lack liegt aber kein Biest, sondern die nächste Seite. Blödsinn!'] },
+  { t:'Blödsinn!', fx:'kraft', act:['knopf','uhr'], book:'auf', bots:['fall','schreck'], wall:'stoer', dome:'still', pulse:'zurueck', rev:true,
+    txt:'Jemand drückt den Blödsinn-Taster: der Spieler mit I, ein Schuss in den Trichter, oder ein Bot stolpert drauf. Die Maschine verschluckt sich und läuft rückwärts, alle Räder sauber mit.',
+    card:['Blödsinn!','Wenn die Geschichte langweilig oder falsch wird: Reset-Knopf drücken.'] },
+  { t:'Leimen', fx:'sinn', act:['leim'], book:'auf', bots:['schau','schau'], wall:'stoer', dome:'still', glow:'leim', rev:true,
+    txt:'Die Locken fliegen rückwärts aus dem Trichter, rollen sich wieder auf und landen in der Leimpresse. Ein riesiger Klebestift klebt sie neu zusammen, zu Verbindungen, die es vorher nicht gab.',
+    card:['The Glue Stick','Mashup: Verbindungen schaffen, wo keine sind.'] },
+  { t:'Auswurf', fx:'sinn', act:['auswurf'], book:'auf', bots:['fang','schau'], wall:'karten', dome:'still', glow:'auswurf', cards:true,
+    txt:'Die Presse spuckt KFB-Karten aus dem Deck zum Buch, flach mit Tuschekante. Gerettete Zeitkapseln, jede Runde andere, passend zum Kapitel. Sie klatschen auf den Stapel.',
+    card:['Survival of the Friendliest','Aus dem Feind wird ein Verbündeter. Die Maschine rettet, was sie fressen wollte.'] },
+  { t:'Lesen', fx:'sinn', act:['dome'], book:'auf', bots:['lies','schau'], wall:'karten', dome:'stern', glow:'dome', cards:true,
+    txt:'Ein Bot setzt sich auf den Stapel und liest eine Karte. Die Wände hören auf zu echoen und zeigen diese Karte groß. Die Kuppel verbindet Sterne zu einem Sternbild.',
+    card:['Resonance','Wenn die Welt antwortet. Kein Echo, sondern Antwort.'] },
+  { t:'Weitergeben', fx:'ruhe', act:['klemme'], book:'zu', bots:['trag','trag'], wall:'karten', dome:'still', cards:true, door:true,
+    txt:'Beide Bots krempeln die Ärmel hoch und tragen den Stapel zu zweit in den Nachbarraum. Das Buch blättert zurück und schließt sich, ganz heil. Nächstes Kapitel.',
+    card:['Hope','Hoffnung ist ein Verb mit hochgekrempelten Ärmeln.'] },
+];
+
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const ns = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent) { const e = document.createElementNS(ns, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; }
+
+// Ein festes Maschinen-Schema: links Kurbel und Uhrwerk mit Buchklemme, auf der Linie Einzug, Scanner, Schere, Schredder, Leimpresse, Auswurf, Stapel; oben die Sternzeichen-Kuppel
+const ST = { kurbel:[26,150], uhr:[62,136], klemme:[96,112], einzug:[128,122], scan:[160,112], schere:[192,118], schredder:[226,112], leim:[258,118], auswurf:[286,122], knopf:[150,164], dome:[160,38] };
+function gear(g, x, y, r, teeth, fill, active) {
+  const pts = []; for (let i = 0; i < teeth * 2; i++) { const a = (i / (teeth * 2)) * Math.PI * 2, rr = i % 2 ? r : r + 2.6; pts.push((x + rr * Math.cos(a)).toFixed(1) + ',' + (y + rr * Math.sin(a)).toFixed(1)); }
+  el('polygon', { points: pts.join(' '), fill, stroke: 'var(--ink)', 'stroke-width': active ? 2 : 1.4, 'stroke-linejoin': 'round' }, g);
+  el('circle', { cx: x, cy: y, r: Math.max(2, r * 0.28), fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, g);
+}
+function bot(g, x, y, pose) {
+  const b = el('g', { transform: `translate(${x},${y})` }, g);
+  const tilt = { schlaf: 'rotate(-70)', fall: 'rotate(35)', schreck: 'rotate(-8)' }[pose] || '';
+  const body = el('g', { transform: tilt }, b);
+  el('rect', { x: -7, y: -22, width: 14, height: 16, rx: 5, fill: 'var(--bot)', stroke: 'var(--ink)', 'stroke-width': 1.5 }, body);
+  el('rect', { x: -6, y: -34, width: 12, height: 11, rx: 4, fill: 'var(--bot)', stroke: 'var(--ink)', 'stroke-width': 1.5 }, body);
+  const ey = pose === 'schlaf' ? 'M-3 -29 h2 M1 -29 h2' : null;
+  if (ey) el('path', { d: ey, stroke: 'var(--ink)', 'stroke-width': 1.2 }, body);
+  else { el('circle', { cx: -2.5, cy: -29, r: pose === 'schreck' ? 2.4 : 1.6, fill: '#fff', stroke: 'var(--ink)', 'stroke-width': .8 }, body); el('circle', { cx: 2.5, cy: -29, r: pose === 'schreck' ? 2.4 : 1.6, fill: '#fff', stroke: 'var(--ink)', 'stroke-width': .8 }, body); }
+  el('path', { d: 'M-4 -6 l-2 6 M4 -6 l2 6', stroke: 'var(--ink)', 'stroke-width': 2, 'stroke-linecap': 'round' }, body);
+  const arm = { kurbel: 'M7 -16 l8 -2', glaett: 'M7 -14 l10 4', starr: 'M-7 -16 l-4 4 M7 -16 l4 4', eimer: 'M7 -14 l6 6', fang: 'M-7 -18 l-6 -6 M7 -18 l6 -6', lies: 'M-7 -16 l6 -4 M7 -16 l-6 -4', trag: 'M-7 -20 l-3 -8 M7 -20 l3 -8', putz: 'M7 -14 l8 0', schau: 'M-7 -14 l-3 5 M7 -14 l3 5', schreck: 'M-7 -18 l-6 -7 M7 -18 l6 -7' }[pose] || 'M-7 -14 l-3 5 M7 -14 l3 5';
+  el('path', { d: arm, stroke: 'var(--ink)', 'stroke-width': 2, 'stroke-linecap': 'round', fill: 'none' }, body);
+  if (pose === 'eimer') el('path', { d: 'M12 -8 h8 l-1 9 h-6 z', fill: 'var(--clay)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, body);
+  if (pose === 'lies') el('rect', { x: -4, y: -24, width: 8, height: 6, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1 }, body);
+  if (pose === 'glaett') el('rect', { x: 15, y: -12, width: 12, height: 3, rx: 1.5, fill: 'var(--clay2)', stroke: 'var(--ink)', 'stroke-width': 1 }, body);
+  if (pose === 'starr') el('path', { d: 'M0 -40 v-4', stroke: 'var(--kraft)', 'stroke-width': 1.5 }, body);
+}
+function draw(p) {
+  const svg = el('svg', { viewBox: '0 0 320 190', role: 'img', 'aria-label': p.t });
+  const back = el('g', {}, svg);
+  // Wände der Kammer
+  el('rect', { x: 0, y: 0, width: 320, height: 172, fill: 'var(--paper)' }, back);
+  if (p.wall === 'echo' || p.wall === 'stoer') {
+    for (let i = 0; i < 9; i++) { const x = 8 + i * 35, y = 8 + (i % 3) * 6, s = p.wall === 'stoer' ? (i % 2 ? 4 : -4) : 0;
+      el('rect', { x, y, width: 26, height: 18, fill: 'var(--book)', opacity: .35 + (i % 3) * .12, stroke: 'var(--line)', transform: `skewX(${s * 3})` }, back);
+      el('path', { d: `M${x + 3} ${y + 6} h18 M${x + 3} ${y + 10} h14 M${x + 3} ${y + 14} h16`, stroke: 'var(--book2)', 'stroke-width': .8, opacity: .6 }, back); }
+  }
+  if (p.wall === 'karten') for (let i = 0; i < 7; i++) { const x = 18 + i * 42; el('rect', { x, y: 8, width: 20, height: 28, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.6 }, back); el('rect', { x: x + 3, y: 11, width: 14, height: 12, fill: i % 2 ? 'var(--clay)' : 'var(--clay2)', opacity: .8 }, back); }
+  // Boden
+  el('rect', { x: 0, y: 172, width: 320, height: 18, fill: 'var(--line)' }, back);
+  // Kuppel
+  const [dx, dy] = ST.dome, domeOn = p.dome === 'stern';
+  el('path', { d: `M${dx - 30} ${dy + 14} A30 30 0 0 1 ${dx + 30} ${dy + 14} Z`, fill: domeOn ? 'color-mix(in srgb,var(--sinn) 18%,var(--paper))' : 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.8 }, svg);
+  const stars = [[-18, 8], [-8, -4], [4, -10], [16, -2], [22, 10], [6, 6]];
+  stars.forEach(([x, y]) => el('circle', { cx: dx + x, cy: dy + y, r: domeOn ? 2 : 1.2, fill: domeOn ? 'var(--sinn)' : 'var(--muted)' }, svg));
+  if (domeOn) el('polyline', { points: stars.map(([x, y]) => `${dx + x},${dy + y}`).join(' '), fill: 'none', stroke: 'var(--sinn)', 'stroke-width': 1.4 }, svg);
+  el('path', { d: `M${dx} ${dy + 14} V100`, stroke: 'var(--iron)', 'stroke-width': 3 }, svg);
+  // Förderlinie
+  el('path', { d: 'M110 134 H300', stroke: 'var(--ink)', 'stroke-width': 2.5 }, svg);
+  for (let x = 116; x < 300; x += 14) el('circle', { cx: x, cy: 138, r: 3, fill: 'var(--rubber)' }, svg);
+  const A = (k) => p.act.includes(k);
+  // Uhrwerk + Kurbel
+  const g = el('g', {}, svg);
+  gear(g, 48, 146, 15, 18, 'var(--iron)', A('uhr')); gear(g, 72, 132, 9, 11, 'var(--clay2)', A('uhr')); gear(g, 86, 152, 11, 13, 'var(--rubber)', A('uhr'));
+  el('path', { d: 'M26 150 l-10 -14', stroke: 'var(--ink)', 'stroke-width': 3, 'stroke-linecap': 'round' }, g);
+  el('circle', { cx: 15, cy: 134, r: 4, fill: 'var(--clay)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, g);
+  // Buch in der Klemme
+  const [bx, by] = ST.klemme;
+  el('path', { d: `M${bx - 14} 134 v-30 M${bx + 14} 134 v-30`, stroke: 'var(--iron)', 'stroke-width': 3 }, svg);
+  if (p.book === 'zu') { el('rect', { x: bx - 10, y: by - 14, width: 20, height: 28, fill: 'var(--book)', stroke: 'var(--ink)', 'stroke-width': 1.8 }, svg); el('rect', { x: bx - 10, y: by - 14, width: 4, height: 28, fill: 'var(--book2)' }, svg); }
+  else { el('path', { d: `M${bx} ${by + 14} L${bx - 16} ${by + 8} V${by - 16} L${bx} ${by - 10} L${bx + 16} ${by - 16} V${by + 8} Z`, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.8 }, svg); el('path', { d: `M${bx} ${by - 10} V${by + 14}`, stroke: 'var(--ink)', 'stroke-width': 1.2 }, svg); el('path', { d: `M${bx - 13} ${by - 6} l9 3 M${bx - 13} ${by - 1} l9 3 M${bx + 4} ${by - 3} l9 -3 M${bx + 4} ${by + 2} l9 -3`, stroke: 'var(--book2)', 'stroke-width': 1 }, svg); }
+  // Stationen
+  const hi = (k) => (A(k) ? 'var(--ink)' : 'var(--line)');
+  const [ex] = ST.einzug; el('circle', { cx: ex, cy: 120, r: 6, fill: 'var(--rubber)', stroke: hi('einzug'), 'stroke-width': 2 }, svg); el('circle', { cx: ex, cy: 106, r: 6, fill: 'var(--rubber)', stroke: hi('einzug'), 'stroke-width': 2 }, svg);
+  const [sx] = ST.scan; el('rect', { x: sx - 12, y: 90, width: 24, height: 16, rx: 3, fill: 'var(--iron)', stroke: hi('scan'), 'stroke-width': 2 }, svg); el('circle', { cx: sx, cy: 106, r: 4, fill: A('scan') ? 'var(--kraft)' : 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, svg);
+  if (A('scan')) el('path', { d: `M${sx - 10} 128 L${sx} 108 L${sx + 10} 128`, fill: 'color-mix(in srgb,var(--kraft) 30%,transparent)', stroke: 'none' }, svg);
+  const [cx] = ST.schere;
+  el('circle', { cx, cy: 118, r: 13, fill: 'var(--iron)', stroke: hi('schere'), 'stroke-width': 2 }, svg);
+  el('path', { d: `M${cx + 12} 106 l12 -6`, stroke: 'var(--ink)', 'stroke-width': 3, 'stroke-linecap': 'round' }, svg);
+  el('path', { d: `M${cx - 8} 82 L${cx + 2} 100 M${cx + 8} 82 L${cx - 2} 100`, stroke: hi('schere'), 'stroke-width': 2.5, 'stroke-linecap': 'round' }, svg);
+  el('circle', { cx: cx - 9, cy: 79, r: 3.5, fill: 'none', stroke: 'var(--clay)', 'stroke-width': 2.2 }, svg); el('circle', { cx: cx + 9, cy: 79, r: 3.5, fill: 'none', stroke: 'var(--clay)', 'stroke-width': 2.2 }, svg);
+  if (p.page === 'walze') { el('circle', { cx, cy: 118, r: 11, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1 }, svg);
+    for (let a = 0; a < 6; a++) { const t = a / 6 * Math.PI * 2; el('path', { d: `M${cx} 118 L${(cx + 11 * Math.cos(t)).toFixed(1)} ${(118 + 11 * Math.sin(t)).toFixed(1)}`, stroke: p.score ? 'var(--schaden)' : 'var(--line)', 'stroke-width': p.score ? 1.6 : .8 }, svg); }
+    el('circle', { cx, cy: 118, r: 6, fill: 'none', stroke: p.score ? 'var(--schaden)' : 'var(--line)', 'stroke-width': p.score ? 1.6 : .8 }, svg); }
+  if (p.peel) for (let i = 0; i < 7; i++) { const x = cx + 14 + i * 4.5, y = 100 - Math.sin(i * 0.9) * 10 + i * 1.5;
+    el('path', { d: `M${x} ${y} q4 -5 7 0 q-3 4 -7 0`, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1 }, svg); }
+  const [tx] = ST.schredder; el('path', { d: `M${tx - 14} 92 H${tx + 14} L${tx + 5} 116 V124 H${tx - 5} V116 Z`, fill: 'var(--iron)', stroke: hi('schredder'), 'stroke-width': 2 }, svg);
+  const [lx] = ST.leim; el('rect', { x: lx - 6, y: 86, width: 12, height: 30, rx: 3, fill: 'var(--clay2)', stroke: hi('leim'), 'stroke-width': 2 }, svg); el('rect', { x: lx - 6, y: 80, width: 12, height: 7, rx: 2, fill: 'var(--clay)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, svg);
+  const [ax] = ST.auswurf; el('path', { d: `M${ax - 8} 112 h16 v14 h-16 z`, fill: 'var(--rubber)', stroke: hi('auswurf'), 'stroke-width': 2 }, svg);
+  // Kartenstapel
+  const stack = p.cards ? 5 : 2; for (let i = 0; i < stack; i++) el('rect', { x: 296, y: 162 - i * 4, width: 18, height: 10, fill: i % 2 ? 'var(--clay)' : 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, svg);
+  // Blödsinn-Taster
+  const [kx, ky] = ST.knopf; el('rect', { x: kx - 8, y: ky, width: 16, height: 8, fill: 'var(--iron)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, svg); el('ellipse', { cx: kx, cy: ky, rx: 7, ry: 4, fill: A('knopf') ? 'var(--schaden)' : 'var(--book2)', stroke: 'var(--ink)', 'stroke-width': 1.4 }, svg);
+  // Seite auf dem Weg
+  const pageAt = { einzug: [116, 116], scan: [150, 124] }[p.page];
+  if (pageAt) el('rect', { x: pageAt[0], y: pageAt[1], width: 22, height: 8, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.2 }, svg);
+  if (p.peel) { for (let i = 0; i < 14; i++) el('rect', { x: tx - 10 + ((i * 37) % 20), y: 96 + ((i * 53) % 18), width: 3, height: 3, fill: ['var(--book)', 'var(--book2)', 'var(--kraft)'][i % 3] }, svg); el('path', { d: `M${tx - 4} 124 q4 14 0 26 q10 2 16 -2`, fill: 'none', stroke: 'var(--clay)', 'stroke-width': 4, 'stroke-linecap': 'round' }, svg); }
+  // Effekte
+  if (p.pulse) { const to = { uhr: [96, 112], klemme: [96, 112], einzug: [128, 113], scan: [160, 106], zurueck: [26, 150] }[p.pulse];
+    el('path', { d: `M26 150 Q60 120 ${to[0]} ${to[1]}`, fill: 'none', stroke: 'var(--kraft)', 'stroke-width': 3, 'stroke-dasharray': '5 5', 'stroke-linecap': 'round' }, svg);
+    el('circle', { cx: to[0], cy: to[1], r: 6, fill: 'none', stroke: 'var(--kraft)', 'stroke-width': 2 }, svg); }
+  if (p.fx === 'schaden') { const x0 = p.score ? ST.schere[0] : ST.schere[0] + 12, y0 = p.score ? 100 : 108;
+    el('path', { d: `M${x0 - 12} ${y0} l4 -3 l3 4 l4 -5 l3 4 l4 -3 l4 3`, fill: 'none', stroke: 'var(--schaden)', 'stroke-width': 2.4, 'stroke-linejoin': 'round' }, svg);
+    el('circle', { cx: x0, cy: y0, r: 10, fill: 'color-mix(in srgb,var(--schaden) 25%,transparent)' }, svg); }
+  if (p.glow) { const [gx, gy] = ST[p.glow] || [160, 40];
+    el('ellipse', { cx: gx, cy: gy, rx: 22, ry: 14, fill: 'color-mix(in srgb,var(--sinn) 22%,transparent)' }, svg);
+    el('path', { d: `M${gx - 20} ${gy + 4} q10 -16 20 -2 q10 14 20 -4`, fill: 'none', stroke: 'var(--sinn)', 'stroke-width': 2, 'stroke-linecap': 'round' }, svg); }
+  if (p.glow === 'auswurf' || p.cards) { el('rect', { x: 292, y: 96, width: 14, height: 10, fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 1.4, transform: 'rotate(-18 299 101)' }, svg); }
+  if (p.rev) el('path', { d: 'M250 70 H190 l8 -6 M190 70 l8 6', fill: 'none', stroke: 'var(--ink)', 'stroke-width': 2, 'stroke-linecap': 'round' }, svg);
+  if (p.door) { el('rect', { x: 304, y: 112, width: 14, height: 60, fill: 'var(--ink)' }, svg); }
+  // Bots
+  const pos = { kurbel: [12, 172], schlaf: [300, 160], putz: [70, 172], schau: [210, 172], glaett: [120, 172], starr: [180, 172], eimer: [232, 172], fall: [150, 172], schreck: [196, 172], fang: [276, 172], lies: [305, 152], trag: [290, 172] };
+  p.bots.forEach((b, i) => { let [x, y] = pos[b] || [200, 172]; if (b === 'starr' && i) x += 50; if (b === 'schau' && i) x += 40; if (b === 'trag' && i) x -= 22; bot(svg, x, y, b); });
+  return svg;
+}
+const grid = document.getElementById('grid');
+const fxName = { kraft: 'Kraft', schaden: 'Zerstörung', sinn: 'Bedeutung', ruhe: 'ruhig' };
+P.forEach((p, i) => {
+  const a = document.createElement('article'); a.className = 'panel';
+  a.appendChild(draw(p));
+  const b = document.createElement('div'); b.className = 'pbody';
+  b.innerHTML = `<div class="ptitle"><span class="n">${i + 1}</span><h3>${p.t}</h3></div><p>${p.txt}</p>
+    <div class="card"><b>${p.card[0]}</b> · ${p.card[1]}</div>
+    <div class="tags"><span class="tag ${p.fx}">Effekt: ${fxName[p.fx]}</span>${p.rev ? '<span class="tag ruhe">rückwärts</span>' : ''}</div>`;
+  a.appendChild(b); grid.appendChild(a);
+});
+</script>
