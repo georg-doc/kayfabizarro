@@ -1,0 +1,852 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KFB Visual Replay capture and critique v0.1",
+  "description": "Proposed evidence schema; not runtime validation. For complete semantic rules read CONTRACT.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "run_id",
+    "capture_kind",
+    "provenance",
+    "scenario",
+    "clock",
+    "configuration",
+    "device",
+    "graphics",
+    "media",
+    "events",
+    "metrics",
+    "review"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.visual-replay/0.1"
+    },
+    "status": {
+      "enum": [
+        "EXAMPLE_NOT_A_TEST",
+        "PROPOSAL",
+        "CAPTURED",
+        "CONTEXT_VERIFIED",
+        "CRITIC_REVIEWED",
+        "TESTED",
+        "INDEPENDENT_REVIEWED",
+        "GEORG_PRODUCT_ACCEPTED"
+      ]
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capture_kind": {
+      "enum": [
+        "LINEAR_IDEAL",
+        "FREE_ROAM_DEVIATION"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repo",
+        "branch",
+        "head",
+        "bundle_sha256",
+        "asset_manifest_sha256",
+        "deployment_status"
+      ],
+      "properties": {
+        "repo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "head": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            {
+              "const": "UNVERIFIED"
+            }
+          ]
+        },
+        "bundle_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "asset_manifest_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "deployment_status": {
+          "enum": [
+            "NOT_VERIFIED",
+            "DEPLOYED",
+            "PRIVATE_VERIFIED",
+            "PUBLIC_VERIFIED"
+          ]
+        }
+      }
+    },
+    "scenario": {
+      "type": "object",
+      "required": [
+        "scene_id",
+        "beat_id",
+        "path_source_ref",
+        "path_status",
+        "expected_event",
+        "observed_event"
+      ],
+      "properties": {
+        "scene_id": {
+          "type": "string"
+        },
+        "beat_id": {
+          "type": "string"
+        },
+        "path_source_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "path_status": {
+          "enum": [
+            "PLANNED_NOT_EXECUTABLE",
+            "SCRIPTED",
+            "REPLAYABLE",
+            "TESTED_PLAYTHROUGH",
+            "UNKNOWN"
+          ]
+        },
+        "expected_event": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observed_event": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "clock": {
+      "type": "object",
+      "required": [
+        "utc_start",
+        "monotonic_origin_ms",
+        "sim_tick",
+        "sim_time_ms",
+        "frame_id",
+        "media_pts_ms",
+        "sync_error_ms"
+      ],
+      "properties": {
+        "utc_start": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "monotonic_origin_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "sim_tick": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "sim_time_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "frame_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "media_pts_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "sync_error_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "required": [
+        "flag_pairs",
+        "flag_hash",
+        "world_seed",
+        "game_state_id",
+        "camera",
+        "player",
+        "controls",
+        "event_chain"
+      ],
+      "properties": {
+        "flag_pairs": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "flag_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "world_seed": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "game_state_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "camera": {
+          "$ref": "#/$defs/camera"
+        },
+        "player": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "controls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "at_ms",
+              "action",
+              "state"
+            ],
+            "properties": {
+              "at_ms": {
+                "type": "number"
+              },
+              "action": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "event_chain": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "device": {
+      "type": "object",
+      "required": [
+        "test_rig",
+        "os",
+        "browser",
+        "gpu",
+        "renderer_api",
+        "viewport_css",
+        "render_pixels",
+        "dpr",
+        "graphics_preset",
+        "gpu_contention"
+      ],
+      "properties": {
+        "test_rig": {
+          "type": "string"
+        },
+        "os": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "browser": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gpu": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renderer_api": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "viewport_css": {
+          "$ref": "#/$defs/dimensions"
+        },
+        "render_pixels": {
+          "$ref": "#/$defs/dimensions"
+        },
+        "dpr": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "graphics_preset": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gpu_contention": {
+          "enum": [
+            "UNKNOWN",
+            "NONE_OBSERVED",
+            "MEASURED_PRESENT"
+          ]
+        }
+      }
+    },
+    "graphics": {
+      "type": "object",
+      "required": [
+        "scene_revision",
+        "renderer_version",
+        "tone_mapping",
+        "color_space",
+        "shadow_mode",
+        "lighting_state",
+        "shader_materials",
+        "vfx_emitters",
+        "load_events"
+      ],
+      "properties": {
+        "scene_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renderer_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tone_mapping": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "color_space": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shadow_mode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lighting_state": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "shader_materials": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/shader_material"
+          }
+        },
+        "vfx_emitters": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "load_events": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/media"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "capture_overhead",
+        "frame_p50_ms",
+        "frame_p95_ms",
+        "frame_p99_ms",
+        "frame_max_ms",
+        "draw_calls",
+        "triangles",
+        "cpu_gpu_sampling"
+      ],
+      "properties": {
+        "capture_overhead": {
+          "enum": [
+            "UNMEASURED",
+            "LIGHT",
+            "HEAVY"
+          ]
+        },
+        "frame_p50_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "frame_p95_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "frame_p99_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "frame_max_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "draw_calls": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "triangles": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "cpu_gpu_sampling": {
+          "enum": [
+            "UNAVAILABLE",
+            "ESTIMATED",
+            "MEASURED"
+          ]
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "critic_mode",
+        "rubric_revision",
+        "target_fidelity",
+        "dimensions",
+        "findings",
+        "golden_ref",
+        "human_acceptance"
+      ],
+      "properties": {
+        "critic_mode": {
+          "enum": [
+            "NO_REVIEW",
+            "BUILDER_ONLY",
+            "READ_ONLY_PACKAGED",
+            "FRESH_RUNTIME_CAPTURE"
+          ]
+        },
+        "rubric_revision": {
+          "type": "string"
+        },
+        "target_fidelity": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "score",
+              "weight",
+              "evidence_refs"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "score": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 4
+              },
+              "weight": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "finding_id",
+              "severity",
+              "event_ids",
+              "evidence_refs",
+              "owner_seam",
+              "priority_status"
+            ],
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "severity": {
+                "enum": [
+                  "P0",
+                  "P1",
+                  "P2",
+                  "P3"
+                ]
+              },
+              "event_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "owner_seam": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "priority_status": {
+                "enum": [
+                  "OPEN",
+                  "REPAIR",
+                  "TESTED",
+                  "QUARANTINED",
+                  "RESOLVED"
+                ]
+              }
+            }
+          }
+        },
+        "golden_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "human_acceptance": {
+          "enum": [
+            "NOT_REQUESTED",
+            "PENDING",
+            "PASS",
+            "FAIL",
+            "TUNE"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "dimensions": {
+      "type": "object",
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "required": [
+        "position",
+        "quaternion",
+        "fov_deg",
+        "exposure"
+      ],
+      "properties": {
+        "position": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "quaternion": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "fov_deg": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "exposure": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "shader_material": {
+      "type": "object",
+      "required": [
+        "material_id",
+        "source_asset_id",
+        "shader_sha256",
+        "texture_refs",
+        "uniforms_relevant"
+      ],
+      "properties": {
+        "material_id": {
+          "type": "string"
+        },
+        "source_asset_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shader_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "texture_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uniforms_relevant": {
+          "type": "object"
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "path",
+        "sha256",
+        "bytes",
+        "source",
+        "frame_id",
+        "media_pts_ms"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "PNG",
+            "WEBM",
+            "MP4",
+            "WAV",
+            "JSON",
+            "CONTACT_SHEET"
+          ]
+        },
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source": {
+          "enum": [
+            "ACTUAL_GAME",
+            "TARGET_GENERATED",
+            "ANNOTATION",
+            "DIAGNOSTIC"
+          ]
+        },
+        "frame_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "media_pts_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "event_id",
+        "frame_id",
+        "media_pts_ms",
+        "sim_tick",
+        "type",
+        "cause_event_ids",
+        "state_snapshot_id",
+        "capture_refs"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string"
+        },
+        "frame_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "media_pts_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "sim_tick": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "type": {
+          "type": "string"
+        },
+        "cause_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "state_snapshot_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "capture_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
