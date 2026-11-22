@@ -1,0 +1,1163 @@
+{
+ "schema": "aqua.anschlag-puls/1 (Beispiel für WS0, setPuls)",
+ "stand": "2026-11-22, Aqua r38, Titel grand_theft_aqua, headless, ~30 Bilder/s",
+ "herkunft": "index.html radioViz(): je Band schnelle Hülle (35/s) gegen langsame Hülle (2,2/s); Anschlag = max(0, schnell − 1,04·langsam), normiert auf gleitenden Spitzenwert (Abfall 0,35/s), Ausklang 6/s. Kick = Tracker-Kick ODER sub > 0,8, mind. 0,2 s Abstand; Kick stößt eine Feder an (feder), Farbe springt je Kick.",
+ "baender_hz": {
+  "sub": [
+   35,
+   130
+  ],
+  "mid": [
+   250,
+   2000
+  ],
+  "high": [
+   3000,
+   11000
+  ]
+ },
+ "felder": {
+  "sub/mid/high": "0..1 Anschlag je Band (nicht Lautstärke)",
+  "kick": "0..1, 1 beim Schlag, fällt mit 6/s",
+  "feder": "−1,6..1,6 Federausschlag (Stauchen/Strecken)",
+  "farbe": "Index in die Palette, springt je Kick",
+  "tracker": "zum Vergleich das selbstnormierte kfb.audio-presentation-pulse/1 (bass/mid/high stehen dort fast immer bei 0,9–1)"
+ },
+ "vorschlag_setPuls": "setPuls({ sub, mid, high, kick, beat?, phrase? }) – im Ride liefert createRide st.musik { bass, mid, high, kick, beat, phrase } in derselben Art",
+ "frames": [
+  {
+   "t": 0,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.502,
+   "kick": 0,
+   "feder": -0.026,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.938,
+    "mid": 0.982,
+    "high": 0.827,
+    "bpm": 114.8,
+    "beatPulse01": 0.004
+   }
+  },
+  {
+   "t": 0.071,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.547,
+   "kick": 0,
+   "feder": 0.009,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.92,
+    "mid": 0.984,
+    "high": 0.918,
+    "bpm": 114.8,
+    "beatPulse01": 0.665
+   }
+  },
+  {
+   "t": 0.122,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.247,
+   "kick": 0,
+   "feder": 0.015,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.931,
+    "mid": 0.996,
+    "high": 0.81,
+    "bpm": 114.8,
+    "beatPulse01": 0.365
+   }
+  },
+  {
+   "t": 0.185,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.883,
+   "kick": 0,
+   "feder": 0.008,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.912,
+    "mid": 0.988,
+    "high": 0.923,
+    "bpm": 114.8,
+    "beatPulse01": 0.175
+   }
+  },
+  {
+   "t": 0.266,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.383,
+   "kick": 0,
+   "feder": -0.001,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.916,
+    "mid": 0.993,
+    "high": 0.815,
+    "bpm": 114.8,
+    "beatPulse01": 0.071
+   }
+  },
+  {
+   "t": 0.353,
+   "sub": 0.05,
+   "mid": 0,
+   "high": 0.605,
+   "kick": 0.6,
+   "feder": 0.366,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.975,
+    "mid": 0.987,
+    "high": 0.864,
+    "bpm": 114.8,
+    "beatPulse01": 0.01
+   }
+  },
+  {
+   "t": 0.419,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.205,
+   "kick": 0.2,
+   "feder": 0.231,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.977,
+    "mid": 0.987,
+    "high": 0.865,
+    "bpm": 114.8,
+    "beatPulse01": 0.004
+   }
+  },
+  {
+   "t": 0.465,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.385,
+   "kick": 0,
+   "feder": 0.053,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.922,
+    "mid": 0.985,
+    "high": 0.877,
+    "bpm": 114.8,
+    "beatPulse01": 0.003
+   }
+  },
+  {
+   "t": 0.53,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": -0.071,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.905,
+    "mid": 0.981,
+    "high": 0.833,
+    "bpm": 114.8,
+    "beatPulse01": 0.488
+   }
+  },
+  {
+   "t": 0.601,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.701,
+   "kick": 0,
+   "feder": -0.062,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.936,
+    "mid": 0.979,
+    "high": 0.867,
+    "bpm": 114.8,
+    "beatPulse01": 0.219
+   }
+  },
+  {
+   "t": 0.657,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.401,
+   "kick": 0,
+   "feder": -0.023,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.954,
+    "mid": 0.972,
+    "high": 0.8,
+    "bpm": 114.8,
+    "beatPulse01": 0.12
+   }
+  },
+  {
+   "t": 0.704,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.9,
+   "kick": 0,
+   "feder": 0.006,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.901,
+    "mid": 0.966,
+    "high": 0.9,
+    "bpm": 114.8,
+    "beatPulse01": 0.068
+   }
+  },
+  {
+   "t": 0.754,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.6,
+   "kick": 0,
+   "feder": 0.016,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.836,
+    "mid": 0.976,
+    "high": 0.832,
+    "bpm": 114.8,
+    "beatPulse01": 0.04
+   }
+  },
+  {
+   "t": 0.802,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.3,
+   "kick": 0,
+   "feder": 0.012,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.785,
+    "mid": 0.972,
+    "high": 0.884,
+    "bpm": 114.8,
+    "beatPulse01": 0.021
+   }
+  },
+  {
+   "t": 0.87,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.667,
+   "kick": 0,
+   "feder": 0.002,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.715,
+    "mid": 0.985,
+    "high": 0.876,
+    "bpm": 114.8,
+    "beatPulse01": 0.01
+   }
+  },
+  {
+   "t": 0.954,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.926,
+   "kick": 0.7,
+   "feder": 0.363,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.783,
+    "mid": 0.992,
+    "high": 0.932,
+    "bpm": 114.8,
+    "beatPulse01": 0.003
+   }
+  },
+  {
+   "t": 1.02,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.526,
+   "kick": 0.3,
+   "feder": 0.265,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.88,
+    "mid": 0.971,
+    "high": 0.819,
+    "bpm": 114.8,
+    "beatPulse01": 0.625
+   }
+  },
+  {
+   "t": 1.099,
+   "sub": 0.118,
+   "mid": 0,
+   "high": 0.8,
+   "kick": 0,
+   "feder": -0.001,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.968,
+    "mid": 0.989,
+    "high": 0.952,
+    "bpm": 114.8,
+    "beatPulse01": 0.23
+   }
+  },
+  {
+   "t": 1.181,
+   "sub": 0.484,
+   "mid": 0,
+   "high": 1,
+   "kick": 0,
+   "feder": -0.067,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.989,
+    "mid": 0.998,
+    "high": 0.933,
+    "bpm": 114.8,
+    "beatPulse01": 0.09
+   }
+  },
+  {
+   "t": 1.255,
+   "sub": 0.258,
+   "mid": 0,
+   "high": 0.6,
+   "kick": 0,
+   "feder": -0.029,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.97,
+    "mid": 0.983,
+    "high": 0.854,
+    "bpm": 114.8,
+    "beatPulse01": 0.038
+   }
+  },
+  {
+   "t": 1.304,
+   "sub": 0.187,
+   "mid": 0,
+   "high": 0.3,
+   "kick": 0,
+   "feder": 0,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.968,
+    "mid": 0.977,
+    "high": 0.898,
+    "bpm": 114.8,
+    "beatPulse01": 0.021
+   }
+  },
+  {
+   "t": 1.365,
+   "sub": 1,
+   "mid": 0,
+   "high": 0.747,
+   "kick": 0.8,
+   "feder": 0.296,
+   "farbe": 0,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.992,
+    "mid": 0.988,
+    "high": 0.9,
+    "bpm": 114.8,
+    "beatPulse01": 0.011
+   }
+  },
+  {
+   "t": 1.427,
+   "sub": 0.701,
+   "mid": 1,
+   "high": 1,
+   "kick": 0.5,
+   "feder": 0.39,
+   "farbe": 0,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.963,
+    "mid": 0.991,
+    "high": 0.925,
+    "bpm": 114.8,
+    "beatPulse01": 0.006
+   }
+  },
+  {
+   "t": 1.503,
+   "sub": 1,
+   "mid": 0.5,
+   "high": 0.554,
+   "kick": 0,
+   "feder": 0.089,
+   "farbe": 0,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.995,
+    "mid": 0.95,
+    "high": 0.806,
+    "bpm": 113.9,
+    "beatPulse01": 0.827
+   }
+  },
+  {
+   "t": 1.581,
+   "sub": 0.506,
+   "mid": 0.713,
+   "high": 0.338,
+   "kick": 0,
+   "feder": -0.073,
+   "farbe": 0,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.948,
+    "mid": 0.979,
+    "high": 0.897,
+    "bpm": 112.9,
+    "beatPulse01": 0.352
+   }
+  },
+  {
+   "t": 1.62,
+   "sub": 0.72,
+   "mid": 0.514,
+   "high": 0.138,
+   "kick": 0,
+   "feder": -0.08,
+   "farbe": 0,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.963,
+    "mid": 0.947,
+    "high": 0.776,
+    "bpm": 112.5,
+    "beatPulse01": 0.209
+   }
+  },
+  {
+   "t": 1.697,
+   "sub": 0.767,
+   "mid": 0.073,
+   "high": 0.805,
+   "kick": 0.5,
+   "feder": 0.36,
+   "farbe": 1,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.958,
+    "mid": 0.954,
+    "high": 0.862,
+    "bpm": 112,
+    "beatPulse01": 0.096
+   }
+  },
+  {
+   "t": 1.774,
+   "sub": 0.367,
+   "mid": 0,
+   "high": 0.405,
+   "kick": 0.1,
+   "feder": 0.184,
+   "farbe": 1,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.875,
+    "mid": 0.952,
+    "high": 0.916,
+    "bpm": 111.8,
+    "beatPulse01": 0.041
+   }
+  },
+  {
+   "t": 1.846,
+   "sub": 0.429,
+   "mid": 0.39,
+   "high": 0.258,
+   "kick": 0,
+   "feder": -0.042,
+   "farbe": 1,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.93,
+    "mid": 0.985,
+    "high": 0.887,
+    "bpm": 111.6,
+    "beatPulse01": 0.007
+   }
+  },
+  {
+   "t": 1.887,
+   "sub": 0.522,
+   "mid": 0.19,
+   "high": 0.058,
+   "kick": 0,
+   "feder": -0.075,
+   "farbe": 1,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.958,
+    "mid": 0.953,
+    "high": 0.753,
+    "bpm": 111.5,
+    "beatPulse01": 0.005
+   }
+  },
+  {
+   "t": 2.002,
+   "sub": 0.059,
+   "mid": 0.12,
+   "high": 0.592,
+   "kick": 0,
+   "feder": -0.025,
+   "farbe": 1,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.929,
+    "mid": 0.987,
+    "high": 0.965,
+    "bpm": 111.5,
+    "beatPulse01": 0.82
+   }
+  },
+  {
+   "t": 2.083,
+   "sub": 0,
+   "mid": 0.535,
+   "high": 0.693,
+   "kick": 0,
+   "feder": 0.017,
+   "farbe": 1,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.859,
+    "mid": 0.999,
+    "high": 0.999,
+    "bpm": 111.4,
+    "beatPulse01": 0.225
+   }
+  },
+  {
+   "t": 2.143,
+   "sub": 0.154,
+   "mid": 0.286,
+   "high": 0.471,
+   "kick": 0.7,
+   "feder": 0.377,
+   "farbe": 2,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.915,
+    "mid": 0.978,
+    "high": 0.982,
+    "bpm": 111.4,
+    "beatPulse01": 0.234
+   }
+  },
+  {
+   "t": 2.222,
+   "sub": 0.461,
+   "mid": 0.185,
+   "high": 0.36,
+   "kick": 0.2,
+   "feder": 0.219,
+   "farbe": 2,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.986,
+    "mid": 0.986,
+    "high": 0.979,
+    "bpm": 111.4,
+    "beatPulse01": 0.089
+   }
+  },
+  {
+   "t": 2.281,
+   "sub": 0.105,
+   "mid": 0.009,
+   "high": 0.085,
+   "kick": 0,
+   "feder": -0.012,
+   "farbe": 2,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.962,
+    "mid": 0.993,
+    "high": 0.973,
+    "bpm": 111.4,
+    "beatPulse01": 0.045
+   }
+  },
+  {
+   "t": 2.37,
+   "sub": 0.209,
+   "mid": 0,
+   "high": 0.162,
+   "kick": 0.8,
+   "feder": 0.209,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": true,
+    "bass": 0.978,
+    "mid": 0.989,
+    "high": 0.982,
+    "bpm": 111.4,
+    "beatPulse01": 0.009
+   }
+  },
+  {
+   "t": 2.416,
+   "sub": 0.561,
+   "mid": 0,
+   "high": 0,
+   "kick": 0.599,
+   "feder": 0.316,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.989,
+    "mid": 0.989,
+    "high": 0.969,
+    "bpm": 111.5,
+    "beatPulse01": 0.006
+   }
+  },
+  {
+   "t": 2.494,
+   "sub": 0.355,
+   "mid": 0,
+   "high": 0.671,
+   "kick": 0.099,
+   "feder": 0.152,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.977,
+    "mid": 0.998,
+    "high": 0.934,
+    "bpm": 111.7,
+    "beatPulse01": 0.826
+   }
+  },
+  {
+   "t": 2.549,
+   "sub": 0.314,
+   "mid": 0,
+   "high": 0.272,
+   "kick": 0,
+   "feder": -0.014,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.986,
+    "mid": 0.999,
+    "high": 0.891,
+    "bpm": 111.7,
+    "beatPulse01": 0.446
+   }
+  },
+  {
+   "t": 2.635,
+   "sub": 0.486,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": -0.054,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.985,
+    "mid": 0.981,
+    "high": 0.899,
+    "bpm": 111.8,
+    "beatPulse01": 0.174
+   }
+  },
+  {
+   "t": 2.693,
+   "sub": 0.529,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": -0.029,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.995,
+    "mid": 0.983,
+    "high": 0.892,
+    "bpm": 111.8,
+    "beatPulse01": 0.104
+   }
+  },
+  {
+   "t": 2.755,
+   "sub": 0.469,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": 0.004,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.99,
+    "mid": 0.981,
+    "high": 0.907,
+    "bpm": 111.8,
+    "beatPulse01": 0.045
+   }
+  },
+  {
+   "t": 2.804,
+   "sub": 0.169,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": 0.012,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.972,
+    "mid": 0.994,
+    "high": 0.877,
+    "bpm": 111.9,
+    "beatPulse01": 0.026
+   }
+  },
+  {
+   "t": 2.885,
+   "sub": 0.515,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": 0.006,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.985,
+    "mid": 0.999,
+    "high": 0.878,
+    "bpm": 111.9,
+    "beatPulse01": 0.011
+   }
+  },
+  {
+   "t": 2.954,
+   "sub": 0.375,
+   "mid": 0,
+   "high": 0.051,
+   "kick": 0,
+   "feder": -0.001,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.964,
+    "mid": 0.993,
+    "high": 0.94,
+    "bpm": 111.9,
+    "beatPulse01": 0.005
+   }
+  },
+  {
+   "t": 3.002,
+   "sub": 0.074,
+   "mid": 0,
+   "high": 0.465,
+   "kick": 0,
+   "feder": -0.002,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.942,
+    "mid": 0.995,
+    "high": 0.967,
+    "bpm": 111.9,
+    "beatPulse01": 0.003
+   }
+  },
+  {
+   "t": 3.053,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.166,
+   "kick": 0,
+   "feder": -0.002,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.93,
+    "mid": 0.976,
+    "high": 0.939,
+    "bpm": 111.9,
+    "beatPulse01": 0.699
+   }
+  },
+  {
+   "t": 3.12,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.317,
+   "kick": 0,
+   "feder": 0,
+   "farbe": 3,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.897,
+    "mid": 0.987,
+    "high": 0.963,
+    "bpm": 111.9,
+    "beatPulse01": 0.3
+   }
+  },
+  {
+   "t": 3.198,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0.7,
+   "feder": 0.366,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.908,
+    "mid": 0.996,
+    "high": 0.931,
+    "bpm": 111.9,
+    "beatPulse01": 0.244
+   }
+  },
+  {
+   "t": 3.248,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0.4,
+   "feder": 0.347,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.923,
+    "mid": 0.988,
+    "high": 0.96,
+    "bpm": 111.9,
+    "beatPulse01": 0.14
+   }
+  },
+  {
+   "t": 3.314,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": 0.114,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.951,
+    "mid": 0.983,
+    "high": 0.9,
+    "bpm": 111.9,
+    "beatPulse01": 0.064
+   }
+  },
+  {
+   "t": 3.386,
+   "sub": 0,
+   "mid": 0.026,
+   "high": 0,
+   "kick": 0,
+   "feder": -0.051,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.959,
+    "mid": 0.996,
+    "high": 0.951,
+    "bpm": 111.9,
+    "beatPulse01": 0.03
+   }
+  },
+  {
+   "t": 3.432,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": -0.073,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.89,
+    "mid": 0.991,
+    "high": 0.911,
+    "bpm": 111.9,
+    "beatPulse01": 0.016
+   }
+  },
+  {
+   "t": 3.488,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.9,
+   "kick": 0,
+   "feder": -0.047,
+   "farbe": 4,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.908,
+    "mid": 0.983,
+    "high": 0.957,
+    "bpm": 111.9,
+    "beatPulse01": 0.009
+   }
+  },
+  {
+   "t": 3.555,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.5,
+   "kick": 0.8,
+   "feder": 0.334,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.93,
+    "mid": 0.972,
+    "high": 0.893,
+    "bpm": 111.9,
+    "beatPulse01": 0.003
+   }
+  },
+  {
+   "t": 3.614,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.099,
+   "kick": 0.399,
+   "feder": 0.349,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.943,
+    "mid": 0.982,
+    "high": 0.914,
+    "bpm": 111.9,
+    "beatPulse01": 0.718
+   }
+  },
+  {
+   "t": 3.688,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": 0.101,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.905,
+    "mid": 0.969,
+    "high": 0.89,
+    "bpm": 111.9,
+    "beatPulse01": 0.308
+   }
+  },
+  {
+   "t": 3.737,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.266,
+   "kick": 0,
+   "feder": -0.038,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.874,
+    "mid": 0.983,
+    "high": 0.953,
+    "bpm": 111.9,
+    "beatPulse01": 0.172
+   }
+  },
+  {
+   "t": 3.803,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": -0.082,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.927,
+    "mid": 0.975,
+    "high": 0.913,
+    "bpm": 111.9,
+    "beatPulse01": 0.084
+   }
+  },
+  {
+   "t": 3.847,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": -0.05,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.951,
+    "mid": 0.981,
+    "high": 0.937,
+    "bpm": 111.9,
+    "beatPulse01": 0.05
+   }
+  },
+  {
+   "t": 3.888,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": -0.024,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.957,
+    "mid": 0.971,
+    "high": 0.934,
+    "bpm": 111.9,
+    "beatPulse01": 0.032
+   }
+  },
+  {
+   "t": 3.938,
+   "sub": 0,
+   "mid": 0,
+   "high": 0,
+   "kick": 0,
+   "feder": 0.005,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.926,
+    "mid": 0.966,
+    "high": 0.861,
+    "bpm": 111.9,
+    "beatPulse01": 0.018
+   }
+  },
+  {
+   "t": 4.024,
+   "sub": 0,
+   "mid": 0,
+   "high": 0.221,
+   "kick": 0,
+   "feder": 0.009,
+   "farbe": 5,
+   "tracker": {
+    "audible01": 1,
+    "kick": false,
+    "bass": 0.94,
+    "mid": 0.993,
+    "high": 0.964,
+    "bpm": 111.9,
+    "beatPulse01": 0.008
+   }
+  }
+ ]
+}
