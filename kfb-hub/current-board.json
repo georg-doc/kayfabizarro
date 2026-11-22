@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-22.r23-karaoke-candidate",
-  "updatedAt": "2026-11-22T15:55:04.710Z",
+  "revision": "2026-11-22.r24-boardscene-brief",
+  "updatedAt": "2026-11-22T18:46:00+01:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -176,21 +176,23 @@
   "briefings": [
     {
       "id": "brief-invisible-handshake-r18-tarot-hex",
-      "title": "The Invisible Handshake · R23 Milners Kindergarten Karaoke",
-      "badge": "R23 DESIGN CANDIDATE · NOT LIVE",
+      "title": "The Invisible Handshake · R24 WSG/WSB Blender Table Diorama",
+      "badge": "BLENDER BRIEF · NOT LIVE",
       "status": "hold",
-      "provider": "Independent card game · Draft PR #475",
-      "desc": "Six public faction narratives + central die-free Focus. Human speakers introduce cards SHOW/SPIN/SELL, then SET HATE/FEAR/HOPE at face1 as Problem/Reaction/Solution; each later spoken accusation/retort physically MOVEs the active die to a different die-free occupied outer card and TURNs it +1. Node static 120 starts/5,400 legal destinations; first TILT always HATE at beat19. Personal Claim/Quest payout unresolved; 0 human games, no public browser.",
-      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R23_MILNERS_KINDERGARTEN_KARAOKE_2026-11-22.md",
+      "provider": "Existing Invisible Handshake owner · Draft PR #475 · WS0 → WSG → WSB",
+      "desc": "3D module brief: actual KFP cutting mat; six hex faction narrative slots/card stands inward angled 1.74:1; three red/yellow/blue clay D6; central original black surveillance-eye tower; Alpha/Omega source-backed robotic dice moves and Patch geometric FX donor audit. R23 rules intact. KayKit playerstand/D6 repo files verified; mat/tower/robot/Patch source unverified, source-isolation required. WSG Claude Design; WSB Blender MCP (not WSP). No scene, GLB or public Stage yet.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/WS0_WSG_WSB_BOARDGAME_SCENE_BLENDER_MCP_BRIEF_R24_2026-11-22.md",
       "tags": [
         "invisible handshake",
-        "r23",
-        "milners kindergarten",
-        "karaoke",
-        "move turn",
+        "r24",
+        "boardgame scene",
+        "blender mcp",
+        "ws0",
+        "wsg",
+        "wsb",
         "not live"
       ],
-      "prompt": "Physically test 2H/4H/6H six named narrative cards + one central FOCUS: SHOW/SPIN/SELL, one assertive Kayfabe claim as each SET/MOVE+TURN gesture. Assess actual card meaning, one-line continuity, time, first TILT and optional costly Claim desire; Georg KEEP/TUNE/FAIL. No Stage/Live claim."
+      "prompt": "WS0 read R24 brief + source audit, isolate KFP mat/tower/Alpha-Omega rigs/Patch FX, WSG compose, WSB Blender MCP build reusable hex cutting-mat scene; preserve R23 and return source proof, no merge/Stage/Live."
     },
     {
       "id": "brief-island-hud-flight-r4-sources",
