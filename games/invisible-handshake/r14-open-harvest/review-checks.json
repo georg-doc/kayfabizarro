@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "fixtures": [
+    "5\u21926 preparation harvested by next different actor; trigger resets only; other resident dice relocate",
+    "1\u21920 discards without trophy and preserves other values",
+    "Preparation mark follows die across card move; self later harvest correctly counted",
+    "Continuous6 reroll does not relabel original preparation; leaving6 clears mark",
+    "Last public card removal parks dice; own vacant play consumes hand and restores all parked dice",
+    "Draw changes only stock/hand, occupies action and stops at hand6",
+    "Stock/hand exhaustion has no invented play/action",
+    "Thirty narrow six-round runs pass supplied finite-count/bounds assertions",
+    "Twenty legal alternating moves reproduce original board/dice withzero wins; legal voluntary non-scoring cycle exists"
+  ],
+  "narrow_runs": 30,
+  "rounds_per_narrow_run": 6,
+  "sourceSHA256": "36e056e83f347231f079d898d65da772b42dccea102c71a383059d3503143474",
+  "scope": "No full batch rerun; every crafted applied action first checked against options; no script edits."
+}

@@ -1,0 +1,150 @@
+## 2026-11-22 · R25 · Center trophy CLAIM vs three-die pressure sum · user concept, bounded comparison
+
+Georg wants a random roll against visible HATE/FEAR/HOPE face sum S3..18 to claim central die-free FOCUS; collecting cards preferred to first-empty-hand, while six faction public narratives must refresh. [R25 candidate](R25_NARRATIVE_CAPTURE_SUM_PRESSURE_CARD_ECONOMY_2026-11-22.md): compare separate randomizer D20≤S linear15–90% vs 3d6≤S steep0.46–100%; optional single hand-card stake for CLAIM after legal action (failure discard vs replacement draw), and optional PUBLISH to own public slot. Capture winner gets Focus trophy; refresh **one active die-bearing outer** + Focus versus **all three die-bearing outer** + Focus, six seats/three distinct dice stay legal. Source [JS probe](R25_CAPTURE_CARD_LEDGER_PROBE.js), [static report](R25_CAPTURE_CARD_ECONOMY_TEST_REPORT_2026-11-22.md):20 constructed scripts/150 50-card audits/120 transitions/5 stock fails verified with V8 Node-assert shim; no whole games/human tests/public Stage, rules not accepted. Actual 3D scene: Georg gave R24 directly to Claude Design, WSB not assigned; previous plan annotated. One next gate 2H+4NPC physical CLAIM/hand/refresh with 6H tempo comparison, Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-22 · R24 · 3D Boardgame Diorama briefing to WS0 → WSG → WSB
+
+Georg requests modular 3D KFP cutting-mat hex stage with six inward-rotated 1.74:1 card/standee anchors, original black surveillance-eye tower, three red/yellow/blue clay Domination D6 and Alpha/Omega robot manipulation for Karaoke/onboarding. WS0 coordinator, WSG Claude Design, **WSB Blender MCP executor**, NOT WSP. [R24 full brief](WS0_WSG_WSB_BOARDGAME_SCENE_BLENDER_MCP_BRIEF_R24_2026-11-22.md), [source audit](R24_3D_BOARDGAME_SCENE_SOURCE_AUDIT_2026-11-22.md). KayKit BoardGameBits playerstand+D6 assets verified by GitHub live-tree; exact KFP mat/tower/robots/Patch sources not verified; source-alone proof gate. Rules/game runtime unaffected; 0 Blender scene builds/exports/browser/public Stage/human games. One next gate: WS0 source truth and WSG/WSB source-faithful Blender visual module candidate.
+
+---
+
+## 2026-11-22 · R23 · Milners Kindergarten Karaoke · USER-DIRECTED MOVE+TURN LOOP
+
+Georg proposes SHOW/SPIN/SELL reveal of six faction narratives at a hexagonal table; each of three successive humans sets HATE/FEAR/HOPE to1 as Problem/Reaction/Solution through a concrete in-universe accusation/retort/solution. Thereafter every beat both MOVEs its active die to another occupied die-free outer card and TURNs+1, explaining the narrative reframing while referencing central die-free FOCUS. [R23 proposal](R23_MILNERS_KINDERGARTEN_KARAOKE_2026-11-22.md), [static probe](R23_KARAOKE_GEOMETRY_PRESSURE_PROBE.js) and [test report](R23_KARAOKE_STATIC_TEST_REPORT_2026-11-22.md): 120 ordered starts, 5,400 legal destination checks, mandatory first HATE TILT at beat19, 2/12/6 strictly-inside/boundary/outside center triangles. This fixes R22 A's indefinite motion stalls but creates a deterministic timer; optional risky Claim and center payout remain proposals. 0 complete games, 0 humans, 0 current browser/Stage/Live; preserve R19/older candidates. Single next gate: physical 2/4/6-human spoken cards and MOVE+TURN product check, Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-20 · R22 · Kayfabe allegation as physical dice action · USER-DRIVEN CORRECTION
+
+Georg corrects the rhetorical model: one Beat is a concrete **accusation, escalation, counter-accusation or defense**, not a flat category reason. While pointing to the real faction/card the human SETs, TURNs, MOVEs or SWAPs the shared active HATE/FEAR/HOPE die, leaving one die maximum per outer public card and center Quest die-free. [R22 source](R22_KAYFABE_ACCUSATION_DICE_BEATS_2026-11-20.md) retains fixed Problem→Reaction→Solution and optional non-punitive KFB Story D6. Compare target-driven action A (only TURN advances face) to B (also MOVE/SWAP advance face); physical pressure/tipping payout and central seventh-card winner intentionally open. [V8 static report](R22_KAYFABE_DICE_BEAT_TEST_REPORT_2026-11-20.md): 25,920 actions PASS; A exhibits a 60-action legal MOVE cycle without tipping, B tips 9 times. No new app/Stage/Live, human games, card art or merge. Next gate 2H/4H/6H real-card Kayfabe A/B, then Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-19 · R21 · Problem/Reaction/Solution + KFB Story D6 + 7th Card claim
+
+Georg suggests preserving **three-card Problem → Reaction → Solution** and using the original six-face KFB Story-Mode die for *tonal stipulation*, then claiming the central seventh narrative card after Solution. [R21 candidate](R21_STORY_D6_TRIPLET_SEVENTH_CARD_CLAIM_2026-11-19.md) rolls existing D6 once per *triplet* (intentional adaptation), no number-bearing printed cards, 5-card hands, six outer slots as last two triplets and center FOCUS. A common story claim vs optional B objective personal **unique matching nonnumeric symbol** (no subjective judge, solver only triggers check). [Static report](R21_SEVENTH_CARD_CLAIM_TEST_REPORT_2026-11-19.md): 27 configurations/12 unique, 4 unique wins each role under uniform symbols, five opening and five after-claim stock invariants, automatic Solver winner seat lock demonstrated. Zero R21 games, no runtime, Stage/Live or merge. One gate: 2H/6H fast physical A/B trial; Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-19 · R20 · Fast emotion-chain, numberless cards · NEW CANDIDATE
+
+Georg rejects R19's complexity for broad audiences and suggests fast UNO-style plays: justify why a played card provokes **HATE, FEAR or HOPE**, followed by a delayed realization of what the group constructed. [R20 KISS proposal](R20_EMOTION_CHAIN_UNO_KISS_CANDIDATE_2026-11-19.md): five hand cards, one played card and one causal clause per turn, forced HATE→FEAR→HOPE sequence, private motive revealed after the HOPE card, first empty hand wins. No card numbers, assigned suits or stat values; no R19 dice, capture, NPC or FOCUS mechanics carried over. Optional Tarot seven-card hex is a retrospective, not turn complexity. **Concept only; no actual games or new UI.** Next single gate: quick 2-player and 5–6-person paper timing test vs R19; Georg KEEP/TUNE/FAIL.
+
+---
+
+## 2026-11-19 · R19 · Interactive seven-card setup–turn–resolution lab
+
+New [self-contained HTML round lab](r19-interactive-turn/turn-lab.html) and [test report](r19-interactive-turn/TEST_REPORT_R19_2026-11-19.md) in the existing game owner / Draft PR #475. Six outer faction narratives + die-free Focus, 2 humans / 4 NPCs, three different HATE/FEAR/HOPE dice and **50-card** stock/hand/trophy/discard conservation. Setup allows one of four public cards per human, then named-card causal narrative → one selected action → 6→7 claim / 1→0 burn or MOVE/SWAP/DRAW/REROLL resolution → second human → one R16 NPC A pulse → round summary and next-first-player rotation. Default R17 A center context; R17 B award opt-in with known bias. **38/38 browser assertions PASS**, viewport 1260px and 390px; 0 human games, 0 live Stage. No full 3–6 player runtime or accepted endgame. Hub metadata on the branch is candidate-only; no publication, merge or promoted game. One next gate: Georg interactively assesses meaning/tempo/reading clarity versus R17 A.
+
+---
+
+## 2026-11-19 · R18 · Seven-card Tarot Hex · SPATIAL READING CANDIDATE
+
+Georg supplied a 7-position “Spiral of Self-Mastery” Tarot image as a game-theory/satire/esoterics direction. [R18 proposal](R18_TAROT_HEX_SEVEN_CARD_READING_2026-11-19.md) maps **six outer** human/NPC narratives to hexagon vertices and the **seventh card to the existing die-free center Focus**, with readable prompts for repeated crisis, mask, resistance, authority, boundary, permanent structure and beneficiary. Upright=PUBLIC CLAIM, reversed=PRIVATE INCENTIVE. Maintains R17 HATE→FEAR→HOPE roles, 3 D6, 50 ordinary+6 faction cards and one existing action. Plain R17 A versus label-overlay R18 B; optional R17 B Focus payout is separate and remains imbalanced. [V8 static probe](R18_TAROT_HEX_STATIC_PROBE.js) and [report](R18_TAROT_HEX_TEST_REPORT_2026-11-19.md): 600 legal placements, 5,400 moves, 1,800 swaps, 1,800 relocation checks, 720 seat permutations, 20 conservation ledgers; **0 human R18 games**. No Site/Stage/Live, art, deck mass production or merge. Next single gate: paired 2H+4NPC A/B reading and short 6H comparison.
+
+---
+
+## 2026-11-18 · R17 · Problem–Reaction–Solution via actual narrative cards · DESIGN CANDIDATE
+
+Georg's new direction: make players link real public narrative card titles/images and faction perspective, rather than relying on equivalent cards with generic symbols. [R17 game design](THREE_DIE_NARRATIVE_CHAIN_R17_2026-11-18.md) uses KFB donors Therefore/But and Finger Rule. Human points in fixed order HATE=Problem, FEAR=Reaction, HOPE=Solution to three distinct dice-bearing outer cards, says one causal one-line story or minimal title template. Single existing action then resolves; no performance judging, no fourth die, numeric card stats or secret goals. R15C six outer human+NPC slots and one die per card unchanged; R16's fixed printed F/H/H icons are a separate hypothesis.
+
+A (narrative alone) versus optional B (Focus to another human under HOPE at high outer collapse, NPC Hope reframe and next-round-only Focus replenishment). [R17 static evidence](THREE_DIE_NARRATIVE_CHAIN_R17_TEST_REPORT_2026-11-18.md) enumerates 14,400 events; B has major structural difference in human award fraction at 2 vs6 players (1/6 versus5/6 under uniform placements), NOT a measured game balance result. [Return](RETURN.md) and routing updated. No human play, Site/Stage/Hub Live, card art or PR merge. Next gate physical 2H+4NPC and 6H causal-card test, Georg KEEP/TUNE/FAIL.
+
+## 2026-11-17 · R16 · NPC editorial pulses and cards with a real function · CANDIDATE
+
+- Georg requested a real 2–6 player **round ceremony** (public six-faction stage, one shared Focus, optional SHOW/SPIN/SELL in an actually playable turn), NPC logic with variation but no complex autonomous actor, more narrative card turnover, and tactical use for 50 otherwise statless cards.
+- [R16 mechanics proposal](NPC_TURN_AND_NARRATIVE_CARDS_R16_2026-11-17.md): each human initially chooses 1 of 4 dealt cards to publish, keeps 3; remaining 6−n NPC factions each reveal random card, first human reveals die-free Focus. One human action per turn and **one combined NPC editorial pulse after complete human circuit**. NPC A replaces/refills one rotating NPC public narrative; NPC B on a die-bearing NPC position MOVEs the existing die clockwise to first occupied die-free outer position, otherwise replaces/refills. One die per card, no NPC full-turn AI/hand/trophy or invented random control die.
+- C0 statless control versus experimental C1: one **non-numeric FEAR/HOPE/HATE icon** per *future* narrative card, with on-human PLAY/REWRITE: FEAR die+1 capped6; HOPE draw one stock card into hand; HATE exchange one chosen hand card with a random human opponent hand card. REWRITE replaces active own card from hand, old to discard, one action. The icons are **not assigned to the 50 cards or accepted**, no per-card numeric attack/defense/power. Other card stealing/trading/capture-to-hand options deferred until card identity actually matters.
+- [R16 static test report](NPC_TURN_AND_NARRATIVE_CARDS_R16_TEST_REPORT_2026-11-17.md) and [source probe](NPC_TURN_AND_NARRATIVE_CARDS_R16_PROBE.js): **46 V8 scenario groups / 51 grouped assertions PASS**, 2–6 humans and n NPC slots; NOT full-game simulation or human testing. Six outer cards and one die/card from R15C preserved, stock `43−3n`. NPC Focus payout, 5→6 prep gift, endgame, six-seat pacing unresolved. [Return](RETURN.md) and [CURRENT_STATE](CURRENT_STATE.md) updated. No new Stage, KFB Hub Live tile, runtime/site change or PR merge.
+- **Single next gate:** physical 2-human/4-NPC A/B pulse and C1 on-play short turn trace, then a six-human all-player contrast; Georg KEEP/TUNE/FAIL before 50-card icon production.
+
+## R10 · 2026-11-17
+Tested publicchipend/nextstart capture2–6,three/scaled/sixNPC layouts,free vs syntheticfixed modifiers. Targeteddenial permitszero-scorecycle. Attack-no-claim doesnotrepair it. Concept evidence only; noSite/runtimechange. See r10-chip-test/REPORT.md.
+
+## R0.9 · 2026-11-17
+Georg's R08 UI rejection addressed: restored functional R/A/F triangle and five-step real-engine onboarding. Same private Site v3, originaldice/engine retained. Independent lesson checks and actual browser traversal; novice comprehension still awaits Georg. See r09/README.md and RETURN.md.
+
+## R0.8 · 2026-11-17
+Own-turn banking selected after1944 paired games;144 production-equivalence games. Functional selectable market matrix replaces ornamental triangle; camera controls and explicit confirmation. Existing private Site v2. Early-lead/graph/Frame-preview limits remain. See RETURN.md and r08/README.md.
+
+## R0.7 · Playable private prototype · 17 November2026
+
+User authorized parallel research, simulations and online modular3D prototype; earlier paper-only gate superseded for this candidate. Existing owner/PR475 retained. [Play private Site](https://the-invisible-handshake.frizzlebob.chatgpt.site) · Site v1 source040b5b22f6bb6c93220e1d8a51c99658023499c7, deployment appgdep_6afc3d27bba081919727443237b63da1 succeeded. Browser live view reaches login; authenticated live canvas not observed. Local actual full6-seat demo and soloWindow turn tested.
+
+Delivered: solo and2–6 shared-screen humans/computer policies; complete56-slot mechanical set; original KFB dice on modular3D table; exclusive pyramid/window; English fictional institution copy; rules, save/resume and source reader. No remote multi-browser multiplayer, final card artwork or existingKFB rule/runtime change. StuntRace was read-only palette/declarative-scene reference; Git transport unavailable there, connector used.
+
+[Independent tests](r07/tests/TEST_REPORT.md):1800 complete synthetic games,51,200actions,90,539invariant checks,10fixtures. Same engine SHA c7bd234135545cc3d40ac67ed0a34aa4de7a9141261cdc4a42347ea0ab1b38c3. Six roles reach11 but unequal accessibility; final-seat advantage/raw-score ties remain. Lightweight bulk policies differ from Site chooser; no superiority/balance/fun claim. [Browser evidence](r07/tests/BROWSER_REPORT.md), [independent guard](r07/tests/CRITIC_GUARD.md), [provenance](r07/PROVENANCE.json).
+
+Research38source/findmittel records: Yurchak/Curtis/Overton, Hughes, Desmet, empirical persuasion/nudging/NLP/AI, historical operation distinctions. Also persisted in existing Atlas package influence-r07; no full Hughes video corpus/Desmetbook/Curtisfilm audit. Original/interpretation/fiction separate.
+
+One next gate: Georg plays one solo and one2-person round, checks whether dependencies and framing create worthwhile decisions; address endgame/seat-order issue before treating this as balanced. No merge/Live promotion.
+
+
+---
+# The Invisible Handshake · Additive changelog
+
+## 2026-11-17 · R15C six outer narratives even with two humans · USER CORRECTION
+
+Georg clarified **six face-up outer faction Narratives are dealt in every game**, with n humans and `6−n` randomly revealed NPC narratives; cards may be temporarily missing only after removal. **One Fear/Hope/Hate D6 maximum per occupied outer card**, all three normally occupy distinct outer cards; center Focus never holds dice. The previously proposed R15B `two other dice different slots` gating condition is tautological, **REJECTED**. Wrong earlier two-human "dice stack" rationale withdrawn. [Owner spatial correction](SIX_OUTER_NARRATIVES_SINGLE_DIE_R15C_2026-11-17.md), [test report](SIX_OUTER_SINGLE_DIE_TEST_REPORT_R15C_2026-11-17.md): 600 setups, 5,400 MOVE cases, 1,800 SWAP cases, 1,800 legal relocation choices; **not human or full-game play**. Corrected 50-card stock `43−3n` (37 at 2H+4NPC, 25 at 6H). NPC actions/refill and center compensation with NPC contributor explicitly still open. Historical R14/R15 tests are not current corrected simulations. Return, handoff, router update; no Stage/Hub or merge. One gate: explicit minimal NPC policy and 2H+4NPC versus 6H stress.
+
+
+## 2026-11-17 · R15B Focus release after borromean outer collapse · CANDIDATE
+
+- Georg explicitly rejected putting Fear/Hope/Hate dice on the central Focus card. [New R15B design](FOCUS_COLLAPSE_R15B_CANDIDATE_2026-11-17.md): the center is a **systemic narrative**, released/reframed on an **outer** deterministic 6→7 / 1→0 collapse. Actor gets R14 outer trophy on upper collapse; different outer-card contributor may receive center as compensation; lower collapse burns outer and may cycle/discard center; same-actor self-harvest never yields a center double trophy.
+- Two controlled alternatives: A every outer collapse activates center; B only when **the two other dice were on distinct occupied outer narrative slots pre-collapse**, making MOVE/SWAP consequential. No dice may occupy center, and R0.5/R0.6 old FAVOR/Overton market prototypes stay historical. Mandatory own-slot re-entry remains a separate R15 untested requirement.
+- [Static test](FOCUS_COLLAPSE_R15B_TEST_REPORT_2026-11-17.md) and [JS source](FOCUS_COLLAPSE_PROBE_R15B.js): 51 constructed scenarios / **149 assertions PASS** in independent V8 run, **not games, not balance**, script not run as Node directly. Main 56 cards unchanged, no new stats, art, solo, missions or released stage. Actor/contributor collusion, 5→6 gift, lockout and center stock depletion remain open. [Return](RETURN.md). One next gate: paired 2-/6-player A/B model comparison then physical 2-player trial, Georg A/B/FAIL.
+
+
+## 2026-11-17 · Current proposal · mandatory entry and central FOCUS (R15 design only)
+
+Georg corrected the public-card supply framing: own public narrative card **is required** to participate in the arena. New [candidate note](CENTRAL_FOCUS_ENTRY_GATE_R15_PROPOSAL_2026-11-17.md) adds an empty-own-slot legal-action gate (PLAY from hand, or DRAW first if empty hand; no die actions until own card restored). This is **not** an already-simulated R14 rule. Proposes common 1-card FOCUS narrative from same 50-card stock (start stock 49−4n) in the center of the six-faction board: A permanent narrative context only versus B open capturable focus with single centre-only auto-refill. No 57th card, no new stat/mission, same three Fear/Hope/Hate dice and 2–6-player priority. [Deterministic static test](CENTRAL_FOCUS_R15_TEST_NOTES_2026-11-17.md): 38/38 conservation/gating fixtures; **not a gameplay simulation**. Risks: targeted lockout, Focus trophy farming, exhausted stock/hand re-entry; R14's 5→6 gifting not repaired. [Owner Return](RETURN.md), current state and central router updated, no Stage/Hub/Live and no KFB game runtime integration. **Next gate:** 2-player A/B and six-seat denial stress → Georg A/B/FAIL.
+
+
+## 2026-11-17 · R0.6 Borromean RAF Pyramid + Psychology Atlas addendum · CANDIDATE
+
+- Georg asked to reuse KFB's original **three colored borromean D6 / R-A-F (Resonanz, Amplitude, Frequenz)** for a tactile power-pyramid/Overton/HyperNormalisation triangle with corner themes, cluster/POI focus, die rotation 1–6, position movement and an all-seeing-eye center. Original [Travel S60c Sky Dice](../../travel/travel-v16/terrain-v16/sky-dice.js) and [KFB Pinball audio](../../skills/KFB%20PetStudio/KFB%20FrankenStein%20Studio%2016/KFB-v16/petstudio-v9/kfb-pinball-audio.js) are verified *code/source* donors, **no actual art model isolated**.
+- [R0.6 rules/design](BORROMEAN_RAF_PYRAMID_R06_2026-11-17.md): A = one shared triangular board; corners existing RESOURCES/RULES/INFLUENCE; 3 D6 each placed on a different corner, faces 1–6; uniquely highest die defines public focus, tie puts eye in CONTESTED state; RECRUIT matching focus 0 FAVOR otherwise 1; one proposed P04 PLOT rotates a die exactly ±1 or swaps two die positions, then RECRUITS at updated cost. Alternative B with three **actual issue/POI clusters** deferred; full barycentric calculation rejected for KISS. R0.5 two-slot Market window **not combined**; the 56-card budget unchanged.
+- [R0.6 JS source probe](BORROMEAN_RAF_PROBE_R06.js), [independent Node test evidence](TEST_REPORT_R06_2026-11-17.md): 1,296 face/position states; 990 uniquely focused/306 contested; 15,552 legal favor-cost combinations; 3,960 free and 11,592 1-FAVOR scenarios; 6,480 valid rotations/1,296 blocked boundaries; 3,888 swaps. **No real games, artwork, timed turns, Stage/Hub publication or claim of gameplay balance.**
+- [Source-critical Research Atlas R0.6 addendum](ATLAS_PSYCHOLOGICAL_INFLUENCE_ADDENDUM_R06_2026-11-17.md) enhances [existing Atlas handoff](ATLAS_RESEARCH_HANDOFF_R05_2026-11-17.md): Chase Hughes channel and public first-party methods, Mattias Desmet mass-formation theory and independent evidence, historical PsyOps/false flags/propaganda, neuro-linguistic programming vs computational NLP, nudging/meta-analyses, triadic Overton/issue claims. **Research requirements queued, not run**; existing Atlas and MKULTRA/Monarch research owners untouched. 
+- **Next gate:** one physical 2-player A/B between R0.5 rectangle and R0.6 dice/pyramid, optional solo turn, Georg A/B/FAIL (not auto-acceptance). No merge/Live.
+
+## 2026-11-17 · R0.5 Overton, HyperNormalisation & automated diagnostics · CANDIDATE
+
+- Georg proposes a movable public **Overton window**: default test = a two-slot aperture across four MARKET Institutions; outside-window RECRUIT costs 1 FAVOR, inside costs 0, optional PLOT shifts the frame ±1 and recruits once. This is a spatial/public-attention proxy, **not** a real political opinion continuum; B issue-specific scale remains deferred.
+- HyperNormalisation uses KFB's Kayfabe/Bizarro to separate observable network state from public storyline; PsyOps, False Flags and fictional "MKUltra 4.0" stay existing PLOT/EVENT skins until an actual mechanic passes. KFB Freestyle ritual is **Name It / Claim It / Power It**; optional new game "Show It / Spin It / Sell It" is non-scoring, non-mandatory.
+- [R0.5 mechanical note](OVERTON_HYPERNORMALISATION_R05_2026-11-17.md), [14-case bot simulation](SIMULATION_R05_REPORT_2026-11-17.md), [machine summary](SIM_R05_COMPACT_RESULTS.json), [exhaustive window probe](OVER_TON_WINDOW_PROBE_R05.js) and [Atlas research jobs](ATLAS_RESEARCH_HANDOFF_R05_2026-11-17.md) saved. **3,500 automated games; 48 window affordability checks, 4 moves/8 resulting recruit pairs; 0 human plays, 0 R0.5 full-session window sims, 0 new print masters.**
+- Junta, Machiavelli, Sun Tzu and Hegel sources checked. Low successful POACH under constant VETO, 50% final PUBLIC HEARING chance, and unbalanced Solo remain risks. **Next gate:** human two-player with-vs-without window + optional one solo turn. No Stage/Live, no KFB Hub tile, no auto merge.
+
+
+## 2026-11-17 · R0.4 cross-sphere proxy + BGA mechanics research · CANDIDATE
+
+Georg bestätigt das Sechs-Sphären-Prinzip und priorisiert **2–6 Spieler**; Solo als optionale Variante derselben Karten. Neuer [12-Card R0.4 Text-/Regelsatz](PROXY_12_AND_SOLO_R04_2026-11-17.md) umfasst 2 Rollen, 6 Institutionspaare über sechs Einflusssphären, 3 Plot-Formen, 1 Event. Zwei neue Gesprächs-PDFs: 3 Seiten mit 12 Karten, 2 Seiten Quickstart/Solo, noch **nicht als GitHub-Binärdateien abgelegt**. [BGA-/Reddit-Recherche](BGA_MECHANICS_DONOR_AUDIT_R04_2026-11-17.md) vergleicht 11 öffentlich lesbare BGA-Regelzusammenfassungen und Solo-Erfahrungsberichte; priorisiert mutable alliances (Pax Pamir), evidence/exposure (Watergate), simple veto (Coup), verwirft schwere Systemimporte. [Testreport](TEST_REPORT_R04_2026-11-17.md): 8/8 Strukturchecks; 5/5 PDF-Seiten gerendert und geprüft. Keine human games, kein behaupteter 6p-Tempo-PASS, 56 Karten nicht ausgearbeitet, keine Stage-Route, kein Hub Live Tile. **One gate:** Georg testet physisch das 12-Karten-2-Spieler-Szenario, optional einen Solo-B-Zug, meldet KEEP/TUNE/FAIL.
+
+
+## 2026-11-17 · R0.3 Power Spheres, Kayfabe & Bizarro · CANDIDATE
+
+Georg korrigiert die medienzentrierte Perspektive: Podcaster/Influencer sind kleine Knoten in sechs verflochtenen Machtfeldern. [R0.3 Design](POWER_SPHERES_KAYFABE_BIZARRO_R03_2026-11-17.md) entwirft 6×5 fiktive Institutionskandidaten über Kapital/Versorgung, Staat/Geopolitik, Intelligence/PsyOps, Medien/Plattformen, Kultur/Universitäten, Wissenschaft/KI/Space. Kayfabe (Fassade vs Anreiz) und Bizarro (doppelte Umkehrung) werden als Satirestruktur aufgenommen; Foucault, Derrida, Hartmann und weitere Ansätze als konkurrierende Deutungsangebote, nicht Wertungszahlen. [Testbericht](TEST_REPORT_R03_2026-11-17.md) = 8/8 statische Assertions, ein rechnerisches POACH-Beispiel mit 10-Punkte-Relativverschiebung als **offenes Balance-Risiko**. Daten- und Behauptungsstatus der GitHub-Spender/öffentlichen Quellen bleiben getrennt. Keine Menschen getestet, keine neuen Druckmaster/Art/Stage, 56 Slots und R0-Regelkern unverändert. **Next gate:** physischer 12-Proxy-Test über sechs Felder vor Kartenproduktion.
+
+
+## 2026-11-17 · R0.1/R0.2 semantic and media landscape TUNE · CANDIDATE
+
+- **Georg feedback:** Voice is too narrow; replace VOICE with **INFLUENCE** (media, manipulation, kompromat, covert agreements). **RESOURCES** is a candidate for MONEY (credit, supply and energy); RULES now expressly includes lawfare.
+- [R0.1 semantic taxonomy](SEMANTICS_R01_2026-11-17.md) separates all three types from spendable FAVOR. [R0.2 media ecosystem](MEDIA_ECOSYSTEM_R02_2026-11-17.md) adds ten **candidate** media/culture institution concepts, re-themed existing Plot effects and one **unapproved** Event variant inside the same 56 slots.
+- No new mechanical resource, following counter, owner, code, printed cards or browser Stage. Research about NATO ACT and historical MKULTRA is separated from fictional cultural manipulation. R0 PDFs still use the superseded MONEY/VOICE labels.
+- **Single next gate:** physical 1–2-player microgame KEEP/TUNE/FAIL using R0.2 semantics.
+
+
+## 2026-11-17 · Paper Prototype R0 · CANDIDATE
+
+**Owner:** Analog design in `games/invisible-handshake`; source/donor Research Atlas PR #394 remains untouched.
+**Route:** `design/invisible-handshake-paper-r0-2026-11-17`; no runtime owner and no Stage URL.
+**Decision:** Compare visible network A to shared-Stage B; choose **A** for one R0 test. This is a candidate selection, not Georg approval.
+**Implementation:** English quickstart, 12 original fictional text cards, 56-slot allocation, eight-round event clock, one Favor resource, three Institution tags, one-reaction VETO/RECRUIT fallback, deterministic solo System.
+**Evidence:** 4/4 capacity configurations; 3/3 written-accounting examples; one rules PDF page + three four-card PDF pages validated locally. 0 human playtests, 0 timed turns, 0 deployed browser routes.
+**Boundary:** No Artscape, full deck text, KFB gameplay code, KFB registry, Dropbox mutation, new brand art, auto merge or live promotion.
+**Unresolved:** Veto loops, leader lock, timing at six, final-score kingmaking, solo difficulty.
+**Next gate:** Georg physically tests 12-card microloop and gives KEEP / TUNE / FAIL. Formal 56-slot proxy timing only after that human gate.
+
+This is additive. Preserve subsequent outcomes rather than rewriting this R0 state as accepted.

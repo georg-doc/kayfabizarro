@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "fixtures": [
+    "Known adjust low boundary resets only chosen die and preserves input",
+    "Swap moves location and carries die identity/value",
+    "Flip7-v has no0/7 overflow",
+    "Reroll deterministic evaluation equals exact six-outcome expectation",
+    "Option counts and no same-location swaps for2/4/6",
+    "New claim not aged on creation; pays after second opponent",
+    "Due claim invalidated before payout",
+    "Ten narrow complete runs preserve script accounting and bounds"
+  ],
+  "narrow_complete_runs": 10,
+  "sourceSHA256": "b5125d310e26cc386f4b1b7a288729ec1c327e3d93a3927de797b34e8a27aea8",
+  "scope": "No whole batch rerun; no production or supplied script changes."
+}

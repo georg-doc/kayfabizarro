@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-04.1",
-  "updatedAt": "2026-11-04T02:37:00.196Z",
+  "revision": "2026-11-22.r25-narrative-capture-candidate",
+  "updatedAt": "2026-11-22T19:30:00+01:00",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -174,6 +174,26 @@
     }
   ],
   "briefings": [
+    {
+      "id": "brief-invisible-handshake-r18-tarot-hex",
+      "title": "The Invisible Handshake · R25 Sum Capture / Card Collection",
+      "badge": "R25 MECHANICS CANDIDATE · NOT LIVE",
+      "status": "hold",
+      "provider": "Independent narrative boardgame · Draft PR #475 · 3D scene direct Claude Design",
+      "desc": "Georg proposes optional central Focus capture by rolling a separate D20<=sum(HATE+FEAR+HOPE), linear15–90%, or separate 3D6<=sum, nonlinear0.46–100%. Collection of Focus trophies preferred, three hand cards act as named stakes and public narrative PUBLISH, refresh one vs3 outer cards after success. V8 static source test:20 scripts/150 50-card ledger checks, zero full or human games. R24 scene brief was submitted directly to existing Claude Design, WSB NOT tasked. Draft source only, no Stage/Live.",
+      "url": "https://github.com/georg-doc/kayfabizarro/blob/design/invisible-handshake-paper-r0-2026-11-17/games/invisible-handshake/R25_NARRATIVE_CAPTURE_SUM_PRESSURE_CARD_ECONOMY_2026-11-22.md",
+      "tags": [
+        "invisible handshake",
+        "r25",
+        "dice sum",
+        "capture",
+        "trophy",
+        "card collection",
+        "claude design scene separately",
+        "not live"
+      ],
+      "prompt": "Physically compare 2H/4NPC R25 D20<=3-dice sum vs 3D6 roll; one optional center CLAIM by human after legal die action, hand stake fail-loss versus replacement, refresh one vs3 public outer narratives, short 6H check. Keep untested 3D Claude Design separate; Georg KEEP/TUNE/FAIL."
+    },
     {
       "id": "brief-island-hud-flight-r4-sources",
       "title": "Island Lab · HUD Sprint R4-0 sources",

@@ -1,0 +1,110 @@
+{
+  "start": {
+    "round": 1,
+    "active": 0,
+    "bank": [
+      0,
+      0
+    ],
+    "credits": [
+      0,
+      0
+    ],
+    "plot": {
+      "id": "P3",
+      "type": 3
+    },
+    "net": [],
+    "production": 0,
+    "focus": null
+  },
+  "beforeFrame": {
+    "round": 2,
+    "active": 0,
+    "bank": [
+      1,
+      0
+    ],
+    "credits": [
+      1,
+      2
+    ],
+    "plot": {
+      "id": "P3",
+      "type": 3
+    },
+    "net": [
+      "The Compute Chokepoint"
+    ],
+    "production": 1,
+    "focus": null
+  },
+  "action": {
+    "type": "frame",
+    "index": 1,
+    "replace": null,
+    "move": {
+      "kind": "rotate",
+      "index": 1,
+      "delta": 1
+    }
+  },
+  "preview": {
+    "round": 2,
+    "active": 0,
+    "bank": [
+      7,
+      0
+    ],
+    "credits": [
+      2,
+      2
+    ],
+    "plot": {
+      "id": "P11",
+      "type": 3
+    },
+    "net": [
+      "The Compute Chokepoint",
+      "The Peer Review Gate"
+    ],
+    "production": 6,
+    "focus": 1
+  },
+  "final": {
+    "round": 3,
+    "active": 0,
+    "bank": [
+      7,
+      0
+    ],
+    "credits": [
+      2,
+      2
+    ],
+    "plot": {
+      "id": "P11",
+      "type": 3
+    },
+    "net": [
+      "The Compute Chokepoint",
+      "The Peer Review Gate"
+    ],
+    "production": 6,
+    "focus": 1
+  },
+  "realLog": [
+    "Round 1: Public Hearing — least damaging institution suspended.",
+    "You recruits The Compute Chokepoint",
+    "You banks 1 points (total 1).",
+    "The Committee holds position.",
+    "The Committee banks 0 points (total 0).",
+    "Round 2: Public Hearing — least damaging institution suspended.",
+    "The Committee holds position.",
+    "The Committee banks 0 points (total 0).",
+    "You moves the public frame.",
+    "You recruits The Peer Review Gate",
+    "You banks 6 points (total 7).",
+    "Round 3: Expedited Funding."
+  ]
+}
