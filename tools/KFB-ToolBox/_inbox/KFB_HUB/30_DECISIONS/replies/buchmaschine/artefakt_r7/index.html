@@ -1,0 +1,289 @@
+<title>Buchmaschine Testbühne</title>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden;font:14px system-ui}canvas{display:block}
+#ui{position:fixed;left:12px;bottom:12px;right:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:#0008;color:#eee;padding:8px 10px;border-radius:8px}
+button,select{font:inherit;padding:6px 10px;border-radius:6px;border:1px solid #777;background:#222;color:#eee;cursor:pointer}button.on{background:#7a5a2a}
+#kopf{position:fixed;left:12px;top:10px;color:#dfe3ea;font:13px system-ui;background:#0008;padding:6px 10px;border-radius:8px}#phase{color:#ffd9a0}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+<div id="kopf"><b>Buchmaschine</b> · HyperNorm-Kammer · Phase <span id="phase">–</span></div>
+<div id="ui"><button id="rw">◀ rückwärts</button><button id="st0">❚❚ halt</button><button id="fw" class="on">vorwärts ▶</button>
+<button id="au" class="on">Ablauf</button><button id="regie" class="on">Kamera-Regie</button><button id="ton">Ton an</button><a href="voxel.html" style="color:#ffd9a0;padding:6px 4px">Voxel-Relief ▸</a></div>
+<script type="module">
+// Buchmaschine in der HyperNorm-Kammer (Georg 22.11.): der ganze Loop ist EIN Rezept (src/data/choreo/buchmaschine_loop.r1.json, Lauf über src/core/rezept.js
+// und den Ereignis-Bus): Phasen, Marken und Spuren steuern Kurbel, Blitze, Ausholen, Licht, Wände, Schälen, Voxelrelief und Kamera. Übergänge überlappen.
+// Raum und Licht kommen aus der Kammer (src/scenelets/hnKammer.js, Lichter der Kammer, Wände = HyperNorm mit dem Help-Deck zum Buch).
+// Das Modul selbst bringt kein Licht mit; nur die Spiegelumgebung für blankes Metall stellt diese Bühne.
+import * as THREE from 'three'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'
+import { buildParts, makeMaterials } from './src/vendor/codevember-orrery/parts.js'
+import { shaftAngle } from './src/vendor/codevember-orrery/train.js'
+import { arrangeSign, BLEND, SPREAD, easeInOut } from './src/vendor/codevember-orrery/arrange.js'
+import { SIGNS } from './src/vendor/codevember-orrery/signs.js'
+import { pointHash } from './src/vendor/codevember-orrery/random.js'
+import { applyClay } from './src/vendor/clay/kfb-clay.v1.2.js'
+import { createSchaelen } from './src/scenelets/buchmaschine/schaelen.js'
+import { createBildVoxel } from './src/scenelets/buchmaschine/bildVoxel.js'
+import { rostLook, verlaufUmgebung } from './src/scenelets/buchmaschine/rostLook.js'
+import * as Bogen from './tools/buchmaschine/energy-arc.r1.buchmaschine.js'
+import { createHnKammer } from './src/scenelets/hnKammer.js'
+import { createRezeptLauf } from './src/core/rezept.js'
+import { createCueBus } from './src/core/cueBus.js'
+import { createTon } from './tools/buchmaschine/ton.js'
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
+renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(innerWidth, innerHeight)
+renderer.shadowMap.enabled = true; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.outputColorSpace = THREE.SRGBColorSpace
+document.body.appendChild(renderer.domElement)
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#000000')
+const camera = new THREE.PerspectiveCamera(38, innerWidth / innerHeight, 0.05, 200)
+const controls = new OrbitControls(camera, renderer.domElement); controls.enabled = false
+const composer = new EffectComposer(renderer); composer.addPass(new RenderPass(scene, camera))
+const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), 0.5, 0.5, 0.92); composer.addPass(bloom); composer.addPass(new OutputPass())
+const env = verlaufUmgebung(renderer, { sky: '#2a3040', ground: '#0a0a10' })
+const BODEN = -0.45
+const rng = (() => { let s = 20261122; return () => { s = (s + 0x6d2b79f5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296 } })()
+
+// Kammer: Bühne der Kammer liegt im Ursprung der Maschine, Boden auf BODEN
+const kammer = createHnKammer({ THREE, renderer, quellen: [{ url: 'tools/buchmaschine/pd_pool_klein/manifest.json', src: 'pd' }, { url: './engine/hypernorm/test/daten/help-deck.hn-media.json' }], helligkeit: 0.6, lichter: true, seed: 1966, worker: new URLSearchParams(location.search).get('worker') === 'aus' ? false : 'auto' })
+kammer.group.position.set(0, BODEN, -kammer.anker.buehne.z); scene.add(kammer.group)
+const SPOTS = kammer.licht.filter((l) => l.isSpotLight)
+SPOTS[2] && (SPOTS[2].intensity *= 0.35)   // weißes Oberlicht der Kammer: das helle Papier des Buchs überstrahlt sonst
+const SPOT_I = SPOTS.map((s) => s.intensity)
+for (const s of SPOTS) { s.target.position.y = 3.0; s.castShadow = true; s.shadow.mapSize.set(1024, 1024); s.shadow.bias = -0.0004 }   // Maschine ist höher als 1,2 m
+
+// Orrery mit Rost-Grundfassung (wie R6)
+const ladeBild = (src) => new Promise((ok) => { const im = new Image(); im.onload = () => ok(im); im.src = src })
+const texVon = (im, srgb) => { const t = new THREE.Texture(im); t.wrapS = t.wrapT = THREE.RepeatWrapping; if (srgb) t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; t.needsUpdate = true; return t }
+const [imD, imA] = await Promise.all([ladeBild('tools/buchmaschine/_privat/rost/rost_diff.jpg'), ladeBild('tools/buchmaschine/_privat/rost/rost_arm.jpg')])
+const ROST = { diff: texVon(imD, true), arm: texVon(imA, false) }
+const ROLLEN = { antrieb: { ton: 1.0, grau: 0.0, kante: 0.35 }, traeger: { ton: 0.68, grau: 0.1, kante: 0.3 }, arm: { ton: 1.18, grau: 0.45, kante: 0.4 }, eisen: { ton: 0.8, grau: 0.35, kante: 0.4 }, gummi: null, knauf: { ton: 0.9, grau: 0.0, kante: 0.3 } }
+const { parts, train } = buildParts(makeMaterials(), 5)
+const maschine = new THREE.Group(); maschine.name = 'buchmaschine'; scene.add(maschine)
+const machine = new THREE.Group(); machine.name = 'orrery'; maschine.add(machine)
+const mat = (color, roughness = 0.8) => new THREE.MeshStandardMaterial({ color, roughness, metalness: 0 })
+const rolle = new Map()
+for (const p of parts) {
+  machine.add(p.mesh); p.mesh.castShadow = true
+  if (p.id === 'sun') { p.mesh.visible = false; continue }
+  let r = null
+  if (p.kind === 'gear') r = train.gears.get(p.id).teeth >= 36 ? 'antrieb' : 'gummi'
+  else if (p.kind === 'plate') r = 'traeger'
+  else if (p.kind === 'bar') r = /Arm$|Bracket$/.test(p.id) ? 'arm' : 'eisen'
+  else if (p.id === 'crankKnob') r = 'knauf'
+  if (r) { p.mesh.material = mat(r === 'gummi' ? '#262422' : '#8a8580', r === 'gummi' ? 0.95 : 0.8); rolle.set(p.mesh, r) }
+  else { const c = p.mesh.material.color?.getHex?.() ?? 0xcccccc; p.mesh.material = mat(c, 0.7) }
+}
+const SCHEIBE_Y = 4.24
+const scheibe = new THREE.Mesh(new THREE.CylinderGeometry(1.05, 1.1, 0.07, 48), mat('#8a8580')); scheibe.castShadow = scheibe.receiveShadow = true
+const nabe = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.18, 0.12, 20), mat('#8a8580')); nabe.position.y = -0.08; scheibe.add(nabe)
+for (let i = 0; i < 6; i++) { const b = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.03, 8), mat('#8a8580')); const t = i / 6 * Math.PI * 2; b.position.set(Math.cos(t) * 0.9, 0.045, Math.sin(t) * 0.9); scheibe.add(b) }
+scheibe.position.y = SCHEIBE_Y; machine.add(scheibe)
+for (const m of [scheibe, nabe, ...scheibe.children]) rolle.set(m, m === scheibe ? 'traeger' : 'eisen')
+applyClay(machine, THREE, { profile: 'midground', seed: 'buchmaschine-orrery', scaleRef: 1.6 })
+for (const [mesh, r] of rolle) { const R = ROLLEN[r]; if (!R) continue; rostLook(mesh.material, { tex: ROST, lack: null, kante: R.kante, skala: 1.3, ton: R.ton, grau: R.grau, bump: 0.5 }); mesh.material.envMap = env; mesh.material.envMapIntensity = 0.6 }
+
+// WSB-Buch r3, Schälhaut (einmalig) und darunter das Voxelrelief derselben Doppelseite
+const gltf = await new GLTFLoader().loadAsync('tools/buchmaschine/_privat/buch/KFB_Buch_Mensch.r3.gltf.json')
+const buch = new THREE.Group(); buch.name = 'buch'; scene.add(buch)
+const buchInnen = new THREE.Group(); buch.add(buchInnen)
+const halter = new THREE.Group(); halter.rotation.x = Math.PI / 2; halter.scale.setScalar(4.6); buchInnen.add(halter); halter.add(gltf.scene)
+gltf.scene.traverse((o) => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; o.frustumCulled = false } })
+const mixer = new THREE.AnimationMixer(gltf.scene); mixer.clipAction(gltf.animations.find((c) => c.name === 'offen')).play(); mixer.update(0.01); gltf.scene.updateMatrixWorld(true)
+const kasten = new THREE.Box3(), inv = new THREE.Matrix4(); buchInnen.updateMatrixWorld(true); inv.copy(buchInnen.matrixWorld).invert()
+for (const n of ['Blatt_15', 'Blatt_16']) gltf.scene.getObjectByName(n).traverse((o) => { if (!o.isMesh) return; const pos = o.geometry.attributes.position, v = new THREE.Vector3()
+  for (let i = 0; i < pos.count; i += 7) { (o.isSkinnedMesh ? o.getVertexPosition(i, v) : v.fromBufferAttribute(pos, i)); v.applyMatrix4(o.matrixWorld).applyMatrix4(inv); kasten.expandByPoint(v) } })
+{ const c = kasten.getCenter(new THREE.Vector3()); halter.position.x -= c.x; halter.position.y -= c.y; kasten.min.x -= c.x; kasten.max.x -= c.x; kasten.min.y -= c.y; kasten.max.y -= c.y }
+const BREITE = kasten.max.x - kasten.min.x, HOEHE = kasten.max.y - kasten.min.y, ZOBEN = kasten.max.z
+const bildVon = (nr) => { let im = null; gltf.scene.traverse((o) => { if (o.isMesh) for (const mt of [].concat(o.material)) if (mt.name === 'Buch_S' + String(nr).padStart(3, '0') && mt.map) im = mt.map.image }); return im }
+const PW = 660, PH = 920, seite = document.createElement('canvas'); seite.width = 2 * PW; seite.height = PH
+{ const g = seite.getContext('2d'); g.fillStyle = '#efe9dc'; g.fillRect(0, 0, 2 * PW, PH); g.drawImage(bildVon(30), 0, 0, PW, PH); g.drawImage(bildVon(31), PW, 0, PW, PH) }
+const atlas = new THREE.CanvasTexture(seite); atlas.colorSpace = THREE.SRGBColorSpace; atlas.anisotropy = 8
+const haut = createSchaelen({ THREE, atlas, zellen: [1, 1], seiten: 1, breite: BREITE, hoehe: HOEHE, spalten: 24, zeilen: 17, rng, einmalig: true })
+haut.unter.visible = false; haut.gruppe.position.z = ZOBEN + 0.004; buchInnen.add(haut.gruppe); scene.add(haut.flocken)
+const relief = createBildVoxel({ THREE, bild: seite, breite: BREITE, hoehe: HOEHE, spalten: 80, tiefe: 0.12, rng })
+relief.gruppe.position.z = ZOBEN - 0.002; buchInnen.add(relief.gruppe); scene.add(relief.lose)
+const buchMitte = new THREE.Object3D(); buchInnen.add(buchMitte)
+// Licht-Angebot der Maschine: ein weiches, warmes Buchlicht von vorn (wie das Figurenlicht V-386), schattenlos; die Kammer kann es übernehmen
+const buchLicht = new THREE.SpotLight('#ffd9b0', 0, 12, Math.PI / 6, 0.8, 1.2); scene.add(buchLicht, buchLicht.target)
+
+// Tesla-Bögen: Einschläge an Rand und Rücken, Lauffeuer um den Umriss
+const VF = Bogen.presets.find((p) => p.id === 'VOLTAGE_FILAMENT')
+const TESLA = { ...VF, shape: { ...VF.shape, ribbonWidthWorld: 0.075, strandCount: 6 }, visual: { ...VF.visual, emissiveGain: 1.6, haloWidthFactor: 2.2 } }
+const KANTE = { ...VF, shape: { ...VF.shape, archHeightRatio: 0.07, ribbonWidthWorld: 0.035, strandCount: 3, fan: 0.08 }, visual: { ...VF.visual, emissiveGain: 2.2, haloWidthFactor: 2.4 } }
+const RAND = [[-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0]].map(([x, y]) => { const o = new THREE.Object3D(); o.position.set(x * BREITE / 2, y * HOEHE / 2, ZOBEN + 0.02); buchInnen.add(o); return { o, u: (x + 1) / 2, v: (y + 1) / 2 } })
+const buchNormal = new THREE.Vector3(0, 0, 1)
+const planet = (id) => parts.find((p) => p.id === id).mesh
+const BOEGEN = ['jupiter', 'saturn', 'earth', 'mars'].map((id) => { const ziel = new THREE.Object3D(); buchInnen.add(ziel); const b = Bogen.create({ a: planet(id), b: ziel, preset: TESLA }); scene.add(b.object3d); return { b, ziel, an: 0, warte: 0.5 + rng() * 2, k: 0, k2: 1, dauer: 0.3 } })
+const ABSCHNITTE = [...RAND.map((_, i) => [i, (i + 1) % 8]), [1, 5]].map(([i, j]) => { const b = Bogen.create({ a: RAND[i].o, b: RAND[j].o, preset: KANTE, up: buchNormal }); scene.add(b.object3d); return { b, an: 0 } })
+const lauf = []
+const einschlag = (k, jetzt) => { for (let s = 0; s < 5; s++) { lauf.push({ t: jetzt + s * 0.07, seg: (k + s) % 8, dauer: 0.22 }); lauf.push({ t: jetzt + s * 0.07, seg: (k - 1 - s + 16) % 8, dauer: 0.22 }) } lauf.push({ t: jetzt + (k === 1 || k === 5 ? 0.05 : 0.2), seg: 8, dauer: 0.25 }) }
+
+// Ton der Testbühne (im Spiel: Audio-Host) und Ereignis-Protokoll
+const tonSpieler = createTon({ belegung: await (await fetch('tools/buchmaschine/ton_belegung.json')).json(), karte: await (await fetch('tools/buchmaschine/ton_karte.json')).json() })
+ton.onclick = async () => { if (tonSpieler.laeuft) { tonSpieler.aus(); ton.textContent = 'Ton an'; ton.classList.remove('on') } else { await tonSpieler.an(); ton.textContent = 'Ton aus'; ton.classList.add('on') } }
+const ereignisse = []; let simZeit = 0, speed = 0.08, richtung = 1
+const melde = (typ, staerke = 1, ort = null) => { const e = { typ, t: +simZeit.toFixed(3), staerke: +staerke.toFixed(2), rueck: speed < 0 ? 1 : 0, ort: ort ? ort.toArray().map((v) => +v.toFixed(2)) : null }; ereignisse.push(e); tonSpieler.melde(e); if (ereignisse.length > 4000) ereignisse.splice(0, 2000) }
+
+// Mechanik: Orrery und Sternbild-Umbau (arrangeSign unverändert)
+const sunPart = parts.find((p) => p.id === 'sun')
+const cur = parts.map(() => ({ p: new THREE.Vector3(), q: new THREE.Quaternion() })), from = parts.map(() => ({ p: new THREE.Vector3(), q: new THREE.Quaternion(), s: new THREE.Vector3(1, 1, 1) }))
+const delay = parts.map((_, i) => pointHash(i, 7) * SPREAD)
+let mode = 'mechanism', formen = new Map(), uhr = BLEND + SPREAD, wechselPuls = 0, drive = 0
+const scheibeVon = { p: new THREE.Vector3(0, SCHEIBE_Y, 0), s: 1 }, haengeQ = new THREE.Quaternion(), angekommen = new Set()
+const UPV = new THREE.Vector3(0, 1, 0)
+function go(m, zeichen, blickVon) {
+  if (m === 'form') formen = arrangeSign(parts, zeichen, blickVon)
+  mode = m; uhr = 0; wechselPuls = 1; angekommen.clear(); schlagGemeldet = false
+  parts.forEach((p, i) => { from[i].p.copy(cur[i].p); from[i].q.copy(cur[i].q); from[i].s.copy(p.mesh.scale) })
+  scheibeVon.p.copy(scheibe.position); scheibeVon.s = scheibe.scale.x
+  const n = blickVon.clone().sub(new THREE.Vector3(0, 3.1, 0)).setY(0).normalize(), m4 = new THREE.Matrix4().lookAt(new THREE.Vector3(), n, UPV)
+  haengeQ.setFromRotationMatrix(m4).multiply(new THREE.Quaternion().setFromAxisAngle(UPV, Math.PI))
+  feder.w.add(new THREE.Vector3(rng() - 0.5, 0, rng() - 0.5).multiplyScalar(7)); feder.sv -= 2.2
+  melde('umbau', 0.8)
+}
+// weiches Buch (Feder, Pendel, Stauchen)
+const feder = { p: new THREE.Vector3(0, SCHEIBE_Y + 0.12, 0), v: new THREE.Vector3(), q: new THREE.Quaternion(), w: new THREE.Vector3(), zielAlt: null, vZiel: new THREE.Vector3(), stauch: 0, sv: 0 }
+const tV = new THREE.Vector3(), tQ = new THREE.Quaternion(), achse = new THREE.Vector3()
+function federSchritt(dt, zielP, zielQ, zielS) {
+  if (!feder.zielAlt) { feder.zielAlt = zielP.clone(); feder.p.copy(zielP); feder.q.copy(zielQ) }
+  const vz = tV.subVectors(zielP, feder.zielAlt).divideScalar(Math.max(dt, 1e-4)), acc = vz.clone().sub(feder.vZiel).divideScalar(Math.max(dt, 1e-4)).clampLength(0, 60)
+  feder.vZiel.copy(vz); feder.zielAlt.copy(zielP)
+  const k = 34, c = 2 * Math.sqrt(k) * 0.26
+  feder.v.addScaledVector(tV.subVectors(zielP, feder.p).multiplyScalar(k).addScaledVector(feder.v, -c), dt); feder.p.addScaledVector(feder.v, dt)
+  tQ.copy(zielQ).multiply(feder.q.clone().invert()); if (tQ.w < 0) { tQ.x *= -1; tQ.y *= -1; tQ.z *= -1; tQ.w *= -1 }
+  const ang = 2 * Math.acos(Math.min(1, tQ.w)), s = Math.sqrt(Math.max(1e-8, 1 - tQ.w * tQ.w)); achse.set(tQ.x / s, tQ.y / s, tQ.z / s).multiplyScalar(ang)
+  const ka = 20, ca = 2 * Math.sqrt(ka) * 0.2
+  feder.w.addScaledVector(achse.multiplyScalar(ka).addScaledVector(feder.w, -ca), dt)
+  feder.w.addScaledVector(new THREE.Vector3().crossVectors(UPV, acc).multiplyScalar(-0.09), dt * 60 * dt)
+  const wl = feder.w.length(); if (wl > 1e-6) feder.q.premultiply(tQ.setFromAxisAngle(achse.copy(feder.w).divideScalar(wl), wl * dt))
+  feder.sv += (-acc.y * 0.01 - feder.stauch * 70 - feder.sv * 6) * dt; feder.stauch += feder.sv * dt; feder.stauch = THREE.MathUtils.clamp(feder.stauch, -0.18, 0.18)
+  buch.position.copy(feder.p); buch.quaternion.copy(feder.q); buch.scale.set(zielS * (1 - feder.stauch * 0.5), zielS * (1 - feder.stauch * 0.5), zielS * (1 + feder.stauch))
+}
+
+// Rezept: EIN Lauf steuert den ganzen Loop; Marken schalten, Spuren regeln laufend
+const REZEPT = await (await fetch('./src/data/choreo/buchmaschine_loop.r1.json')).json()
+const bus = createCueBus()
+let rezept = createRezeptLauf(REZEPT, { bus, akteur: 'buchmaschine' }), zeichenNr = 4, schaelenAn = false, schlagGemeldet = true, auto = true
+const KAM = REZEPT.kamera, schuss = (n) => KAM.schuesse[n], WEIT = new THREE.Vector3(...KAM.schuesse.weit.pos)
+let ruck = 0, ruckZeit = 0
+const rucke = (name) => { const a = KAM.ruck[name]; if (a) { ruck = Math.max(ruck, a); ruckZeit = 0 } }
+bus.on('*', (e) => { if (e.name.startsWith('phase:')) phase.textContent = e.name.slice(6) })
+bus.on('zisch', () => { melde('dampf', 1, scheibe.getWorldPosition(new THREE.Vector3())); rucke('zisch') })
+bus.on('umbau', () => { go('form', SIGNS[zeichenNr++ % SIGNS.length].name, WEIT); rucke('umbau') })
+bus.on('einrasten', () => rucke('einrasten'))
+bus.on('schaelen', () => { schaelenAn = true }); bus.on('schaelen:ende', () => { schaelenAn = false })
+bus.on('zerfall', () => { relief.zerfallen(0.5, 1.05, { tempo: 1.1, wucht: 1 }); melde('schlag', 0.7, buch.position); rucke('zerfall') })
+bus.on('zerfall2', () => relief.zerfallen(0.5, 0.5, { tempo: 0.6, wucht: 0.8 }))
+bus.on('rueckbau', () => go('mechanism', null, WEIT))
+bus.on('einfliegen', () => relief.aufbauen(0.5, 0.5, { art: 'einfliegen', tempo: 0.45 }))
+bus.on('haut_zurueck', () => haut.zurueck(0.5, 0.0, { tempo: 0.55 }))
+bus.on('landen', () => rucke('landen'))
+bus.on('rezept:fertig', () => { relief.zuruecksetzen(); rezept = createRezeptLauf(REZEPT, { bus, akteur: 'buchmaschine' }) })
+
+// Kamera-Regie: Schüsse aus dem Rezept, Feder zum Ziel (Gleitfahrt), Schnitt = Sprung mit kurzem Nachfedern, Ruck an Marken
+const kamZiel = { p: new THREE.Vector3(), l: new THREE.Vector3(), fov: 38 }, kam = { p: new THREE.Vector3(10, 6, 12), v: new THREE.Vector3(), l: new THREE.Vector3(0, 3, 0), lv: new THREE.Vector3() }
+let aktSchuss = null
+function schussZiel(n, t) {
+  const S = schuss(n)
+  if (S.art === 'fix') { kamZiel.p.set(...S.pos); kamZiel.l.set(...S.blick) }
+  else if (S.art === 'orbit') { const a = t * S.tempo * Math.PI * 2 + 0.7; kamZiel.p.set(S.mitte[0] + Math.sin(a) * S.radius, S.hoehe, S.mitte[2] + Math.cos(a) * S.radius); kamZiel.l.set(...S.mitte) }
+  else { const z = buch.getWorldPosition(new THREE.Vector3()), d = WEIT.clone().sub(z).setY(0).normalize().applyAxisAngle(UPV, S.azimut || 0)
+    kamZiel.p.copy(z).addScaledVector(d, S.abstand).add(new THREE.Vector3(0, S.hoehe, 0)); kamZiel.l.copy(z).add(new THREE.Vector3(0, S.tiefer || 0, 0)) }
+  kamZiel.fov = S.fov || 38
+}
+function regieSchritt(dt, t) {
+  const folge = KAM.folge.filter((f) => f.ab <= t + 1e-6).pop()
+  if (folge && folge !== aktSchuss) { aktSchuss = folge; schussZiel(folge.schuss, simZeit)
+    if (folge.schnitt) { kam.p.copy(kamZiel.p).addScaledVector(kamZiel.p.clone().sub(kamZiel.l).normalize(), 0.5); kam.l.copy(kamZiel.l); kam.v.set(0, 0, 0); kam.lv.set(0, 0, 0); camera.fov = kamZiel.fov } }
+  if (aktSchuss) schussZiel(aktSchuss.schuss, simZeit)
+  const k = KAM.feder.k, c = 2 * Math.sqrt(k) * KAM.feder.daempfung
+  kam.v.addScaledVector(tV.subVectors(kamZiel.p, kam.p).multiplyScalar(k).addScaledVector(kam.v, -c), dt); kam.p.addScaledVector(kam.v, dt)
+  kam.lv.addScaledVector(tV.subVectors(kamZiel.l, kam.l).multiplyScalar(k * 1.6).addScaledVector(kam.lv, -c * 1.3), dt); kam.l.addScaledVector(kam.lv, dt)
+  camera.fov += (kamZiel.fov - camera.fov) * Math.min(1, dt * 2); camera.updateProjectionMatrix()
+  ruckZeit += dt; const r = ruck * Math.exp(-KAM.abklingen * ruckZeit), w = simZeit * 37
+  camera.position.copy(kam.p).add(new THREE.Vector3(Math.sin(w) * r, Math.sin(w * 1.3 + 1) * r, Math.sin(w * 0.7 + 2) * r))
+  camera.lookAt(tV.copy(kam.l).add(new THREE.Vector3(Math.sin(w * 1.1 + 3) * r * 0.5, Math.sin(w * 0.9) * r * 0.5, 0)))
+}
+
+const pos = new THREE.Vector3(), quat = new THREE.Quaternion(), spinQ = new THREE.Quaternion()
+for (const [i, p] of parts.entries()) { p.pose(0, pos, quat); cur[i].p.copy(pos); cur[i].q.copy(quat) }
+const LIEGEN = new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI / 2 + 0.18, 0, 0))
+let zahnAlt = 0, blitzZeit = 0, gelenkDampf = 3
+function schritt(dt) {
+  simZeit += dt
+  if (auto) { rezept.tick(dt); bus.flush() }
+  const sp = (n, d) => (auto ? rezept.spur(n) ?? d : d)
+  speed = 0.08 * richtung * sp('tempo', 1)
+  drive += speed * dt; uhr += dt; wechselPuls = Math.max(0, wechselPuls - dt * 0.6)
+  const zahn = Math.floor(drive * 36); if (zahn !== zahnAlt) { zahnAlt = zahn; if (mode === 'mechanism') { feder.v.y += 0.55; feder.sv -= 0.9 } if (speed !== 0) melde('zahn', 0.6) }
+  maschine.position.y = sp('duck', 0)
+  SPOTS.forEach((s, i) => (s.intensity = SPOT_I[i] * sp('licht', 1)))
+  { const bw = buch.getWorldPosition(new THREE.Vector3()), n = new THREE.Vector3(0, 0, 1).applyQuaternion(buch.quaternion)
+    buchLicht.position.copy(bw).addScaledVector(n, 3.2).add(new THREE.Vector3(0, 1.4, 0)); buchLicht.target.position.copy(bw)
+    buchLicht.intensity += ((mode === 'form' ? 4 : 1.5) * sp('licht', 1) - buchLicht.intensity) * Math.min(1, dt * 3) }
+  // Kantenlichter folgen dem Geschehen (wie Verfolger auf einer Bühne): Ziel gleitet zur Mitte zwischen Maschine und Buch, hängt das Buch, ganz zum Buch
+  { const bw = buch.getWorldPosition(tV), ziel = mode === 'form' ? bw : bw.clone().lerp(new THREE.Vector3(0, 3.0, 0), 0.5); kammer.group.worldToLocal(ziel)
+    for (const s of SPOTS) s.target.position.lerp(ziel, 1 - Math.exp(-dt * 2.5)) }
+  const D = drive * Math.PI * 2
+  parts.forEach((p, i) => {
+    p.pose(D, pos, quat); let sc = 1, zq = quat
+    if (mode === 'form') { const t = formen.get(p); if (t) { pos.copy(t.position); sc = t.scale; if (t.faced) { spinQ.setFromAxisAngle(UPV, p.spin(D)); zq = t.quaternion.clone().multiply(spinQ) } else zq = t.quaternion } }
+    const ts = typeof sc === 'number' ? new THREE.Vector3(sc, sc, sc) : sc, k = easeInOut(THREE.MathUtils.clamp((uhr - delay[i]) / BLEND, 0, 1))
+    if (k >= 1) { cur[i].p.copy(pos); cur[i].q.copy(zq); p.mesh.scale.copy(ts); if (uhr < BLEND + SPREAD + 0.1 && !angekommen.has(i)) { angekommen.add(i); if (p.id !== 'sun') melde('einrasten', Math.min(1, p.size), cur[i].p) } }
+    else { cur[i].p.lerpVectors(from[i].p, pos, k); cur[i].p.y += Math.sin(Math.PI * k) * Math.min(1.2, from[i].p.distanceTo(pos) * 0.12); cur[i].q.copy(from[i].q).slerp(zq, k); p.mesh.scale.lerpVectors(from[i].s, ts, k) }
+    p.mesh.position.copy(cur[i].p); p.mesh.quaternion.copy(cur[i].q)
+  })
+  const si = parts.indexOf(sunPart), kb = easeInOut(THREE.MathUtils.clamp((uhr - delay[si]) / BLEND, 0, 1)), scheibeDreh = shaftAngle(train, 'mercury', D)
+  const zielScheibeP = mode === 'form' ? sunPart.mesh.position.clone().add(new THREE.Vector3(0, 0.55, 0)) : new THREE.Vector3(0, SCHEIBE_Y, 0)
+  scheibe.position.lerpVectors(scheibeVon.p, zielScheibeP, kb); scheibe.position.y += Math.sin(Math.PI * kb) * 0.8
+  scheibe.scale.setScalar(THREE.MathUtils.lerp(scheibeVon.s, mode === 'form' ? 0.45 : 1, kb)); scheibe.quaternion.setFromAxisAngle(UPV, scheibeDreh)
+  const sw = scheibe.getWorldPosition(new THREE.Vector3())
+  let zielP, zielQ, zielS
+  if (mode === 'form' && kb > 0.5) { zielS = 0.75; zielP = sw.clone().add(new THREE.Vector3(0, -0.12 - HOEHE * zielS * 0.5, 0)); zielQ = haengeQ.clone() }
+  else { zielS = 1; zielP = sw.clone().add(new THREE.Vector3(0, 0.05 + 0.1 * scheibe.scale.x, 0)); zielQ = new THREE.Quaternion().setFromAxisAngle(UPV, scheibeDreh).multiply(LIEGEN) }
+  federSchritt(dt, zielP, zielQ, zielS)
+  if (!schlagGemeldet && kb >= 1) { schlagGemeldet = true; melde('schlag', THREE.MathUtils.clamp(feder.v.length() * 0.25 + 0.5, 0.4, 1), buch.position) }
+  if (mode === 'mechanism' && speed !== 0) { gelenkDampf -= dt; if (gelenkDampf <= 0) { gelenkDampf = 3 + rng() * 2; melde('dampf', 0.3, parts[Math.floor(rng() * parts.length)].mesh.position) } }
+  const laufen = Math.abs(speed) / 0.08
+  tonSpieler.rascheln(haut.lose / 300)
+  buch.updateMatrixWorld(true)
+  haut.update(dt, { welt: haut.gruppe, boden: BODEN + 0.01, laufen: Math.max(laufen, 0.2) })
+  relief.update(dt, { boden: BODEN })
+  // Blitze: Schläge auf Randpunkte; in der Schäl-Spanne löst jeder zweite Einschlag eine Welle aus, darunter wächst das Relief
+  blitzZeit += dt; buchNormal.set(0, 0, 1).applyQuaternion(buch.quaternion)
+  const reiz = sp('reiz', 0.7) + wechselPuls * 1.5
+  for (const B of BOEGEN) {
+    if (B.an > 0) { B.an -= dt; const f = 1 - Math.max(0, B.an) / B.dauer; B.ziel.position.lerpVectors(RAND[B.k].o.position, RAND[B.k2].o.position, f * 0.6); if (B.an <= 0) B.warte = (0.4 + rng() * 1.6) / reiz }
+    else { B.warte -= dt; if (B.warte <= 0) { B.dauer = B.an = 0.25 + rng() * 0.5; B.k = Math.floor(rng() * 8); B.k2 = (B.k + (rng() < 0.5 ? 1 : 7)) % 8; B.ziel.position.copy(RAND[B.k].o.position); einschlag(B.k, blitzZeit); melde('blitz', 0.4 + rng() * 0.6, RAND[B.k].o.getWorldPosition(new THREE.Vector3()))
+      if (schaelenAn && rng() < 0.6) { const { u, v } = RAND[B.k]; melde('schaelen', 0.7); haut.welle(u, v, { tempo: 1.2, reichweite: 0.28 + rng() * 0.22 }); relief.aufbauen(u, v, { tempo: 1.2, reichweite: 0.28 + 0.22, verzoegerung: 0.85 }) } } }
+    B.b.update(dt, { camera, opacity: B.an > 0 ? 0.6 + 0.4 * Math.abs(Math.sin(simZeit * 50 + B.warte)) : 0 }); B.b.object3d.visible = B.an > 0
+  }
+  for (let i = lauf.length - 1; i >= 0; i--) { const L = lauf[i]; if (blitzZeit >= L.t) { ABSCHNITTE[L.seg].an = Math.max(ABSCHNITTE[L.seg].an, L.dauer); lauf.splice(i, 1) } }
+  for (const A of ABSCHNITTE) { if (A.an > 0) A.an -= dt; A.b.update(dt, { camera, opacity: A.an > 0 ? 0.7 + 0.3 * Math.abs(Math.sin(blitzZeit * 40 + A.an * 9)) : 0 }); A.b.object3d.visible = A.an > 0 }
+  kammer.update(dt, { musik: { kick: Math.max(0, (sp('wand', 0.4) - 0.4) * 0.8) } })
+  if (regieAn) regieSchritt(dt, rezept.L.t)
+}
+let regieAn = true, live = true
+rw.onclick = () => { richtung = -1; for (const b of ['rw', 'st0', 'fw']) document.getElementById(b).classList.toggle('on', b === 'rw') }
+st0.onclick = () => { richtung = 0; for (const b of ['rw', 'st0', 'fw']) document.getElementById(b).classList.toggle('on', b === 'st0') }
+fw.onclick = () => { richtung = 1; for (const b of ['rw', 'st0', 'fw']) document.getElementById(b).classList.toggle('on', b === 'fw') }
+au.onclick = () => { auto = !auto; au.classList.toggle('on', auto) }
+regie.onclick = () => { regieAn = !regieAn; regie.classList.toggle('on', regieAn); controls.enabled = !regieAn; if (!regieAn) { controls.target.copy(kam.l); controls.update() } }
+let uhrAlt = performance.now()
+function frame() { const t = performance.now(), dt = Math.min(0.05, (t - uhrAlt) / 1000); uhrAlt = t; if (live) { schritt(dt); if (!regieAn) controls.update(); composer.render() } requestAnimationFrame(frame) }
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); composer.setSize(innerWidth, innerHeight) })
+const kammerBereit = () => Promise.race([Promise.resolve(kammer.bereit).catch(() => null), new Promise((r) => setTimeout(r, 8000))])
+window.__record = async ({ dir, frames, w = 1280, h = 720 }) => {
+  await kammerBereit(); live = false; renderer.setPixelRatio(1); renderer.setSize(w, h, false); composer.setPixelRatio(1); composer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix()
+  ereignisse.length = 0; const t0 = simZeit, rascheln = []
+  for (let i = 0; i < frames; i++) { schritt(1 / 30); rascheln.push(+(Math.min(1, haut.lose / 300)).toFixed(3)); composer.render(); await fetch(`/save?f=${dir}/${String(i).padStart(4, '0')}.png`, { method: 'POST', body: renderer.domElement.toDataURL('image/png') }) }
+  await fetch(`/save?f=${dir}/ereignisse.json`, { method: 'POST', body: JSON.stringify({ t0, fps: 30, frames, ereignisse: ereignisse.map((e) => ({ ...e, t: +(e.t - t0).toFixed(3) })), rascheln }) })
+  return { rezeptT: +rezept.L.t.toFixed(2), phase: rezept.L.phase, mode, wuerfel: relief.stand().wuerfel, flocken: haut.lose }
+}
+window.__info = () => ({ rezeptT: +rezept.L.t.toFixed(2), phase: rezept.L.phase, mode, kammerInfo: kammer.flaeche?.info ?? null })
+frame()
+</script>

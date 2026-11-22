@@ -1,0 +1,243 @@
+{
+ "schema": "kfb.hn-media/1",
+ "revision": "r1",
+ "set": "help-deck-k3",
+ "baseUrl": "./",
+ "visibility": "private",
+ "curator": "WSV",
+ "note": "K3-Testmaterial Help-Deck Seite 3: Figuren freigestellt (imgtool mask2), Karten und Seite ohne weißen Rand (unwhite), Textfelder je Karte in Anteilen der Seite. Gehört in die Registry (M7). · Artefakt-Fassung: Bilder verkleinert (WebP/JPG < 2 MB), sha256 entfernt.",
+ "items": [
+  {
+   "id": "help.01.figure",
+   "kind": "figure",
+   "file": "help/figur_01.webp",
+   "bytes": 175416,
+   "mime": "image/webp",
+   "width": 1600,
+   "height": 1271,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "card": 1,
+   "page": 3,
+   "quadrant": 0
+  },
+  {
+   "id": "help.01.card",
+   "kind": "card",
+   "file": "help/karte_01.jpg",
+   "bytes": 355959,
+   "mime": "image/jpeg",
+   "width": 2000,
+   "height": 1120,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "card": 1,
+   "page": 3,
+   "quadrant": 0,
+   "zones": {
+    "title": [
+     0.079,
+     0.032,
+     0.307,
+     0.064
+    ],
+    "power": [
+     0.318,
+     0.192,
+     0.175,
+     0.122
+    ],
+    "lore": [
+     0.339,
+     0.333,
+     0.154,
+     0.147
+    ]
+   }
+  },
+  {
+   "id": "help.02.figure",
+   "kind": "figure",
+   "file": "help/figur_02.webp",
+   "bytes": 145366,
+   "mime": "image/webp",
+   "width": 1600,
+   "height": 1367,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "card": 2,
+   "page": 3,
+   "quadrant": 1,
+   "cutBottom": true
+  },
+  {
+   "id": "help.02.card",
+   "kind": "card",
+   "file": "help/karte_02.jpg",
+   "bytes": 334913,
+   "mime": "image/jpeg",
+   "width": 2000,
+   "height": 1118,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "card": 2,
+   "page": 3,
+   "quadrant": 1,
+   "zones": {
+    "title": [
+     0.518,
+     0.032,
+     0.332,
+     0.077
+    ],
+    "power": [
+     0.775,
+     0.192,
+     0.157,
+     0.128
+    ],
+    "lore": [
+     0.771,
+     0.339,
+     0.164,
+     0.141
+    ]
+   }
+  },
+  {
+   "id": "help.03.figure",
+   "kind": "figure",
+   "file": "help/figur_03.webp",
+   "bytes": 151264,
+   "mime": "image/webp",
+   "width": 1600,
+   "height": 787,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "card": 3,
+   "page": 3,
+   "quadrant": 2
+  },
+  {
+   "id": "help.03.card",
+   "kind": "card",
+   "file": "help/karte_03.jpg",
+   "bytes": 378948,
+   "mime": "image/jpeg",
+   "width": 2000,
+   "height": 1119,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "card": 3,
+   "page": 3,
+   "quadrant": 2,
+   "zones": {
+    "title": [
+     0.075,
+     0.531,
+     0.261,
+     0.064
+    ],
+    "power": [
+     0.075,
+     0.877,
+     0.239,
+     0.096
+    ],
+    "lore": [
+     0.371,
+     0.871,
+     0.122,
+     0.102
+    ]
+   }
+  },
+  {
+   "id": "help.04.figure",
+   "kind": "figure",
+   "file": "help/figur_04.webp",
+   "bytes": 115794,
+   "mime": "image/webp",
+   "width": 1600,
+   "height": 661,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "card": 4,
+   "page": 3,
+   "quadrant": 3
+  },
+  {
+   "id": "help.04.card",
+   "kind": "card",
+   "file": "help/karte_04.jpg",
+   "bytes": 375388,
+   "mime": "image/jpeg",
+   "width": 2000,
+   "height": 1115,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "card": 4,
+   "page": 3,
+   "quadrant": 3,
+   "zones": {
+    "title": [
+     0.514,
+     0.525,
+     0.411,
+     0.07
+    ],
+    "power": [
+     0.521,
+     0.877,
+     0.239,
+     0.077
+    ],
+    "lore": [
+     0.818,
+     0.896,
+     0.114,
+     0.083
+    ]
+   }
+  },
+  {
+   "id": "help.p03",
+   "kind": "page",
+   "file": "help/seite_03.jpg",
+   "bytes": 595136,
+   "mime": "image/jpeg",
+   "width": 2048,
+   "height": 1144,
+   "deck": "help_i_am_a_human",
+   "rights": {
+    "license": "KFB-OWN",
+    "basis": "eigenes Deck (Georg v. Westphalen)"
+   },
+   "page": 3
+  }
+ ]
+}
