@@ -57,6 +57,7 @@ Kein Briefing ohne ABSICHT und ZIEL. Das Brief-Gate (`tools/brief_gate.py`, `too
 - HUD: bestehende Positionen bleiben, diegetisch, aus dem Kit.
 - Bewegung: echte Clips (Motion Library, KayKit, Mixamo) statt Eigenbau; Extremposen auf Ausholung und Aufprall; Ease-in/-out, Holds, keine linearen Fahrten.
 - Effekte: Ursache und Richtung lesbar, eine physikalische Vorstellung, keine Kameratricks.
+- Texte und Stimme: nie aus dem Nichts. Quelle = Georgs Zeilen oder Sprachnotiz, Kartentexte (Triplet-SSOT), Golden Samples (`replies/META_TEXTE/GOLDEN_SAMPLES_AQUA_R1.md`). Claude schneidet und setzt ein, erfindet keine Witze. Fehlt Material: Georg um 3–5 Kernzeilen bitten. Blind-Text-Kritik gegen Golden und Anti-Samples (`replies/META_TEXTE/ANTI_SAMPLES_R1.md`); ein Slop-Marker = FAIL.
 
 **Stufe D · Belege**
 - Belege im Spiel-Look und mit festen Kamera-Presets; Bewegung als Video.
@@ -98,3 +99,4 @@ Maschinenlesbar in `tools/qa_matrix.r1.json`, Prompt in `tools/CRITIC_BLIND_PROM
 WS0 pflegt diese Seite. Änderungen nur mit Register-Zeile und neuer Versionszeile unten. Gespiegelt auf GitHub durch `sync_github.sh` (kayfabizarro, Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`).
 
 - R1 · 23.11.2026 · Erstfassung nach Georgs Workflow (V-2096, V-2097).
+- R1.1 · 23.11.2026 · Texte und Stimme in Stufe C, Anti-Samples (V-2098, Falkenstein-FAIL).
