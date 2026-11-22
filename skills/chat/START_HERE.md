@@ -1,3 +1,17 @@
+## 2026-11-23 · KFB SOP R1 · ONE ENTRY FOR EVERY SESSION (V-2097)
+
+**Read first, before anything below:** [KFB_SOP_R1.md](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/KFB_SOP_R1.md) (the single maintained version, on the register mirror branch; this block is only a pointer).
+
+- Precedence: Georg's words → hard guardrails → canon/register → SOP → specs → local habits.
+- One loop: inventory → mirror the intent in one sentence → target as image (existing asset/genre refs; webchat only where a look is missing, fetched by WS0) → one owner builds → craft gates in code → silent blind critic (≤ 5 rounds, stop after 2 without improvement) → WS0 → Georg.
+- Brief form: ABSICHT · GENRE · OWNER · ZIEL · FERTIG · GRENZEN · DETAIL.
+- Blind-critic matrix A–H: [qa_matrix.r1.json](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/tools/qa_matrix.r1.json), prompt [CRITIC_BLIND_PROMPT.md](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/tools/CRITIC_BLIND_PROMPT.md). PASS = no axis < 7, mean ≥ 8.
+- Texts never from scratch (Georg's lines, card texts, golden samples); [anti-samples](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/ANTI_SAMPLES_R1.md).
+- Missing 3D models: WSB via official Meshy MCP, [workflow](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/TOOLS/MESHY_MCP_WORKFLOW_R1.md) (V-2099).
+- Register authority: `DECISIONS.md` V-numbers on the same mirror branch. Where this router conflicts with the SOP, the SOP wins.
+
+---
+
 ## 2026-11-22 · KFB REALITY REMIX COMPLETE WS0 CHAT META HANDOFF
 
 Georg's whole Reality Remix / Hackable Multiverse / Creator Commons conversation is consolidated in the current game owner **Draft [PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155)**, review branch `planning/reality-remix-multiverse-r0-2026-11-22`:
