@@ -1,3 +1,17 @@
+## R25 Return · Dice-Sum CLAIM + 50-card collection economy · 22 November 2026
+
+**Current user-directed game direction:** capture of the die-free central FOCUS through a probability roll against **S = visible HATE+FEAR+HOPE faces (3..18)**; early claims difficult, later claims easier, but another human can claim first. Georg prefers **collecting trophy cards** over emptying three-card hands. Public narrative cards on six constant faction seats should turn over regularly, especially after a capture. R23 spoken accusation-as-MOVE+TURN survives; no automatic role-based reward.
+
+[Complete R25 mechanics comparison](R25_NARRATIVE_CAPTURE_SUM_PRESSURE_CARD_ECONOMY_2026-11-22.md): **A D20≤S** linear15%..90%, or **B separate 3D6≤S** nonlinear0.46%..100%; original three colored shared pressure dice never rerolled. Optional CLAIM after completed die beat, one real hand card as named stake, center trophy to acting HUMAN only on success. **Failure A:** discard staked card (real cost), or **B:** discard-and-draw one replacement (softer card cycling); extra free draw on fail is *not* inherently punishment under trophy victory. Optional PUBLISH of a hand narrative on one's own outer faction slot, no new permanent printed powers. **Capture refresh A:** replace center and exactly **one** die-bearing outer narrative, keeping six occupied and three dice legal/reset1; **B:** replace all **three** dice-bearing outer narratives plus center. Stock exhaustion closes no-phantom case, none of these design options silently accepted. First to three center trophies is a candidate finite finish, not yet balanced. R23 fixed beat19 TILT does not remain universally true once optional DRAW/capture resets exist.
+
+[Reproducible R25 fixture](R25_CAPTURE_CARD_LEDGER_PROBE.js) fetched from GitHub and run in Code Mode V8 with Node assert shim: **20 constructed scripts, 150 fifty-card conservation audits, 120 asserted legal transitions, 5 stock-shortage guards, all PASS**. Independent smaller Node sanity performed with equivalent transitions, not repository source under Node. **No full games, no player tests, no browser/Stage/Site, no independent balance acceptance.** Original R19 HTML preserved. Project/source/draft PR remain `georg-doc/kayfabizarro` / `design/invisible-handshake-paper-r0-2026-11-17` / #475; no merge.
+
+**Parallel scene route corrected:** Georg put R24 **directly into existing Claude Design**, not WSB. Blender MCP delegation remains only conditional on a verified missing source/rig gap; no claim WSB is implementing anything. [R24 earlier brief](WS0_WSG_WSB_BOARDGAME_SCENE_BLENDER_MCP_BRIEF_R24_2026-11-22.md) now carries an explicit actual-executor override.
+
+**ONE NEXT GATE:** real-card 2H+4NPC short test: D20 vs 3D6 choice clarity, hand stake lose-vs-cycle, Focus trophy with 1 vs3 outer narrative replacements, then brief 6H tempo/seat check; Georg KEEP/TUNE/FAIL on Capture+Hand+Refresh, not on the 3D scene.
+
+---
+
 ## R24 Return · 3D tabletop / boardgame scene briefing · 22 November 2026
 
 **Georg authorization:** Create a reusable physical **KFP cutting-mat tabletop scene** for R23's six-faction hex and center black eye-tower, with landscape 1.74:1 cards, standees/slots, red/yellow/blue six-sided clay Domination dice, subtle eye tracking/energy paths and **actual Alpha/Omega** robot die manipulation for tutorial/karaoke. **WS0 coordinates; WSG (Claude Design) visualizes; WSB (Blender MCP) implements — NOT WSP.** This is scene production planning, **not** acceptance of new rules or a second game runtime.
