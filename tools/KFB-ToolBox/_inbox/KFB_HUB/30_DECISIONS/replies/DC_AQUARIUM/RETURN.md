@@ -1,5 +1,12 @@
 # DC Aquarium · Feinschliff-Chat → WS0 (neueste oben)
 
+## R-027 · 22.11.2026 · Leben als Seitenansicht des Fisches (WS0-Korrektur) · Artefakt v32
+- Die Leben zeigen jetzt die Seitenansicht des gerade gespielten Fisches: einmal je Fischart aus dem echten Modell gerendert, Profil von der Seite mit KFB-Auge, Kopf nach rechts, eng zugeschnitten.
+- Verlorene Leben sind eine dunkle Silhouette derselben Form.
+- Beim Kapern wechselt die Form auf den neuen Fisch, der Lebensstand bleibt.
+- Kein gemaltes Symbol mehr; die Umfärbung des Clownfisch-Symbols ist raus.
+- Beleg: `leben_fisch_profile_r2.png` (alle sieben Fische, je mit einem verlorenen Leben ab dem dritten Fisch).
+- Die übrigen Punkte aus WS0s Nachricht (Auge, Fisch-Akten R2, Hai, Ringe, Silber) stehen schon in R-026.
 ## R-026 · 22.11.2026 · Georgs Hub-Liste (q827–q835) + Parcours-Runde + Modi · Artefakt v31
 
 Je Punkt ein Beleg in diesem Ordner.
