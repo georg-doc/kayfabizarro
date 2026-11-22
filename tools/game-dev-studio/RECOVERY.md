@@ -189,3 +189,13 @@ Catalog note:
 `tools/game-dev-studio/catalog.json` now contains this package, but the current public Studio UI still renders `packages[0]` only. No package-selector/public Eumel preview is claimed by this registration.
 
 Next Eumel gate remains the isolated three2p5d browser/visual review before Resident or Project-Island runtime work.
+
+
+## Additive research cursor · 2026-11-22 · LATO.2 Mac-first mesh pilot
+
+**State:** RESEARCH / DOCUMENTED · NOT IMPLEMENTED. This does not override active Pilot 01, Eumel, Theatre Curtain or their separate receiving gates.  
+**Brief:** `tools/game-dev-studio/research/LATO2_MAC_MESH_PILOT_2026-11-22.md`.  
+**Preserved owners:** Asset Registry/Librarian (canonical source), `tools/img2threejs` (authoring donor), Game Dev Studio (package/3D QA), named runtime receiver (World/Race), no second renderer.
+**Hardware decision:** official LATO.2 depends on NVIDIA CUDA compiler/extensions; M1 Max 32 GB cannot run it out of the box. Use Mac Blender/GLB viewer and optionally tested Mac-native TRELLIS-Silicon/MLX (NOT LATO port); run LATO inference only in a suitable remote NVIDIA environment or external demo using rights-cleared source. No custom training necessary.
+**Actual proof this turn:** GitHub source read and added documentation only. Inference 0; mesh 0; screenshots/browser/Stage 0; consumer 0. No public/Live claim.
+**One next gate for this research lane:** `GDS_LATO2_ONE_ASSET_VISUAL_COMPARISON_POC` — select/isolate one exact safe existing asset, obtain ≥1 actual LATO derivative and comparable Decimate model, then show and QA them side-by-side in the existing 3D Studio lane. If unavailable, persist real failure evidence instead of substitute geometry.
