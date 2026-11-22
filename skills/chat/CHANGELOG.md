@@ -1,3 +1,14 @@
+## 2026-11-22 · PROPOSAL · *Hilfe, ich bin ein Mensch!* Human Nature Book Processor Scenelet R0
+
+- New source-grounded **concept only** on `planning/kfb-human-nature-book-processor-scenelet-r0-2026-11-22`; no WorldBuilder / Card / Audio / physics code or Stage/Live deployment.
+- Existing `index.html` narrative (**The Death of the Author / Der Tod des Autors** → **The Fractal Almanac**) is the primary story donor: the book is cut, contextual relations are reopened and panels recombined. This prevents a new lore origin.
+- Proposed physical book display (real front/spine/back and open spreads), reversible machine cycle (display → cut/scan → misinterpret → rescue/recompose), optional Card encounter, and source-first 3D proof.
+- `help_i_am_a_human` = 56-card candidate, distinct from alternate 56-card `human_nature_uncut_hilfe_ich_bin_ein_mensch` and 36-card `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc`. Inspected card mappings are `mappingVerified:false`; do not crop unverified PDF cards.
+- Adam Chernick Codevember 06-Orrery inspected, MIT gear mechanism donor only; actual browser visual isolation and 3D integration **0**.
+- Publisher sources confirm 248-page book; original print atlas/spread missing from this slice. Westend public copy says 42 questions, current KFB narrative says 40; keep as source discrepancy, not a new rule.
+- Files: `skills/chat/concepts/KFB_HUMAN_BOOK_PROCESSOR_SCENELET_R0_2026-11-22.md`, matching `SOURCE_R0_2026-11-22.json`, `TEST_REPORT_R0_2026-11-22.md` and `RETURN_R0_2026-11-22.md`.
+- **Gate:** source-proven genuine book 3D asset + isolated original Orrery demonstration before any world placement or machinery runtime. Existing Island R4 STOP/NO MVP remains intact; no router/Hub/Stage route changed, no merge/promotion.
+
 ## 2026-11-04 · WS0 Black Ink Blob Sprite Family docs/intake candidate
 
 - Captured nine Georg-visual-PASS 12-character theme pairs into an 18-source-sheet SHA-256 intake ledger, 108 mechanical sprite candidates and reusable L0/L1/L2 footless-blob prompt/QA grammar.
