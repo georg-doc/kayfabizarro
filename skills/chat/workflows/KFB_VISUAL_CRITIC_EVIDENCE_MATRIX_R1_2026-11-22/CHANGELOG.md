@@ -23,3 +23,10 @@
 - Three honest dispatch levels: GitHub queued issue + human/agent resume; deterministic GitHub Actions/webhook; optional subscribed MCP Events to Work/Dot (not ordinary dormant Webchat); no unverified push into arbitrary open Claude chats.
 - 11/11 limited schema checks PASS, no actual automated event subscriptions/deliveries. Existing 8/8 + 9/9 structural results retained.
 - Repo/Runtime owners unchanged, no merge or publish. Current single next gate: `KFB_WEBCHAT_JOB_PUSH_POC_01`, a 1-job readback plus WS0 routing proof.
+
+## 2026-11-22 · R1c · Cross-chat priority decisions → single WS0 queue (proposal)
+- Georg authorized sending the proposed future Visual Studio working method to WS0 and requested additive P0/P1/P2/P3 prioritization inside progressive-disclosure Webchat review.
+- Added `PRIORITY_QUEUE_R1.md`, `priority-update.schema.json` and a clearly synthetic example; preserve every priority revision as an additive event, never replace Georg's explicit requested tier with a hidden AI ranking.
+- Separate `priority`, `readiness`, `work status`, `technical severity`, and `design approval`. A P0 can be blocked on a source; P3 can still be a quick win without turning green into "done".
+- GitHub Issue/PR remains the shared SSOT across chats; WS0 receives an explicit issue and then must still acknowledge/triage it before a runtime builder is considered started. No duplicate runtime owner or new standing model poller.
+- **11/11 limited structural checks PASS** (cumulative 39/39 across four proposals); zero operational queue/UI/Stage tests. Single technical gate `KFB_WEBCHAT_PRIORITY_ROUNDTRIP_01` incorporates the earlier job push check.
