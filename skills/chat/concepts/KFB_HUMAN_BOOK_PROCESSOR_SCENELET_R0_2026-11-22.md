@@ -8,6 +8,14 @@
 **Stage:** NONE; concept-only, no public preview or route to register.  
 **Protected state:** Island R4 STOP / NO MVP, no R5, no new geometry-authoring grant; no overwrite of existing book, deck, viewer, Card Builder, Ink, HUD, Sound or Style SSOT.
 
+## ADDITIVE R1 PRODUCTION DIRECTION · 2026-11-22 · GEORG DECISION
+
+**WS0 Lead** spawns **one dedicated Claude child chat** to build the complete Book Processor module. **WSB / Blender MCP** produces the authentic 3D BOOK first, with exact print textures, page rig and export. The child Claude owns only the additive machine/scenelet module; existing WB2 WorldBuilder/WSA and Card/PDF, audio, clay shader and movement owners remain unchanged. **Spawn/build/publication are NOT yet performed.**
+
+**Visual decision:** Orrery is a **mechanical donor only**; its polished golden/brass presentation is rejected. KFB target = worn **rusty DIY / handmade salvage** with matte iron, chipped utilitarian paint, hard-rubber/toy gears, selected clay-molded elements, visible repairs, tasteful grime and skewed silhouette. Functional meshing tooth profiles, axle pivots and gear ratios must remain true while non-contact spokes/hubs/covers/brackets carry cartoon asymmetry; no pseudofunctional wobble, glittering surfaces, repetitive grime or generic steampunk clutter.
+
+**Binding new execution brief:** `skills/chat/concepts/KFB_HUMAN_BOOK_PROCESSOR_WS0_WSB_CLAUDE_EXECUTION_BRIEF_R1_2026-11-22.md`. First new visual decision is an isolated real Orrery gear pair with three materially distinct salvage adaptations, and WSB's actual real-book asset source proof; no world geometry, no Stage, no new runtime owner. Existing R0 S0 source isolation is preserved.
+
 ## 1. Source facts and provenance
 
 ### Book
