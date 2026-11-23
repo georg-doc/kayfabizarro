@@ -1,0 +1,2149 @@
+{
+  "schema": "kfb.bnwn.sponsor-stingers.authoring.v1",
+  "title": "Brave New World News — Sponsor Stingers R2",
+  "status": "AUTHORING_CANDIDATE",
+  "count": 150,
+  "new": 144,
+  "retained": 6,
+  "tts_script": "BNWN_Sponsor_Stingers_R2_150_TTS.txt",
+  "separator_ssml": "<break time=\"1.6s\" />",
+  "mix_owner": "Existing KFB Audio; no independent AudioContext or event owner.",
+  "cues": [
+    {
+      "id": "BNWN-SPON-001",
+      "source": "R1_RETAINED",
+      "category": "LEGACY_ID",
+      "text": "Sponsored by Official Reality. Same events. Better packaging.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "station_id",
+        "transition"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-002",
+      "source": "R1_RETAINED",
+      "category": "LEGACY_ID",
+      "text": "Your satisfaction has been measured. Thank you for enjoying it.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "station_id",
+        "transition"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-003",
+      "source": "R1_RETAINED",
+      "category": "LEGACY_ID",
+      "text": "No need to read the terms. We have already read you.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "station_id",
+        "transition"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-004",
+      "source": "R1_RETAINED",
+      "category": "LEGACY_ID",
+      "text": "One city. One version. Unlimited updates.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "station_id",
+        "transition"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-005",
+      "source": "R1_RETAINED",
+      "category": "LEGACY_ID",
+      "text": "Independent thinking is now available on our family plan. Family members cannot be added.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "station_id",
+        "transition"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-006",
+      "source": "R1_RETAINED",
+      "category": "LEGACY_ID",
+      "text": "This announcement was brought to you by Normal. Normal is subject to change.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "station_id",
+        "transition"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-007",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Trust the experts! Every expert comes pre-trusted, so you don't have to.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-008",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Follow the science! It has been redirected through Investor Relations.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-009",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Consensus is in! The invoice is attached.",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-010",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Peer reviewed. By peers of the shareholder.",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-011",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Today's independent advisory board is brought to you by the company it advises.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-012",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "If the science changes, your memory of yesterday's science will change with it.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-013",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Our new certainty has completed all five stages of marketing!",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-014",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Question the questioner! It's faster than answering.",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-015",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Confident answers. No exposure to questions.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-016",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "The evidence is emerging! Please remain seated until it agrees.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-017",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Experts disagree? Our subscription selects the winning expert for you.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-018",
+      "source": "R2_NEW",
+      "category": "EXPERTS_SCIENCE",
+      "text": "Remember: the methodology is classified. The conclusion is complimentary.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "media_saturation",
+        "policy_update"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-019",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Protect our democracy! Your choice will be counted once it has been approved.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-020",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "We're saving democracy from its voters. Buy one safeguard, get three restrictions free!",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-021",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Voting is your voice. The transcript is ours.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-022",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "The public has spoken! Our moderators have improved the wording.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-023",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Full participation! No influence required.",
+      "word_count": 5,
+      "estimated_speech_seconds": 2.1,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-024",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Opposition is welcome during the designated five-second comment window.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-025",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Freedom of speech includes the freedom to remain algorithmically unheard.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-026",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Some choices are too important to leave on a ballot.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-027",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Every voice counts! Our weighting system is confidential.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-028",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Elect the future! We've already placed the order.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-029",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Today's emergency measure is temporary. Just like the last twelve.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-030",
+      "source": "R2_NEW",
+      "category": "DEMOCRACY",
+      "text": "Dissent is democracy's immune system. Our firewall has been updated.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "state_propaganda",
+        "wanted_level_up"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-031",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "Smart Dust is everywhere! Not everywhere you can see.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-032",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "Privacy 2.0! We know what you've been hiding, so you don't have to.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-033",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "The camera is only on when it matters. We decide what matters.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-034",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "Your face is your password! Your face is also our product.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-035",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "Your smart doorbell has joined the neighborhood watch. It nominated you.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-036",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "SafeWalk knows your location, your intentions, and any unexplained detours.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-037",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "Good morning! Your kitchen has shared a helpful thought with Compliance.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-038",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "We deleted your data. The copy retained for quality assurance misses you already.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-039",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "Protect your children! Our microphones never outgrow them.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-040",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "Opt-out complete! Your refusal is now part of your profile.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-041",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "You own your device. Your device knows who owns you.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-042",
+      "source": "R2_NEW",
+      "category": "SURVEILLANCE",
+      "text": "We respect personal boundaries. Our sensors just happen to be very small.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "mib_search",
+        "surveillance_ping"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-043",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "Public services, now powered by shareholder value. Please keep receipts for your rights.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-044",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "This message was not authorized by the government. The government is a wholly owned subsidiary.",
+      "word_count": 15,
+      "estimated_speech_seconds": 6.4,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-045",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "A better future starts with a quarterly earnings call!",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-046",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "Regulations are expensive. That's why we wrote our own.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-047",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "Freedom is our flagship product! Support ends next quarter.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-048",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "The invisible hand has received a corporate badge.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-049",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "We bought the town square! Your speech is still free; parking isn't.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-050",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "Citizenship has moved to a subscription model. Your welcome letter includes the cancellation fee.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-051",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "Please enjoy our new government interface! Same buttons, fewer humans.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-052",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "We believe in stakeholder dialogue. The stakeholders have signed nondisclosure agreements.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-053",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "A monopoly isn't a lack of choice. It's an excellent opportunity for brand loyalty!",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-054",
+      "source": "R2_NEW",
+      "category": "CORPORATE_STATE",
+      "text": "Democracy meets efficiency! Shareholder meetings now open with the national anthem.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "home_shopping",
+        "district_destroyed"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-055",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "Dark Enlightenment Deluxe! No daylight, no oversight, and absolutely no comments section.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-056",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "The algorithm has been promoted. Its manager was dismissed for asking why.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-057",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "Why elect a leader when you can subscribe to a founder?",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-058",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "Our sovereign cloud has no parliament and an excellent uptime record.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-059",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "Move fast and break checks and balances!",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-060",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "AI Alignment is working! The model agrees with the board.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-061",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "Behold the rational king! He comes with a dashboard and no refund policy.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-062",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "Human-in-the-loop remains an optional premium feature.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-063",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "The future is meritocratic. Merit is measured in equity.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-064",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "Legacy democracy? Upgrade to Governance-as-a-Service!",
+      "word_count": 5,
+      "estimated_speech_seconds": 2.1,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-065",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "This policy was generated by artificial intelligence. Accountability remains naturally unavailable.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-066",
+      "source": "R2_NEW",
+      "category": "ALGORITHMIC_SOVEREIGNTY",
+      "text": "The machine hasn't replaced your judgment. It has buried it under recommendations.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "policy_update",
+        "faction_dystopia"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-067",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Programmable money! It goes wherever it is told. Do you?",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-068",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Your wallet cares about the planet. It has declined your train ticket.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-069",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Inflation is only a number. Your groceries have been instructed to stop noticing.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-070",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Our welfare app comes with a generous helping of terms and conditions!",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-071",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "You have earned three freedom points! Spend them where permitted.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-072",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "The market has spoken. It would prefer you rented.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-073",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Congratulations! You own nothing, and the app says your happiness is trending.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-074",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Cashless convenience! Forget about cash; we'll never forget the transaction.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-075",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Your salary is now delivered in exposure, access, and a small amount of money.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-076",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Disobedience has been charged to your household account.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-077",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "The invisible price tag is included at no extra charge!",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-078",
+      "source": "R2_NEW",
+      "category": "MONEY_CREDITS",
+      "text": "Our universal basic subscription is available to everyone who qualifies as everyone.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "economy",
+        "purchase"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-079",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "Breaking news! Yesterday's correction has been corrected by this morning's original story.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-080",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "Independent journalism, proudly funded by our independence partners!",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-081",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "Facts checked. Context removed. Confidence restored.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-082",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "We don't censor viewpoints. We optimize discoverability.",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-083",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "This broadcast is sponsored by the absence of alternative broadcasts.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-084",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "Your feed knows what happened. It would rather show you what you felt.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-085",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "For balance, we invited two experts who agree in different fonts.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-086",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "Tonight's debate has been fact-checked before anyone has spoken!",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-087",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "The story has no source. But it does have a very trustworthy color scheme.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-088",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "A rumor is now misinformation. A press release is now a primary source.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-089",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "Your timeline is chronological. We choose which moments deserve time.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-090",
+      "source": "R2_NEW",
+      "category": "MEDIA_TRUTH",
+      "text": "There are two sides to every issue! Both are available on the premium tier.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "news_interrupt",
+        "coverup"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-091",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "Follow the science! Exceptions available for platinum sponsors.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-092",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "Sustainable compliance! Now with recycled excuses.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-093",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "Green choices, red lines. Your footprint was calculated before you walked.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-094",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "Our carbon-neutral jets fly on excellent intentions!",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-095",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "The wellness app knows when you're anxious. It has notified your employer.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-096",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "Public health is our priority! We have partnered with Public Relations.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-097",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "BreatheEasy air credits! Because breathing is better with a billing plan.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-098",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "We are building a greener tomorrow. Today's trees have been cleared for the announcement.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-099",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "Your personal risk score is private. Except where commercially useful.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-100",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "Stay safe, stay healthy, stay inside our operating margins!",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-101",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "The latest guidelines are final until the next update. Previous certainty expires at midnight.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-102",
+      "source": "R2_NEW",
+      "category": "WELLNESS_GREEN",
+      "text": "If you can still afford the solution, the emergency is not over.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "wellness",
+        "public_order"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-103",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "Property destruction? Try our complimentary Urban Renewal Perspective!",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-104",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "One less building, one more public-private opportunity.",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-105",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "Our demolition insurance covers all structures still listed as standing.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-106",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "The suspect is dangerous! Tune in after these messages to learn how to profit.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-107",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "Collecting cards is not illegal. Their interpretation might be.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-108",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "Buy three wanted posters! Get a fourth suspect free.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-109",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "All Men in Black are licensed to provide personalized reassurance.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-110",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "Our city has no rebel problem. Our cameras have a resolution problem.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-111",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "The district is perfectly safe. Please step over the barricade as instructed.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-112",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "Today's skyline is brought to you by the sponsor of yesterday's missing tower.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-113",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "Don't call it a raid. It's an aggressive customer outreach initiative!",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-114",
+      "source": "R2_NEW",
+      "category": "REBELS_DISTRICTS",
+      "text": "Your loyalty will be rewarded when the authorities find your address.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "building_destroyed",
+        "district_destroyed",
+        "wanted_level_up",
+        "card_collected",
+        "mib_search"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-115",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "Be yourself! The approved version is in Settings.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-116",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "Live your truth. Provided it matches the communal template.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-117",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "Your Social Worth Score: better than your neighbor's, not yet good enough.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-118",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "No one is judging you. The scoring engine doesn't count as anyone.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-119",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "Every disagreement is a chance to improve the other person's behavior!",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-120",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "We listen to every citizen. Most calls are forwarded to a holding melody.",
+      "word_count": 13,
+      "estimated_speech_seconds": 5.5,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-121",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "Your therapist now offers quarterly performance reviews.",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-122",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "Family harmony begins with synchronized beliefs. Individual updates are disabled.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-123",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "You can unsubscribe from our opinions at any time. Nothing will change.",
+      "word_count": 12,
+      "estimated_speech_seconds": 5.1,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-124",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "All citizens are unique! Please use the issued template.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-125",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "Your silence has been registered as enthusiastic consent.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-126",
+      "source": "R2_NEW",
+      "category": "BEHAVIOR_SOCIAL",
+      "text": "We are not watching you. We're investing in your potential!",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "npc_witness",
+        "social_score"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-127",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "Now with ninety-nine percent fewer disclosures! The remaining one is classified.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-128",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "Terms and conditions may contain traces of actual governance.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-129",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "No purchase necessary. Participation is.",
+      "word_count": 5,
+      "estimated_speech_seconds": 2.1,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-130",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "Available wherever permission is granted. Permission is granted selectively.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-131",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "Results may vary. Reality will not.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-132",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "Ask your doctor if compliance is right for you. Your doctor has been pre-briefed.",
+      "word_count": 14,
+      "estimated_speech_seconds": 6,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-133",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "Side effects include certainty, fatigue, and an unusually tidy search history.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-134",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "By hearing this message, you've agreed to hearing the next one.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-135",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "Offer valid until you notice the catch!",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-136",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "Exclusions include people, places, and events that contradict this offer.",
+      "word_count": 10,
+      "estimated_speech_seconds": 4.3,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-137",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "If you disagree, please consult the instructions for agreeing.",
+      "word_count": 9,
+      "estimated_speech_seconds": 3.8,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-138",
+      "source": "R2_NEW",
+      "category": "FINE_PRINT",
+      "text": "This product does not provide freedom. Freedom sold separately; currently unavailable.",
+      "word_count": 11,
+      "estimated_speech_seconds": 4.7,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-139",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Consume. Believe. Obey. Save twenty percent.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-140",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Repeat after us. That was your idea.",
+      "word_count": 7,
+      "estimated_speech_seconds": 3,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-141",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Don't think twice. Think approved.",
+      "word_count": 5,
+      "estimated_speech_seconds": 2.1,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-142",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "A better you. A smaller you.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-143",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "The truth is simple. Keep it that way.",
+      "word_count": 8,
+      "estimated_speech_seconds": 3.4,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-144",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Less choice. More confidence.",
+      "word_count": 4,
+      "estimated_speech_seconds": 1.7,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-145",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Stay awake. Keep scrolling.",
+      "word_count": 4,
+      "estimated_speech_seconds": 1.7,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-146",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Trust the signal. Ignore the source.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-147",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Don't resist. Rebrand.",
+      "word_count": 3,
+      "estimated_speech_seconds": 1.3,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-148",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "One future. No returns.",
+      "word_count": 4,
+      "estimated_speech_seconds": 1.7,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-149",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Smile. The camera cares.",
+      "word_count": 4,
+      "estimated_speech_seconds": 1.7,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    },
+    {
+      "id": "BNWN-SPON-150",
+      "source": "R2_NEW",
+      "category": "SUBLIMINAL",
+      "text": "Everything's fine. Especially the missing parts.",
+      "word_count": 6,
+      "estimated_speech_seconds": 2.6,
+      "suggested_events": [
+        "ambient",
+        "transition",
+        "station_id",
+        "after_news"
+      ],
+      "asset_status": "TEXT_CANDIDATE_NOT_RECORDED"
+    }
+  ]
+}
