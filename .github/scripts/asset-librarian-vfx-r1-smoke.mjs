@@ -25,7 +25,7 @@ class CDP {
     });
   }
   send(method,params={}){const id=++this.index;return new Promise((resolve,reject)=>{this.pending.set(id,{resolve,reject});this.ws.send(JSON.stringify({id,method,params}));});}
-  async eval(expression){const r=await this.send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,userGesture:true});if(r.exceptionDetails)throw new Error(r.exceptionDetails.text);return r.result?.value;}
+  async eval(expression){const r=await this.send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,userGesture:true});if(r.exceptionDetails)throw new Error(r.exceptionDetails.exception?.description || r.exceptionDetails.text);return r.result?.value;}
   async handleFeed({requestId,request}){
     this.requests.push({url:request.url,headers:request.headers,revision:this.revision,mode:this.mode});
     if(this.mode==='offline'){await this.send('Fetch.failRequest',{requestId,errorReason:'ConnectionFailed'});return;}
@@ -66,6 +66,7 @@ async function run(){
     await openEffect(cdp,'elements.thunderstrike');
     const detail=await cdp.eval(`document.getElementById('vfxDetailContent').textContent`);
     assert(['parameter','bereich','standard','wirkung','phasen_s','kosten','use_cases','unbekannt','globale_parameter','api'].every(key=>detail.includes(key)),'Complete typed details');
+    await cdp.send('Page.bringToFront');await cdp.send('Emulation.setFocusEmulationEnabled',{enabled:true});
     await cdp.send('Browser.grantPermissions',{origin:'http://127.0.0.1:8779',permissions:['clipboardReadWrite','clipboardSanitizedWrite']});
     await cdp.eval(`document.getElementById('copyVfxReference').click();true`);
     const reference=await poll(()=>cdp.eval(`navigator.clipboard.readText().then(text=>{try{return JSON.parse(text);}catch{return null;}})`),'Clipboard reference');
