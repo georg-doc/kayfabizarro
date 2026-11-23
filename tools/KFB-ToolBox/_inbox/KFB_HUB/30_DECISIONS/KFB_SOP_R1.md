@@ -25,12 +25,12 @@
 | 5 Stille Blind-Kritik | getrennter Agent | Prüfmatrix §5 gegen Ziel und Absicht. PASS = jede Achse ≥ 7 und Mittel ≥ 8. Sonst still reparieren, höchstens 5 Runden. Zwei Runden ohne Verbesserung = Stopp, kleinsten Blocker als Karte. |
 | 6 Abnahme WS0 | WS0 | Prüft selbst das Endergebnis gegen das Ziel. Leitet keine Erklärung eines Owners ungeprüft weiter. |
 | 7 Abnahme Georg | Georg | Eine Hub-Karte: ein Vergleich, groß, seine Begriffe, PASS/TUNE/FAIL. Bewegung immer als Video. |
-| 8 Festhalten | WS0 | Register-Zeile, Merge, GitHub. |
+| 8 Festhalten | WS0 | Register-Zeile, Merge, GitHub. Bei jedem neuen Spender (Repo, Demo, CodePen, patch.gg, Bibliothek) eine Zeile im Modul-Katalog `KFB_MODULE_KATALOG_R1.md`: was übernommen wurde, was der Spender noch bietet (Presets, Modi, Varianten, Parameter), was davon für Anschluss-Module und Backlog sinnvoll ist. |
 
 Georg sieht nie Zwischenstände. Er ist nie Kopier-Station zwischen Sitzungen: Übergaben laufen über GitHub-Links und Sitzungs-Nachrichten.
 
 ## 2a · Eskalationsleiter „Use What Works“ (über allen Fachregeln)
-1. **Bestand im Projekt:** abgenommene Module, Assets, Clips, Texte, Register (Pfad und Commit nennen).
+1. **Bestand im Projekt:** abgenommene Module, Assets, Clips, Texte, Register (Pfad und Commit nennen), dazu der Modul-Katalog mit dem Rest-Potenzial der schon eingebauten Spender.
 2. **Freie Quellen:** 3D-Suche (mcp 3d-assets), Asset-Librarian, patch.gg, KayKit > Tiny Treats > Quaternius > Kenney; Ton aus dem Sound-Atlas; Bewegung aus Motion Library, KayKit, Mixamo.
 3. **Erzeugen auf festem Weg:** Ton macht WS0 mit ElevenLabs, bis Georg „eng“ sagt. Bilder macht WS0 über den Webchat. 3D-Modelle über Meshy nur mit Georgs Freigabe per Hub-Karte. Texte nie erzeugen, nur aus Quellen verdichten.
 4. **Georg:** eine Entscheidung, oder eine bekannte Schwäche wird metanarrativ aufgefangen (Vorschlag mit Bild).

@@ -84,6 +84,7 @@ Pfade: `R/` = `replies/`, `C/` = `CANON_3D/`, `T/` = Spiel-Repo `test/`, `O/` = 
   - Spiel-Look in jedem Beleg.
   - Fahrkamera 12°.
   - Genre-Grammatik nennen, zum Beispiel Produktfilm: Hero, Drehteller, Scan, Makro, Kamerafahrt.
+  - Trailer aus echtem Spielmaterial in Remotion: Haken, Spielmomente, Steigerung, Titelkarte. Musik aus Bubble FM bzw. Suno-Stems.
 - **Golden:**
   - `R/HERO_RUN_SHOTLIST_R1.md` (Referenz).
   - Abnahmelauf `R/ABNAHME_S01/`.
@@ -155,6 +156,7 @@ Pfade: `R/` = `replies/`, `C/` = `CANON_3D/`, `T/` = Spiel-Repo `test/`, `O/` = 
     - eine Einfüge-Box;
     - Kennungen nur in einer Tabelle.
   - Spieler geschlechtsneutral ansprechen.
+  - HeyGen nur für sprechende Avatare (Bullauge, Moderation) mit Georgs Zeilen. Kein Text-zu-Video als Trailer, Anti-Sample 2.
 - **Golden:**
   - `R/META_TEXTE/GOLDEN_SAMPLES_AQUA_R1.md`.
   - `T/ref/V204_plain_bubble_reference.jpg`.

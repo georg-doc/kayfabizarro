@@ -7,6 +7,7 @@ Du bist Art Director für „AquaCare 11 · Grand Theft Aqua“ (DocCheck VibeLa
 
 ## Material (GitHub)
 - Erfassung: `replies/AQUA_10/erfassung_r1/<modus>_<geraet>/` mit 21 Szenen je Lauf, 7 Videoloops und Protokoll (Ereignisse, Bugs, Konfiguration).
+- Referenz-Frames: aus `KFB_REFERENZEN_R1.md` die passenden Sammlungen (z. B. Claybound für Material und HUD-Haptik, Rocko für schiefe Räume, Spell Spill für Splitter-Effekte). Sie sind Maßstab für Qualität, nicht zum Kopieren.
 - Kritiker-Befunde: `replies/AQUA_CRITIC_R2/ZUSAMMEN_R2.md` (offen: 10 Pause, 11 Rahmen, 15/22 Texte, 19 Kameraweg, 24 Startbild, 25 Handy-Tippflächen).
 
 ## Ablauf
