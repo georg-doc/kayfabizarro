@@ -1,0 +1,54 @@
+{
+  "schema": "kfb.ws0.cartoon-locomotion-toolkit/0.1",
+  "date": "2026-10-27",
+  "status": "RESEARCH_TOOL_SOURCE_UNTESTED",
+  "owner": "KFB shared Cartoon Animation / existing Motion authoring",
+  "runner": "WS0 + VS Code + existing Blender MCP",
+  "pullRequest": 456,
+  "branch": "research/motionbricks-macbook-ws0-2026-10-27",
+  "entrypoints": {
+    "brief": "skills/kfb-cartoon-animation/_handover/WS0_CARTOON_LOCOMOTION_TOOLKIT_2026-10-27.md",
+    "donors": "skills/kfb-cartoon-animation/_handover/WS0_CARTOON_LOCOMOTION_DONOR_ATLAS_2026-10-27.md",
+    "ws0Start": "skills/kfb-cartoon-animation/_handover/WS0_VSCODE_BLENDER_MCP_START_2026-10-27.md",
+    "inspector": "skills/kfb-cartoon-animation/tools/pose_motion_audit.py",
+    "motionBricksHold": "skills/kfb-cartoon-animation/_handover/WS0_MOTIONBRICKS_MACBOOK_DONOR_RESEARCH_2026-10-27.md"
+  },
+  "baseline": {
+    "actor": "Mannequin_Medium",
+    "secondary": "FrizzleBob v5",
+    "locomotion": {
+      "walk": "Walking_B",
+      "run": "Running_A",
+      "sprint": "Running_B",
+      "jog": "speed-phase blend"
+    },
+    "sourcePolicy": "KayKit native first; additional sources only verified gaps"
+  },
+  "priority": [
+    "Blender Asset Browser Pose Library",
+    "Blender In-Betweens",
+    "Blender Motion Paths",
+    "Existing KFB motion library and retarget scripts",
+    "Installed Blender MCP inventory"
+  ],
+  "optional": [
+    "AnimAide if Blender 5.1.2 compatible",
+    "B Onion Skin if compatible",
+    "Blender Studio Snow/Rain as isolated reference",
+    "CloudRig rig-controls only as future donor"
+  ],
+  "deferred": [
+    "MotionBricks ONNX",
+    "Cascadeur",
+    "Extra Retarget plugin",
+    "New runtime controllers",
+    "Nintendo assets"
+  ],
+  "nextGate": "WS0_CARTOON_LOCO_SOURCE_ISOLATION_01",
+  "tests": {
+    "blenderRun": 0,
+    "authoringRuns": 0,
+    "addonInstalls": 0,
+    "browserRuns": 0
+  }
+}
