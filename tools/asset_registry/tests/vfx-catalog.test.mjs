@@ -6,6 +6,8 @@ assert.equal(validateVfxCatalog(source),source);
 assert.equal(vfxRows(source).length,127);
 assert.equal(source.spender.length,10);
 assert.deepEqual(source.zahlen.nach_status,{'vendored ungenutzt':72,'im Spiel':20,'nur extern':35});
+const r1=structuredClone(source);r1.schema='kfb.vfx-katalog/1';assert.equal(validateVfxCatalog(r1),r1);
+const unsupported=structuredClone(source);unsupported.schema='kfb.vfx-katalog/999';assert.throws(()=>validateVfxCatalog(unsupported));
 const original = JSON.stringify(source);
 const thunder=vfxRows(source).find(row=>row.vfxEffect.id==='elements.thunderstrike');
 assert.equal(vfxReference(thunder).parameter.intensity,1);

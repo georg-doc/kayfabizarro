@@ -1,4 +1,4 @@
-# VFX-Katalog R1 · Effekt-Spender und Effekte (WS0, 23.11.2026)
+# VFX-Katalog · Effekt-Spender und Effekte (WS0; R1 23.11.2026, R2 24.11.2026)
 
 ## Zweck
 Eine zentrale Stelle für alle Effekte, die KFB nutzt oder nutzen könnte. Je Effekt stehen hier die Einstellungen, Presets, Dauer, grobe Kosten, KFB-Einsätze, Stolpersteine und der Status. Die Datei `vfx_katalog.r1.json` ist die SSOT dafür. `KFB_MODULE_KATALOG_R1.md` bleibt die Übersicht aller Spender und Reste; dieser Katalog geht bei den Effekten eine Ebene tiefer.
@@ -32,8 +32,26 @@ Regeln:
 - **Bei Elements ist `dauer_s`** die Summe der Phasen ohne Flugzeit. Die einzelnen Phasen stehen in `phasen_s`.
 - **Vorschau-URLs** zeigen auf die Bilder der Spender (git.patch.gg, fest auf einen Commit, oder cdn.patch.gg). **`datei`** ist ein Pfad im Stamm oder unter `replies/`. Neu gerendert ist nichts.
 
+## R2 · Schema `kfb.vfx-katalog/2` (24.11.2026, V-2151)
+Datei: `vfx_katalog.r2.json`. R1 bleibt daneben liegen.
+
+Georgs Regel: Einen Effekt nicht so einsetzen, wie wir ihn uns vorstellen. Erst verstehen, wie der Spender ihn gedacht hat, dann bei uns den Kontext finden, der ihn mit möglichst wenig Anpassung nutzt.
+
+R2 ergänzt jeden Effekt und jeden Spender um diese Felder:
+- `gedachter_einsatz`: wofür der Spender ihn gebaut hat (Demo, Steuerung, Arena-Logik). Belegt aus Spender-Seite, README oder Kopfkommentar im Code; die Datei steht in Klammern dahinter.
+- `einordnung_tech`: passt er zu unserem Stack? WebGL oder WebGPU, HDR über feuerNaht, Aqua-Artefakt (dort kein Effekseer, nur Flipbook), Leistung, Abhängigkeiten wie eigene Arena, Puppen oder Physik.
+- `passt_bei_uns`: 1–3 KFB- bzw. Aqua-Kontexte, die dem gedachten Einsatz am nächsten kommen. Der nächstliegende steht zuerst.
+- `warum_nicht`: wo er bei uns nicht wie gedacht funktioniert, und warum.
+- `anpassung`: `{ stufe: keine | klein | mittel | groß, was }`. Die Stufe gilt für den **ersten** Eintrag in `passt_bei_uns`.
+- `idee` (optional): eine kurze Gestaltungs- oder Nutzungsidee.
+
+Weitere Neuerungen:
+- Der Spender Ultra Elements hat zusätzlich `elements_einordnung`: Park-Grund V-1732, Kontexte, in denen die Zauber wie gedacht laufen, und eine Reihenfolge.
+- `zahlen.nach_anpassung` zählt die Effekte je Stufe.
+- Was nicht belegt ist, steht als „unbekannt“ da.
+
 ## So nutzen externe Chats den Katalog
-Ein externer Chat (Claude Design, ChatGPT, WSA) bekommt diese Datei oder ihren Link und sucht nach `art` oder `use_cases` das Passende. Er übernimmt dann `id`, `einbauweg` und die Parameter-Werte des Effekts wörtlich in seinen Auftrag. Neue Effekt-Formen erfindet er nicht. Was `status: "nur extern"` hat, braucht vorher einen Übernahme-Schritt durch WS0. Was „vendored ungenutzt“ ist, läuft über die genannte Naht, ohne neuen Effekt-Code. Die Stolpersteine (`caveats`) gehören in jeden Auftrag mit hinein, zum Beispiel den Flipbook-Weg für Effekseer im Aqua-Artefakt oder HDR nur über feuerNaht.
+Ein externer Chat (Claude Design, ChatGPT, WSA) bekommt diese Datei oder ihren Link. Ab R2 liest er zuerst `gedachter_einsatz` und `passt_bei_uns` und nimmt den Kontext mit der kleinsten `anpassung`. Erst danach sucht er über `art` oder `use_cases`. Er übernimmt dann `id`, `einbauweg` und die Parameter-Werte des Effekts wörtlich in seinen Auftrag. Neue Effekt-Formen erfindet er nicht. Was `status: "nur extern"` hat, braucht vorher einen Übernahme-Schritt durch WS0. Was „vendored ungenutzt“ ist, läuft über die genannte Naht, ohne neuen Effekt-Code. Die Stolpersteine (`caveats`) gehören in jeden Auftrag mit hinein, zum Beispiel den Flipbook-Weg für Effekseer im Aqua-Artefakt oder HDR nur über feuerNaht.
 
 ## Pflege
 - **Eigentümer: WS0.** Nur WS0 schreibt in `vfx_katalog.r1.json`. Andere Stationen melden neue Effekte oder geänderte Werte an WS0, etwa über den Kanal oder die Rückgabe.

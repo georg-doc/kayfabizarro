@@ -38,7 +38,7 @@ function assertPublic(value) {
 }
 
 export function validateVfxCatalog(doc) {
-  if (doc?.schema !== VFX_SCHEMA || !Array.isArray(doc.spender) || !doc.zahlen?.nach_status) throw new Error('Invalid VFX catalogue');
+  if (![VFX_SCHEMA, 'kfb.vfx-katalog/2'].includes(doc?.schema) || !Array.isArray(doc.spender) || !doc.zahlen?.nach_status) throw new Error('Invalid VFX catalogue');
   assertPublic(doc);
   const donors = new Set(), effects = new Set(), counts = {};
   for (const donor of doc.spender) {
@@ -81,19 +81,19 @@ export async function loadVfxCatalog() {
 }
 
 export function vfxRows(document) {
-  return document ? document.spender.flatMap(donor => donor.effekte.map(effect => ({vfxEffect: effect, vfxDonor: donor}))) : [];
+  return document ? document.spender.flatMap(donor => donor.effekte.map(effect => ({vfxEffect: effect, vfxDonor: donor, vfxSchema: document.schema}))) : [];
 }
 
 export function vfxSearchText(row) {
   const effect = row.vfxEffect, donor = row.vfxDonor;
-  return JSON.stringify(effect ? [effect.name, effect.id, donor.name, effect.use_cases, effect.caveats, donor.caveats, effect.schalter]
+  return JSON.stringify(effect ? [effect.name, effect.id, donor.name, effect.use_cases, effect.caveats, donor.caveats, effect.schalter, effect.gedachter_einsatz, effect.passt_bei_uns, effect.warum_nicht, effect.einordnung_tech, effect.anpassung]
     : [donor.name, donor.id, donor.caveats, donor.globale_parameter, donor.api]).toLowerCase();
 }
 
 export function vfxReference(row, preset) {
   const effect = row.vfxEffect;
   const parameter = preset ? preset.werte : Object.fromEntries((effect.parameter || []).map(value => [value.name, value.standard]));
-  return {katalog: VFX_SCHEMA, id: effect.id, einbauweg: row.vfxDonor.einbauweg, parameter};
+  return {katalog: row.vfxSchema || VFX_SCHEMA, id: effect.id, einbauweg: row.vfxDonor.einbauweg, parameter};
 }
 
 export const vfxText = value => value === undefined ? '—' : typeof value === 'string' ? value : JSON.stringify(value);

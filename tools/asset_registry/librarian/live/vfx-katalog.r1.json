@@ -1,14 +1,15 @@
 {
- "schema": "kfb.vfx-katalog/1",
- "version": "R1",
- "stand": "2026-11-23",
+ "schema": "kfb.vfx-katalog/2",
+ "version": "R2",
+ "stand": "2026-11-24",
  "gepflegt_von": "WS0",
  "zweck": "SSOT aller Effekt-Spender und Effekte, die KFB nutzt oder nutzen könnte",
  "quellen": [
   "patch.gg API v1 (Projekt-Metadaten, recipe.json, spells.json, effects.baked.json, READMEs; nur gelesen)",
   "Stamm ~/kfb-ws0/merge-wt @68f8fb42 (nur gelesen)",
   "replies/VFX_EFFEKSEER_R1/effekte_katalog.json",
-  "KFB_MODULE_KATALOG_R1.md"
+  "KFB_MODULE_KATALOG_R1.md",
+  "R2: Kopfkommentare der Spender-Dateien (ultra-elements src/spells, abilities config/settings.js, fire FIRE_TYPES), READMEs der Spender, DECISIONS V-1732/V-2151"
  ],
  "regeln": {
   "unbekannt": "Wert nicht in Code oder Quelle belegt",
@@ -18,7 +19,8 @@
    "vendored ungenutzt",
    "nur extern"
   ],
-  "dauer_s_elements": "Elements: Summe der Phasen charge + impact + linger (ohne Flugzeit); Einzelphasen in phasen_s"
+  "dauer_s_elements": "Elements: Summe der Phasen charge + impact + linger (ohne Flugzeit); Einzelphasen in phasen_s",
+  "r2": "V-2151: zuerst verstehen, wie der Spender den Effekt gedacht hat, dann den KFB/Aqua-Kontext mit geringster Anpassung. anpassung bezieht sich auf den ersten Eintrag in passt_bei_uns."
  },
  "zahlen": {
   "spender": 10,
@@ -27,6 +29,12 @@
    "vendored ungenutzt": 72,
    "im Spiel": 20,
    "nur extern": 35
+  },
+  "nach_anpassung": {
+   "mittel": 34,
+   "klein": 69,
+   "groß": 3,
+   "keine": 21
   }
  },
  "spender": [
@@ -536,6 +544,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/thunderstrike.webp"
+     },
+     "gedachter_einsatz": "Naturgetreuer Blitzschlag auf ein Ziel: Ladung am Fokus, Wolkenkappe über dem Ziel, Leitblitz, Hauptschlag, Nachschläge, Brandmuster am Boden, Donner mit Schallverzögerung (lightning.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt fx.bolts: im Spiel versetzt (V-1732), mit festem Ursprung erst prüfen. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Boss ruft Blitze auf FB herab",
+      "Website-Showcase bzw. Video in der Elements-Arena"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Blitz-Kanal endet im Spiel nicht am Zielpunkt (V-1732).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -702,7 +721,19 @@
        "quelle": "tools/vfx-buehne/arsenal.js"
       }
      ],
-     "auf_vfx_buehne": true
+     "auf_vfx_buehne": true,
+     "gedachter_einsatz": "Dicker Bogen, der von Zielpuppe zu Zielpuppe springt (lightning.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt fx.bolts: im Spiel versetzt (V-1732), mit festem Ursprung erst prüfen. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena mit Adds: Bogen springt zwischen FB und Begleitern (die drei Zielpuppen = Figuren der Arena)",
+      "VFX-Bühne (läuft dort schon als Blitzwerfer)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Blitz-Kanal endet im Spiel nicht am Zielpunkt (V-1732). Ohne drei Ziele in der Nähe springt der Bogen ins Leere.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "idee": "FB plus zwei Begleiter als die drei Zielpuppen: der Bogen zwingt die Gruppe auseinander."
     },
     {
      "id": "elements.ball-lightning",
@@ -899,7 +930,18 @@
        "quelle": "tools/vfx-buehne/arsenal.js"
       }
      ],
-     "auf_vfx_buehne": true
+     "auf_vfx_buehne": true,
+     "gedachter_einsatz": "Plasmakugel wächst am Fokus und treibt langsam schlingernd zum Ziel (ball-lightning.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt fx.bolts: im Spiel versetzt (V-1732), mit festem Ursprung erst prüfen. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: langsame Kugel, der FB ausweicht",
+      "VFX-Bühne (Kugelblitz)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Blitz-Kanal endet im Spiel nicht am Zielpunkt (V-1732).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     }
     },
     {
      "id": "elements.thunderstorm",
@@ -1133,6 +1175,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/thunderstorm.webp"
+     },
+     "gedachter_einsatz": "Gewitterzelle über dem Ziel: drehende Wolkendecke, Böenfront, Regen in Schwaden, gestaffelte Einschläge (thunderstorm.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt fx.bolts: im Spiel versetzt (V-1732), mit festem Ursprung erst prüfen. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Phasenwechsel mit Unwetter über dem Platz",
+      "Website-Showcase"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Blitz-Kanal endet im Spiel nicht am Zielpunkt (V-1732).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -1308,7 +1361,18 @@
        "quelle": "tools/vfx-buehne/arsenal.js"
       }
      ],
-     "auf_vfx_buehne": true
+     "auf_vfx_buehne": true,
+     "gedachter_einsatz": "Feuerball mit Flammenschweif, Rauch und Glut, vom Fokus zum Ziel geworfen (fire.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Boss wirft Feuerbälle",
+      "VFX-Bühne (Feuerball-Werfer)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     }
     },
     {
      "id": "elements.inferno",
@@ -1475,6 +1539,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/inferno.webp"
+     },
+     "gedachter_einsatz": "Tosende Feuersäule mit Wirbel, Hitzeflimmern, Glut und Brandring am Ziel (fire.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Feuersäule als Flächen-Gefahr"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -1680,6 +1754,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/phoenix.webp"
+     },
+     "gedachter_einsatz": "Feuervogel formt sich am Fokus, steigt im Bogen auf und stößt aufs Ziel (phoenix.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Auftritt bzw. Boss-Spezialangriff in der Arena",
+      "Video bzw. Kartenpromo"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -1921,6 +2006,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/ember-swarm.webp"
+     },
+     "gedachter_einsatz": "Tausende zielsuchende Glutfunken im Schwarm (GPU), steigen auf und fallen über das Ziel her (ember-swarm.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Glut-Schwarm jagt FB",
+      "Lagerplatz bei Nacht als Schaueffekt auf flachem Platz"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -2083,7 +2179,18 @@
        "quelle": "tools/vfx-buehne/arsenal.js"
       }
      ],
-     "auf_vfx_buehne": true
+     "auf_vfx_buehne": true,
+     "gedachter_einsatz": "Gebündelter Wasserstrahl wie Feuerwehrschlauch bzw. Wasserwerfer, als gehaltener Strahl (water.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena (Aqua-Boss): Wasserwerfer-Strahl",
+      "VFX-Bühne (Wasserlanze)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     }
     },
     {
      "id": "elements.geyser",
@@ -2236,6 +2343,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/geyser.webp"
+     },
+     "gedachter_einsatz": "Wasserfontäne aus dem Boden wie Old Faithful (water.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Fontäne als Bodenfalle"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -2423,6 +2540,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/tsunami.webp"
+     },
+     "gedachter_einsatz": "Der Orb saugt das Becken des Übungsplatzes leer, hinter dem Ziel türmt sich eine Welle auf und bricht (tsunami.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an. Braucht das Becken des Übungsplatzes (saugt es leer).",
+     "passt_bei_uns": [
+      "Website-Showcase in der Elements-Arena (mit ihrem Becken)",
+      "Aqua-Boss nur, wenn die Arena ein Becken hat"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Ohne Becken in der Arena nicht wie gedacht.",
+     "anpassung": {
+      "stufe": "groß",
+      "was": "Arena mit Becken bauen oder nur im Showcase nutzen."
      }
     },
     {
@@ -2670,7 +2798,18 @@
        "quelle": "tools/vfx-buehne/arsenal.js"
       }
      ],
-     "auf_vfx_buehne": true
+     "auf_vfx_buehne": true,
+     "gedachter_einsatz": "Eiskristall wächst am Fokus und fliegt als gläserne Scherbe zum Ziel (ice.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Eis-Boss wirft Scherben",
+      "VFX-Bühne (Eisspitze)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     }
     },
     {
      "id": "elements.ice-wall",
@@ -2904,7 +3043,18 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/ice-wall.webp"
-     }
+     },
+     "gedachter_einsatz": "Frostlinie über den Boden, dann eine gebogene Reihe großer Eisstacheln quer zur Linie Zaubernder → Ziel; Teilchen halten daran an (ice.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Boss zieht eine Eismauer als Deckung bzw. Sperre"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "idee": "Boss baut die Mauer zwischen sich und FB, FB muss sie mit Feuer brechen."
     },
     {
      "id": "elements.absolute-zero",
@@ -3108,6 +3258,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/absolute-zero.webp"
+     },
+     "gedachter_einsatz": "Glocke aus Eisnebel bildet sich hoch über dem Ziel, hängt und fällt auf den Boden (absolute-zero.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Frost-Fläche, aus der FB raus muss"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -3318,6 +3478,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/blizzard.webp"
+     },
+     "gedachter_einsatz": "Schneesturm: seitlich treibender Schnee, Verwehungen am Boden, Sicht bricht ein, Frost auf Boden und Puppen (blizzard.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Schneesturm-Phase mit wenig Sicht"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -3543,6 +3713,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/upheaval.webp"
+     },
+     "gedachter_einsatz": "Riss läuft zum Ziel, der Boden grollt, dann bricht nacheinander eine Reihe Felsstacheln hervor (earth.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Felsstacheln laufen auf FB zu"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -3769,6 +3949,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/meteor.webp"
+     },
+     "gedachter_einsatz": "Brocken reißen um den Zaubernden aus dem Boden, formen einen Fels, der im schweren Bogen fliegt und einen Krater schlägt (earth.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Felsbrocken-Wurf mit Krater",
+      "Website-Showcase"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -3990,6 +4181,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/fissure.webp"
+     },
+     "gedachter_einsatz": "Haarriss läuft zum Ziel, dann reißt der Boden auf: Graben mit Magma in der Tiefe (fissure.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Boden reißt zwischen Boss und FB auf"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -4194,6 +4395,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/lava-geyser.webp"
+     },
+     "gedachter_einsatz": "Lavafontäne mit fliegenden Bomben, die als glühendes Gestein landen (lava-geyser.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Lavafontäne als Zonen-Gefahr"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -4392,6 +4603,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/cyclone.webp"
+     },
+     "gedachter_einsatz": "Staubtrichter setzt am Boden auf und wandert zum Ziel, zieht alle losen Teilchen an (wind.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Wirbel wandert über den Platz"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -4590,7 +4811,19 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/wind-slash.webp"
-     }
+     },
+     "gedachter_einsatz": "Tief geworfene Druckklinge, fast unsichtbar: Lichtbrechungskante, Dampfschleier, Staublinie und eine Kerbe im Boden (wind.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Boss wirft Druckklingen, FB springt drüber",
+      "Schallfaust nur als Sonderangriff mit Ladezeit (nicht im Schnellfeuer)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Als Schuss der Schallfaust im Schnellfeuer nicht wie gedacht (Ladephase 0,9 s, Wurf vom Orb).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "idee": "Als Boss-Angriff lesbar, weil fast unsichtbar: nur Staublinie und Bodenkerbe kündigen ihn an."
     },
     {
      "id": "elements.dust-devils",
@@ -4779,6 +5012,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/dust-devils.webp"
+     },
+     "gedachter_einsatz": "Drei kleine Windhosen entstehen um das Ziel und tanzen umeinander (dust-devils.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: drei Windhosen als Hindernisse",
+      "Website-Showcase"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -4962,6 +5206,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/singularity.webp"
+     },
+     "gedachter_einsatz": "Schwarzes Loch mit Akkretionsscheibe und Lichtkrümmung nach Interstellar, driftet zum Ziel (void.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt fx.bolts: im Spiel versetzt (V-1732), mit festem Ursprung erst prüfen. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena (MiB/Zensur-Boss): Sog-Angriff"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Blitz-Kanal endet im Spiel nicht am Zielpunkt (V-1732).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -5145,6 +5399,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/rift.webp"
+     },
+     "gedachter_einsatz": "Riss im Raum (die Risskante, aus der laut portal.js das Portal wächst); Einzelheiten im Code nicht kommentiert.",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt fx.bolts: im Spiel versetzt (V-1732), mit festem Ursprung erst prüfen. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena (Zensur-Boss): Riss als Auftritt"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Blitz-Kanal endet im Spiel nicht am Zielpunkt (V-1732).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -5324,6 +5588,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/portal.webp"
+     },
+     "gedachter_einsatz": "Zwei verbundene Portale: eines zwischen Zauberndem und Ziel, eines hinter dem Ziel; durch die Membran sieht man echt in das andere (portal.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an. Zeichnet echte Durchsicht über onBeforeRender (wie three Reflector): kostet einen weiteren Szenen-Blick.",
+     "passt_bei_uns": [
+      "Boss-Arena: Boss-Auftritt durch Portal",
+      "Website-Showcase"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -5528,6 +5803,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/judgment.webp"
+     },
+     "gedachter_einsatz": "Gewitterdecke über dem Ziel, die Sonne geht, ein Loch reißt auf und ein Lichtschaft schlägt herab (light.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena (Academy/System-Boss): Strafe von oben"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -5751,7 +6036,18 @@
        "quelle": "tools/vfx-buehne/arsenal.js"
       }
      ],
-     "auf_vfx_buehne": true
+     "auf_vfx_buehne": true,
+     "gedachter_einsatz": "Gehaltener Lichtstrahl vom Fokus mit Kern, Hülle, Teilchen, Aufprall-Glanz und Linienlicht (light.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: gehaltener Strahl, FB weicht seitlich aus",
+      "VFX-Bühne (Laserbrenner)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     }
     },
     {
      "id": "elements.solar-flare",
@@ -5939,6 +6235,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/solar-flare.webp"
+     },
+     "gedachter_einsatz": "Miniatursonne zündet vor einem heiligen Siegel und fliegt mit brodelnder Oberfläche zum Ziel (solar-flare.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Sonnenkugel-Wurf"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -6142,7 +6448,19 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/aurora-veil.webp"
-     }
+     },
+     "gedachter_einsatz": "Heiliger Kreis unter dem Ziel, hoch oben ein ruhiger Polarlicht-Bogen, der in einem Substurm aufbricht (aurora-veil.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena bei Nacht: Bühnenbild bzw. Heilzone",
+      "Website-Showcase"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "idee": "Polarlicht als Arena-Himmel für die Nachtphase."
     },
     {
      "id": "elements.supernova",
@@ -6369,7 +6687,19 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/supernova.webp"
-     }
+     },
+     "gedachter_einsatz": "Roter Riese entsteht über dem Ziel, pulsiert, implodiert und explodiert (supernova.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Finale in der Arena",
+      "Website-Showcase bzw. Video"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "idee": "Endkaskade des Bosses: Pulsieren als Countdown."
     },
     {
      "id": "elements.toxic-bloom",
@@ -6552,7 +6882,18 @@
        "quelle": "tools/vfx-buehne/arsenal.js"
       }
      ],
-     "auf_vfx_buehne": true
+     "auf_vfx_buehne": true,
+     "gedachter_einsatz": "Geworfener Säureklumpen spritzt aufs Ziel; die Säure steht als Pfütze und frisst sich in den Boden (acid.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Säurepfütze als Bodenzone",
+      "VFX-Bühne (Säurewerfer)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     }
     },
     {
      "id": "elements.corrosion-cloud",
@@ -6723,6 +7064,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/corrosion-cloud.webp"
+     },
+     "gedachter_einsatz": "Klumpen platzt zu schwerem Giftgas, das am Boden entlang kriecht (acid.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena (Würfelmonster-Boss): Giftgas am Boden"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -6924,6 +7275,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/plague-swarm.webp"
+     },
+     "gedachter_einsatz": "Tausende leuchtende Insekten mit echtem Schwarmverhalten auf der GPU (plague-swarm.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Schwarm-Angriff eines Slop-Bosses"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -7130,6 +7491,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/arcane-barrage.webp"
+     },
+     "gedachter_einsatz": "Runenkreis vor dem Orb, 8 Lenkgeschosse mit echter Zielnavigation (arcane.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Lenkgeschoss-Salve des Bosses"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -7336,7 +7707,18 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/aegis.webp"
-     }
+     },
+     "gedachter_einsatz": "Energiekuppel mit Seifenhaut-Optik als Schild (arcane.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt den Refraktions-Durchgang: offener MRT-GL-Fehler (V-1732). Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Schildphase des Bosses (erst Schild brechen)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "idee": "Kuppel um den Boss, nur ein Element-Treffer bricht sie."
     },
     {
      "id": "elements.starfall",
@@ -7539,6 +7921,17 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/starfall.webp"
+     },
+     "gedachter_einsatz": "Eine Tasche Nacht öffnet sich über dem Ziel, Sterne zünden und stürzen herab, Kreis am Boden (starfall.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Arena: Sternregen über einer Zone",
+      "Website-Showcase"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -7726,6 +8119,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/frozen-lightning.webp"
+     },
+     "gedachter_einsatz": "Blitz zum Ziel gefriert zu einem Kristallgitter und zerspringt (frozen-lightning.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Nutzt fx.bolts: im Spiel versetzt (V-1732), mit festem Ursprung erst prüfen. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Fähigkeit in der Arena (Modul-Katalog)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung). Blitz-Kanal endet im Spiel nicht am Zielpunkt (V-1732).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      }
     },
     {
@@ -7925,6 +8328,16 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/fire-tornado.webp"
+     },
+     "gedachter_einsatz": "Feuerspirale brennt sich wie eine Zündschnur in den Boden, dann bricht ein Feuerwirbel hervor und zieht Teilchen an (fire-tornado.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Fähigkeit in der Arena (Modul-Katalog)"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     },
     {
@@ -8092,9 +8505,48 @@
      "schalter": "elemente=r1 (geparkt)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/elements/raw/46c41423a0bc5afadb766b3ffa14b0e286cca64a/thumbs/spells/black-flame.webp"
+     },
+     "gedachter_einsatz": "Schwarzes Feuer, das Licht schluckt statt gibt, mit violetter Korona und Glut (black-flame.js).",
+     "einordnung_tech": "WebGL2 über feuerNaht/elementeNaht. Flacher Boden y = 0, Mauer 18 m; Bodenspuren nur auf dem Elements-Boden; spricht die Zielpuppen an.",
+     "passt_bei_uns": [
+      "Boss-Fähigkeit in der Arena (Modul-Katalog)",
+      "MiB- bzw. Zensur-Boss"
+     ],
+     "warum_nicht": "In der offenen Welt (Hang, wandernder Ursprung).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "Zauber-Übungsplatz: ein Zaubernder mit Orb wirft auf Klick auf einen Bodenpunkt oder eine der drei Zielpuppen; flacher Boden bei y = 0 mit Mauer bei 18 m, Becken, Reaktionsfeld am Boden (Brand, Frost, Risse, Säure), eigener Himmel (dusk, noon, night) und eigene Nachbearbeitung; die Bibliothek zeichnet das ganze Bild (README, elements.js). Alle Zauber sprechen die Zielpuppen an (Ziel bzw. Reaktion, Code).",
+   "einordnung_tech": "WebGL2 und three 0.186 wie bei uns. Eigenes HDR-Ziel und PostFX: im Spiel nur über feuerNaht + drawInto (ohne Arena, Himmel, PostFX). Offene Punkte aus V-1732: direkte Blitze über fx.bolts liegen versetzt (Projektion/Tiefe), MRT-GL-Fehler in der Refraktions-Szene, Boden-Annahme y = 0 gegen Hang. Ohne Arena fehlen Bodenspuren. ≈ 2 MB, 7–10 s Vorwärmen. Aqua-Artefakt: unbekannt.",
+   "passt_bei_uns": [
+    "Website-Showcase bzw. VFX-Seite: die ganze Bibliothek mit eigener Arena, genau wie gedacht (V-1732 nennt Website/VFX)",
+    "Boss-Arena: flacher runder Kampfplatz bis 18 m Radius, fester Ursprung in der Mitte, Boss = Zaubernder, FB und Begleiter = die drei Zielpuppen",
+    "VFX-Bühne bzw. Kampfbühne (7 Zauber laufen dort schon)",
+    "Video bzw. Kartenpromo (WSV) in der Elements-Arena"
+   ],
+   "warum_nicht": "Offene Welt: Hang statt y = 0, Ursprung wandert mit dem Ziel, direkte Blitze liegen versetzt (Grund des Parkens, V-1732); Gewitter und Pol-Bögen sind dort anders gelöst (driveAtmos, energy-arc.r1). Einzelwaffen im Schnellfeuer passen nicht zum Ablauf Laden → Wurf → Nachklang (0,5–2,6 s Ladephase).",
+   "anpassung": {
+    "stufe": "mittel",
+    "was": "Für die Boss-Arena: flachen Platz bei y = 0 bauen, Ursprung fest in die Mitte, Zielpuppen auf FB und Begleiter legen, elemente=r1 nur dort; für die Website: keine."
+   },
+   "elements_einordnung": {
+    "park_grund_v1732": "Zauber bringen die Arena-Logik mit (Puppen, Leitblitze); direkte Blitze über fx.bolts zeichnen, liegen aber im Spiel versetzt; dazu MRT-GL-Fehler in der Refraktions-Szene und Boden y = 0 gegen Hang. Georg: kein Kaninchenbau.",
+    "laeuft_wie_gedacht": [
+     "Website-Showcase bzw. VFX-Seite: eigene Seite mit createElements, Arena, Himmel und PostFX unverändert; keine Anpassung.",
+     "Boss-Arena: die Arena-Logik wird zum Merkmal statt zum Hindernis. Flacher Platz, fester Ursprung, keine Hänge, die drei Puppen sind die Kampfteilnehmer. Blitze bleiben dort, wo Ursprung und Kamera fest stehen, am Ziel (zu prüfen).",
+     "VFX-Bühne und Kampfbühne: flacher Boden, Zielpuppen werden schon auf unsere Ziele gelegt (tools/vfx-buehne/main.js).",
+     "Video (WSV): Aufnahme in der Elements-Arena oder auf flacher Bühne."
+    ],
+    "nicht_wie_gedacht": [
+     "offene Welt mit Hang und wanderndem Ursprung",
+     "Wetter über dem ganzen Gelände",
+     "Einzelwaffen mit Schnellfeuer"
+    ],
+    "reihenfolge_vorschlag": "Zuerst Zauber ohne fx.bolts und ohne Refraktion in einer Boss-Arena (Feuer, Erde, Licht ohne Linse, Schwärme, Portal); Blitz- und Refraktions-Zauber erst nach einer Probe der zwei offenen Fehler am festen Ursprung."
+   }
   },
   {
    "id": "patch-effekseer",
@@ -8194,6 +8646,17 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/fireball.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Feuer; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 3.3 s, verlischt ganz; fällt herab.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 21.1 × 25.4 m bei scale 1. Im Aqua-Artefakt nur als Flipbook-Atlas.",
+     "passt_bei_uns": [
+      "Granate bzw. Rakete: großer Einschlag (Explosion per vorlauf)",
+      "Aqua Bomben-Hai (im Einsatz, Flipbook)"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nicht direkt (kein Effekseer).",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -8266,6 +8729,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/flame-ring.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Feuer; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 2.6 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 20.1 × 13.6 m bei scale 1.",
+     "passt_bei_uns": [
+      "Boss-Auftritt: Feuerring um die Arena"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8337,6 +8810,17 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/fire-burst.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von AndrewFM, Gruppe Feuer; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.2 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 3.9 × 7.2 m bei scale 1.",
+     "passt_bei_uns": [
+      "Molotow bzw. brennende Kiste bricht auf",
+      "Treffer der Feuer-Waffen"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8408,6 +8892,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/falling-ember.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von NextSoft, Gruppe Feuer; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.8 s, klingt langsam aus; fällt herab, breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 3.6 × 13.1 m bei scale 1.",
+     "passt_bei_uns": [
+      "Granaten- bzw. Meteorfall von oben"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8480,6 +8974,17 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/water-burst.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von NextSoft, Gruppe Wasser und Eis; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 0.9 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 7.0 × 5.6 m bei scale 1. Im Aqua-Artefakt nur als Flipbook-Atlas.",
+     "passt_bei_uns": [
+      "Aqua: Eintauchen bzw. Wassertreffer (Flipbook)",
+      "Pfütze im Spiel: FB springt hinein"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nicht direkt (kein Effekseer).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8551,6 +9056,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/water-spout.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von tktk, Gruppe Wasser und Eis; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 1.9 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 26.4 × 23.4 m bei scale 1. Im Aqua-Artefakt nur als Flipbook-Atlas.",
+     "passt_bei_uns": [
+      "Aqua: Fontäne (Flipbook)"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nicht direkt (kein Effekseer).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8622,6 +9137,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/frost-fall.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von NextSoft, Gruppe Wasser und Eis; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 1.3 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 7.5 × 12.4 m bei scale 1.",
+     "passt_bei_uns": [
+      "Eis-Treffer, Slop-Zustand „eis“"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8693,6 +9218,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/cold-mist.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Wasser und Eis; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): schlagartig, Höhepunkt bei 0.3 s, verlischt ganz; bleibt am Ort.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 29.2 × 26.6 m bei scale 1.",
+     "passt_bei_uns": [
+      "Kältenebel als Raumstimmung im Labyrinth"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8764,6 +9299,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/tornado.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von NextSoft, Gruppe Wasser und Eis; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 1.2 s, verlischt ganz; steigt auf, breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 10.0 × 8.3 m bei scale 1.",
+     "passt_bei_uns": [
+      "Wirbel-Gefahr in der Arena"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8836,6 +9381,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/lightning-strike.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Blitz; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 1.0 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 120.1 × 188.3 m bei scale 1.",
+     "passt_bei_uns": [
+      "Gewitter-Einschlag als Ereignis (stark verkleinert)"
+     ],
+     "warum_nicht": "In voller Größe überdeckt er Figur und Szene.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
      }
     },
     {
@@ -8907,6 +9462,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/thunderbolt.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von NextSoft, Gruppe Blitz; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): schlagartig, Höhepunkt bei 0.1 s, verlischt ganz; bleibt am Ort.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 8.1 × 33.7 m bei scale 1.",
+     "passt_bei_uns": [
+      "Blaster-Treffer, Slop-Zustand „strom“"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -8979,6 +9544,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/storm-orb.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Suzuki, Gruppe Blitz; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 6.9 s, bricht ab; bleibt am Ort; läuft als Schleife.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 3.1 × 3.4 m bei scale 1. Läuft endlos: stopRoot nötig.",
+     "passt_bei_uns": [
+      "Aura um Elektro-Gegner bzw. geladene Pole"
+     ],
+     "warum_nicht": "Als kurzer Treffer zu lang (Schleife, 15 s Takt).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
      }
     },
     {
@@ -9051,6 +9626,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/ember-blade.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Schwert; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 8.1 s, verlischt ganz; fällt herab, breitet sich seitlich aus, wächst in die Höhe; läuft als Schleife.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 41.2 × 57.4 m bei scale 1. Läuft endlos: stopRoot nötig.",
+     "passt_bei_uns": [
+      "Schwert-Aura für eine Spezialklinge (Schleife)"
+     ],
+     "warum_nicht": "Als kurzer Treffer zu lang (Schleife, 15 s Takt). In voller Größe überdeckt er Figur und Szene.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
      }
     },
     {
@@ -9123,6 +9708,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/moonlight-blade.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Schwert; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 3.1 s, klingt langsam aus; fällt herab, breitet sich seitlich aus, wächst in die Höhe; läuft als Schleife.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 40.3 × 42.4 m bei scale 1. Läuft endlos: stopRoot nötig.",
+     "passt_bei_uns": [
+      "Schwert-Aura (Schleife)"
+     ],
+     "warum_nicht": "Als kurzer Treffer zu lang (Schleife, 15 s Takt). In voller Größe überdeckt er Figur und Szene.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
      }
     },
     {
@@ -9195,6 +9790,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/sacred-blade.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Schwert; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 4.4 s, verlischt ganz; fällt herab, breitet sich seitlich aus, wächst in die Höhe; läuft als Schleife.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 45.9 × 52.0 m bei scale 1. Läuft endlos: stopRoot nötig.",
+     "passt_bei_uns": [
+      "Schwert-Aura (Schleife)"
+     ],
+     "warum_nicht": "Als kurzer Treffer zu lang (Schleife, 15 s Takt). In voller Größe überdeckt er Figur und Szene.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
      }
     },
     {
@@ -9267,6 +9872,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/crescent-slash.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von NextSoft, Gruppe Schwert; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.3 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 4.4 × 5.8 m bei scale 1.",
+     "passt_bei_uns": [
+      "einzelner Schwerthieb-Bogen (abgelöst durch Bogenspur)"
+     ],
+     "warum_nicht": "Als Schwertspur las er sich als Glassplitter statt als Bogen (Kritik Einhand R1/R2).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -9338,6 +9953,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/golden-cuts.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Suzuki, Gruppe Schwert; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 2.1 s, verlischt ganz; steigt auf, breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 23.8 × 21.1 m bei scale 1.",
+     "passt_bei_uns": [
+      "Combo-Finisher für Einhandschwert bzw. Katana"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -9409,6 +10034,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/benediction.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Heilung und Licht; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.7 s, verlischt ganz; bleibt am Ort.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 28.2 × 25.1 m bei scale 1.",
+     "passt_bei_uns": [
+      "Speichern bzw. Rastplatz"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -9480,6 +10115,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/healing-light.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von NextSoft, Gruppe Heilung und Licht; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 2.3 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 9.0 × 12.9 m bei scale 1.",
+     "passt_bei_uns": [
+      "Heilung (Leben zurück)"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -9553,6 +10198,17 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/golden-rise.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von tktk, Gruppe Heilung und Licht; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 2.1 s, verlischt ganz; steigt auf, breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 9.2 × 10.2 m bei scale 1.",
+     "passt_bei_uns": [
+      "Portal-Sprung R2 (im Einsatz)",
+      "Teleport bzw. Aufstieg"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -9624,7 +10280,18 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/power-up.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
-     }
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von NextSoft, Gruppe Heilung und Licht; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 1.3 s, verlischt ganz; bleibt am Ort.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 3.0 × 3.2 m bei scale 1.",
+     "passt_bei_uns": [
+      "Power-up eingesammelt (Spezialmunition)"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "idee": "Beim Einsammeln von Spezialmunition, in der Munitionsfarbe getönt."
     },
     {
      "id": "effekseer.blood-lance",
@@ -9695,6 +10362,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/blood-lance.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Dunkel; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): schlagartig, Höhepunkt bei 0.4 s, verlischt ganz; steigt auf.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 20.3 × 10.3 m bei scale 1.",
+     "passt_bei_uns": [
+      "Boss-Fähigkeit dunkel"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -9766,6 +10443,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/phantasm-rain.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Dunkel; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 2.9 s, verlischt ganz; fällt herab, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 43.3 × 27.0 m bei scale 1.",
+     "passt_bei_uns": [
+      "Boss-Fläche: Geschosse regnen"
+     ],
+     "warum_nicht": "In voller Größe überdeckt er Figur und Szene.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
      }
     },
     {
@@ -9839,6 +10526,16 @@
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/phantasm.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)",
       "flipbook": "replies/DC_AQUARIUM/phantasm_atlas_r1.png (8×6, 48 Bilder, 3,6 s, weiß, 32 m bei scale 1)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Dunkel; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 2.3 s, verlischt ganz; breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 14.7 × 16.9 m bei scale 1. Im Aqua-Artefakt nur als Flipbook-Atlas.",
+     "passt_bei_uns": [
+      "Aqua Luke → Röhre (im Einsatz, Flipbook)"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nicht direkt (kein Effekseer).",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -9911,6 +10608,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/herald.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Dunkel; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.7 s, verlischt ganz; fällt herab, breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 3.0 × 8.6 m bei scale 1. Im Aqua-Artefakt nur als Flipbook-Atlas.",
+     "passt_bei_uns": [
+      "Aqua-Augenlevel (im Einsatz)"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nicht direkt (kein Effekseer).",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -9982,6 +10689,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/toxic-aura.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von the Effekseer project, Gruppe Dunkel; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): langer Aufbau, Höhepunkt bei 1.9 s, verlischt ganz; bleibt am Ort.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 6.2 × 4.0 m bei scale 1.",
+     "passt_bei_uns": [
+      "Aura um Würfelmonster bzw. Zensur-Gegner"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -10053,7 +10770,18 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/hex-shield.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
-     }
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von the Effekseer project, Gruppe Schilde; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.6 s, verlischt ganz; fällt herab.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 11.4 × 5.0 m bei scale 1.",
+     "passt_bei_uns": [
+      "Schild-Block beim Einhand + Schild"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "idee": "Schild-Block: Effekt am Kontaktpunkt des Schilds, Farbe nach Waffen-Meta-Typ."
     },
     {
      "id": "effekseer.red-shield",
@@ -10124,6 +10852,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/red-shield.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von the Effekseer project, Gruppe Schilde; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.6 s, verlischt ganz; bleibt am Ort.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 11.1 × 4.9 m bei scale 1.",
+     "passt_bei_uns": [
+      "Schild-Block, rote Waffenfarbe"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -10195,6 +10933,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/molten-shield.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von the Effekseer project, Gruppe Schilde; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.6 s, bricht ab; bleibt am Ort.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 9.9 × 4.9 m bei scale 1.",
+     "passt_bei_uns": [
+      "Schild bricht"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      }
     },
     {
@@ -10267,6 +11015,16 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/spark-hit.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von tktk, Gruppe Treffer; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.6 s, verlischt ganz; steigt auf, breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 11.4 × 13.6 m bei scale 1.",
+     "passt_bei_uns": [
+      "Nahkampf-Treffer sword1h und polearm (im Einsatz)"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -10338,7 +11096,18 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/red-hit.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
-     }
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von AndrewFM, Gruppe Treffer; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 0.2 s, verlischt ganz; steigt auf, breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 5.7 × 5.9 m bei scale 1.",
+     "passt_bei_uns": [
+      "Boxen bzw. Faust-Treffer"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "idee": "Boxhandschuh-Treffer: kurz genug für Schlagfolgen (0,9 s)."
     },
     {
      "id": "effekseer.shockwave",
@@ -10409,7 +11178,18 @@
      "vorschau": {
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/shockwave.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)"
-     }
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Treffer; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): schlagartig, Höhepunkt bei 0.2 s, verlischt ganz; bleibt am Ort.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 18.1 × 17.1 m bei scale 1.",
+     "passt_bei_uns": [
+      "schwere Landung, Bodenschlag, Boxen-Finisher"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nur über einen Flipbook-Atlas.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "idee": "Bei schwerer Landung von FB (Jetpack aus) einmal am Boden."
     },
     {
      "id": "effekseer.feather-burst",
@@ -10483,9 +11263,32 @@
       "url": "https://git.patch.gg/patch/effekseer/raw/31f94d3d4a5d6b4b8be825c5470c266edb0de0b7/thumbs/effects/feather-burst.webp",
       "datei": "replies/VFX_EFFEKSEER_R1/effekseer_katalog.html (Bildstreifen)",
       "flipbook": "replies/DC_AQUARIUM/featherburst_atlas_r1.png (8×6, 48 Bilder, 3,2 s, weiß, 20 m bei scale 1)"
+     },
+     "gedachter_einsatz": "Effekseer-Beispiel von Pierre, Gruppe Treffer; im Block per Klick auf den Boden gewirkt. Ablauf (gemessen): kurzer Aufbau, Höhepunkt bei 1.0 s, verlischt ganz; steigt auf, breitet sich seitlich aus, wächst in die Höhe.",
+     "einordnung_tech": "effekseerSchicht (WebGL), keine Naht nötig. 25.5 × 20.1 m bei scale 1. Im Aqua-Artefakt nur als Flipbook-Atlas.",
+     "passt_bei_uns": [
+      "Aqua Kelp/Spieleinstieg (im Einsatz, Flipbook)",
+      "Kissen- bzw. Fluff-Treffer im Theater"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt nicht direkt (kein Effekseer).",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "Beispiel-Effekte aus dem Effekseer-Editor (Sample-Ordner), stilisierte Fantasy, kein Realismus; im Block wählt man einen Effekt nach Gruppe und Bild und wirkt ihn per Klick auf den Boden, auf Wunsch immer wieder (README, recipe.json).",
+   "einordnung_tech": "WebGL wie bei uns, eine Laufzeit über effekseerSchicht, zeichnet nach der Szene; kein WebGPU. Größe beim Laden festlegen (Größen schwanken um Faktor 50). Im Aqua-Artefakt zeichnet Effekseer nicht: dort Flipbook-Atlas aus dem Stamm. Farben für Anzeige-Farbraum, nicht für lineare Ziele.",
+   "passt_bei_uns": [
+    "einzelne Ereignisse an einem Punkt: Treffer, Einsammeln, Heilen, Teleport",
+    "Schild und Schwert-Aura an Waffen",
+    "Aqua über Flipbook-Atlanten"
+   ],
+   "warum_nicht": "Nicht für dauernde Flächen oder Wetter (Einzelereignisse an einem Punkt); nicht im Aqua-Artefakt ohne Flipbook; Verzerrungs-Teile brauchen captureBackground (nicht gebaut).",
+   "anpassung": {
+    "stufe": "klein",
+    "was": "Effekt-Dateien nach src/vendor/effekseer kopieren, über lade/spiele mit scale und farbe abspielen."
+   }
   },
   {
    "id": "patch-fire",
@@ -10656,6 +11459,16 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/campfire.webp"
+     },
+     "gedachter_einsatz": "Lagerfeuer auf Scheiten, Grundform aller Typen (≈ 1,9 m hoch bei size 1). (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.18 ms Startansicht, 0.54 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "Amphitheater und Lagerplätze (im Einsatz)"
+     ],
+     "warum_nicht": "Nicht im Aqua-Artefakt geprüft (unbekannt).",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -10802,6 +11615,17 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/torch.webp"
+     },
+     "gedachter_einsatz": "Flamme auf einem Fackelkopf von etwa 5 cm Radius und 21 cm Höhe, am Fuß des Kopfes stehend. (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.13 ms Startansicht, 0.28 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "Wandfackeln im Gefängnis-Labyrinth",
+      "Fackel in FBs Hand bei Nacht"
+     ],
+     "warum_nicht": "Fackelreihen nur mit lights bzw. shadow aus für die meisten, sonst teuer.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "feuerAdd({ type: 'torch' }) am vorhandenen Prop, Form über around bzw. outOf."
      }
     },
     {
@@ -10950,6 +11774,16 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/candle.webp"
+     },
+     "gedachter_einsatz": "Ruhige Flamme auf einem Docht: unten schmal und blau, Bauch, Spitze. (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.07 ms Startansicht, 0.21 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "Kerzen in Innenräumen (Geburtstag, Altar, Tisch)"
+     ],
+     "warum_nicht": "Sehr klein (5,6 cm Flamme): aus der Fahrkamera kaum lesbar.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "feuerAdd({ type: 'candle' }) am vorhandenen Prop, Form über around bzw. outOf."
      }
     },
     {
@@ -11098,7 +11932,19 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/gas.webp"
-     }
+     },
+     "gedachter_einsatz": "Aus einer Düse, gleichmäßig und blau. (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.04 ms Startansicht, 0.14 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "Gasdüsen an MiB- und Sci-Fi-Orten",
+      "Bunsenbrenner im Labor"
+     ],
+     "warum_nicht": "Nicht im Aqua-Artefakt geprüft (unbekannt).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "feuerAdd({ type: 'gas' }) am vorhandenen Prop, Form über around bzw. outOf."
+     },
+     "idee": "Blaue Gasflammen als Erkennungszeichen von MiB-Technik."
     },
     {
      "id": "fire.brazier",
@@ -11244,6 +12090,16 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/brazier.webp"
+     },
+     "gedachter_einsatz": "Aus der Öffnung einer Schale, erst gehalten, dann frei. (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.15 ms Startansicht, 0.47 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "Kohlebecken im Amphitheater"
+     ],
+     "warum_nicht": "Nicht im Aqua-Artefakt geprüft (unbekannt).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "feuerAdd({ type: 'brazier' }) am vorhandenen Prop, Form über around bzw. outOf."
      }
     },
     {
@@ -11390,6 +12246,16 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/fireplace.webp"
+     },
+     "gedachter_einsatz": "Breites, niedriges Feuer entlang der Scheite hinten in einem Kamin. (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.29 ms Startansicht, 0.81 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "Kamin in Innenräumen"
+     ],
+     "warum_nicht": "Nicht im Aqua-Artefakt geprüft (unbekannt).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "feuerAdd({ type: 'fireplace' }) am vorhandenen Prop, Form über around bzw. outOf."
      }
     },
     {
@@ -11536,6 +12402,16 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/bonfire.webp"
+     },
+     "gedachter_einsatz": "Hoher quadratischer Scheiterhaufen: Flammen durch den Stapel und ein Feuerturm oben. (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.4 ms Startansicht, 1.07 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "Freudenfeuer an Lagerplätzen"
+     ],
+     "warum_nicht": "Nicht im Aqua-Artefakt geprüft (unbekannt).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "feuerAdd({ type: 'bonfire' }) am vorhandenen Prop, Form über around bzw. outOf."
      }
     },
     {
@@ -11683,6 +12559,16 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/crate.webp"
+     },
+     "gedachter_einsatz": "Flammen, die an allen Seiten einer Kiste hochklettern. (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.46 ms Startansicht, 1.87 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "brennende Kiste als Zerstörungszustand"
+     ],
+     "warum_nicht": "Nicht im Aqua-Artefakt geprüft (unbekannt).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "feuerAdd({ type: 'crate' }) am vorhandenen Prop, Form über around bzw. outOf."
      }
     },
     {
@@ -11831,9 +12717,33 @@
      "schalter": "feuer=0 schaltet aus; feuerwind=r1 (Slice 1)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/fire/raw/4d6ee79b7bce072bc0515cfa1e787536e8b0eaf2/thumbs/types/line.webp"
-     }
+     },
+     "gedachter_einsatz": "Flammenfront entlang einer Linie am Boden, als Reihe kleiner Feuer, damit sie von jeder Seite liest. (Kommentar in FIRE_TYPES)",
+     "einordnung_tech": "feuerNaht (HDR). Kosten: Pixel des Feuers auf dem Schirm; RTX 4090, 1080p, halbe Auflösung: 0.32 ms Startansicht, 1.03 ms nah (Spender); Laptop-GPU etwa 3–4×.",
+     "passt_bei_uns": [
+      "Feuerwand als Gefahr bzw. Boss-Element",
+      "Brandschneise nach Molotow"
+     ],
+     "warum_nicht": "Als gebogener Flammenstrahl nicht wie gedacht: line ist eine Front am Boden, kein Strahl aus einer Düse.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "feuerAdd({ type: 'line', length }) entlang der Gefahrenlinie."
+     },
+     "idee": "Feuerwand als Boss-Arena-Rand, die sich zusammenzieht."
     }
-   ]
+   ],
+   "gedachter_einsatz": "Echte 3D-Flamme aus Shader-Mathematik, um die man herumgehen kann: Lagerfeuer, Fackel, Freudenfeuer usw., je Typ an das Brennende angepasst, mit Funken, Rauch und flackerndem Licht (Spender-Seite, FIRE_TYPES).",
+   "einordnung_tech": "WebGL2 wie bei uns, über feuerNaht (HDR-Ziel, drawOver, unser Tonweg); nur Perspektivkamera; kein WebGPU. Je Feuer zwei Punktlichter, eines mit Würfelschatten. Aqua-Artefakt: unbekannt.",
+   "passt_bei_uns": [
+    "feste Feuerstellen an Orten (Fackeln, Kerzen, Kamin, Kohlebecken)",
+    "Zerstörungszustände (Kiste)",
+    "Gefahren-Linie (Feuerwand)"
+   ],
+   "warum_nicht": "Kein fliegender Flammenstrahl und kein Geschoss: alle Typen stehen am Ort; das Feuer liest das Netz nicht (Rechteck, Kreis, 6 Brennstücke).",
+   "anpassung": {
+    "stufe": "klein",
+    "was": "feuerAdd({ type, around | outOf }) am Prop, Lichter in Reihen aus."
+   }
   },
   {
    "id": "patch-abilities",
@@ -11980,6 +12890,16 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/pyre.webp"
+     },
+     "gedachter_einsatz": "Fern-Wurf: dieselbe Kronen-Form wie glacier, in Feuer: lange, ungleiche Flammenklingen ohne Nachfedern (settings.js).",
+     "einordnung_tech": "Wirk-Art zone; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -12099,6 +13019,16 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/kraken.webp"
+     },
+     "gedachter_einsatz": "Fern-Wurf: Tentakel peitschen in den Kreis, Rhythmus wie rollender Donner, Finale alle zugleich (settings.js).",
+     "einordnung_tech": "Wirk-Art zone; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props). Tentakel werfen Schatten über 2D-Props (Georg 13.11.).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -12217,6 +13147,16 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/electrical.webp"
+     },
+     "gedachter_einsatz": "Fern-Wurf: spiegelnde Kugel mit Korona aus Blitzen, pulsiert organisch (settings.js).",
+     "einordnung_tech": "Wirk-Art zone; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -12330,6 +13270,17 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/earth.webp"
+     },
+     "gedachter_einsatz": "Linien-Wurf: Steinplatten legen sich in den Boden, Bruchwelle hebt sie, am Ende wächst ein Steinturm (settings.js).",
+     "einordnung_tech": "Wirk-Art line; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)",
+      "FB-Power-Move mit Ladezeit (q630: Feuerknopf halten und loslassen)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props). Glas-Transmission kostet einen zweiten Szenen-Durchgang (halbe Bildrate gemessen); KFB setzt glassTransmission 0, Staub sandfarben (q627).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -12436,7 +13387,19 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/portal.webp"
-     }
+     },
+     "gedachter_einsatz": "Tor: ein Steinbogen baut sich Stein für Stein, das Portal zündet darin und bleibt, bis ein neues Tor entsteht (settings.js).",
+     "einordnung_tech": "Wirk-Art gate; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss-Auftritt bzw. Arena-Ausgang (Tor bleibt stehen)",
+      "Portal-Ort im Viertel"
+     ],
+     "warum_nicht": "Nicht angebunden.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Tor-System der Sandbox in abilities.jsx ergänzen (wie die Linien und Flächen)."
+     },
+     "idee": "Verdant Gate als Ausgang, der nach dem Bosskampf wächst."
     },
     {
      "id": "abilities.aether",
@@ -12542,6 +13505,17 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/aether.webp"
+     },
+     "gedachter_einsatz": "Tor: Ring schließt sich, klappt hoch, dreht weiter; Licht am Rand, Mitte leer (settings.js).",
+     "einordnung_tech": "Wirk-Art ring; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss-Auftritt bzw. Arena-Ausgang (Tor bleibt stehen)",
+      "Portal-Ort im Viertel"
+     ],
+     "warum_nicht": "Nicht angebunden.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Tor-System der Sandbox in abilities.jsx ergänzen (wie die Linien und Flächen)."
      }
     },
     {
@@ -12647,6 +13621,17 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/fire-portal.webp"
+     },
+     "gedachter_einsatz": "Tor: schwarze Scheibe mit Ringemitter, alles Sichtbare ist ein Funkensystem (settings.js).",
+     "einordnung_tech": "Wirk-Art scribe; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss-Auftritt bzw. Arena-Ausgang (Tor bleibt stehen)",
+      "Portal-Ort im Viertel"
+     ],
+     "warum_nicht": "Nicht angebunden.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Tor-System der Sandbox in abilities.jsx ergänzen (wie die Linien und Flächen)."
      }
     },
     {
@@ -12777,6 +13762,17 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/ice.webp"
+     },
+     "gedachter_einsatz": "Linien-Wurf: Bruchfront läuft die Ziellinie entlang, dahinter reißt ein Feld Kristallstacheln aus dem Boden, am Ende groß (settings.js).",
+     "einordnung_tech": "Wirk-Art line; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)",
+      "FB-Power-Move mit Ladezeit (q630: Feuerknopf halten und loslassen)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -12895,6 +13891,17 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/thunder.webp"
+     },
+     "gedachter_einsatz": "Linien-Wurf: Bündel Blitzfäden aus der Hand entlang der Ziellinie, flackert und erlischt (settings.js).",
+     "einordnung_tech": "Wirk-Art line; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)",
+      "FB-Power-Move mit Ladezeit (q630: Feuerknopf halten und loslassen)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -13013,6 +14020,17 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/meteor.webp"
+     },
+     "gedachter_einsatz": "Linien-Wurf: brennender Fels mit Lavanähten im Bogen, explodiert am Ziel (settings.js).",
+     "einordnung_tech": "Wirk-Art line; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)",
+      "FB-Power-Move mit Ladezeit (q630: Feuerknopf halten und loslassen)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -13131,6 +14149,17 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/beam.webp"
+     },
+     "gedachter_einsatz": "Linien-Wurf: massiver Lichtstrahl mit Spiralen und Stoßscheiben, bewusst nicht elektrisch (settings.js).",
+     "einordnung_tech": "Wirk-Art line; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)",
+      "FB-Power-Move mit Ladezeit (q630: Feuerknopf halten und loslassen)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -13261,7 +14290,18 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/snare.webp"
-     }
+     },
+     "gedachter_einsatz": "Fern-Wurf auf einen Kreis: Käfig aus Fäden brennt genau im angezeigten Kreis (settings.js).",
+     "einordnung_tech": "Wirk-Art zone; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "idee": "Zielkreis des Spenders als Boss-Telegraph: FB sieht, wo der Käfig gleich brennt."
     },
     {
      "id": "abilities.glacier",
@@ -13385,6 +14425,16 @@
      "schalter": "abilities=r1 (aus)",
      "vorschau": {
       "url": "https://git.patch.gg/patch/abilities/raw/cf546c57a1df5f32c92e2da93b1347cc299aa8f2/thumbs/abilities/glacier.webp"
+     },
+     "gedachter_einsatz": "Fern-Wurf: Eiskrone wächst als Ring um den Kreis, Welle läuft beidseitig herum, zerspringt in Platten (settings.js).",
+     "einordnung_tech": "Wirk-Art zone; über abilities.jsx (nur Effektsysteme); Boden y = 0 an der Figur.",
+     "passt_bei_uns": [
+      "Boss wirft es mit Zielanzeige auf FB (Vorwarnung wie beim Spender)"
+     ],
+     "warum_nicht": "Angebunden in src/m1/abilities.jsx, aber für den Spieler aus seit 13.11. (ruckelt, Zweck unklar, Tentakel-Schatten über 2D-Props).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      }
     },
     {
@@ -13500,6 +14550,17 @@
      "schalter": null,
      "vorschau": {
       "url": "https://cdn.patch.gg/media/levels/b3/7f/b37f3b1c0707fc3dec791565a3fd34f4c183781fed4be830c22401db914eb88c/800.webp"
+     },
+     "gedachter_einsatz": "Buff: Blitzbögen kriechen über den Körper und springen ab, Krater mit Ladung am Boden (settings.js).",
+     "einordnung_tech": "Hängt an Knochen nach Namen (Hips … LeftHand) und am CharacterController der Sandbox; KayKit-Rig ungeprüft.",
+     "passt_bei_uns": [
+      "Boss-Wutphase (Boss mit passendem Rig)",
+      "FB-Power-Move, wenn das Rig passt"
+     ],
+     "warum_nicht": "An FB nur, wenn die Knochennamen passen (unbekannt).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Knochen-Zuordnung auf unser Rig, Anbindung wie abilities.jsx."
      }
     },
     {
@@ -13615,6 +14676,17 @@
      "schalter": null,
      "vorschau": {
       "url": "https://cdn.patch.gg/media/levels/b3/7f/b37f3b1c0707fc3dec791565a3fd34f4c183781fed4be830c22401db914eb88c/800.webp"
+     },
+     "gedachter_einsatz": "Buff: Magie-Bänder winden sich um den Körper, dunkler Rauch am Boden (settings.js).",
+     "einordnung_tech": "Hängt an Knochen nach Namen (Hips … LeftHand) und am CharacterController der Sandbox; KayKit-Rig ungeprüft.",
+     "passt_bei_uns": [
+      "Boss-Wutphase (Boss mit passendem Rig)",
+      "FB-Power-Move, wenn das Rig passt"
+     ],
+     "warum_nicht": "An FB nur, wenn die Knochennamen passen (unbekannt).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Knochen-Zuordnung auf unser Rig, Anbindung wie abilities.jsx."
      }
     },
     {
@@ -13730,9 +14802,32 @@
      "schalter": null,
      "vorschau": {
       "url": "https://cdn.patch.gg/media/levels/b3/7f/b37f3b1c0707fc3dec791565a3fd34f4c183781fed4be830c22401db914eb88c/800.webp"
+     },
+     "gedachter_einsatz": "Buff: Feuerkugeln kreisen um den Körper, Boden verbrennt schwarz (settings.js).",
+     "einordnung_tech": "Hängt an Knochen nach Namen (Hips … LeftHand) und am CharacterController der Sandbox; KayKit-Rig ungeprüft.",
+     "passt_bei_uns": [
+      "Boss-Wutphase (Boss mit passendem Rig)",
+      "FB-Power-Move, wenn das Rig passt"
+     ],
+     "warum_nicht": "An FB nur, wenn die Knochennamen passen (unbekannt).",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Knochen-Zuordnung auf unser Rig, Anbindung wie abilities.jsx."
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "Fähigkeiten einer three.js-Figur: Zielanzeige am Boden (Pfeil oder Kreis), Wurf von der Figur mit Wirk-Clip (cast1–3), Bodenabdrücke, Lichter, Partikel, Kamerawackeln; Linie, Fläche oder Tor, das stehen bleibt; drei Boosts hüllen die Figur ein (README).",
+   "einordnung_tech": "WebGL wie bei uns; KFB nutzt nur die Effektsysteme (abilities.jsx). Boden y = 0 je Wurf, ohne Tiefenbild harte Schnitte, erster Wurf ohne Vorwärmen hakt. Boosts brauchen Knochen nach Mixamo-Namen. Aqua: unbekannt.",
+   "passt_bei_uns": [
+    "Boss-Fähigkeiten mit Zielanzeige am Boden als Vorwarnung für FB",
+    "Power-Moves von FB mit Ladezeit (Georg 13.11.: später)",
+    "Tore als Boss-Auftritt bzw. Ausgang einer Arena"
+   ],
+   "warum_nicht": "Als Dauerfeuer jeder Waffe zu schwer und zu laut (ruckelte, Tentakel-Schatten über 2D-Props, Georg 13.11.).",
+   "anpassung": {
+    "stufe": "klein",
+    "was": "Anbindung steht (abilities.jsx); für Bosse nur Werfer = Boss statt FB und Ziel = FB."
+   }
   },
   {
    "id": "patch-spells",
@@ -13807,6 +14902,18 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/spells/raw/483d23ce9dd12a18d3493cf16a7a08f7a1c5493f/thumbs/spells/chains.webp"
+     },
+     "gedachter_einsatz": "Goldene Portale, Ketten ziehen den Körper hoch und reißen die Glieder ab. Ziel: Körper, auf den gezeigt wird (README).",
+     "einordnung_tech": "Eigene SpellsApp mit eigener Bildschleife; Ragdoll der Sandbox; Mixamo-Knochennamen.",
+     "passt_bei_uns": [
+      "Video bzw. Kartenpromo (WSV) mit Patchs Puppe als Ziel",
+      "Website-Showcase",
+      "Boss-Finisher bzw. Endkaskade (Zensur-Ketten der MiB)"
+     ],
+     "warum_nicht": "Im Spiel ohne eigene Naht und Ragdoll-Anschluss nicht wie gedacht.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
      }
     },
     {
@@ -13866,6 +14973,18 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/spells/raw/483d23ce9dd12a18d3493cf16a7a08f7a1c5493f/thumbs/spells/gyro.webp"
+     },
+     "gedachter_einsatz": "Messing-Gyroskop schießt verzweigte Blitze von Körper zu Körper, dann Überladung. Ziel: Kreis 6 m (README).",
+     "einordnung_tech": "Eigene SpellsApp mit eigener Bildschleife; Ragdoll der Sandbox; Mixamo-Knochennamen.",
+     "passt_bei_uns": [
+      "Video bzw. Kartenpromo (WSV) mit Patchs Puppe als Ziel",
+      "Website-Showcase",
+      "Boss-Fähigkeit gegen Gruppen, MiB-Technik"
+     ],
+     "warum_nicht": "Im Spiel ohne eigene Naht und Ragdoll-Anschluss nicht wie gedacht.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
      }
     },
     {
@@ -13925,6 +15044,18 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/spells/raw/483d23ce9dd12a18d3493cf16a7a08f7a1c5493f/thumbs/spells/reliquary.webp"
+     },
+     "gedachter_einsatz": "Wurzeln hängen den Körper in einen Runenring und ziehen ihn in die Erde. Ziel: Körper, auf den gezeigt wird (README).",
+     "einordnung_tech": "Eigene SpellsApp mit eigener Bildschleife; Ragdoll der Sandbox; Mixamo-Knochennamen.",
+     "passt_bei_uns": [
+      "Video bzw. Kartenpromo (WSV) mit Patchs Puppe als Ziel",
+      "Website-Showcase",
+      "Boss-Finisher Wald bzw. Fernwald"
+     ],
+     "warum_nicht": "Im Spiel ohne eigene Naht und Ragdoll-Anschluss nicht wie gedacht.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
      }
     },
     {
@@ -13984,6 +15115,18 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/spells/raw/483d23ce9dd12a18d3493cf16a7a08f7a1c5493f/thumbs/spells/amethyst.webp"
+     },
+     "gedachter_einsatz": "Amethyst-Spitzen wachsen um den Körper und zerdrücken ihn. Ziel: Körper, auf den gezeigt wird (README).",
+     "einordnung_tech": "Eigene SpellsApp mit eigener Bildschleife; Ragdoll der Sandbox; Mixamo-Knochennamen.",
+     "passt_bei_uns": [
+      "Video bzw. Kartenpromo (WSV) mit Patchs Puppe als Ziel",
+      "Website-Showcase",
+      "Boss-Finisher Kristall"
+     ],
+     "warum_nicht": "Im Spiel ohne eigene Naht und Ragdoll-Anschluss nicht wie gedacht.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
      }
     },
     {
@@ -14043,9 +15186,33 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/spells/raw/483d23ce9dd12a18d3493cf16a7a08f7a1c5493f/thumbs/spells/tome.webp"
+     },
+     "gedachter_einsatz": "Buch öffnet ein Orrery, Planeten fallen auf alle im Kreis. Ziel: Kreis 6 m (README).",
+     "einordnung_tech": "Eigene SpellsApp mit eigener Bildschleife; Ragdoll der Sandbox; Mixamo-Knochennamen.",
+     "passt_bei_uns": [
+      "Video bzw. Kartenpromo (WSV) mit Patchs Puppe als Ziel",
+      "Website-Showcase",
+      "Academy-Boss: Buch-Zauber (passt zum Almanach-Motiv)"
+     ],
+     "warum_nicht": "Im Spiel ohne eigene Naht und Ragdoll-Anschluss nicht wie gedacht.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "Kinoreife Zauber von 6–12 s, die auf echte Körper wirken (festnageln, zerreißen, zerschneiden) statt einen fertigen Tod abzuspielen; Ziel ist Patchs Puppe mit eigener PBD-Ragdoll (README).",
+   "einordnung_tech": "WebGL, aber eigener Renderer, eigene Bildschleife und EffectComposer; humanoide Netze mit Mixamo-Knochennamen; Modelle in Git LFS. Im Spiel nur mit eigener Naht (wie elementeNaht).",
+   "passt_bei_uns": [
+    "Video bzw. Kartenpromo (WSV) mit Patchs Puppe als Ziel",
+    "Website-Showcase",
+    "Boss-Finisher als eigene Zwischensequenz"
+   ],
+   "warum_nicht": "Im laufenden Spiel: eigene Bildschleife und Ragdoll statt unserer Kampfkette; unsere Rigs ungeprüft.",
+   "anpassung": {
+    "stufe": "klein",
+    "was": "Für Video bzw. Showcase die Spender-App unverändert mit Puppe aufnehmen."
+   }
   },
   {
    "id": "patch-geometry-painter",
@@ -14254,6 +15421,18 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/geometry-painter/raw/0596b4bca863740a5c3c14ed794f05ba7e78055d/thumbs/modes/crystals.webp"
+     },
+     "gedachter_einsatz": "Quarzkristalle wachsen entlang des Strichs auf einem Netz. Malen per Maus oder aus Code (README).",
+     "einordnung_tech": "WebGPU-Pflicht, three-mesh-bvh.",
+     "passt_bei_uns": [
+      "Website-Showcase bzw. Video",
+      "Kristall-Adern an Höhlenwänden",
+      "Eis- bzw. Amethyst-Bewuchs nach einem Zauber"
+     ],
+     "warum_nicht": "Im WebGL-Spiel nicht lauffähig.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Showcase bzw. Video unverändert; im Spiel groß (WebGPU-Pfad nötig)."
      }
     },
     {
@@ -14406,6 +15585,18 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/geometry-painter/raw/0596b4bca863740a5c3c14ed794f05ba7e78055d/thumbs/modes/molten.webp"
+     },
+     "gedachter_einsatz": "Glühende Risse mit Glut und Krustenbrocken entlang des Strichs. Malen per Maus oder aus Code (README).",
+     "einordnung_tech": "WebGPU-Pflicht, three-mesh-bvh.",
+     "passt_bei_uns": [
+      "Website-Showcase bzw. Video",
+      "Riss, der sich von einer Boss-Landung ausbreitet",
+      "Krater-Ränder nach Einschlag (passt zu KRATER_MENTALMODELL)"
+     ],
+     "warum_nicht": "Im WebGL-Spiel nicht lauffähig.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Showcase bzw. Video unverändert; im Spiel groß (WebGPU-Pfad nötig)."
      }
     },
     {
@@ -14575,6 +15766,17 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/geometry-painter/raw/0596b4bca863740a5c3c14ed794f05ba7e78055d/thumbs/modes/aurora.webp"
+     },
+     "gedachter_einsatz": "Vorhänge aus Polarlicht-Seide, Saum am Strich. Malen per Maus oder aus Code (README).",
+     "einordnung_tech": "WebGPU-Pflicht, three-mesh-bvh.",
+     "passt_bei_uns": [
+      "Website-Showcase bzw. Video",
+      "Vorhänge aus Licht für HyperNorm bzw. Mindspaces"
+     ],
+     "warum_nicht": "Im WebGL-Spiel nicht lauffähig.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Showcase bzw. Video unverändert; im Spiel groß (WebGPU-Pfad nötig)."
      }
     },
     {
@@ -14762,9 +15964,32 @@
      "schalter": null,
      "vorschau": {
       "url": "https://git.patch.gg/patch/geometry-painter/raw/0596b4bca863740a5c3c14ed794f05ba7e78055d/thumbs/modes/reef.webp"
+     },
+     "gedachter_einsatz": "Leuchtendes Riff mit Kolonien, Anemonen und Plankton entlang des Strichs. Malen per Maus oder aus Code (README).",
+     "einordnung_tech": "WebGPU-Pflicht, three-mesh-bvh.",
+     "passt_bei_uns": [
+      "Website-Showcase bzw. Video",
+      "Aqua: Riff wächst entlang der Beckenwand"
+     ],
+     "warum_nicht": "Im WebGL-Spiel nicht lauffähig.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Showcase bzw. Video unverändert; im Spiel groß (WebGPU-Pfad nötig)."
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "Mit der Maus über ein beliebiges Netz ziehen, entlang des Strichs wächst Geometrie; auch aus Code malbar (Zauberbahn, Riss ab Landepunkt, Ader an Höhlenwand) (README).",
+   "einordnung_tech": "Nur WebGPU (three/webgpu, TSL); unser Spiel zeichnet mit WebGLRenderer. Ersetzt Mesh.prototype.raycast global.",
+   "passt_bei_uns": [
+    "eigene WebGPU-Seite: Showcase bzw. Website",
+    "Video bzw. Standbilder (Buchmaschine, Kartenpromo)",
+    "später Mindspaces, wenn es einen WebGPU-Pfad gibt (V-1721: Zerstörung, Kymatik)"
+   ],
+   "warum_nicht": "Im Spiel und im Aqua-Artefakt (WebGL) nicht ohne Umbau auf WebGL.",
+   "anpassung": {
+    "stufe": "klein",
+    "was": "Als eigene WebGPU-Seite bzw. für Video unverändert; im Spiel groß."
+   }
   },
   {
    "id": "three-quarks",
@@ -14847,6 +16072,16 @@
      "schalter": "quarks=r1 (Slice 1)",
      "vorschau": {
       "datei": "tools/vfx-buehne (liest kampfVfx.r1.js)"
+     },
+     "gedachter_einsatz": "KFB-eigener Effekt auf three.quarks (Georgs Wahl 18.11. bzw. Stangen/Einhand R1): Pistole, Blaster: kurzer Kegel nach vorn, 2–4 Funken; Formen kegel | flipbook | flipbook+stern (Vorlagen CC0)",
+     "einordnung_tech": "quarksHost, WebGL.",
+     "passt_bei_uns": [
+      "Pistole, Blaster: kurzer Kegel nach vorn, 2–4 Funken; Formen kegel | flipbook | flipbook+stern (Vorlagen CC0)"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -14909,6 +16144,16 @@
      "schalter": "quarks=r1 (Slice 1)",
      "vorschau": {
       "datei": "tools/vfx-buehne (liest kampfVfx.r1.js)"
+     },
+     "gedachter_einsatz": "KFB-eigener Effekt auf three.quarks (Georgs Wahl 18.11. bzw. Stangen/Einhand R1): Pistole, Blaster: vorn spitz, hinten auslaufend, Kind des Geschoss-Meshes",
+     "einordnung_tech": "quarksHost, WebGL.",
+     "passt_bei_uns": [
+      "Pistole, Blaster: vorn spitz, hinten auslaufend, Kind des Geschoss-Meshes"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -14971,6 +16216,16 @@
      "schalter": "quarks=r1 (Slice 1)",
      "vorschau": {
       "datei": "tools/vfx-buehne (liest kampfVfx.r1.js)"
+     },
+     "gedachter_einsatz": "KFB-eigener Effekt auf three.quarks (Georgs Wahl 18.11. bzw. Stangen/Einhand R1): Funken in Schussrichtung (q759), kurze Glut",
+     "einordnung_tech": "quarksHost, WebGL.",
+     "passt_bei_uns": [
+      "Funken in Schussrichtung (q759), kurze Glut"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -15033,6 +16288,16 @@
      "schalter": "quarks=r1 (Slice 1)",
      "vorschau": {
       "datei": "tools/vfx-buehne (liest kampfVfx.r1.js)"
+     },
+     "gedachter_einsatz": "KFB-eigener Effekt auf three.quarks (Georgs Wahl 18.11. bzw. Stangen/Einhand R1): material plastic: Blitzscheibe, Ring, kantige Splitter",
+     "einordnung_tech": "quarksHost, WebGL.",
+     "passt_bei_uns": [
+      "material plastic: Blitzscheibe, Ring, kantige Splitter"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -15095,6 +16360,16 @@
      "schalter": "quarks=r1 (Slice 1)",
      "vorschau": {
       "datei": "tools/vfx-buehne (liest kampfVfx.r1.js)"
+     },
+     "gedachter_einsatz": "KFB-eigener Effekt auf three.quarks (Georgs Wahl 18.11. bzw. Stangen/Einhand R1): material stone: Staub und Brocken mit Schwerkraft",
+     "einordnung_tech": "quarksHost, WebGL.",
+     "passt_bei_uns": [
+      "material stone: Staub und Brocken mit Schwerkraft"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -15192,9 +16467,29 @@
      "schalter": "einhand=r1, stangen=r1",
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigener Effekt auf three.quarks (Georgs Wahl 18.11. bzw. Stangen/Einhand R1): sword1h, polearm: Band folgt der Klingenspitze im Hiebfenster, Catmull-Rom geglättet, Textur Particle_Soft.png",
+     "einordnung_tech": "quarksHost, WebGL.",
+     "passt_bei_uns": [
+      "sword1h, polearm: Band folgt der Klingenspitze im Hiebfenster, Catmull-Rom geglättet, Textur Particle_Soft.png"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "Allgemeine Partikel-Engine für three.js: Effekte als Daten (Emitter, Verhalten, Renderer-Art) in einem BatchedRenderer.",
+   "einordnung_tech": "WebGL wie bei uns, Version 0.17.1 fest; Zeit kommt aus der Kampfkette.",
+   "passt_bei_uns": [
+    "Schuss, Treffer, Spuren im Kampf (im Einsatz)"
+   ],
+   "warum_nicht": "Kein Bloom im Spiel-Renderer: HDR-Kerne leuchten nicht nach.",
+   "anpassung": {
+    "stufe": "keine",
+    "was": "läuft schon"
+   }
   },
   {
    "id": "inkwave",
@@ -15264,6 +16559,17 @@
      "schalter": "tinte=r1 (Slice 1)",
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "Spritzer stempeln Teamfarbe in eine Bodenkarte, nasser Lack trocknet (paint.js + inkShading.js).",
+     "einordnung_tech": "WebGL; übernommen über tintenKarte.",
+     "passt_bei_uns": [
+      "Zensur-Tinte der Würfelmonster (tinte=r1, Slice 1)",
+      "Blut-Flecken als zweite Schicht (blut=r1)"
+     ],
+     "warum_nicht": "Gelände ohne Umgebungskarte: Spiegelung nimmt die Himmelsfarbe aus INK_WET.",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -15293,6 +16599,16 @@
      "schalter": "labyink=r1 (WS1-Theater, prüfen)",
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "Wie der Stempel, an Wänden (Inkwave malt auch Wände).",
+     "einordnung_tech": "WebGL; übernommen über tintenKarte.",
+     "passt_bei_uns": [
+      "Theater: Befreien = Fluff-Farbe spritzt drüber und schmilzt weg (T-020 B)"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft im Theater"
      }
     },
     {
@@ -15488,7 +16804,20 @@
      "schalter": null,
      "vorschau": {
       "datei": null
-     }
+     },
+     "gedachter_einsatz": "Partikel für jeden Spielmoment: Treffer, Explosion, Mündung, Schritte, Landung, Eintauchen, Auftauchen, Laden.",
+     "einordnung_tech": "WebGL; hängt an Inkwaves Kontext.",
+     "passt_bei_uns": [
+      "hitSplash und explosion für Tinten-Treffer an Slops und Würfelmonstern",
+      "muzzle und shotTrail für eine Tinten-Waffe",
+      "footstep, land, wake für FB in Tinte"
+     ],
+     "warum_nicht": "Braucht den Inkwave-Kontext (core/ctx.js); Einzelübernahme nur mit Anpassung.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "FX-Klasse aus Inkwaves Kontext lösen (core/ctx.js) und an Treffer-Ereignisse hängen."
+     },
+     "idee": "hitSplash in Zensur-Tintenfarbe, wenn ein Würfelmonster getroffen wird."
     },
     {
      "id": "inkwave.screenfx",
@@ -15569,6 +16898,18 @@
      "schalter": null,
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "Ein Vollbild-Durchgang: Tinte auf der Linse, Herzschlag-Vignette, Treffer-Stoß, Druckwelle, Schwimm-Streifen, Respawn-Iris.",
+     "einordnung_tech": "WebGL; hängt an Inkwaves Kontext.",
+     "passt_bei_uns": [
+      "Tintenspritzer auf der Kamera bei Slop-Treffer",
+      "Herzschlag-Vignette bei wenig Leben",
+      "Druckwelle bei Explosion"
+     ],
+     "warum_nicht": "Hängt an Inkwaves Renderer-Wrapper (R.setExtraPass); bei uns kein Composer-Pass vorhanden.",
+     "anpassung": {
+      "stufe": "groß",
+      "was": "Braucht einen Vollbild-Durchgang nach dem Grading; im Spiel gibt es keinen Composer-Pass."
      }
     },
     {
@@ -15618,9 +16959,31 @@
      "schalter": null,
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "Kielwasser von bis zu 4 Schwimmern im Tinten-Boden (V-Welle, glänzender Hügel über dem Körper).",
+     "einordnung_tech": "WebGL; hängt an Inkwaves Kontext.",
+     "passt_bei_uns": [
+      "FB taucht in Tinte bzw. Pfütze"
+     ],
+     "warum_nicht": "Lebt im Inkwave-levelMaterial.",
+     "anpassung": {
+      "stufe": "groß",
+      "was": "Lebt im Inkwave-levelMaterial; unsere Tintenkarte hat keine Schwimmspur."
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "4-gegen-4-Tintenschießer gegen Bots: Boden in Teamfarbe malen, in der eigenen Tinte schwimmen und nachladen, drei Minuten (Spender-Seite).",
+   "einordnung_tech": "WebGL; Malsystem und Schattierung sind übernommen, der Rest hängt an Inkwaves Kontext (ctx, Renderer-Wrapper, levelMaterial).",
+   "passt_bei_uns": [
+    "Tinte am Boden (im Einsatz)",
+    "Schleim an Wänden (Theater)",
+    "Tinten-Treffer an Slops und Würfelmonstern"
+   ],
+   "warum_nicht": "Schwimmen in Tinte und Bildschirm-Effekte setzen Inkwaves Level-Material und Composer voraus.",
+   "anpassung": {
+    "stufe": "keine",
+    "was": "Stempel läuft schon"
+   }
   },
   {
    "id": "codevember-bolt",
@@ -15703,7 +17066,19 @@
      "schalter": "portal=r3 mit tueren=1 (prüfen)",
      "vorschau": {
       "datei": "test/_portal-r3-beleg.mjs (Beleg)"
-     }
+     },
+     "gedachter_einsatz": "Plasmakugel zum Anfassen (Maus, Finger, Kamerahände).",
+     "einordnung_tech": "WebGL im Stamm, CPU-Fäden.",
+     "passt_bei_uns": [
+      "Portal R3 (im Einsatz)",
+      "Aqua: Unterwasser-Kugel mit Maus bzw. Finger"
+     ],
+     "warum_nicht": "Im Aqua-Artefakt ungeprüft (unbekannt).",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon (Portal R3)"
+     },
+     "idee": "Aqua: Blitze mit dem Finger nach unten drücken als Spielziel (faedenHoehe)."
     },
     {
      "id": "bolt.handtracking",
@@ -15734,9 +17109,30 @@
      "schalter": null,
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "Fingerspitzen über die Kamera erkennen und als Berührung auf die Kugel legen (hands/README).",
+     "einordnung_tech": "MediaPipe im Worker, Kamera-Erlaubnis.",
+     "passt_bei_uns": [
+      "Aqua: Kugel mit der Hand steuern"
+     ],
+     "warum_nicht": "Ohne Kamera-Erlaubnis bzw. auf Handys ohne Rechenreserve; nicht verdrahtet.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "MediaPipe einbinden und an beruehre() hängen."
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "Interaktive Plasmakugel: Fäden wie in einer echten Kugel, bis zu 5 Finger bzw. Hände (Kamera) ziehen Blitze zu sich (filaments.ts, hands/README).",
+   "einordnung_tech": "Original WebGPU, im Stamm auf WebGL angepasst; Fäden auf der CPU; Handtracking braucht MediaPipe und Kamera.",
+   "passt_bei_uns": [
+    "Aqua: Unterwasser-Kugel zum Anfassen (am nächsten am Original)",
+    "Portal R3 (im Einsatz)"
+   ],
+   "warum_nicht": "Als reines Portal ohne Berührung wird die Interaktion des Originals nicht genutzt.",
+   "anpassung": {
+    "stufe": "keine",
+    "was": "Portal R3 läuft"
+   }
   },
   {
    "id": "kfb-eigen",
@@ -15780,6 +17176,16 @@
      "schalter": "portal=r2 mit tueren=1 (prüfen)",
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigen: Türen-Portal: Golden rise, Wabern ins Licht, Gutter Space, Rückkehr",
+     "einordnung_tech": "WebGL, direkt.",
+     "passt_bei_uns": [
+      "Türen-Portal: Golden rise, Wabern ins Licht, Gutter Space, Rückkehr"
+     ],
+     "warum_nicht": "Rezept src/data/choreo/portal_sprung.r2.json; nutzt Effekseer Golden rise.",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -15847,6 +17253,17 @@
      "schalter": "energiebogen=r2 (über viertelLoader)",
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigen: Energiemasten im Viertel",
+     "einordnung_tech": "WebGL, direkt.",
+     "passt_bei_uns": [
+      "Energiemasten im Viertel",
+      "Handblitz (handblitz=r1, aus)"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -15882,6 +17299,16 @@
      "schalter": null,
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigen: abgelöst durch Patch Fire (q662 PASS)",
+     "einordnung_tech": "WebGL, direkt.",
+     "passt_bei_uns": [
+      "abgelöst durch Patch Fire (q662 PASS)"
+     ],
+     "warum_nicht": "Patch Fire war im Vergleich deutlich besser (q662).",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "abgelöst durch Patch Fire, nicht mehr vorgesehen"
      }
     },
     {
@@ -15932,6 +17359,16 @@
      "schalter": null,
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigen: kleiner Brand nach Treffer (Referenz smallBurn)",
+     "einordnung_tech": "WebGL, direkt.",
+     "passt_bei_uns": [
+      "kleiner Brand nach Treffer (Referenz smallBurn)"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Modul an einem Ort einhängen (liegt im Stamm)."
      }
     },
     {
@@ -15956,6 +17393,16 @@
      "schalter": null,
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigen: Nachbrand an Bruchkanten (#105)",
+     "einordnung_tech": "WebGL, direkt.",
+     "passt_bei_uns": [
+      "Nachbrand an Bruchkanten (#105)"
+     ],
+     "warum_nicht": "Atlas 680 × 254, 8 × 2 Zellen; Karten drehen sich zur Kamera.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Modul an einem Ort einhängen (liegt im Stamm)."
      }
     },
     {
@@ -15990,6 +17437,16 @@
      "schalter": "blut=r1 (Slice 1)",
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigen: Loch, Ruß, Brand, Durchschuss an Figuren; Tropfen und Flecken in der Tintenkarte",
+     "einordnung_tech": "WebGL, direkt.",
+     "passt_bei_uns": [
+      "Loch, Ruß, Brand, Durchschuss an Figuren; Tropfen und Flecken in der Tintenkarte"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -16012,6 +17469,16 @@
      "schalter": null,
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigen: Jetpack, Auto (M2Car), Elan-Ringe, Schuss-Burst",
+     "einordnung_tech": "WebGL, direkt.",
+     "passt_bei_uns": [
+      "Jetpack, Auto (M2Car), Elan-Ringe, Schuss-Burst"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "keine",
+      "was": "läuft schon"
      }
     },
     {
@@ -16071,9 +17538,29 @@
      "schalter": null,
      "vorschau": {
       "datei": null
+     },
+     "gedachter_einsatz": "KFB-eigen: Suchscheinwerfer (Aqua Critic R2 #28), Gefängnis-Labyrinth",
+     "einordnung_tech": "WebGL, direkt.",
+     "passt_bei_uns": [
+      "Suchscheinwerfer (Aqua Critic R2 #28), Gefängnis-Labyrinth"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Modul an einem Ort einhängen (liegt im Stamm)."
      }
     }
-   ]
+   ],
+   "gedachter_einsatz": "Eigene Module für KFB-Situationen (Kopfkommentare der Dateien).",
+   "einordnung_tech": "WebGL, direkt im Spiel.",
+   "passt_bei_uns": [
+    "je Modul, siehe Effekte"
+   ],
+   "warum_nicht": "unbekannt",
+   "anpassung": {
+    "stufe": "keine",
+    "was": "je Modul"
+   }
   }
  ]
 }

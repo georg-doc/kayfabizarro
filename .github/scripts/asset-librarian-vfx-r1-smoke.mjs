@@ -69,7 +69,7 @@ async function run(){
     await cdp.send('Browser.grantPermissions',{origin:'http://127.0.0.1:8779',permissions:['clipboardReadWrite','clipboardSanitizedWrite']});
     await cdp.eval(`document.getElementById('copyVfxReference').click();true`);
     const reference=await poll(()=>cdp.eval(`navigator.clipboard.readText().then(text=>{try{return JSON.parse(text);}catch{return null;}})`),'Clipboard reference');
-    assert(reference.katalog==='kfb.vfx-katalog/1'&&reference.id==='elements.thunderstrike'&&reference.parameter.intensity===1,'Source reference and standard values');
+    assert(reference.katalog===catalog.schema&&reference.id==='elements.thunderstrike'&&reference.parameter.intensity===1,'Source reference and standard values');
     result.checks.clipboard=reference;
     await poll(()=>cdp.eval(`Boolean(document.querySelector('#vfxDetailContent img')?.naturalWidth)`),'Detail preview');
     await screenshot(cdp,'01-fx-detail');
