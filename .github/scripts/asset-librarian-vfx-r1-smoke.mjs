@@ -37,14 +37,14 @@ class CDP {
 async function connect(url){const ws=new WebSocket(url);await new Promise((resolve,reject)=>{ws.addEventListener('open',resolve,{once:true});ws.addEventListener('error',reject,{once:true});});return new CDP(ws);}
 async function screenshot(cdp,name){const r=await cdp.send('Page.captureScreenshot',{format:'png',fromSurface:true});writeFileSync(path.join(OUT,name+'.png'),Buffer.from(r.data,'base64'));}
 async function value(cdp,id,text){await cdp.eval(`(()=>{const el=document.getElementById(${JSON.stringify(id)});el.value=${JSON.stringify(text)};el.dispatchEvent(new Event(el.tagName==='INPUT'?'input':'change',{bubbles:true}));return true;})()`);}
-async function fx(cdp){await poll(()=>cdp.eval(`document.getElementById('registryStatus')?.textContent==='Registry ready'`),'Registry ready',90000);await cdp.eval(`document.querySelector('[data-library-tab="fx"]').click();true`);await poll(()=>cdp.eval(`document.querySelectorAll('#resourceList [data-vfx-id]').length===127`),'127 VFX effects');}
+async function fx(cdp){await poll(()=>cdp.eval(`document.getElementById('registryStatus')?.textContent==='Registry ready'`),'Registry ready',90000);await cdp.eval(`document.querySelector('[data-library-tab="fx"]').click();true`);await poll(()=>cdp.eval(`document.querySelectorAll('#resourceList [data-vfx-id]').length===${catalog.zahlen.effekte}`),'Owner VFX effects');}
 async function count(cdp,expected){await poll(()=>cdp.eval(`document.querySelectorAll('#resourceList .resource-card').length===${expected}`),`count ${expected}`);}
 async function openEffect(cdp,id){await cdp.eval(`document.querySelector('[data-vfx-id="${id}"] .resource-open').click();true`);await poll(()=>cdp.eval(`document.getElementById('vfxDetailContent').hidden===false`),'VFX detail');}
 
 async function run(){
   mkdirSync(OUT,{recursive:true});
   const exe=executable();assert(exe,'Chrome is required for browser acceptance');
-  const server=spawn('python3',['-m','http.server','8779','--bind','127.0.0.1'],{cwd:ROOT,stdio:'ignore'});
+  const server=spawn('python3',['-c',"import http.server; http.server.ThreadingHTTPServer.request_queue_size=128; http.server.test(HandlerClass=http.server.SimpleHTTPRequestHandler, ServerClass=http.server.ThreadingHTTPServer, port=8779, bind='127.0.0.1')"],{cwd:ROOT,stdio:'ignore'});
   const browser=spawn(exe,['--headless=new','--no-sandbox','--disable-dev-shm-usage','--enable-webgl','--use-angle=swiftshader','--enable-unsafe-swiftshader','--remote-debugging-port=9239','--user-data-dir='+mkdtempSync(path.join(os.tmpdir(),'kfb-vfx-r1-')),'--window-size=1440,1000','about:blank'],{stdio:'ignore'});
   const result={schema:'kfb.vfx-catalog-browser-acceptance/1',checks:{},result:'FAIL'};let cdp;
   try {
@@ -55,11 +55,11 @@ async function run(){
     await cdp.send('Fetch.enable',{patterns:[{urlPattern:LIVE+'*',requestStage:'Request'}]});
     await cdp.send('Page.navigate',{url:BASE});
     await poll(()=>cdp.eval(`Boolean(document.querySelector('[data-library-tab="fx"]'))`),'FX navigation');
-    await fx(cdp);await value(cdp,'resourceFxScope','vfx');await count(cdp,127);
-    result.checks.catalog={effects:127,donors:catalog.spender.length,status:catalog.zahlen.nach_status};
-    for(const [status,n] of [['im Spiel',20],['vendored ungenutzt',72],['nur extern',35]]){await value(cdp,'resourceStatusFilter',status);await count(cdp,n);}
+    await fx(cdp);await value(cdp,'resourceFxScope','vfx');await count(cdp,catalog.zahlen.effekte);
+    result.checks.catalog={effects:catalog.zahlen.effekte,donors:catalog.spender.length,status:catalog.zahlen.nach_status};
+    for(const [status,n] of Object.entries(catalog.zahlen.nach_status)){await value(cdp,'resourceStatusFilter',status);await count(cdp,n);}
     await value(cdp,'resourceStatusFilter','');
-    await value(cdp,'resourceSpenderFilter','patch-elements');await count(cdp,39);await value(cdp,'resourceSpenderFilter','');
+    await value(cdp,'resourceSpenderFilter','patch-elements');await count(cdp,catalog.spender.find(donor=>donor.id==='patch-elements').effekte.length);await value(cdp,'resourceSpenderFilter','');
     await value(cdp,'resourceArtFilter','Portal');assert(await cdp.eval(`document.querySelectorAll('#resourceList .resource-card').length>0`),'Art filter');await value(cdp,'resourceArtFilter','');
     await value(cdp,'resourceSearch','effekseer.fireball');await count(cdp,1);await value(cdp,'resourceSearch','');
     result.checks.filters=true;
@@ -75,7 +75,7 @@ async function run(){
     await screenshot(cdp,'01-fx-detail');
     await cdp.eval(`document.getElementById('resourceDetailClose').click();true`);
     await value(cdp,'resourceFxScope','registry');await count(cdp,10);result.checks.legacyFx=10;
-    await value(cdp,'resourceFxScope','donors');await count(cdp,10);await openEffect(cdp,'patch-elements');
+    await value(cdp,'resourceFxScope','donors');await count(cdp,catalog.spender.length);await openEffect(cdp,'patch-elements');
     assert(await cdp.eval(`document.getElementById('vfxDetailContent').textContent.includes('globale_parameter')&&document.getElementById('vfxDetailContent').textContent.includes('api')`),'Donor parameters and API');
     await cdp.eval(`document.getElementById('resourceDetailClose').click();true`);
     await value(cdp,'resourceFxScope','vfx');await openEffect(cdp,'quarks.muendung');
