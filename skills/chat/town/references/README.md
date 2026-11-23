@@ -24,3 +24,11 @@ The source collection intentionally omits measurements, render passes and toolin
 ## Boundary
 
 `../LIVING_KFB_TOWN.md` is the one Town living concept document. Reference material sits beside it so context and derivation survive without silently rewriting Town decisions.
+
+## 2026-10-26 · First Play / Gutter prologue R1 — proposal only
+
+New concept and owner-boundary source atlas: [KFB First Play — Awakening / Gutter / Open World](KFB_FIRST_PLAY_AWAKENING_GUTTER_OPEN_WORLD_R1_2026-10-26.md).
+
+Companions: [18/18 source/editorial checks](KFB_FIRST_PLAY_TEST_REPORT_R1_2026-10-26.md), [additive changelog](KFB_FIRST_PLAY_CHANGELOG.md), [Return](KFB_FIRST_PLAY_RETURN_R1_2026-10-26.md).
+
+This records Georg's proposed opening and first-player journey, **not a Town J-decision**, implemented tutorial, runtime authority or automatic replacement of the accepted r022 public Town delta. First-next gate is WS0 source-isolated storyboard + active WS1 receiver/World intake.
