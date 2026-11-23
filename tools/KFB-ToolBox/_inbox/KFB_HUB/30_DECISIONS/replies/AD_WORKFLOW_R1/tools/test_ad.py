@@ -286,7 +286,7 @@ class WebchatScript(unittest.TestCase):
     UA = os.path.join(PKG, 'upload', 'A')
 
     def st(self, *extra, paket=None):
-        return run(os.path.join(self.UA, 'ad_return.py'), 'start', '--paket', paket or os.path.join(self.UA, 'package.json'),
+        return run(S, 'start', '--paket', paket or os.path.join(self.UA, 'package.json'),
                    '--arbeit', os.path.join(self.d, 'w'), *extra)
 
     def test_unknown_family(self):
@@ -299,7 +299,7 @@ class WebchatScript(unittest.TestCase):
         self.assertIn('Upload passt nicht', self.st('--familie', 'D').stdout)
 
     def test_foreign_script_rejected(self):
-        u = os.path.join(self.d, 'u'); shutil.copytree(self.UA, u)
+        u = os.path.join(self.d, 'u'); shutil.copytree(self.UA, u); shutil.copy2(S, os.path.join(u, 'ad_return.py'))
         with open(os.path.join(u, 'ad_return.py'), 'a') as f:
             f.write('\n# verändert\n')
         r = run(os.path.join(u, 'ad_return.py'), 'start', '--paket', os.path.join(u, 'package.json'), '--familie', 'A', '--arbeit', os.path.join(self.d, 'w'))
@@ -311,14 +311,14 @@ class WebchatScript(unittest.TestCase):
         u = os.path.join(self.d, 'u'); shutil.copytree(self.UA, u)
         with open(os.path.join(u, 'package.json'), 'w') as f:
             json.dump(pkg, f, indent=4)
-        r = run(os.path.join(u, 'ad_return.py'), 'start', '--paket', os.path.join(u, 'package.json'), '--familie', 'A',
+        r = run(S, 'start', '--paket', os.path.join(u, 'package.json'), '--familie', 'A',
                 '--erwarte', canon_hash(pkg)[:12], '--arbeit', os.path.join(self.d, 'w'))
         self.assertEqual(r.returncode, 0, r.stdout)
 
     def test_unchanged_target_rejected_and_verwerfen(self):
         self.assertEqual(self.st('--familie', 'A').returncode, 0)
         w = ['--arbeit', os.path.join(self.d, 'w')]
-        sc = os.path.join(self.UA, 'ad_return.py')
+        sc = S
         r = run(sc, 'ziel', '--finding', 'F01', '--rolle', 'still', '--bild', os.path.join(self.UA, 'S02_startbild__trouble_desktop__still__edit.png'), *w)
         self.assertIn('unverändert', r.stdout)
         self.assertIn('Entwurf', self.st('--familie', 'A').stdout)

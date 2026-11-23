@@ -7,9 +7,9 @@ ABSICHT  Der Spieler bricht als Aquariumsfisch aus dem DocCheck-Becken aus und e
 GENRE    Cartoon-Heist-Arcade im Browser (GTA-Ton im Interface, Looney-Tunes-Timing, Clay-Vordergrund)
 OWNER    KLÄREN – genau einer aus: WSB + WS0 · Branch/Modul: WS0 trägt ein
 ZIEL     Zielbild(er), von Georg im Webchat freigegeben (aufs Originalformat zurückgeführt):
-           F03_ausholung_v1: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/rueckgabe/D_l1/ziele/F03_ausholung_v1.png · PASS 2026-11-23T02:58:02Z „SIMULIERT: passt“
+           F03_ausholung_v1: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/rueckgabe/D_l1/ziele/F03_ausholung_v1.png · PASS 2026-11-23T18:41:29Z „SIMULIERT: passt“
            Ausgang: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/stills/S16_hai_angriff__trouble_desktop__ausholung.png · Ereignis hai:angriff 119.64 s (Laufuhr) · Clip-Zeit unbekannt
-           F03_aufprall_v2: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/rueckgabe/D_l1/ziele/F03_aufprall_v2.png · PASS 2026-11-23T02:58:02Z „SIMULIERT: jetzt gut“
+           F03_aufprall_v2: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/rueckgabe/D_l1/ziele/F03_aufprall_v2.png · PASS 2026-11-23T18:41:29Z „SIMULIERT: jetzt gut“
            Ausgang: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/stills/S16_hai_angriff__trouble_desktop__aufprall.png · Ereignis hai:biss 120.24 s · hai:schwarz bis 120.66 s (Laufuhr) · Clip-Zeit unbekannt
          Clip: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/clips/S16_hai_angriff__trouble_desktop.mp4 · Clip-Zeitfenster unbekannt (Ausnahme im Paket); Laufuhr-Ereignisse der Stills gelten
          Referenzen: Looney Tunes / Road Runner [offen] (ohne Frames); Claybound [offen] (https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/refs/claybound__1.jpg, https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/refs/claybound__2.jpg)

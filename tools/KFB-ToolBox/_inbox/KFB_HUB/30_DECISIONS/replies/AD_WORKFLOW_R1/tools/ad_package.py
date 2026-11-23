@@ -31,7 +31,7 @@ LEITPLANKEN = os.path.join(SKILL_DIR, 'references', 'LEITPLANKEN.md')
 
 PRIV_REPO = 'git@github.com:georg-doc/KFB-Stunt-Car-Race.git'
 PRIV_KEY = os.path.expanduser('~/.ssh/kfb_private_assets_deploy')
-MAX_UPLOAD = 10   # vorsichtige Grenze je ChatGPT-Nachricht: package.json, LEITPLANKEN.md, ad_return.py + ≤ 7 Bilder
+MAX_UPLOAD = 8   # Georg 23.11.: der Webchat verkraftet nur wenige Dateien; package.json + Bilder + eine Referenz (Skript und Leitplanke liegen im Skill)
 
 
 def die(msgs):
@@ -221,7 +221,7 @@ def build(spec_path, out, ausnahmen):
     for f in pkg['familien']:
         ordner = f'upload/{f["id"]}'
         os.makedirs(os.path.join(out, ordner), exist_ok=True)
-        files, fam_refs = ['package.json', 'LEITPLANKEN.md', 'ad_return.py'], []
+        files, fam_refs = ['package.json'], []
         for s in szenen:
             if s['familie'] != f['id'] or not any(b['malbar'] for b in s['befunde']):
                 continue
@@ -234,7 +234,7 @@ def build(spec_path, out, ausnahmen):
         for r in refs:
             if r['id'] in fam_refs:
                 for fr in r['frames'][:1]:
-                    if len(files) < MAX_UPLOAD:
+                    if len(files) < MAX_UPLOAD and not any(x in [y for q in refs for y in q['frames']] for x in files):
                         files.append(fr)
         if len(files) > MAX_UPLOAD:
             errs.append(f'Familie {f["id"]}: {len(files)} Upload-Dateien > {MAX_UPLOAD}; Familie teilen')

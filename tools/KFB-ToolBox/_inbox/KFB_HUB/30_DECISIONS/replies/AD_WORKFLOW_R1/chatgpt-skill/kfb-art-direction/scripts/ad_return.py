@@ -140,9 +140,10 @@ def start(a, w):
     if arg(a, '--erwarte') and not h.startswith(arg(a, '--erwarte').lstrip('#')):
         die(f'Paket-Prüfsumme {h[:12]} ≠ Aufruf {arg(a, "--erwarte")}: falsche oder veränderte package.json – Ordner neu hochladen')
     if self_sha() != pkg['werkzeug']['sha256']:
-        die('Dieses ad_return.py gehört nicht zum Paket: das ad_return.py aus dem hochgeladenen Ordner verwenden')
-    if file_sha(os.path.join(pdir, 'LEITPLANKEN.md')) != pkg['leitplanken']['sha256']:
-        die('LEITPLANKEN.md aus dem Ordner fehlt oder ist verändert: Ordner vollständig hochladen')
+        die('Dieses ad_return.py gehört nicht zum Paket: Skill veraltet, bitte den Skill kfb-art-direction neu hochladen')
+    lp_orte = [os.path.join(pdir, 'LEITPLANKEN.md'), os.path.join(os.path.dirname(HERE), 'references', 'LEITPLANKEN.md'), os.path.join(HERE, 'references', 'LEITPLANKEN.md')]
+    if pkg['leitplanken']['sha256'] not in [file_sha(x) for x in lp_orte]:
+        die('LEITPLANKEN.md im Skill passt nicht zum Paket: Skill veraltet, bitte den Skill kfb-art-direction neu hochladen')
     if fam not in [f['id'] for f in pkg['familien']]:
         die(f'Familie {fam} nicht im Paket: {[f["id"] for f in pkg["familien"]]}')
     soll = {}

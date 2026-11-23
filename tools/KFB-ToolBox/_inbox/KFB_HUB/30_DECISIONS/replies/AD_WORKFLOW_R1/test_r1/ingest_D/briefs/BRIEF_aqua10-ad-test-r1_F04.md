@@ -7,7 +7,7 @@ ABSICHT  Der Spieler bricht als Aquariumsfisch aus dem DocCheck-Becken aus und e
 GENRE    Cartoon-Heist-Arcade im Browser (GTA-Ton im Interface, Looney-Tunes-Timing, Clay-Vordergrund)
 OWNER    Aqua · Branch/Modul: WS0 trägt ein
 ZIEL     Zielbild(er), von Georg im Webchat freigegeben (aufs Originalformat zurückgeführt):
-           F04_naehe_v1: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/rueckgabe/D_l1/ziele/F04_naehe_v1.png · PASS 2026-11-23T02:58:02Z „SIMULIERT: ok“
+           F04_naehe_v1: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/rueckgabe/D_l1/ziele/F04_naehe_v1.png · PASS 2026-11-23T18:41:29Z „SIMULIERT: ok“
            Ausgang: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/stills/S16_hai_angriff__trouble_desktop__naehe.png · Ereignis hai:naehe 118.55 s (Laufuhr) · Clip-Zeit unbekannt
          Clip: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/clips/S16_hai_angriff__trouble_desktop.mp4 · Clip-Zeitfenster unbekannt (Ausnahme im Paket); Laufuhr-Ereignisse der Stills gelten
          Referenzen: Claybound [offen] (https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/refs/claybound__1.jpg, https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/refs/claybound__2.jpg)

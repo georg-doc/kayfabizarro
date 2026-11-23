@@ -23,5 +23,5 @@ python3 tools/ad_vergleich.py runde test_r1/_privat/F03_vergleich.json test_r1/_
 echo "== Lauf 2 Familie D (nur F04, mit Anker)"
 python3 tools/ad_package.py stage test_r1/_privat/paket D --lauf 2 --nur F04 || true
 python3 tools/ad_package.py stage test_r1/_privat/paket D --lauf 2 --nur F04 --anker test_r1/ingest_D/_privat/ziele/F03_ausholung_v1.png
-U2=test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_D_l2; python3 $U2/ad_return.py start --paket $U2/package.json --familie D --lauf 2 --nur F04 --arbeit test_r1/_privat/webchat_D2 --simuliert | head -3
+U2=test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_D_l2; python3 chatgpt-skill/kfb-art-direction/scripts/ad_return.py start --paket $U2/package.json --familie D --lauf 2 --nur F04 --arbeit test_r1/_privat/webchat_D2 --simuliert | head -3
 echo "== Tests"; python3 -W ignore tools/test_ad.py 2>&1 | tail -3

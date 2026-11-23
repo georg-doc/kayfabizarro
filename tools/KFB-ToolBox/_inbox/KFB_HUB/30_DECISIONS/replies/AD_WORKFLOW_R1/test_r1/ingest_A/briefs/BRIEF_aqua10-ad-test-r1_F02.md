@@ -7,7 +7,7 @@ ABSICHT  Der Spieler bricht als Aquariumsfisch aus dem DocCheck-Becken aus und e
 GENRE    Cartoon-Heist-Arcade im Browser (GTA-Ton im Interface, Looney-Tunes-Timing, Clay-Vordergrund)
 OWNER    Aqua · Branch/Modul: WS0 trägt ein
 ZIEL     Zielbild(er), von Georg im Webchat freigegeben (aufs Originalformat zurückgeführt):
-           F02_still_v1: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/rueckgabe/A_l1/ziele/F02_still_v1.png · PASS 2026-11-23T02:58:05Z „SIMULIERT: ja, Rahmen so“
+           F02_still_v1: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/rueckgabe/A_l1/ziele/F02_still_v1.png · PASS 2026-11-23T18:41:31Z „SIMULIERT: ja, Rahmen so“
            Ausgang: https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/stills/S05_figurenblatt__trouble_desktop__still.png · Ereignis – · Clip-Zeit unbekannt
          Clip: –
          Referenzen: Claybound [offen] (https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/refs/claybound__1.jpg, https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/ad/aqua10-ad-test-r1/ad/aqua10-ad-test-r1/paket/media/refs/claybound__2.jpg)

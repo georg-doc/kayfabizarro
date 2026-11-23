@@ -1,14 +1,14 @@
 # Webchat-Simulation Familie D (Weg bundle) mit dem Skript aus dem Upload-Ordner. Aufruf aus AD_WORKFLOW_R1/.
 set -u
 export KFB_AD_DIR=$PWD/test_r1/_privat/kfb_ad
-U=test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_D_l1; W=test_r1/_privat/webchat_D; S=$U/ad_return.py
+U=test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_D_l1; W=test_r1/_privat/webchat_D; S=chatgpt-skill/kfb-art-direction/scripts/ad_return.py
 H=$(python3 -c "import json;print(json.load(open('$KFB_AD_DIR/pakete.json'))['aqua10-ad-test-r1']['r1']['hash'][:12])")
 python3 -c "from PIL import Image; Image.new('RGB',(1000,1000)).save('test_r1/_privat/quadrat.png'); Image.open('$U/S16_hai_angriff__trouble_desktop__aufprall__edit.png').resize((1536,1024)).save('test_r1/_privat/modell_aufprall_1536.png')"
 B='{"echtzeit_threejs":true,"ein_licht_rig":true,"keine_glanzpunkte":true,"kein_neuer_text":true,"figuren_unveraendert":true,"komposition_gleich":true,"seitenverhaeltnis_gleich":true,"hud_aus_kit":null,"neue_assets":[],"hinweis":"SIMULIERT"}'
 r(){ python3 $S "$@" --arbeit $W; }
 rm -rf $W
 r start --paket $U/package.json --familie D --erwarte 000000000000 --simuliert; echo "exit $? (erwartet: Prüfsumme falsch)"
-python3 test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_A_l1/ad_return.py start --paket test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_A_l1/package.json --familie D --arbeit $W --simuliert; echo "exit $? (erwartet: Upload passt nicht zu Familie D)"
+python3 chatgpt-skill/kfb-art-direction/scripts/ad_return.py start --paket test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_A_l1/package.json --familie D --arbeit $W --simuliert; echo "exit $? (erwartet: Upload passt nicht zu Familie D)"
 r start --paket $U/package.json --familie D --lauf 1 --erwarte "#$H" --modell "SIMULIERT (kein Bildmodell)" --simuliert
 r start --paket $U/package.json --familie D --simuliert; echo "exit $? (erwartet: Entwurf existiert)"
 r ziel --finding F04 --rolle naehe --bild test_r1/_privat/quadrat.png; echo "exit $? (erwartet: Format)"

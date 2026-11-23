@@ -1,0 +1,645 @@
+{
+  "_hinweis": "Paket-Revision r2 (WS0, 23.11.2026) auf Erfassung r6 nach den Fehler-Fixes aus Kritik R3 (Artefakt v78); ersetzt r1 (Erfassung r2). Alle zehn Befunde am r6-Still erneut angesehen: alle treffen weiter zu. Auswahl nach WS0-Entscheid aus KRITIK_R3 (blind, Erfassung r2; Stills jetzt aus r6): Bug-Befunde gingen als Fix an den Aqua-Chat, K15 in den späteren Textpass, K04 nicht aufgenommen (Monitortext blass-rot auf ausgebranntem Weiß, Text ist im Video vorhanden, nur ausgebrannt: zuerst Belichtung prüfen, Aqua-Chat). Jeder Befund am Still selbst angesehen. ABSICHT/GENRE sind WS0-Werte, nicht von Georg freigegeben. Referenz-Namen exakt wie fett in KFB_REFERENZEN_R1.md; Frames als private Kopie unter _privat_quelle/refs. HUD-Kit-Teile aus FEHLT_IM_KIT.md (1–4) sind kein Übermalen und kein Befund (Workflow §10.5, Typ kit_teil fehlt im Schema): eigener Auftrag, nicht in diesem Paket.",
+  "run_id": "aqua10-ad-r1",
+  "paket_rev": "r3",
+  "erstellt": "2026-11-23",
+  "produkt": {
+    "id": "aqua10",
+    "name": "AquaCare 11 · Grand Theft Aqua (Aqua 1.0)"
+  },
+  "build": {
+    "version": "Artefakt v78, Erfassung r6 (6 Läufe, 23.11.2026)",
+    "commit": null,
+    "url": null
+  },
+  "absicht": "Der Spieler bricht als Aquariumsfisch aus dem DocCheck-Becken aus und erlebt eine Cartoon-Gangsterflucht ins offene Meer; der Fisch ist der Star, das Becken die Bühne, alles lesbar am Desktop und am Handy.",
+  "genre": "Cartoon-Heist-Arcade im Browser (GTA-Ton im Interface, Looney-Tunes-Timing, Clay-Vordergrund)",
+  "erfassung_wurzel": "_privat_quelle/erfassung_r6",
+  "referenzen": [
+    {
+      "id": "claybound",
+      "name": "Claybound",
+      "frames": [
+        "_privat_quelle/refs/claybound_ss1.jpg"
+      ]
+    },
+    {
+      "id": "claybound-weg",
+      "name": "Claybound",
+      "frames": [
+        "_privat_quelle/refs/claybound_ss3.jpg"
+      ]
+    },
+    {
+      "id": "spell-spill",
+      "name": "Spell Spill",
+      "frames": [
+        "_privat_quelle/refs/spellspill_splitter.png"
+      ]
+    },
+    {
+      "id": "looney-tunes",
+      "name": "Looney Tunes / Road Runner",
+      "frames": []
+    },
+    {
+      "id": "gta-ton-interface",
+      "name": "GTA (Ton, Interface)",
+      "frames": []
+    }
+  ],
+  "familien": [
+    {
+      "id": "A",
+      "name": "Start, Tür, Fischwahl, Figurenblatt"
+    },
+    {
+      "id": "C",
+      "name": "Flucht, Meer, Kapern"
+    },
+    {
+      "id": "D",
+      "name": "Hai-Angriff, Blutbahn"
+    },
+    {
+      "id": "F",
+      "name": "HUD, Game Over"
+    }
+  ],
+  "szenen": [
+    {
+      "scene_id": "S05_figurenblatt_handy",
+      "familie": "A",
+      "titel": "Figurenblatt am Handy",
+      "lauf": "trouble_handyquer",
+      "protokoll_nr": 5,
+      "stills": [
+        {
+          "datei": "05_figurenblatt.png",
+          "rolle": "still",
+          "sha256": "044e5d3bfedc4ea17f83b7ed17d13c183f50cadfa523b64fc510d38052e2c6be"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F01",
+          "achse": "E",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Figurenblatt am Handy ist ein flaches CSS-Panel mit dünner Goldlinie und X; es füllt den Schirm und ist unten abgeschnitten (Werte und Skill Tree nicht sichtbar). Ziel: dieselbe Tafel im Kit-Rahmen wie die Fisch-Karte (Petrol/Messing, Nieten, Leuchtstreifen, siehe Desktop-Still S05), ohne X, in eine Handy-Seite passend.",
+          "beleg": [
+            {
+              "datei": "05_figurenblatt.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K24",
+            "kritiker_beleg": [
+              "KRITIK_R3 K24: trouble_handy_quer/05_figurenblatt.png (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft, trifft weiter zu)",
+          "referenzen": [
+            "claybound"
+          ],
+          "aeste": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": "S05_figurenblatt_desktop",
+      "familie": "A",
+      "titel": "Figurenblatt am Desktop",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 5,
+      "stills": [
+        {
+          "datei": "05_figurenblatt.png",
+          "rolle": "still",
+          "sha256": "6d229b13f9d10927857e22cb575e88d24979538689f709ce1981aa5eda9db321"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F02",
+          "achse": "C",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Zwei Rahmensprachen nebeneinander: Das Figurenblatt ist ein flaches CSS-Panel mit X und überdeckt Logo und Fisch-Karte; die Fisch-Karte rechts steckt schon im Kit-Rahmen (Petrol/Messing). Ziel: Figurenblatt im selben Kit-Rahmen, ohne X.",
+          "beleg": [
+            {
+              "datei": "05_figurenblatt.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K24",
+            "kritiker_beleg": [
+              "KRITIK_R3 K24: chill_desktop/05_figurenblatt.png (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft, trifft weiter zu)",
+          "referenzen": [
+            "claybound"
+          ],
+          "aeste": [
+            1
+          ],
+          "bereich": {
+            "x": 0.17,
+            "y": 0.0,
+            "w": 0.66,
+            "h": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S02_startbild",
+      "familie": "A",
+      "titel": "Startbild mit Radio",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 2,
+      "stills": [
+        {
+          "datei": "02_startbild.png",
+          "rolle": "still",
+          "sha256": "8af5b8ecdc8774ec45504c35a0b5c852d16b7f454345e18fb4b78e6f43533743"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F03",
+          "achse": "E",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Radio-Laufschrift winzig (etwa 6 px) und mitten im Wort abgeschnitten („ble FM · Grand T“); der Titel ist in keinem Still lesbar. Ziel: größere Schrift, nur Sender oder Songtitel, ruhend statt Laufband, im bestehenden Radio-Rahmen.",
+          "beleg": [
+            {
+              "datei": "02_startbild.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K18",
+            "kritiker_beleg": [
+              "KRITIK_R3 K18: chill_desktop/02_startbild.png (alle Szenen) (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft, trifft weiter zu)",
+          "referenzen": [
+            "claybound",
+            "gta-ton-interface"
+          ],
+          "aeste": [
+            1
+          ],
+          "bereich": {
+            "x": 0.38,
+            "y": 0.02,
+            "w": 0.24,
+            "h": 0.12
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S09_flucht_luke",
+      "familie": "C",
+      "titel": "Flucht durch die Luke (Glasbruch)",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 9,
+      "stills": [
+        {
+          "datei": "09_flucht_luke_ausholung.png",
+          "rolle": "ausholung",
+          "ereignis": "luke.zap 49.984 s (Laufuhr)",
+          "ereignis_s": 49.984,
+          "sha256": "3fe4eb7e448409cbef968fb1af9b616ebfea1a548c8cfea712b0433dab2730db"
+        },
+        {
+          "datei": "09_flucht_luke_aufprall.png",
+          "rolle": "aufprall",
+          "ereignis": "luke.bruch 51.045 s (Laufuhr)",
+          "ereignis_s": 51.045,
+          "sha256": "3ad7531277041b5433be349045fec703efc2322ed89921e108b2819b30f991b4"
+        }
+      ],
+      "clip": {
+        "datei": "09_flucht_luke.mp4",
+        "t_start": null,
+        "t_end": null,
+        "sha256": "97a4f42e9b2184e206926cb85d9a3d3472715a1654d0015c8a30804f854600d5"
+      },
+      "befunde": [
+        {
+          "id": "F04",
+          "achse": "D",
+          "schwere": "mittel",
+          "art": "bewegung",
+          "text": "Glasbruch der Luke: Beim Zap glüht das Bullauge als weißer Bloom, beim Bruch blendet es nur zur Stadt über; kein Riss, keine Scherben, kein Sog. Ziel: Ausholung = Riss-Stern im Glas an der Treffstelle; Aufprall = eckige Glasscherben fliegen mit dem Wassersog aus dem Rahmen Richtung Rohr.",
+          "beleg": [
+            {
+              "rolle": "ausholung"
+            },
+            {
+              "rolle": "aufprall"
+            },
+            {
+              "clip": true,
+              "ereignis": "luke.zap 49.984 s → luke.bruch 51.045 s"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K10",
+            "kritiker_beleg": [
+              "KRITIK_R3 K10: chill_desktop/09_flucht_luke_ausholung.png, 09_flucht_luke_aufprall.png, 09_flucht_luke.mp4 t_clip 2.72 (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft: weiter Bloom, dann Überblendung; der Monitortext links ist nicht Teil des Zielbilds)",
+          "referenzen": [
+            "spell-spill",
+            "looney-tunes"
+          ],
+          "aeste": [
+            6,
+            4
+          ],
+          "bereich": {
+            "x": 0.39,
+            "y": 0.18,
+            "w": 0.35,
+            "h": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S12_kapern",
+      "familie": "C",
+      "titel": "Kapern",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 12,
+      "stills": [
+        {
+          "datei": "12_kapern_ausholung.png",
+          "rolle": "ausholung",
+          "ereignis": "Still 97.124 s (Laufuhr; kein eigenes Ereignis, 0,42 s vor kapern.treffer)",
+          "ereignis_s": 97.124,
+          "sha256": "bc7a4061ad1f748150c7e059bc80977cb5bea7916c2ee95d2d2df30207b419d0"
+        },
+        {
+          "datei": "12_kapern_aufprall.png",
+          "rolle": "aufprall",
+          "ereignis": "kapern.treffer 97.54 s (Laufuhr)",
+          "ereignis_s": 97.54,
+          "sha256": "1150bb4f50129c46529dfa3b91d8bb43e4d42a4b241a74faef6a71758b82449c"
+        }
+      ],
+      "clip": {
+        "datei": "12_kapern.mp4",
+        "t_start": null,
+        "t_end": null,
+        "sha256": "2d0282e8a42d69f6358855d36660853726bebc18694327ea74a96f16401d23a1"
+      },
+      "befunde": [
+        {
+          "id": "F05",
+          "achse": "D",
+          "schwere": "hoch",
+          "art": "bewegung",
+          "text": "Kapern, das zentrale GTA-Verb, ist nur ein Modelltausch: Der rote Fisch steht über dem kleinen Zielfisch, im nächsten Bild ist der Spieler der Zielfisch, ohne Ausholung, Kontakt-Frame oder Effekt. Ziel: Ausholung = roter Fisch zieht sich zurück und zielt auf den Fisch darunter; Aufprall = Kontakt-Frame mit Stoß, Sprung auf den Zielfisch, kurzer Hold.",
+          "beleg": [
+            {
+              "rolle": "ausholung"
+            },
+            {
+              "rolle": "aufprall"
+            },
+            {
+              "clip": true,
+              "ereignis": "kapern.treffer 97.54 s"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K08",
+            "kritiker_beleg": [
+              "KRITIK_R3 K08: chill_desktop/12_kapern_aufprall.png, 12_kapern.mp4 t_clip 0.46–0.70 (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft, trifft weiter zu)",
+          "referenzen": [
+            "looney-tunes",
+            "spell-spill"
+          ],
+          "aeste": [
+            5,
+            6,
+            11
+          ],
+          "bereich": {
+            "x": 0.36,
+            "y": 0.38,
+            "w": 0.3,
+            "h": 0.38
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S14_augenfeld",
+      "familie": "C",
+      "titel": "Augenfeld mit Ringen",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 14,
+      "stills": [
+        {
+          "datei": "14_augenfeld.png",
+          "rolle": "still",
+          "sha256": "6a5b4b0168b2b5d377fa4f1e866bafbb66114bb1fb37ee8cb4ea655f1bc043c4"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F06",
+          "achse": "F",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Die Ringe sind als Ziel kaum lesbar: ein kleiner Ring hinter dem Fisch, ein riesiger Ringbogen im Vordergrund links liest sich als Streifen; das Rap Sheet zeigt in allen Läufen „Rings 0“. Ziel: Ringe groß, beleuchtet, im Weg vor dem Fisch, der nächste Ring sichtbar.",
+          "beleg": [
+            {
+              "datei": "14_augenfeld.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K26",
+            "kritiker_beleg": [
+              "KRITIK_R3 K26: chill_desktop/14_augenfeld.png, 18_game_over.png (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft, trifft weiter zu)",
+          "referenzen": [
+            "claybound-weg"
+          ],
+          "aeste": [
+            3,
+            11
+          ],
+          "bereich": {
+            "x": 0.0,
+            "y": 0.05,
+            "w": 0.62,
+            "h": 0.95
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S16_hai_angriff",
+      "familie": "D",
+      "titel": "Hai-Angriff",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 16,
+      "stills": [
+        {
+          "datei": "16_hai_angriff_ausholung.png",
+          "rolle": "ausholung",
+          "ereignis": "hai:angriff 137.439 s (Laufuhr)",
+          "ereignis_s": 137.439,
+          "sha256": "de6f49a0b41d1fed83592271504611f1f37bd9aecc123a6f5717666082a968dc"
+        },
+        {
+          "datei": "16_hai_angriff_aufprall.png",
+          "rolle": "aufprall",
+          "ereignis": "hai:aufprall 139.219 s (Laufuhr)",
+          "ereignis_s": 139.219,
+          "sha256": "c739033051c6cdaf20b06dead2976b34338175d4de04ea4785d3191503c0cf5d"
+        }
+      ],
+      "clip": {
+        "datei": "16_hai_angriff.mp4",
+        "t_start": null,
+        "t_end": null,
+        "sha256": "f4697a540fa5eeceac1e15285d049d2cf6c06e6b2c8d7304e5334f29b8537917"
+      },
+      "befunde": [
+        {
+          "id": "F07",
+          "achse": "D",
+          "schwere": "hoch",
+          "art": "bewegung",
+          "text": "Hai-Aufprall: eine weiche, formlose rote 2D-Wolke über Haikopf und halbem Bild, ohne Richtung und ohne Reaktion am Körper; sie verdeckt den Hai statt den Treffer zu zeigen. Ziel: Treffer als Kette am Hai – Hai bläht sich, Fisch schießt heraus, Spritzer und Splitter fliegen in Stoßrichtung, Hai reagiert mit einem Take.",
+          "beleg": [
+            {
+              "rolle": "ausholung"
+            },
+            {
+              "rolle": "aufprall"
+            },
+            {
+              "clip": true,
+              "ereignis": "hai:angriff 137.439 s → hai:aufprall 139.219 s"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K05",
+            "kritiker_beleg": [
+              "KRITIK_R3 K05: chill_desktop/16_hai_angriff_aufprall.png, 16_hai_angriff.mp4 t_clip 7.38 (alle Läufe gleich) (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft: Monitor ist aus dem Kino-Bild weg, die rote Wolke ist geblieben und größer)",
+          "referenzen": [
+            "spell-spill",
+            "looney-tunes"
+          ],
+          "aeste": [
+            5,
+            6
+          ],
+          "bereich": {
+            "x": 0.3,
+            "y": 0.18,
+            "w": 0.55,
+            "h": 0.68
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S17_blutbahn",
+      "familie": "D",
+      "titel": "Blutbahn",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 17,
+      "stills": [
+        {
+          "datei": "17_blutbahn.png",
+          "rolle": "still",
+          "sha256": "1c9cd3df96f0a3310a516b232dcb4502f59dbb97f77a99a7fceda5dc9f6888b7"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F08",
+          "achse": "E",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Der Break-the-Glass-Monitor steht in der Blutbahn angeschnitten oben links direkt hinter Sonar, Muschelzähler und Lebensanzeige; das HUD liegt jetzt darüber, aber die Ecke ist unruhig und der Monitor selbst unlesbar. Ziel: Monitor in die Ferne zur Bildmitte, HUD-Ecke oben links frei.",
+          "beleg": [
+            {
+              "datei": "17_blutbahn.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K13",
+            "kritiker_beleg": [
+              "KRITIK_R3 K13: chill_desktop/17_blutbahn.png, 19_neustart.png (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft: HUD liegt oben, Monitor steht weiter in der HUD-Ecke)",
+          "referenzen": [
+            "claybound"
+          ],
+          "aeste": [
+            3,
+            1
+          ],
+          "bereich": {
+            "x": 0.0,
+            "y": 0.0,
+            "w": 0.4,
+            "h": 0.58
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S18_game_over",
+      "familie": "F",
+      "titel": "Game Over",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 18,
+      "stills": [
+        {
+          "datei": "18_game_over_fall.png",
+          "rolle": "still",
+          "suffix": "fall",
+          "sha256": "62b6d55032804e5b24f3252b3912450e0902914f60da84ae8a6e92d08e6ed276"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F09",
+          "achse": "F",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Game Over ohne sichtbare Ursache: Der Fisch treibt grau ab, die Lebensanzeige stand bis zuletzt auf 3, das Rap Sheet sagt „Caught: Hooked“, ein Haken ist nie zu sehen. Ziel: Ursache im Bild – Haken hängt sichtbar im Fisch (Schnur nach oben), Lebensanzeige oben links zeigt das letzte Leben fallend.",
+          "beleg": [
+            {
+              "datei": "18_game_over_fall.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K09",
+            "kritiker_beleg": [
+              "KRITIK_R3 K09: chill_desktop/18_game_over_fall.png, 18_game_over.mp4, 18_game_over.png (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (am r6-Still 23.11. geprüft, trifft weiter zu)",
+          "referenzen": [
+            "looney-tunes",
+            "claybound"
+          ],
+          "aeste": [
+            11,
+            1
+          ],
+          "bereich": {
+            "x": 0.0,
+            "y": 0.0,
+            "w": 0.45,
+            "h": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S11_kelp_garden",
+      "familie": "F",
+      "titel": "Bullauge mit Videogesicht",
+      "lauf": "chill_desktop",
+      "protokoll_nr": 11,
+      "stills": [
+        {
+          "datei": "11_kelp_garden.png",
+          "rolle": "still",
+          "sha256": "ea9c6bd757f366e5a63ab508eaf95548580ca4f773da4fd0edb6e54fd9256483"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F10",
+          "achse": "B",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Flexa und Falkenstein sind fotorealistische Videogesichter im Bullauge einer Cartoon-Welt; das Bullauge wirkt eingeklebt. Ob das so bleibt (Meta-Bruch gewollt) oder die Gesichter einen Cartoon-Grade bekommen, entscheidet Georg.",
+          "beleg": [
+            {
+              "datei": "11_kelp_garden.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_10/_privat/kritik_r3/KRITIK_R3.json",
+            "nr": "K22",
+            "kritiker_beleg": [
+              "KRITIK_R3 K22: chill_desktop/11_kelp_garden.png, 06_flexa_intro.png (Erfassung r2); Still jetzt aus Erfassung r6"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": false,
+          "stand": "klären (Georg entscheidet, ob die fotorealen Bullaugen-Gesichter bleiben; bis dahin nicht malen)",
+          "referenzen": [],
+          "aeste": [
+            2,
+            9
+          ]
+        }
+      ]
+    }
+  ],
+  "_quelle": "Schnappschuss der nötigen Dateien aus replies/AQUA_10/_privat/erfassung_r6 (byte-gleich, sha256 festgenagelt) unter _privat_quelle/erfassung_r6. Lauf trouble_handy_quer heißt dort trouble_handyquer, weil das Paket-Schema im Mediennamen genau einen Unterstrich im Lauf erlaubt (Werkzeug unverändert); die Konfiguration im Protokoll nennt weiter geraet handy_quer."
+}

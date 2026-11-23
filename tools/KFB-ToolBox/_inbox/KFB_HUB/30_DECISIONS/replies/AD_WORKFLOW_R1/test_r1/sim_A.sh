@@ -1,7 +1,7 @@
 # Webchat-Simulation Familie A (Weg einzeln: Bilder nicht als Datei in der Sandbox). Aufruf aus AD_WORKFLOW_R1/.
 set -u
 export KFB_AD_DIR=$PWD/test_r1/_privat/kfb_ad
-U=test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_A_l1; W=test_r1/_privat/webchat_A; DL=test_r1/_privat/downloads_A; S=$U/ad_return.py
+U=test_r1/_privat/kfb_ad/aqua10-ad-test-r1_r1_A_l1; W=test_r1/_privat/webchat_A; DL=test_r1/_privat/downloads_A; S=chatgpt-skill/kfb-art-direction/scripts/ad_return.py
 H=$(python3 -c "import json;print(json.load(open('$KFB_AD_DIR/pakete.json'))['aqua10-ad-test-r1']['r1']['hash'][:12])")
 B='{"echtzeit_threejs":true,"ein_licht_rig":true,"keine_glanzpunkte":true,"kein_neuer_text":true,"figuren_unveraendert":true,"komposition_gleich":true,"seitenverhaeltnis_gleich":true,"hud_aus_kit":true,"neue_assets":[],"hinweis":"SIMULIERT"}'
 r(){ python3 $S "$@" --arbeit $W; }
