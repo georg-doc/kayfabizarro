@@ -1,3 +1,4 @@
+import {loadVfxCatalog,vfxRows,vfxSearchText,vfxText,vfxPreview,renderVfxDetail} from './vfx-catalog.js';
 import { previewRigResource, clearRigPreview, canPreviewRig } from './rig-preview.js';
 import { initDeckLibrary } from './deck-library.js';
 
@@ -13,6 +14,8 @@ let currentTab = 'assets';
 let currentRows = [];
 let showAssetCallback = null;
 let deckUi = null;
+let vfxCatalog = null, vfxPending = null, activation = 0;
+let legacyStatuses = [];
 
 async function json(url) {
   const response = await fetch(url, { cache:'no-store' });
@@ -36,7 +39,7 @@ async function ensureRows(tab) {
 }
 function badge(text, cls='') { const span=document.createElement('span'); span.className=`badge ${cls}`.trim(); span.textContent=text; return span; }
 function option(value,text) { const node=document.createElement('option'); node.value=value; node.textContent=text; return node; }
-function statusClass(status) { return ['AVAILABLE','CONFIGURED'].includes(status) ? 'ok' : ['WIP','WIP_CONFIG','DOCUMENTED_REFERENCE'].includes(status) ? 'warn' : ''; }
+function statusClass(status) { return ['im Spiel','AVAILABLE','CONFIGURED'].includes(status) ? 'ok' : ['vendored ungenutzt','WIP','WIP_CONFIG','DOCUMENTED_REFERENCE'].includes(status) ? 'warn' : ''; }
 function closeResourceDetail() {
   clearRigPreview();
   $('resourceDetailPanel').classList.remove('open');
@@ -58,6 +61,20 @@ function actionButton(label, handler, primary=true) { const button=document.crea
 function linkButton(label, href) { const a=document.createElement('a'); a.className='button-link quiet'; a.textContent=label; a.href=href; a.target='_blank'; a.rel='noreferrer'; return a; }
 async function showResource(row) {
   openResourceDetail();
+  $('vfxDetailContent').hidden = !row.vfxDonor;
+  $('vfxDetailContent').replaceChildren();
+  if (row.vfxDonor) {
+    clearRigPreview();
+    const effect = row.vfxEffect, donor = row.vfxDonor;
+    $('resourceDetailKind').textContent = effect?.art || 'Spender';
+    $('resourceDetailName').textContent = effect?.name || donor.name;
+    $('resourceDetailSummary').textContent = effect ? donor.name : donor.id;
+    $('resourceDetailBadges').replaceChildren(...(effect ? [badge(effect.status,statusClass(effect.status))] : []));
+    $('resourceDetailJson').textContent = JSON.stringify(effect || donor,null,2);
+    $('resourcePrimaryAction').replaceChildren();
+    renderVfxDetail(row,$('vfxDetailContent'),$('resourcePrimaryAction'));
+    return;
+  }
   $('resourceDetailKind').textContent=row.kind;
   $('resourceDetailName').textContent=row.displayName || row.actorId || row.resourceId;
   $('resourceDetailSummary').textContent=resourceSummary(row);
@@ -88,7 +105,18 @@ function matchesScope(row, actor) {
 }
 function filteredRows() {
   const q=$('resourceSearch').value.trim().toLowerCase(), actor=$('resourceActorFilter').value, status=$('resourceStatusFilter').value;
-  return currentRows.filter((row)=>{
+  const scope = currentTab === 'fx' ? $('resourceFxScope').value : '';
+  const rows = scope === 'donors' ? (vfxCatalog?.document?.spender || []).map(donor=>({vfxDonor:donor})) : currentRows;
+  return rows.filter((row)=>{
+    if (row.vfxDonor) {
+      const effect=row.vfxEffect, donor=row.vfxDonor;
+      if (scope === 'registry' || actor && effect) return false;
+      if (effect && status && effect.status !== status) return false;
+      if ($('resourceSpenderFilter').value && donor.id !== $('resourceSpenderFilter').value) return false;
+      if (effect && $('resourceArtFilter').value && effect.art !== $('resourceArtFilter').value) return false;
+      return !q || vfxSearchText(row).includes(q);
+    }
+    if (scope === 'vfx' || scope === 'donors' || currentTab === 'fx' && ($('resourceSpenderFilter').value || $('resourceArtFilter').value)) return false;
     if (status && row.status !== status) return false;
     if (!matchesScope(row,actor)) return false;
     if (!q) return true;
@@ -96,33 +124,84 @@ function filteredRows() {
   });
 }
 function renderResources() {
+  const donors=currentTab==='fx' && $('resourceFxScope').value==='donors';
+  for (const id of ['resourceArtFilter','resourceStatusFilter','resourceActorFilter']) $(id).disabled=donors;
   const rows=filteredRows(), list=$('resourceList'), tpl=$('resourceTemplate'); list.replaceChildren();
   for (const row of rows) {
-    const f=tpl.content.cloneNode(true); f.querySelector('.resource-title').textContent=row.displayName || row.resourceId; f.querySelector('.resource-kind').textContent=row.kind;
+    const f=tpl.content.cloneNode(true);
+    if (row.vfxDonor) {
+      const effect=row.vfxEffect, donor=row.vfxDonor;
+      f.querySelector('.resource-title').textContent=effect?.name || donor.name;
+      f.querySelector('.resource-kind').textContent=effect?.art || 'Spender';
+      f.querySelector('.resource-card-meta').textContent=effect ? donor.name : donor.lizenz;
+      f.querySelector('.resource-open').prepend(vfxPreview(effect?.vorschau ?? donor.vorschau,effect?.name || donor.name));
+      if (effect) f.querySelector('.resource-badges').append(badge(effect.status,statusClass(effect.status)));
+      f.querySelector('.resource-card').dataset.vfxId=effect?.id || donor.id;
+      f.querySelector('.resource-open').onclick=()=>showResource(row); list.append(f); continue;
+    }
+    f.querySelector('.resource-title').textContent=row.displayName || row.resourceId; f.querySelector('.resource-kind').textContent=row.kind;
     f.querySelector('.resource-card-meta').textContent=resourceSummary(row); const badges=f.querySelector('.resource-badges'); badges.append(badge(row.status || 'UNKNOWN',statusClass(row.status)));
     if (row.provider) badges.append(badge(row.provider)); if (row.rig) badges.append(badge(`Rig ${row.rig}`)); if (row.executionStatus) badges.append(badge('owner runtime'));
     if (currentTab === 'rigs' && canPreviewRig(row)) badges.append(badge(row.schema === 'kfb.carl.rig/6' || row.schema === 'kfb.pets/1' ? '3D owner preview' : '3D partial preview', row.schema === 'kfb.carl.rig/6' || row.schema === 'kfb.pets/1' ? 'ok' : 'warn'));
     f.querySelector('.resource-open').onclick=()=>showResource(row); list.append(f);
   }
   $('resourceMeta').textContent=`${rows.length.toLocaleString()} shown · ${currentRows.length.toLocaleString()} ${currentTab}`;
+  if (currentTab === 'fx' && vfxCatalog?.document) $('resourceMeta').textContent = `${rows.length.toLocaleString()} gezeigt · ${vfxCatalog.document.zahlen.effekte} VFX-Effekte · ${currentRows.filter(row=>!row.vfxDonor).length} Registry-FX`;
+
 }
 async function fillActorFilter() {
   const actors=await ensureActors(), select=$('resourceActorFilter'), previous=select.value;
   select.replaceChildren(option('','All actors / scopes'),option('kfb-pets','KFB Pets · custom motion/FX scope'),...actors.map((a)=>option(a.actorId,a.displayName || a.actorId))); select.value=previous;
 }
+function configureFxFilters(active) {
+  for (const id of ['resourceFxScope','resourceSpenderFilter','resourceArtFilter','vfxCatalogHeader']) $(id).hidden=!active;
+  const select=$('resourceStatusFilter'), previous=select.value;
+  const statuses=active ? [...new Set([...legacyStatuses, ...Object.keys(vfxCatalog?.document?.zahlen.nach_status || {})])] : legacyStatuses;
+  select.replaceChildren(option('','Any status'),...statuses.map(value=>option(value,value)));
+  if (statuses.includes(previous)) select.value=previous;
+  if (!active) return;
+  const doc=vfxCatalog?.document;
+  const donors=$('resourceSpenderFilter'), arts=$('resourceArtFilter'), donorValue=donors.value, artValue=arts.value;
+  donors.replaceChildren(option('','Alle Spender'),...(doc?.spender || []).map(donor=>option(donor.id,donor.name)));
+  if ([...donors.options].some(value=>value.value===donorValue)) donors.value=donorValue;
+  const kinds=[...new Set(vfxRows(doc).map(row=>row.vfxEffect.art))].sort();
+  arts.replaceChildren(option('','Alle Arten'),...kinds.map(art=>option(art,art)));
+  if (kinds.includes(artValue)) arts.value=artValue;
+  $('vfxCatalogStand').textContent=doc ? `Stand ${vfxText(doc.stand)} · ${doc.zahlen.spender} Spender · ${doc.zahlen.effekte} Effekte · ${vfxCatalog.source==='main'?'main':'lokaler Schnappschuss'}` : 'VFX-Katalog vorübergehend nicht verfügbar';
+  $('vfxCatalogCounts').replaceChildren(...Object.entries(doc?.zahlen.nach_status || {}).map(([status,count])=>badge(`${status} · ${vfxText(count)}`,statusClass(status))));
+  $('vfxCatalogFields').textContent=doc ? JSON.stringify(Object.fromEntries(Object.entries(doc).filter(([key])=>key!=='spender')),null,2) : '';
+}
 export async function activateProductionTab(tab) {
+  const request=++activation;
   currentTab=tab;
   document.querySelectorAll('[data-library-tab]').forEach((button)=>button.classList.toggle('active',button.dataset.libraryTab===tab));
   if (tab === 'decks') { closeResourceDetail(); return deckUi.activateDeckLibrary(); }
   deckUi.deactivateDeckLibrary();
   const assets=tab==='assets'; $('assetWorkspace').hidden=!assets; $('resourceWorkspace').hidden=assets; closeResourceDetail();
+  configureFxFilters(false);
   if (assets) return;
+  $('resourceMeta').classList.remove('error');
+  if (tab==='fx') {
+    $('resourceList').replaceChildren(); $('resourceMeta').textContent='FX werden geladen…';
+    vfxPending ||= loadVfxCatalog();
+    const [legacy, catalog]=await Promise.allSettled([ensureRows('fx'),vfxPending,fillActorFilter()]);
+    if (request!==activation) return;
+    vfxCatalog=catalog.status==='fulfilled'?catalog.value:null;
+    currentRows=[...(legacy.status==='fulfilled'?legacy.value:[]),...vfxRows(vfxCatalog?.document)];
+    $('resourceRevision').textContent=vfxCatalog?.document?.version || cache.manifest?.resourceRegistryRevision || 'FX';
+    $('resourceEyebrow').textContent='fx'; configureFxFilters(true); renderResources(); return;
+  }
   try {
-    const manifest=await ensureManifest(); $('resourceRevision').textContent=manifest.resourceRegistryRevision || 'R0'; await fillActorFilter(); currentRows=await ensureRows(tab); $('resourceEyebrow').textContent=tab; renderResources();
-  } catch (error) { $('resourceMeta').textContent=`Resource Registry unavailable: ${error.message}`; $('resourceMeta').classList.add('error'); }
+    const manifest=await ensureManifest();
+    await fillActorFilter(); const rows=await ensureRows(tab);
+    if (request!==activation) return;
+    $('resourceRevision').textContent=manifest.resourceRegistryRevision || 'R0'; currentRows=rows; $('resourceEyebrow').textContent=tab; renderResources();
+  } catch (error) { if (request===activation) { $('resourceMeta').textContent=`Resource Registry unavailable: ${error.message}`; $('resourceMeta').classList.add('error'); } }
 }
 export function initProductionResources({ showAsset }) {
   showAssetCallback=showAsset;
+  legacyStatuses=[...$('resourceStatusFilter').options].map(value=>value.value).filter(Boolean);
+  for (const id of ['resourceFxScope','resourceSpenderFilter','resourceArtFilter']) $(id).onchange=renderResources;
   deckUi=initDeckLibrary();
   document.querySelectorAll('[data-library-tab]').forEach((button)=>button.onclick=()=>activateProductionTab(button.dataset.libraryTab));
   $('resourceSearch').oninput=renderResources; $('resourceActorFilter').onchange=renderResources; $('resourceStatusFilter').onchange=renderResources; $('resourceDetailClose').onclick=closeResourceDetail;
