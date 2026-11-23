@@ -1,6 +1,8 @@
-# KFB SOP R1 · So arbeiten wir (23.11.2026, V-2097)
+# KFB SOP · Stamm · Version R2 (23.11.2026, V-2097, V-2100)
 
 **Gilt für jede Sitzung:** WS0, Owner-Chats (Aqua, Buchmaschine, WSA), WSB (Blender), Webchats und Kritiker. Diese Seite ist der Einstieg. Sie ersetzt `START_HERE_STEERING.md` und `KFB_WORKING_RULES_R1.md` als Startpunkt; deren Inhalte sind hier eingeordnet.
+
+**Baum:** Dieser Stamm gilt für alle: Absicht, Leitplanken, Ablauf, Briefing-Form, Prüfmatrix, Eskalationsleiter. Die Fachgebiete stehen als Äste in `KFB_SOP_AESTE_R1.md` (HUD, 3D, Szene, Regie, Animation, VFX, Ton, Text, Metanarrativ, Beschaffung, Spiel), jeder Ast mit Regeln, Golden, Anti, Gate und Lücke. Die Benchmarks von außen stehen in `KFB_REFERENZEN_R1.md`. Ein Auftrag = konkreter Job + welche Äste + welche Referenzen.
 
 **Grundsatz:** Kein Bau ohne Ziel. Kein Zeigen ohne bestandene Prüfung. Keine neue Mikro-Regel pro Vorfall: Ein Vorfall ändert diese Seite (Version hochzählen) oder wird einer bestehenden Zeile zugeordnet.
 
@@ -26,6 +28,13 @@
 | 8 Festhalten | WS0 | Register-Zeile, Merge, GitHub. |
 
 Georg sieht nie Zwischenstände. Er ist nie Kopier-Station zwischen Sitzungen: Übergaben laufen über GitHub-Links und Sitzungs-Nachrichten.
+
+## 2a · Eskalationsleiter „Use What Works“ (über allen Fachregeln)
+1. **Bestand im Projekt:** abgenommene Module, Assets, Clips, Texte, Register (Pfad und Commit nennen).
+2. **Freie Quellen:** 3D-Suche (mcp 3d-assets), Asset-Librarian, patch.gg, KayKit > Tiny Treats > Quaternius > Kenney; Ton aus dem Sound-Atlas; Bewegung aus Motion Library, KayKit, Mixamo.
+3. **Erzeugen auf festem Weg:** Ton macht WS0 mit ElevenLabs, bis Georg „eng“ sagt. Bilder macht WS0 über den Webchat. 3D-Modelle über Meshy nur mit Georgs Freigabe per Hub-Karte. Texte nie erzeugen, nur aus Quellen verdichten.
+4. **Georg:** eine Entscheidung, oder eine bekannte Schwäche wird metanarrativ aufgefangen (Vorschlag mit Bild).
+Auf keiner Stufe erlaubt: basteln, hochskalieren, zurechtschneiden, Platzhalter als fertig ausgeben.
 
 ## 3 · Briefing-Form (jedes Briefing, jede Sitzung)
 ```
@@ -95,8 +104,14 @@ Maschinenlesbar in `tools/qa_matrix.r1.json`, Prompt in `tools/CRITIC_BLIND_PROM
 - Die Elementliste eines Briefings abarbeiten und die Absicht verlieren.
 - Pro Vorfall eine neue Regel statt dieser Seite.
 
-## 8 · Pflege
-WS0 pflegt diese Seite. Änderungen nur mit Register-Zeile und neuer Versionszeile unten. Gespiegelt auf GitHub durch `sync_github.sh` (kayfabizarro, Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`).
+## 8 · Rückkanal und Pflege
+- **Nach jedem FAIL oder Postmortem fragt WS0:** Welches Anti-Muster steckt dahinter? Gibt es dafür schon eine Zeile in Stamm, Ast oder Referenzen?
+  - Ja: Die Zeile wird geschärft oder um ein Golden/Anti-Beispiel ergänzt.
+  - Nein: Das Muster kommt als eine allgemeine Zeile an die richtige Stelle, nie als Punkt 19 einer Einzelliste.
+- **Jede Änderung** bekommt eine Register-Zeile und eine Versionszeile unten. Die Version zählt hoch.
+- **Golden und Anti wachsen mit Georgs Abnahmen** (PASS → Golden, FAIL → Anti im passenden Ast).
+- **Gespiegelt auf GitHub** durch `sync_github.sh` (kayfabizarro, Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`). Ein Verweis steht oben in `skills/chat/START_HERE.md` auf kayfabizarro main.
 
 - R1 · 23.11.2026 · Erstfassung nach Georgs Workflow (V-2096, V-2097).
 - R1.1 · 23.11.2026 · Texte und Stimme in Stufe C, Anti-Samples (V-2098, Falkenstein-FAIL).
+- R2 · 23.11.2026 · Baum (Äste), Eskalationsleiter, Rückkanal, Referenzen (V-2100).

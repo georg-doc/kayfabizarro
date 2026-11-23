@@ -21,3 +21,12 @@ Georgs Urteil: stimmungsneutral, beliebig, generisch, nicht einmal albern. Ein A
 1. Texte entstehen nie aus dem Nichts. Quelle = Georgs eigene Zeilen oder Sprachnotiz, Kartentexte (Triplet-SSOT), Golden Samples. Claude schneidet, verdichtet, setzt ein, schreibt keine Witze frei (vgl. Memory HeyGen-Briefs 06.11.).
 2. Fehlt Material, fragt WS0 Georg nach 3–5 Kernzeilen oder einer Sprachnotiz zur Figur, statt zu erfinden.
 3. Text-Kritik (blind) prüft Achse A (Absicht) und eine Slop-Prüfung: kein Marker aus der Tabelle oben, kein Satz, der auch in einem anderen Spiel stehen könnte.
+
+## Anti-Sample 2 · Aqua-Trailer „Hadrian“-Prompt (22.11.) · Georg 23.11.: FAIL, „so schlecht, dass es sich nicht lohnt, weiter darüber nachzudenken“
+Quelle: `replies/AQUA_TRAILER_R1/HADRIAN_PROMPT_R1.txt`. Das Video liegt unter `CLAUDE/KFB MusicalChatterbox/KFB Aqua Trailer - HeyGen Video_original.mp4`.
+**Anti-Muster:** Ein freier Text-zu-Video-Prompt aus Stilwort-Salat („1990s TV cartoon, dirty and weird, fisheye, whip pans …“) ohne ein einziges echtes Spiel-Asset, ohne Referenz-Frames, ohne Storyboard und ohne Georgs Zeilen. Das Ergebnis ist ein generischer Look, der nichts mit unserem Spiel zu tun hat.
+**Regel:**
+- Trailer entstehen aus echtem Spielmaterial (Erfassung, Kampfbühne, Ride) in Remotion. Grammatik Spiel-Trailer: Haken, Spielmomente, Steigerung, Titelkarte.
+- Musik aus Bubble FM bzw. Georgs Suno-Stems.
+- HeyGen nur für sprechende Avatare im Bullauge, mit Georgs Zeilen und einer Szene je Clip.
+- Kein Text-zu-Video als Trailer.
