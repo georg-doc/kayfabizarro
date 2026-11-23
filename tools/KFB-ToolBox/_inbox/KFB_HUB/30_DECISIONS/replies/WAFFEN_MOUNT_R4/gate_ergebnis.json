@@ -1,0 +1,1711 @@
+{
+ "grenze": {
+  "halterRuhe": 0.01,
+  "halterMax": 0.03,
+  "reaktionKick": 0.03,
+  "reaktionStauchOderKipp": {
+   "stauch": 0.05,
+   "kippGrad": 3
+  },
+  "inKoerper": 0.01,
+  "muendung": 0.01,
+  "strahl": 0.01,
+  "laufGrad": 20,
+  "griffWeg": 0.001,
+  "boden": -0.01,
+  "kickMin": 0.02,
+  "kickMax": 0.12,
+  "kippGrad": 12,
+  "stauch": 0.25,
+  "laengung": 0.25,
+  "waffenKippGrad": 13,
+  "ruheS": 0.6,
+  "formelR": 0.001
+ },
+ "figuren": {
+  "pet_cow": {
+   "waffen": {
+    "pistol": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.2059,
+     "muendungWeg": 0.1796,
+     "laufGrad": 8.1454,
+     "halterRuhe": 0.0062,
+     "halterMax": 0.0069,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1125,
+       "sy": 0.93835
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.16
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07385,
+       "kippGrad": 6.418,
+       "sy": 0.93702
+      }
+     },
+     "bilder": 32,
+     "huellePunkte": 107228,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "pistol",
+      "familie": "energie",
+      "koerper": "wuerfel",
+      "R": 1.0758,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.1,
+       "waffenKipp": 0.5,
+       "stauch": 0.1,
+       "spannung": 0.08,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 1,
+      "anhaengselGrad": 0.18,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4833,
+      "ruheNachFireS": 0.5333,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.07654,
+       "kippGrad": 6.41847,
+       "stauch": 0.13176,
+       "streck": 0.04472,
+       "laengung": 0.16,
+       "waffenKippGrad": 3,
+       "anhaengselGrad": 16.39103
+      }
+     },
+     "mount": {
+      "klasse": "pistol",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_pistol",
+      "halter": "KFB_Halter_pistol",
+      "regel": "r1",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 1.60308,
+      "sollLaenge": 0.4809,
+      "laenge": 0.3,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 1.603084
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_pistol"
+     ],
+     "rot": []
+    },
+    "longgun": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.1774,
+     "muendungWeg": 0.2221,
+     "laufGrad": 9.1051,
+     "halterRuhe": 0.0055,
+     "halterMax": 0.017,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1219,
+       "sy": 0.92294
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.2
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07807,
+       "kippGrad": 7.335,
+       "sy": 0.9178
+      }
+     },
+     "bilder": 32,
+     "huellePunkte": 107228,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "longgun",
+      "familie": "kinetisch",
+      "koerper": "wuerfel",
+      "R": 1.0758,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.13,
+       "waffenKipp": 0.5,
+       "stauch": 0.13,
+       "spannung": 0.1,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 2,
+      "anhaengselGrad": 0.18,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4833,
+      "ruheNachFireS": 0.5333,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.0812,
+       "kippGrad": 7.33539,
+       "stauch": 0.1684,
+       "streck": 0.05731,
+       "laengung": 0.2,
+       "waffenKippGrad": 4,
+       "anhaengselGrad": 16.39103
+      }
+     },
+     "mount": {
+      "klasse": "longgun",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_longgun",
+      "halter": "KFB_Halter_longgun",
+      "regel": "r2_seite_unter_augen",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 0.96185,
+      "sollLaenge": 0.9618,
+      "laenge": 1,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 0.96185
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_longgun"
+     ],
+     "rot": []
+    },
+    "funcannon": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.0035,
+     "muendungWeg": 0.2876,
+     "laufGrad": 13.1958,
+     "halterRuhe": 0.0109,
+     "halterMax": 0.0256,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1688,
+       "sy": 0.8844
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.22
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.09494,
+       "kippGrad": 9.169,
+       "sy": 0.90102
+      }
+     },
+     "bilder": 32,
+     "huellePunkte": 107228,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "funcannon",
+      "familie": "explosiv",
+      "koerper": "wuerfel",
+      "R": 1.0758,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.16,
+       "waffenKipp": 0.5,
+       "stauch": 0.16,
+       "spannung": 0.15,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": -0.003,
+      "anhaengsel": 2,
+      "anhaengselGrad": 0.18,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4833,
+      "ruheNachFireS": 0.5333,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.09984,
+       "kippGrad": 9.16924,
+       "stauch": 0.22668,
+       "streck": 0.07612,
+       "laengung": 0.22,
+       "waffenKippGrad": 6,
+       "anhaengselGrad": 16.39103
+      }
+     },
+     "mount": {
+      "klasse": "funcannon",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_funcannon",
+      "halter": "KFB_Halter_funcannon",
+      "regel": "r2_seite_unter_augen",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 1.6551,
+      "sollLaenge": 0.7481,
+      "laenge": 0.452,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 1.655101
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_funcannon"
+     ],
+     "rot": [
+      "Halter ohne Kontakt in Ruhe 0.0109"
+     ]
+    }
+   },
+   "rot": [],
+   "koerper": "wuerfel",
+   "augen": "OK",
+   "vergleich": {
+    "pistol": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.1233
+    },
+    "longgun": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.234
+    },
+    "funcannon": {
+     "knotenZuFormelR": 0.0001,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.2282
+    }
+   }
+  },
+  "pet_chick": {
+   "waffen": {
+    "pistol": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.26,
+     "muendungWeg": 0.1878,
+     "laufGrad": 8.1794,
+     "halterRuhe": 0.0051,
+     "halterMax": 0.0075,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1125,
+       "sy": 0.93835
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.16
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07385,
+       "kippGrad": 6.418,
+       "sy": 0.93702
+      }
+     },
+     "bilder": 31,
+     "huellePunkte": 132926,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "pistol",
+      "familie": "energie",
+      "koerper": "wuerfel",
+      "R": 1.0585,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.1,
+       "waffenKipp": 0.5,
+       "stauch": 0.1,
+       "spannung": 0.08,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 2,
+      "anhaengselGrad": 0.13,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4667,
+      "ruheNachFireS": 0.5167,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.07654,
+       "kippGrad": 6.41847,
+       "stauch": 0.13176,
+       "streck": 0.04472,
+       "laengung": 0.16,
+       "waffenKippGrad": 3,
+       "anhaengselGrad": 14.20556
+      }
+     },
+     "mount": {
+      "klasse": "pistol",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_pistol",
+      "halter": "KFB_Halter_pistol",
+      "regel": "r1",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 1.58506,
+      "sollLaenge": 0.4755,
+      "laenge": 0.3,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 1.585062
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_pistol"
+     ],
+     "rot": []
+    },
+    "longgun": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.2473,
+     "muendungWeg": 0.2338,
+     "laufGrad": 9.1051,
+     "halterRuhe": 0.0014,
+     "halterMax": 0.0149,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1219,
+       "sy": 0.92294
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.2
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07807,
+       "kippGrad": 7.335,
+       "sy": 0.9178
+      }
+     },
+     "bilder": 31,
+     "huellePunkte": 132926,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "longgun",
+      "familie": "kinetisch",
+      "koerper": "wuerfel",
+      "R": 1.0585,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.13,
+       "waffenKipp": 0.5,
+       "stauch": 0.13,
+       "spannung": 0.1,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 2,
+      "anhaengselGrad": 0.13,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4667,
+      "ruheNachFireS": 0.5167,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.0812,
+       "kippGrad": 7.33539,
+       "stauch": 0.1684,
+       "streck": 0.05731,
+       "laengung": 0.2,
+       "waffenKippGrad": 4,
+       "anhaengselGrad": 14.20556
+      }
+     },
+     "mount": {
+      "klasse": "longgun",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_longgun",
+      "halter": "KFB_Halter_longgun",
+      "regel": "r3_seite_fluegel",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 0.95104,
+      "sollLaenge": 0.951,
+      "laenge": 1,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 0.951037
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_longgun"
+     ],
+     "rot": []
+    },
+    "funcannon": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": -0.007,
+     "muendungWeg": 0.2911,
+     "laufGrad": 13.1958,
+     "halterRuhe": 0.0095,
+     "halterMax": 0.0256,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1688,
+       "sy": 0.8844
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.22
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.09494,
+       "kippGrad": 9.169,
+       "sy": 0.90102
+      }
+     },
+     "bilder": 32,
+     "huellePunkte": 132926,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "funcannon",
+      "familie": "explosiv",
+      "koerper": "wuerfel",
+      "R": 1.0585,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.16,
+       "waffenKipp": 0.5,
+       "stauch": 0.16,
+       "spannung": 0.15,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": -0.003,
+      "anhaengsel": 3,
+      "anhaengselGrad": 0.16,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4833,
+      "ruheNachFireS": 0.5333,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.09984,
+       "kippGrad": 9.16924,
+       "stauch": 0.22668,
+       "streck": 0.07612,
+       "laengung": 0.22,
+       "waffenKippGrad": 6,
+       "anhaengselGrad": 14.20556
+      }
+     },
+     "mount": {
+      "klasse": "funcannon",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_funcannon",
+      "halter": "KFB_Halter_funcannon",
+      "regel": "r2_seite_unter_augen",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 1.6365,
+      "sollLaenge": 0.7397,
+      "laenge": 0.452,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 1.636495
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_funcannon"
+     ],
+     "rot": []
+    }
+   },
+   "rot": [],
+   "koerper": "wuerfel",
+   "augen": "OK",
+   "vergleich": {
+    "pistol": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.1135
+    },
+    "longgun": {
+     "knotenZuFormelR": 0.0001,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.1963
+    },
+    "funcannon": {
+     "knotenZuFormelR": 0.0001,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.3009
+    }
+   }
+  },
+  "fisch_tuna": {
+   "waffen": {
+    "pistol": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.877,
+     "muendungWeg": 0.1109,
+     "laufGrad": 13.6094,
+     "halterRuhe": 0.0053,
+     "halterMax": 0.0091,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1125,
+       "sy": 0.93835
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.16
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07385,
+       "kippGrad": 7.233,
+       "sy": 0.93702
+      }
+     },
+     "bilder": 30,
+     "huellePunkte": 55487,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "pistol",
+      "familie": "energie",
+      "koerper": "fisch",
+      "R": 3.4847,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.1,
+       "waffenKipp": 0.5,
+       "stauch": 0.1,
+       "spannung": 0.08,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 3,
+      "anhaengselGrad": 0.03,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.45,
+      "ruheNachFireS": 0.5,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.07654,
+       "kippGrad": 7.23328,
+       "stauch": 0.13176,
+       "streck": 0.04472,
+       "laengung": 0.16,
+       "waffenKippGrad": 3,
+       "anhaengselGrad": 6.55641
+      }
+     },
+     "mount": {
+      "klasse": "pistol",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_pistol",
+      "halter": "KFB_Halter_pistol",
+      "regel": "r1",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 5.26457,
+      "sollLaenge": 1.5794,
+      "laenge": 0.3,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 5.264573
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_pistol"
+     ],
+     "rot": []
+    },
+    "longgun": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.981,
+     "muendungWeg": 0.1749,
+     "laufGrad": 18.3778,
+     "halterRuhe": 0.0018,
+     "halterMax": 0.0071,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1219,
+       "sy": 0.92294
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.2
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07807,
+       "kippGrad": 8.15,
+       "sy": 0.9178
+      }
+     },
+     "bilder": 31,
+     "huellePunkte": 55461,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "longgun",
+      "familie": "kinetisch",
+      "koerper": "fisch",
+      "R": 3.4847,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.13,
+       "waffenKipp": 0.5,
+       "stauch": 0.13,
+       "spannung": 0.1,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 3,
+      "anhaengselGrad": 0.06,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4667,
+      "ruheNachFireS": 0.5167,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.0812,
+       "kippGrad": 8.1502,
+       "stauch": 0.1684,
+       "streck": 0.05731,
+       "laengung": 0.2,
+       "waffenKippGrad": 4,
+       "anhaengselGrad": 6.55641
+      }
+     },
+     "mount": {
+      "klasse": "longgun",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_longgun",
+      "halter": "KFB_Halter_longgun",
+      "regel": "r3_seite_kontakt",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 3.15874,
+      "sollLaenge": 3.1587,
+      "laenge": 1,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 3.158744
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_longgun"
+     ],
+     "rot": []
+    },
+    "funcannon": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.8073,
+     "muendungWeg": 0.2026,
+     "laufGrad": 17.119,
+     "halterRuhe": 0.0022,
+     "halterMax": 0.0072,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1688,
+       "sy": 0.8844
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.22
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.09494,
+       "kippGrad": 9.984,
+       "sy": 0.90102
+      }
+     },
+     "bilder": 33,
+     "huellePunkte": 55549,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "funcannon",
+      "familie": "explosiv",
+      "koerper": "fisch",
+      "R": 3.4847,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.16,
+       "waffenKipp": 0.5,
+       "stauch": 0.16,
+       "spannung": 0.15,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": -0.002,
+      "anhaengsel": 3,
+      "anhaengselGrad": 0.07,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.5,
+      "ruheNachFireS": 0.55,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.09984,
+       "kippGrad": 9.98405,
+       "stauch": 0.22668,
+       "streck": 0.07612,
+       "laengung": 0.22,
+       "waffenKippGrad": 6,
+       "anhaengselGrad": 6.55641
+      }
+     },
+     "mount": {
+      "klasse": "funcannon",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_funcannon",
+      "halter": "KFB_Halter_funcannon",
+      "regel": "r3_seite_kontakt",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 3.88243,
+      "sollLaenge": 1.7549,
+      "laenge": 0.452,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 3.882428
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_funcannon"
+     ],
+     "rot": []
+    }
+   },
+   "rot": [],
+   "koerper": "fisch",
+   "augen": "OK",
+   "vergleich": {
+    "pistol": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.2135
+    },
+    "longgun": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.2022
+    },
+    "funcannon": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.3598
+    }
+   }
+  },
+  "fisch_cowfish": {
+   "waffen": {
+    "pistol": {
+     "inKoerper": 0.0021,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.7933,
+     "muendungWeg": 0.1443,
+     "laufGrad": 8.9181,
+     "halterRuhe": 0.0033,
+     "halterMax": 0.0059,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1125,
+       "sy": 0.93835
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.16
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07385,
+       "kippGrad": 7.233,
+       "sy": 0.93702
+      }
+     },
+     "bilder": 30,
+     "huellePunkte": 114093,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "pistol",
+      "familie": "energie",
+      "koerper": "fisch",
+      "R": 2.4227,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.1,
+       "waffenKipp": 0.5,
+       "stauch": 0.1,
+       "spannung": 0.08,
+       "ruheTiefe": 0.2578,
+       "restAbgang": 0.1738,
+       "restMaximum": 0.0364,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 3,
+      "anhaengselGrad": 0.03,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.45,
+      "ruheNachFireS": 0.5,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.07654,
+       "kippGrad": 7.23328,
+       "stauch": 0.13176,
+       "streck": 0.04472,
+       "laengung": 0.16,
+       "waffenKippGrad": 3,
+       "anhaengselGrad": 6.55641
+      }
+     },
+     "mount": {
+      "klasse": "pistol",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_pistol",
+      "halter": "KFB_Halter_pistol",
+      "regel": "r1",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 3.63077,
+      "sollLaenge": 1.0892,
+      "laenge": 0.3,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 3.630771
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_pistol"
+     ],
+     "rot": []
+    },
+    "longgun": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.9473,
+     "muendungWeg": 0.1808,
+     "laufGrad": 11.5865,
+     "halterRuhe": 0.0052,
+     "halterMax": 0.015,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1219,
+       "sy": 0.92294
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.2
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07807,
+       "kippGrad": 8.15,
+       "sy": 0.9178
+      }
+     },
+     "bilder": 31,
+     "huellePunkte": 114093,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "longgun",
+      "familie": "kinetisch",
+      "koerper": "fisch",
+      "R": 2.4227,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.13,
+       "waffenKipp": 0.0381,
+       "stauch": 0.13,
+       "spannung": 0.1,
+       "ruheTiefe": 0.239,
+       "restAbgang": 0.2343,
+       "restMaximum": 0.2026,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 3,
+      "anhaengselGrad": 0.06,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4667,
+      "ruheNachFireS": 0.5167,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.0812,
+       "kippGrad": 8.1502,
+       "stauch": 0.1684,
+       "streck": 0.05731,
+       "laengung": 0.2,
+       "waffenKippGrad": 0.3048,
+       "anhaengselGrad": 6.55641
+      }
+     },
+     "mount": {
+      "klasse": "longgun",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_longgun",
+      "halter": "KFB_Halter_longgun",
+      "regel": "r3_seite_kontakt",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 2.17846,
+      "sollLaenge": 2.1785,
+      "laenge": 1,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 2.178463
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_longgun"
+     ],
+     "rot": []
+    },
+    "funcannon": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.7686,
+     "muendungWeg": 0.2531,
+     "laufGrad": 13.7813,
+     "halterRuhe": 0.002,
+     "halterMax": 0.0075,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1688,
+       "sy": 0.8844
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.22
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.09494,
+       "kippGrad": 9.984,
+       "sy": 0.90102
+      }
+     },
+     "bilder": 33,
+     "huellePunkte": 114045,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "funcannon",
+      "familie": "explosiv",
+      "koerper": "fisch",
+      "R": 2.4227,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.16,
+       "waffenKipp": 0.5,
+       "stauch": 0.16,
+       "spannung": 0.15,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": -0.002,
+      "anhaengsel": 3,
+      "anhaengselGrad": 0.07,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.5,
+      "ruheNachFireS": 0.55,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.09984,
+       "kippGrad": 9.98405,
+       "stauch": 0.22668,
+       "streck": 0.07612,
+       "laengung": 0.22,
+       "waffenKippGrad": 6,
+       "anhaengselGrad": 6.55641
+      }
+     },
+     "mount": {
+      "klasse": "funcannon",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_funcannon",
+      "halter": "KFB_Halter_funcannon",
+      "regel": "r3_seite_kontakt",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 2.67756,
+      "sollLaenge": 1.2103,
+      "laenge": 0.452,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 2.67756
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_funcannon"
+     ],
+     "rot": []
+    }
+   },
+   "rot": [],
+   "koerper": "fisch",
+   "augen": "OK",
+   "vergleich": {
+    "pistol": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.4859
+    },
+    "longgun": {
+     "knotenZuFormelR": 0.0001,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.4063
+    },
+    "funcannon": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.5023
+    }
+   }
+  },
+  "hai_white": {
+   "waffen": {
+    "pistol": {
+     "inKoerper": 0,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.745,
+     "muendungWeg": 0.1353,
+     "laufGrad": 13.4108,
+     "halterRuhe": 0.0052,
+     "halterMax": 0.0071,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1125,
+       "sy": 0.93835
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.16
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07385,
+       "kippGrad": 7.233,
+       "sy": 0.93702
+      }
+     },
+     "bilder": 30,
+     "huellePunkte": 78261,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "pistol",
+      "familie": "energie",
+      "koerper": "hai",
+      "R": 2.0268,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.1,
+       "waffenKipp": 0.208,
+       "stauch": 0.1,
+       "spannung": 0.08,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 4,
+      "anhaengselGrad": 0.05,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.45,
+      "ruheNachFireS": 0.5,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.07654,
+       "kippGrad": 7.23328,
+       "stauch": 0.13176,
+       "streck": 0.04472,
+       "laengung": 0.16,
+       "waffenKippGrad": 1.248,
+       "anhaengselGrad": 9.83462
+      }
+     },
+     "mount": {
+      "klasse": "pistol",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_pistol",
+      "halter": "KFB_Halter_pistol",
+      "regel": "r4_hai_unter_kiefer",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 3.0419,
+      "sollLaenge": 0.9126,
+      "laenge": 0.3,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 3.041902
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_pistol"
+     ],
+     "rot": []
+    },
+    "longgun": {
+     "inKoerper": 0.0142,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.8078,
+     "muendungWeg": 0.1953,
+     "laufGrad": 14.1008,
+     "halterRuhe": 0.0127,
+     "halterMax": 0.035,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1219,
+       "sy": 0.92294
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.2
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.07807,
+       "kippGrad": 8.15,
+       "sy": 0.9178
+      }
+     },
+     "bilder": 31,
+     "huellePunkte": 78279,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "longgun",
+      "familie": "kinetisch",
+      "koerper": "hai",
+      "R": 2.0268,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.13,
+       "waffenKipp": 0.5,
+       "stauch": 0.13,
+       "spannung": 0.1,
+       "ruheTiefe": 0,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": 0,
+      "anhaengsel": 4,
+      "anhaengselGrad": 0.09,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.4667,
+      "ruheNachFireS": 0.5167,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.0812,
+       "kippGrad": 8.1502,
+       "stauch": 0.1684,
+       "streck": 0.05731,
+       "laengung": 0.2,
+       "waffenKippGrad": 4,
+       "anhaengselGrad": 9.83462
+      }
+     },
+     "mount": {
+      "klasse": "longgun",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_longgun",
+      "halter": "KFB_Halter_longgun",
+      "regel": "r4_hai_unter_kiefer",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 1.82514,
+      "sollLaenge": 1.8251,
+      "laenge": 1,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 1.825141
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_longgun"
+     ],
+     "rot": [
+      "Waffe im Körper 0.0142",
+      "Halter ohne Kontakt in Ruhe 0.0127",
+      "Halter löst sich im Schuss 0.035"
+     ]
+    },
+    "funcannon": {
+     "inKoerper": 0.0047,
+     "muendung": 0,
+     "strahl": 0,
+     "griffWeg": 0,
+     "tiefsterY": 0.9659,
+     "muendungWeg": 0.173,
+     "laufGrad": 13.3883,
+     "halterRuhe": 0.0045,
+     "halterMax": 0.0071,
+     "phasen": {
+      "ruhe": {
+       "inKoerper": 0.0047,
+       "muendung": 0
+      },
+      "antizipation": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": -0.1688,
+       "sy": 0.8844
+      },
+      "abgang": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "laengung": 0.22
+      },
+      "maximum": {
+       "inKoerper": 0,
+       "muendung": 0,
+       "kick": 0.09494,
+       "kippGrad": 9.984,
+       "sy": 0.90102
+      }
+     },
+     "bilder": 33,
+     "huellePunkte": 78361,
+     "rahmen": "Körperrahmen ohne Rückstoß-Versatz/-Kippen",
+     "deformer": {
+      "phase": "ruhe",
+      "klasse": "funcannon",
+      "familie": "explosiv",
+      "koerper": "hai",
+      "R": 2.0268,
+      "schuesse": 1,
+      "waechter": {
+       "waffenKippVorher": 0.5,
+       "stauchVorher": 0.16,
+       "waffenKipp": 0.5,
+       "stauch": 0.16,
+       "spannung": 0.15,
+       "ruheTiefe": 0.01,
+       "restAbgang": 0,
+       "restMaximum": 0,
+       "posen": 9
+      },
+      "kick": 0,
+      "kickEinheiten": 0,
+      "kippGrad": 0,
+      "sy": 1,
+      "sxz": 1,
+      "volumen": 1,
+      "laengung": 0,
+      "waffenKippGrad": -0.002,
+      "anhaengsel": 4,
+      "anhaengselGrad": 0.11,
+      "abgangNachS": 0.05,
+      "ruheNachAbgangS": 0.5,
+      "ruheNachFireS": 0.55,
+      "maximumNachAbgangS": 0.05,
+      "max": {
+       "kick": 0.09984,
+       "kippGrad": 9.98405,
+       "stauch": 0.22668,
+       "streck": 0.07612,
+       "laengung": 0.22,
+       "waffenKippGrad": 6,
+       "anhaengselGrad": 9.83462
+      }
+     },
+     "mount": {
+      "klasse": "funcannon",
+      "seite": "R",
+      "quelle": "knoten",
+      "mount": "KFB_Mount_funcannon",
+      "halter": "KFB_Halter_funcannon",
+      "regel": "r3_seite_kontakt",
+      "huelle": "seite",
+      "angelegtR": null,
+      "freiR": null,
+      "skala": 1.61517,
+      "sollLaenge": 0.7301,
+      "laenge": 0.452,
+      "laengeQuelle": "length_m",
+      "griff": "KFB_Grip_R",
+      "muendung": "KFB_Muzzle",
+      "waffenSkalaKnoten": 1.615169
+     },
+     "mündungsEffekt": 1,
+     "halter": [
+      "KFB_Halter_funcannon"
+     ],
+     "rot": []
+    }
+   },
+   "rot": [],
+   "koerper": "hai",
+   "augen": "OK",
+   "vergleich": {
+    "pistol": {
+     "knotenZuFormelR": 0.0001,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.6703
+    },
+    "longgun": {
+     "knotenZuFormelR": 0.0001,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.3549
+    },
+    "funcannon": {
+     "knotenZuFormelR": 0,
+     "richtungGrad": 0,
+     "knotenZuKlassenwertR": 0.3579
+    }
+   }
+  }
+ },
+ "fehler": [],
+ "ohneSchalter": {
+  "schalter": false,
+  "deformer": null,
+  "mount": "knoten"
+ },
+ "seitenFehler": [],
+ "rot": [
+  "pet_cow/funcannon Halter ohne Kontakt in Ruhe 0.0109",
+  "hai_white/longgun Waffe im Körper 0.0142",
+  "hai_white/longgun Halter ohne Kontakt in Ruhe 0.0127",
+  "hai_white/longgun Halter löst sich im Schuss 0.035"
+ ]
+}

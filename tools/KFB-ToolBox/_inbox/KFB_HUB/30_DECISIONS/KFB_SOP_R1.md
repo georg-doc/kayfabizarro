@@ -86,6 +86,8 @@ Maschinenlesbar in `tools/qa_matrix.r1.json`, Prompt in `tools/CRITIC_BLIND_PROM
 | G Ton | stört oder fehlt | passt teilweise | stützt Lage und Rhythmus | erzählt mit |
 | H Technik | Fehler, Abstürze, Ruckeln | gelegentliche Fehler | fehlerfrei auf Desktop und Handy | dazu schnell geladen |
 
+**Ohne Zielbild** (Georgs Vorgabe reicht als Ziel): Der Kritiker vergleicht zusätzlich paarweise mit dem besten bisherigen Stand (besser / gleich / schlechter je Achse). Absolute Werte schwanken ohne festen Maßstab. Bleibt es zwei Zählungen bei Werten unter 7, folgt eine Hub-Karte mit Video und der Option „Zielbilder per Webchat“.
+
 **PASS:** keine Achse unter 7, Mittel ≥ 8, Stufe-A/B-Gates grün. Nicht zutreffende Achsen = „n/a“ mit Grund. Jede Bewertung mit Beleg (Datei, Szene, Zeitpunkt). Für Vergleichbarkeit: gleiche Erfassung, gleicher Prompt, gleiche Matrix-Version.
 
 ## 6 · Rollen
@@ -115,3 +117,4 @@ Maschinenlesbar in `tools/qa_matrix.r1.json`, Prompt in `tools/CRITIC_BLIND_PROM
 - R1 · 23.11.2026 · Erstfassung nach Georgs Workflow (V-2096, V-2097).
 - R1.1 · 23.11.2026 · Texte und Stimme in Stufe C, Anti-Samples (V-2098, Falkenstein-FAIL).
 - R2 · 23.11.2026 · Baum (Äste), Eskalationsleiter, Rückkanal, Referenzen (V-2100).
+- R2.1 · 23.11.2026 · Kritik ohne Zielbild: paarweiser Vergleich, Plateau-Regel (V-2118).
