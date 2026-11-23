@@ -1,0 +1,732 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kfb.ad-package.v1",
+  "title": "KFB Art-Direction-Paket v1 (Kritiker-Erfassung → Webchat)",
+  "description": "Ein Paket = eine Erfassung (ein Build, ein Modus/Gerät oder mehrere) mit ausgewählten Befunden. Alle Pfade relativ zum Paketordner. Medien sind privat (privates Repo), nie im öffentlichen Spiegel.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "run_id",
+    "paket_rev",
+    "erstellt",
+    "produkt",
+    "build",
+    "absicht",
+    "genre",
+    "aeste",
+    "sop",
+    "referenzen",
+    "ablage",
+    "erfassung",
+    "familien",
+    "szenen",
+    "upload",
+    "werkzeug",
+    "leitplanken",
+    "ablauf"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.ad-package.v1"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "z. B. aqua10-ad-r1; gleich Branch-Suffix ad/<run_id>"
+    },
+    "paket_rev": {
+      "type": "string",
+      "pattern": "^r[0-9]+$"
+    },
+    "erstellt": {
+      "type": "string",
+      "minLength": 10
+    },
+    "produkt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 2
+        },
+        "name": {
+          "type": "string",
+          "minLength": 2
+        }
+      }
+    },
+    "build": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "z. B. Artefakt v72 / r53"
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "absicht": {
+      "type": "string",
+      "minLength": 20,
+      "description": "SOP §3 ABSICHT, ein Satz"
+    },
+    "genre": {
+      "type": "string",
+      "minLength": 3
+    },
+    "aeste": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 11
+      },
+      "description": "Äste aus KFB_SOP_AESTE_R1.md"
+    },
+    "sop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stamm",
+        "aeste",
+        "referenzen",
+        "matrix"
+      ],
+      "properties": {
+        "stamm": {
+          "type": "string"
+        },
+        "aeste": {
+          "type": "string"
+        },
+        "referenzen": {
+          "type": "string"
+        },
+        "matrix": {
+          "type": "string"
+        }
+      }
+    },
+    "referenzen": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "nimm",
+          "nicht",
+          "frames",
+          "aeste",
+          "wirksamkeit"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nimm": {
+            "type": "string",
+            "minLength": 3
+          },
+          "nicht": {
+            "type": "string"
+          },
+          "frames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aeste": {
+            "type": "string"
+          },
+          "wirksamkeit": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ablage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repo",
+        "branch",
+        "pfad",
+        "privat"
+      ],
+      "properties": {
+        "repo": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "pfad": {
+          "type": "string"
+        },
+        "privat": {
+          "const": true
+        }
+      }
+    },
+    "erfassung": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quelle",
+        "laeufe"
+      ],
+      "properties": {
+        "quelle": {
+          "type": "string"
+        },
+        "laeufe": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "modus_geraet",
+              "konfiguration"
+            ],
+            "properties": {
+              "modus_geraet": {
+                "type": "string"
+              },
+              "konfiguration": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "familien": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "szenen"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-F]$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "szenen": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "szenen": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/szene"
+      }
+    },
+    "upload": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "familie",
+          "ordner",
+          "dateien"
+        ],
+        "properties": {
+          "familie": {
+            "type": "string",
+            "pattern": "^[A-F]$"
+          },
+          "ordner": {
+            "type": "string"
+          },
+          "dateien": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 10,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ausnahmen": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "behoben",
+          "zeit_unsicher"
+        ]
+      },
+      "description": "bewusste Ausnahmen beim Bau (WS0 begründet sie im Register)"
+    },
+    "werkzeug": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "datei",
+        "sha256"
+      ],
+      "description": "ad_return.py, das im Upload mitreist; der Webchat startet nur mit genau diesem Skript",
+      "properties": {
+        "datei": {
+          "const": "ad_return.py"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "leitplanken": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "datei",
+        "sha256",
+        "sop"
+      ],
+      "description": "LEITPLANKEN.md, die im Upload mitreist (SOP-Stand im Kopf = sop)",
+      "properties": {
+        "datei": {
+          "const": "LEITPLANKEN.md"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sop": {
+          "type": "string"
+        }
+      }
+    },
+    "ablauf": {
+      "type": "string",
+      "pattern": "^r[0-9]+$",
+      "description": "Ablauf-Stand des ChatGPT-SKILL.md, für den dieses Paket gebaut ist"
+    }
+  },
+  "$defs": {
+    "still": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pfad",
+        "rolle",
+        "breite",
+        "hoehe",
+        "sha256",
+        "edit"
+      ],
+      "properties": {
+        "pfad": {
+          "type": "string",
+          "pattern": "^media/stills/S[0-9]{2}_[a-z0-9_]+__[a-z0-9]+_[a-z0-9]+__[a-z0-9_]+\\.(png|jpg)$"
+        },
+        "rolle": {
+          "enum": [
+            "still",
+            "ausholung",
+            "aufprall",
+            "naehe"
+          ]
+        },
+        "t_clip_s": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "ereignis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "breite": {
+          "type": "integer",
+          "minimum": 16
+        },
+        "hoehe": {
+          "type": "integer",
+          "minimum": 16
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "edit": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "pfad",
+            "breite",
+            "hoehe",
+            "oben",
+            "unten",
+            "links",
+            "rechts",
+            "sha256"
+          ],
+          "description": "aufs Modellformat aufgefüllte Fassung (grauer Rand, Original unskaliert); null = Original passt schon",
+          "properties": {
+            "pfad": {
+              "type": "string",
+              "pattern": "^media/edit/S[0-9]{2}_[a-z0-9_]+__[a-z0-9]+_[a-z0-9]+__[a-z0-9_]+__edit\\.png$"
+            },
+            "breite": {
+              "type": "integer",
+              "minimum": 16
+            },
+            "hoehe": {
+              "type": "integer",
+              "minimum": 16
+            },
+            "oben": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unten": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "links": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "rechts": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    },
+    "befund": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "achse",
+        "schwere",
+        "art",
+        "text",
+        "beleg",
+        "quelle",
+        "owner",
+        "malbar",
+        "stand",
+        "aeste",
+        "referenzen"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^F[0-9]{2}$"
+        },
+        "achse": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H"
+          ]
+        },
+        "schwere": {
+          "enum": [
+            "hoch",
+            "mittel",
+            "niedrig"
+          ]
+        },
+        "art": {
+          "enum": [
+            "still",
+            "bewegung"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 10
+        },
+        "beleg": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "pfad"
+            ],
+            "properties": {
+              "pfad": {
+                "type": "string"
+              },
+              "t_clip_s": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "ereignis": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "quelle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "datei",
+            "nr"
+          ],
+          "properties": {
+            "datei": {
+              "type": "string"
+            },
+            "nr": {
+              "type": "string"
+            },
+            "kritiker_beleg": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 2
+        },
+        "malbar": {
+          "type": "boolean",
+          "description": "false = nicht als Bild lösbar (Ton, Timing allein, Leistung): Webchat überspringt"
+        },
+        "stand": {
+          "type": "string",
+          "description": "Stand laut Kritiker-Liste; 'behoben' wird beim Bau abgelehnt"
+        },
+        "referenzen": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "aeste": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 11
+          },
+          "description": "SOP-Äste dieses Befunds (fest, der Webchat übernimmt sie)"
+        },
+        "bereich": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "x",
+            "y",
+            "w",
+            "h"
+          ],
+          "description": "Bildbereich der Änderung (Anteile 0–1, bezogen aufs Original); außerhalb soll das Ziel dem Original gleichen",
+          "properties": {
+            "x": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "y": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "w": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "h": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      }
+    },
+    "szene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scene_id",
+        "familie",
+        "titel",
+        "modus_geraet",
+        "clip",
+        "stills",
+        "ereignisse",
+        "konfiguration",
+        "befunde"
+      ],
+      "properties": {
+        "scene_id": {
+          "type": "string",
+          "pattern": "^S[0-9]{2}_[a-z0-9_]+$"
+        },
+        "familie": {
+          "type": "string",
+          "pattern": "^[A-F]$"
+        },
+        "titel": {
+          "type": "string"
+        },
+        "modus_geraet": {
+          "type": "string"
+        },
+        "clip": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "pfad",
+            "sha256",
+            "dauer_s",
+            "t_start",
+            "t_end"
+          ],
+          "properties": {
+            "pfad": {
+              "type": "string",
+              "pattern": "^media/clips/S[0-9]{2}_[a-z0-9_]+__[a-z0-9]+_[a-z0-9]+\\.(mp4|webm)$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "dauer_s": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "t_start": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "description": "Fenster des Moments im Clip (Clip-Zeit); null = unbekannt"
+            },
+            "t_end": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "zeit_unsicher": {
+              "type": "boolean"
+            }
+          }
+        },
+        "stills": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/still"
+          }
+        },
+        "ereignisse": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "konfiguration": {
+          "type": "object"
+        },
+        "befunde": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/befund"
+          }
+        }
+      }
+    }
+  }
+}

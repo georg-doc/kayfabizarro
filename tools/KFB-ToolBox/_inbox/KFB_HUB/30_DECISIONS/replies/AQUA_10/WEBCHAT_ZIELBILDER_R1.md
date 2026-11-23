@@ -22,6 +22,14 @@ Du bist Art Director für „AquaCare 11 · Grand Theft Aqua“ (DocCheck VibeLa
    Je Nachricht ein 2×2-Blatt mit vier Szenen derselben Familie, jedes Feld im Seitenverhältnis des Originals.
 3. **Zu jedem Feld drei Zeilen:** welches Problem gelöst wird, was geändert ist, was gleich bleibt.
 
+## Zusatz: fehlende Kit-Teile (aus `replies/AQUA_10/FEHLT_IM_KIT.md`)
+Nach Familie F malst du ein HUD-Blatt in einem Lauf, im Stil des bestehenden Kits (`prompt_pill`, `panel_wide`), transparent und in 2×:
+- Hinweisleiste in drei Breiten,
+- kurze Prompt-Leiste ohne Fassung,
+- falls nötig 4 Symbole ohne Ring (Karte, Lautsprecher, Figur, Taste).
+- `panel_wide` neu mit weich auslaufendem Glanz oben links. Den Spiegeleffekt behalten, nur den harten Abbruch weg (Georg 23.11.).
+Maße stehen in FEHLT_IM_KIT.md. Das Zerschneiden in 3er- bzw. 9er-Teile macht der Code, nicht das Bild.
+
 ## Regeln
 - Auf dem echten Screenshot malen: Komposition, Kamera und Spielfiguren bleiben erkennbar. Kein neues Spiel erfinden.
 - Figuren nicht umdesignen (Flexa, ECHO, Fische, Hai). Augen und Gesicht wie im Original.

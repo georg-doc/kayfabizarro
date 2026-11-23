@@ -1,0 +1,296 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buchmaschine Heldenfilm</title>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden;font:14px system-ui}canvas{display:block}
+#kopf{position:fixed;left:12px;top:10px;color:#dfe3ea;font:13px system-ui;background:#0008;padding:6px 10px;border-radius:8px}#shot{color:#ffd9a0}</style>
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.js","three/addons/":"../../vendor/addons/"}}</script></head><body>
+<div id="kopf"><b>Buchmaschine</b> · Intro als Produktfilm · <span id="shot">–</span></div>
+<script type="module">
+// Intro der Buchmaschine als Produkt-Hero-Film des Buchs (Georg 23.11. über WS0; replies/buchmaschine/SHOTLISTE_PRODUKTFILM_R1.md).
+// Das Buch (WSB r3b, echte Scans) wird präsentiert, während die Maschine es analysiert: Hero, Drehung mit Rückseite, Scan-Lichtband,
+// Makro mit Schärfeverlagerung, Ausfalten zum ganzen Umschlag, Fahrt über das Panorama, Orbit während der Analyse, Übergang in den Befund.
+// Die Maschine ist Bühne (unscharf im Hintergrund). Alles ist eine Funktion der Zeit T (0…LAENGE), damit Belege bildgenau sind.
+// Scan-Effekt: „Basic Hologram“ von Daniel Ilett (CC0 Shaders, über patch.gg), Fresnel-Rand und Scanlinien, hier als WebGL-ShaderMaterial; dazu ein Lichtband.
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js'
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'
+import { buildParts, makeMaterials } from '../../src/vendor/codevember-orrery/parts.js'
+import { applyClay } from '../../src/vendor/clay/kfb-clay.v1.2.js'
+import { rostLook, verlaufUmgebung } from '../../src/scenelets/buchmaschine/rostLook.js'
+import { createHnKammer } from '../../src/scenelets/hnKammer.js'
+
+const W0 = innerWidth, H0 = innerHeight
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true })
+renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(W0, H0)
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.outputColorSpace = THREE.SRGBColorSpace
+document.body.appendChild(renderer.domElement)
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#000000')
+const camera = new THREE.PerspectiveCamera(28, W0 / H0, 0.02, 200)
+const composer = new EffectComposer(renderer); composer.addPass(new RenderPass(scene, camera))
+const bokeh = new BokehPass(scene, camera, { focus: 3, aperture: 0.0015, maxblur: 0.008 }); composer.addPass(bokeh)
+const bloom = new UnrealBloomPass(new THREE.Vector2(W0, H0), 0.14, 0.4, 0.96); composer.addPass(bloom); composer.addPass(new OutputPass())
+const env = verlaufUmgebung(renderer, { sky: '#2a3040', ground: '#0a0a10' })
+const BODEN = -0.45, SCHEIBE_Y = 4.24, B = new THREE.Vector3(0, 4.9, 0), UPV = new THREE.Vector3(0, 1, 0)
+const V3 = (a) => new THREE.Vector3(...a)
+
+// Raum: HyperNorm-Kammer nur als Glimmen; Licht bringt die Bühne selbst (ein Produktfilm-Aufbau)
+const kammer = createHnKammer({ THREE, renderer, quellen: [{ url: 'pd_pool_klein/manifest.json', src: 'pd' }, { url: '../../engine/hypernorm/test/daten/help-deck.hn-media.json' }], helligkeit: 0.06, lichter: false, seed: 1966 })
+kammer.group.position.set(0, BODEN, -kammer.anker.buehne.z); scene.add(kammer.group)
+let wandU = null; kammer.group.traverse((o) => { if (o.material?.uniforms?.uHell) wandU = o.material.uniforms })
+const key = new THREE.SpotLight('#ffe2c4', 16, 14, Math.PI / 7, 0.85, 1.4); key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0003
+const randL = new THREE.SpotLight('#9fc6ff', 48, 12, Math.PI / 8, 0.6, 1.4), randR = new THREE.SpotLight('#b9d4ff', 42, 12, Math.PI / 8, 0.6, 1.4)
+const oben = new THREE.SpotLight('#fff3e2', 9, 10, Math.PI / 6, 0.9, 1.4), fuell = new THREE.HemisphereLight('#2b2f3c', '#0d0a08', 0.35), buehne = new THREE.SpotLight('#ffcfa0', 0, 16, Math.PI / 5, 0.8, 1.3)
+for (const l of [key, randL, randR, buehne, oben]) { scene.add(l, l.target) }
+scene.add(fuell)
+
+// Maschine als Bühne: Orrery in Rost, Drehteller unter dem Buch
+const ladeBild = (src) => new Promise((ok) => { const im = new Image(); im.onload = () => ok(im); im.src = src })
+const texVon = (im, srgb) => { const t = new THREE.Texture(im); t.wrapS = t.wrapT = THREE.RepeatWrapping; if (srgb) t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; t.needsUpdate = true; return t }
+const [imD, imA] = await Promise.all([ladeBild('_privat/rost/rost_diff.jpg'), ladeBild('_privat/rost/rost_arm.jpg')])
+const ROST = { diff: texVon(imD, true), arm: texVon(imA, false) }
+const { parts, train } = buildParts(makeMaterials(), 5)
+const machine = new THREE.Group(); scene.add(machine)
+const mat = (color, roughness = 0.8) => new THREE.MeshStandardMaterial({ color, roughness, metalness: 0 })
+const rolle = new Map(), planeten = []
+for (const p of parts) {
+  machine.add(p.mesh); p.mesh.castShadow = true
+  if (p.id === 'sun') { p.mesh.visible = false; continue }
+  let r = null
+  if (p.kind === 'gear') r = train.gears.get(p.id).teeth >= 36 ? 'antrieb' : 'gummi'
+  else if (p.kind === 'plate') r = 'traeger'
+  else if (p.kind === 'bar') r = /Arm$|Bracket$/.test(p.id) ? 'arm' : 'eisen'
+  else if (p.id === 'crankKnob') r = 'knauf'
+  if (r) { p.mesh.material = mat(r === 'gummi' ? '#262422' : '#8a8580', r === 'gummi' ? 0.95 : 0.8); rolle.set(p.mesh, r) }
+  else { const c = p.mesh.material.color?.getHex?.() ?? 0xcccccc; p.mesh.material = mat(c, 0.7); p.mesh.material.emissive = new THREE.Color('#a8c4ff'); planeten.push(p.mesh) }
+}
+const ROLLEN = { antrieb: { ton: 1.0, grau: 0.0, kante: 0.35 }, traeger: { ton: 0.68, grau: 0.1, kante: 0.3 }, arm: { ton: 1.18, grau: 0.45, kante: 0.4 }, eisen: { ton: 0.8, grau: 0.35, kante: 0.4 }, knauf: { ton: 0.9, grau: 0.0, kante: 0.3 } }
+const scheibe = new THREE.Mesh(new THREE.CylinderGeometry(1.05, 1.1, 0.07, 64), mat('#8a8580')); scheibe.position.y = SCHEIBE_Y; scheibe.castShadow = scheibe.receiveShadow = true; machine.add(scheibe); rolle.set(scheibe, 'traeger')
+applyClay(machine, THREE, { profile: 'midground', seed: 'buchmaschine-orrery', scaleRef: 1.6 })
+// große Scheibe: Rost großflächig und flacher (R9)
+for (const [mesh, r] of rolle) { const R = ROLLEN[r]; if (!R) continue; const gross = mesh === scheibe; rostLook(mesh.material, { tex: ROST, lack: null, kante: R.kante, skala: gross ? 0.42 : 1.3, ton: R.ton, grau: R.grau, bump: gross ? 0.2 : 0.5 }); mesh.material.envMap = env; mesh.material.envMapIntensity = 0.7 }
+const pos = new THREE.Vector3(), quat = new THREE.Quaternion()
+
+// Buch r3b: Präsentation über drei Gruppen (Drehung, Neigung, Wenden) und einen Versatz, der vom geschlossenen auf das offene Buch zentriert
+const gltf = await new GLTFLoader().loadAsync('_privat/buch/KFB_Buch_Mensch.r3b.glb')
+const buch = new THREE.Group(), buchVersatz = new THREE.Group(), halter = new THREE.Group(); scene.add(buch); buch.add(buchVersatz); buchVersatz.add(halter)
+halter.rotation.x = Math.PI / 2; halter.scale.setScalar(4.6); halter.add(gltf.scene)
+gltf.scene.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = false; o.frustumCulled = false } })
+// Runde 2: Knet-Normal-Map nur angedeutet (in der Makro-Nähe wirkte sie als Raster), Umschlag mit leichtem Lackglanz in der Spiegelumgebung
+gltf.scene.traverse((o) => { if (o.isMesh) for (const m of [].concat(o.material)) { if (m.normalMap) { m.normalMap = null } if (m.name === 'Buch_Umschlag') { m.roughness = 0.4; m.envMap = env; m.envMapIntensity = 0.55 } if (m.name === 'Buch_Umschlag_innen') m.color.set('#b8b2a5'); if (m.name === 'Buch_Schnitt') { m.color.multiplyScalar(0.6); m.roughness = 1 } if (m.map) { m.map.anisotropy = renderer.capabilities.getMaxAnisotropy(); m.map.needsUpdate = true } m.needsUpdate = true } })   // Kanten ohne Flimmern (volle Anisotropie), weiße Innenseite nicht ausbrennen
+const mixer = new THREE.AnimationMixer(gltf.scene), aOffen = mixer.clipAction(gltf.animations.find((c) => c.name === 'offen')); aOffen.play(); mixer.update(0.01); gltf.scene.updateMatrixWorld(true)
+const kasten = new THREE.Box3(), inv = new THREE.Matrix4(); buchVersatz.updateMatrixWorld(true); inv.copy(buchVersatz.matrixWorld).invert()
+for (const n of ['Blatt_15', 'Blatt_16']) gltf.scene.getObjectByName(n).traverse((o) => { if (!o.isMesh) return; const p = o.geometry.attributes.position, v = new THREE.Vector3()
+  for (let i = 0; i < p.count; i += 7) { (o.isSkinnedMesh ? o.getVertexPosition(i, v) : v.fromBufferAttribute(p, i)); v.applyMatrix4(o.matrixWorld).applyMatrix4(inv); kasten.expandByPoint(v) } })
+{ const c = kasten.getCenter(new THREE.Vector3()); halter.position.x -= c.x; halter.position.y -= c.y }
+const BREITE = kasten.max.x - kasten.min.x, HOEHE = kasten.max.y - kasten.min.y
+aOffen.stop(); { const a = mixer.clipAction(gltf.animations.find((c) => c.name === 'zu')); a.play(); mixer.update(0); a.stop() }
+const KN = {}; gltf.scene.traverse((o) => { if (o.isBone) KN[o.name] = o })
+function spuren(clipName, passt) {
+  const clip = gltf.animations.find((c) => c.name === clipName)
+  return clip.tracks.filter((t) => passt(t.name.split('.')[0])).map((t) => { const [knoten, eig] = t.name.split('.'), k = t.getValueSize(), v = t.values, n = t.times.length
+    const gleich = (i, j) => { for (let c = 0; c < k; c++) if (Math.abs(v[i * k + c] - v[j * k + c]) > 1e-4) return false; return true }
+    let i0 = 0, i1 = n - 1; while (i0 < n - 1 && gleich(i0, i0 + 1)) i0++; while (i1 > 0 && gleich(i1, i1 - 1)) i1--; if (i1 <= i0) { i0 = 0; i1 = n - 1 }
+    return { ziel: KN[knoten]?.[eig], ip: t.createInterpolant(), t0: t.times[i0], t1: t.times[i1] } }).filter((s) => s.ziel)
+}
+const GRUPPEN = { deckel: spuren('oeffnen', (n) => n === 'deckel_v'), faecher: spuren('oeffnen', (n) => /^(p0[2-8]|b1[67])/.test(n)), p01: spuren('oeffnen', (n) => /^p01/.test(n)),
+  b14: spuren('oeffnen', (n) => /^b14/.test(n)), b15: spuren('oeffnen', (n) => /^b15/.test(n)), klappeV: spuren('klappen_aus', (n) => n === 'klappe_v') }
+// hintere Klappe: dieselbe Drehung wie die vordere, gespiegelt (der Clip bewegt nur klappe_v)
+const KV = GRUPPEN.klappeV.find((s) => s.ziel.isQuaternion), qv0 = new THREE.Quaternion().fromArray(KV.ip.evaluate(KV.t0)), qv1 = new THREE.Quaternion().fromArray(KV.ip.evaluate(KV.t1))
+const dKlappe = qv0.clone().invert().multiply(qv1), qh0 = KN.klappe_h.quaternion.clone(), SPIEGEL = Number(new URLSearchParams(location.search).get('spiegel') ?? -1)
+const pose = {}
+function buchPose(soll) { let neu = false
+  for (const g in GRUPPEN) { const f = Math.min(1, Math.max(0, soll[g] ?? 0)); if (Math.abs(f - (pose[g] ?? -1)) < 1e-4) continue; pose[g] = f; neu = true
+    for (const S of GRUPPEN[g]) S.ziel.fromArray(S.ip.evaluate(S.t0 + f * (S.t1 - S.t0))) }
+  const fh = Math.min(1, Math.max(0, soll.klappeH ?? 0)); if (Math.abs(fh - (pose.klappeH ?? -1)) > 1e-4) { pose.klappeH = fh; neu = true
+    const d = new THREE.Quaternion().slerp(SPIEGEL < 0 ? dKlappe.clone().invert() : dKlappe, fh); KN.klappe_h.quaternion.copy(qh0).multiply(d) }
+  if (neu) gltf.scene.updateMatrixWorld(true) }
+
+// Scan: Hologramm-Hülle (Fresnel + Scanlinien nach Daniel Ilett, CC0) mit wanderndem Lichtband
+const holoU = { uFarbe: { value: new THREE.Color('#8fe3ff') }, uGlow: { value: 0.55 }, uDeck: { value: 0 }, uFresnel: { value: 2.0 }, uBreite: { value: 0.15 }, uDichte: { value: 260 }, uTempo: { value: 0.02 }, uStaerke: { value: 0.12 }, uZeit: { value: 0 },
+  uBandAchse: { value: new THREE.Vector3(0, 1, 0) }, uBand: { value: 0 }, uBandBreite: { value: 0.05 } }
+const holoMat = new THREE.ShaderMaterial({ uniforms: holoU, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+  vertexShader: `varying vec3 vW; varying vec3 vN; void main(){ vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; vN = normalize(mat3(modelMatrix) * normal); gl_Position = projectionMatrix * viewMatrix * w; }`,
+  fragmentShader: `uniform vec3 uFarbe, uBandAchse; uniform float uGlow, uDeck, uFresnel, uBreite, uDichte, uTempo, uStaerke, uZeit, uBand, uBandBreite; varying vec3 vW; varying vec3 vN;
+    void main(){ vec3 V = normalize(cameraPosition - vW); float fres = pow(1.0 - clamp(abs(dot(normalize(vN), V)), 0.0, 1.0), uFresnel);
+      float h = (vW.y + uTempo * uZeit) * uDichte; float scan = smoothstep(uBreite, uBreite * 1.5, sin(h) * 0.5 + 0.5); scan = (1.0 - scan) * uStaerke;
+      float band = exp(-pow((dot(vW, uBandAchse) - uBand) / uBandBreite, 2.0));
+      float a = clamp(fres + scan, 0.0, 1.0) * 0.45 + band * 0.9; gl_FragColor = vec4(uFarbe * uGlow * a * uDeck, 1.0); }` })
+const huelle = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1, 1, 1, 1), holoMat); huelle.renderOrder = 5; buch.add(huelle)
+// Scan-Ebene: eine dünne, helle Lichtfläche quer durch die Hülle, wandert mit dem Band (eine Scan-Sprache: Glaskasten + Ebene)
+const ebeneMat = new THREE.ShaderMaterial({ uniforms: { uFarbe: holoU.uFarbe, uDeck: { value: 0 } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+  vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+  fragmentShader: `uniform vec3 uFarbe; uniform float uDeck; varying vec2 vUv; void main(){ float r = 1.0 - smoothstep(0.42, 0.5, max(abs(vUv.x - 0.5), abs(vUv.y - 0.5))); float kante = smoothstep(0.44, 0.5, max(abs(vUv.x - 0.5), abs(vUv.y - 0.5))) * (1.0 - smoothstep(0.5, 0.52, max(abs(vUv.x - 0.5), abs(vUv.y - 0.5)))); gl_FragColor = vec4(uFarbe * (0.18 * r + 1.4 * kante) * uDeck, 1.0); }` })
+const ebene = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), ebeneMat); ebene.renderOrder = 6; scene.add(ebene)
+const bandLicht = new THREE.SpotLight('#a9e8ff', 0, 4, Math.PI / 10, 0.4, 1.5); scene.add(bandLicht, bandLicht.target)
+
+// Zeitleiste: Schlüssel [t, wert, art]; art 'io' (Standard, sanft an und aus), 'aus' (Ankommen mit leichtem Nachfedern), 'an' (Anlauf)
+const io = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2), aus = (x) => { const c = 1.25; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2) }, an = (x) => x * x * x
+const EASE = { io, aus, an }
+function spur(keys, T) {
+  if (T <= keys[0][0]) return keys[0][1]
+  for (let i = 1; i < keys.length; i++) { const [t1, v1, art] = keys[i], [t0, v0] = keys[i - 1]; if (T <= t1) { const u = (EASE[art || 'io'])((T - t0) / Math.max(1e-6, t1 - t0)); return Array.isArray(v0) ? v0.map((a, k) => a + (v1[k] - a) * u) : v0 + (v1 - v0) * u } }
+  return keys[keys.length - 1][1]
+}
+const PI = Math.PI, FLACH = -PI / 2 + 0.32
+const LAENGE = 29.0
+// Runde 6 (Georg 23.11.: „Richtung stimmt“; Blind-Kritik R5): sichtbare Analyse (Rahmen, Messmarken, kurze Befundzeilen), Halte auf drei Hero-Motiven
+// (Tiere, Titel, Frau mit Bär), Kantenlicht gedämpft, wenn das Buch auf der Kante steht; Orbit ~95°, Mammut-Halt 1,5 s; Befund: Buch neutral, Rot nur auf Bühne und Kante
+const BUCH = {
+  dreh: [[0, -0.6], [3.0, -0.38], [3.9, PI / 2, 'io'], [4.4, PI / 2], [5.4, PI, 'io']],
+  wend: [[0, 0], [17.6, 0], [19.0, PI, 'io']],
+  neig: [[0, -0.1], [17.6, -0.1], [19.0, -0.5, 'io']],
+  deckel: [[0, 0], [6.4, 0], [8.2, 1, 'io']], p01: [[0, 0], [19.4, 0], [20.2, 1]], b14: [[0, 0], [20.4, 0], [21.2, 1]], b15: [[0, 0]],
+  klappeV: [[0, 0], [8.0, 0], [8.9, 1, 'aus'], [17.0, 1], [17.6, 0]], klappeH: [[0, 0], [8.5, 0], [9.4, 1, 'aus'], [17.0, 1], [17.6, 0]],
+  hoehe: [[0, 0], [17.6, 0], [19.0, -0.25, 'io']],
+  scan: [[0, 0], [0.8, 0], [1.0, 1], [2.6, 1], [2.8, 0], [5.5, 0], [5.65, 1], [6.3, 1], [6.45, 0], [21.5, 0], [21.65, 1], [22.6, 1], [22.75, 0], [25.95, 0], [26.05, 1.2], [26.6, 0]],
+  scanPos: [[0, 0.62], [1.0, 0.62], [2.6, -0.62], [5.5, 0.62], [5.65, 0.62], [6.3, -0.62], [21.5, -0.95], [21.65, -0.95], [22.6, 0.95], [25.95, -0.95], [26.05, -0.95], [26.6, 0.95]],
+  warn: [[0, 0], [26.2, 0], [26.35, 1, 'aus']],
+  stempel: [[0, 0], [26.2, 0], [26.4, 1, 'aus']],
+  ring: [[0, 0.15], [0.8, 0.15], [1.0, 1], [2.8, 0.25], [5.5, 0.25], [5.65, 1], [6.45, 0.25], [21.5, 0.25], [21.65, 1], [22.8, 0.3], [26.0, 1.1], [29, 1.0]],
+  rotLicht: [[0, 0], [26.2, 0], [26.35, 1, 'aus']],
+  planeten: [[0, 0]],
+  streif: [[0, 0], [10.4, 0], [11.4, 1], [16.6, 1], [17.2, 0]],
+}
+const SCAN_Y_BIS = 15
+const ORB = (a, r, h) => [Math.sin(a) * r, h, Math.cos(a) * r]
+const TOT = [[0.05, 0.15, 2.5], [0, 0, 0], 38, 0.001]
+const MAMMUT = [[-0.85, 0.6, 1.25], [-0.4, -0.3, 0.15], 27, 0.004]
+const FAHRTEN = [
+  [0.0, 3.0, [[[-0.62, 0.12, 2.8], [0.02, 0.02, 0], 26, 0.0022], [[-0.5, 0.08, 2.25], [0.02, 0, 0], 26, 0.0024]]],
+  [3.0, 6.4, [[[-0.5, 0.08, 2.25], [0.02, 0, 0], 26, 0.0024], [[0.25, 0.1, 2.3], [0, 0, 0], 26, 0.002], [[0.4, 0.12, 2.3], [0, 0, 0], 26, 0.002]]],
+  [6.4, 9.4, [[[0.4, 0.12, 2.3], [0, 0, 0], 26, 0.002], [[0.25, 0.14, 2.45], [0, 0, 0], 32, 0.0014], TOT]],
+  [9.4, 10.4, [TOT]],
+  [10.4, 11.9, [TOT, [[-0.6, 0.0, 1.6], [-0.52, -0.25, 0], 30, 0.003], [[-0.6, -0.2, 0.86], [-0.52, -0.3, 0], 30, 0.004]]],
+  [11.9, 13.1, [[[-0.6, -0.2, 0.86], [-0.52, -0.3, 0], 30, 0.004]]],
+  [13.1, 14.3, [[[-0.6, -0.2, 0.86], [-0.52, -0.3, 0], 30, 0.004], [[0.0, 0.25, 1.0], [0.2, 0.15, 0], 30, 0.0035], [[0.3, 0.38, 0.9], [0.4, 0.33, 0], 30, 0.004]]],
+  [14.3, 15.5, [[[0.3, 0.38, 0.9], [0.4, 0.33, 0], 30, 0.004]]],
+  [15.5, 16.1, [[[0.3, 0.38, 0.9], [0.4, 0.33, 0], 30, 0.004], [[0.3, -0.02, 0.98], [0.42, -0.1, 0], 30, 0.0035]]],
+  [16.1, 17.3, [[[0.3, -0.02, 0.98], [0.42, -0.1, 0], 30, 0.0035]]],
+  [17.3, 18.2, [[[0.3, -0.02, 0.98], [0.42, -0.1, 0], 30, 0.0035], [[0.5, 0.1, 1.8], [0.4, -0.05, 0], 32, 0.0015], TOT]],
+  [18.2, 19.4, [TOT, [ORB(0.6, 2.5, 0.8), [0, -0.12, 0], 34, 0.0012], [ORB(0.95, 2.35, 1.1), [0, -0.2, 0], 30, 0.0016]]],
+  [19.4, 23.0, [[ORB(0.95, 2.35, 1.1), [0, -0.2, 0], 30, 0.0016], [ORB(0.4, 2.3, 1.05), [0, -0.2, 0], 30, 0.0016], [ORB(-0.2, 2.25, 1.05), [0, -0.22, 0], 30, 0.0016], [ORB(-0.7, 2.2, 1.1), [-0.05, -0.22, 0], 30, 0.0016]]],
+  [23.0, 23.8, [[ORB(-0.7, 2.2, 1.1), [-0.05, -0.22, 0], 30, 0.0016], MAMMUT]],
+  [23.8, 25.3, [MAMMUT]],
+  [25.3, 25.9, [MAMMUT, [ORB(-0.18, 1.95, 0.95), [0.05, -0.22, 0], 30, 0.0016]]],
+  [25.9, 29.0, [[ORB(-0.18, 1.95, 0.95), [0.05, -0.22, 0], 30, 0.0016], [ORB(-0.16, 1.75, 0.9), [0.05, -0.2, 0], 30, 0.0016]]],
+]
+const RUCK = 26.2
+const cr = (p0, p1, p2, p3, t) => { const t2 = t * t, t3 = t2 * t; return 0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2 + (-p0 + 3 * p1 - 3 * p2 + p3) * t3) }
+function kameraBei(T) {
+  const F = FAHRTEN.find((f) => T >= f[0] && T < f[1]) || FAHRTEN[FAHRTEN.length - 1], P = F[2]
+  if (P.length === 1) return P[0]
+  const u = io(Math.min(1, Math.max(0, (T - F[0]) / (F[1] - F[0])))) * (P.length - 1), i = Math.min(P.length - 2, Math.floor(u)), f = u - i
+  const g = (k) => P[Math.max(0, Math.min(P.length - 1, k))], mix = (sel) => { const a = sel(g(i - 1)), b = sel(g(i)), c = sel(g(i + 1)), d = sel(g(i + 2)); return Array.isArray(b) ? b.map((_, n) => cr(a[n], b[n], c[n], d[n], f)) : cr(a, b, c, d, f) }
+  return [mix((p) => p[0]), mix((p) => p[1]), mix((p) => p[2]), mix((p) => p[3])]
+}
+const SHOTS = [['1 Cover', 0], ['2 Drehung', 3.0], ['3 Ausfalten', 6.4], ['4 Panorama', 10.4], ['5 Ins Innere', 17.3], ['6 Orbit und Scan', 19.4], ['7 Detail', 23.0], ['8 Befund', 25.3]].map(([id, t0], i, a) => ({ id, t: [t0, a[i + 1]?.[1] ?? LAENGE] }))
+const shotBei = (T) => SHOTS.find((s) => T >= s.t[0] && T < s.t[1]) || SHOTS[SHOTS.length - 1]
+const ereignisse = [], gemeldet = new Set()
+const MARKEN = [[1.0, 'laden', 0.6], [3.0, 'servo', 0.6], [5.65, 'laden', 0.5], [6.4, 'blatt', 0.8], [8.0, 'blatt', 0.6], [8.5, 'blatt', 0.6], [9.4, 'klick', 0.5], [11.95, 'klick', 0.35], [14.35, 'klick', 0.35], [16.15, 'klick', 0.35], [17.0, 'blatt', 0.5], [17.6, 'servo', 0.7], [19.4, 'blatt', 0.7], [20.4, 'blatt', 0.7], [21.65, 'laden', 0.8], [21.7, 'relief', 0.6], [23.85, 'klick', 0.4], [25.9, 'stille', 0.9], [25.95, 'brumm', 1.0], [26.2, 'schlag', 1.0], [26.25, 'klick', 1.0]]
+
+// Scan als Lichtkante direkt auf dem Papier (statt Overlay) und Warnfärbung des Befunds: kleine Erweiterung aller Buch-Materialien
+const scanU = { uScanAchse: { value: new THREE.Vector3(1, 0, 0) }, uScanPos: { value: 0 }, uScanBreite: { value: 0.018 }, uScan: { value: 0 }, uScanFarbe: { value: new THREE.Color('#9fe6ff') }, uWarn: { value: 0 } }
+gltf.scene.traverse((o) => { if (!o.isMesh) return; for (const m of [].concat(o.material)) { if (m.userData.scan) continue; m.userData.scan = true; const vorher = m.onBeforeCompile
+  m.onBeforeCompile = (sh, r) => { vorher?.call(m, sh, r); Object.assign(sh.uniforms, scanU)
+    sh.vertexShader = 'varying vec3 vScanW;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\nvScanW = (modelMatrix * vec4(transformed, 1.0)).xyz;')
+    sh.fragmentShader = 'uniform vec3 uScanAchse, uScanFarbe; uniform float uScanPos, uScanBreite, uScan, uWarn; varying vec3 vScanW;\n' + sh.fragmentShader.replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
+      { float d = dot(vScanW, uScanAchse) - uScanPos; float kante = exp(-d * d / (uScanBreite * uScanBreite)); float nach = smoothstep(0.0, -0.25, d) * 0.12;
+        totalEmissiveRadiance += uScanFarbe * (kante * 0.75 + nach * 0.6) * uScan;
+        diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(1.0, 0.42, 0.36), uWarn * 0.55); totalEmissiveRadiance += vec3(0.35, 0.03, 0.0) * uWarn * 0.25; }`) }
+  m.customProgramCacheKey = () => 'kfb-scan-r1'; m.needsUpdate = true } })
+// Befund-Stempel: rote Stempelfarbe auf der linken Seite, schlägt mit Überschwingen auf
+const stempelBild = (() => { const c = document.createElement('canvas'); c.width = 1024; c.height = 420; const g = c.getContext('2d'); g.translate(512, 210); g.rotate(-0.12)
+  g.fillStyle = 'rgba(245,238,225,0.9)'; g.fillRect(-500, -180, 1000, 360); g.strokeStyle = 'rgba(200,24,18,1)'; g.lineWidth = 22; g.strokeRect(-470, -150, 940, 300); g.lineWidth = 6; g.strokeRect(-440, -122, 880, 244)
+  g.fillStyle = 'rgba(200,24,18,1)'; g.font = '900 120px "Arial Black", Impact, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('GEDANKEN-', 0, -46); g.fillText('VERBRECHEN', 0, 70)
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t })()
+const stempel = new THREE.Mesh(new THREE.PlaneGeometry(0.62, 0.62 * 420 / 1024), new THREE.MeshBasicMaterial({ map: stempelBild, transparent: true, depthWrite: false, toneMapped: false }))
+stempel.renderOrder = 7; buchVersatz.add(stempel)
+const rotLicht = new THREE.PointLight('#ff3a1a', 0, 6, 1.6); scene.add(rotLicht)
+const streif = new THREE.SpotLight('#ffe6c8', 0, 6, Math.PI / 9, 0.5, 1.2); scene.add(streif, streif.target)
+huelle.visible = false; ebene.visible = false
+const planetFarbe = planeten.map((m) => m.material.color.clone())
+// Bühne beruhigt (Kritik R3): Planeten aus dem Bild, die Maschine nur als dunkle Silhouette; ein schlichter Lichtring um den Teller deutet den Scanner an
+for (const p of parts) if (planeten.includes(p.mesh) || /ring/i.test(p.id)) p.mesh.visible = false
+const ring = new THREE.Mesh(new THREE.TorusGeometry(1.1, 0.012, 12, 160), new THREE.MeshBasicMaterial({ color: '#8fe3ff', transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }))
+ring.rotation.x = PI / 2; ring.position.set(0, SCHEIBE_Y + 0.045, 0); scene.add(ring)
+
+// Analyse-Marken (Kritik R5: „die Maschine analysiert nicht sichtbar“): dünne cyanfarbene Rahmen und kurze Befundzeilen, nur während der Analyse, vor dem Befund wieder weg
+const markMat = () => new THREE.LineBasicMaterial({ color: '#5fdcff', transparent: true, opacity: 0, depthTest: false, toneMapped: false })
+function rahmen(w, h, ecke = 0.1, d = 0.007) { const p = [], quad = (x0, y0, x1, y1) => p.push(x0, y0, 0, x1, y0, 0, x1, y1, 0, x0, y0, 0, x1, y1, 0, x0, y1, 0)
+  for (const [sx, sy] of [[-1, -1], [1, -1], [1, 1], [-1, 1]]) { const x = sx * w / 2, y = sy * h / 2; quad(Math.min(x, x - sx * ecke), y - d, Math.max(x, x - sx * ecke), y + d); quad(x - d, Math.min(y, y - sy * ecke), x + d, Math.max(y, y - sy * ecke)) }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color: '#5fdcff', transparent: true, opacity: 0, depthTest: false, toneMapped: false, side: THREE.DoubleSide })); m.renderOrder = 8; return m }
+function zeile(text, breite = 0.45) { const c = document.createElement('canvas'); c.width = 1024; c.height = 96; const g = c.getContext('2d'); g.fillStyle = 'rgba(2,12,18,0.6)'; g.fillRect(0, 0, 1024, 96); g.fillStyle = 'rgba(95,220,255,0.95)'; g.fillRect(0, 88, 1024, 3)
+  g.font = '600 52px "IBM Plex Mono", Menlo, Consolas, monospace'; g.fillText(text, 6, 62); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(breite, breite * 96 / 1024), new THREE.MeshBasicMaterial({ map: t, transparent: true, opacity: 0, depthTest: false, toneMapped: false })); m.renderOrder = 9; return m }
+// Anzeige liegt über dem fertigen Bild (nach Schärfentiefe und Bloom): mittiger Messrahmen, Befundzeilen unten links; Einheiten = halbe Bildhöhe
+const hudScene = new THREE.Scene(), hudCam = new THREE.OrthographicCamera(-16 / 9, 16 / 9, 1, -1, -1, 1)
+const HUD = []
+function hudRahmen(w, h, t0, t1) { const o = rahmen(w, h, 0.12); hudScene.add(o); HUD.push({ obj: o, t0, t1 }) }
+function hudZeile(text, slot, t0, t1) { const o = zeile(text, 1.1); o.userData.slot = slot; hudScene.add(o); HUD.push({ obj: o, t0, t1, slot }) }
+hudRahmen(1.5, 1.7, 0.8, 3.0); hudZeile('SCAN · OBJEKT 0417', 0, 1.0, 3.0); hudZeile('FORMAT 165 × 230 MM', 1, 1.6, 3.0)
+hudRahmen(1.5, 1.7, 5.5, 6.5); hudZeile('RÜCKSEITE · TEXT ERFASST', 0, 5.6, 6.5)
+hudRahmen(1.3, 1.2, 11.9, 13.1); hudZeile('MOTIV · TIERE', 0, 12.0, 13.1); hudZeile('EINSTUFUNG · HARMLOS', 1, 12.4, 13.1)
+hudRahmen(1.9, 1.0, 14.3, 15.5); hudZeile('TITEL ERKANNT', 0, 14.4, 15.5); hudZeile('SCHLAGWORT · MENSCH', 1, 14.8, 15.5)
+hudRahmen(1.3, 1.3, 16.1, 17.3); hudZeile('MOTIV · MENSCH IN NOT', 0, 16.2, 17.3); hudZeile('EMPATHIE · ERHÖHT', 1, 16.6, 17.3)
+hudRahmen(2.6, 1.6, 21.5, 23.0); hudZeile('ANALYSE · SEITE 30–31', 0, 21.6, 23.0)
+hudRahmen(1.3, 1.3, 23.8, 25.2); hudZeile('MUSTER · KOOPERATION', 0, 23.9, 25.2); hudZeile('ABWEICHUNG VOM NORMBUCH 87 %', 1, 24.4, 25.2)
+function zeichne() { composer.render(); const a = camera.aspect; hudCam.left = -a; hudCam.right = a; hudCam.updateProjectionMatrix()
+  let an = false; for (const M of HUD) { const d = markeDeck(T, M.t0, M.t1); M.obj.visible = d > 0.001; M.obj.material.opacity = 0.9 * d; an ||= M.obj.visible
+    if (M.slot !== undefined) M.obj.position.set(-a + 0.08 + 0.55, -0.76 - 0.125 * M.slot, 0) }
+  if (an) { renderer.autoClear = false; renderer.render(hudScene, hudCam); renderer.autoClear = true } }
+const markeDeck = (T, t0, t1) => Math.min(THREE.MathUtils.clamp((T - t0) / 0.2, 0, 1), THREE.MathUtils.clamp((t1 - T) / 0.2, 0, 1))
+
+let T = 0
+function setze(Tn) {
+  T = Tn
+  const s = shotBei(T); shot.textContent = s.id
+  // Buch: Pose, Drehung um die Hochachse, leichte Neigung; Versatz zentriert geschlossen bzw. offen
+  const dreh = spur(BUCH.dreh, T), neig = spur(BUCH.neig, T), wend = spur(BUCH.wend, T), offen = spur(BUCH.deckel, T)
+  buchPose({ deckel: offen, faecher: offen, p01: spur(BUCH.p01, T), b14: spur(BUCH.b14, T), b15: spur(BUCH.b15, T), klappeV: spur(BUCH.klappeV, T), klappeH: spur(BUCH.klappeH, T) })
+  buch.quaternion.setFromAxisAngle(UPV, dreh + wend).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), neig))
+  buch.position.copy(B).add(new THREE.Vector3(0, spur(BUCH.hoehe, T), 0))
+  buchVersatz.position.x = -BREITE / 4 * (1 - offen)
+  buch.updateMatrixWorld(true)
+  // Scan-Lichtkante quer über die Breite des offenen Buchs, Befund-Färbung, Stempel
+  const ax = T < SCAN_Y_BIS ? new THREE.Vector3(0, 1, 0) : new THREE.Vector3(1, 0, 0).applyQuaternion(buch.quaternion); scanU.uScanAchse.value.copy(ax)
+  scanU.uScanPos.value = buch.position.dot(ax) + spur(BUCH.scanPos, T); ring.material.opacity = 0.9 * spur(BUCH.ring, T); ring.material.color.set('#8fe3ff').lerp(new THREE.Color('#ff5a2a'), spur(BUCH.warn, T)); scanU.uScan.value = spur(BUCH.scan, T); const warn = spur(BUCH.warn, T); scanU.uWarn.value = 0
+  scanU.uScanFarbe.value.set('#22c8ff').lerp(new THREE.Color('#ff5a2a'), warn)
+  const st = spur(BUCH.stempel, T); stempel.visible = st > 0.001; stempel.position.set(BREITE / 4, 0.05, 0.2); stempel.scale.setScalar(THREE.MathUtils.lerp(1.7, 1, Math.min(1, st))); stempel.material.opacity = Math.min(1, st * 1.6)
+  // Licht: Hauptlicht schräg vorn oben links, Kanten von hinten, oben weich; Streiflicht während des Panoramas von links flach über den Umschlag
+  key.position.copy(B).add(new THREE.Vector3(-2.2, 2.6, 2.6)); key.target.position.copy(B); oben.position.copy(B).add(new THREE.Vector3(0.4, 3.2, 0.8)); oben.target.position.copy(B)
+  { const kante = Math.abs(Math.cos(dreh + spur(BUCH.wend, T))), auf = T < 10.5 ? Math.sin(PI * offen) : 0, f = (0.3 + 0.7 * kante) * (1 - 0.55 * auf); randL.intensity = 48 * f; randR.intensity = 42 * f }   // steht das Buch auf der Kante, brennt sonst Rücken oder Klappe aus
+  randL.position.copy(B).add(new THREE.Vector3(-2.4, 1.2, -2.6)); randL.target.position.copy(B); randR.position.copy(B).add(new THREE.Vector3(2.6, 0.9, -2.2)); randR.target.position.copy(B)
+  const K = kameraBei(T), kp = V3(K[0]); streif.intensity = 14 * spur(BUCH.streif, T); streif.position.copy(B).add(new THREE.Vector3(kp.x - 1.9, 0.15, 0.32)); streif.target.position.copy(B).add(new THREE.Vector3(kp.x + 0.4, -0.05, 0))
+  buehne.intensity = 0; rotLicht.position.copy(B).add(new THREE.Vector3(0.2, 0.9, -1.7)); rotLicht.intensity = 26 * spur(BUCH.rotLicht, T)
+  if (wandU) wandU.uHell.value = 0.003 + 0.03 * warn
+  // Maschine als dunkle Bühne: langsamer Lauf, Planeten gedämpft, glimmen beim Scannen, im Befund rot
+  const D = T * 0.08 * Math.PI * 2 * 0.35
+  parts.forEach((p) => { p.pose(D, pos, quat); p.mesh.position.copy(pos); p.mesh.quaternion.copy(quat) })
+  scheibe.rotation.y = dreh * 0.5
+  const g = spur(BUCH.planeten, T); planeten.forEach((m, i) => { m.material.color.copy(planetFarbe[i]).multiplyScalar(0.35); m.material.emissiveIntensity = g; m.material.emissive.set('#a8c4ff').lerp(new THREE.Color('#ff6a3a'), warn) })
+  // Kamera: eine durchgehende Fahrt
+  const rz = T - RUCK, r = rz > 0 && rz < 0.6 ? 0.018 * Math.exp(-rz * 7) : 0
+  camera.position.copy(B).add(kp).add(new THREE.Vector3(Math.sin(T * 61) * r, Math.sin(T * 47 + 1) * r, 0)); const blick = B.clone().add(V3(K[1])); camera.lookAt(blick); camera.fov = K[2]; camera.updateProjectionMatrix()
+  bokeh.uniforms.focus.value = camera.position.distanceTo(blick); bokeh.uniforms.aperture.value = K[3]; bokeh.uniforms.maxblur.value = 0.012
+  for (const [tm, typ, stk] of MARKEN) { const k = tm + typ; if (T >= tm && !gemeldet.has(k)) { gemeldet.add(k); ereignisse.push({ typ, t: tm, staerke: stk, rueck: 0, ort: B.toArray() }) } }
+  kammer.update(1 / 30, { musik: { kick: warn * 0.3 } })
+}
+const kammerBereit = () => Promise.race([Promise.resolve(kammer.bereit).catch(() => null), new Promise((r) => setTimeout(r, 8000))])
+let live = false, uhr0 = 0
+function frame(t) { if (live) { setze(((t - uhr0) / 1000) % LAENGE); zeichne() } requestAnimationFrame(frame) }
+kammerBereit().then(() => { uhr0 = performance.now(); live = true })
+requestAnimationFrame(frame)
+const groesse = (w, h) => { renderer.setPixelRatio(1); renderer.setSize(w, h, false); composer.setPixelRatio(1); composer.setSize(w, h); bokeh.setSize?.(w, h); camera.aspect = w / h; camera.updateProjectionMatrix() }
+// __bild(T, datei): Schlüsselbild zur Zeit T; __record({ dir, von, bis, fps, schritt }): Einzelbilder und Ereignis-Protokoll
+window.__bild = async (Tn, datei, w = 1280, h = 720) => { await kammerBereit(); live = false; groesse(w, h); for (let i = 0; i < 4; i++) kammer.update(1 / 30, {}); setze(Tn); zeichne(); await fetch(`/save?f=${datei}`, { method: 'POST', body: renderer.domElement.toDataURL('image/png') }); return shotBei(Tn).id }
+window.__record = async ({ dir, von = 0, bis = LAENGE, fps = 30, schritt = 1, w = 1280, h = 720 }) => {
+  await kammerBereit(); live = false; groesse(w, h); ereignisse.length = 0; gemeldet.clear(); const n = Math.round((bis - von) * fps)
+  for (let i = 0; i < n; i++) { setze(von + i / fps); if (i % schritt) continue; zeichne(); await fetch(`/save?f=${dir}/${String(i).padStart(4, '0')}.png`, { method: 'POST', body: renderer.domElement.toDataURL('image/png') }) }
+  await fetch(`/save?f=${dir}/ereignisse.json`, { method: 'POST', body: JSON.stringify({ t0: von, fps, frames: n, ereignisse: ereignisse.map((e) => ({ ...e, t: +(e.t - von).toFixed(3) })), rascheln: new Array(n).fill(0) }) })
+  return n
+}
+window.__info = () => ({ T, BREITE, HOEHE, shot: shotBei(T).id, pose: { ...pose } })
+</script></body></html>

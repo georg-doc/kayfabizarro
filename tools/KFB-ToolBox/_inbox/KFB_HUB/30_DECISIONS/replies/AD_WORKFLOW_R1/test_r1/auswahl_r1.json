@@ -1,0 +1,261 @@
+{
+  "_hinweis": "Probelauf AD_WORKFLOW_R1/test_r1. ABSICHT/GENRE sind Testwerte der WS0-Stellvertretung, nicht von Georg freigegeben. Referenz-Namen exakt wie in KFB_REFERENZEN_R1.md (fett); nimm/nicht/Äste kommen von dort.",
+  "run_id": "aqua10-ad-test-r1",
+  "paket_rev": "r1",
+  "erstellt": "2026-11-23",
+  "produkt": {
+    "id": "aqua10",
+    "name": "AquaCare 11 · Grand Theft Aqua (Aqua 1.0)"
+  },
+  "build": {
+    "version": "Erfassung r1, Lauf trouble_desktop 23.11. 02:22 UTC",
+    "commit": null,
+    "url": null
+  },
+  "absicht": "Der Spieler bricht als Aquariumsfisch aus dem DocCheck-Becken aus und erlebt eine Cartoon-Gangsterflucht ins offene Meer; der Fisch ist der Star, das Becken die Bühne.",
+  "genre": "Cartoon-Heist-Arcade im Browser (GTA-Ton im Interface, Looney-Tunes-Timing, Clay-Vordergrund)",
+  "erfassung_wurzel": "_privat_quelle/erfassung_r1",
+  "referenzen": [
+    {
+      "id": "claybound",
+      "name": "Claybound",
+      "frames": [
+        "30_DECISIONS/replies/CLAY_REFERENZ_R2/ref_claybound_ss1.jpg",
+        "30_DECISIONS/replies/CLAY_REFERENZ_R2/ref_claybound_ss3.jpg"
+      ]
+    },
+    {
+      "id": "looney-tunes",
+      "name": "Looney Tunes / Road Runner",
+      "frames": []
+    },
+    {
+      "id": "gta-ton-interface",
+      "name": "GTA (Ton, Interface)",
+      "frames": []
+    }
+  ],
+  "familien": [
+    {
+      "id": "A",
+      "name": "Startbild, Code-Wort-Tür, Fischwahl"
+    },
+    {
+      "id": "D",
+      "name": "Hai-Angriff (Ausholung und Zuschnappen), Blutbahn"
+    }
+  ],
+  "szenen": [
+    {
+      "scene_id": "S02_startbild",
+      "familie": "A",
+      "titel": "Startbild",
+      "lauf": "trouble_desktop",
+      "protokoll_nr": 2,
+      "stills": [
+        {
+          "datei": "02_startbild.png",
+          "rolle": "still",
+          "sha256": "ae2c6405b9047765ec2484205b0465f5467b5cab248fe4b27929a5ccc3ab4b36"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F01",
+          "achse": "E",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Startbild: bunter, gemalter Hintergrund konkurriert mit dem Becken (dem Helden); der Spruch „Crime pays. In shells.“ steht klein und weiß auf unruhigem Grund.",
+          "beleg": [
+            {
+              "datei": "02_startbild.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_CRITIC_R2/ZUSAMMEN_R2.md",
+            "nr": "24",
+            "kritiker_beleg": [
+              "KRITIKER_B #13: belege/trouble_desktop/01_startbild.png, 03_mixer_spielt.png"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen",
+          "referenzen": [
+            "claybound",
+            "gta-ton-interface"
+          ],
+          "aeste": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": "S05_figurenblatt",
+      "familie": "A",
+      "titel": "Figurenblatt",
+      "lauf": "trouble_desktop",
+      "protokoll_nr": 5,
+      "stills": [
+        {
+          "datei": "05_figurenblatt.png",
+          "rolle": "still",
+          "sha256": "38c1effe6f95565ba03942ce0017f9c157d93ea4128e026d1a791ce787f6ddf5"
+        }
+      ],
+      "clip": null,
+      "befunde": [
+        {
+          "id": "F02",
+          "achse": "C",
+          "schwere": "hoch",
+          "art": "still",
+          "text": "Zwei Rahmensprachen nebeneinander: Das Figurenblatt ist ein flaches CSS-Panel mit dünner Goldlinie, die Fisch-Karte daneben steckt im Kit-Rahmen (Petrol/Messing).",
+          "beleg": [
+            {
+              "datei": "05_figurenblatt.png"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_CRITIC_R2/ZUSAMMEN_R2.md",
+            "nr": "11",
+            "kritiker_beleg": [
+              "KRITIKER_B #10",
+              "KRITIKER_A #24"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen (Fisch-Karte inzwischen im Kit-Rahmen, Figurenblatt nicht; am Still 23.11. 02:22 geprüft)",
+          "referenzen": [
+            "claybound"
+          ],
+          "aeste": [
+            1
+          ],
+          "bereich": {
+            "x": 0.17,
+            "y": 0.0,
+            "w": 0.66,
+            "h": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "scene_id": "S16_hai_angriff",
+      "familie": "D",
+      "titel": "Hai-Angriff",
+      "lauf": "trouble_desktop",
+      "protokoll_nr": 16,
+      "stills": [
+        {
+          "datei": "16_hai_angriff_naehe.png",
+          "rolle": "naehe",
+          "ereignis": "hai:naehe 118.55 s (Laufuhr)",
+          "ereignis_s": 118.55,
+          "sha256": "5b7d723587734906134c23a4e925e4bca0906c857676b3ad95ead8e52bb430a1"
+        },
+        {
+          "datei": "16_hai_angriff_ausholung.png",
+          "rolle": "ausholung",
+          "ereignis": "hai:angriff 119.64 s (Laufuhr)",
+          "ereignis_s": 119.64,
+          "sha256": "92826370905731639d0a21be0573618344469dcfc73156c5b7866c731d63662e"
+        },
+        {
+          "datei": "16_hai_angriff_aufprall.png",
+          "rolle": "aufprall",
+          "ereignis": "hai:biss 120.24 s · hai:schwarz bis 120.66 s (Laufuhr)",
+          "ereignis_s": 120.24,
+          "sha256": "1f74a1e761ae469600392dff0562ee71d30855d86e4f3ff829ee811f1b1a3ad2"
+        }
+      ],
+      "clip": {
+        "datei": "16_hai_angriff.mp4",
+        "t_start": null,
+        "t_end": null,
+        "sha256": "800932fb7825bb9e5a915c60a7764f766c0b88a1b8def7155314818ba939fdb2"
+      },
+      "befunde": [
+        {
+          "id": "F03",
+          "achse": "D",
+          "schwere": "hoch",
+          "art": "bewegung",
+          "text": "Hai-Biss: Das Schwarzbild nach dem Biss wirkt wie ein Ladefehler; der Treffer liest sich als flacher roter Fleck ohne lesbare Ursache und Richtung.",
+          "beleg": [
+            {
+              "rolle": "ausholung"
+            },
+            {
+              "rolle": "aufprall"
+            },
+            {
+              "clip": true,
+              "ereignis": "hai:biss 120.24 s → hai:schwarzAus 120.66 s"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_CRITIC_R2/ZUSAMMEN_R2.md",
+            "nr": "14",
+            "kritiker_beleg": [
+              "KRITIKER_B #6",
+              "KRITIKER_A #15"
+            ]
+          },
+          "owner": "WSB + WS0",
+          "malbar": true,
+          "stand": "teilweise r41: Dunkel 0,3 s; Hai-Look bei WSB",
+          "referenzen": [
+            "looney-tunes",
+            "claybound"
+          ],
+          "aeste": [
+            4,
+            6
+          ]
+        },
+        {
+          "id": "F04",
+          "achse": "E",
+          "schwere": "mittel",
+          "art": "still",
+          "text": "Welt-Monitor („The New Normal“) ragt links angeschnitten ins Bild und steht im Kameraweg, sogar im Hai-Kino.",
+          "beleg": [
+            {
+              "rolle": "naehe"
+            }
+          ],
+          "quelle": {
+            "datei": "replies/AQUA_CRITIC_R2/ZUSAMMEN_R2.md",
+            "nr": "19",
+            "kritiker_beleg": [
+              "KRITIKER_A #19"
+            ]
+          },
+          "owner": "Aqua",
+          "malbar": true,
+          "stand": "offen",
+          "referenzen": [
+            "claybound"
+          ],
+          "aeste": [
+            3,
+            4
+          ],
+          "bereich": {
+            "x": 0.0,
+            "y": 0.45,
+            "w": 0.12,
+            "h": 0.45
+          }
+        }
+      ]
+    }
+  ],
+  "_quelle": "Schnappschuss aus replies/AQUA_10/erfassung_r1/trouble_desktop (Lauf 23.11. 02:22 UTC), weil die Erfassung an Ort und Stelle neu geschrieben wird und öffentlich gespiegelt wäre."
+}

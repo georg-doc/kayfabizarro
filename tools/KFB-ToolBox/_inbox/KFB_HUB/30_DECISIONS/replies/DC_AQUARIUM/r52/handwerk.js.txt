@@ -1,0 +1,81 @@
+// Handwerks-Prüfung für Kit-Teile (WS0 23.11., Georgs HUD-Regeln: Originalgröße, 1:1, kein Teil in fremdem Zusammenhang).
+// Wird von den Prüfskripten per Runtime.evaluate in die Seite gelegt; window.__handwerk() liefert { geprueft, verstoesse: [{ regel, element, datei, wert }] }.
+// Regeln je sichtbarem Kit-Bild (img, background-image, mask-image, border-image, auch ::before/::after):
+//   1 Seitenverhältnis gerendert gegen naturalWidth/naturalHeight höchstens 1 % Abweichung
+//   2 nie größer als die Originalgröße (CSS-Pixel × devicePixelRatio)
+//   3 kein 9-/3-Teiler (border-image), außer die Datei steht in DEHNBAR (Quelle: tex/hud/manifest.json markiert keine Datei als dehnbar → Liste leer)
+//   4 kein Teil in fremdem Zusammenhang: Rolle laut ROLLEN, Pflichtinhalt vorhanden, kein Rahmen-Teil in einem anderen Rahmen-Teil
+//   5 kein clip-path, kein object-fit/background-size cover, nicht beschnitten
+(() => {
+  const DEHNBAR = {}
+  const GETEILT = { 'beta.webp': 'Georg 22.11. (r37): Beta-Schnipsel aus zwei Bildhälften, die rechte biegt sich; zusammen ganzes Bild' }
+  const KIT = /\/tex\/hud\/([a-z0-9_]+\.webp)/
+  const RAHMEN = /^(ic_|keycap|btn_|prompt_pill|panel_|frame_|bar_frame)/
+  const ROLLEN = [
+    [/^ic_/, { braucht: null, rolle: 'runder Knopf mit eigenem Symbol, allein stehend' }],
+    [/^keycap/, { braucht: 'text', rolle: 'Taste mit Zeichen' }],
+    [/^btn_(primary|secondary|gold)/, { braucht: 'text', rolle: 'Knopf mit Beschriftung' }],
+    [/^btn_round/, { braucht: 'inhalt', rolle: 'Bullauge mit Inhalt' }],
+    [/^prompt_pill/, { braucht: 'symbol+text', rolle: 'Pille: Symbol in der Fassung und Text im Glas' }],
+    [/^panel_/, { braucht: 'text', rolle: 'Tafel mit Inhalt' }],
+    [/^frame_/, { braucht: 'medium', rolle: 'Rahmen um Bild oder Video' }],
+    [/^bar_frame/, { braucht: 'inhalt', rolle: 'Leistenrahmen mit Füllung' }],
+  ]
+  const rolle = (f) => (ROLLEN.find(([re]) => re.test(f)) || [null, { braucht: null, rolle: 'Einzelteil' }])[1]
+  const urls = (v) => [...String(v || '').matchAll(/url\(["']?([^"')]+)["']?\)/g)].map((m) => m[1])
+  const name = (e) => (e.id ? '#' + e.id : e.tagName.toLowerCase() + (e.classList.length ? '.' + [...e.classList].join('.') : ''))
+  const sicht = (e) => { for (let n = e; n && n !== document.documentElement; n = n.parentElement) { const c = getComputedStyle(n); if (n.hidden || c.display === 'none' || c.visibility === 'hidden' || +c.opacity < 0.05) return false } const r = e.getBoundingClientRect(); return r.width > 2 && r.height > 2 && r.right > 0 && r.bottom > 0 && r.left < innerWidth && r.top < innerHeight }
+  const groessen = new Map()
+  const natur = (src) => { if (groessen.has(src)) return groessen.get(src); const p = new Promise((ok) => { const i = new Image(); i.onload = () => ok([i.naturalWidth, i.naturalHeight]); i.onerror = () => ok(null); i.src = src }); groessen.set(src, p); return p }
+  const len = (v, ref) => (v.endsWith('%') ? parseFloat(v) / 100 * ref : v.endsWith('px') ? parseFloat(v) : NaN)
+  function bgMass(size, bw, bh, nw, nh) {
+    const t = size.trim().split(/\s+/)
+    if (t[0] === 'cover') return { cover: true, w: Math.max(bw / nw, bh / nh) * nw, h: Math.max(bw / nw, bh / nh) * nh }
+    if (t[0] === 'contain') { const k = Math.min(bw / nw, bh / nh); return { w: nw * k, h: nh * k } }
+    let w = t[0] === 'auto' ? NaN : len(t[0], bw), h = t[1] == null || t[1] === 'auto' ? NaN : len(t[1], bh)
+    if (isNaN(w) && isNaN(h)) { w = nw; h = nh } else if (isNaN(w)) w = h * nw / nh; else if (isNaN(h)) h = w * nh / nw
+    return { w, h }
+  }
+  window.__handwerk = async () => {
+    const dpr = devicePixelRatio || 1, out = [], rahmenEls = []
+    let geprueft = 0
+    const fall = (regel, el, datei, wert) => out.push({ regel, element: el, datei, wert })
+    const kandidaten = []
+    for (const e of document.querySelectorAll('body *')) {
+      if (!sicht(e)) continue
+      if (e.tagName === 'IMG' && KIT.test(e.currentSrc || e.src)) kandidaten.push({ e, art: 'img', src: e.currentSrc || e.src, pseudo: '' })
+      for (const pseudo of ['', '::before', '::after']) {
+        const c = getComputedStyle(e, pseudo || null); if (pseudo && (c.content === 'none' || c.content === 'normal')) continue
+        for (const [prop, art] of [['backgroundImage', 'bg'], ['maskImage', 'mask'], ['webkitMaskImage', 'mask'], ['borderImageSource', 'border']]) for (const u of urls(c[prop])) if (KIT.test(new URL(u, location.href).pathname)) kandidaten.push({ e, art, src: new URL(u, location.href).href, pseudo, c })
+      }
+    }
+    const gesehen = new Set()
+    for (const k of kandidaten) {
+      const datei = new URL(k.src).pathname.match(KIT)[1], el = name(k.e) + k.pseudo, key = el + '|' + datei + '|' + k.art; if (gesehen.has(key)) continue; gesehen.add(key)
+      const nat = await natur(k.src); if (!nat) { fall('Bild lädt nicht', el, datei, k.src); continue } const [nw, nh] = nat; geprueft++
+      const c = k.c || getComputedStyle(k.e, k.pseudo || null), r = k.e.getBoundingClientRect()
+      const ce = getComputedStyle(k.e), px = (v) => parseFloat(v) || 0, bb = ce.boxSizing === 'border-box'
+      let bw = px(ce.width) + (bb ? -px(ce.borderLeftWidth) - px(ce.borderRightWidth) : px(ce.paddingLeft) + px(ce.paddingRight)), bh = px(ce.height) + (bb ? -px(ce.borderTopWidth) - px(ce.borderBottomWidth) : px(ce.paddingTop) + px(ce.paddingBottom))   // Polsterbox vor transform, ohne Rundung
+      if (!(bw > 0 && bh > 0)) { bw = r.width; bh = r.height }
+      if (k.pseudo) { const pw = parseFloat(c.width), ph = parseFloat(c.height); if (pw > 0 && ph > 0) { bw = pw; bh = ph } }
+      if (c.clipPath && c.clipPath !== 'none') fall('clip-path auf Kit-Teil', el, datei, c.clipPath)
+      if (k.art === 'border') { if (!DEHNBAR[datei]) fall('9-/3-Teiler ohne Freigabe als dehnbar', el, datei, c.borderImageSlice + ' / ' + c.borderImageWidth); continue }
+      let w, h
+      if (k.art === 'img') { const of = c.objectFit; if (of === 'cover') fall('object-fit cover', el, datei, 'cover'); if (of === 'contain' || of === 'scale-down') { const s = Math.min(bw / nw, bh / nh, of === 'scale-down' ? 1 : Infinity); w = nw * s; h = nh * s } else { w = bw; h = bh } }
+      else { const size = k.art === 'mask' ? (c.maskSize || c.webkitMaskSize || 'auto') : c.backgroundSize, idx = urls(k.art === 'mask' ? (c.maskImage || c.webkitMaskImage) : c.backgroundImage).findIndex((u) => new URL(u, location.href).href === k.src), sz = size.split(',')[Math.max(0, idx)] || size
+        const m = bgMass(sz, bw, bh, nw, nh); if (m.cover) fall('background-size cover', el, datei, sz.trim()); w = m.w; h = m.h
+        const rep = (c.backgroundRepeat || '').split(',')[Math.max(0, idx)] || ''; if (k.art === 'bg' && !GETEILT[datei] && (w > bw + 1 || h > bh + 1) && !/repeat(?!-)|round|space/.test(rep.replace('no-repeat', ''))) fall('beschnitten (Bild größer als die Fläche)', el, datei, `${w.toFixed(0)}×${h.toFixed(0)} in ${bw.toFixed(0)}×${bh.toFixed(0)}`) }
+      const ar = (w / h) / (nw / nh); if (Math.abs(ar - 1) > 0.01) fall('Seitenverhältnis verzerrt', el, datei, `${w.toFixed(1)}×${h.toFixed(1)} statt ${nw}×${nh} (${((ar - 1) * 100).toFixed(1)} %)`)
+      if (w * dpr > nw + 1 || h * dpr > nh + 1) fall('größer als Original', el, datei, `${(w * dpr).toFixed(0)}×${(h * dpr).toFixed(0)} > ${nw}×${nh}`)
+      if (!/^(ic_|keycap|btn_|prompt_pill|panel_|frame_|bar_frame)/.test(datei)) continue
+      rahmenEls.push({ e: k.e, datei, el })
+      const traeger = /^btn_/.test(datei) ? (k.e.closest('button, a, [role=button]') || k.e) : k.e, felder = [...traeger.querySelectorAll('input, textarea')].map((f) => f.value || f.placeholder).join(' ')
+      const ro = rolle(datei), text = (k.pseudo ? (c.content || '').replace(/^["']|["']$/g, '') : (traeger.innerText || traeger.value || traeger.placeholder || '') + ' ' + felder).trim()
+      if (ro.braucht === 'text' && !text) fall('fremder Zusammenhang: leer (' + ro.rolle + ')', el, datei, 'kein Text')
+      if (ro.braucht === 'symbol+text') fall('fremder Zusammenhang: ' + ro.rolle + ' — ein Symbol ohne eigenen Rahmen gibt es im Kit nicht', el, datei, 'Fassung leer oder fremd belegt')
+      if (ro.braucht === 'medium') { const box = k.e.closest('[class]')?.parentElement || k.e.parentElement; if (!box?.querySelector('video, img:not([src*="/tex/hud/"]), canvas')) fall('fremder Zusammenhang: Rahmen ohne Bild/Video', el, datei, name(box || k.e)) }
+    }
+    for (const a of rahmenEls) for (const b of rahmenEls) if (a !== b && a.e !== b.e && b.e.contains(a.e) && RAHMEN.test(a.datei) && RAHMEN.test(b.datei)) fall('fremder Zusammenhang: Rahmen-Teil in fremder Fassung', a.el, a.datei, 'in ' + b.el + ' (' + b.datei + ')')
+    return { geprueft, verstoesse: out }
+  }
+})()

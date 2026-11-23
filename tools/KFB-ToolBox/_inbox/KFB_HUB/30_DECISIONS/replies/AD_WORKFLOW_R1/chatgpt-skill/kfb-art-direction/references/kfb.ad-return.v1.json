@@ -1,0 +1,416 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kfb.ad-return.v1",
+  "title": "KFB Art-Direction-Rückgabe v1 (Webchat → WS0)",
+  "description": "Eine Rückgabe = ein Webchat-Lauf = eine Szenenfamilie eines Pakets. Jedes Zielbild ist über finding_id, scene_id, quelle_still und paket.sha256 auf Befund, Clip+Zeit, Screenshot, Referenz und SOP-Ast rückführbar.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "run_id",
+    "familie",
+    "paket",
+    "webchat",
+    "check_in",
+    "simuliert",
+    "befunde"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.ad-return.v1"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "familie": {
+      "type": "string",
+      "pattern": "^[A-F]$"
+    },
+    "lauf": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "1 = erster Webchat-Lauf dieser Familie; neuer Chat = +1"
+    },
+    "paket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repo",
+        "branch",
+        "pfad",
+        "paket_rev",
+        "sha256"
+      ],
+      "properties": {
+        "repo": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "pfad": {
+          "type": "string"
+        },
+        "paket_rev": {
+          "type": "string",
+          "pattern": "^r[0-9]+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "sha256 der kanonischen package.json (json.dumps sort_keys, separators , :) – unempfindlich gegen Neu-Formatierung, empfindlich gegen jede Inhaltsänderung"
+        }
+      }
+    },
+    "webchat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "plattform",
+        "modell",
+        "skill",
+        "skill_version",
+        "gestartet",
+        "beendet",
+        "skill_sha256",
+        "sop"
+      ],
+      "properties": {
+        "plattform": {
+          "type": "string"
+        },
+        "modell": {
+          "type": "string",
+          "description": "so genau, wie der Chat es weiß, z. B. 'ChatGPT Images 2.5'"
+        },
+        "skill": {
+          "const": "kfb-art-direction"
+        },
+        "skill_version": {
+          "type": "string",
+          "pattern": "^r[0-9]+(\\.[0-9]+)?$"
+        },
+        "gestartet": {
+          "type": "string"
+        },
+        "beendet": {
+          "type": "string"
+        },
+        "chat_titel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "skill_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "sha256 von ad_return.py, wie es im Chat lief"
+        },
+        "sop": {
+          "type": "string",
+          "description": "SOP-Stand der Leitplanke, z. B. Stamm R2 · Äste R1 · Referenzen R1"
+        }
+      }
+    },
+    "check_in": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "weg"
+      ],
+      "properties": {
+        "weg": {
+          "enum": [
+            "github",
+            "bundle",
+            "einzeln"
+          ],
+          "description": "github = Commit durch den Webchat; bundle = eine JSON-Datei mit eingebetteten Bildern; einzeln = Manifest + Bilder einzeln geladen"
+        },
+        "ziel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "simuliert": {
+      "type": "boolean",
+      "description": "true = Probelauf ohne echte Bildgenerierung; nie bauen"
+    },
+    "befunde": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/befund"
+      }
+    },
+    "bilder_b64": {
+      "type": "object",
+      "description": "nur bei weg=bundle: datei → Base64 (PNG/JPEG/WebP)",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 16
+      }
+    }
+  },
+  "$defs": {
+    "freigabe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "zeit"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PASS",
+            "TUNE",
+            "FAIL",
+            "OFFEN"
+          ]
+        },
+        "notiz": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "georg_wortlaut": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Georgs Worte wörtlich"
+        },
+        "zeit": {
+          "type": "string"
+        }
+      }
+    },
+    "ziel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_id",
+        "quelle_still",
+        "rolle",
+        "iteration",
+        "datei",
+        "sha256",
+        "breite",
+        "hoehe",
+        "freigabe"
+      ],
+      "properties": {
+        "target_id": {
+          "type": "string",
+          "pattern": "^F[0-9]{2}_(still|ausholung|aufprall|naehe)_v[0-9]+$"
+        },
+        "quelle_still": {
+          "type": "string",
+          "description": "pfad aus package.json szenen[].stills[]"
+        },
+        "rolle": {
+          "enum": [
+            "still",
+            "ausholung",
+            "aufprall",
+            "naehe"
+          ]
+        },
+        "iteration": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "datei": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^ziele/F[0-9]{2}_(still|ausholung|aufprall|naehe)_v[0-9]+\\.(png|jpg|webp)$"
+        },
+        "download_nr": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "nur weg=einzeln: Reihenfolge, in der Georg die PASS-Bilder lädt"
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "breite": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 16
+        },
+        "hoehe": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 16
+        },
+        "freigabe": {
+          "$ref": "#/$defs/freigabe"
+        },
+        "format": {
+          "enum": [
+            "original",
+            "edit",
+            null
+          ],
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Seitenverhältnis des Zielbilds: wie Original oder wie aufgefüllte Fassung (Ingest entfernt den Rand)"
+        }
+      }
+    },
+    "baubarkeit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "echtzeit_threejs",
+        "ein_licht_rig",
+        "keine_glanzpunkte",
+        "kein_neuer_text",
+        "figuren_unveraendert",
+        "komposition_gleich",
+        "seitenverhaeltnis_gleich",
+        "hud_aus_kit",
+        "neue_assets",
+        "hinweis"
+      ],
+      "properties": {
+        "echtzeit_threejs": {
+          "type": "boolean"
+        },
+        "ein_licht_rig": {
+          "type": "boolean"
+        },
+        "keine_glanzpunkte": {
+          "type": "boolean"
+        },
+        "kein_neuer_text": {
+          "type": "boolean"
+        },
+        "figuren_unveraendert": {
+          "type": "boolean"
+        },
+        "komposition_gleich": {
+          "type": "boolean"
+        },
+        "seitenverhaeltnis_gleich": {
+          "type": "boolean"
+        },
+        "hud_aus_kit": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "null = kein HUD im Bild betroffen"
+        },
+        "neue_assets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Teile, die es im Spiel noch nicht gibt (→ Fehlt-im-Kit / Beschaffung)"
+        },
+        "hinweis": {
+          "type": "string"
+        }
+      }
+    },
+    "befund": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_id",
+        "scene_id",
+        "status",
+        "aenderung",
+        "bleibt",
+        "warum",
+        "referenzen",
+        "aeste",
+        "baubarkeit",
+        "ziele"
+      ],
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "pattern": "^F[0-9]{2}$"
+        },
+        "scene_id": {
+          "type": "string",
+          "pattern": "^S[0-9]{2}_[a-z0-9_]+$"
+        },
+        "status": {
+          "enum": [
+            "bearbeitet",
+            "nicht_malbar",
+            "uebersprungen"
+          ]
+        },
+        "grund": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "aenderung": {
+          "type": "string",
+          "description": "Zeile 1: was geändert ist"
+        },
+        "bleibt": {
+          "type": "string",
+          "description": "Zeile 2: was gleich bleibt"
+        },
+        "warum": {
+          "type": "string",
+          "description": "Zeile 3: welches Problem gelöst wird (Befund-Bezug)"
+        },
+        "referenzen": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "ids aus package.json referenzen[]"
+        },
+        "aeste": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 11
+          }
+        },
+        "baubarkeit": {
+          "$ref": "#/$defs/baubarkeit"
+        },
+        "ziele": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ziel"
+          }
+        }
+      }
+    }
+  }
+}

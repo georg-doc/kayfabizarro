@@ -27,7 +27,7 @@
 | 7 Abnahme Georg | Georg | Eine Hub-Karte: ein Vergleich, groß, seine Begriffe, PASS/TUNE/FAIL. Bewegung immer als Video. |
 | 8 Festhalten | WS0 | Register-Zeile, Merge, GitHub. Bei jedem neuen Spender (Repo, Demo, CodePen, patch.gg, Bibliothek) eine Zeile im Modul-Katalog `KFB_MODULE_KATALOG_R1.md`: was übernommen wurde, was der Spender noch bietet (Presets, Modi, Varianten, Parameter), was davon für Anschluss-Module und Backlog sinnvoll ist. |
 
-Georg sieht nie Zwischenstände. Er ist nie Kopier-Station zwischen Sitzungen: Übergaben laufen über GitHub-Links und Sitzungs-Nachrichten.
+Ist Georgs Vorgabe klar, wird sie umgesetzt, ohne Sicherungsschleifen davor (Referenzbilder suchen, Animatic, Zusatzfragen). Zielbilder und Referenzen braucht es nur, wo ein Look fehlt. Georg sieht nie Zwischenstände. Er ist nie Kopier-Station zwischen Sitzungen: Übergaben laufen über GitHub-Links und Sitzungs-Nachrichten.
 
 ## 2a · Eskalationsleiter „Use What Works“ (über allen Fachregeln)
 1. **Bestand im Projekt:** abgenommene Module, Assets, Clips, Texte, Register (Pfad und Commit nennen), dazu der Modul-Katalog mit dem Rest-Potenzial der schon eingebauten Spender.

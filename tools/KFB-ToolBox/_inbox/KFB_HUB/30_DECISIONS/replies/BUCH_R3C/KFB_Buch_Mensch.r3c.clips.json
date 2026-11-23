@@ -1,0 +1,74 @@
+{
+ "datei": "KFB_Buch_Mensch.r3c.glb",
+ "basis": "r3b",
+ "knochen_neu": [
+  "ruecken"
+ ],
+ "clips": [
+  {
+   "name": "zu",
+   "dauer_s": 0.133,
+   "inhalt": "geschlossen (Ruhe)"
+  },
+  {
+   "name": "offen",
+   "dauer_s": 0.133,
+   "inhalt": "offen auf S. 30/31 (Mammut), Rücken flach"
+  },
+  {
+   "name": "oeffnen",
+   "dauer_s": 1.633,
+   "inhalt": "zu → offen"
+  },
+  {
+   "name": "zuklappen",
+   "dauer_s": 1.633,
+   "inhalt": "offen → zu"
+  },
+  {
+   "name": "blaettern",
+   "dauer_s": 0.933,
+   "inhalt": "Blatt 16 nach links (wie r3b)"
+  },
+  {
+   "name": "blaettern_zurueck",
+   "dauer_s": 0.933,
+   "inhalt": "Blatt 16 zurück (wie r3b)"
+  },
+  {
+   "name": "klappen_aus",
+   "dauer_s": 1.033,
+   "inhalt": "vordere Klappe aus (offenes Buch)"
+  },
+  {
+   "name": "klappen_ein",
+   "dauer_s": 1.033,
+   "inhalt": "vordere Klappe ein"
+  },
+  {
+   "name": "seite_abziehen",
+   "dauer_s": 1.233,
+   "inhalt": "Blatt 16 schält sich ab (Ende halb)"
+  },
+  {
+   "name": "umschlag_ausfalten",
+   "dauer_s": 2.233,
+   "inhalt": "NEU: zu → Umschlag flach, Außenseite zur Kamera (von hinten), Block steht am Rücken, Klappen nacheinander aus"
+  },
+  {
+   "name": "umschlag_einfalten",
+   "dauer_s": 2.233,
+   "inhalt": "NEU: Rückrichtung"
+  },
+  {
+   "name": "blaettern_p01",
+   "dauer_s": 0.933,
+   "inhalt": "NEU: Paket p01 nach links (Start: nur Vorderdeckel links)"
+  },
+  {
+   "name": "blaettern_b14",
+   "dauer_s": 0.933,
+   "inhalt": "NEU: Blatt b14 nach links (Start: Vorderdeckel + p01 links)"
+  }
+ ]
+}

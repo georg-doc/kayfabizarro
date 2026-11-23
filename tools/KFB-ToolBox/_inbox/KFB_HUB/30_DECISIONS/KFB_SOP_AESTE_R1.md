@@ -156,6 +156,8 @@ Pfade: `R/` = `replies/`, `C/` = `CANON_3D/`, `T/` = Spiel-Repo `test/`, `O/` = 
     - eine Einfüge-Box;
     - Kennungen nur in einer Tabelle.
   - Spieler geschlechtsneutral ansprechen.
+  - **Sprache:** Alles im Spiel ist strikt Englisch. Texte kommen aus einer Stringtabelle mit Schlüsseln, damit eine Übersetzung später möglich ist. Kein Text steht fest im Code oder im Bild (Georg 23.11.).
+  - **Inszenieren statt beschriften:** Kein Wort erklärt, was Bühne, Licht, Ton und Bewegung zeigen sollen (Anti-Sample 3).
   - HeyGen nur für sprechende Avatare (Bullauge, Moderation) mit Georgs Zeilen. Kein Text-zu-Video als Trailer, Anti-Sample 2.
 - **Golden:**
   - `R/META_TEXTE/GOLDEN_SAMPLES_AQUA_R1.md`.

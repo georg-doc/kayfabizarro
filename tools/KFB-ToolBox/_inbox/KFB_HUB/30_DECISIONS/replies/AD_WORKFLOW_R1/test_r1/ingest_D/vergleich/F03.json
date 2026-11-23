@@ -1,0 +1,54 @@
+{
+  "schema": "kfb.ad-vergleich.v1",
+  "run_id": "aqua10-ad-test-r1",
+  "finding_id": "F03",
+  "ergebnis_ingest": "bau",
+  "basis": "KFB_HUB/30_DECISIONS/replies/AD_WORKFLOW_R1/test_r1/ingest_D",
+  "absicht": "Der Spieler bricht als Aquariumsfisch aus dem DocCheck-Becken aus und erlebt eine Cartoon-Gangsterflucht ins offene Meer; der Fisch ist der Star, das Becken die Bühne.",
+  "genre": "Cartoon-Heist-Arcade im Browser (GTA-Ton im Interface, Looney-Tunes-Timing, Clay-Vordergrund)",
+  "ziel": {
+    "bilder": [
+      "_privat/ziele/F03_ausholung_v1.png",
+      "_privat/ziele/F03_aufprall_v2.png"
+    ],
+    "kern": "Geändert: SIMULIERT: Biss ohne Schwarzbild; Zuschnappen mit Wasser-Schockring und Blasenstoß in Bissrichtung. Bleibt: Hai-Modell, KFB-Augen, Kamera, Kinobalken.",
+    "hinweis": "Bilder relativ zu basis; __kern = Original außerhalb des Befund-Bereichs, Ziel innerhalb"
+  },
+  "erfassung_vorgabe": {
+    "scene_id": "S16_hai_angriff",
+    "modus_geraet": "trouble_desktop",
+    "rollen": [
+      "ausholung",
+      "aufprall"
+    ],
+    "clip_fenster": {
+      "t_start": null,
+      "t_end": null,
+      "unsicher": true
+    },
+    "ereignisse": {
+      "ausholung": "hai:angriff 119.64 s (Laufuhr)",
+      "aufprall": "hai:biss 120.24 s · hai:schwarz bis 120.66 s (Laufuhr)"
+    },
+    "aufloesung": [
+      1280,
+      720
+    ],
+    "regel": "gleicher Lauf, gleiche Auflösung, gleiches Ereignis/Kamera-Preset wie das Ausgangs-Still; Bewegung als Video",
+    "ablage": "ingest_D/_privat/vergleich_F03_r<n>/ (nie öffentlich; ad_vergleich prüft)"
+  },
+  "matrix": "tools/qa_matrix.r1.json",
+  "prompt": "tools/CRITIC_BLIND_PROMPT.md",
+  "pass": {
+    "min_axis": 7,
+    "min_mean": 8,
+    "min_B": 8
+  },
+  "max_runden": 5,
+  "stopp_ohne_besserung": 2,
+  "nicht_mitgeben": [
+    "Ausgangs-Still (kein Vergleich mit früheren Ständen)",
+    "Owner-Notizen",
+    "Webchat-Verlauf"
+  ]
+}

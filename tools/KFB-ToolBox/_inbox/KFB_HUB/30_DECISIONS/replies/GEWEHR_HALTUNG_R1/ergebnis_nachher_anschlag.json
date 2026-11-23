@@ -1,0 +1,501 @@
+{
+ "grenze": {
+  "griffHand": 0.02,
+  "inKoerper": 0.01,
+  "zielGrad": 10,
+  "ikRest": 0.02
+ },
+ "ohne": false,
+ "figuren": {
+  "the_boss": {
+   "waffen": {
+    "spygun": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0105,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 90,
+      "ikRest": null,
+      "haltung": "waffenhalt:Ranged_1H_Aiming:spygun",
+      "art": "1h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 6119,
+       "hand": 415,
+       "waffe": 823
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0105,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": null,
+      "haltung": "waffenhalt:Ranged_1H_Aiming:spygun",
+      "art": "1h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 6119,
+       "hand": 415,
+       "waffe": 823
+      }
+     },
+     "rot": []
+    },
+    "marksman": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0112,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 0.0010461893423860278,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:marksman",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 6119,
+       "hand": 415,
+       "waffe": 889
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0058,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 0.002672585232601231,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:marksman",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 6119,
+       "hand": 415,
+       "waffe": 889
+      }
+     },
+     "rot": []
+    },
+    "shotgun": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0213,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 3.1623714913396365e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:shotgun",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 6119,
+       "hand": 415,
+       "waffe": 634
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0124,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 1.2150339801692432e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:shotgun",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 6119,
+       "hand": 415,
+       "waffe": 634
+      }
+     },
+     "rot": [
+      "Stand: Griff–Hand 0.0213"
+     ]
+    }
+   },
+   "fehler": []
+  },
+  "michelle": {
+   "waffen": {
+    "spygun": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0045,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 90,
+      "ikRest": null,
+      "haltung": "waffenhalt:Ranged_1H_Aiming:spygun",
+      "art": "1h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16859,
+       "hand": 1267,
+       "waffe": 823
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0045,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": null,
+      "haltung": "waffenhalt:Ranged_1H_Aiming:spygun",
+      "art": "1h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16859,
+       "hand": 1267,
+       "waffe": 823
+      }
+     },
+     "rot": []
+    },
+    "marksman": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0044,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 0.0016053178944431187,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:marksman",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16859,
+       "hand": 1267,
+       "waffe": 889
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0046,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 0.005750107112519507,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:marksman",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16859,
+       "hand": 1267,
+       "waffe": 889
+      }
+     },
+     "rot": []
+    },
+    "shotgun": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0045,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 6.076977233590785e-9,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:shotgun",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16859,
+       "hand": 1267,
+       "waffe": 634
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0039,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 3.542584234790257e-9,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:shotgun",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16859,
+       "hand": 1267,
+       "waffe": 634
+      }
+     },
+     "rot": []
+    }
+   },
+   "fehler": []
+  },
+  "big_vegas": {
+   "waffen": {
+    "spygun": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0104,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 90,
+      "ikRest": null,
+      "haltung": "waffenhalt:Ranged_1H_Aiming:spygun",
+      "art": "1h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 2186,
+       "hand": 335,
+       "waffe": 823
+      }
+     },
+     "gehen": {
+      "griffHand": 0.013,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": null,
+      "haltung": "waffenhalt:Ranged_1H_Aiming:spygun",
+      "art": "1h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 2186,
+       "hand": 335,
+       "waffe": 823
+      }
+     },
+     "rot": []
+    },
+    "marksman": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0182,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 1.909823773149357e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:marksman",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 2186,
+       "hand": 335,
+       "waffe": 889
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0088,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 5.738568255779871e-9,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:marksman",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 2186,
+       "hand": 335,
+       "waffe": 889
+      }
+     },
+     "rot": []
+    },
+    "shotgun": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0214,
+      "inKoerper": 0.0028,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 4.450124823789666e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:shotgun",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 2186,
+       "hand": 335,
+       "waffe": 634
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0115,
+      "inKoerper": 0.0279,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 1.3187662651290621e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:shotgun",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 2186,
+       "hand": 335,
+       "waffe": 634
+      }
+     },
+     "rot": [
+      "Stand: Griff–Hand 0.0214",
+      "Gehen: Waffe im Körper 0.0279"
+     ]
+    }
+   },
+   "fehler": []
+  },
+  "ortiz": {
+   "waffen": {
+    "spygun": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0032,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 90,
+      "ikRest": null,
+      "haltung": "waffenhalt:Ranged_1H_Aiming:spygun",
+      "art": "1h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16277,
+       "hand": 3780,
+       "waffe": 823
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0234,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": null,
+      "haltung": "waffenhalt:Ranged_1H_Aiming:spygun",
+      "art": "1h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16277,
+       "hand": 3780,
+       "waffe": 823
+      }
+     },
+     "rot": [
+      "Gehen: Griff–Hand 0.0234"
+     ]
+    },
+    "marksman": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0032,
+      "inKoerper": 0,
+      "zielGrad": 0.1,
+      "kameraGrad": 24.1,
+      "ikRest": 1.1750721942009398e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:marksman",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16277,
+       "hand": 3780,
+       "waffe": 889
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0135,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 3.246844033725594e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:marksman",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16277,
+       "hand": 3780,
+       "waffe": 889
+      }
+     },
+     "rot": []
+    },
+    "shotgun": {
+     "gewaehlt": true,
+     "stand": {
+      "griffHand": 0.0033,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 1.006952119801244e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:shotgun",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16277,
+       "hand": 3780,
+       "waffe": 634
+      }
+     },
+     "gehen": {
+      "griffHand": 0.0066,
+      "inKoerper": 0,
+      "zielGrad": 0,
+      "kameraGrad": 24.1,
+      "ikRest": 2.866268537915928e-8,
+      "haltung": "waffenhalt:Ranged_2H_Aiming:shotgun",
+      "art": "2h",
+      "achseGrad": null,
+      "griffQuelle": "ursprung",
+      "mixamo": true,
+      "ecken": {
+       "koerper": 16277,
+       "hand": 3780,
+       "waffe": 634
+      }
+     },
+     "rot": []
+    }
+   },
+   "fehler": []
+  }
+ },
+ "fehler": [],
+ "rot": [
+  "the_boss/shotgun Stand: Griff–Hand 0.0213",
+  "big_vegas/shotgun Stand: Griff–Hand 0.0214",
+  "big_vegas/shotgun Gehen: Waffe im Körper 0.0279",
+  "ortiz/spygun Gehen: Griff–Hand 0.0234"
+ ]
+}

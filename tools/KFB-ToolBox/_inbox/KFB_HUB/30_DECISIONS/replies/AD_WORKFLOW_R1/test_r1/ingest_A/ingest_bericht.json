@@ -1,0 +1,54 @@
+{
+  "run_id": "aqua10-ad-test-r1",
+  "familie": "A",
+  "lauf": 1,
+  "weg": "einzeln",
+  "simuliert": true,
+  "paket_sha256": "2023668ce8bab4ea43b92f294b82623b48f0d69fd10ddcc8d89596a2f8323ca8",
+  "skill": "r1",
+  "befunde": [
+    {
+      "finding_id": "F01",
+      "scene_id": "S02_startbild",
+      "status_webchat": "bearbeitet",
+      "pass": [
+        "F01_still_v1"
+      ],
+      "ergebnis": "bau",
+      "gruende": [],
+      "versandbereit": false
+    },
+    {
+      "finding_id": "F02",
+      "scene_id": "S05_figurenblatt",
+      "status_webchat": "bearbeitet",
+      "pass": [
+        "F02_still_v1"
+      ],
+      "ergebnis": "bau",
+      "gruende": [
+        "neue Assets: großer Kit-Rahmen fürs Figurenblatt (fehlt im Kit)"
+      ],
+      "versandbereit": false
+    }
+  ],
+  "klaeren": [
+    "Doppelt geladen (ignoriert): ChatGPT Image 2 (1).png"
+  ],
+  "paarung": [
+    [
+      "F02_still_v1",
+      "ChatGPT Image 1.png",
+      "Ähnlichkeit eindeutig"
+    ],
+    [
+      "F01_still_v1",
+      "ChatGPT Image 2.png",
+      "Ähnlichkeit eindeutig"
+    ]
+  ],
+  "paarung_ok": true,
+  "aussen_abweichung": {
+    "F02_still_v1": 0.2
+  }
+}
