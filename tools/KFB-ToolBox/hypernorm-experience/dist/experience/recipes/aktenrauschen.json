@@ -1,0 +1,66 @@
+{
+  "id": "aktenrauschen",
+  "title": "Aktenrauschen",
+  "context": "HISTORICAL",
+  "look": "halftone",
+  "bpm": 125,
+  "colors": [
+    "#12110d",
+    "#e8dfba",
+    "#c43a26"
+  ],
+  "music": [
+    "music/M1_brainwave_flaeche.m4a"
+  ],
+  "atmo": [
+    "audio/KS5_tief.m4a",
+    "audio/NA1_blaetterwind.m4a"
+  ],
+  "texts": [
+    "Unidentified Anomalous Phenomena Records Collection",
+    "Textual and Microfilm",
+    "Record Group 615"
+  ],
+  "textSource": "nara",
+  "mixDb": {"music": [0], "atmo": [-6, -12], "voice": -3},
+  "portals": [
+    {
+      "kind": "door",
+      "target": "dada-garten"
+    },
+    {
+      "kind": "caption",
+      "target": "sendezentrale"
+    },
+    {
+      "kind": "eye",
+      "target": "dada-garten"
+    }
+  ],
+  "schema": "kfb.hypernorm-sphere/2",
+  "seed": 738,
+  "shells": 3,
+  "hold": {
+    "minimumSeconds": 4,
+    "perBars": 16
+  },
+  "rights": [
+    {"source":"https://www.archives.gov/files/research/topics/UAP/40027753page15.jpg","rights":"NARA 40027753, Project Blue Book: UFO Sightings, page 15. US federal archival scan; republication with attribution per NARA UAP index."},
+    {
+      "source": "georg-doc/KFB-Stunt-Car-Race@assets/hypernorm-r1",
+      "rights": "Georg-owned/generated; PRIVATE; same authenticated Site only"
+    },
+    {
+      "source": "https://www.gutenberg.org/ebooks/15396",
+      "rights": "Gertrude Stein (1874–1946), Tender Buttons (1914); public domain, author died over 70 years ago"
+    },
+    {
+      "source": "https://www.gutenberg.org/ebooks/1934",
+      "rights": "William Blake (1757–1827), Songs of Innocence and Experience (1794); public domain"
+    },
+    {
+      "source": "https://www.archives.gov/research/topics/uaps",
+      "rights": "NARA federal collection index; excerpts attributed to NARA; no LHOHQ material copied"
+    }
+  ]
+}

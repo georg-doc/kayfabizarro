@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import {SPHERES,createState,enterRoom,selectNext,shotAt} from '../dist/experience/state.js';
+import {measureLoudness} from '../dist/experience/loudness.js';
+const checks=[];const check=(name,fn)=>{try{fn();checks.push({name,pass:true});}catch(e){checks.push({name,pass:false,error:e.message});}};
+const recipes=SPHERES.map(id=>JSON.parse(fs.readFileSync('dist/experience/recipes/'+id+'.json')));
+check('All 9 recipe transitions resolve',()=>{let n=0;for(const r of recipes)for(const p of r.portals){assert.ok(SPHERES.includes(p.target));n++;}assert.equal(n,9);});
+check('180 seconds autopilot routes all three spheres',()=>{const state=createState();enterRoom(state,0,0);for(let t=1;t<=180;t++){if(t-state.roomStarted>=26)enterRoom(state,selectNext(state),t);}assert.ok(state.visits.every(n=>n>=2));});
+check('Re-entry generates a new deterministic variant',()=>{const a=createState(),b=createState();for(const s of [a,b]){enterRoom(s,0,0);enterRoom(s,1,26);enterRoom(s,0,52);}assert.deepEqual(a.history,b.history);assert.notEqual(a.history[0].seed,a.history[2].seed);});
+check('Curtis holds >=4 seconds every 16 bars',()=>{for(let bar=0;bar<128;bar+=16){const shot=shotAt(bar*4*60/125);assert.equal(shot.hold,true);assert.ok(shot.duration>=4);}});
+check('Three shells and provenance for each recipe',()=>{for(const r of recipes){assert.equal(r.shells,3);assert.ok(r.rights.every(x=>x.source&&x.rights));}});
+check('Private sources remain same-origin',()=>{for(const r of recipes)for(const file of [...r.music,...r.atmo]){assert.equal(/https?:/.test(file),false);assert.ok(fs.existsSync('dist/experience/private/'+file));}});
+check('All transported manifest assets match SHA-256',()=>{const m=JSON.parse(fs.readFileSync('reference/ASSET_MANIFEST.json'));let n=0;for(const f of m.dateien){const p='dist/experience/private/'+f.pfad;if(!fs.existsSync(p))continue;const bytes=fs.readFileSync(p);assert.equal(bytes.length,f.bytes);assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),f.sha256);n++;}assert.ok(n>=88);});
+check('H13 planner and paint retained byte-for-byte',()=>{const original=fs.readFileSync('reference/H13.dc.html','utf8').match(/<script type="text\/x-dc"[^>]*>([\s\S]*?)<\/script>/)[1];assert.ok(fs.readFileSync('dist/experience/vendor/h13-engine.js','utf8').includes(original));});
+check('One VideoTexture within budget of three',()=>{const s=fs.readFileSync('dist/experience/main.js','utf8');assert.equal((s.match(/new THREE.VideoTexture/g)||[]).length,1);});
+check('LUFS meter scales by six dB for doubled amplitude',()=>{const signal=Float32Array.from({length:48000},(_,i)=>.05*Math.sin(2*Math.PI*1000*i/48000));const louder=Float32Array.from(signal,v=>v*2);const a=measureLoudness([signal,signal]),b=measureLoudness([louder,louder]);assert.ok(Math.abs((b.integratedLufs-a.integratedLufs)-6.0206)<.001);});
+console.log(JSON.stringify({passed:checks.filter(x=>x.pass).length,total:checks.length,checks},null,2));if(checks.some(x=>!x.pass))process.exitCode=1;

@@ -1,0 +1,4 @@
+<!doctype html><meta charset="utf-8"><title>KFB EyeRig v6 · isolated donor</title><style>body{margin:0;background:#0b0d10;color:#d5d0bb;font:14px monospace}p{position:fixed;top:10px;left:20px}canvas{display:block}</style><p>Actual KFB EyeRig v6 · isolated donor · not replacement geometry</p><script type="module">
+import * as THREE from './vendor/three.module.js';import {createKfbEye} from './kfb-eye.js';
+const r=new THREE.WebGLRenderer({antialias:true});r.setSize(innerWidth,innerHeight);document.body.append(r.domElement);const scene=new THREE.Scene();scene.background=new THREE.Color('#0b0d10');scene.add(new THREE.HemisphereLight(0xffffff,0x604224,3));const c=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,30);c.position.z=4;const e=createKfbEye();scene.add(e.group);let before=performance.now();function frame(t){e.rig.update(Math.min(.05,(t-before)/1000));before=t;r.render(scene,c);requestAnimationFrame(frame);}requestAnimationFrame(frame);
+</script>
