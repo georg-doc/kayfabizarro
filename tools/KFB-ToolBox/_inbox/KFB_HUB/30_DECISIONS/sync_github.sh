@@ -25,7 +25,7 @@ if [[ -n "$LAST" ]]; then
     git show "gh/${BR}:${f}" > "$H/$rel" 2>/dev/null && echo "pulled $rel"
   done
 fi
-add(){ local b=$(git hash-object -w "$1"); git update-index --add --cacheinfo 100644,$b,"$2"; }
+add(){ [[ ${2:l} == *.(png|jpg|jpeg|webp|gif|webm|ogg|wav|mp3|mp4|m4a|mov|glb|gltf|bundle|tgz) ]] && return 0; local b=$(git hash-object -w "$1"); git update-index --add --cacheinfo 100644,$b,"$2"; }
 for f in KFB_SOP_R1.md KFB_SOP_AESTE_R1.md KFB_REFERENZEN_R1.md KFB_MODULE_KATALOG_R1.md tools/qa_matrix.r1.json tools/CRITIC_BLIND_PROMPT.md DECISIONS.md decisions.json CHANGELOG.md build_decisions.py START_HERE_STEERING.md REVIEW_STEUERUNG_R1.md STYLE_GUIDE_3D_R1.md MOTION_GUIDE_R1.md ANIMATIONSBIBEL_R1.md KFB_WORKING_RULES_R1.md ARCHITECTURE_R1.md merge_changelog.py sync_github.sh WS0_STATE.md tools/brief_gate.py tools/brief_domains.json tools/BRIEF_GATE_PROMPT.md tools/build_character_registry.py tools/check_character_parity.py; do [[ -f "$H/$f" ]] && add "$H/$f" "$BASE/$f"; done
 for f in "$H"/CHARACTERS_R1/**/*(.N); do add "$f" "$BASE/${f#$H/}"; done  # V-682 Charakter-Register (nur JSON/MD, keine Assets)
 for f in "$H"/replies/**/*(.N); do r=${f#$H/replies/}; [[ $r == WSA_* || $r == track-module-look* || $r == SETTINGS_* ]] && continue; [[ $r == *.bundle || $r == */MINI/* || $r == *.glb || $r == *.gltf || $r == *.bin || $r == *.b64.txt || $r == *.mp4 || $r == */_privat* || $r == */assets/* || $r == */vendor/* || $r == *.png || $r == *.jpg || $r == *.jpeg || $r == *.webp || $r == *.gif || $r == *.mov || $r == *.m4a || $r == *.wav || $r == *.mp3 || $r == *.webm || $r == *.ogg || $r == *.tgz || $r == *.jpeg || $r == */erfassung_r*/* || $r == */belege/* ]] && continue; add "$f" "$BASE/replies/$r"; done  # V-2108: keine Bilder/Medien/Erfassungen in den öffentlichen Spiegel (Medien nur im privaten Repo). V-433: no 3D files (also Base64 GLB *.b64.txt), audio, private folders or vendor copies into the public register;  # WSA files are written on GitHub by WSA: never overwrite them from local copies
@@ -34,7 +34,7 @@ for f in "${H:h}"/65_SCENELETS/*/(KONZEPTBLATT_*.md|concept.json)(.N); do r=${f#
 add "$L/CLAUDE.md" "$BASE/LAB_CLAUDE.md"
 for f in KFB_WORLDBUILDER_PLAN_R1.md PROJECT_STATE.md PHASE_C_DONORS_R1.md POSTMORTEM_JOYRIDE_REGRESS_R1.md POSTMORTEM_MVP1_STAGE1_R1.md BASELINE_ACCEPTED_R1.md ACCEPTANCE_INDEX.md ISLAND_ANATOMY_RULES.md SCALE_CONTRACT_K2.md; do add "$L/docs/$f" "$BASE/lab-docs/$f"; done
 for f in "$L"/docs/POSTMORTEM_*.md(N); do add "$f" "$BASE/lab-docs/${f:t}"; done
-for d in "$L"/docs/golden/candidates/*_2026-10-1[1-9](N/); do for f in "$d"/*(.N); do add "$f" "$BASE/lab-docs/golden/${d:t}/${f:t}"; done; done
+for d in "$L"/docs/golden/candidates/*_2026-10-1[1-9](N/); do for f in "$d"/*(.N); do [[ $f == *.(png|jpg|jpeg|webp|gif) ]] && continue; add "$f" "$BASE/lab-docs/golden/${d:t}/${f:t}"; done; done
 T=$(git write-tree --missing-ok)   # V-2000: Blobs des ganzen Repo-Baums nicht lokal nachladen (kostete je Lauf Minuten und GB)
 if [[ $T == $(git rev-parse "$PARENT^{tree}") ]]; then echo "no change"; exit 0; fi
 C=$(printf '%s\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n' "$MSG" | git commit-tree $T -p $PARENT)
