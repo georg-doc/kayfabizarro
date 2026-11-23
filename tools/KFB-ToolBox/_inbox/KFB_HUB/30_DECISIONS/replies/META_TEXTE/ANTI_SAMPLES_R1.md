@@ -34,4 +34,5 @@ Quelle: `replies/AQUA_TRAILER_R1/HADRIAN_PROMPT_R1.txt`. Das Video liegt unter `
 ## Anti-Sample 3 · Stempel „GEDANKENVERBRECHEN“ im Buch-Intro R5/R6 · Georg 23.11.: Design- und Konzeptfehler
 Beleg: `replies/buchmaschine/schluesselbilder_intro_r5/` (t_27.0s).
 **Anti-Muster: Etikett statt Inszenierung.** Ein Wort erklärt dem Zuschauer didaktisch und frontal, was die Szene zeigen sollte. Dazu ist es schlecht gesetzt und deutsch in einem englischen Spiel.
-**Regel:** Bedeutung entsteht aus Bühne, Licht, Ton und Bewegung, zum Beispiel: Scanlicht bleibt stehen, Brummen setzt aus, Ring kühlt nach Rot. Schrift nur sparsam, wo sie diegetisch hingehört (HyperNorm-Wand, Interface), englisch, aus der Stringtabelle.
+**Regel (Geltung):** betrifft eingeblendete Beschriftungen, Stempel, Slogans, Erklärwörter. Bilder und Schrift, die in der Welt selbst stehen (HyperNorm-Bildwände, Plakate, Interface), sind kein Etikett und bleiben erlaubt; nie als „keine Schrift im Bild“ lesen (Georg 23.11., V-2136).
+Bedeutung entsteht aus Bühne, Licht, Ton und Bewegung, zum Beispiel: Scanlicht bleibt stehen, Brummen setzt aus, Ring kühlt nach Rot. Schrift nur sparsam, wo sie diegetisch hingehört (HyperNorm-Wand, Interface), englisch, aus der Stringtabelle.

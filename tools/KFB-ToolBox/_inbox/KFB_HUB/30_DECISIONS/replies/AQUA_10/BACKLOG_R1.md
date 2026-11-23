@@ -28,6 +28,8 @@
 | # | Punkt | Entscheid |
 |---|---|---|
 | K22 | **Echte Videogesichter im Bullauge** (Flexa, Falkenstein) | Georg q855: bleiben fotorealistisch, der Kontrast zum Cartoon-Becken ist gewollt. Kein Cartoon- oder Monitor-Filter. In Kritikläufen als „gewollt“ markieren. |
+| B1/B2 | **Wirbel** | Georg 23.11.: Vorbild patch.gg „Elements“, Spruch Cyclone, in Wasser- und Tangfarben, Warnfarbe bei Nähe; eingesaugt = ein Leben weniger. Gebaut r57 (Artefakt v80): Level 2 ein langsamer, Level 4 zwei (der zweite nur Trouble/Gangster). Später: Sog führt in ein Lungen-Level (analog Blutbahn). |
+| – | **Tür ohne Ton** | Georg 23.11.: Klicks an der Tür starteten das Radio. Seit r57 Musik erst nach dem richtigen Wort. |
 
 ## B · Fragen an Georg
 
