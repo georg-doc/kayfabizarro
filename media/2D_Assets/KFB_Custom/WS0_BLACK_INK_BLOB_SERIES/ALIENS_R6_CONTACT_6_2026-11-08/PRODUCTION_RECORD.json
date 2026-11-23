@@ -1,0 +1,73 @@
+{
+  "schema": "kfb.slop-production/1",
+  "set_id": "WSA_ALIENS_R6_CONTACT_20261108",
+  "source_family": "kfb_alien_ink_blobs_r6",
+  "name": "01-contact-crew",
+  "prompt": "Create one KFB collectible game sprite contact sheet, landscape 3:2, six isolated alpha cutouts exactly in three columns by two rows, front or mild three-quarter view, close to even scale. Real transparent PNG background, empty corners and wide genuinely empty gutters. Keep every prop, beam, ring and drop within its own cell. No scene, gradients, grid markings, text, ground or shadows. Actual reference sprites 1–4 define the ORIGINAL identity, morphology and props in the first four specified cells. Preserve their signature silhouette and their hand-made materials. Fifth reference is ONLY the empty-gutter alpha sprite grid template and the warm WHITE sclera with red iris and black pupil reference. Do not copy any RPG costume. Every visible eye on every character, including alien eye stalk tips and a single large cyclops eye, must have large clearly visible warm WHITE sclera, a much smaller isolated RED iris, and a separate BLACK pupil. Absolutely no solid-red eyeball, tinted sclera or red glow. Use controlled asymmetric eyelids and six different mouth beats and distinct gaze targets. Two feminine-read figures through subtle styling or acting. Dark near-black charcoal-violet ink bodies, broad modeled old-school tactile cartoon plasticine, soft satin and selective fine modeling. Preserve original prop colors and scale, and model glass, metal, stone and liquid distinctly. Each figure a complete alien blob with expressive organic spines, curled points or uneven lobes. Weird physical comedy, single clearly readable prop idea. No big repeated grin.\nTOP LEFT original EYESTALK TENTACLE: exactly three tall flexible tentacle eyestalks above the pair of facial eyes, like ref 1. Each of the five eyes has white sclera, small red iris and black pupil. Eyestalks inspect three different directions; face looks upward in bewilderment, tiny pinched squiggle mouth. Five readable eyes, no extra eyes. TOP MIDDLE original UFO CYCLOPS: gray metal saucer collar with lime portholes, clear neutral bubble canopy, one antenna with lime ball, dark goo drips under saucer; exactly one big white eye with red iris and black pupil looking left, lower lid pushed up in skeptical concentration. Small closed diagonal mouth. TOP RIGHT original SIGNAL ANTENNA: two short black antennae capped by lime balls and two steel headphones with green marks. Feminine read, eyebrows uneven, cautious sideways look, one cheek pressed up into a shallow closed wry half-smile, held still listening.\nBOTTOM LEFT original BRAIN DOME: big sculpted lavender brain under a neutral clear dome with riveted gray band. Gaze down at one own arm curl, tiny round O of startled recognition, visibly different arms and low spread body. BOTTOM CENTER NEW GRAVITY COLLECTOR: compact pointy asymmetrical ink blob holding a small chipped teal horseshoe magnet pulling three small charcoal meteor pebbles inside her cell, feminine read, eyes crossed at the nearest pebble, puffed cheeks and tiny lips holding breath. BOTTOM RIGHT NEW WORMHOLE TINKER: tall crooked blob with one sharp splash point, wearing only a single copper strap, looking down proudly through a palm-size folded brass portal hoop with small violet inner lip, the tip of its own opposite tendril peeks back out; delighted off-center open smile with one tooth. Simple easy-to-read portal prop.",
+  "references": [
+    "KFB_ALIEN_BLOB_R6_01_eyestalk_tentacle.png",
+    "KFB_ALIEN_BLOB_R6_02_ufo_cyclops.png",
+    "KFB_ALIEN_BLOB_R6_03_signal_antenna.png",
+    "KFB_ALIEN_BLOB_R6_04_brain_dome.png",
+    "02-guild-party.png"
+  ],
+  "sha256": "d64d51e6ae3338fed2759539c8913b0eb758bacf854171c869ea4be5c1d4ffc5",
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "outer_edge_alpha_max": 1,
+  "grid_line_alpha_max": [
+    253,
+    1,
+    2
+  ],
+  "design_status": "PASS",
+  "candidate_crop_boundaries_px": {
+    "horizontal": 512,
+    "vertical_by_row": [
+      [
+        512,
+        1024
+      ],
+      [
+        495,
+        1024
+      ]
+    ],
+    "validation": "Tested at alpha threshold 16. Individual isolation pending."
+  },
+  "source_sha256": {
+    "KFB_ALIEN_BLOB_R6_04_brain_dome.png": "28a1fcf381adc95a52057040ab2a398d1b55379d70064b7458c079baacb9fb36",
+    "KFB_ALIEN_BLOB_R6_02_ufo_cyclops.png": "d84b828c4167841bc4f5dc5cbee3bfeb409a069527b2f67f2844f01dc8b9e923",
+    "KFB_ALIEN_BLOB_R6_03_signal_antenna.png": "b4dc58ee4d0d3a4d19e2d67948b73a7b7193e31618ecf5d32b9724dc46ad1d3a",
+    "KFB_ALIEN_BLOB_R6_01_eyestalk_tentacle.png": "1ae08bd16d4d4d3dd66648a6dd0d6e12929e14f2de769666f28d636baad5e235"
+  },
+  "layout_reference": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+  "identity_lineage": [
+    {
+      "authoring_id": "WSA_ALIENS_R6_CONTACT_20261108_01",
+      "variant_of": "SL_ALIEN_EYESTALK_TENTACLE",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_ALIENS_R6_CONTACT_20261108_02",
+      "variant_of": "SL_ALIEN_UFO_CYCLOPS",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_ALIENS_R6_CONTACT_20261108_03",
+      "variant_of": "SL_ALIEN_SIGNAL_ANTENNA",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_ALIENS_R6_CONTACT_20261108_04",
+      "variant_of": "SL_ALIEN_BRAIN_DOME",
+      "replace_selected_runtime_asset": false
+    }
+  ]
+}

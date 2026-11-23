@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-2aefc8aa-308b-49a4-ad92-1f0034c263bc.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "bed0c1e1395477302617a34c5a2e22bbafbef3dbb8628daa0d58f7a9d2fcbe97",
+  "git_blob_sha": "a3414d33917df4f90d20b6b16b9ca73ec68e94bf",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "prompt": "Use case: stylized-concept. NEW KFB surreal trade-family image: exactly SIX unique complete ink blob cartoon-claymation characters,3columns by2rows,landscape1536x1024 transparent PNG. Every family has TWO historical,TWO present-day,TWO sci-fi characters as six DIFFERENT identities,not same actor levels/twins. STYLE reference1 original veteran: ONLY soft rounded continuous ink anatomy and material. STYLE reference2 original RPG: ONLY tactile sculpted accessory craft,NOT its cloned expressions,red eyeballs or costumes. No previous generated-sheet identity or style chain. Dark charcoal-black thick goo bodies with subtle deep violet sheen,rounded asymmetrical splat lobes,few rounded ink droplets,short goo hands. Huge acting face directly in ink. Full upright FOOTLESS blobs facing camera. No human torso,legs,feet,cropped bust or robot bodies. Fine fingerprints,soft thick modeled clay,rich materials. Not generic Pixar human/realistic human,not angular stone or patchy camouflage. Exactly TWO female-read subtly through lids/lashes/headgear,no human anatomy. WHITE/IVORY EYEBALLS,RED iris,BLACK pupil; thick filled dark-violet lids. Eyes always visible, goggles above them,open-face sci-fi gear. Same dark ink lip material,not random rosy human lips. Teeth emerge only INSIDE mouth from upper gum,never teeth on external lower lip,closed mouths toothless. Vary mouth,silhouette,pose,attitude,emotion independently before costume; offbeat weird expressive but relatable. Few clear simple props with functional readable craft,not overcomplex machinery. All role weapons/blades only inert occupational tools held down safely,no injury/gore. Clothing as small panels/collars not human suit.\nFAMILY: Minen & Öl – Schicht unter Vorbehalt. Context: historical mining and early oil drilling,modern extraction,retro-dieselpunk space resource workers.\nTOP LEFT — Grubenwart Tiefgenug, maennlich-read. HISTORICAL mine worker: broad low ink splat, scuffed leather miner cap with unlit little candle bracket ABOVE eyes, short wooden-handled pickaxe and small brass safety lantern at flank. Heavy uneven lids, deep crooked closed toothless frown. Personality: Considers daylight an administrative rumour.\nTOP MIDDLE — Bohrknecht Förderlich, maennlich-read. EARLY20th-century oil roughneck: tall crooked pear blob, brown flatcap, small canvas bib patch, one hefty old pipe wrench and tiny black oilcan. Fierce delighted open grin with TWO upper teeth, one eyebrow high. Personality: Tightens every joint except the one in the official argument.\nTOP RIGHT — Geologin Fundstelle, weiblich-read. CURRENT mine surveyor: round top-heavy blob, white hardhat with small lamp ABOVE eyes, subtle lashes, holds one simple violet rock core and chunky handheld scanner pointed toward core. Bulging unequal eyes and tiny off-centre toothless open oval mouth. Personality: Can find a deposit more easily than an agreed explanation of it.\nBOTTOM LEFT — Bohrmeister Druckhalt, maennlich-read. CURRENT drilling specialist: squat square rounded splat, ochre helmet, two small orange vest panels only, compact pressure gauge attached to one little shutoff valve. Side-eye, enormous pursed toothless lower lip same dark-violet material. Personality: Keeps the pressure within limits while the limits keep moving.\nBOTTOM MIDDLE — Asteroidenhauerin Splitterruh, weiblich-read. SCI-FI asteroid miner: tall hooked splat, small teal retro-space work helmet OPEN FACE no visor, two lashes, tiny copper shoulder fittings not humanoid spacesuit, compact blunt spiral hand-drill and one little copper ore nugget. Wide crooked triumphant grin with ONE upper tooth. Personality: Finds solid work in a universe determined to remain mostly empty.\nBOTTOM RIGHT — Vakuumförderer Restdruck, maennlich-read. SCI-FI space oil technician: broad drooping splat, padded plum cap with one small dial ABOVE eyes, short brass hose ending at a sealed palm-sized amber sample cylinder, visibly connected. Raised worried brows, closed nervous toothless zigzag lips. Personality: Collects the last drop before somebody changes the definition of a drop.\nCOMPOSITION: Three columns/two rows,similar substantial visible body heights across all6,complete figures/props within each roughly460x440px area. Clear32px transparent gutters and generous outer margin. No overlap,cropped accessories or shrinking lower row. No scenelet,scenery,background color,floor,ground shadow discs,text,labels,letters,watermark,borders or gridlines. Genuine transparent alpha.",
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+    ]
+  },
+  "reference_roles": [
+    "veteran-original.png: body/material STYLE ONLY",
+    "rpg-props.png: accessory craft STYLE ONLY"
+  ],
+  "reference_checks": [
+    {
+      "file": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "verified": true
+    },
+    {
+      "file": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "verified": true
+    },
+    {
+      "file": "wut-family.png",
+      "sha256": "237641ae0ba4b39dfe3b1aec8725ceb6a4108e945b0241adb54a1bbdbf3fb30e",
+      "verified": true
+    },
+    {
+      "file": "construction-props.png",
+      "sha256": "e9c6c20d6bc984340b2458d00dda5dfadb948ee0c61c4065ef16d6b999072d24",
+      "verified": true
+    },
+    {
+      "file": "professions-props.png",
+      "sha256": "9fe95050d827919acb6f42c62f2a073169e4f5ee8e9309b89397428de49d6ce5",
+      "verified": true
+    },
+    {
+      "file": "rpg-props.png",
+      "sha256": "08bc11e8d49b3776b4e0c101c624affb9f54d682f9f4e9a16c4f64ed024082cf",
+      "verified": true
+    }
+  ],
+  "reference_checks_passed": 6
+}

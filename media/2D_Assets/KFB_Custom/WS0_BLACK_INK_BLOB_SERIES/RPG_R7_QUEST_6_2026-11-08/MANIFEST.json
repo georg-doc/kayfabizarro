@@ -1,0 +1,312 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RPG_R7_QUEST_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 0,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RPG_R7_QUEST_6_2026-11-08/sheet-r1.png",
+    "sha256": "8fe10b125f8ae09cdd36e352cc7f9a12452613e580a748902a174c00b41984a1"
+  },
+  "production_record": "RPG_R7_QUEST_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "RPG_R7_QUEST_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "RPG_R7_QUEST_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Quest Party",
+    "theme": "RPG r7",
+    "relationship_policy": "Six-member fantasy party with independently usable identities.",
+    "usage_candidates": [
+      "fantasy encounter",
+      "HyperNorm resident",
+      "standalone Slop"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sir Cedric Flinch",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_QUEST_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Knight",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "red-plumed slotted helmet",
+        "steel sword",
+        "red and cream quartered shield"
+      ],
+      "temperament": "Even his backup plan is wearing a helmet.",
+      "prompt_auszug": "Worried glance toward the blade and compressed mouth.",
+      "prompt_quelle": "RPG_R7_QUEST_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_RPG_KNIGHT_SWORD_SHIELD"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Orlo Spindle",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_QUEST_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Wizard",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "purple star hat",
+        "cape",
+        "staff with green spiral orb"
+      ],
+      "temperament": "Trusts a spell right up to the moment it replies.",
+      "prompt_auszug": "Uneven lids and a small startled O aimed at the orb.",
+      "prompt_quelle": "RPG_R7_QUEST_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_RPG_WIZARD_STAFF"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Cutpurse",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_QUEST_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Rogue",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "green cowl",
+        "dagger",
+        "tan belt pouch"
+      ],
+      "temperament": "Can take a thing so politely that the receipt feels rude.",
+      "prompt_auszug": "Low asymmetric lids and a knowing half-smile.",
+      "prompt_quelle": "RPG_R7_QUEST_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_RPG_ROGUE_DAGGER"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rowan Featherdraw",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_QUEST_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Ranger",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "green hat with scarlet feather",
+        "wooden bow",
+        "red-fletched arrows",
+        "quiver"
+      ],
+      "temperament": "Treats a false target as a waste of good fletching.",
+      "prompt_auszug": "One eye shut along the arrow with lips held flat.",
+      "prompt_quelle": "RPG_R7_QUEST_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_RPG_RANGER_BOW"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Stillbell",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_QUEST_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Monk",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "ochre sash",
+        "bronze meditation bell",
+        "wooden striker"
+      ],
+      "temperament": "Can remain tranquil while everybody else fills in a complaint form.",
+      "prompt_auszug": "Closed eyes and a soft, composed smile.",
+      "prompt_quelle": "RPG_R7_QUEST_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hob Hornwhistle",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_QUEST_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Beastmaster",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "bronze whistle",
+        "small horned companion"
+      ],
+      "temperament": "Finds the beast's poor judgment reassuringly familiar.",
+      "prompt_auszug": "Proud downcast glance and a big one-tooth laugh.",
+      "prompt_quelle": "RPG_R7_QUEST_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Convenient Positions",
+    "team_kit": "Muted ochre, ink red, cream and slate.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_03",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+    ]
+  }
+}

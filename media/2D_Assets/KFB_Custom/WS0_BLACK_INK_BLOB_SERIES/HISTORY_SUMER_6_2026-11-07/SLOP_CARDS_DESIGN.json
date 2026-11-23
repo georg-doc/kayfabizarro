@@ -1,0 +1,421 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_01",
+      "name": "Tessa Wedgewise",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Will correct a contradiction before the clay dries.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Wait. The clay is still wet.",
+            "That exception needs another tablet."
+          ],
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_SUMER_20261107",
+            "trio": "WSA_HISTORY_SUMER_20261107_TRIO_A"
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "She recopies HyperNorm instructions until each has exactly one meaning; her reject pile is a second building.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The archive has developed structural ambitions.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "furious tablet scribe",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_02",
+      "name": "Orrin Rollseal",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Finds an impression more trustworthy than a conversation.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It bears my seal.",
+            "The impression is final."
+          ],
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_SUMER_20261107",
+            "trio": "WSA_HISTORY_SUMER_20261107_TRIO_A"
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The Men in Black give him a seal for every forbidden exception.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: His signature is also a very small rolling pin.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "smug seal custodian",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_03",
+      "name": "Basil Barleydue",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Believes a missing grain can explain a falling empire.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "There was one more grain.",
+            "Recount the empire."
+          ],
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_SUMER_20261107",
+            "trio": "WSA_HISTORY_SUMER_20261107_TRIO_A"
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "His building reduces every dissonant card to a ration discrepancy.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: A famine is apparently an arithmetic problem with poor manners.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "shocked grain assessor",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_04",
+      "name": "Gil Copperclink",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Measures progress by how long a tool stays repaired.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "This is the same ingot.",
+            "Try not to polish the handle."
+          ],
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_SUMER_20261107",
+            "trio": "WSA_HISTORY_SUMER_20261107_TRIO_B"
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hunky and Dory request shining certainty, so he polishes the same ingot through every historical era.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The copper is beginning to recognize the customer.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "weary copper artisan",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_05",
+      "name": "Enno Reedraft",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Insists the supply boat was early and the river was late.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The river was late.",
+            "Everything is in bundles."
+          ],
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_SUMER_20261107",
+            "trio": "WSA_HISTORY_SUMER_20261107_TRIO_B"
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He packs the HyperNorm storehouse in sealed bundles so awkward questions cannot leak.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: His manifest includes a separate entry for the river's attitude.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "haughty boat provisioner",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_SUMER_ACTOR_20261107_06",
+      "name": "Luma Cupmeasure",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Makes a ceremony of giving everyone slightly less.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Foam does not count.",
+            "Your cup has been standardized."
+          ],
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_SUMER_20261107",
+            "trio": "WSA_HISTORY_SUMER_20261107_TRIO_B"
+          },
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "She notices that MiB officials receive larger cups and files the observation under foam.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Equality has been measured with the manager's cup.",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "gleeful ration brewer",
+          "src": "HISTORY_SUMER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

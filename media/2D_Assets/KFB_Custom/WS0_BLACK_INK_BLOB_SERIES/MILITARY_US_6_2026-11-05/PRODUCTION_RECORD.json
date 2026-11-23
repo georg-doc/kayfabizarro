@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-a15e48d7-1ec0-462f-9ba4-94138529be6e.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "b96c6ed804b22a774639d51a1028fbf104ea816b6bed5c0222894c039f24ee09",
+  "git_blob_sha": "8d03613d3eb17c074302a2751388decb21040fb7",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "prompt": "Use case: stylized-concept. NEW KFB historical military ink-monster family. Exactly SIX complete unique cartoon-claymation ink blob monsters in a LANDSCAPE 1536x1024 transparent PNG,3 columns x2rows. Reference1 STYLE ONLY for rounded continuous footless ink body and soft plasticine material; reference2 STYLE ONLY for rich sculpted accessory craft. NOT source identities or repeated grins or red eyeballs. Continuous charcoal-black goo body, subtle deep violet sheen, thick soft rounded asymmetrical splat lobes and a few rounded ink droplets. Huge expressive face directly in blob, short goo hands, upright camera-facing. No human torso, legs, feet, bust crops or humanoid action figures. Fine clay fingerprints and thick handmade fabric, leather, metal. Not generic glossy Pixar people; weird, offbeat and tragically relatable military-bureaucracy satire. WHITE/IVORY sclera, RED iris, BLACK pupil, purple eyelids fully filled. Eyes never hidden by hats or goggles. Exactly two female-read through subtle lids/lashes, no human anatomy. Teeth only INSIDE mouth descending from upper gum, never on outer lower lip; closed mouths toothless. Each1–2dominant accessory anchors, body remains visible. Historical visual inspiration, not exact reenactment. No text/lettering/numbers, flags, political emblems, extremist insignia, eagle badges, skull badges, slogans, propaganda or heroic leader portraits. Plain fictional uniforms. No blood/battle scene. Weapons are simple inert period props held safely beside figure; not firing/aiming toward camera.\nFamily: US-amerikanischer Trupp. Palette and costume: US Army / Army Air Forces inspired olive drab, khaki canvas and brown leather.\nTOP LEFT — Sergeant Schonmalweiter; maennlich-read; broad low squarish ink blob; weathered M1-style bowl helmet with short loose chinstrap, rolled sleeve tabs only, whistle and small folded map; clenched crooked mouth with one upper tooth; impatient sideglance and raised instructing goo hand. Personality: Turns every missing direction into a loudly announced shortcut.\nTOP MIDDLE — Private Päckchen; maennlich-read; tall thin wobbly comma blob; oversized olive bowl helmet, two simple chest pouches, compact wood-stock rifle safely vertical muzzle upward at side; huge ivory eyes looking up under brim, tiny anxious toothless mouth. Personality: Carries everything required except a convincing explanation of where he is.\nTOP RIGHT — Corporal Knister; weiblich-read; round pear-shaped blob with sharply uneven brows and very dry side-smirk; olive sidecap, two subtly long lashes, large simple handset attached by short coiled cord to small radio pack at flank; no full human jacket. Personality: Can hear a bad order clearly through any amount of static.\nBOTTOM LEFT — Lieutenant Himmelwärts; maennlich-read; top-heavy bulbous blob, brown leather flight cap with goggles parked above uncovered eyes and short cream collar; a single broad aviation chart; stunned open oval mouth and one upper tooth, one eye stretched taller than other. Personality: Believes altitude will eventually improve the paperwork.\nBOTTOM MIDDLE — Medic Ruhigblut; weiblich-read; wide asymmetric droplet blob; small plain olive helmet, compact medical pouch marked by simple ivory plus, rolled bandage in goo hand; lashes, fierce reassuring crooked grin with two uneven upper teeth; no syringe clutter. Personality: Insists that everyone panic one at a time.\nBOTTOM RIGHT — Mechanic Drehmoment; maennlich-read; squat triangular rounded splat; soft olive work cap and short stained canvas bib patch leaving body visible, one thick spanner and dented metal oil can; bored heavy eyelids, compressed toothless zigzag lips. Personality: Repairs vehicles faster than officers can rename the fault.\nCOMPOSITION: Three columns,two rows. Equal substantial body scale, complete uncropped silhouettes and props each within about460x440px cell. Uniform visible heights across rows.32px clear transparent row/column gutters and generous outer margin. Do not overlap characters. All six self-contained,no floor,ground disc,backdrop,scenery,text,labels,border or gridlines. True transparent alpha.",
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+    ]
+  },
+  "reference_roles": [
+    "veteran-original.png: body/material STYLE ONLY",
+    "rpg-props.png: accessory craft STYLE ONLY"
+  ],
+  "reference_checks": [
+    {
+      "file": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "verified": true
+    },
+    {
+      "file": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "verified": true
+    },
+    {
+      "file": "wut-family.png",
+      "sha256": "237641ae0ba4b39dfe3b1aec8725ceb6a4108e945b0241adb54a1bbdbf3fb30e",
+      "verified": true
+    },
+    {
+      "file": "construction-props.png",
+      "sha256": "e9c6c20d6bc984340b2458d00dda5dfadb948ee0c61c4065ef16d6b999072d24",
+      "verified": true
+    },
+    {
+      "file": "professions-props.png",
+      "sha256": "9fe95050d827919acb6f42c62f2a073169e4f5ee8e9309b89397428de49d6ce5",
+      "verified": true
+    },
+    {
+      "file": "rpg-props.png",
+      "sha256": "08bc11e8d49b3776b4e0c101c624affb9f54d682f9f4e9a16c4f64ed024082cf",
+      "verified": true
+    }
+  ],
+  "reference_checks_passed": 6
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "kfb.slop-batch-evidence/1",
+  "date": "2026-11-05",
+  "native_generation_jobs": 6,
+  "native_edit_jobs": 1,
+  "retained_source_pngs": 7,
+  "selected_sheets": 6,
+  "identities": 12,
+  "depictions": 36,
+  "female_read_identities": 6,
+  "male_read_identities": 6,
+  "new_georg_pass": 0,
+  "runtime_tests": 0,
+  "combat_writes": 0,
+  "checks": {
+    "unique_authoring_ids": 36,
+    "selected_cell_seams_clear_of_visible_content": 6,
+    "all_selected_dimensions": [
+      1536,
+      1024
+    ]
+  },
+  "limitations": [
+    "Alpha interiors max254, residual alpha1\u20133; normalization deferred.",
+    "Illustrative identity continuity, not a rig.",
+    "Instrument functionality not validated beyond visual icon readability.",
+    "Prompt deviations in per-sheet QA.",
+    "Model/seed not exposed."
+  ],
+  "next_gate": "Georg design verdict on six career sheets",
+  "implementation_head": "8e44df25772c50b86367b547b5a7231a104994e5",
+  "exact_text_readbacks": 39,
+  "png_byte_comparisons": 7
+}

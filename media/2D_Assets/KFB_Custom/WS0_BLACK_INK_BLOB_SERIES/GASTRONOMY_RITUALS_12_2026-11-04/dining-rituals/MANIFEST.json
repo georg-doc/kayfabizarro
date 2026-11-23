@@ -1,0 +1,188 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DINING_RITUALS_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+    "sha256": "f3da4bd8468d9a6e676040aeb6285d065fd1e56f2923dfc7585e804216b2717d"
+  },
+  "production_record": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/PRODUCTION_RECORD.json",
+  "cards": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Kitchen R2 eyelid fix selected; R1 retained, original QA/native-render differences documented."
+  },
+  "figuren": [
+    {
+      "id": "WSA_DINING_RITUALS_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Gaumenurteil",
+      "bild": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large silver tasting fork with tiny olive"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 male FOOD CRITIC: very broad LOW sagging ink splat with a single small curled upper lobe, little charcoal beret and short burgundy cravat collar, one brass monocle held low. Heavy unimpressed WHITE/red/black eyes sideways, huge crooked offended UNDERBITE with TWO long lower teeth, no grin. One hand holds ONE absurdly enormous rounded SILVER TASTING FORK with only THREE thick blunt prongs, a SINGLE tiny green olive perched on tip; other hand supports own forearm solemnly. No plate/table, no stabbing/action, all fork fully inside cell.",
+      "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DINING_RITUALS_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Rezepttreue",
+      "bild": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "cookbook",
+        "carrot"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 FEMALE-READ RECIPE ABSOLUTIST: tall curved pear ink blob, soft violet rolled goo crest under tiny coral kerchief, short cream knitted collar. One WHITE/red/black eye wide DOWN and other fiercely narrowed, CLENCHED jagged uneven teeth with lips pulled sideways, no tongue. Hugs ONE very FAT worn mustard COOKBOOK with blank cover and thick cream pages, while trying to tuck ONE giant plump orange carrot between its closed covers like a bookmark. Two simple chunky props, carrot has a single broad soft green leaf tuft, no text/recipes.",
+      "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DINING_RITUALS_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Koffeinvorbehalt",
+      "bild": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "oversized enamel coffee cup"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male COFFEE RITUALIST: very tall thin crooked bean ink blob with two dramatically drooping crown lobes, tiny battered brown soft cap and short teal cuff collar. Huge uneven WHITE/red/black eyes staring UP, mouth tightly compressed into a small ZIGZAG showing one lower tooth, visibly jittery but whole figure upright. Both hands clutch ONE enormous rounded chipped BLUE ENAMEL COFFEE CUP with fat cream rim and thick brass handle, dark clay coffee inside. No saucer, steam, table, text or UI, full dark goo base visible below cup.",
+      "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DINING_RITUALS_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Faltengebot",
+      "bild": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "single folded linen napkin"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 FEMALE-READ TABLE ETIQUETTE GUARDIAN: compact broad asymmetric wavy ink splat, huge soft violet crown roll under small teal headband and tiny burgundy collar. One eye CLOSED with furious concentration and other WHITE/red/black wide looking down, crooked open triangular UNDERBITE with three uneven ivory teeth, no O/tongue. Both hands firmly crease ONE extremely FAT folded IVORY LINEN NAPKIN into a triangle at own belly, one big corner stubbornly curled back upward. Beautiful tactile rounded cloth, no table/utensils/background, full ink lobes visible.",
+      "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DINING_RITUALS_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Restevermögen",
+      "bild": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large preserving jar with few peas"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 male LEFTOVERS STRATEGIST: compact nearly spherical heavy ink blob with low curled side lobes, tiny faded olive cloth cap and short cream velvet collar. Lazy half-lidded WHITE/red/black gaze down, CLOSED deep crooked satisfied smile with one gold fang. Both goo arms protectively hug ONE absurdly huge bulbous clear greenish GLASS PRESERVING JAR with broad CLOSED copper lid, containing just THREE enormous green clay peas at bottom. Rounded thick glass, no labels/glow/smoke, no other utensils, clear whole footless ink body behind/below.",
+      "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_DINING_RITUALS_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Vorverzehr",
+      "bild": {
+        "datei": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/dining-rituals-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "retro camera",
+        "tiny cake"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 male FOOD PHOTOGRAPHER: medium tall lopsided broad-bottom pear ink blob, single soft drooping crown curl, small rose zip collar and little brass spectacle on one eye. One WHITE/red/black eye wide and other squeezed in concentration, long FLAT crooked downward lip with TWO small sparse teeth, no grin or tongue. Holds ONE beautifully chunky retro BRASS CAMERA aimed DOWN toward ONE tiny cream cake with single coral cherry resting on opposite goo palm, camera and cake close to own belly. No tripod/plate/table/scene or additional figure, no writing/logos or screen UI, entire body/props inside cell.",
+      "prompt_quelle": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ],
+  "georg_decision": {
+    "source": "Georg chat2026-11-04",
+    "verdict": "all12gastronomyPASS with corrected eyelid R2 selected"
+  }
+}

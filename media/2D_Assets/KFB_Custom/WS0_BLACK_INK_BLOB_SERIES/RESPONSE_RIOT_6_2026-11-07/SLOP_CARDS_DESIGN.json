@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESPONSE_RIOT_ACTOR_20261107_01",
+      "name": "Cal Holdfast",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cal Holdfast stays stubbornly braced when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Stubbornly braced. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold the line here."
+          ],
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_RIOT_20261107",
+            "trio": "WSA_RESPONSE_RIOT_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cal Holdfast serves with Shield Detail, a riot unit detail assigned to HyperNorm disturbances. The short transparent shield with thick ivory frame is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cal Holdfast looks stubbornly braced even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stubbornly braced",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_RIOT_ACTOR_20261107_02",
+      "name": "Tess Brace",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Tess Brace stays keenly alert when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Keenly alert. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give us a little room."
+          ],
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_RIOT_20261107",
+            "trio": "WSA_RESPONSE_RIOT_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Tess Brace serves with Shield Detail, a riot unit detail assigned to HyperNorm disturbances. The compact blue rounded shield is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Tess Brace looks keenly alert even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "keenly alert",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_RIOT_ACTOR_20261107_03",
+      "name": "Oren Buffer",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Oren Buffer stays anxious but steady when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Anxious but steady. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I need a closer look."
+          ],
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_RIOT_20261107",
+            "trio": "WSA_RESPONSE_RIOT_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Oren Buffer serves with Shield Detail, a riot unit detail assigned to HyperNorm disturbances. The small padded forearm guard and foam baton held down is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Oren Buffer looks anxious but steady even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "anxious but steady",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_RIOT_ACTOR_20261107_04",
+      "name": "Bram Softstop",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bram Softstop stays quietly unimpressed when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Quietly unimpressed. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay with your detail."
+          ],
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_RIOT_20261107",
+            "trio": "WSA_RESPONSE_RIOT_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bram Softstop serves with Relief Detail, a riot unit detail assigned to HyperNorm disturbances. The small scuffed slate-blue shield is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Bram Softstop looks quietly unimpressed even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "quietly unimpressed",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_RIOT_ACTOR_20261107_05",
+      "name": "Nora Linekeep",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Nora Linekeep stays sharply focused when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Sharply focused. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We have someone to check on."
+          ],
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_RIOT_20261107",
+            "trio": "WSA_RESPONSE_RIOT_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nora Linekeep serves with Relief Detail, a riot unit detail assigned to HyperNorm disturbances. The small white radio and padded shoulder tab is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nora Linekeep looks sharply focused even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "sharply focused",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_RIOT_ACTOR_20261107_06",
+      "name": "Perry Spare",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Perry Spare stays grimly determined when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Grimly determined. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have this covered."
+          ],
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_RIOT_20261107",
+            "trio": "WSA_RESPONSE_RIOT_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Perry Spare serves with Relief Detail, a riot unit detail assigned to HyperNorm disturbances. The short ivory-edged shield and spare helmet strap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Perry Spare looks grimly determined even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "grimly determined",
+          "src": "RESPONSE_RIOT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

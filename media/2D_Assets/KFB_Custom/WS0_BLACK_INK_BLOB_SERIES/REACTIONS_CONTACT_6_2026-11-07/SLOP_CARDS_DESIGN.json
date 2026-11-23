@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_01",
+      "name": "Grace Afterall",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She has just discovered that the worst possibility was not compulsory.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English warm mezzo, a breathy laugh after tension",
+            "audio": null
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Oh. We are all right.",
+            "I can breathe that bit again."
+          ],
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_CONTACT_20261107"
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Grace spent the HyperNorm inspection expecting a fault serious enough to explain her worry. The Men in Black found none; Hunky and Dory advised continued readiness. A dissonant card asked whether she could stop preparing for a moment. She laughed before deciding if this was permitted. Now she keeps a handkerchief for tears, dust and the small undignified noise that relief sometimes makes.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The crisis is over. Her shoulders have received the news.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "relieved",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_02",
+      "name": "Gilbert Muchobliged",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He receives a small kindness as though it required careful long-term custody.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English gentle rounded baritone, sincere and slightly astonished",
+            "audio": null
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That was kind of you.",
+            "I shall remember the useful part."
+          ],
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_CONTACT_20261107"
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gilbert was lent a clothespin on a windy HyperNorm morning and has treated it as evidence that the neighbours are not merely other addresses. The Men in Black prefer evidence of breaches; Hunky and Dory request measurable benefits. A contradictory card asked what gratitude produces. Gilbert cannot supply a figure. He can tell which resident needs their washing brought in before the rain.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The favour was small. He has made room for its full significance.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "grateful",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_03",
+      "name": "Alf AlmostaParty",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He is delighted to be included and has not yet worked out what to do with his hands.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English bright tenor, eagerness interrupted by shy timing",
+            "audio": null
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Is this the right moment?",
+            "I am enjoying it. Apparently."
+          ],
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_CONTACT_20261107"
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Alf arrived at the HyperNorm gathering early enough to practise being spontaneous. The Men in Black wanted an orderly occasion; Hunky and Dory supplied an approved level of enjoyment. A dissonant card made the neighbours laugh at something nobody had planned. Alf missed the joke, then joined the laughter. His hands remain uncertain, but he has stopped mistaking uncertainty for exclusion.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Participation is going well. The clapping is awaiting coordination.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "awkwardly delighted",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_04",
+      "name": "Hope Perhaps",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She is willing to hope, provided hope agrees to speak a little more quietly.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English soft alto, cautious brightness",
+            "audio": null
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Perhaps this much could work.",
+            "Let us see what it does."
+          ],
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_CONTACT_20261107"
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hope carries a small sprig through HyperNorm rather than announcing that the place might improve. The Men in Black ask what it proves; Hunky and Dory suggest a more impressive plant. A contradictory card says that a possibility need not become a promise. She finds this easier to hold. The sprig now lives where the most tired neighbour pauses on the stairs.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Improvement is possible. She has not booked the celebration.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "guardedly hopeful",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_05",
+      "name": "Cecil Seenit",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He would prefer the incident to become a brief and anonymous historical period.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English light baritone, dry embarrassment with awkward gaps",
+            "audio": null
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I can account for most of this.",
+            "We need not give it a name."
+          ],
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_CONTACT_20261107"
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cecil brought an unmatched sock to the HyperNorm laundry and discovered that everyone had noticed his elaborate explanation. The Men in Black asked for consistency; Hunky and Dory asked him to repeat the amusing part. A dissonant card offered the possibility of a mistake without a verdict. He accepted it eventually. He now leaves the odd socks in a shared basket without assigning blame.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The matter is behind him. Unfortunately, so is the sock.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "embarrassed",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_06",
+      "name": "Morris Makesroom",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He makes a little room before asking what has gone wrong.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English low steady baritone, attentive and unhurried",
+            "audio": null
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "You need not explain it yet.",
+            "Take the comfortable bit."
+          ],
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_CONTACT_20261107"
+          },
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Morris keeps a folded blanket on the HyperNorm landing for residents who insist they are not cold. The Men in Black want names before assistance; Hunky and Dory want a reason worth recording. A dissonant card once left him unsure who was right. He discovered he could offer the blanket before resolving that. This has made several difficult conversations quieter without making them disappear.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The explanation can wait. There is room beside him.",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "compassionate concern",
+          "src": "REACTIONS_CONTACT_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_01",
+      "name": "Gabe Longview",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Gabe Longview stays concentrated and calm when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Concentrated and calm. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold the line here."
+          ],
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SPECIAL_20261107",
+            "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gabe Longview serves with Recon Detail, a special forces detail assigned to HyperNorm disturbances. The sage boonie and tiny binoculars held at chest is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Gabe Longview looks concentrated and calm even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "concentrated and calm",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_02",
+      "name": "Sable Quickstep",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sable Quickstep stays quietly energized when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Quietly energized. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give us a little room."
+          ],
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SPECIAL_20261107",
+            "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Sable Quickstep serves with Recon Detail, a special forces detail assigned to HyperNorm disturbances. The tan helmet is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Sable Quickstep looks quietly energized even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "quietly energized",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_03",
+      "name": "Reed Stillwater",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Reed Stillwater stays deliberately patient when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Deliberately patient. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I need a closer look."
+          ],
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SPECIAL_20261107",
+            "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Reed Stillwater serves with Recon Detail, a special forces detail assigned to HyperNorm disturbances. The boonie and short rope coil is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Reed Stillwater looks deliberately patient even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "deliberately patient",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_04",
+      "name": "Finn Trace",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Finn Trace stays startled by a clue when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Startled by a clue. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay with your detail."
+          ],
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SPECIAL_20261107",
+            "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Finn Trace serves with Recovery Detail, a special forces detail assigned to HyperNorm disturbances. The sand wrap and small marker flag is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Finn Trace looks startled by a clue even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled by a clue",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_05",
+      "name": "Piper Recovery",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Piper Recovery stays focused and reassuring when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Focused and reassuring. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We have someone to check on."
+          ],
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SPECIAL_20261107",
+            "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Piper Recovery serves with Recovery Detail, a special forces detail assigned to HyperNorm disturbances. The tan open-face helmet is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Piper Recovery looks focused and reassuring even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "focused and reassuring",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_SPECIAL_ACTOR_20261107_06",
+      "name": "Dean Spareline",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Dean Spareline stays dryly resourceful when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Dryly resourceful. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have this covered."
+          ],
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_SPECIAL_20261107",
+            "trio": "WSA_RESPONSE_SPECIAL_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Dean Spareline serves with Recovery Detail, a special forces detail assigned to HyperNorm disturbances. The boonie and small folding tool held closed is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Dean Spareline looks dryly resourceful even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dryly resourceful",
+          "src": "RESPONSE_SPECIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

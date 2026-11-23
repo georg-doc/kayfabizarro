@@ -1,0 +1,327 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESTORE_DECON_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESTORE_DECON_6_2026-11-07/sheet-r1.png",
+    "sha256": "68c76c9b6f1da4c5774c79d54571697c8de53eb717277c334e3393613f34991e"
+  },
+  "production_record": "RESTORE_DECON_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESTORE_DECON_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESTORE_DECON_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Rinse Shift",
+    "theme": "Decontamination Cleaners",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "restoration encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESTORE_DECON_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Giles Rinse",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_DECON_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "concentrating rinse lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_DECON_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_DECON_ACTOR_20261107_02",
+        "WSA_RESTORE_DECON_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one short capped spray wand with a stubby hose"
+      ],
+      "temperament": "Giles Rinse is the crew's concentrating rinse lead.",
+      "prompt_auszug": "round low body, wide unequal eyes and a tiny startled oval mouth without teeth",
+      "prompt_quelle": "RESTORE_DECON_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "concentrating rinse lead"
+    },
+    {
+      "id": "WSA_RESTORE_DECON_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nia Sealcheck",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_DECON_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "doubtful surface checker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_DECON_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_DECON_ACTOR_20261107_01",
+        "WSA_RESTORE_DECON_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one compact blank contamination-check paddle"
+      ],
+      "temperament": "Nia Sealcheck is the crew's doubtful surface checker.",
+      "prompt_auszug": "wide soft square body, half-lidded eyes and a dry closed smile",
+      "prompt_quelle": "RESTORE_DECON_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "doubtful surface checker"
+    },
+    {
+      "id": "WSA_RESTORE_DECON_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hugo Sump",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_DECON_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overburdened recovery carrier",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_DECON_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESTORE_DECON_ACTOR_20261107_01",
+        "WSA_RESTORE_DECON_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small sealed waste-fluid canister"
+      ],
+      "temperament": "Hugo Sump is the crew's overburdened recovery carrier.",
+      "prompt_auszug": "curved upright body, attentive uneven brows and a tight closed pursed mouth",
+      "prompt_quelle": "RESTORE_DECON_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "overburdened recovery carrier"
+    },
+    {
+      "id": "WSA_RESTORE_DECON_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Drypatch",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_DECON_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "resigned drying technician",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_DECON_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_DECON_ACTOR_20261107_05",
+        "WSA_RESTORE_DECON_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one thick folded absorbent pad"
+      ],
+      "temperament": "Wes Drypatch is the crew's resigned drying technician.",
+      "prompt_auszug": "slender reverse-comma shape, eager eyes and a narrow open two-upper-tooth grin",
+      "prompt_quelle": "RESTORE_DECON_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "resigned drying technician"
+    },
+    {
+      "id": "WSA_RESTORE_DECON_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Cleanpass",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_DECON_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "quietly proud finish lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_DECON_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_DECON_ACTOR_20261107_04",
+        "WSA_RESTORE_DECON_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small rounded inspection lamp"
+      ],
+      "temperament": "Mara Cleanpass is the crew's quietly proud finish lead.",
+      "prompt_auszug": "broad scalloped silhouette, heavy skeptical eyes and a straight closed dark mouth",
+      "prompt_quelle": "RESTORE_DECON_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "quietly proud finish lead"
+    },
+    {
+      "id": "WSA_RESTORE_DECON_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Capwell",
+      "language": "en",
+      "bild": {
+        "datei": "RESTORE_DECON_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "anxiously careful residue keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESTORE_DECON_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESTORE_DECON_ACTOR_20261107_04",
+        "WSA_RESTORE_DECON_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one lidded specimen cup in a thick cradle"
+      ],
+      "temperament": "Len Capwell is the crew's anxiously careful residue keeper.",
+      "prompt_auszug": "lean pear silhouette, one high brow and a closed crooked determined smirk",
+      "prompt_quelle": "RESTORE_DECON_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "anxiously careful residue keeper"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "restoration_task": "Decontamination Cleaners",
+    "team_kit": "faded ivory and sea-green rubber coveralls over round ink bodies, tiny ink feet, teal gloves, grey couplers, green rinse pods",
+    "trios": [
+      {
+        "id": "WSA_RESTORE_DECON_20261107_TRIO_A",
+        "name": "Wash Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESTORE_DECON_ACTOR_20261107_01",
+          "WSA_RESTORE_DECON_ACTOR_20261107_02",
+          "WSA_RESTORE_DECON_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESTORE_DECON_20261107_TRIO_B",
+        "name": "Release Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESTORE_DECON_ACTOR_20261107_04",
+          "WSA_RESTORE_DECON_ACTOR_20261107_05",
+          "WSA_RESTORE_DECON_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESTORE_DECON_ACTOR_20261107_01",
+      "WSA_RESTORE_DECON_ACTOR_20261107_02",
+      "WSA_RESTORE_DECON_ACTOR_20261107_03",
+      "WSA_RESTORE_DECON_ACTOR_20261107_04",
+      "WSA_RESTORE_DECON_ACTOR_20261107_05",
+      "WSA_RESTORE_DECON_ACTOR_20261107_06"
+    ]
+  },
+  "georg_feedback": "All six cleanup and restoration sheets PASS; minor reference inheritances accepted."
+}

@@ -1,0 +1,535 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_MAFIA_20261104",
+  "figuren": [
+    {
+      "id": "SL_MAFIA_01",
+      "name": {
+        "v": "Don Kleingedruckt",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He confuses being feared with being the only person still speaking softly.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "deep_state_plumbing",
+                "federal_kayfabe",
+                "geopolitical_thrillers_conspiracy_theories"
+              ],
+              "biome": [
+                "wueste",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MAFIA_01",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Bass",
+            "delivery": "measured dry pauses",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Seine Angebote sind herzlich. Die Bedingungen kommen aus einer anderen Abteilung.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_MAFIA_20261104",
+        "image_cell": {
+          "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "prompt_excerpt": "TOP LEFT: COSA NOSTRA CINEMA DON, broad very low sagging ink splat, tiny black fedora tilted on one thick goo curl, cream tuxedo collar, little red carnation and deep black short lapels. Heavy half-closed WHITE eyes with red irises black pupils, profoundly bored drooping underbite with one enormous GOLD tooth. Cradles a ridiculously tiny cream clay lap cat in huge goo hand, other hand raises an oversized unlit fat cigar held in thick gold-ringed goo fingers. The giant hand/tiny pet contrast gives physical dark humor. No human nose/moustache/ethnicity."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MAFIA_02",
+      "name": {
+        "v": "Madame Kassenruhe",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She maintains perfect composure while everyone else supplies the consequences.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "deep_state_plumbing",
+                "federal_kayfabe",
+                "geopolitical_thrillers_conspiracy_theories"
+              ],
+              "biome": [
+                "wueste",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MAFIA_02",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Oben",
+            "delivery": "brisk clipped precision",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Sie braucht keine Drohung. Es genügt, wenn die anderen sorgfältig genug zuhören.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_MAFIA_20261104",
+        "image_cell": {
+          "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "prompt_excerpt": "TOP CENTER: FEMALE-READ YAKUZA-THRILLER SYNDICATE MATRIARCH, tall tapering asymmetric ink splat, dark plum sculpted goo coiffure with simple gold pin, short black silk jacket draped off one shoulder with ONE large coral koi-shaped embroidery patch, modest neckline no human torso. Cold perfectly upright posture, one narrowed lid and one raised, CLOSED crooked smile with two thin uneven ivory fangs. Hands hold a fat folding ivory fan and squat black lacquered wooden money box with gold latch. Imposing elegant authority, not a geisha or caricature, no slanted ethnic eyes."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MAFIA_03",
+      "name": {
+        "v": "Herr Glücksreserve",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He trusts chance only when it has been securely stored in his own case.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "deep_state_plumbing",
+                "federal_kayfabe",
+                "geopolitical_thrillers_conspiracy_theories"
+              ],
+              "biome": [
+                "wueste",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MAFIA_03",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Bass",
+            "delivery": "low weary drawl",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Das Glück ist auf seiner Seite. Er trägt es deshalb lieber mit beiden Händen.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_MAFIA_20261104",
+        "image_cell": {
+          "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "prompt_excerpt": "TOP RIGHT: TRIAD-CRIME-CINEMA GAMBLING KINGPIN, nearly spherical compact ink splat, short worn teal silk mandarin-collar cape with thick brass frog fastenings, round gold-rimmed spectacles low on nose-less goo face. Large WHITE eyes with red irises black pupils looking down greedily; tiny puckered O mouth with one fang. Both hands hug a chunky green-and-gold mahjong tile case with just THREE huge ivory tiles sticking out, each a simple circular colored inset, NO writing or symbols. One fat polished jade ring, restrained prop count, no ethnic facial cues."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MAFIA_04",
+      "name": {
+        "v": "Onkel Altbestand",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He regards loyalty as something that should survive every change of accounting.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "deep_state_plumbing",
+                "federal_kayfabe",
+                "geopolitical_thrillers_conspiracy_theories"
+              ],
+              "biome": [
+                "wueste",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MAFIA_04",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Mitte",
+            "delivery": "earnest rising urgency",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Er spricht von alten Werten. Gemeint sind die, deren Herkunft niemand mehr nachfragt.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_MAFIA_20261104",
+        "image_cell": {
+          "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "prompt_excerpt": "BOTTOM LEFT: BRATVA-THRILLER OLD GUARD BOSS, tall massive pear-shaped ink splat with wide bottom goo lobes, battered black leather cap, short oxblood leather shoulder jacket with thick beige fleece collar, one heavy gold chain. Tiny narrowed WHITE eyes, red irises black pupils gazing sideways, huge clenched uneven ivory-tooth scowl. Cradles a big battered brown locked metal cashbox with rounded corners, other goo fist rests on a fat heavy gold pocket watch dangling on short chain. Menacing worn material heft; no nationalist insignia or ethnic physiognomy."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MAFIA_05",
+      "name": {
+        "v": "Doña Selbstverständlich",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She makes extravagant hospitality feel like an item already added to your bill.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "deep_state_plumbing",
+                "federal_kayfabe",
+                "geopolitical_thrillers_conspiracy_theories"
+              ],
+              "biome": [
+                "wueste",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MAFIA_05",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Oben",
+            "delivery": "warm conspiratorial aside",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Sie bietet alles an. Ablehnen wäre unhöflich und außerdem bereits einkalkuliert.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_MAFIA_20261104",
+        "image_cell": {
+          "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "prompt_excerpt": "BOTTOM CENTER: FEMALE-READ CARTEL-THRILLER MOB QUEEN, squat wide luxuriant ink blob, large cream tailored hat with burgundy band, short ivory jacket collar over dark goo, one chunky gold hoop earring and soft purple goo victory curl. Huge delighted crooked fang laugh, one eyelid half closed, other wide WHITE eye red iris black pupil. One goo arm hugs a tiny beautiful pink clay lap dog wearing enormous gold collar, other hand holds a bulbous gold perfume bottle shaped like a pineapple with broad green-gold leaf stopper. Confident gaudy luxury and tactile surreal charm, no sombrero or ethnic facial parody."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    },
+    {
+      "id": "SL_MAFIA_06",
+      "name": {
+        "v": "Mr. Nebenquote",
+        "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He can calculate everyone's chances except the cost of being unable to stop.",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "decks": [
+                "deep_state_plumbing",
+                "federal_kayfabe",
+                "geopolitical_thrillers_conspiracy_theories"
+              ],
+              "biome": [
+                "wueste",
+                "mesa"
+              ]
+            }
+          },
+          "src": "KFB-Stunt-Car-Race@4fd30cf3eab57db75ff80794e7da97ecce1618a1:src/data/mobs2d/slop-roster.r1.json#SL_MAFIA_06",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "rolle": "Mitte",
+            "delivery": "compressed indignant emphasis",
+            "casting_status": "DESIGN_NO_AUDIO_ASSIGNED"
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "No verified Triplet IDs assigned; see rufe_vorschlaege; never fabricate IDs.",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "Georg / WSA chat, 2026-11-04; authoring DESIGN, not Georg text approval",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "pool": "TRIPLET_SSOT_R1.md / existing calls; not new dialogue or runtime IDs",
+        "calls": [
+          "Bongo.",
+          "Humbug?!"
+        ]
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@docs/kfb-decisions-register-2026-10-11:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "praemisse": "Bewohner eines HyperNorm-Kartengebäudes; ein liebenswert fehlgeleitetes Zensurwesen, das widersprüchliche Karten schwarz-weiß einhegen möchte. Men in Black und Hunky & Dory treiben den Ordnungsdruck an.",
+        "frizzlebob_feldnotiz": "Er setzt auf Sicherheit. Zur Sicherheit setzt er noch einmal.",
+        "haltung_ist_keine_feindzuweisung": true
+      },
+      "source": {
+        "set": "WSA_MAFIA_20261104",
+        "image_cell": {
+          "datei": "MAFIA_BOSSES_2026-11-04/mafia-bosses-sheet-r1.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "prompt_excerpt": "BOTTOM RIGHT: LONDON UNDERWORLD BOOKMAKER BOSS, short wiry asymmetrical bean-shaped splat, faded charcoal tweed flat cap with a tiny feather, short navy waistcoat lapels, small rust-red cravat. One bulging WHITE eye with red iris black pupil and one squinting eye, manic lopsided open mouth with sparse uneven teeth and thick tongue. Holds a fat chunky brass old-fashioned telephone receiver against goo ear lobe, other hand grips an oversized rolled racing ledger with one big plain leather strap, no writing. A little brass bell hangs from ledger strap, tactile officious arrogance."
+      },
+      "merge_policy": "Overlay only DESIGN authoring fields by exact id; preserve any later GEORG approval; no runtime/combat changes."
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "CAREER_TIER_TRIPLETS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Three career variants each of one female and one male identity; not six independent actors.",
+  "image": {
+    "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+    "sha256": "ab4da673e6b5c478e0926b2fcf0dd4b3a20a6ae1e6312672afe5d8f5ee68f343"
+  },
+  "production_record": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
+  "cards": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source accepted; downstream catalogue/runtime import remains a separate receiving step."
+  },
+  "figuren": [
+    {
+      "id": "WSA_CAREER_BUERO_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Weiterleitung",
+      "variant_title": "Praktikant",
+      "berufsfeld": "buero",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_BUERO_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "folder, chipped coffee mug"
+      ],
+      "signature": "upright small narrow bean-shaped ink blob with a flat side-parted goo quiff, thick lower lip with ONE square lower tooth, short faded BLUE shirt collar and tiny CORAL tie, no human torso/trousers.",
+      "prompt_auszug": "Painfully eager forced CLOSED tooth smile, very wide asymmetric eyes. Hugs ONE plain thin tan FILE FOLDER and ONE little chipped cream coffee mug.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Praktikant",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_BUERO_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Weiterleitung",
+      "variant_title": "Teamleiter",
+      "berufsfeld": "buero",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_BUERO_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "tabbed folders, large mug"
+      ],
+      "signature": "upright small narrow bean-shaped ink blob with a flat side-parted goo quiff, thick lower lip with ONE square lower tooth, short faded BLUE shirt collar and tiny CORAL tie, no human torso/trousers.",
+      "prompt_auszug": "Strained panicky sideways grimace, one eye bulging and other squinting. Same quiff/collar/tie. Holds SAME folder now thick with THREE broad blank tabs; coffee mug now bigger but still plain.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Teamleiter",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_BUERO_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Weiterleitung",
+      "variant_title": "Abteilungsleiter",
+      "berufsfeld": "buero",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_BUERO_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "folders with brass binder clip, mug"
+      ],
+      "signature": "upright small narrow bean-shaped ink blob with a flat side-parted goo quiff, thick lower lip with ONE square lower tooth, short faded BLUE shirt collar and tiny CORAL tie, no human torso/trousers.",
+      "prompt_auszug": "Weary hollow half-lid stare, thick downturned CLOSED pout, same lower tooth. Same small blue collar and coral tie with tiny brass clip. Holds SAME thick tabbed folder now with ONE giant plain brass binder CLIP, and same mug. File hierarchy through binding, no computer/floating icons or text.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Abteilungsleiter",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_JUSTIZ_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Rechtsbehelf",
+      "variant_title": "Rechtsreferendarin",
+      "berufsfeld": "justiz",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_JUSTIZ_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "lawbook, quill bookmark"
+      ],
+      "signature": "upright broad rounded triangle ink splat with one high rolled violet quiff and tiny ivory hair pin, soft heavy lashes, ONE large upper fang and TWO short lower teeth. Short charcoal judicial collar with tiny white neck tabs ONLY, exposed goo body.",
+      "prompt_auszug": "Earnest stubborn eyes and defiant uneven tooth grimace. Holds ONE worn plain dark LAWBOOK with a short ivory ribbon tab and ONE small quill-shaped wooden bookmark.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Rechtsreferendarin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_JUSTIZ_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Rechtsbehelf",
+      "variant_title": "Richterin",
+      "berufsfeld": "justiz",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_JUSTIZ_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "clasped lawbook, wooden gavel"
+      ],
+      "signature": "upright broad rounded triangle ink splat with one high rolled violet quiff and tiny ivory hair pin, soft heavy lashes, ONE large upper fang and TWO short lower teeth. Short charcoal judicial collar with tiny white neck tabs ONLY, exposed goo body.",
+      "prompt_auszug": "Stern one-brow-raised direct gaze, CLOSED crooked thin-tooth lip. Same quiff/pin/collar/teeth. SAME lawbook with plain steel clasp, one hand holds ONE short fat wooden GAVEL low against belly.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Richterin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_JUSTIZ_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Rechtsbehelf",
+      "variant_title": "Gerichtspräsidentin",
+      "berufsfeld": "justiz",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_JUSTIZ_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "copper-clasped book, brass-banded gavel"
+      ],
+      "signature": "upright broad rounded triangle ink splat with one high rolled violet quiff and tiny ivory hair pin, soft heavy lashes, ONE large upper fang and TWO short lower teeth. Short charcoal judicial collar with tiny white neck tabs ONLY, exposed goo body.",
+      "prompt_auszug": "Cold satisfied almost closed eyes and large sculpted sideways pout, no tongue. Same judicial collar/quiff/hairpin, one tiny copper collar brooch. SAME book now copper-clasped, same gavel with modest brass band. No scales/statues/thrones/courtroom or full robe.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Gerichtspräsidentin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Die sind alle Pars ... auf GitHub persistieren ... fürs Game und Asset Librarian."
+  }
+}

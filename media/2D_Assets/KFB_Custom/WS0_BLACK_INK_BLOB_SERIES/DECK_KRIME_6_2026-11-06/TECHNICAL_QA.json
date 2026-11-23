@@ -1,0 +1,60 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "da79ae3c2a894c9aba9490e55690569bce66298474d6c61e7e5b8f62b6d768aa",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 557858,
+  "low_alpha_pixels_1_16": 76691,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha": {
+      "(0, 1536)": 0,
+      "(0, 525)": 0,
+      "(525, 1020)": 0,
+      "(1020, 1536)": 0
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "design_observations": [
+    "Six whole upright footless ink actors; white/red/black eye rule visually reviewed at native scale",
+    "Two female-read planned and visible; no cross-family identity/state bindings",
+    "Two female-read top-middle/bottom-right",
+    "Puppet control strings remain within same actor, no seventh puppet",
+    "Smoking-cap boss cigar physically at mouth rather than held separately; one clay smoke curl",
+    "Whistleblower one visible upper tooth rather than requested two; figurative bellow rather than actual whistle-in-mouth"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "review_previews": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "actual_reviews": {
+    "native_scale": true,
+    "checker": true,
+    "light_64_96_192": true,
+    "dark_160": true,
+    "method": "Each native output and batch QA boards visually inspected; no selected image resized; previews only"
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_01",
+      "name": "Stanley Startle",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He has never agreed to anything happening quite that suddenly.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English breathy tenor, words arriving slightly after the reaction",
+            "audio": null
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Was that included?",
+            "I was not expecting the unexpected."
+          ],
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_ALARM_20261107"
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Stanley keeps the HyperNorm landing classified as quiet until a noise makes this administratively difficult. He used to report unsettling cards before reading them. The Men in Black called that prudent; Hunky and Dory called it efficient. After the latest crash he found another resident just as frightened. They now check on each other before deciding what the noise means.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nothing has been confirmed. His eyebrows have responded independently.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_02",
+      "name": "Penny Scatter",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She has saved the bag and will consider the rest of the emergency shortly.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English quick mezzo, anxious starts with a stubborn practical finish",
+            "audio": null
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have got something.",
+            "Which way is the sensible way?"
+          ],
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_ALARM_20261107"
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Penny grabbed her shopping bag when the HyperNorm wall shook, on the grounds that a bag must contain something essential. It held one roll. The Men in Black requested an orderly account; Hunky and Dory suggested orderly feelings. A contradictory card asked whether preparedness could include being frightened. Penny is considering it while making sure the neighbour beside her gets half the roll.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The essentials are secure. Their essential nature remains under review.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "panicked",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_03",
+      "name": "Basil Surelynot",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He will believe it when he has exhausted the alternatives to looking.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry mid-baritone, measured incredulity",
+            "audio": null
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Surely that is not the arrangement.",
+            "I may need to look again."
+          ],
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_ALARM_20261107"
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Basil raises an eyelid whenever HyperNorm supplies a fact that does not fit his morning. His usual categories are obvious and obviously mistaken. The Men in Black approve the distinction; Hunky and Dory issue examples. A dissonant card recently made him say he did not know. Nobody confiscated his collar. He now keeps one small interval between seeing something and explaining why it cannot be there.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: He doubts his eyes. They have requested a second opinion.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "incredulous",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_04",
+      "name": "Dot Standstill",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He is waiting for the world to resume at a manageable speed.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English soft low tenor, short phrases separated by patient silence",
+            "audio": null
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One moment.",
+            "I am still here."
+          ],
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_ALARM_20261107"
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Dot has stopped on the HyperNorm landing while his thoughts negotiate the next frame. The building offers safe and unsafe; neither explains what to do with both hands. The Men in Black ask for a response, and Hunky and Dory ask for a faster one. An ambiguous card has taught a neighbour to wait beside him without issuing advice. Dot finds this considerably easier to move towards.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: No decision has been reached. The hands are holding their positions.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "frozen in shock",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_05",
+      "name": "Sid Sideglance",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He suspects the explanation, particularly when it is reassuring.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English quiet gravelly baritone, restrained sideways suspicion",
+            "audio": null
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "And what is the other explanation?",
+            "I have not ruled you out."
+          ],
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_ALARM_20261107"
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Sid carries an envelope he has not opened because HyperNorm letters tend to become facts once read. He divides visitors into known trouble and trouble making an introduction. The Men in Black find him attentive; Hunky and Dory find him useful. A dissonant card suggested that a cautious greeting might precede a verdict. Sid has not abandoned suspicion. He has begun leaving enough room for an answer.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The envelope is innocent until opened. He considers this suspicious.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "suspicious",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_06",
+      "name": "Nora Overload",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She can handle one more thing if it would kindly stop being several things.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English warm alto, strained breath easing into an honest request",
+            "audio": null
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Could that happen one at a time?",
+            "I heard all of it."
+          ],
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_REACTIONS_ALARM_20261107"
+          },
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nora used to keep HyperNorm problems in separate mental drawers until several arrived together. The Men in Black insist that each has a correct category; Hunky and Dory keep providing new drawers. A contradictory card says that needing a pause is not the same as refusing an answer. She has pinned nothing up and made no announcement. She simply lets the next neighbour breathe before asking what happened.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Everything is being considered. This is precisely the difficulty.",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "overwhelmed",
+          "src": "REACTIONS_ALARM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

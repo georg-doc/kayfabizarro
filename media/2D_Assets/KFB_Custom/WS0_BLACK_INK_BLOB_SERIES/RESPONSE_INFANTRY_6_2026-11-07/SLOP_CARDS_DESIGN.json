@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_01",
+      "name": "Jack Fieldnote",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Jack Fieldnote stays steady and observant when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Steady and observant. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold the line here."
+          ],
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_INFANTRY_20261107",
+            "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Jack Fieldnote serves with Rifle Detail, a u.s.-inspired infantry detail assigned to HyperNorm disturbances. The olive helmet is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Jack Fieldnote looks steady and observant even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "steady and observant",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_02",
+      "name": "Ruth Relay",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ruth Relay stays brightly focused when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Brightly focused. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give us a little room."
+          ],
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_INFANTRY_20261107",
+            "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ruth Relay serves with Rifle Detail, a u.s.-inspired infantry detail assigned to HyperNorm disturbances. The rounded helmet and box radio with short aerial is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ruth Relay looks brightly focused even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "brightly focused",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_03",
+      "name": "Sam Canvas",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sam Canvas stays stubbornly composed when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Stubbornly composed. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I need a closer look."
+          ],
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_INFANTRY_20261107",
+            "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Sam Canvas serves with Rifle Detail, a u.s.-inspired infantry detail assigned to HyperNorm disturbances. The olive helmet is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Sam Canvas looks stubbornly composed even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stubbornly composed",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_04",
+      "name": "Wes Canteen",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Wes Canteen stays dryly unbothered when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Dryly unbothered. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay with your detail."
+          ],
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_INFANTRY_20261107",
+            "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Wes Canteen serves with Service Detail, a u.s.-inspired infantry detail assigned to HyperNorm disturbances. The olive helmet and small metal canteen is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Wes Canteen looks dryly unbothered even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dryly unbothered",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_05",
+      "name": "Della Compass",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Della Compass stays warily inquisitive when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Warily inquisitive. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We have someone to check on."
+          ],
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_INFANTRY_20261107",
+            "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Della Compass serves with Service Detail, a u.s.-inspired infantry detail assigned to HyperNorm disturbances. The helmet and round brass pocket compass is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Della Compass looks warily inquisitive even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "warily inquisitive",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_06",
+      "name": "Frank Packrat",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Frank Packrat stays earnestly determined when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Earnestly determined. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have this covered."
+          ],
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_INFANTRY_20261107",
+            "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Frank Packrat serves with Service Detail, a u.s.-inspired infantry detail assigned to HyperNorm disturbances. The helmet and small rolled canvas blanket is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Frank Packrat looks earnestly determined even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "earnestly determined",
+          "src": "RESPONSE_INFANTRY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

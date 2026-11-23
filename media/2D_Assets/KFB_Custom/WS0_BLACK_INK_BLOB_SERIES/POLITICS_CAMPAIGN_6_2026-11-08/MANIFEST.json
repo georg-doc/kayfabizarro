@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_POLITICS_CAMPAIGN_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "POLITICS_CAMPAIGN_6_2026-11-08/sheet-r1.png",
+    "sha256": "6a5590524d8ca269d446214c965d4354140f17448b4e4cb0092369b5f16e2558"
+  },
+  "production_record": "POLITICS_CAMPAIGN_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "POLITICS_CAMPAIGN_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "POLITICS_CAMPAIGN_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Portable Campaign",
+    "theme": "The Portable Campaign",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ivy Doorbell",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_CAMPAIGN_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "doorstep canvasser",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_02",
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "miniature brass doorbell and one plain leaflet"
+      ],
+      "temperament": "Doorstep canvasser.",
+      "prompt_auszug": "tall bent comma, rehearsed grin and hopeful lifted brows",
+      "prompt_quelle": "POLITICS_CAMPAIGN_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "doorstep canvasser"
+    },
+    {
+      "id": "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Posterroll",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_CAMPAIGN_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "poster crew organizer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_01",
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "compact bundle of rolled posters, one with a blank geometric circle"
+      ],
+      "temperament": "Poster crew organizer.",
+      "prompt_auszug": "wide scalloped mass, skeptical side gaze and closed mouth",
+      "prompt_quelle": "POLITICS_CAMPAIGN_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "poster crew organizer"
+    },
+    {
+      "id": "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Soundbite",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_CAMPAIGN_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "debate candidate",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_01",
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny microphone and one pie-shaped bite of a clay speech bubble"
+      ],
+      "temperament": "Debate candidate.",
+      "prompt_auszug": "round tapered splat, wide anxious eyes and open gasp",
+      "prompt_quelle": "POLITICS_CAMPAIGN_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "debate candidate"
+    },
+    {
+      "id": "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Pollneedle",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_CAMPAIGN_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "poll watcher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_05",
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small dial with a needle wobbling over three colored sections"
+      ],
+      "temperament": "Poll watcher.",
+      "prompt_auszug": "squat uneven bean, cross-eyed concentration and tight lip",
+      "prompt_quelle": "POLITICS_CAMPAIGN_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "poll watcher"
+    },
+    {
+      "id": "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Jade Photoop",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_CAMPAIGN_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "photo-op planner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_04",
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short viewfinder frame held to one side of the face"
+      ],
+      "temperament": "Photo-op planner.",
+      "prompt_auszug": "tall offset pear, determined squint and lopsided smile",
+      "prompt_quelle": "POLITICS_CAMPAIGN_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "photo-op planner"
+    },
+    {
+      "id": "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Balloonknot",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_CAMPAIGN_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "rally volunteer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_04",
+        "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small round balloon attached by a short string to a handheld spool"
+      ],
+      "temperament": "Rally volunteer.",
+      "prompt_auszug": "compact wavy teardrop, tired eyes and weary frown",
+      "prompt_quelle": "POLITICS_CAMPAIGN_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "rally volunteer"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Portable Campaign",
+    "team_kit": "Faded coral, moss, mustard and navy. Imaginary geometric campaign marks only.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_01",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_02",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_CAMPAIGN_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_04",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_05",
+          "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_01",
+      "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_02",
+      "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_03",
+      "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_04",
+      "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_05",
+      "WSA_POLITICS_CAMPAIGN_ACTOR_20261108_06"
+    ]
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_01",
+      "name": "Voss Screen",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Voss Screen is the crew's screen operator.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Coldly attentive screen operator.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Mark the boundary here."
+          ],
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CARD_20261107",
+            "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Voss Screen serves with the Capture Detail of The Card Lock Bureau. The kit includes a compact handheld Hypernormalization Screen with bone frame, indigo fittings and smoked glass facing outward. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Voss Screen treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "coldly attentive screen operator",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_02",
+      "name": "Nyx Sleeve",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Nyx Sleeve is the crew's card capturer.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Curiously guarded card capturer.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a moment to check this."
+          ],
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CARD_20261107",
+            "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nyx Sleeve serves with the Capture Detail of The Card Lock Bureau. The kit includes a sealed translucent sleeve holding one blank card with an abstract dark corner mark. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nyx Sleeve treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "curiously guarded card capturer",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_03",
+      "name": "Ike Margin",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ike Margin is the crew's perimeter guard.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Dryly irritated perimeter guard.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The case is secured."
+          ],
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CARD_20261107",
+            "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ike Margin serves with the Capture Detail of The Card Lock Bureau. The kit includes a closed indigo latch box with thick ceramic hinge. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ike Margin treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dryly irritated perimeter guard",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_04",
+      "name": "Hale Clip",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Hale Clip is the crew's archive custodian.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Serenely methodical archive custodian.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay near your detail."
+          ],
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CARD_20261107",
+            "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hale Clip serves with the Archive Detail of The Card Lock Bureau. The kit includes a small upright case with a visible blank card in its clear lid. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Hale Clip treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "serenely methodical archive custodian",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_05",
+      "name": "Mina Frame",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Mina Frame is the crew's screen technician.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Intently focused screen technician.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have the panel."
+          ],
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CARD_20261107",
+            "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mina Frame serves with the Archive Detail of The Card Lock Bureau. The kit includes a second smaller Hypernormalization Screen with bone casing, dark inset and lilac corner bumpers. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Mina Frame treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "intently focused screen technician",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_CARD_ACTOR_20261107_06",
+      "name": "Della Index",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Della Index is the crew's evidence courier.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Uneasily composed evidence courier.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_CARD_20261107",
+            "trio": "WSA_CONTAINMENT_CARD_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Della Index serves with the Archive Detail of The Card Lock Bureau. The kit includes a small closed card cassette with two ceramic latches. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Della Index treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "uneasily composed evidence courier",
+          "src": "CONTAINMENT_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

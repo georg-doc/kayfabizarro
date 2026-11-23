@@ -1,0 +1,421 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_01",
+      "name": "Cal Brickwell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Has never met a wall he could not audit.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The bricks agree.",
+            "The wall is another matter."
+          ],
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_INDUS_20261107",
+            "trio": "WSA_HISTORY_INDUS_20261107_TRIO_A"
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He tries to rebuild HyperNorm certainty one approved rectangle at a time.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The wall is correct. The room is missing.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "exhausted brick checker",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_02",
+      "name": "Nell Fairweight",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Distrusts anything that balances too quickly.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Wait for the balance.",
+            "That answer weighs too little."
+          ],
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_INDUS_20261107",
+            "trio": "WSA_HISTORY_INDUS_20261107_TRIO_A"
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Her building weighs inconvenient cards until a difference can be charged for.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Fairness is available in three approved sizes.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "suspicious balance keeper",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_03",
+      "name": "Perry Sealmark",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Wants every package to be immediately recognizable.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The seal is excellent.",
+            "Contents are a separate workshop."
+          ],
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_INDUS_20261107",
+            "trio": "WSA_HISTORY_INDUS_20261107_TRIO_A"
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The Men in Black encourage his useful distinction between sealed and suspicious.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The seal has passed inspection. Its contents remain theoretical.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "beaming stamp maker",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_04",
+      "name": "Cora Beadline",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can see a crooked hole from another century.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One bead is leaning.",
+            "Nobody look at the third one."
+          ],
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_INDUS_20261107",
+            "trio": "WSA_HISTORY_INDUS_20261107_TRIO_B"
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "She makes the approved pattern repeat, then hides one uneven bead for luck.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Her act of rebellion measures six millimetres.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "anxious bead artisan",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_05",
+      "name": "Rafe Drainclear",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Takes civic plumbing personally.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The policy is blocking the drain.",
+            "Bring a larger bucket."
+          ],
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_INDUS_20261107",
+            "trio": "WSA_HISTORY_INDUS_20261107_TRIO_B"
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He clears black censorship goo from the drains and is told that the blockage is a policy.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The policy has reached the second floor.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "indignant drain tender",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_06",
+      "name": "Otto Cargo",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Is happy whenever the parcel is someone else's responsibility.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, characterful English delivery; no imitated ethnic accent.",
+            "audio": null
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It arrived. Somewhere.",
+            "The parcel is no longer mine."
+          ],
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_HISTORY_INDUS_20261107",
+            "trio": "WSA_HISTORY_INDUS_20261107_TRIO_B"
+          },
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hunky and Dory promise the shipment belongs here; Otto stamps the feeling of relief.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The destination was decided after arrival.",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "relieved dock clerk",
+          "src": "HISTORY_INDUS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

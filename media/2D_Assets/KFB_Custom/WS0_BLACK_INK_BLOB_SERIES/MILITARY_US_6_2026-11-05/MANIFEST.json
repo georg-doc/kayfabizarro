@@ -1,0 +1,261 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MILITARY_US_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "MILITARY_US_6_2026-11-05/sheet-r1.png",
+    "sha256": "b96c6ed804b22a774639d51a1028fbf104ea816b6bed5c0222894c039f24ee09"
+  },
+  "production_record": "MILITARY_US_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "MILITARY_US_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "MILITARY_US_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "US-amerikanischer Trupp",
+    "visual_context": "US Army / Army Air Forces inspired olive drab, khaki canvas and brown leather",
+    "relationship_policy": "Shared visual military family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Military bureaucracy, certainty, hierarchy and human coping; not inherent national character"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_MILITARY_US_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sergeant Schonmalweiter",
+      "bild": {
+        "datei": "MILITARY_US_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "whistle",
+        "folded map",
+        "M1-style helmet"
+      ],
+      "temperament": "Turns every missing direction into a loudly announced shortcut.",
+      "prompt_auszug": "Sergeant Schonmalweiter; maennlich-read; broad low squarish ink blob; weathered M1-style bowl helmet with short loose chinstrap, rolled sleeve tabs only, whistle and small folded map; clenched crooked mouth with one upper tooth; impatient sideglance and raised instructing goo hand. Personality: Turns every missing direction into a loudly announced shortcut.",
+      "prompt_quelle": "MILITARY_US_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_US_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Private Päckchen",
+      "bild": {
+        "datei": "MILITARY_US_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wood-stock rifle",
+        "olive helmet",
+        "canvas pouches"
+      ],
+      "temperament": "Carries everything required except a convincing explanation of where he is.",
+      "prompt_auszug": "Private Päckchen; maennlich-read; tall thin wobbly comma blob; oversized olive bowl helmet, two simple chest pouches, compact wood-stock rifle safely vertical muzzle upward at side; huge ivory eyes looking up under brim, tiny anxious toothless mouth. Personality: Carries everything required except a convincing explanation of where he is.",
+      "prompt_quelle": "MILITARY_US_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_US_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Corporal Knister",
+      "bild": {
+        "datei": "MILITARY_US_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "sidecap",
+        "radio handset",
+        "radio pack"
+      ],
+      "temperament": "Can hear a bad order clearly through any amount of static.",
+      "prompt_auszug": "Corporal Knister; weiblich-read; round pear-shaped blob with sharply uneven brows and very dry side-smirk; olive sidecap, two subtly long lashes, large simple handset attached by short coiled cord to small radio pack at flank; no full human jacket. Personality: Can hear a bad order clearly through any amount of static.",
+      "prompt_quelle": "MILITARY_US_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_US_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lieutenant Himmelwärts",
+      "bild": {
+        "datei": "MILITARY_US_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather flight cap",
+        "goggles above eyes",
+        "chart"
+      ],
+      "temperament": "Believes altitude will eventually improve the paperwork.",
+      "prompt_auszug": "Lieutenant Himmelwärts; maennlich-read; top-heavy bulbous blob, brown leather flight cap with goggles parked above uncovered eyes and short cream collar; a single broad aviation chart; stunned open oval mouth and one upper tooth, one eye stretched taller than other. Personality: Believes altitude will eventually improve the paperwork.",
+      "prompt_quelle": "MILITARY_US_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_US_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Medic Ruhigblut",
+      "bild": {
+        "datei": "MILITARY_US_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "medical pouch",
+        "rolled bandage",
+        "plain olive helmet"
+      ],
+      "temperament": "Insists that everyone panic one at a time.",
+      "prompt_auszug": "Medic Ruhigblut; weiblich-read; wide asymmetric droplet blob; small plain olive helmet, compact medical pouch marked by simple ivory plus, rolled bandage in goo hand; lashes, fierce reassuring crooked grin with two uneven upper teeth; no syringe clutter. Personality: Insists that everyone panic one at a time.",
+      "prompt_quelle": "MILITARY_US_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_US_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mechanic Drehmoment",
+      "bild": {
+        "datei": "MILITARY_US_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "spanner",
+        "oil can",
+        "work cap"
+      ],
+      "temperament": "Repairs vehicles faster than officers can rename the fault.",
+      "prompt_auszug": "Mechanic Drehmoment; maennlich-read; squat triangular rounded splat; soft olive work cap and short stained canvas bib patch leaving body visible, one thick spanner and dented metal oil can; bored heavy eyelids, compressed toothless zigzag lips. Personality: Repairs vehicles faster than officers can rename the fault.",
+      "prompt_quelle": "MILITARY_US_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

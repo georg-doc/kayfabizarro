@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_01",
+      "name": "The Persona",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Polished public face.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "This is my meeting smile."
+          ],
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_ARCHETYPES_20261107",
+            "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Inner Cast, The Persona takes the role of polished public face. “This is my meeting smile.”",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small smiling ivory stage mask held beside the visible real face.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "polished public face",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_02",
+      "name": "The Shadow",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Quiet keeper of disowned things.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I thought you might want this back."
+          ],
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_ARCHETYPES_20261107",
+            "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Inner Cast, The Shadow takes the role of quiet keeper of disowned things. “I thought you might want this back.”",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: rounded dark indigo mantle and a tiny discarded golden button.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "quiet keeper of disowned things",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_03",
+      "name": "The Trickster",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Playful rule bender.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I rolled the rulebook."
+          ],
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_ARCHETYPES_20261107",
+            "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Inner Cast, The Trickster takes the role of playful rule bender. “I rolled the rulebook.”",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two mismatched dice tucked under one hand and crooked cap.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "playful rule bender",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_04",
+      "name": "The Caregiver",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sturdy nurturing figure.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Keep the seed warm."
+          ],
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_ARCHETYPES_20261107",
+            "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Inner Cast, The Caregiver takes the role of sturdy nurturing figure. “Keep the seed warm.”",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small blanket folded around a clay seed, independent hand-held prop.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "sturdy nurturing figure",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_05",
+      "name": "The Old Guide",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Patient guide.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One corner at a time."
+          ],
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_ARCHETYPES_20261107",
+            "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Inner Cast, The Old Guide takes the role of patient guide. “One corner at a time.”",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short worn staff with a small amber lantern firmly attached.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "patient guide",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_ARCHETYPES_ACTOR_20261107_06",
+      "name": "The Self",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Relieved integrator.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "All four pieces are here."
+          ],
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_ARCHETYPES_20261107",
+            "trio": "WSA_PSYCHE_ARCHETYPES_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Inner Cast, The Self takes the role of relieved integrator. “All four pieces are here.”",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: four-color mandala medallion held at belly.",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "relieved integrator",
+          "src": "PSYCHE_ARCHETYPES_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

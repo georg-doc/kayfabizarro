@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_01",
+      "name": "Mack Plumblow",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeps the whole job on schedule by moving the schedule.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Foreman"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Gravelly, distracted foreman.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It's on the drawing."
+          ],
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_STRUCTURAL_20261108"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mack once filed a drawing of a repaired HyperNorm wall as evidence that the repair had been completed.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The wall disagreed. Its objection is with Planning.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Wary side-eye, raised brow and half-open mouth.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_02",
+      "name": "Gus Bitlock",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Treats a straight drill hole as a matter of conscience.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Jackhammer Operator"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Clipped speech with a vibrating undertone.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold it. There."
+          ],
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_STRUCTURAL_20261108"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gus drills out anything HyperNorm has classified as a structural contradiction.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "When I asked for a quieter answer, he handed me the ear defenders.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Focused downward gaze and tightly crooked mouth.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_03",
+      "name": "Mara Jointline",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Takes a private delight in a joint nobody else can see.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Bricklayer"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Low, wry satisfaction.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Mind the joint."
+          ],
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_STRUCTURAL_20261108"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mara was summoned to repair a wall with an awkward gap in its official history. She laid a neat course over the footnote.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "Her mortar is the only part of the report that has set.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Low sidelong gaze and a small pleased smirk.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_04",
+      "name": "Ned Bucketturn",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Underestimates how far the bucket can reach.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Excavator Operator"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Breathy, earnest alarm.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That's deeper than it looks."
+          ],
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_STRUCTURAL_20261108"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ned dug up the foundations of a HyperNorm office that was still officially under construction.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He put them back in the same hole, which was accepted as continuity.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Startled sideways gaze and a small round gasp.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_05",
+      "name": "Tess Truepoint",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Trusts a reading only after it has contradicted her once.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Surveyor"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, exacting delivery.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold that point."
+          ],
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_STRUCTURAL_20261108"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "HyperNorm moved a boundary overnight. Tess returned at dawn and measured exactly how far the explanation had travelled.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "Her original mark is still there. The boundary is considering an appeal.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "One eye shut, the other aimed down the sight, lips braced.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_BUILDERS_R9_STRUCTURAL_20261108_06",
+      "name": "Otto Sawline",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Enjoys a good fit and a bad explanation.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Site Carpenter"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Warm, unhurried cackle.",
+            "audio": null
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Measure it when it stops moving."
+          ],
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_BUILDERS_R9_STRUCTURAL_20261108"
+          },
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Otto builds temporary screens to hide damage while the official story dries. He leaves a little breathing room.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "I asked whether the screens were permanent. He said only the temporary ones were.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Sidelong laugh and one visible tooth.",
+          "src": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "image": "sheet-r1.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "84800a635b7d76240d55b8ab2450f1b8cf82b3355a3c8f5f4c43b1411c670352",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "transparent_pixels": 769657,
+  "outer_edge_alpha_max": 1,
+  "cell_seam_alpha_max": {
+    "512": 0,
+    "1024": 1,
+    "horizontal": 1
+  },
+  "fixed_cell_crop_safe": true,
+  "georg_status": null,
+  "status": "DRAFT",
+  "runtime_tests": 0,
+  "visual_review": {
+    "whole_upright_footless_blobs": true,
+    "open_eye_rule": "white/ivory sclera, red iris, black pupil",
+    "row_continuity": "recognizable illustrated identity, not a matching rig or exact model",
+    "review_sizes_px": [
+      64,
+      96,
+      160,
+      192
+    ],
+    "backgrounds": [
+      "light",
+      "dark",
+      "checker"
+    ],
+    "deviations": [
+      "Chef cap grows taller at the senior stage than the intended small cap."
+    ],
+    "design_acceptance": "PENDING_GEORG"
+  },
+  "alpha_note": "Selected native outputs peak254/255; residual alpha1–3 and final edge normalization remain deferred."
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-e65689a0-50c7-48aa-ac1f-d31dbcbc1742.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "08b88305089a7c58ed19dd06c505998388f81b93aefae118cf429fa01bba3063",
+  "git_blob_sha": "f6b3bda73f977d91ef66745ce98bc60dc91ab309",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a new KFB ink blob monster character sheet, The Sunburn Society. Supplied original PNGs are style inputs for rounded ink anatomy, thick modeled lids, plasticine surface and handcrafted accessory scale. Create exactly SIX full individual upright actors in a 3-column by 2-row landscape 1536×1024 PNG with a true transparent alpha backdrop. Each actor at equal substantial scale inside their own logical cell, entire prop and all droplets inside generous transparent gutters and outer margin. No scenery, floor, labels, border, branding, joined figures or background color. Each is a dark charcoal continuous footless ink splat with subtle plum sheen and rich softly rounded clay, small goo hands, bare goo base and expressive asymmetrical organic lobes. Compact costume pieces wrap the blob. Thick filled dark lids with white sclera, red iris and black pupil. Teeth inside lips. Offbeat tourist satire, six different poses, looks and mouth shapes. Visible wear and miniature handcrafted volume. No copied eyepatches, wings, military insignia or outfits from references. Wardrobe family: ugly citrus swim wraps, fuchsia sun gear, terry towels and turquoise rubber. Row-major cast:\n1. Female-read appalled paddler: round perched blob, widened eyes, clenched tiny grimace. Prop: small inflatable flamingo ring.\n2. Male-read overconfident sunbather: wide flattened body with upright face, low eyes, lopsided smile. Prop: giant soft sunscreen tube with cap.\n3. Male-read irritable sandcastle architect: squat peaked blob, pinched eyelids, drooping dark lip. Prop: sand bucket and stubby spade.\n4. Female-read panicking snack defender: tall bent splat, startled eyes aimed upward, asymmetric gasp. Prop: wrapped ice cream clutched tightly against chest.\n5. Male-read bored shade seeker: skinny comma, sleepy eyes, pursed straight mouth. Prop: folded striped parasol and paperback.\n6. Male-read gleeful float photographer: plump heart blob, one delighted wink, uneven toothy laugh. Prop: waterproof camera on a bright flotation handle.\nEmphasize eyes and acting. Keep every figure independently usable as a sightseeing bystander. Hold props close. Separate all six in clear alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS"
+}

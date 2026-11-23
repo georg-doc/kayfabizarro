@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_01",
+      "name": "Vera Echo",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Self-reinforcing echo chamber.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Everyone here agrees with me."
+          ],
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_SOCIAL_20261107",
+            "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Committee of Bad Habits, Vera Echo takes the role of self-reinforcing echo chamber. “Everyone here agrees with me.”",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two small tin speaking funnels facing one another.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "self-reinforcing echo chamber",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_02",
+      "name": "Bram Borrowblame",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Scapegoating habit.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The arrow was already pointing."
+          ],
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_SOCIAL_20261107",
+            "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Committee of Bad Habits, Bram Borrowblame takes the role of scapegoating habit. “The arrow was already pointing.”",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: plain pointing-arrow token held upside down.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "scapegoating habit",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_03",
+      "name": "Gus Statuspin",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Status anxiety.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Is that the top step?"
+          ],
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_SOCIAL_20261107",
+            "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Committee of Bad Habits, Gus Statuspin takes the role of status anxiety. “Is that the top step?”",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: one small stepped podium ornament and oversized blank badge.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "status anxiety",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_04",
+      "name": "Jade Thoughtloop",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Rumination.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I was nearly done thinking."
+          ],
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_SOCIAL_20261107",
+            "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Committee of Bad Habits, Jade Thoughtloop takes the role of rumination. “I was nearly done thinking.”",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short looped strip of smooth clay ribbon at belly.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "rumination",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_05",
+      "name": "Ned Spiral",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Rising panic.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Please give me a minute."
+          ],
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_SOCIAL_20261107",
+            "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Committee of Bad Habits, Ned Spiral takes the role of rising panic. “Please give me a minute.”",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: palm-sized curled spring clutched in both hands.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "rising panic",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_SOCIAL_ACTOR_20261107_06",
+      "name": "Otto Avoidance",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Avoidant habit.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I can still hear you from here."
+          ],
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_SOCIAL_20261107",
+            "trio": "WSA_PSYCHE_SOCIAL_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Committee of Bad Habits, Otto Avoidance takes the role of avoidant habit. “I can still hear you from here.”",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small clay folding screen held sideways at flank, full body visible.",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "avoidant habit",
+          "src": "PSYCHE_SOCIAL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Tier format: one male and one female identity each repeated three times, not a normal independent six-character cast.",
+  "image": {
+    "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+    "sha256": "b2fcf3ce92ab2eae83654f59df2fce369e2d1d04cacde46eb34d8ec8782a7e72"
+  },
+  "production_record": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/PRODUCTION_RECORD.json",
+  "cards": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
+  },
+  "figuren": [
+    {
+      "id": "WSA_RPG_MEUCHLER_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Schlussstrich",
+      "variant_title": "trash",
+      "klasse": "meuchler",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_MEUCHLER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "dull short dagger"
+      ],
+      "signature": "upright thin inverted-drop ink splat with one LOW coiled crown tuft, subtle long lids/lashes, TWO tiny offset lower teeth, short midnight-blue hood collar folded behind head and one small coral knot. No human ninja body.",
+      "prompt_auszug": "Nervous tight grimace, wide asymmetrical eyes. Both hands hold ONE short blunt-looking battered DULL TIN DAGGER low across own belly, no attack on anyone.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_MEUCHLER_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Schlussstrich",
+      "variant_title": "common",
+      "klasse": "meuchler",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_MEUCHLER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "curved iron dagger, wrist guard"
+      ],
+      "signature": "upright thin inverted-drop ink splat with one LOW coiled crown tuft, subtle long lids/lashes, TWO tiny offset lower teeth, short midnight-blue hood collar folded behind head and one small coral knot. No human ninja body.",
+      "prompt_auszug": "Cool calculating one-eye squint, small crooked fang smile. Same dagger now curved dark iron, other hand adjusts small short leather wrist guard, signature coral knot remains.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_MEUCHLER_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Schlussstrich",
+      "variant_title": "elite",
+      "klasse": "meuchler",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_MEUCHLER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ornate curved dagger, little cowl"
+      ],
+      "signature": "upright thin inverted-drop ink splat with one LOW coiled crown tuft, subtle long lids/lashes, TWO tiny offset lower teeth, short midnight-blue hood collar folded behind head and one small coral knot. No human ninja body.",
+      "prompt_auszug": "Exhausted disapproving half-lids, downturned thick lip with two teeth. Same single curved dagger beautifully brass-inlaid, tiny plain blue half-cowl and coral knot, restrained professional menace not murder scene.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_PALADIN_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sir Unverhältnismäßig",
+      "variant_title": "trash",
+      "klasse": "paladin",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_PALADIN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "battered sun shield"
+      ],
+      "signature": "tall broad square-ish ROUND-LOBE ink blob, one upright split crown curl, one huge OFF-CENTRE upper tooth plus small lower fang, tiny cream collar and pale-gold brow circlet with a teal oval. Ink body dominant, no legs/chest armour.",
+      "prompt_auszug": "Earnest over-wide eyes, awkward lower lip trying to look noble. Holds ONE small battered iron SHIELD shaped like rounded toast, little plain ivory sun boss.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_PALADIN_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sir Unverhältnismäßig",
+      "variant_title": "common",
+      "klasse": "paladin",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_PALADIN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass-rimmed sun shield, small shoulder tab"
+      ],
+      "signature": "tall broad square-ish ROUND-LOBE ink blob, one upright split crown curl, one huge OFF-CENTRE upper tooth plus small lower fang, tiny cream collar and pale-gold brow circlet with a teal oval. Ink body dominant, no legs/chest armour.",
+      "prompt_auszug": "Outraged braced blob pose, clenched uneven teeth, strong but soft brows. Same toast-shaped shield now steel with a broad brass rim, one tiny cream shoulder tab.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_PALADIN_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sir Unverhältnismäßig",
+      "variant_title": "elite",
+      "klasse": "paladin",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_PALADIN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "ornate sun shield, small shoulder shell"
+      ],
+      "signature": "tall broad square-ish ROUND-LOBE ink blob, one upright split crown curl, one huge OFF-CENTRE upper tooth plus small lower fang, tiny cream collar and pale-gold brow circlet with a teal oval. Ink body dominant, no legs/chest armour.",
+      "prompt_auszug": "Insufferably benevolent half-lids and closed crooked smirk. Same shield polished brass/steel, same sun boss larger, small beautiful brass shoulder shell and same circlet; no cape/halo or wings.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
+}

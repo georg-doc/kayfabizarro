@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-dd6e5202-06de-4d1b-a667-55788c4e82a6.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "330542246399fa7a7bd72fac94b09aebeb43bf79a6655986267a240bcf68a53b",
+  "git_blob_sha": "db149551c479cf3e6da3144b7e3d17d3692028fc",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Make a NEW KFB claymation ink-blob character sheet using the attached images solely as style references. Precisely six entirely distinct complete footless ink blobs in three columns by two rows, landscape 1536x1024 transparent PNG. Special Forces. Shared team palette and craft: muted sand and sage harness tabs, soft boonie hats and open-face tan helmets, short olive wraps. Compact specialist tools and visible faces. Sandy silhouette, distinct from navy SWAT and charcoal Black Ops. Top row Recon Detail, bottom row Recovery Detail. They are separate characters posed independently, each contained in its own cell with broad transparent breathing room and comparable scale. No floor, text, marks of a real unit, gridlines, shadow discs or touching. Expressive sculpted organic charcoal-plum ink from the reference, modest dark satin highlights and fine tactile fingerprints. Rounded goo base and short goo hands. Gear is sparse, chunky handmade accessories fitted directly onto ink. No human torso, legs, boots, armor exoskeleton, face masks or concealed pupils. White ivory sclera, distinct red irises, black pupils, dark sculpted lids. Dark ink lips. Teeth only inside an open mouth. Asymmetric faces and silhouettes before equipment. Fictional stylized game art, no active combat. Two subtly female-read blobs, cells 2 and 5. Row-major character direction:\n1. Male-read, concentrated and calm. sage boonie and tiny binoculars held at chest. tall rounded comma, sharp side gaze and tiny flat mouth.\n2. Female-read, quietly energized. tan helmet, compact headset and small compass. slender pear, lively uneven brows, crooked smile.\n3. Male-read, deliberately patient. boonie and short rope coil. broad low scalloped blob, half-open steady eyes, closed smirk.\n4. Male-read, startled by a clue. sand wrap and small marker flag. lean wavy blob, wide eyes and angled gasp.\n5. Female-read, focused and reassuring. tan open-face helmet, small rolled fabric sling. wide pear blob, soft raised brows, little smile.\n6. Male-read, dryly resourceful. boonie and small folding tool held closed. squat irregular blob, one lifted brow and tight closed smile.\nReadable unit identity at thumbnail size. Keep all helmets, hands, gear, crest and droplets fully within the sheet. The input references supply material and anatomy. Create these six new characters in the designated team kit."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS",
+  "georg_design_status": "PASS"
+}

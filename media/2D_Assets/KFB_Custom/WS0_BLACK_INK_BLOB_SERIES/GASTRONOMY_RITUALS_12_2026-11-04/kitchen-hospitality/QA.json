@@ -1,0 +1,188 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "sha256": "b7ea0c8c339a59ac700135aace24e853e014969971874a9b37e03c0f2d99bdaa",
+  "git_blob_sha": "0b24212d1966b1e9cf99329328cf7b55f6aa3afb",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "alpha0_pixels": 620020,
+  "seam_pixels_gt16": {
+    "512": 0,
+    "1024": 0,
+    "horizontal512": 60
+  },
+  "outer_edge_pixels_gt16": 0,
+  "cells": [
+    {
+      "zelle": 0,
+      "alpha_gt16_bbox_in_cell": [
+        23,
+        13,
+        495,
+        501
+      ],
+      "margins_px": [
+        23,
+        13,
+        17,
+        11
+      ]
+    },
+    {
+      "zelle": 1,
+      "alpha_gt16_bbox_in_cell": [
+        52,
+        5,
+        474,
+        507
+      ],
+      "margins_px": [
+        52,
+        5,
+        38,
+        5
+      ]
+    },
+    {
+      "zelle": 2,
+      "alpha_gt16_bbox_in_cell": [
+        35,
+        5,
+        475,
+        512
+      ],
+      "margins_px": [
+        35,
+        5,
+        37,
+        0
+      ]
+    },
+    {
+      "zelle": 3,
+      "alpha_gt16_bbox_in_cell": [
+        33,
+        2,
+        491,
+        504
+      ],
+      "margins_px": [
+        33,
+        2,
+        21,
+        8
+      ]
+    },
+    {
+      "zelle": 4,
+      "alpha_gt16_bbox_in_cell": [
+        24,
+        9,
+        481,
+        503
+      ],
+      "margins_px": [
+        24,
+        9,
+        31,
+        9
+      ]
+    },
+    {
+      "zelle": 5,
+      "alpha_gt16_bbox_in_cell": [
+        27,
+        0,
+        468,
+        499
+      ],
+      "margins_px": [
+        27,
+        0,
+        44,
+        13
+      ]
+    }
+  ],
+  "mechanical_seam_check_clear": false,
+  "background_samples": [
+    [
+      [
+        0,
+        0
+      ],
+      0
+    ],
+    [
+      [
+        512,
+        512
+      ],
+      0
+    ],
+    [
+      [
+        1024,
+        512
+      ],
+      0
+    ],
+    [
+      [
+        500,
+        10
+      ],
+      0
+    ],
+    [
+      [
+        1500,
+        1000
+      ],
+      0
+    ]
+  ],
+  "georg_status": "PASS",
+  "design_status": "ALL_SIX_GEORG_DESIGN_PASS",
+  "generated_jobs": 2,
+  "figures": 6,
+  "female_read_slots_1based": [
+    3,
+    6
+  ],
+  "builder_visual_observations": [
+    "Six upright footless ink figures, two female-read casting slots, original modeled clay family retained.",
+    "Visible eyes have ivory/white sclera, red iris and black pupil.",
+    "Camera points forward rather than the requested downward direction; food/book/plate props obscure some lower contours. Details for Georg, no automatic TUNE/PASS.",
+    "No automatic human design acceptance or individual sprite-edge acceptance."
+  ],
+  "technical_holds": [
+    "Independent per-actor isolation/edge review unaccepted.",
+    "Nonempty nominal seams; blind512px crops unsafe."
+  ],
+  "runtime_tests": 0,
+  "individual_game_exports": 0,
+  "librarian_registered": false,
+  "intake_eligible": true,
+  "selected_image": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+  "job_counts": {
+    "new_sheet_generation": 1,
+    "eyelid_edit": 1,
+    "total_calls": 2
+  },
+  "edit_review": {
+    "target": "top-right oyster merchant, viewer-right upper eyelid",
+    "upper_lid_now_violet": true,
+    "sclera_red_iris_black_pupil_preserved_visually": true,
+    "outside_roi_pixel_identical": false,
+    "outside_roi_visible_RGB_MAE": 5.956215821917378,
+    "note": "Native image edit introduces small rendering variations beyond lid; not a bitwise local paint patch."
+  },
+  "georg_decision": "Georg accepts all12 with eyelid fix."
+}

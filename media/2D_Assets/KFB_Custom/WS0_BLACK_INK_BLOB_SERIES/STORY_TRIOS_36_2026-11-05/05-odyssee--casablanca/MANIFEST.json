@@ -1,0 +1,254 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "STORY_TRIOS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+    "sha256": "8ddf48ddca26433038ebcee2b2fea7e7a6d3e8e01634767380cf1585d8d5d3aa"
+  },
+  "production_record": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/PRODUCTION_RECORD.json",
+  "cards": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION",
+    "note": "Design accepted; source-grid PASS does not certify catalogue master resolution. Do not promote enlarged grid crops as new high-detail masters."
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRIO_ODYSSEE_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Heimwegabweichung",
+      "rolle_im_trio": "Odysseus archetype: resourceful delayed traveller",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_ODYSSEE_20261105",
+      "trio_mit": [
+        "WSA_TRIO_ODYSSEE_20261105_02",
+        "WSA_TRIO_ODYSSEE_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short wooden oar"
+      ],
+      "prompt_auszug": "TALL narrow hooked upright ink pear, ONE forked crown curl, TWO upper teeth far apart. Wary calculating sideways squint and crooked CLOSED fang smirk. Tiny battered bronze sailor brow helmet and moss collar. Holds ONE SHORT thick worn wooden OAR with broad oval blade low across own belly, no boat/sea.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_ODYSSEE_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Zwischengewebe",
+      "rolle_im_trio": "Penelope archetype: patient strategic weaver",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_ODYSSEE_20261105",
+      "trio_mit": [
+        "WSA_TRIO_ODYSSEE_20261105_01",
+        "WSA_TRIO_ODYSSEE_20261105_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small hand loom, shuttle"
+      ],
+      "prompt_auszug": "WIDE upright rounded triangle ink blob, TWO rolled quiff lobes in tiny cream kerchief, lashes, single big lower tooth. Serene skeptical half-lids and CLOSED raised-side lip. Holds ONE miniature rounded WOODEN HAND LOOM with FOUR thick cream strands and ONE little terracotta shuttle resting INSIDE frame, no textile scene.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_ODYSSEE_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Einblick",
+      "rolle_im_trio": "Polyphemus archetype: affronted one-eyed host",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_ODYSSEE_20261105",
+      "trio_mit": [
+        "WSA_TRIO_ODYSSEE_20261105_01",
+        "WSA_TRIO_ODYSSEE_20261105_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cheese wheel"
+      ],
+      "prompt_auszug": "SHORT very WIDE blunt ink splat, THREE low crown nubs, exactly ONE CENTRAL LARGE EYE with WHITE sclera, RED iris, BLACK pupil, TWO large uneven lower tusks. Indignant squint on single eye and massive downturned heavy lip. Tiny terracotta collar, both hands hug ONE huge rounded CREAM CHEESE WHEEL with ONE wedge notch, no livestock/extra characters.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_CASABLANCA_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr LetzterAusschank",
+      "rolle_im_trio": "Rick-like cafe-keeper archetype",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_CASABLANCA_20261105",
+      "trio_mit": [
+        "WSA_TRIO_CASABLANCA_20261105_02",
+        "WSA_TRIO_CASABLANCA_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "coupe glass"
+      ],
+      "prompt_auszug": "WIDE upright heavy rounded bean ink splat, low flat side-part goo quiff, ONE square upper tooth. Jaded half-lidded WHITE/red/black side gaze, CLOSED thick crooked lip. Tiny IVORY dinner-jacket LAPEL COLLAR with BLACK bow tie only. Holds ONE stout small coupe GLASS with thick amber clay drink, no bar or human suit.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_CASABLANCA_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Abschiedsvorbehalt",
+      "rolle_im_trio": "Ilsa-like departing-beloved archetype",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_CASABLANCA_20261105",
+      "trio_mit": [
+        "WSA_TRIO_CASABLANCA_20261105_01",
+        "WSA_TRIO_CASABLANCA_20261105_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "folded letter"
+      ],
+      "prompt_auszug": "TALL slender upright pear ink blob, TWO soft rolled crown curls beneath small cream travel hat, gentle lashes, TWO tiny lower teeth. One eye wide and one heavy lid, determined sad CLOSED curved mouth. Short ivory scarf collar, both hands hold ONE folded blank cream LETTER against own belly, no hands reaching toward another character.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_CASABLANCA_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Prinzipienreise",
+      "rolle_im_trio": "Victor-like principled-traveller archetype",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_CASABLANCA_20261105",
+      "trio_mit": [
+        "WSA_TRIO_CASABLANCA_20261105_01",
+        "WSA_TRIO_CASABLANCA_20261105_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "travel papers"
+      ],
+      "prompt_auszug": "MEDIUM tall upright rounded trapezoid ink splat, THREE short asymmetric crown nubs, solitary upper fang and firm lower lip. Focused wary WHITE/red/black forward eyes, crooked CLOSED resolved mouth. Tiny tan lapel collar and one little brass oval pin. Holds TWO oversized plain ivory TRAVEL PAPERS bound by a short dark ribbon, absolutely no print/stamps/airplane/scene.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: die sind alle sehr gut und passen; scale/resolution concern retained separately."
+  },
+  "technical_holds": [
+    "CATALOGUE_MASTER_RESOLUTION_PENDING",
+    "CROSS_SET_BODY_SCALE_NORMALIZATION_PENDING"
+  ]
+}

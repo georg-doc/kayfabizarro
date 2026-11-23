@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.historical-inspiration/1",
+  "scope": "Bounded material inspiration for fictional multiverse Slops; no literal reconstruction or claim about a culture's inherent traits.",
+  "sources": [
+    {
+      "groups": [
+        "SUMER"
+      ],
+      "url": "https://www.metmuseum.org/art/collection/search/326721",
+      "cue": "Cylinder seal as a clay-impression tool"
+    },
+    {
+      "groups": [
+        "SUMER"
+      ],
+      "url": "https://www.loc.gov/collections/cuneiform-tablets/about-this-collection/",
+      "cue": "Clay tablets and reed writing tools"
+    },
+    {
+      "groups": [
+        "INDUS"
+      ],
+      "url": "https://nationalmuseumindia.gov.in/en/blog-curators-corners/view?id=NA%3D%3D",
+      "cue": "Balance and weights"
+    },
+    {
+      "groups": [
+        "INDUS"
+      ],
+      "url": "https://www.metmuseum.org/art/collection/search/324063",
+      "cue": "Indus animal stamp seal"
+    },
+    {
+      "groups": [
+        "CRETE"
+      ],
+      "url": "https://heraklionmuseum.gr/en/exhibit/marine-style-flask/",
+      "cue": "Marine-style pottery"
+    },
+    {
+      "groups": [
+        "MAYA"
+      ],
+      "url": "https://art.thewalters.org/object/2009.20.39/",
+      "cue": "Cacao drinking vessel"
+    },
+    {
+      "groups": [
+        "SILK"
+      ],
+      "url": "https://www.amnh.org/explore/ology/ology-cards/316-silk-road",
+      "cue": "Fabric trade context"
+    }
+  ],
+  "reference_policy": "Web sources inform text and prop concepts; only the two original KFB PNGs are actual visual inputs. Costumes, individual personalities, names, scenario and lore are fictional.",
+  "lore_source": {
+    "repository": "georg-doc/kayfabizarro",
+    "branch": "docs/kfb-decisions-register-2026-10-11",
+    "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+    "read_verified": true
+  }
+}

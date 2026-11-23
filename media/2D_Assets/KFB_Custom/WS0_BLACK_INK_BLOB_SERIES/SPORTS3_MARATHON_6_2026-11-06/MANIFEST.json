@@ -1,0 +1,266 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS3_MARATHON_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS3_MARATHON_6_2026-11-06/sheet-r1.png",
+    "sha256": "daec2c27374cfadbe0407d7e815801a59e78c7eacb4e2228d51df591b45461f9"
+  },
+  "production_record": "SPORTS3_MARATHON_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS3_MARATHON_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS3_MARATHON_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Laufgruppe Fast Am Ziel",
+    "visual_context": "1920s-to-1970s marathon club,faded ochre-and-cream small cotton vests/collars,cloth caps,enamel bottles,no bib lettering,no legs",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "MARATHON",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS3_MARATHON_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Paula Pacepflicht",
+      "bild": {
+        "datei": "SPORTS3_MARATHON_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "brass stopwatch",
+        "blank pacing pennant",
+        "cream headband"
+      ],
+      "temperament": "She sets a comfortable pace according to a definition nobody else has seen.",
+      "prompt_auszug": "Paula Pacepflicht, female-read. Tall slim bell ink blob,small side curl and lashes,stern one-raised-eyelid gaze,closed precise pout;cream headband,small ochre collar;holds one squat brass stopwatch and a small blank pennant low in other hand.",
+      "prompt_quelle": "SPORTS3_MARATHON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "pacemaker"
+    },
+    {
+      "id": "WSA_SPORTS3_MARATHON_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Emil Endspurt",
+      "bild": {
+        "datei": "SPORTS3_MARATHON_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "ochre sweatband",
+        "small cream vest panel"
+      ],
+      "temperament": "He keeps his last reserve somewhere the rest of him has stopped looking.",
+      "prompt_auszug": "Emil Endspurt, male-read. Lean upright sweeping comma ink blob,high wind-swept crest,determined manic white eyes and ecstatic three-upper-tooth grin;ochre sweatband,tiny cream vest-front;two empty short goo hands in energetic compact running gestures,no human arms/legs.",
+      "prompt_quelle": "SPORTS3_MARATHON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "competitive finisher"
+    },
+    {
+      "id": "WSA_SPORTS3_MARATHON_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Berta Bananenpause",
+      "bild": {
+        "datei": "SPORTS3_MARATHON_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "peeled banana",
+        "tin cup",
+        "patched cloth cap"
+      ],
+      "temperament": "She entered for the experience and is now negotiating its duration.",
+      "prompt_auszug": "Berta Bananenpause, female-read. Broad round scalloped ink blob,modest lashes,big questioning eyes and tiny worried toothless smile;cream cloth cap with ochre patch,small ochre scarf;holds ONE peeled yellow clay banana upright in hand and little tin cup in other,no full banana costume.",
+      "prompt_quelle": "SPORTS3_MARATHON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "first-time recreational runner"
+    },
+    {
+      "id": "WSA_SPORTS3_MARATHON_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Immernoch",
+      "bild": {
+        "datei": "SPORTS3_MARATHON_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "enamel flask",
+        "single laurel sprig",
+        "cream flat cap"
+      ],
+      "temperament": "He has finished enough marathons to distrust the word final.",
+      "prompt_auszug": "Otto Immernoch, male-read. Very tall wavering pear ink blob,drooping loop crest,deeply weary half-lidded eyes and long CLOSED toothless frown;old cream flat cap,ochre collar;holds dented enamel water flask against flank,one small laurel sprig tucked into collar.",
+      "prompt_quelle": "SPORTS3_MARATHON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "veteran endurance runner"
+    },
+    {
+      "id": "WSA_SPORTS3_MARATHON_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bodo Botschaftslauf",
+      "bild": {
+        "datei": "SPORTS3_MARATHON_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small blank cloth banner",
+        "ochre neckerchief"
+      ],
+      "temperament": "He runs for a cause that is still being agreed at committee level.",
+      "prompt_auszug": "Bodo Botschaftslauf, male-read. Very broad star-lobed ink blob with high flamboyant curl,delighted side-eyed two-upper-tooth laugh;small ochre neckerchief and cream wristbands;holds folded blank cloth banner on SHORT wooden crossbar across lower flank,not spanning cell,no words.",
+      "prompt_quelle": "SPORTS3_MARATHON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "charity / cause runner"
+    },
+    {
+      "id": "WSA_SPORTS3_MARATHON_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fiete Fastda",
+      "bild": {
+        "datei": "SPORTS3_MARATHON_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "held canvas running shoe",
+        "ochre cotton cap"
+      ],
+      "temperament": "He is not last; he is maintaining a socially useful distance from the finish.",
+      "prompt_auszug": "Fiete Fastda, male-read. Compact narrow teardrop ink blob with bent crest,big hopeful unequal eyes and tiny CLOSED shaky smile;ochre cotton cap,small cream collar;holds ONE worn canvas running shoe by laces as separate lucky charm,other hand lifted in exhausted greeting,no feet.",
+      "prompt_quelle": "SPORTS3_MARATHON_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "last-finisher / determined underdog"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

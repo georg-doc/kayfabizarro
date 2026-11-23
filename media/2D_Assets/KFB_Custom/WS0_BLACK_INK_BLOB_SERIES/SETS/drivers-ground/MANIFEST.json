@@ -1,0 +1,212 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DRIVERS_GROUND_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+    "sha256": "5f7212d731f4deebd0e38a49d36ce322b147a2064513d786346873afb9d57732"
+  },
+  "production_record": "DRIVERS_12_2026-11-04/ground-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/drivers-ground/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      5
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_FAHRER_07",
+      "id_scope": "canonical_roster",
+      "name": "Der Anschlusspfleger",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot1 weary CITY BUS DRIVER: broad low sagging pancake ink splat, small faded navy peaked transit cap, tiny grey collar and loosening burgundy tie.",
+          "Thick drooping lids, white/red/black gaze looking left, mouth a crooked downward flat pout with one huge tooth.",
+          "Holds a beautifully worn enormous bus steering wheel tilted at belly, a chunky brass mechanical ticket punch dangling from short strap at wrist."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot1 weary CITY BUS DRIVER: broad low sagging pancake ink splat, small faded navy peaked transit cap, tiny grey collar and loosening burgundy tie. Thick drooping lids, white/red/black gaze looking left, mouth a crooked downward flat pout with one huge tooth. Holds a beautifully worn enormous bus steering wheel tilted at belly, a chunky brass mechanical ticket punch dangling from short strap at wrist. Wheel full circular shape with thick rim, ink body continuous behind, no dashboard/bus.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/ground-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_08",
+      "id_scope": "canonical_roster",
+      "name": "Nora Nachttarif",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP CENTER slot2 FEMALE-READ NIGHT TAXI DRIVER: tall asymmetric pear blob with curled purple goo quiff under small mustard cap, short teal collar, one subtle lash.",
+          "Cradles a chunky rounded brass taximeter with blank dark glass window, one large red button, and a small steaming takeaway coffee cup leaning precariously in other goo hand."
+        ]
+      },
+      "prompt_auszug": "TOP CENTER slot2 FEMALE-READ NIGHT TAXI DRIVER: tall asymmetric pear blob with curled purple goo quiff under small mustard cap, short teal collar, one subtle lash. One eye half shut and other wide, crooked CLOSED knowing grin with one gold fang, sideways red gaze. Cradles a chunky rounded brass taximeter with blank dark glass window, one large red button, and a small steaming takeaway coffee cup leaning precariously in other goo hand. NO taxi sign/text/numbers, no human body.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/ground-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_09",
+      "id_scope": "canonical_roster",
+      "name": "Herr Fünfpunktnull",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT slot3 GIG-ECONOMY RIDEHAIL DRIVER: slender bent bean-shaped splat with three soft upper lobes, battered coral headset and tiny beige zip collar.",
+          "Huge strained CLENCHED tooth smile, both red pupils looking nervously UP toward a thick clay smartphone in one hand.",
+          "Other hand holds a completely round mechanical rating medallion with FIVE big blank brass rivets around rim, no stars or text or actual logo."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot3 GIG-ECONOMY RIDEHAIL DRIVER: slender bent bean-shaped splat with three soft upper lobes, battered coral headset and tiny beige zip collar. Huge strained CLENCHED tooth smile, both red pupils looking nervously UP toward a thick clay smartphone in one hand. Other hand holds a completely round mechanical rating medallion with FIVE big blank brass rivets around rim, no stars or text or actual logo. Posture pulled in two directions but props simple, no car, no screen UI.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/ground-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_10",
+      "id_scope": "canonical_roster",
+      "name": "Herr Hebelwirkung",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT slot4 old RAILWAY LOCOMOTIVE DRIVER: squat nearly spherical ink splat, faded indigo railway cap and a small red neck scarf, one big ear protector on side.",
+          "ONE eye closed in effort other WHITE/red/black aimed DOWN, huge asymmetric underbite with two broad teeth.",
+          "Both hands haul a chunky detached brass throttle lever with big black grip mounted on a small curved iron handheld base, few strong shapes."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot4 old RAILWAY LOCOMOTIVE DRIVER: squat nearly spherical ink splat, faded indigo railway cap and a small red neck scarf, one big ear protector on side. ONE eye closed in effort other WHITE/red/black aimed DOWN, huge asymmetric underbite with two broad teeth. Both hands haul a chunky detached brass throttle lever with big black grip mounted on a small curved iron handheld base, few strong shapes. No rails/train/diorama or steam scenery.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/ground-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_11",
+      "id_scope": "canonical_roster",
+      "name": "Herr Fernbeziehung",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot5 LONG-HAUL TRUCKER: towering wide-bottom pear-shaped droopy ink blob, worn rust-red trucker cap, tiny faded check shirt collar.",
+          "Hugs a fat blue enamel thermos flask with rounded metal lid and a thick rolled creased route chart pinched under other arm, blank paper no route labels.",
+          "Visceral tired affectionate grip on thermos, no scenery."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot5 LONG-HAUL TRUCKER: towering wide-bottom pear-shaped droopy ink blob, worn rust-red trucker cap, tiny faded check shirt collar. One eye very wide and other almost shut, mouth deep uneven lower-lip sag with THREE tiny teeth, no grin/tongue. Hugs a fat blue enamel thermos flask with rounded metal lid and a thick rolled creased route chart pinched under other arm, blank paper no route labels. Visceral tired affectionate grip on thermos, no scenery.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/ground-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_FAHRER_12",
+      "id_scope": "canonical_roster",
+      "name": "Pia Zustellversuch",
+      "bild": {
+        "datei": "DRIVERS_12_2026-11-04/drivers-ground-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT slot6 FEMALE-READ DELIVERY VAN COURIER: compact low wavy splat, teal tied headscarf under plain cream cap brim, subtle lashes, short orange work collar.",
+          "Two goo hands carry a SINGLE dented cardboard parcel almost her own size, a huge blank paper tag caught between one finger and box, simple thick string cross."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot6 FEMALE-READ DELIVERY VAN COURIER: compact low wavy splat, teal tied headscarf under plain cream cap brim, subtle lashes, short orange work collar. Exasperated jagged open-mouth laugh with irregular ivory teeth but NO tongue, red gaze turned RIGHT. Two goo hands carry a SINGLE dented cardboard parcel almost her own size, a huge blank paper tag caught between one finger and box, simple thick string cross. One box only, full goo silhouette visible, no cut-off torso/feet or labels.",
+      "prompt_quelle": "DRIVERS_12_2026-11-04/ground-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

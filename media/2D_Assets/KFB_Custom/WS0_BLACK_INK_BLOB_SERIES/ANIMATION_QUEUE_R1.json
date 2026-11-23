@@ -1,0 +1,35 @@
+{
+  "schema": "kfb.slop-motion-plan/1",
+  "status": "SUPERSEDED_BY_R2_VERIFIED_LIBRARY_INPUT",
+  "owner": "WSA",
+  "runtime_owner": "WS1",
+  "jobs": [
+    {
+      "job_id": "MOTION_PILOT_001",
+      "status": "NEEDS_CANONICAL_MASTER_AND_CAPABILITY_CHECK",
+      "source_canonical_identity_id": null,
+      "source_png_sha256": null,
+      "motion_reference_filename": "Sechsfaches Tintenmonster im Schlummerloop.gif",
+      "motion_reference_sha256": "1b56c79d1256ad7e37ccd384c4007f765f5f313a6ecbe35214a4e8830c027dcb",
+      "motion_reference_is_identity_donor": false,
+      "intent": "idle_blink",
+      "target_frame_count": 6,
+      "target_frame_duration_ms": 220,
+      "target_canvas": "match accepted single master and provider constraints",
+      "protected": [
+        "hat",
+        "props",
+        "teeth",
+        "mouth",
+        "material details",
+        "root anchor"
+      ],
+      "generation_authorized_by_this_document": false,
+      "georg_status": null,
+      "runtime_status": "NOT_SUBMITTED"
+    }
+  ],
+  "after_pilot": "Six-case mixed validation pack;only then bounded production batches",
+  "provider_adapter_status": "NOT_EXECUTED_OR_VERIFIED_IN_THIS_SLICE",
+  "superseded_by": "ANIMATION_QUEUE_R2.json"
+}

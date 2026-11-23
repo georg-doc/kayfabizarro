@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_TOURISM_CRUISE_ACTOR_20261107_01",
+      "name": "Doris Deckchair",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Stern deckchair claimant with a gift for holding up a group.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That chair has my towel on it."
+          ],
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_CRUISE_20261107",
+            "trio": "WSA_TOURISM_CRUISE_20261107_TRIO_A"
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Doris Deckchair booked a place with The Floating Buffet. That chair has my towel on it. The incident report lists rolled striped towel and giant sun visor as the only personal effect accounted for.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: That chair has my towel on it.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stern deckchair claimant",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_CRUISE_ACTOR_20261107_02",
+      "name": "Gus Midnightbuffet",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ecstatic dessert raider with a gift for holding up a group.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Is that the emergency jelly?"
+          ],
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_CRUISE_20261107",
+            "trio": "WSA_TOURISM_CRUISE_20261107_TRIO_A"
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gus Midnightbuffet booked a place with The Floating Buffet. Is that the emergency jelly? The incident report lists silver plate with one elaborate jelly tower as the only personal effect accounted for.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Is that the emergency jelly?",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "ecstatic dessert raider",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_CRUISE_ACTOR_20261107_03",
+      "name": "Marvin Seasway",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Seasick cabin guest with a gift for holding up a group.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I preferred the sea from the brochure."
+          ],
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_CRUISE_20261107",
+            "trio": "WSA_TOURISM_CRUISE_20261107_TRIO_A"
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Marvin Seasway booked a place with The Floating Buffet. I preferred the sea from the brochure. The incident report lists small rolled paper bag and sea-green wristband as the only personal effect accounted for.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I preferred the sea from the brochure.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "seasick cabin guest",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_CRUISE_ACTOR_20261107_04",
+      "name": "Lola Lastport",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Impatient excursion regular with a gift for holding up a group.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We have six minutes ashore."
+          ],
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_CRUISE_20261107",
+            "trio": "WSA_TOURISM_CRUISE_20261107_TRIO_B"
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Lola Lastport booked a place with The Floating Buffet. We have six minutes ashore. The incident report lists folded port map and compact camera as the only personal effect accounted for.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: We have six minutes ashore.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "impatient excursion regular",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_CRUISE_ACTOR_20261107_05",
+      "name": "Ernie Shipshop",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Proud souvenir shopper with a gift for holding up a group.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It's the ship, but collectible."
+          ],
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_CRUISE_20261107",
+            "trio": "WSA_TOURISM_CRUISE_20261107_TRIO_B"
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ernie Shipshop booked a place with The Floating Buffet. It's the ship, but collectible. The incident report lists tiny plastic ship in clear collectible bubble packaging as the only personal effect accounted for.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: It's the ship, but collectible.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "proud souvenir shopper",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_CRUISE_ACTOR_20261107_06",
+      "name": "Phil Shuffleboard",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bored deck entertainer with a gift for holding up a group.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Are we on day three or Tuesday?"
+          ],
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_CRUISE_20261107",
+            "trio": "WSA_TOURISM_CRUISE_20261107_TRIO_B"
+          },
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Phil Shuffleboard booked a place with The Floating Buffet. Are we on day three or Tuesday? The incident report lists stubby shuffleboard cue and puck as the only personal effect accounted for.",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Are we on day three or Tuesday?",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "bored deck entertainer",
+          "src": "TOURISM_CRUISE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

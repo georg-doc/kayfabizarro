@@ -1,0 +1,279 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_REACTIONS_CONTACT_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
+    "sha256": "b30e754cd6193521491e275555f7efcc4f95086f42a676c5ad7b74c32024154c"
+  },
+  "production_record": "REACTIONS_CONTACT_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "REACTIONS_CONTACT_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "REACTIONS_CONTACT_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Small Openings",
+    "theme": "relief, warmth and uncertain social contact",
+    "backlog_neighbors": [
+      "G01",
+      "G02",
+      "G03"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "building resident",
+      "pedestrian",
+      "low-equipment NPC",
+      "trash opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Grace Afterall",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "relieved",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "single small ivory handkerchief",
+        "tiny faded teal scarf"
+      ],
+      "temperament": "She has just discovered that the worst possibility was not compulsory.",
+      "prompt_auszug": "Female-read tall soft droopy bell ink blob, modest lashes and small faded teal scarf. One hand loosens scarf, other holds single small ivory handkerchief near chest. Half-open white eyes look upward, eyebrows released unevenly, mouth crooked OPEN laughing exhale with two upper teeth and no tongue. Body opens outward in relief while upright. Clearly different from ecstatic joy.",
+      "prompt_quelle": "REACTIONS_CONTACT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gilbert Muchobliged",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "grateful",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny wooden clothespin"
+      ],
+      "temperament": "He receives a small kindness as though it required careful long-term custody.",
+      "prompt_auszug": "Male-read squat wide round blob with one curled central crest. Both ink hands clasp ONE tiny wooden clothespin to his heart as an unexpectedly precious favour. Huge soft white eyes looking toward camera, inner brows lifted, small CLOSED uneven touched smile. Tiny forward inclination but upright full-size, no kneeling, no human coat. Gratitude, not bashful flirtation.",
+      "prompt_quelle": "REACTIONS_CONTACT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Alf AlmostaParty",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "awkwardly delighted",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small crooked paper party cone"
+      ],
+      "temperament": "He is delighted to be included and has not yet worked out what to do with his hands.",
+      "prompt_auszug": "Male-read broad crooked triangular splat with little crooked muted orange paper party cone atop one short crest. Both ink hands suspended mid-clap separated by visible gap, shy shoulders slightly raised. Asymmetrical white eyes wide with nervous delight, one raised brow, OPEN broad lop-sided grin with four widely irregular upper teeth. Eager awkward joy, no confetti or balloon props.",
+      "prompt_quelle": "REACTIONS_CONTACT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hope Perhaps",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "guardedly hopeful",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one tiny green sprig",
+        "small dusty rose collar"
+      ],
+      "temperament": "She is willing to hope, provided hope agrees to speak a little more quietly.",
+      "prompt_auszug": "Female-read upright reverse-comma ink blob, low swept inkquiff, modest lashes and small dusty rose collar. One hand holds a tiny green sprig close, other palm half opens as if testing an offer without handing anything across cells. White eyes raised toward camera with one cautious narrowed lid and other bright open, mouth CLOSED hesitant upturn with worried other corner. Tentative hope, no fantasy costume.",
+      "prompt_quelle": "REACTIONS_CONTACT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cecil Seenit",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "embarrassed",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small unmatched sock"
+      ],
+      "temperament": "He would prefer the incident to become a brief and anonymous historical period.",
+      "prompt_auszug": "Male-read chubby pear-shaped blob with three small uneven crest nubs, otherwise bare goo. One hand awkwardly conceals one small unmatched faded blue sock behind his OWN side, other rubs back of crest. White eyes sidelong down, brows lifted at unequal heights, CLOSED crooked compressed mouth trying to whistle but no pink lips. Mortified caught-out posture, still upright and large, no blush overlays.",
+      "prompt_quelle": "REACTIONS_CONTACT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_CONTACT_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Morris Makesroom",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_CONTACT_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "compassionate concern",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "single small folded blanket"
+      ],
+      "temperament": "He makes a little room before asking what has gone wrong.",
+      "prompt_auszug": "Male-read broad rounded low-crest goo blob, holding one little folded ochre blanket securely in one hand against body. Other hand makes a low reassuring open palm toward camera without interaction with neighboring cells. Half-open white eyes, raised inner brows, CLOSED small patient crooked smile. Upright with gentle forward attention, not tragic crying, no halo or nurse uniform.",
+      "prompt_quelle": "REACTIONS_CONTACT_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-07",
+    "quote": "super! die sind alle PASS.",
+    "scope": "All three reaction sheets/eighteen designs;no extraction/runtime approval inferred"
+  }
+}

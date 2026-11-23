@@ -1,0 +1,53 @@
+{
+  "schema": "kfb.slop-tier-rows/1",
+  "status": "DESIGN",
+  "readings": [
+    "same identity at three escalation stages",
+    "siblings",
+    "related gang"
+  ],
+  "columns": [
+    {
+      "column": 0,
+      "stufe": 1,
+      "label": "Trash",
+      "hits_proposal": 1
+    },
+    {
+      "column": 1,
+      "stufe": 2,
+      "label": "Common",
+      "hits_proposal": 2
+    },
+    {
+      "column": 2,
+      "stufe": 3,
+      "label": "Elite",
+      "hits_proposal": 3
+    }
+  ],
+  "rows": [
+    {
+      "row": 0,
+      "identity": "WSA_ROSTWART",
+      "class": "warrior",
+      "members": [
+        "WSA_ROSTWART_T1_20261104",
+        "WSA_ROSTWART_T2_20261104",
+        "WSA_ROSTWART_T3_20261104"
+      ]
+    },
+    {
+      "row": 1,
+      "identity": "WSA_LILA_LEHRGANG",
+      "class": "mage",
+      "members": [
+        "WSA_LILA_LEHRGANG_T1_20261104",
+        "WSA_LILA_LEHRGANG_T2_20261104",
+        "WSA_LILA_LEHRGANG_T3_20261104"
+      ]
+    }
+  ],
+  "absurdity": "Separate axis; not derived from tier.",
+  "runtime": "No transformation, spawn, roster or combat implementation changed."
+}

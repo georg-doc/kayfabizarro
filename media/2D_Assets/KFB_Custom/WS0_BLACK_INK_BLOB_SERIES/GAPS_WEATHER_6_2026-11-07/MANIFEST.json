@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_GAPS_WEATHER_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+    "sha256": "29e2fde8b6e24ae4ac207625924075a0411a2a95690b39fd4d19121e927e33c2"
+  },
+  "production_record": "GAPS_WEATHER_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "GAPS_WEATHER_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "GAPS_WEATHER_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Weather Maintenance Office",
+    "theme": "The Weather Maintenance Office",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_GAPS_WEATHER_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Fogbrush",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "fog sweeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_WEATHER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_WEATHER_ACTOR_20261107_02",
+        "WSA_GAPS_WEATHER_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short hand broom gathering one soft puff of fog"
+      ],
+      "temperament": "Fog sweeper.",
+      "prompt_auszug": "low broad round splat, narrowed focused eyes",
+      "prompt_quelle": "GAPS_WEATHER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "fog sweeper"
+    },
+    {
+      "id": "WSA_GAPS_WEATHER_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Hailsort",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "hail sorter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_WEATHER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_WEATHER_ACTOR_20261107_01",
+        "WSA_GAPS_WEATHER_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny open egg carton with a few round hailstones"
+      ],
+      "temperament": "Hail sorter.",
+      "prompt_auszug": "tall pear, counting with one raised eyebrow",
+      "prompt_quelle": "GAPS_WEATHER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "hail sorter"
+    },
+    {
+      "id": "WSA_GAPS_WEATHER_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hal Windsock",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "wind surveyor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_WEATHER_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_WEATHER_ACTOR_20261107_01",
+        "WSA_GAPS_WEATHER_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short windsock bent the wrong way on a stubby pole"
+      ],
+      "temperament": "Wind surveyor.",
+      "prompt_auszug": "lean sideways curl, bewildered gaze, mouth ajar",
+      "prompt_quelle": "GAPS_WEATHER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "wind surveyor"
+    },
+    {
+      "id": "WSA_GAPS_WEATHER_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Rainseal",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "rain dispatcher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_WEATHER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_WEATHER_ACTOR_20261107_05",
+        "WSA_GAPS_WEATHER_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small umbrella-shaped shutoff valve"
+      ],
+      "temperament": "Rain dispatcher.",
+      "prompt_auszug": "round diamond blob, determined side-eye, flat closed lips",
+      "prompt_quelle": "GAPS_WEATHER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "rain dispatcher"
+    },
+    {
+      "id": "WSA_GAPS_WEATHER_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sid Pressure",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "barometer attendant",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_WEATHER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_WEATHER_ACTOR_20261107_04",
+        "WSA_GAPS_WEATHER_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "large single-dial barometer with clear glass"
+      ],
+      "temperament": "Barometer attendant.",
+      "prompt_auszug": "squat square, alarmed eyebrows, narrow worried mouth",
+      "prompt_quelle": "GAPS_WEATHER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "barometer attendant"
+    },
+    {
+      "id": "WSA_GAPS_WEATHER_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Cloudtest",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "cloud quality inspector",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_WEATHER_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_WEATHER_ACTOR_20261107_04",
+        "WSA_GAPS_WEATHER_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one soft miniature cloud with a shallow dent"
+      ],
+      "temperament": "Cloud quality inspector.",
+      "prompt_auszug": "wide bean, downcast eyes, faintly disappointed frown",
+      "prompt_quelle": "GAPS_WEATHER_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "cloud quality inspector"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "thematic_family": "The Weather Maintenance Office",
+    "team_kit": "Storm blue, butter yellow and washed teal, weather-service vests with tiny clean accessories",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Everyday roles and absurd material encounters.",
+    "trios": [
+      {
+        "id": "WSA_GAPS_WEATHER_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_GAPS_WEATHER_ACTOR_20261107_01",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_02",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_GAPS_WEATHER_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_GAPS_WEATHER_ACTOR_20261107_04",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_05",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_GAPS_WEATHER_ACTOR_20261107_01",
+      "WSA_GAPS_WEATHER_ACTOR_20261107_02",
+      "WSA_GAPS_WEATHER_ACTOR_20261107_03",
+      "WSA_GAPS_WEATHER_ACTOR_20261107_04",
+      "WSA_GAPS_WEATHER_ACTOR_20261107_05",
+      "WSA_GAPS_WEATHER_ACTOR_20261107_06"
+    ]
+  }
+}

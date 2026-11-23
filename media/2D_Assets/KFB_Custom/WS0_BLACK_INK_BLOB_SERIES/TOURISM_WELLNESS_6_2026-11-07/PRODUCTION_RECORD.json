@@ -1,0 +1,39 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-d6e01330-117d-4c7b-afad-735789606788.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "72f723c74f3ef67cb781e6bbadd50f1cc32587b74a11b5ae3e5328ef96aeff9f",
+  "git_blob_sha": "c4f152418cff1f713f7c1bf7cf905cc006b553cd",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a new KFB ink blob monster character sheet, The Compulsory Relaxation. Supplied original PNGs are style inputs for rounded ink anatomy, thick modeled lids, plasticine surface and handcrafted accessory scale. Create exactly SIX full individual upright actors in a 3-column by 2-row landscape 1536×1024 PNG with a true transparent alpha backdrop. Each actor at equal substantial scale inside their own logical cell, entire prop and all droplets inside generous transparent gutters and outer margin. No scenery, floor, labels, border, branding, joined figures or background color. Each is a dark charcoal continuous footless ink splat with subtle plum sheen and rich softly rounded clay, small goo hands, bare goo base and expressive asymmetrical organic lobes. Compact costume pieces wrap the blob. Thick filled dark lids with white sclera, red iris and black pupil. Teeth inside lips. Offbeat tourist satire, six different poses, looks and mouth shapes. Visible wear and miniature handcrafted volume. No copied eyepatches, wings, military insignia or outfits from references. Wardrobe family: over-bright spa wraps in lilac, peach and mint, rumpled terry fabric. Row-major cast:\n1. Female-read furious relaxation guest: broad soft square blob, tense narrowed lids, thin pursed lips. Prop: tiny hourglass and rolled yoga mat.\n2. Male-read startled spa customer: tall bent droplet, wide eyes fully visible, open gasp. Prop: two cucumber slices held away from face and facecloth.\n3. Male-read pleased mud-bath tourist: low round splat, droopy lids, dreamy crooked smile. Prop: small terracotta bowl of clay mask with chunky brush.\n4. Female-read irritated robe critic: upright scalloped body, one brow high, frowning mouth. Prop: stack of neatly folded contrasting towels.\n5. Male-read ecstatic retreat guest: bouncy bean blob, upward eyes, toothy laugh. Prop: giant smoothie with one sprig of garnish.\n6. Male-read anxious digital detox participant: thin tilted blob, uneven worried eyes, closed trembling lip. Prop: small padlocked phone pouch clutched close.\nEmphasize eyes and acting. Keep every figure independently usable as a sightseeing bystander. Hold props close. Separate all six in clear alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS"
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-3773f8ff-3bfe-44dd-8e25-3c3fc13dc36e.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "6573e117aff2ce23f2f15df24624d7f4d12257cd3757a45bb5b657dcbae100f7",
+  "git_blob_sha": "222c5800dd63e7d2c7307e2e75f94119f703d7f7",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+    ],
+    "prompt": "Use case: stylized-concept. Create ONE new KFB landscape transparent PNG3x2 character sheet, exactly SIX unique absurd surreal weird expressive ink blob claymation monsters belonging to fictional retro sport club RFC Anständiger Zusammenstoß. 1920s-to-1950s rugby club, faded deep blue and cream broad striped small jersey fronts, worn laced oval brown balls, cloth scrum caps. Actual input1 is STYLE ONLY for rounded whole ink body/material;input2 STYLE ONLY for handcrafted props,not edit targets. Do not copy their costumes,face layout or repeated grins. Fresh personalities and mouth choreography. Offbeat warm satirical tactile stopmotion appeal,avoid glossy Pixar-human clichés.\nANATOMY LOCK: Each actor is a continuous full upright FOOTLESS charcoal-black ink splat with subtle dark violet sheen,soft thick asymmetric lobes,a few rounded droplets,huge face directly in goo and short goo hands. NO human torso/legs/feet/bust,no human skin,no animal/robot body. Sports conveyed by props/acting ONLY,not realistic sporting anatomy. All actors upright to camera,not swimming horizontally,not lying,not seated/mounted. Costumes SMALL collar/bib/shoulder accents,body goo dominant. Rich rounded softly modeled plasticine,subtle fingerprints,selective fabric/leather/wood/metalcues,upper-left soft studio light. Every eye WHITE/IVORY sclera RED iris BLACK pupil,thick fully filled darkviolet lids. Caps/masks/goggles never obscure eyes. Exactly2female-read subtle lashes/crest;no human anatomy. Six distinct expressions beyond6hat swaps. Teeth ONLY descend from upper gum INSIDE open mouth;never outside lowerlip;closed mouths toothless. Lips dark ink,avoid human pink lips. Few bold coherent props.\nTOP LEFT — Rocco Ruckordnung, male-read. Very wide low scalloped upright ink blob, one scar-like clay crease on brow, heavy suspicious eyelids, long closed sideways pout; tiny blue-cream striped collar and soft cream scrum cap; thick bandaged goo hands held at chest ready to bind, no human legs.\nTOP MIDDLE — Hilda Hakenschluss, female-read. Compact triangular ink blob, raised side ink quiff, lashed sharp eyes and delighted crooked two-upper-tooth shout; blue cloth scrum cap, small cream neckerchief; one old laced brown oval rugby ball cradled in goo hand, other hand gesturing come-here.\nTOP RIGHT — Leo Langverband, male-read. Very tall thin rounded ink column, drooping loop crest, bashful upward white eyes and tiny toothless worried mouth; small blue-cream collar, cream wristbands; holds small rolled leather lineout-lifting strap in hands, no person lifted.\nBOTTOM LEFT — Fina Fadenzieher, female-read. Small-bodied but equal overall-size upright comma blob, strong side quiff, lashed half-lidded sly eyes, toothless crooked smirk; tiny blue scarf and cream wrist tape; one oval rugby ball held low at flank ready to pass but not toward neighbouring actor, free hand directs inward.\nBOTTOM MIDDLE — Felix Feldplan, male-read. Round pear blob with tiny spiral crest, puzzled raised eyebrow, small closed pursed mouth; soft blue cap, small striped collar; holds one folded cloth tactics card with ONLY three cream arcs and no lettering, other hand touches chin.\nBOTTOM RIGHT — Benny Durchbruch, male-read. Lean broad star-lobed upright blob with swept back ink crest, wide joyful determined eyes and lopsided three-upper-tooth grin; short cream scarf and blue wristbands; oval ball secured under one goo arm, other goo hand curled in small confident fist, no running feet.\nCOMPOSITION: Native landscape1536x1024,3equal columns x2equal rows. Six substantial similarly scaled characters in BOTH rows,roughly450x440px within512x512logical cells,clear transparent32px gutters and margins. Do not make bottom row smaller. No actor/prop touching another or clipping image. Full sticks/poles/tools stay inside own cell. No scenery,horse,pool,water surface,ice,track,field,court,scenelet,ground,shadow disc,lettering,numbers,logos,real-team branding,gridlines,frames or labels. True transparent alpha background. Each figure usable independently. No extra creatures,extra actors or inherited slot-specific tongue/outbursts."
+  },
+  "reference_roles": [
+    "veteran-original.png: body/material STYLE ONLY",
+    "rpg-props.png: accessory craft STYLE ONLY"
+  ],
+  "reference_checks": [
+    {
+      "file": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "verified": true
+    },
+    {
+      "file": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "verified": true
+    },
+    {
+      "file": "wut-family.png",
+      "sha256": "237641ae0ba4b39dfe3b1aec8725ceb6a4108e945b0241adb54a1bbdbf3fb30e",
+      "verified": true
+    },
+    {
+      "file": "construction-props.png",
+      "sha256": "e9c6c20d6bc984340b2458d00dda5dfadb948ee0c61c4065ef16d6b999072d24",
+      "verified": true
+    },
+    {
+      "file": "professions-props.png",
+      "sha256": "9fe95050d827919acb6f42c62f2a073169e4f5ee8e9309b89397428de49d6ce5",
+      "verified": true
+    },
+    {
+      "file": "rpg-props.png",
+      "sha256": "08bc11e8d49b3776b4e0c101c624affb9f54d682f9f4e9a16c4f64ed024082cf",
+      "verified": true
+    }
+  ],
+  "reference_checks_passed": 6
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "6573e117aff2ce23f2f15df24624d7f4d12257cd3757a45bb5b657dcbae100f7",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 611584,
+  "low_alpha_pixels_1_16": 87287,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha": {
+      "(0, 1536)": 4,
+      "(0, 525)": 1,
+      "(525, 1020)": 2,
+      "(1020, 1536)": 1
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "design_observations": [
+    "Six whole upright footless ink actors; white/red/black eye rule visually reviewed at native scale",
+    "Two female-read planned and visible; no cross-family identity/state bindings",
+    "Scrum caps added to lock and tactical player;Fina has unplanned cream leaf hair ornament",
+    "Lock support strap rendered with X-stitch end;3-arc tactics card rendered upright cloth panel",
+    "Wing holds oval ball in front rather than tucked completely under arm;no feet/field scene"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "review_previews": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "actual_reviews": {
+    "native_scale": true,
+    "checker": true,
+    "light_64_96_192": true,
+    "dark_160": true,
+    "method": "Each original and QA board visually reviewed;selected PNG bytes unchanged"
+  }
+}

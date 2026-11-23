@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_ALIEN_SF_SYMBIONTS_20261108_01",
+      "name": "Otto Coilshell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Shares a shell with something that won't share a schedule.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Shell Roommate"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Measured English delivery.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It's my shell on weekdays."
+          ],
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SYMBIONTS_20261108"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The occupant answered the door from inside Otto's head. He asked me to leave it a note anyway.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The occupant answered the door from inside Otto's head. He asked me to leave it a note anyway.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Eyes up and mouth pressed flat.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SYMBIONTS_20261108_02",
+      "name": "Faye Siftspore",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Samples airborne trouble before anyone else can name it.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Filter Feeder"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, with a slight upward inflection.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold still. I'm tasting the air."
+          ],
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SYMBIONTS_20261108"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "She filtered out three spores and a rumor. The rumor had passed through twice.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "She filtered out three spores and a rumor. The rumor had passed through twice.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Lateral gaze and thoughtful pucker.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SYMBIONTS_20261108_03",
+      "name": "Hugo Hatchclick",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Knows when a quiet hatch needs one more minute.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Antenna Midwife"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Low and unhurried.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Two little lights. Very good."
+          ],
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SYMBIONTS_20261108"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The antennae emerged before the creature. He called that an early signal.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The antennae emerged before the creature. He called that an early signal.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Soft downward gaze and uneven smile.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SYMBIONTS_20261108_04",
+      "name": "Nell Mosslift",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Is the last to know what is growing over her head.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Hitchhiking Moss"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quick, slightly breathless.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Is that still on me?"
+          ],
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SYMBIONTS_20261108"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The fungus had reached its destination. Nell was still on the way to hers.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The fungus had reached its destination. Nell was still on the way to hers.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Eyes lifted toward the crest and narrow gape.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SYMBIONTS_20261108_05",
+      "name": "Bo Bubbleside",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeps his spare pressure in plain sight.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Pressure Puffer"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Soft and precise.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "One more atmosphere."
+          ],
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SYMBIONTS_20261108"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He held his breath until the air sac made the decision for him.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He held his breath until the air sac made the decision for him.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Eyes forward and a concentrated squiggle mouth.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SYMBIONTS_20261108_06",
+      "name": "Cal Saltlick",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Trusts his tongue with tasks his common sense declined.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Salt Licker"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Clipped comic timing.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Just checking the mineral."
+          ],
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SYMBIONTS_20261108"
+          },
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cal assured me it was only a sample. The sample was visibly smaller when he said it.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "Cal assured me it was only a sample. The sample was visibly smaller when he said it.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Downward eyes and a tongue caught mid-taste.",
+          "src": "ALIEN_SF_SYMBIONTS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

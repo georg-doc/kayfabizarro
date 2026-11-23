@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_POLITICS_TYPES_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "POLITICS_TYPES_6_2026-11-08/sheet-r1.png",
+    "sha256": "3fea92ca9fdfd7a3bc858416d31b47e70facb2c3cb0e4116d3496cfeb3caf06a"
+  },
+  "production_record": "POLITICS_TYPES_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "POLITICS_TYPES_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "POLITICS_TYPES_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Convenient Positions",
+    "theme": "The Convenient Positions",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Weatherturn",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_TYPES_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "opportunistic position switcher",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+        "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny weather vane with two opposing arrows"
+      ],
+      "temperament": "Opportunistic position switcher.",
+      "prompt_auszug": "tall lean curved drip, sidelong knowing smile",
+      "prompt_quelle": "POLITICS_TYPES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "opportunistic position switcher"
+    },
+    {
+      "id": "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Promisecoil",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_TYPES_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "promise maker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+        "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small spring wound around a blank rolled ribbon"
+      ],
+      "temperament": "Promise maker.",
+      "prompt_auszug": "broad uneven splat, huge hopeful eyes and proud grin",
+      "prompt_quelle": "POLITICS_TYPES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "promise maker"
+    },
+    {
+      "id": "WSA_POLITICS_TYPES_ACTOR_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Middlemark",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_TYPES_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "compromise broker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+      "trio_mit": [
+        "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+        "WSA_POLITICS_TYPES_ACTOR_20261108_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two dissimilar puzzle halves joined by one conspicuous brass clip"
+      ],
+      "temperament": "Compromise broker.",
+      "prompt_auszug": "low wide scalloped blob, worried narrow smile",
+      "prompt_quelle": "POLITICS_TYPES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "compromise broker"
+    },
+    {
+      "id": "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Answerloop",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_TYPES_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "question dodger",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+        "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "a small coiled arrow that points back into itself"
+      ],
+      "temperament": "Question dodger.",
+      "prompt_auszug": "short reverse comma, one lifted eyelid, tight amused lips",
+      "prompt_quelle": "POLITICS_TYPES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "question dodger"
+    },
+    {
+      "id": "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Rulefold",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_TYPES_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "procedure loyalist",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+        "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small folded rulebook with one long colored tab"
+      ],
+      "temperament": "Procedure loyalist.",
+      "prompt_auszug": "rounded taper, narrowed focused eyes, stiff frown",
+      "prompt_quelle": "POLITICS_TYPES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "procedure loyalist"
+    },
+    {
+      "id": "WSA_POLITICS_TYPES_ACTOR_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Handclap",
+      "language": "en",
+      "bild": {
+        "datei": "POLITICS_TYPES_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "professional applause starter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+      "trio_mit": [
+        "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+        "WSA_POLITICS_TYPES_ACTOR_20261108_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small wooden clapper device held by its handle"
+      ],
+      "temperament": "Professional applause starter.",
+      "prompt_auszug": "short round lopsided blob, excited raised brows and open smile",
+      "prompt_quelle": "POLITICS_TYPES_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "professional applause starter"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Convenient Positions",
+    "team_kit": "Muted ochre, ink red, cream and slate.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_03",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+    ]
+  }
+}

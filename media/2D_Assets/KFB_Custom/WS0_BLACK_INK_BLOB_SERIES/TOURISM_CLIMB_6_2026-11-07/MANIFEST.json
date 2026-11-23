@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TOURISM_CLIMB_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TOURISM_CLIMB_6_2026-11-07/sheet-r1.png",
+    "sha256": "59e1d4760a10564e9d246bde7fa631b9cc2fc47075bee139a9c924273fc4191f"
+  },
+  "production_record": "TOURISM_CLIMB_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "TOURISM_CLIMB_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "TOURISM_CLIMB_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Scenic Miscalculation",
+    "theme": "The Scenic Miscalculation",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "tourist bystander",
+      "destruction sightseer",
+      "three-member tour party",
+      "six-member tour group"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TOURISM_CLIMB_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Shortcut",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_CLIMB_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "hubristic route finder",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_CLIMB_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_02",
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "folded trail map and giant compass"
+      ],
+      "temperament": "Hubristic route finder with a gift for holding up a group.",
+      "prompt_auszug": "broad trapezoid blob, chin high, crooked smug smile",
+      "prompt_quelle": "TOURISM_CLIMB_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "hubristic route finder"
+    },
+    {
+      "id": "WSA_TOURISM_CLIMB_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Chalkstorm",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_CLIMB_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "impatient climber",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_CLIMB_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_01",
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "bulging chalk pouch and thick carabiner"
+      ],
+      "temperament": "Impatient climber with a gift for holding up a group.",
+      "prompt_auszug": "tall scalloped blob, irritated narrowed eyes, gritted inner teeth",
+      "prompt_quelle": "TOURISM_CLIMB_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "impatient climber"
+    },
+    {
+      "id": "WSA_TOURISM_CLIMB_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Lastledge",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_CLIMB_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "height-shy hiker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_CLIMB_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_01",
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two collapsed trekking poles held tightly"
+      ],
+      "temperament": "Height-shy hiker with a gift for holding up a group.",
+      "prompt_auszug": "wobbly upright teardrop, unequal trembling eyes, small toothless gasp",
+      "prompt_quelle": "TOURISM_CLIMB_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "height-shy hiker"
+    },
+    {
+      "id": "WSA_TOURISM_CLIMB_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Rockselfie",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_CLIMB_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "gleeful summit photographer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_CLIMB_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_05",
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "chunky compact camera clipped to a fat rope coil"
+      ],
+      "temperament": "Gleeful summit photographer with a gift for holding up a group.",
+      "prompt_auszug": "curved blob, eyebrow lifted, skewed delighted laugh",
+      "prompt_quelle": "TOURISM_CLIMB_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "gleeful summit photographer"
+    },
+    {
+      "id": "WSA_TOURISM_CLIMB_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hugo Snackbelay",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_CLIMB_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary belay partner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_CLIMB_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_04",
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "rope loop and half-unwrapped granola bar"
+      ],
+      "temperament": "Weary belay partner with a gift for holding up a group.",
+      "prompt_auszug": "low rounded splat, lidded sidelong gaze, short bored frown",
+      "prompt_quelle": "TOURISM_CLIMB_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary belay partner"
+    },
+    {
+      "id": "WSA_TOURISM_CLIMB_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Blister",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_CLIMB_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "offended gear enthusiast",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_CLIMB_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_04",
+        "WSA_TOURISM_CLIMB_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny hiking boot held by its laces as a prop, bare ink base"
+      ],
+      "temperament": "Offended gear enthusiast with a gift for holding up a group.",
+      "prompt_auszug": "lopsided cube blob, glowering eye, puffed closed lips",
+      "prompt_quelle": "TOURISM_CLIMB_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "offended gear enthusiast"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "tour_group": "The Scenic Miscalculation",
+    "team_kit": "mismatched fleece capes, neon rope, chalk pouches and retro climbing hardware",
+    "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+    "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+    "trios": [
+      {
+        "id": "WSA_TOURISM_CLIMB_20261107_TRIO_A",
+        "name": "Outbound Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_01",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_02",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_TOURISM_CLIMB_20261107_TRIO_B",
+        "name": "Return Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_04",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_05",
+          "WSA_TOURISM_CLIMB_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_TOURISM_CLIMB_ACTOR_20261107_01",
+      "WSA_TOURISM_CLIMB_ACTOR_20261107_02",
+      "WSA_TOURISM_CLIMB_ACTOR_20261107_03",
+      "WSA_TOURISM_CLIMB_ACTOR_20261107_04",
+      "WSA_TOURISM_CLIMB_ACTOR_20261107_05",
+      "WSA_TOURISM_CLIMB_ACTOR_20261107_06"
+    ]
+  }
+}

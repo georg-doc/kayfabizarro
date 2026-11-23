@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-85b40e42-9960-484b-85f3-9a73064c8ddf.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "d6ab97310f9aea172154faf9d51bd4fbf3df263049808e42d74e30894af42e9e",
+  "git_blob_sha": "42930d8e5fda0235eee87ec2a28022db02b5b4a8",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+    ],
+    "prompt": "Use case: stylized-concept. Create ONE new KFB landscape transparent PNG3x2 character sheet, exactly SIX unique absurd surreal weird expressive ink blob claymation monsters belonging to fictional retro sport club SV Trockener Ernst. Vintage seaside swim club in muted coral and cream, rubber swim caps, small terry towel collars, brass goggles held clear of eyes. Actual input1 is STYLE ONLY for rounded whole ink body/material;input2 STYLE ONLY for handcrafted props,not edit targets. Do not copy their costumes,face layout or repeated grins. Fresh personalities and mouth choreography. Offbeat warm satirical tactile stopmotion appeal,avoid glossy Pixar-human clichés.\nANATOMY LOCK: Each actor is a continuous full upright FOOTLESS charcoal-black ink splat with subtle dark violet sheen,soft thick asymmetric lobes,a few rounded droplets,huge face directly in goo and short goo hands. NO human torso/legs/feet/bust,no human skin,no animal/robot body. Sports conveyed by props/acting ONLY,not realistic sporting anatomy. All actors upright to camera,not swimming horizontally,not lying,not seated/mounted. Costumes SMALL collar/bib/shoulder accents,body goo dominant. Rich rounded softly modeled plasticine,subtle fingerprints,selective fabric/leather/wood/metalcues,upper-left soft studio light. Every eye WHITE/IVORY sclera RED iris BLACK pupil,thick fully filled darkviolet lids. Caps/masks/goggles never obscure eyes. Exactly2female-read subtle lashes/crest;no human anatomy. Six distinct expressions beyond6hat swaps. Teeth ONLY descend from upper gum INSIDE open mouth;never outside lowerlip;closed mouths toothless. Lips dark ink,avoid human pink lips. Few bold coherent props.\nTOP LEFT — Franz Freistilamt, male-read. Compact forward-leaning but upright comma ink blob, gleeful focused white eyes, crooked wide open grin with two upper teeth; coral rubber cap, tiny cream towel collar; one single thick wooden kickboard tucked at flank, short goo hands ready.\nTOP MIDDLE — Bruno Brustton, male-read. Very broad scalloped ink blob, low skeptical lids, toothless proud pout; cream rubber cap with coral stripe, little coral towel collar; presses both goo palms neatly together at chest in exaggerated breaststroke preparation, no human torso/legs.\nTOP RIGHT — Rita Rückenruhe, female-read. Tall curved teardrop blob completely UPRIGHT, side ink curl peeking from cream cap, lashed wide eyes looking up and worried small closed mouth; coral towel scarf; holds antique brass swim goggles in one hand LOW away from eyes, other palm raised defensively.\nBOTTOM LEFT — Bodo Butterflug, male-read. Round star-lobed ink blob, two swept-up ink crests, ecstatic raised eyes, delighted asymmetrical three-upper-tooth shout; small coral cap, two cream wristbands; both short goo arms spread high at sides in dramatic symmetrical stroke preparation, no actual wings.\nBOTTOM MIDDLE — Mira Mehrbahn, female-read. Broad tall bell-shaped blob with modest lashes and exhausted half-lidded stare, small lopsided toothless grimace; faded coral flower-trim swim cap, small cream towel shoulder; holds tiny tin cup and rolled striped towel, body dominant.\nBOTTOM RIGHT — Paul Pausenpfiff, male-read. Narrow upright pear blob, raised questioning brow and tiny toothless sideways mouth; cream cap with coral seam, tiny coral collar; holds brass stopwatch in one hand and a short baton-shaped rolled towel in the other like an uncertain relay handover kept entirely within cell.\nCOMPOSITION: Native landscape1536x1024,3equal columns x2equal rows. Six substantial similarly scaled characters in BOTH rows,roughly450x440px within512x512logical cells,clear transparent32px gutters and margins. Do not make bottom row smaller. No actor/prop touching another or clipping image. Full sticks/poles/tools stay inside own cell. No scenery,horse,pool,water surface,ice,track,field,court,scenelet,ground,shadow disc,lettering,numbers,logos,real-team branding,gridlines,frames or labels. True transparent alpha background. Each figure usable independently. No extra creatures,extra actors or inherited slot-specific tongue/outbursts."
+  },
+  "reference_roles": [
+    "veteran-original.png: body/material STYLE ONLY",
+    "rpg-props.png: accessory craft STYLE ONLY"
+  ],
+  "reference_checks": [
+    {
+      "file": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "verified": true
+    },
+    {
+      "file": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "verified": true
+    },
+    {
+      "file": "wut-family.png",
+      "sha256": "237641ae0ba4b39dfe3b1aec8725ceb6a4108e945b0241adb54a1bbdbf3fb30e",
+      "verified": true
+    },
+    {
+      "file": "construction-props.png",
+      "sha256": "e9c6c20d6bc984340b2458d00dda5dfadb948ee0c61c4065ef16d6b999072d24",
+      "verified": true
+    },
+    {
+      "file": "professions-props.png",
+      "sha256": "9fe95050d827919acb6f42c62f2a073169e4f5ee8e9309b89397428de49d6ce5",
+      "verified": true
+    },
+    {
+      "file": "rpg-props.png",
+      "sha256": "08bc11e8d49b3776b4e0c101c624affb9f54d682f9f4e9a16c4f64ed024082cf",
+      "verified": true
+    }
+  ],
+  "reference_checks_passed": 6
+}

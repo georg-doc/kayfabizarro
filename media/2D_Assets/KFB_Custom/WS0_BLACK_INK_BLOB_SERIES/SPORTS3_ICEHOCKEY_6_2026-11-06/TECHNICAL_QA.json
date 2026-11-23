@@ -1,0 +1,60 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "294e652909ee061b7c146422e97e9511ad1ba6da6832f8050337f8a0833a6335",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 573348,
+  "low_alpha_pixels_1_16": 82781,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha": {
+      "(0, 1536)": 25,
+      "(0, 525)": 2,
+      "(525, 1020)": 1,
+      "(1020, 1536)": 2
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced",
+    "No certified global straight horizontal crop seam;validated per-actor isolation required"
+  ],
+  "design_observations": [
+    "Six whole upright footless ink actors; white/red/black eye rule visually reviewed at native scale",
+    "Two female-read planned and visible; no cross-family identity/state bindings",
+    "Second hockey team distinct scarlet/navy palette,new authoring identities,not linked states of green team",
+    "Native captain armband includes C despite no-lettering brief;documented minor deviation,not silently repaired",
+    "Goalie has two upper teeth rather than clench;rookie glove reads as soft two-part mitt;all eyes visible"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "review_previews": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "actual_reviews": {
+    "native_scale": true,
+    "checker": true,
+    "light_64_96_192": true,
+    "dark_160": true,
+    "method": "Each original and QA board visually reviewed;selected PNG bytes unchanged"
+  }
+}

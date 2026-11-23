@@ -1,0 +1,211 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_COUPLES_A_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 2,
+    "rows": 3,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+    "sha256": "658326db310bf4a8cf622bb08d494f40854e819afbd1b10e714b2793a776109e"
+  },
+  "production_record": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-a-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/couples-a/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "EXCLUDED_BY_WS0_BRIEF",
+    "reason": "WS0 forwarded brief excludes International Couples from current intake; current game snapshot already contains them, owner reconciliation requested."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      2,
+      5
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_PAAR_07",
+      "id_scope": "canonical_roster",
+      "name": "Herr Taktbestand",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_08",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "LEFT husband very low wide sagging splat, tiny moss-green Tyrolean-style felt hat with short soft feather, short burgundy embroidered collar only, no lederhosen or legs.",
+          "BOTH hands rest on a fat miniature wooden accordion HELD CLOSE AGAINST OWN BELLY, bellows folded, no reaching."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP: ALPINE19thCENTURY FESTIVAL MARRIED PAIR, shared moss-green/burgundy felt/wool edging, small carved cream flower brooches and gold bands. LEFT husband very low wide sagging splat, tiny moss-green Tyrolean-style felt hat with short soft feather, short burgundy embroidered collar only, no lederhosen or legs. Bored half lids with WHITE/red/black pupils looking slightly right, crooked drooping mouth with one big tooth. BOTH hands rest on a fat miniature wooden accordion HELD CLOSE AGAINST OWN BELLY, bellows folded, no reaching. ",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_08",
+      "id_scope": "canonical_roster",
+      "name": "Frau Festvorbehalt",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_07",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "RIGHT wife tall asymmetric pear blob with thick purple goo roll/bun and burgundy floral headscarf, short cream/moss-green embroidered shawl collar (no full skirt).",
+          "Hugs a beautiful chunky woven basket with TWO giant mushrooms tightly at own belly."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP: ALPINE19thCENTURY FESTIVAL MARRIED PAIR, shared moss-green/burgundy felt/wool edging, small carved cream flower brooches and gold bands. RIGHT wife tall asymmetric pear blob with thick purple goo roll/bun and burgundy floral headscarf, short cream/moss-green embroidered shawl collar (no full skirt). One raised lid and one sleepy, CLOSED amused fang smile, gaze mostly forward with mild left side-eye. Hugs a beautiful chunky woven basket with TWO giant mushrooms tightly at own belly. Both have personal independent occupations, shared textiles imply couple, no handoff/performance directed toward partner.",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_09",
+      "id_scope": "canonical_roster",
+      "name": "Frau Fächerweise",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_10",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW2 MIDDLE: EDO-INSPIRED JAPANESE URBAN CRAFT COUPLE, shared indigo/rust-red crosshatch cloth edging and small brass concentric-disc clasps, plain wedding bands.",
+          "Holds a fat folded paper fan and a tiny worn black lacquer trinket case together CLOSE to OWN chest; hands not toward partner."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE: EDO-INSPIRED JAPANESE URBAN CRAFT COUPLE, shared indigo/rust-red crosshatch cloth edging and small brass concentric-disc clasps, plain wedding bands. LEFT wife compact spherical ink splat with large soft curled purple goo quiff pinned with one simple wood pin, short indigo patterned kimono-style SHOULDER WRAP only, whole goo base visible. One eye narrowed and other wide WHITE/red/black, broad jagged TOOTHY grin with irregular ivory teeth, NO tongue. Holds a fat folded paper fan and a tiny worn black lacquer trinket case together CLOSE to OWN chest; hands not toward partner. ",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_10",
+      "id_scope": "canonical_roster",
+      "name": "Herr Werkstolz",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_09",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "ROW2 MIDDLE: EDO-INSPIRED JAPANESE URBAN CRAFT COUPLE, shared indigo/rust-red crosshatch cloth edging and small brass concentric-disc clasps, plain wedding bands.",
+          "RIGHT husband tall skinny bent ink bean, small plain indigo cloth cap, short rust-red work-wrap collar, one closed eye and other drooping red gaze forward, deep FLAT lower-lip pout with three sparse teeth.",
+          "Cradles a thick rolled paper scroll CLOSED with a big woven red cord and one fat wooden brush tucked into own arm."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE: EDO-INSPIRED JAPANESE URBAN CRAFT COUPLE, shared indigo/rust-red crosshatch cloth edging and small brass concentric-disc clasps, plain wedding bands. RIGHT husband tall skinny bent ink bean, small plain indigo cloth cap, short rust-red work-wrap collar, one closed eye and other drooping red gaze forward, deep FLAT lower-lip pout with three sparse teeth. Cradles a thick rolled paper scroll CLOSED with a big woven red cord and one fat wooden brush tucked into own arm. No text/writing/calligraphy, no national facial cues or samurai/sacred emblems. Independent craft personalities, subtle mismatched marital pride.",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_11",
+      "id_scope": "canonical_roster",
+      "name": "Herr Fadenführung",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_12",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "LEFT husband medium tall broad-bottom lumpy splat, beautiful small patterned wool earflap cap and short woven poncho COLLAR ONLY (no full draped human torso).",
+          "One red eye huge and one half shut, anxious CLENCHED tooth smile, front-facing.",
+          "Both hands firmly hold ONE chunky hand spindle wound with thick teal wool and a big warm cream yarn ball, personal craft task at own belly."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM: ANDEAN LATE19th/EARLY20thCENTURY HIGHLAND CRAFT COUPLE, matching burnt-orange/teal/cream woven stripes, tiny round copper clasps and gold bands. LEFT husband medium tall broad-bottom lumpy splat, beautiful small patterned wool earflap cap and short woven poncho COLLAR ONLY (no full draped human torso). One red eye huge and one half shut, anxious CLENCHED tooth smile, front-facing. Both hands firmly hold ONE chunky hand spindle wound with thick teal wool and a big warm cream yarn ball, personal craft task at own belly. ",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_12",
+      "id_scope": "canonical_roster",
+      "name": "Frau Musterhoheit",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-a-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_11",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "RIGHT wife very wide low asymmetric ink puddle, small cream felt bowler with teal band, short burnt-orange woven shawl collar and tiny copper earrings.",
+          "Hugs a fat glazed clay pitcher with broad handle and bold cream/teal band pattern AGAINST OWN BODY, no pouring/spout aimed at spouse."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM: ANDEAN LATE19th/EARLY20thCENTURY HIGHLAND CRAFT COUPLE, matching burnt-orange/teal/cream woven stripes, tiny round copper clasps and gold bands. RIGHT wife very wide low asymmetric ink puddle, small cream felt bowler with teal band, short burnt-orange woven shawl collar and tiny copper earrings. Heavy skeptical lids, one tooth protruding from crooked underbite, mild left side-eye with torso neutral front. Hugs a fat glazed clay pitcher with broad handle and bold cream/teal band pattern AGAINST OWN BODY, no pouring/spout aimed at spouse. Same species anatomy, no ethnic caricature. Hand-modeled woven yarn and glazed clay richness.",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-a-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

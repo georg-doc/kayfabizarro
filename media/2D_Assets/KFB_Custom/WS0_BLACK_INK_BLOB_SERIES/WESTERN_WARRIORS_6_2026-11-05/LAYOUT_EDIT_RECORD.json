@@ -1,0 +1,21 @@
+{
+  "status": "GENERATED",
+  "tool": "image_gen.imagegen",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "reason": "R1 cross-cell prop contamination in equal512 cells",
+  "args": {
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/output/slop-western-warriors-20261105/sheet-r1.png"
+    ],
+    "transparent_background": true,
+    "prompt": "Precise layout-only edit of this exact six-character KFB ink monster sheet. Preserve all six identities, expressions, eyes, feather shapes, props, material, colours, costumes, relative scale and cell order. Do not redesign, add or remove anything. Keep landscape 1536x1024, 3 columns by 2 rows. Make the six complete standalone silhouettes fit individually in their equal 512x512 cells with clear margins: all visible content of cell0 in x24..488 y24..488; cell1 x536..1000 y24..488; cell2 x1048..1512 y24..488; cell3 x24..488 y536..1000; cell4 x536..1000 y536..1000; cell5 x1048..1512 y536..1000. Uniformly reduce each full actor only as much as necessary, roughly 7-9 percent from current version, and recenter. Match body heights across both rows; do not make a miniature bottom row. Especially contain the shield arrow top-left, drum beaters bottom-left, axe bottom-middle and dangling feathers bottom-right entirely within own cells. No inter-cell bleed. Actual transparent PNG alpha, clean fully transparent background/gutters, opaque character interiors. No RGB background gradient visible, no floor, shadow-disc, text, labels or gridlines. WHITE sclera, RED iris, BLACK pupil unchanged."
+  },
+  "output_file": "sheet-r2.png",
+  "sha256": "03181e11da4d41242ab3a7d6da5daa7600093ef5fb4fbebbc664e6d75a8c5440",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-76b6479c-3ec2-4f62-a269-09198ba3e456.png"
+}

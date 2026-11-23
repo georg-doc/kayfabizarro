@@ -1,0 +1,333 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CONTAINMENT_PANDEMIC_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "CONTAINMENT_PANDEMIC_6_2026-11-07/sheet-r1.png",
+    "sha256": "17a27c0fcc1cdd3e4378b283741a9f2e5b0e5c6158f17b452b0d97f7d2fe45f1"
+  },
+  "production_record": "CONTAINMENT_PANDEMIC_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "CONTAINMENT_PANDEMIC_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "CONTAINMENT_PANDEMIC_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Quiet Ward",
+    "theme": "Pandemic Response",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "containment encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Milo Checkin",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_PANDEMIC_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "kindly intake lead",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_02",
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small blank intake slate with teal corner protectors"
+      ],
+      "temperament": "Milo Checkin is the crew's intake lead.",
+      "prompt_auszug": "wide bell blob with warm patient eyes",
+      "prompt_quelle": "CONTAINMENT_PANDEMIC_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "kindly intake lead"
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Breath",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_PANDEMIC_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "focused triage specialist",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_01",
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "compact thermometer with abstract unlit display"
+      ],
+      "temperament": "Nell Breath is the crew's triage specialist.",
+      "prompt_auszug": "tall pear blob with inquisitive lifted brow",
+      "prompt_quelle": "CONTAINMENT_PANDEMIC_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "focused triage specialist"
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Toby Ward",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_PANDEMIC_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "uneasily helpful supply runner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_01",
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small closed teal medical pouch with a plain ivory square"
+      ],
+      "temperament": "Toby Ward is the crew's supply runner.",
+      "prompt_auszug": "round blob with raised inner brows",
+      "prompt_quelle": "CONTAINMENT_PANDEMIC_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "uneasily helpful supply runner"
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cal Interval",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_PANDEMIC_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dryly methodical contact coordinator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05",
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short teal communication radio"
+      ],
+      "temperament": "Cal Interval is the crew's contact coordinator.",
+      "prompt_auszug": "squat scalloped blob with a skeptical side look",
+      "prompt_quelle": "CONTAINMENT_PANDEMIC_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "dryly methodical contact coordinator"
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ada Clear",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_PANDEMIC_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "patient isolation support",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_04",
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small framed Hypernormalization Screen with pale teal housing and a smoked inset"
+      ],
+      "temperament": "Ada Clear is the crew's isolation support.",
+      "prompt_auszug": "lean curve blob with gentle but direct gaze",
+      "prompt_quelle": "CONTAINMENT_PANDEMIC_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "patient isolation support"
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otis Filter",
+      "language": "en",
+      "bild": {
+        "datei": "CONTAINMENT_PANDEMIC_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "attentive protection technician",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_04",
+        "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "capped circular filter cartridge held as a spare at waist level"
+      ],
+      "temperament": "Otis Filter is the crew's protection technician.",
+      "prompt_auszug": "compact square blob with furrowed eyebrows",
+      "prompt_quelle": "CONTAINMENT_PANDEMIC_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "attentive protection technician"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "incident_type": "Pandemic Response",
+    "screen_operator_ids": [
+      "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05"
+    ],
+    "team_kit": "warm ivory protective hoods with clear open face rims, teal trim, tiny soft fabric straps and cool blue medical accessories",
+    "trios": [
+      {
+        "id": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_A",
+        "name": "Care Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_01",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_02",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_B",
+        "name": "Contact Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_04",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05",
+          "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_01",
+      "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_02",
+      "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_03",
+      "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_04",
+      "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05",
+      "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06"
+    ]
+  },
+  "georg_decision": {
+    "quote": "Die sind super und alle Pass.",
+    "scope": "All six containment sheets and 36 designs."
+  }
+}

@@ -1,0 +1,1074 @@
+{
+  "schema": "kfb.group-narratives-design/1",
+  "status": "DESIGN",
+  "source_head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+  "scope": "Additive narrative overlay; no relation, image acceptance, exclusion or canonical ID changes.",
+  "groups": [
+    {
+      "group_id": "PAIR_SOURCE_01",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_01",
+        "SL_PAAR_02"
+      ],
+      "summary_en": "Herr Nachgeschenkt measures affection by the cup, while Frau Zuckervorbehalt protects its sweetness from careless distribution. Their little domestic rationing system resembles HyperNorm in miniature, until one quietly gives the other the better portion. Each can defend a ritual alone; together they reveal whom it serves.",
+      "field_note_de": "Die Zuneigung reicht für zwei. Der Zucker wird noch geprüft.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-pilot/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "PAIR_SOURCE_02",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_03",
+        "SL_PAAR_04"
+      ],
+      "summary_en": "Frau Rosenrecht presents the flourishing evidence; Herr Nebenblüte nurses the less convincing pot. Their competition gives tenderness something safe to argue about. HyperNorm would record a clear winner, overlooking how carefully she watches his little plant and how faithfully he notices every new bloom.",
+      "field_note_de": "Sie führt nach Blüten. Gegossen wird trotzdem beides.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-pilot/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "PAIR_SOURCE_03",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_05",
+        "SL_PAAR_06"
+      ],
+      "summary_en": "Herr Richtungsgefühl supplies certainty, Frau Reisegeduld supplies luggage and an increasingly useful silence. They keep travelling because neither wants the other stranded with the whole mistake. Their shared route exposes HyperNorm's favourite trick: treating a confident explanation as transport, then asking someone else to carry it.",
+      "field_note_de": "Der Weg stimmt. Nur die Gegend hält sich nicht daran.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-pilot/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "PAIR_SOURCE_04",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_07",
+        "SL_PAAR_08"
+      ],
+      "summary_en": "Herr Taktbestand guards the familiar tune while Frau Festvorbehalt rearranges the celebration around it. Affection survives in their argument about how things have always been done, because each still listens for the other's entrance. Their household tradition is a negotiation disguised as HyperNorm's permanent cultural committee.",
+      "field_note_de": "Die Tradition bleibt. Über den Einsatz wird verhandelt.",
+      "status": "DESIGN",
+      "intake_eligible": false,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-a/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "PAIR_SOURCE_05",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_09",
+        "SL_PAAR_10"
+      ],
+      "summary_en": "Frau Fächerweise can make a precise objection without interrupting Herr Werkstolz's concentration. He calls this excellent working weather; she calls it almost understanding. Their shared craft is giving each other enough room, while HyperNorm mistakes their practiced pauses for unanimous approval of the current arrangement.",
+      "field_note_de": "Er arbeitet konzentriert. Sie widerspricht fachgerecht.",
+      "status": "DESIGN",
+      "intake_eligible": false,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-a/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "PAIR_SOURCE_06",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_11",
+        "SL_PAAR_12"
+      ],
+      "summary_en": "Herr Fadenführung keeps the thread tight; Frau Musterhoheit values the unexpected turns appearing in the pattern. Neither wants the shared work to unravel, but they disagree about whether surprise counts as damage. Their small workshop makes HyperNorm's rigid account look less convincing than an imperfect thing carefully held together.",
+      "field_note_de": "Das Muster war anders geplant. Es hält trotzdem.",
+      "status": "DESIGN",
+      "intake_eligible": false,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-a/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "PAIR_SOURCE_07",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_13",
+        "SL_PAAR_14"
+      ],
+      "summary_en": "Her urn keeps warmth under careful custody; his lantern keeps its own small territory of light. The pair approaches evening through separate rituals, each reassuring to its keeper and mildly unreasonable to the other. HyperNorm prefers one approved atmosphere, but their uneasy companionship leaves two ways to inhabit the same quiet.",
+      "field_note_de": "Die Wärme bleibt bei ihr. Das Licht hat eine eigene Zuständigkeit.",
+      "status": "DESIGN",
+      "intake_eligible": false,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-b/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      },
+      "revision_note": "Root repaired independent-review P2: removed invented tea offering; source says no pouring/offering/no staged tea service."
+    },
+    {
+      "group_id": "PAIR_SOURCE_08",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_15",
+        "SL_PAAR_16"
+      ],
+      "summary_en": "Herr Trommelpflicht maintains the count while Frau Festgestimmt hears room for an affectionate correction. Their celebration depends on both persistence and the willingness to follow another pulse. HyperNorm can regulate the programme, but cannot quite account for the moment they stop proving their timing and begin enjoying it.",
+      "field_note_de": "Der Takt ist vorgeschrieben. Das Mitwippen kam von selbst.",
+      "status": "DESIGN",
+      "intake_eligible": false,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-b/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "PAIR_SOURCE_09",
+      "kind": "pair",
+      "members": [
+        "SL_PAAR_17",
+        "SL_PAAR_18"
+      ],
+      "summary_en": "Herr Saitenlage offers the old version in song; Frau Feierbestand remembers the small attentions missing from its verses. Their quarrel stays tender because both keep returning to the same celebration. HyperNorm prefers a single official refrain, whereas this pair's shared history insists on a second voice.",
+      "field_note_de": "Er kennt alle Strophen. Sie kennt die Auslassungen.",
+      "status": "DESIGN",
+      "intake_eligible": false,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/couples-b/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "PAIR_SOURCE_10",
+      "kind": "pair",
+      "members": [
+        "SL_PIRAT_05",
+        "SL_PIRAT_06"
+      ],
+      "summary_en": "Vesta Vakuum provides the command, Bruno Bergungsrecht another broken engine with an optimistic explanation. Their affection lives between her guarded composure and his practical offerings. In a universe HyperNorm would inventory as salvage or waste, they keep recognising a possible future in what the other brings home.",
+      "field_note_de": "Der Antrieb ist hin. Die Absicht läuft noch.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit reciprocal paar_mit in source manifests; no canonical relationship ID assigned.",
+        "manifests": [
+          "SETS/pirates/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RESIDENT_01",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_01"
+      ],
+      "summary_en": "Herr Lesefrieden's two depictions belong to one interrupted reader: first the mug becomes a refuge, then it accompanies an indignant defence of the evening. HyperNorm supplies the comforting claim that everything has its proper place; his fear and anger expose how fragile that promise feels when someone actually arrives.",
+      "field_note_de": "Die Ruhe war vereinbart. Mit dem Abend allerdings nur mündlich.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "SETS/residents-a/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RESIDENT_02",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_02"
+      ],
+      "summary_en": "Frau Badeordnung is the same resident in frightened confusion and furious protest, with the familiar brush and towel anchoring both expressions. Her private care ritual offers a small protected space. When HyperNorm's orderly world intrudes, she discovers that demanding tranquillity can become the loudest event in the building.",
+      "field_note_de": "Die Entspannung wird jetzt mit Nachdruck durchgesetzt.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "SETS/residents-a/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RESIDENT_03",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_03"
+      ],
+      "summary_en": "Herr Hausverstand clutches the familiar newspaper when surprised, then brandishes its implied authority when angry. These are two reactions of one resident, not opposing neighbours. He wants reassurance that tomorrow remains legible; HyperNorm encourages him to confuse yesterday's printed certainty with a promise nobody is allowed to break.",
+      "field_note_de": "Was nicht in der Zeitung stand, hätte warten können.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "SETS/residents-a/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RESIDENT_04",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_04"
+      ],
+      "summary_en": "Frau Wärmereserve moves from anxious self-protection to offended resistance without becoming a different person. The same wish for familiar comfort underlies both states. Her preparations cannot prevent every unfamiliar feeling, and HyperNorm's promise of a fully manageable household only makes each surprise seem like a personal administrative failure.",
+      "field_note_de": "Für Zugluft ist gesorgt. Für Überraschungen fehlt das Formular.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "SETS/residents-b/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RESIDENT_05",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_05"
+      ],
+      "summary_en": "Herr Senderecht's startled and angry states share one firm conviction: the person already holding control should keep it. His familiar remote promises a world that can be changed without conversation. HyperNorm flatters that wish, until an unexpected interruption reveals how much of his authority depends on everyone else's patience.",
+      "field_note_de": "Die Fernbedienung liegt bereits bei der zuständigen Stelle.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "SETS/residents-b/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RESIDENT_06",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RESIDENT_06"
+      ],
+      "summary_en": "Frau Teigruhe appears first unsettled, then fiercely offended, but remains the same patient guardian of a rising process. Dough can be given time; people keep demanding immediate answers. HyperNorm's insistence on predictable outcomes turns her useful patience into a grievance whenever the wider world refuses to rise on schedule.",
+      "field_note_de": "Der Teig braucht Ruhe. Sie inzwischen auch.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "SETS/residents-b/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_ROSTWART",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_ROSTWART"
+      ],
+      "summary_en": "Herr Rostwart remains one anxious corridor defender across three gear depictions. Practice equipment exposes his hesitation; better gear helps him find a voice; the grandest version mistakes protection for supervisory authority. Beneath HyperNorm's attractive promise of rank, he still wants someone to say the corridor is safe enough to stop guarding.",
+      "field_note_de": "Die Ausrüstung wächst. Der Flur bleibt derselbe.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_LILA_LEHRGANG",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_LILA_LEHRGANG"
+      ],
+      "summary_en": "Frau Lila Lehrgang's three equipment stages trace one apprentice's relationship with permission. Initial caution becomes delight in small magical interventions, then an imposing certainty that reality needs correction. HyperNorm rewards the last posture, though the earliest hesitant version still remembers that knowing a spell need not mean using it on everyone.",
+      "field_note_de": "Die Wirklichkeit erhält eine letzte Gelegenheit zur Nachbesserung.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_BARBAR_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_BARBAR_20261105"
+      ],
+      "summary_en": "Grunz Grundsatz grows more emphatic across three gear states while remaining one identity. His first uncertainty concerns whether anger is allowed; later equipment makes disagreement feel satisfyingly solid; the grandest display turns confidence into noise. HyperNorm welcomes the certainty, overlooking the nervous question still rattling somewhere inside the declaration.",
+      "field_note_de": "Die Lautstärke wurde erhöht. Der Grundsatz blieb ungeprüft.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_KULTIST_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_KULTIST_20261105"
+      ],
+      "summary_en": "Schwester Restgewissheit seeks instructions, discovers the pleasure of agreement, then presents certainty as something she can distribute. These three equipped depictions share one hunger for reassurance. HyperNorm offers her an official answer for every doubt, while the person beneath the ritual still hopes somebody will explain what happens when the answer fails.",
+      "field_note_de": "Die Gewissheit wird portioniert. Nachfragen sättigen schlecht.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_KLERIKER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_KLERIKER_20261105"
+      ],
+      "summary_en": "Diakonin Nebenwirkung's changing gear belongs to one would-be comforter, moving from hesitant eligibility checks through determined intervention to polished administrative assurance. Care and control remain uncomfortably close. In HyperNorm she can classify a complaint more easily than hear it, yet the original wish to ease someone's distress has not entirely disappeared.",
+      "field_note_de": "Die Beschwerde ist behandelt. Wie es Ihnen geht, folgt später.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_DIEB_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_DIEB_20261105"
+      ],
+      "summary_en": "Herr Mitnahme's three equipment states show the same uncertain relationship with ownership becoming increasingly assured. What begins as a private hesitation develops into procedural ingenuity and then elegant possession. HyperNorm gives him splendid language for excluding inconvenient claims, though he still prefers nobody to watch the exact moment an object changes hands.",
+      "field_note_de": "Der Besitzwechsel war diskret. Die Begründung kommt nach.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_MEUCHLER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_MEUCHLER_20261105"
+      ],
+      "summary_en": "Frau Schlussstrich remains one reluctant finisher beneath three increasingly accomplished gear arrangements. Early anxiety about completing a task becomes a quiet talent for closing objections, then exhaustion with everyone's need for endings. HyperNorm prizes her tidy conclusions; she privately wishes a matter could remain unfinished without becoming somebody else's emergency.",
+      "field_note_de": "Der Schlussstrich sitzt. Das Gespräch steht noch davor.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_PALADIN_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_PALADIN_20261105"
+      ],
+      "summary_en": "Sir Unverhältnismäßig's three gear stages belong to one earnest protector whose certainty outgrows his ability to listen. Rehearsed nobility hardens into compulsory kindness, then forgiving grandeur. HyperNorm finds his posture exemplary, while a smaller, more useful courage would be letting another resident decline assistance without treating the refusal as a moral incident.",
+      "field_note_de": "Die Hilfe ist verbindlich. Zustimmung wird nachgereicht.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_TODESRITTER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_TODESRITTER_20261105"
+      ],
+      "summary_en": "Graf Endzustand's three equipment depictions preserve the same weary identity, from bewilderment about eternity to territorial working hours and magnificent impatience. Death has failed to simplify his obligations. HyperNorm continues sending matters requiring final resolution, while he increasingly suspects the merciful answer would be allowing one meeting to finish without a successor.",
+      "field_note_de": "Die Ewigkeit läuft. Der Termin hätte enden können.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_BARDE_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_BARDE_20261105"
+      ],
+      "summary_en": "Madame Zugabe becomes more splendidly equipped without becoming three performers. Her tentative request for a little song develops into a generous interpretation of interruptions, then an expectation of applause. HyperNorm approves the predictable response; her warmer impulse survives whenever she hears an actual listener rather than an audience obliged to confirm her importance.",
+      "field_note_de": "Die Zugabe ist genehmigt. Das Ende wartet draußen.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_HOARDER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_HOARDER_20261105"
+      ],
+      "summary_en": "Frau Eventuellnützlich's three gear states accumulate around one protective imagination. A bent spoon suggests possible need; each further object supplies another defence against an uncertain future. HyperNorm calls the resulting preparedness exemplary, but she is guarding people as much as possessions, even when her arrangements leave almost nowhere for those people to sit.",
+      "field_note_de": "Für alle Fälle ist etwas da. Platz gehört nicht dazu.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_DUNGEON_MASTER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_DUNGEON_MASTER_20261105"
+      ],
+      "summary_en": "Herr Wirklichkeitsvorbehalt's increasingly elaborate equipment dresses one worried organiser, first hoping events follow his notes, then offering approved choices, finally explaining why the result was inevitable. HyperNorm recognises a promising colleague. His concealed tenderness is the wish that everyone has a worthwhile evening, a wish he keeps endangering by deciding its meaning beforehand.",
+      "field_note_de": "Die Entscheidung ist frei. Das Ergebnis wurde vorbereitet.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_REGELNERD_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_REGELNERD_20261105"
+      ],
+      "summary_en": "Dr. Eigentlich's three gear depictions enlarge one fear of missing an exception. Nervous checking becomes confident interruption, then the magnificent regulation of spontaneous enjoyment. HyperNorm appreciates his thoroughness; the others might appreciate it too if he could remember that finding a rule is sometimes less helpful than noticing who needs a little room.",
+      "field_note_de": "Der Spaß wäre zulässig gewesen. Leider ohne diesen Absatz.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_RPG_SNACK_PROVIDER_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_RPG_SNACK_PROVIDER_20261105"
+      ],
+      "summary_en": "Frau Proviantvorsehung remains one attentive provider across modest, practical and extravagant gear. Quiet concern becomes insistence on equal portions, then authority over seconds. Her care answers a real need that HyperNorm's abstract order forgets, although feeding everyone kindly becomes harder when she starts interpreting a declined helping as a challenge to the whole arrangement.",
+      "field_note_de": "Alle sind versorgt. Der Nachschlag hat noch Weisungsrecht.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_MEDIZIN_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_MEDIZIN_20261105"
+      ],
+      "summary_en": "Dr. Befundvorbehalt's student, doctor and senior clinical depictions describe one career identity learning different ways to carry uncertainty. Notes become reassurance and finally interpretive authority. HyperNorm favours the appearance of an unbroken answer, but her earliest careful attention remains valuable precisely because it remembers that another person's discomfort cannot be settled by seniority.",
+      "field_note_de": "Der Befund ist endgültig. Die Patientin fühlt noch nach.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_PFLEGE_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_PFLEGE_20261105"
+      ],
+      "summary_en": "Herr Stationshaltung's trainee, qualified nurse and ward leader are three stages of one identity, carrying the same practical wish to keep people cared for. Confidence improves while responsibility spreads. HyperNorm can provide a place for every key and still fail to provide enough hands, leaving his competence stretched between genuine care and impossible completeness.",
+      "field_note_de": "Die Schlüssel sind vollständig. Die Schicht leider nicht.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_KUECHE_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_KUECHE_20261105"
+      ],
+      "summary_en": "Monsieur Nachwürde moves through apprentice, cook and kitchen chief as one person developing a stronger opinion about an unfinished dish. Curiosity becomes concentration, then final tasting authority. HyperNorm would make the recipe beyond dispute; his better instinct knows that feeding someone involves discovering what they need, even when it contradicts the kitchen's proud conclusion.",
+      "field_note_de": "Abgeschmeckt ist es. Gegessen werden muss noch.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_HANDWERK_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_HANDWERK_20261105"
+      ],
+      "summary_en": "Frau Sollpassung's apprentice, craftswoman and master depictions retain one patient eye for what does not fit. Early uncertainty becomes practical discrimination and eventually supervisory certainty. HyperNorm tempts her to correct the world around the measurement, while her real gift remains recognising when a stubborn object needs attention rather than a more authoritative explanation.",
+      "field_note_de": "Es passt jetzt. Die Vorgabe wurde entsprechend beruhigt.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_BILDUNG_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_BILDUNG_20261105"
+      ],
+      "summary_en": "Frau Lehrsatz appears as trainee teacher, teacher and school leader, all one identity negotiating the distance between questions and prescribed answers. Preparation becomes classroom confidence, then institutional permission. HyperNorm welcomes neatly bounded independence, yet her original habit of checking what she teaches could still open a small space for a pupil's unexpected thought.",
+      "field_note_de": "Selbstständiges Denken bitte innerhalb der bekannten Lösung.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_WISSENSCHAFT_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_WISSENSCHAFT_20261105"
+      ],
+      "summary_en": "Professor Resthypothese's laboratory beginner, researcher and institute head share one curiosity gradually surrounded by applications and signatures. The first unexplained liquid becomes a promising result, then an institution to sustain. HyperNorm rewards the convincing account; the vulnerable achievement is remembering how enjoyable a question felt before its answer became a responsibility to defend.",
+      "field_note_de": "Das Ergebnis ist offen. Die Mittel sind bereits verplant.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_BUERO_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_BUERO_20261105"
+      ],
+      "summary_en": "Herr Weiterleitung's intern, team leader and departmental head are one career identity discovering how usefulness becomes responsibility, then how responsibility can be passed along. The coffee grows safer as the decisions travel further. HyperNorm calls this efficient coordination; he sometimes misses the early pleasure of completing a small task someone actually needed.",
+      "field_note_de": "Weitergeleitet ist es. Erledigung war nicht Gegenstand der Nachricht.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_JUSTIZ_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_JUSTIZ_20261105"
+      ],
+      "summary_en": "Frau Rechtsbehelf progresses through legal trainee, judge and court president as one person seeking a fair shape for ambiguity. More pages become hearings, then confidence in the final interpretation. HyperNorm favours closure over discomfort, while her first willingness to read another page could still interrupt a conclusion that has become too comfortable with itself.",
+      "field_note_de": "Beide Seiten wurden gehört. Der Zweifel erhält keinen Vorsitz.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_TRANSPORT_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_TRANSPORT_20261105"
+      ],
+      "summary_en": "Frau Anschlussverlust's learner, bus driver and fleet leader remain one identity trying to bring departure and arrival into agreement. The anxious wheel becomes a timetable, then a whole network to coordinate. HyperNorm treats punctual order as an explanation for travel, but she knows the relief of someone finally reaching the place they needed.",
+      "field_note_de": "Die Abfahrt steht fest. Die Ankunft hat noch Rückfragen.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_HANDEL_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_HANDEL_20261105"
+      ],
+      "summary_en": "Herr Warenwert's apprentice, shopkeeper and branch director carry one growing fascination with how an object acquires a price. Eagerness becomes commercial attention, then protective supervision of stock. HyperNorm encourages value to stay neatly accounted for; the earliest version can still recognise the small delight of an actual customer finding something useful and leaving with it.",
+      "field_note_de": "Der Warenwert ist gesichert. Die Ware wartet auf Freigang.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_MEDIEN_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_MEDIEN_20261105"
+      ],
+      "summary_en": "Herr Schlagzeile's intern, reporter and editor are one identity moving from permission to urgency and finally control of the published account. Questions initially feel dangerous; later other people's answers do. HyperNorm offers an orderly headline for every disturbance, while the reporter within him still remembers the inconvenient excitement of hearing something he had not approved.",
+      "field_note_de": "Die Meinung ist frei. Redaktionsschluss war allerdings gestern.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_CAREER_VERWALTUNG_20261105",
+      "kind": "identity_variants",
+      "members": [
+        "WSA_CAREER_VERWALTUNG_20261105"
+      ],
+      "summary_en": "Frau Zuständigkeitsbereich's trainee, caseworker and office leader share a sincere beginning: wanting to help somebody reach the right desk. Experience teaches her to organise waiting, then own the boundaries of responsibility. HyperNorm makes those boundaries reassuringly precise, though the original request may still need the simple kindness that set her career in motion.",
+      "field_note_de": "Die Zuständigkeit ist geklärt. Das Anliegen wartet weiter.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit zustand_von in source manifests.",
+        "manifests": [
+          "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_AUSBRECHER_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_AUSBRECHER_20261105_01",
+        "WSA_TRIO_AUSBRECHER_20261105_02",
+        "WSA_TRIO_AUSBRECHER_20261105_03"
+      ],
+      "summary_en": "Herr Fluchtweg plans the exit, Frau Löffelrecht tests the wall, and Herr Bewährungsangst worries about what leaving commits them to. Their companionship makes freedom imaginable before it becomes practical. HyperNorm survives inside their habits: even while escaping a prescribed account, each wants assurance that the new situation comes with understandable rules.",
+      "field_note_de": "Der Ausbruch ist geplant. Die Freiheit enthält noch Unklarheiten.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_BRUCHKOLONNE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_02",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_03"
+      ],
+      "summary_en": "Herr Schließzustand approaches the lock as a procedural objection, Frau Fernverdacht sees trouble before it arrives, and Herr Leerlauf refuses to lend urgency unlimited authority. Their competing tempos make an awkwardly caring crew. HyperNorm would classify them by function, missing the way each quietly compensates for another member's least useful certainty.",
+      "field_note_de": "Der Fluchtwagen wartet. Vor allem auf Einigkeit.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_NACHTJAZZ_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_NACHTJAZZ_20261105_01",
+        "WSA_TRIO_NACHTJAZZ_20261105_02",
+        "WSA_TRIO_NACHTJAZZ_20261105_03"
+      ],
+      "summary_en": "Frau Atemvorbehalt shapes the silence, Herr Grundton steadies it, and Herr Nebenbeat cannot resist improving its timing. Their musical disagreement works because none can quite replace the others' listening. HyperNorm prefers an approved interpretation; this trio's modest resistance lies in making room for a response that was not written into the arrangement.",
+      "field_note_de": "Die Pause war beabsichtigt. Drei Meinungen lang.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_GARAGENKRACH_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_GARAGENKRACH_20261105_01",
+        "WSA_TRIO_GARAGENKRACH_20261105_02",
+        "WSA_TRIO_GARAGENKRACH_20261105_03"
+      ],
+      "summary_en": "Frau Lautantrag supplies the complaint, Herr Akkordresten trusts the chord he already knows, and Herr Eimermaß gives available material an indispensable rhythm. They protect one another's right to make an imperfect noise. HyperNorm can dismiss the sound as disorder, but has difficulty explaining why the three keep returning happier to the rehearsal.",
+      "field_note_de": "Die Beschwerde wurde verstärkt. Jetzt trägt sie den Refrain.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_SONNTAGSFAMILIE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_01",
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_02",
+        "WSA_TRIO_SONNTAGSFAMILIE_20261105_03"
+      ],
+      "summary_en": "Tante Letztentscheid arranges the pleasant day, Herr Familiensonntag hopes to enjoy its absence of obligations, and Opa Zeitreserve audits everyone's arrival. Their family affection hides in the effort each makes to be there. HyperNorm's approved leisure becomes comic pressure when nobody can admit that being together might need less successful organisation.",
+      "field_note_de": "Der freie Sonntag ist lückenlos eingeteilt.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_ROHRKOMMANDO_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_ROHRKOMMANDO_20261105_01",
+        "WSA_TRIO_ROHRKOMMANDO_20261105_02",
+        "WSA_TRIO_ROHRKOMMANDO_20261105_03"
+      ],
+      "summary_en": "Frau Hauptabsperrung wants the leak stopped, Herr Dichtungslehre trusts his spare part, and Herr Abnahmetermin needs the water to agree with the paperwork. Each offers something useful and one avoidable delay. Their working trust begins when practical care outranks HyperNorm's demand that reality become properly documented before anybody touches the valve.",
+      "field_note_de": "Das Wasser ist unterwegs. Die Abnahme sucht den Vorgang.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_MACBETH_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_MACBETH_20261105_01",
+        "WSA_TRIO_MACBETH_20261105_02",
+        "WSA_TRIO_MACBETH_20261105_03"
+      ],
+      "summary_en": "König Vielleichtmorgen wears the result of ambition, Lady Fleckenfreiheit tends its visible traces, and Frau Vorhersagbar keeps prediction compatible with whatever happens next. Their uneasy dependence turns certainty into a shared maintenance task. HyperNorm likes the authoritative story they present, while each isolated figure carries a private unease that no polished account can quite remove.",
+      "field_note_de": "Die Zukunft war vorhergesagt. Nur nicht in dieser Fassung.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_HAMLET_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_HAMLET_20261105_01",
+        "WSA_TRIO_HAMLET_20261105_02",
+        "WSA_TRIO_HAMLET_20261105_03"
+      ],
+      "summary_en": "Prinz Aufschub preserves the question, Herr Nachtrag preserves the inconvenient facts, and Vater Unabgeschlossen refuses to let the matter stay closed. Their affection is burdened by incompatible duties to memory. In HyperNorm, an approved conclusion would settle everything; this trio keeps showing how a tidy ending can fail the people expected to live inside it.",
+      "field_note_de": "Der Fall ist abgeschlossen. Die Beteiligten wissen es noch nicht.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_ODYSSEE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_ODYSSEE_20261105_01",
+        "WSA_TRIO_ODYSSEE_20261105_02",
+        "WSA_TRIO_ODYSSEE_20261105_03"
+      ],
+      "summary_en": "Herr Heimwegabweichung supplies another route, Frau Zwischengewebe gives waiting a reversible form, and Herr Einblick defends the limits of hospitality. Their different claims on home make companionship difficult but consequential. HyperNorm would assign arrival, loyalty and belonging fixed meanings; these three remain individually certain while exposing the gaps in one another's definitions.",
+      "field_note_de": "Die Heimkehr verzögert sich. Zuhause wird weiter ausgelegt.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_CASABLANCA_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_CASABLANCA_20261105_01",
+        "WSA_TRIO_CASABLANCA_20261105_02",
+        "WSA_TRIO_CASABLANCA_20261105_03"
+      ],
+      "summary_en": "Herr LetzterAusschank keeps a place for departure, Frau Abschiedsvorbehalt carries a decision that resists simplification, and Herr Prinzipienreise treats leaving as more than private convenience. Their tenderness involves making room for choices they cannot all share. HyperNorm wants a single loyalty declared; this trio's care persists in the difficult generosity of an unpossessed farewell.",
+      "field_note_de": "Der Abschied ist entschieden. Das Gefühl bleibt noch sitzen.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_MUSKETIERE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_MUSKETIERE_20261105_01",
+        "WSA_TRIO_MUSKETIERE_20261105_02",
+        "WSA_TRIO_MUSKETIERE_20261105_03"
+      ],
+      "summary_en": "Herr Würdeverlust distrusts the ceremony, Herr Umfangseid fills it expansively, and Madame Hintergedanke prepares an explanation for every allegiance. Their fellowship survives unequal investments in honour because each still risks being there for the others. HyperNorm can record a common oath, while their individual hesitations supply its less official, more human meaning.",
+      "field_note_de": "Der Eid gilt für alle. Die Begründungen bleiben verschieden.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    },
+    {
+      "group_id": "WSA_TRIO_QUIJOTE_20261105",
+      "kind": "trio",
+      "members": [
+        "WSA_TRIO_QUIJOTE_20261105_01",
+        "WSA_TRIO_QUIJOTE_20261105_02",
+        "WSA_TRIO_QUIJOTE_20261105_03"
+      ],
+      "summary_en": "Ritter Zustandsbild recognises the world he believes ought to exist, Herr Bodenhaftung carries provisions for the actual road, and Frau Eigenwirklichkeit insists on being consulted about herself. Their connection holds idealism, care and resistance in productive friction. HyperNorm offers a fixed approved reality; none can claim the whole trio without hearing the other two.",
+      "field_note_de": "Das Ideal steht fest. Die Betroffene möchte kurz widersprechen.",
+      "status": "DESIGN",
+      "intake_eligible": true,
+      "source_note": {
+        "head": "46ad5a152087762ab3521613a3fd7f26075e1aa4",
+        "relation_source": "Explicit trio/trio_mit in source manifests.",
+        "manifests": [
+          "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json"
+        ],
+        "basis": "RELATION_GRAPH_R1.json + IDENTITY_BRIEFS_R1.json; narrative proposal only; group_id is an existing source projection key, not a canonical asset ID."
+      }
+    }
+  ],
+  "counts": {
+    "pair": 10,
+    "identity_variants": 32,
+    "trio": 12
+  }
+}

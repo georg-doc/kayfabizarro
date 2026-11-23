@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.slop-qa/1",
+  "georg_status": null,
+  "technical_status": "LAYOUT_CHECKED_EDGE_NORMALIZATION_DEFERRED",
+  "image": {
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "sha256": "70e97e2766e17e39a6ac21c9f99c2fe6bea5461420a0844571fd5ea5cdd8a754",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "transparent_pixels": 829533,
+    "opaque_pixels": 0,
+    "outer_edge_alpha_max": 1,
+    "seam_alpha_max": {
+      "512": 0,
+      "1024": 0
+    },
+    "horizontal_seam_alpha_max": 1
+  },
+  "visual_review": {
+    "identities": 2,
+    "depictions": 6,
+    "complete_upright_footless_bodies": true,
+    "white_sclera_red_iris_black_pupil": true,
+    "same_identity_across_row": "recognizable illustrated variants, not an exact rig",
+    "tier_readability": "gear and attitude progress; approximately constant body size",
+    "source_conditioning": "two original benchmark PNGs in actual native image call",
+    "limitations": [
+      "Elite expressions retain open crooked smiles despite more closed-mouth direction.",
+      "No runtime, combat balance or exact character-model continuity tested.",
+      "Three female-read depictions represent one female identity; deliberate tier-format exception.",
+      "Native output alpha interiors peak at254; residual background alpha1 remains. Clean opaque interiors/edge normalization deferred to final asset preparation. R2 cell seams have no visible content; alpha<=1."
+    ],
+    "small_size_review": "Derived cell thumbnails at 64,96,160,192 pixels; identity accents and broad props readable, fine hardware disappears at64px.",
+    "design_acceptance": "PENDING_GEORG"
+  }
+}

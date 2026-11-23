@@ -1,0 +1,278 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DIGITAL_NEURAL_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "DIGITAL_NEURAL_6_2026-11-07/sheet-r1.png",
+    "sha256": "03bbb929e9b89e1a17a9a9a447cf1c576c041a8f942cdcbe698f2a1764962d72"
+  },
+  "production_record": "DIGITAL_NEURAL_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "DIGITAL_NEURAL_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "DIGITAL_NEURAL_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Terms of Thought",
+    "theme": "smombies with fictional neural-link implants, comic digital dependency",
+    "backlog_neighbors": [
+      "G09"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "HyperNorm resident",
+      "digital satire cluster",
+      "NPC candidate",
+      "opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_DIGITAL_NEURAL_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cliff Cloudlink",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_NEURAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "rapturously connected",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny brass temple puck",
+        "one short curved antenna"
+      ],
+      "temperament": "He has connected everything except the possibility of declining.",
+      "prompt_auszug": "Male-read tall egg goo blob, tiny brass disc gently seated ON OUTSIDE temple with one short curved antenna. Both little palms open in delight at chest. Huge white eyes look slightly upward, brows unevenly ecstatic, OPEN two-upper-tooth beam. Organic goo remains95percentbody, no fullheadhelmet/metal skull/surgery.",
+      "prompt_quelle": "DIGITAL_NEURAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_NEURAL_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Buffering",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_NEURAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "mentally buffering",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small external ear-loop sensor",
+        "tiny faded teal headband"
+      ],
+      "temperament": "She is still loading a response nobody is waiting politely enough to receive.",
+      "prompt_auszug": "Female-read wide rounded splat with two floppy short crests, modest lashes, tiny faded teal headband and ONE short copper ear-loop sensor. One hand touches own temple, other freezes halfway palm-up. One huge fixed white eye and other slightly drooped, tiny CLOSED flat line mouth. Comic delayed thought, no loading-text, spinning graphics or literal gears.",
+      "prompt_quelle": "DIGITAL_NEURAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_NEURAL_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hugh Autocomplete",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_NEURAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "smugly over-assisted",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny brass temple button"
+      ],
+      "temperament": "He knows what he meant because a service has already finished meaning it.",
+      "prompt_auszug": "Male-read lean reverse-comma blob, long folded crest, one tiny external brass temple button. One hand points smugly toward button, other hand folded on belly. One half-lidded knowing eye and one raised curious brow, OPEN narrow asymmetrical three-upper-tooth speaking mouth, chin goo pushed out in premature certainty. No floating words or spectacles.",
+      "prompt_quelle": "DIGITAL_NEURAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_NEURAL_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Alma Airgap",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_NEURAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "anxiously disconnecting",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one tiny external shoulder socket",
+        "one short thick unplugged cable"
+      ],
+      "temperament": "She would like to disconnect without being disconnected from everybody.",
+      "prompt_auszug": "Female-read pear-shaped goo blob with soft sidecurl, subtle lashes. One hand pinches a short thick UNPLUGGED cable end just beside her own tiny brass shoulder socket, other palm held cautiously outward. Huge alarmed white eyes inspect plug, brows knitted unevenly, CLOSED crooked trembling mouth. No wounds/exposedbrain;external toy interface, all organic clay goo.",
+      "prompt_quelle": "DIGITAL_NEURAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_NEURAL_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Percy Pending",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_NEURAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "indignant about mandatory updates",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny external brass ear patch with one red button"
+      ],
+      "temperament": "He resents the update most when it claims to improve his willingness.",
+      "prompt_auszug": "Male-read broad box-rounded blob, three stumpy soft crest lobes. Tiny brass ear patch with ONEsmallredbutton. One hand repeatedly poised to press button, other palm up in exasperation. One huge eye and other inspecting slit, forehead ridges unequal, CLOSED massive dark-ink buckled pout. No typography, visor or robot torso.",
+      "prompt_quelle": "DIGITAL_NEURAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_NEURAL_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Zen Unplugged",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_NEURAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "blissfully offline",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny external collar socket",
+        "short detached cable end"
+      ],
+      "temperament": "He is having a thought with no reassuring indication of its delivery.",
+      "prompt_auszug": "Male-read broad round low-crest organic blob. One hand loosely holds one short detached cable end beside tiny brass collar socket, other hand rests at belly. Eyes HALF-OPEN with visible white/red/black and dreamy relaxed lids, brows softened unevenly, CLOSED tiny crooked contented smile. Deep relief and quiet presence, not asleep, no halo/meditationfloor.",
+      "prompt_quelle": "DIGITAL_NEURAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "georg_decision": {
+    "quote": "Wir sind auch alle Pass.",
+    "scope": "All six digital satire sheets and 36 designs."
+  }
+}

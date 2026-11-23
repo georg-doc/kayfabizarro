@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_01",
+      "name": "Jack Beacon",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Jack Beacon is the crew's search lead.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Determined search lead.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Mark the boundary here."
+          ],
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_RESCUE_20261107",
+            "trio": "WSA_CONTAINMENT_RESCUE_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Jack Beacon serves with the Search Detail of The High Ground Crew. The kit includes a stubby cream search lamp held down. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Jack Beacon treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "determined search lead",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_02",
+      "name": "Sable Line",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sable Line is the crew's rope specialist.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Brisk rope specialist.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a moment to check this."
+          ],
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_RESCUE_20261107",
+            "trio": "WSA_CONTAINMENT_RESCUE_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Sable Line serves with the Search Detail of The High Ground Crew. The kit includes a small neatly coiled tan rope. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Sable Line treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "brisk rope specialist",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_03",
+      "name": "Frank Listen",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Frank Listen is the crew's spotter.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Suspiciously attentive spotter.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The case is secured."
+          ],
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_RESCUE_20261107",
+            "trio": "WSA_CONTAINMENT_RESCUE_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Frank Listen serves with the Search Detail of The High Ground Crew. The kit includes a handheld acoustic listening puck with small ear cup. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Frank Listen treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "suspiciously attentive spotter",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_04",
+      "name": "Finn Float",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Finn Float is the crew's evacuation lead.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Warily helpful evacuation lead.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay near your detail."
+          ],
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_RESCUE_20261107",
+            "trio": "WSA_CONTAINMENT_RESCUE_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Finn Float serves with the Evacuation Detail of The High Ground Crew. The kit includes a compact red-and-cream rescue float with short grab loop. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Finn Float treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "warily helpful evacuation lead",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_05",
+      "name": "Piper Shelter",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Piper Shelter is the crew's shelter runner.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Steadily reassuring shelter runner.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have the panel."
+          ],
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_RESCUE_20261107",
+            "trio": "WSA_CONTAINMENT_RESCUE_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Piper Shelter serves with the Evacuation Detail of The High Ground Crew. The kit includes a small folded ochre emergency blanket. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Piper Shelter treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "steadily reassuring shelter runner",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_RESCUE_ACTOR_20261107_06",
+      "name": "Cole Signal",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cole Signal is the crew's communicator.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Startled but ready communicator.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_RESCUE_20261107",
+            "trio": "WSA_CONTAINMENT_RESCUE_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cole Signal serves with the Evacuation Detail of The High Ground Crew. The kit includes a tiny red hand radio with short aerial. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cole Signal treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled but ready communicator",
+          "src": "CONTAINMENT_RESCUE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

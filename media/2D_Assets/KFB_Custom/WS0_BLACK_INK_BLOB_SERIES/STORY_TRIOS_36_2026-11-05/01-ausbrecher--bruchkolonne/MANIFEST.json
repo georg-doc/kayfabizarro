@@ -1,0 +1,254 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "STORY_TRIOS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+    "sha256": "39afcc656b104f1fb3dbb0ec90ce9b314d7cb0392da989018414c0ff46658f98"
+  },
+  "production_record": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/PRODUCTION_RECORD.json",
+  "cards": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION",
+    "note": "Design accepted; source-grid PASS does not certify catalogue master resolution. Do not promote enlarged grid crops as new high-detail masters."
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRIO_AUSBRECHER_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Fluchtweg",
+      "rolle_im_trio": "anxious escape planner",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_AUSBRECHER_20261105",
+      "trio_mit": [
+        "WSA_TRIO_AUSBRECHER_20261105_02",
+        "WSA_TRIO_AUSBRECHER_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rolled blank escape sketch, red pencil"
+      ],
+      "prompt_auszug": "TALL skinny hooked upright ink bean, one long sagging crown lobe, one enormous lower ivory tooth. Unequal wide WHITE/red/black eyes DOWN, worried crooked CLOSED lower lip. Hugs ONE rolled blank cream escape sketch with ONE short fat red carpenter pencil tucked in fold.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_AUSBRECHER_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Löffelrecht",
+      "rolle_im_trio": "determined prison tunnel specialist",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_AUSBRECHER_20261105",
+      "trio_mit": [
+        "WSA_TRIO_AUSBRECHER_20261105_01",
+        "WSA_TRIO_AUSBRECHER_20261105_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "bent steel spoon"
+      ],
+      "prompt_auszug": "SHORT very WIDE blunt-lobed ink splat, TWO low crown nubs, subtle lashes, THREE widely spaced upper teeth. One eye squints shut with effort, other forward, side-clenched tooth grimace. Grips ONE absurdly broad bent steel SOUP SPOON against own belly like her entire practical education.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_AUSBRECHER_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Bewährungsangst",
+      "rolle_im_trio": "nervous prison baggage keeper",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_AUSBRECHER_20261105",
+      "trio_mit": [
+        "WSA_TRIO_AUSBRECHER_20261105_01",
+        "WSA_TRIO_AUSBRECHER_20261105_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "patched drawstring bundle"
+      ],
+      "prompt_auszug": "ROUND upright dumpling ink blob, crown forms THREE tiny offset drops, TWO big lower teeth, heavy trembling lip. White/red/black eyes stare SIDEWAYS, pinched worried half-open underbite. Both goo hands protect ONE tiny patched brown drawstring BUNDLE with a little blank ivory tag, no loot spilling.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Schließzustand",
+      "rolle_im_trio": "punctilious lock specialist",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_BRUCHKOLONNE_20261105",
+      "trio_mit": [
+        "WSA_TRIO_BRUCHKOLONNE_20261105_02",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass key, short lock pick"
+      ],
+      "prompt_auszug": "MEDIUM narrow upright pear ink blob, stiff sideways crown curl, thick upper lip and ONE crooked upper tooth. Half-lidded judgmental side-eye, CLOSED pursed lip. Holds ONE enormous old brass KEY and ONE short fat blunt lock pick together low at belly, simple readable tools.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_BRUCHKOLONNE_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Fernverdacht",
+      "rolle_im_trio": "over-alert lookout",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_BRUCHKOLONNE_20261105",
+      "trio_mit": [
+        "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "stubby brass spyglass"
+      ],
+      "prompt_auszug": "TALL leaning inverted-drop ink splat, TWO antenna-like rounded crown lobes, subtle lashes, asymmetrical upper fangs. One eye CLOSED and one WHITE/red/black very wide looking outward, crooked small tense mouth. Hugs ONE stubby thick battered BRASS SPYGLASS at her own belly, not looking through it or pointing at another actor.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_BRUCHKOLONNE_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Leerlauf",
+      "rolle_im_trio": "unhurried getaway driver",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_BRUCHKOLONNE_20261105",
+      "trio_mit": [
+        "WSA_TRIO_BRUCHKOLONNE_20261105_01",
+        "WSA_TRIO_BRUCHKOLONNE_20261105_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-spoke steering wheel"
+      ],
+      "prompt_auszug": "WIDE low upright bean splat with a huge coiled crown loop, ONE square lower tooth, sleepy drooping lids. Exhausted unimpressed WHITE/red/black gaze and enormous CLOSED pout. Holds ONE small three-spoke BLACK rubber steering wheel with iron hub, loose in both goo hands, no car.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: die sind alle sehr gut und passen; scale/resolution concern retained separately."
+  },
+  "technical_holds": [
+    "CATALOGUE_MASTER_RESOLUTION_PENDING",
+    "CROSS_SET_BODY_SCALE_NORMALIZATION_PENDING"
+  ]
+}

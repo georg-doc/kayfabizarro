@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_ALIENS_R6_CONTACT_20261108_01",
+      "name": "Venn Upwhere",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Checks the ceiling before he checks the news.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Eyestalk Tentacle"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Airy dry precision.",
+            "audio": null
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Which one of me saw that?"
+          ],
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIENS_R6_CONTACT_20261108"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "HyperNorm recruited Venn to maintain five points of visual contact. It now pays him to look away from four of them.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "All five witnesses were present. Unfortunately they shared a body.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Five raised eyes and a pinched, bewildered mouth.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIENS_R6_CONTACT_20261108_02",
+      "name": "Grom Portside",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Treats docking instructions as personal criticism.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "UFO Cyclops"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Low clipped delivery.",
+            "audio": null
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That's my good side."
+          ],
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIENS_R6_CONTACT_20261108"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Grom pilots the smallest saucer that can legally be called a HyperNorm vehicle. The regulation is measured from his waist.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He arrived five minutes late and insisted the saucer had been early.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "One sideways eye and a small diagonal frown.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIENS_R6_CONTACT_20261108_03",
+      "name": "Nia Crossband",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Hears the part of a message its sender left out.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Signal Antenna"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Bright sidelong understatement.",
+            "audio": null
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Leave that channel open."
+          ],
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIENS_R6_CONTACT_20261108"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nia tunes incident reports for HyperNorm. The unapproved channel is generally the one with the best reception.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "She held up one finger. I heard the official version catch up with us.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Uneven lids, sidelong gaze and a quiet smile.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIENS_R6_CONTACT_20261108_04",
+      "name": "Kel Hindsight",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Is regularly startled by a thought he just had.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Brain Dome"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Breathy quick emphasis.",
+            "audio": null
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Oh. That was me."
+          ],
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIENS_R6_CONTACT_20261108"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Kel keeps his working notes visible under glass. HyperNorm sent a cloth to help him achieve discretion.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The committee admired the dome. Kel had been hoping they'd notice the brain.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Eyes follow an ink curl, with a small round gasp.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIENS_R6_CONTACT_20261108_05",
+      "name": "Mara Fallup",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Collects small exceptions to the law of falling.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Gravity Collector"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Soft with short held pauses.",
+            "audio": null
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Just a little closer."
+          ],
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIENS_R6_CONTACT_20261108"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mara checks that the pieces thrown up by a HyperNorm demolition come down in the authorized order. Some keep their own hours.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "She recovered three pebbles and the principle on which they had been overlooked.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Eyes track the pebbles and cheeks puff with concentration.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIENS_R6_CONTACT_20261108_06",
+      "name": "Pim Loopback",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Takes shortcuts with the same hand he waves goodbye with.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Wormhole Tinker"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Warm quiet deadpan.",
+            "audio": null
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Back already?"
+          ],
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIENS_R6_CONTACT_20261108"
+          },
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pim fitted a pocket portal to the HyperNorm service corridor. An inspection of the other end took less time than deciding which end to inspect.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "I shook his hand twice. He claimed only one arrival.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Looks down at the portal with a delighted open smile.",
+          "src": "ALIENS_R6_CONTACT_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

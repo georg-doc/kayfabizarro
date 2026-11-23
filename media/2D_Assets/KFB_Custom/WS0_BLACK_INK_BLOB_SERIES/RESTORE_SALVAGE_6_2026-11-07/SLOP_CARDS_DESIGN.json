@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESTORE_SALVAGE_ACTOR_20261107_01",
+      "name": "Rafe Magnet",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Rafe Magnet is the crew's stern recovery lead.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Stern recovery lead.",
+            "audio": null
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We start at this end."
+          ],
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SALVAGE_20261107",
+            "trio": "WSA_RESTORE_SALVAGE_20261107_TRIO_A"
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Rafe Magnet works the Recovery Detail with The Bent Bolt Detail. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Rafe Magnet takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Rafe Magnet has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stern recovery lead",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SALVAGE_ACTOR_20261107_02",
+      "name": "Tess Rivet",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Tess Rivet is the crew's eager machine fixer.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Eager machine fixer.",
+            "audio": null
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me the next piece."
+          ],
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SALVAGE_20261107",
+            "trio": "WSA_RESTORE_SALVAGE_20261107_TRIO_A"
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Tess Rivet works the Recovery Detail with The Bent Bolt Detail. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Tess Rivet takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Tess Rivet has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "eager machine fixer",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SALVAGE_ACTOR_20261107_03",
+      "name": "Nolan Buckle",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Nolan Buckle is the crew's worried load checker.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Worried load checker.",
+            "audio": null
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That needs another pass."
+          ],
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SALVAGE_20261107",
+            "trio": "WSA_RESTORE_SALVAGE_20261107_TRIO_A"
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nolan Buckle works the Recovery Detail with The Bent Bolt Detail. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Nolan Buckle takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nolan Buckle has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "worried load checker",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SALVAGE_ACTOR_20261107_04",
+      "name": "Cobb Clamp",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cobb Clamp is the crew's calm structural helper.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Calm structural helper.",
+            "audio": null
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It will stand for now."
+          ],
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SALVAGE_20261107",
+            "trio": "WSA_RESTORE_SALVAGE_20261107_TRIO_B"
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cobb Clamp works the Sorting Detail with The Bent Bolt Detail. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Cobb Clamp takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cobb Clamp has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "calm structural helper",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SALVAGE_ACTOR_20261107_05",
+      "name": "Willa Splice",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Willa Splice is the crew's shrewd cable keeper.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Shrewd cable keeper.",
+            "audio": null
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Checking the finish."
+          ],
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SALVAGE_20261107",
+            "trio": "WSA_RESTORE_SALVAGE_20261107_TRIO_B"
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Willa Splice works the Sorting Detail with The Bent Bolt Detail. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Willa Splice takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Willa Splice has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "shrewd cable keeper",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SALVAGE_ACTOR_20261107_06",
+      "name": "Perry Scrap",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Perry Scrap is the crew's fussily methodical sorter.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Fussily methodical sorter.",
+            "audio": null
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the next corner."
+          ],
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SALVAGE_20261107",
+            "trio": "WSA_RESTORE_SALVAGE_20261107_TRIO_B"
+          },
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Perry Scrap works the Sorting Detail with The Bent Bolt Detail. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Perry Scrap takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Perry Scrap has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "fussily methodical sorter",
+          "src": "RESTORE_SALVAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

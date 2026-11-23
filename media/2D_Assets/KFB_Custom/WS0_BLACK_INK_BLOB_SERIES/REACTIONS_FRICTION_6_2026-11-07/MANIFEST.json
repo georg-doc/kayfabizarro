@@ -1,0 +1,276 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_REACTIONS_FRICTION_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
+    "sha256": "4e02255dbccc5bb05cfc0c5b987d640aed1f464d5873e0e00ab1bd0bb69429c6"
+  },
+  "production_record": "REACTIONS_FRICTION_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "REACTIONS_FRICTION_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "REACTIONS_FRICTION_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Last Small Inconvenience",
+    "theme": "irritation, resistance and everyday fatigue",
+    "backlog_neighbors": [
+      "G01",
+      "G02",
+      "G03"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "building resident",
+      "pedestrian",
+      "low-equipment NPC",
+      "trash opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_REACTIONS_FRICTION_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Percy Outrage",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "indignant",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny faded ochre pajama collar"
+      ],
+      "temperament": "He regards this inconvenience as a serious misunderstanding of his importance.",
+      "prompt_auszug": "Male-read broad box-rounded goo body, two short crest nubs, tiny faded ochre pajama collar. One hand pressed to chest in offended disbelief, other palm sharply up near shoulder. One eye enormous and other narrowing, eyebrows uneven not matching V, wide CLOSED buckled pout with no outside teeth. Outrage at a petty inconvenience, not armed soldier anger.",
+      "prompt_quelle": "REACTIONS_FRICTION_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_FRICTION_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Wontbudge",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "defiant",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [],
+      "temperament": "He has made up his mind and is using the rest of his body to keep it there.",
+      "prompt_auszug": "Male-read stout asymmetric diamond-lobed ink blob with swept sidecrest, bare body. BOTH short ink arms folded tightly across his goo belly, chin lifted, weight leans forward but upright. Determined clear white eyes, one brow down and other arrogantly up, tiny CLOSED tilted smirk. Stubborn refusal visible in the whole silhouette, no fists holding weapons.",
+      "prompt_quelle": "REACTIONS_FRICTION_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_FRICTION_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Tess Anyminute",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "impatient",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one tiny brass wristwatch",
+        "small muted green headband"
+      ],
+      "temperament": "She has allowed enough time for everyone else to stop taking it.",
+      "prompt_auszug": "Female-read tall thin undulating ink blob with two soft hanging crest loops, modest lashes and small muted green headband. One ink hand presents a tiny brass wristwatch strapped to OTHER short ink wrist, no numbers on dial. Heavy white-eye lids, irises sidelong, brow crooked in pointed annoyance, CLOSED long flat pursed mouth. Upright twist of impatience, no foot tapping or human limbs.",
+      "prompt_quelle": "REACTIONS_FRICTION_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_FRICTION_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Arthur FineThen",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "resigned",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small empty cloth shopping bag"
+      ],
+      "temperament": "He has accepted the situation without endorsing its handling.",
+      "prompt_auszug": "Male-read wide drooping pear blob with low wilted central crest. Holds ONE empty little cloth shopping bag loosely at side, other ink palm turned up in a tiny exhausted shrug. White eyes half-open looking down toward camera, brows folded into lopsided weary arches, mouth CLOSED diagonal sigh-line. Whole body softens but remains upright at full cell size, not melted puddle or lying down.",
+      "prompt_quelle": "REACTIONS_FRICTION_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_FRICTION_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Winnie Lastwink",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "exhausted",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "tiny blue sleep-mask lifted above eyes"
+      ],
+      "temperament": "She has enough energy to object once the next yawn has finished.",
+      "prompt_auszug": "Female-read broad round blob with one small floppy crest, modest lashes, tiny faded blue sleep-mask pushed ABOVE brows and fully clear of eyes. One ink hand supports cheek while other hangs naturally close against body. One heavy lid barely open but white sclera/red iris/black pupil visible, other eye open a little more, OPEN sideways yawn with two upper teeth and no tongue gag. Upright, not asleep sitting/lying, no pillow or bed.",
+      "prompt_quelle": "REACTIONS_FRICTION_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_FRICTION_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Felix Notmyproblem",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_FRICTION_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "barely concealed schadenfreude",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small plain bread roll"
+      ],
+      "temperament": "He is pleased it happened to someone else and mildly ashamed of the efficiency.",
+      "prompt_auszug": "Male-read compact scalloped round goo body with an offset curled crest. One hand grips a single small plain bread roll near belly, other lightly pinches his OWN mouth corner trying to suppress a snicker. Sideways white eyes sparkle, one brow raised in amused judgement, OPEN narrow tilted grin reveals two irregular upper teeth. Everyday petty delight rather than villain cackle; not same smile as other cells, no cup or pirate gear.",
+      "prompt_quelle": "REACTIONS_FRICTION_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-07",
+    "quote": "super! die sind alle PASS.",
+    "scope": "All three reaction sheets/eighteen designs;no extraction/runtime approval inferred"
+  }
+}

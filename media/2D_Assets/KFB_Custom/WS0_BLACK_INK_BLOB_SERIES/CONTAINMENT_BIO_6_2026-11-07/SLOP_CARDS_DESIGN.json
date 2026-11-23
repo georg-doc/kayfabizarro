@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_01",
+      "name": "Hollis Sample",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Hollis Sample is the crew's collector.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Cautious collector.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Mark the boundary here."
+          ],
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_BIO_20261107",
+            "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hollis Sample serves with the Sample Detail of The Spore Detail. The kit includes a small capped glass sample tube in a thick olive cradle. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Hollis Sample treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "cautious collector",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_02",
+      "name": "Bea Seal",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bea Seal is the crew's seal inspector.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Brisk seal inspector.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a moment to check this."
+          ],
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_BIO_20261107",
+            "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bea Seal serves with the Sample Detail of The Spore Detail. The kit includes a stubby olive seam-checking roller. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Bea Seal treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "brisk seal inspector",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_03",
+      "name": "Moss Canister",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Moss Canister is the crew's overprepared courier.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Overprepared courier.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The case is secured."
+          ],
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_BIO_20261107",
+            "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Moss Canister serves with the Sample Detail of The Spore Detail. The kit includes a sealed squat specimen jar with an abstract dark fleck inside. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Moss Canister treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "overprepared courier",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_04",
+      "name": "Wes Perimeter",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Wes Perimeter is the crew's isolation lead.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Stern isolation lead.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay near your detail."
+          ],
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_BIO_20261107",
+            "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Wes Perimeter serves with the Isolation Detail of The Spore Detail. The kit includes a compact portable Hypernormalization Screen with chunky mustard frame and smoked green inset. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Wes Perimeter treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stern isolation lead",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_05",
+      "name": "Inez Tag",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Inez Tag is the crew's card custodian.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Quietly alert card custodian.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have the panel."
+          ],
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_BIO_20261107",
+            "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Inez Tag serves with the Isolation Detail of The Spore Detail. The kit includes one blank ivory card in a small sealed clear case. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Inez Tag treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "quietly alert card custodian",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_BIO_ACTOR_20261107_06",
+      "name": "Len Decon",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Len Decon is the crew's rinse technician.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Patient rinse technician.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_BIO_20261107",
+            "trio": "WSA_CONTAINMENT_BIO_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Len Decon serves with the Isolation Detail of The Spore Detail. The kit includes a short scrub brush and capped rinse flask. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Len Decon treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "patient rinse technician",
+          "src": "CONTAINMENT_BIO_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,575 @@
+{
+  "schema": "kfb.slop-card-overlay/1",
+  "status": "DESIGN",
+  "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+  "figuren": [
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_01",
+      "name": {
+        "v": "Madame Rahmenbedingung",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She welcomes new perspectives once they have learned to fit inside her frame.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "museum curator",
+              "biome": [],
+              "decks": [
+                "museum_of_modern_mess",
+                "kayfabizarro_pulitzer_punk",
+                "epistemic_sabotage",
+                "kayfabizarro_improv_comedy"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "quiet clipped authority interrupted by doubt",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Sie ist für alles offen. Die Öffnung wurde eigens nach ihren Vorstellungen vermessen.",
+        "black_white_logic": "She welcomes new perspectives once they have learned to fit inside her frame.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CULTURE_INTERPRETATION_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+          "zelle": 0,
+          "cell_base": 0,
+          "row": 0,
+          "column": 0
+        },
+        "prompt_excerpt": "TOP LEFT slot1 FEMALE-READ MUSEUM CURATOR: very low broad soft wavy ink splat with two elegant curled crown lobes, small faded plum beret and tiny cream scarf collar, one copper stud. Heavy disapproving half-lids WHITE sclera RED iris BLACK pupil looking sideways; long FLAT closed crooked lip with one small gold fang. Holds ONE beautifully worn thick ornate gold EMPTY picture frame slightly out at her OWN side, peering suspiciously at its opening. Frame at belly/side, not surrounding whole body or covering face, full goo base dominant, no painting/scenery/words."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_02",
+      "name": {
+        "v": "Herr Letztlektüre",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He finishes every discussion with a book he has already decided how to dislike.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "literary critic",
+              "biome": [],
+              "decks": [
+                "museum_of_modern_mess",
+                "kayfabizarro_pulitzer_punk",
+                "epistemic_sabotage",
+                "kayfabizarro_improv_comedy"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "expansive bright confidence, conspicuous pauses for agreement",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er hat es gelesen. Dem Text wird von einer weiteren Stellungnahme abgeraten.",
+        "black_white_logic": "He finishes every discussion with a book he has already decided how to dislike.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CULTURE_INTERPRETATION_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+          "zelle": 1,
+          "cell_base": 0,
+          "row": 0,
+          "column": 1
+        },
+        "prompt_excerpt": "TOP MIDDLE slot2 male LITERARY CRITIC: towering thin drooping pear ink blob, small moss soft cap and short rust scarf, brass pince-nez resting below one eye. Deep crooked offended UNDERBITE with THREE sparse irregular teeth, one eye wide and the other almost shut, WHITE/red/black gaze DOWN. Both hands embrace ONE absurdly FAT leather book whose massive rounded indigo spine contrasts with a single tiny ivory page sticking out. Closed plain cover, no text/marks, no pile or desk."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_03",
+      "name": {
+        "v": "Herr Ausdruckspflicht",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He polishes other people's expressions until they resemble the one he approved.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "theatre dramaturge",
+              "biome": [],
+              "decks": [
+                "museum_of_modern_mess",
+                "kayfabizarro_pulitzer_punk",
+                "epistemic_sabotage",
+                "kayfabizarro_improv_comedy"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "precise soft correction with an impatient last word",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Das Gefühl ist echt. Er hat die Oberfläche persönlich nachbearbeitet.",
+        "black_white_logic": "He polishes other people's expressions until they resemble the one he approved.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CULTURE_INTERPRETATION_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+          "zelle": 2,
+          "cell_base": 0,
+          "row": 0,
+          "column": 2
+        },
+        "prompt_excerpt": "TOP RIGHT slot3 male THEATRE DRAMATURGE: compact almost spherical springy ink splat with THREE short irregular upper lobes, tiny faded teal collar and coral bow tie. Face nervously stretched into broad CLENCHED jagged tooth smile, one white/red/black eye bulging and other squinting toward object. One hand holds ONE small smooth cream clay theatrical tragedy mask with softly modeled drooping brows and tiny mouth opening, other buffs it with ONE plump burgundy polishing cloth. Mask below his face at own belly, no puppet body, stage, extra people or floating expressions."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_04",
+      "name": {
+        "v": "Frau Ursprungszustand",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She restores objects with the care she wishes the present would accept from her.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "museum restorer",
+              "biome": [],
+              "decks": [
+                "museum_of_modern_mess",
+                "kayfabizarro_pulitzer_punk",
+                "epistemic_sabotage",
+                "kayfabizarro_improv_comedy"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "strained breath and a tentative rising finish",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Boggle...?"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Es soll wieder werden wie früher. Beim Früher hat sie eine besonders ruhige Hand.",
+        "black_white_logic": "She restores objects with the care she wishes the present would accept from her.",
+        "druckbezug": "Pflicht unter Druck der Men in Black",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CULTURE_INTERPRETATION_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+          "zelle": 3,
+          "cell_base": 0,
+          "row": 1,
+          "column": 0
+        },
+        "prompt_excerpt": "BOTTOM LEFT slot4 FEMALE-READ MUSEUM RESTORER: tall narrow curved bean ink blob, one violet curled goo bun held under tiny teal headscarf, short dusty rose collar. One eye fully CLOSED in concentrated effort, other WHITE/red/black looking down, narrow crooked lip with single ivory tooth biting upper lip, NO tongue. Carefully holds a very TINY chipped cream teacup in one palm and ONE comically huge soft rounded ivory-bristle restoration brush with copper handle in opposite hand, brush barely touches cup rim. Two clear tactile props, no table or human torso."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_05",
+      "name": {
+        "v": "Herr Geschmacksurteil",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He delivers judgement gently because he has never had to carry its weight afterwards.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "arbiter of taste",
+              "biome": [],
+              "decks": [
+                "museum_of_modern_mess",
+                "kayfabizarro_pulitzer_punk",
+                "epistemic_sabotage",
+                "kayfabizarro_improv_comedy"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "low contented judgement, slow rounded emphasis",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Bongo.",
+          "Humbug?!"
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Er urteilt behutsam. Der Hammer wurde für diesen Zweck besonders weich gehalten.",
+        "black_white_logic": "He delivers judgement gently because he has never had to carry its weight afterwards.",
+        "druckbezug": "Hunky & Dorys Anerkennung motiviert",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CULTURE_INTERPRETATION_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+          "zelle": 4,
+          "cell_base": 0,
+          "row": 1,
+          "column": 1
+        },
+        "prompt_excerpt": "BOTTOM MIDDLE slot5 male ARBITER OF TASTE: very broad heavy rounded triangular UPRIGHT ink splat with low hanging side lobes, tiny cream bow tie and short charcoal collar, no hat. Profound complacent CLOSED asymmetric smile with two little uneven fangs, heavy lids and WHITE/red/black gaze calmly down. Cradles ONE gigantic beautifully worn rounded wooden judge's gavel tenderly like a pet, both goo hands supporting broad smooth barrel. Gavel stays at own belly, no block/table/action strike or legal writing; full ink body visible."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    },
+    {
+      "id": "WSA_CULTURE_INTERPRETATION_20261104_06",
+      "name": {
+        "v": "Herr Zutrittszweifel",
+        "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+        "status": "DESIGN"
+      },
+      "status": "DESIGN",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He protects the boundary so faithfully that he no longer remembers what it was meant to protect.",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm-Kartengebäude",
+              "kontext": "cultural access gatekeeper",
+              "biome": [],
+              "decks": [
+                "museum_of_modern_mess",
+                "kayfabizarro_pulitzer_punk",
+                "epistemic_sabotage",
+                "kayfabizarro_improv_comedy"
+              ]
+            }
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "direction": "brisk official middle register with sudden anxious catches",
+            "voice_id": null,
+            "audio_status": "DESIGN_NO_RECORDING"
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null
+          },
+          "src": "WSA authoring2026-11-04; exact prompt in sibling PRODUCTION_RECORD.json",
+          "status": "DESIGN"
+        }
+      },
+      "rufe_vorschlaege": {
+        "status": "DESIGN",
+        "existing_call_strings": [
+          "Blödsinn!",
+          "Bongo."
+        ],
+        "runtime_triplet_ids_assigned": false,
+        "source": "TRIPLET_SSOT_R1 §2b"
+      },
+      "backstory": {
+        "status": "DESIGN",
+        "source": "kayfabizarro@60d1fec7e078ce1ef0da3c9b6920180c585703d7:tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SLOP_METANARRATIV_R1.md",
+        "frizzlebob_feldnotiz": "Der Zugang ist geregelt. Was dahinter liegt, wurde ihm bisher nicht mitgeteilt.",
+        "black_white_logic": "He protects the boundary so faithfully that he no longer remembers what it was meant to protect.",
+        "druckbezug": "übererfüllt freiwillig aus eigenem Ordnungsbedürfnis",
+        "praemisse": "Bewohnt HyperNorm-Kartengebäude; will kognitive Dissonanz schwarz-weiß einhegen, schwärzen oder glattbügeln. Tragikomische Satire mit Herz."
+      },
+      "source": {
+        "set": "WSA_CULTURE_INTERPRETATION_20261104",
+        "image_cell": {
+          "datei": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/culture-interpretation-sheet-r1.png",
+          "zelle": 5,
+          "cell_base": 0,
+          "row": 1,
+          "column": 2
+        },
+        "prompt_excerpt": "BOTTOM RIGHT slot6 male CULTURAL ACCESS GATEKEEPER: medium tall lopsided pear ink splat with one tall bent crown lobe, small faded navy uniform cap and short mustard collar. Huge wide WHITE/red/black eyes looking outward in alarm, long downward flat lip with two broad sparse bottom teeth, NO smile/tongue/O mouth. Both hands clutch the TWO large brass rounded ends of ONE short fat burgundy velvet barrier rope forming a shallow U across own belly. No posts/stanchions/door/scene, rope attaches only to his own hands, no crossing neighbor cells. Tragically determined guard of a portable boundary."
+      },
+      "deck_relation": "Loose association, no exclusive spawn rule or thematic card-dialogue matching.",
+      "combat": {
+        "stufe": null,
+        "treffer": null,
+        "hostility": null
+      },
+      "merge_policy": "DESIGN only; receiving owner maps canonical IDs after actual Georg image PASS."
+    }
+  ]
+}

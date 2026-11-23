@@ -1,0 +1,72 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "b92570ae1dc21b71c4ce48348011cb8a3f56e53020789f78a6dca7d30ba4bf93",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 524453,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha_by_strip": {
+      "(0, 1536)": 244,
+      "(0, 525)": 244,
+      "(525, 1020)": 5,
+      "(1020, 1536)": 2
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha max254/low-alpha residue; final production cleanup pending",
+    "Logical3x2cells are not certified safe fixed512crops; validated individual isolation pending",
+    "No game sprites or safe extraction rectangles asserted"
+  ],
+  "design_observations": [
+    "Six whole upright footless senior ink bodies; two female-read top-middle/bottom-left",
+    "Soft sagging lobes/heavy lids/grey clay hair suggest age while hobbies and temperament remain salient",
+    "Eyes unobscured; magnifier/trumpet held below face",
+    "No external lower-lip tooth observed in native view; current open mouths show upper teeth, closed mouths toothless",
+    "Age-related complaints are creative motifs, not clinical diagnoses"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "mouth_check": [
+    {
+      "cell": 0,
+      "observed": "closed, no tooth"
+    },
+    {
+      "cell": 1,
+      "observed": "open, two upper teeth inside cavity"
+    },
+    {
+      "cell": 2,
+      "observed": "open laugh, three upper teeth inside cavity"
+    },
+    {
+      "cell": 3,
+      "observed": "closed, no tooth"
+    },
+    {
+      "cell": 4,
+      "observed": "small open cavity, one upper tooth"
+    },
+    {
+      "cell": 5,
+      "observed": "open yawn, two upper teeth, no tongue"
+    }
+  ],
+  "original_benchmark_hashes_verified": 6
+}

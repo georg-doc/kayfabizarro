@@ -1,0 +1,205 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SAILORS_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+    "sha256": "f36605136c231c52cf570d5859241d60f1f8c339f3a799a20c3d20a4dae3cea1"
+  },
+  "production_record": "SAILORS_HISTORIC_2026-11-04/PRODUCTION_RECORD.json",
+  "selected_recipe": [
+    "args",
+    "extra_attempt.args"
+  ],
+  "recipe_note": "Selected second variant: README records Georg decision overriding original UNNECESSARY_NOT_SELECTED receipt label; original generation plus alpha-extraction edit.",
+  "cards": "SETS/sailors/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      1,
+      3,
+      5
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_MATROSE_01",
+      "id_scope": "canonical_roster",
+      "name": "Hein Heimathafen",
+      "bild": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT: boisterous young deckhand, broad squat splat, worn striped sailor collar and soft white sailor cap tilted sideways, wide laughing mouth with mismatched teeth and exuberant sideways gaze; hugs a huge thick coil of tarred rope with a chunky anchor dangling at its end."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT: boisterous young deckhand, broad squat splat, worn striped sailor collar and soft white sailor cap tilted sideways, wide laughing mouth with mismatched teeth and exuberant sideways gaze; hugs a huge thick coil of tarred rope with a chunky anchor dangling at its end. Everything softly sculpted clay, rope tactile with bold strands. Complete goo base visible.",
+      "prompt_quelle": "SAILORS_HISTORIC_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MATROSE_02",
+      "id_scope": "canonical_roster",
+      "name": "Madame Dienstwind",
+      "bild": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP CENTER: FEMALE-READ tall lean historic marine grenadier, faded navy bicorne with small rusty red plume, just short navy shoulder cape and brass buttons over continuous goo; furiously indignant one-eye squint and crooked toothy shout, rounded old flintlock musket with wooden stock held upright beside her (not firing), other goo hand on a small black cannonball."
+        ]
+      },
+      "prompt_auszug": "TOP CENTER: FEMALE-READ tall lean historic marine grenadier, faded navy bicorne with small rusty red plume, just short navy shoulder cape and brass buttons over continuous goo; furiously indignant one-eye squint and crooked toothy shout, rounded old flintlock musket with wooden stock held upright beside her (not firing), other goo hand on a small black cannonball. Subtle clay lashes, no human body.",
+      "prompt_quelle": "SAILORS_HISTORIC_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MATROSE_03",
+      "id_scope": "canonical_roster",
+      "name": "Käptn Gegenwasser",
+      "bild": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT: ancient salty boatswain, very wide low saggy ink puddle, tiny battered navy knit cap, one heavy sleepy lid and one wide eye, enormous grumpy underbite with sparse teeth, curved ivory clay pipe unlit clamped in lip; both goo hands wrapped around a stubby salt-crusted wooden ship wheel nearly as broad as himself."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT: ancient salty boatswain, very wide low saggy ink puddle, tiny battered navy knit cap, one heavy sleepy lid and one wide eye, enormous grumpy underbite with sparse teeth, curved ivory clay pipe unlit clamped in lip; both goo hands wrapped around a stubby salt-crusted wooden ship wheel nearly as broad as himself. An oversized barnacle on wheel rim, simple visual maritime weirdness.",
+      "prompt_quelle": "SAILORS_HISTORIC_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MATROSE_04",
+      "id_scope": "canonical_roster",
+      "name": "Ada Fernsicht",
+      "bild": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT: FEMALE-READ weatherbeaten navigator/captain, compact asymmetric pear blob, burgundy headscarf under battered tricorn, one soft curling goo quiff, skeptical raised lid and knowing closed crooked smile with single fang; holds a long thick brass spyglass to one eye while the other eye looks toward viewer, a small curled chart tucked under other goo arm."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT: FEMALE-READ weatherbeaten navigator/captain, compact asymmetric pear blob, burgundy headscarf under battered tricorn, one soft curling goo quiff, skeptical raised lid and knowing closed crooked smile with single fang; holds a long thick brass spyglass to one eye while the other eye looks toward viewer, a small curled chart tucked under other goo arm. Beautiful modeled brass and parchment, no map text.",
+      "prompt_quelle": "SAILORS_HISTORIC_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MATROSE_05",
+      "id_scope": "canonical_roster",
+      "name": "Admiral Hätschel",
+      "bild": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM CENTER: ecstatic old naval gunner, round springy splat with upward goo lobes, small battered red historic naval cap, huge wild delighted toothy cackle, one eye larger than other; cradles a miniature chunky bronze ship cannon like a beloved pet, one hand stroking its rounded barrel, simple wooden carriage attached with two thick wheels, no firing/smoke."
+        ]
+      },
+      "prompt_auszug": "BOTTOM CENTER: ecstatic old naval gunner, round springy splat with upward goo lobes, small battered red historic naval cap, huge wild delighted toothy cackle, one eye larger than other; cradles a miniature chunky bronze ship cannon like a beloved pet, one hand stroking its rounded barrel, simple wooden carriage attached with two thick wheels, no firing/smoke. Visceral charming absurd cartoon silhouette, not a human torso.",
+      "prompt_quelle": "SAILORS_HISTORIC_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MATROSE_06",
+      "id_scope": "canonical_roster",
+      "name": "Frau Salzbestand",
+      "bild": {
+        "datei": "SAILORS_HISTORIC_2026-11-04/sailors-historic-sheet-r2-selected.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM RIGHT: FEMALE-READ veteran dock sailor, broad lopsided goo body, faded mustard sou'wester folded brim, half-lidded utterly unimpressed side-eye, pursed crooked mouth with two protruding teeth; holds a big silver clay fish by its tail, fish bends softly like a wet sock; other hand casually rests on small battered sea chest tucked into her goo side.",
+          "Minimal selective barnacles and salt wear, no dense detail."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT: FEMALE-READ veteran dock sailor, broad lopsided goo body, faded mustard sou'wester folded brim, half-lidded utterly unimpressed side-eye, pursed crooked mouth with two protruding teeth; holds a big silver clay fish by its tail, fish bends softly like a wet sock; other hand casually rests on small battered sea chest tucked into her goo side. Minimal selective barnacles and salt wear, no dense detail. Subtle lashes, no breasts/legs.",
+      "prompt_quelle": "SAILORS_HISTORIC_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

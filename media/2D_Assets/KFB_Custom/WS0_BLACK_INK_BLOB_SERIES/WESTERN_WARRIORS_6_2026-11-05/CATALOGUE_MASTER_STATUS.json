@@ -1,0 +1,19 @@
+{
+  "schema": "kfb.catalogue-master-status/1",
+  "set_id": "WSA_WESTERN_WARRIORS_20261105",
+  "design": "GEORG_PASS",
+  "selected_image": "sheet-r2.png",
+  "actual_sheet_pixels": [
+    1536,
+    1024
+  ],
+  "native_individual_masters": 0,
+  "status": "PENDING_INDIVIDUAL_NATIVE_MASTERS",
+  "scale_audit": {
+    "r1_mean_visible_height": 494.1667,
+    "r2_mean_visible_height": 426.8333,
+    "reduction_percent": 13.63,
+    "threshold": "alpha>16, includes props"
+  },
+  "note": "Sheet layout repair reduced visible height. Source R1 retained at larger effective scale. Neither source version is an independent high-detail catalogue master. Upscaling crops does not restore detail."
+}

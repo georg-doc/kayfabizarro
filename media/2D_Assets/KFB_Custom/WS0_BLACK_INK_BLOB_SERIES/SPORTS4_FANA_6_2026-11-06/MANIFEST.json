@@ -1,0 +1,273 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS4_FANA_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS4_FANA_6_2026-11-06/sheet-r1.png",
+    "sha256": "1caf290d0f09982522a65313e27b8bcbe3457d000e110f3a23c700cec9845476"
+  },
+  "production_record": "SPORTS4_FANA_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS4_FANA_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS4_FANA_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Die Blauen vom richtigen Ausgang",
+    "visual_context": "Sport-neutral retro supporters in cobalt-blue and cream scarves/caps,handmade pennants and noise-makers,no realclub emblems",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "domain": "FANA",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_CANONICAL_LINEUP",
+    "sport_scope": "ALL_SPORTS",
+    "fan_affiliation": {
+      "team": "A",
+      "sport_specific": false,
+      "opposing_family": "WSA_SPORTS4_FANB_20261106",
+      "status": "DESIGN_FAMILY_RELATION_NOT_ACTOR_PAIR_OR_COMBAT_BINDING"
+    }
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS4_FANA_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ulf Unabsteigbar",
+      "bild": {
+        "datei": "SPORTS4_FANA_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "foam finger",
+        "blue-cream scarf"
+      ],
+      "temperament": "He believes loyalty is a result that can be shouted into existence.",
+      "prompt_auszug": "Ulf Unabsteigbar, male-read. Broad squat ink splat with wild swept crest,huge ecstatic eyes and asymmetrical three-upper-tooth victory bellow;small blue-cream striped scarf;ONE big cream foam index-finger glove raised beside face,other hand fist,allwithin cell.",
+      "prompt_quelle": "SPORTS4_FANA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "fanatical loyalist"
+    },
+    {
+      "id": "WSA_SPORTS4_FANA_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Maja Mitgesang",
+      "bild": {
+        "datei": "SPORTS4_FANA_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small tin megaphone",
+        "blue crest ribbon"
+      ],
+      "temperament": "She knows every chant and invents the missing facts in rhythm.",
+      "prompt_auszug": "Maja Mitgesang, female-read. Tall offset bell ink blob,high sidequiff and subtle lashes,joyful narrowed white eyes and crooked open two-upper-tooth singing mouth;blue ribbon tied to crest,small cream collar;holds compact blue tin megaphone below face pointed outward within owncell.",
+      "prompt_quelle": "SPORTS4_FANA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "chant leader"
+    },
+    {
+      "id": "WSA_SPORTS4_FANA_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rudi Rhythmuspflicht",
+      "bild": {
+        "datei": "SPORTS4_FANA_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small drum",
+        "single mallet",
+        "knit cap"
+      ],
+      "temperament": "He is responsible for the atmosphere and would appreciate a timetable.",
+      "prompt_auszug": "Rudi Rhythmuspflicht, male-read. Round scalloped ink blob with two uneven little curls,wide worried eyes looking sideways,tense CLOSED smile;blue knit cap and cream collar;holds ONE little cylindrical blue drum low at belly and ONE thick short mallet,no harness obscuring body.",
+      "prompt_quelle": "SPORTS4_FANA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "supporter drummer"
+    },
+    {
+      "id": "WSA_SPORTS4_FANA_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bernd Bessergewusst",
+      "bild": {
+        "datei": "SPORTS4_FANA_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blank programme",
+        "blue flatcap"
+      ],
+      "temperament": "He predicted every defeat shortly after it became certain.",
+      "prompt_auszug": "Bernd Bessergewusst, male-read. Tall bent pear ink blob,heavy one-sided skeptical eyelids,long CLOSED downturned mouth;blue flatcap,small cream neckerchief;holds a folded blank programme with only three simple round dots,freehand pointing to own head.",
+      "prompt_quelle": "SPORTS4_FANA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "armchair tactician"
+    },
+    {
+      "id": "WSA_SPORTS4_FANA_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lotte Langzeitkarte",
+      "bild": {
+        "datei": "SPORTS4_FANA_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "thermos",
+        "folded scarf",
+        "cream cap"
+      ],
+      "temperament": "She has waited so long for success that it might now disturb the routine.",
+      "prompt_auszug": "Lotte Langzeitkarte, female-read. Wide upright scalloped ink blob,soft lashed tired eyes and tiny trembling toothless hopeful smile;small cream cap with blueband,tiny blue collar;holds squat worn thermos in one hand and folded blue-cream scarf in the other.",
+      "prompt_quelle": "SPORTS4_FANA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "lifelong season-ticket supporter"
+    },
+    {
+      "id": "WSA_SPORTS4_FANA_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fips Glücksamt",
+      "bild": {
+        "datei": "SPORTS4_FANA_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "patched lucky mitten",
+        "blue ribbon",
+        "blue collar"
+      ],
+      "temperament": "He accepts responsibility for victory and blames anyone who touches the mitten.",
+      "prompt_auszug": "Fips Glücksamt, male-read. Narrow teardrop ink blob with springy curled crest,huge suspicious sideglance,pursed toothless tiny mouth;small blue collar;clutches ONE ridiculous patched cream lucky mitten with a little blue ribbon tied round it,other hand protects it.",
+      "prompt_quelle": "SPORTS4_FANA_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "superstitious lucky-charm keeper"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

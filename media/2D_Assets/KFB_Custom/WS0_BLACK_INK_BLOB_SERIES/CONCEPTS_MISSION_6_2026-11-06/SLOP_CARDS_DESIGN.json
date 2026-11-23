@@ -1,0 +1,360 @@
+{
+  "schema": "kfb.slop-cards/1",
+  "status": "DESIGN",
+  "cards": [
+    {
+      "id": "WSA_CONCEPTS_MISSION_ACTOR_20261106_01",
+      "name": "Kommandantin Nochneun",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can make a room feel ready by counting loudly enough.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "frizzlebob_s_mission_control"
+              ]
+            }
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONCEPTS_MISSION_20261106"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Can make a room feel ready by counting loudly enough. Her HyperNorm lights announce readiness in three reliable colours. A dissonant card asks whether the quiet person at the back has finished checking. The Men in Black demand a single answer; Hunky and Dory keep revising the form. A small exception is quietly kept for a tired neighbour.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Bereitschaft wird durch hörbare Rückzählung unterstützt.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONCEPTS_MISSION_ACTOR_20261106_02",
+      "name": "Knopfwart Gleichgleich",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Would like a moment to confirm what everybody means by now.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "frizzlebob_s_mission_control"
+              ]
+            }
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONCEPTS_MISSION_20261106"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Would like a moment to confirm what everybody means by now. His HyperNorm button marks the boundary between waiting and the official irreversible moment. A dissonant card asks what now means to everybody else. Hunky and Dory call doubt a packing error. The Men in Black request certainty; a spare place is quietly kept for a tired neighbour.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Der Zeitpunkt ist eindeutig, sobald er abgestimmt wurde.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONCEPTS_MISSION_ACTOR_20261106_03",
+      "name": "Logbuchfrau Nachgetragen",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Records the decisive moment after it has acquired an approved wording.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "frizzlebob_s_mission_control"
+              ]
+            }
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONCEPTS_MISSION_20261106"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Records the decisive moment after it has acquired an approved wording. Her HyperNorm logbook converts messy events into approved sequence. A dissonant card asks her to preserve the hesitation between two entries. The Men in Black want a clean answer. Hunky and Dory keep revising the question; the unofficial pauses are left for anyone needing to breathe.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Der entscheidende Augenblick wurde nachträglich sprachlich freigegeben.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONCEPTS_MISSION_ACTOR_20261106_04",
+      "name": "Schüsselhörer Ferngenau",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can hear everything except the part everyone claims was obvious.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "frizzlebob_s_mission_control"
+              ]
+            }
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONCEPTS_MISSION_20261106"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Can hear everything except the part everyone claims was obvious. His dish catches HyperNorm signals classified as either instruction or interference. A dissonant card sounds inconveniently like a neighbour needing an explanation. Hunky and Dory praise efficiency while the Men in Black count deviations. The small practical kindnesses remain off the official list.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Der Empfang ist vollständig. Das Selbstverständliche fehlt.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONCEPTS_MISSION_ACTOR_20261106_05",
+      "name": "Treibstoffwart Brennruhig",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeps the volatile part better contained than the briefing.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "frizzlebob_s_mission_control"
+              ]
+            }
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONCEPTS_MISSION_20261106"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Keeps the volatile part better contained than the briefing. His sealed HyperNorm canister receives more careful handling than the expectations around it. A dissonant card suggests testing the briefing for leaks too. The Men in Black enforce the binary rule; Hunky and Dory raise the quota. In private, a frightened resident still receives patient attention.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Das Flüchtige wurde besser als die Erwartungen gesichert.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONCEPTS_MISSION_ACTOR_20261106_06",
+      "name": "Houston Rückfrage",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Has already called it a problem and is waiting for the approved synonym.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "frizzlebob_s_mission_control"
+              ]
+            }
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONCEPTS_MISSION_20261106"
+          },
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Has already called it a problem and is waiting for the approved synonym. His handset reports a HyperNorm problem before the naming committee approves one. A dissonant card stays on the line without demanding reassurance. Hunky and Dory insist that the figures balance. The Men in Black watch the ledger; one small kindness stays deliberately unrecorded.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Störung wartet auf eine betriebsverträglichere Bezeichnung.",
+          "src": "CONCEPTS_MISSION_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

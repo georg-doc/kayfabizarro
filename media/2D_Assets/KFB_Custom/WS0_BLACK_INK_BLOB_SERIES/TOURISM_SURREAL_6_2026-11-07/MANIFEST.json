@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TOURISM_SURREAL_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TOURISM_SURREAL_6_2026-11-07/sheet-r1.png",
+    "sha256": "d7e63be4dbef2b451b32bcc763a3aae9a33a4f43f45c2e937a01a305548415f4"
+  },
+  "production_record": "TOURISM_SURREAL_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "TOURISM_SURREAL_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "TOURISM_SURREAL_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Wrong Century Excursion",
+    "theme": "The Wrong Century Excursion",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "tourist bystander",
+      "destruction sightseer",
+      "three-member tour party",
+      "six-member tour group"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Erarep",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_SURREAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "unimpressed time tour guide",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_02",
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "chunky clock-faced paddle and rolled itinerary"
+      ],
+      "temperament": "Unimpressed time tour guide with a gift for holding up a group.",
+      "prompt_auszug": "square upright splat, one raised lid, compressed frown",
+      "prompt_quelle": "TOURISM_SURREAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "unimpressed time tour guide"
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Portalpose",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_SURREAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "delighted paradox photographer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_01",
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "chunky instant camera with one miniature print coming out"
+      ],
+      "temperament": "Delighted paradox photographer with a gift for holding up a group.",
+      "prompt_auszug": "round curved ink blob, delighted side gaze, crooked open laugh",
+      "prompt_quelle": "TOURISM_SURREAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "delighted paradox photographer"
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hal Epochlag",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_SURREAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "drowsy era-hopper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_01",
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "oversized hourglass neck pillow and stamped passport"
+      ],
+      "temperament": "Drowsy era-hopper with a gift for holding up a group.",
+      "prompt_auszug": "low wide blob, heavy lids, tiny sleepy grin",
+      "prompt_quelle": "TOURISM_SURREAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "drowsy era-hopper"
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mara Mooncheap",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_SURREAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "offended off-world bargain guest",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_05",
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "miniature crater souvenir in a clear globe"
+      ],
+      "temperament": "Offended off-world bargain guest with a gift for holding up a group.",
+      "prompt_auszug": "tall pear, pointed side-eye, pursed pout",
+      "prompt_quelle": "TOURISM_SURREAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "offended off-world bargain guest"
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bert Tomorrowbag",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_SURREAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "panicking lost luggage traveller",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_04",
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small scuffed suitcase with wildly mismatched clock tags"
+      ],
+      "temperament": "Panicking lost luggage traveller with a gift for holding up a group.",
+      "prompt_auszug": "lopsided bean, round startled eyes, tiny open oval",
+      "prompt_quelle": "TOURISM_SURREAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "panicking lost luggage traveller"
+    },
+    {
+      "id": "WSA_TOURISM_SURREAL_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Lastwitness",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_SURREAL_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "fascinated destruction tourist",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_SURREAL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_04",
+        "WSA_TOURISM_SURREAL_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "fat toy binoculars and rolled viewing map"
+      ],
+      "temperament": "Fascinated destruction tourist with a gift for holding up a group.",
+      "prompt_auszug": "lean wide-based blob, eyes sideways, narrow surprised smile",
+      "prompt_quelle": "TOURISM_SURREAL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "fascinated destruction tourist"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "tour_group": "The Wrong Century Excursion",
+    "team_kit": "retro future holiday kits, tourist florals, teal plastic travel gadgets and paper tags",
+    "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+    "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+    "trios": [
+      {
+        "id": "WSA_TOURISM_SURREAL_20261107_TRIO_A",
+        "name": "Outbound Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_01",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_02",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_TOURISM_SURREAL_20261107_TRIO_B",
+        "name": "Return Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_04",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_05",
+          "WSA_TOURISM_SURREAL_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_TOURISM_SURREAL_ACTOR_20261107_01",
+      "WSA_TOURISM_SURREAL_ACTOR_20261107_02",
+      "WSA_TOURISM_SURREAL_ACTOR_20261107_03",
+      "WSA_TOURISM_SURREAL_ACTOR_20261107_04",
+      "WSA_TOURISM_SURREAL_ACTOR_20261107_05",
+      "WSA_TOURISM_SURREAL_ACTOR_20261107_06"
+    ]
+  }
+}

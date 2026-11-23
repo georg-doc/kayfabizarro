@@ -1,0 +1,409 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_01",
+      "name": "Dread Already",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He checks for bad news in case the good news was a misleading omission.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English anxious light tenor",
+            "audio": null
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Has anything worse happened?"
+          ],
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_DIGITAL_DOOM_20261107"
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Dread refreshes the HyperNorm feed to remain prepared for events he is too tired to address. A dissonant card suggested checking on the neighbour instead. He found them frightened too. The feed is still open, but their door is no longer shut.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: He is fully informed. A useful next step has not been included.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "compulsively alarmed",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_02",
+      "name": "Bella Replay",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She has watched it so often that meaning would now be an interruption.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English warm distracted mezzo",
+            "audio": null
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Again. The same bit again."
+          ],
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_DIGITAL_DOOM_20261107"
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bella replays a tiny absurd clip in her HyperNorm room until even surprise becomes familiar. The Men in Black prefer predictable laughter. An ambiguous card made a neighbour laugh differently, and she looked up long enough to ask why. She remembers that part without replaying it.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nothing new has occurred. She is delighted to confirm it.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "entranced by nonsense",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_03",
+      "name": "Ned Next",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He is interested in what comes next rather than in anything that arrives.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English quick precise tenor",
+            "audio": null
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "There may be a better next one."
+          ],
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_DIGITAL_DOOM_20261107"
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ned swipes through HyperNorm recommendations before they have had time to become thoughts. Hunky and Dory call this engagement. A dissonant card asked what he was waiting to find. He has not answered, but has begun letting his neighbour finish a sentence.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The next thing is nearly here. So was the last one.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "restless anticipation",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_04",
+      "name": "Dot Deadpan",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "She disapproves intensely enough to keep watching.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry low alto",
+            "audio": null
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "This is dreadful. Look at it."
+          ],
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_DIGITAL_DOOM_20261107"
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Dot shares the worst HyperNorm clips to demonstrate that she knows better. The Men in Black appreciate the distribution more than the distinction. A contradictory card suggested that disgust can still be an audience. She now sometimes tells a neighbour something funny without sending the clip.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: She refuses to approve it. Leaving has proved more difficult.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "laughing through disgust",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_05",
+      "name": "Monty Deepfeed",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He has seen a pattern and would prefer no further evidence to disturb it.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English quiet gravelly baritone",
+            "audio": null
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "They would not show us this by accident."
+          ],
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_DIGITAL_DOOM_20261107"
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Monty follows the HyperNorm feed until coincidence acquires an official shape. Hunky and Dory supply helpful connections. A dissonant card offered an explanation that blamed nobody. He kept it private at first, then asked a neighbour to look through it with him.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The pattern is clear. The exceptions have been muted.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "conspiratorial certainty",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_DIGITAL_DOOM_ACTOR_20261107_06",
+      "name": "Gus Lastpercent",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "He has enough energy left to recharge the thing using the rest of it.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English soft tired baritone",
+            "audio": null
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I can stop when this is charged."
+          ],
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_DIGITAL_DOOM_20261107"
+          },
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gus carries a battery pack through HyperNorm so his feed need never stop before he does. The Men in Black call him attentive. An ambiguous card asked when he had last eaten with somebody. He keeps the cable, but has started sitting out the final argument.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: The battery has reserves. He has not.",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "unable to stop despite exhaustion",
+          "src": "DIGITAL_DOOM_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_01",
+      "name": "Reg Patchday",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Reg Patchday is the crew's confident service lead.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Confident service lead.",
+            "audio": null
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We start at this end."
+          ],
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_NORMALITY_20261107",
+            "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_A"
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Reg Patchday works the Reset Detail with The Routine Restoration Office. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Reg Patchday takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Reg Patchday has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "confident service lead",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_02",
+      "name": "Mina Seamless",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Mina Seamless is the crew's dubiously optimistic seam fixer.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Dubiously optimistic seam fixer.",
+            "audio": null
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me the next piece."
+          ],
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_NORMALITY_20261107",
+            "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_A"
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mina Seamless works the Reset Detail with The Routine Restoration Office. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Mina Seamless takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Mina Seamless has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dubiously optimistic seam fixer",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_03",
+      "name": "Edwin Reset",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Edwin Reset is the crew's startled reset technician.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Startled reset technician.",
+            "audio": null
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That needs another pass."
+          ],
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_NORMALITY_20261107",
+            "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_A"
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Edwin Reset works the Reset Detail with The Routine Restoration Office. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Edwin Reset takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Edwin Reset has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled reset technician",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_04",
+      "name": "Frank Again",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Frank Again is the crew's bored continuity keeper.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Bored continuity keeper.",
+            "audio": null
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It will stand for now."
+          ],
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_NORMALITY_20261107",
+            "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_B"
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Frank Again works the Continuity Detail with The Routine Restoration Office. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Frank Again takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Frank Again has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "bored continuity keeper",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_05",
+      "name": "Nell Almostnew",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Nell Almostnew is the crew's patient cosmetic restorer.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Patient cosmetic restorer.",
+            "audio": null
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Checking the finish."
+          ],
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_NORMALITY_20261107",
+            "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_B"
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nell Almostnew works the Continuity Detail with The Routine Restoration Office. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Nell Almostnew takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nell Almostnew has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "patient cosmetic restorer",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_NORMALITY_ACTOR_20261107_06",
+      "name": "Toby Asbefore",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Toby Asbefore is the crew's quietly worried handoff lead.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Quietly worried handoff lead.",
+            "audio": null
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the next corner."
+          ],
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_NORMALITY_20261107",
+            "trio": "WSA_RESTORE_NORMALITY_20261107_TRIO_B"
+          },
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Toby Asbefore works the Continuity Detail with The Routine Restoration Office. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Toby Asbefore takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Toby Asbefore has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "quietly worried handoff lead",
+          "src": "RESTORE_NORMALITY_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-86638399-1ab5-4ef7-9f97-af7e2aa4b1be.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "eb2da8bff22f526f29b8b0059eaadda284900f14b0ff78a0fddc9f22103be69d",
+  "git_blob_sha": "b045ca9d815000b08ec150956fb81e30fcbdcede",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_transparent_pixels": 493970,
+  "background_samples": {
+    "(0, 0)": 0,
+    "(512, 512)": 0,
+    "(1535, 0)": 0,
+    "(0, 1023)": 0,
+    "(1535, 1023)": 0
+  },
+  "georg_design_status": "PASS",
+  "extraction": "NOT_PERFORMED",
+  "runtime": "NOT_TESTED",
+  "selected_file": "sheet-r2.png",
+  "layout_edit_jobs": 1,
+  "selection_history": [
+    {
+      "version": "r1",
+      "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-33e3458a-81aa-4c8c-8de7-b54edfab49e1.png",
+      "sha256": "29067772539e9a51d58099a74b877a7811417025558de3b5772b0702ed180edc",
+      "alpha_extrema": [
+        1,
+        254
+      ],
+      "fully_transparent_pixels": 0,
+      "status": "SUPERSEDED_BACKGROUND_HAZE"
+    },
+    {
+      "version": "r2",
+      "args": {
+        "transparent_background": true,
+        "referenced_image_paths": [
+          "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-33e3458a-81aa-4c8c-8de7-b54edfab49e1.png"
+        ],
+        "prompt": "Edit the supplied 1536×1024 six-character claymation rail-tourist PNG. Preserve exactly the original six characters, blue and mustard clothing, expressions, props, clay material and 3×2 layout at the same scale. Remove all background matte and ghost haze from the spaces and gutters around the silhouettes and between detached droplets. Return a real transparent PNG with alpha exactly zero in the open background, outer margins and gutters. Keep the figures fully opaque inside with clean antialiased edges. No background gradient, paper texture, shadows, glow, text, edits to the characters or prop changes."
+      },
+      "sha256": "eb2da8bff22f526f29b8b0059eaadda284900f14b0ff78a0fddc9f22103be69d",
+      "status": "SELECTED_DRAFT"
+    }
+  ],
+  "visual_observations": [
+    "Six rail travellers with coherent blue and mustard kits and differentiated faces. Timetable, binoculars, railway sign, camera, pretzel and berth key readable.",
+    "The upper-right paddle carries a rail pictogram instead of a bus pictogram. Top-left tooth and bottom-left camera reach close to lip or cell boundaries respectively.",
+    "Selected r2 from one native alpha repair. Six poses and role cues survive. The new image has slight modeling differences and 493970 alpha-zero pixels."
+  ],
+  "georg_status": "PASS"
+}

@@ -1,0 +1,306 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WOODLAND_CLAN_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "explicit_extraction_rects_required": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "WOODLAND_CLAN_6_2026-11-05/sheet-r1.png",
+    "sha256": "556b2def80c351540a49f5b484d38661f9278212b25f7a7d2da9188f3ef68f6c"
+  },
+  "production_record": "WOODLAND_CLAN_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "WOODLAND_CLAN_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "WOODLAND_CLAN_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "group_context": "Six standalone satirical fictional woodland warrior clan costume archetypes. No historical likeness, canonical deck mapping or inferred pair/trio relations.",
+  "figuren": [
+    {
+      "id": "WSA_WOODLAND_CLAN_MEMBER_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Häuptling Vollmund",
+      "bild": {
+        "datei": "WOODLAND_CLAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "ausschnitt_px": [
+          0,
+          0,
+          520,
+          513
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short-horned iron helmet",
+        "large red clay moustache",
+        "short iron sword",
+        "drinking horn",
+        "bronze torc"
+      ],
+      "prompt_auszug": "MALE-READ BOASTFUL CHIEF. Huge wide pear blob with one fat sagging crown loop. Worn round iron helmet with TWO SHORT blunt curved cream horns, thick short red-brown clay moustache bent outward, simple bronze torc. Enormous delighted boast at peak: eyes opened to very different widths, one brow lifted, broad sideways laughing mouth with three widely spaced uneven teeth. One hand holds ONE squat wooden-hilt iron SWORD low at own side, other holds ONE small thick DRINKING HORN against own belly. No human beard-covered torso; mouth remains visible below small moustache.",
+      "prompt_quelle": "WOODLAND_CLAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WOODLAND_CLAN_MEMBER_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Speerführerin Starrsinn",
+      "bild": {
+        "datei": "WOODLAND_CLAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "ausschnitt_px": [
+          520,
+          0,
+          1013,
+          513
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "bronze headband",
+        "two clay braids",
+        "short spear",
+        "small round blue shield",
+        "checked shoulder cloth"
+      ],
+      "prompt_auszug": "FEMALE-READ WAR LEADER. Tall thick hooked bean body, two small dark clay braids, battered bronze headband with a small round disc, no horned helmet. Utter stern impatience, heavy lower lip thrust forward, narrowed white eyes looking SIDEWAYS, one single small upper tooth, brow raised on one side rather than same V-shape. Holds ONE SHORT stout SPEAR vertically at side and ONE small ROUND blue-painted wooden SHIELD close against lower body, clear hand grips; shield covers at most a quarter of blob. Short checked ochre shoulder cloth.",
+      "prompt_quelle": "WOODLAND_CLAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WOODLAND_CLAN_MEMBER_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rauner Wurzelrecht",
+      "bild": {
+        "datei": "WOODLAND_CLAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "ausschnitt_px": [
+          1013,
+          0,
+          1536,
+          513
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "patched moss-green hood",
+        "ivory clay moustache tips",
+        "bronze sickle",
+        "tied mistletoe bundle"
+      ],
+      "prompt_auszug": "MALE-READ DOUBTING ELDER / DRUID. Round lopsided dumpling blob with one long curved goo droplet at side. Small stitched moss-green hood draped only over top/shoulder, two short ivory clay moustache tips, no full white beard hiding face. Extremely suspicious sleepy half-lidded sideways glance, closed crooked downturned mouth with one irregular lower tooth. Holds ONE rounded bronze SICKLE with thick wooden grip and ONE little BUNDLE OF MISTLETOE tied with cord, both low and readable. He seems to be inspecting whether the foliage is taking its responsibilities seriously. No magical glow, potions or floating runes.",
+      "prompt_quelle": "WOODLAND_CLAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WOODLAND_CLAN_MEMBER_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Keulwart Kurzschluss",
+      "bild": {
+        "datei": "WOODLAND_CLAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "ausschnitt_px": [
+          0,
+          513,
+          522,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rusty brow band",
+        "leather strap",
+        "small shoulder scrap",
+        "knobbed wooden war club"
+      ],
+      "prompt_auszug": "MALE-READ CHAMPION / CLUB WARRIOR. Broad near-square soft lobed splat with three fat crown nubs. One rusty iron brow band, a short leather strap with a small round buckle, minimal tufty clay shoulder scrap. Furious baffled determination: bulging white eyes looking UP at crooked angles, tight sideways CLENCHED teeth, massive bent lower lip and asymmetrical heavy brow. Holds ONE ridiculous short thick knotted wooden WAR CLUB with three rounded wooden knobs, hugged close at an angle within own cell. No huge raised weapon or muscular human arms. Strong contained body tension, standing upright.",
+      "prompt_quelle": "WOODLAND_CLAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WOODLAND_CLAN_MEMBER_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fährtenleserin Schrägblick",
+      "bild": {
+        "datei": "WOODLAND_CLAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "ausschnitt_px": [
+          522,
+          513,
+          1003,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "muted teal headband",
+        "short red clay braids",
+        "small wooden bow",
+        "blunt arrow",
+        "leather pouch"
+      ],
+      "prompt_auszug": "FEMALE-READ CUNNING SCOUT. Compact upright tapered splat with soft wavy lobe outline, simple muted teal headband and two short red clay side braids, subtle lashes. Assessing near-smile: one enormous white eye peers SIDEWAYS, other narrowed, gently arched brow, almost CLOSED asymmetric sly lip curl with two tiny offset teeth. Holds ONE short thick simple WOODEN BOW beside body and ONE blunt chunky arrow close to own chest, not aiming across cell. Visible bowstring connects both tips. A single small leather pouch, no cloak covering body.",
+      "prompt_quelle": "WOODLAND_CLAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WOODLAND_CLAN_MEMBER_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Beutelhüter Nachschlag",
+      "bild": {
+        "datei": "WOODLAND_CLAN_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "ausschnitt_px": [
+          1003,
+          513,
+          1536,
+          1024
+        ],
+        "rect_convention": "left,top,right,bottom; right/bottom exclusive; use explicit bounds, not fixed512 crop"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "sliding bronze circlet",
+        "checked brown shoulder cloth",
+        "upturned bronze helmet",
+        "oversized gold coins"
+      ],
+      "prompt_auszug": "MALE-READ SPOILS KEEPER / JUNIOR RETAINER. Tall top-heavy crooked blob, folded brown checked shoulder scrap, plain bronze circlet sliding over one eye, round clay side curl. Anxious covetous concentration: unequal white eyes staring DOWN, upper lip pinched to one side and one large central tooth, enormous lower lip, brows curled upward at inner ends. Clutches ONE upturned battered bronze HELMET filled with THREE oversized GOLD COINS, like a miserly fruit bowl; one finger counts a coin still inside the helmet. No scattered treasure or scene. He is clearly guarding the count, not serving food.\n\nComposition crucial: six LARGE complete characters in a clean regular3x2 visual grid. Same substantial BODY HEIGHT across both rows. Design whole silhouettes to occupy450-475px of each512pxcell, safe margins, hats/horns/weapons/droplets INSIDE own cell, clear gutters between actors and rows. Keep at least32px transparent gap between rows, no props on seams, no overlap/touching and no cropped details. Do not shrink the entire bottom row. No gridlines, background, floor, shadow disk, matte, gradient, checkerboard, halo, text or watermark. Real alpha-zero transparent surroundings with opaque character interiors and clean antialiased edges. Soft upper-left studio light on figures only.",
+      "prompt_quelle": "WOODLAND_CLAN_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending",
+    "Row gutter only3px atalpha<=16; use explicit rectangles, no fixed512or padded automatic crops"
+  ],
+  "family_context": {
+    "name": "Stamm der Vorbehalte",
+    "hierarchy": "Loose social roles, not combat tiers or historical reconstruction",
+    "roles": [
+      "chief",
+      "war-leader",
+      "elder/counsellor",
+      "champion",
+      "scout/specialist",
+      "spoils-keeper/retainer"
+    ],
+    "conceptual_opponent_of_set": "WSA_ROMAN_LEGION_20261105",
+    "relation_source": "Georg chat: could be opponents of Roman legion",
+    "relation_status": "DESIGN_CONTEXT_NOT_RUNTIME_FACTION",
+    "standalone_actors": true
+  },
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Super, die sind auch großartig geworden; requested next family. Proceed-PASS under PRODUCTIVE_REVIEW_GATE_POLICY."
+  }
+}

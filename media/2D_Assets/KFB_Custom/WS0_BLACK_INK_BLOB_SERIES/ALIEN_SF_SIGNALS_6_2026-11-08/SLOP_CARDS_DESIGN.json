@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_ALIEN_SF_SIGNALS_20261108_01",
+      "name": "Hollis Wickshut",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeps a light on for arrivals nobody has authorized.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Beacon Keeper"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Measured English delivery.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Steady now."
+          ],
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SIGNALS_20261108"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The shutter opens inward. He prefers to be the first to know the light is working.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The shutter opens inward. He prefers to be the first to know the light is working.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Downward gaze and relieved smile.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SIGNALS_20261108_02",
+      "name": "Mira Halfheard",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Wants the echo to say what it meant the first time.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Echo Catcher"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, with a slight upward inflection.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Wait for the repeat."
+          ],
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SIGNALS_20261108"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "I heard my question return in a better mood. Mira caught it before it could answer.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "I heard my question return in a better mood. Mira caught it before it could answer.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Head tilted with a wry oblique mouth.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SIGNALS_20261108_03",
+      "name": "Grom Quietband",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Broadcasts at the exact volume of a secret.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Dead Frequency Announcer"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Low and unhurried.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "If anyone is receiving, don't."
+          ],
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SIGNALS_20261108"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He continued the weather report after the frequency died. Apparently the dead take a keen interest in drizzle.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He continued the weather report after the frequency died. Apparently the dead take a keen interest in drizzle.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "One eye up and pursed lips.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SIGNALS_20261108_04",
+      "name": "Wes Staticspool",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Keeps stray interference wound in very particular layers.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Static Tamer"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quick, slightly breathless.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It bites if you unwind it."
+          ],
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SIGNALS_20261108"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The wire never crossed itself. This cannot be said of the instructions.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The wire never crossed itself. This cannot be said of the instructions.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Eyes down with clenched square teeth.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SIGNALS_20261108_05",
+      "name": "Nia Punchline",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Makes a record of each missing piece.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Alien Code Clerk"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Soft and precise.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That silence needs a hole."
+          ],
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SIGNALS_20261108"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The strip was full of holes. Nia said the report was complete.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The strip was full of holes. Nia said the report was complete.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Low lids and blunt frown.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_SIGNALS_20261108_06",
+      "name": "Sid Cupwire",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Wishes the neighbors would stop sounding so interesting.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Signal Eavesdropper"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Clipped comic timing.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "They know we can hear them."
+          ],
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_SIGNALS_20261108"
+          },
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He found the signal came from his own side of the wall. The cup was already full of it.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He found the signal came from his own side of the wall. The cup was already full of it.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Widened eyes and a small O.",
+          "src": "ALIEN_SF_SIGNALS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

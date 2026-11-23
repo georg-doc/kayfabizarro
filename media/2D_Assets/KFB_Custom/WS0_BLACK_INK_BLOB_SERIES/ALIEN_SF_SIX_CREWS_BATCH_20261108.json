@@ -1,0 +1,106 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_ALIEN_SF_SIX_CREWS_20261108",
+  "date": "2026-11-08",
+  "georg_status": "PASS",
+  "language": "en",
+  "handoff": "Existing Game and Asset Librarian selected-set intake. Individual receiving remains pending.",
+  "sets": [
+    {
+      "set_id": "WSA_ALIEN_SF_ARRIVALS_20261108",
+      "manifest": "ALIEN_SF_ARRIVALS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "ALIEN_SF_ARRIVALS_6_2026-11-08/sheet-r1.png",
+      "sha256": "bd28b4c0875f3c5dda868f9281ef64b498f114a9bef743c2b9db1f7dea35085e",
+      "roles": [
+        "Passport Examiner",
+        "Baggage Claim Oracle",
+        "Exchange Counter Blob",
+        "Customs Confessor",
+        "Welcome Ambassador",
+        "Translation Failure"
+      ]
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_VACUUM_20261108",
+      "manifest": "ALIEN_SF_VACUUM_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "ALIEN_SF_VACUUM_6_2026-11-08/sheet-r1.png",
+      "sha256": "7caeb54901ffd9e4cb338b6f37f06e5ddc5e49c96ef638f8ef9f1571ef5e3909",
+      "roles": [
+        "Orbit Pothole Patcher",
+        "Air Leak Listener",
+        "Gravity Plumber",
+        "Solar Panel Cleaner",
+        "Moonlight Meter Reader",
+        "Cable Splicer"
+      ]
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_SIGNALS_20261108",
+      "manifest": "ALIEN_SF_SIGNALS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "ALIEN_SF_SIGNALS_6_2026-11-08/sheet-r1.png",
+      "sha256": "01d2a34d54b84cf509e94589f4e8f4e7567ab89fff1ebb390ad1a776a4923652",
+      "roles": [
+        "Beacon Keeper",
+        "Echo Catcher",
+        "Dead Frequency Announcer",
+        "Static Tamer",
+        "Alien Code Clerk",
+        "Signal Eavesdropper"
+      ]
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_WORLDS_20261108",
+      "manifest": "ALIEN_SF_WORLDS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "ALIEN_SF_WORLDS_6_2026-11-08/sheet-r1.png",
+      "sha256": "ef0f1f6fea82763e01ace9f9836c501f3172ada9051be4a412b1b37208c75a0e",
+      "roles": [
+        "Tidal Moon",
+        "Micro Volcano",
+        "Eclipse Twin",
+        "Atmosphere Shedder",
+        "Geode Listener",
+        "Runaway Pole"
+      ]
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_SYMBIONTS_20261108",
+      "manifest": "ALIEN_SF_SYMBIONTS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "ALIEN_SF_SYMBIONTS_6_2026-11-08/sheet-r1.png",
+      "sha256": "ff7649ffa3ef792ac155c88874a413426210735ad827ae53f0ff319550272ece",
+      "roles": [
+        "Shell Roommate",
+        "Filter Feeder",
+        "Antenna Midwife",
+        "Hitchhiking Moss",
+        "Pressure Puffer",
+        "Salt Licker"
+      ]
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_NEIGHBORS_20261108",
+      "manifest": "ALIEN_SF_NEIGHBORS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "image": "ALIEN_SF_NEIGHBORS_6_2026-11-08/sheet-r1.png",
+      "sha256": "036541c25878637fedec0f0e6e70404a235b9dc63d51092456dfcea28bd2ce9f",
+      "roles": [
+        "Vacuum Laundry Tenant",
+        "Meal Tube Enthusiast",
+        "Porthole Watcher",
+        "Thermostat Obsessive",
+        "Gravity-Defying Sleeper",
+        "Borrowed Oxygen Neighbor"
+      ]
+    }
+  ]
+}

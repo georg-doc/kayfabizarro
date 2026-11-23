@@ -1,0 +1,269 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPACE_MECHANICS_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPACE_MECHANICS_6_2026-11-06/sheet-r1.png",
+    "sha256": "79b9410aca3ae254dbba149b3d3a0daa0e3295c91ea047b07d07bc1fdf7a0f45"
+  },
+  "production_record": "SPACE_MECHANICS_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPACE_MECHANICS_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPACE_MECHANICS_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Dock Drei Noch Nicht Fertig",
+    "visual_context": "1930s dieselpunk spaceship dock mechanics,ochre and faded petrol-blue small workwear accents,worn brass/steel/enamel tools;NOwholehumanoveralls",
+    "relationship_policy": "Shared fictional space crew and distinct role intentions; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Exploration, authority, maintenance, possession, enhancement, certainty and neighbourly care; fictional HyperNorm residents",
+    "domain": "MECHANICS",
+    "role_status": "FICTIONAL_AUTHORING_INTENT_NOT_RUNTIME_ASSIGNMENT"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPACE_MECHANICS_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Chefingenieur Restdruck",
+      "bild": {
+        "datei": "SPACE_MECHANICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "large adjustable wrench",
+        "blank pressure gauge",
+        "flatcap"
+      ],
+      "temperament": "He knows which sound is normal and dislikes that it has changed.",
+      "prompt_auszug": "Chefingenieur Restdruck, male-read. Broad tall domed ink blob,heavy worn eyelids,one lifted brow,long CLOSED wearyfrown;petrol flatcap,small ochre workcollar;holds ONE big adjustable brass wrench at flank and ONE little blank pressuregauge in otherhand.",
+      "prompt_quelle": "SPACE_MECHANICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "chief engineer"
+    },
+    {
+      "id": "WSA_SPACE_MECHANICS_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Lina Leckstelle",
+      "bild": {
+        "datei": "SPACE_MECHANICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "copper pipe elbow",
+        "closed sealant tin",
+        "ochre headscarf"
+      ],
+      "temperament": "She finds leaks by listening to the excuses around them.",
+      "prompt_auszug": "Lina Leckstelle, female-read. Lean upright ink comma,sidequiff andlashes,keen bright whiteeyes,CLOSED slygrin;ochre headscarf with knot,small petrol collar;holds ONE short copper pipe elbow and a squat tin of dark sealant closedlid,no spills.",
+      "prompt_quelle": "SPACE_MECHANICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "pressure / pipe technician"
+    },
+    {
+      "id": "WSA_SPACE_MECHANICS_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bodo Brennkammer",
+      "bild": {
+        "datei": "SPACE_MECHANICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-fin engine part",
+        "leather gloves",
+        "woolcap"
+      ],
+      "temperament": "He services the hot section with the expression of a man reading the word usually.",
+      "prompt_auszug": "Bodo Brennkammer, male-read. Very wide low scalloped ink blob,huge alarmed eyes and tiny toothless gasp;ochre woolcap,small petrol collar;thick leathergloves on shortgoo hands hold ONE squat cylindrical enginepart with three rounded coolingfins,noflame.",
+      "prompt_quelle": "SPACE_MECHANICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "engine technician"
+    },
+    {
+      "id": "WSA_SPACE_MECHANICS_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mira Magnetspule",
+      "bild": {
+        "datei": "SPACE_MECHANICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "three-winding copper coil",
+        "ceramic screwdriver",
+        "petrol bandana"
+      ],
+      "temperament": "She repairs the circuit while everyone else argues about the atmosphere.",
+      "prompt_auszug": "Mira Magnetspule, female-read. Tall offset pear ink blob,lashes,high sidecurl,half-lidded skeptical eyes and pursed CLOSED mouth;small petrol bandana,ochre collar;holds ONE thick copper coil with three bold windings and ONE short insulated ceramic screwdriver,no cableclutter.",
+      "prompt_quelle": "SPACE_MECHANICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "electrical technician"
+    },
+    {
+      "id": "WSA_SPACE_MECHANICS_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Außenhaut",
+      "bild": {
+        "datei": "SPACE_MECHANICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "raised weldingvisor",
+        "short rivetgun",
+        "square patch plate"
+      ],
+      "temperament": "He believes every hull is a temporary arrangement between holes.",
+      "prompt_auszug": "Otto Außenhaut, male-read. Round star-lobed ink splat with sweeping crest,delighted whiteeyes and two-upper-tooth open laugh;small lifted weldingvisor perched entirely ABOVEeyes,ochre shoulderpatch;holds short blunt rivetgun pointingdown and ONE small square hullpatchplate,no sparks.",
+      "prompt_quelle": "SPACE_MECHANICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "hull repairer"
+    },
+    {
+      "id": "WSA_SPACE_MECHANICS_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Ersatzteil",
+      "bild": {
+        "datei": "SPACE_MECHANICS_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "partsbox",
+        "single gear cog",
+        "petrol knitcap"
+      ],
+      "temperament": "He has found the spare part and would like to know what it used to belong to.",
+      "prompt_auszug": "Pip Ersatzteil, male-read. Narrow crooked ink bell,drooping curl,huge worried upwardeyes,tiny CLOSED tentative smile;petrol knitcap,small ochre collar;holds ONE small tin partsbox containing a single LARGE gear cog visible,other palm unsure.",
+      "prompt_quelle": "SPACE_MECHANICS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "apprentice / parts runner"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

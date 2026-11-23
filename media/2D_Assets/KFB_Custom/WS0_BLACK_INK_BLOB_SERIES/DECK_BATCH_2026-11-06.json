@@ -1,0 +1,132 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "owner": "WSA",
+  "date": "2026-11-06",
+  "started_date": "2026-11-05",
+  "status": "GEORG_DESIGN_PASS",
+  "counts": {
+    "sheets": 4,
+    "depictions": 24,
+    "identities": 24,
+    "female_read_identities": 8,
+    "generation_jobs": 4,
+    "layout_edit_jobs": 0
+  },
+  "sets": [
+    {
+      "code": "KRIME",
+      "set_id": "WSA_DECK_KRIME_20261106",
+      "manifest": "DECK_KRIME_6_2026-11-06/MANIFEST.json",
+      "sha256": "da79ae3c2a894c9aba9490e55690569bce66298474d6c61e7e5b8f62b6d768aa",
+      "git_blob_sha": "168ef0383275dae584fddc923ff3389d039a8ae3",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "shadow_politics",
+        "user_family_title": "Organized Kayfabe-Krime",
+        "registry_title": "Ruled by Organized Kayfabe-Krime",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/shadow_politics.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Lobbyist with Briefcase",
+        "Puppet Politician",
+        "Smoke-Filled Room Cigar Boss",
+        "Ballot Box Stuffer",
+        "Bribe Envelope Courier",
+        "Whistleblower with Whistle"
+      ]
+    },
+    {
+      "code": "COVERUP",
+      "set_id": "WSA_DECK_COVERUP_20261106",
+      "manifest": "DECK_COVERUP_6_2026-11-06/MANIFEST.json",
+      "sha256": "155e0211290d5e33139fd5baf07a0e0c8a19eabc258b942deeea4f4210125d60",
+      "git_blob_sha": "438c0a8966cc7b8b7b82ff2311f5f2555b6a3535",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "the_kayfabizarro_manifesto_cover_up",
+        "user_family_title": "How To Stage A Cover-Up",
+        "registry_title": "How To Stage A Cover-Up",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/the_kayfabizarro_manifesto_cover_up.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Shredder Machine Clerk",
+        "Spin Doctor Top",
+        "Redacted Black-Bar Agent",
+        "Fall Guy Patsy",
+        "Press Release Parrot",
+        "Rug Sweeper Janitor"
+      ]
+    },
+    {
+      "code": "MOVE1",
+      "set_id": "WSA_DECK_MOVE1_20261106",
+      "manifest": "DECK_MOVE1_6_2026-11-06/MANIFEST.json",
+      "sha256": "2f3795ca8865862388e5966c8f626d37ed5aee68b8bbd9fb99f6704e1deb5d8c",
+      "git_blob_sha": "0976f654d2d13934299700b63162a90b8a6b298f",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "the_move_1",
+        "user_family_title": "THE MOVE 1",
+        "registry_title": "THE MOVE: A Field Guide to Managed Reactions",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/the_move_1.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Outrage Bait Fisherman",
+        "Distraction Juggler",
+        "Fake Apology Crier",
+        "Gaslighting Lamp Lighter",
+        "Bandwagon Drummer",
+        "Silent Treatment Statue"
+      ]
+    },
+    {
+      "code": "MOVE2",
+      "set_id": "WSA_DECK_MOVE2_20261106",
+      "manifest": "DECK_MOVE2_6_2026-11-06/MANIFEST.json",
+      "sha256": "e9db6a40ddcdca492ee722e497c9ed022566c624ea3ea71cce6156ccfe8ec80c",
+      "git_blob_sha": "8ab72643c9125875b3401f2879c74cc47401b5a4",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "deck_binding": {
+        "deck_id": "the_move_id",
+        "user_family_title": "THE MOVE 2",
+        "registry_title": "The Move: A Field Guide to Managed Reactions",
+        "source_repo": "georg-doc/kayfabizarro",
+        "source_path": "registry/assets/v1/decks/the_move_id.json",
+        "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+        "status": "THEMATIC_DESIGN_PROPOSAL",
+        "exact_card_mapping": null
+      },
+      "user_concepts": [
+        "Triangulation Puppeteer",
+        "Love-Bomb Cupid",
+        "Moving Goalpost Carrier",
+        "Victim Card Dealer",
+        "Smear Paint Roller",
+        "Reaction Harvester Farmer"
+      ]
+    }
+  ],
+  "notes": [
+    "Source1536x1024 alpha sheets,not individual catalogue masters",
+    "Exact actual prompts/reference input roles in production records",
+    "MOVE1/MOVE2 are user family labels; canon deck IDs retained despite similar registry titles",
+    "All24 textual cards/backstories DESIGN"
+  ],
+  "georg_status": "PASS"
+}

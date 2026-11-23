@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_GAPS_DEEP_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+    "sha256": "b3f5e36a14672b334379380ed0f9a873b60c781a7bc9af5dfd83b8f7f395f50c"
+  },
+  "production_record": "GAPS_DEEP_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "GAPS_DEEP_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "GAPS_DEEP_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Deep Sea After Hours",
+    "theme": "Deep Sea After Hours",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "thematic resident",
+      "symbolic ensemble",
+      "three-member detail",
+      "six-member family"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Len Sparebulb",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "lanternfish maintenance worker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_DEEP_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_DEEP_ACTOR_20261107_02",
+        "WSA_GAPS_DEEP_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small warm luminous bulb on short forehead stalk and one smooth spare bulb in hand"
+      ],
+      "temperament": "Lanternfish maintenance worker.",
+      "prompt_auszug": "lean high comma, worried sideways gaze, tight lips",
+      "prompt_quelle": "GAPS_DEEP_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "lanternfish maintenance worker"
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Clamledger",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "clam shift supervisor",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_DEEP_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_DEEP_ACTOR_20261107_01",
+        "WSA_GAPS_DEEP_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small rounded clam shell collar and a thick clipboard"
+      ],
+      "temperament": "Clam shift supervisor.",
+      "prompt_auszug": "wide squat body, unimpressed narrowed eyes and closed frown",
+      "prompt_quelle": "GAPS_DEEP_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "clam shift supervisor"
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bram Ventcheck",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "tube worm vent regulator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_DEEP_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_GAPS_DEEP_ACTOR_20261107_01",
+        "WSA_GAPS_DEEP_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small pale rolled tube at flank and a short chunky thermometer with red tip"
+      ],
+      "temperament": "Tube worm vent regulator.",
+      "prompt_auszug": "tall upright droplet, one eyebrow lifted and pursed mouth",
+      "prompt_quelle": "GAPS_DEEP_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "tube worm vent regulator"
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Faye Softsignal",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "bioluminescent signal keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_DEEP_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_DEEP_ACTOR_20261107_05",
+        "WSA_GAPS_DEEP_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short bead antennae and one sealed cyan lantern"
+      ],
+      "temperament": "Bioluminescent signal keeper.",
+      "prompt_auszug": "round asymmetric pear, upturned eager eyes, small delighted smile",
+      "prompt_quelle": "GAPS_DEEP_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "bioluminescent signal keeper"
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gus Siltsettle",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "sediment cleaner",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_DEEP_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_DEEP_ACTOR_20261107_04",
+        "WSA_GAPS_DEEP_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny smooth silt scoop with a small pale mound and broad short brush"
+      ],
+      "temperament": "Sediment cleaner.",
+      "prompt_auszug": "broad low droop, tired lids, flat closed lips",
+      "prompt_quelle": "GAPS_DEEP_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "sediment cleaner"
+    },
+    {
+      "id": "WSA_GAPS_DEEP_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Pressurecup",
+      "language": "en",
+      "bild": {
+        "datei": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "break-time resident",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_GAPS_DEEP_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_GAPS_DEEP_ACTOR_20261107_04",
+        "WSA_GAPS_DEEP_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "compact thick-walled deep-sea mug with handle"
+      ],
+      "temperament": "Break-time resident.",
+      "prompt_auszug": "lean wobbly blob, brows raised and startled round mouth",
+      "prompt_quelle": "GAPS_DEEP_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "break-time resident"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "thematic_family": "Deep Sea After Hours",
+    "team_kit": "Deep ocean indigo with contained amber and cyan bioluminescent accents, matte ink clay and smooth glass",
+    "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+    "satirical_target": "Everyday roles and absurd material encounters.",
+    "trios": [
+      {
+        "id": "WSA_GAPS_DEEP_20261107_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_GAPS_DEEP_ACTOR_20261107_01",
+          "WSA_GAPS_DEEP_ACTOR_20261107_02",
+          "WSA_GAPS_DEEP_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_GAPS_DEEP_20261107_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_GAPS_DEEP_ACTOR_20261107_04",
+          "WSA_GAPS_DEEP_ACTOR_20261107_05",
+          "WSA_GAPS_DEEP_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_GAPS_DEEP_ACTOR_20261107_01",
+      "WSA_GAPS_DEEP_ACTOR_20261107_02",
+      "WSA_GAPS_DEEP_ACTOR_20261107_03",
+      "WSA_GAPS_DEEP_ACTOR_20261107_04",
+      "WSA_GAPS_DEEP_ACTOR_20261107_05",
+      "WSA_GAPS_DEEP_ACTOR_20261107_06"
+    ]
+  }
+}

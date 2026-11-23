@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-5e629cd4-6a8d-40c1-8c72-a783bf71d6f8.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "c5b4653024f76d162932c5087bd7b3dec3bde0d09fe106af7275e9f2bcf54aab",
+  "git_blob_sha": "41eb833e90135b8cc035730beabbecdafea65117",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Make a NEW KFB claymation ink-blob character sheet using the attached images solely as style references. Precisely six entirely distinct complete footless ink blobs in three columns by two rows, landscape 1536x1024 transparent PNG. Black Ops. Shared team palette and craft: coal charcoal gear with muted oxblood stitch accents and grey lenses clipped to temple or raised above forehead, never cover eyes. Small stealth equipment and retro spy silhouette, organic plum-charcoal goo dominates. Top row Silent Detail, bottom row Containment Detail. They are separate characters posed independently, each contained in its own cell with broad transparent breathing room and comparable scale. No floor, text, marks of a real unit, gridlines, shadow discs or touching. Expressive sculpted organic charcoal-plum ink from the reference, modest dark satin highlights and fine tactile fingerprints. Rounded goo base and short goo hands. Gear is sparse, chunky handmade accessories fitted directly onto ink. No human torso, legs, boots, armor exoskeleton, face masks or concealed pupils. White ivory sclera, distinct red irises, black pupils, dark sculpted lids. Dark ink lips. Teeth only inside an open mouth. Asymmetric faces and silhouettes before equipment. Fictional stylized game art, no active combat. Two subtly female-read blobs, cells 2 and 5. Row-major character direction:\n1. Male-read, coldly attentive. short black open-face cowl, small radio with red indicator. tall narrow blob, hard side glance and closed slant mouth.\n2. Female-read, curiously guarded. raised charcoal night lenses and tiny handheld sensor. round soft crest, sharp uneven gaze and pursed mouth.\n3. Male-read, irritated by attention. black short collar and blank charcoal dossier. wide box-rounded body, deep frown and lopsided lids.\n4. Male-read, serenely methodical. charcoal helmet and small sealed latch box. broad squat shape, half-lidded eyes and unsettling closed smile.\n5. Female-read, intently listening. small ear cup and short black signal wand pointing down. tall crescent blob, high uneven brow and narrow side call.\n6. Male-read, uneasily composed. short black cap and tiny gray flashlight. pear-shaped blob, large wary eyes and forced crooked smile.\nReadable unit identity at thumbnail size. Keep all helmets, hands, gear, crest and droplets fully within the sheet. The input references supply material and anatomy. Create these six new characters in the designated team kit."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS",
+  "georg_design_status": "PASS"
+}

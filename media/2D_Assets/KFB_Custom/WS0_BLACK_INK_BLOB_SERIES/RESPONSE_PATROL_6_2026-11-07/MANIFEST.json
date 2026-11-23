@@ -1,0 +1,323 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESPONSE_PATROL_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESPONSE_PATROL_6_2026-11-07/sheet-r1.png",
+    "sha256": "e5b9b4b75280c8cdba823d2d5058b8cbce2fe9be71d1417809f2199eaa4bdc8e"
+  },
+  "production_record": "RESPONSE_PATROL_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESPONSE_PATROL_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESPONSE_PATROL_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Local Detail",
+    "theme": "Patrol Police",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "response encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Milo Beat",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PATROL_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "patiently skeptical",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_02",
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "peaked cap, radio microphone"
+      ],
+      "temperament": "Milo Beat stays patiently skeptical when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "broad bell, sideways eyes, small closed smile, one palm asking for a pause",
+      "prompt_quelle": "RESPONSE_PATROL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "June Signal",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PATROL_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "briskly attentive",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_01",
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "peaked cap, small two-tone traffic paddle with no text"
+      ],
+      "temperament": "June Signal stays briskly attentive when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "tall pear, wide focus, crooked call, paddle beside body",
+      "prompt_quelle": "RESPONSE_PATROL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Eddie Notebook",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PATROL_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "doubtful but thorough",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_01",
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "peaked cap, tiny notebook and stubby pencil"
+      ],
+      "temperament": "Eddie Notebook stays doubtful but thorough when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "narrow curved body, one lifted brow, pinched mouth",
+      "prompt_quelle": "RESPONSE_PATROL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rory Slowdown",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PATROL_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "offended by haste",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_05",
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "peaked cap, stubby flashlight"
+      ],
+      "temperament": "Rory Slowdown stays offended by haste when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "squat wide blob, heavy lowered lids, pursed pout",
+      "prompt_quelle": "RESPONSE_PATROL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Whistle",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PATROL_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "calm in the commotion",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_04",
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "peaked cap, short whistle lanyard"
+      ],
+      "temperament": "Nell Whistle stays calm in the commotion when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "round soft crest, bright sideways glance, restrained smile",
+      "prompt_quelle": "RESPONSE_PATROL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Toby Overtime",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_PATROL_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "wearily helpful",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_04",
+        "WSA_RESPONSE_PATROL_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "peaked cap, small flashlight and thermos"
+      ],
+      "temperament": "Toby Overtime stays wearily helpful when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "drooping pear, weary eyes, open small sigh",
+      "prompt_quelle": "RESPONSE_PATROL_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "sequence": 1,
+    "team_kit": "faded navy cloth, short peaked patrol caps and small brass generic badges, powder-blue collar accents. No armor or combat helmets.",
+    "trios": [
+      {
+        "id": "WSA_RESPONSE_PATROL_20261107_TRIO_A",
+        "name": "Street Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_01",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_02",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESPONSE_PATROL_20261107_TRIO_B",
+        "name": "Neighbourhood Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_04",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_05",
+          "WSA_RESPONSE_PATROL_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESPONSE_PATROL_ACTOR_20261107_01",
+      "WSA_RESPONSE_PATROL_ACTOR_20261107_02",
+      "WSA_RESPONSE_PATROL_ACTOR_20261107_03",
+      "WSA_RESPONSE_PATROL_ACTOR_20261107_04",
+      "WSA_RESPONSE_PATROL_ACTOR_20261107_05",
+      "WSA_RESPONSE_PATROL_ACTOR_20261107_06"
+    ]
+  },
+  "georg_decision": {
+    "quote": "Die sind alle pass.",
+    "scope": "All seven response team sheets and 42 designs."
+  }
+}

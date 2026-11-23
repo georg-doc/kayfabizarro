@@ -1,0 +1,133 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "owner": "WSA",
+  "date": "2026-11-06",
+  "status": "GEORG_DESIGN_PASS",
+  "counts": {
+    "sheets": 6,
+    "depictions": 36,
+    "identities": 36,
+    "female_read_identities": 12,
+    "generation_jobs": 6,
+    "layout_edit_jobs": 0
+  },
+  "sets": [
+    {
+      "code": "ASTRO",
+      "set_id": "WSA_SPACE_ASTRO_20261106",
+      "manifest": "SPACE_ASTRO_6_2026-11-06/MANIFEST.json",
+      "sha256": "54260b4931033fe914a5e900d51de29f98a1767dfc7739dbd93162fe8269e199",
+      "git_blob_sha": "44cdca78b2cd1ee541226a8e91c958315df72a84",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Expedition Vorläufiges Neuland",
+      "family_roles": [
+        "expedition commander",
+        "pilot",
+        "sample scientist",
+        "astro-navigator",
+        "EVA specialist",
+        "rookie / first-contact volunteer"
+      ]
+    },
+    {
+      "code": "SOLDIERS",
+      "set_id": "WSA_SPACE_SOLDIERS_20261106",
+      "manifest": "SPACE_SOLDIERS_6_2026-11-06/MANIFEST.json",
+      "sha256": "00e602112643081ac12e7162f6cf836a647a310c13ca4ba6d95faa0a98b16a1a",
+      "git_blob_sha": "5e365c00204afac59005e32de7a965299c458a32",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Raumtrupp Ungeklärte Lage",
+      "family_roles": [
+        "squad sergeant",
+        "recon scout",
+        "heavy ray-gunner",
+        "field medic",
+        "signals operator",
+        "combat engineer"
+      ]
+    },
+    {
+      "code": "PIRATES",
+      "set_id": "WSA_SPACE_PIRATES_20261106",
+      "manifest": "SPACE_PIRATES_6_2026-11-06/MANIFEST.json",
+      "sha256": "42aa4cfcbf8dc0479329f7d7c211520ec56105a77ea5b4356db368f506df6940",
+      "git_blob_sha": "b13d12232c826c909fc4c221eb662477a232239a",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Freibeuter der letzten Umlaufbahn",
+      "family_roles": [
+        "corsair captain",
+        "quartermaster",
+        "gunner",
+        "navigator",
+        "boarding specialist",
+        "cook / provisions keeper"
+      ]
+    },
+    {
+      "code": "CYBORGS",
+      "set_id": "WSA_SPACE_CYBORGS_20261106",
+      "manifest": "SPACE_CYBORGS_6_2026-11-06/MANIFEST.json",
+      "sha256": "73773736874fcd4f4eb37e668f72872a7c39111864dc12423d17b0171d1e0fc2",
+      "git_blob_sha": "15b3d0b5f7db942423727a3dd7839ed36ff1088b",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Die teilweise Verbesserungsfähigen",
+      "family_roles": [
+        "precision-hand augment",
+        "memory / update interface",
+        "power-storage augment",
+        "sensor augment",
+        "clockwork-assist augment",
+        "self-maintenance tinkerer"
+      ]
+    },
+    {
+      "code": "MECHANICS",
+      "set_id": "WSA_SPACE_MECHANICS_20261106",
+      "manifest": "SPACE_MECHANICS_6_2026-11-06/MANIFEST.json",
+      "sha256": "79b9410aca3ae254dbba149b3d3a0daa0e3295c91ea047b07d07bc1fdf7a0f45",
+      "git_blob_sha": "7470d69c9000b44da0f71d4eb8ba44b3bbdf0fa2",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Dock Drei Noch Nicht Fertig",
+      "family_roles": [
+        "chief engineer",
+        "pressure / pipe technician",
+        "engine technician",
+        "electrical technician",
+        "hull repairer",
+        "apprentice / parts runner"
+      ]
+    },
+    {
+      "code": "TROOPERS",
+      "set_id": "WSA_SPACE_TROOPERS_20261106",
+      "manifest": "SPACE_TROOPERS_6_2026-11-06/MANIFEST.json",
+      "sha256": "e6b4d43160904fafc636804d390c0d0f6d2f04bf0d79d55a16fd2dedbac587cc",
+      "git_blob_sha": "613a0d4ed318408a50ed9317156ff8c9be53a8ae",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "family": "Imperiale Ordnung Auf Widerruf",
+      "family_roles": [
+        "garrison officer",
+        "shield / protection trooper",
+        "rookie patrol trooper",
+        "signals trooper",
+        "technical trooper",
+        "records / checkpoint clerk"
+      ]
+    }
+  ],
+  "notes": [
+    "Six independent native original-reference-conditioned3x2 sheets;no generated parent chain",
+    "Six fictional retro space crews;roles DESIGN,not canonical runtime/combat bindings",
+    "Selected1536x1024 originals unchanged;true alpha0..254",
+    "All36 cards/biographies DESIGN;no canonical deck/tier/hits invented",
+    "Pirate captain far-eye iris/pupil not legible under heavy squint;explicit design-readability concern",
+    "Individual validated isolation/alpha cleanup/high-resolution single catalogue masters pending"
+  ],
+  "georg_status": "PASS"
+}

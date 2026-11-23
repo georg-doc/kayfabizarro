@@ -1,0 +1,266 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS3_POKER_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS3_POKER_6_2026-11-06/sheet-r1.png",
+    "sha256": "b5c79cc92b82f50ce2619eeb04beb2abe64a6e785bbb2222c17cdf890389a5e2"
+  },
+  "production_record": "SPORTS3_POKER_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS3_POKER_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS3_POKER_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Club Zum letzten Einsatz",
+    "visual_context": "Retro smoke-free 1930s card club accessories in bottle-green,cream and burgundy,wooden and clay chips,small waistcoat panels,no table",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "POKER",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS3_POKER_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Verdecktes",
+      "bild": {
+        "datei": "SPORTS3_POKER_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "two backed cards",
+        "raised green eyeshade",
+        "burgundy collar"
+      ],
+      "temperament": "She gives nothing away except the impression that everyone else already has.",
+      "prompt_auszug": "Vera Verdecktes, female-read. Tall tapering ink bell,side quiff,subtle lashes,one slowly raised eyelid and tiny closed superior smirk;small green felt eyeshade pushed ABOVE eyes and burgundy collar;holds exactly TWO thick ivory playing cards showing plain backs against her flank.",
+      "prompt_quelle": "SPORTS3_POKER_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "tight veteran / poker face"
+    },
+    {
+      "id": "WSA_SPORTS3_POKER_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bodo Bluffbedarf",
+      "bild": {
+        "datei": "SPORTS3_POKER_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-chip stack",
+        "burgundy bowtie"
+      ],
+      "temperament": "He bluffs with the expression of someone requesting permission to lie.",
+      "prompt_auszug": "Bodo Bluffbedarf, male-read. Wide wobbly ink pear,huge nervous side-glancing eyes and clenched teeth clearly INSIDE open tense mouth;small burgundy bowtie and cream collar;holds one short stack of three large poker chips between trembling goo hands.",
+      "prompt_quelle": "SPORTS3_POKER_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "bluffer"
+    },
+    {
+      "id": "WSA_SPORTS3_POKER_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kurt Kalkül",
+      "bild": {
+        "datei": "SPORTS3_POKER_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-bead abacus",
+        "green visor"
+      ],
+      "temperament": "He can calculate every outcome except the one involving people.",
+      "prompt_auszug": "Kurt Kalkül, male-read. Narrow angular-in-outline but smoothly rounded three-lobed ink blob,heavy skeptical brows and pursed toothless mouth;small green visor cap and cream collar;holds a tiny brass pocket abacus with THREE beads,other hand touching chin.",
+      "prompt_quelle": "SPORTS3_POKER_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "odds analyst"
+    },
+    {
+      "id": "WSA_SPORTS3_POKER_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mona Mitgehen",
+      "bild": {
+        "datei": "SPORTS3_POKER_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "single oversized poker chip",
+        "cream neckerchief"
+      ],
+      "temperament": "She calls every bet because exclusion feels more expensive.",
+      "prompt_auszug": "Mona Mitgehen, female-read. Broad squat star-lobed ink blob,soft lashed lids,joyful crooked open grin with three upper teeth;small cream neckerchief and burgundy wristband;pushes one oversized single poker chip forward IN OWN cell,other palm open welcoming.",
+      "prompt_quelle": "SPORTS3_POKER_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "calling player"
+    },
+    {
+      "id": "WSA_SPORTS3_POKER_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fiete Fastpleite",
+      "bild": {
+        "datei": "SPORTS3_POKER_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "one last chip",
+        "empty velvet purse",
+        "flat cap"
+      ],
+      "temperament": "He guards his last chip as if it were the deposit on a different life.",
+      "prompt_auszug": "Fiete Fastpleite, male-read. Slender drooping comma ink blob,giant worried white eyes downcast toward open palm,tiny closed wavering smile;old burgundy flat cap and green collar;holds ONE tiny lone poker chip in palm and an empty small velvet purse in other hand.",
+      "prompt_quelle": "SPORTS3_POKER_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "short-stack underdog"
+    },
+    {
+      "id": "WSA_SPORTS3_POKER_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Don Durchgeben",
+      "bild": {
+        "datei": "SPORTS3_POKER_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three backed cards",
+        "small waistcoat front",
+        "cuffbands"
+      ],
+      "temperament": "He distributes chance with an air of having personally approved it.",
+      "prompt_auszug": "Don Durchgeben, male-read. Round broad ink splat with swept crest,alert sideways eyes and toothless asymmetric professional smile;tiny green waistcoat front and cream cuffbands;holds short fan of THREE thick plain-backed cards low at waist,other palm flat in dealer gesture.",
+      "prompt_quelle": "SPORTS3_POKER_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "dealer / table organiser"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

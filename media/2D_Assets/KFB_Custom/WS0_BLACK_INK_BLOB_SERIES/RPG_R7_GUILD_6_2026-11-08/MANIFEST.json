@@ -1,0 +1,312 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RPG_R7_GUILD_20261108",
+  "date": "2026-11-08",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 0,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+    "sha256": "4d82caacc45a3929b7a5510477c20d1e48223d866fab42d6aae027d5f4480ea7"
+  },
+  "production_record": "RPG_R7_GUILD_6_2026-11-08/PRODUCTION_RECORD.json",
+  "cards": "RPG_R7_GUILD_6_2026-11-08/SLOP_CARDS_DESIGN.json",
+  "biographies": "RPG_R7_GUILD_6_2026-11-08/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Guild Party",
+    "theme": "RPG r7",
+    "relationship_policy": "Six-member fantasy party with independently usable identities.",
+    "usage_candidates": [
+      "fantasy encounter",
+      "HyperNorm resident",
+      "standalone Slop"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RPG_R7_GUILD_20261108_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Agnes Versebound",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Cleric",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "gold cross staff",
+        "red prayer book",
+        "purple and cream mitre"
+      ],
+      "temperament": "Protects a ritual from anyone inclined to enjoy it prematurely.",
+      "prompt_auszug": "Half-lidded downward gaze and a little disapproving frown.",
+      "prompt_quelle": "RPG_R7_GUILD_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_RPG_CLERIC_STAFF"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_GUILD_20261108_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bruno Splitlog",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Barbarian",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "horned helmet",
+        "double-bladed axe",
+        "tan mantle"
+      ],
+      "temperament": "Finds almost any impasse easier to split than discuss.",
+      "prompt_auszug": "Head tilted back, eyes up and a loud triumphant laugh.",
+      "prompt_quelle": "RPG_R7_GUILD_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_RPG_BARBARIAN_AXE"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_GUILD_20261108_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Felix Softnote",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Bard",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "purple cap with yellow feather",
+        "wooden lute",
+        "gold music notes"
+      ],
+      "temperament": "Hits a soft note just when the room wants a speech.",
+      "prompt_auszug": "Closed eyes and puckered singing mouth.",
+      "prompt_quelle": "RPG_R7_GUILD_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_RPG_BARD_LUTE"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_GUILD_20261108_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ada Fizzwell",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Alchemist",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "green-lensed goggles",
+        "green bubbling flask",
+        "pink and blue vials"
+      ],
+      "temperament": "Knows exactly how much confidence to add before it froths.",
+      "prompt_auszug": "Wide uneven eyes toward the flask and a wavy tight mouth.",
+      "prompt_quelle": "RPG_R7_GUILD_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [
+        "SL_RPG_ALCHEMIST_POTION"
+      ],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_GUILD_20261108_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Moss Knucklebell",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Necromancer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small handbell",
+        "skeletal hand",
+        "satchel"
+      ],
+      "temperament": "Delegates small errands with unnerving patience.",
+      "prompt_auszug": "Sidelong glance toward the hand and a crooked smirk.",
+      "prompt_quelle": "RPG_R7_GUILD_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RPG_R7_GUILD_20261108_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cal Clackwork",
+      "language": "en",
+      "bild": {
+        "datei": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; see production record for candidate crop boundaries",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "Artificer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "brass mechanical claw",
+        "wind-up key",
+        "bronze goggles"
+      ],
+      "temperament": "Has an adjustment for everything, especially the adjustments.",
+      "prompt_auszug": "Eyes fixed on the claw and clenched square teeth.",
+      "prompt_quelle": "RPG_R7_GUILD_6_2026-11-08/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "political_family": "The Convenient Positions",
+    "team_kit": "Muted ochre, ink red, cream and slate.",
+    "encounter_behavior": "Fictional political roles and institutions.",
+    "satirical_target": "Political satire and administrative procedures.",
+    "trios": [
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_A",
+        "name": "First Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_03"
+        ]
+      },
+      {
+        "id": "WSA_POLITICS_TYPES_20261108_TRIO_B",
+        "name": "Second Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+          "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_POLITICS_TYPES_ACTOR_20261108_01",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_02",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_03",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_04",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_05",
+      "WSA_POLITICS_TYPES_ACTOR_20261108_06"
+    ]
+  }
+}

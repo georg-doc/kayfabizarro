@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_01",
+      "name": "Archie Foldwall",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Archie Foldwall is the crew's eager panel lead.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Eager panel lead.",
+            "audio": null
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We start at this end."
+          ],
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_FACADE_20261107",
+            "trio": "WSA_RESTORE_FACADE_20261107_TRIO_A"
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Archie Foldwall works the Panel Detail with The Instant Front. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Archie Foldwall takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Archie Foldwall has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "eager panel lead",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_02",
+      "name": "Cleo Extrude",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cleo Extrude is the crew's intent nozzle specialist.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Intent nozzle specialist.",
+            "audio": null
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me the next piece."
+          ],
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_FACADE_20261107",
+            "trio": "WSA_RESTORE_FACADE_20261107_TRIO_A"
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cleo Extrude works the Panel Detail with The Instant Front. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Cleo Extrude takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cleo Extrude has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "intent nozzle specialist",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_03",
+      "name": "Ned Plumbline",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ned Plumbline is the crew's doubtful alignment checker.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Doubtful alignment checker.",
+            "audio": null
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That needs another pass."
+          ],
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_FACADE_20261107",
+            "trio": "WSA_RESTORE_FACADE_20261107_TRIO_A"
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ned Plumbline works the Panel Detail with The Instant Front. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Ned Plumbline takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ned Plumbline has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "doubtful alignment checker",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_04",
+      "name": "Bo Quickbrace",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bo Quickbrace is the crew's stubborn provisional builder.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Stubborn provisional builder.",
+            "audio": null
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It will stand for now."
+          ],
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_FACADE_20261107",
+            "trio": "WSA_RESTORE_FACADE_20261107_TRIO_B"
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bo Quickbrace works the Fit Detail with The Instant Front. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Bo Quickbrace takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Bo Quickbrace has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "stubborn provisional builder",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_05",
+      "name": "Iris Clipfit",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Iris Clipfit is the crew's wryly precise joiner.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Wryly precise joiner.",
+            "audio": null
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Checking the finish."
+          ],
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_FACADE_20261107",
+            "trio": "WSA_RESTORE_FACADE_20261107_TRIO_B"
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Iris Clipfit works the Fit Detail with The Instant Front. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Iris Clipfit takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Iris Clipfit has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "wryly precise joiner",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_FACADE_ACTOR_20261107_06",
+      "name": "Otis Finishcoat",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Otis Finishcoat is the crew's exhausted facade finisher.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Exhausted facade finisher.",
+            "audio": null
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the next corner."
+          ],
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_FACADE_20261107",
+            "trio": "WSA_RESTORE_FACADE_20261107_TRIO_B"
+          },
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Otis Finishcoat works the Fit Detail with The Instant Front. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Otis Finishcoat takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Otis Finishcoat has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "exhausted facade finisher",
+          "src": "RESTORE_FACADE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

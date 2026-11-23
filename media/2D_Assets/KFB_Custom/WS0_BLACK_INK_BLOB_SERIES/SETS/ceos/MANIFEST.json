@@ -1,0 +1,210 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CEOS_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+    "sha256": "6b1cb3ce80b68b8bda2e5f8a8d9c184ddf4eed74dfaca1e4215a225b3f07bbd6"
+  },
+  "production_record": "WORKERS_CEOS_DUO_2026-11-04/ceos-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/ceos/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      2,
+      3
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_CEO_01",
+      "id_scope": "canonical_roster",
+      "name": "Gründer Zündfunke",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP LEFT slot1 manic STARTUP FOUNDER: tall thin squiggly ink splat with three upward soft goo lobes, tiny round amber spectacles pushed high, short wrinkled teal hoodie collar.",
+          "Both hands squeeze an oversized golden lightbulb-shaped clay trophy whose glass dome contains a tiny wind-up brass cog."
+        ]
+      },
+      "prompt_auszug": "TOP LEFT slot1 manic STARTUP FOUNDER: tall thin squiggly ink splat with three upward soft goo lobes, tiny round amber spectacles pushed high, short wrinkled teal hoodie collar. Eyes enormously wide and uneven, RED irises black pupils looking upward, mouth a SIDEWAYS stretched clenched ivory-tooth grin, NO tongue. Both hands squeeze an oversized golden lightbulb-shaped clay trophy whose glass dome contains a tiny wind-up brass cog. Big single clear innovation idol, one thick winding key at base, no icons/text or literal glow background.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/ceos-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_CEO_02",
+      "id_scope": "canonical_roster",
+      "name": "Vorsitzender Sitzfleisch",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP MIDDLE slot2 ancient BOARD CHAIRMAN: nearly spherical sagging ink blob, one small downward curling top lobe, worn burgundy velvet collar and tiny cream bow tie.",
+          "Cradles a chunky brass boardroom desk bell like a pet, one soft goo fingertip gently presses its broad button, a fat ivory cuff on other hand.",
+          "Dense rich modeled clay heft, no desk/scenery."
+        ]
+      },
+      "prompt_auszug": "TOP MIDDLE slot2 ancient BOARD CHAIRMAN: nearly spherical sagging ink blob, one small downward curling top lobe, worn burgundy velvet collar and tiny cream bow tie. One eye FULLY CLOSED in a wink, other WHITE eye red iris black pupil glancing lazily downward; CLOSED narrow complacent smirk with one broad gold fang. Cradles a chunky brass boardroom desk bell like a pet, one soft goo fingertip gently presses its broad button, a fat ivory cuff on other hand. Dense rich modeled clay heft, no desk/scenery.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/ceos-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_CEO_03",
+      "id_scope": "canonical_roster",
+      "name": "Dr. Wendehammer",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "TOP RIGHT slot3 FEMALE-READ CORPORATE TURNAROUND BOSS: very broad low angularity-free splat with wide flat side lobes, sculpted purple swept-back goo quiff, short ivory sharp-lapel collar, single enormous round gold earring.",
+          "Both hands pull a huge red rubber stamp from a fat folder that bulges like a sandwich; stamp face plain blank, no lettering."
+        ]
+      },
+      "prompt_auszug": "TOP RIGHT slot3 FEMALE-READ CORPORATE TURNAROUND BOSS: very broad low angularity-free splat with wide flat side lobes, sculpted purple swept-back goo quiff, short ivory sharp-lapel collar, single enormous round gold earring. FEROCIOUS clenched irregular TEETH, straight flattened lips, one heavy lid raised, WHITE eyes/red iris/black pupil locked forward, no round mouth. Both hands pull a huge red rubber stamp from a fat folder that bulges like a sandwich; stamp face plain blank, no lettering. Bold simple tactile office implements, domineering outward force, no human anatomy.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/ceos-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_CEO_04",
+      "id_scope": "canonical_roster",
+      "name": "Madame Mehrwert",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM LEFT slot4 FEMALE-READ LUXURY CONGLOMERATE HEIRESS: tall leaning pear-shaped ink splat with soft asymmetrical rolled goo crest, small plum turban cap and short cream faux-fur collar.",
+          "Dangles a disproportionately tiny gold shopping bag from one massive goo finger, other hand holds a huge bulbous sculpted pearl magnifier examining it."
+        ]
+      },
+      "prompt_auszug": "BOTTOM LEFT slot4 FEMALE-READ LUXURY CONGLOMERATE HEIRESS: tall leaning pear-shaped ink splat with soft asymmetrical rolled goo crest, small plum turban cap and short cream faux-fur collar. Dramatically exhausted half-closed eyes, red gaze turned LEFT, deep DROOPING open lower lip with only one tiny ivory tooth, no smile/tongue. Dangles a disproportionately tiny gold shopping bag from one massive goo finger, other hand holds a huge bulbous sculpted pearl magnifier examining it. Decadent bored physicality, rich soft cloth/pearlescent craft, two props only, no logos.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/ceos-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_CEO_05",
+      "id_scope": "canonical_roster",
+      "name": "Direktor Lieferengpass",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "BOTTOM MIDDLE slot5 SHIPPING/INDUSTRIAL TYCOON: squat tilted bean-shaped splat, battered navy captain-like peaked business cap with blank brass badge, short mustard suit collar.",
+          "Huge triangular OPEN JAGGED mouth in indignant roar, uneven ivory teeth, NO TONGUE visible; one eye scrunched, other wide WHITE/red/black.",
+          "Cradles a miniature chunky rusty steel shipping container with one large brass padlock, other goo hand grips a fat ivory telephone receiver."
+        ]
+      },
+      "prompt_auszug": "BOTTOM MIDDLE slot5 SHIPPING/INDUSTRIAL TYCOON: squat tilted bean-shaped splat, battered navy captain-like peaked business cap with blank brass badge, short mustard suit collar. Huge triangular OPEN JAGGED mouth in indignant roar, uneven ivory teeth, NO TONGUE visible; one eye scrunched, other wide WHITE/red/black. Cradles a miniature chunky rusty steel shipping container with one large brass padlock, other goo hand grips a fat ivory telephone receiver. Strong cartoon mismatched sizes, no text, no scene.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/ceos-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_CEO_06",
+      "id_scope": "canonical_roster",
+      "name": "Herr Liquiditätsangst",
+      "bild": {
+        "datei": "WORKERS_CEOS_DUO_2026-11-04/ceos-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Wide terrified WHITE eyes red irises black pupils looking DOWN at hands, mouth compressed into a tiny ZIGZAG with two lower fangs biting upper lip, NO tongue/grin/O.",
+          "Hugging a thick round-bellied piggy bank made of tarnished brass with THREE huge coins squeezed under one goo arm, other hand covers slot protectively."
+        ]
+      },
+      "prompt_auszug": "BOTTOM RIGHT slot6 paranoid FINANCIAL CFO: medium rounded triangular ink blob, sparse two soft upper lobes, indigo short pinstripe lapels, one thick brass monocle on long soft cord. Wide terrified WHITE eyes red irises black pupils looking DOWN at hands, mouth compressed into a tiny ZIGZAG with two lower fangs biting upper lip, NO tongue/grin/O. Hugging a thick round-bellied piggy bank made of tarnished brass with THREE huge coins squeezed under one goo arm, other hand covers slot protectively. Beautiful tactile absurd hoarding, not banker ethnic caricature, same ink species.",
+      "prompt_quelle": "WORKERS_CEOS_DUO_2026-11-04/ceos-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

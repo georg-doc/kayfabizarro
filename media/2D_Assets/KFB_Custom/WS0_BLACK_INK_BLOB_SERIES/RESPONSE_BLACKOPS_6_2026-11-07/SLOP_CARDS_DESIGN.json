@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_01",
+      "name": "Voss Null",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Voss Null stays coldly attentive when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Coldly attentive. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold the line here."
+          ],
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_BLACKOPS_20261107",
+            "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Voss Null serves with Silent Detail, a black ops detail assigned to HyperNorm disturbances. The short black open-face cowl is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Voss Null looks coldly attentive even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "coldly attentive",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_02",
+      "name": "Nyx Nightglass",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Nyx Nightglass stays curiously guarded when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Curiously guarded. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give us a little room."
+          ],
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_BLACKOPS_20261107",
+            "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nyx Nightglass serves with Silent Detail, a black ops detail assigned to HyperNorm disturbances. The raised charcoal night lenses and tiny handheld sensor is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nyx Nightglass looks curiously guarded even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "curiously guarded",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_03",
+      "name": "Ike Redacted",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ike Redacted stays irritated by attention when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Irritated by attention. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I need a closer look."
+          ],
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_BLACKOPS_20261107",
+            "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ike Redacted serves with Silent Detail, a black ops detail assigned to HyperNorm disturbances. The black short collar and blank charcoal dossier is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ike Redacted looks irritated by attention even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "irritated by attention",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_04",
+      "name": "Hale Quietlock",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Hale Quietlock stays serenely methodical when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Serenely methodical. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay with your detail."
+          ],
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_BLACKOPS_20261107",
+            "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hale Quietlock serves with Containment Detail, a black ops detail assigned to HyperNorm disturbances. The charcoal helmet and small sealed latch box is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Hale Quietlock looks serenely methodical even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "serenely methodical",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_05",
+      "name": "Mina Vanish",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Mina Vanish stays intently listening when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Intently listening. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We have someone to check on."
+          ],
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_BLACKOPS_20261107",
+            "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mina Vanish serves with Containment Detail, a black ops detail assigned to HyperNorm disturbances. The small ear cup and short black signal wand pointing down is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Mina Vanish looks intently listening even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "intently listening",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_BLACKOPS_ACTOR_20261107_06",
+      "name": "Cole Unlisted",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cole Unlisted stays uneasily composed when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Uneasily composed. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have this covered."
+          ],
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_BLACKOPS_20261107",
+            "trio": "WSA_RESPONSE_BLACKOPS_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cole Unlisted serves with Containment Detail, a black ops detail assigned to HyperNorm disturbances. The short black cap and tiny gray flashlight is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cole Unlisted looks uneasily composed even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "uneasily composed",
+          "src": "RESPONSE_BLACKOPS_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

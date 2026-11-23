@@ -1,3 +1,71 @@
+## Georg PASS and silhouette steering · 2026-11-08
+
+Keep each figure a complete organic ink blob. Use varied round, tapered, curled and scalloped contours as in the original references. Let small waves or foot-like lobes grow naturally from the shape where they suit the figure. Preserve varied widths and lower edges. Hold props at the side or belly and use small collars, pins or sashes to show the complete ink body. Check the full outline in the small preview. The youth sheets passed. The first school attempts leaned too far toward a shared flared base and were superseded.
+
+---
+
+## Georg PASS and surface steering · 2026-11-07
+
+Keep soft satin charcoal-plum plasticine with larger, sparse modeled marks and broad fabric folds. Reduce fine stipple across bodies, bandages and accessories. Render clear liquid as a smooth homogeneous volume. Use clean smooth finishes for plastic, glass, and glazed surfaces. The hitchhiking sheet's empty bottle shows an unwanted sand-like texture and informs this forward correction.
+
+The 72 tourist designs are accepted. Apply the material direction to the upcoming cartoon injury and recovery sheets and subsequent production.
+
+---
+
+## Georg PASS / historical family continuation · 2026-11-07
+
+The six cleanup and restoration crews are DESIGN PASS, including minor reference inheritances. Continue the accepted 3×2 transparent sheet format, original reference conditioning, gentle charcoal/plum clay, white/red/black eyes, strict-English game text, distinct expressive acting and two female-read characters per sheet. The next series uses historically inspired multiverse families. No new runtime or animation scope.
+
+---
+
+## Georg PASS / next digital satire batch · 2026-11-07
+
+All three REACTIONS_ALARM/CONTACT/FRICTION six-sheets (18figures) Georg DESIGN PASS,including minor generated details noted in QA. Existing strict-English game text and gentle material steering remain binding. Next authorized outcome:six fresh unique-six transparent landscape sheets:doomscroll/brainrot,fictional neural-link smombies,social-media addicts,gamers/dopamine seekers,influencers with absurd product placement,podcaster archetypes.2female-read planned each,organic ink body dominant,readable simple props,actual original reference inputs. Fictional devices/brand-free props,no claims about actual products. No extra runtime or GIF task.
+
+---
+
+## Georg language decision · 2026-11-07 · Game strictly English
+
+All new Slop display names, titles, states, personality/backstory prose, FrizzleBob field notes, voice directions and proposed calls MUST be English. Chat conversation and historical German briefs need not be rewritten. Preserve stable IDs,provenance,accepted pixels and receiving-schema keys/enum tokens;provide English display values for those tokens. Do not repurpose identifiers as display names. Latest18authoring records (Emotions,Neighbourhood,Certainty) localized in place with image PASS intact;not a claim that all historical catalogue/runtime copies are migrated. Immutable historical generation prompts remain exact evidence,not current display text. New batches contain no German game-facing prose. Existing registry/game owners apply receiving updates;no second localization owner.
+
+Georg also accepts all six CERTAINTY_HABITS designs. Next authorized bounded series:three new six-unique sheets of ordinary residents/passersby with diverse emotions/reactions,low equipment and two female-read each. Trash/NPC are usage candidates,not automatic combat-tier or hit assignments. Keep accepted gentle material steering and original reference conditioning.
+
+---
+
+## Georg PASS · 07.11.2026 · Gentle material direction accepted
+
+All six EMOTIONS_AMBIVALENCE_6_2026-11-07 designs PASS. Georg explicitly accepts the cautious style correction. Continue that SAME small charcoal bias/subtle plum/soft satin sculpted clay direction; do not intensify darkening or remove tactile volume. Earlier pending language below is historical. Keep actual ORIGINAL reference inputs, no generated-image style-parent chain. No retrofit of accepted assets. Next authorized sheet: six simple building residents and absurd neighbourhood rituals, two female-read.
+
+---
+
+## Georg steering · 07.11.2026 · gentle material correction, future runs only
+
+Georg chooses SMALL style adjustments to avoid overcorrection while continuing the accepted Slop line. Preserve rounded tactile modeled clay, expressive ink anatomy, original references, white/ivory sclera + red iris + black pupil, prop craft and established output formats. Nudge broad body tone only slightly toward charcoal/ink black; retain subtle deep-plum undertone and restrained satin highlights. Do not flatten all volume into matte black, replace clay with liquid/chrome, or globally darken eyes/teeth/props. Avoid luminous white/lavender rim glow and fibrous material on the goo. Existing approved artwork stays accepted and unchanged. This is prospective prompt steering, not a claim of a validated new material baseline.
+
+First bounded candidate: [EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json](EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json), six standalone residents combining emotion/ambivalence/simple social habits. ONE original-reference-conditioned landscape3x2 sheet, DRAFT awaiting Georg. Visible plum remains prominent; do not claim the color correction succeeded or use this generated sheet as a new style parent. Review before further expansion of this material adjustment. Separate GIF work remains independent.
+
+---
+
+## Aktueller Betriebsstand · 06.11.2026 · additive Fortsetzung
+
+Georgs später ausdrücklich beauftragte Sheet-Serie ist etabliert:142Sheets/852Darstellungen Design-PASS einschließlich sechs Space-Crews. Der alte Recovery-STOP weiter unten bleibt Historie des verworfenen Veteranenlaufs und ist keine globale Produktionssperre. Die bestehenden visuellen R2-Regeln gelten weiter; neues/riskantes Format zuerst als Pilot, akzeptierte Formate als begrenzter Batch nach aktueller Beauftragung.
+
+Fortsetzung und Formatwahl: [LIVING_MASTERPLAN_R1.md](LIVING_MASTERPLAN_R1.md), [FORMAT_RECIPES_R1.md](FORMAT_RECIPES_R1.md), [GOLDEN_REFERENCES_R1.json](GOLDEN_REFERENCES_R1.json). Vollständige Originalreferenzen tatsächlich dem Bildjob mitgeben; kein generierter Stil-Elternlauf. Für Animation die exakte registrierte Einzelidentität als Donor, Motion-PASS separat vom Bild-PASS. [ANIMATION_PILOT_R1.md](ANIMATION_PILOT_R1.md) dokumentiert den noch nicht ausgeführten Generierungs-/Runtime-Pilot. Historisch akzeptierte Ausnahmen werden nicht rückwirkend verworfen.
+
+---
+
+# ADDITIVE GEORG MOUTH / INHERITANCE STEERING · 2026-11-05
+
+For future Slop generations: visible teeth emerge from inside the mouth; lower teeth sit behind/above the lower lip, upper teeth descend from upper gum/roof. Never attach a tooth to outside/below a thick protruding lower lip. In a completely closed mouth, omit visible teeth unless emergence is anatomically unambiguous. Plan new mouth/pose choreography per sheet to reduce inherited slot-specific expressions. Georg explicitly accepts current family-doctor set despite bottom-right lip/tooth issue; MINOR_TUNE_LATER, no retroactive image rejection or unrequested repair.
+
+# ADDITIVE GEORG VARIATION STEERING · 2026-11-04
+
+Watch recurring slot-specific expression inheritance across families, especially top-right round mouth and bottom-right protruding tongue. This is not automatically a material/style FAIL; prioritize consistency PLUS unique silhouettes, acting and offbeat tactile claymation appeal. Plan fresh face/pose choreography and move gender/expressions across cells; do not template all rows. Use fresh independent jobs conditioned on original references, not iterative generated style parents. Current native image tool does NOT expose seed input or seed receipts: state that limitation; never claim controlled seed variation. A two-job/twelve-character experiment is two generated3x2 sheets, not twelve independent jobs or proof of causal seed effects.
+
+# ADDITIVE GEORG CAST DECISION · 2026-11-04
+
+For normal six-character Slop / Ink Monster families ALWAYS include one or two female-read characters, unless Georg explicitly chooses a different cast. Keep whole footless ink anatomy; convey gender reading subtly through expression, lids/lashes, quiff/scarf and character design, not human torsos. Source-backed sheets remain valid. New explorer/pioneer/research family uses jungle/pyramid/alien planet as prop/costume vibe only, no scenelet.
+
 # Black Ink Monster Production SOP · R2 · 2026-11-04
 
 Status: Georg decisions captured; recovery workflow NOT yet image-validated. Owner WS0; Asset Registry/Librarian remains asset truth, WS1 owns game runtime. Supersedes conflicting eye, batch and reference rules in PROMPT_SYSTEM.md / EXPORT_QA.md for new Ink Monster jobs only. Historical PASS artwork is not retroactively rejected.

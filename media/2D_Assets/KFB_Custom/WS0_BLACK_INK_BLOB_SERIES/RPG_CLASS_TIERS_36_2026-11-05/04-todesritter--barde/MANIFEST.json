@@ -1,0 +1,249 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Tier format: one male and one female identity each repeated three times, not a normal independent six-character cast.",
+  "image": {
+    "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+    "sha256": "9ddc78b24f7ac1f7a2005fd7e6ce12850f65c5f7a981afbab6dc84295aeb301a"
+  },
+  "production_record": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
+  "cards": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
+  },
+  "figuren": [
+    {
+      "id": "WSA_RPG_TODESRITTER_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Graf Endzustand",
+      "variant_title": "trash",
+      "klasse": "todesritter",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_TODESRITTER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rusty compact flail, damaged helmet"
+      ],
+      "signature": "heavy upright round-bottom ink splat with drooping crown lobes and an extra long thick lower lip, THREE uneven upper ivory teeth, tiny worn black-grey brow helmet with one broken nub, faded icy-teal collar strip. All eyes WHITE/red/black not glowing.",
+      "prompt_auszug": "Dejected sleepy asymmetrical eyes, open sagging jaw. Holds ONE tiny rusty FLAIL: fat short handle, very short chain, ONE rounded iron ball resting against own body, no floating weapon.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_TODESRITTER_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Graf Endzustand",
+      "variant_title": "common",
+      "klasse": "todesritter",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_TODESRITTER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "iron studded flail, damaged helmet"
+      ],
+      "signature": "heavy upright round-bottom ink splat with drooping crown lobes and an extra long thick lower lip, THREE uneven upper ivory teeth, tiny worn black-grey brow helmet with one broken nub, faded icy-teal collar strip. All eyes WHITE/red/black not glowing.",
+      "prompt_auszug": "Indignant teeth clenched, eyebrows uneven, torso goo leans forward. Same compact flail now dark iron with blunt rounded studs, same broken helmet nub.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_TODESRITTER_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Graf Endzustand",
+      "variant_title": "elite",
+      "klasse": "todesritter",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_TODESRITTER_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "brass/steel flail, damaged helmet, small shoulder plate"
+      ],
+      "signature": "heavy upright round-bottom ink splat with drooping crown lobes and an extra long thick lower lip, THREE uneven upper ivory teeth, tiny worn black-grey brow helmet with one broken nub, faded icy-teal collar strip. All eyes WHITE/red/black not glowing.",
+      "prompt_auszug": "Terminally bored half-lids, huge pout and teeth barely peeking. Same flail beautifully dark steel and worn brass, tiny shoulder plate, SAME broken nub/collar; no skull mask/bones/ribcage.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_BARDE_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Madame Zugabe",
+      "variant_title": "trash",
+      "klasse": "barde",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_BARDE_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "worn small lute"
+      ],
+      "signature": "medium tall curvy upright ink pear with a wavy crown quiff, long soft lids/lashes, two widely spaced upper ivory teeth, little plum beret with ONE drooping coral feather, narrow mustard collar.",
+      "prompt_auszug": "Shy near-closed worried lips, eyes sideways. Cradles ONE tiny crooked wooden three-string LUTE, one string visibly slack but physical and contained.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_BARDE_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Madame Zugabe",
+      "variant_title": "common",
+      "klasse": "barde",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_BARDE_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "polished lute"
+      ],
+      "signature": "medium tall curvy upright ink pear with a wavy crown quiff, long soft lids/lashes, two widely spaced upper ivory teeth, little plum beret with ONE drooping coral feather, narrow mustard collar.",
+      "prompt_auszug": "Wild delighted sideways open tooth laugh, one eye shut, body flexed upright. SAME lute now neat polished wood with thick ivory soundhole rim, same beret/feather.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_BARDE_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Madame Zugabe",
+      "variant_title": "elite",
+      "klasse": "barde",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_BARDE_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "brass-fitted lute, small tassel"
+      ],
+      "signature": "medium tall curvy upright ink pear with a wavy crown quiff, long soft lids/lashes, two widely spaced upper ivory teeth, little plum beret with ONE drooping coral feather, narrow mustard collar.",
+      "prompt_auszug": "Withering diva side-eye, closed thick curled lip and two teeth. Same beautiful little lute with brass fittings and one tiny copper shoulder tassel, same feather, no stage/mic/music-note symbols.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RESPONSE_INFANTRY_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "RESPONSE_INFANTRY_6_2026-11-07/sheet-r1.png",
+    "sha256": "864abea0f6182f8fd377fc64ef5079ee96a244d6c5a4d42efab89cb7349898b9"
+  },
+  "production_record": "RESPONSE_INFANTRY_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "RESPONSE_INFANTRY_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "RESPONSE_INFANTRY_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Field Detail",
+    "theme": "U.S.-Inspired Infantry",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "response encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Jack Fieldnote",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_INFANTRY_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "steady and observant",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_02",
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "olive helmet, folded pocket map"
+      ],
+      "temperament": "Jack Fieldnote stays steady and observant when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "broad pear, narrow purposeful gaze and closed firm mouth",
+      "prompt_quelle": "RESPONSE_INFANTRY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ruth Relay",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_INFANTRY_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "brightly focused",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_01",
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "rounded helmet and box radio with short aerial"
+      ],
+      "temperament": "Ruth Relay stays brightly focused when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "upright comma blob, uneven raised eyebrows, side call",
+      "prompt_quelle": "RESPONSE_INFANTRY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sam Canvas",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_INFANTRY_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "stubbornly composed",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_01",
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "olive helmet, tiny toy-like slinged rifle pointing down along flank"
+      ],
+      "temperament": "Sam Canvas stays stubbornly composed when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "wide square blob, heavy eyes, tight dark pout",
+      "prompt_quelle": "RESPONSE_INFANTRY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Wes Canteen",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_INFANTRY_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "dryly unbothered",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_05",
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "olive helmet and small metal canteen"
+      ],
+      "temperament": "Wes Canteen stays dryly unbothered when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "squat scalloped blob, half-lidded smirk",
+      "prompt_quelle": "RESPONSE_INFANTRY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Della Compass",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_INFANTRY_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "warily inquisitive",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_04",
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "helmet and round brass pocket compass"
+      ],
+      "temperament": "Della Compass stays warily inquisitive when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "tall oval blob, wide uneven eyes, small quizzical mouth",
+      "prompt_quelle": "RESPONSE_INFANTRY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_RESPONSE_INFANTRY_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frank Packrat",
+      "language": "en",
+      "bild": {
+        "datei": "RESPONSE_INFANTRY_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "earnestly determined",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_RESPONSE_INFANTRY_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_04",
+        "WSA_RESPONSE_INFANTRY_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "helmet and small rolled canvas blanket"
+      ],
+      "temperament": "Frank Packrat stays earnestly determined when the rest of the detail loses its rhythm.",
+      "prompt_auszug": "broad round blob, raised brow and crooked two-tooth smile",
+      "prompt_quelle": "RESPONSE_INFANTRY_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "sequence": 5,
+    "team_kit": "classic olive drab and muted khaki canvas, rounded steel helmet silhouettes, faded tan straps. Generic tiny red-white-blue fabric tabs without text. Distinct from improvised orange paramilitary.",
+    "trios": [
+      {
+        "id": "WSA_RESPONSE_INFANTRY_20261107_TRIO_A",
+        "name": "Rifle Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_01",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_02",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_RESPONSE_INFANTRY_20261107_TRIO_B",
+        "name": "Service Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_04",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_05",
+          "WSA_RESPONSE_INFANTRY_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_RESPONSE_INFANTRY_ACTOR_20261107_01",
+      "WSA_RESPONSE_INFANTRY_ACTOR_20261107_02",
+      "WSA_RESPONSE_INFANTRY_ACTOR_20261107_03",
+      "WSA_RESPONSE_INFANTRY_ACTOR_20261107_04",
+      "WSA_RESPONSE_INFANTRY_ACTOR_20261107_05",
+      "WSA_RESPONSE_INFANTRY_ACTOR_20261107_06"
+    ]
+  },
+  "georg_decision": {
+    "quote": "Die sind alle pass.",
+    "scope": "All seven response team sheets and 42 designs."
+  }
+}

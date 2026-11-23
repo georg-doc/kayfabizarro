@@ -1,0 +1,277 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_DIGITAL_INFLUENCE_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "DIGITAL_INFLUENCE_6_2026-11-07/sheet-r1.png",
+    "sha256": "0a00a05f675df2bb8905d20a39b53aecbd5f99d7e3de5467830a536fbb1339c4"
+  },
+  "production_record": "DIGITAL_INFLUENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "DIGITAL_INFLUENCE_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "DIGITAL_INFLUENCE_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "An Entirely Personal Recommendation",
+    "theme": "influencers performing absurd brand-free product placement",
+    "backlog_neighbors": [
+      "G09"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "HyperNorm resident",
+      "digital satire cluster",
+      "NPC candidate",
+      "opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_DIGITAL_INFLUENCE_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ava Airquote",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_INFLUENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "ecstatically promoting nothing",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small empty glass jar",
+        "small peach neckbow"
+      ],
+      "temperament": "She has never felt so personally moved by an object that contains so little.",
+      "prompt_auszug": "Female-read broad curvy scallopedblob,modestlashes,smallpeachneckbow. Bothhands lovinglypresentONEtinyEMPTY thickclayglassjar (transparentplain) atbelly. Eyeswideinforcedwonder, onebrowtooarched, OPEN three-upper-tooth theatricalgasp. Nohiddenitem,no lettering,notceremonialurn. Emptyairaspremiumproduct.",
+      "prompt_quelle": "DIGITAL_INFLUENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_INFLUENCE_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Brad Bricksoft",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_INFLUENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "proud of a ridiculous convenience",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small squashy clay brick"
+      ],
+      "temperament": "He has solved a problem by making the unsuitable object more comfortable.",
+      "prompt_auszug": "Male-read shortbroadsquaredinkblob withtwo unevencrests. Bothhands squeeze ONEsmall rustredtoybrick so it visiblybowslikecushion, simplefourroundedcorners. Whiteeyes delightfullyunequal, CLOSED huge crooked self-satisfiedsmile. No floatingbox/text/machine;humbleabsurdproductphysicallyclear.",
+      "prompt_quelle": "DIGITAL_INFLUENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_INFLUENCE_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Theo Glowbro",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_INFLUENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "smugly demonstrating an unconvincing beauty product",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one little plain pump bottle",
+        "tiny ivory collar"
+      ],
+      "temperament": "He sells natural confidence with a carefully managed demonstration of needing it.",
+      "prompt_auszug": "Male-read tallleanloopcrestblob, tinyivorycollar. Onehandholds ONElittleplainpumpbottle atflank,otherhandgentlypolisheshisOWNdarkinkcheek. Heavyunequallidswithclearwhiteeyes,raisedknowingbrow,CLOSEDtinyvainasymmetricpucker. Remainsdarkink,notwhitefacemask,nomedicaltext,labelsorhumanlips.",
+      "prompt_quelle": "DIGITAL_INFLUENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_INFLUENCE_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cal Cannedcalm",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_INFLUENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "frantically selling relaxation",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny sealed tin can"
+      ],
+      "temperament": "He would like everyone to relax before the next delivery deadline.",
+      "prompt_auszug": "Male-read compactbroadpearinkblob, threefloppynubs. Onehandclutches ONEtinysealedblanktincan near chest,othermakesexaggeratedlowcalmingpalm. Eyeshugeandworried,browssteepbutunequal,OPENsmallskewedtwo-toothspeakinggrimace. Nervousurgency contradicts restfulpitch;no steamwords,logosorproductpile.",
+      "prompt_quelle": "DIGITAL_INFLUENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_INFLUENCE_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Petra Plug",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_INFLUENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "hard-selling authenticity",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "one small brass disc with big blank red button"
+      ],
+      "temperament": "She offers genuine spontaneity at the touch of a properly rehearsed button.",
+      "prompt_auszug": "Female-read tallreversecommablob,modestlashes,tinymustardheadribbon. Onehandholds ONEsmallbrassdiscwithalargeroundedBLANKredbutton,otherfingerpoisedtopressit. Confidentliddedwhiteeyes,onebrowraised,OPENsharpasymmetricthree-upper-toothsalesgrin. No words/gearcontraption,clearoneobject,wrycertaintynotwitch.",
+      "prompt_quelle": "DIGITAL_INFLUENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_DIGITAL_INFLUENCE_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Woody Wellpaid",
+      "language": "en",
+      "bild": {
+        "datei": "DIGITAL_INFLUENCE_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "exhausted by his own enthusiasm",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one tiny plain water bottle",
+        "short faded-blue neckscarf"
+      ],
+      "temperament": "He believes in the product for the duration of his remaining energy.",
+      "prompt_auszug": "Male-read wide round droopycrestblob,shortfadedbluescarf. Onehand presentsONEtinyplainwaterbottle belowmouth,otherpatsownchestwithdutifulconviction. Heavyhalfopenwhiteeyes,onebrowfeeblyraised,CLOSEDlongcrookedweariedadvertisingsmile. Tiredforcedsincerity,noglow/labels/realbrand.",
+      "prompt_quelle": "DIGITAL_INFLUENCE_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "georg_decision": {
+    "quote": "Wir sind auch alle Pass.",
+    "scope": "All six digital satire sheets and 36 designs."
+  }
+}

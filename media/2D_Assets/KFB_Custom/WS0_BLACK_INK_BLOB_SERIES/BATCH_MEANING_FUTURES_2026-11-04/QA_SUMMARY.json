@@ -1,0 +1,61 @@
+{
+  "status": "ALL12_GEORG_DESIGN_PASS",
+  "jobs": 2,
+  "sheets": 2,
+  "figures": 12,
+  "georg_pass": 12,
+  "cards_design": 12,
+  "reference_hashes_checked": 6,
+  "actual_source_files": [
+    {
+      "key": "meaning-wellbeing",
+      "source": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/meaning-wellbeing-sheet-r1.png",
+      "sha256": "d3b155dc6c222b47a0c9371d6144512acbf642346b34e8baba013f2367f6aa18",
+      "git_blob_sha": "1b8514b948987bdd333b4f9c87689b9934ffdb74",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 0,
+        "1024": 0,
+        "horizontal512": 1706
+      },
+      "outer_edge_pixels": 0
+    },
+    {
+      "key": "future-promises",
+      "source": "MEANING_FUTURES_12_2026-11-04/future-promises/future-promises-sheet-r1.png",
+      "sha256": "231b2baa28cc1b75344b0838a396cb59099903bebff6415d6a3857f20166a707",
+      "git_blob_sha": "f091b72d0d03dd490ffef05f9e445ee56c41c343",
+      "alpha": [
+        0,
+        254
+      ],
+      "seams": {
+        "512": 362,
+        "1024": 0,
+        "horizontal512": 0
+      },
+      "outer_edge_pixels": 0
+    }
+  ],
+  "qa_views_px": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "prior_georg_pass_checkpoint": "f9b9aa89aaec72ff25bfb1ff3b5f4d8d6e672fba",
+  "prior_education_culture_georg_pass": 12,
+  "runtime_tests": 0,
+  "individual_game_crops": 0,
+  "intake_eligible": 12,
+  "github_verification": {
+    "implementation_head": "d9bf1a0b4bc66a2778d80fb350d14b5cb075180c",
+    "branch_ref_verified": true,
+    "exact_text_readbacks": 9,
+    "remote_png_byte_matches": 2,
+    "prior_education_culture_pass_readbacks": 8
+  }
+}

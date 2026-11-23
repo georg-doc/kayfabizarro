@@ -1,0 +1,237 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_WESTERN_WARRIORS_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "WESTERN_WARRIORS_6_2026-11-05/sheet-r2.png",
+    "sha256": "03181e11da4d41242ab3a7d6da5daa7600093ef5fb4fbebbc664e6d75a8c5440"
+  },
+  "production_record": "WESTERN_WARRIORS_6_2026-11-05/PRODUCTION_RECORD.json",
+  "layout_edit_record": "WESTERN_WARRIORS_6_2026-11-05/LAYOUT_EDIT_RECORD.json",
+  "cards": "WESTERN_WARRIORS_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "WESTERN_WARRIORS_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "group_context": "Six independent fictional Western costume archetypes; no named real nation or inferred pair/trio relation.",
+  "figuren": [
+    {
+      "id": "WSA_WESTERN_WARRIOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Federmaß",
+      "bild": {
+        "datei": "WESTERN_WARRIORS_6_2026-11-05/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "feather fan",
+        "round stitched shield with lodged arrow"
+      ],
+      "prompt_auszug": "wide pear-shaped male-read elder commander. Compact fan of ivory feathers with dark tips curving around back of head, turquoise headband. He tries to look serenely authoritative, heavily lowered lids, one eyebrow high, firm compressed crooked mouth with one tooth peeking. Round ochre leather shield held against lower side, one ridiculous small arrow visibly stuck harmlessly in his own shield. Strong quiet skeptical acting, no open smile.",
+      "prompt_quelle": "WESTERN_WARRIORS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WESTERN_WARRIOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Sehnenruh",
+      "bild": {
+        "datei": "WESTERN_WARRIORS_6_2026-11-05/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "two swept feathers",
+        "wooden bow",
+        "blunt arrow"
+      ],
+      "prompt_auszug": "female-read tall teardrop archer with two long asymmetrically tilted rust-and-cream feathers and short dark clay side braids, turquoise band. Razor-focused sidelong aim, one eye narrowed, confident asymmetric toothy half-smirk. Holds a simple thick wooden bow vertically beside body, one comically blunt chunky arrow in the other hand. Bowstring visibly joins both bow tips. No drawn aiming pose extending into adjacent cell.",
+      "prompt_quelle": "WESTERN_WARRIORS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WESTERN_WARRIOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Raschelverdacht",
+      "bild": {
+        "datei": "WESTERN_WARRIORS_6_2026-11-05/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three upright feathers",
+        "short spear with large stone point",
+        "ochre scarf"
+      ],
+      "prompt_auszug": "round jittery male-read sentry, three short feathers sticking up in uneven directions, small stitched ochre scarf. Huge white eyes glancing sharply sideways, eyebrows lifted in startled indignation, clenched uneven teeth. Both hands clutch one short stout spear upright; spear tip looks almost too large for the anxious owner. Complete body stays upright and substantial.",
+      "prompt_quelle": "WESTERN_WARRIORS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WESTERN_WARRIOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bummbert Auftakt",
+      "bild": {
+        "datei": "WESTERN_WARRIORS_6_2026-11-05/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "sideways feather crest",
+        "round drum",
+        "two beaters"
+      ],
+      "prompt_auszug": "squat broad male-read warrior drummer, short sweeping sideways feather crest, simple red sash. Wild delighted battle enthusiasm, eyes squeezed into expressive white crescents with visible red iris/black pupils, broad asymmetrical cackling mouth with few irregular teeth. One small round leather drum strapped directly to lower blob and two chunky beaters raised within his own cell. Rhythmic body lean, upright; strong funny face.",
+      "prompt_quelle": "WESTERN_WARRIORS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WESTERN_WARRIOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Kantenruhe",
+      "bild": {
+        "datei": "WESTERN_WARRIORS_6_2026-11-05/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "swept-back ivory feathers",
+        "turquoise headband",
+        "broad stone hatchet"
+      ],
+      "prompt_auszug": "female-read compact angular-in-attitude but physically soft thick lobed blob, two swept-back ivory feathers in beaded turquoise headband. Utterly unimpressed, one large half-lidded eye and one raised skeptical lid, pursed lopsided lip, a single projecting ivory tooth. One broad stone-headed tomahawk held safely low across body, free goo hand resting on its blunt head like she is waiting for everyone else to finish. No nose or human anatomy.",
+      "prompt_quelle": "WESTERN_WARRIORS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_WESTERN_WARRIOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Rückstoß",
+      "bild": {
+        "datei": "WESTERN_WARRIORS_6_2026-11-05/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "drooping feather",
+        "worn Western hat",
+        "short antique musket"
+      ],
+      "prompt_auszug": "tall top-heavy male-read grizzled frontier veteran, one worn drooping feather and short split fan behind head, faded leather shoulder strap. Ferocious outraged shout, irregular narrow open mouth with unequal teeth, heavily asymmetric brows, prominent white sclera. Holds a short thick old flintlock-style musket upright at his side, simple wooden stock and single steel barrel, no modern weapon parts, no smoke. The drooping feather comically contradicts his explosive temper.",
+      "prompt_quelle": "WESTERN_WARRIORS_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Interior alpha maximum254; not certified opaque master",
+    "Per-actor catalogue masters and game extraction pending",
+    "One source sheet; not six native individual masters"
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: sind alle PASS; size/catalogue concern retained separately."
+  }
+}

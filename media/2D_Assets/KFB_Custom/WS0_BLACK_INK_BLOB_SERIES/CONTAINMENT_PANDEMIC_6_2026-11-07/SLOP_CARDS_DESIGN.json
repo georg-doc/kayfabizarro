@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_01",
+      "name": "Milo Checkin",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Milo Checkin is the crew's intake lead.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Kindly intake lead.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Mark the boundary here."
+          ],
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_PANDEMIC_20261107",
+            "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Milo Checkin serves with the Care Detail of The Quiet Ward. The kit includes a small blank intake slate with teal corner protectors. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Milo Checkin treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "kindly intake lead",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_02",
+      "name": "Nell Breath",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Nell Breath is the crew's triage specialist.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Focused triage specialist.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a moment to check this."
+          ],
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_PANDEMIC_20261107",
+            "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nell Breath serves with the Care Detail of The Quiet Ward. The kit includes a compact thermometer with abstract unlit display. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nell Breath treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "focused triage specialist",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_03",
+      "name": "Toby Ward",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Toby Ward is the crew's supply runner.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Uneasily helpful supply runner.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The case is secured."
+          ],
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_PANDEMIC_20261107",
+            "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_A"
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Toby Ward serves with the Care Detail of The Quiet Ward. The kit includes a small closed teal medical pouch with a plain ivory square. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Toby Ward treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "uneasily helpful supply runner",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_04",
+      "name": "Cal Interval",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cal Interval is the crew's contact coordinator.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Dryly methodical contact coordinator.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay near your detail."
+          ],
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_PANDEMIC_20261107",
+            "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cal Interval serves with the Contact Detail of The Quiet Ward. The kit includes a short teal communication radio. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cal Interval treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dryly methodical contact coordinator",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_05",
+      "name": "Ada Clear",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ada Clear is the crew's isolation support.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Patient isolation support.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have the panel."
+          ],
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_PANDEMIC_20261107",
+            "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ada Clear serves with the Contact Detail of The Quiet Ward. The kit includes a small framed Hypernormalization Screen with pale teal housing and a smoked inset. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ada Clear treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "patient isolation support",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_CONTAINMENT_PANDEMIC_ACTOR_20261107_06",
+      "name": "Otis Filter",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Otis Filter is the crew's protection technician.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Brief, expressive field calls. Attentive protection technician.",
+            "audio": null
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_CONTAINMENT_PANDEMIC_20261107",
+            "trio": "WSA_CONTAINMENT_PANDEMIC_20261107_TRIO_B"
+          },
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Otis Filter serves with the Contact Detail of The Quiet Ward. The kit includes a capped circular filter cartridge held as a spare at waist level. Hypernormalization assignments send the crew where a dangerous card or an incident has unsettled a district.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Otis Filter treats the equipment check as the first useful part of every briefing.",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "attentive protection technician",
+          "src": "CONTAINMENT_PANDEMIC_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

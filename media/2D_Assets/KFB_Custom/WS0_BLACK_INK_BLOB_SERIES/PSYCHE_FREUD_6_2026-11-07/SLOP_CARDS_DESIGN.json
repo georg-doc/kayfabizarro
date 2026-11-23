@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_01",
+      "name": "Sigmund Freud",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Wry historical analyst.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Tell me about the cushion."
+          ],
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_FREUD_20261107",
+            "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Couch Has Notes, Sigmund Freud takes the role of wry historical analyst. “Tell me about the cushion.”",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short gray pointed beard, round spectacles, compact dark waistcoat, small notebook at flank.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "wry historical analyst",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_02",
+      "name": "Ada Wordchain",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Eager free associator.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The bell reminded me of an apple."
+          ],
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_FREUD_20261107",
+            "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Couch Has Notes, Ada Wordchain takes the role of eager free associator. “The bell reminded me of an apple.”",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: short ribbon of three tactile pictogram beads, a key, an apple and a bell.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "eager free associator",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_03",
+      "name": "Bram Slipword",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Embarrassed verbal slip.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That was the other word."
+          ],
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_FREUD_20261107",
+            "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_A"
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Couch Has Notes, Bram Slipword takes the role of embarrassed verbal slip. “That was the other word.”",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: two mismatched speech-shaped clay tokens held against chest, blank surfaces.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "embarrassed verbal slip",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_04",
+      "name": "Nora Couchfold",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Skeptical analysand.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I brought my own couch."
+          ],
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_FREUD_20261107",
+            "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Couch Has Notes, Nora Couchfold takes the role of skeptical analysand. “I brought my own couch.”",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small upholstered chaise cushion with a folded rug corner, held in hand.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "skeptical analysand",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_05",
+      "name": "Giles Defence",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Defensive intellectualizer.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have a theory about that theory."
+          ],
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_FREUD_20261107",
+            "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Couch Has Notes, Giles Defence takes the role of defensive intellectualizer. “I have a theory about that theory.”",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: thick hardcover held like a miniature shield.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "defensive intellectualizer",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PSYCHE_FREUD_ACTOR_20261107_06",
+      "name": "Theo Dreamnote",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sleepy keeper of dreams.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet, expressive English delivery.",
+            "audio": null
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I wrote it down before waking."
+          ],
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PSYCHE_FREUD_20261107",
+            "trio": "WSA_PSYCHE_FREUD_20261107_TRIO_B"
+          },
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "In The Couch Has Notes, Theo Dreamnote takes the role of sleepy keeper of dreams. “I wrote it down before waking.”",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: small bedside notebook and old brass pencil.",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "sleepy keeper of dreams",
+          "src": "PSYCHE_FREUD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

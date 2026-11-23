@@ -1,0 +1,268 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPACE_ASTRO_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPACE_ASTRO_6_2026-11-06/sheet-r1.png",
+    "sha256": "54260b4931033fe914a5e900d51de29f98a1767dfc7739dbd93162fe8269e199"
+  },
+  "production_record": "SPACE_ASTRO_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPACE_ASTRO_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPACE_ASTRO_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Expedition Vorläufiges Neuland",
+    "visual_context": "1950s retro astronaut expedition,ivory enamel and faded skyblue collars,brass instruments,open clear helmet rims,no fullhuman spacesuits",
+    "relationship_policy": "Shared fictional space crew and distinct role intentions; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Exploration, authority, maintenance, possession, enhancement, certainty and neighbourly care; fictional HyperNorm residents",
+    "domain": "ASTRO",
+    "role_status": "FICTIONAL_AUTHORING_INTENT_NOT_RUNTIME_ASSIGNMENT"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPACE_ASTRO_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kommandant Kreisbahn",
+      "bild": {
+        "datei": "SPACE_ASTRO_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "open ivory helmet crown",
+        "brass starfinder",
+        "skyblue collar"
+      ],
+      "temperament": "He treats the unknown as an area awaiting an authorised opinion.",
+      "prompt_auszug": "Kommandant Kreisbahn, male-read. Broad tall bell ink blob,heavy authoritative white eyes,one lifted brow and firm CLOSED toothless pout;small ivory open helmet crown and skyblue collar ring,ENTIREface/eyes/mouthclear,not enclosedhumanbody;holds one squat brass compass-like starfinder with three simple dots on dial.",
+      "prompt_quelle": "SPACE_ASTRO_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "expedition commander"
+    },
+    {
+      "id": "WSA_SPACE_ASTRO_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pia Parabola",
+      "bild": {
+        "datei": "SPACE_ASTRO_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "two-grip control yoke",
+        "flightcap",
+        "raised goggles"
+      ],
+      "temperament": "She can land anywhere provided nobody insists it was the destination.",
+      "prompt_auszug": "Pia Parabola, female-read. Lean upright reverse-comma ink splat,high sidequiff and modest lashes,delighted sharp white eyes and asymmetric two-upper-tooth grin;small skyblue cloth flightcap with goggles HIGHaboveeyes,ivory neckerchief;holds one compact retro metal control yoke with two rounded grips at flank.",
+      "prompt_quelle": "SPACE_ASTRO_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "pilot"
+    },
+    {
+      "id": "WSA_SPACE_ASTRO_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dr. Moosprobe",
+      "bild": {
+        "datei": "SPACE_ASTRO_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "sealed moonrock jar",
+        "ivory cap",
+        "skyblue collar"
+      ],
+      "temperament": "He has found evidence of something and would prefer it to remain politely inert.",
+      "prompt_auszug": "Dr. Moosprobe, male-read. Squat round scalloped ink blob,two soft uneven crests,huge suspicious curious eyes and tiny CLOSED anxious smile;small ivory knitcap,skyblue collar;holds one thick sealed samplejar containing ONE rounded mustard clay moonrock,other goo hand protects jar.",
+      "prompt_quelle": "SPACE_ASTRO_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "sample scientist"
+    },
+    {
+      "id": "WSA_SPACE_ASTRO_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nova Nachthimmel",
+      "bild": {
+        "datei": "SPACE_ASTRO_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "three-dot star chart",
+        "ivory headband",
+        "skyblue scarf"
+      ],
+      "temperament": "She knows exactly where they are and finds it deeply unhelpful.",
+      "prompt_auszug": "Nova Nachthimmel, female-read. Very tall thin wavy ink column,small curled sidecrest,lashes,half-lidded skeptical eyes and pursed toothless side-mouth;small ivory headband and skyblue scarf;holds one folded star chart with THREE cream dots linked by simple lines,no letters.",
+      "prompt_quelle": "SPACE_ASTRO_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "astro-navigator"
+    },
+    {
+      "id": "WSA_SPACE_ASTRO_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Egon Außenbords",
+      "bild": {
+        "datei": "SPACE_ASTRO_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "tether coil",
+        "brass clasp",
+        "ivory collar ring"
+      ],
+      "temperament": "He volunteers for the outside jobs to escape the inside meetings.",
+      "prompt_auszug": "Egon Außenbords, male-read. Wide diamond-lobed ink splat with swept inkcrest,joyful determined white eyes and crooked open three-upper-tooth shout;small ivory helmet collar belowmouth,skyblue wristbands;holds compact coil of one thick tether rope and ONE simple brass clasp,bodydominant.",
+      "prompt_quelle": "SPACE_ASTRO_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "EVA specialist"
+    },
+    {
+      "id": "WSA_SPACE_ASTRO_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pip Erstkontakt",
+      "bild": {
+        "datei": "SPACE_ASTRO_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "blank mission pennant",
+        "oversized open helmet frame"
+      ],
+      "temperament": "He rehearsed first contact and forgot to include an actual other.",
+      "prompt_auszug": "Pip Erstkontakt, male-read. Tall bent pear ink blob with drooping curl,huge unequal frightened eyes and tiny toothless gasp;ivory open-face astronaut helmet frame too big but fullyframingface,small skyblue neckpatch;holds one small blank triangular missionpennant at chest,free hand tentative greeting.",
+      "prompt_quelle": "SPACE_ASTRO_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "family_role": "rookie / first-contact volunteer"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

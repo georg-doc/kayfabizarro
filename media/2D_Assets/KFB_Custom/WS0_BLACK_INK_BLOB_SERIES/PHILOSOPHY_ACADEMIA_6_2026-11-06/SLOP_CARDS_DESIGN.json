@@ -1,0 +1,360 @@
+{
+  "schema": "kfb.slop-cards/1",
+  "status": "DESIGN",
+  "cards": [
+    {
+      "id": "WSA_PHILOSOPHY_ACADEMIA_ACTOR_20261106_01",
+      "name": "Professor Rangordnung",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can identify a weak argument by checking who is allowed to make it.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "academic_anarchy_intellectual"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_ACADEMIA_20261106"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Can identify a weak argument by checking who is allowed to make it. His HyperNorm diploma authorizes conclusions before the seminar begins. A dissonant card asks whether an unappointed resident may still have noticed something. The Men in Black demand a single answer; Hunky and Dory keep revising the form. A small exception is quietly kept for a tired neighbour.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Begründung folgt aus der zuständigen Begründungsbefugnis.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_ACADEMIA_ACTOR_20261106_02",
+      "name": "Doktor Denkverdreht",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Has followed the argument faithfully into a place where it no longer fits.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "academic_anarchy_intellectual"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_ACADEMIA_20261106"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Has followed the argument faithfully into a place where it no longer fits. His HyperNorm puzzle loop fits every theory except the one explaining the loop. A dissonant card asks whether he might simply put it down. Hunky and Dory call doubt a packing error. The Men in Black request certainty; a spare place is quietly kept for a tired neighbour.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Der Gedankengang benötigt inzwischen eine Wendefläche.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_ACADEMIA_ACTOR_20261106_03",
+      "name": "Dr. Fußnotenreich",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Never lets a conclusion leave without attaching its extended family.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "academic_anarchy_intellectual"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_ACADEMIA_20261106"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Never lets a conclusion leave without attaching its extended family. Her HyperNorm books attach a lineage to every permissible sentence. A dissonant card arrives without ancestors and is offered a page tab anyway. The Men in Black want a clean answer. Hunky and Dory keep revising the question; the unofficial pauses are left for anyone needing to breathe.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Fußnote führt noch einige Angehörige mit.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_ACADEMIA_ACTOR_20261106_04",
+      "name": "Ordinarius Besitzstand",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Treats a permanent appointment as evidence that the universe has settled.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "academic_anarchy_intellectual"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_ACADEMIA_20261106"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Treats a permanent appointment as evidence that the universe has settled. His miniature chair preserves a permanent HyperNorm place from temporary people. A dissonant card asks whether belonging could be shared without being divided. Hunky and Dory praise efficiency while the Men in Black count deviations. The small practical kindnesses remain off the official list.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Der Platz ist frei von jeder weiteren Vergabefrage.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_ACADEMIA_ACTOR_20261106_05",
+      "name": "Konferenzfrau Gleichvernetzt",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Remembers the affiliation before remembering the face.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "academic_anarchy_intellectual"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_ACADEMIA_20261106"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Remembers the affiliation before remembering the face. Her HyperNorm badge makes introductions valid before anybody hears a name. A dissonant card has no affiliation and remembers hers surprisingly well. The Men in Black enforce the binary rule; Hunky and Dory raise the quota. In private, a frightened resident still receives patient attention.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Bekanntschaft wurde institutionell bereits angebahnt.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_PHILOSOPHY_ACADEMIA_ACTOR_20261106_06",
+      "name": "Kopist Eigenständig",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Has arrived independently at a remarkably familiar original idea.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": [
+                "academic_anarchy_intellectual"
+              ]
+            }
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English dry warm tragically bureaucratic character voice; no audio selected"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [],
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_PHILOSOPHY_ACADEMIA_20261106"
+          },
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Has arrived independently at a remarkably familiar original idea. His matching HyperNorm scrolls are both certified original. A dissonant card asks why the same accidental mark appears on each. Hunky and Dory insist that the figures balance. The Men in Black watch the ledger; one small kindness stays deliberately unrecorded.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Die Eigenleistung stimmt erfreulich genau überein.",
+          "src": "PHILOSOPHY_ACADEMIA_6_2026-11-06/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

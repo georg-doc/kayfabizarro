@@ -1,0 +1,276 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_REACTIONS_ALARM_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
+    "sha256": "5b236ac8151496493af74fc7e785130570d265ef41b620873cc5cf4fca65b89a"
+  },
+  "production_record": "REACTIONS_ALARM_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "REACTIONS_ALARM_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "REACTIONS_ALARM_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Unexpected Residents",
+    "theme": "surprise, alarm and disorientation",
+    "backlog_neighbors": [
+      "G01",
+      "G02",
+      "G03"
+    ],
+    "relationship_policy": "Six independent new identities; no same-character state/pair/trio links inferred.",
+    "usage_candidates": [
+      "building resident",
+      "pedestrian",
+      "low-equipment NPC",
+      "trash opponent candidate"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY; no combat tier/hit allocation"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Stanley Startle",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small rumpled nightcap"
+      ],
+      "temperament": "He has never agreed to anything happening quite that suddenly.",
+      "prompt_auszug": "Male-read tall pear-shaped ink blob, little cream nightcap slipping sideways. Whole body recoils upright, two short ink palms held at chest, huge unequal eyes and both brows suddenly raised, tiny crooked OPEN gasp with two upper teeth. Crest lobe flung into a smooth curved hook. Startled at a sudden noise, not generic anger or screaming skull.",
+      "prompt_quelle": "REACTIONS_ALARM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Penny Scatter",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "panicked",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "single small brown paper bag",
+        "small faded coral neck bow"
+      ],
+      "temperament": "She has saved the bag and will consider the rest of the emergency shortly.",
+      "prompt_auszug": "Female-read broad asymmetric crescent splat, subtle lashes, faded coral neck bow. Hugging one small brown paper bag in one ink hand while other palm flutters beside face. Eyes wide and looking in two nearby directions, brows slanted with acute alarm, mouth a skewed horizontal OPEN yelp with three teeth, no round O. Body twists upright without legs or running feet. Comic panic, not lying down.",
+      "prompt_quelle": "REACTIONS_ALARM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Basil Surelynot",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "incredulous",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "tiny dull green domestic collar"
+      ],
+      "temperament": "He will believe it when he has exhausted the alternatives to looking.",
+      "prompt_auszug": "Male-read compact square-rounded blob with short twin uneven crests, tiny dull green collar. One hand slowly lifts a thick eyelid from BELOW the eyebrow without covering eye; other held palm-up beside body. One huge white eye and other suspicious slit, jaw pushed sideways in a CLOSED toothless incredulous grimace. Double-take frozen at its peak, not frightened.",
+      "prompt_quelle": "REACTIONS_ALARM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Dot Standstill",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "frozen in shock",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [],
+      "temperament": "He is waiting for the world to resume at a manageable speed.",
+      "prompt_auszug": "Male-read small broad bell-shaped goo body with three stumpy soft crest lobes, no costume/prop. BOTH ink hands held rigidly away from belly with tiny curled fingers. Enormous fixed forward white eyes, tiny red irises, brows nearly level, mouth tiny CLOSED flat line. Whole upright silhouette stiffened like somebody forgot the next frame. Not a humanoid statue, no grey stone material.",
+      "prompt_quelle": "REACTIONS_ALARM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sid Sideglance",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "suspicious",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "one small blank folded envelope"
+      ],
+      "temperament": "He suspects the explanation, particularly when it is reassuring.",
+      "prompt_auszug": "Male-read lean leaning comma-shaped blob, one elongated drooping crest, bare goo otherwise. One hand conceals a small blank folded cream envelope against flank, other hand curled protectively over chest. Both red irises sharply sideways within clear white sclera, one brow high other low, tight CLOSED corner mouth in watchful distrust. No spy costume, glasses or hat.",
+      "prompt_quelle": "REACTIONS_ALARM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_REACTIONS_ALARM_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Overload",
+      "language": "en",
+      "bild": {
+        "datei": "REACTIONS_ALARM_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "overwhelmed",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "short mustard knitted collar"
+      ],
+      "temperament": "She can handle one more thing if it would kindly stop being several things.",
+      "prompt_auszug": "Female-read wide scalloped ink blob, low curled sidequiff and modest lashes, short mustard knitted collar. Two ink hands press temples without covering eyes. One lid droops low while other eye rolls upward, brows knotted in helpless disbelief, mouth wide crooked CLOSED wavy pout. Upright body squeezed inward a little but same large cell scale. Mental overload rather than grief, no floating punctuation.",
+      "prompt_quelle": "REACTIONS_ALARM_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-07",
+    "quote": "super! die sind alle PASS.",
+    "scope": "All three reaction sheets/eighteen designs;no extraction/runtime approval inferred"
+  }
+}

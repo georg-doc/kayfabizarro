@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "operation": "precise-object-edit / upper eyelid color fill",
+  "source_path": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-fddd8237-d73b-4924-8dfc-cd63649c62e7.png",
+  "args": {
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/.chatgpt-projects/g-p-6aa43ccf8750819191582c384993f2c1/output/slop-gastro-20261104/kitchen-hospitality-sheet-r1.png"
+    ],
+    "transparent_background": true,
+    "prompt": "Use case: precise-object-edit. The input is the SINGLE EDIT TARGET, not a style reference. Make ONE tiny eyelid color repair only. Return the SAME full1536x1024 3columns x2rows transparent PNG sheet with all SIX figures unchanged.\nTARGET: the FEMALE OYSTER MERCHANT in the TOP RIGHT cell, holding the large open oyster and pearl. On her VIEWER-RIGHT eye (her left eye), the RAISED UPPER EYELID has an incorrectly IVORY/CREAM crescent ABOVE the long curved BLACK UPPER EYELASH/LASH LINE and BELOW the purple upper brow. This small crescent is eyelid SKIN, not sclera. Approximate region in the1536x1024 image: x1280–1385, y115–184. Fill/recolor ONLY that cream-colored upper-lid crescent with the SAME DARK MUTED VIOLET plasticine as her other eyelid and surrounding ink skin. Keep soft modeled clay texture, raised rounded volume and shading. Connect it naturally to the purple brow and stop exactly at the existing BLACK eyelash line. Keep the raised eyelid shape and skeptical asymmetrical expression.\nThe actual eyeball area BELOW the black eyelash line MUST remain ivory/WHITE sclera with its RED iris and BLACK pupil intact. Do NOT purple-fill the whole eye, move the lash, lower the lid, close the eye, alter pupil/gaze, or change the viewer-left eye (already correct). Do not add any red marking: supplied clean source has no annotation.\nPRESERVE everything outside that tiny eyelid fill: all other pixels/figures/props/positions/sizes/expressions, oyster/pearl, textures, lighting, exact3x2layout, existing transparency including holes and empty gutters. No redesign, restyling, recropping, background, gradients, text or new details. Deliver full original sheet, not a closeup."
+  },
+  "receipt": "Generated images are saved to /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21 as /Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-fddd8237-d73b-4924-8dfc-cd63649c62e7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "status": "GENERATED_DRAFT_AWAITING_GEORG",
+  "source_r1": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r1.png",
+  "source_r1_sha256": "5cce945df2ba8ea07a7000be8060ed5765820f7b6301fec02607f15c6698e707",
+  "output_r2": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/kitchen-hospitality-sheet-r2-eyelid.png",
+  "output_sha256": "b7ea0c8c339a59ac700135aace24e853e014969971874a9b37e03c0f2d99bdaa",
+  "git_blob_sha": "0b24212d1966b1e9cf99329328cf7b55f6aa3afb",
+  "georg_status": "PASS",
+  "georg_decision": "Corrected eyelid fits; all12gastronomy explicitly accepted."
+}

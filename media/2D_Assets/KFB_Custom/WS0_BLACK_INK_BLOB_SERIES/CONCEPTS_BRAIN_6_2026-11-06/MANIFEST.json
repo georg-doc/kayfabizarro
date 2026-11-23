@@ -1,0 +1,282 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CONCEPTS_BRAIN_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "CONCEPTS_BRAIN_6_2026-11-06/sheet-r1.png",
+    "sha256": "2896964cefb7bcc8585df94173bb04e145907f8fea95b2c4d33e5395feffb699"
+  },
+  "production_record": "CONCEPTS_BRAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "CONCEPTS_BRAIN_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "CONCEPTS_BRAIN_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Brain-Flipper Pack",
+    "visual_context": "Fictional satirical concept archetypes,free deck inspiration not exact canonical card/scientific diagram or real-person likeness",
+    "relationship_policy": "Shared thematic deck ensemble;distinct standalone identities,metaphoric twin/pair/animal concepts in props,not pair/state/trio/tier bindings",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Fictional certainty,dramatic roles,improvisation,moral framing,mission bureaucracy and perception;not factual scientific diagram or real-person allegation"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_CONCEPTS_BRAIN_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Illusionist Drehblick",
+      "bild": {
+        "datei": "CONCEPTS_BRAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plum showman cap",
+        "handheld spiral spinner"
+      ],
+      "temperament": "Can keep both interpretations moving until either one feels certain.",
+      "prompt_auszug": "Illusionist Drehblick, maennlich-read. Optical Illusion Spinner: tall lean hooked ink splat,little plum showman cap,tiny cream collar,ONE chunky circular spinner with simple bold concentric black/ivory spiral on short handle,no text,no complexdiagram. Ecstatic crooked open grin with TWO upper teeth,one brow lifted. Personality: Can keep both interpretations moving until either one feels certain.",
+      "prompt_quelle": "CONCEPTS_BRAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "brain_flipper_image_spots",
+      "user_concept": "Optical Illusion Spinner"
+    },
+    {
+      "id": "WSA_CONCEPTS_BRAIN_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Denkerin Andersoben",
+      "bild": {
+        "datei": "CONCEPTS_BRAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "inverted teal cap",
+        "upside-down landscape card"
+      ],
+      "temperament": "Has turned the idea over and is still deciding which part moved.",
+      "prompt_auszug": "Denkerin Andersoben, weiblich-read. Upside-Down Thinker adapted UPRIGHT: broad round top-heavy ink blob,small teal cap visibly worn upside-down atop head but eyes not covered,two subtle lashes,ONE little framed landscape card held UPSIDE DOWN,three simple mountain/sun symbols. One huge eye one squint,small toothless off-centre triangular open mouth,body upright. Personality: Has turned the idea over and is still deciding which part moved.",
+      "prompt_quelle": "CONCEPTS_BRAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "brain_flipper_image_spots",
+      "user_concept": "Upside-Down Thinker"
+    },
+    {
+      "id": "WSA_CONCEPTS_BRAIN_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Blätterer Bewegtnoch",
+      "bild": {
+        "datei": "CONCEPTS_BRAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rust artist cap",
+        "flipbook",
+        "short pencil"
+      ],
+      "temperament": "Knows the movement depends on several patient things staying still.",
+      "prompt_auszug": "Blätterer Bewegtnoch, maennlich-read. Flip Book Animator: low wide square rounded ink blob,small rust artist cap,ONE thick flipbook fanned to show THREE simple circle-at-different-position drawings,no words,short pencil tucked behind cap. Heavy unequal lids,closed toothless crooked dry smile. Personality: Knows the movement depends on several patient things staying still.",
+      "prompt_quelle": "CONCEPTS_BRAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "brain_flipper_image_spots",
+      "user_concept": "Flip Book Animator"
+    },
+    {
+      "id": "WSA_CONCEPTS_BRAIN_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sphinx Fastgelöst",
+      "bild": {
+        "datei": "CONCEPTS_BRAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "striped scholar headcloth",
+        "blue collar",
+        "riddle box",
+        "knot clasp"
+      ],
+      "temperament": "Would appreciate an answer that explains why the question was locked.",
+      "prompt_auszug": "Sphinx Fastgelöst, maennlich-read. Riddle Sphinx metaphor ONE ink blob not animal/stone: tall broad-based pear splat,small cream-and-copper striped scholar headcloth ABOVE eyes,tiny blue collar,ONE small sealed riddle box with simple knot-shaped clasp. Huge unequal pleading eyes,closed nervous toothless wavy lips,no lion body/no wings required. Personality: Would appreciate an answer that explains why the question was locked.",
+      "prompt_quelle": "CONCEPTS_BRAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "brain_flipper_image_spots",
+      "user_concept": "Riddle Sphinx"
+    },
+    {
+      "id": "WSA_CONCEPTS_BRAIN_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Gedankenspinne Fadenfolge",
+      "bild": {
+        "datei": "CONCEPTS_BRAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "berry bobbin cap",
+        "three-peg mindmap board",
+        "teal thread"
+      ],
+      "temperament": "Can connect every point and would like somebody to notice the knot.",
+      "prompt_auszug": "Gedankenspinne Fadenfolge, weiblich-read. Mind Map Spider metaphor ONE continuous ink actor: broad lopsided splat,little berry cap with TWO tiny thread bobbins ABOVE eyes,two lashes,ONE small wood board with THREE brass pegs linked by thick teal thread held at flank;TWO normal goo hands only,no8spiderlegs or animalbody. One high brow,heavy side-eye,closed toothless severe pout. Personality: Can connect every point and would like somebody to notice the knot.",
+      "prompt_quelle": "CONCEPTS_BRAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "brain_flipper_image_spots",
+      "user_concept": "Mind Map Spider"
+    },
+    {
+      "id": "WSA_CONCEPTS_BRAIN_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Aha-Wart Leuchtjetzt",
+      "bild": {
+        "datei": "CONCEPTS_BRAIN_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "copper bulb cap",
+        "switch wand",
+        "notebook"
+      ],
+      "temperament": "Experiences a revelation every time the same switch finally works.",
+      "prompt_auszug": "Aha-Wart Leuchtjetzt, maennlich-read. Aha Light Bulb: squat round asymmetric ink blob,small copper cap topped with ONE compact ivory lightbulb ornament ABOVE face,ONE short brass switch wand and little closed notebook. Gleeful enormous crooked open grin with THREE upper teeth,one eye nearly winking,no giant lightbulb body. Personality: Experiences a revelation every time the same switch finally works.",
+      "prompt_quelle": "CONCEPTS_BRAIN_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "brain_flipper_image_spots",
+      "user_concept": "Aha Light Bulb"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "deck_binding": {
+    "deck_id": "brain_flipper_image_spots",
+    "user_family_title": "Brain-Flipper Pack",
+    "registry_title": "The Brain-Flipper Pack",
+    "source_repo": "georg-doc/kayfabizarro",
+    "source_path": "registry/assets/v1/decks/brain_flipper_image_spots.json",
+    "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+    "status": "THEMATIC_DESIGN_PROPOSAL",
+    "exact_card_mapping": null
+  }
+}

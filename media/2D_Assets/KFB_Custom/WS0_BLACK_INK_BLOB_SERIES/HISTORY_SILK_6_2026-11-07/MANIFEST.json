@@ -1,0 +1,328 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_HISTORY_SILK_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "HISTORY_SILK_6_2026-11-07/sheet-r1.png",
+    "sha256": "4f2149cff2edb5eb4fdf6db8501418c32bc4159fa489cf09c7f205cb7143ea6b"
+  },
+  "production_record": "HISTORY_SILK_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "HISTORY_SILK_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "HISTORY_SILK_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Long Way Round",
+    "theme": "medieval Silk Road caravan trade multiverse family",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "historical multiverse encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_HISTORY_SILK_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cedric Manymiles",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SILK_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "exhausted caravan steward",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SILK_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_SILK_ACTOR_20261107_02",
+        "WSA_HISTORY_SILK_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small folded route cloth with one knotted cord marker"
+      ],
+      "temperament": "Has taken the scenic route through three administrative systems.",
+      "prompt_auszug": "low heavy ink pear, eyes half closed at unequal heights, flat closed lip",
+      "prompt_quelle": "HISTORY_SILK_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "exhausted caravan steward"
+    },
+    {
+      "id": "WSA_HISTORY_SILK_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Boltwise",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SILK_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "fiercely proud textile broker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SILK_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_SILK_ACTOR_20261107_01",
+        "WSA_HISTORY_SILK_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small rolled indigo silk-like bolt with a cream lining"
+      ],
+      "temperament": "Can hear a bad bargain through a closed caravan chest.",
+      "prompt_auszug": "tall curved scalloped blob, raised superior brow, closed off-center satisfied smile",
+      "prompt_quelle": "HISTORY_SILK_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "fiercely proud textile broker"
+    },
+    {
+      "id": "WSA_HISTORY_SILK_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ned Spicerisk",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SILK_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled spice seller",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SILK_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_SILK_ACTOR_20261107_01",
+        "WSA_HISTORY_SILK_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two compact stoppered clay spice jars and a little wooden scoop"
+      ],
+      "temperament": "Has misplaced a sneeze of exceptional commercial value.",
+      "prompt_auszug": "wide soft diamond body, eyes abruptly round, small toothless oval gasp",
+      "prompt_quelle": "HISTORY_SILK_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "startled spice seller"
+    },
+    {
+      "id": "WSA_HISTORY_SILK_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ollie Phrasebook",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SILK_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "smug interpreter",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SILK_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_SILK_ACTOR_20261107_05",
+        "WSA_HISTORY_SILK_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small folded blank-page booklet with several colored ribbon tabs"
+      ],
+      "temperament": "Translates certainty into whatever the customer hoped to hear.",
+      "prompt_auszug": "lean reverse-comma splat, one eye pointed up, tight sly smirk",
+      "prompt_quelle": "HISTORY_SILK_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "smug interpreter"
+    },
+    {
+      "id": "WSA_HISTORY_SILK_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nora Cupstop",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SILK_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "joyful roadside host",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SILK_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_SILK_ACTOR_20261107_04",
+        "WSA_HISTORY_SILK_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "small copper tea kettle and one thick clay cup"
+      ],
+      "temperament": "Gives exhausted travellers five minutes outside history.",
+      "prompt_auszug": "round low asymmetrical body, delighted eyes going different ways, broad two-upper-tooth chuckle",
+      "prompt_quelle": "HISTORY_SILK_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "joyful roadside host"
+    },
+    {
+      "id": "WSA_HISTORY_SILK_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Giles Latchlast",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_SILK_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "offended customs keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_SILK_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_SILK_ACTOR_20261107_04",
+        "WSA_HISTORY_SILK_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small wood travel chest with comically large brass clasp"
+      ],
+      "temperament": "Finds a border wherever luggage pauses.",
+      "prompt_auszug": "broad square splat with a single high curved lobe, stern offset eyes, lower lip thrust in closed pout",
+      "prompt_quelle": "HISTORY_SILK_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "offended customs keeper"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "historical_family": "medieval Silk Road caravan trade multiverse family",
+    "team_kit": "layered short rust, indigo and cream wraps, varied soft travel caps and headscarves, rolled textiles, leather cases, rope and worn brass; no humanoid legs",
+    "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+    "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+    "trios": [
+      {
+        "id": "WSA_HISTORY_SILK_20261107_TRIO_A",
+        "name": "Caravan Circle",
+        "row": 0,
+        "member_ids": [
+          "WSA_HISTORY_SILK_ACTOR_20261107_01",
+          "WSA_HISTORY_SILK_ACTOR_20261107_02",
+          "WSA_HISTORY_SILK_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_HISTORY_SILK_20261107_TRIO_B",
+        "name": "Bazaar Circle",
+        "row": 1,
+        "member_ids": [
+          "WSA_HISTORY_SILK_ACTOR_20261107_04",
+          "WSA_HISTORY_SILK_ACTOR_20261107_05",
+          "WSA_HISTORY_SILK_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_HISTORY_SILK_ACTOR_20261107_01",
+      "WSA_HISTORY_SILK_ACTOR_20261107_02",
+      "WSA_HISTORY_SILK_ACTOR_20261107_03",
+      "WSA_HISTORY_SILK_ACTOR_20261107_04",
+      "WSA_HISTORY_SILK_ACTOR_20261107_05",
+      "WSA_HISTORY_SILK_ACTOR_20261107_06"
+    ]
+  }
+}

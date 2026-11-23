@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_01",
+      "name": "Milo Beat",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Milo Beat stays patiently skeptical when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Patiently skeptical. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold the line here."
+          ],
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PATROL_20261107",
+            "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Milo Beat serves with Street Detail, a patrol police detail assigned to HyperNorm disturbances. The peaked cap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Milo Beat looks patiently skeptical even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "patiently skeptical",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_02",
+      "name": "June Signal",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "June Signal stays briskly attentive when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Briskly attentive. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give us a little room."
+          ],
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PATROL_20261107",
+            "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "June Signal serves with Street Detail, a patrol police detail assigned to HyperNorm disturbances. The peaked cap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: June Signal looks briskly attentive even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "briskly attentive",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_03",
+      "name": "Eddie Notebook",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Eddie Notebook stays doubtful but thorough when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Doubtful but thorough. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I need a closer look."
+          ],
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PATROL_20261107",
+            "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_A"
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Eddie Notebook serves with Street Detail, a patrol police detail assigned to HyperNorm disturbances. The peaked cap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Eddie Notebook looks doubtful but thorough even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "doubtful but thorough",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_04",
+      "name": "Rory Slowdown",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Rory Slowdown stays offended by haste when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Offended by haste. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay with your detail."
+          ],
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PATROL_20261107",
+            "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Rory Slowdown serves with Neighbourhood Detail, a patrol police detail assigned to HyperNorm disturbances. The peaked cap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Rory Slowdown looks offended by haste even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "offended by haste",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_05",
+      "name": "Nell Whistle",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Nell Whistle stays calm in the commotion when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Calm in the commotion. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We have someone to check on."
+          ],
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PATROL_20261107",
+            "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nell Whistle serves with Neighbourhood Detail, a patrol police detail assigned to HyperNorm disturbances. The peaked cap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nell Whistle looks calm in the commotion even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "calm in the commotion",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESPONSE_PATROL_ACTOR_20261107_06",
+      "name": "Toby Overtime",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Toby Overtime stays wearily helpful when the rest of the detail loses its rhythm.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English delivery. Wearily helpful. Short team callouts.",
+            "audio": null
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I have this covered."
+          ],
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESPONSE_PATROL_20261107",
+            "trio": "WSA_RESPONSE_PATROL_20261107_TRIO_B"
+          },
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Toby Overtime serves with Neighbourhood Detail, a patrol police detail assigned to HyperNorm disturbances. The peaked cap is familiar enough to hold onto when a routine encounter becomes a surprise.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Toby Overtime looks wearily helpful even when the briefing has run out of useful instructions.",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "wearily helpful",
+          "src": "RESPONSE_PATROL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

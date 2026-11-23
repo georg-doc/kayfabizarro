@@ -1,0 +1,190 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+    "sha256": "09bcb06815d2d81c83dfaab57bbd589d5f80f827294a845ded3564d1cdcab555"
+  },
+  "production_record": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/PRODUCTION_RECORD.json",
+  "cards": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source intake allowed; historical seam/crop evidence retained, no new gate invented."
+  },
+  "figuren": [
+    {
+      "id": "WSA_SERVICES_CONSUMPTION_20261104_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Rückgaberecht",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "kaempferisch",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "crumpled receipt"
+      ],
+      "prompt_auszug": "TOP LEFT slot1 male CUSTOMER COMPLAINT SPECIALIST: low broad sagging ink splat, small battered beige flat cap and tiny burgundy scarf collar. Furious crooked clenched UNDERBITE with three widely spaced ivory teeth, one eye squeezed and one huge red gaze forward. Both massive goo hands reverently hold a TINY crumpled blank ivory receipt at own belly, disproportionate solemnity, one simple paper prop; no text or floating anger symbols.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_SERVICES_CONSUMPTION_20261104_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Ausschanklage",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "tiny coffee cup",
+        "large cream jug"
+      ],
+      "prompt_auszug": "TOP MIDDLE slot2 FEMALE-READ CAFE SERVER: tall narrow curved pear ink blob, violet rolled goo quiff under short coral tied kerchief, tiny cream apron COLLAR ONLY. Warm exhausted SIDEWAYS open-tooth laugh with uneven teeth, one eye half closed and other focused down, no tongue. One hand delicately carries a comically TINY teal coffee cup, other hugs one huge plump ivory cream jug with brass-colored rim, two beautiful simple clay ceramic props. No tray/table or apron-shaped body.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_SERVICES_CONSUMPTION_20261104_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Kassensturz",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "verwirrt",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "mechanical till"
+      ],
+      "prompt_auszug": "TOP RIGHT slot3 male SUPERMARKET CASHIER: almost spherical compact ink splat with a single tall drooping top lobe, faded moss work collar and small rust-red visor. Alarmed wide white/red/black eyes looking down, mouth tightly compressed into a ZIGZAG with one bottom tooth, no grin. Cradles ONE old-fashioned chunky mustard mechanical cash register with a broad open drawer containing just THREE large blank copper coins, blank glass window and two big cream rounded buttons, no numbers/text. Whole blob dominant behind small handheld machine.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_SERVICES_CONSUMPTION_20261104_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Deckungssumme",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "tiny folded umbrella",
+        "portfolio"
+      ],
+      "prompt_auszug": "BOTTOM LEFT slot4 FEMALE-READ INSURANCE SALESPERSON: broad-bottom medium pear ink splat, sculpted violet swept goo crest, tiny teal collar and one fat copper earstud. Lazy perfectly certain CLOSED crooked smile with a gold fang, one eye narrowed in knowing wink and other looks forward. Holds a comically TINY CLOSED plum umbrella upright against own body like a sceptre, short rounded brass hooked handle; opposite arm hugs a chunky cream portfolio with blank cover. No umbrella overhead or background.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_SERVICES_CONSUMPTION_20261104_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Brotgewissheit",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "oversized loaf"
+      ],
+      "prompt_auszug": "BOTTOM MIDDLE slot5 male BREAD VENDOR: very wide heavy UPRIGHT ink splat with rounded drooping side lobes, little soft cream baker cap and short indigo collar. Huge proud jagged sideways TOOTHY grin, eyes almost squeezed shut with white/red/black visible at corners, no tongue. Both goo arms squeeze ONE absurdly giant rounded rust-gold loaf of clay bread against own belly, four broad sculpted score grooves and soft finger dents. No basket clutter, signs or shop scene.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    },
+    {
+      "id": "WSA_SERVICES_CONSUMPTION_20261104_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Letzter Schliff",
+      "bild": {
+        "datei": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/everyday-services-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "expressive_occupational_peak",
+      "haltung_vorschlag": "unzufrieden",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "shaving brush",
+        "tiny comb"
+      ],
+      "prompt_auszug": "BOTTOM RIGHT slot6 male FASTIDIOUS BARBER: tall crooked bean-shaped ink splat with two short curled goo crown lobes, tiny faded rose work collar and little round brass spectacles. One white eye fully closed and other skeptically red-pupilled downward, pursed flat crooked lip with two small irregular teeth, NO round mouth or tongue. Delicately holds ONE tiny wooden comb in one hand and ONE huge ivory-bristled shaving brush with bulbous teal handle in the other, inspecting brush critically. No razor, mirror, chair, real hair/fur body or scene.",
+      "prompt_quelle": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": []
+    }
+  ],
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04",
+    "verdict": "all24PASS",
+    "accepted_detail_deviation": "Incorrect stethoscope detail accepted as non-blocking; no correction requested."
+  }
+}

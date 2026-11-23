@@ -1,0 +1,84 @@
+{
+  "schema": "kfb.slop-concept-context/1",
+  "status": "DESIGN",
+  "concepts": [
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_01",
+      "source_figure": "Socrates",
+      "concept": "persistent questioning",
+      "visual_anchor": "chin gesture and plain cup"
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_02",
+      "source_figure": "Plato",
+      "concept": "ideal forms",
+      "visual_anchor": "upward gaze/finger and scroll"
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_03",
+      "source_figure": "Aristotle",
+      "concept": "nature/investigation/classification",
+      "visual_anchor": "leaf specimen and tablet"
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_04",
+      "source_figure": "Diogenes",
+      "concept": "independence/frugality/challenge to convention",
+      "visual_anchor": "lamp and miniature storage jar"
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_05",
+      "source_figure": "Hypatia",
+      "concept": "mathematical and astronomical inquiry",
+      "visual_anchor": "simple three-ring model and stylus"
+    },
+    {
+      "id": "WSA_GREEK_PHILOSOPHER_20261105_06",
+      "source_figure": "Epicurus / Epicurean outlook",
+      "concept": "sufficiency and simple satisfactions",
+      "visual_anchor": "bread and water",
+      "adaptation": "Epikura is female-read fictional Slop persona; not a claim that Epicurus was a woman"
+    }
+  ],
+  "source_notes": [
+    {
+      "key": "socrates",
+      "url": "https://plato.stanford.edu/entries/socrates/",
+      "access": "search excerpt",
+      "supports": "Socratic dialogue/questioning; cup convention is noted in archived search excerpt",
+      "cup_source": "https://plato.stanford.edu/archives/spr2023/entries/socrates/"
+    },
+    {
+      "key": "plato",
+      "url": "https://plato.stanford.edu/entries/plato/",
+      "access": "opened, central doctrines section",
+      "supports": "forms/ideas; upward gesture is our artistic metaphor"
+    },
+    {
+      "key": "aristotle",
+      "url": "https://plato.stanford.edu/entries/aristotle-biology/index.html",
+      "access": "search excerpt",
+      "supports": "biological division/investigation; leaf/tablet are our original prop choice"
+    },
+    {
+      "key": "diogenes",
+      "url": "https://plato.stanford.edu/entries/ethics-ancient/",
+      "access": "opened and found section5",
+      "supports": "traditional jar/lamp account and challenge to convention; miniature portable jar is a visual joke"
+    },
+    {
+      "key": "hypatia",
+      "url": "https://doi.org/10.1093/acrefore/9780199381135.013.3196",
+      "access": "Oxford Classical Dictionary search excerpt only; full page redirected to inaccessible host",
+      "supports": "philosophy/mathematics/astronomy; ring model not claimed as an authentic owned/invented object"
+    },
+    {
+      "key": "epicurus",
+      "url": "https://plato.stanford.edu/entries/ethics-ancient/",
+      "access": "opened and found section7",
+      "supports": "bread/water/simple satisfactions without need for luxury; fictional female reading is our adaptation",
+      "additional_source": "https://plato.stanford.edu/entries/epicurus/"
+    }
+  ],
+  "scope": "Iconic/creative motifs only; no direct quotations, exact likenesses, comprehensive doctrinal summaries or new canon. Historical philosopher source distinct from satirical fictional Slop biography."
+}

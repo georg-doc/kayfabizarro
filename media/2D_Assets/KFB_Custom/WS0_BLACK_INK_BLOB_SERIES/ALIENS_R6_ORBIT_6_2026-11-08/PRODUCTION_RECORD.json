@@ -1,0 +1,73 @@
+{
+  "schema": "kfb.slop-production/1",
+  "set_id": "WSA_ALIENS_R6_ORBIT_20261108",
+  "source_family": "kfb_alien_ink_blobs_r6",
+  "name": "02-orbit-crew",
+  "prompt": "Create one KFB collectible game sprite contact sheet, landscape 3:2, six isolated alpha cutouts exactly in three columns by two rows, front or mild three-quarter view, close to even scale. Real transparent PNG background, empty corners and wide genuinely empty gutters. Keep every prop, beam, ring and drop within its own cell. No scene, gradients, grid markings, text, ground or shadows. Actual reference sprites 1–4 define the ORIGINAL identity, morphology and props in the first four specified cells. Preserve their signature silhouette and their hand-made materials. Fifth reference is ONLY the empty-gutter alpha sprite grid template and the warm WHITE sclera with red iris and black pupil reference. Do not copy any RPG costume. Every visible eye on every character, including alien eye stalk tips and a single large cyclops eye, must have large clearly visible warm WHITE sclera, a much smaller isolated RED iris, and a separate BLACK pupil. Absolutely no solid-red eyeball, tinted sclera or red glow. Use controlled asymmetric eyelids and six different mouth beats and distinct gaze targets. Two feminine-read figures through subtle styling or acting. Dark near-black charcoal-violet ink bodies, broad modeled old-school tactile cartoon plasticine, soft satin and selective fine modeling. Preserve original prop colors and scale, and model glass, metal, stone and liquid distinctly. Each figure a complete alien blob with expressive organic spines, curled points or uneven lobes. Weird physical comedy, single clearly readable prop idea. No big repeated grin.\nTOP LEFT original OCTO INK: keep actual curling charcoal tentacles and violet suction cups on the ends, no outfit. One lid lowered in weary exasperation, gaze up at a tentacle, flat line mouth displaced to one side. TOP MIDDLE original CRYSTAL GROWTH: large faceted pink-purple crystal at crest and three smaller crystals erupting from the dark full blob. Feminine read; eyes look up at the large crystal with one lid high, tight worried crooked grimace with one tiny tooth. TOP RIGHT original ORBIT RING: a dark spherical blob pocked with craters, keep one pink-purple orbital ring crossing diagonally in front of it and tiny attendant spheres inside cell. Relaxed half-lidded lateral gaze, small pleased closed smile, neither eyes nor ring occluded by background.\nBOTTOM LEFT original ABDUCTION BEAM: dark gooey pointed blob beneath small slate UFO cap with exactly three lime lights and a narrow molded translucent lime beam visibly connecting its underside to blob crown. Beam is part of sprite only; no luminous background spill and no green tint across white sclera. Wide eyes look up in affronted shock, high arched brows and a tall narrow shout, only one tooth. BOTTOM CENTER NEW LUNAR SEEDKEEPER: narrow leaning ink blob wearing one mustard strap, holds a little cratered moonstone seed pot with one absurd lime crescent sprout. Feminine read, one eye squeezed half shut and other eye fixed lovingly downward on the tiny sprout, soft puckered lips. BOTTOM RIGHT NEW COMET ICE CARRIER: stocky tilted splash silhouette, long tapered end sweeping behind, holds a compact translucent ice chunk with a trapped ochre comet pebble; focus on clear smooth blue facets and just a couple trapped bubbles. Two eyes pointed down at the cold block, tightly clenched little rectangular teeth, pained determination.",
+  "references": [
+    "KFB_ALIEN_BLOB_R6_05_octo_ink.png",
+    "KFB_ALIEN_BLOB_R6_06_crystal_growth.png",
+    "KFB_ALIEN_BLOB_R6_07_orbit_ring.png",
+    "KFB_ALIEN_BLOB_R6_08_abduction_beam.png",
+    "02-guild-party.png"
+  ],
+  "sha256": "d0a4d4cb18ffbe36740714ab7378a6f3b7614fbc342ce8f885c3f166f503aff4",
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "outer_edge_alpha_max": 1,
+  "grid_line_alpha_max": [
+    0,
+    1,
+    253
+  ],
+  "design_status": "PASS",
+  "candidate_crop_boundaries_px": {
+    "horizontal": 491,
+    "vertical_by_row": [
+      [
+        512,
+        1024
+      ],
+      [
+        512,
+        1024
+      ]
+    ],
+    "validation": "Tested at alpha threshold 16. Individual isolation pending."
+  },
+  "source_sha256": {
+    "KFB_ALIEN_BLOB_R6_05_octo_ink.png": "88f8d40371fc15e0478245df97babac4b42ceb233aae796347be117815cc9f5c",
+    "KFB_ALIEN_BLOB_R6_07_orbit_ring.png": "323e390e4a4c6c56a1c6bc5545b5b18df43e2523ba20912d30ac40ab79f55ad4",
+    "KFB_ALIEN_BLOB_R6_08_abduction_beam.png": "851a2967122c5a145345d9f99525c737962a0ca54e10e73bcda3e5f6cbd0c217",
+    "KFB_ALIEN_BLOB_R6_06_crystal_growth.png": "7d2db55e64d9dbea4d5405da83b1ed9070dc6da9cc486dcdc568d87f10737cb7"
+  },
+  "layout_reference": "RPG_R7_GUILD_6_2026-11-08/sheet-r1.png",
+  "identity_lineage": [
+    {
+      "authoring_id": "WSA_ALIENS_R6_ORBIT_20261108_01",
+      "variant_of": "SL_ALIEN_OCTO_INK",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_ALIENS_R6_ORBIT_20261108_02",
+      "variant_of": "SL_ALIEN_CRYSTAL_GROWTH",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_ALIENS_R6_ORBIT_20261108_03",
+      "variant_of": "SL_ALIEN_ORBIT_RING",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_ALIENS_R6_ORBIT_20261108_04",
+      "variant_of": "SL_ALIEN_ABDUCTION_BEAM",
+      "replace_selected_runtime_asset": false
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "kfb.slop-integrator-evidence/1",
+  "implementation_head": "0f591c5ebb1853ec7eae10d996dccc4f4a0e9fe6",
+  "source_text_readbacks": 22,
+  "source_master_blob_readback": "d5025402b3d120dd8b871a51406f4ef7d8d5f73e",
+  "game_head": "c1cc86c11100dcc8be83e184e5b859558cad49c5",
+  "game_roster_full_json_readback": "PASS",
+  "adapter_tests": 23,
+  "integrated_structural_check": "PASS",
+  "integrated_metadata_plan": {
+    "selected_sheets": 49,
+    "excluded_sheets": 2,
+    "source_errors": 0,
+    "media_evidence_pending": 49
+  },
+  "peer_review": "58 identity samples plus group samples; concrete repairs independently rechecked; no global Georg text approval",
+  "master_status": "TUNE",
+  "candidate_sha256": "777d183fe8385d20ad907dd180684f13144d9f35da4018d99529c3dddf0bf3a8",
+  "actual_candidate_dimensions": [
+    1254,
+    1254
+  ],
+  "next_gate": "WS0 receiving mapping/intake and existing Library export/rebuild; master replacement requires faithful identity and technical acceptance"
+}

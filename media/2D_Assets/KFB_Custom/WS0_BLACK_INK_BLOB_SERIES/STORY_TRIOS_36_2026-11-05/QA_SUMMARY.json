@@ -1,0 +1,35 @@
+{
+  "schema": "kfb.slop-batch-evidence/1",
+  "date": "2026-11-05",
+  "native_generation_jobs": 6,
+  "native_edit_jobs": 2,
+  "retained_source_pngs": 8,
+  "selected_sheets": 6,
+  "trios": 12,
+  "identities": 36,
+  "depictions": 36,
+  "female_read_identities": 12,
+  "new_georg_pass": 0,
+  "runtime_tests": 0,
+  "checks": {
+    "unique_authoring_ids": 36,
+    "unique_trio_ids": 12,
+    "reciprocal_group_memberships": 36,
+    "female_read_per_sheet": 2,
+    "selected_visible_cell_seams_clear": 6,
+    "dimensions_all": [
+      1536,
+      1024
+    ]
+  },
+  "limitations": [
+    "Native alpha max254, residual alpha1; final normalization deferred.",
+    "Per-sheet acting/sculpt deviations retained.",
+    "No actor/film reference images; loose archetypal sources only.",
+    "Model/seed not exposed."
+  ],
+  "next_gate": "Georg design verdict on six story-trio sheets",
+  "implementation_head": "d202e7854b679f9f6257dd4cb60a2413252a1639",
+  "exact_text_readbacks": 42,
+  "png_byte_comparisons": 8
+}

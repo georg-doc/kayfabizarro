@@ -1,0 +1,1639 @@
+{
+  "schema": "kfb.slop-set-index/1",
+  "date": "2026-11-08",
+  "source_owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "assets/ws0-ink-miners-2026-11-04",
+    "pr": 469
+  },
+  "counts": {
+    "selected_sheets": 247,
+    "pass_depictions": 1482,
+    "canonical_ids_matched": 108,
+    "resident_authoring_depictions": 12,
+    "resident_identities": 6,
+    "intake_eligible_sheets": 245,
+    "intake_eligible_depictions": 1470,
+    "other_authoring_depictions": 1362
+  },
+  "excluded_sources": [
+    {
+      "path": "MINERS_2026-11-04",
+      "status": "FAIL_TUNE",
+      "intake_eligible": false
+    },
+    {
+      "path": "INTERNATIONAL_COUPLES_12_2026-11-04",
+      "status": "PASS",
+      "intake_eligible": false,
+      "reason": "WS0 brief exclusion; existing game import discrepancy logged"
+    }
+  ],
+  "sets": [
+    {
+      "set_id": "WSA_MECHANICS_20261104",
+      "manifest": "SETS/mechanics/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SAILORS_20261104",
+      "manifest": "SETS/sailors/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PIRATES_20261104",
+      "manifest": "SETS/pirates/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_EXPLORERS_20261104",
+      "manifest": "SETS/explorers/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HITMEN_20261104",
+      "manifest": "SETS/hitmen/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MAFIA_20261104",
+      "manifest": "SETS/mafia/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS1_20261104",
+      "manifest": "SETS/workers1/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS2_20261104",
+      "manifest": "SETS/workers2/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CEOS_20261104",
+      "manifest": "SETS/ceos/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_OFFICE_ANALOG_20261104",
+      "manifest": "SETS/office-analog/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_OFFICE_DIGITAL_20261104",
+      "manifest": "SETS/office-digital/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DRIVERS_GROUND_20261104",
+      "manifest": "SETS/drivers-ground/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DRIVERS_SPACE_20261104",
+      "manifest": "SETS/drivers-space/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_LAW_CIVIC_20261104",
+      "manifest": "SETS/law-civic/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_LAW_INSTITUTIONS_20261104",
+      "manifest": "SETS/law-institutions/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_COUPLES_PILOT_20261104",
+      "manifest": "SETS/couples-pilot/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_COUPLES_A_20261104",
+      "manifest": "SETS/couples-a/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_COUPLES_B_20261104",
+      "manifest": "SETS/couples-b/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": false
+    },
+    {
+      "set_id": "WSA_RESIDENTS_A_20261104",
+      "manifest": "SETS/residents-a/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESIDENTS_B_20261104",
+      "manifest": "SETS/residents-b/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CARE_CLINICAL_20261104",
+      "manifest": "HEALTH_CARE_12_2026-11-04/care-clinical/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HEALTH_SELFCARE_20261104",
+      "manifest": "HEALTH_CARE_12_2026-11-04/health-selfcare/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DOMESTIC_EVERYDAY_20261104",
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/domestic-everyday/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SERVICES_CONSUMPTION_20261104",
+      "manifest": "EVERYDAY_SERVICES_12_2026-11-04/services-consumption/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_EDUCATION_SELFIMPROVEMENT_20261104",
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/education-selfimprovement/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CULTURE_INTERPRETATION_20261104",
+      "manifest": "EDUCATION_CULTURE_12_2026-11-04/culture-interpretation/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MEANING_WELLBEING_20261104",
+      "manifest": "MEANING_FUTURES_12_2026-11-04/meaning-wellbeing/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_FUTURE_PROMISES_20261104",
+      "manifest": "MEANING_FUTURES_12_2026-11-04/future-promises/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_KITCHEN_HOSPITALITY_20261104",
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/kitchen-hospitality/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DINING_RITUALS_20261104",
+      "manifest": "GASTRONOMY_RITUALS_12_2026-11-04/dining-rituals/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PRIVATE_OBSESSIONS_20261104",
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/private-obsessions/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CLUB_RITUALS_20261104",
+      "manifest": "LEISURE_CLUBS_12_2026-11-04/club-rituals/MANIFEST.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_TIER_TRIPLETS_20261104",
+      "manifest": "RPG_TIER_TRIPLETS_PILOT_2026-11-04/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_KLERIKER__DIEB_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/02-kleriker--dieb/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_MEUCHLER__PALADIN_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/03-meuchler--paladin/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_TODESRITTER__BARDE_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/04-todesritter--barde/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_HOARDER__DUNGEON_MASTER_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/05-hoarder--dungeon-master/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_REGELNERD__SNACK_PROVIDER_20261105",
+      "manifest": "RPG_CLASS_TIERS_36_2026-11-05/06-regelnerd--snack-provider/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CAREER_MEDIZIN__PFLEGE_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/01-medizin--pflege/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CAREER_KUECHE__HANDWERK_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/02-kueche--handwerk/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CAREER_BILDUNG__WISSENSCHAFT_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/03-bildung--wissenschaft/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CAREER_BUERO__JUSTIZ_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/04-buero--justiz/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CAREER_TRANSPORT__HANDEL_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/05-transport--handel/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+      "manifest": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRIOS_AUSBRECHER__BRUCHKOLONNE_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/01-ausbrecher--bruchkolonne/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
+    },
+    {
+      "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
+    },
+    {
+      "set_id": "WSA_TRIOS_SONNTAGSFAMILIE__ROHRKOMMANDO_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/03-sonntagsfamilie--rohrkommando/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
+    },
+    {
+      "set_id": "WSA_TRIOS_MACBETH__HAMLET_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/04-macbeth--hamlet/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
+    },
+    {
+      "set_id": "WSA_TRIOS_ODYSSEE__CASABLANCA_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/05-odyssee--casablanca/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
+    },
+    {
+      "set_id": "WSA_TRIOS_MUSKETIERE__QUIJOTE_20261105",
+      "manifest": "STORY_TRIOS_36_2026-11-05/06-musketiere--quijote/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION"
+    },
+    {
+      "set_id": "WSA_WESTERN_WARRIORS_20261105",
+      "manifest": "WESTERN_WARRIORS_6_2026-11-05/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true,
+      "status": "PASS"
+    },
+    {
+      "set_id": "WSA_CONFEDERATE_SOLDIERS_20261105",
+      "manifest": "CONFEDERATE_SOLDIERS_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_UNION_SOLDIERS_20261105",
+      "manifest": "UNION_SOLDIERS_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ROMAN_LEGION_20261105",
+      "manifest": "ROMAN_LEGION_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WOODLAND_CLAN_20261105",
+      "manifest": "WOODLAND_CLAN_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_VENETIAN_COURT_20261105",
+      "manifest": "VENETIAN_COURT_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ODYSSEY_20261105",
+      "manifest": "ODYSSEY_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GREEK_PHILOSOPHERS_20261105",
+      "manifest": "GREEK_PHILOSOPHERS_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CLOWN_TROUPE_20261105",
+      "manifest": "CLOWN_TROUPE_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ROBBER_GANG_20261105",
+      "manifest": "ROBBER_GANG_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MEN_IN_BLACK_20261105",
+      "manifest": "MEN_IN_BLACK_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_EMERGENCY_TEAM_20261105",
+      "manifest": "EMERGENCY_TEAM_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_FAMILY_DOCTORS_20261105",
+      "manifest": "FAMILY_DOCTORS_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SENIORS_20261105",
+      "manifest": "SENIORS_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ANCIENT_EGYPT_20261105",
+      "manifest": "ANCIENT_EGYPT_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MILITARY_US_20261105",
+      "manifest": "MILITARY_US_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MILITARY_FRANCE_20261105",
+      "manifest": "MILITARY_FRANCE_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MILITARY_UK_20261105",
+      "manifest": "MILITARY_UK_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MILITARY_ITALY_20261105",
+      "manifest": "MILITARY_ITALY_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MILITARY_GERMANY_20261105",
+      "manifest": "MILITARY_GERMANY_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MILITARY_USSR_20261105",
+      "manifest": "MILITARY_USSR_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_MILITARY_SPAIN_20261105",
+      "manifest": "MILITARY_SPAIN_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS_FIRE_20261105",
+      "manifest": "WORKERS_FIRE_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS_BUILD_20261105",
+      "manifest": "WORKERS_BUILD_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS_PLUMB_20261105",
+      "manifest": "WORKERS_PLUMB_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS_DOCK1920_20261105",
+      "manifest": "WORKERS_DOCK1920_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_WORKERS_STRIKE1920_20261105",
+      "manifest": "WORKERS_STRIKE1920_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRADES_MINEROIL_20261105",
+      "manifest": "TRADES_MINEROIL_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRADES_BAR_20261105",
+      "manifest": "TRADES_BAR_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRADES_SERVICE_20261105",
+      "manifest": "TRADES_SERVICE_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRADES_CLEAN_20261105",
+      "manifest": "TRADES_CLEAN_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRADES_BUTCHER_20261105",
+      "manifest": "TRADES_BUTCHER_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRADES_BAKE_20261105",
+      "manifest": "TRADES_BAKE_6_2026-11-05/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DECK_KRIME_20261106",
+      "manifest": "DECK_KRIME_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DECK_COVERUP_20261106",
+      "manifest": "DECK_COVERUP_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DECK_MOVE1_20261106",
+      "manifest": "DECK_MOVE1_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DECK_MOVE2_20261106",
+      "manifest": "DECK_MOVE2_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_ACADEMIA_20261106",
+      "manifest": "PHILOSOPHY_ACADEMIA_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_PHILOSOPHY_20261106",
+      "manifest": "PHILOSOPHY_PHILOSOPHY_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_DUNGEON_20261106",
+      "manifest": "PHILOSOPHY_DUNGEON_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_HERO01_20261106",
+      "manifest": "PHILOSOPHY_HERO01_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PHILOSOPHY_ROSTER_20261106",
+      "manifest": "PHILOSOPHY_ROSTER_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CULTURE_CINEMA_20261106",
+      "manifest": "CULTURE_CINEMA_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CULTURE_INDUSTRY_20261106",
+      "manifest": "CULTURE_INDUSTRY_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CULTURE_ICEBERG_20261106",
+      "manifest": "CULTURE_ICEBERG_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CULTURE_ROMANCE_20261106",
+      "manifest": "CULTURE_ROMANCE_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CULTURE_EARNEST_20261106",
+      "manifest": "CULTURE_EARNEST_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONCEPTS_WRINKLE_20261106",
+      "manifest": "CONCEPTS_WRINKLE_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONCEPTS_DRAMA_20261106",
+      "manifest": "CONCEPTS_DRAMA_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONCEPTS_IMPROV_20261106",
+      "manifest": "CONCEPTS_IMPROV_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONCEPTS_MORALITY_20261106",
+      "manifest": "CONCEPTS_MORALITY_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONCEPTS_MISSION_20261106",
+      "manifest": "CONCEPTS_MISSION_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONCEPTS_BRAIN_20261106",
+      "manifest": "CONCEPTS_BRAIN_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_NARRATIVE_AGE_20261106",
+      "manifest": "NARRATIVE_AGE_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_NARRATIVE_NIBELUNGEN_20261106",
+      "manifest": "NARRATIVE_NIBELUNGEN_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_NARRATIVE_KOSMIK_20261106",
+      "manifest": "NARRATIVE_KOSMIK_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_NARRATIVE_EGO_20261106",
+      "manifest": "NARRATIVE_EGO_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_NARRATIVE_FLAWS_20261106",
+      "manifest": "NARRATIVE_FLAWS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_NARRATIVE_MUSEUM_20261106",
+      "manifest": "NARRATIVE_MUSEUM_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRUSTSYSTEMS_TRUST_20261106",
+      "manifest": "TRUSTSYSTEMS_TRUST_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRUSTSYSTEMS_SYSTEMS_20261106",
+      "manifest": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRUSTSYSTEMS_MEDICINE_20261106",
+      "manifest": "TRUSTSYSTEMS_MEDICINE_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TRUSTSYSTEMS_ANTIRULES_20261106",
+      "manifest": "TRUSTSYSTEMS_ANTIRULES_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS_SOCCER_20261106",
+      "manifest": "SPORTS_SOCCER_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS_FOOTBALL_20261106",
+      "manifest": "SPORTS_FOOTBALL_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS_BASKETBALL_20261106",
+      "manifest": "SPORTS_BASKETBALL_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS_BASEBALL_20261106",
+      "manifest": "SPORTS_BASEBALL_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS_TENNIS_20261106",
+      "manifest": "SPORTS_TENNIS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS2_HOCKEY_20261106",
+      "manifest": "SPORTS2_HOCKEY_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS2_RIDING_20261106",
+      "manifest": "SPORTS2_RIDING_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS2_SWIMMING_20261106",
+      "manifest": "SPORTS2_SWIMMING_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS2_ATHLETICS_20261106",
+      "manifest": "SPORTS2_ATHLETICS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS2_RUGBY_20261106",
+      "manifest": "SPORTS2_RUGBY_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS3_POKER_20261106",
+      "manifest": "SPORTS3_POKER_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS3_SKI_20261106",
+      "manifest": "SPORTS3_SKI_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS3_MOTOR_20261106",
+      "manifest": "SPORTS3_MOTOR_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS3_CYCLING_20261106",
+      "manifest": "SPORTS3_CYCLING_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS3_ICEHOCKEY_20261106",
+      "manifest": "SPORTS3_ICEHOCKEY_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS3_MARATHON_20261106",
+      "manifest": "SPORTS3_MARATHON_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS4_FANA_20261106",
+      "manifest": "SPORTS4_FANA_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS4_FANB_20261106",
+      "manifest": "SPORTS4_FANB_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS4_REPORTERS_20261106",
+      "manifest": "SPORTS4_REPORTERS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS4_VOLLEYBALL_20261106",
+      "manifest": "SPORTS4_VOLLEYBALL_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS4_MOUNTAIN_20261106",
+      "manifest": "SPORTS4_MOUNTAIN_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPORTS4_DEEPSEA_20261106",
+      "manifest": "SPORTS4_DEEPSEA_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPACE_ASTRO_20261106",
+      "manifest": "SPACE_ASTRO_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPACE_SOLDIERS_20261106",
+      "manifest": "SPACE_SOLDIERS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPACE_PIRATES_20261106",
+      "manifest": "SPACE_PIRATES_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPACE_CYBORGS_20261106",
+      "manifest": "SPACE_CYBORGS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPACE_MECHANICS_20261106",
+      "manifest": "SPACE_MECHANICS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SPACE_TROOPERS_20261106",
+      "manifest": "SPACE_TROOPERS_6_2026-11-06/MANIFEST.json",
+      "status": "PASS",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_EMOTIONS_AMBIVALENCE_20261107",
+      "manifest": "EMOTIONS_AMBIVALENCE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_NEIGHBOUR_RITUALS_20261107",
+      "manifest": "NEIGHBOUR_RITUALS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CERTAINTY_HABITS_20261107",
+      "manifest": "CERTAINTY_HABITS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_REACTIONS_ALARM_20261107",
+      "manifest": "REACTIONS_ALARM_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_REACTIONS_CONTACT_20261107",
+      "manifest": "REACTIONS_CONTACT_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_REACTIONS_FRICTION_20261107",
+      "manifest": "REACTIONS_FRICTION_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_DOOM_20261107",
+      "manifest": "DIGITAL_DOOM_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_NEURAL_20261107",
+      "manifest": "DIGITAL_NEURAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_SOCIAL_20261107",
+      "manifest": "DIGITAL_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_GAMING_20261107",
+      "manifest": "DIGITAL_GAMING_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_INFLUENCE_20261107",
+      "manifest": "DIGITAL_INFLUENCE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_DIGITAL_PODCAST_20261107",
+      "manifest": "DIGITAL_PODCAST_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_PATROL_20261107",
+      "manifest": "RESPONSE_PATROL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_RIOT_20261107",
+      "manifest": "RESPONSE_RIOT_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_SWAT_20261107",
+      "manifest": "RESPONSE_SWAT_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_PARAMILITARY_20261107",
+      "manifest": "RESPONSE_PARAMILITARY_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_INFANTRY_20261107",
+      "manifest": "RESPONSE_INFANTRY_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_SPECIAL_20261107",
+      "manifest": "RESPONSE_SPECIAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESPONSE_BLACKOPS_20261107",
+      "manifest": "RESPONSE_BLACKOPS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_BIO_20261107",
+      "manifest": "CONTAINMENT_BIO_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_PANDEMIC_20261107",
+      "manifest": "CONTAINMENT_PANDEMIC_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_REACTOR_20261107",
+      "manifest": "CONTAINMENT_REACTOR_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_CHEMICAL_20261107",
+      "manifest": "CONTAINMENT_CHEMICAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_RESCUE_20261107",
+      "manifest": "CONTAINMENT_RESCUE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_CONTAINMENT_CARD_20261107",
+      "manifest": "CONTAINMENT_CARD_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_CYAN_20261107",
+      "manifest": "SUITED_CYAN_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_ACID_20261107",
+      "manifest": "SUITED_ACID_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_YELLOW_20261107",
+      "manifest": "SUITED_YELLOW_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_QUARANTINE_20261107",
+      "manifest": "SUITED_QUARANTINE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_THERMAL_20261107",
+      "manifest": "SUITED_THERMAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SUITED_CARD_20261107",
+      "manifest": "SUITED_CARD_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_SWEEP_20261107",
+      "manifest": "RESTORE_SWEEP_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_SALVAGE_20261107",
+      "manifest": "RESTORE_SALVAGE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_DECON_20261107",
+      "manifest": "RESTORE_DECON_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_CLEANER_20261107",
+      "manifest": "RESTORE_CLEANER_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_FACADE_20261107",
+      "manifest": "RESTORE_FACADE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RESTORE_NORMALITY_20261107",
+      "manifest": "RESTORE_NORMALITY_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HISTORY_STONE_20261107",
+      "manifest": "HISTORY_STONE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HISTORY_SUMER_20261107",
+      "manifest": "HISTORY_SUMER_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HISTORY_INDUS_20261107",
+      "manifest": "HISTORY_INDUS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HISTORY_CRETE_20261107",
+      "manifest": "HISTORY_CRETE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HISTORY_MAYA_20261107",
+      "manifest": "HISTORY_MAYA_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_HISTORY_SILK_20261107",
+      "manifest": "HISTORY_SILK_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_PACKAGE_20261107",
+      "manifest": "TOURISM_PACKAGE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_BEACH_20261107",
+      "manifest": "TOURISM_BEACH_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_CLIMB_20261107",
+      "manifest": "TOURISM_CLIMB_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_WINTER_20261107",
+      "manifest": "TOURISM_WINTER_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_BACKPACK_20261107",
+      "manifest": "TOURISM_BACKPACK_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_CRUISE_20261107",
+      "manifest": "TOURISM_CRUISE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_AIR_20261107",
+      "manifest": "TOURISM_AIR_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_RAIL_20261107",
+      "manifest": "TOURISM_RAIL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_HITCH_20261107",
+      "manifest": "TOURISM_HITCH_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_SCAM_20261107",
+      "manifest": "TOURISM_SCAM_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_WELLNESS_20261107",
+      "manifest": "TOURISM_WELLNESS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_TOURISM_SURREAL_20261107",
+      "manifest": "TOURISM_SURREAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_INJURY_BLAST_20261107",
+      "manifest": "INJURY_BLAST_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_INJURY_GRAZE_20261107",
+      "manifest": "INJURY_GRAZE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_INJURY_BOX_20261107",
+      "manifest": "INJURY_BOX_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_INJURY_ROAD_20261107",
+      "manifest": "INJURY_ROAD_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_INJURY_DEBRIS_20261107",
+      "manifest": "INJURY_DEBRIS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_INJURY_RECOVERY_20261107",
+      "manifest": "INJURY_RECOVERY_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PSYCHE_FREUD_20261107",
+      "manifest": "PSYCHE_FREUD_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PSYCHE_JUNG_20261107",
+      "manifest": "PSYCHE_JUNG_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PSYCHE_ARCHETYPES_20261107",
+      "manifest": "PSYCHE_ARCHETYPES_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PSYCHE_SYMBOLS_20261107",
+      "manifest": "PSYCHE_SYMBOLS_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PSYCHE_THERAPY_20261107",
+      "manifest": "PSYCHE_THERAPY_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_PSYCHE_SOCIAL_20261107",
+      "manifest": "PSYCHE_SOCIAL_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_WEATHER_20261107",
+      "manifest": "GAPS_WEATHER_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_LOST_20261107",
+      "manifest": "GAPS_LOST_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_ESTATE_20261107",
+      "manifest": "GAPS_ESTATE_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_INSECT_20261107",
+      "manifest": "GAPS_INSECT_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_DEEP_20261107",
+      "manifest": "GAPS_DEEP_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_GEO_20261107",
+      "manifest": "GAPS_GEO_6_2026-11-07/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_PRINT_20261108",
+      "manifest": "GAPS_PRINT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_HAUNT_20261108",
+      "manifest": "GAPS_HAUNT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_GAPS_INTERPRET_20261108",
+      "manifest": "GAPS_INTERPRET_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_YOUTH_TOTS_20261108",
+      "manifest": "YOUTH_TOTS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_YOUTH_SCHOOL_20261108",
+      "manifest": "YOUTH_SCHOOL_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_YOUTH_TEEN_20261108",
+      "manifest": "YOUTH_TEEN_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_YOUTH_SCOUT_20261108",
+      "manifest": "YOUTH_SCOUT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_YOUTH_RALLY_20261108",
+      "manifest": "YOUTH_RALLY_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SCHOOL_LANG_20261108",
+      "manifest": "SCHOOL_LANG_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SCHOOL_STEM_20261108",
+      "manifest": "SCHOOL_STEM_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SCHOOL_SOCIETY_20261108",
+      "manifest": "SCHOOL_SOCIETY_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SCHOOL_ARTS_20261108",
+      "manifest": "SCHOOL_ARTS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SCHOOL_STAFF_20261108",
+      "manifest": "SCHOOL_STAFF_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_SCHOOL_SUPPORT_20261108",
+      "manifest": "SCHOOL_SUPPORT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_POLITICS_TYPES_20261108",
+      "manifest": "POLITICS_TYPES_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_POLITICS_CAMPAIGN_20261108",
+      "manifest": "POLITICS_CAMPAIGN_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_POLITICS_GOV_20261108",
+      "manifest": "POLITICS_GOV_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_POLITICS_MINISTRY_20261108",
+      "manifest": "POLITICS_MINISTRY_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_POLITICS_STATE_20261108",
+      "manifest": "POLITICS_STATE_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_POLITICS_WATCH_20261108",
+      "manifest": "POLITICS_WATCH_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_BUILDERS_R9_STRUCTURAL_20261108",
+      "manifest": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_BUILDERS_R9_SERVICES_20261108",
+      "manifest": "BUILDERS_R9_SERVICES_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_R7_QUEST_20261108",
+      "manifest": "RPG_R7_QUEST_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_RPG_R7_GUILD_20261108",
+      "manifest": "RPG_R7_GUILD_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIENS_R6_CONTACT_20261108",
+      "manifest": "ALIENS_R6_CONTACT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIENS_R6_ORBIT_20261108",
+      "manifest": "ALIENS_R6_ORBIT_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_ARRIVALS_20261108",
+      "manifest": "ALIEN_SF_ARRIVALS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_VACUUM_20261108",
+      "manifest": "ALIEN_SF_VACUUM_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_SIGNALS_20261108",
+      "manifest": "ALIEN_SF_SIGNALS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_WORLDS_20261108",
+      "manifest": "ALIEN_SF_WORLDS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_SYMBIONTS_20261108",
+      "manifest": "ALIEN_SF_SYMBIONTS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    },
+    {
+      "set_id": "WSA_ALIEN_SF_NEIGHBORS_20261108",
+      "manifest": "ALIEN_SF_NEIGHBORS_6_2026-11-08/MANIFEST.json",
+      "georg_status": "PASS",
+      "intake_eligible": true
+    }
+  ],
+  "candidate_sets": [],
+  "candidate_counts": {
+    "sheets": 0,
+    "depictions": 0,
+    "identities": 0,
+    "pass": 0
+  },
+  "production_supplement": {
+    "biographies": "POST_PASS_PRODUCTION_R1/BIOGRAPHIES_DESIGN_R1.json",
+    "relations": "POST_PASS_PRODUCTION_R1/RELATION_GRAPH_R1.json",
+    "group_narratives": "POST_PASS_PRODUCTION_R1/GROUP_NARRATIVES_DESIGN_R1.json",
+    "workflow": "POST_PASS_PRODUCTION_R1/POST_PASS_WORKFLOW_R1.md",
+    "text_status": "DESIGN"
+  }
+}

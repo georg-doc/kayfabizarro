@@ -1,0 +1,161 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "requested_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "556b2def80c351540a49f5b484d38661f9278212b25f7a7d2da9188f3ef68f6c",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 490197,
+  "cells": [
+    {
+      "cell": 0,
+      "extraction_rect": [
+        0,
+        0,
+        520,
+        513
+      ],
+      "alpha_gt16_bounds": [
+        35,
+        8,
+        505,
+        505
+      ],
+      "visible_size": [
+        470,
+        497
+      ]
+    },
+    {
+      "cell": 1,
+      "extraction_rect": [
+        520,
+        0,
+        1013,
+        513
+      ],
+      "alpha_gt16_bounds": [
+        15,
+        9,
+        477,
+        512
+      ],
+      "visible_size": [
+        462,
+        503
+      ]
+    },
+    {
+      "cell": 2,
+      "extraction_rect": [
+        1013,
+        0,
+        1536,
+        513
+      ],
+      "alpha_gt16_bounds": [
+        16,
+        26,
+        492,
+        501
+      ],
+      "visible_size": [
+        476,
+        475
+      ]
+    },
+    {
+      "cell": 3,
+      "extraction_rect": [
+        0,
+        513,
+        522,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        21,
+        4,
+        509,
+        496
+      ],
+      "visible_size": [
+        488,
+        492
+      ]
+    },
+    {
+      "cell": 4,
+      "extraction_rect": [
+        522,
+        513,
+        1003,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        13,
+        4,
+        470,
+        501
+      ],
+      "visible_size": [
+        457,
+        497
+      ]
+    },
+    {
+      "cell": 5,
+      "extraction_rect": [
+        1003,
+        513,
+        1536,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        12,
+        2,
+        507,
+        501
+      ],
+      "visible_size": [
+        495,
+        499
+      ]
+    }
+  ],
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "safe_vertical_seam_max_alpha": [
+    1,
+    1,
+    0,
+    0
+  ],
+  "safe_horizontal_seam_max_alpha": 62,
+  "technical_holds": [
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending",
+    "Row gutter only3px atalpha<=16; use explicit rectangles, no fixed512or padded automatic crops"
+  ],
+  "design_observations": [
+    "Six complete upright footless blobs; two female-read; white/red/black eyes",
+    "Chief drinking horn and moustache larger than planned",
+    "Spear leader cloth wraps lower body but full footless silhouette remains",
+    "Spoils helmet contains more than intended three coins; source intent and visible deviation retained",
+    "No source resizing or layout edit performed"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "horizontal_cut_line_max_alpha": 3,
+  "reference_hash_checks": 6
+}

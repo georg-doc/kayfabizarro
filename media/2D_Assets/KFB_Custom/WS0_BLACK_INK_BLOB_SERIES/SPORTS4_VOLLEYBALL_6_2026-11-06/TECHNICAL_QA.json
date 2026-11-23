@@ -1,0 +1,60 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "b0d64b4d5da04bc13edd03b85cc9bbe3372cf195d08ad63739e153aaf3a4c619",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 570827,
+  "low_alpha_pixels_1_16": 76958,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha": {
+      "(0, 1536)": 2,
+      "(0, 525)": 2,
+      "(525, 1020)": 1,
+      "(1020, 1536)": 1
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced",
+    "Setter ball very tight to top edge;top-row alpha>32 count0,but generous extraction margin not achieved;preserve source and validate individual isolation"
+  ],
+  "design_observations": [
+    "Six whole upright footless ink actors; white/red/black eye rule visually reviewed at native scale",
+    "Two female-read planned and visible; no cross-family identity/state bindings",
+    "Setter ball exceptionally tight to top margin;top image row contains zero alpha>32 pixels,not visibly clipped but margin inadequate for routine extraction",
+    "Setter/blocker arms extend farther than short-goo-arm intent;face/continuous inkbody remains clear",
+    "Mini-net became unfolded three-by-three square frame rather than folded three-square net;large towel accents retained;no actual sandscene"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "review_previews": [
+    64,
+    96,
+    160,
+    192
+  ],
+  "actual_reviews": {
+    "native_scale": true,
+    "checker": true,
+    "light_64_96_192": true,
+    "dark_160": true,
+    "method": "Each native output and QA board visually reviewed;selected PNG bytes unchanged"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "kfb.slop-production/1",
+  "set_id": "WSA_RPG_R7_GUILD_20261108",
+  "source_archive": "kfb_rpg_ink_blobs_r7_draft.zip",
+  "name": "02-guild-party",
+  "prompt": "A game sprite sheet with SIX separately isolated alpha cutouts, real PNG transparency. WIDE 1536x1024 landscape, even 3 columns and 2 rows, no scene and no background at all. No backdrop, floor, gradient or shadows. Empty transparent gutters horizontally and vertically, all props, weapons and small particles contained inside their own cell with a clear margin. Six full original KFB Slops as dark charcoal ink with a hint of violet, tangible handmade stop-motion clay, broad soft volume, subtle finish, each a whole elastic ink creature with a distinct lower edge and one or two organic curled or pointed splash tips. No humanoid legs, no busts, no universal foot base. Apply new acting and eyes while faithfully retaining iconic physical props, costume silhouettes and original palette from the corresponding four actual RPG r7 sprite references. For every visible eye use bright warm WHITE sclera, clearly bounded RED iris and BLACK pupil. Give each character its own deliberately distinct gaze, eyelids, mouth and posture. Two feminine-read figures, subtly through styling/acting. No joined scowl eyebrows or repeated mouths. No labels, letters, scene objects or frame borders. The fifth attachment is an alpha layout example only, ignore all construction gear, color palettes and identities in it.\nTop left original CLERIC. Same magenta and cream mitre with gold cross, staff with gold cross top, red prayer book with gold cross. Feminine read, weary half-lidded gaze down to the book, tight disapproving little inverted U mouth. Top center original BARBARIAN. Same cream horned metal helmet, chunky double-bladed axe, tan fur mantle and red cheek stripes. Head back, eyes looking up at a raised axe, one eyebrow arched high, wide triumphant side laugh with one large tooth rather than a fanged roar. Broad charcoal ink body. Top right original BARD. Same violet floppy cap with huge yellow feather, gold notes, short purple cape and wood lute. Closed eyes, face raised and puckered to sing a soft high note. Keep the closed-lid beat. \nBottom left original ALCHEMIST. Same bronze goggles with green lenses on head, brown belt and two small pink/blue vials, same bulb flask with green bubbling liquid. Feminine read. Wide uneven eyes looking sideways into flask, mouth a tiny shaky horizontal line, comic controlled panic. Bottom center new NECROMANCER. Tall bent charcoal blob with long taper under tattered grey-purple half cape, holds a simple cream handbell and a tiny articulated skeletal hand reaching out of his satchel to ring it. Suspicious sideways eye directed toward the hand, nearly closed crooked smile. Bottom right new ARTIFICER. Rounded triangular ink body with two little sharp curls, petrol blue leather harness, holds a compact clockwork wind-up key and a brass contraption shaped like a portable crab claw. Cross-eye gaze at the device's misaligned grip, rounded cheek puff and clenched mouth with small squared teeth. Keep it immediately readable with just the key and mechanical claw.",
+  "references": [
+    "KFB_RPG_INK_R7_05_cleric_staff.png",
+    "KFB_RPG_INK_R7_06_barbarian_axe.png",
+    "KFB_RPG_INK_R7_07_bard_lute.png",
+    "KFB_RPG_INK_R7_08_alchemist_potion.png",
+    "01-structural-crew.png"
+  ],
+  "sha256": "4d82caacc45a3929b7a5510477c20d1e48223d866fab42d6aae027d5f4480ea7",
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "outer_edge_alpha_max": 3,
+  "grid_line_alpha_max": [
+    0,
+    0,
+    0
+  ],
+  "design_status": "PASS",
+  "candidate_crop_boundaries_px": {
+    "horizontal": 512,
+    "vertical_by_row": [
+      [
+        512,
+        1024
+      ],
+      [
+        512,
+        1024
+      ]
+    ],
+    "validation": "Alpha below 16 on each tested line. Individual extraction and visual checks pending."
+  },
+  "source_sha256": {
+    "KFB_RPG_INK_R7_05_cleric_staff.png": "06751816fed2bf8ff915f5f25f640077110cd5b18fde5c526040f71dd86f3b31",
+    "KFB_RPG_INK_R7_07_bard_lute.png": "241f194c3ac6e3581eccdc8a5a21ad464c6e95a646c91720add12c5bf40c06e0",
+    "KFB_RPG_INK_R7_06_barbarian_axe.png": "ea997dc41bc8dee728edfc8d98cfd340b2b3e07f48c0a2b87c28f72d7594c37e",
+    "KFB_RPG_INK_R7_08_alchemist_potion.png": "2ffb861d9689b9c7d6fc31db3aa091baa47f453ebb636d86ef5cfaec28351fa3"
+  },
+  "layout_reference": "BUILDERS_R9_STRUCTURAL_6_2026-11-08/sheet-r1.png",
+  "identity_lineage": [
+    {
+      "authoring_id": "WSA_RPG_R7_GUILD_20261108_01",
+      "variant_of": "SL_RPG_CLERIC_STAFF",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_RPG_R7_GUILD_20261108_02",
+      "variant_of": "SL_RPG_BARBARIAN_AXE",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_RPG_R7_GUILD_20261108_03",
+      "variant_of": "SL_RPG_BARD_LUTE",
+      "replace_selected_runtime_asset": false
+    },
+    {
+      "authoring_id": "WSA_RPG_R7_GUILD_20261108_04",
+      "variant_of": "SL_RPG_ALCHEMIST_POTION",
+      "replace_selected_runtime_asset": false
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_COUPLES_B_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 2,
+    "rows": 3,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+    "sha256": "d59d4c5d032da9562f5844f4e3040b59548cca60b56b47a820d8f65487e04ae1"
+  },
+  "production_record": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-b-production-record.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/couples-b/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": false,
+    "status": "EXCLUDED_BY_WS0_BRIEF",
+    "reason": "WS0 forwarded brief excludes International Couples from current intake; current game snapshot already contains them, owner reconciliation requested."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      0,
+      3,
+      5
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_PAAR_13",
+      "id_scope": "canonical_roster",
+      "name": "Frau Gefäßtreue",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_14",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "LEFT wife tall curved pear blob with soft purple goo bun mostly under short teal embroidered headscarf, tiny round copper earrings, only short cream/saffron shawl collar.",
+          "One WHITE/red/black eye almost closed and other wide looking front, huge jagged uneven-tooth laugh with NO tongue.",
+          "Both hands hug a beautiful bulbous glazed cream clay lidded urn with big teal/saffron geometric panels against own belly; no pouring or offering, no writing/sacred symbols."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP: MAGHREB-INSPIRED LATE19th/EARLY20thCENTURY URBAN ARTISAN COUPLE, matching aged teal/saffron woven braid/cream edging and simple gold wedding bands. LEFT wife tall curved pear blob with soft purple goo bun mostly under short teal embroidered headscarf, tiny round copper earrings, only short cream/saffron shawl collar. One WHITE/red/black eye almost closed and other wide looking front, huge jagged uneven-tooth laugh with NO tongue. Both hands hug a beautiful bulbous glazed cream clay lidded urn with big teal/saffron geometric panels against own belly; no pouring or offering, no writing/sacred symbols. ",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_14",
+      "id_scope": "canonical_roster",
+      "name": "Herr Tassengrund",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_13",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "RIGHT husband very wide LOW lumpy ink puddle with small saffron brimless felt cap and short teal embroidered work collar.",
+          "Heavy half-lids, red gaze mildly left but bodyfront, long CLOSED smug smile with one GOLD fang.",
+          "Holds a squat worn brass lantern with fat cream glass panels on his own lap, a SINGLE thick tassel dangling within his own silhouette."
+        ]
+      },
+      "prompt_auszug": "ROW1 TOP: MAGHREB-INSPIRED LATE19th/EARLY20thCENTURY URBAN ARTISAN COUPLE, matching aged teal/saffron woven braid/cream edging and simple gold wedding bands. RIGHT husband very wide LOW lumpy ink puddle with small saffron brimless felt cap and short teal embroidered work collar. Heavy half-lids, red gaze mildly left but bodyfront, long CLOSED smug smile with one GOLD fang. Holds a squat worn brass lantern with fat cream glass panels on his own lap, a SINGLE thick tassel dangling within his own silhouette. No scenery or staged tea service, rich hand-modeled metal/glazed clay.",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_15",
+      "id_scope": "canonical_roster",
+      "name": "Herr Trommelpflicht",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_16",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "LEFT husband tall narrow stooped ink bean with two soft tall goo lobes, tiny plum cloth cap and short ivory shawl collar with moss embroidered border.",
+          "Both hands hold a miniature beautifully rounded wooden barrel drum CLOSE at own belly, leather ends and two thick rope loops, not extended/performed toward spouse."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE: BENGAL-INSPIRED EARLY20thCENTURY FESTIVAL/MUSIC COUPLE, coordinated plum/ivory/moss woven edging and small warm copper disc clasps, wedding bands. LEFT husband tall narrow stooped ink bean with two soft tall goo lobes, tiny plum cloth cap and short ivory shawl collar with moss embroidered border. Anxious wide eyes WHITE/red/black gazing up, clenched crooked teeth with one lower tooth, NO round mouth. Both hands hold a miniature beautifully rounded wooden barrel drum CLOSE at own belly, leather ends and two thick rope loops, not extended/performed toward spouse. ",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_16",
+      "id_scope": "canonical_roster",
+      "name": "Frau Festgestimmt",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_15",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "RIGHT wife compact broad asymmetric splat with purple goo quiff and short plum/ivory patterned headscarf/shawl collar, one little gold earring.",
+          "Cradles a small ornate brass lidded keepsake box with one big ivory clasp and fat rolled moss silk cloth tucked under other arm, personal belongings not exchange.",
+          "No religious/sacred markings, sari-like drape only collar not human body or legs."
+        ]
+      },
+      "prompt_auszug": "ROW2 MIDDLE: BENGAL-INSPIRED EARLY20thCENTURY FESTIVAL/MUSIC COUPLE, coordinated plum/ivory/moss woven edging and small warm copper disc clasps, wedding bands. RIGHT wife compact broad asymmetric splat with purple goo quiff and short plum/ivory patterned headscarf/shawl collar, one little gold earring. One squint and one half-lid, crooked skeptical UNDERBITE with three uneven ivory teeth, light left side-eye and neutral torso. Cradles a small ornate brass lidded keepsake box with one big ivory clasp and fat rolled moss silk cloth tucked under other arm, personal belongings not exchange. No religious/sacred markings, sari-like drape only collar not human body or legs.",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_17",
+      "id_scope": "canonical_roster",
+      "name": "Herr Saitenlage",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 2,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_18",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "LEFT husband nearly spherical springy ink splat with small rounded cream straw hat with narrow brim and turquoise band, short coral embroidered bolero-style collar ONLY.",
+          "Both hands clutch a miniature richly rounded wooden guitar-like small folk string instrument AGAINST OWN BELLY, neck angled toward OUTER LEFT edge but stays safely inside cell, no duet posture, no big sombrero/facial caricature."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM: MEXICO-INSPIRED EARLY20thCENTURY TOWN FESTIVAL COUPLE, shared faded coral/turquoise/cream floral embroidery, matching tiny brass flower clasps and gold wedding bands. LEFT husband nearly spherical springy ink splat with small rounded cream straw hat with narrow brim and turquoise band, short coral embroidered bolero-style collar ONLY. One eye very wide and other tightly closed, broad SIDEWAYS open grin with uneven ivory teeth NO tongue. Both hands clutch a miniature richly rounded wooden guitar-like small folk string instrument AGAINST OWN BELLY, neck angled toward OUTER LEFT edge but stays safely inside cell, no duet posture, no big sombrero/facial caricature. ",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_PAAR_18",
+      "id_scope": "canonical_roster",
+      "name": "Frau Feierbestand",
+      "bild": {
+        "datei": "INTERNATIONAL_COUPLES_12_2026-11-04/international-couples-sheet-b-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 2,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": "SL_PAAR_17",
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "RIGHT wife taller leaning pear blob, sculpted purple goo coils decorated with TWO chunky coral clay flowers, short turquoise/cream embroidered shawl collar, tiny brass earring.",
+          "Hugs a small warm terracotta glazed bowl containing TWO enormous cream/coral woven textile spools, own craft items held centered, not food-offering."
+        ]
+      },
+      "prompt_auszug": "ROW3 BOTTOM: MEXICO-INSPIRED EARLY20thCENTURY TOWN FESTIVAL COUPLE, shared faded coral/turquoise/cream floral embroidery, matching tiny brass flower clasps and gold wedding bands. RIGHT wife taller leaning pear blob, sculpted purple goo coils decorated with TWO chunky coral clay flowers, short turquoise/cream embroidered shawl collar, tiny brass earring. Drooping half-lids red gaze mildly left, deep flat offended lower-lip pout with single broad tooth. Hugs a small warm terracotta glazed bowl containing TWO enormous cream/coral woven textile spools, own craft items held centered, not food-offering. Handcrafted chunky floral cloth/clay-wood materials, no mariachi text/icons/scenery.",
+      "prompt_quelle": "INTERNATIONAL_COUPLES_12_2026-11-04/sheet-b-production-record.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

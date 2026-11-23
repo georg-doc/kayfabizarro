@@ -1,0 +1,46 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "33aaf2cc4d523465d955d194d118330a4ecb12fc35fe99a69c7d177bd6f805e9",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 538246,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "NOT_CERTIFIED_PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "minimum_peak_alpha_by_strip": {
+      "(0, 1536)": 232,
+      "(0, 525)": 1,
+      "(525, 1020)": 1,
+      "(1020, 1536)": 190
+    }
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha max254/low-alpha residue; final production cleanup pending",
+    "Logical3x2cells are not certified safe fixed512crops; validated individual isolation pending",
+    "No game sprites or safe extraction rectangles asserted"
+  ],
+  "design_observations": [
+    "Six whole upright footless ink doctors; two female-read top-middle/bottom-left",
+    "Shared short open white-coat accents; body/lower ink lobes visible, actual eyes uncovered",
+    "Four head mirrors generated instead of planned two, all above brows; added to internist and prescription GP",
+    "Stethoscope, cuff/dial/bulb, reflex hammer/fork are readable simplified motifs",
+    "Prescription pad rendered with curled top, not written; prop anatomy is stylized, not clinically validated"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "original_benchmark_hashes_verified": 6
+}

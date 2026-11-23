@@ -1,0 +1,78 @@
+{
+  "sha256": "206119a612d1be01217ce0cf36de088e85f6759cdee683954be0ec9b878d158e",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "alpha0_pixels": 570020,
+  "sourceGrid": {
+    "columns": 2,
+    "rows": 3
+  },
+  "rowPairs": [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ]
+  ],
+  "samples": [
+    [
+      [
+        0,
+        0
+      ],
+      0
+    ],
+    [
+      [
+        512,
+        512
+      ],
+      0
+    ],
+    [
+      [
+        512,
+        1024
+      ],
+      0
+    ],
+    [
+      [
+        500,
+        10
+      ],
+      0
+    ],
+    [
+      [
+        1000,
+        1500
+      ],
+      0
+    ]
+  ],
+  "design_status": "DRAFT awaiting Georg",
+  "job_count": 1,
+  "pictured_characters": 6,
+  "pictured_couples": 3,
+  "holds": [
+    "rose extends beyond nominal vertical cell seam; mechanical512cell crop not accepted",
+    "individual anatomy/alpha/crop not reviewed for game admission"
+  ],
+  "runtime_tests": 0,
+  "librarian_registered": false
+}

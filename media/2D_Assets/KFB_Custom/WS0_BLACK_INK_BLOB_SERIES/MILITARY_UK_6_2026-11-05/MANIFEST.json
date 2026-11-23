@@ -1,0 +1,261 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MILITARY_UK_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "MILITARY_UK_6_2026-11-05/sheet-r1.png",
+    "sha256": "39d15ab5f4117ed635f5624dced09dbb6b8f27617d628e077af8b2b99917c2ef"
+  },
+  "production_record": "MILITARY_UK_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "MILITARY_UK_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "MILITARY_UK_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Britischer Trupp",
+    "visual_context": "British interwar/WWII-inspired khaki, Brodie-style flat helmets, RAF blue-grey, brown webbing",
+    "relationship_policy": "Shared visual military family only; not a documented historical unit, nor binding pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Military bureaucracy, certainty, hierarchy and human coping; not inherent national character"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_MILITARY_UK_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sergeant Quiteenough",
+      "bild": {
+        "datei": "MILITARY_UK_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "Brodie-style helmet",
+        "whistle",
+        "khaki webbing"
+      ],
+      "temperament": "Disapproves of chaos chiefly for its poor timing.",
+      "prompt_auszug": "Sergeant Quiteenough; maennlich-read; square squat ink splat under flat Brodie-style helmet, simple khaki webbing and little whistle; one eyelid hanging lower, huge offended toothless pout. Personality: Disapproves of chaos chiefly for its poor timing.",
+      "prompt_quelle": "MILITARY_UK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_UK_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Signalwoman Missheard",
+      "bild": {
+        "datei": "MILITARY_UK_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "blue-grey sidecap",
+        "headset",
+        "field telephone"
+      ],
+      "temperament": "Repeats every order accurately enough to expose it.",
+      "prompt_auszug": "Signalwoman Missheard; weiblich-read; tall swan-necked blob with blue-grey sidecap and two lashes, headset sits above eyes, compact field telephone handset; surprised asymmetrical open grin with one upper tooth. Personality: Repeats every order accurately enough to expose it.",
+      "prompt_quelle": "MILITARY_UK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_UK_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Sapper Underfoot",
+      "bild": {
+        "datei": "MILITARY_UK_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "khaki helmet",
+        "entrenching shovel",
+        "cable reel"
+      ],
+      "temperament": "Finds solid ground suspicious until he has improved it.",
+      "prompt_auszug": "Sapper Underfoot; maennlich-read; wide leaning rounded splat, tilted khaki helmet and rolled sleeves as small tabs, short entrenching shovel and cable reel; determined tongue-pressed cheek, tight toothless mouth. Personality: Finds solid ground suspicious until he has improved it.",
+      "prompt_quelle": "MILITARY_UK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_UK_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pilot Cloudledger",
+      "bild": {
+        "datei": "MILITARY_UK_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "flying cap",
+        "goggles above eyes",
+        "chart"
+      ],
+      "temperament": "Has excellent bearings and no idea why they brought him here.",
+      "prompt_auszug": "Pilot Cloudledger; maennlich-read; top-heavy teardrop blob, brown leather flying cap and tiny blue-grey scarf, goggles parked high, folded chart; eyes comically far apart looking inward, round open mouth with two upper teeth. Personality: Has excellent bearings and no idea why they brought him here.",
+      "prompt_quelle": "MILITARY_UK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_UK_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Quartermaster Lastpair",
+      "bild": {
+        "datei": "MILITARY_UK_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "peaked service cap",
+        "clipboard",
+        "keyring"
+      ],
+      "temperament": "Can issue anything except a second opinion.",
+      "prompt_auszug": "Quartermaster Lastpair; weiblich-read; round lopsided blob, khaki peaked service cap and simple short collar, clipboard and large keyring; lashes, one brow high, dry lopsided closed toothless smile. Personality: Can issue anything except a second opinion.",
+      "prompt_quelle": "MILITARY_UK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_MILITARY_UK_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Highlander Standfast",
+      "bild": {
+        "datei": "MILITARY_UK_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "tam-style bonnet",
+        "tartan shoulder fold",
+        "chanter"
+      ],
+      "temperament": "Maintains morale at a volume suitable for distant departments.",
+      "prompt_auszug": "Highlander Standfast; maennlich-read; tall broad-based ink blob, dark tam-style bonnet with small plain fabric pompom, tiny tartan shoulder fold, bagpipe chanter held alone as simple prop; eyes fiercely delighted, open crooked laugh with two upper teeth. Personality: Maintains morale at a volume suitable for distant departments.",
+      "prompt_quelle": "MILITARY_UK_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

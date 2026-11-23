@@ -1,0 +1,329 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TOURISM_HITCH_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TOURISM_HITCH_6_2026-11-07/sheet-r1.png",
+    "sha256": "7b0441fa39717bd3569c05531e6424c206973318963681e7e7ddd981f5a695b0"
+  },
+  "production_record": "TOURISM_HITCH_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "TOURISM_HITCH_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "TOURISM_HITCH_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Uncertain Lift",
+    "theme": "The Uncertain Lift",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "tourist bystander",
+      "destruction sightseer",
+      "three-member tour party",
+      "six-member tour group"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mina Thumbsout",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_HITCH_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "optimistic hitchhiker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_HITCH_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_HITCH_ACTOR_20261107_02",
+        "WSA_TOURISM_HITCH_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "oversized gloved thumb gesture and blank cardboard sign"
+      ],
+      "temperament": "Optimistic hitchhiker with a gift for holding up a group.",
+      "prompt_auszug": "lean bouncy blob, hopeful wide eyes, crooked toothy smile",
+      "prompt_quelle": "TOURISM_HITCH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "optimistic hitchhiker"
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ray Wrongway",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_HITCH_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "appalled detour traveller",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_HITCH_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_HITCH_ACTOR_20261107_01",
+        "WSA_TOURISM_HITCH_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small road map with a boldly doubled-back route"
+      ],
+      "temperament": "Appalled detour traveller with a gift for holding up a group.",
+      "prompt_auszug": "wide bent body, uneven open eyes, clenched inner teeth",
+      "prompt_quelle": "TOURISM_HITCH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "appalled detour traveller"
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fred Ropefix",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_HITCH_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "smug roadside repairer",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_HITCH_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_TOURISM_HITCH_ACTOR_20261107_01",
+        "WSA_TOURISM_HITCH_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "small duct tape roll and scuffed backpack buckle"
+      ],
+      "temperament": "Smug roadside repairer with a gift for holding up a group.",
+      "prompt_auszug": "square low blob, heavy side-eye, closed smile",
+      "prompt_quelle": "TOURISM_HITCH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "smug roadside repairer"
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pippa Pebbleboots",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_HITCH_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "weary roadside camper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_HITCH_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_HITCH_ACTOR_20261107_05",
+        "WSA_TOURISM_HITCH_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "rolled sleeping bag with a pocket lantern"
+      ],
+      "temperament": "Weary roadside camper with a gift for holding up a group.",
+      "prompt_auszug": "slumped teardrop, lids half closed, downturned thin mouth",
+      "prompt_quelle": "TOURISM_HITCH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "weary roadside camper"
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Ollie Liftmaybe",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_HITCH_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "skeptical roadside negotiator",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_HITCH_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_HITCH_ACTOR_20261107_04",
+        "WSA_TOURISM_HITCH_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "miniature stuffed travel duffel with stitched handle"
+      ],
+      "temperament": "Skeptical roadside negotiator with a gift for holding up a group.",
+      "prompt_auszug": "round asymmetrical body, one raised lid, tight pout",
+      "prompt_quelle": "TOURISM_HITCH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "skeptical roadside negotiator"
+    },
+    {
+      "id": "WSA_TOURISM_HITCH_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cal Snackmile",
+      "language": "en",
+      "bild": {
+        "datei": "TOURISM_HITCH_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "startled road tripper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TOURISM_HITCH_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_TOURISM_HITCH_ACTOR_20261107_04",
+        "WSA_TOURISM_HITCH_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "crumpled snack bag and giant empty water bottle"
+      ],
+      "temperament": "Startled road tripper with a gift for holding up a group.",
+      "prompt_auszug": "tall scalloped blob, two wide off-axis eyes, tiny oval gasp",
+      "prompt_quelle": "TOURISM_HITCH_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "startled road tripper"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "tour_group": "The Uncertain Lift",
+    "team_kit": "fluorescent thrift-shop windbreakers, corduroy wraps, faded patches and battered packs",
+    "encounter_behavior": "Independent passersby or a group that stops to watch a HyperNorm facade collapse.",
+    "satirical_target": "Packaged leisure, tourist habits and the collision between the itinerary and reality",
+    "trios": [
+      {
+        "id": "WSA_TOURISM_HITCH_20261107_TRIO_A",
+        "name": "Outbound Detail",
+        "row": 0,
+        "member_ids": [
+          "WSA_TOURISM_HITCH_ACTOR_20261107_01",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_02",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_TOURISM_HITCH_20261107_TRIO_B",
+        "name": "Return Detail",
+        "row": 1,
+        "member_ids": [
+          "WSA_TOURISM_HITCH_ACTOR_20261107_04",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_05",
+          "WSA_TOURISM_HITCH_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_TOURISM_HITCH_ACTOR_20261107_01",
+      "WSA_TOURISM_HITCH_ACTOR_20261107_02",
+      "WSA_TOURISM_HITCH_ACTOR_20261107_03",
+      "WSA_TOURISM_HITCH_ACTOR_20261107_04",
+      "WSA_TOURISM_HITCH_ACTOR_20261107_05",
+      "WSA_TOURISM_HITCH_ACTOR_20261107_06"
+    ]
+  }
+}

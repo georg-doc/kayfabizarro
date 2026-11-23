@@ -1,0 +1,58 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-14da8e6b-987d-4e69-8a97-7ef620e98a13.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "17a27c0fcc1cdd3e4378b283741a9f2e5b0e5c6158f17b452b0d97f7d2fe45f1",
+  "git_blob_sha": "5fdbb4ddf870292e14f0ed98b8418c8f4683476b",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a NEW KFB claymation ink-blob sheet using the two attached original benchmarks solely for anatomy, clay surface, and sculpted eyes. Exactly six complete independent footless characters in three columns by two rows. Landscape 1536×1024 PNG. TRUE transparent alpha-zero background in all gaps and margins. No white matte, floor, vignette, scenery, large backdrop screens, shadow discs, labels, grid lines, real organization logos or national badges. Pandemic Response crew. Shared kit: warm ivory protective hoods with clear open face rims, teal trim, tiny soft fabric straps and cool blue medical accessories. Top row Care Detail, bottom row Contact Detail. Each blob is a separate character with a full standalone silhouette at comparable scale. Art direction: richly tactile dark charcoal-plum satin clay with soft highlights, round organic goo bodies and short goo hands. Equipment rests directly against the clay body with chunky rounded shapes. Keep each full face unobstructed, including white ivory sclera, distinct red iris and black pupil, dark sculpted lids and dark ink lips. Protective hoods have wide open face rings or a clear visor raised above the forehead. Two subtly female-read figures in cells 2 and 5. Mouth and body silhouette vary deliberately. Teeth sit within an open mouth. No human torso, legs, boots or rigid armor. Props: a Hypernormalization Screen is a little portable slab the character holds beside its body, with dark smoked glass and a chunky rim. A dangerous card is a sealed abstract blank card with one tiny dark corner mark. No lettering. Keep all silhouettes including droplets and equipment in their cells, with generous air around each. Row-major direction:\n1. Male-read kindly intake lead. small blank intake slate with teal corner protectors. wide bell blob with warm patient eyes.\n2. Female-read focused triage specialist. compact thermometer with abstract unlit display. tall pear blob with inquisitive lifted brow.\n3. Male-read uneasily helpful supply runner. small closed teal medical pouch with a plain ivory square. round blob with raised inner brows.\n4. Male-read dryly methodical contact coordinator. short teal communication radio. squat scalloped blob with a skeptical side look.\n5. Female-read patient isolation support. small framed Hypernormalization Screen with pale teal housing and a smoked inset. lean curve blob with gentle but direct gaze.\n6. Male-read attentive protection technician. capped circular filter cartridge held as a spare at waist level. compact square blob with furrowed eyebrows.\nMake the theme readable at thumbnail size. Render all six as independent character cutouts with true alpha."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS",
+  "image_edit_jobs": 1,
+  "selected_edit": {
+    "reason": "Diversify repeated open grins across the six faces.",
+    "args": {
+      "transparent_background": true,
+      "referenced_image_paths": [
+        "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-204c0013-fad8-4d51-a262-6126561bf1e2.png"
+      ],
+      "prompt": "Edit only facial expressions on the supplied six-figure clay sheet. Keep six independent figures, same places, scale, poses, hoods, cyan-teal trim and exact individual hand props. Preserve true transparent alpha-zero in all gaps and margins, 1536x1024 landscape, no shadow/background. Change top left to a gentle toothless CLOSED smile, top center to a concentrated pursed closed mouth and inquisitive eyes, top right to a small worried slightly open mouth. Bottom left is half-lidded with a dry straight closed mouth, bottom center has softly determined raised eyebrows and a small confident closed smile, bottom right has a tight uneven grimace. Give each distinct face a different mouth shape. Preserve the style of sculpted dark charcoal-plum ink, ivory sclera and red irises with black pupils. Nothing overlaps. No text. Keep each entire standalone silhouette."
+    },
+    "original_source": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-204c0013-fad8-4d51-a262-6126561bf1e2.png",
+    "original_sha256": "f8ff13738cfc091fedfc62d289224a6bdd0bc001db3698167b425c5ecd0491db",
+    "original_alpha_extrema": [
+      0,
+      254
+    ],
+    "selected_sha256": "17a27c0fcc1cdd3e4378b283741a9f2e5b0e5c6158f17b452b0d97f7d2fe45f1"
+  },
+  "georg_design_status": "PASS"
+}

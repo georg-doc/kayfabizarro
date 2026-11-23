@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_01",
+      "name": "Sir Cedric Flinch",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Even his backup plan is wearing a helmet.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Knight"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dignified low voice that catches at the end.",
+            "audio": null
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "After you. A little farther after you."
+          ],
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RPG_R7_QUEST_20261108"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cedric guards a HyperNorm gate whose official threat level has never dropped below magnificent. He checks the sword before every shift because the gate has no hinges.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "I asked him which side of the gate was safe. He indicated the shield.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Worried glance toward the blade and compressed mouth.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_02",
+      "name": "Orlo Spindle",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Trusts a spell right up to the moment it replies.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Wizard"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Measured scholar who breaks into a squeak.",
+            "audio": null
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That was supposed to be a footnote."
+          ],
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RPG_R7_QUEST_20261108"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Orlo was hired to teach an orb to summarize unwelcome evidence. It now gives the evidence twice and pauses for questions.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He has begun referring to the orb as a colleague so he can formally ignore it.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Uneven lids and a small startled O aimed at the orb.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_03",
+      "name": "Vera Cutpurse",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can take a thing so politely that the receipt feels rude.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Rogue"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Soft, dry sideways delivery.",
+            "audio": null
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Nothing missing that you can prove."
+          ],
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RPG_R7_QUEST_20261108"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Vera steals only items that the Men in Black have formally declared never existed. Her bag has become too heavy to deny.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "I searched the pouch. She helpfully returned my watch before I asked.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Low asymmetric lids and a knowing half-smile.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_04",
+      "name": "Rowan Featherdraw",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Treats a false target as a waste of good fletching.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Ranger"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quiet and matter of fact.",
+            "audio": null
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Hold still. The story keeps moving."
+          ],
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RPG_R7_QUEST_20261108"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Rowan tracks contradictions through the scrub around HyperNorm. She marks the places where the official tracks double back.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The arrow was straighter than any account of what happened next.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "One eye shut along the arrow with lips held flat.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_05",
+      "name": "Bram Stillbell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Can remain tranquil while everybody else fills in a complaint form.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Monk"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Warm, unhurried murmur.",
+            "audio": null
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Let it finish ringing."
+          ],
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RPG_R7_QUEST_20261108"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bram rings one note whenever a HyperNorm instruction contradicts itself. He was transferred to a room with excellent soundproofing.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "His official response time is one breath. The appeal takes considerably longer.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Closed eyes and a soft, composed smile.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RPG_R7_QUEST_20261108_06",
+      "name": "Hob Hornwhistle",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Finds the beast's poor judgment reassuringly familiar.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Beastmaster"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Rumbling laugh with gentle calls.",
+            "audio": null
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Good beast. Put it back."
+          ],
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RPG_R7_QUEST_20261108"
+          },
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hob trained a horned creature to find censored evidence. It currently finds his lunch and a little more evidence than necessary.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The companion's official job title is Assistance. Its teeth are informal.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Proud downcast glance and a big one-tooth laugh.",
+          "src": "RPG_R7_QUEST_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_TOURISM_PACKAGE_ACTOR_20261107_01",
+      "name": "Gordon Wrongturn",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Lost package guest with a gift for holding up a group.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The map was like this when I got it."
+          ],
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_PACKAGE_20261107",
+            "trio": "WSA_TOURISM_PACKAGE_20261107_TRIO_A"
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Gordon Wrongturn booked a place with The All Inclusive Incident. The map was like this when I got it. The incident report lists upside-down folded resort map as the only personal effect accounted for.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: The map was like this when I got it.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "lost package guest",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_PACKAGE_ACTOR_20261107_02",
+      "name": "Pam Poolclaim",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sunbed territorialist with a gift for holding up a group.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That lounger is occupied by my towel."
+          ],
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_PACKAGE_20261107",
+            "trio": "WSA_TOURISM_PACKAGE_20261107_TRIO_A"
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pam Poolclaim booked a place with The All Inclusive Incident. That lounger is occupied by my towel. The incident report lists striped towel wrapped around a miniature folding lounger as the only personal effect accounted for.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: That lounger is occupied by my towel.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "sunbed territorialist",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_PACKAGE_ACTOR_20261107_03",
+      "name": "Clive Buffetsprint",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Buffet opportunist with a gift for holding up a group.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I'm getting these for the table."
+          ],
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_PACKAGE_20261107",
+            "trio": "WSA_TOURISM_PACKAGE_20261107_TRIO_A"
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Clive Buffetsprint booked a place with The All Inclusive Incident. I'm getting these for the table. The incident report lists precarious plate of three tiny desserts as the only personal effect accounted for.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I'm getting these for the table.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "buffet opportunist",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_PACKAGE_ACTOR_20261107_04",
+      "name": "Dex Doubletake",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Destruction sightseer with a gift for holding up a group.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Do it again. I missed the collapse."
+          ],
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_PACKAGE_20261107",
+            "trio": "WSA_TOURISM_PACKAGE_20261107_TRIO_B"
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Dex Doubletake booked a place with The All Inclusive Incident. Do it again. I missed the collapse. The incident report lists chunky compact camera and dangling lens cap as the only personal effect accounted for.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Do it again. I missed the collapse.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "destruction sightseer",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_PACKAGE_ACTOR_20261107_05",
+      "name": "Nora Wristband",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Exhausted tour rep with a gift for holding up a group.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay where I can count you."
+          ],
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_PACKAGE_20261107",
+            "trio": "WSA_TOURISM_PACKAGE_20261107_TRIO_B"
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nora Wristband booked a place with The All Inclusive Incident. Stay where I can count you. The incident report lists small raised paddle with one blank colored circle and coil of wristbands as the only personal effect accounted for.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Stay where I can count you.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "exhausted tour rep",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_PACKAGE_ACTOR_20261107_06",
+      "name": "Ian Extras",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Outraged surcharge victim with a gift for holding up a group.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "How is shade an optional extra?"
+          ],
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_PACKAGE_20261107",
+            "trio": "WSA_TOURISM_PACKAGE_20261107_TRIO_B"
+          },
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ian Extras booked a place with The All Inclusive Incident. How is shade an optional extra? The incident report lists absurdly long curled blank receipt held close as the only personal effect accounted for.",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: How is shade an optional extra?",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "outraged surcharge victim",
+          "src": "TOURISM_PACKAGE_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

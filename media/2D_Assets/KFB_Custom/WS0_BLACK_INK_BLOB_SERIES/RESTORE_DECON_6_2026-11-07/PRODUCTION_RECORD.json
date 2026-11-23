@@ -1,0 +1,40 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "resizes_to_selected": 0,
+  "output_file": "sheet-r1.png",
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-45dc4f96-5c09-443d-820e-ce81350dacc4.png",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "sha256": "68c76c9b6f1da4c5774c79d54571697c8de53eb717277c334e3393613f34991e",
+  "git_blob_sha": "fefc2ee48430f76e1be6cdf50c6edc0f8c6ad6de",
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/freche-family.png"
+    ],
+    "prompt": "Create a new KFB claymation ink-blob character sheet using the two attached original references for soft rounded goo anatomy, dark charcoal-plum modeled clay, expressive sculpted eyelids and handmade accessory craft. Exactly six UNIQUE complete figures in three columns by two rows on a TRUE transparent PNG, 1536x1024 landscape. Theme: Decontamination Cleaners, crews who spend all day restoring a district after the player's destruction. Warm, weary, absurd workplace satire. Shared team kit: faded ivory and sea-green rubber coveralls over round ink bodies, tiny ink feet, teal gloves, grey couplers, green rinse pods. Top row Wash Detail, bottom row Release Detail. Each separately usable, entire silhouette and every prop comfortably inside its own cell, generous clear margins and gutters. No scenery, floor, shadows, gridlines, signs with text, brands or connected background architecture. Living organic ink faces and rounded soft blob shapes. Clothes wrap the blob's short round body, sparse equipment and short ink hands, no humanoid torso or long human legs. Decontamination workers have full short rounded suits and tiny dark ink feet under the hem. Other crews show rounded goo base lobes under their short clothes. Clear WHITE/IVORY sclera, RED iris and BLACK pupil, filled dark modeled lids. Faces fully visible, dark ink lips. Exactly two subtly female-read figures, cells 2 and 5. Actively DIFFERENT mouth shapes and eye directions within each row, mostly CLOSED. No repeating six giant grins. Prop concepts simple, chunky, plausible-looking inside the cartoon world. Scuffed wood, brass, rubber and cloth, fine fingerprints, soft restrained upper-left light. Gentle charcoal bias with subtle deep plum, preserve dimensional volume. No bright rim halo. Give the crews battle-worn maintenance character, little mends, scuffs and dented tools. Fictional game characters with retro steampunk or modest sci-fi tooling. Row-major roles:\n1. Male-read concentrating rinse lead, with one short capped spray wand with a stubby hose. round low body, wide unequal eyes and a tiny startled oval mouth without teeth.\n2. Female-read doubtful surface checker, with one compact blank contamination-check paddle. wide soft square body, half-lidded eyes and a dry closed smile.\n3. Male-read overburdened recovery carrier, with one small sealed waste-fluid canister. curved upright body, attentive uneven brows and a tight closed pursed mouth.\n4. Male-read resigned drying technician, with one thick folded absorbent pad. slender reverse-comma shape, eager eyes and a narrow open two-upper-tooth grin.\n5. Female-read quietly proud finish lead, with one small rounded inspection lamp. broad scalloped silhouette, heavy skeptical eyes and a straight closed dark mouth.\n6. Male-read anxiously careful residue keeper, with one lidded specimen cup in a thick cradle. lean pear silhouette, one high brow and a closed crooked determined smirk.\nKeep every character distinct in silhouette, posture and acting. Tools carried independently at belly or flank. No actual crime evidence, blood or gore. True alpha background in every gap and at outer edges."
+  },
+  "references": [
+    {
+      "name": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "role": "original body/material"
+    },
+    {
+      "name": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "role": "original family morphology"
+    }
+  ],
+  "material_change": "Same accepted gentle charcoal/plum satin clay direction; no stronger correction and no generated style parent.",
+  "georg_status": "PASS",
+  "georg_feedback": "All six cleanup and restoration sheets PASS; minor reference inheritances accepted."
+}

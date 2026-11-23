@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_SUITED_CARD_ACTOR_20261107_01",
+      "name": "Voss Frame",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Voss Frame serves as the capture lead in Capture Detail.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Boundary set."
+          ],
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CARD_20261107",
+            "trio": "WSA_SUITED_CARD_20261107_TRIO_A"
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Voss Frame works with The Sealed Archive on fictional containment incidents. The full protective suit carries portable indigo Hypernormalization Screen with ivory rim.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Voss Frame has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "capture lead",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CARD_ACTOR_20261107_02",
+      "name": "Nia Laminate",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Nia Laminate serves as the card capturer in Capture Detail.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a closer look."
+          ],
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CARD_20261107",
+            "trio": "WSA_SUITED_CARD_20261107_TRIO_A"
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Nia Laminate works with The Sealed Archive on fictional containment incidents. The full protective suit carries clear sealed sleeve with an abstract blank card.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Nia Laminate has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "card capturer",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CARD_ACTOR_20261107_03",
+      "name": "Ike Archive",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Ike Archive serves as the case custodian in Capture Detail.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The sample is sealed."
+          ],
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CARD_20261107",
+            "trio": "WSA_SUITED_CARD_20261107_TRIO_A"
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ike Archive works with The Sealed Archive on fictional containment incidents. The full protective suit carries closed bone-white latch box.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Ike Archive has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "case custodian",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CARD_ACTOR_20261107_04",
+      "name": "Hale Hinge",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Hale Hinge serves as the archive lead in Archive Detail.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Keep the detail together."
+          ],
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CARD_20261107",
+            "trio": "WSA_SUITED_CARD_20261107_TRIO_B"
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hale Hinge works with The Sealed Archive on fictional containment incidents. The full protective suit carries small open protective case with a sealed card.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Hale Hinge has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "archive lead",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CARD_ACTOR_20261107_05",
+      "name": "Mina Screen",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Mina Screen serves as the screen technician in Archive Detail.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Screen ready."
+          ],
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CARD_20261107",
+            "trio": "WSA_SUITED_CARD_20261107_TRIO_B"
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mina Screen works with The Sealed Archive on fictional containment incidents. The full protective suit carries compact ivory Hypernormalization Screen with lilac bumpers.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Mina Screen has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "screen technician",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CARD_ACTOR_20261107_06",
+      "name": "Della Cassette",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Della Cassette serves as the evidence carrier in Archive Detail.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CARD_20261107",
+            "trio": "WSA_SUITED_CARD_20261107_TRIO_B"
+          },
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Della Cassette works with The Sealed Archive on fictional containment incidents. The full protective suit carries small indigo card cassette.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Della Cassette has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "evidence carrier",
+          "src": "SUITED_CARD_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

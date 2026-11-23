@@ -1,0 +1,249 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_RPG_BARBAR__KULTIST_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Tier format: one male and one female identity each repeated three times, not a normal independent six-character cast.",
+  "image": {
+    "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+    "sha256": "c7df60664361fa9b58169d1df59f4b80ff0c6900294b4294bf84faeaf02f3d41"
+  },
+  "production_record": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
+  "cards": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Accepted as concept variant; technical preparation notes retained."
+  },
+  "figuren": [
+    {
+      "id": "WSA_RPG_BARBAR_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Grunz Grundsatz",
+      "variant_title": "trash",
+      "klasse": "barbar",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_BARBAR_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "wood club"
+      ],
+      "signature": "very WIDE squat ink splat, three blunt crown lobes, massive underbite with ONE big lower ivory tusk and TWO tiny upper teeth, scarlet cloth headband and amber bead. No human muscles or feet.",
+      "prompt_auszug": "Bewildered open underbite, raised asymmetric brows. Holds a short fat rough wooden CLUB tied with one cord; tiny ragged sheepskin collar.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_BARBAR_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Grunz Grundsatz",
+      "variant_title": "common",
+      "klasse": "barbar",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_BARBAR_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "stone-headed club, leather wristband"
+      ],
+      "signature": "very WIDE squat ink splat, three blunt crown lobes, massive underbite with ONE big lower ivory tusk and TWO tiny upper teeth, scarlet cloth headband and amber bead. No human muscles or feet.",
+      "prompt_auszug": "Furious teeth clenched sideways, sideways leaning goo. Same club now stone-headed, same headband/bead, one broad leather wristband.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_BARBAR_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Grunz Grundsatz",
+      "variant_title": "elite",
+      "klasse": "barbar",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_BARBAR_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "iron-banded club, bone collar clasp"
+      ],
+      "signature": "very WIDE squat ink splat, three blunt crown lobes, massive underbite with ONE big lower ivory tusk and TWO tiny upper teeth, scarlet cloth headband and amber bead. No human muscles or feet.",
+      "prompt_auszug": "Rapturous roaring underbite, one eye squeezed shut, triumphant tilted crown. Same club now chunky iron-banded, tiny bone clasp on same sheepskin collar; not oversized armour.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_KULTIST_20261105_T1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Schwester Restgewissheit",
+      "variant_title": "trash",
+      "klasse": "kultist",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "trash",
+      "zustand_von": "WSA_RPG_KULTIST_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "unlit candle and saucer"
+      ],
+      "signature": "tall narrow bent pear ink blob, two drooping side lobes, asymmetrical small ivory fangs, soft burgundy pointed HOOD framing face with one teal repair patch, subtle lashes. Exposed ink belly/base, no robes hiding body.",
+      "prompt_auszug": "Uneasy wide side-looking eyes, lips pressed with one fang. Both hands carefully hold ONE stubby unlit crooked CANDLE in a little clay saucer.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "verwirrt",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 1,
+        "hits": 1,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_KULTIST_20261105_T2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Schwester Restgewissheit",
+      "variant_title": "common",
+      "klasse": "kultist",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "common",
+      "zustand_von": "WSA_RPG_KULTIST_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "lit candle and brass saucer"
+      ],
+      "signature": "tall narrow bent pear ink blob, two drooping side lobes, asymmetrical small ivory fangs, soft burgundy pointed HOOD framing face with one teal repair patch, subtle lashes. Exposed ink belly/base, no robes hiding body.",
+      "prompt_auszug": "Ecstatic eyes up, broad crooked underbite smile. Same hood/patch; same candle now lit with SMALL solid clay flame, plain dark brass saucer; one twisted cord collar.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "kaempferisch",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 2,
+        "hits": 2,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    },
+    {
+      "id": "WSA_RPG_KULTIST_20261105_T3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Schwester Restgewissheit",
+      "variant_title": "elite",
+      "klasse": "kultist",
+      "bild": {
+        "datei": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "elite",
+      "zustand_von": "WSA_RPG_KULTIST_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "three candle stubs in brass saucer"
+      ],
+      "signature": "tall narrow bent pear ink blob, two drooping side lobes, asymmetrical small ivory fangs, soft burgundy pointed HOOD framing face with one teal repair patch, subtle lashes. Exposed ink belly/base, no robes hiding body.",
+      "prompt_auszug": "Chilly serene half-lidded eyes, tight smug single-fang smirk. Same small hood with modest copper edging; same candle now THREE fat fused stubs in ONE compact brass saucer, no flames near face, no cult scene.",
+      "prompt_quelle": "RPG_CLASS_TIERS_36_2026-11-05/01-barbar--kultist/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "haltung_vorschlag": "unzufrieden",
+      "ersetzt": [],
+      "erneuert": [],
+      "tier_proposal": {
+        "stufe": 3,
+        "hits": 3,
+        "absurd": null,
+        "status": "DESIGN_ONLY_NO_RUNTIME_WRITE"
+      }
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "source": "Georg chat: Super, sehr schön auch. Das hat gut funktioniert und können wir uns so als Konzeptvariante merken.",
+    "verdict": "DESIGN_PASS_CONCEPT_VARIANT"
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_SUITED_CYAN_ACTOR_20261107_01",
+      "name": "Dex Arc",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Dex Arc serves as the surge observer in Surge Detail.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Boundary set."
+          ],
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CYAN_20261107",
+            "trio": "WSA_SUITED_CYAN_20261107_TRIO_A"
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Dex Arc works with The Arc Detail on fictional containment incidents. The full protective suit carries small blue dial meter.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Dex Arc has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "surge observer",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CYAN_ACTOR_20261107_02",
+      "name": "Juno Coil",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Juno Coil serves as the insulation lead in Surge Detail.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a closer look."
+          ],
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CYAN_20261107",
+            "trio": "WSA_SUITED_CYAN_20261107_TRIO_A"
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Juno Coil works with The Arc Detail on fictional containment incidents. The full protective suit carries short coil of blue-insulated cable.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Juno Coil has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "insulation lead",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CYAN_ACTOR_20261107_03",
+      "name": "Pax Socket",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Pax Socket serves as the relay carrier in Surge Detail.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The sample is sealed."
+          ],
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CYAN_20261107",
+            "trio": "WSA_SUITED_CYAN_20261107_TRIO_A"
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pax Socket works with The Arc Detail on fictional containment incidents. The full protective suit carries riveted cyan relay box.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Pax Socket has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "relay carrier",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CYAN_ACTOR_20261107_04",
+      "name": "Vic Ground",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Vic Ground serves as the grounding lead in Grounding Detail.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Keep the detail together."
+          ],
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CYAN_20261107",
+            "trio": "WSA_SUITED_CYAN_20261107_TRIO_B"
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Vic Ground works with The Arc Detail on fictional containment incidents. The full protective suit carries chunky grey clamp on a short blue handle.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Vic Ground has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "grounding lead",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CYAN_ACTOR_20261107_05",
+      "name": "Mira Wave",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Mira Wave serves as the screen operator in Grounding Detail.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Screen ready."
+          ],
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CYAN_20261107",
+            "trio": "WSA_SUITED_CYAN_20261107_TRIO_B"
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Mira Wave works with The Arc Detail on fictional containment incidents. The full protective suit carries small blue-rimmed Hypernormalization Screen with cyan waveform.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Mira Wave has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "screen operator",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_CYAN_ACTOR_20261107_06",
+      "name": "Cal Switch",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Cal Switch serves as the switch custodian in Grounding Detail.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_CYAN_20261107",
+            "trio": "WSA_SUITED_CYAN_20261107_TRIO_B"
+          },
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Cal Switch works with The Arc Detail on fictional containment incidents. The full protective suit carries blue rotary isolator with cyan insert.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Cal Switch has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "switch custodian",
+          "src": "SUITED_CYAN_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRUSTSYSTEMS_SYSTEMS_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/sheet-r1.png",
+    "sha256": "891bfddd218e1933e249d9410c7998b4f81fa1dcb19310e5fb2cbe28a06dfee0"
+  },
+  "production_record": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Unspoken Systems",
+    "visual_context": "Fictional satirical social/medical-history/rule archetypes,free deck inspiration not exact canonical card or real-person/clinical claim",
+    "relationship_policy": "Shared deck-themed family;distinct standalone identities,Pinky pair2prop gloves only,no pair/state/trio/tier binding",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Fictional trust,gatekeeping,unspoken rules,medical-history caricature and rebellion;not real-person allegation,clinical advice or treatment claim"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRUSTSYSTEMS_SYSTEMS_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Handwart Unsichtbar",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "plum clerk cap",
+        "empty ivory glove",
+        "brass weight"
+      ],
+      "temperament": "Has found the missing hand and is still unsure who is wearing the explanation.",
+      "prompt_auszug": "Handwart Unsichtbar, maennlich-read. Invisible Hand Glove: tall narrow hooked ink blob,little plum clerk cap,tiny cream collar,ONE EMPTY ivory formal glove held upright by cuff in own goo hand,other hand small brass balance weight,no extra living hand. Huge unequal eyes inspecting glove,tiny toothless triangular open mouth. Personality: Has found the missing hand and is still unsure who is wearing the explanation.",
+      "prompt_quelle": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "user_concept": "Invisible Hand Glove"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_SYSTEMS_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Wiegehabt",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rust sleeping cap",
+        "miniature rocking chair"
+      ],
+      "temperament": "Is making steady progress toward exactly where he already was.",
+      "prompt_auszug": "Herr Wiegehabt, maennlich-read. Status Quo Rocking Chair adapted upright: broad low square ink splat,small rust sleeping cap,tiny teal collar,ONE miniature wooden rocking chair held firmly at flank,not sitting,no floor. Extremely heavy uneven eyelids,huge closed toothless pout,goo body whole. Personality: Is making steady progress toward exactly where he already was.",
+      "prompt_quelle": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "user_concept": "Status Quo Rocking Chair"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_SYSTEMS_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Torhüterin Schlüsselrecht",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "cream peaked cap",
+        "three-key ring",
+        "blank permission card"
+      ],
+      "temperament": "Enjoys helping people discover that permission was the missing qualification.",
+      "prompt_auszug": "Torhüterin Schlüsselrecht, weiblich-read. Gatekeeper with Keys: round top-heavy ink blob,small cream peaked cap,two subtle lashes,tiny plum collar,ONE large brass keyring with THREE chunky different keys and small blank permission card. Fierce delighted crooked open grin with TWO upper teeth,one brow high. Personality: Enjoys helping people discover that permission was the missing qualification.",
+      "prompt_quelle": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "user_concept": "Gatekeeper with Keys"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_SYSTEMS_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Aufsteiger Nächstergrad",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "tan office cap",
+        "tie",
+        "teal three-rung ladder",
+        "three blank medal-tags"
+      ],
+      "temperament": "Can name the next rung more easily than the reason for reaching it.",
+      "prompt_auszug": "Aufsteiger Nächstergrad, maennlich-read. Social Ladder Climber upright metaphor: tall curved pear ink blob,small tan office cap,tiny burgundy tie,ONE miniature TEAL WOODEN THREE-RUNG ladder with THREE different blank medal-tags clipped to rungs,held beside body,no climbing scene. Huge anxious unequal eyes gazing upward,closed toothless nervous wavy mouth. Personality: Can name the next rung more easily than the reason for reaching it.",
+      "prompt_quelle": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "user_concept": "Social Ladder Climber"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_SYSTEMS_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Regelwart Bekanntlich",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "dark scholar cap",
+        "open blank book"
+      ],
+      "temperament": "Finds it obvious once someone else has been punished for not knowing.",
+      "prompt_auszug": "Regelwart Bekanntlich, maennlich-read. Unwritten Rule Book blank: squat broad asymmetric ink splat,little dark scholar cap,tiny cream collar,ONE OPEN thick book showing TWO completely BLANK ivory pages,no marks or letters,one goo finger indicates empty page. Hooded skeptical eyes,closed toothless crooked side-mouth. Personality: Finds it obvious once someone else has been punished for not knowing.",
+      "prompt_quelle": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "user_concept": "Unwritten Rule Book (blank)"
+    },
+    {
+      "id": "WSA_TRUSTSYSTEMS_SYSTEMS_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fluraufsicht Soüblich",
+      "bild": {
+        "datei": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "teal monitor cap",
+        "whistle",
+        "blank pass clipboard"
+      ],
+      "temperament": "Protects the corridor from people arriving with an unapproved manner of walking.",
+      "prompt_auszug": "Fluraufsicht Soüblich, weiblich-read. Norm Enforcer Hall Monitor: tall broad-based ink pear,little teal hall-monitor cap,two lashes,tiny cream shoulder tabs,ONE metal whistle and small wooden clipboard with blank pass sheet. Huge officious crooked open bellow with THREE upper teeth,one eye narrowed. Personality: Protects the corridor from people arriving with an unapproved manner of walking.",
+      "prompt_quelle": "TRUSTSYSTEMS_SYSTEMS_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
+      "user_concept": "Norm Enforcer Hall Monitor"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ],
+  "deck_binding": {
+    "deck_id": "unspoken_systems_kayfabizarro_meta_deck_01",
+    "user_family_title": "Unspoken Systems",
+    "registry_title": "Unspoken Systems — Kayfabizarro Meta Deck 01",
+    "source_repo": "georg-doc/kayfabizarro",
+    "source_path": "registry/assets/v1/decks/unspoken_systems_kayfabizarro_meta_deck_01.json",
+    "source_ref": "bf1a7ca132b3d10ab99e5de382df4964a0b007ae",
+    "status": "THEMATIC_DESIGN_PROPOSAL",
+    "exact_card_mapping": null
+  }
+}

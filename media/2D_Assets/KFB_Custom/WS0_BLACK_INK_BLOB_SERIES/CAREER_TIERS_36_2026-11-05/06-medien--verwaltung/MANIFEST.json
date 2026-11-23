@@ -1,0 +1,262 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CAREER_MEDIEN__VERWALTUNG_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "CAREER_TIER_TRIPLETS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 2,
+    "depictions": 6,
+    "female_read_identities": 1,
+    "female_read_depictions": 3
+  },
+  "casting_note": "Three career variants each of one female and one male identity; not six independent actors.",
+  "image": {
+    "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+    "sha256": "ef5585d2481a5ff0fd74f77c6b96fbd07ae05aeb34b9036b9690dde52a9d7284"
+  },
+  "production_record": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
+  "cards": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "note": "Source accepted; downstream catalogue/runtime import remains a separate receiving step."
+  },
+  "figuren": [
+    {
+      "id": "WSA_CAREER_MEDIEN_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Schlagzeile",
+      "variant_title": "Redaktionspraktikant",
+      "berufsfeld": "medien",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_MEDIEN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "notepad, teal pencil"
+      ],
+      "signature": "upright tall leaning ink bean with two floppy unequal crown lobes, tiny rusty-brown PRESS FLATCAP with one plain cream paper slip but NO text, short scarlet scarf and small copper round spectacles, ONE long lower tooth plus two upper nubs.",
+      "prompt_auszug": "Abashed wary side-looking white/red/black eyes, lips compressed off centre with lower tooth. Holds ONE little blank ivory pocket NOTEBOOK and ONE fat teal pencil.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Redaktionspraktikant",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_MEDIEN_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Schlagzeile",
+      "variant_title": "Reporter",
+      "berufsfeld": "medien",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_MEDIEN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "notepad, microphone"
+      ],
+      "signature": "upright tall leaning ink bean with two floppy unequal crown lobes, tiny rusty-brown PRESS FLATCAP with one plain cream paper slip but NO text, short scarlet scarf and small copper round spectacles, ONE long lower tooth plus two upper nubs.",
+      "prompt_auszug": "Impassioned crooked OPEN shout, unequal eyes looking straight toward camera, NO tongue. Same hat/slip/scarf/glasses. SAME notebook thickened, other hand holds ONE very small black rounded MICROPHONE with copper stem, held low away from face.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Reporter",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_MEDIEN_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Schlagzeile",
+      "variant_title": "Chefredakteur",
+      "berufsfeld": "medien",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_MEDIEN_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "leather notebook, red pencil"
+      ],
+      "signature": "upright tall leaning ink bean with two floppy unequal crown lobes, tiny rusty-brown PRESS FLATCAP with one plain cream paper slip but NO text, short scarlet scarf and small copper round spectacles, ONE long lower tooth plus two upper nubs.",
+      "prompt_auszug": "Solemn censorious half-lids, CLOSED severe downward lip with lower tooth peeking, not smirk. Same hat/slip/scarf, little brass spectacles rim. SAME notebook now leather-bound, one hand grips ONE broad RED PENCIL with fat blunt point. No headlines/newspaper text/camera or newsroom scene.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Chefredakteur",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_VERWALTUNG_20261105_L1",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Zuständigkeitsbereich",
+      "variant_title": "Verwaltungsanwärterin",
+      "berufsfeld": "verwaltung",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "career_stage_1",
+      "zustand_von": "WSA_CAREER_VERWALTUNG_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small wood stamp, blank document"
+      ],
+      "signature": "upright low wide rounded rectangular ink splat with TWO rolled goo crown curls and tiny TEAL hair scarf, lashes, three uneven upper ivory teeth, thick soft lower lip. Tiny PLUM office cardigan collar and cream oval button, no full human outfit.",
+      "prompt_auszug": "Sparkling eager raised ONE brow and bright asymmetric eyes, small open crooked tooth smile with NO tongue. Holds ONE little bare wooden RUBBER STAMP and ONE tiny blank ivory document.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 1,
+        "label": "Verwaltungsanwärterin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_VERWALTUNG_20261105_L2",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Zuständigkeitsbereich",
+      "variant_title": "Sachbearbeiterin",
+      "berufsfeld": "verwaltung",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "career_stage_2",
+      "zustand_von": "WSA_CAREER_VERWALTUNG_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "larger stamp, blank document stack"
+      ],
+      "signature": "upright low wide rounded rectangular ink splat with TWO rolled goo crown curls and tiny TEAL hair scarf, lashes, three uneven upper ivory teeth, thick soft lower lip. Tiny PLUM office cardigan collar and cream oval button, no full human outfit.",
+      "prompt_auszug": "Blank unblinking bored gaze with one drooping lid, long CLOSED flat lower lip and one tooth. SAME scarf/collar/quiff. SAME stamp now thick worn wood with round dark rubber base, SAME document now a small blank ivory stack in one hand.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 2,
+        "label": "Sachbearbeiterin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_CAREER_VERWALTUNG_20261105_L3",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Zuständigkeitsbereich",
+      "variant_title": "Amtsleiterin",
+      "berufsfeld": "verwaltung",
+      "bild": {
+        "datei": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "career_stage_3",
+      "zustand_von": "WSA_CAREER_VERWALTUNG_20261105",
+      "paar_mit": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "copper-capped stamp, ribbon-bound documents"
+      ],
+      "signature": "upright low wide rounded rectangular ink splat with TWO rolled goo crown curls and tiny TEAL hair scarf, lashes, three uneven upper ivory teeth, thick soft lower lip. Tiny PLUM office cardigan collar and cream oval button, no full human outfit.",
+      "prompt_auszug": "Terrifyingly cordial CLOSED lopsided smile with only one tiny tooth, high rounded eyebrows, clearly NOT tongue/round mouth. SAME teal scarf and plum collar with plain brass oval brooch. SAME stamp now copper-capped rich wood, SAME blank papers bound with a thick teal ribbon. No text/seals/official logos or desk.",
+      "prompt_quelle": "CAREER_TIERS_36_2026-11-05/06-medien--verwaltung/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "career_stage": {
+        "level": 3,
+        "label": "Amtsleiterin",
+        "status": "DESIGN"
+      },
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: Die sind alle Pars ... auf GitHub persistieren ... fürs Game und Asset Librarian."
+  }
+}

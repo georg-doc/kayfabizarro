@@ -1,0 +1,156 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "requested_size": [
+    3072,
+    2048
+  ],
+  "mode": "RGBA",
+  "sha256": "c927d2e37f2151ed9aa695e1cdb4115f711f03404b0aee88a0789b4043f846fa",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 539084,
+  "cells": [
+    {
+      "cell": 0,
+      "extraction_rect": [
+        0,
+        0,
+        544,
+        524
+      ],
+      "alpha_gt16_bounds": [
+        52,
+        27,
+        521,
+        516
+      ],
+      "visible_size": [
+        469,
+        489
+      ]
+    },
+    {
+      "cell": 1,
+      "extraction_rect": [
+        544,
+        0,
+        1024,
+        524
+      ],
+      "alpha_gt16_bounds": [
+        23,
+        34,
+        462,
+        513
+      ],
+      "visible_size": [
+        439,
+        479
+      ]
+    },
+    {
+      "cell": 2,
+      "extraction_rect": [
+        1024,
+        0,
+        1536,
+        524
+      ],
+      "alpha_gt16_bounds": [
+        47,
+        43,
+        460,
+        510
+      ],
+      "visible_size": [
+        413,
+        467
+      ]
+    },
+    {
+      "cell": 3,
+      "extraction_rect": [
+        0,
+        524,
+        544,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        16,
+        18,
+        529,
+        477
+      ],
+      "visible_size": [
+        513,
+        459
+      ]
+    },
+    {
+      "cell": 4,
+      "extraction_rect": [
+        544,
+        524,
+        1024,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        26,
+        20,
+        449,
+        477
+      ],
+      "visible_size": [
+        423,
+        457
+      ]
+    },
+    {
+      "cell": 5,
+      "extraction_rect": [
+        1024,
+        524,
+        1536,
+        1024
+      ],
+      "alpha_gt16_bounds": [
+        19,
+        11,
+        473,
+        486
+      ],
+      "visible_size": [
+        454,
+        475
+      ]
+    }
+  ],
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "safe_vertical_seam_max_alpha": [
+    1,
+    1
+  ],
+  "safe_horizontal_seam_max_alpha": 2,
+  "technical_holds": [
+    "Native tool returned1536x1024 rather than requested3072x2048",
+    "Not six independent high-resolution catalogue masters",
+    "Explicit variable extraction rectangles required; fixed512 crop would cut props",
+    "Alpha max254 and low-alpha background residue; final production alpha normalization pending"
+  ],
+  "design_observations": [
+    "Six complete upright footless blobs; two female-read; white/red/black eyes",
+    "General spyglass wooden/brass rather than all-brass",
+    "Supply key on tin handle rather than directly over latch",
+    "No source resizing or layout edit performed"
+  ],
+  "georg_status": null,
+  "intake_eligible": false
+}

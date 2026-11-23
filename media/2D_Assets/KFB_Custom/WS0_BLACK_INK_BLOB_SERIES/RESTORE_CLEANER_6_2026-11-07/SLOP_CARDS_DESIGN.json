@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_01",
+      "name": "Vin Untrace",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Vin Untrace is the crew's severely polite lead.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Severely polite lead.",
+            "audio": null
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We start at this end."
+          ],
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_CLEANER_20261107",
+            "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_A"
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Vin Untrace works the Removal Detail with The Unremarkable Finish. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Vin Untrace takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Vin Untrace has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "severely polite lead",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_02",
+      "name": "Faye Spotless",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Faye Spotless is the crew's skeptical stain inspector.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Skeptical stain inspector.",
+            "audio": null
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me the next piece."
+          ],
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_CLEANER_20261107",
+            "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_A"
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Faye Spotless works the Removal Detail with The Unremarkable Finish. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Faye Spotless takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Faye Spotless has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "skeptical stain inspector",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_03",
+      "name": "Neil Bagwell",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Neil Bagwell is the crew's nervously tidy courier.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Nervously tidy courier.",
+            "audio": null
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That needs another pass."
+          ],
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_CLEANER_20261107",
+            "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_A"
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Neil Bagwell works the Removal Detail with The Unremarkable Finish. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Neil Bagwell takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Neil Bagwell has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "nervously tidy courier",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_04",
+      "name": "Hal Polish",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Hal Polish is the crew's serenely thorough finisher.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Serenely thorough finisher.",
+            "audio": null
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It will stand for now."
+          ],
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_CLEANER_20261107",
+            "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_B"
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hal Polish works the Finish Detail with The Unremarkable Finish. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Hal Polish takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Hal Polish has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "serenely thorough finisher",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_05",
+      "name": "Vera Plausible",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Vera Plausible is the crew's dryly satisfied surface painter.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Dryly satisfied surface painter.",
+            "audio": null
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Checking the finish."
+          ],
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_CLEANER_20261107",
+            "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_B"
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Vera Plausible works the Finish Detail with The Unremarkable Finish. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Vera Plausible takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Vera Plausible has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "dryly satisfied surface painter",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_CLEANER_ACTOR_20261107_06",
+      "name": "Sid Ordinary",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Sid Ordinary is the crew's weary final checker.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Weary final checker.",
+            "audio": null
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the next corner."
+          ],
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_CLEANER_20261107",
+            "trio": "WSA_RESTORE_CLEANER_20261107_TRIO_B"
+          },
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Sid Ordinary works the Finish Detail with The Unremarkable Finish. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Sid Ordinary takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Sid Ordinary has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "weary final checker",
+          "src": "RESTORE_CLEANER_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

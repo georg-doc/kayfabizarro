@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_SUITED_YELLOW_ACTOR_20261107_01",
+      "name": "Hank Lock",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Hank Lock serves as the machine observer in Machine Detail.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Boundary set."
+          ],
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_YELLOW_20261107",
+            "trio": "WSA_SUITED_YELLOW_20261107_TRIO_A"
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Hank Lock works with The Warning Line on fictional containment incidents. The full protective suit carries yellow analog gauge with black rim.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Hank Lock has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "machine observer",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_YELLOW_ACTOR_20261107_02",
+      "name": "Tess Beacon",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Tess Beacon serves as the warning lead in Machine Detail.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me a closer look."
+          ],
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_YELLOW_20261107",
+            "trio": "WSA_SUITED_YELLOW_20261107_TRIO_A"
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Tess Beacon works with The Warning Line on fictional containment incidents. The full protective suit carries small red caged lamp.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Tess Beacon has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "warning lead",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_YELLOW_ACTOR_20261107_03",
+      "name": "Oren Wheel",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Oren Wheel serves as the line custodian in Machine Detail.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The sample is sealed."
+          ],
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_YELLOW_20261107",
+            "trio": "WSA_SUITED_YELLOW_20261107_TRIO_A"
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Oren Wheel works with The Warning Line on fictional containment incidents. The full protective suit carries red valve wheel with silver hub.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Oren Wheel has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "line custodian",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_YELLOW_ACTOR_20261107_04",
+      "name": "Jack Brace",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Jack Brace serves as the barrier lead in Perimeter Detail.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Keep the detail together."
+          ],
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_YELLOW_20261107",
+            "trio": "WSA_SUITED_YELLOW_20261107_TRIO_B"
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Jack Brace works with The Warning Line on fictional containment incidents. The full protective suit carries small yellow-black striped barricade paddle.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Jack Brace has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "barrier lead",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_YELLOW_ACTOR_20261107_05",
+      "name": "Bea Panel",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bea Panel serves as the screen operator in Perimeter Detail.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Screen ready."
+          ],
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_YELLOW_20261107",
+            "trio": "WSA_SUITED_YELLOW_20261107_TRIO_B"
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bea Panel works with The Warning Line on fictional containment incidents. The full protective suit carries small yellow Hypernormalization Screen with dark glass and black hazard stripe.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Bea Panel has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "screen operator",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_SUITED_YELLOW_ACTOR_20261107_06",
+      "name": "Len Coupler",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Len Coupler serves as the hose technician in Perimeter Detail.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English, expressive field callouts.",
+            "audio": null
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the handoff."
+          ],
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_SUITED_YELLOW_20261107",
+            "trio": "WSA_SUITED_YELLOW_20261107_TRIO_B"
+          },
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Len Coupler works with The Warning Line on fictional containment incidents. The full protective suit carries compact red hose coupler with silver ends.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Len Coupler has checked the suit and is ready for the next assignment.",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "hose technician",
+          "src": "SUITED_YELLOW_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

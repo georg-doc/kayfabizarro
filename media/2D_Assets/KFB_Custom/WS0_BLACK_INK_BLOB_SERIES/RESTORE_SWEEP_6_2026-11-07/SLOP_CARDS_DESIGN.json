@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_RESTORE_SWEEP_ACTOR_20261107_01",
+      "name": "Milo Bristle",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Milo Bristle is the crew's unimpressed sweeper.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Unimpressed sweeper.",
+            "audio": null
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "We start at this end."
+          ],
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SWEEP_20261107",
+            "trio": "WSA_RESTORE_SWEEP_20261107_TRIO_A"
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Milo Bristle works the Brush Detail with The Morning After. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Milo Bristle takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Milo Bristle has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "unimpressed sweeper",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SWEEP_ACTOR_20261107_02",
+      "name": "Jade Dustpan",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Jade Dustpan is the crew's fiercely tidy collector.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Fiercely tidy collector.",
+            "audio": null
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Give me the next piece."
+          ],
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SWEEP_20261107",
+            "trio": "WSA_RESTORE_SWEEP_20261107_TRIO_A"
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Jade Dustpan works the Brush Detail with The Morning After. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Jade Dustpan takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Jade Dustpan has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "fiercely tidy collector",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SWEEP_ACTOR_20261107_03",
+      "name": "Otto Binwheel",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Otto Binwheel is the crew's weary bin keeper.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Weary bin keeper.",
+            "audio": null
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "That needs another pass."
+          ],
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SWEEP_20261107",
+            "trio": "WSA_RESTORE_SWEEP_20261107_TRIO_A"
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Otto Binwheel works the Brush Detail with The Morning After. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Otto Binwheel takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Otto Binwheel has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "weary bin keeper",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SWEEP_ACTOR_20261107_04",
+      "name": "Drew Gutter",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Drew Gutter is the crew's skeptical drain checker.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Skeptical drain checker.",
+            "audio": null
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It will stand for now."
+          ],
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SWEEP_20261107",
+            "trio": "WSA_RESTORE_SWEEP_20261107_TRIO_B"
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Drew Gutter works the Collection Detail with The Morning After. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Drew Gutter takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Drew Gutter has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "skeptical drain checker",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SWEEP_ACTOR_20261107_05",
+      "name": "Pippa Sweep",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Pippa Sweep is the crew's patient finish inspector.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Patient finish inspector.",
+            "audio": null
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Checking the finish."
+          ],
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SWEEP_20261107",
+            "trio": "WSA_RESTORE_SWEEP_20261107_TRIO_B"
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Pippa Sweep works the Collection Detail with The Morning After. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Pippa Sweep takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Pippa Sweep has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "patient finish inspector",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_RESTORE_SWEEP_ACTOR_20261107_06",
+      "name": "Bert Loosebit",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Bert Loosebit is the crew's startled litter picker.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "kaempferisch",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "combative"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "English. Tired but expressive field delivery. Startled litter picker.",
+            "audio": null
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Ready for the next corner."
+          ],
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_RESTORE_SWEEP_20261107",
+            "trio": "WSA_RESTORE_SWEEP_20261107_TRIO_B"
+          },
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Bert Loosebit works the Collection Detail with The Morning After. When a player leaves another HyperNorm block in pieces, the crew returns with familiar tools and a fresh estimate. Bert Loosebit takes pride in leaving one small part of the district easier to live in.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob: Bert Loosebit has seen this corner before. The building was facing another direction then.",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "startled litter picker",
+          "src": "RESTORE_SWEEP_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "kfb.slop-history-backlog/1",
+  "status": "PROPOSAL_NOT_GENERATED",
+  "current_batch": "HISTORICAL_FAMILIES_BATCH_20261107.json",
+  "selection_policy": "Six bounded families per continuation. Check current accepted index before selecting overlaps. Keep everyday roles alongside authority; English names and distinct individual personalities; no literal reconstruction claim.",
+  "next_family_candidates": [
+    {
+      "key": "ACHAEMENID_ROADS",
+      "context": "Achaemenid-inspired courier and storehouse roles",
+      "visual_anchors": [
+        "soft traveling caps",
+        "sealed satchels",
+        "horse-tack fragments",
+        "tax receipt tablets"
+      ],
+      "research_gate": "Verify material cues from museum sources before prompting"
+    },
+    {
+      "key": "HAN_WORKSHOPS",
+      "context": "Han-inspired postal, lacquer and workshop family",
+      "visual_anchors": [
+        "bamboo slips",
+        "lacquer cup",
+        "short work robes",
+        "seal case"
+      ],
+      "research_gate": "Verify actual prop period and craft references"
+    },
+    {
+      "key": "SAHEL_CITY",
+      "context": "Medieval Sahel-inspired scholars, traders and urban crafts",
+      "visual_anchors": [
+        "manuscript case",
+        "woven cloth",
+        "trade weights",
+        "reed pen"
+      ],
+      "research_gate": "Choose a specific time/place; avoid mixing distant modern styles"
+    },
+    {
+      "key": "ANDES_ROAD",
+      "context": "Andean road, textile and storehouse family",
+      "visual_anchors": [
+        "knotted record cords",
+        "textile bundle",
+        "travel bag",
+        "storage vessel"
+      ],
+      "research_gate": "Verify time/place and roles without invented script readings"
+    },
+    {
+      "key": "EDO_STREET",
+      "context": "Edo-inspired urban shop and public-service family",
+      "visual_anchors": [
+        "shop apron",
+        "wood bucket",
+        "abacus",
+        "paper parcel"
+      ],
+      "research_gate": "Read current catalogue to avoid worker-set duplicates"
+    },
+    {
+      "key": "EARLY_PRINT",
+      "context": "Early printing workshop and book-trade family",
+      "visual_anchors": [
+        "ink ball",
+        "type tray",
+        "binding tool",
+        "proof sheet"
+      ],
+      "research_gate": "Choose one coherent printing era"
+    },
+    {
+      "key": "TELEGRAPH_AGE",
+      "context": "Industrial telegraph, post and railway clerks",
+      "visual_anchors": [
+        "message spool",
+        "handset",
+        "signal flag",
+        "ticket punch"
+      ],
+      "research_gate": "Check accepted transport and office families first"
+    }
+  ],
+  "cross_cutting_variants": [
+    "Era-swapped neighbours carrying one recognizable signature prop",
+    "Two story trios: arrival in an unfamiliar century versus confident local routine",
+    "Three stages of an institution or craft using the accepted tier format"
+  ],
+  "not_a_runtime_assignment": true
+}

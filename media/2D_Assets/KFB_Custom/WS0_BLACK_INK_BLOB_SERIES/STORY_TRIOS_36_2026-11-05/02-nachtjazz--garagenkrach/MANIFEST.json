@@ -1,0 +1,254 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_TRIOS_NACHTJAZZ__GARAGENKRACH_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "STORY_TRIOS_R1",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+    "sha256": "919120486d7f2779f4b5219921ed709d8413887397883726fa260e447c7f6446"
+  },
+  "production_record": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
+  "cards": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "catalogue_master_status": "PENDING_SCALE_AND_NATIVE_RESOLUTION_PREPARATION",
+    "note": "Design accepted; source-grid PASS does not certify catalogue master resolution. Do not promote enlarged grid crops as new high-detail masters."
+  },
+  "figuren": [
+    {
+      "id": "WSA_TRIO_NACHTJAZZ_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Atemvorbehalt",
+      "rolle_im_trio": "jazz saxophonist",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_NACHTJAZZ_20261105",
+      "trio_mit": [
+        "WSA_TRIO_NACHTJAZZ_20261105_02",
+        "WSA_TRIO_NACHTJAZZ_20261105_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "short brass saxophone"
+      ],
+      "prompt_auszug": "TALL curving upright ink pear, high flowing crown quiff, long lids/lashes, TWO offset ivory upper teeth. One eye blissfully shut and one sideways, strong curved closed lip. Holds ONE short beautifully rounded BRASS SAXOPHONE with thick curved bell and THREE large keys at own belly, mouthpiece clear of face.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_NACHTJAZZ_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Grundton",
+      "rolle_im_trio": "double-bass anchor",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_NACHTJAZZ_20261105",
+      "trio_mit": [
+        "WSA_TRIO_NACHTJAZZ_20261105_01",
+        "WSA_TRIO_NACHTJAZZ_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "compact wooden double bass"
+      ],
+      "prompt_auszug": "VERY WIDE low heavy upright ink splat, three blunt crown lobes, single big lower tusk. Low patient half-lids, CLOSED solemn downturned lip. Hugs ONE compact fat WOODEN DOUBLE BASS with short neck and THREE thick strings, entire instrument at belly with NO endpin/floor, goo face/body dominant.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_NACHTJAZZ_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Nebenbeat",
+      "rolle_im_trio": "impatient snare drummer",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_NACHTJAZZ_20261105",
+      "trio_mit": [
+        "WSA_TRIO_NACHTJAZZ_20261105_01",
+        "WSA_TRIO_NACHTJAZZ_20261105_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small snare, two short sticks"
+      ],
+      "prompt_auszug": "SMALL narrow tilted upright goo bean, one springy crown hook, FOUR tiny irregular upper teeth. Both WHITE/red/black eyes wide and asymmetric, delighted sideways clenched-tooth grin. ONE small copper-rimmed SNARE DRUM strapped LOW to own belly, ONE short fat wooden stick in each goo hand, no kit/stool.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_GARAGENKRACH_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Frau Lautantrag",
+      "rolle_im_trio": "garage singer",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_GARAGENKRACH_20261105",
+      "trio_mit": [
+        "WSA_TRIO_GARAGENKRACH_20261105_02",
+        "WSA_TRIO_GARAGENKRACH_20261105_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "microphone"
+      ],
+      "prompt_auszug": "BROAD upright triangular ink splat, THREE thick crown waves like soft goo mohawk, lashes, TWO big uneven lower teeth. Defiant furious OPEN underbite SHOUT, one eye squeezed, no tongue. Holds ONE fat old black MICROPHONE with copper stem at belly, no stand or cable.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_GARAGENKRACH_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Akkordresten",
+      "rolle_im_trio": "obsessive guitarist",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_GARAGENKRACH_20261105",
+      "trio_mit": [
+        "WSA_TRIO_GARAGENKRACH_20261105_01",
+        "WSA_TRIO_GARAGENKRACH_20261105_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short electric guitar"
+      ],
+      "prompt_auszug": "TALL thin stooping-but-UPRIGHT bean, long drooping crown lobe, ONE off-centre upper ivory fang. Suspicious concentrated crosswise gaze, CLOSED lip biting tooth. Hugs ONE short rounded battered mustard ELECTRIC GUITAR with plum pickguard and THREE fat strings, no amp/cables.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    },
+    {
+      "id": "WSA_TRIO_GARAGENKRACH_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Herr Eimermaß",
+      "rolle_im_trio": "bucket percussionist",
+      "bild": {
+        "datei": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/sheet-r2.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "standalone_expressive_trio_member",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_TRIO_GARAGENKRACH_20261105",
+      "trio_mit": [
+        "WSA_TRIO_GARAGENKRACH_20261105_01",
+        "WSA_TRIO_GARAGENKRACH_20261105_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "upturned bucket, wooden spoon"
+      ],
+      "prompt_auszug": "VERY ROUND low upright ink dumpling, TWO tiny side crown nubs, large soft lower lip and THREE sparse upper teeth. Enormous delighted open tooth LAUGH, one eye shut, NO tongue. Holds ONE dented upside-down steel BUCKET as a small belly drum, ONE short fat wooden kitchen spoon for striking, no floor.",
+      "prompt_quelle": "STORY_TRIOS_36_2026-11-05/02-nachtjazz--garagenkrach/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "absurd": null
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: die sind alle sehr gut und passen; scale/resolution concern retained separately."
+  },
+  "technical_holds": [
+    "CATALOGUE_MASTER_RESOLUTION_PENDING",
+    "CROSS_SET_BODY_SCALE_NORMALIZATION_PENDING"
+  ]
+}

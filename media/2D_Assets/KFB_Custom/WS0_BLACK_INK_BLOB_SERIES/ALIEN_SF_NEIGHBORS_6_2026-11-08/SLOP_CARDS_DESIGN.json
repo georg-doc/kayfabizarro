@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_ALIEN_SF_NEIGHBORS_20261108_01",
+      "name": "Mara Sockdraw",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Refuses to buy another sock when this one is still in sight.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Vacuum Laundry Tenant"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Measured English delivery.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Stay on your side of the vent."
+          ],
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_NEIGHBORS_20261108"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The laundry report listed one missing item and a strong suspicion of the ventilation system.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The laundry report listed one missing item and a strong suspicion of the ventilation system.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Uneven eyes up and clenched mouth.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_NEIGHBORS_20261108_02",
+      "name": "Gus Tubespoon",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Enjoys dinner best when it keeps its shape.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Meal Tube Enthusiast"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, with a slight upward inflection.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "There. Dinner has landed."
+          ],
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_NEIGHBORS_20261108"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The meal held its spiral throughout our interview. Its flavor showed less commitment.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The meal held its spiral throughout our interview. Its flavor showed less commitment.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Eager downcast gaze and one-tooth smile.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_NEIGHBORS_20261108_03",
+      "name": "Iris Moonwindow",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Carries her favorite view from room to room.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Porthole Watcher"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Low and unhurried.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "It's lovely from this side."
+          ],
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_NEIGHBORS_20261108"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "She says it is the same moon from every corridor. I tried to disagree and found her already there.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "She says it is the same moon from every corridor. I tried to disagree and found her already there.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Sidelong gaze and a barely parted smile.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_NEIGHBORS_20261108_04",
+      "name": "Tess Frostturn",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Treats a degree of difference as a genuine disagreement.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Thermostat Obsessive"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Quick, slightly breathless.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Who touched the dial?"
+          ],
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_NEIGHBORS_20261108"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The station is comfortable at nineteen. Tess is comfortable when it agrees with her about nineteen.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The station is comfortable at nineteen. Tess is comfortable when it agrees with her about nineteen.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Direct stern gaze and pursed lips.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_NEIGHBORS_20261108_05",
+      "name": "Len Strapnap",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Fastens the pillow before he trusts the bed.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Gravity-Defying Sleeper"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Soft and precise.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Five more minutes in orbit."
+          ],
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_NEIGHBORS_20261108"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "He claimed to have slept standing up. The pillow was the only thing prepared to confirm it.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "He claimed to have slept standing up. The pillow was the only thing prepared to confirm it.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Heavy eyes and little yawn.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_ALIEN_SF_NEIGHBORS_20261108_06",
+      "name": "Sid Borrowair",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Returns favors once the pressure has dropped.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            },
+            "occupation_en": "Borrowed Oxygen Neighbor"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Clipped comic timing.",
+            "audio": null
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Can I borrow a little more?"
+          ],
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_ALIEN_SF_NEIGHBORS_20261108"
+          },
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "The cylinder came back half full. Sid called this a partial return on air.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "The cylinder came back half full. Sid called this a partial return on air.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "Guilty side-eye and wavy mouth.",
+          "src": "ALIEN_SF_NEIGHBORS_6_2026-11-08/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

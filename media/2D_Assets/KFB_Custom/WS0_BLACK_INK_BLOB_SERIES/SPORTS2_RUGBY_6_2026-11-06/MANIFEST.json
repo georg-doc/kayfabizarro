@@ -1,0 +1,267 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_SPORTS2_RUGBY_20261106",
+  "date": "2026-11-06",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "SPORTS2_RUGBY_6_2026-11-06/sheet-r1.png",
+    "sha256": "6573e117aff2ce23f2f15df24624d7f4d12257cd3757a45bb5b657dcbae100f7"
+  },
+  "production_record": "SPORTS2_RUGBY_6_2026-11-06/PRODUCTION_RECORD.json",
+  "cards": "SPORTS2_RUGBY_6_2026-11-06/SLOP_CARDS_DESIGN.json",
+  "biographies": "SPORTS2_RUGBY_6_2026-11-06/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "RFC Anständiger Zusammenstoß",
+    "visual_context": "1920s-to-1950s rugby club, faded deep blue and cream broad striped small jersey fronts, worn laced oval brown balls, cloth scrum caps",
+    "relationship_policy": "Shared fictional sports team and distinct playing roles; no canonical pair/state/trio/combat-tier assignments",
+    "fictional_archetypes": true,
+    "standalone_actors": true,
+    "satirical_target": "Competitive status, teamwork, hierarchy, certainty and neighbourly care; fictional HyperNorm sports residents",
+    "sport": "RUGBY",
+    "team_role_status": "FICTIONAL_AUTHORING_INTENT_NOT_LEGAL_COMPLETE_LINEUP"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_SPORTS2_RUGBY_ACTOR_20261106_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rocco Ruckordnung",
+      "bild": {
+        "datei": "SPORTS2_RUGBY_6_2026-11-06/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "cream scrum cap",
+        "bandaged goo hands",
+        "striped collar"
+      ],
+      "temperament": "He makes room for others by becoming extremely difficult to move.",
+      "prompt_auszug": "Rocco Ruckordnung, male-read. Very wide low scalloped upright ink blob, one scar-like clay crease on brow, heavy suspicious eyelids, long closed sideways pout; tiny blue-cream striped collar and soft cream scrum cap; thick bandaged goo hands held at chest ready to bind, no human legs.",
+      "prompt_quelle": "SPORTS2_RUGBY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "prop / front-row anchor"
+    },
+    {
+      "id": "WSA_SPORTS2_RUGBY_ACTOR_20261106_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hilda Hakenschluss",
+      "bild": {
+        "datei": "SPORTS2_RUGBY_6_2026-11-06/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "oval leather rugby ball",
+        "blue scrum cap",
+        "cream neckerchief"
+      ],
+      "temperament": "She holds the pack together with affection that sounds like an order.",
+      "prompt_auszug": "Hilda Hakenschluss, female-read. Compact triangular ink blob, raised side ink quiff, lashed sharp eyes and delighted crooked two-upper-tooth shout; blue cloth scrum cap, small cream neckerchief; one old laced brown oval rugby ball cradled in goo hand, other hand gesturing come-here.",
+      "prompt_quelle": "SPORTS2_RUGBY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "hooker / pack leader"
+    },
+    {
+      "id": "WSA_SPORTS2_RUGBY_ACTOR_20261106_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Leo Langverband",
+      "bild": {
+        "datei": "SPORTS2_RUGBY_6_2026-11-06/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "rolled leather support strap",
+        "cream wristbands"
+      ],
+      "temperament": "He is useful at great heights and uncertain at conversational ones.",
+      "prompt_auszug": "Leo Langverband, male-read. Very tall thin rounded ink column, drooping loop crest, bashful upward white eyes and tiny toothless worried mouth; small blue-cream collar, cream wristbands; holds small rolled leather lineout-lifting strap in hands, no person lifted.",
+      "prompt_quelle": "SPORTS2_RUGBY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "lock / lineout specialist"
+    },
+    {
+      "id": "WSA_SPORTS2_RUGBY_ACTOR_20261106_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Fina Fadenzieher",
+      "bild": {
+        "datei": "SPORTS2_RUGBY_6_2026-11-06/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "oval rugby ball",
+        "blue scarf",
+        "cream wrist tape"
+      ],
+      "temperament": "She starts every movement and denies responsibility for where it ends.",
+      "prompt_auszug": "Fina Fadenzieher, female-read. Small-bodied but equal overall-size upright comma blob, strong side quiff, lashed half-lidded sly eyes, toothless crooked smirk; tiny blue scarf and cream wrist tape; one oval rugby ball held low at flank ready to pass but not toward neighbouring actor, free hand directs inward.",
+      "prompt_quelle": "SPORTS2_RUGBY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "scrum-half"
+    },
+    {
+      "id": "WSA_SPORTS2_RUGBY_ACTOR_20261106_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Felix Feldplan",
+      "bild": {
+        "datei": "SPORTS2_RUGBY_6_2026-11-06/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "three-arc tactics cloth",
+        "blue cap"
+      ],
+      "temperament": "He can read the game until somebody actually begins playing it.",
+      "prompt_auszug": "Felix Feldplan, male-read. Round pear blob with tiny spiral crest, puzzled raised eyebrow, small closed pursed mouth; soft blue cap, small striped collar; holds one folded cloth tactics card with ONLY three cream arcs and no lettering, other hand touches chin.",
+      "prompt_quelle": "SPORTS2_RUGBY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "fly-half / tactical playmaker"
+    },
+    {
+      "id": "WSA_SPORTS2_RUGBY_ACTOR_20261106_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Benny Durchbruch",
+      "bild": {
+        "datei": "SPORTS2_RUGBY_6_2026-11-06/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "tucked oval ball",
+        "cream scarf",
+        "blue wristbands"
+      ],
+      "temperament": "He mistakes a narrow gap for a personal invitation.",
+      "prompt_auszug": "Benny Durchbruch, male-read. Lean broad star-lobed upright blob with swept back ink crest, wide joyful determined eyes and lopsided three-upper-tooth grin; short cream scarf and blue wristbands; oval ball secured under one goo arm, other goo hand curled in small confident fist, no running feet.",
+      "prompt_quelle": "SPORTS2_RUGBY_6_2026-11-06/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "sports_role": "wing / finisher"
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha maximum and low-alpha edges require production opacity/edge validation",
+    "Individual isolation and safe extraction not yet certified; logical cells are not crop rectangles",
+    "No game sprites or runtime/Library publication produced"
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_MECHANICS_20261104",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "georg_decision": {
+    "source": "Georg chat 2026-11-04; explicit all-PASS per family, resident confirmation in latest message",
+    "scope": "image design only; new writing stays DESIGN"
+  },
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major"
+  },
+  "image": {
+    "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+    "sha256": "50186fdfc3ccf0658ee8beba2306ecd67b58697f7f7aaacf243b3394aa1a7121"
+  },
+  "production_record": "MECHANICS_DIESELPUNK_2026-11-04/PRODUCTION_RECORD.json",
+  "selected_recipe": [
+    "args"
+  ],
+  "recipe_note": "Original preserved image job.",
+  "cards": "SETS/mechanics/SLOP_CARDS_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS",
+    "reason": "Design PASS permits receiving-owner intake; no new technical or human gate added here."
+  },
+  "casting": {
+    "female_read_cells_0based": [
+      0,
+      2,
+      4
+    ],
+    "policy": "Two female-read figures in future normal six-sets; preserve approved legacy casting and paired/state formats."
+  },
+  "figuren": [
+    {
+      "id": "SL_MECHANIKER_01",
+      "id_scope": "canonical_roster",
+      "name": "Vera Ventil",
+      "bild": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Top left: FEMALE-READ stocky hot-rod engine mechanic, short red tied headscarf, gleefully toothy sideways smirk, hefty wrench turning a big bolt on a compact exposed cartoon V-twin engine held against her goo body; large simple rounded cylinders, two curved exhausts."
+        ]
+      },
+      "prompt_auszug": "Top left: FEMALE-READ stocky hot-rod engine mechanic, short red tied headscarf, gleefully toothy sideways smirk, hefty wrench turning a big bolt on a compact exposed cartoon V-twin engine held against her goo body; large simple rounded cylinders, two curved exhausts.",
+      "prompt_quelle": "MECHANICS_DIESELPUNK_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MECHANIKER_02",
+      "id_scope": "canonical_roster",
+      "name": "Professor Rückstoß",
+      "bild": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Top center: tall narrow test-pilot jetpack tinkerer, eccentric goggles pushed up, HUGE delighted open-mouthed cackle and red pupils looking backward; wears a beautifully chunky twin-cylinder riveted teal rocket pack with broad conical exhaust bells and two SHORT thick sculpted orange clay flame puffs, hands holding a single spanner."
+        ]
+      },
+      "prompt_auszug": "Top center: tall narrow test-pilot jetpack tinkerer, eccentric goggles pushed up, HUGE delighted open-mouthed cackle and red pupils looking backward; wears a beautifully chunky twin-cylinder riveted teal rocket pack with broad conical exhaust bells and two SHORT thick sculpted orange clay flame puffs, hands holding a single spanner. Footless goo outline always visible.",
+      "prompt_quelle": "MECHANICS_DIESELPUNK_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MECHANIKER_03",
+      "id_scope": "canonical_roster",
+      "name": "Mona Profil",
+      "bild": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Top right: FEMALE-READ compact tire mechanic, purple goo victory-roll quiff, half-lidded unimpressed sideways gaze, crooked closed mouth with one tooth; hefts one oversized worn hot-rod tire with cream hub, one elbow resting on its tread, no other equipment."
+        ]
+      },
+      "prompt_auszug": "Top right: FEMALE-READ compact tire mechanic, purple goo victory-roll quiff, half-lidded unimpressed sideways gaze, crooked closed mouth with one tooth; hefts one oversized worn hot-rod tire with cream hub, one elbow resting on its tread, no other equipment. Tire genuinely round with bold cartoon tread.",
+      "prompt_quelle": "MECHANICS_DIESELPUNK_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MECHANIKER_04",
+      "id_scope": "canonical_roster",
+      "name": "Herr Nahtlos",
+      "bild": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Bottom left: broad low puddle welder, lifted rounded welding mask, one eye squinting and lopsided tongue-out concentrated face; one thick retro welding torch aimed at a small detached curved rusty jetpack exhaust nozzle, just three bold sculpted spark shapes at contact."
+        ]
+      },
+      "prompt_auszug": "Bottom left: broad low puddle welder, lifted rounded welding mask, one eye squinting and lopsided tongue-out concentrated face; one thick retro welding torch aimed at a small detached curved rusty jetpack exhaust nozzle, just three bold sculpted spark shapes at contact. Strong chunky clay prop modeling.",
+      "prompt_quelle": "MECHANICS_DIESELPUNK_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MECHANIKER_05",
+      "id_scope": "canonical_roster",
+      "name": "Rita Reserve",
+      "bild": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Bottom center: FEMALE-READ pear-shaped jetpack fuel specialist, teal headscarf, wide mischievous eyes, delighted asymmetrical fang smile; embraces one bulbous brass-and-red retro rocket fuel can with a thick flexible pouring spout, one large oily black drop suspended at the spout."
+        ]
+      },
+      "prompt_auszug": "Bottom center: FEMALE-READ pear-shaped jetpack fuel specialist, teal headscarf, wide mischievous eyes, delighted asymmetrical fang smile; embraces one bulbous brass-and-red retro rocket fuel can with a thick flexible pouring spout, one large oily black drop suspended at the spout. No labels or symbols, simple beautiful can form.",
+      "prompt_quelle": "MECHANICS_DIESELPUNK_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    },
+    {
+      "id": "SL_MECHANIKER_06",
+      "id_scope": "canonical_roster",
+      "name": "Otto Standgas",
+      "bild": {
+        "datei": "MECHANICS_DIESELPUNK_2026-11-04/mechanics-sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2
+      },
+      "zustand": "posed_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": {
+        "basis": "original_prompt_intent_not_new_visual_QA",
+        "auszuege": [
+          "Bottom right: grizzled squat carburetor mechanic, heavy low lids and deeply grumpy underbite, sparse ivory teeth, battered leather aviator cap; cradles a big rounded cartoon carburetor with brass intake trumpet and one red adjustment knob, short screwdriver in other hand."
+        ]
+      },
+      "prompt_auszug": "Bottom right: grizzled squat carburetor mechanic, heavy low lids and deeply grumpy underbite, sparse ivory teeth, battered leather aviator cap; cradles a big rounded cartoon carburetor with brass intake trumpet and one red adjustment knob, short screwdriver in other hand.",
+      "prompt_quelle": "MECHANICS_DIESELPUNK_2026-11-04/PRODUCTION_RECORD.json",
+      "georg_status": "PASS",
+      "erneuert": [],
+      "ersetzt": []
+    }
+  ]
+}

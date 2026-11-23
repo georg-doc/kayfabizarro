@@ -1,0 +1,86 @@
+{
+  "schema": "kfb.slop-motion-plan/2",
+  "status": "VERIFIED_LIBRARY_INPUT_READY_GIF_CHANNEL_REQUIRED",
+  "owner": "WSA",
+  "static_production_lane": "UNCHANGED",
+  "source_identity_policy": "Registered Librarian asset ID is sufficient;runtime ID may be null",
+  "priority_policy": [
+    "royal or boss-looking designs",
+    "visually elite/veteran designs",
+    "remaining cast"
+  ],
+  "priority_is_combat_tier": false,
+  "jobs": [
+    {
+      "job_id": "MOTION_KING_ULTIMATELY_001",
+      "status": "INPUT_VERIFIED_NATIVE_TOOL_GIF_FORMAT_MISMATCH",
+      "parent_asset_id": "slop-source:WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_04",
+      "source_depiction_id": "WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_04",
+      "source": {
+        "asset_id": "slop-source:WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_04",
+        "title": "King Ultimately",
+        "source_repo": "georg-doc/KFB-Stunt-Car-Race",
+        "source_ref": "51fd8e457711f28ec877545289a45fe88180ac7f",
+        "source_path": "75_REFS/WSA_ASSET_INTAKE/EXPANSION_2026-11-06_R2/slops/png/WSA_PHILOSOPHY_DUNGEON_ACTOR_20261106_04.png",
+        "sha256": "aa5768edbfd7925c05fb2cc89bc49863fb3cb9eacd68ef0b4ad074cd4d0b0f1c",
+        "git_blob_sha": "bee2e8d327a405c38b6428407235efe10d66b327",
+        "bytes": 368108,
+        "dimensions": [
+          455,
+          515
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "library_design_status": "PASS",
+        "library_png_status": "CHECKED",
+        "game_id": null,
+        "runtime_test": "OPEN",
+        "native_pixels_preserved": true,
+        "animation_priority": "ROYAL_VISUAL_PRIORITY_NOT_ASSIGNED_COMBAT_TIER"
+      },
+      "relation": "animated_variant_of",
+      "motion_version": 1,
+      "intent": "idle_blink",
+      "target_frame_count": 6,
+      "target_frame_duration_ms": 220,
+      "proposed_canvas": [
+        576,
+        576
+      ],
+      "native_tool_attempt": {
+        "calls": 1,
+        "actual_format": "PNG",
+        "actual_frames": 1,
+        "selected_as_motion": false,
+        "record": "KING_GIF_CAPABILITY_RESULT.json"
+      },
+      "generation_intent_authority": "Georg requests Librarian-based animation lane;single bounded capability pilot",
+      "georg_motion_status": null,
+      "runtime_status": "NOT_SUBMITTED",
+      "registration_status": "NO_ANIMATED_ASSET_REGISTERED"
+    },
+    {
+      "job_id": "MOTION_QUEEN_001",
+      "status": "IDENTIFY_REGISTERED_DONOR",
+      "parent_asset_id": null,
+      "intent": "idle_expression",
+      "note": "No Queen source was unambiguously found by two visible name searches;do not invent ID or reuse King as Queen."
+    }
+  ],
+  "existing_pilot": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "assets/slop-anim-pilot-r1",
+    "head": "3746e3563ec326989c8da64e5b989a4d427bf163",
+    "manifest": "slop_anim_r1/pilot/pirat_bruellen.atlas.json",
+    "schema": "kfb.slop-anim/1",
+    "frames": 6,
+    "fps": 4.17,
+    "sdf_max": 12,
+    "gif_matches_local_sha256": "acbaa492cc350ec893f133949cce22c45959a38590d2f96d0f02940324ef687a",
+    "parent_asset_id": null
+  },
+  "next_gate": "Use verified King input in a genuinely GIF-capable channel;review one real loop before batch expansion"
+}

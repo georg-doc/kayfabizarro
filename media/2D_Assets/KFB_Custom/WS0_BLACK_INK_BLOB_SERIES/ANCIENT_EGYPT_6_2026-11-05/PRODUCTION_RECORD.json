@@ -1,0 +1,60 @@
+{
+  "schema": "kfb.slop-production/1",
+  "status": "GENERATED",
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "model": "NOT_EXPOSED",
+  "seed": "NOT_EXPOSED",
+  "args": {
+    "prompt": "Use case: stylized-concept. A NEW KFB Ancient Egypt ink-monster family, exactly SIX complete characters on one landscape 1536x1024 transparent PNG sheet. Input reference1 is STYLE ONLY for continuous rounded ink body/material; reference2 STYLE ONLY for hand-crafted clay accessories. Do not copy identities, repeated faces, or red eyeballs from references.\nSoft handmade stop-motion plasticine, tactile fine fingerprints, substantial charcoal-black ink splats with dark violet sheen, big expressive sculpted faces directly in continuous goo bodies, short goo hands, thick round asymmetrical lobes and a few tiny suspended ink droplets. Upright footless full ink blobs, no human torsos, legs, feet or bust crops. Strong offbeat cartoon acting, surreal and oddly relatable; avoid glossy generic animated-film people. WHITE IVORY EYEBALLS, small RED IRISES, BLACK PUPILS. Thick violet clay lids correctly filled, never ivory eyelid skin. No masks covering eyes. Exactly two female-read characters. Rich muted gold, turquoise faience, dusty linen accessories, ancient Egyptian-inspired hierarchy and ritual rather than modern occult clutter. Each 1–2 clear identity anchors and its own silhouette/mouth/attitude. All visible teeth originate INSIDE the mouth, upper teeth descending from upper gum only; no teeth sitting on external lower lip; closed mouths toothless.\nTOP LEFT — Male-read PHARAOH: broad squat ink-splat with splendidly offended upward chin, one broad lifted brow, pursed asymmetric closed toothless mouth. Compact blue-and-gold nemes and small cobra ornament, one little curved crook held beside body. No giant mantle hiding ink. Regal pomposity undercut by gooey roundness.\nTOP MIDDLE — Female-read LOTUS PRIESTESS: tall pear-shaped ink blob, bright wide ivory eyes looking sidelong in skeptical wonder, uneven delighted grin with TWO upper teeth only. Narrow turquoise-and-gold lotus headband, compact handheld sistrum with simple gold rectangular loop and three visible crossbars. Two delicate lashes, no human hair or anatomy.\nTOP RIGHT — Male-read SCRIBE: narrow leaning comma-shaped blob with two different-sized bulging ivory eyes concentrating crosswise on a short papyrus roll. Tiny linen cap, reed stylus in other goo hand. Mouth pulled tight sideways with no visible teeth, absurdly meticulous worried concentration. Papyrus has only a few abstract shallow impressions, no legible text.\nBOTTOM LEFT — Male-read COMMANDER: wide square-ish rounded splat, tiny bronze helmet/cap with simple cloth side flaps, compact bronze crescent khopesh held clearly out to the side, small plain round shield down at flank. Fearless theatrical battle-bellow with two uneven upper teeth, broad open mouth wholly above thick lower lip. Full ink silhouette visible.\nBOTTOM MIDDLE — Male-read HIGH PRIEST: round lopsided blob, heavy drooping sleepy lids over visible ivory eyes with red irises, very solemn tiny closed crooked mouth, concentrated raised goo hand. Small simple gold ritual collar and short incense bowl with ONE curled solid clay wisp, not smoke cloud. Comically trying hard to be mysterious; no full robe.\nBOTTOM RIGHT — Female-read FUNERARY CUSTODIAN: top-heavy hooked teardrop-shaped ink splat, one eyebrow raised, other eye slightly squinting, exasperated tender crooked open smile with a single upper tooth. Modest narrow linen headwrap, one gold hoop earring, turquoise collar detail. Both goo hands cradle a SMALL canopic-style jar with unmistakably inanimate jackal lid; the jar is an object without living eyes, not seventh character. No mummy body, no corpse.\nCOMPOSITION: Equal visual scale, three columns by two rows, separate full cutout figures centered each cell. Body heights about350–390px, full silhouettes/accessories within roughly460x440px each. Generous clear outer margin and at least32px completely transparent gutters between rows and columns, no overlaps, no contacting neighbours, no cropped droplets or props. Camera-facing poses with subtle expressive twist. Bodies stay large and legible; props never dominate. No labels, lettering, watermark, border, gridlines, scenery, pyramids, ground plane, cast background shadows or background color. Genuine transparent alpha.",
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/veteran-original.png",
+      "/Users/georgv.westphalen/.codex/plugins/cache/created-by-me-remote/kfb-asset-scene-composer/0.2.3/skills/produce-kfb-ink-monsters/references/benchmarks/rpg-props.png"
+    ]
+  },
+  "output_file": "sheet-r1.png",
+  "sha256": "47f56d2f36cffa66164735d80b240e76a3d20d5e21c6446f1598deca9580549d",
+  "actual_dimensions": [
+    1536,
+    1024
+  ],
+  "native_output": "/Users/georgv.westphalen/.codex/generated_images/01a1a734-9fe3-7ee0-a480-9b0565cd0f21/exec-61a260d8-21c7-4621-9491-7a090754691c.png",
+  "reference_roles": [
+    "veteran-original.png: body/material only",
+    "rpg-props.png: accessory craft only"
+  ],
+  "reference_checks": [
+    {
+      "file": "veteran-original.png",
+      "sha256": "00b056e8f0873b947d674272eace659fc3bd150980f48d5057244f854d82b4ac",
+      "verified": true
+    },
+    {
+      "file": "freche-family.png",
+      "sha256": "10be390164ed0fb281ccbdd412c178cb4616651cebc583ef7126af7b9c68c476",
+      "verified": true
+    },
+    {
+      "file": "wut-family.png",
+      "sha256": "237641ae0ba4b39dfe3b1aec8725ceb6a4108e945b0241adb54a1bbdbf3fb30e",
+      "verified": true
+    },
+    {
+      "file": "construction-props.png",
+      "sha256": "e9c6c20d6bc984340b2458d00dda5dfadb948ee0c61c4065ef16d6b999072d24",
+      "verified": true
+    },
+    {
+      "file": "professions-props.png",
+      "sha256": "9fe95050d827919acb6f42c62f2a073169e4f5ee8e9309b89397428de49d6ce5",
+      "verified": true
+    },
+    {
+      "file": "rpg-props.png",
+      "sha256": "08bc11e8d49b3776b4e0c101c624affb9f54d682f9f4e9a16c4f64ed024082cf",
+      "verified": true
+    }
+  ],
+  "reference_checks_passed": 6
+}

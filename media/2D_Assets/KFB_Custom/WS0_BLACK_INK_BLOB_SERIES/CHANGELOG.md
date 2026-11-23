@@ -18,3 +18,7 @@
 - Validation: 18/18 implementation file readbacks; 3 YAML frontmatters, 2 manifest versions, 6 reference hashes, 1 ZIP CRC; independent forward-test verified six references and pilot-first routing. No image recovery validation or runtime test.
 - Earlier 18-sheet/108-candidate intake counts remain separate; its existing admission work is deferred, not falsely closed.
 
+
+
+## 2026-11-04 · Miners FAIL/TUNE and mechanic sheet candidate
+Archived 6 miners as evidence (pilot PASS historical, series FAIL/TUNE); produced 1 reference-conditioned six-character mechanic sheet + 6 mechanical raw crops. Colored-background HOLD; no admission or game tests. See current Return and per-series manifests/receipts. Slops means KFB ink blob monsters.

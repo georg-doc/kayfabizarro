@@ -1,0 +1,267 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_NEIGHBOUR_RITUALS_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
+    "sha256": "423752eb86e78af0b72f44f12a6b1a970d86a35c40db30a0124f4d4d6f4f2320"
+  },
+  "production_record": "NEIGHBOUR_RITUALS_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "NEIGHBOUR_RITUALS_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "NEIGHBOUR_RITUALS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "Provisional Good Neighbours",
+    "backlog_neighbors": [
+      "G03",
+      "G06"
+    ],
+    "relationship_policy": "Six independent residents; thematic neighbours, not pairs/trios/shared props. No canonical combat roles."
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_AWAITING_TECHNICAL_EXTRACTION",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Kuno Keepfree",
+      "bild": {
+        "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "reserving a place",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "one faded striped hand towel",
+        "one wooden clothespin"
+      ],
+      "temperament": "He reserves space with the solemn conviction that absence is a form of ownership.",
+      "prompt_auszug": "Broad squat squarish-rounded male-read resident, three short uneven goo crests. Small rusty orange neckerchief only. Stubborn narrow white eyes with iris/pupil visible, one tense lid and huge protruding CLOSED toothless indignant pout. Holds a single folded faded striped hand towel close to chest like a territorial flag, wooden clothespin clipped to towel. Other ink hand firmly palm-out at belly height. Full upright blob, no chair or actual saved seat.",
+      "prompt_quelle": "NEIGHBOUR_RITUALS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "haltung_display_en": "discontented",
+      "gender_reading_en": "male-read"
+    },
+    {
+      "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Irma Allbymyself",
+      "bild": {
+        "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "reluctantly accepting help",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small crooked folded umbrella",
+        "faded lavender headband"
+      ],
+      "temperament": "She can manage perfectly well as soon as somebody quietly makes it easier.",
+      "prompt_auszug": "Female-read tall asymmetric pear-shaped blob, modest lashes and lopsided ink quiff wrapped in a thin faded lavender headband. A tiny crooked FOLDED umbrella with one bent handle is held tightly to herself. Chin lifted, one eye widens with apprehension and other squints with proud denial, small strained TWO UPPER TOOTH grimace inside mouth. One ink hand briefly reaches outward then curls back against body. No helper or shared object.",
+      "prompt_quelle": "NEIGHBOUR_RITUALS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "haltung_display_en": "discontented",
+      "gender_reading_en": "female-read"
+    },
+    {
+      "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Edgar Actually",
+      "bild": {
+        "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "explaining without being asked",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small rolled cloth measuring tape",
+        "tiny faded green collar"
+      ],
+      "temperament": "He can explain the problem more quickly if nobody interrupts with a solution.",
+      "prompt_auszug": "Lean male-read wavy upright ink blob, single off-center folded crest, tiny faded green collar. One animated ink hand raises one rounded teaching finger near his shoulder, other holds one compact rolled cloth measuring tape with a short dangling end, NO NUMERALS. Earnestly bulging white eyes looking directly at camera, tilted lecturing brow and small sideways open mouth with THREE uneven upper teeth, intense excitement about a minor household fact. No blackboard or complex machine.",
+      "prompt_quelle": "NEIGHBOUR_RITUALS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "haltung_display_en": "combative",
+      "gender_reading_en": "male-read"
+    },
+    {
+      "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Vera Nevertheless",
+      "bild": {
+        "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "quietly disagreeing",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "little wooden door wedge",
+        "small muted teal neck bow"
+      ],
+      "temperament": "She disagrees so quietly that agreement has learned to listen twice.",
+      "prompt_auszug": "Female-read round scalloped wide blob with one soft sideways crest, subtle lashes, a small muted teal neck bow. Holds one simple small wooden door wedge close at flank; other ink hand makes a tiny low palm-up gesture. One eyelid heavy with weary doubt, the other lifted with unexpected resolve; tight lopsided CLOSED mouth, no teeth, no lipstick. Gaze direct and quietly firm, body leaning forward slightly, upright and full-sized. No door or building scene.",
+      "prompt_quelle": "NEIGHBOUR_RITUALS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "haltung_display_en": "confused",
+      "gender_reading_en": "female-read"
+    },
+    {
+      "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Mr. Justthisonce",
+      "bild": {
+        "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "reluctantly granting an exception",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "one small blank paper ticket",
+        "small beige pajama collar"
+      ],
+      "temperament": "He grants permission as though kindness were an exceptional clerical event.",
+      "prompt_auszug": "Tall bell-shaped male-read ink blob with drooping double crest, a small beige pajama collar. One ink hand pinches one small BLANK cream ticket at his own chest, other hand reluctantly opens with palm up. Hooded eyes still show white sclera, one raised brow betrays warm concern, a long crooked CLOSED compressed smile almost admitting affection. Not angry V-brows or round O mouth; no glasses, rulebook, cap or stamps.",
+      "prompt_quelle": "NEIGHBOUR_RITUALS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "haltung_display_en": "discontented",
+      "gender_reading_en": "male-read"
+    },
+    {
+      "id": "WSA_NEIGHBOUR_RITUALS_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Bodie Backagain",
+      "bild": {
+        "datei": "NEIGHBOUR_RITUALS_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only;not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "ceremonially returning a borrowed item",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "single old wooden spoon with a tiny burgundy ribbon"
+      ],
+      "temperament": "He returns borrowed objects with more ceremony than most people give the loan.",
+      "prompt_auszug": "Short broad triangle-lobed male-read ink blob, swept-back asymmetric two-prong goo crest, tiny burgundy fabric collar accent. Both ink hands proudly display ONE old wooden spoon tied with a very small burgundy ribbon, held securely against his own body without handing it to anyone. Huge delighted white eyes, eager lifted brows, small skewed open FOUR TOOTH smile in mouth. Ceremonial triumph wildly out of proportion to the mundane spoon. No tongue gag, no medal, no full suit.",
+      "prompt_quelle": "NEIGHBOUR_RITUALS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "haltung_display_en": "combative",
+      "gender_reading_en": "male-read"
+    }
+  ],
+  "georg_decision": {
+    "date": "2026-11-07",
+    "quote": "super, die sind alle PASS :)",
+    "scope": "all six designs;not extraction/catalogue/runtime approval"
+  },
+  "language": "en",
+  "localization_policy": "All active display names and game-facing prose English. Stable schema keys, technical IDs and established enum tokens retained;display translations supplied."
+}

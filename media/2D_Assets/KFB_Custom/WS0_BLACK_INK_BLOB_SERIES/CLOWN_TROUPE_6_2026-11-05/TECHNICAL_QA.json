@@ -1,0 +1,45 @@
+{
+  "schema": "kfb.slop-sheet-qa/1",
+  "actual_size": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "sha256": "85627449fc159c3bd5bd09e7e0b16926b7d9cdb2cf3c382d8fd29c08d83126a8",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "fully_clear_pixels": 558693,
+  "generation_jobs": 1,
+  "layout_edit_jobs": 0,
+  "extracted_game_assets": 0,
+  "automatic_extraction": "UNSAFE_PENDING_CONTOUR_MASKS",
+  "straight_row_diagnostic": {
+    "window_y": [
+      470,
+      550
+    ],
+    "full_sheet_minimum_column_peak_alpha": 252,
+    "left_column_minimum_peak_alpha": 204,
+    "centre_column_minimum_peak_alpha": 14,
+    "right_column_minimum_peak_alpha": 7
+  },
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha max254 and low-alpha residue; final production alpha cleanup pending",
+    "No safe straight global row seam atalpha<=16; left-column minimum crossing alpha204",
+    "Logical3x2cells cannot be extracted by fixed512or one horizontalcut; defer contour-mask isolation",
+    "No game sprites produced; no safe extraction rectangles asserted"
+  ],
+  "design_observations": [
+    "Six whole upright footless actors; two female-read, top-middle and bottom-left",
+    "One low-dangling mask only, no actual eyes hidden",
+    "Marotte dummy is an inanimate wooden prop, not seventh actor",
+    "White-clown ruff larger than minimal prompt; ink body remains visible",
+    "Clapper two wooden blades clearly modeled"
+  ],
+  "georg_status": null,
+  "intake_eligible": false,
+  "original_benchmark_hashes_verified": 6
+}

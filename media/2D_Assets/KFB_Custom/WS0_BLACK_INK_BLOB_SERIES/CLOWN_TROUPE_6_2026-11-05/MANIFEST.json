@@ -1,0 +1,289 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_CLOWN_TROUPE_20261105",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "GEORG_DESIGN_PASS",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_contour_mask_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "CLOWN_TROUPE_6_2026-11-05/sheet-r1.png",
+    "sha256": "85627449fc159c3bd5bd09e7e0b16926b7d9cdb2cf3c382d8fd29c08d83126a8"
+  },
+  "production_record": "CLOWN_TROUPE_6_2026-11-05/PRODUCTION_RECORD.json",
+  "cards": "CLOWN_TROUPE_6_2026-11-05/SLOP_CARDS_DESIGN.json",
+  "biographies": "CLOWN_TROUPE_6_2026-11-05/BIOGRAPHIES_DESIGN.json",
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_SOURCE",
+    "technical_extraction_status": "PENDING_CONTOUR_MASK_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "family_context": {
+    "name": "Ensemble der ernsten Angelegenheiten",
+    "roles": [
+      "Auguste",
+      "white-clown",
+      "Pierrot",
+      "Venetian Colombina",
+      "Harlequin",
+      "court jester"
+    ],
+    "humour_modes": [
+      "innocent slapstick / delighted physical chaos",
+      "ceremonial superiority / perfectionism undermined by timing",
+      "deadpan melancholy / tender disappointed expectation",
+      "social wit / implication / playful complicity",
+      "trickster timing / rearranging the apparent rules",
+      "sardonic authority critique / licensed truth-telling"
+    ],
+    "adaptation": "Free comic archetypes, not exact historic costumes or real performer likenesses",
+    "relationship_policy": "Shared troupe context only; no pair/state/trio or combat-tier binding",
+    "standalone_actors": true
+  },
+  "figuren": [
+    {
+      "id": "WSA_CLOWN_TROUPE_ACTOR_20261105_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "August Fehlstart",
+      "bild": {
+        "datei": "CLOWN_TROUPE_6_2026-11-05/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "battered navy bowler",
+        "mustard lapel scrap",
+        "small red clown nose",
+        "brass squeeze horn with red bulb"
+      ],
+      "humour_mode": "innocent slapstick / delighted physical chaos",
+      "prompt_auszug": "MALE-READ AUGUSTE, innocent physical chaos. Huge broad pear blob with one drooping crown lobe, tiny battered navy bowler tilted back and one short oversized mustard lapel on shoulder. One small ROUND RED CLOWN NOSE below eyes, never hiding eyes. Explosive naive delight: one white eye enormous, other half-squinting sideways, unequal lifted brows, broad skewed laughing mouth with three uneven widely spaced teeth. Holds ONE squat brass SQUEEZE HORN, simple flared bell attached to short tube and large RED RUBBER BULB clearly squeezed by goo hand, other hand supporting tube. Entire horn low against belly within cell. No full clown suit or human gloves.",
+      "prompt_quelle": "CLOWN_TROUPE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CLOWN_TROUPE_ACTOR_20261105_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Madame Punktgenau",
+      "bild": {
+        "datei": "CLOWN_TROUPE_6_2026-11-05/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "ivory cone hat with black pom-poms",
+        "small ivory ruff",
+        "two ivory cheek crescents",
+        "short black baton",
+        "red rubber ball"
+      ],
+      "humour_mode": "ceremonial superiority / perfectionism undermined by timing",
+      "prompt_auszug": "FEMALE-READ WHITE-CLOWN, comic perfectionist. Tall tapering soft pear with a coiled upper goo lobe, little IVORY CONE HAT with two black pom-poms, thin ivory pleated ruff only at upper body edge, two tiny IVORY CRESCENT CHEEK PAINT marks below eyes, dark ink face remains dominant. Supreme offended precision: very unequal half-lidded white eyes look DOWN, one brow high in judgment, tightly pursed asymmetric lip with one tiny projecting upper tooth. One hand holds ONE SHORT black conductor BATON with ivory tip at own belly; other flat goo palm balances ONE immaculate round RED RUBBER BALL. No magic, extra balls, mask or white human face.",
+      "prompt_quelle": "CLOWN_TROUPE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CLOWN_TROUPE_ACTOR_20261105_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Pierrot Vielleicht",
+      "bild": {
+        "datei": "CLOWN_TROUPE_6_2026-11-05/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small ivory skullcap",
+        "ivory collar scrap",
+        "two dark costume buttons",
+        "single cheek teardrop accent",
+        "drooping cloth flower"
+      ],
+      "humour_mode": "deadpan melancholy / tender disappointed expectation",
+      "prompt_auszug": "MALE-READ PIERROT, sincere deadpan melancholy. Compact round low dumpling splat with two small crown nubs, small soft ivory skullcap and one tiny ivory collar fold, TWO black costume buttons low on bare ink body, one small cream TEARDROP PAINT accent on cheek below eye. Huge sad white eyes glance SIDEWAYS, drooped inner brow corners and enormous sagging CLOSED lower lip, one single uneven lower tooth. Both hands protect ONE short drooping CLOTH FLOWER with green clay stem and ivory petals, bent gently downward at own wrist. No balloon, handkerchief stream, tears falling through scene or full white costume.",
+      "prompt_quelle": "CLOWN_TROUPE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CLOWN_TROUPE_ACTOR_20261105_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Colombina Nebenwitz",
+      "bild": {
+        "datei": "CLOWN_TROUPE_6_2026-11-05/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "weiblich",
+      "accessoires": [
+        "small red cap with teal bow",
+        "short clay side curls",
+        "diamond collar panel",
+        "ivory fan",
+        "small low-dangling half-mask"
+      ],
+      "humour_mode": "social wit / implication / playful complicity",
+      "prompt_auszug": "FEMALE-READ VENETIAN COLOMBINA, knowing social wit. Broad wavy-edged ink splat, two short dark clay side curls, little faded RED cap with a small teal bow, short cream-and-red diamond collar panel at one shoulder only. Delighted incredulity: one huge white eye looking UP sideways and other narrowed with amusement, asymmetrically arched brows, nearly CLOSED crooked grin with one off-center small tooth. Holds ONE little partly opened ivory FAN low across own belly. Other hand dangles ONE small plain black-and-gold HALF-MASK by a short ribbon LOW beside her own hip, well BELOW face/eyes. Actual face fully uncovered; mask is subordinate inanimate prop, not an extra face on head. No feather tower, full gown or human bodice.",
+      "prompt_quelle": "CLOWN_TROUPE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CLOWN_TROUPE_ACTOR_20261105_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Harlekin Umspiel",
+      "bild": {
+        "datei": "CLOWN_TROUPE_6_2026-11-05/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "small black-red soft cap",
+        "three bold diamond sash patches",
+        "short two-blade wooden slapstick clapper"
+      ],
+      "humour_mode": "trickster timing / rearranging the apparent rules",
+      "prompt_auszug": "MALE-READ HARLEQUIN, agile trickster pausing mid-scheme. Tall hooked kidney-shaped ink blob leaning slightly but fully upright, one sideways curled crown lobe. Little black felt cap with one soft drooping red tip, just THREE bold teal/red/ochre DIAMOND patches across one short shoulder sash, not full patterned human outfit. Focused sly mischief: mismatched white eyes peering SIDEWAYS in different squints, one eyebrow curling higher, small taut asymmetric lip-corner smile with two tiny unequal teeth. Both hands hold ONE SHORT WOODEN SLAPSTICK CLAPPER at own belly: TWO chunky pale wooden blades joined at one fat red handle, slightly separated so construction is clear. No stick hitting a neighbor, mask or acrobatic legs.",
+      "prompt_quelle": "CLOWN_TROUPE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    },
+    {
+      "id": "WSA_CLOWN_TROUPE_ACTOR_20261105_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Hofnarr Wahrmund",
+      "bild": {
+        "datei": "CLOWN_TROUPE_6_2026-11-05/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout position only; not a safe fixed512crop",
+        "isolation_status": "PENDING_CONTOUR_MASK_EXTRACTION"
+      },
+      "zustand": "standalone_expressive_archetype",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": null,
+      "trio_mit": [],
+      "gelesenes_geschlecht": "maennlich",
+      "accessoires": [
+        "short three-point wine-red/green jester cap",
+        "three brass bells",
+        "small pointed collar",
+        "short marotte with carved wooden dummy head"
+      ],
+      "humour_mode": "sardonic authority critique / licensed truth-telling",
+      "prompt_auszug": "MALE-READ COURT JESTER, sardonic truth-teller. Top-heavy near-square soft blob with three uneven low crown lobes, short three-point jester cap in muted wine-red and green, three chunky brass bells, one short matching pointed collar scrap. World-weary witty outrage: huge unequal white eyes rolling UP, one brow sharply lifted and other drooped, thick crooked compressed lower lip with two irregular teeth visible in shallow half-open sideways mouth. Holds ONE SHORT MAROTTE jester rattle upright close to own side, carved WOODEN DUMMY HEAD with a miniature cap at tip; tiny carved black eye grooves only, clearly a wooden prop, not another living monster. Free goo hand makes a small shrug at own belly. No crown, throne or full robe.",
+      "prompt_quelle": "CLOWN_TROUPE_6_2026-11-05/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "georg_status": "PASS",
+      "design_status": "GEORG_DESIGN_PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null
+    }
+  ],
+  "technical_holds": [
+    "Native sheet is not six independent high-resolution catalogue masters",
+    "Alpha max254 and low-alpha residue; final production alpha cleanup pending",
+    "No safe straight global row seam atalpha<=16; left-column minimum crossing alpha204",
+    "Logical3x2cells cannot be extracted by fixed512or one horizontalcut; defer contour-mask isolation",
+    "No game sprites produced; no safe extraction rectangles asserted"
+  ],
+  "georg_decision": {
+    "date": "2026-11-05",
+    "verdict": "PASS",
+    "source": "Georg chat: di clowns sind PASS :)"
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "schema": "kfb.slop-batch/1",
+  "batch_id": "WSA_GAPS_BATCHES_01_02_20261107",
+  "date": "2026-11-07",
+  "owner": "WSA",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "assets/ws0-ink-miners-2026-11-04",
+  "pull_request": 469,
+  "language": "en",
+  "design_status": "PASS",
+  "intake_eligible": true,
+  "sheets": 6,
+  "unique_identities": 36,
+  "depictions": 36,
+  "native_generation_jobs": 6,
+  "image_edits": 0,
+  "counts": {
+    "trios": 12,
+    "full_families": 6,
+    "female_read_casting_intents": 12
+  },
+  "sets": [
+    {
+      "set_id": "WSA_GAPS_WEATHER_20261107",
+      "title": "The Weather Maintenance Office",
+      "manifest": "GAPS_WEATHER_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_WEATHER_6_2026-11-07/sheet-r1.png",
+      "sha256": "29e2fde8b6e24ae4ac207625924075a0411a2a95690b39fd4d19121e927e33c2",
+      "git_blob": "7f9ed7baf88f142a48a4418837fe1fc9e9391da2",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "The Weather Maintenance Office",
+        "team_kit": "Storm blue, butter yellow and washed teal, weather-service vests with tiny clean accessories",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_WEATHER_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_WEATHER_ACTOR_20261107_01",
+              "WSA_GAPS_WEATHER_ACTOR_20261107_02",
+              "WSA_GAPS_WEATHER_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_WEATHER_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_WEATHER_ACTOR_20261107_04",
+              "WSA_GAPS_WEATHER_ACTOR_20261107_05",
+              "WSA_GAPS_WEATHER_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_WEATHER_ACTOR_20261107_01",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_02",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_03",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_04",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_05",
+          "WSA_GAPS_WEATHER_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_GAPS_LOST_20261107",
+      "title": "Lost and Unmissed",
+      "manifest": "GAPS_LOST_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_LOST_6_2026-11-07/sheet-r1.png",
+      "sha256": "15ad191844ce6fcc0b75fe4d021d3a9a233a0a9cfa2d663d331688adb43809cd",
+      "git_blob": "af90965a265bc36349d10530267fb7551753442b",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "Lost and Unmissed",
+        "team_kit": "Terracotta, faded mustard and sage, the warm and slightly worn palette of a small municipal counter",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_LOST_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_LOST_ACTOR_20261107_01",
+              "WSA_GAPS_LOST_ACTOR_20261107_02",
+              "WSA_GAPS_LOST_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_LOST_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_LOST_ACTOR_20261107_04",
+              "WSA_GAPS_LOST_ACTOR_20261107_05",
+              "WSA_GAPS_LOST_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_LOST_ACTOR_20261107_01",
+          "WSA_GAPS_LOST_ACTOR_20261107_02",
+          "WSA_GAPS_LOST_ACTOR_20261107_03",
+          "WSA_GAPS_LOST_ACTOR_20261107_04",
+          "WSA_GAPS_LOST_ACTOR_20261107_05",
+          "WSA_GAPS_LOST_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_GAPS_ESTATE_20261107",
+      "title": "The Estate Committee",
+      "manifest": "GAPS_ESTATE_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_ESTATE_6_2026-11-07/sheet-r1.png",
+      "sha256": "42a0d1ba90ef32c23a2b32dff00f2ad355608644f2ad43d2b62be96caadbf738",
+      "git_blob": "8fae89ec24640fce6c22e451c198214c79a12530",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "The Estate Committee",
+        "team_kit": "Soft ink-blue, muted plum and cream, compact formal wear and quiet florist accents",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_ESTATE_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_ESTATE_ACTOR_20261107_01",
+              "WSA_GAPS_ESTATE_ACTOR_20261107_02",
+              "WSA_GAPS_ESTATE_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_ESTATE_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_ESTATE_ACTOR_20261107_04",
+              "WSA_GAPS_ESTATE_ACTOR_20261107_05",
+              "WSA_GAPS_ESTATE_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_ESTATE_ACTOR_20261107_01",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_02",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_03",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_04",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_05",
+          "WSA_GAPS_ESTATE_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_GAPS_INSECT_20261107",
+      "title": "The Insect Hotel",
+      "manifest": "GAPS_INSECT_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_INSECT_6_2026-11-07/sheet-r1.png",
+      "sha256": "6989784ede28b98c78a61b7a43ae30d2ea57bf6b397f16a8243387ec219cfa86",
+      "git_blob": "640b06ab4ef5d6cc0197a144a3d528490aca078a",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "The Insect Hotel",
+        "team_kit": "Golden amber, moss green and russet, compact insect cues on dark ink blobs",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_INSECT_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_INSECT_ACTOR_20261107_01",
+              "WSA_GAPS_INSECT_ACTOR_20261107_02",
+              "WSA_GAPS_INSECT_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_INSECT_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_INSECT_ACTOR_20261107_04",
+              "WSA_GAPS_INSECT_ACTOR_20261107_05",
+              "WSA_GAPS_INSECT_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_INSECT_ACTOR_20261107_01",
+          "WSA_GAPS_INSECT_ACTOR_20261107_02",
+          "WSA_GAPS_INSECT_ACTOR_20261107_03",
+          "WSA_GAPS_INSECT_ACTOR_20261107_04",
+          "WSA_GAPS_INSECT_ACTOR_20261107_05",
+          "WSA_GAPS_INSECT_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_GAPS_DEEP_20261107",
+      "title": "Deep Sea After Hours",
+      "manifest": "GAPS_DEEP_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_DEEP_6_2026-11-07/sheet-r1.png",
+      "sha256": "b3f5e36a14672b334379380ed0f9a873b60c781a7bc9af5dfd83b8f7f395f50c",
+      "git_blob": "886b88f7081d184495ffa797efc7df0deadb7817",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "Deep Sea After Hours",
+        "team_kit": "Deep ocean indigo with contained amber and cyan bioluminescent accents, matte ink clay and smooth glass",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_DEEP_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_DEEP_ACTOR_20261107_01",
+              "WSA_GAPS_DEEP_ACTOR_20261107_02",
+              "WSA_GAPS_DEEP_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_DEEP_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_DEEP_ACTOR_20261107_04",
+              "WSA_GAPS_DEEP_ACTOR_20261107_05",
+              "WSA_GAPS_DEEP_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_DEEP_ACTOR_20261107_01",
+          "WSA_GAPS_DEEP_ACTOR_20261107_02",
+          "WSA_GAPS_DEEP_ACTOR_20261107_03",
+          "WSA_GAPS_DEEP_ACTOR_20261107_04",
+          "WSA_GAPS_DEEP_ACTOR_20261107_05",
+          "WSA_GAPS_DEEP_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    },
+    {
+      "set_id": "WSA_GAPS_GEO_20261107",
+      "title": "Geological Complaints",
+      "manifest": "GAPS_GEO_6_2026-11-07/MANIFEST.json",
+      "sheet": "GAPS_GEO_6_2026-11-07/sheet-r1.png",
+      "sha256": "d399f394c27d93063aed9b78065b76d0637a9cb96f8f4536fc8b22057ff5e947",
+      "git_blob": "d6815967d5e8264a04cbca83bf25987e0483bb1a",
+      "design_status": "PASS",
+      "intake_eligible": true,
+      "encounter_proposal": {
+        "status": "DESIGN",
+        "thematic_family": "Geological Complaints",
+        "team_kit": "Basalt slate, ochre, calcite ivory and muted fern, chunky carved rock shapes and sparse broad texture",
+        "encounter_behavior": "Fictional group encounters, individual residents and symbolic characters.",
+        "satirical_target": "Everyday roles and absurd material encounters.",
+        "trios": [
+          {
+            "id": "WSA_GAPS_GEO_20261107_TRIO_A",
+            "name": "First Detail",
+            "row": 0,
+            "member_ids": [
+              "WSA_GAPS_GEO_ACTOR_20261107_01",
+              "WSA_GAPS_GEO_ACTOR_20261107_02",
+              "WSA_GAPS_GEO_ACTOR_20261107_03"
+            ]
+          },
+          {
+            "id": "WSA_GAPS_GEO_20261107_TRIO_B",
+            "name": "Second Detail",
+            "row": 1,
+            "member_ids": [
+              "WSA_GAPS_GEO_ACTOR_20261107_04",
+              "WSA_GAPS_GEO_ACTOR_20261107_05",
+              "WSA_GAPS_GEO_ACTOR_20261107_06"
+            ]
+          }
+        ],
+        "full_team_member_ids": [
+          "WSA_GAPS_GEO_ACTOR_20261107_01",
+          "WSA_GAPS_GEO_ACTOR_20261107_02",
+          "WSA_GAPS_GEO_ACTOR_20261107_03",
+          "WSA_GAPS_GEO_ACTOR_20261107_04",
+          "WSA_GAPS_GEO_ACTOR_20261107_05",
+          "WSA_GAPS_GEO_ACTOR_20261107_06"
+        ]
+      },
+      "georg_status": "PASS"
+    }
+  ],
+  "backlog": "NEW_SLOP_GROUPS_BACKLOG_20261107.json",
+  "batches": [
+    {
+      "number": 1,
+      "sets": [
+        "WSA_GAPS_WEATHER_20261107",
+        "WSA_GAPS_LOST_20261107",
+        "WSA_GAPS_ESTATE_20261107"
+      ]
+    },
+    {
+      "number": 2,
+      "sets": [
+        "WSA_GAPS_INSECT_20261107",
+        "WSA_GAPS_DEEP_20261107",
+        "WSA_GAPS_GEO_20261107"
+      ]
+    }
+  ],
+  "accepted_authoring_snapshot": {
+    "sheets": 215,
+    "depictions": 1290,
+    "intake_eligible_sheets": 213,
+    "intake_eligible_depictions": 1278
+  },
+  "qa": {
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_zero_on_every_sheet": true,
+    "fully_transparent_pixels": {
+      "WEATHER": 648787,
+      "LOST": 703507,
+      "ESTATE": 630235,
+      "INSECT": 698747,
+      "DEEP": 708769,
+      "GEO": 636541
+    },
+    "nominal_cell_crossings": [
+      "WEATHER",
+      "LOST",
+      "INSECT",
+      "GEO"
+    ],
+    "alpha_samples": {
+      "WEATHER": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 199,
+        "y512": 527
+      },
+      "LOST": {
+        "outer": 0,
+        "x512": 79,
+        "x1024": 27,
+        "y512": 0
+      },
+      "ESTATE": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 0
+      },
+      "INSECT": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 145
+      },
+      "DEEP": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 0,
+        "y512": 0
+      },
+      "GEO": {
+        "outer": 0,
+        "x512": 0,
+        "x1024": 37,
+        "y512": 0
+      }
+    },
+    "extraction": "NOT_PERFORMED",
+    "runtime": "NOT_TESTED",
+    "next_gate": "Silhouette-aware isolation and receiving intake for Game and Asset Librarian"
+  },
+  "georg_status": "PASS",
+  "georg_pass_date": "2026-11-08"
+}

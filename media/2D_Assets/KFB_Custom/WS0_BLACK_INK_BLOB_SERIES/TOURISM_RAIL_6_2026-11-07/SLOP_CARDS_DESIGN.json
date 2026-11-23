@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.slop-cards-design/1",
+  "language": "en",
+  "status": "DESIGN",
+  "records": [
+    {
+      "id": "WSA_TOURISM_RAIL_ACTOR_20261107_01",
+      "name": "Edna Timetable",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Suspicious rail itinerary keeper with a gift for holding up a group.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The timetable has a footnote."
+          ],
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_RAIL_20261107",
+            "trio": "WSA_TOURISM_RAIL_20261107_TRIO_A"
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Edna Timetable booked a place with Platform Zero Again. The timetable has a footnote. The incident report lists fat accordion timetable with abstract blank blocks as the only personal effect accounted for.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: The timetable has a footnote.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "suspicious rail itinerary keeper",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_RAIL_ACTOR_20261107_02",
+      "name": "Clive Windowseat",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Self-satisfied window-seat passenger with a gift for holding up a group.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I booked that particular window."
+          ],
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_RAIL_20261107",
+            "trio": "WSA_TOURISM_RAIL_20261107_TRIO_A"
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Clive Windowseat booked a place with Platform Zero Again. I booked that particular window. The incident report lists tiny binoculars and a neck cushion as the only personal effect accounted for.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I booked that particular window.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "self-satisfied window-seat passenger",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_RAIL_ACTOR_20261107_03",
+      "name": "Ron Replacementbus",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Aghast rail passenger with a gift for holding up a group.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "Where does the train bus stop?"
+          ],
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_RAIL_20261107",
+            "trio": "WSA_TOURISM_RAIL_20261107_TRIO_A"
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Ron Replacementbus booked a place with Platform Zero Again. Where does the train bus stop? The incident report lists big wheeled bag and blank replacement shuttle icon paddle as the only personal effect accounted for.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: Where does the train bus stop?",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "aghast rail passenger",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_RAIL_ACTOR_20261107_04",
+      "name": "Iris Trackspot",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Thrilled train spotter with a gift for holding up a group.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I got the coupling in focus!"
+          ],
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_RAIL_20261107",
+            "trio": "WSA_TOURISM_RAIL_20261107_TRIO_B"
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Iris Trackspot booked a place with Platform Zero Again. I got the coupling in focus! The incident report lists notebook and chunky telephoto camera as the only personal effect accounted for.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I got the coupling in focus!",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "thrilled train spotter",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_RAIL_ACTOR_20261107_05",
+      "name": "Vic Compartment",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Irritated compartment snacker with a gift for holding up a group.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "unzufrieden",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "discontented"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "The pretzel has a reservation."
+          ],
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_RAIL_20261107",
+            "trio": "WSA_TOURISM_RAIL_20261107_TRIO_B"
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Vic Compartment booked a place with Platform Zero Again. The pretzel has a reservation. The incident report lists paper bag with a single comically big pretzel as the only personal effect accounted for.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: The pretzel has a reservation.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "irritated compartment snacker",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    },
+    {
+      "id": "WSA_TOURISM_RAIL_ACTOR_20261107_06",
+      "name": "Alf Wrongcar",
+      "language": "en",
+      "karte": {
+        "persoenlichkeit": {
+          "v": "Confused sleeper passenger with a gift for holding up a group.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "haltung": {
+          "v": "verwirrt",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN",
+          "display_en": "confused"
+        },
+        "rolle": {
+          "v": {
+            "bewohner": {
+              "gebaeude": "HyperNorm",
+              "decks": []
+            }
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "stimme": {
+          "v": {
+            "vorschlag": "Dry, expressive English delivery.",
+            "audio": null
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "rufe": {
+          "v": [
+            "I'm in the right carriage emotionally."
+          ],
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "beziehung": {
+          "v": {
+            "paar_mit": null,
+            "zustand_von": null,
+            "family": "WSA_TOURISM_RAIL_20261107",
+            "trio": "WSA_TOURISM_RAIL_20261107_TRIO_B"
+          },
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "backstory": {
+          "v": "Alf Wrongcar booked a place with Platform Zero Again. I'm in the right carriage emotionally. The incident report lists striped travel pillow and large berth key fob as the only personal effect accounted for.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "frizzlebob": {
+          "v": "FrizzleBob's field report: I'm in the right carriage emotionally.",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        },
+        "emotion": {
+          "v": "confused sleeper passenger",
+          "src": "TOURISM_RAIL_6_2026-11-07/CHARACTER_INTENT.json",
+          "status": "DESIGN"
+        }
+      }
+    }
+  ]
+}

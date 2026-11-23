@@ -1,0 +1,328 @@
+{
+  "schema": "kfb.slop-set/1",
+  "set_id": "WSA_HISTORY_INDUS_20261107",
+  "date": "2026-11-07",
+  "status": "PASS",
+  "georg_status": "PASS",
+  "design_status": "PASS",
+  "language": "en",
+  "localization_policy": "All display names and game-facing prose English. Existing receiving-schema keys and enum tokens retained with English display values.",
+  "format": "SIX_UNIQUE_3X2",
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "index_base": 0,
+    "order": "row-major",
+    "logical_cells_only": true,
+    "requires_validated_individual_extraction": true
+  },
+  "counts": {
+    "identities": 6,
+    "depictions": 6,
+    "trios": 2,
+    "female_read_identities": 2
+  },
+  "image": {
+    "datei": "HISTORY_INDUS_6_2026-11-07/sheet-r1.png",
+    "sha256": "11d6337449b51b3f08cf3883f1352b74fb84b5976ce38f21e59059ee7a9c1644"
+  },
+  "production_record": "HISTORY_INDUS_6_2026-11-07/PRODUCTION_RECORD.json",
+  "cards": "HISTORY_INDUS_6_2026-11-07/SLOP_CARDS_DESIGN.json",
+  "biographies": "HISTORY_INDUS_6_2026-11-07/BIOGRAPHIES_DESIGN.json",
+  "family_context": {
+    "name": "The Exact Measure",
+    "theme": "Indus city-inspired trade and craft family",
+    "relationship_policy": "Two authored three-member details per row. Each identity can stand alone.",
+    "usage_candidates": [
+      "historical multiverse encounter",
+      "three-member detail",
+      "six-member team"
+    ],
+    "runtime_assignment": "PROPOSAL_ONLY"
+  },
+  "intake": {
+    "eligible": true,
+    "status": "GEORG_DESIGN_PASS_PENDING_RECEIVING_INTAKE",
+    "technical_extraction_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION",
+    "catalogue_master_status": "PENDING_INDIVIDUAL_NATIVE_MASTERS"
+  },
+  "figuren": [
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_01",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cal Brickwell",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_INDUS_6_2026-11-07/sheet-r1.png",
+        "zelle": 0,
+        "cell_base": 0,
+        "row": 0,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "exhausted brick checker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_INDUS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_INDUS_ACTOR_20261107_02",
+        "WSA_HISTORY_INDUS_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "two small uniform fired-clay bricks and a short measuring rod"
+      ],
+      "temperament": "Has never met a wall he could not audit.",
+      "prompt_auszug": "square low body with one long soft lobe, tired offset eyes, straight sealed mouth",
+      "prompt_quelle": "HISTORY_INDUS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "exhausted brick checker"
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_02",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Nell Fairweight",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_INDUS_6_2026-11-07/sheet-r1.png",
+        "zelle": 1,
+        "cell_base": 0,
+        "row": 0,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "suspicious balance keeper",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_INDUS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_INDUS_ACTOR_20261107_01",
+        "WSA_HISTORY_INDUS_ACTOR_20261107_03"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "tiny chunky balance beam with two shallow pans and one cubical stone weight"
+      ],
+      "temperament": "Distrusts anything that balances too quickly.",
+      "prompt_auszug": "tall curved pear, one hard side-eye, pursed off-center lips",
+      "prompt_quelle": "HISTORY_INDUS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "suspicious balance keeper"
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_03",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Perry Sealmark",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_INDUS_6_2026-11-07/sheet-r1.png",
+        "zelle": 2,
+        "cell_base": 0,
+        "row": 0,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "beaming stamp maker",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_INDUS_20261107_TRIO_A",
+      "trio_mit": [
+        "WSA_HISTORY_INDUS_ACTOR_20261107_01",
+        "WSA_HISTORY_INDUS_ACTOR_20261107_02"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "square pale stone seal with one incised bull-like animal silhouette"
+      ],
+      "temperament": "Wants every package to be immediately recognizable.",
+      "prompt_auszug": "wide rounded splat, proud upward gaze, broad single-upper-tooth grin",
+      "prompt_quelle": "HISTORY_INDUS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "beaming stamp maker"
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_04",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Cora Beadline",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_INDUS_6_2026-11-07/sheet-r1.png",
+        "zelle": 3,
+        "cell_base": 0,
+        "row": 1,
+        "column": 0,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "anxious bead artisan",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_INDUS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_INDUS_ACTOR_20261107_05",
+        "WSA_HISTORY_INDUS_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "weiblich",
+      "gender_reading_en": "female-read",
+      "accessoires": [
+        "strand of oversized orange-red carnelian clay beads and short hand drill"
+      ],
+      "temperament": "Can see a crooked hole from another century.",
+      "prompt_auszug": "compact tilted teardrop, one eye wide and one squeezed, lower lip curled inward",
+      "prompt_quelle": "HISTORY_INDUS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "unzufrieden",
+      "haltung_display_en": "discontented",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "anxious bead artisan"
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_05",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Rafe Drainclear",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_INDUS_6_2026-11-07/sheet-r1.png",
+        "zelle": 4,
+        "cell_base": 0,
+        "row": 1,
+        "column": 1,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "indignant drain tender",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_INDUS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_INDUS_ACTOR_20261107_04",
+        "WSA_HISTORY_INDUS_ACTOR_20261107_06"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "short hooked scoop and a little terracotta pipe bend"
+      ],
+      "temperament": "Takes civic plumbing personally.",
+      "prompt_auszug": "wide crooked bean, brows flared up, open complaining mouth with three uneven interior teeth",
+      "prompt_quelle": "HISTORY_INDUS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "kaempferisch",
+      "haltung_display_en": "combative",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "indignant drain tender"
+    },
+    {
+      "id": "WSA_HISTORY_INDUS_ACTOR_20261107_06",
+      "id_scope": "WSA_AUTHORING_ONLY_PENDING_RECEIVING_MAPPING",
+      "name": "Otto Cargo",
+      "language": "en",
+      "bild": {
+        "datei": "HISTORY_INDUS_6_2026-11-07/sheet-r1.png",
+        "zelle": 5,
+        "cell_base": 0,
+        "row": 1,
+        "column": 2,
+        "cell_semantics": "logical layout only; not certified crop",
+        "isolation_status": "PENDING_VALIDATED_INDIVIDUAL_ISOLATION"
+      },
+      "zustand": "relieved dock clerk",
+      "paar_mit": null,
+      "zustand_von": null,
+      "trio": "WSA_HISTORY_INDUS_20261107_TRIO_B",
+      "trio_mit": [
+        "WSA_HISTORY_INDUS_ACTOR_20261107_04",
+        "WSA_HISTORY_INDUS_ACTOR_20261107_05"
+      ],
+      "gelesenes_geschlecht": "maennlich",
+      "gender_reading_en": "male-read",
+      "accessoires": [
+        "woven parcel with a simple clay tag and chunky rope loop"
+      ],
+      "temperament": "Is happy whenever the parcel is someone else's responsibility.",
+      "prompt_auszug": "upright soft oval, sleepy smiling eyes, slack tiny closed smile",
+      "prompt_quelle": "HISTORY_INDUS_6_2026-11-07/PRODUCTION_RECORD.json",
+      "haltung_vorschlag": "verwirrt",
+      "haltung_display_en": "confused",
+      "georg_status": "PASS",
+      "design_status": "PASS",
+      "ersetzt": [],
+      "erneuert": [],
+      "combat_stage": null,
+      "hits": null,
+      "rolle_im_trio": "relieved dock clerk"
+    }
+  ],
+  "encounter_proposal": {
+    "status": "DESIGN",
+    "historical_family": "Indus city-inspired trade and craft family",
+    "team_kit": "ivory cotton-like short wraps, terracotta-red hems, carnelian beads, shell and muted steatite; modest headcloths, visible ink silhouettes",
+    "historical_accuracy": "FICTIONAL_MATERIAL_INSPIRED_MULTIVERSE",
+    "satirical_target": "HyperNorm certainty, bureaucracy and social roles; fictional individual quirks",
+    "trios": [
+      {
+        "id": "WSA_HISTORY_INDUS_20261107_TRIO_A",
+        "name": "Market Measures",
+        "row": 0,
+        "member_ids": [
+          "WSA_HISTORY_INDUS_ACTOR_20261107_01",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_02",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_03"
+        ]
+      },
+      {
+        "id": "WSA_HISTORY_INDUS_20261107_TRIO_B",
+        "name": "Workshop Circle",
+        "row": 1,
+        "member_ids": [
+          "WSA_HISTORY_INDUS_ACTOR_20261107_04",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_05",
+          "WSA_HISTORY_INDUS_ACTOR_20261107_06"
+        ]
+      }
+    ],
+    "full_team_member_ids": [
+      "WSA_HISTORY_INDUS_ACTOR_20261107_01",
+      "WSA_HISTORY_INDUS_ACTOR_20261107_02",
+      "WSA_HISTORY_INDUS_ACTOR_20261107_03",
+      "WSA_HISTORY_INDUS_ACTOR_20261107_04",
+      "WSA_HISTORY_INDUS_ACTOR_20261107_05",
+      "WSA_HISTORY_INDUS_ACTOR_20261107_06"
+    ]
+  }
+}
