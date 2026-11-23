@@ -1,0 +1,38 @@
+{
+  "schema": "kfb.ws0.claude-sop-playlist-intake/1",
+  "date": "2026-10-30",
+  "status": "URL_CAPTURED_CONTENT_UNVERIFIED",
+  "owner": "KFB ToolBox / Motion authoring (this bounded pilot)",
+  "executor": "WS0 / Claude",
+  "playlist": {
+    "url": "https://youtube.com/playlist?list=PLUETZMzKOlb_UsmyOqdjsmRic2gR5erJx&si=9ZGd-3zIYKh9faUB",
+    "id": "PLUETZMzKOlb_UsmyOqdjsmRic2gR5erJx",
+    "title": null,
+    "publisher": null,
+    "videoCount": null,
+    "videoIds": [],
+    "transcriptsVerified": 0,
+    "access": "DIRECT_YOUTUBE_READER_DISABLED",
+    "contentsConfirmed": false
+  },
+  "training": {
+    "kind": "task_based_competence_check_not_finetuning",
+    "sopAuthority": "GitHub",
+    "exercises": [
+      "E1 cold start and owner arbitration",
+      "E2 source isolation /reanimate G0",
+      "E3 Mario-like jump A/B conditional",
+      "E4 safe GitHub persistence/recovery"
+    ],
+    "status": "NOT_STARTED"
+  },
+  "sourcePins": {
+    "motionPR": 344,
+    "ws0DraftPR": 461,
+    "ws0Issue": 462,
+    "worldPR": 348
+  },
+  "nextGate": "WS0 G0: exact playlist metadata + /reanimate source/export availability, original KFB-owned reference",
+  "runtimeChange": false,
+  "stagePublished": false
+}

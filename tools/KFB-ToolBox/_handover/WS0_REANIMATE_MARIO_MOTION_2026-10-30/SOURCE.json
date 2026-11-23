@@ -1,0 +1,93 @@
+{
+  "schema": "kfb.ws0.reanimate-motion-research/1",
+  "date": "2026-10-30",
+  "status": "RESEARCH_NOT_TESTED",
+  "owner": "KFB ToolBox / Motion authoring",
+  "executor": "WS0",
+  "branch": "research/ws0-reanimate-mario-motion-donor-2026-10-30",
+  "primaryCandidate": {
+    "name": "Niaz Morshed /reanimate",
+    "url": "https://reanimate.niazmorshed.dev/",
+    "marketingClaim": "Reverse engineer any animation from any website, video or gif",
+    "claimStatus": "PUBLIC_ANNOUNCEMENT_ONLY",
+    "siteRetrieval": "UNAVAILABLE_AT_RESEARCH",
+    "api": "UNKNOWN",
+    "sourceRepo": "UNKNOWN",
+    "license": "UNKNOWN",
+    "pricing": "UNKNOWN",
+    "login": "UNKNOWN",
+    "exports": "UNKNOWN",
+    "videoTo3DSkeletal": "NOT_VERIFIED"
+  },
+  "notSameAs": [
+    "https://github.com/reanimate/reanimate",
+    "https://reanimate.sh/"
+  ],
+  "repo": "georg-doc/kayfabizarro",
+  "baselineMain": "7e1c4ab0f143b2f1c0f33017eb473574f20190c9",
+  "existingSources": [
+    {
+      "path": "skills/kfb-cartoon-animation/SKILL.md",
+      "role": "cartoon choreography + movement boundaries"
+    },
+    {
+      "path": "skills/kfb-cartoon-animation/references/kfb-integration-current-ssot.md",
+      "role": "accepted native Medium gait, Motion PR #344"
+    },
+    {
+      "path": "skills/kfb-cartoon-animation/references/20-locomotion-gaits-transitions.md",
+      "role": "jump lifecycle and contact"
+    },
+    {
+      "path": "skills/kfb-cartoon-animation/references/90-validation-debug-evidence.md",
+      "role": "motion proof discipline"
+    },
+    {
+      "path": "tools/KFB-ToolBox/START_HERE.md",
+      "role": "ToolBox authoring owner"
+    },
+    {
+      "path": "tools/KFB-ToolBox/_inbox/WS0_2026-09-15/RETURN_WSA.md",
+      "role": "historic source baseline with Jump_Full_Long"
+    },
+    {
+      "path": "media/3D_Assets/Animations/KFB_Motion_Library/RETURN.md",
+      "role": "33 source-backed clips per Medium/Large family"
+    },
+    {
+      "path": "tools/2D Animation Studio/README.md",
+      "role": "separate 2D cutout owner"
+    },
+    {
+      "path": "tools/KFB-ToolBox/docs/2D_ANIMATION_STUDIO_BRIDGE.md",
+      "role": "2D/3D bridge, no owner merger"
+    },
+    {
+      "path": "skills/chat/KFB_OPEN_WORLD_GROUND_CONTROLS_CANON_2026-10-07.md",
+      "role": "Space jump and single movement owner"
+    },
+    {
+      "path": "skills/chat/START_HERE.md",
+      "role": "R4 STOP / world runtime protection"
+    }
+  ],
+  "targetFirst": {
+    "referenceDurationSeconds": [
+      1,
+      3
+    ],
+    "type": "original KFB-owned cartoon jump",
+    "target": "Mannequin_Medium / approved Rig_Medium",
+    "isolationRequired": true
+  },
+  "secondaryIdeas": [
+    "HUD and Action Bar",
+    "Comic Emanata speech thought",
+    "Cascade Sphere ripple/portal",
+    "2D/2.5D character acting"
+  ],
+  "secondaryStatus": "BACKLOG_NOT_AUTHORIZED",
+  "writingScope": "docs only; no runtime, existing owner/site/hub modification",
+  "outcome": "WS0 research briefing; no actual animation output yet",
+  "nextGate": "G0 exact external capability + licensing + one isolated KFB-owned input/output proof"
+}
