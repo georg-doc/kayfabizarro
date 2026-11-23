@@ -23,6 +23,12 @@
 | A13 | **Retina:** Die Kit-Teile sind nur so groß, dass sie auf normalen Bildschirmen 1:1 sind. Auf Retina-Macs sind sie hochgerechnet. | Schärfe auf Georgs Mac und den meisten Kollegen-Laptops. | Familie F in 2× liefern |
 | A14 | **Weitere Luken 2–6** und die Falkenstein-Videos (alte Liste). | Mehr Ziele im Becken. | später |
 
+## Entschieden (nicht mehr offen)
+
+| # | Punkt | Entscheid |
+|---|---|---|
+| K22 | **Echte Videogesichter im Bullauge** (Flexa, Falkenstein) | Georg q855: bleiben fotorealistisch, der Kontrast zum Cartoon-Becken ist gewollt. Kein Cartoon- oder Monitor-Filter. In Kritikläufen als „gewollt“ markieren. |
+
 ## B · Fragen an Georg
 
 1. **Wirbel-Level:** Soll der Strudel ein eigenes Level sein (nach der Schlucht, vor dem Hai) oder eine Gefahr, die in mehreren Stationen auftaucht? Und führt der Sog in den Strudel-Modus mit Rückkehr an dieselbe Stelle oder als Abkürzung zur nächsten Station?

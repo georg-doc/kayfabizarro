@@ -1,0 +1,163 @@
+{
+ "figur": "the_boss",
+ "angriffe": [
+  {
+   "id": "stoss",
+   "ausruesten": false,
+   "clip": "kfb_combat_polearm_spear_thrust_a",
+   "bilder": 149,
+   "mp4": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_stoss.mp4",
+   "lupe": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_stoss_zeitlupe.mp4",
+   "streifen": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_stoss_bildstreifen.jpg",
+   "r": {
+    "ok": true,
+    "shot": 1,
+    "clip": "kfb_combat_polearm_spear_thrust_a"
+   },
+   "spurBilder": 23,
+   "kontakte": 1,
+   "letzterKontakt": {
+    "id": 1,
+    "clip": "kfb_combat_polearm_spear_thrust_a",
+    "clipTime": 0.9066666666666756,
+    "at": [
+     -317.7002213178509,
+     -10.770496783898137,
+     300.11160542113225
+    ],
+    "material": null,
+    "target": "buehne_mushroom:0:-317:300"
+   },
+   "spurInfo": {
+    "bereit": true,
+    "trefferBereit": true,
+    "fehler": null,
+    "spur": false,
+    "spurId": null,
+    "art": "polearm",
+    "punkte": 0,
+    "bilder": 15,
+    "treffer": 1,
+    "gestartet": 1,
+    "beendet": 1,
+    "trefferGesamt": 1,
+    "quarks": "trail"
+   }
+  },
+  {
+   "id": "schwung",
+   "ausruesten": false,
+   "clip": "kfb_combat_polearm_slash_advance_a",
+   "bilder": 177,
+   "mp4": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_schwung.mp4",
+   "lupe": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_schwung_zeitlupe.mp4",
+   "streifen": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_schwung_bildstreifen.jpg",
+   "r": {
+    "ok": true,
+    "shot": 2,
+    "clip": "kfb_combat_polearm_slash_advance_a"
+   },
+   "spurBilder": 26,
+   "kontakte": 2,
+   "letzterKontakt": {
+    "id": 2,
+    "clip": "kfb_combat_polearm_slash_advance_a",
+    "clipTime": 0.806666666666661,
+    "at": [
+     -317.6930355962336,
+     -10.737344454915267,
+     299.84137728368796
+    ],
+    "material": null,
+    "target": "buehne_mushroom:0:-317:300"
+   },
+   "spurInfo": {
+    "bereit": true,
+    "trefferBereit": true,
+    "fehler": null,
+    "spur": false,
+    "spurId": null,
+    "art": "polearm",
+    "punkte": 0,
+    "bilder": 25,
+    "treffer": 0,
+    "gestartet": 2,
+    "beendet": 2,
+    "trefferGesamt": 2,
+    "quarks": "trail"
+   }
+  },
+  {
+   "id": "smash",
+   "ausruesten": false,
+   "clip": "kfb_combat_polearm_staff_smash_a",
+   "bilder": 165,
+   "mp4": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_smash.mp4",
+   "lupe": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_smash_zeitlupe.mp4",
+   "streifen": "/Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/NAHKAMPF_FEINSCHLIFF_R1/runde3/the_boss_standard_smash_bildstreifen.jpg",
+   "r": {
+    "ok": true,
+    "shot": 3,
+    "clip": "kfb_combat_polearm_staff_smash_a"
+   },
+   "spurBilder": 29,
+   "kontakte": 3,
+   "letzterKontakt": {
+    "id": 3,
+    "clip": "kfb_combat_polearm_staff_smash_a",
+    "clipTime": 1.055459090619498,
+    "at": [
+     -317.66939440659615,
+     -10.68053106312464,
+     299.8057189189357
+    ],
+    "material": null,
+    "target": "buehne_mushroom:0:-317:300"
+   },
+   "spurInfo": {
+    "bereit": true,
+    "trefferBereit": true,
+    "fehler": null,
+    "spur": false,
+    "spurId": null,
+    "art": "polearm",
+    "punkte": 0,
+    "bilder": 23,
+    "treffer": 1,
+    "gestartet": 3,
+    "beendet": 3,
+    "trefferGesamt": 3,
+    "quarks": "trail"
+   }
+  }
+ ],
+ "fehler": [],
+ "buehne": {
+  "a": [
+   -323,
+   300
+  ],
+  "z": [
+   -317,
+   300
+  ],
+  "richtung": [
+   1,
+   0
+  ],
+  "quer": [
+   0,
+   1
+  ],
+  "fuesse": [
+   -318.79998779296875,
+   -11.676381971238012,
+   299.93145751953125
+  ],
+  "vorn": [
+   0.9999999999999888,
+   0,
+   -1.4881166920943656e-7
+  ]
+ }
+}
