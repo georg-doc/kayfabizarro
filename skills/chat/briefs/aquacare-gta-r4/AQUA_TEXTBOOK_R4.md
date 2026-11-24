@@ -4,36 +4,23 @@
 Hier stehen nur die geänderten IDs. Alles andere bleibt Original: Golden-Sublines, Stärken, Flexa-Intro, Menü, Credits. Version 1 zeigt nur Crew und ECHO; die stehen oben.
 Kein unabhängiger Kritiker gelaufen.
 
-## Version 1 · Crew (Steckbriefe)
+## Version 1 · Crew (Steckbriefe) · Runde 2
 
-Stärken und Bounty-Zahlen bleiben.
+DocFish, FlexiFish und Prof. MaBi sind gesetzt (Georg 24.11.). Die Rollenzeile (`.rolle`) trägt jetzt das Hauptverbrechen statt der Heist-Rolle. Stärken und Bounty-Zahlen unverändert.
 
-### Namen und Rollen
+| ID | Name | Anklage (`.rolle`) | Backstory |
+|---|---|---|---|
+| `crimson` | DocFish | Joyriding a filter pump | Grand theft aqua, four counts. Took the pump through two tanks and a lava lamp. Resisting a net. Bounty: 4,711 shells. |
+| `angel` | FlexiFish | Breaking and editing | Stole the castle, returned it with corrections, kept the drawbridge. Her file has been rewritten four times. By her. Bounty: 900 shells. |
+| `mabi` | Prof. MaBi | Root access to dinner | *(Original)* Root access to the filter, the lights and the feeding schedule. Deployed on a Friday. It worked. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. |
+| `gold` | Bullion the Fifth | Tax evasion in a tank that does not exist | Keeps three sets of books: ours, theirs and Tank Five’s. There is no Tank Five. Asked about it under oath, he gave his name. Bounty: 24,000 shells, freshly laundered. |
+| `neon` | Deputy Strobe | Impersonating a patrol car | Glows in the dark, which is a problem in this line of work. Flashes when nervous. Thirty-nine heists abandoned by his own crew. This is the fortieth. Bounty: 300 shells and a lampshade. |
+| `clown` | Prof. Dr. Dr. Humoral | Unlicensed bloodletting | Three titles. Nobody checked. Treats everything by bloodletting and keeps the blood. Sold one treasure chest to three pirates, twice. Bounty: 650 shells and one red nose, held as evidence. |
+| `puffer` | Tetro “Chef’s Special” | Manslaughter, as a main course | Six inches of attitude. Twelve when provoked. Was served once. The whole table regretted it. Headbutted a vending machine. Won. Bounty: 2,000 shells. Bring gloves. |
+| `guppy` | Placebo Forte | Trafficking nothing. In bulk. | Moves product. There is no product. It works anyway. Got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells, or one sponsored post. |
+| `sub` | Colonel Endo | Trespassing. Internally. | Goes in where others will not. Films it. Sells the footage back to the owner. Says the shark goes deeper than it looks. Bounty: 3,500 shells for the memory card. |
 
-| ID | Original | Neu |
-|---|---|---|
-| `crimson.name` | DocFish | Doc Probably |
-| `angel.name` | FlexiFish | Angie Twice |
-| `mabi.name` | Prof. MaBi | Tuesday |
-| `puffer.name` | Tetro | Little Tetro |
-| `sub.rolle` | Informant | Snitch |
-
-Bullion, Strobe, Prof. Humoral, Placebo und Endo bleiben, ebenso die übrigen acht Rollentitel.
-Offen: DocFish, FlexiFish und MaBi könnten an DocCheck, Flexikon oder eine Person gebunden sein. Wenn ja, bleiben sie.
-
-### Backstories
-
-| ID | Original | Neu |
-|---|---|---|
-| `crimson.backstory` (Doc Probably, Wheelman) | Grand theft aqua, four counts. Joyriding a filter pump. Resisting a net. Bounty: 4,711 shells. | Grand theft aqua, four counts. Joyrode a filter pump through two tanks and a lava lamp. Calls himself Doc. Nobody has seen the diploma. Bounty: 4,711 shells. |
-| `angel.backstory` (Angie Twice, Cat Burglar) | Breaking and entering, mostly entering. She stole the castle ornament, returned the castle and kept the drawbridge. Bounty: 900 shells. | Breaking and entering, mostly entering. Stole the castle, returned the castle, kept the drawbridge. Witnesses place her in two tanks at the same feeding. Bounty: 900 shells. |
-| `mabi.backstory` (Tuesday, Hacker) | Root access to the filter, the lights and the feeding schedule. Deployed on a Friday. It worked. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. | Root access to the filter, the lights and the calendar. It has been Tuesday for six weeks. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. |
-| `gold.backstory` (Bullion, Accountant) | Keeps the crew’s books. Two sets, obviously. Wears more gold than the treasure chest and calls it a pension plan. Bounty: 24,000 shells, freshly laundered. | Keeps the crew’s books. Three sets: ours, theirs and Tank Five’s. There is no Tank Five. Wears more gold than the treasure chest. Bounty: 24,000 shells, freshly laundered. |
-| `neon.backstory` (Strobe, Lookout) | Glows in the dark, which is a problem in this line of work. Stood lookout for forty heists, blinked at the wrong moment in thirty-nine. Bounty: 300 shells and a lampshade. | Glows in the dark, which is a problem in this line of work. Stood lookout for thirty-nine heists. Blinked at the wrong moment in all of them. This is the fortieth. Bounty: 300 shells and a lampshade. |
-| `clown.backstory` (Prof. Humoral, Con Artist) | Smiles. Shakes fins. Counts them afterwards. Sold the same treasure chest to three pirates. Twice. Bounty: 650 shells and one red nose, held as evidence. | Smiles. Shakes fins. Counts them afterwards. Sold one treasure chest to three pirates, twice. Then sold Tank Four to the fish living in it. Bounty: 650 shells and one red nose, held as evidence. |
-| `puffer.backstory` (Little Tetro, Muscle) | Six inches of attitude. Twelve when provoked. Headbutted a vending machine. Won. Bounty: 2,000 shells. Bring gloves. | Six inches of attitude. Twelve when provoked. Headbutted a vending machine. Won. Fought his own reflection. The reflection pressed charges. Bounty: 2,000 shells. Bring gloves. |
-| `guppy.backstory` (Placebo, Smuggler) | Moves product. Never says which. She got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells, or one sponsored post. | Moves product. Never says which. It works anyway. Got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells, or one sponsored post. |
-| `sub.backstory` (Endo, Snitch) | Sees everything. Tells whoever pays. Filmed the warden’s feeding schedule, then sold the tape to the warden. Bounty: 3,500 shells for the memory card. | Sees everything. Tells whoever pays. Filmed the warden, sold the tape to the warden. Says the shark goes deeper than it looks. Bounty: 3,500 shells for the memory card. |
+Offen: „Deputy Strobe“ setzt voraus, dass der Neonfisch im Spiel blinkt oder pulsiert.
 
 ## Version 1 · ECHO
 
