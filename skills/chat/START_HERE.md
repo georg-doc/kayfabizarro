@@ -12,6 +12,17 @@
 
 ---
 
+## 2026-11-24 · AQUACARE / GRAND THEFT AQUA · TEXTBOOK R2 (WS0 REVIEW INTAKE)
+
+**State: DOCS_ONLY · UNMERGED REVIEW CANDIDATE · no Aquarium runtime/voice/Stage/Live write.** Source upload: `aqua_textbuch_2026-11-24.md`, original `dc/aquarium-standalone` branch still unlocated among connected repositories. On `georg-doc/kayfabizarro` branch `docs/aquacare-grand-theft-aqua-textbook-r2-2026-11-24`, **240/389** ID-preserving candidate replacements in `Neu` and a machine patch are ready for WS0. Golden splash subtitle set unchanged; 6/6 local structural QA + 2/2 GitHub integrity PASS, 0 game/audio/browser/independent review.
+
+- [Full source table](https://github.com/georg-doc/kayfabizarro/blob/docs/aquacare-grand-theft-aqua-textbook-r2-2026-11-24/skills/chat/briefs/AQUACARE_GRAND_THEFT_AQUA_TEXTBOOK_R2_2026-11-24.md)
+- [WS0 Return + additive changelog](https://github.com/georg-doc/kayfabizarro/blob/docs/aquacare-grand-theft-aqua-textbook-r2-2026-11-24/skills/chat/briefs/AQUACARE_GRAND_THEFT_AQUA_R2_RETURN_CHANGELOG.md)
+
+**One next gate:** recover actual Aquarium owner/repo/HEAD and prove an approved text import against current triggers and voice timings. No automatic promotion or video enable.
+
+---
+
 
 ## 2026-11-24 · WS0 INTAKE · FRIENDLIES SOCCER / KFB CARD ARENA + DOCCHECK CELLULAR ARENA
 
