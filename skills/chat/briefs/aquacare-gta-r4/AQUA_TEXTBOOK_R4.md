@@ -4,22 +4,24 @@
 Hier stehen nur die geänderten IDs. Alles andere bleibt Original: Golden-Sublines, Stärken, Flexa-Intro, Menü, Credits. Version 1 zeigt nur Crew und ECHO; die stehen oben.
 Kein unabhängiger Kritiker gelaufen.
 
-## Version 1 · Crew (Steckbriefe) · Runde 4
+## Version 1 · Crew (Steckbriefe) · Runde 5
 
-Georg zu Runde 3: 70–80 %, zu viel Gag-Gerüst (Bounty-Anhängsel wiederholen sich), zu wenig Eigenheit je Figur, zu wenig Punch. Maßstab: Rick and Morty, dann South Park und Simpsons, mit GTA-Vibe.
-DocFish, FlexiFish und Prof. MaBi sind als Namen gesetzt. Die Rollenzeile (`.rolle`) trägt das Hauptverbrechen. Stärken und Bounty-Zahlen unverändert.
+Blind Critic zu Runde 4 (24.11., ohne Herkunftsangabe, Maßstab Rick-and-Morty-Autorenraum): Punch 7, Figur 6, Absurdität 6, Satire 6, Formelfreiheit 4, übersteht Punch-up 5. Hauptbefund: ein Rhythmus für alle neun Karten (Fragment plus trockener Nachsatz), also ein Erzähler statt neun Figuren. ECHO: 6 / 5 / 5 / 2 / 4 / 3.
+Runde 5: jede Karte in einer anderen Textsorte. DocFish, FlexiFish und Prof. MaBi sind als Namen gesetzt. Bounty-Zahlen unverändert.
 
 | ID | Name | Anklage (`.rolle`) | Backstory |
 |---|---|---|---|
-| `crimson` | DocFish | Grand theft aqua, four counts | Fastest fish in the crew. Has never once been on time. Stole the filter pump for a house call. His last patient is still open on the table. He says it’s fine. Bounty: 4,711 shells. |
-| `angel` | FlexiFish | Burglary, with corrections | Stole the castle, returned the castle, kept the drawbridge. Caught four times, always the same way: she came back to fix a typo in the ransom note. Bounty: 900 shells. |
-| `mabi` | Prof. MaBi | Tampering with dinner | Root access to the filter, the lights and the feeding schedule. Deployed on a Friday. It worked. Wears sunglasses so the monitors cannot read his face. Bounty: 0xFFFF shells. |
-| `gold` | Ping-Pong Bullion | Counterfeiting. Painted gravel. | Was won at a funfair with one ping-pong ball. Nobody calls him that twice. Keeps two sets of books and wears the difference. Bounty: 24,000 shells. He says that is insulting. |
-| `neon` | Strobe™ | Unlicensed reproduction, 212 counts | Glows because a lab wanted a fish that glows. The lab owns the glow. He has 212 children and every one of them is a lawsuit. Stands lookout. Can be seen from the parking lot. Bounty: 300 shells. |
-| `clown` | Prof. Dr. Dr. Humoral | Bloodletting without a licence | Three titles. Nobody checked. Says every illness is too much blood and offers to keep it for you. Two thousand grateful patients. One very full freezer. Bounty: 650 shells. |
-| `puffer` | Tetro “Party Favor” | Controlled substance | Dolphins used to pass him around at parties. Then he learned to headbutt. Six inches of attitude, twelve when provoked, lethal either way. Bounty: 2,000 shells. Do not lick. |
-| `guppy` | Placebo Forte | Selling the tank its own water | Bottles the water you are swimming in and sells it back as a cleanse. Sold out twice. The reviews are sincere. She got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells. |
-| `sub` | Endo, Internal Affairs | Unlawful entry, eight counts | Is a submarine. The crew has agreed not to bring it up. Has seen every one of them from the inside and sells the footage to whoever asks. Says DocFish was a disappointment. Bounty: 3,500 shells. |
+| `crimson` | DocFish | Theft of a filter pump | “I’m a doctor. I needed the pump. Yes, the patient is still open on the table. He’s fine. They’re usually fine.” Statement on arrest. Bounty: 4,711 shells. |
+| `angel` | FlexiFish | Burglary, with corrections | Stole the castle. [borrowed] Kept the drawbridge. [it was loose] Caught when she came back to fix a typo in the ransom note. [two typos] Bounty: 900 shells. [1,900] |
+| `mabi` | Prof. MaBi | Tampering with dinner | Changed the password on the feeding schedule. The warden now has to ask him when dinner is. He is thinking about it. Wears sunglasses so the monitors cannot read his face. Bounty: 0xFFFF shells. |
+| `gold` | Ping-Pong Bullion | Counterfeiting. Painted gravel. | Has filed an objection to his own bounty: “I was won at a funfair with a ping-pong ball. I have been appreciating ever since. Twenty-four thousand is an insult.” Bounty: 24,000 shells. |
+| `neon` | Strobe™ | Unlicensed reproduction, 212 counts | “Dear Strobe, our client owns your glow. You have reproduced it 212 times without a licence. Kindly return the children.” He stands lookout anyway. Bounty: 300 shells. |
+| `clown` | Prof. Dr. Dr. Humoral | Bloodletting without a licence | Three titles. Nobody checked. Diagnosis: too much blood. Treatment: he keeps some. Follow-up: he keeps the rest. Bounty: 650 shells. |
+| `puffer` | Tetro “Party Favor” | Controlled substance | “We passed him around at parties. Great guy. Then he started headbutting. Kevin still can’t feel his face.” A dolphin, under oath. Bounty: 2,000 shells. Do not lick. |
+| `guppy` | Placebo Forte | Selling the tank its own water | PURE TANK WATER. Bottled at the source. You are the source. Her cleanse has sold out twice and the reviews are sincere. Bounty: 1,200 shells. |
+| `sub` | Endo, Internal Affairs | Unlawful entry, eight counts | Is a submarine. The crew has agreed not to bring it up. Has filmed every one of them from the inside and sells the tapes back. DocFish paid double. Bounty: 3,500 shells. |
+
+Offen: Bei Prof. MaBi ist „Deployed on a Friday. It worked.“ gestrichen (der Kritiker fand in der Karte keine Figur). Falls die Zeile ein Insider ist, kommt sie zurück.
 
 ## Version 1 · ECHO
 
