@@ -15,6 +15,7 @@ on:
       - ".github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.6-town-workbench-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.7-browse-filters-smoke.mjs"
+      - ".github/scripts/asset-librarian-vfx-r1-smoke.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   push:
     branches:
@@ -32,6 +33,7 @@ on:
       - ".github/scripts/asset-librarian-v1.5-animation-framing-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.6-town-workbench-smoke.mjs"
       - ".github/scripts/asset-librarian-v1.7-browse-filters-smoke.mjs"
+      - ".github/scripts/asset-librarian-vfx-r1-smoke.mjs"
       - ".github/workflows/asset-librarian-browser-smoke.yml"
   workflow_dispatch:
 
@@ -67,6 +69,8 @@ jobs:
           node --check tools/asset_registry/librarian/render.js
           node --check tools/asset_registry/librarian/asset-types.js
           node --check tools/asset_registry/librarian/resources-ui.js
+          node --check tools/asset_registry/librarian/vfx-catalog.js
+          node --check .github/scripts/asset-librarian-vfx-r1-smoke.mjs
           node --check tools/asset_registry/librarian/rig-preview.js
           node --check tools/asset_registry/librarian/animation-sources.js
           node --check tools/asset_registry/librarian/motion-preview.js
@@ -97,6 +101,12 @@ jobs:
 
       - name: Run v1.7 browse pagination and multiselect filter smoke
         run: node .github/scripts/asset-librarian-v1.7-browse-filters-smoke.mjs
+
+      - name: Check VFX owner data, trust boundary and snapshot fallback
+        run: node tools/asset_registry/tests/vfx-catalog.test.mjs
+
+      - name: Run VFX catalogue desktop, mobile and data-only refresh smoke
+        run: node .github/scripts/asset-librarian-vfx-r1-smoke.mjs
 
       - name: Upload browser evidence
         if: always()

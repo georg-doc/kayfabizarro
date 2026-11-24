@@ -116,6 +116,9 @@
     <section id="resourceWorkspace" class="resource-workspace" hidden aria-label="Production resources">
       <section class="resource-toolbar panel">
         <input id="resourceSearch" class="global-search" type="search" placeholder="Search current production resources…" autocomplete="off">
+        <select id="resourceFxScope" aria-label="FX-Bestand" hidden><option value="">Alle FX</option><option value="vfx">VFX-Katalog</option><option value="registry">Registry-FX</option><option value="donors">Spender</option></select>
+        <select id="resourceSpenderFilter" aria-label="Spender" hidden><option value="">Alle Spender</option></select>
+        <select id="resourceArtFilter" aria-label="Art" hidden><option value="">Alle Arten</option></select>
         <select id="resourceActorFilter" aria-label="Actor / scope"><option value="">All actors / scopes</option></select>
         <select id="resourceStatusFilter" aria-label="Resource status">
           <option value="">Any status</option>
@@ -131,6 +134,7 @@
           <div><div id="resourceEyebrow" class="eyebrow">production resources</div><p id="resourceMeta">Loading Resource Registry…</p></div>
           <span id="resourceRevision" class="pill"></span>
         </div>
+        <div id="vfxCatalogHeader" hidden><p id="vfxCatalogStand" class="small-note"></p><div id="vfxCatalogCounts" class="badges"></div><details><summary>Katalogangaben</summary><pre id="vfxCatalogFields"></pre></details></div>
         <div id="resourceList" class="resource-list" aria-live="polite"></div>
       </section>
     </section>
@@ -196,6 +200,7 @@
         <div id="resourcePreviewNote" class="preview-meta"></div>
       </div>
       <div id="resourcePrimaryAction" class="resource-primary-action"></div>
+      <div id="vfxDetailContent" hidden></div>
       <details class="resource-tech"><summary>Evidence & technical facts</summary><pre id="resourceDetailJson"></pre></details>
     </aside>
 
