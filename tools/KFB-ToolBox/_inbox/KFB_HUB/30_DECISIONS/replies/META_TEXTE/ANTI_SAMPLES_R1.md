@@ -36,3 +36,24 @@ Beleg: `replies/buchmaschine/schluesselbilder_intro_r5/` (t_27.0s).
 **Anti-Muster: Etikett statt Inszenierung.** Ein Wort erklärt dem Zuschauer didaktisch und frontal, was die Szene zeigen sollte. Dazu ist es schlecht gesetzt und deutsch in einem englischen Spiel.
 **Regel (Geltung):** betrifft eingeblendete Beschriftungen, Stempel, Slogans, Erklärwörter. Bilder und Schrift, die in der Welt selbst stehen (HyperNorm-Bildwände, Plakate, Interface), sind kein Etikett und bleiben erlaubt; nie als „keine Schrift im Bild“ lesen (Georg 23.11., V-2136).
 Bedeutung entsteht aus Bühne, Licht, Ton und Bewegung, zum Beispiel: Scanlicht bleibt stehen, Brummen setzt aus, Ring kühlt nach Rot. Schrift nur sparsam, wo sie diegetisch hingehört (HyperNorm-Wand, Interface), englisch, aus der Stringtabelle.
+
+
+## Anti-Sample 4 · Aqua Textbuch R2 / Webchat (24.11.2026) · EXTREME FAIL
+**Georg wörtlich:** „das ist ein totaler fail, die beispiel!“ / „DAS IST AI SLOP GALORE!!“
+Quelle: [verworfener PR #484](https://github.com/georg-doc/kayfabizarro/pull/484), ursprünglicher Kandidat `9a46f0bf9ffdf0545117aaf06846e364a6f714d3`. Urteil bezieht sich ausdrücklich auf die sieben im Chat gezeigten Beispiele; das gesamte daraus abgeleitete Paket (240 Änderungen) ist zur Integration gesperrt, nicht einzeln von Georg bewertet.
+
+### Wortgetreue Negativbeispiele und redaktionelle Fehleranalyse
+| Abgelehntes Beispiel | Warum es als Negativreferenz dient (Analyse des Assistenten, nicht zusätzliches Georg-Zitat) |
+|---|---|
+| “If you can hear me, the sedative has worn off.” | Austauschbarer Labor-/Horror-Opener; weder Gangsterfigur noch spezifische satirische Beobachtung. |
+| “Psst. Keep swimming. I haven't decided which cameras are mine.” | Erzwungenes rätselhaftes Insiderwissen; unklare Logik als Ersatz für Subtext. |
+| “Smile. The footage goes straight to the professor's bedroom.” | Beliebiger voyeuristischer Schockgag; Schlafzimmer als unbegründeter Tabubruch. |
+| “Who loosened that hatch? No, don't answer. I know precisely who loosened that hatch.” | Standard-Bösewicht, redundante Selbstunterbrechung; gespielte Exzentrik ohne Pointe. |
+| “Release Number Seven. If it remembers my name, cut the microphone.” | Mysteriöse Nummer und Mikrofon als Versatzstücke eines austauschbaren Geheimlabor-Skripts; erfundene Vorgeschichte. |
+| “Those are my red blood cells. I recognize the defective ones. I designed them.” | Willkürlicher Reveal; behauptete Genialität statt intelligenter, eigenwilliger Figur; keine belegte Pointe. |
+| “CASE CLOSED. The filter has no comment.” | Krimi-Floskel plus vermenschlichtes Aquariumgerät: genau das bereits abgelehnte Schema. |
+
+### Postmortem
+Auftrag: GTA-Vibe, meta-aware gangster fish, mad scientist, progressive disclosure, absurde witty Satire. PRIME DIRECTIVE: kein Cliché AI Slop; kein KPI-, Billing-, Work-Humor, keine Better-X-with-Y-Schablonen. Der Assistent las Golden/Anti und SOP, wiederholte trotzdem den bereits dokumentierten Fehler V-2098. Er behandelte Genre-Etiketten und vorhandene Spielobjekte als hinreichende Quelle für frei erfundene Dialoge. Das ist keine Quellenverdichtung. Die Charakterisierung als Crime-Komödie/medizinischer Thriller behauptete Qualität, anstatt sie sprachlich zu zeigen. Er skalierte den unbewiesenen Ansatz auf 240 Änderungen, bevor auch nur eine Tonprobe akzeptiert war. Kein unabhängiger Blindkritiker wurde eingesetzt. Strukturelle Checks (IDs/JSON) wurden prominent präsentiert, obwohl sie keinen Witz beurteilen. Die anschließende Empfehlung zur Integration war verfrüht.
+
+**Konsequenz:** R2 vollständig quarantänisieren; kein Import, kein Voice-Rendering, kein Merge, keine automatische R3-Reparatur. Originaltexte und akzeptierte Golden Samples bleiben maßgeblich. Keine neuen Regeln neben V-2098: die bestehende Quellenpflicht und Blindkritik tatsächlich anwenden. Beim nächsten ausdrücklich beauftragten Textjob zuerst wenige quellengestützte, figurenspezifische Zeilen prüfen, bevor ein Pool erweitert wird. Keine neue Lore aus diesen Negativbeispielen ableiten. Eine bloße Ersetzung von Bürohumor durch Labor-, Kamera-, Fisch- oder Krimivokabular zählt nicht als Verbesserung.
