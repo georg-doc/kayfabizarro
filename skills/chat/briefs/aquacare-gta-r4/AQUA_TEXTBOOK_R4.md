@@ -6,6 +6,8 @@ Kein unabhängiger Kritiker gelaufen.
 
 ## Version 1 · Crew (Steckbriefe) · Runde 6
 
+**FAIL (Georg 24.11.).** „Selling the tank its own water“ = AI Slop. „a filter pump is basically a heart if you don't look at it“ = AI-Schwurbel-Slop. Runde 6 ist kein Textspender. Sechs Runden ohne Treffer; die Crew-Steckbriefe bleiben bis auf Weiteres im Original.
+
 Blind Critic, zwei unabhängige Läufe am 24.11. (ohne Herkunftsangabe, Maßstab Rick-and-Morty-Autorenraum, 8 = Ziel):
 
 | Kategorie | Crew R4 | Crew R5 | ECHO R1 | ECHO R2 |
@@ -20,7 +22,7 @@ Blind Critic, zwei unabhängige Läufe am 24.11. (ohne Herkunftsangabe, Maßstab
 | Ambivalenz verdient | | | | 4 |
 
 Befund beide Male: ein Rhythmus (Aussage plus kurzer trockener Nachsatz) für alles, „eine Stimme in neun Kostümen“. Runde 5 hat die Textsorte gewechselt, nicht die Stimme.
-Runde 6: kein Erzähler mehr. Jede Karte ist, was der Fisch bei der Festnahme selbst sagt. Bounty ohne Anhängsel. DocFish, FlexiFish und Prof. MaBi sind als Namen gesetzt. Noch nicht vom Kritiker geprüft.
+Runde 6: kein Erzähler mehr. Jede Karte ist, was der Fisch bei der Festnahme selbst sagt. Bounty ohne Anhängsel. DocFish, FlexiFish und Prof. MaBi sind als Namen gesetzt. Nicht vom Kritiker geprüft.
 
 | ID | Name | Anklage (`.rolle`) | Backstory | Bounty |
 |---|---|---|---|---|
