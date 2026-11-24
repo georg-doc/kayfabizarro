@@ -7,7 +7,7 @@ Kein unabhängiger Kritiker gelaufen.
 ## Version 1 · Crew (Steckbriefe) · Runde 7
 
 Runden 2 bis 6 verworfen (Georg 24.11.): Konzept-Ironie, Plapperstimmen, bemühter Medizinhumor, und keine Karte spielte damit, dass es Fische sind.
-Runde 7: Fischkörper, Fischverhalten und Aquarienalltag als Strafakte. Kein Medizinhumor. Gute Originalzeilen bleiben. Georg hat die Richtung an vier Proben bestätigt (DocFish, FlexiFish, Tetro, Strobe).
+Runde 7: Fischkörper, Fischverhalten und Aquarienalltag als Strafakte. Kein Medizinhumor. Gute Originalzeilen bleiben. **Georg 24.11.: alle neun Karten „tragen“.**
 Namen wie im Original; Zunamen und Titel sind offen. Die Rollenzeile (`.rolle`) trägt die Anklage. Stärken und Bounty-Zahlen unverändert.
 
 | ID | Name | Anklage (`.rolle`) | Backstory |
