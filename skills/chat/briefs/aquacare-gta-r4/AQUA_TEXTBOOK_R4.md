@@ -23,21 +23,41 @@ Runde 5: jede Karte in einer anderen Textsorte. DocFish, FlexiFish und Prof. MaB
 
 Offen: Bei Prof. MaBi ist „Deployed on a Friday. It worked.“ gestrichen (der Kritiker fand in der Karte keine Figur). Falls die Zeile ein Insider ist, kommt sie zurück.
 
-## Version 1 · ECHO
+## Version 1 · ECHO · Runde 2
 
-Alle nicht genannten ECHO-IDs bleiben Original.
+Georg 24.11.: ECHO ist eine Art Hacker mit unklarer eigener Agenda, zwischen freundlichem Helfer und Manipulator, weiß deutlich mehr, als er sagt. Die Zeilen folgen dem Weg des Spielers: gefangen im Becken, umsehen, dann überraschend die Stimme. „You again“ passt nicht zum ersten Kontakt, höchstens nach einem Tod.
+Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben Original.
 
-| ID | Original | Neu |
-|---|---|---|
-| `leiter_achtung[2]` | Hey, you. | You again. |
-| `leiter_code[1]` | Enter the code. | Punch in the code. |
-| `leiter_hinweis[4]` | 4711. Cologne water. | 4711. Of course it is. |
-| `beam[1]` | Searchlights. Stay out of the light. | They noticed the empty tank. Stay out of the light. |
-| `caught[1]` | They saw you. | They saw you. I will loop the cameras. Again. |
-| `hook[1]` | Bait on a line. | Bait on a line. Free lunch never is. |
-| `hooked[1]` | Reeled in. I cut the line. | Reeled in. I cut the line. You owe me. |
-| `augenGriff[1]` | Absorbed. I will pull you out. | Absorbed. I will pull you out. Most of you. |
-| `finale[1]` | You made it. Rest now. | You made it. You were never just a fish to me. |
+| Moment | ID | Original | Neu |
+|---|---|---|---|
+| erster Kontakt | `leiter_achtung[1]` | Psst. | Psst. Little fish. Do not look at the camera. |
+| Spieler reagiert nicht | `leiter_achtung[2]` | Hey, you. | Yes, you. The others are not listening. I checked. |
+| Ziel zeigen | `leiter_bedienfeld[1]` | Find the control panel. | There is a panel next to the hatch. Go there. I will explain on the way. |
+| | `leiter_bedienfeld[2]` | The panel. Next to the hatch. | *(bleibt)* |
+| | `leiter_bedienfeld[3]` | Swim to the panel. | Swim to the panel. I cannot press it for you. I tried. |
+| am Bedienfeld | `leiter_code[1]` | Enter the code. | It wants four digits. I know them. I want you to find them. |
+| | `leiter_code[2]` | Four digits will set you free. | Four digits. Look around. Something in here smells expensive. |
+| Hinweise, steigend | `leiter_hinweis[1]` | Freedom smells like Cologne. | The bottle. Somebody left perfume in a fish tank. |
+| | `leiter_hinweis[2]` | Read the label on the bottle. | *(bleibt)* |
+| | `leiter_hinweis[3]` | Cologne water. Four digits. | The number on the label. All four digits. |
+| | `leiter_hinweis[4]` | 4711. Cologne water. | 4711. I was hoping you would manage alone. |
+| an der Flasche | `flasche[1]` | 4711. Cologne water. | 4711. It is printed right there. |
+| Code stimmt | `codeRight[1]` | Hold on to your fins. | It is open. Go. Do not thank me yet. |
+| Becken gekippt | `zuSpaet[1]` | Too late. The tank tipped. | Too late. Never mind. We go again. |
+| erster Köder | `hook[1]` | Bait on a line. | That is bait. Whoever holds the line is not your friend. I am. |
+| am Haken | `hooked[1]` | Reeled in. I cut the line. | I cut the line. Remember that later. |
+| erste Mine | `mine[1]` | Old sea mines. Still working. | Mines. I did not put them there. I just did not remove them. |
+| Truhe | `chest[1]` | A gift. Do not ask. | For you. I hid it there a long time ago. |
+| Suchscheinwerfer | `beam[1]` | Searchlights. Stay out of the light. | They noticed the empty tank. Stay out of the light. |
+| entdeckt | `caught[1]` | They saw you. | They saw you. I will loop the cameras. Again. |
+| Level 3 | `level3[1]` | More lights now. Trust the current. | More lights now. Trust the current. Trust me more. |
+| Augen, gefasst | `augenGriff[1]` | Absorbed. I will pull you out. | Absorbed. I will pull you out. Most of you. |
+| im Blutstrom | `cells[1]` | Red cells. They carry oxygen, and now you. | Follow the red ones. I have never been this far in. |
+| Ziel | `finale[1]` | You made it. Rest now. | You made it. You were never just a fish to me. You were the way in. |
+
+Neue Zeile, braucht einen Auslöser im Spiel (Neustart nach Tod oder gekipptem Becken): `leiter_achtung.retry` → Psst. You again.
+
+Offen: `finale[1]` legt ECHOs Absicht ein Stück offen (der Fisch war der Weg hinein). Das ist eine Setzung.
 
 # Später (wenn die Basis trägt)
 
