@@ -1,3 +1,5 @@
+> **24.11.2026 · SUPERSEDED WRITING DIRECTION:** R3 rejected EXTREME FAIL; PR #485 closed/unmerged. Current creative assignment: [R4 Writer Brief](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/AQUACARE_GTA_R4_WRITER_BRIEF_2026-11-24.md). Original source and research references remain usable; historical R3 transfer hypotheses, review procedure and next steps below are not instructions for the new writer. No R2/R3 text reuse, no inherited stop cascade; Georg explicitly requests a concise complete new text set.
+
 # AquaCare II — Grand Theft Aqua · R3 Fresh Chat Brief / vollständiges Recovery-Paket
 **24.11.2026 · WS0 / bestehender Aqua-Text-Owner · RESEARCH COMPLETE / FRESH WRITER BRIEF ONLY**
 **R2 = EXTREME FAIL, PR #484 CLOSED / NOT MERGED.** All 240 rejected candidate edits quarantined; no repair or import. New R3 text generation is a separate task requested in principle by Georg; this packet is research and briefing, not a new script. No new runtime owner.
