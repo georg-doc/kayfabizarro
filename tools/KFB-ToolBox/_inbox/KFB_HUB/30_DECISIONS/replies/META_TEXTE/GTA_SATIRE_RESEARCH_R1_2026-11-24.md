@@ -1,3 +1,5 @@
+> **24.11.2026 · SUPERSEDED WRITING DIRECTION:** R3 rejected EXTREME FAIL; PR #485 closed/unmerged. Current creative assignment: [R4 Writer Brief](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/AQUACARE_GTA_R4_WRITER_BRIEF_2026-11-24.md). Original source and research references remain usable; historical R3 transfer hypotheses, review procedure and next steps below are not instructions for the new writer. No R2/R3 text reuse, no inherited stop cascade; Georg explicitly requests a concise complete new text set.
+
 # GTA satire research R1 — AquaCare / KFB transfer
 Date: 24 November 2026. Owner: WS0 / existing Aqua text lane. Status: research and editorial evidence, not a script or accepted canon. No gameplay or runtime changes.
 
