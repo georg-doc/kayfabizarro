@@ -351,20 +351,20 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `flexa.combo.03` | Perfect. I'll deduct it from your sentence. I won't. | zur Zeit aus | We have a clear view of the shells. Less clear is where the fish is putting them. |
 | `flexa.combo.04` | Keep collecting. They'll look nice on your headstone. | zur Zeit aus | The fish doesn't even slow down for the money any more. |
 | `flexa.truhe.01` | Who left a chest in my tank? | zur Zeit aus | Who put a treasure chest in there? |
-| `flexa.truhe.02` | A perk. Temporary. Like you. | zur Zeit aus | A treasure chest. It was closed when the fish arrived. |
+| `flexa.truhe.02` | A perk. Temporary. Like you. | zur Zeit aus | We are treating the contents as missing, presumed inside the fish. |
 | `flexa.truhe.03` | Turbo. Now you can die faster. | zur Zeit aus | The fish has suddenly picked up speed. |
-| `flexa.truhe.04` | Invisible? I can still see your file. | zur Zeit aus | The suspect is no longer visible to the searchlights. |
+| `flexa.truhe.04` | Invisible? I can still see your file. | zur Zeit aus | Could someone explain why the searchlight has lost the fish we can all see? |
 | `flexa.licht.01` | Found you. | zur Zeit aus | That's the fish. |
 | `flexa.licht.02` | Smile. You're on camera. Forever. | zur Zeit aus | There. That's the fish we've been talking about. |
 | `flexa.licht.03` | The light suits you. Very evidence-like. | zur Zeit aus | We finally have a clear picture. |
 | `flexa.licht.04` | Hiding behind kelp. Bold strategy. Wrong, but bold. | zur Zeit aus | You can see the fish through the kelp. |
 | `flexa.haken.01` | Free burger. No strings attached. One string attached. | zur Zeit aus | Notice that the bait is attached to something outside the picture. |
 | `flexa.haken.02` | Hungry? Oldest trick in the ocean. | zur Zeit aus | It has seen the food. Watch the line. |
-| `flexa.haken.03` | Reeled in. Customer retention at its finest. | zur Zeit aus | The fish has taken the bait. |
+| `flexa.haken.03` | Reeled in. Customer retention at its finest. | zur Zeit aus | The suspect appears to have been apprehended by a fisherman. |
 | `flexa.haken.04` | Bon appétit. For somebody. | zur Zeit aus | You can see the line. You can't see who's holding it. |
 | `flexa.mine.01` | That was a mine. You were the pin. | zur Zeit aus | We won't be using that shot in the aquarium brochure. |
 | `flexa.mine.02` | Ouch. Was that in your terms and conditions? It was in mine. | zur Zeit aus | The fish made contact with a mine. |
-| `flexa.mine.03` | Boom. Filed under self-inflicted. | zur Zeit aus | Can we see the fish? |
+| `flexa.mine.03` | Boom. Filed under self-inflicted. | zur Zeit aus | Could we have a wider shot? I'm trying to locate the fish. |
 | `flexa.augen.01` | Don't stare back. They have no manners. | zur Zeit aus | Look at the eyes. They don't appear to belong to anything. |
 | `flexa.augen.02` | My eyes are everywhere. Some of them literally. | zur Zeit aus | I can identify the suspect. I cannot identify the witnesses. |
 | `flexa.augen.03` | Absorbed. Very efficient. I approve. | zur Zeit aus | The eye has got hold of the fish. |
@@ -390,7 +390,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `flexa.leer.01` | Still here? The water isn't. | zur Zeit aus | The water is turning cloudy. |
 | `flexa.leer.02` | Your call is important to us. Please hold. Forever. | zur Zeit aus | We'll keep the picture on the fish. |
 | `flexa.leer.03` | Fun fact. Goldfish remember for three seconds. You don't even manage that. | zur Zeit aus | Watch the gills. |
-| `flexa.leer.04` | I've seen screensavers with more ambition. | zur Zeit aus | This is a very ordinary scene in an aquarium. |
+| `flexa.leer.04` | I've seen screensavers with more ambition. | zur Zeit aus | In a dentist's waiting room this would be considered calming. |
 | `flexa.leer.05` | I could reboot you. I could also not. | zur Zeit aus | The suspect has stopped moving. |
 | `flexa.leer.06` | Tick. Tock. The water is turning. | zur Zeit aus | The water isn't clearing. |
 | `flexa.leer.07` | I miss the days when you were just decoration. | zur Zeit aus |  |
@@ -402,7 +402,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `falkenstein.flucht.01` | Look at you. Out of the tank for two minutes and already lost. My assistant says you escaped. My assistant also says the coffee machine is self-aware. | WIP, zur Zeit aus | I put a castle in there. There isn't a castle on the bed of the Atlantic, as far as I'm aware. What does the animal want? |
 | `falkenstein.flucht.02` | Relax, little fish. I own the water you are swimming in. I can afford to be patient. You cannot. | WIP, zur Zeit aus | A fish that gets out of its aquarium is generally a dead fish. Kindly stop congratulating this one. |
 | `falkenstein.kelp.01` | You are collecting shells. Adorable. I collect fish. | WIP, zur Zeit aus | It's collecting shells. I should like to know what a fish regards as a pocket. |
-| `falkenstein.kelp.02` | Every shell you touch, I counted first. Freedom is just a bigger tank with worse lighting. | WIP, zur Zeit aus | What possible use has it for a shell of that size? No, don't zoom in on the shell. I want to see what the fish does with it. |
+| `falkenstein.kelp.02` | Every shell you touch, I counted first. Freedom is just a bigger tank with worse lighting. | WIP, zur Zeit aus | I had made no allowance for a fish developing a private collection. What does it do with the shells when we're not looking? |
 | `falkenstein.riff.01` | You went through the mines. The mines were a polite request to stop. I do not make requests twice. | WIP, zur Zeit aus | The footage makes it look as though someone's laid out a slalom course. Those are sea mines. |
 | `falkenstein.riff.02` | Charges, updated. Grand theft aqua. Resisting arrest. Unlicensed hope in a public reef. | WIP, zur Zeit aus | We spend a great deal of time trying to establish what fish can see. I'd dearly like to know what this one considers an obstacle. |
 | `falkenstein.augen.01` | I gave the reef eyes. Every one of them hates you. They tell me everything. They tell me you are smug. Stop being smug. | WIP, zur Zeit aus | I wanted a view from each of the eyes. I now have an excellent view of the other eyes. Where is the fish? |
@@ -414,7 +414,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `falkenstein.frei.01` | Sightseeing? Take your time. Every minute you waste, I bill to your family. | WIP, zur Zeit aus | Could you at least turn the camera towards the fish? I'm getting a very comprehensive education in seaweed. |
 | `falkenstein.frei.02` | Stop admiring the coral. The coral is evidence. | WIP, zur Zeit aus | I used to be able to see this animal by walking up to the glass. I'm now asking a fish to turn round so I can see the coral. |
 | `falkenstein.over.01` | And back to the tank. Do not worry. You will not remember this. You never do. | WIP, zur Zeit aus | There. Tank Four. The little castle is still there. Let's see whether the fish has learned anything about the castle. |
-| `falkenstein.over.02` | Back in the tank. Back where you belong. Somebody write this down. I won. I always win. | WIP, zur Zeit aus | I should like to see the beginning again. Pay particular attention to the fish that's done this before. |
+| `falkenstein.over.02` | Back in the tank. Back where you belong. Somebody write this down. I won. I always win. | WIP, zur Zeit aus | Before we repeat the experiment, do you remember the way out? It matters rather a lot if it's the fish we're studying. |
 | `falkenstein.ziel.01` | You reached the open sea. Enjoy it. The open sea is just my second tank. | WIP, zur Zeit aus | There's no glass in front of it. I don't think I've ever seen that fish without looking through something. |
 | `falkenstein.ziel.02` | Do you know what this experiment cost? Next week we try this on people. What do I tell the people? | WIP, zur Zeit aus | What exactly have we established? We put a fish in water and it went somewhere else. |
 
