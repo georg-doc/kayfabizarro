@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-22.4",
-  "updatedAt": "2026-11-22T19:29:00Z",
+  "revision": "2026-11-24.1",
+  "updatedAt": "2026-11-24T00:57:48Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -171,6 +171,16 @@
       "url": "https://github.com/georg-doc/kayfabizarro/blob/planning/hybrid-baked-clay-texture-architecture-2026-10-07/skills/chat/research/KFB_3D_EDITOR_SHADER_INSPECTOR_DONOR_AUDIT_2026-10-08.md",
       "executor": "KFB Surface / Material Language · research",
       "nextExecutor": "NONE · optional lab only after explicit authorization"
+    },
+    {
+      "id": "friendlies-soccer-ws0-handoff-2026-11-24",
+      "title": "Friendlies Soccer · KFB Card Arena + DocCheck Cellular Arena",
+      "summary": "WS0 source-first intake: original Friendlies gameplay and 2v2 retained, actual KFB Medium/Large/Mixamo/FrankenStein actors + measured kick donor proposed. KFB field = one true 1.74:1 card OR exact 2×2 FOUR-card page at 1.74:1 (no art stretch); DocCheck = restrained cell-membrane/signal arena. Patch source/rights and Soccer ZIP content unverified; 0 runtime tests, no Stage/Live.",
+      "badge": "DOCS ONLY · WS0 INTAKE",
+      "action": "Draft PR #156 · Briefing öffnen",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/156",
+      "executor": "WS0 · existing KFB-Stunt-Car-Race gameplay integrator",
+      "nextExecutor": "S0: inspect real Patch Friendlies remix/source rights and actual Soccer Pack kick, then S1 one KFB actor in unchanged playable 2v2"
     }
   ],
   "briefings": [
@@ -420,7 +430,11 @@
     }
   ],
   "quickLinks": [
-    {"title":"WS0 · Reality Remix Full Chat Meta Handoff 22.11.2026","summary":"Direktes vollständig referenziertes Übergabeprotokoll: Vision, 17 Fachbriefings, Game-/License-/Asset-Belege, neuer WS0-Ausführungsauftrag. Draft PR #155, docs only, kein Stage.","url":"https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/reality-remix-multiverse-r0-2026-11-22/docs/konzepte/reality-remix-r0/META_HANDOFF_WS0_2026-11-22.md"},
+    {
+      "title": "WS0 · Reality Remix Full Chat Meta Handoff 22.11.2026",
+      "summary": "Direktes vollständig referenziertes Übergabeprotokoll: Vision, 17 Fachbriefings, Game-/License-/Asset-Belege, neuer WS0-Ausführungsauftrag. Draft PR #155, docs only, kein Stage.",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/reality-remix-multiverse-r0-2026-11-22/docs/konzepte/reality-remix-r0/META_HANDOFF_WS0_2026-11-22.md"
+    },
     {
       "title": "Reality Remix Multiverse R0 · WS0 Draft PR #155",
       "summary": "Draft PR #155 enthält jetzt die vollständige WS0-Chat-Meta-Summary, direkten Execution Prompt und Source-/Evidence Index; 17 frühere Fachbriefings bleiben, keine Runtime/Stage.",
