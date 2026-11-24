@@ -4,11 +4,25 @@
 Hier stehen nur die geänderten IDs. Alles andere bleibt Original: Golden-Sublines, Stärken, Flexa-Intro, Menü, Credits. Version 1 zeigt nur Crew und ECHO; die stehen oben.
 Kein unabhängiger Kritiker gelaufen.
 
-## Version 1 · Crew (Steckbriefe) · Runde 6
+## Version 1 · Crew (Steckbriefe) · Runde 7
 
-**FAIL (Georg 24.11.).** „Selling the tank its own water“ = AI Slop. „a filter pump is basically a heart if you don't look at it“ = AI-Schwurbel-Slop. Runde 6 ist kein Textspender. Sechs Runden ohne Treffer; die Crew-Steckbriefe bleiben bis auf Weiteres im Original.
+Runden 2 bis 6 verworfen (Georg 24.11.): Konzept-Ironie, Plapperstimmen, bemühter Medizinhumor, und keine Karte spielte damit, dass es Fische sind.
+Runde 7: Fischkörper, Fischverhalten und Aquarienalltag als Strafakte. Kein Medizinhumor. Gute Originalzeilen bleiben. Georg hat die Richtung an vier Proben bestätigt (DocFish, FlexiFish, Tetro, Strobe).
+Namen wie im Original; Zunamen und Titel sind offen. Die Rollenzeile (`.rolle`) trägt die Anklage. Stärken und Bounty-Zahlen unverändert.
 
-Blind Critic, zwei unabhängige Läufe am 24.11. (ohne Herkunftsangabe, Maßstab Rick-and-Morty-Autorenraum, 8 = Ziel):
+| ID | Name | Anklage (`.rolle`) | Backstory |
+|---|---|---|---|
+| `crimson` | DocFish | Resisting a net | Grand theft aqua, four counts. Joyrode the filter pump. Fastest fish in the tank. The tank is eighty centimetres. Has hit the glass eleven times. Bounty: 4,711 shells. |
+| `angel` | FlexiFish | Breaking and entering, mostly entering | Turns sideways and is gone. Stole the castle ornament, returned the castle and kept the drawbridge. Bounty: 900 shells. |
+| `mabi` | Prof. MaBi | Tampering with the feeding schedule | Root access to the filter, the lights and the feeding schedule. Dinner now comes nine times a day. Nobody has reported him. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. |
+| `gold` | Bullion | Keeping two sets of books | Came home from a funfair in a plastic bag. Keeps the crew’s books. Two sets, obviously. Questioned nine times, remembers nothing, and the court believes him. Bounty: 24,000 shells, freshly laundered. |
+| `neon` | Strobe | Glowing after lights-out | Came in a bag of ten. Has no eyelids. Still missed thirty-nine alarms out of forty. Bounty: 300 shells and a lampshade. |
+| `clown` | Prof. Humoral | Selling one chest to three pirates | Smiles. Shakes fins. Counts them afterwards. Sold the same treasure chest to three pirates. Twice. Does business from inside an anemone that stings everyone but him. Bounty: 650 shells and one red nose, held as evidence. |
+| `puffer` | Tetro | Biting the hand that feeds him | Kept the finger. Doubles in size when the net comes. The net has stopped coming. Bounty: 2,000 shells. Bring gloves. |
+| `guppy` | Placebo | Smuggling shells past customs | Moves product. Never says which. Tells customs she is expecting. She has been expecting for three years. Got 30,000 shells through that way. Bounty: 1,200 shells, or one sponsored post. |
+| `sub` | Endo | Impersonating a fish | Is a submarine. The crew has agreed not to bring it up. Blew bubbles in the corner for six years and heard everything. Sold the warden’s feeding schedule back to the warden. Bounty: 3,500 shells for the memory card. |
+
+Blind Critic zu den verworfenen Runden, zwei unabhängige Läufe am 24.11. (8 = Ziel). Runde 7 ist nicht geprüft.
 
 | Kategorie | Crew R4 | Crew R5 | ECHO R1 | ECHO R2 |
 |---|---|---|---|---|
@@ -21,20 +35,6 @@ Blind Critic, zwei unabhängige Läufe am 24.11. (ohne Herkunftsangabe, Maßstab
 | Onboarding | | | | 7 |
 | Ambivalenz verdient | | | | 4 |
 
-Befund beide Male: ein Rhythmus (Aussage plus kurzer trockener Nachsatz) für alles, „eine Stimme in neun Kostümen“. Runde 5 hat die Textsorte gewechselt, nicht die Stimme.
-Runde 6: kein Erzähler mehr. Jede Karte ist, was der Fisch bei der Festnahme selbst sagt. Bounty ohne Anhängsel. DocFish, FlexiFish und Prof. MaBi sind als Namen gesetzt. Nicht vom Kritiker geprüft.
-
-| ID | Name | Anklage (`.rolle`) | Backstory | Bounty |
-|---|---|---|---|---|
-| `crimson` | DocFish | Theft of a filter pump | “Yes, I took the pump. I’m a doctor, I had a patient open on the table, and a filter pump is basically a heart if you don’t look at it. He’s fine. Is he asking for me?” | 4,711 shells |
-| `angel` | FlexiFish | Burglary, with corrections | “I returned the castle. The drawbridge is a separate matter. And I only came back because the ransom note had a typo. Two, now that I see your report.” | 900 shells |
-| `mabi` | Prof. MaBi | Tampering with dinner | “I changed one password. Dinner is when I say it is. The warden has asked nicely. I’m considering it.” | 0xFFFF shells |
-| `gold` | Ping-Pong Bullion | Counterfeiting. Painted gravel. | “That is not painted gravel. That is an asset class. I was won at a funfair with a ping-pong ball, and look at me now.” | 24,000 shells |
-| `neon` | Strobe™ | Unlicensed reproduction, 212 counts | “The lab says it owns the glow and wants all 212 children back. I said come and get them, they’re not hard to find. Now I’m the lookout. Same problem.” | 300 shells |
-| `clown` | Prof. Dr. Dr. Humoral | Practising medicine on a police officer | “Officer, you look pale. May I? It’s blood. You have far too much of it and I can take some off your hands today. No charge. I keep the blood.” | 650 shells |
-| `puffer` | Tetro “Party Favor” | Controlled substance | “Dolphins used to pass me around at parties. I was fun. Now I’m six inches and nobody laughs. Lick me. Go on.” | 2,000 shells |
-| `guppy` | Placebo Forte | Selling the tank its own water | “It’s not ‘just tank water’. It’s bottled at the source. You’re the source. That’s the beautiful part. You look tired, by the way.” | 1,200 shells |
-| `sub` | Endo, Internal Affairs | Unlawful entry | “I’m a fish. Ask the crew, they’ll tell you. I go in, I film, I come out. DocFish paid double for his tape. Ask him about that instead.” | 3,500 shells |
 
 ## Version 1 · ECHO · Runde 3
 
