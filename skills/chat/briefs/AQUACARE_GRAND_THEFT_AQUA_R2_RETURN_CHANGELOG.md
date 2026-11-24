@@ -1,3 +1,5 @@
+> **SUPERSEDING DECISION — 2026-11-24: EXTREME FAIL / AI SLOP GALORE.** Georg explicitly rejected the seven chat examples. All 240 proposed edits quarantined; DO NOT IMPORT, MERGE, RENDER VOICES or treat as canon. Original source remains authoritative. [Central Anti-Sample 4 and postmortem](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/ANTI_SAMPLES_R1.md). No R3 authorized. Structural checks are not creative acceptance. Historical return below is superseded.
+
 # AQUACARE / GRAND THEFT AQUA — EDITORIAL R2 RETURN & CHANGELOG
 
 Date: 2026-11-24
