@@ -1,0 +1,47 @@
+{
+ "echo": [
+  [
+   4.1,
+   "Psst."
+  ],
+  [
+   13.9,
+   "Find the control panel."
+  ],
+  [
+   29.5,
+   "Enter the code."
+  ],
+  [
+   32.7,
+   "Hold on to your fins."
+  ]
+ ],
+ "marken": [
+  [
+   0.1,
+   "Spielstart",
+   "{\"stufe\":null,\"i\":0,\"fertig\":[]}"
+  ],
+  [
+   5.7,
+   "Spieler schwimmt los",
+   "{\"stufe\":\"achtung\",\"i\":1,\"fertig\":[]}"
+  ],
+  [
+   17.3,
+   "Bedienfeld offen",
+   "{\"stufe\":\"bedienfeld\",\"i\":1,\"fertig\":[\"achtung\"]}"
+  ],
+  [
+   28.3,
+   "tippt 4711",
+   "{\"stufe\":\"code\",\"i\":1,\"fertig\":[\"achtung\",\"bedienfeld\"]}"
+  ],
+  [
+   41,
+   "Ende",
+   "{\"stufe\":null,\"i\":1,\"fertig\":[\"achtung\",\"bedienfeld\",\"code\",\"hinweis\"]}"
+  ]
+ ]
+}

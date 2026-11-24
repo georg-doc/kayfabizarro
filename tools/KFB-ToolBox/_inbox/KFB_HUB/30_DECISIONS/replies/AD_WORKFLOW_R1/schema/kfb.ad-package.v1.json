@@ -352,6 +352,42 @@
       "type": "string",
       "pattern": "^r[0-9]+$",
       "description": "Ablauf-Stand des ChatGPT-SKILL.md, für den dieses Paket gebaut ist"
+    },
+    "entscheidungen": {
+      "type": "array",
+      "description": "R3: nur ad-Designentscheidungen dieses Malpakets (code/kit stehen im Paket-Bericht)",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "element",
+          "befunde",
+          "szenen"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^E[0-9]{2}$"
+          },
+          "element": {
+            "type": "string"
+          },
+          "befunde": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "szenen": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
     }
   },
   "$defs": {
@@ -623,6 +659,18 @@
               "maximum": 1
             }
           }
+        },
+        "entscheidung": {
+          "type": "string",
+          "pattern": "^E[0-9]{2}$",
+          "description": "R3: Designentscheidung (dedupe); gleiche Entscheidung = gleiche Lösung auf allen Zielen, eine Freigabe"
+        },
+        "masken": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "R3: Rolle → Masken-PNG (weiß = Bereich) in Größe der zu bearbeitenden Datei (__edit.png bzw. Original)"
         }
       }
     },

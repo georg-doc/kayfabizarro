@@ -4,7 +4,7 @@
   "lauf": 1,
   "weg": "bundle",
   "simuliert": true,
-  "paket_sha256": "b213a88026a3a02165aa746a49308591fe89145b31593f97fe63aee92582f64e",
+  "paket_sha256": "51a532d2b0114aeeb085b1d8aec13e105f33262c42331e5245619eec27bfb273",
   "skill": "r1",
   "befunde": [
     {
@@ -37,6 +37,66 @@
   "paarung": [],
   "paarung_ok": true,
   "aussen_abweichung": {
+    "F03_ausholung_v1": 0.0,
+    "F03_aufprall_v2": 0.17,
     "F04_naehe_v1": 0.0
-  }
+  },
+  "bildtreue": {
+    "F03_ausholung_v1": {
+      "status": "PASS",
+      "aussen": {
+        "mittel": 0.0,
+        "max_kachel": 0.0,
+        "max_kachel_ort": null,
+        "kacheln_stark": 0,
+        "kacheln_geprueft": 75,
+        "anteil_aussen": 0.547,
+        "analyse": [
+          320,
+          180
+        ]
+      },
+      "ocr": "übersprungen",
+      "gruende": []
+    },
+    "F03_aufprall_v2": {
+      "status": "PASS",
+      "aussen": {
+        "mittel": 0.17,
+        "max_kachel": 0.5,
+        "max_kachel_ort": [
+          3,
+          7
+        ],
+        "kacheln_stark": 0,
+        "kacheln_geprueft": 75,
+        "anteil_aussen": 0.547,
+        "analyse": [
+          320,
+          180
+        ]
+      },
+      "ocr": "übersprungen",
+      "gruende": []
+    },
+    "F04_naehe_v1": {
+      "status": "PASS",
+      "aussen": {
+        "mittel": 0.0,
+        "max_kachel": 0.0,
+        "max_kachel_ort": null,
+        "kacheln_stark": 0,
+        "kacheln_geprueft": 136,
+        "anteil_aussen": 0.923,
+        "analyse": [
+          320,
+          180
+        ]
+      },
+      "ocr": "übersprungen",
+      "gruende": []
+    }
+  },
+  "verworfen": [],
+  "blick": []
 }

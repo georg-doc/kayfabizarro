@@ -2,6 +2,7 @@
 """AD-Paket bauen, prüfen, bereitlegen, veröffentlichen (WS0-Seite; Standardbibliothek, Pillow oder macOS-sips fürs Auffüllen).
 
   python3 ad_package.py pin      <auswahl.json>          (sha256 der gesehenen Stills/Clips in die Auswahl schreiben)
+  python3 ad_package.py dedupe   <auswahl.json> [--json] (Weg-Sortierung prüfen, Designentscheidungen zeigen; schreibt nichts)
   python3 ad_package.py build    <auswahl.json> <ausgabe-ordner unter …/_privat/> [--erlaube-behoben] [--erlaube-zeit-unsicher]
   python3 ad_package.py validate <paket-ordner>
   python3 ad_package.py stage    <paket-ordner> <familie> [--lauf n --anker <PASS-Bild> --nur F01,F03] [--ziel KFB_AD]
@@ -13,6 +14,11 @@ build    liest die Auswahl (WS0), kopiert Stills/Clips/Referenz-Frames mit sprec
          holt Referenzen per Name aus KFB_REFERENZEN_R1.md, SOP-Versionen aus den SOP-Köpfen, Ereignisse und
          Konfiguration aus protokoll.json, schreibt package.json, je Familie einen Upload-Ordner (≤ 10 Dateien)
          und README.md mit der Aufrufzeile (inkl. Paket-Prüfsumme). Trägt das Paket in KFB_AD/pakete.json ein.
+         R3: jeder Befund braucht `weg` (code | kit | ad) und `grund`; nur `ad` kommt ins Malpaket (malbare ad-Befunde
+         mit `bereich`, je Still eine Maske unter media/masken/), `code`/`kit` stehen als `auftraege_direkt` in
+         PAKET_BERICHT.md / paket_bericht.json (WS0 → Owner). Gleiche Elemente werden eine Designentscheidung (E01 …).
+         Legt CODEX_AUFTRAG.md und ad_bildtreue.py ins Paket und je Familie Skript + Leitplanke in upload/<F>/ (für Codex).
+dedupe   Gruppen: gleiches `element` oder gleiche Szene (protokoll_nr, z. B. Handy + Desktop) mit überlappendem Bereich.
 validate Schema + Dateien + sha256 + Regeln.
 stage    Upload-Ordner einer Familie nach KFB_AD/<run_id>_<familie>/ (Georgs einziger Ordner).
 publish  Commit nach georg-doc/KFB-Stunt-Car-Race (PRIVAT), Branch ad/<run_id>, nur unter ad/<run_id>/.
@@ -25,7 +31,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ad_common import (HUB, KFB_AD, canon_hash, dump, image_size, load_schema, mp4_duration, pad_geometry, pad_image,
                        referenz_tabelle, sha256, sop_kurz, sop_versions, sync_schuetzt, validate)
 
-SKILL_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'chatgpt-skill', 'kfb-art-direction')
+A_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SKILL_DIR = os.path.join(A_DIR, 'chatgpt-skill', 'kfb-art-direction')
+BILDTREUE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ad_bildtreue.py')
+CODEX_AUFTRAG = os.path.join(A_DIR, 'CODEX_AUFTRAG_R1.md')
+WEGE = ('code', 'kit', 'ad')
+IOU_GLEICH = 0.5   # Bereiche derselben Szene (Handy + Desktop) gelten ab dieser Überlappung als dasselbe Element
 WERKZEUG = os.path.join(SKILL_DIR, 'scripts', 'ad_return.py')
 LEITPLANKEN = os.path.join(SKILL_DIR, 'references', 'LEITPLANKEN.md')
 
@@ -92,10 +103,120 @@ def pin(spec_path):
     dump(spec, spec_path); print(f'OK: {sum(1 for _ in files_of(spec, base))} Dateien festgenagelt in {spec_path}')
 
 
+def weg_fehler(spec):
+    """R3: Weg-Pflichtfeld je Befund; malbare ad-Befunde brauchen einen Bereich (Bildtreue-Maske)."""
+    errs = []
+    for s in spec['szenen']:
+        for b in s.get('befunde', []):
+            if b.get('weg') not in WEGE:
+                errs.append(f'{b["id"]}: Pflichtfeld weg fehlt oder falsch ({b.get("weg")!r}; erlaubt code | kit | ad) – vor dem Malen sortieren')
+            if not isinstance(b.get('grund'), str) or len(b['grund'].strip()) < 10:
+                errs.append(f'{b["id"]}: Pflichtfeld grund fehlt (ein Satz, warum dieser Weg)')
+            if b.get('weg') == 'ad' and b.get('malbar', True) and not b.get('bereich'):
+                errs.append(f'{b["id"]}: ad-Befund ohne bereich – Bildtreue-Prüfung braucht die Maske')
+    return errs
+
+
+def _iou(a, b):
+    if not a or not b:
+        return 0.0
+    x0, y0 = max(a['x'], b['x']), max(a['y'], b['y'])
+    x1, y1 = min(a['x'] + a['w'], b['x'] + b['w']), min(a['y'] + a['h'], b['y'] + b['h'])
+    inter = max(0.0, x1 - x0) * max(0.0, y1 - y0)
+    uni = a['w'] * a['h'] + b['w'] * b['h'] - inter
+    return inter / uni if uni > 0 else 0.0
+
+
+def dedupe(spec):
+    """Befunde zu Designentscheidungen bündeln: gleiches `element` oder gleiche Szene (protokoll_nr bzw. scene_id) mit
+    Bereichs-Überlappung ≥ IOU_GLEICH. Gibt (gruppen, fehler) zurück; eine Gruppe = eine Freigabe, mehrere Ziele."""
+    rows = [(s, b) for s in spec['szenen'] for b in s.get('befunde', [])]
+    par = list(range(len(rows)))
+    def find(i):
+        while par[i] != i:
+            par[i] = par[par[i]]; i = par[i]
+        return i
+    for i, (si, bi) in enumerate(rows):
+        for j in range(i + 1, len(rows)):
+            sj, bj = rows[j]
+            el = bi.get('element') and slug(bi['element']) == slug(bj.get('element') or '')
+            szene = si['scene_id'] == sj['scene_id'] or (si.get('protokoll_nr') is not None and si.get('protokoll_nr') == sj.get('protokoll_nr'))
+            if el or (szene and _iou(bi.get('bereich'), bj.get('bereich')) >= IOU_GLEICH):
+                par[find(i)] = find(j)
+    gruppen, fehler, seen = [], [], {}
+    for i, (s, b) in enumerate(rows):
+        seen.setdefault(find(i), []).append((s, b))
+    for n, mitglieder in enumerate(sorted(seen.values(), key=lambda m: m[0][1]['id']), 1):
+        wege = sorted({b.get('weg') for _, b in mitglieder if b.get('weg')})
+        if len(wege) > 1:
+            fehler.append(f'Designentscheidung {", ".join(b["id"] for _, b in mitglieder)}: gemischter Weg {wege} – ein Element, ein Weg')
+        gruppen.append({'id': f'E{n:02d}', 'weg': wege[0] if len(wege) == 1 else None,
+                        'element': next((b['element'] for _, b in mitglieder if b.get('element')), mitglieder[0][0]['titel']),
+                        'befunde': [b['id'] for _, b in mitglieder], 'szenen': [s['scene_id'] for s, _ in mitglieder],
+                        'owner': sorted({b['owner'] for _, b in mitglieder})})
+    return gruppen, fehler
+
+
+def bericht_daten(spec, gruppen):
+    by_id = {b['id']: (s, b) for s in spec['szenen'] for b in s.get('befunde', [])}
+    direkt = []
+    for g in gruppen:
+        if g['weg'] in ('code', 'kit'):
+            direkt.append(dict(g, befunde=[{'id': f, 'scene_id': by_id[f][0]['scene_id'], 'owner': by_id[f][1]['owner'],
+                                            'text': by_id[f][1]['text'], 'grund': by_id[f][1]['grund'],
+                                            'stand': by_id[f][1].get('stand', 'offen'), 'quelle': by_id[f][1]['quelle']}
+                                           for f in g['befunde']]))
+    wege = {w: sum(1 for _, b in by_id.values() if b.get('weg') == w) for w in WEGE}
+    return {'run_id': spec['run_id'], 'paket_rev': spec['paket_rev'], 'wege': wege,
+            'entscheidungen': [{k: g[k] for k in ('id', 'weg', 'element', 'befunde', 'szenen')} for g in gruppen],
+            'malpaket': [g['id'] for g in gruppen if g['weg'] == 'ad'], 'auftraege_direkt': direkt}
+
+
+def write_bericht(out, daten, pkg=None):
+    daten = dict(daten, codex={u['familie']: codex_zeile(pkg, u['familie']) for u in pkg['upload']} if pkg else {})
+    dump(daten, os.path.join(out, 'paket_bericht.json'))
+    w = daten['wege']
+    L = [f'# Paket-Bericht {daten["run_id"]} {daten["paket_rev"]}', '',
+         f'Weg-Verteilung: code {w["code"]} · kit {w["kit"]} · ad {w["ad"]} Befunde; '
+         f'{len(daten["entscheidungen"])} Designentscheidungen, davon {len(daten["malpaket"])} im Malpaket.', '',
+         '| Entscheidung | Weg | Element | Befunde | Szenen |', '|---|---|---|---|---|']
+    for g in daten['entscheidungen']:
+        L.append(f'| {g["id"]} | {g["weg"]} | {g["element"]} | {", ".join(g["befunde"])} | {", ".join(g["szenen"])} |')
+    L += ['', '## Aufträge direkt (WS0 → Owner, kein Malen)', '']
+    for g in daten['auftraege_direkt']:
+        L.append(f'- **{g["id"]} · {g["weg"]} · {g["element"]}** (Owner {", ".join(g["owner"])}; eine Entscheidung für {", ".join(x["id"] for x in g["befunde"])})')
+        for x in g['befunde']:
+            L.append(f'  - {x["id"]} ({x["scene_id"]}, {x["quelle"]["nr"]}): {x["text"]} · Weg-Grund: {x["grund"]} · Stand: {x["stand"]}')
+    if not daten['auftraege_direkt']:
+        L.append('- keine')
+    if daten['codex']:
+        L += ['', '## Codex (Bildschritt, je Familie eine Zeile für Georg)', ''] + [f'- Familie {f}: `{z}`' for f, z in daten['codex'].items()]
+    with open(os.path.join(out, 'PAKET_BERICHT.md'), 'w', encoding='utf-8') as f:
+        f.write('\n'.join(L) + '\n')
+
+
+def maske(rel_bild, bereich, g, dst):
+    """Masken-PNG in Größe des zu bearbeitenden Bilds (aufgefüllt oder Original): weiß = Bereich, schwarz = bleibt."""
+    from PIL import Image
+    w0, h0 = (g['breite'] - g['links'] - g['rechts'], g['hoehe'] - g['oben'] - g['unten']) if g else Image.open(rel_bild).size
+    W, H = (g['breite'], g['hoehe']) if g else (w0, h0)
+    ox, oy = (g['links'], g['oben']) if g else (0, 0)
+    m = Image.new('L', (W, H), 0)
+    m.paste(255, (ox + int(bereich['x'] * w0), oy + int(bereich['y'] * h0),
+                  ox + int(round((bereich['x'] + bereich['w']) * w0)), oy + int(round((bereich['y'] + bereich['h']) * h0))))
+    m.save(dst)
+
+
 def build(spec_path, out, ausnahmen):
     base = os.path.dirname(os.path.abspath(spec_path))
     spec = json.load(open(spec_path, encoding='utf-8'))
     root = resolve(spec['erfassung_wurzel'], base)
+    werrs = weg_fehler(spec)
+    gruppen, gerrs = dedupe(spec)
+    if werrs or gerrs:
+        die(werrs + gerrs)
+    gruppe_von = {f: g['id'] for g in gruppen for f in g['befunde']}
+    daten = bericht_daten(spec, gruppen)
     if not sync_schuetzt(root):
         die(f'Erfassung {root} wird öffentlich gespiegelt (sync_github.sh): erst unter …/_privat/ ablegen oder den Ausschluss aus VORSCHLAG_sync_github.diff einbauen')
     if not sync_schuetzt(out):
@@ -111,7 +232,10 @@ def build(spec_path, out, ausnahmen):
         die(f'LEITPLANKEN.md nennt nicht den aktuellen SOP-Stand ({sop_kurz(sv)}): Leitplanke nachziehen, dann bauen')
     if os.path.exists(os.path.join(out, 'package.json')):
         die(f'{out} enthält schon ein Paket; neue paket_rev = neuer Ordner')
-    for d in ('media/stills', 'media/edit', 'media/clips', 'media/refs'):
+    if not daten['malpaket']:
+        os.makedirs(out, exist_ok=True); write_bericht(out, daten)
+        print(f'OK: kein ad-Befund, kein Malpaket · Aufträge direkt: {os.path.join(out, "PAKET_BERICHT.md")}'); return
+    for d in ('media/stills', 'media/edit', 'media/clips', 'media/refs', 'media/masken'):
         os.makedirs(os.path.join(out, d), exist_ok=True)
     errs, protos, laeufe = [], {}, {}
     tabelle = referenz_tabelle()
@@ -146,6 +270,8 @@ def build(spec_path, out, ausnahmen):
 
     szenen = []
     for s in spec['szenen']:
+        if not any(b['weg'] == 'ad' for b in s.get('befunde', [])):
+            continue   # Szene nur mit code/kit-Befunden: nichts zu malen, kein Medium ins Paket
         lauf = s['lauf']; p = proto(lauf) or {}
         ps = next((x for x in p.get('szenen', []) if x.get('nr') == s.get('protokoll_nr')), {})
         vb = ps.get('video_beginn_s')
@@ -184,6 +310,8 @@ def build(spec_path, out, ausnahmen):
         by_role = {st['rolle']: st for st in stills}
         befunde = []
         for b in s.get('befunde', []):
+            if b['weg'] != 'ad':
+                continue
             beleg = []
             for x in b['beleg']:
                 if x.get('clip') and clip:
@@ -195,7 +323,14 @@ def build(spec_path, out, ausnahmen):
             befunde.append({'id': b['id'], 'achse': b['achse'], 'schwere': b['schwere'], 'art': b['art'], 'text': b['text'],
                             'beleg': beleg, 'quelle': b['quelle'], 'owner': b['owner'], 'malbar': b.get('malbar', True),
                             'stand': b.get('stand', 'offen'), 'referenzen': b.get('referenzen', []), 'aeste': b.get('aeste', []),
-                            'bereich': b.get('bereich')})
+                            'bereich': b.get('bereich'), 'entscheidung': gruppe_von[b['id']], 'masken': {}})
+            if b.get('malbar', True) and b.get('bereich'):
+                bp = {x['pfad'] for x in beleg}
+                for st in stills:
+                    if st['pfad'] in bp or b['art'] == 'bewegung' and st['rolle'] in ('ausholung', 'aufprall'):
+                        mr = f'media/masken/{os.path.splitext(os.path.basename(st["pfad"]))[0]}__{b["id"]}__maske.png'
+                        maske(os.path.join(out, st['pfad']), b['bereich'], st['edit'], os.path.join(out, mr))
+                        befunde[-1]['masken'][st['rolle']] = mr
         for st in stills:
             st.pop('_quelle')
         konf = {k: ps.get(k) for k in ('lage', 'ueberdeckung', 'handwerk', 'fehler', 'konsole', 'notiz', 'dauer_s', 'video_s',
@@ -213,10 +348,12 @@ def build(spec_path, out, ausnahmen):
                       'pfad': f'ad/{spec["run_id"]}/paket_{spec["paket_rev"]}', 'privat': True},
            'erfassung': {'quelle': spec['erfassung_wurzel'], 'laeufe': [{'modus_geraet': k, 'konfiguration': v} for k, v in laeufe.items()]},
            'familien': [f for f in familien if f['szenen']], 'szenen': szenen, 'upload': [], 'ausnahmen': ausnahmen,
+           'entscheidungen': [{k: g[k] for k in ('id', 'element', 'befunde', 'szenen')} for g in gruppen if g['weg'] == 'ad'],
            'ablauf': ablauf_version(),
            'werkzeug': {'datei': 'ad_return.py', 'sha256': sha256(WERKZEUG)},
            'leitplanken': {'datei': 'LEITPLANKEN.md', 'sha256': sha256(LEITPLANKEN), 'sop': sop_kurz(sop_versions())}}
     shutil.copy2(WERKZEUG, os.path.join(out, 'ad_return.py')); shutil.copy2(LEITPLANKEN, os.path.join(out, 'LEITPLANKEN.md'))
+    shutil.copy2(BILDTREUE, os.path.join(out, 'ad_bildtreue.py')); shutil.copy2(CODEX_AUFTRAG, os.path.join(out, 'CODEX_AUFTRAG.md'))
 
     for f in pkg['familien']:
         ordner = f'upload/{f["id"]}'
@@ -245,6 +382,8 @@ def build(spec_path, out, ausnahmen):
             shutil.copy2(os.path.join(out, rel), os.path.join(out, ordner, os.path.basename(rel)))
             names.append(os.path.basename(rel))
         pkg['upload'].append({'familie': f['id'], 'ordner': ordner, 'dateien': ['package.json'] + names})
+        for extra in ('ad_return.py', 'LEITPLANKEN.md'):   # für Codex (start prüft beide neben package.json); stage kopiert nur `dateien`
+            shutil.copy2(os.path.join(out, extra), os.path.join(out, ordner, extra))
 
     dump(pkg, os.path.join(out, 'package.json'))
     for u in pkg['upload']:
@@ -253,8 +392,12 @@ def build(spec_path, out, ausnahmen):
     if errs:
         die(errs)
     write_readme(pkg, out)
+    write_bericht(out, daten, pkg)
     register_paket(pkg, out)
+    w = daten['wege']
     print(f'OK: Paket {pkg["run_id"]} {pkg["paket_rev"]} #{canon_hash(pkg)[:12]} → {out}')
+    print(f'Weg: code {w["code"]} · kit {w["kit"]} · ad {w["ad"]} · Malpaket {", ".join(daten["malpaket"])} · '
+          f'Aufträge direkt {len(daten["auftraege_direkt"])} (PAKET_BERICHT.md)')
 
 
 def ordnername(pkg, fam, lauf=1):
@@ -267,6 +410,13 @@ def aufruf(pkg, fam, lauf=1, nur=None):
             + (f' Nur {",".join(nur)}' if nur else '') + f' Ordner {ordnername(pkg, fam, lauf)} #{canon_hash(pkg)[:12]}')
 
 
+def codex_zeile(pkg, fam, lauf=1):
+    """Eine Zeile für Georg in Codex (Bildschritt R3): Codex liest CODEX_AUFTRAG.md im privaten Zweig."""
+    ab = pkg['ablage']
+    return (f'Lies im Repo {ab["repo"]}, Zweig {ab["branch"]}, die Datei {ab["pfad"]}/CODEX_AUFTRAG.md und führe sie aus: '
+            f'Familie {fam} Lauf {lauf} #{canon_hash(pkg)[:12]}')
+
+
 def write_readme(pkg, out):
     lines = [f'# AD-Paket {pkg["run_id"]} ({pkg["paket_rev"]})', '',
              f'Produkt: {pkg["produkt"]["name"]} · Build {pkg["build"]["version"]}', f'Absicht: {pkg["absicht"]}', '',
@@ -274,6 +424,9 @@ def write_readme(pkg, out):
              'dem genannten Ordner in Dropbox › KFB_AD in den Chat ziehen:', '']
     for u in pkg['upload']:
         lines.append(f'- Familie {u["familie"]}: `{aufruf(pkg, u["familie"])}`')
+    lines += ['', 'R3 · Bildschritt in Codex (statt Webchat; je Familie eine Zeile, Anleitung CODEX_AUFTRAG.md im Zweig):', '']
+    for u in pkg['upload']:
+        lines.append(f'- Familie {u["familie"]}: `{codex_zeile(pkg, u["familie"])}`')
     with open(os.path.join(out, 'README.md'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines) + '\n')
 
@@ -323,6 +476,11 @@ def check(out, pkg=None):
             for r in b['referenzen']:
                 if r not in refs:
                     errs.append(f'{b["id"]}: Referenz {r} nicht im Paket')
+            for rolle, mp in (b.get('masken') or {}).items():
+                if not os.path.exists(os.path.join(out, mp)):
+                    errs.append(f'{b["id"]}: Maske {mp} fehlt')
+            if 'entscheidung' in b and b['entscheidung'] not in {e['id'] for e in pkg.get('entscheidungen', [])}:
+                errs.append(f'{b["id"]}: Designentscheidung {b["entscheidung"]} nicht im Paket')
             if b['malbar']:
                 if not b['referenzen']:
                     errs.append(f'{b["id"]}: malbarer Befund ohne Referenz')
@@ -424,6 +582,19 @@ def main():
     cmd = a[0]
     if cmd == 'pin' and len(a) >= 2:
         pin(a[1])
+    elif cmd == 'dedupe' and len(a) >= 2:
+        spec = json.load(open(a[1], encoding='utf-8'))
+        gruppen, gerrs = dedupe(spec)
+        d = bericht_daten(spec, gruppen)
+        if '--json' in a:
+            print(json.dumps(d, ensure_ascii=False, indent=1))
+        else:
+            print(f'Weg: code {d["wege"]["code"]} · kit {d["wege"]["kit"]} · ad {d["wege"]["ad"]}')
+            for g in gruppen:
+                print(f'  {g["id"]} [{g["weg"]}] {g["element"]}: {", ".join(g["befunde"])}  ({", ".join(g["szenen"])})')
+        errs = weg_fehler(spec) + gerrs
+        if errs:
+            die(errs)
     elif cmd == 'build' and len(a) >= 3:
         build(a[1], a[2], [x for x, f in (('behoben', '--erlaube-behoben'), ('zeit_unsicher', '--erlaube-zeit-unsicher')) if f in a])
     elif cmd == 'validate' and len(a) >= 2:

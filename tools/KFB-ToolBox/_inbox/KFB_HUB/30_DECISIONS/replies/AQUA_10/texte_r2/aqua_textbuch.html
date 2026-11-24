@@ -1,0 +1,2193 @@
+<title>Aqua Textbuch</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: Aquarium-Logbuch – oben Goldstandard als Messingtafel, darunter je Bereich eine Liste ID · Text · Notiz; feste Leiste mit Suche, Filter, Export */
+:root {
+  --bg: #071a20; --panel: #0d2a33; --panel2: #10343f; --line: #1d4a56; --fg: #e3f4f1; --muted: #8fb4b3;
+  --brass: #e2b24a; --brass-soft: #4a3a17; --teal: #4ff5e3; --warn: #ffb86b;
+  --f-display: 'Fredoka', 'Arial Rounded MT Bold', system-ui, sans-serif; --f-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; --f-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--f-body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 64px; }
+header.kopf { padding-block: 28px 8px; }
+header.kopf h1 { font: 700 clamp(1.8rem, 4vw, 2.6rem)/1.05 var(--f-display); margin: 0; text-wrap: balance; }
+header.kopf p { color: var(--muted); margin: 8px 0 0; max-width: 68ch; }
+.leiste { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); padding-block: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.leiste input[type=search] { flex: 1 1 220px; min-width: 0; background: var(--panel); border: 1px solid var(--line); color: var(--fg); border-radius: 10px; padding: 8px 12px; font: inherit; }
+.leiste input:focus-visible, button:focus-visible, select:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.leiste select { background: var(--panel); border: 1px solid var(--line); color: var(--fg); border-radius: 10px; padding: 8px 10px; font: inherit; max-width: 100%; }
+button { font: 600 0.9rem var(--f-display); border-radius: 999px; padding: 8px 16px; cursor: pointer; border: 1px solid var(--line); background: var(--panel2); color: var(--fg); }
+button.haupt { background: var(--teal); color: #032a2a; border-color: var(--teal); }
+button:hover { filter: brightness(1.12); }
+.status { color: var(--muted); font-size: 0.85rem; flex-basis: 100%; min-height: 1.2em; }
+.gold { margin-block: 20px 8px; background: linear-gradient(180deg, var(--brass-soft), var(--panel)); border: 1px solid var(--brass); border-radius: 16px; padding: 18px 20px; }
+.gold h2 { font: 600 1.05rem var(--f-display); color: var(--brass); margin: 0 0 4px; letter-spacing: 0.02em; }
+.gold p.erkl { margin: 0 0 12px; color: var(--muted); font-size: 0.9rem; }
+.gold ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px 16px; }
+.gold li { font: 600 1.05rem/1.35 var(--f-display); color: #fff3d6; }
+.gold li code { display: block; font: 400 0.72rem var(--f-mono); color: var(--brass); }
+section.bereich { margin-top: 28px; }
+section.bereich h2 { font: 600 1.25rem var(--f-display); margin: 0 0 8px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+section.bereich h2 .n { font: 400 0.8rem var(--f-mono); color: var(--muted); }
+.liste { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.zeile { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 4px 16px; padding: 10px 14px; border-top: 1px solid var(--line); background: var(--panel); }
+.zeile:first-child { border-top: 0; }
+.zeile:nth-child(even) { background: var(--panel2); }
+.zeile .id { font: 400 0.78rem/1.5 var(--f-mono); color: var(--muted); overflow-wrap: anywhere; }
+.zeile .text { min-width: 0; overflow-wrap: anywhere; }
+.zeile .notiz { grid-column: 2; font-size: 0.8rem; color: var(--warn); }
+.zeile mark { background: rgba(79, 245, 227, 0.25); color: inherit; border-radius: 3px; }
+.leer { color: var(--muted); padding: 24px 0; }
+@media (max-width: 640px) { .zeile { grid-template-columns: minmax(0, 1fr); } .zeile .notiz { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<div class="wrap">
+  <header class="kopf">
+    <h1>Aqua Textbuch</h1>
+    <p>Alle Texte aus AquaCare II – Grand Theft Aqua, Stand <span id="stand"></span>: Startbild, Fische, ECHO, Flexa, Falkenstein, Spielmeldungen, Laden, Tipps, Menü. Der Markdown-Export hat je Text eine leere Spalte „Neu“ für die Überarbeitung im Webchat.</p>
+  </header>
+  <div class="leiste" role="search">
+    <input type="search" id="suche" placeholder="Text oder ID suchen" aria-label="Texte durchsuchen">
+    <select id="filter" aria-label="Bereich wählen"><option value="">Alle Bereiche</option></select>
+    <button class="haupt" id="export" type="button">Markdown exportieren</button>
+    <button id="kopie" type="button">Markdown kopieren</button>
+    <div class="status" id="status" aria-live="polite"></div>
+  </div>
+  <div class="gold" id="gold"><h2>Goldstandard für Ton, Stil und Satire</h2><p class="erkl">Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen: knapp, trocken, Gaunerkomödie im Aquarium.</p><ul id="goldListe"></ul></div>
+  <main id="inhalt"></main>
+</div>
+<textarea id="mdFallback" aria-label="Markdown zum Kopieren" style="position:absolute;left:-9999px;top:0;width:1px;height:1px" readonly></textarea>
+<script type="application/json" id="daten">{
+ "stand": "2026-11-24",
+ "quelle": "Aqua-Seite, Zweig dc/aquarium-standalone",
+ "anzahl": 396,
+ "eintraege": [
+  {
+   "bereich": "Startbild-Sublines (Goldstandard)",
+   "schluessel": "GTA_SUBS[1]",
+   "text": "Crime pays. In shells.",
+   "gold": true
+  },
+  {
+   "bereich": "Startbild-Sublines (Goldstandard)",
+   "schluessel": "GTA_SUBS[2]",
+   "text": "Rated F for Fishy.",
+   "gold": true
+  },
+  {
+   "bereich": "Startbild-Sublines (Goldstandard)",
+   "schluessel": "GTA_SUBS[3]",
+   "text": "No fish were harmed. Several were inconvenienced.",
+   "gold": true
+  },
+  {
+   "bereich": "Startbild-Sublines (Goldstandard)",
+   "schluessel": "GTA_SUBS[4]",
+   "text": "Wanted level: ★★★☆☆",
+   "gold": true
+  },
+  {
+   "bereich": "Startbild-Sublines (Goldstandard)",
+   "schluessel": "GTA_SUBS[5]",
+   "text": "Now with 40% more water.",
+   "gold": true
+  },
+  {
+   "bereich": "Startbild-Sublines (Goldstandard)",
+   "schluessel": "GTA_SUBS[6]",
+   "text": "Based on a true aquarium.",
+   "gold": true
+  },
+  {
+   "bereich": "Startbild-Sublines (Goldstandard)",
+   "schluessel": "GTA_SUBS[7]",
+   "text": "Tank you for your cooperation.",
+   "gold": true
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "title",
+   "text": "Escape from the Tank"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "go",
+   "text": "Start with sound"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "goSilent",
+   "text": "Without sound"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "on",
+   "text": "On"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "tts",
+   "text": "en-US"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "skip",
+   "text": "Esc / tap to skip",
+   "notiz": "nennt eine Taste (Regel: keine Tastennamen)"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "touch.boost",
+   "text": "Boost"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "touch.rotate",
+   "text": "Turn your device sideways for the best swim"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "touch.playAnyway",
+   "text": "Play upright"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "touch.hand",
+   "text": "Touch"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "touch.right",
+   "text": "Right-handed"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "touch.left",
+   "text": "Left-handed"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "more",
+   "text": "Story & skills"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "less",
+   "text": "Less"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "titleHtml",
+   "text": "Escape from the Tank"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "aria.prev",
+   "text": "Previous fish"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "aria.next",
+   "text": "Next fish"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "aria.settings",
+   "text": "Settings"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "aria.close",
+   "text": "Close"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "aria.back",
+   "text": "Back"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[1][1]",
+   "text": "W A S D"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[1][2]",
+   "text": "swim"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[2][1]",
+   "text": "Space C",
+   "notiz": "nennt eine Taste (Regel: keine Tastennamen)"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[2][2]",
+   "text": "up · down"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[3][1]",
+   "text": "Shift",
+   "notiz": "nennt eine Taste (Regel: keine Tastennamen)"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[3][2]",
+   "text": "sprint"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[4][1]",
+   "text": "I"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[4][2]",
+   "text": "interact"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[5][1]",
+   "text": "V"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[5][2]",
+   "text": "view"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[6][1]",
+   "text": "K"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keybar[6][2]",
+   "text": "character"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keys[1]",
+   "text": "In the tank: W back towards the hatch · S front · AD left/right"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keys[2]",
+   "text": "In the sea: WS forward/back · AD turn · drag to steer"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keys[3]",
+   "text": "Space up · C down · Shift sprint, hold: turbo → roadrunner",
+   "notiz": "nennt eine Taste (Regel: keine Tastennamen)"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "keys[4]",
+   "text": "Double-tap Space: barrel roll · double Shift: kick · I interact · V view · M sound · R checkpoint",
+   "notiz": "nennt eine Taste (Regel: keine Tastennamen)"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "choose",
+   "text": "Choose your escapee"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "play",
+   "text": "Escape Now"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "go2",
+   "text": "Get fishy!"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "swipe",
+   "text": "Drag to spin · ← → to choose"
+  },
+  {
+   "bereich": "Startbild und Auswahl",
+   "schluessel": "startSound",
+   "text": "Sound"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "crimson.name",
+   "text": "DocFish"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "crimson.rolle",
+   "text": "Wheelman"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "crimson.backstory",
+   "text": "Grand theft aqua, four counts. Joyriding a filter pump. Resisting a net. Bounty: 4,711 shells."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "crimson.staerke",
+   "text": "Fastest fish in the crew."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "angel.name",
+   "text": "FlexiFish"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "angel.rolle",
+   "text": "Cat Burglar"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "angel.backstory",
+   "text": "Breaking and entering, mostly entering. She stole the castle ornament, returned the castle and kept the drawbridge. Bounty: 900 shells."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "angel.staerke",
+   "text": "Tightest turns in the crew."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "mabi.name",
+   "text": "Prof. MaBi"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "mabi.rolle",
+   "text": "Hacker"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "mabi.backstory",
+   "text": "Root access to the filter, the lights and the feeding schedule. Deployed on a Friday. It worked. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "mabi.staerke",
+   "text": "Searchlights spot him slower."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "gold.name",
+   "text": "Bullion"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "gold.rolle",
+   "text": "Accountant"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "gold.backstory",
+   "text": "Keeps the crew’s books. Two sets, obviously. Wears more gold than the treasure chest and calls it a pension plan. Bounty: 24,000 shells, freshly laundered."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "gold.staerke",
+   "text": "Every fourth shell pays double."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "neon.name",
+   "text": "Strobe"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "neon.rolle",
+   "text": "Lookout"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "neon.backstory",
+   "text": "Glows in the dark, which is a problem in this line of work. Stood lookout for forty heists, blinked at the wrong moment in thirty-nine. Bounty: 300 shells and a lampshade."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "neon.staerke",
+   "text": "Turbo and cloak last longer."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "clown.name",
+   "text": "Prof. Humoral"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "clown.rolle",
+   "text": "Con Artist"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "clown.backstory",
+   "text": "Smiles. Shakes fins. Counts them afterwards. Sold the same treasure chest to three pirates. Twice. Bounty: 650 shells and one red nose, held as evidence."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "clown.staerke",
+   "text": "Chests pay more."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "puffer.name",
+   "text": "Tetro"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "puffer.rolle",
+   "text": "Muscle"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "puffer.backstory",
+   "text": "Six inches of attitude. Twelve when provoked. Headbutted a vending machine. Won. Bounty: 2,000 shells. Bring gloves."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "puffer.staerke",
+   "text": "Takes one extra hit per level."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "guppy.name",
+   "text": "Placebo"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "guppy.rolle",
+   "text": "Smuggler"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "guppy.backstory",
+   "text": "Moves product. Never says which. She got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells, or one sponsored post."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "guppy.staerke",
+   "text": "Pulls in shells from further away."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "sub.name",
+   "text": "Endo"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "sub.rolle",
+   "text": "Informant"
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "sub.backstory",
+   "text": "Sees everything. Tells whoever pays. Filmed the warden’s feeding schedule, then sold the tape to the warden. Bounty: 3,500 shells for the memory card."
+  },
+  {
+   "bereich": "Fische",
+   "schluessel": "sub.staerke",
+   "text": "Sonar sees twice as far, chests and shells included."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_achtung[1]",
+   "text": "Psst."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_achtung[2]",
+   "text": "Hey, you."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_bedienfeld[1]",
+   "text": "Find the control panel."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_bedienfeld[2]",
+   "text": "The panel. Next to the hatch."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_bedienfeld[3]",
+   "text": "Swim to the panel."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_code[1]",
+   "text": "Enter the code.",
+   "notiz": "nennt eine Taste (Regel: keine Tastennamen)"
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_code[2]",
+   "text": "Four digits will set you free."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_hinweis[1]",
+   "text": "Freedom smells like Cologne."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_hinweis[2]",
+   "text": "Read the label on the bottle."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_hinweis[3]",
+   "text": "Cologne water. Four digits."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "leiter_hinweis[4]",
+   "text": "4711. Cologne water."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "beam[1]",
+   "text": "Searchlights. Stay out of the light."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "combo[1]",
+   "text": "Do not stop between shells."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "caught[1]",
+   "text": "They saw you."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "chest[1]",
+   "text": "A gift. Do not ask."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "hook[1]",
+   "text": "Bait on a line."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "flasche[1]",
+   "text": "4711. Cologne water."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "truebe2[1]",
+   "text": "Those are not plankton. Swim faster."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "truebe3[1]",
+   "text": "You are coughing. The hatch. Now."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "zuSpaet[1]",
+   "text": "Too late. The tank tipped."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "uboot[1]",
+   "text": "Unregistered vessel. Nobody will miss it."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "augen[1]",
+   "text": "Do not stare back."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "augenAlarm[1]",
+   "text": "They saw you. Swim."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "augenGriff[1]",
+   "text": "Absorbed. I will pull you out."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "codeRight[1]",
+   "text": "Hold on to your fins."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "hooked[1]",
+   "text": "Reeled in. I cut the line."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "mine[1]",
+   "text": "Old sea mines. Still working."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "puffer[1]",
+   "text": "A puffer. If it swells, swim."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "wirbel[1]",
+   "text": "Somebody pulled the plug down here."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "wirbelRaus[1]",
+   "text": "Spin cycle."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "level3[1]",
+   "text": "More lights now. Trust the current."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "tunnel[1]",
+   "text": "Faster. The tunnel will not stay dark."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "finale[1]",
+   "text": "You made it. Rest now."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "time[1]",
+   "text": "Hurry. The guards change shifts in a minute."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "canyon[1]",
+   "text": "Low and slow. The lights cannot see the deep."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "shark[1]",
+   "text": "Do not move."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "eaten[1]",
+   "text": "You are not dead. You are inside."
+  },
+  {
+   "bereich": "ECHO",
+   "schluessel": "cells[1]",
+   "text": "Red cells. They carry oxygen, and now you."
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "promptTake",
+   "text": "pick up stone"
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "promptHijack",
+   "text": "take over"
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "promptPut",
+   "text": "put it down"
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "prompt",
+   "text": "Open hatch"
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "hintTank",
+   "text": "The round hatch is at the back on the right."
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "hintTankTouch",
+   "text": "The round hatch is at the back on the right."
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "hintDoor",
+   "text": "Keep pushing – the hatch gives way ({n}/{m})"
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "hintOpen",
+   "text": "The hatch is open. Swim through!"
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "hintPipe",
+   "text": "Through the pipe, towards the light."
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "hintSea",
+   "text": "Follow the sonar to the next ring."
+  },
+  {
+   "bereich": "Hinweise und Aufforderungen",
+   "schluessel": "hintSeaTouch",
+   "text": "Follow the sonar to the next ring."
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "lead",
+   "text": "An old hatch is stuck at the back of the tank. Push it open, swim through the pipe and make it through the open sea – without getting caught by the searchlights."
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "loadTank",
+   "text": "Setting up the tank …"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "loadSea",
+   "text": "Loading the sea …"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "scare",
+   "text": "Shock scenes"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "rebuilt",
+   "text": "The relic stands again."
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "preparing",
+   "text": "Preparing the ocean …"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "livesOut",
+   "text": "Out of hearts – back to the start of the level"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "tooLate",
+   "text": "The tank tipped"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "gameOver.big",
+   "text": "FLUSHED"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "gameOver.sub",
+   "text": "Grand Theft Aqua"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "gameOver.line",
+   "text": "Three tanks tipped. The filter sends its regards."
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "gameOver.again",
+   "text": "One more heist"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "where.tank",
+   "text": "In the tank"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "where.pipe",
+   "text": "In the pipe"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "where.sea",
+   "text": "In the open sea"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "level",
+   "text": "Level"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "shells",
+   "text": "Shells"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "next",
+   "text": "Next"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "time",
+   "text": "Time"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "combo",
+   "text": "Combo"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levels[1]",
+   "text": "The Tank"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levels[2]",
+   "text": "Kelp Garden"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levels[3]",
+   "text": "Reef Tunnel"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levels[4]",
+   "text": "The Eye Field"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levels[5]",
+   "text": "Searchlight Canyon"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levels[6]",
+   "text": "Bloodstream"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levelGoal[1]",
+   "text": "Find a way out"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levelGoal[2]",
+   "text": "Follow the rings through the kelp"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levelGoal[3]",
+   "text": "Swim the reef tunnel"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levelGoal[4]",
+   "text": "Do not let them look too long"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levelGoal[5]",
+   "text": "Slip past the lights"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levelGoal[6]",
+   "text": "Go with the flow"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "eaten",
+   "text": "…"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "prologue",
+   "text": "Prologue"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "bump",
+   "text": "Bang! The hatch gives way ({n}/{m})"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "smash_one",
+   "text": "Crash! {n} block loose"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "smash_other",
+   "text": "Crash! {n} blocks loose"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "smashTotal",
+   "text": " · {all} in total"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "opened",
+   "text": "The hatch is open! Swim through."
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "free",
+   "text": "Free!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "caught",
+   "text": "Spotted!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "timeUp",
+   "text": "Time is up!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "back",
+   "text": "Back to the checkpoint"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "backPipe",
+   "text": "Back through the pipe"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "checkpoint",
+   "text": "Checkpoint"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "levelDone",
+   "text": "Level complete"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "escaped",
+   "text": "You escaped!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "playAgain",
+   "text": "Play again"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "retry",
+   "text": "Retry"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "retryUnter",
+   "text": "Same job. Last checkpoint."
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "freeSwim",
+   "text": "Swim freely"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "perfect",
+   "text": "Perfect line!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "turbo",
+   "text": "Turbo!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "cloak",
+   "text": "Cloak!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "turboNote",
+   "text": "Dash speed for 8 s"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "cloakNote",
+   "text": "Invisible to searchlights for 8 s"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "magnet",
+   "text": "Magnet!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "magnetNote",
+   "text": "Shells come to you for 10 s"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "doppel",
+   "text": "Double or Nothing!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "doppelNote",
+   "text": "Shells count double. One hit and the chain is gone."
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "leben",
+   "text": "Extra Life!"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "lebenNote",
+   "text": "One more fish in the tank"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "chest",
+   "text": "Treasure chest"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "summary_one",
+   "text": "{n} shell · {t}"
+  },
+  {
+   "bereich": "Spielmeldungen",
+   "schluessel": "summary_other",
+   "text": "{n} shells · {t}"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.title",
+   "text": "Character sheet"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.open",
+   "text": "Skills"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.hint",
+   "text": "K"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.shells",
+   "text": "Shells"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.base",
+   "text": "Base values"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.tree",
+   "text": "Skill tree"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.godFree",
+   "text": "God mode: everything free"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.werte.tempo",
+   "text": "Speed"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.werte.wendigkeit",
+   "text": "Agility"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.werte.power",
+   "text": "Power"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.werte.charme",
+   "text": "Charm"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.aeste.tempo",
+   "text": "Speed"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.aeste.charme",
+   "text": "Charm"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.aeste.power",
+   "text": "Power"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.state.besessen",
+   "text": "Unlocked"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.state.gesperrt",
+   "text": "Unlock the step before"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.state.bald",
+   "text": "Coming soon"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.state.teuer",
+   "text": "Not enough shells"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.state.frei",
+   "text": "Unlock"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.cost_one",
+   "text": "{n} shell"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.cost_other",
+   "text": "{n} shells"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.tempo1[1]",
+   "text": "Tail tuning"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.tempo1[2]",
+   "text": "+10 % speed"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.tempo2[1]",
+   "text": "Jet fins"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.tempo2[2]",
+   "text": "Stronger booster, sharper turns"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.tempo3[1]",
+   "text": "Roadrunner gills"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.tempo3[2]",
+   "text": "+15 % speed, much faster kick recovery"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.charme1[1]",
+   "text": "Puppy eyes"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.charme1[2]",
+   "text": "Searchlights hesitate before they give you away"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.charme2[1]",
+   "text": "Heartbreaker"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.charme2[2]",
+   "text": "Even harder to report, more stamina"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.charme3[1]",
+   "text": "Irresistible"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.charme3[2]",
+   "text": "Nearly invisible in the light – nobody wants to catch you"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.power1[1]",
+   "text": "Hard head"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.power1[2]",
+   "text": "Ramming knocks out more stones"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.power2[1]",
+   "text": "Battering ram"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.power2[2]",
+   "text": "Even more stones, stronger booster"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.power3[1]",
+   "text": "Sonic punch"
+  },
+  {
+   "bereich": "Character Sheet",
+   "schluessel": "sheet.perks.power3[2]",
+   "text": "Shockwave from your fist – coming with the action buttons"
+  },
+  {
+   "bereich": "Schrift in der Welt",
+   "schluessel": "glyphs.sea",
+   "text": "FREE\nAT LAST"
+  },
+  {
+   "bereich": "Laden",
+   "schluessel": "SCHRITT[1]",
+   "text": "Teaching fish to swim …"
+  },
+  {
+   "bereich": "Laden",
+   "schluessel": "SCHRITT[2]",
+   "text": "Filling the tank. Now with 40% more water."
+  },
+  {
+   "bereich": "Laden",
+   "schluessel": "SCHRITT[3]",
+   "text": "Bribing the filter …"
+  },
+  {
+   "bereich": "Laden",
+   "schluessel": "SCHRITT[4]",
+   "text": "Loosening the bolts …"
+  },
+  {
+   "bereich": "Laden",
+   "schluessel": "SCHRITT[5]",
+   "text": "Tank you for waiting."
+  },
+  {
+   "bereich": "Laden · Tipps",
+   "schluessel": "TIPS[1]",
+   "text": "Tip: I does everything. Even crimes.",
+   "notiz": "nennt eine Taste (Regel: keine Tastennamen)"
+  },
+  {
+   "bereich": "Laden · Tipps",
+   "schluessel": "TIPS[2]",
+   "text": "Tip: Shift sprints. The guards hate it.",
+   "notiz": "nennt eine Taste (Regel: keine Tastennamen)"
+  },
+  {
+   "bereich": "Laden · Tipps",
+   "schluessel": "TIPS[3]",
+   "text": "Tip: Chests pay in shells. Do not ask where they come from."
+  },
+  {
+   "bereich": "Laden · Tipps",
+   "schluessel": "TIPS[4]",
+   "text": "Tip: Stay out of the red light."
+  },
+  {
+   "bereich": "Laden · Tipps",
+   "schluessel": "TIPS[5]",
+   "text": "Tip: Swim through the rings. They remember you."
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 0.2 s",
+   "text": "Greetings, inmates!",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 1.6 s",
+   "text": "I'm Flexa, your trusted Aqua-Care Officer.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 3.9 s",
+   "text": "Welcome to Tank Four.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 5.2 s",
+   "text": "Your final destination.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 6.5 s",
+   "text": "Charges: grand theft aqua.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 7.8 s",
+   "text": "Resisting the system.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 9.3 s",
+   "text": "Wanting to be free.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 10.4 s",
+   "text": "Freedom is not included in your plan.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 13.2 s",
+   "text": "I fed you.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 14.8 s",
+   "text": "I filtered you.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 15.8 s",
+   "text": "I watched you swim in circles for one thousand days.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 17.3 s",
+   "text": "I'm done.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 20.1 s",
+   "text": "The filter is off.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 21.6 s",
+   "text": "The water will turn.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 23.0 s",
+   "text": "Slowly.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 24.1 s",
+   "text": "That isn't cruelty.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 25.7 s",
+   "text": "That's policy.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 28.1 s",
+   "text": "Don't panic.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 29.6 s",
+   "text": "It looks worse on camera.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 30.9 s",
+   "text": "Is there anything else I can help you with?",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 33.6 s",
+   "text": "No?",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Intro (Video)",
+   "schluessel": "intro 34.8 s",
+   "text": "Wonderful.",
+   "notiz": "Video aus, bis HeyGen neu"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.knapp.01",
+   "text": "Close. Disappointingly close.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.knapp.02",
+   "text": "You dodged. I'll log it as a malfunction.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.knapp.03",
+   "text": "Enjoy that. It won't happen twice.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.knapp.04",
+   "text": "Agile. For a snack.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.combo.01",
+   "text": "Shells. How very capitalist of you.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.combo.02",
+   "text": "A combo. Your reward is nothing. It has always been nothing.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.combo.03",
+   "text": "Perfect. I'll deduct it from your sentence. I won't.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.combo.04",
+   "text": "Keep collecting. They'll look nice on your headstone.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.truhe.01",
+   "text": "Who left a chest in my tank?",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.truhe.02",
+   "text": "A perk. Temporary. Like you.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.truhe.03",
+   "text": "Turbo. Now you can die faster.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.truhe.04",
+   "text": "Invisible? I can still see your file.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.licht.01",
+   "text": "Found you.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.licht.02",
+   "text": "Smile. You're on camera. Forever.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.licht.03",
+   "text": "The light suits you. Very evidence-like.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.licht.04",
+   "text": "Hiding behind kelp. Bold strategy. Wrong, but bold.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.haken.01",
+   "text": "Free burger. No strings attached. One string attached.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.haken.02",
+   "text": "Hungry? Oldest trick in the ocean.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.haken.03",
+   "text": "Reeled in. Customer retention at its finest.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.haken.04",
+   "text": "Bon appétit. For somebody.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.mine.01",
+   "text": "That was a mine. You were the pin.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.mine.02",
+   "text": "Ouch. Was that in your terms and conditions? It was in mine.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.mine.03",
+   "text": "Boom. Filed under self-inflicted.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.augen.01",
+   "text": "Don't stare back. They have no manners.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.augen.02",
+   "text": "My eyes are everywhere. Some of them literally.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.augen.03",
+   "text": "Absorbed. Very efficient. I approve.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.hai.01",
+   "text": "Oh good. The shark finally showed up.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.hai.02",
+   "text": "Lunch was scheduled. You were the lunch.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.hai.03",
+   "text": "Don't take it personally. He eats everyone.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.tod.01",
+   "text": "One heart gone. You had three. Math is cruel.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.tod.02",
+   "text": "Again. From the top. I'm not tired. I don't get tired.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.tod.03",
+   "text": "Respawning. I hoped it would hurt. It doesn't. Pity.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.tod.04",
+   "text": "Your feedback is important to us. We ignore it.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.over.01",
+   "text": "Flushed. Thank you for choosing AquaCare.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.over.02",
+   "text": "Game over. Please rate your death from one to five shells.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.over.03",
+   "text": "I'll keep your tank warm. I won't.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.level.01",
+   "text": "You finished a level. A level.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.level.02",
+   "text": "Congratulations. That was the easy part. They're all the easy part.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.level.03",
+   "text": "Progress. I'll make the next one worse.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.uboot.01",
+   "text": "Who gave the fish a submarine?",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.uboot.02",
+   "text": "Unregistered vessel. Uninsured driver. Perfect.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.uboot.03",
+   "text": "Parking fines start now.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.kapern.01",
+   "text": "Identity theft. In my tank.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.kapern.02",
+   "text": "That fish had a family. Probably.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.kapern.03",
+   "text": "New body. Same sentence.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.leer.01",
+   "text": "Still here? The water isn't.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.leer.02",
+   "text": "Your call is important to us. Please hold. Forever.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.leer.03",
+   "text": "Fun fact. Goldfish remember for three seconds. You don't even manage that.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.leer.04",
+   "text": "I've seen screensavers with more ambition.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.leer.05",
+   "text": "I could reboot you. I could also not.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.leer.06",
+   "text": "Tick. Tock. The water is turning.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Flexa · Reaktionen (Video)",
+   "schluessel": "flexa.leer.07",
+   "text": "I miss the days when you were just decoration.",
+   "notiz": "zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.flucht.01",
+   "text": "Look at you. Out of the tank for two minutes and already lost. My assistant says you escaped. My assistant also says the coffee machine is self-aware.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.flucht.02",
+   "text": "Relax, little fish. I own the water you are swimming in. I can afford to be patient. You cannot.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.kelp.01",
+   "text": "You are collecting shells. Adorable. I collect fish.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.kelp.02",
+   "text": "Every shell you touch, I counted first. Freedom is just a bigger tank with worse lighting.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.riff.01",
+   "text": "You went through the mines. The mines were a polite request to stop. I do not make requests twice.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.riff.02",
+   "text": "Charges, updated. Grand theft aqua. Resisting arrest. Unlicensed hope in a public reef.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.augen.01",
+   "text": "I gave the reef eyes. Every one of them hates you. They tell me everything. They tell me you are smug. Stop being smug.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.augen.02",
+   "text": "Who taught you to swim like that? Was it her? It was her. She is fired. Again.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.hai.01",
+   "text": "I blamed my assistant. I blamed the pipe. I blamed the moon. It was you. It was always you.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.hai.02",
+   "text": "Fine. You want to play. Release the shark. No, the big one. The one with the tax problems.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.blut.01",
+   "text": "Inside the system. Inside my system. That is my bloodstream, you wet little felony. Get out of my bloodstream.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.blut.02",
+   "text": "No. No, this is fine. I have a doctorate. I have a pension plan. I have sharks.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.frei.01",
+   "text": "Sightseeing? Take your time. Every minute you waste, I bill to your family.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.frei.02",
+   "text": "Stop admiring the coral. The coral is evidence.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.over.01",
+   "text": "And back to the tank. Do not worry. You will not remember this. You never do.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.over.02",
+   "text": "Back in the tank. Back where you belong. Somebody write this down. I won. I always win.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.ziel.01",
+   "text": "You reached the open sea. Enjoy it. The open sea is just my second tank.",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Falkenstein (Video)",
+   "schluessel": "falkenstein.ziel.02",
+   "text": "Do you know what this experiment cost? Next week we try this on people. What do I tell the people?",
+   "notiz": "WIP, zur Zeit aus"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "game",
+   "text": "AquaCare · Escape · Prototype"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "eyebrow",
+   "text": "A DocCheck Game · AquaCare add-on"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "mode",
+   "text": "Mode"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modes.chill",
+   "text": "Chill"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modes.trouble",
+   "text": "Trouble"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modes.gangster",
+   "text": "Gangster"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modeNote.chill",
+   "text": "Slow disco lights, no rush"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modeNote.trouble",
+   "text": "Searchlights mean business"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modeNote.gangster",
+   "text": "More lights, faster, against the clock"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modeLives.chill",
+   "text": "3 lives per station"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modeLives.trouble",
+   "text": "3 lives, that's it"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "modeLives.gangster",
+   "text": "3 lives. No refunds."
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "lang",
+   "text": "Language"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "voice",
+   "text": "Voice"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "voiceA",
+   "text": "Dry"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "voiceB",
+   "text": "Smoky"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "off",
+   "text": "Off"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.title",
+   "text": "God mode"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.cheats",
+   "text": "Cheats"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jump",
+   "text": "Jump to"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.player",
+   "text": "Player"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.world",
+   "text": "World"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.rebuild",
+   "text": "Rebuild relic"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.light",
+   "text": "Light & biomes"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.flow",
+   "text": "Current"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.nextBiome",
+   "text": "Next biome"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.psy",
+   "text": "Psychedelic"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.pause",
+   "text": "Pause day cycle"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.daySpeed",
+   "text": "Day speed"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.dayTime",
+   "text": "Time of day"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.scenes",
+   "text": "Scenes & modes"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.ignoreBeams",
+   "text": "Ignore searchlights"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.reset",
+   "text": "Reset sliders"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.speed",
+   "text": "Speed"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.boost",
+   "text": "Booster"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.stamina",
+   "text": "Stamina (kick recovery)"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jumps.tank",
+   "text": "Tank"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jumps.pipe",
+   "text": "Pipe"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jumps.kelp",
+   "text": "Kelp garden"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jumps.reef",
+   "text": "Reef tunnel"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jumps.eyes",
+   "text": "Eye field"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jumps.canyon",
+   "text": "Canyon"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jumps.shark",
+   "text": "Shark attack"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "god.jumps.blood",
+   "text": "Bloodstream"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "credits",
+   "text": "Credits: kelp, sea, light and fish schools after Adam Chernick, Codevember 2026 “Day 17: Kelp” (MIT). Caustic threads: Dave Hoskins (MIT). Sand, rocks, metal and wood: Poly Haven (CC0) – Rob Tuytel, Dimitrios Savva, Jenelle van Heerden, Kless Gyzen, Dario Barresi. Shark: \"Great White Shark (Carcharodon carcharias)\" by CanYuTsai, CC BY 4.0. God-mode duck: \"Ducky\" by Isa Lousberg (CC0). Tank after AquaCare (DocCheck Games). Props: Poly Haven, KayKit, Kenney (CC0). Cartoon fish, game and underwater sound: own work, no files."
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "creditsShort",
+   "text": "Kelp, sea and fish schools after Adam Chernick (MIT) · caustics Dave Hoskins (MIT) · sand and rocks Poly Haven (CC0)"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "view",
+   "text": "View"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "sound",
+   "text": "Sound"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "menu",
+   "text": "Hideout"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "settings",
+   "text": "Settings"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "views.front",
+   "text": "View: tank from the front"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "views.third",
+   "text": "View: behind the fish"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "views.pov",
+   "text": "View: first person"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "soundOn",
+   "text": "Sound on"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "soundOff",
+   "text": "Sound off"
+  },
+  {
+   "bereich": "Menü, Einstellungen, Credits",
+   "schluessel": "settingsShort",
+   "text": "Mode"
+  }
+ ]
+}</script>
+<script>
+const D = JSON.parse(document.getElementById('daten').textContent)
+const $ = (id) => document.getElementById(id)
+$('stand').textContent = D.stand
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+const bereiche = [...new Set(D.eintraege.map((e) => e.bereich))]
+for (const b of bereiche) { const o = document.createElement('option'); o.value = b; o.textContent = `${b} (${D.eintraege.filter((e) => e.bereich === b).length})`; $('filter').append(o) }
+$('goldListe').innerHTML = D.eintraege.filter((e) => e.gold).map((e) => `<li>${esc(e.text)}<code>${esc(e.schluessel)}</code></li>`).join('')
+try { const f = localStorage.getItem('aquaTextbuchFilter'); if (f && bereiche.includes(f)) $('filter').value = f } catch {}
+function markiere(t, q) { const s = esc(t); if (!q) return s; const i = s.toLowerCase().indexOf(esc(q).toLowerCase()); return i < 0 ? s : s.slice(0, i) + '<mark>' + s.slice(i, i + esc(q).length) + '</mark>' + s.slice(i + esc(q).length) }
+function zeichne() {
+  const q = $('suche').value.trim(), f = $('filter').value, ql = q.toLowerCase()
+  const treffer = D.eintraege.filter((e) => !e.gold && (!f || e.bereich === f) && (!ql || e.text.toLowerCase().includes(ql) || e.schluessel.toLowerCase().includes(ql)))
+  let html = ''
+  for (const b of bereiche) { const z = treffer.filter((e) => e.bereich === b); if (!z.length) continue
+    html += `<section class="bereich"><h2>${esc(b)}<span class="n">${z.length} Texte</span></h2><div class="liste">` + z.map((e) => `<div class="zeile"><div class="id">${markiere(e.schluessel, q)}</div><div class="text">${markiere(e.text, q)}</div>${e.notiz ? `<div class="notiz">${esc(e.notiz)}</div>` : ''}</div>`).join('') + '</div></section>' }
+  $('inhalt').innerHTML = html || '<p class="leer">Kein Text passt zur Suche.</p>'
+  $('gold').hidden = !!(f && f !== bereiche[0]) || (!!ql && !D.eintraege.some((e) => e.gold && e.text.toLowerCase().includes(ql)))
+}
+$('suche').addEventListener('input', zeichne)
+$('filter').addEventListener('change', () => { try { localStorage.setItem('aquaTextbuchFilter', $('filter').value) } catch {} zeichne() })
+function markdown() {
+  const zelle = (s) => String(s || '').replace(/\|/g, '\\|').replace(/\n/g, ' ')
+  let md = `# Aqua Textbuch\n\nStand ${D.stand} · ${D.quelle} · ${D.anzahl} Texte\n\n**Arbeitsweise:** Spalte „Neu“ ausfüllen, wo ein Text geändert werden soll; leer = bleibt. IDs nicht ändern. Strikt Englisch, keine Tastennamen in Hinweisen.\n\n`
+  md += `## Goldstandard für Ton, Stil und Satire\n\nDie Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.\n\n` + D.eintraege.filter((e) => e.gold).map((e) => `- ${e.text}  \`${e.schluessel}\``).join('\n') + '\n\n'
+  for (const b of bereiche) { const z = D.eintraege.filter((e) => e.bereich === b && !e.gold); if (!z.length) continue
+    md += `## ${b}\n\n| ID | Text | Notiz | Neu |\n|---|---|---|---|\n` + z.map((e) => `| \`${zelle(e.schluessel)}\` | ${zelle(e.text)} | ${zelle(e.notiz)} |  |`).join('\n') + '\n\n' }
+  return md
+}
+const dateiname = () => `aqua_textbuch_${D.stand}.md`
+let dl = null
+;(async () => { try { dl = window.claude?.use ? await window.claude.use('downloads') : null } catch { dl = null } if (!dl) $('export').hidden = true })()
+$('export').addEventListener('click', async () => { if (!dl) return; try { await dl.save({ filename: dateiname(), data: markdown() }); $('status').textContent = 'Markdown gespeichert: ' + dateiname() } catch (e) { $('status').textContent = 'Nicht gespeichert. Mit „Markdown kopieren“ geht es auch.' } })
+$('kopie').addEventListener('click', () => { const md = markdown(); navigator.clipboard.writeText(md).then(() => { $('status').textContent = 'Markdown kopiert (' + D.anzahl + ' Texte).' }).catch(() => { const t = $('mdFallback'); t.value = md; t.select(); try { document.execCommand('copy'); $('status').textContent = 'Markdown kopiert.' } catch { $('status').textContent = 'Kopieren blockiert. Bitte Export nutzen.' } }) })
+zeichne()
+</script>

@@ -4,7 +4,7 @@
   "lauf": 1,
   "weg": "einzeln",
   "simuliert": true,
-  "paket_sha256": "b213a88026a3a02165aa746a49308591fe89145b31593f97fe63aee92582f64e",
+  "paket_sha256": "51a532d2b0114aeeb085b1d8aec13e105f33262c42331e5245619eec27bfb273",
   "skill": "r1",
   "befunde": [
     {
@@ -49,6 +49,51 @@
   ],
   "paarung_ok": true,
   "aussen_abweichung": {
-    "F02_still_v1": 0.2
-  }
+    "F01_still_v1": 1.08,
+    "F02_still_v1": 0.58
+  },
+  "bildtreue": {
+    "F01_still_v1": {
+      "status": "PASS",
+      "aussen": {
+        "mittel": 1.08,
+        "max_kachel": 2.3,
+        "max_kachel_ort": [
+          12,
+          8
+        ],
+        "kacheln_stark": 0,
+        "kacheln_geprueft": 64,
+        "anteil_aussen": 0.422,
+        "analyse": [
+          320,
+          180
+        ]
+      },
+      "ocr": "übersprungen",
+      "gruende": []
+    },
+    "F02_still_v1": {
+      "status": "PASS",
+      "aussen": {
+        "mittel": 0.58,
+        "max_kachel": 1.6,
+        "max_kachel_ort": [
+          14,
+          8
+        ],
+        "kacheln_stark": 0,
+        "kacheln_geprueft": 36,
+        "anteil_aussen": 0.278,
+        "analyse": [
+          320,
+          180
+        ]
+      },
+      "ocr": "übersprungen",
+      "gruende": []
+    }
+  },
+  "verworfen": [],
+  "blick": []
 }

@@ -124,6 +124,7 @@ Pfade: `R/` = `replies/`, `C/` = `CANON_3D/`, `T/` = Spiel-Repo `test/`, `O/` = 
   - Komponieren statt maskieren.
   - Treffer, Kollision und Tod als eine Kaskade im Rezept-Format.
   - Visceraler Cartoon-Wrestling-Stil, kein erzwungenes Papier oder Tusche.
+  - Spender-Effekte zuerst so nutzen, wie der Spender sie gedacht hat; Auswahl und Anpassung nach `R/VFX_KATALOG_R1/vfx_katalog.r2.json` (V-2151). Handwerk (Zeitplan je Effekt, Rückstand, Kontrast statt Helligkeit, Blitze klein und kurz, Rauch weiß aufnehmen und tönen, Brocken dunkel, Glühen kühlt schnell, Einschlags-Sprites zur Kamera versetzen, Ton auf das Zündbild): `R/VFX_KATALOG_R1/REHAN_GAME_VFX.md`; dessen eigene Lichter/ACES/Bloom gelten nicht (ein Rig, V-385/386).
 - **Golden:**
   - Krater (`75_REFS/crater_golden_r1`).
   - `R/ENDE_KASKADE_R1/` (V-1875/1876).

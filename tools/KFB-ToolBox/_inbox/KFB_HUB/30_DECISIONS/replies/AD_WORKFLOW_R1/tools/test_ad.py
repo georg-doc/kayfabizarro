@@ -195,6 +195,19 @@ class Ingest(unittest.TestCase):
         self.assertEqual(self.ing().returncode, 0)
         self.assertEqual(self.bericht()['F04']['ergebnis'], 'klaeren')
 
+    def test_bildtreue_fremdes_bild_verworfen(self):
+        b4 = next(b for b in self.ret['befunde'] if b['finding_id'] == 'F04')
+        z = next(z for z in b4['ziele'] if z['freigabe']['status'] == 'PASS')
+        raw = open(os.path.join(PKG, 'media', 'stills', 'S02_startbild__trouble_desktop__still.png'), 'rb').read()
+        self.ret['bilder_b64'][z['datei']] = base64.b64encode(raw).decode(); z['sha256'] = hashlib.sha256(raw).hexdigest()
+        r = self.ing(); self.assertEqual(r.returncode, 0, r.stdout)
+        e = self.bericht()['F04']
+        self.assertEqual(e['ergebnis'], 'verworfen'); self.assertIn('Bild verändert außerhalb des Bereichs', e['gruende'][0])
+        with open(os.path.join(self.d, 'aus', 'ingest_bericht.json')) as f:
+            self.assertFalse(any('F04' in k for k in json.load(f)['klaeren']), 'verworfen geht nicht als Klärung zu Georg')
+        self.assertFalse(os.path.exists(os.path.join(self.d, 'aus', 'briefs', 'BRIEF_aqua10-ad-test-r1_F04.md')))
+        self.assertEqual(self.bericht()['F03']['ergebnis'], 'bau')
+
     def test_motion_needs_both_poses(self):
         for z in self.ret['befunde'][0]['ziele']:
             if z['rolle'] == 'aufprall':
@@ -240,9 +253,178 @@ class Einzeln(unittest.TestCase):
     def test_second_version_after_pass_is_ambiguous(self):
         import time
         self.variante(time.time())
+        os.utime(os.path.join(self.dl, os.path.basename(self.ret)))   # Rückgabe „gerade geladen“: Test hängt nicht mehr am Alter des Probelaufs
         r, b = self.ing()
         self.assertFalse(b['paarung_ok'])
         self.assertFalse(any(e['versandbereit'] for e in b['befunde']))
+
+
+def auswahl_kopie(d, aendern=None):
+    """Probe-Auswahl in einen Temp-Ordner (Erfassung absolut), optional geändert; gibt den Pfad zurück."""
+    with open(os.path.join(R, 'test_r1', 'auswahl_r1.json')) as f:
+        sp = json.load(f)
+    sp['erfassung_wurzel'] = os.path.join(R, 'test_r1', '_privat_quelle', 'erfassung_r1')
+    if aendern:
+        aendern(sp)
+    p = os.path.join(d, 'auswahl.json')
+    with open(p, 'w') as f:
+        json.dump(sp, f, ensure_ascii=False)
+    return p
+
+
+def befund(sp, fid):
+    return next(b for s in sp['szenen'] for b in s['befunde'] if b['id'] == fid)
+
+
+class Sortierung(unittest.TestCase):
+    """R3: Weg-Pflichtfeld, nur ad im Malpaket, Dedupe zu Designentscheidungen."""
+    def setUp(self):
+        self.d = tempfile.mkdtemp(); self.env = dict(os.environ, KFB_AD_DIR=os.path.join(self.d, 'kfb_ad'))
+
+    def tearDown(self):
+        shutil.rmtree(self.d)
+
+    def build(self, aendern):
+        return run(os.path.join(T, 'ad_package.py'), 'build', auswahl_kopie(self.d, aendern), os.path.join(self.d, '_privat', 'p'),
+                   '--erlaube-zeit-unsicher', env=self.env)
+
+    def test_weg_pflicht(self):
+        def ohne(sp):
+            befund(sp, 'F02').pop('weg'); befund(sp, 'F03')['grund'] = ''
+        r = self.build(ohne)
+        self.assertEqual(r.returncode, 2); self.assertIn('F02: Pflichtfeld weg', r.stdout); self.assertIn('F03: Pflichtfeld grund', r.stdout)
+        r = self.build(lambda sp: befund(sp, 'F01').pop('bereich'))
+        self.assertIn('F01: ad-Befund ohne bereich', r.stdout)
+
+    def test_nur_ad_im_malpaket(self):
+        def sortiert(sp):
+            befund(sp, 'F04').update(weg='code', grund='Monitor verschieben ist Platzierung im Code.')
+            befund(sp, 'F02').update(weg='kit', grund='Kit-Rahmen gibt es schon, nur einsetzen.')
+        r = self.build(sortiert); self.assertEqual(r.returncode, 0, r.stdout)
+        p = os.path.join(self.d, '_privat', 'p')
+        with open(os.path.join(p, 'package.json')) as f:
+            pkg = json.load(f)
+        ids = {b['id'] for s in pkg['szenen'] for b in s['befunde']}
+        self.assertEqual(ids, {'F01', 'F03'})
+        self.assertNotIn('S05_figurenblatt', [s['scene_id'] for s in pkg['szenen']])
+        with open(os.path.join(p, 'paket_bericht.json')) as f:
+            ber = json.load(f)
+        direkt = {x['id']: g['weg'] for g in ber['auftraege_direkt'] for x in g['befunde']}
+        self.assertEqual(direkt, {'F02': 'kit', 'F04': 'code'})
+        self.assertEqual(ber['wege'], {'code': 1, 'kit': 1, 'ad': 2})
+        for s in pkg['szenen']:
+            for b in s['befunde']:
+                self.assertTrue(b['masken'] and all(os.path.exists(os.path.join(p, m)) for m in b['masken'].values()))
+        self.assertTrue(os.path.exists(os.path.join(p, 'CODEX_AUFTRAG.md')) and os.path.exists(os.path.join(p, 'ad_bildtreue.py')))
+        self.assertEqual(run(os.path.join(T, 'ad_package.py'), 'validate', p, env=self.env).returncode, 0)
+
+    def test_dedupe(self):
+        import importlib
+        ap = importlib.import_module('ad_package')
+        with open(auswahl_kopie(self.d)) as f:
+            sp = json.load(f)
+        befund(sp, 'F01')['element'] = 'Figurenblatt'; befund(sp, 'F02')['element'] = 'figurenblatt'
+        g, err = ap.dedupe(sp)
+        self.assertEqual(err, []); self.assertIn(['F01', 'F02'], [x['befunde'] for x in g]); self.assertEqual(len(g), 3)
+        befund(sp, 'F02')['weg'] = 'kit'
+        self.assertIn('gemischter Weg', ap.dedupe(sp)[1][0])
+        # gleiche Szene auf zweitem Gerät (protokoll_nr gleich), Bereich überlappt → eine Entscheidung
+        sp2 = json.loads(json.dumps(sp)); s16 = next(s for s in sp2['szenen'] if s['scene_id'] == 'S16_hai_angriff')
+        handy = json.loads(json.dumps(s16)); handy['scene_id'] = 'S16_hai_angriff_handy'; handy['lauf'] = 'trouble_handy'
+        handy['befunde'] = [dict(befund(sp2, 'F03'), id='F09', bereich={'x': 0.32, 'y': 0.2, 'w': 0.5, 'h': 0.65})]
+        sp2['szenen'].append(handy)
+        self.assertIn(['F03', 'F09'], [x['befunde'] for x in ap.dedupe(sp2)[0]])
+        handy['befunde'][0]['bereich'] = {'x': 0.0, 'y': 0.0, 'w': 0.1, 'h': 0.1}
+        self.assertNotIn(['F03', 'F09'], [x['befunde'] for x in ap.dedupe(sp2)[0]])
+
+    def test_dedupe_cli_schreibt_nichts(self):
+        a = auswahl_kopie(self.d); vorher = open(a, 'rb').read()
+        r = run(os.path.join(T, 'ad_package.py'), 'dedupe', a, env=self.env)
+        self.assertEqual(r.returncode, 0, r.stdout); self.assertIn('ad 4', r.stdout); self.assertEqual(open(a, 'rb').read(), vorher)
+
+
+class Bildtreue(unittest.TestCase):
+    ORIG = os.path.join(PKG, 'media', 'stills', 'S16_hai_angriff__trouble_desktop__aufprall.png')
+    BEREICH = '0.3,0.18,0.55,0.68'
+
+    def setUp(self):
+        self.d = tempfile.mkdtemp(); self.p = os.path.join(self.d, '_privat'); os.makedirs(self.p)
+
+    def tearDown(self):
+        shutil.rmtree(self.d)
+
+    def bt(self, ziel, *extra):
+        r = run(os.path.join(T, 'ad_bildtreue.py'), ziel, self.ORIG, '--bereich', self.BEREICH, *extra)
+        return r.returncode, (json.loads(r.stdout) if r.stdout.strip().startswith('{') else r.stdout)
+
+    def test_innen_geaendert_ist_pass(self):
+        from PIL import Image, ImageDraw
+        im = Image.open(self.ORIG).convert('RGB'); ImageDraw.Draw(im).ellipse([480, 200, 900, 560], fill=(255, 40, 40))
+        z = os.path.join(self.p, 'innen.png'); im.save(z)
+        code, res = self.bt(z, '--heatmap', os.path.join(self.p, 'hm.png'))
+        self.assertEqual((code, res['status'], res['format']['wie']), (0, 'PASS', 'gleich'))
+        self.assertTrue(os.path.exists(os.path.join(self.p, 'hm.png')))
+        if not shutil.which('tesseract'):
+            self.assertEqual(res['ocr']['status'], 'übersprungen')
+
+    def test_modellformat_mit_rand_ist_pass(self):
+        from PIL import Image
+        g = pad_geometry(1280, 720); im = Image.open(self.ORIG).convert('RGB')
+        c = Image.new('RGB', (g['breite'], g['hoehe']), (128, 128, 128)); c.paste(im, (0, g['oben']))
+        z = os.path.join(self.p, 'modell.png'); c.resize((1536, 1024)).save(z)
+        code, res = self.bt(z, '--rand-geo', json.dumps(g))
+        self.assertEqual((code, res['format']['wie']), (0, 'rand_entfernt'))
+
+    def test_fremdes_bild_und_fremdes_menue_fail(self):
+        code, res = self.bt(os.path.join(PKG, 'media', 'stills', 'S02_startbild__trouble_desktop__still.png'))
+        self.assertEqual((code, res['status']), (3, 'FAIL'))
+        from PIL import Image, ImageDraw
+        im = Image.open(self.ORIG).convert('RGB'); ImageDraw.Draw(im).rectangle([20, 20, 300, 200], fill=(30, 200, 220))
+        z = os.path.join(self.p, 'menue.png'); im.save(z)
+        code, res = self.bt(z)
+        self.assertEqual(code, 3); self.assertIn('Kachel', res['gruende'][0])
+        b = os.path.join(self.p, 'quadrat.png'); Image.new('RGB', (900, 900)).save(b)
+        self.assertEqual(self.bt(b)[0], 3)
+
+    def test_heatmap_nur_privat(self):
+        code, res = self.bt(self.ORIG, '--heatmap', os.path.join(self.d, 'oeffentlich.png'))
+        self.assertEqual(code, 2); self.assertIn('_privat', res['grund'])
+
+
+class CodexWeg(unittest.TestCase):
+    """Codex startet mit Skript + Leitplanke aus upload/<F>, malt, prüft Bildtreue übers Paket; WS0-Vorprüfung sortiert."""
+    def setUp(self):
+        self.d = tempfile.mkdtemp(); self.w = os.path.join(self.d, 'rueckgabe', 'D_l1')
+
+    def tearDown(self):
+        shutil.rmtree(self.d)
+
+    def test_codex_fluss(self):
+        from PIL import Image, ImageDraw
+        u = os.path.join(PKG, 'upload', 'D'); sc = os.path.join(u, 'ad_return.py')
+        with open(os.path.join(PKG, 'package.json')) as f:
+            h = canon_hash(json.load(f))[:12]
+        r = run(sc, 'start', '--paket', os.path.join(u, 'package.json'), '--familie', 'D', '--erwarte', h, '--modell', 'codex probe', '--arbeit', self.w)
+        self.assertEqual(r.returncode, 0, r.stdout)
+        ziele = {}
+        for rolle, farbe in (('ausholung', None), ('aufprall', None)):
+            im = Image.open(os.path.join(u, f'S16_hai_angriff__trouble_desktop__{rolle}__edit.png')).convert('RGB').resize((1536, 1024))
+            if rolle == 'ausholung':
+                ImageDraw.Draw(im).ellipse([700, 380, 950, 620], fill=(250, 250, 255))       # im Bereich
+            else:
+                ImageDraw.Draw(im).rectangle([20, 160, 330, 330], fill=(0, 90, 110))         # erfundenes Menü außerhalb
+            ziele[rolle] = os.path.join(self.d, f'F03_{rolle}_v1.png'); im.save(ziele[rolle])
+        codes = {k: run(os.path.join(PKG, 'ad_bildtreue.py'), v, '--paket', os.path.join(u, 'package.json'), '--befund', 'F03',
+                        '--rolle', k, '--ohne-ocr').returncode for k, v in ziele.items()}
+        self.assertEqual(codes, {'ausholung': 0, 'aufprall': 3})
+        for k, v in ziele.items():
+            self.assertEqual(run(sc, 'ziel', '--finding', 'F03', '--rolle', k, '--bild', v, '--arbeit', self.w).returncode, 0)
+        aus = os.path.join(self.d, 'vp')
+        r = run(os.path.join(T, 'ad_ingest.py'), 'vorpruefung', self.w, '--paket', PKG, '--aus', aus)
+        self.assertEqual(r.returncode, 0, r.stdout)
+        with open(os.path.join(aus, 'vorpruefung.json')) as f:
+            st = {x['target_id']: x['status'] for x in json.load(f)['ziele']}
+        self.assertEqual((st['F03_ausholung_v1'], st['F03_aufprall_v1']), ('PASS', 'FAIL'))
 
 
 class Vergleich(unittest.TestCase):

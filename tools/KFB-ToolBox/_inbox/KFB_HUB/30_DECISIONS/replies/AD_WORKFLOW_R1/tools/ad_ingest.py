@@ -2,6 +2,7 @@
 """AD-Rückgabe einlesen (WS0-Seite; Standardbibliothek, Pillow bzw. macOS-sips für Bildformat und Ähnlichkeit).
 
   python3 ad_ingest.py scan   [--inbox DIR ...] [--state DATEI]
+  python3 ad_ingest.py vorpruefung <arbeit-ordner mit entwurf.json> --paket <paket-ordner> --aus <ordner>
   python3 ad_ingest.py ingest <rueckgabe.json> --aus <ordner> [--paket <paket-ordner>] [--bilder DIR | --datei BILD ...]
                               [--paar <Ziel>=<Datei> ...] [--paarung-ok] [--erlaube-simuliert] [--state DATEI]
 
@@ -10,10 +11,13 @@ ingest  prüft Schema, Skript-Prüfsumme (tools/skill_versions.json), Paket (run
         Drift; --paket fehlt → aus KFB_AD/pakete.json), holt die Bilder (bundle: eingebettet; einzeln: aus --bilder im
         Zeitfenster Chat-Beginn … Manifest, Paarung über Ähnlichkeit zum Quell-Still; github: --bilder = ausgecheckter
         rueckgabe-Ordner), führt sie aufs Originalformat zurück (aufgefüllten Rand entfernen, Originalgröße),
-        prüft Änderung außerhalb des Befund-Bereichs, Baubarkeit, und schreibt nach <aus>/:
+        prüft die Bildtreue (ad_bildtreue.py: Format, Pixel außerhalb des Bereichs, OCR falls tesseract) – ein Ziel mit
+        FAIL wird „verworfen: Bild verändert außerhalb des Bereichs“ und geht nicht zu Georg –, Baubarkeit, und schreibt nach <aus>/:
           _privat/ziele/<id>.png (+ __roh, __kern) und _privat/rueckgabe.json  (privat; veröffentlichen mit
              ad_package.py publish <aus>/_privat --run <run_id> --unter rueckgabe/<F>_l<n> --push)
           INGEST_BERICHT.md + ingest_bericht.json · briefs/BRIEF_<run>_<F>.md · vergleich/<F>.json
+vorpruefung  R3/Codex: Bildtreue je registriertem Ziel eines ad_return-Entwurfs (Freigaben noch OFFEN), bevor etwas in den
+        Hub geht. Schreibt <aus>/VORPRUEFUNG.md + vorpruefung.json (Heatmaps unter <aus>/_privat/vorpruefung/).
 Exit 0 = ok (Klärungsfälle im Bericht), 2 = Rückgabe unbrauchbar.
 """
 import base64, datetime, json, os, sys
@@ -21,6 +25,7 @@ sys.dont_write_bytecode = True   # kein __pycache__ im gespiegelten replies/-Ord
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ad_common import (HUB, KFB_AD, canon_hash, diff, dump, load_schema, normalize, outside_change, sha256, sha256_bytes,
                        thumb, validate)
+from ad_bildtreue import SCHWELLEN as BT_SCHWELLEN, pruefe as bildtreue_pruefe
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 AESTE = {1: 'HUD und Interface', 2: '3D, Material, Licht', 3: 'Szenenkomposition und Welt', 4: 'Regie, Kamera, Belege',
@@ -29,7 +34,6 @@ AESTE = {1: 'HUD und Interface', 2: '3D, Material, Licht', 3: 'Szenenkomposition
 GATE_DOMAINS = {1: 'HUD', 2: 'Licht', 3: 'Welt', 4: 'Welt', 5: 'Figuren', 6: 'Kampf', 7: 'Audio', 8: 'Audio', 9: 'Spiel', 10: 'Spiel', 11: 'Kampf'}
 FLAGS = ['echtzeit_threejs', 'ein_licht_rig', 'keine_glanzpunkte', 'kein_neuer_text', 'figuren_unveraendert',
          'komposition_gleich', 'seitenverhaeltnis_gleich']
-AUSSEN_HINWEIS, AUSSEN_KLAEREN = 12, 25   # mittlere Abweichung außerhalb des Bereichs (0–255)
 
 
 def arg(a, k, d=None):
@@ -237,7 +241,7 @@ def ingest(a):
         if not paarung_ok:
             klaeren.append('Paarung nicht eindeutig: WS0 prüft per Blick, dann neu mit --paar <Ziel>=<Datei> bzw. --paarung-ok')
 
-    aussen = {}
+    aussen, bildtreue, verworfen, blick = {}, {}, {}, []
     for b, z in pass_z:
         tid = z['target_id']; raw = roh[tid]; st = src_of[tid]
         if z['sha256'] and sha256_bytes(raw) != z['sha256']:
@@ -259,16 +263,23 @@ def ingest(a):
         wert, kern = outside_change(n, os.path.join(pdir, st['pfad']), bereich)
         if kern:
             open(os.path.join(zdir, f'{tid}__kern.png'), 'wb').write(kern); z['_kern'] = os.path.join('_privat', 'ziele', f'{tid}__kern.png')
-        if wert is not None:
+        bt = bildtreue_pruefe(n, os.path.join(pdir, st['pfad']), bereich, None, os.path.join(zdir, f'{tid}__heatmap.png'))
+        bildtreue[tid] = {'status': bt['status'], 'aussen': bt['aussen'], 'ocr': bt['ocr']['status'], 'gruende': bt['gruende'] + bt['hinweise']}
+        if bt['aussen']:
+            aussen[tid] = bt['aussen']['mittel']
+        elif wert is not None:
             aussen[tid] = wert
-            if wert >= AUSSEN_KLAEREN:
-                klaeren.append(f'{tid}: Änderung außerhalb des Befund-Bereichs {wert}/255 (Text, Figuren?)')
+        if bt['status'] == 'FAIL':
+            verworfen[tid] = '; '.join(bt['gruende'])
+        elif bt['status'] == 'HINWEIS':
+            blick.append(f'{tid}: ' + '; '.join(bt['hinweise']))
 
     os.makedirs(os.path.join(out, 'briefs'), exist_ok=True)
     os.makedirs(os.path.join(out, 'vergleich'), exist_ok=True)
     bericht = {'run_id': ret['run_id'], 'familie': fam, 'lauf': ret.get('lauf', 1), 'weg': weg, 'simuliert': ret['simuliert'],
                'paket_sha256': ret['paket']['sha256'], 'skill': ret['webchat']['skill_version'], 'befunde': [], 'klaeren': klaeren,
-               'paarung': paarung, 'paarung_ok': paarung_ok, 'aussen_abweichung': aussen}
+               'paarung': paarung, 'paarung_ok': paarung_ok, 'aussen_abweichung': aussen, 'bildtreue': bildtreue,
+               'verworfen': [f'{t}: {g}' for t, g in verworfen.items()], 'blick': blick}
     for b in ret['befunde']:
         s, pb = befund_pkg[b['finding_id']]
         pz = [z for z in b['ziele'] if z['freigabe']['status'] == 'PASS']
@@ -282,6 +293,10 @@ def ingest(a):
                 klaeren.append(f'{b["finding_id"]}: im Webchat ohne Zielbild zurück („{b.get("grund")}“) → Hub-Karte')
         elif not pz:
             e['ergebnis'] = 'kein_pass'
+        elif any(z['target_id'] in verworfen for z in pz):
+            e['ergebnis'] = 'verworfen'
+            e['gruende'] = [f'{z["target_id"]}: verworfen: Bild verändert außerhalb des Bereichs ({verworfen[z["target_id"]]})'
+                            for z in pz if z['target_id'] in verworfen]
         else:
             bb = b['baubarkeit']; rot = [f for f in FLAGS if not bb[f]]
             if bb.get('hud_aus_kit') is False:
@@ -299,7 +314,11 @@ def ingest(a):
             owner_ok = not any(x in pb['owner'] for x in ('+', ',', ' und ', '/'))
             if not owner_ok:
                 e['gruende'].append(f'OWNER klären (genau einer): {pb["owner"]}')
-            e['versandbereit'] = (e['ergebnis'] == 'bau' and owner_ok and not bb['neue_assets'] and not ret['simuliert'] and paarung_ok)
+            ohne_blick = not any(k.startswith(z['target_id'] + ':') for z in pz for k in blick)
+            if not ohne_blick:
+                e['gruende'].append('Bildtreue-Hinweis: WS0-Blick vor Versand')
+            e['versandbereit'] = (e['ergebnis'] == 'bau' and owner_ok and not bb['neue_assets'] and not ret['simuliert'] and paarung_ok
+                                  and ohne_blick)
             if all(z.get('_wh') for z in pz):
                 write_brief(out, pkg, s, pb, b, pz, ret, ref_ids, e)
                 write_vergleich(out, pkg, s, pb, b, pz, e)
@@ -314,7 +333,8 @@ def ingest(a):
     st = state_load(stp); st['erledigt'][sha256(rp)] = {'datei': os.path.basename(rp), 'aus': os.path.abspath(out)}
     os.makedirs(os.path.dirname(os.path.abspath(stp)), exist_ok=True); dump(st, stp)
     print(f'OK: {sum(1 for e in bericht["befunde"] if e["ergebnis"] == "bau")} bau, '
-          f'{sum(1 for e in bericht["befunde"] if e["ergebnis"] == "klaeren")} klären → {out}')
+          f'{sum(1 for e in bericht["befunde"] if e["ergebnis"] == "klaeren")} klären, '
+          f'{sum(1 for e in bericht["befunde"] if e["ergebnis"] == "verworfen")} verworfen (Bildtreue) → {out}')
 
 
 def write_brief(out, pkg, s, pb, b, pz, ret, ref_ids, e):
@@ -384,9 +404,15 @@ def write_bericht_md(out, r):
          '| Befund | Szene | PASS-Ziele | Ergebnis | Gründe / offen | versandbereit |', '|---|---|---|---|---|---|']
     for e in r['befunde']:
         L.append(f'| {e["finding_id"]} | {e["scene_id"]} | {", ".join(e["pass"]) or "–"} | {e["ergebnis"]} | {"; ".join(e["gruende"]) or "–"} | {"ja" if e["versandbereit"] else "nein"} |')
-    if r['aussen_abweichung']:
-        L += ['', 'Abweichung außerhalb des Befund-Bereichs (0–255; ab %d WS0-Blick, ab %d klären): ' % (AUSSEN_HINWEIS, AUSSEN_KLAEREN) +
-              ', '.join(f'{k} {v}' for k, v in r['aussen_abweichung'].items())]
+    if r.get('bildtreue'):
+        L += ['', 'Bildtreue (ad_bildtreue.py; Mittel außerhalb ab %d Blick, ab %d FAIL; Kachel ab %d Blick, ab %d FAIL): ' % (
+              BT_SCHWELLEN['mittel_hinweis'], BT_SCHWELLEN['mittel_fail'], BT_SCHWELLEN['kachel_hinweis'], BT_SCHWELLEN['kachel_fail']) +
+              ', '.join(f'{k} {v["status"]} (Mittel {(v["aussen"] or {}).get("mittel")}, Kachel {(v["aussen"] or {}).get("max_kachel")}, OCR {v["ocr"]})'
+                        for k, v in r['bildtreue'].items())]
+    if r.get('verworfen'):
+        L += ['', '**Verworfen (geht nicht zu Georg; neu malen lassen):**'] + [f'- {k}' for k in r['verworfen']]
+    if r.get('blick'):
+        L += ['', '**WS0-Blick (Bildtreue-Hinweis):**'] + [f'- {k}' for k in r['blick']]
     if r['klaeren']:
         L += ['', '**Klären:**'] + [f'- {k}' for k in r['klaeren']]
     if r['paarung']:
@@ -394,6 +420,55 @@ def write_bericht_md(out, r):
              [f'- {t} ← {f} ({w})' for t, f, w in r['paarung']]
     with open(os.path.join(out, 'INGEST_BERICHT.md'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(L) + '\n')
+
+
+def vorpruefung(a):
+    """Bildtreue für einen ad_return-Entwurf (Codex-Rückgabe, Freigaben noch OFFEN), bevor die Ziele in den Hub gehen."""
+    arbeit = a[1]; pdir = arg(a, '--paket'); out = arg(a, '--aus')
+    if not pdir or not out:
+        die('--paket <paket-ordner> und --aus <ordner> angeben')
+    d = load_json(os.path.join(arbeit, 'entwurf.json')); pkg = load_json(os.path.join(pdir, 'package.json'))
+    if d['run_id'] != pkg['run_id'] or d['paket']['sha256'] != canon_hash(pkg):
+        die('Entwurf gehört nicht zu diesem Paket (run_id oder Paket-Prüfsumme weicht ab)')
+    befund = {b['id']: (s, b) for s in pkg['szenen'] for b in s['befunde']}
+    hdir = os.path.join(out, '_privat', 'vorpruefung'); os.makedirs(hdir, exist_ok=True)
+    rows = []
+    for b in d['befunde']:
+        if b['finding_id'] not in befund:
+            die(f'{b["finding_id"]}: nicht im Paket')
+        s, pb = befund[b['finding_id']]
+        neu = {}
+        for z in b['ziele']:
+            neu[z['rolle']] = z
+        if b['status'] != 'bearbeitet':
+            rows.append({'target_id': b['finding_id'], 'status': 'kein_bild', 'gruende': [b.get('grund') or b['status']]}); continue
+        for rolle in b.get('_rollen') or list(neu):
+            z = neu.get(rolle)
+            if not z or not z.get('datei'):
+                rows.append({'target_id': f'{b["finding_id"]}_{rolle}', 'status': 'fehlt', 'gruende': ['kein Zielbild als Datei']}); continue
+            st = next(x for x in s['stills'] if x['pfad'] == z['quelle_still'])
+            raw = open(os.path.join(arbeit, z['datei']), 'rb').read()
+            n, how = normalize(raw, (st['breite'], st['hoehe']), st['edit'])
+            if not n:
+                rows.append({'target_id': z['target_id'], 'status': 'FAIL', 'gruende': ['Format passt weder zum Original noch zur aufgefüllten Fassung']}); continue
+            bt = bildtreue_pruefe(n, os.path.join(pdir, st['pfad']), pb.get('bereich'), None, os.path.join(hdir, f'{z["target_id"]}__heatmap.png'))
+            g = bt['gruende'] + bt['hinweise'] + (['grauer Rand übermalt (Blick)'] if how == 'rand_veraendert' else [])
+            stat = bt['status'] if not (how == 'rand_veraendert' and bt['status'] == 'PASS') else 'HINWEIS'
+            rows.append({'target_id': z['target_id'], 'entscheidung': pb.get('entscheidung'), 'status': stat, 'gruende': g,
+                         'aussen': bt['aussen'], 'ocr': bt['ocr']['status'], 'datei': z['datei']})
+    dump({'run_id': d['run_id'], 'familie': d['familie'], 'lauf': d.get('lauf', 1), 'ziele': rows}, os.path.join(out, 'vorpruefung.json'))
+    L = [f'# Vorprüfung {d["run_id"]} · Familie {d["familie"]} · Lauf {d.get("lauf", 1)}', '',
+         '| Ziel | Entscheidung | Bildtreue | Mittel / Kachel außen | Gründe |', '|---|---|---|---|---|']
+    for r in rows:
+        au = r.get('aussen') or {}
+        L.append(f'| {r["target_id"]} | {r.get("entscheidung") or "–"} | {r["status"]} | {au.get("mittel", "–")} / {au.get("max_kachel", "–")} | {"; ".join(r["gruende"]) or "–"} |')
+    L += ['', 'PASS → Hub (eine Karte je Designentscheidung) · HINWEIS → WS0-Blick, dann Hub oder verwerfen · FAIL → verworfen: '
+          'Bild verändert außerhalb des Bereichs, geht nicht zu Georg (neuer Codex-Lauf mit `--nur`).']
+    with open(os.path.join(out, 'VORPRUEFUNG.md'), 'w', encoding='utf-8') as f:
+        f.write('\n'.join(L) + '\n')
+    zu = [r['target_id'] for r in rows if r['status'] == 'PASS']; vw = [r['target_id'] for r in rows if r['status'] == 'FAIL']
+    print(f'Vorprüfung: Hub {", ".join(zu) or "–"} · Blick {", ".join(r["target_id"] for r in rows if r["status"] == "HINWEIS") or "–"} · '
+          f'verworfen {", ".join(vw) or "–"} → {os.path.join(out, "VORPRUEFUNG.md")}')
 
 
 def main():
@@ -404,6 +479,8 @@ def main():
         scan(a)
     elif a[0] == 'ingest' and len(a) > 1:
         ingest(a)
+    elif a[0] == 'vorpruefung' and len(a) > 1:
+        vorpruefung(a)
     else:
         sys.exit(__doc__)
 
