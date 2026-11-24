@@ -135,3 +135,27 @@
   .resource-list { grid-template-columns: 1fr; }
   #resourcePreviewCanvas { height: 330px; }
 }
+
+/* The VFX owner catalogue shares the resource toolbar, cards and drawer. */
+.resource-toolbar:has(#resourceFxScope:not([hidden])) { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.resource-toolbar:has(#resourceFxScope:not([hidden])) .global-search { grid-column:1/-1; }
+#vfxCatalogHeader { margin:0 0 14px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+#vfxCatalogHeader pre { white-space:pre-wrap; overflow-wrap:anywhere; font-size:10px; }
+#vfxCatalogHeader summary,.vfx-donor-details summary { cursor:pointer; margin-top:12px; }
+.vfx-preview { display:grid; place-items:center; min-height:112px; background:var(--paper-2); border-radius:6px; position:relative; overflow:hidden; }
+.vfx-preview img { display:block; max-width:100%; width:112px; height:112px; object-fit:contain; }
+.vfx-placeholder { padding:12px; text-align:center; overflow-wrap:anywhere; color:var(--muted); font-size:10px; }
+.vfx-section { margin:18px 0; }
+.vfx-section h3 { font-size:13px; margin:0 0 10px; }
+.vfx-section ul { margin:0; padding-left:20px; }
+.vfx-section li { overflow-wrap:anywhere; margin:8px 0; }
+.vfx-facts { display:grid; grid-template-columns:minmax(90px,.35fr) minmax(0,1fr); gap:8px 12px; font-size:11px; }
+.vfx-facts dt { color:var(--muted); }
+.vfx-facts dd { margin:0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.vfx-table-wrap { max-width:100%; overflow-x:auto; }
+.vfx-table-wrap table { border-collapse:collapse; width:100%; table-layout:fixed; font-size:10px; }
+.vfx-table-wrap th,.vfx-table-wrap td { padding:8px; text-align:left; border-bottom:1px solid var(--line); overflow-wrap:anywhere; vertical-align:top; white-space:pre-wrap; }
+#vfxDetailContent>.vfx-preview img { width:224px; height:224px; }
+.resource-primary-action label:has(#vfxReferencePreset) { display:grid; gap:6px; min-width:0; width:100%; }
+@media(max-width:900px) { .resource-toolbar:has(#resourceFxScope:not([hidden])) { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:560px) { .resource-toolbar:has(#resourceFxScope:not([hidden])) { grid-template-columns:minmax(0,1fr); } .vfx-facts { grid-template-columns:minmax(0,1fr); gap:4px; } .vfx-facts dd { margin-bottom:8px; } }
