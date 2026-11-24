@@ -12,6 +12,12 @@
 
 ---
 
+## 2026-11-24 · AQUACARE GTA R3 · RESEARCH / FRESH CHAT
+
+**RESEARCH / DOCS ONLY.** Georg rejected R2 explicitly (“AI SLOP GALORE!!”); [PR #484](https://github.com/georg-doc/kayfabizarro/pull/484) CLOSED / NOT MERGED. Do not import its 240 replacements. WS0/Aqua text owner: use the new [complete R3 fresh-chat briefing](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/AQUACARE_GTA_TEXTBOOK_R3_FRESH_CHAT_BRIEF_2026-11-24.md) with original 389-ID table, seven Golden splash lines, exact negative examples and postmortem, [15-case GTA research](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/GTA_SATIRE_RESEARCH_R1_2026-11-24.md) and copy-ready prompt. No new R3 text, voice, runtime, Stage or Live. Next: fresh writer produces a small source-backed sample and separate critic reviews it before selective expansion. Actual Aquarium runtime source remains unresolved.
+
+---
+
 
 ## 2026-11-24 · WS0 INTAKE · FRIENDLIES SOCCER / KFB CARD ARENA + DOCCHECK CELLULAR ARENA
 
