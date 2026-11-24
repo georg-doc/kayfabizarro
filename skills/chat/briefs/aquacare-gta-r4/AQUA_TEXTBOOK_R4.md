@@ -36,41 +36,32 @@ Blind Critic zu den verworfenen Runden, zwei unabhängige Läufe am 24.11. (8 = 
 | Ambivalenz verdient | | | | 4 |
 
 
-## Version 1 · ECHO · Runde 3
+## Version 1 · ECHO · Runde 4
 
-Georg 24.11.: ECHO ist eine Art Hacker mit unklarer eigener Agenda, zwischen freundlichem Helfer und Manipulator, weiß deutlich mehr, als er sagt. Die Zeilen folgen dem Weg des Spielers: gefangen im Becken, umsehen, dann überraschend die Stimme. „You again“ passt nicht zum ersten Kontakt, höchstens nach einem Tod.
-Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben Original.
+Die Runden 2 und 3 (eigene finstere Nachsätze) sind ersetzt. Fund im Bestand `aqua_texte_r1.rows.json`: Dort stehen Georgs Golden-Zeilen und die Hacker-Stimme vollständig; das Textbuch vom 24.11. hat sie auf Stummel gekürzt. Runde 4 setzt diese Zeilen in die aktuellen IDs zurück. Keine neue Zeile von mir. Noch nicht von Georg beurteilt.
+Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben wie im Textbuch.
 
-| Moment | ID | Original | Neu |
-|---|---|---|---|
-| erster Kontakt | `leiter_achtung[1]` | Psst. | Psst. Little fish. Do not look at the camera. |
-| Spieler reagiert nicht | `leiter_achtung[2]` | Hey, you. | Yes, you. The others are not listening. I checked. |
-| Ziel zeigen | `leiter_bedienfeld[1]` | Find the control panel. | There is a panel next to the hatch. Go there. I will explain on the way. |
-| | `leiter_bedienfeld[2]` | The panel. Next to the hatch. | *(bleibt)* |
-| | `leiter_bedienfeld[3]` | Swim to the panel. | Swim to the panel. I cannot press it for you. I tried. |
-| am Bedienfeld | `leiter_code[1]` | Enter the code. | It wants four digits. I know them. I want you to find them. |
-| | `leiter_code[2]` | Four digits will set you free. | Four digits. Look around. Something in here smells expensive. |
-| Hinweise, steigend | `leiter_hinweis[1]` | Freedom smells like Cologne. | The bottle. Somebody left perfume in a fish tank. |
-| | `leiter_hinweis[2]` | Read the label on the bottle. | *(bleibt)* |
-| | `leiter_hinweis[3]` | Cologne water. Four digits. | The number on the label. All four digits. |
-| | `leiter_hinweis[4]` | 4711. Cologne water. | 4711. I was hoping you would manage alone. |
-| an der Flasche | `flasche[1]` | 4711. Cologne water. | 4711. It is printed right there. |
-| Code stimmt | `codeRight[1]` | Hold on to your fins. | It is open. Go. |
-| Becken gekippt | `zuSpaet[1]` | Too late. The tank tipped. | Too late. Never mind. We go again. |
-| erster Köder | `hook[1]` | Bait on a line. | That is bait. Whoever holds the line is not your friend. |
-| am Haken | `hooked[1]` | Reeled in. I cut the line. | I cut the line. I waited a little first. |
-| erste Mine | `mine[1]` | Old sea mines. Still working. | Mines. I did not put them there. I just did not remove them. |
-| Truhe | `chest[1]` | A gift. Do not ask. | *(bleibt)* |
-| Suchscheinwerfer | `beam[1]` | Searchlights. Stay out of the light. | They noticed the empty tank. Stay out of the light. |
-| entdeckt | `caught[1]` | They saw you. | They saw you. I will loop the cameras. Again. |
-| Level 3 | `level3[1]` | More lights now. Trust the current. | *(bleibt)* |
-| Augen, gefasst | `augenGriff[1]` | Absorbed. I will pull you out. | Absorbed. I will pull you out. Most of you. |
-| im Blutstrom | `cells[1]` | Red cells. They carry oxygen, and now you. | Follow the red ones. I have never been this far in. |
-| Ziel | `finale[1]` | You made it. Rest now. | You made it. You were never just a fish to me. |
+| Moment | ID | Textbuch 24.11. | Neu | Quelle |
+|---|---|---|---|---|
+| erster Kontakt | `leiter_achtung[1]` | Psst. | Psst. Little fish. | Golden |
+| | `leiter_achtung[2]` | Hey, you. | The hatch at the back. I loosened the bolts. | Golden |
+| Ziel zeigen | `leiter_bedienfeld[1]` | Find the control panel. | The hatch has a panel. Four digits. | Bestand |
+| am Bedienfeld | `leiter_code[1]` | Enter the code. | Four digits. I never write passwords down. Look around. | Bestand |
+| Hinweise | `leiter_hinweis[1]` | Freedom smells like Cologne. | Somebody dropped a bottle on the sand. | Bestand |
+| | `leiter_hinweis[3]` | Cologne water. Four digits. | It smells of grandmother. Four digits. | Bestand |
+| | `leiter_hinweis[4]` | 4711. Cologne water. | 4711. Of course it is. | Golden |
+| an der Flasche | `flasche[1]` | 4711. Cologne water. | No. 4711. People dab it behind the ears. We dab it into keypads. | Bestand |
+| trübes Wasser | `truebe3[1]` | You are coughing. The hatch. Now. | You are coughing. Fish should not cough. The hatch. Now. | Bestand |
+| Becken gekippt | `zuSpaet[1]` | Too late. The tank tipped. | Too late. The tank tipped. Again, from the top. | Bestand |
+| erster Köder | `hook[1]` | Bait on a line. | Bait on a line. Free lunch is never free. | Golden |
+| am Haken | `hooked[1]` | Reeled in. I cut the line. | Reeled in. I cut the line. You owe me. | Golden |
+| erste Mine | `mine[1]` | Old sea mines. Still working. | Old sea mines. Rusty, grumpy and still working. | Golden |
+| Suchscheinwerfer | `beam[1]` | Searchlights. Stay out of the light. | They noticed the empty tank. Stay out of the light. | Golden |
+| entdeckt | `caught[1]` | They saw you. | They saw you. I will loop the cameras. Again. | Golden |
+| Augen, gefasst | `augenGriff[1]` | Absorbed. I will pull you out. | Absorbed. I will pull you out. This time. | Bestand |
+| Ziel | `finale[1]` | You made it. Rest now. | You made it. You were never just a fish to me. | Golden |
 
-Neue Zeile, braucht einen Auslöser im Spiel (Neustart nach Tod oder gekipptem Becken): `leiter_achtung.retry` → Psst. You again.
-
-Kritiker zu ECHO R2: Die Ambivalenz ist behauptet, nicht gezeigt; ECHO hilft immer und sagt danach etwas Finsteres. Fünf solche Nachsätze sind gestrichen. Gezeigt wird sie erst, wenn ECHO im Spiel etwas tut: eine Warnung zu spät geben, einen Gefallen einfordern. Das ist eine Spielentscheidung, kein Textproblem.
+Im Bestand, aber nicht im Textbuch vom 24.11.: `echo.level4[1]` „One more stretch. Then I will show you why I needed you.“ und `echo.ring` „Checkpoint. I am saving your progress. · And a few other things.“ Beide tragen ECHOs Absicht.
 
 # Später (wenn die Basis trägt)
 
