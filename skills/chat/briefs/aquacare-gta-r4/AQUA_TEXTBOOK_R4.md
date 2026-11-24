@@ -40,7 +40,7 @@ Blind Critic zu den verworfenen Runden, zwei unabhängige Läufe am 24.11. (8 = 
 
 Grundlage bleibt Runde 4: Georgs Golden-Zeilen und die vollen Zeilen aus dem Bestand `aqua_texte_r1.rows.json`.
 Polish nach Georg 24.11.: ECHO als andere Entität spürbar machen (Hacker, unsichtbarer Beobachter, etwas Anonymous- und Q-Ecke), mit Anrede und kurzen Einwürfen, ohne die Zeilen lang zu machen. Bogen: Am Anfang ist der Fisch ein Werkzeug („little fish“, „You owe me“), ab Level 3 wird er „kiddo“. Vier Dog-Whistles, nicht mehr: „Wake up“, „Do your own research“, „There are no coincidences“, „Trust the current“.
-Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben wie im Textbuch. Noch nicht von Georg beurteilt.
+Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben wie im Textbuch. **Georg 24.11.: „Trägt, liefern“.** An WS0 geliefert als `texte/aqua/echo_r4.rows.json` (R-002).
 
 | Moment | ID | Textbuch 24.11. | Neu | Herkunft |
 |---|---|---|---|---|
