@@ -12,6 +12,28 @@
 
 ---
 
+## 2026-11-24 · AQUACARE GTA R3 · RESEARCH / FRESH CHAT
+
+**RESEARCH / DOCS ONLY.** Georg rejected R2 explicitly (“AI SLOP GALORE!!”); [PR #484](https://github.com/georg-doc/kayfabizarro/pull/484) CLOSED / NOT MERGED. Do not import its 240 replacements. WS0/Aqua text owner: use the new [complete R3 fresh-chat briefing](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/AQUACARE_GTA_TEXTBOOK_R3_FRESH_CHAT_BRIEF_2026-11-24.md) with original 389-ID table, seven Golden splash lines, exact negative examples and postmortem, [15-case GTA research](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/GTA_SATIRE_RESEARCH_R1_2026-11-24.md) and copy-ready prompt. No new R3 text, voice, runtime, Stage or Live. Next: fresh writer produces a small source-backed sample and separate critic reviews it before selective expansion. Actual Aquarium runtime source remains unresolved.
+
+---
+
+
+## 2026-11-24 · WS0 INTAKE · FRIENDLIES SOCCER / KFB CARD ARENA + DOCCHECK CELLULAR ARENA
+
+**Status: DOCS_ONLY · UNMERGED DRAFT · no runtime, no Stage/Live.** Existing KFB gameplay owner: georg-doc/KFB-Stunt-Car-Race, target game/integration-r2. Separate WS0 planning Draft [PR #156](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/156) on branch planning/friendlies-soccer-kfb-doccheck-r0-2026-11-24.
+
+- [Full handoff / phases / medical and card concepts](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/friendlies-soccer-kfb-doccheck-r0-2026-11-24/docs/konzepte/friendlies-soccer-r0/WS0_HANDOFF_2026-11-24.md)
+- [Technical contract + 50 proposed NOT_RUN tests](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/friendlies-soccer-kfb-doccheck-r0-2026-11-24/docs/konzepte/friendlies-soccer-r0/TECHNICAL_CONTRACT_AND_TEST_PLAN.md)
+- [Return + additive changelog](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/friendlies-soccer-kfb-doccheck-r0-2026-11-24/docs/konzepte/friendlies-soccer-r0/RETURN_AND_CHANGELOG.md)
+- [ArenaSkin / HyperNorm background donor audit](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/planning/friendlies-soccer-kfb-doccheck-r0-2026-11-24/docs/konzepte/friendlies-soccer-r0/ARENA_SKIN_BACKGROUND_DONOR_AUDIT_2026-11-24.md) — current KFB multi-surface canvas texture donor verified; actual Friendlies background implementation still UNKNOWN; 14 proposed checks NOT_RUN.
+
+Georg's direction: reuse Patch Friendlies original soccer/controller, AI, 2v2 and characters. Add verified KFB Rig_Medium/Rig_Large, existing Mixamo and FrankenStein actors with real Soccer Pack kick/motion, without making new ball physics. KFB court = **one actual card OR entire original 2×2 FOUR-card sheet**, both canonical CARD_AR **1.74:1**, source crop order intact. DocCheck version = restrained membrane/signal/receptor cellular arena reusing DocCheck branding/medical review, not forced blood-cell soccer. **Known discrepancy:** game src/cardImage.js uses 1.79, canonical CardBuilder 1.74; do not retune unrelated game code. Raw PDF page ≈1.79265; never stretch.
+
+Soccer Game Pack.zip found privately in Dropbox, contents not inspected; real Patch source/remix permissions and hooks UNVERIFIED. Actual gameplay/browser tests 0, screenshots 0, Stage 0, 50 planned tests NOT_RUN. **One next gate:** WS0 source/rights + isolated real Patch donor and a source Soccer Pack kick; then one KFB actor in actual unchanged 2v2. DocCheck sim-blood/doc-animation owners unaffected. No automatic merge/promotion.
+
+---
+
 ## 2026-11-22 · KFB REALITY REMIX COMPLETE WS0 CHAT META HANDOFF
 
 Georg's whole Reality Remix / Hackable Multiverse / Creator Commons conversation is consolidated in the current game owner **Draft [PR #155](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/155)**, review branch `planning/reality-remix-multiverse-r0-2026-11-22`:

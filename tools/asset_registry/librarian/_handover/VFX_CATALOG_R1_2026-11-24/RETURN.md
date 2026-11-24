@@ -10,13 +10,13 @@ Only `tools/asset_registry/librarian/live/vfx-katalog.r1.json` supplies VFX data
 
 ## Local acceptance evidence
 
-- 127 effects, 10 donors; status filters: 20 im Spiel / 72 vendored ungenutzt / 35 nur extern.
+- 237 effects, 12 donors; status filters: 20 im Spiel / 72 vendored ungenutzt / 145 nur extern. The added donors are `rehan-game-vfx` (26 effects) and `00gamedevs` (84 effects).
 - Existing 10 `fx.jsonl` rows remain in the same workspace.
 - Search, donor/type/status filters, typed details, donor API and global parameters, real clipboard handoff: PASS.
 - Actual immutable git.patch.gg previews and cdn.patch.gg covers load: PASS.
 - Mobile width 390 px and drawer: PASS.
 - Offline and unsafe-feed fallback: PASS; no console errors or runtime exceptions in the VFX acceptance run.
-- Data refresh: `2026-11-24` → `2026-11-24.refresh-proof` on reload with the same build. This is a browser-intercepted response at the exact main URL, not a modification to WS0’s JSON or evidence of a deployed-site refresh. Source SHA-256 remained `ba0ea6ab9c06a8521ae1394a2f6f993835d4e681bfa4db64ae515d41b1f517c9`.
+- Data refresh: `2026-11-24` → `2026-11-24.refresh-proof` on reload with the same build. This is a browser-intercepted response at the exact main URL, not a modification to WS0’s JSON or evidence of a deployed-site refresh. Source SHA-256 remained `95f9c57d5beb40a4f237ca2955ba78ea193cb2c889a5f9f379e545b45f6dd4e4`.
 - VFX data/unit checks and 58 existing Python checks: PASS (Python 3.12).
 - Existing browser suites and the new VFX suite are retained in the PR browser workflow. Their CI result must be reviewed before approval; local older browser runners encountered start/time-out issues on macOS.
 
