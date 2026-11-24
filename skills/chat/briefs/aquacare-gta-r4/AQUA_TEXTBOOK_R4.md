@@ -8,19 +8,19 @@ Kein unabhängiger Kritiker gelaufen.
 
 Runden 2 bis 6 verworfen (Georg 24.11.): Konzept-Ironie, Plapperstimmen, bemühter Medizinhumor, und keine Karte spielte damit, dass es Fische sind.
 Runde 7: Fischkörper, Fischverhalten und Aquarienalltag als Strafakte. Kein Medizinhumor. Gute Originalzeilen bleiben. **Georg 24.11.: alle neun Karten „tragen“.**
-Namen wie im Original; Zunamen und Titel sind offen. Die Rollenzeile (`.rolle`) trägt die Anklage. Stärken und Bounty-Zahlen unverändert.
+Namen: DocFish, FlexiFish, Prof. MaBi und Prof. Humoral bleiben; fünf Fische tragen einen Spitznamen, dessen Grund in der Karte steht (Georg 24.11.: „Trägt“). An WS0 geliefert: `crew_r4.rows.json` (R-001), `namen_r4.rows.json` (R-003). Die Rollenzeile (`.rolle`) trägt die Anklage. Stärken und Bounty-Zahlen unverändert.
 
 | ID | Name | Anklage (`.rolle`) | Backstory |
 |---|---|---|---|
 | `crimson` | DocFish | Resisting a net | Grand theft aqua, four counts. Joyrode the filter pump. Fastest fish in the tank. The tank is eighty centimetres. Has hit the glass eleven times. Bounty: 4,711 shells. |
 | `angel` | FlexiFish | Breaking and entering, mostly entering | Turns sideways and is gone. Stole the castle ornament, returned the castle and kept the drawbridge. Bounty: 900 shells. |
 | `mabi` | Prof. MaBi | Tampering with the feeding schedule | Root access to the filter, the lights and the feeding schedule. Dinner now comes nine times a day. Nobody has reported him. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. |
-| `gold` | Bullion | Keeping two sets of books | Came home from a funfair in a plastic bag. Keeps the crew’s books. Two sets, obviously. Questioned nine times, remembers nothing, and the court believes him. Bounty: 24,000 shells, freshly laundered. |
-| `neon` | Strobe | Glowing after lights-out | Came in a bag of ten. Has no eyelids. Still missed thirty-nine alarms out of forty. Bounty: 300 shells and a lampshade. |
+| `gold` | Bags Bullion | Keeping two sets of books | Came home from a funfair in a plastic bag. Keeps the crew’s books. Two sets, obviously. Questioned nine times, remembers nothing, and the court believes him. Bounty: 24,000 shells, freshly laundered. |
+| `neon` | Lucky Strobe | Glowing after lights-out | Came in a bag of ten. Has no eyelids. Still missed thirty-nine alarms out of forty. Bounty: 300 shells and a lampshade. |
 | `clown` | Prof. Humoral | Selling one chest to three pirates | Smiles. Shakes fins. Counts them afterwards. Sold the same treasure chest to three pirates. Twice. Does business from inside an anemone that stings everyone but him. Bounty: 650 shells and one red nose, held as evidence. |
-| `puffer` | Tetro | Biting the hand that feeds him | Kept the finger. Doubles in size when the net comes. The net has stopped coming. Bounty: 2,000 shells. Bring gloves. |
-| `guppy` | Placebo | Smuggling shells past customs | Moves product. Never says which. Tells customs she is expecting. She has been expecting for three years. Got 30,000 shells through that way. Bounty: 1,200 shells, or one sponsored post. |
-| `sub` | Endo | Impersonating a fish | Is a submarine. The crew has agreed not to bring it up. Blew bubbles in the corner for six years and heard everything. Sold the warden’s feeding schedule back to the warden. Bounty: 3,500 shells for the memory card. |
+| `puffer` | Fingers Tetro | Biting the hand that feeds him | Kept the finger. Doubles in size when the net comes. The net has stopped coming. Bounty: 2,000 shells. Bring gloves. |
+| `guppy` | Ma Placebo | Smuggling shells past customs | Moves product. Never says which. Tells customs she is expecting. She has been expecting for three years. Got 30,000 shells through that way. Bounty: 1,200 shells, or one sponsored post. |
+| `sub` | Bubbles Endo | Impersonating a fish | Is a submarine. The crew has agreed not to bring it up. Blew bubbles in the corner for six years and heard everything. Sold the warden’s feeding schedule back to the warden. Bounty: 3,500 shells for the memory card. |
 
 Blind Critic zu den verworfenen Runden, zwei unabhängige Läufe am 24.11. (8 = Ziel). Runde 7 ist nicht geprüft.
 
