@@ -1,3 +1,5 @@
+> **SUPERSEDING DECISION 24.11.2026 — EXTREME FAIL.** Georg rejected the R3 approach, explicitly the erythrocyte and dentist waiting room lines. All 174 replacements quarantined; complete 396-string export is historical evidence only. DO NOT IMPORT, MERGE, RENDER VOICES, or continue the old A/B review. [Postmortem](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/POSTMORTEM_AQUA_R3_EXTREME_FAIL_2026-11-24.md). Fresh independent writing is requested, not blocked by the rejection. Historical return below superseded.
+
 # AquaCare II Grand Theft Aqua — R3 Return, author review and changelog
 Date 2026-11-24. Existing WS0 / Aqua text-intake owner. Status **FULL GAME EDITORIAL CANDIDATE · NOT ACCEPTED · INDEPENDENT CRITIC NOT RUN**. No runtime, no voice, no Site/Stage, no merge. R2 #484 closed/rejected, untouched.
 
