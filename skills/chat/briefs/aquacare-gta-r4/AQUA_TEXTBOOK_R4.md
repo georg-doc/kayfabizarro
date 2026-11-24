@@ -57,5 +57,8 @@ Kein unabhängiger Kritiker gelaufen.
 ## Offen
 
 - `keybar[…]`, `keys[3]`, `keys[4]` nennen Tasten, sind aber die Tastenlegende selbst. Nicht angefasst.
-- `falkenstein.blut.01` behält „my bloodstream“ aus dem Original. Der Brief nennt Falkensteins Biologie nicht gesichert; wenn das nicht Kanon ist, fällt die Zeile.
-- `falkenstein.ziel.01` macht aus „my second tank“ eine Nummer (Tank Five).
+
+## Entschieden (Georg, 24.11.2026)
+
+- `falkenstein.blut.01`: „my bloodstream“ bleibt.
+- `falkenstein.ziel.01`: „Tank Five“ bleibt.
