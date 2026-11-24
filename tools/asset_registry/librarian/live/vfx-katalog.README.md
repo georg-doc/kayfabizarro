@@ -48,7 +48,8 @@ R2 ergänzt jeden Effekt und jeden Spender um diese Felder:
 - `vitrine`: `{ ausloesen, braucht }`, der einfachste Abspielweg für die Effekt-Vitrine auf der Kampfbühne. Bei Spendern ohne Anbindung steht dort die Spender-Demo zum Einbetten.
 
 Weitere Neuerungen:
-- Nachtrag 24.11.: neuer Spender `rehan-game-vfx` (Skill, Laufzeit und 12 Flipbooks, 26 Einträge). Was davon als Regel taugt, steht in `REHAN_GAME_VFX.md`. Stand jetzt: 11 Spender, 153 Effekte.
+- Nachtrag 24.11.: neuer Spender `rehan-game-vfx` (Skill, Laufzeit und 12 Flipbooks, 26 Einträge). Was davon als Regel taugt, steht in `REHAN_GAME_VFX.md`. Stand damals: 11 Spender, 153 Effekte.
+- Nachtrag 24.11. (2): neuer Spender `00gamedevs` (84 Laufzeit-Effekte aus `00gamedevs.com/ai/catalog.v2.json`; das patch.gg-Starterpaket enthält 5 davon). Objekte und Shader der Seite stehen in `00GAMEDEVS_UEBERSICHT.md`, die Blender-Skills von rehan in `REHAN_CLOUD_BLENDER_SKILLS.md` (beide nicht im Katalog). Stand jetzt: 12 Spender, 237 Effekte.
 - Der Spender Ultra Elements hat zusätzlich `elements_einordnung`: Park-Grund V-1732, Kontexte, in denen die Zauber wie gedacht laufen, und eine Reihenfolge.
 - `zahlen.nach_anpassung` zählt die Effekte je Stufe.
 - Was nicht belegt ist, steht als „unbekannt“ da.
