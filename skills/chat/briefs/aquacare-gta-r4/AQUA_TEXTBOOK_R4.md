@@ -4,22 +4,22 @@
 Hier stehen nur die geänderten IDs. Alles andere bleibt Original: Golden-Sublines, Stärken, Flexa-Intro, Menü, Credits. Version 1 zeigt nur Crew und ECHO; die stehen oben.
 Kein unabhängiger Kritiker gelaufen.
 
-## Version 1 · Crew (Steckbriefe) · Runde 3
+## Version 1 · Crew (Steckbriefe) · Runde 4
 
-Runde 2 verworfen (Georg 24.11.: „Tax evasion in a tank that does not exist = AI SLOP PUR“). Runde 3 ohne Paradox-Pointen: nur konkrete Taten.
-DocFish, FlexiFish und Prof. MaBi sind gesetzt. Die Rollenzeile (`.rolle`) trägt das Hauptverbrechen. Stärken und Bounty-Zahlen unverändert.
+Georg zu Runde 3: 70–80 %, zu viel Gag-Gerüst (Bounty-Anhängsel wiederholen sich), zu wenig Eigenheit je Figur, zu wenig Punch. Maßstab: Rick and Morty, dann South Park und Simpsons, mit GTA-Vibe.
+DocFish, FlexiFish und Prof. MaBi sind als Namen gesetzt. Die Rollenzeile (`.rolle`) trägt das Hauptverbrechen. Stärken und Bounty-Zahlen unverändert.
 
 | ID | Name | Anklage (`.rolle`) | Backstory |
 |---|---|---|---|
-| `crimson` | DocFish | Grand theft aqua, four counts | Joyrode the filter pump. Called it a house call. Resisting a net. Bounty: 4,711 shells. |
-| `angel` | FlexiFish | Theft of one drawbridge | *(Original)* Breaking and entering, mostly entering. She stole the castle ornament, returned the castle and kept the drawbridge. Bounty: 900 shells. |
-| `mabi` | Prof. MaBi | Tampering with the feeding schedule | *(Original)* Root access to the filter, the lights and the feeding schedule. Deployed on a Friday. It worked. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. |
-| `gold` | Honest Bullion | Counterfeiting. Painted gravel. | Keeps the crew’s books. Two sets, obviously. One shell in four in this tank is painted gravel. His. Bounty: 24,000 shells, freshly laundered. |
-| `neon` | Strobe “Lights Out” | Glowing at a crime scene, 39 counts | *(Original)* Glows in the dark, which is a problem in this line of work. Stood lookout for forty heists, blinked at the wrong moment in thirty-nine. Bounty: 300 shells and a lampshade. |
-| `clown` | Prof. Dr. Dr. Humoral | Fraud. One chest, three pirates, twice. | Three titles. Nobody checked. Smiles. Shakes fins. Counts them afterwards. On his third body. The first two are still wanted. Bounty: 650 shells and one red nose, held as evidence. |
-| `puffer` | Tetro “Chef’s Special” | Poisoning a table of six | Six inches of attitude. Twelve when provoked. Was served once. The table regretted it. Headbutted a vending machine. Won. Bounty: 2,000 shells. Bring gloves. |
-| `guppy` | Placebo Forte | Dealing sugar. Uncut. | Moves product. Never says which. The patients improve anyway. She got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells, or one sponsored post. |
-| `sub` | Colonel Endo | Unsolicited inspections | *(Original)* Sees everything. Tells whoever pays. Filmed the warden’s feeding schedule, then sold the tape to the warden. Bounty: 3,500 shells for the memory card. |
+| `crimson` | DocFish | Grand theft aqua, four counts | Fastest fish in the crew. Has never once been on time. Stole the filter pump for a house call. His last patient is still open on the table. He says it’s fine. Bounty: 4,711 shells. |
+| `angel` | FlexiFish | Burglary, with corrections | Stole the castle, returned the castle, kept the drawbridge. Caught four times, always the same way: she came back to fix a typo in the ransom note. Bounty: 900 shells. |
+| `mabi` | Prof. MaBi | Tampering with dinner | Root access to the filter, the lights and the feeding schedule. Deployed on a Friday. It worked. Wears sunglasses so the monitors cannot read his face. Bounty: 0xFFFF shells. |
+| `gold` | Ping-Pong Bullion | Counterfeiting. Painted gravel. | Was won at a funfair with one ping-pong ball. Nobody calls him that twice. Keeps two sets of books and wears the difference. Bounty: 24,000 shells. He says that is insulting. |
+| `neon` | Strobe™ | Unlicensed reproduction, 212 counts | Glows because a lab wanted a fish that glows. The lab owns the glow. He has 212 children and every one of them is a lawsuit. Stands lookout. Can be seen from the parking lot. Bounty: 300 shells. |
+| `clown` | Prof. Dr. Dr. Humoral | Bloodletting without a licence | Three titles. Nobody checked. Says every illness is too much blood and offers to keep it for you. Two thousand grateful patients. One very full freezer. Bounty: 650 shells. |
+| `puffer` | Tetro “Party Favor” | Controlled substance | Dolphins used to pass him around at parties. Then he learned to headbutt. Six inches of attitude, twelve when provoked, lethal either way. Bounty: 2,000 shells. Do not lick. |
+| `guppy` | Placebo Forte | Selling the tank its own water | Bottles the water you are swimming in and sells it back as a cleanse. Sold out twice. The reviews are sincere. She got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells. |
+| `sub` | Endo, Internal Affairs | Unlawful entry, eight counts | Is a submarine. The crew has agreed not to bring it up. Has seen every one of them from the inside and sells the footage to whoever asks. Says DocFish was a disappointment. Bounty: 3,500 shells. |
 
 ## Version 1 · ECHO
 
