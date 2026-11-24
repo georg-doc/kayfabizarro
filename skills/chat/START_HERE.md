@@ -12,6 +12,12 @@
 
 ---
 
+## 2026-11-24 · WS0 INTAKE · CARD WORLDS R0 / WORLD EVERY DAY
+
+**SOURCE-CHECKED · DOCS ONLY · PROPOSED.** Active game owner WS0/Integration-R2: [Issue #158](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/158) contains full donor audit, seed/recipe design, InfiniteRooms portal integration, daily/standalone/main-world scenarios, 18 NOT_RUN checks and Return/additive changelog. Production snapshot `game/integration-r2 @ e75112a99ab6ef9fa6177ca3de58a2b1d3954359`; refetch before building. Upstream [World Every Day @ 1ce9ce7](https://github.com/acher249/world-every-day/tree/1ce9ce7adc95aa5d7cb2e3eb329200a82695d4ea): semantic JSON → art direction → panorama → Marble SPZ → landmark mapping. Native deterministic KFB recipe first; optional SPZ visual backend only with rights/budget/renderer/physics proof. Existing card registry, InfiniteRooms host and tuerPortal owners retained; relates to #127 and #155 without superseding their gates. No runtime changes, no paid calls, no tests, no Stage/Live. Next: one actual card recipe through native portal, safe return + reload. Hub active worklist is the owner issue; no public mirror needed for docs.
+
+---
+
 ## 2026-11-24 · AQUACARE GTA R4 · CURRENT CREATIVE WRITER BRIEF
 
 **R2 #484 and R3 #485: EXTREME FAIL, closed/unmerged, all proposed replacements quarantined.** No reuse, import or voice rendering. Georg explicitly requests a fresh complete English text set: short, precise, natural, genuine wit; evil mastermind, gangster fish, KFB meets GTA; no forced jokes or stop cascades. [R4 Writer Brief — complete self-contained packet](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/AQUACARE_GTA_R4_WRITER_BRIEF_2026-11-24.md) supersedes all R3 writing instructions. [R3 Postmortem](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/POSTMORTEM_AQUA_R3_EXTREME_FAIL_2026-11-24.md). Original 389 IDs and seven Golden lines remain the source. GTA research is background, not approved transfer hypotheses. Existing WS0/Aqua text owner; no new runtime or Stage. Next: fresh writer delivers the complete new candidate, no mandatory intermediate human gates. Runtime source remains unresolved.
