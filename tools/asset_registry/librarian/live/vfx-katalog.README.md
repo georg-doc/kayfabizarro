@@ -45,7 +45,10 @@ R2 ergänzt jeden Effekt und jeden Spender um diese Felder:
 - `anpassung`: `{ stufe: keine | klein | mittel | groß, was }`. Die Stufe gilt für den **ersten** Eintrag in `passt_bei_uns`.
 - `idee` (optional): eine kurze Gestaltungs- oder Nutzungsidee.
 
+- `vitrine`: `{ ausloesen, braucht }`, der einfachste Abspielweg für die Effekt-Vitrine auf der Kampfbühne. Bei Spendern ohne Anbindung steht dort die Spender-Demo zum Einbetten.
+
 Weitere Neuerungen:
+- Nachtrag 24.11.: neuer Spender `rehan-game-vfx` (Skill, Laufzeit und 12 Flipbooks, 26 Einträge). Was davon als Regel taugt, steht in `REHAN_GAME_VFX.md`. Stand jetzt: 11 Spender, 153 Effekte.
 - Der Spender Ultra Elements hat zusätzlich `elements_einordnung`: Park-Grund V-1732, Kontexte, in denen die Zauber wie gedacht laufen, und eine Reihenfolge.
 - `zahlen.nach_anpassung` zählt die Effekte je Stufe.
 - Was nicht belegt ist, steht als „unbekannt“ da.

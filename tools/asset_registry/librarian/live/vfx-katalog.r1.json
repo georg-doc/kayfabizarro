@@ -9,7 +9,8 @@
   "Stamm ~/kfb-ws0/merge-wt @68f8fb42 (nur gelesen)",
   "replies/VFX_EFFEKSEER_R1/effekte_katalog.json",
   "KFB_MODULE_KATALOG_R1.md",
-  "R2: Kopfkommentare der Spender-Dateien (ultra-elements src/spells, abilities config/settings.js, fire FIRE_TYPES), READMEs der Spender, DECISIONS V-1732/V-2151"
+  "R2: Kopfkommentare der Spender-Dateien (ultra-elements src/spells, abilities config/settings.js, fire FIRE_TYPES), READMEs der Spender, DECISIONS V-1732/V-2151",
+  "R2 Nachtrag: patch.gg rehan/game-vfx 0.1.1 (Repo @e444d6f1 gelesen, nichts ausgeführt)"
  ],
  "regeln": {
   "unbekannt": "Wert nicht in Code oder Quelle belegt",
@@ -20,19 +21,20 @@
    "nur extern"
   ],
   "dauer_s_elements": "Elements: Summe der Phasen charge + impact + linger (ohne Flugzeit); Einzelphasen in phasen_s",
-  "r2": "V-2151: zuerst verstehen, wie der Spender den Effekt gedacht hat, dann den KFB/Aqua-Kontext mit geringster Anpassung. anpassung bezieht sich auf den ersten Eintrag in passt_bei_uns."
+  "r2": "V-2151: zuerst verstehen, wie der Spender den Effekt gedacht hat, dann den KFB/Aqua-Kontext mit geringster Anpassung. anpassung bezieht sich auf den ersten Eintrag in passt_bei_uns.",
+  "vitrine": "Feld vitrine je Effekt: { ausloesen, braucht } = einfachster Abspielweg für die Effekt-Vitrine auf der Kampfbühne."
  },
  "zahlen": {
-  "spender": 10,
-  "effekte": 127,
+  "spender": 11,
+  "effekte": 153,
   "nach_status": {
    "vendored ungenutzt": 72,
    "im Spiel": 20,
-   "nur extern": 35
+   "nur extern": 61
   },
   "nach_anpassung": {
-   "mittel": 34,
-   "klein": 69,
+   "mittel": 42,
+   "klein": 87,
    "groß": 3,
    "keine": 21
   }
@@ -555,6 +557,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Thunderstrike', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -733,7 +739,11 @@
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      },
-     "idee": "FB plus zwei Begleiter als die drei Zielpuppen: der Bogen zwingt die Gruppe auseinander."
+     "idee": "FB plus zwei Begleiter als die drei Zielpuppen: der Bogen zwingt die Gruppe auseinander.",
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Chain Arc', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
+     }
     },
     {
      "id": "elements.ball-lightning",
@@ -941,6 +951,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Ball Lightning', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -1186,6 +1200,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Thunderstorm', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -1372,6 +1390,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Fireball', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -1549,6 +1571,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Inferno', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -1765,6 +1791,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Phoenix', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -2017,6 +2047,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Ember Swarm', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -2190,6 +2224,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Tidal Lance', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -2353,6 +2391,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Geyser', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -2551,6 +2593,10 @@
      "anpassung": {
       "stufe": "groß",
       "was": "Arena mit Becken bauen oder nur im Showcase nutzen."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Tsunami', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -2809,6 +2855,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Glacial Spike', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -3054,7 +3104,11 @@
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      },
-     "idee": "Boss baut die Mauer zwischen sich und FB, FB muss sie mit Feuer brechen."
+     "idee": "Boss baut die Mauer zwischen sich und FB, FB muss sie mit Feuer brechen.",
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Ice Wall', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
+     }
     },
     {
      "id": "elements.absolute-zero",
@@ -3268,6 +3322,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Absolute Zero', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -3488,6 +3546,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Blizzard', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -3723,6 +3785,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Upheaval', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -3960,6 +4026,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Meteor', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -4191,6 +4261,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Fissure', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -4405,6 +4479,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Lava Geyser', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -4613,6 +4691,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Cyclone', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -4823,7 +4905,11 @@
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      },
-     "idee": "Als Boss-Angriff lesbar, weil fast unsichtbar: nur Staublinie und Bodenkerbe kündigen ihn an."
+     "idee": "Als Boss-Angriff lesbar, weil fast unsichtbar: nur Staublinie und Bodenkerbe kündigen ihn an.",
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Wind Slash', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
+     }
     },
     {
      "id": "elements.dust-devils",
@@ -5023,6 +5109,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Dust Devils', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -5216,6 +5306,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Singularity', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -5409,6 +5503,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Rift', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -5599,6 +5697,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Portal', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -5813,6 +5915,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Judgment', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -6047,6 +6153,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Radiant Lance', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -6245,6 +6355,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Solar Flare', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -6460,7 +6574,11 @@
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      },
-     "idee": "Polarlicht als Arena-Himmel für die Nachtphase."
+     "idee": "Polarlicht als Arena-Himmel für die Nachtphase.",
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Aurora Veil', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
+     }
     },
     {
      "id": "elements.supernova",
@@ -6699,7 +6817,11 @@
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
      },
-     "idee": "Endkaskade des Bosses: Pulsieren als Countdown."
+     "idee": "Endkaskade des Bosses: Pulsieren als Countdown.",
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Supernova', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
+     }
     },
     {
      "id": "elements.toxic-bloom",
@@ -6893,6 +7015,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Toxic Bloom', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -7074,6 +7200,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Corrosion Cloud', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -7285,6 +7415,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Plague Swarm', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -7501,6 +7635,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Arcane Barrage', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -7718,7 +7856,11 @@
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
      },
-     "idee": "Kuppel um den Boss, nur ein Element-Treffer bricht sie."
+     "idee": "Kuppel um den Boss, nur ein Element-Treffer bricht sie.",
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Aegis', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
+     }
     },
     {
      "id": "elements.starfall",
@@ -7932,6 +8074,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Starfall', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -8129,6 +8275,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Boss-Arena wie beim Spender plus Probe des offenen Fehlers (Blitz-Versatz bzw. MRT) am festen Ursprung."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Frozen Lightning', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -8338,6 +8488,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Fire Tornado', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     },
     {
@@ -8516,6 +8670,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "In einer flachen Boss-Arena mit festem Ursprung über elementeZaubern(name, punkt) wirken, Zielpuppen auf FB und Begleiter."
+     },
+     "vitrine": {
+      "ausloesen": "elementeZaubern(gl, 'Black Flame', punkt, { boden }); im Loop feuerDraw(gl, scene, camera, dt)",
+      "braucht": "elemente=r1, flacher Boden y = 0 um den Punkt, Zielpuppen (api.fx.dummies) auf die Vitrinen-Ziele, Vorwärmen (≈ 2 MB); VFX-Bühne macht es schon so (tools/vfx-buehne)"
      }
     }
    ],
@@ -8657,6 +8815,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('fireball', 'pierre-2/FireBall.efk', scale); sch.spiele('fireball', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei liegt im Stamm. Bei scale 1 ist er 21.1 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -8739,6 +8901,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('flame-ring', 'pierre-1/Flame.efk', scale); sch.spiele('flame-ring', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-1/Flame.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 20.1 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -8821,6 +8987,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('fire-burst', 'andrewfm/fire.efk', scale); sch.spiele('fire-burst', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/andrewfm/fire.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 3.9 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -8902,6 +9072,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('falling-ember', 'nextsoft/MagicMeteo.efk', scale); sch.spiele('falling-ember', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/nextsoft/MagicMeteo.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 3.6 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -8985,6 +9159,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('water-burst', 'nextsoft/MagicWater.efk', scale); sch.spiele('water-burst', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/nextsoft/MagicWater.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 7.0 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -9066,6 +9244,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('water-spout', 'tktk/ToonWater.efk', scale); sch.spiele('water-spout', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/tktk/ToonWater.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 26.4 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -9147,6 +9329,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('frost-fall', 'nextsoft/MagicCold.efk', scale); sch.spiele('frost-fall', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/nextsoft/MagicCold.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 7.5 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -9228,6 +9414,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('cold-mist', 'pierre-2/CosmicMist.efk', scale); sch.spiele('cold-mist', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-2/CosmicMist.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 29.2 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -9309,6 +9499,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('tornado', 'nextsoft/MagicTornade.efk', scale); sch.spiele('tornado', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/nextsoft/MagicTornade.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 10.0 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -9391,6 +9585,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('lightning-strike', 'pierre-1/LightningStrike.efk', scale); sch.spiele('lightning-strike', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-1/LightningStrike.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 120.1 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -9472,6 +9670,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('thunderbolt', 'nextsoft/MagicThunder.efk', scale); sch.spiele('thunderbolt', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/nextsoft/MagicThunder.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 8.1 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -9554,6 +9756,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('storm-orb', 'suzuki/001_magma_effect/aura.efk', scale); sch.spiele('storm-orb', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/suzuki/001_magma_effect/aura.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 3.1 m groß: scale passend kleiner wählen; Schleife: stopAlle() nach dem Zeigen"
      }
     },
     {
@@ -9636,6 +9842,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('ember-blade', 'pierre-2/Sword_Ember.efk', scale); sch.spiele('ember-blade', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-2/Sword_Ember.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 41.2 m groß: scale passend kleiner wählen; Schleife: stopAlle() nach dem Zeigen"
      }
     },
     {
@@ -9718,6 +9928,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('moonlight-blade', 'pierre-2/Sword_Moonlight.efk', scale); sch.spiele('moonlight-blade', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-2/Sword_Moonlight.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 40.3 m groß: scale passend kleiner wählen; Schleife: stopAlle() nach dem Zeigen"
      }
     },
     {
@@ -9800,6 +10014,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('sacred-blade', 'pierre-2/Sword_Sacredlight.efk', scale); sch.spiele('sacred-blade', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-2/Sword_Sacredlight.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 45.9 m groß: scale passend kleiner wählen; Schleife: stopAlle() nach dem Zeigen"
      }
     },
     {
@@ -9882,6 +10100,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('crescent-slash', 'nextsoft/Sword2.efk', scale); sch.spiele('crescent-slash', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei liegt im Stamm. Bei scale 1 ist er 4.4 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -9963,6 +10185,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('golden-cuts', 'suzuki/002_sword_effect/sword.efk', scale); sch.spiele('golden-cuts', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/suzuki/002_sword_effect/sword.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 23.8 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10044,6 +10270,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('benediction', 'pierre-2/Benediction.efk', scale); sch.spiele('benediction', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-2/Benediction.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 28.2 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10125,6 +10355,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('healing-light', 'nextsoft/MagicHeal2.efk', scale); sch.spiele('healing-light', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/nextsoft/MagicHeal2.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 9.0 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10209,6 +10443,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('golden-rise', 'tktk/Light.efk', scale); sch.spiele('golden-rise', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei liegt im Stamm. Bei scale 1 ist er 9.2 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10291,7 +10529,11 @@
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      },
-     "idee": "Beim Einsammeln von Spezialmunition, in der Munitionsfarbe getönt."
+     "idee": "Beim Einsammeln von Spezialmunition, in der Munitionsfarbe getönt.",
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('power-up', 'nextsoft/PowerUp.efk', scale); sch.spiele('power-up', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/nextsoft/PowerUp.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 3.0 m groß: scale passend kleiner wählen"
+     }
     },
     {
      "id": "effekseer.blood-lance",
@@ -10372,6 +10614,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('blood-lance', 'pierre-2/BloodLance.efk', scale); sch.spiele('blood-lance', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-2/BloodLance.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 20.3 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10453,6 +10699,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "stark verkleinert laden, an Klinge bzw. Ziel hängen und mit stopRoot beenden."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('phantasm-rain', 'pierre-1/PhantasmMeteor.efk', scale); sch.spiele('phantasm-rain', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-1/PhantasmMeteor.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 43.3 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10536,6 +10786,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('phantasm', 'pierre-1/PhantasmMeteor_Single.efk', scale); sch.spiele('phantasm', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei liegt im Stamm. Bei scale 1 ist er 14.7 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10618,6 +10872,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('herald', 'pierre-1/Herald.efk', scale); sch.spiele('herald', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei liegt im Stamm. Bei scale 1 ist er 3.0 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10699,6 +10957,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('toxic-aura', 'effekseer-1.6/Aura01.efk', scale); sch.spiele('toxic-aura', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/effekseer-1.6/Aura01.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 6.2 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10781,7 +11043,11 @@
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      },
-     "idee": "Schild-Block: Effekt am Kontaktpunkt des Schilds, Farbe nach Waffen-Meta-Typ."
+     "idee": "Schild-Block: Effekt am Kontaktpunkt des Schilds, Farbe nach Waffen-Meta-Typ.",
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('hex-shield', 'effekseer-1.6/Barrior01.efk', scale); sch.spiele('hex-shield', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/effekseer-1.6/Barrior01.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 11.4 m groß: scale passend kleiner wählen"
+     }
     },
     {
      "id": "effekseer.red-shield",
@@ -10862,6 +11128,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('red-shield', 'effekseer-1.6/Barrior02.efk', scale); sch.spiele('red-shield', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/effekseer-1.6/Barrior02.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 11.1 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -10943,6 +11213,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('molten-shield', 'effekseer-1.6/Barrior03.efk', scale); sch.spiele('molten-shield', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/effekseer-1.6/Barrior03.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 9.9 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -11025,6 +11299,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('spark-hit', 'tktk/ToonHit.efk', scale); sch.spiele('spark-hit', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei liegt im Stamm. Bei scale 1 ist er 11.4 m groß: scale passend kleiner wählen"
      }
     },
     {
@@ -11107,7 +11385,11 @@
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      },
-     "idee": "Boxhandschuh-Treffer: kurz genug für Schlagfolgen (0,9 s)."
+     "idee": "Boxhandschuh-Treffer: kurz genug für Schlagfolgen (0,9 s).",
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('red-hit', 'andrewfm/hit_eff.efk', scale); sch.spiele('red-hit', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/andrewfm/hit_eff.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 5.7 m groß: scale passend kleiner wählen"
+     }
     },
     {
      "id": "effekseer.shockwave",
@@ -11189,7 +11471,11 @@
       "stufe": "klein",
       "was": "Datei samt Texturen nach src/vendor/effekseer/effects kopieren, mit passendem scale laden, farbe nach Waffenfarbe."
      },
-     "idee": "Bei schwerer Landung von FB (Jetpack aus) einmal am Boden."
+     "idee": "Bei schwerer Landung von FB (Jetpack aus) einmal am Boden.",
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('shockwave', 'pierre-1/SonicBoom.efk', scale); sch.spiele('shockwave', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei + Texturen aus dem patch.gg-Block (public/effects/pierre-1/SonicBoom.efk) nach src/vendor/effekseer/effects kopieren. Bei scale 1 ist er 18.1 m groß: scale passend kleiner wählen"
+     }
     },
     {
      "id": "effekseer.feather-burst",
@@ -11274,6 +11560,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "sch = await createEffekseerSchicht(gl); await sch.lade('feather-burst', 'pierre-2/FeatherBomb.efk', scale); sch.spiele('feather-burst', x, y, z, { speed, farbe }); zeichnen über Haken-Knoten nach der Szene (wie bogenSpur.r1.js)",
+      "braucht": "Datei liegt im Stamm. Bei scale 1 ist er 25.5 m groß: scale passend kleiner wählen"
      }
     }
    ],
@@ -11469,6 +11759,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'campfire', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
      }
     },
     {
@@ -11626,6 +11920,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "feuerAdd({ type: 'torch' }) am vorhandenen Prop, Form über around bzw. outOf."
+     },
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'torch', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
      }
     },
     {
@@ -11784,6 +12082,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "feuerAdd({ type: 'candle' }) am vorhandenen Prop, Form über around bzw. outOf."
+     },
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'candle', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
      }
     },
     {
@@ -11944,7 +12246,11 @@
       "stufe": "klein",
       "was": "feuerAdd({ type: 'gas' }) am vorhandenen Prop, Form über around bzw. outOf."
      },
-     "idee": "Blaue Gasflammen als Erkennungszeichen von MiB-Technik."
+     "idee": "Blaue Gasflammen als Erkennungszeichen von MiB-Technik.",
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'gas', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
+     }
     },
     {
      "id": "fire.brazier",
@@ -12100,6 +12406,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "feuerAdd({ type: 'brazier' }) am vorhandenen Prop, Form über around bzw. outOf."
+     },
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'brazier', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
      }
     },
     {
@@ -12256,6 +12566,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "feuerAdd({ type: 'fireplace' }) am vorhandenen Prop, Form über around bzw. outOf."
+     },
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'fireplace', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
      }
     },
     {
@@ -12412,6 +12726,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "feuerAdd({ type: 'bonfire' }) am vorhandenen Prop, Form über around bzw. outOf."
+     },
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'bonfire', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
      }
     },
     {
@@ -12569,6 +12887,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "feuerAdd({ type: 'crate' }) am vorhandenen Prop, Form über around bzw. outOf."
+     },
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'crate', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
      }
     },
     {
@@ -12729,7 +13051,11 @@
       "stufe": "klein",
       "was": "feuerAdd({ type: 'line', length }) entlang der Gefahrenlinie."
      },
-     "idee": "Feuerwand als Boss-Arena-Rand, die sich zusammenzieht."
+     "idee": "Feuerwand als Boss-Arena-Rand, die sich zusammenzieht.",
+     "vitrine": {
+      "ausloesen": "feuerAdd({ type: 'line', position, size }, parent); im Loop feuerDraw(gl, scene, camera, dt); weg mit remove()",
+      "braucht": "Kamera näher als 70 m; feuer=0 nicht gesetzt; bei mehreren Feuern lights/shadow aus"
+     }
     }
    ],
    "gedachter_einsatz": "Echte 3D-Flamme aus Shader-Mathematik, um die man herumgehen kann: Lagerfeuer, Fackel, Freudenfeuer usw., je Typ an das Brennende angepasst, mit Funken, Rauch und flackerndem Licht (Spender-Seite, FIRE_TYPES).",
@@ -12900,6 +13226,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('pyre', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -13029,6 +13359,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('kraken', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -13157,6 +13491,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('electrical', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -13281,6 +13619,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('earth', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -13399,7 +13741,11 @@
       "stufe": "mittel",
       "was": "Tor-System der Sandbox in abilities.jsx ergänzen (wie die Linien und Flächen)."
      },
-     "idee": "Verdant Gate als Ausgang, der nach dem Bosskampf wächst."
+     "idee": "Verdant Gate als Ausgang, der nach dem Bosskampf wächst.",
+     "vitrine": {
+      "ausloesen": "nicht angebunden; Spender-Demo einbetten",
+      "braucht": "Tor-System in abilities.jsx; Spender-Demo: https://01a1aeecf54676ac804717cbb77425ca-production.patchusercontent.com/"
+     }
     },
     {
      "id": "abilities.aether",
@@ -13516,6 +13862,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Tor-System der Sandbox in abilities.jsx ergänzen (wie die Linien und Flächen)."
+     },
+     "vitrine": {
+      "ausloesen": "nicht angebunden; Spender-Demo einbetten",
+      "braucht": "Tor-System in abilities.jsx; Spender-Demo: https://01a1aeecf54676ac804717cbb77425ca-production.patchusercontent.com/"
      }
     },
     {
@@ -13632,6 +13982,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Tor-System der Sandbox in abilities.jsx ergänzen (wie die Linien und Flächen)."
+     },
+     "vitrine": {
+      "ausloesen": "nicht angebunden; Spender-Demo einbetten",
+      "braucht": "Tor-System in abilities.jsx; Spender-Demo: https://01a1aeecf54676ac804717cbb77425ca-production.patchusercontent.com/"
      }
     },
     {
@@ -13773,6 +14127,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('ice', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -13902,6 +14260,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('thunder', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -14031,6 +14393,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('meteor', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -14160,6 +14526,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('beam', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -14301,7 +14671,11 @@
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
      },
-     "idee": "Zielkreis des Spenders als Boss-Telegraph: FB sieht, wo der Käfig gleich brennt."
+     "idee": "Zielkreis des Spenders als Boss-Telegraph: FB sieht, wo der Käfig gleich brennt.",
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('snare', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
+     }
     },
     {
      "id": "abilities.glacier",
@@ -14435,6 +14809,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Angebunden; für Bosse Werfer und Ziel tauschen, vorwärmen."
+     },
+     "vitrine": {
+      "ausloesen": "window.__kfbAbil.cast('glacier', { weite })",
+      "braucht": "abilities=r1, eine Figur als Werfer (Prüf-API in src/m1/abilities.jsx), vorwärmen"
      }
     },
     {
@@ -14561,6 +14939,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Knochen-Zuordnung auf unser Rig, Anbindung wie abilities.jsx."
+     },
+     "vitrine": {
+      "ausloesen": "nicht angebunden; nur Spender-Demo (Agent-Regler boost.*)",
+      "braucht": "Knochen-Zuordnung auf unser Rig; Spender-Demo: https://01a1aeecf54676ac804717cbb77425ca-production.patchusercontent.com/"
      }
     },
     {
@@ -14687,6 +15069,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Knochen-Zuordnung auf unser Rig, Anbindung wie abilities.jsx."
+     },
+     "vitrine": {
+      "ausloesen": "nicht angebunden; nur Spender-Demo (Agent-Regler boost.*)",
+      "braucht": "Knochen-Zuordnung auf unser Rig; Spender-Demo: https://01a1aeecf54676ac804717cbb77425ca-production.patchusercontent.com/"
      }
     },
     {
@@ -14813,6 +15199,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "Knochen-Zuordnung auf unser Rig, Anbindung wie abilities.jsx."
+     },
+     "vitrine": {
+      "ausloesen": "nicht angebunden; nur Spender-Demo (Agent-Regler boost.*)",
+      "braucht": "Knochen-Zuordnung auf unser Rig; Spender-Demo: https://01a1aeecf54676ac804717cbb77425ca-production.patchusercontent.com/"
      }
     }
    ],
@@ -14914,6 +15304,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aee86880752dad9c8984b42a5b6b-production.patchusercontent.com/",
+      "braucht": "Netz; eigene SpellsApp, Modelle aus Git LFS, falls lokal"
      }
     },
     {
@@ -14985,6 +15379,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aee86880752dad9c8984b42a5b6b-production.patchusercontent.com/",
+      "braucht": "Netz; eigene SpellsApp, Modelle aus Git LFS, falls lokal"
      }
     },
     {
@@ -15056,6 +15454,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aee86880752dad9c8984b42a5b6b-production.patchusercontent.com/",
+      "braucht": "Netz; eigene SpellsApp, Modelle aus Git LFS, falls lokal"
      }
     },
     {
@@ -15127,6 +15529,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aee86880752dad9c8984b42a5b6b-production.patchusercontent.com/",
+      "braucht": "Netz; eigene SpellsApp, Modelle aus Git LFS, falls lokal"
      }
     },
     {
@@ -15198,6 +15604,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Video bzw. Showcase: Spender-App so wie sie ist aufnehmen; im Spiel groß."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aee86880752dad9c8984b42a5b6b-production.patchusercontent.com/",
+      "braucht": "Netz; eigene SpellsApp, Modelle aus Git LFS, falls lokal"
      }
     }
    ],
@@ -15433,6 +15843,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Showcase bzw. Video unverändert; im Spiel groß (WebGPU-Pfad nötig)."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aeebe92b75d7a44da17ed972b68d-production.patchusercontent.com/",
+      "braucht": "Netz; WebGPU-Browser (Chrome/Edge 113+)"
      }
     },
     {
@@ -15597,6 +16011,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Showcase bzw. Video unverändert; im Spiel groß (WebGPU-Pfad nötig)."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aeebe92b75d7a44da17ed972b68d-production.patchusercontent.com/",
+      "braucht": "Netz; WebGPU-Browser (Chrome/Edge 113+)"
      }
     },
     {
@@ -15777,6 +16195,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Showcase bzw. Video unverändert; im Spiel groß (WebGPU-Pfad nötig)."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aeebe92b75d7a44da17ed972b68d-production.patchusercontent.com/",
+      "braucht": "Netz; WebGPU-Browser (Chrome/Edge 113+)"
      }
     },
     {
@@ -15975,6 +16397,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Showcase bzw. Video unverändert; im Spiel groß (WebGPU-Pfad nötig)."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Demo als eingebettete Seite (iframe): https://01a1aeebe92b75d7a44da17ed972b68d-production.patchusercontent.com/",
+      "braucht": "Netz; WebGPU-Browser (Chrome/Edge 113+)"
      }
     }
    ],
@@ -16082,6 +16508,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "createKampfVfx(THREE, { batch, parent }) → muendung(waffe, pos, dir) | spur(mesh, waffe, an) | treffer(waffe, at, normal, dir, { material })",
+      "braucht": "quarks=r1, quarksHost; die VFX-Bühne nutzt dasselbe Modul"
      }
     },
     {
@@ -16154,6 +16584,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "createKampfVfx(THREE, { batch, parent }) → muendung(waffe, pos, dir) | spur(mesh, waffe, an) | treffer(waffe, at, normal, dir, { material })",
+      "braucht": "quarks=r1, quarksHost; die VFX-Bühne nutzt dasselbe Modul"
      }
     },
     {
@@ -16226,6 +16660,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "createKampfVfx(THREE, { batch, parent }) → muendung(waffe, pos, dir) | spur(mesh, waffe, an) | treffer(waffe, at, normal, dir, { material })",
+      "braucht": "quarks=r1, quarksHost; die VFX-Bühne nutzt dasselbe Modul"
      }
     },
     {
@@ -16298,6 +16736,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "createKampfVfx(THREE, { batch, parent }) → muendung(waffe, pos, dir) | spur(mesh, waffe, an) | treffer(waffe, at, normal, dir, { material })",
+      "braucht": "quarks=r1, quarksHost; die VFX-Bühne nutzt dasselbe Modul"
      }
     },
     {
@@ -16370,6 +16812,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "createKampfVfx(THREE, { batch, parent }) → muendung(waffe, pos, dir) | spur(mesh, waffe, an) | treffer(waffe, at, normal, dir, { material })",
+      "braucht": "quarks=r1, quarksHost; die VFX-Bühne nutzt dasselbe Modul"
      }
     },
     {
@@ -16477,6 +16923,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "createBogenSpur(THREE, { batch, parent }) → start(id, pose, farbe, art), je Bild folge(pose), ende(); treffer(at, dir, farbe)",
+      "braucht": "quarksHost-BatchedRenderer, Griff- und Spitzen-Pose (base, tip) je Bild; einhand=r1 bzw. stangen=r1"
      }
     }
    ],
@@ -16570,6 +17020,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "über tintenKarte: Stempel an einer Bodenstelle setzen (Würfelmonster-Spucke)",
+      "braucht": "tinte=r1 bzw. labyink=r1"
      }
     },
     {
@@ -16609,6 +17063,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft im Theater"
+     },
+     "vitrine": {
+      "ausloesen": "Theater-Szene mit labyink=r1",
+      "braucht": "tinte=r1 bzw. labyink=r1"
      }
     },
     {
@@ -16817,7 +17275,11 @@
       "stufe": "mittel",
       "was": "FX-Klasse aus Inkwaves Kontext lösen (core/ctx.js) und an Treffer-Ereignisse hängen."
      },
-     "idee": "hitSplash in Zensur-Tintenfarbe, wenn ein Würfelmonster getroffen wird."
+     "idee": "hitSplash in Zensur-Tintenfarbe, wenn ein Würfelmonster getroffen wird.",
+     "vitrine": {
+      "ausloesen": "Spender-Spiel einbetten: https://01a1af03db757706ac32214820357dfe-production.patchusercontent.com/",
+      "braucht": "nicht ohne Inkwave-Kontext abspielbar"
+     }
     },
     {
      "id": "inkwave.screenfx",
@@ -16910,6 +17372,10 @@
      "anpassung": {
       "stufe": "groß",
       "was": "Braucht einen Vollbild-Durchgang nach dem Grading; im Spiel gibt es keinen Composer-Pass."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Spiel einbetten: https://01a1af03db757706ac32214820357dfe-production.patchusercontent.com/",
+      "braucht": "nicht ohne Inkwave-Kontext abspielbar"
      }
     },
     {
@@ -16969,6 +17435,10 @@
      "anpassung": {
       "stufe": "groß",
       "was": "Lebt im Inkwave-levelMaterial; unsere Tintenkarte hat keine Schwimmspur."
+     },
+     "vitrine": {
+      "ausloesen": "Spender-Spiel einbetten: https://01a1af03db757706ac32214820357dfe-production.patchusercontent.com/",
+      "braucht": "nicht ohne Inkwave-Kontext abspielbar"
      }
     }
    ],
@@ -17078,7 +17548,11 @@
       "stufe": "keine",
       "was": "läuft schon (Portal R3)"
      },
-     "idee": "Aqua: Blitze mit dem Finger nach unten drücken als Spielziel (faedenHoehe)."
+     "idee": "Aqua: Blitze mit dem Finger nach unten drücken als Spielziel (faedenHoehe).",
+     "vitrine": {
+      "ausloesen": "startePortalKugel({ koerper, bereit, springe, fertig }); im Loop portalKugelDraw(gl, scene, kamera, dt)",
+      "braucht": "portal=r3 mit tueren=1, Figur als Mitte"
+     }
     },
     {
      "id": "bolt.handtracking",
@@ -17119,6 +17593,10 @@
      "anpassung": {
       "stufe": "mittel",
       "was": "MediaPipe einbinden und an beruehre() hängen."
+     },
+     "vitrine": {
+      "ausloesen": "nicht verdrahtet",
+      "braucht": "MediaPipe + Kamera"
      }
     }
    ],
@@ -17186,6 +17664,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "startePortalSprung({ koerper, bereit, springe, fertig }); im Loop portalSprungDraw(gl, scene, kamera, dt)",
+      "braucht": "portal=r2 mit tueren=1, Effekseer-Schicht"
      }
     },
     {
@@ -17264,6 +17746,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "create({ a, b, preset: 'VOLTAGE_FILAMENT' }) aus energy-arc.r1.js",
+      "braucht": "zwei Endpunkte (Vector3)"
      }
     },
     {
@@ -17309,6 +17795,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "abgelöst durch Patch Fire, nicht mehr vorgesehen"
+     },
+     "vitrine": {
+      "ausloesen": "create({ size, seed }) aus campfire.r2.js",
+      "braucht": "Referenz-Bühne src/vfx-reference/campfire.js"
      }
     },
     {
@@ -17369,6 +17859,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Modul an einem Ort einhängen (liegt im Stamm)."
+     },
+     "vitrine": {
+      "ausloesen": "createTorchFlame(), createFireSparks(anchors), createSmokePlume()",
+      "braucht": "Referenz src/vfx-reference/smallBurn.js"
      }
     },
     {
@@ -17403,6 +17897,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Modul an einem Ort einhängen (liegt im Stamm)."
+     },
+     "vitrine": {
+      "ausloesen": "createFireCards(anchors, { meters, height })",
+      "braucht": "Nyrthos-Atlas (liegt bei vfx/campfire)"
      }
     },
     {
@@ -17447,6 +17945,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "Treffer auf eine Figur über die Kampfkette (combatTargets) bzw. Abnahme-Bühne tools/vfx-buehne",
+      "braucht": "blut=r1, gehäutete Figur"
      }
     },
     {
@@ -17479,6 +17981,10 @@
      "anpassung": {
       "stufe": "keine",
       "was": "läuft schon"
+     },
+     "vitrine": {
+      "ausloesen": "createFlightVfx({ scene, camera, body, nozzles, trails })",
+      "braucht": "Figur bzw. Fahrzeug als body"
      }
     },
     {
@@ -17548,6 +18054,10 @@
      "anpassung": {
       "stufe": "klein",
       "was": "Modul an einem Ort einhängen (liegt im Stamm)."
+     },
+     "vitrine": {
+      "ausloesen": "createScheinwerferKegel({ THREE, laenge: 10, winkelGrad: 16, farbe: '#ff5a4a' }) → group in die Szene",
+      "braucht": "nichts weiter"
      }
     }
    ],
@@ -17561,6 +18071,3070 @@
     "stufe": "keine",
     "was": "je Modul"
    }
+  },
+  {
+   "id": "rehan-game-vfx",
+   "name": "game-vfx (Skill für Claude Code + Laufzeit + Flipbooks), über Patch",
+   "quelle_url": "https://patch.gg/rehan/game-vfx",
+   "lizenz": "Code MIT, Art CC0-1.0",
+   "version": "0.1.1 (Repo @e444d6f1)",
+   "im_stamm": null,
+   "einbauweg": "keiner gebaut; Vorschlag: Pässe vfx/distort der Spender-Pipeline in feuerNaht (ohne ACES/Bloom); Flipbooks direkt über den Flipbook-Weg (Aqua, Sprites)",
+   "renderer": "WebGL2, three 0.17x–0.18x (getestet 0.185.1)",
+   "vorschau": {
+    "url": "https://cdn.patch.gg/media/levels/77/51/7751f3255d53cd19d574b029b9fd0331bb8e0613e034a7ed59d54c1444d8b42a/800.webp"
+   },
+   "art_des_spenders": "Skill bzw. Regelwerk (SKILL.md, reference/CRAFT.md) plus Code-Bibliothek (runtime/: Pipeline, FxWorld, Sprite-Systeme, Bausteine, 6 Zauber, Puppe) plus Effekt-Sammlung (12 Flipbooks CC0) und Skripte (Seedance über fal, Flipbook-Macher, Ton, Aufnahme).",
+   "abhaengigkeiten": [
+    "three 0.185.1",
+    "Python 3.9+ mit numpy und Pillow, ffmpeg (nur für neue Flipbooks)",
+    "fal.ai-Schlüssel FAL_KEY (nur für neue Clips, kostenpflichtig)",
+    "Node 18+ (Aufnahme)",
+    "Patchs Puppe mannequin.glb (optional; PointActor geht mit allem)"
+   ],
+   "caveats": [
+    "Neue Clips kosten Geld (Seedance 2.5 auf fal: ≈ 1,90 $ je Element, ≈ 2,40–2,80 $ je Muster-Video): vorher Georg fragen.",
+    "Bilddateien liegen in Git LFS.",
+    "Eigene Pipeline: ACES, Bloom, 12 Punktlichter."
+   ],
+   "gedachter_einsatz": "Ein Agent baut Spiel-VFX für three.js aus KI-Video: Zauber als Zeitplan planen, optional ein Muster-Video in der eigenen Szene, jedes Bildelement allein auf Schwarz filmen, zu Flipbooks packen, dann den Zauber als Code schichten und mit dem Muster vergleichen (README, SKILL.md). Demo: Dämmerungs-Arena mit Puppe und drei Zielpuppen, Klick wirkt den Zauber.",
+   "einordnung_tech": "WebGL2 und three 0.185 passen. Die Laufzeit zeichnet das Bild selbst (5 Pässe, ACES, Bloom) und legt 12 Punktlichter an: im Spiel nur über unsere HDR-Naht ohne deren Tonkurve. Bodenhöhe frei (groundY), Ziele über PointActor beliebig (anders als Elements). Flipbooks sind reine Texturen und passen direkt in den Aqua-Flipbook-Weg.",
+   "passt_bei_uns": [
+    "Aqua: die 12 CC0-Flipbooks über den vorhandenen Flipbook-Weg",
+    "Effekt-Vitrine bzw. VFX-Bühne: examples/minimal ist schon eine Vitrine mit Knöpfen",
+    "Regelwerk für unseren SOP-Ast VFX (siehe REHAN_GAME_VFX.md)"
+   ],
+   "warum_nicht": "Spender-Pipeline mit eigener Tonkurve und 12 Lichtern gegen unser eines Licht-Rig; realistischer KI-Look neben Knete-Figuren ungeprüft; neue Clips kostenpflichtig.",
+   "anpassung": {
+    "stufe": "klein",
+    "was": "Flipbooks für Aqua übernehmen; für das Spiel mittel (Pässe in feuerNaht, Lichtpool kürzen)."
+   },
+   "effekte": [
+    {
+     "id": "game-vfx.fireball",
+     "name": "Feuerball",
+     "art": "Projektil",
+     "quelle_datei": "skills/game-vfx/runtime/spells/fireball.js",
+     "parameter": [
+      {
+       "name": "anim",
+       "bereich": null,
+       "standard": "cast2",
+       "wirkung": "Wirk-Clip der Puppe (cast1 Fege, cast2 Stoß links, cast3 Hocke und Schlag)"
+      },
+      {
+       "name": "release",
+       "bereich": null,
+       "standard": 0.38,
+       "wirkung": "Loslassen (s nach Clip-Start)"
+      },
+      {
+       "name": "speed",
+       "bereich": null,
+       "standard": 15,
+       "wirkung": "Fluggeschwindigkeit (m/s)"
+      },
+      {
+       "name": "hand",
+       "bereich": null,
+       "standard": "Left",
+       "wirkung": "Wurfhand"
+      },
+      {
+       "name": "caster",
+       "bereich": "PointActor | Figure",
+       "standard": null,
+       "wirkung": "Zaubernder"
+      },
+      {
+       "name": "target",
+       "bereich": "PointActor",
+       "standard": null,
+       "wirkung": "Ziel bzw. Ziele"
+      },
+      {
+       "name": "groundY",
+       "bereich": "m",
+       "standard": 0,
+       "wirkung": "Bodenhöhe"
+      },
+      {
+       "name": "scale",
+       "bereich": null,
+       "standard": 1,
+       "wirkung": "unbekannt"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "Funktion gibt die Länge des Wurfs zurück (Wert unbekannt)",
+     "kosten": {
+      "stufe": "mittel",
+      "worauf": "4 Flipbooks, Teile Decal, Shockwave, Trail, 4 Licht-Aufrufe aus einem Pool von 12 Punktlichtern; eigener 5-Pass-HDR-Durchgang"
+     },
+     "use_cases": [
+      "Feuer-Waffe als Fern-Angriff (Feuerball-Werfer) im Spiel",
+      "Boss wirft Feuerbälle",
+      "Aqua: Feuerball-Fisch über Flipbook"
+     ],
+     "caveats": [
+      "Eigene Pipeline mit ACES und Bloom ersetzt renderer.render: im Spiel nur über unsere HDR-Naht (Pässe 2–4), nicht mit deren Tonkurve.",
+      "FxWorld legt 12 Punktlichter in die Szene (kostet in allen beleuchteten Materialien)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/demo/public/thumbs/fireball.webp"
+     },
+     "gedachter_einsatz": "Feuer sammelt sich in der Hand, weiß glühender Ball mit kurzem Schweif fliegt tief und schnell, sein Licht gleitet über den Boden; Explosion an der Brust des Ziels mit Funkenfächer, Rauch und glühender Brandspur. Ziel: ein Ziel; Zaubernder ist Patchs Puppe mit Wirk-Clip (Kopfkommentar fireball.js, Demo-Arena bei Dämmerung).",
+     "einordnung_tech": "WebGL2, three 0.185 (Spender), Laufzeit ohne eigenen Build. Bodenhöhe groundY frei, Ziele über PointActor beliebig. Nutzt Flipbooks fire-burst, fireball-core, ground-fire, smoke-burst. Eigene Pipeline (ACES, Bloom) und 12 Punktlichter widersprechen unserem einen Licht-Rig und Tonweg (V-385/386).",
+     "passt_bei_uns": [
+      "Feuer-Waffe als Fern-Angriff (Feuerball-Werfer) im Spiel",
+      "Boss wirft Feuerbälle",
+      "Aqua: Feuerball-Fisch über Flipbook"
+     ],
+     "warum_nicht": "Mit der Spender-Pipeline im Spiel: zweite Tonkurve und zweiter Bloom. Auf Hängen: Decals und Bodenringe liegen flach auf groundY.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Pässe vfx und distort in feuerNaht einhängen (ohne ACES/Bloom), Lichtpool auf unsere 2 Lichter kürzen, Ziele als PointActor."
+     },
+     "idee": "Die Lichtpfütze, die unter dem Geschoss über den Boden gleitet (CRAFT.md), als Lesehilfe für Fern-Waffen.",
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks: './fx/' }); SPELLS.fireball(vfx.fx, { caster: new PointActor(werfer), target: new PointActor(ziel), groundY }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "eigene Vitrinen-Leinwand mit Spender-Pipeline (examples/minimal ist genau das: Boden, Werfer, drei Ziele, Knöpfe); Flipbooks aus library/ (Git LFS); renderer mit LinearSRGB und NoToneMapping"
+     }
+    },
+    {
+     "id": "game-vfx.lightning",
+     "name": "Kettenblitz",
+     "art": "Strahl",
+     "quelle_datei": "skills/game-vfx/runtime/spells/lightning.js",
+     "parameter": [
+      {
+       "name": "anim",
+       "bereich": null,
+       "standard": "cast2",
+       "wirkung": "Wirk-Clip der Puppe (cast1 Fege, cast2 Stoß links, cast3 Hocke und Schlag)"
+      },
+      {
+       "name": "release",
+       "bereich": null,
+       "standard": 0.36,
+       "wirkung": "Loslassen (s nach Clip-Start)"
+      },
+      {
+       "name": "hand",
+       "bereich": null,
+       "standard": "Left",
+       "wirkung": "Wurfhand"
+      },
+      {
+       "name": "hop",
+       "bereich": null,
+       "standard": 0.11,
+       "wirkung": "Abstand zwischen den Kettensprüngen (s)"
+      },
+      {
+       "name": "caster",
+       "bereich": "PointActor | Figure",
+       "standard": null,
+       "wirkung": "Zaubernder"
+      },
+      {
+       "name": "dummies",
+       "bereich": "[PointActor, …] (Demo: 3)",
+       "standard": null,
+       "wirkung": "Ziel bzw. Ziele"
+      },
+      {
+       "name": "groundY",
+       "bereich": "m",
+       "standard": 0,
+       "wirkung": "Bodenhöhe"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "Funktion gibt die Länge des Wurfs zurück (Wert unbekannt)",
+     "kosten": {
+      "stufe": "mittel",
+      "worauf": "2 Flipbooks, Teile Bolt, Decal, Shockwave, 2 Licht-Aufrufe aus einem Pool von 12 Punktlichtern; eigener 5-Pass-HDR-Durchgang"
+     },
+     "use_cases": [
+      "Clownbombe bzw. Blitzwerfer gegen Gegnergruppen",
+      "Boss-Arena: Kette zwischen FB und Begleitern"
+     ],
+     "caveats": [
+      "Eigene Pipeline mit ACES und Bloom ersetzt renderer.render: im Spiel nur über unsere HDR-Naht (Pässe 2–4), nicht mit deren Tonkurve.",
+      "FxWorld legt 12 Punktlichter in die Szene (kostet in allen beleuchteten Materialien)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/demo/public/thumbs/lightning.webp"
+     },
+     "gedachter_einsatz": "Strom sammelt sich in der Hand (Plasmakugel), ein Blitz springt zur nächsten Puppe und kettet zu den anderen zwei; je Treffer Blitz-Einschlag, Funken, Bögen in den Boden, kaltes Licht. Ziel: die Puppen (Demo: drei); Zaubernder ist Patchs Puppe mit Wirk-Clip (Kopfkommentar lightning.js, Demo-Arena bei Dämmerung).",
+     "einordnung_tech": "WebGL2, three 0.185 (Spender), Laufzeit ohne eigenen Build. Bodenhöhe groundY frei, Ziele über PointActor beliebig. Nutzt Flipbooks lightning-burst, plasma-orb. Eigene Pipeline (ACES, Bloom) und 12 Punktlichter widersprechen unserem einen Licht-Rig und Tonweg (V-385/386).",
+     "passt_bei_uns": [
+      "Clownbombe bzw. Blitzwerfer gegen Gegnergruppen",
+      "Boss-Arena: Kette zwischen FB und Begleitern"
+     ],
+     "warum_nicht": "Mit der Spender-Pipeline im Spiel: zweite Tonkurve und zweiter Bloom. Auf Hängen: Decals und Bodenringe liegen flach auf groundY.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Pässe vfx und distort in feuerNaht einhängen (ohne ACES/Bloom), Lichtpool auf unsere 2 Lichter kürzen, Ziele als PointActor."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks: './fx/' }); SPELLS.lightning(vfx.fx, { caster: new PointActor(werfer), dummies: [drei PointActor], groundY }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "eigene Vitrinen-Leinwand mit Spender-Pipeline (examples/minimal ist genau das: Boden, Werfer, drei Ziele, Knöpfe); Flipbooks aus library/ (Git LFS); renderer mit LinearSRGB und NoToneMapping"
+     }
+    },
+    {
+     "id": "game-vfx.meteor",
+     "name": "Meteor",
+     "art": "Einschlag",
+     "quelle_datei": "skills/game-vfx/runtime/spells/meteor.js",
+     "parameter": [
+      {
+       "name": "anim",
+       "bereich": null,
+       "standard": "cast1",
+       "wirkung": "Wirk-Clip der Puppe (cast1 Fege, cast2 Stoß links, cast3 Hocke und Schlag)"
+      },
+      {
+       "name": "call",
+       "bereich": null,
+       "standard": 0.38,
+       "wirkung": "Ruf-Zeitpunkt (s)"
+      },
+      {
+       "name": "fall",
+       "bereich": null,
+       "standard": 0.85,
+       "wirkung": "Fallzeit (s)"
+      },
+      {
+       "name": "caster",
+       "bereich": "PointActor | Figure",
+       "standard": null,
+       "wirkung": "Zaubernder"
+      },
+      {
+       "name": "dummies",
+       "bereich": "[PointActor, …] (Demo: 3)",
+       "standard": null,
+       "wirkung": "Ziel bzw. Ziele"
+      },
+      {
+       "name": "groundY",
+       "bereich": "m",
+       "standard": 0,
+       "wirkung": "Bodenhöhe"
+      },
+      {
+       "name": "at, from",
+       "bereich": "Vector3, [x, y, z]",
+       "standard": "[-9, 26, -11]",
+       "wirkung": "Einschlagort, Startpunkt am Himmel"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "Funktion gibt die Länge des Wurfs zurück (Wert unbekannt)",
+     "kosten": {
+      "stufe": "mittel",
+      "worauf": "5 Flipbooks, Teile Debris, Decal, MagicCircle, Shockwave, Trail, 4 Licht-Aufrufe aus einem Pool von 12 Punktlichtern; eigener 5-Pass-HDR-Durchgang"
+     },
+     "use_cases": [
+      "Boss-Fähigkeit mit Vorwarnkreis",
+      "Power-Move bzw. Luftschlag (Granate von oben)",
+      "Krater passend zu KRATER_MENTALMODELL"
+     ],
+     "caveats": [
+      "Eigene Pipeline mit ACES und Bloom ersetzt renderer.render: im Spiel nur über unsere HDR-Naht (Pässe 2–4), nicht mit deren Tonkurve.",
+      "FxWorld legt 12 Punktlichter in die Szene (kostet in allen beleuchteten Materialien)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/demo/public/thumbs/meteor.webp"
+     },
+     "gedachter_einsatz": "Runenkreis markiert die Stelle, brennender Fels stürzt mit Feuer- und Rauchspur vom Himmel; Blitz, Feuersäule, glühende Brocken, Staubring, Puppen fliegen zurück, Feuer brennt im Krater weiter. Ziel: die Puppen (Demo: drei); Zaubernder ist Patchs Puppe mit Wirk-Clip (Kopfkommentar meteor.js, Demo-Arena bei Dämmerung).",
+     "einordnung_tech": "WebGL2, three 0.185 (Spender), Laufzeit ohne eigenen Build. Bodenhöhe groundY frei, Ziele über PointActor beliebig. Nutzt Flipbooks big-explosion, fire-burst, fireball-core, ground-fire, smoke-burst. Eigene Pipeline (ACES, Bloom) und 12 Punktlichter widersprechen unserem einen Licht-Rig und Tonweg (V-385/386).",
+     "passt_bei_uns": [
+      "Boss-Fähigkeit mit Vorwarnkreis",
+      "Power-Move bzw. Luftschlag (Granate von oben)",
+      "Krater passend zu KRATER_MENTALMODELL"
+     ],
+     "warum_nicht": "Mit der Spender-Pipeline im Spiel: zweite Tonkurve und zweiter Bloom. Auf Hängen: Decals und Bodenringe liegen flach auf groundY.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Pässe vfx und distort in feuerNaht einhängen (ohne ACES/Bloom), Lichtpool auf unsere 2 Lichter kürzen, Ziele als PointActor."
+     },
+     "idee": "Runenkreis 2,6 s als Vorwarnung, Einschlag mit Krater: ein Boss-Angriff mit klarer Ursache und Richtung.",
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks: './fx/' }); SPELLS.meteor(vfx.fx, { caster: new PointActor(werfer), dummies: [drei PointActor], groundY }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "eigene Vitrinen-Leinwand mit Spender-Pipeline (examples/minimal ist genau das: Boden, Werfer, drei Ziele, Knöpfe); Flipbooks aus library/ (Git LFS); renderer mit LinearSRGB und NoToneMapping"
+     }
+    },
+    {
+     "id": "game-vfx.inferno",
+     "name": "Inferno",
+     "art": "Feuer",
+     "quelle_datei": "skills/game-vfx/runtime/spells/inferno.js",
+     "parameter": [
+      {
+       "name": "anim",
+       "bereich": null,
+       "standard": "cast3",
+       "wirkung": "Wirk-Clip der Puppe (cast1 Fege, cast2 Stoß links, cast3 Hocke und Schlag)"
+      },
+      {
+       "name": "slam",
+       "bereich": null,
+       "standard": 0.42,
+       "wirkung": "Bodenschlag (s)"
+      },
+      {
+       "name": "caster",
+       "bereich": "PointActor | Figure",
+       "standard": null,
+       "wirkung": "Zaubernder"
+      },
+      {
+       "name": "dummies",
+       "bereich": "[PointActor, …] (Demo: 3)",
+       "standard": null,
+       "wirkung": "Ziel bzw. Ziele"
+      },
+      {
+       "name": "groundY",
+       "bereich": "m",
+       "standard": 0,
+       "wirkung": "Bodenhöhe"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "Funktion gibt die Länge des Wurfs zurück (Wert unbekannt)",
+     "kosten": {
+      "stufe": "mittel",
+      "worauf": "5 Flipbooks, Teile Decal, MagicCircle, Shockwave, Trail, 3 Licht-Aufrufe aus einem Pool von 12 Punktlichtern; eigener 5-Pass-HDR-Durchgang"
+     },
+     "use_cases": [
+      "Boss-Arena: Flächenangriff auf eine Gruppe",
+      "Power-Move"
+     ],
+     "caveats": [
+      "Eigene Pipeline mit ACES und Bloom ersetzt renderer.render: im Spiel nur über unsere HDR-Naht (Pässe 2–4), nicht mit deren Tonkurve.",
+      "FxWorld legt 12 Punktlichter in die Szene (kostet in allen beleuchteten Materialien)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/demo/public/thumbs/inferno.webp"
+     },
+     "gedachter_einsatz": "Ein Ring aus Feuerrunen zeichnet sich um die Puppen, Feuerbänder spiralen hinein, Flammen steigen am Ring, ein Feuerwirbel bricht aus der Mitte, dreht und zerplatzt in Glut. Ziel: die Puppen (Demo: drei); Zaubernder ist Patchs Puppe mit Wirk-Clip (Kopfkommentar inferno.js, Demo-Arena bei Dämmerung).",
+     "einordnung_tech": "WebGL2, three 0.185 (Spender), Laufzeit ohne eigenen Build. Bodenhöhe groundY frei, Ziele über PointActor beliebig. Nutzt Flipbooks fire-burst, fire-pillar, fire-pillar-loop, ground-fire, smoke-burst. Eigene Pipeline (ACES, Bloom) und 12 Punktlichter widersprechen unserem einen Licht-Rig und Tonweg (V-385/386).",
+     "passt_bei_uns": [
+      "Boss-Arena: Flächenangriff auf eine Gruppe",
+      "Power-Move"
+     ],
+     "warum_nicht": "Mit der Spender-Pipeline im Spiel: zweite Tonkurve und zweiter Bloom. Auf Hängen: Decals und Bodenringe liegen flach auf groundY.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Pässe vfx und distort in feuerNaht einhängen (ohne ACES/Bloom), Lichtpool auf unsere 2 Lichter kürzen, Ziele als PointActor."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks: './fx/' }); SPELLS.inferno(vfx.fx, { caster: new PointActor(werfer), dummies: [drei PointActor], groundY }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "eigene Vitrinen-Leinwand mit Spender-Pipeline (examples/minimal ist genau das: Boden, Werfer, drei Ziele, Knöpfe); Flipbooks aus library/ (Git LFS); renderer mit LinearSRGB und NoToneMapping"
+     }
+    },
+    {
+     "id": "game-vfx.frost",
+     "name": "Frost",
+     "art": "Fläche",
+     "quelle_datei": "skills/game-vfx/runtime/spells/frost.js",
+     "parameter": [
+      {
+       "name": "anim",
+       "bereich": null,
+       "standard": "cast3",
+       "wirkung": "Wirk-Clip der Puppe (cast1 Fege, cast2 Stoß links, cast3 Hocke und Schlag)"
+      },
+      {
+       "name": "slam",
+       "bereich": null,
+       "standard": 0.4,
+       "wirkung": "Bodenschlag (s)"
+      },
+      {
+       "name": "hold",
+       "bereich": null,
+       "standard": 1.5,
+       "wirkung": "Haltezeit des Eises (s)"
+      },
+      {
+       "name": "caster",
+       "bereich": "PointActor | Figure",
+       "standard": null,
+       "wirkung": "Zaubernder"
+      },
+      {
+       "name": "target",
+       "bereich": "PointActor",
+       "standard": null,
+       "wirkung": "Ziel bzw. Ziele"
+      },
+      {
+       "name": "groundY",
+       "bereich": "m",
+       "standard": 0,
+       "wirkung": "Bodenhöhe"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "Funktion gibt die Länge des Wurfs zurück (Wert unbekannt)",
+     "kosten": {
+      "stufe": "mittel",
+      "worauf": "2 Flipbooks, Teile Debris, Decal, IceSpikes, Shockwave, 3 Licht-Aufrufe aus einem Pool von 12 Punktlichtern; eigener 5-Pass-HDR-Durchgang"
+     },
+     "use_cases": [
+      "Einfrieren als Slop-Zustand „eis“ mit Bodenschlag",
+      "Boss-Bodenschlag"
+     ],
+     "caveats": [
+      "Eigene Pipeline mit ACES und Bloom ersetzt renderer.render: im Spiel nur über unsere HDR-Naht (Pässe 2–4), nicht mit deren Tonkurve.",
+      "FxWorld legt 12 Punktlichter in die Szene (kostet in allen beleuchteten Materialien)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/demo/public/thumbs/frost.webp"
+     },
+     "gedachter_einsatz": "Der Zaubernde schlägt auf den Boden, eine Linie Eiskristalle bricht zum nächsten Ziel, ein Ring hoher Stacheln friert es ein, Frostnebel rollt aus, Reif breitet sich aus, nach einem Takt zerspringt das Eis. Ziel: ein Ziel; Zaubernder ist Patchs Puppe mit Wirk-Clip (Kopfkommentar frost.js, Demo-Arena bei Dämmerung).",
+     "einordnung_tech": "WebGL2, three 0.185 (Spender), Laufzeit ohne eigenen Build. Bodenhöhe groundY frei, Ziele über PointActor beliebig. Nutzt Flipbooks frost-burst, smoke-burst. Eigene Pipeline (ACES, Bloom) und 12 Punktlichter widersprechen unserem einen Licht-Rig und Tonweg (V-385/386).",
+     "passt_bei_uns": [
+      "Einfrieren als Slop-Zustand „eis“ mit Bodenschlag",
+      "Boss-Bodenschlag"
+     ],
+     "warum_nicht": "Mit der Spender-Pipeline im Spiel: zweite Tonkurve und zweiter Bloom. Auf Hängen: Decals und Bodenringe liegen flach auf groundY.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Pässe vfx und distort in feuerNaht einhängen (ohne ACES/Bloom), Lichtpool auf unsere 2 Lichter kürzen, Ziele als PointActor."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks: './fx/' }); SPELLS.frost(vfx.fx, { caster: new PointActor(werfer), target: new PointActor(ziel), groundY }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "eigene Vitrinen-Leinwand mit Spender-Pipeline (examples/minimal ist genau das: Boden, Werfer, drei Ziele, Knöpfe); Flipbooks aus library/ (Git LFS); renderer mit LinearSRGB und NoToneMapping"
+     }
+    },
+    {
+     "id": "game-vfx.arcane",
+     "name": "Arkan-Wirbel",
+     "art": "Portal",
+     "quelle_datei": "skills/game-vfx/runtime/spells/arcane.js",
+     "parameter": [
+      {
+       "name": "anim",
+       "bereich": null,
+       "standard": "cast2",
+       "wirkung": "Wirk-Clip der Puppe (cast1 Fege, cast2 Stoß links, cast3 Hocke und Schlag)"
+      },
+      {
+       "name": "release",
+       "bereich": null,
+       "standard": 0.36,
+       "wirkung": "Loslassen (s nach Clip-Start)"
+      },
+      {
+       "name": "hand",
+       "bereich": null,
+       "standard": "Left",
+       "wirkung": "Wurfhand"
+      },
+      {
+       "name": "open",
+       "bereich": null,
+       "standard": 1.5,
+       "wirkung": "Öffnungszeit des Wirbels (s)"
+      },
+      {
+       "name": "caster",
+       "bereich": "PointActor | Figure",
+       "standard": null,
+       "wirkung": "Zaubernder"
+      },
+      {
+       "name": "dummies",
+       "bereich": "[PointActor, …] (Demo: 3)",
+       "standard": null,
+       "wirkung": "Ziel bzw. Ziele"
+      },
+      {
+       "name": "groundY",
+       "bereich": "m",
+       "standard": 0,
+       "wirkung": "Bodenhöhe"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "Funktion gibt die Länge des Wurfs zurück (Wert unbekannt)",
+     "kosten": {
+      "stufe": "mittel",
+      "worauf": "2 Flipbooks, Teile Bolt, Decal, Shockwave, Trail, 4 Licht-Aufrufe aus einem Pool von 12 Punktlichtern; eigener 5-Pass-HDR-Durchgang"
+     },
+     "use_cases": [
+      "MiB-Zensur-Sog bzw. Boss-Fähigkeit (Farbe nach Meta-Typ statt Pink)",
+      "Zauberstab-Spezialangriff"
+     ],
+     "caveats": [
+      "Eigene Pipeline mit ACES und Bloom ersetzt renderer.render: im Spiel nur über unsere HDR-Naht (Pässe 2–4), nicht mit deren Tonkurve.",
+      "FxWorld legt 12 Punktlichter in die Szene (kostet in allen beleuchteten Materialien)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/demo/public/thumbs/arcane.webp"
+     },
+     "gedachter_einsatz": "Pinke Funken wirbeln in die Hand, ein Lichtkeim fliegt zu den Puppen, ein Wirbel öffnet sich darunter und zieht sie mit Spiralströmen und Bögen hinein, fällt zusammen und detoniert. Ziel: die Puppen (Demo: drei); Zaubernder ist Patchs Puppe mit Wirk-Clip (Kopfkommentar arcane.js, Demo-Arena bei Dämmerung).",
+     "einordnung_tech": "WebGL2, three 0.185 (Spender), Laufzeit ohne eigenen Build. Bodenhöhe groundY frei, Ziele über PointActor beliebig. Nutzt Flipbooks arcane-burst, arcane-vortex. Eigene Pipeline (ACES, Bloom) und 12 Punktlichter widersprechen unserem einen Licht-Rig und Tonweg (V-385/386).",
+     "passt_bei_uns": [
+      "MiB-Zensur-Sog bzw. Boss-Fähigkeit (Farbe nach Meta-Typ statt Pink)",
+      "Zauberstab-Spezialangriff"
+     ],
+     "warum_nicht": "Mit der Spender-Pipeline im Spiel: zweite Tonkurve und zweiter Bloom. Auf Hängen: Decals und Bodenringe liegen flach auf groundY.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "Pässe vfx und distort in feuerNaht einhängen (ohne ACES/Bloom), Lichtpool auf unsere 2 Lichter kürzen, Ziele als PointActor."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks: './fx/' }); SPELLS.arcane(vfx.fx, { caster: new PointActor(werfer), dummies: [drei PointActor], groundY }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "eigene Vitrinen-Leinwand mit Spender-Pipeline (examples/minimal ist genau das: Boden, Werfer, drei Ziele, Knöpfe); Flipbooks aus library/ (Git LFS); renderer mit LinearSRGB und NoToneMapping"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.fire-burst",
+     "name": "Feuer-Explosion",
+     "art": "Treffer",
+     "quelle_datei": "skills/game-vfx/library/fire-burst.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": false
+       }
+      }
+     ],
+     "dauer_s": 3.042,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Aqua: Explosionen über den Flipbook-Weg (wie phantasm_atlas)",
+      "Granaten- und Raketen-Einschlag im Spiel über eine Sprite-Naht"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/fire-burst.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: kompakte Feuerexplosion, weißer Blitz, rollende Flammen, zerfällt in Glut. Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Aqua: Explosionen über den Flipbook-Weg (wie phantasm_atlas)",
+      "Granaten- und Raketen-Einschlag im Spiel über eine Sprite-Naht"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "idee": "Gleiche Mechanik wie phantasm_atlas_r1 im Aqua: diese CC0-Atlanten sofort als Aqua-Explosionen nutzbar.",
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'fire-burst', 'billboard').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.smoke-burst",
+     "name": "Rauchstoß (weiß, wird getönt)",
+     "art": "Treffer",
+     "quelle_datei": "skills/game-vfx/library/smoke-burst.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "smoke",
+        "schleife": false
+       }
+      }
+     ],
+     "dauer_s": 3.917,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Rauch nach Treffer bzw. Zerstörung, in Zielmaterial-Farbe getönt",
+      "Aqua: Tintenwolke bzw. Schlammwolke (weiß, getönt)"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/smoke-burst.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: dichter weißer Rauch quillt aus der Mitte und löst sich auf; Modus smoke, wird im Shader gefärbt. Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Rauch nach Treffer bzw. Zerstörung, in Zielmaterial-Farbe getönt",
+      "Aqua: Tintenwolke bzw. Schlammwolke (weiß, getönt)"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'smoke-burst', 'billboard').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.plasma-orb",
+     "name": "Plasmakugel (Schleife)",
+     "art": "Zauber",
+     "quelle_datei": "skills/game-vfx/library/plasma-orb.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": true
+       }
+      }
+     ],
+     "dauer_s": 3.292,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Aqua: Energiekugel bzw. Bombe",
+      "Ladezustand in der Hand vor einem Elektro-Wurf"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/plasma-orb.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: knisternde Kugel aus blauer Energie mit Blitzbögen, gleich groß, Schleife. Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Aqua: Energiekugel bzw. Bombe",
+      "Ladezustand in der Hand vor einem Elektro-Wurf"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'plasma-orb', 'billboard').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.lightning-burst",
+     "name": "Blitz-Einschlag",
+     "art": "Treffer",
+     "quelle_datei": "skills/game-vfx/library/lightning-burst.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": false
+       }
+      }
+     ],
+     "dauer_s": 3.0,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Blaster- bzw. Strom-Treffer",
+      "Aqua: Stromschlag-Treffer"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/lightning-burst.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: weiß-blauer Blitz mit verzweigtem Licht. Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Blaster- bzw. Strom-Treffer",
+      "Aqua: Stromschlag-Treffer"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'lightning-burst', 'billboard').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.big-explosion",
+     "name": "Große Explosion",
+     "art": "Treffer",
+     "quelle_datei": "skills/game-vfx/library/big-explosion.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": false
+       }
+      }
+     ],
+     "dauer_s": 3.833,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Boss-Einschlag bzw. Rakete",
+      "Aqua: Minen-Explosion (gefahr_r10_mine)"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/big-explosion.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: große Explosion (Meteor-Einschlag). Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Boss-Einschlag bzw. Rakete",
+      "Aqua: Minen-Explosion (gefahr_r10_mine)"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "idee": "Gleiche Mechanik wie phantasm_atlas_r1 im Aqua: diese CC0-Atlanten sofort als Aqua-Explosionen nutzbar.",
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'big-explosion', 'billboard').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.ground-fire",
+     "name": "Bodenfeuer (Schleife)",
+     "art": "Feuer",
+     "quelle_datei": "skills/game-vfx/library/ground-fire.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": true
+       }
+      }
+     ],
+     "dauer_s": 3.292,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Nachbrand an Einschlagstellen (brennt 2 s nach)",
+      "Aqua: Flammen-Gefahr am Beckenrand"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/ground-fire.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: Flammenband am Boden, Schleife, mit --mask flame geformt. Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Nachbrand an Einschlagstellen (brennt 2 s nach)",
+      "Aqua: Flammen-Gefahr am Beckenrand"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'ground-fire', 'axis').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.frost-burst",
+     "name": "Frost von oben",
+     "art": "Fläche",
+     "quelle_datei": "skills/game-vfx/library/frost-burst.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": false
+       }
+      }
+     ],
+     "dauer_s": 3.458,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Eis-Treffer am Boden (Slop-Zustand „eis“)"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/frost-burst.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: Frostnebel von oben gefilmt, für den Boden (Modus ground). Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Eis-Treffer am Boden (Slop-Zustand „eis“)"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'frost-burst', 'ground').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.arcane-burst",
+     "name": "Arkan-Explosion (pink)",
+     "art": "Treffer",
+     "quelle_datei": "skills/game-vfx/library/arcane-burst.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": false
+       }
+      }
+     ],
+     "dauer_s": 3.625,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Zauberstab-Treffer; Farbe nach Meta-Typ statt Pink"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/arcane-burst.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: pinke Arkan-Explosion. Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Zauberstab-Treffer; Farbe nach Meta-Typ statt Pink"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'arcane-burst', 'billboard').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.fireball-core",
+     "name": "Feuerball-Kern (Schleife)",
+     "art": "Projektil",
+     "quelle_datei": "skills/game-vfx/library/fireball-core.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": true
+       }
+      }
+     ],
+     "dauer_s": 3.292,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Feuer-Geschoss (Flammenwerfer-Kugel, Feuerball-Werfer)"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/fireball-core.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: Kern eines Feuerballs, Schleife. Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Feuer-Geschoss (Flammenwerfer-Kugel, Feuerball-Werfer)"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'fireball-core', 'billboard').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.arcane-vortex",
+     "name": "Arkan-Wirbel von oben (pink, Schleife)",
+     "art": "Fläche",
+     "quelle_datei": "skills/game-vfx/library/arcane-vortex.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": true
+       }
+      }
+     ],
+     "dauer_s": 3.292,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Portal- bzw. Sog-Fläche am Boden (MiB-Zensur)"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/arcane-vortex.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: pinker Wirbel von oben gefilmt, Schleife (Modus ground). Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Portal- bzw. Sog-Fläche am Boden (MiB-Zensur)"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'arcane-vortex', 'ground').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.fire-pillar",
+     "name": "Feuersäule",
+     "art": "Feuer",
+     "quelle_datei": "skills/game-vfx/library/fire-pillar.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": false
+       }
+      }
+     ],
+     "dauer_s": 4.042,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "Boss-Feuersäule",
+      "Aqua: Feuerfontäne"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/fire-pillar.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: Feuersäule steigt auf (Seitenansicht, Modus axis). Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "Boss-Feuersäule",
+      "Aqua: Feuerfontäne"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'fire-pillar', 'axis').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.flipbook.fire-pillar-loop",
+     "name": "Feuersäule (Schleife)",
+     "art": "Feuer",
+     "quelle_datei": "skills/game-vfx/library/fire-pillar-loop.webp + .json",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": "[x, y, z] | Vector3",
+       "standard": null,
+       "wirkung": "Ort (relativ zu follow, wenn gesetzt)"
+      },
+      {
+       "name": "follow",
+       "bereich": "Object3D | Funktion",
+       "standard": null,
+       "wirkung": "Sprite reitet mit"
+      },
+      {
+       "name": "life, delay",
+       "bereich": "s",
+       "standard": null,
+       "wirkung": "Lebensdauer, Verzögerung"
+      },
+      {
+       "name": "vel, acc, drag",
+       "bereich": "m/s, m/s², 1/s",
+       "standard": null,
+       "wirkung": "Bewegung"
+      },
+      {
+       "name": "size, grow",
+       "bereich": "m bzw. [w, h]; Faktor bzw. Funktion",
+       "standard": null,
+       "wirkung": "Größe, Wachstum bis zum Ende"
+      },
+      {
+       "name": "rot, spin",
+       "bereich": "rad, rad/s",
+       "standard": null,
+       "wirkung": "Drehung"
+      },
+      {
+       "name": "color",
+       "bereich": "[r, g, b] HDR bzw. Funktion 0…1 (ramp)",
+       "standard": null,
+       "wirkung": "Farbe"
+      },
+      {
+       "name": "alpha, fadeIn, fadeOut",
+       "bereich": "0…1",
+       "standard": null,
+       "wirkung": "Deckkraft, Ein- und Ausblenden (Anteil der Lebensdauer)"
+      },
+      {
+       "name": "cover",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "0 = leuchtet additiv, 1 = deckt wie Rauch"
+      },
+      {
+       "name": "soft",
+       "bereich": "m",
+       "standard": null,
+       "wirkung": "weicher Übergang in den Boden (0 = aus)"
+      },
+      {
+       "name": "fps | from | ease | frame0",
+       "bereich": null,
+       "standard": "'life'",
+       "wirkung": "Bildfolge: fps oder über die Lebensdauer; from = erstes Bild, ease = from + t^ease · Bilder"
+      },
+      {
+       "name": "stretch",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "nur Modus stretch: Länge je m/s"
+      },
+      {
+       "name": "rise",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "nur Modus axis: 1 setzt den Fuß auf pos"
+      },
+      {
+       "name": "floor, bounce",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "Höhe, an der er abprallt"
+      },
+      {
+       "name": "flicker",
+       "bereich": [
+        0,
+        1
+       ],
+       "standard": null,
+       "wirkung": "Flackern der Deckkraft"
+      }
+     ],
+     "presets": [
+      {
+       "name": "atlas",
+       "werte": {
+        "raster": "8×8",
+        "bilder": 64,
+        "kachel_px": 256,
+        "modus": "add",
+        "schleife": true
+       }
+      }
+     ],
+     "dauer_s": 1.583,
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "eine 2048-px-Textur je Flipbook, ein Sprite-System je Flipbook und Modus"
+     },
+     "use_cases": [
+      "stehende Feuersäule als Gefahr in der Boss-Arena"
+     ],
+     "caveats": [
+      "Realistische KI-Videobilder (Seedance 2.5) im Fantasy-Spiel-Look; gegen den KFB-Vordergrund-Look (Cartoon, Knete) prüfen.",
+      "Liegt im Repo als Git-LFS-Datei (ohne git-lfs nur als Zeiger geladen)."
+     ],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "url": "https://git.patch.gg/rehan/game-vfx/raw/e444d6f1bc0b096aabe1f7c04bc4fda1831dc43c/skills/game-vfx/library/fire-pillar-loop.webp"
+     },
+     "gedachter_einsatz": "Ein Bildelement eines Zaubers, allein auf Schwarz gefilmt (Seedance) und zu 8 × 8 Bildern gepackt: stehende Feuersäule, Schleife. Wird im Laufzeit-Code mit Funken, Bändern, Licht und Wackeln geschichtet (SKILL.md).",
+     "einordnung_tech": "Reine Textur + JSON (Raster, Bilder, Modus, Schleife): läuft in jedem WebGL-Sprite-System, auch im Aqua-Artefakt (Flipbook-Weg). Mit der Laufzeit des Spenders: weiches Ausblenden am Boden nur über deren Tiefen-Durchgang.",
+     "passt_bei_uns": [
+      "stehende Feuersäule als Gefahr in der Boss-Arena"
+     ],
+     "warum_nicht": "Nicht auf 3D-Körpern als Hülle (2D-Bildfolge auf Körpern); realistischer Look neben Knete-Figuren ungeprüft.",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "Atlas samt JSON übernehmen und im Aqua- bzw. Sprite-Weg abspielen (Raster 8 × 8, additiv bzw. smoke)."
+     },
+     "vitrine": {
+      "ausloesen": "Laufzeit: sys(vfx.fx, 'fire-pillar-loop', 'axis').emit({ pos, life, size }); oder als Flipbook-Karte (8 × 8)",
+      "braucht": "Atlas .webp + .json aus library/ (Git LFS), WebGL-Sprite"
+     }
+    },
+    {
+     "id": "game-vfx.kit.trail",
+     "name": "Trail (Band hinter Geschossen)",
+     "art": "Spur",
+     "quelle_datei": "skills/game-vfx/runtime/vfx/kit.js",
+     "parameter": [
+      {
+       "name": "follow",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "width",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "life",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "head",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "tail",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "scroll",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "repeat",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "taper",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "cover",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "alpha",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "breakup",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "über life",
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "unbekannt"
+     },
+     "use_cases": [
+      "Leuchtspur bzw. Rakete",
+      "Wurfgeschoss-Spur"
+     ],
+     "caveats": [],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "datei": null
+     },
+     "gedachter_einsatz": "Baustein der Laufzeit: Band hinter einem bewegten Punkt; breakup 1 zerreißt es in Flammenzungen (RUNTIME.md).",
+     "einordnung_tech": "WebGL2; lebt in fx.vfxScene; braucht die FxWorld der Laufzeit.",
+     "passt_bei_uns": [
+      "Leuchtspur bzw. Rakete",
+      "Wurfgeschoss-Spur"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "FxWorld anlegen, Baustein mit fx.add abspielen (ohne Spender-Pipeline: Teile in unser Bild zeichnen)."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks }); new <Baustein>(vfx.fx, { … }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "Spender-Laufzeit auf eigener Vitrinen-Leinwand (wie examples/minimal)"
+     }
+    },
+    {
+     "id": "game-vfx.kit.bolt",
+     "name": "Bolt (Blitz zwischen zwei Punkten)",
+     "art": "Strahl",
+     "quelle_datei": "skills/game-vfx/runtime/vfx/kit.js",
+     "parameter": [
+      {
+       "name": "from",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "to",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "life",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "regen",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "width",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "jag",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "branches",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "depth",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "core",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "glow",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "über life",
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "unbekannt"
+     },
+     "use_cases": [
+      "Energiemasten bzw. Pol-Bögen",
+      "Blaster-Kette"
+     ],
+     "caveats": [],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "datei": null
+     },
+     "gedachter_einsatz": "Baustein der Laufzeit: verzweigter Blitz zwischen zwei Punkten bzw. Funktionen, alle regen s neu (RUNTIME.md).",
+     "einordnung_tech": "WebGL2; lebt in fx.vfxScene; braucht die FxWorld der Laufzeit.",
+     "passt_bei_uns": [
+      "Energiemasten bzw. Pol-Bögen",
+      "Blaster-Kette"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "FxWorld anlegen, Baustein mit fx.add abspielen (ohne Spender-Pipeline: Teile in unser Bild zeichnen)."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks }); new <Baustein>(vfx.fx, { … }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "Spender-Laufzeit auf eigener Vitrinen-Leinwand (wie examples/minimal)"
+     }
+    },
+    {
+     "id": "game-vfx.kit.shockwave",
+     "name": "Shockwave (Ring mit Hitzeflimmern)",
+     "art": "Treffer",
+     "quelle_datei": "skills/game-vfx/runtime/vfx/kit.js",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "from",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "to",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "life",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "color",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "width",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "alpha",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "distort",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "billboard",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "über life",
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "unbekannt"
+     },
+     "use_cases": [
+      "schwere Landung, Explosion"
+     ],
+     "caveats": [],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "datei": null
+     },
+     "gedachter_einsatz": "Baustein der Laufzeit: Ring am Boden oder zur Kamera, mit Hitzewelle (RUNTIME.md).",
+     "einordnung_tech": "WebGL2; lebt in fx.vfxScene bzw. fx.distortScene; braucht die FxWorld der Laufzeit.",
+     "passt_bei_uns": [
+      "schwere Landung, Explosion"
+     ],
+     "warum_nicht": "Haze und Ring-Verzerrung brauchen den Verzerrungs-Durchgang der Pipeline.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "FxWorld ohne Spender-Tonweg in unsere HDR-Naht hängen."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks }); new <Baustein>(vfx.fx, { … }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "Spender-Laufzeit auf eigener Vitrinen-Leinwand (wie examples/minimal)"
+     }
+    },
+    {
+     "id": "game-vfx.kit.decal",
+     "name": "Decal (Brand-, Frost-, Arkan-Spur)",
+     "art": "Fläche",
+     "quelle_datei": "skills/game-vfx/runtime/vfx/kit.js",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "size",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "kind: 'scorch' | 'frost' | 'arcane'",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "life",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "hot",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "hotColor",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "tint",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "über life",
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "unbekannt"
+     },
+     "use_cases": [
+      "Brand- und Frostspuren an Einschlägen (Spur bleibt, Grundsatz CRAFT.md)"
+     ],
+     "caveats": [],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "datei": null
+     },
+     "gedachter_einsatz": "Baustein der Laufzeit: Spur am Boden, die abkühlt und verblasst (RUNTIME.md).",
+     "einordnung_tech": "WebGL2; lebt in fx.vfxScene; Decals und Brocken in unserer Szene; braucht die FxWorld der Laufzeit.",
+     "passt_bei_uns": [
+      "Brand- und Frostspuren an Einschlägen (Spur bleibt, Grundsatz CRAFT.md)"
+     ],
+     "warum_nicht": "Bodenspuren liegen flach (Hang).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "FxWorld anlegen, Baustein mit fx.add abspielen (ohne Spender-Pipeline: Teile in unser Bild zeichnen)."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks }); new <Baustein>(vfx.fx, { … }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "Spender-Laufzeit auf eigener Vitrinen-Leinwand (wie examples/minimal)"
+     }
+    },
+    {
+     "id": "game-vfx.kit.magiccircle",
+     "name": "MagicCircle (Runenkreis)",
+     "art": "Fläche",
+     "quelle_datei": "skills/game-vfx/runtime/vfx/kit.js",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "size",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "color",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "hot",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "life",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "reveal",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "map",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "spin",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "über life",
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "unbekannt"
+     },
+     "use_cases": [
+      "Vorwarnkreis eines Boss-Angriffs",
+      "Portal-Ort"
+     ],
+     "caveats": [],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "datei": null
+     },
+     "gedachter_einsatz": "Baustein der Laufzeit: prozedurale Runen, die sich rundum zeichnen (RUNTIME.md).",
+     "einordnung_tech": "WebGL2; lebt in fx.vfxScene; braucht die FxWorld der Laufzeit.",
+     "passt_bei_uns": [
+      "Vorwarnkreis eines Boss-Angriffs",
+      "Portal-Ort"
+     ],
+     "warum_nicht": "Bodenspuren liegen flach (Hang).",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "FxWorld anlegen, Baustein mit fx.add abspielen (ohne Spender-Pipeline: Teile in unser Bild zeichnen)."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks }); new <Baustein>(vfx.fx, { … }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "Spender-Laufzeit auf eigener Vitrinen-Leinwand (wie examples/minimal)"
+     }
+    },
+    {
+     "id": "game-vfx.kit.icespikes",
+     "name": "IceSpikes (Eisstacheln)",
+     "art": "Fläche",
+     "quelle_datei": "skills/game-vfx/runtime/vfx/kit.js",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "count",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "radius",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "height [min",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "max]",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "hold",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "inward",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "ring",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "onShatter",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "über life",
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "unbekannt"
+     },
+     "use_cases": [
+      "Eis-Treffer, Eismauer"
+     ],
+     "caveats": [],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "datei": null
+     },
+     "gedachter_einsatz": "Baustein der Laufzeit: Kristalle brechen aus dem Boden (RUNTIME.md).",
+     "einordnung_tech": "WebGL2; lebt in fx.vfxScene; braucht die FxWorld der Laufzeit.",
+     "passt_bei_uns": [
+      "Eis-Treffer, Eismauer"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "FxWorld anlegen, Baustein mit fx.add abspielen (ohne Spender-Pipeline: Teile in unser Bild zeichnen)."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks }); new <Baustein>(vfx.fx, { … }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "Spender-Laufzeit auf eigener Vitrinen-Leinwand (wie examples/minimal)"
+     }
+    },
+    {
+     "id": "game-vfx.kit.debris",
+     "name": "Debris (glühende Brocken)",
+     "art": "Treffer",
+     "quelle_datei": "skills/game-vfx/runtime/vfx/kit.js",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "count",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "speed",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "up",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "size",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "life",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "floor",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "hot",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "color",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "über life",
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "unbekannt"
+     },
+     "use_cases": [
+      "Brocken bei Stein-Treffern und Kratern"
+     ],
+     "caveats": [],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "datei": null
+     },
+     "gedachter_einsatz": "Baustein der Laufzeit: Brocken fliegen, prallen ab, kühlen aus (RUNTIME.md).",
+     "einordnung_tech": "WebGL2; lebt in fx.vfxScene; Decals und Brocken in unserer Szene; braucht die FxWorld der Laufzeit.",
+     "passt_bei_uns": [
+      "Brocken bei Stein-Treffern und Kratern"
+     ],
+     "warum_nicht": "unbekannt",
+     "anpassung": {
+      "stufe": "klein",
+      "was": "FxWorld anlegen, Baustein mit fx.add abspielen (ohne Spender-Pipeline: Teile in unser Bild zeichnen)."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks }); new <Baustein>(vfx.fx, { … }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "Spender-Laufzeit auf eigener Vitrinen-Leinwand (wie examples/minimal)"
+     }
+    },
+    {
+     "id": "game-vfx.kit.haze",
+     "name": "Haze (Hitzeflimmern)",
+     "art": "Umgebung",
+     "quelle_datei": "skills/game-vfx/runtime/vfx/kit.js",
+     "parameter": [
+      {
+       "name": "pos",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "vel",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "size",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "life",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      },
+      {
+       "name": "strength",
+       "bereich": null,
+       "standard": null,
+       "wirkung": "siehe RUNTIME.md"
+      }
+     ],
+     "presets": [],
+     "dauer_s": "über life",
+     "kosten": {
+      "stufe": "leicht",
+      "worauf": "unbekannt"
+     },
+     "use_cases": [
+      "Hitzeflimmern über Feuer und Auspuff"
+     ],
+     "caveats": [],
+     "status": "nur extern",
+     "schalter": null,
+     "vorschau": {
+      "datei": null
+     },
+     "gedachter_einsatz": "Baustein der Laufzeit: Hitzeflimmern über den Verzerrungs-Durchgang (RUNTIME.md).",
+     "einordnung_tech": "WebGL2; lebt in fx.vfxScene bzw. fx.distortScene; braucht die FxWorld der Laufzeit.",
+     "passt_bei_uns": [
+      "Hitzeflimmern über Feuer und Auspuff"
+     ],
+     "warum_nicht": "Haze und Ring-Verzerrung brauchen den Verzerrungs-Durchgang der Pipeline.",
+     "anpassung": {
+      "stufe": "mittel",
+      "was": "FxWorld ohne Spender-Tonweg in unsere HDR-Naht hängen."
+     },
+     "vitrine": {
+      "ausloesen": "vfx = await createVfx({ renderer, scene, camera, flipbooks }); new <Baustein>(vfx.fx, { … }); im Loop vfx.update(dt); vfx.render()",
+      "braucht": "Spender-Laufzeit auf eigener Vitrinen-Leinwand (wie examples/minimal)"
+     }
+    }
+   ]
   }
  ]
 }
