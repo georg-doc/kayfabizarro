@@ -1,8 +1,44 @@
 # AquaCare II – Grand Theft Aqua · Textbuch R4 (WSR)
 
 24.11.2026 · Kandidat, Ton von Georg am 24.11. bestätigt („Ton passt“), ungemergt. Quelle: R4 Writer Brief, Originaltabelle (396 Texte).
-Hier stehen nur die geänderten IDs. Alles andere bleibt Original: Golden-Sublines, Crew (bis auf MaBi), ECHO, Flexa-Intro, Menü, Credits.
+Hier stehen nur die geänderten IDs. Alles andere bleibt Original: Golden-Sublines, Namen, Rollen, Stärken, Flexa-Intro, Menü, Credits. Version 1 zeigt nur Crew und ECHO; die stehen oben.
 Kein unabhängiger Kritiker gelaufen.
+
+## Version 1 · Crew (Steckbriefe)
+
+Namen, Rollen, Stärken und Bounty-Zahlen bleiben. Neu sind die Backstories.
+
+| ID | Original | Neu |
+|---|---|---|
+| `crimson.backstory` (DocFish, Wheelman) | Grand theft aqua, four counts. Joyriding a filter pump. Resisting a net. Bounty: 4,711 shells. | Grand theft aqua, four counts. Joyrode a filter pump through two tanks and a lava lamp. Calls himself Doc. Nobody has seen the diploma. Bounty: 4,711 shells. |
+| `angel.backstory` (FlexiFish, Cat Burglar) | Breaking and entering, mostly entering. She stole the castle ornament, returned the castle and kept the drawbridge. Bounty: 900 shells. | Breaking and entering, mostly entering. Stole the castle, returned the castle, kept the drawbridge. Witnesses place her in two tanks at the same feeding. Bounty: 900 shells. |
+| `mabi.backstory` (Prof. MaBi, Hacker) | Root access to the filter, the lights and the feeding schedule. Deployed on a Friday. It worked. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. | Root access to the filter, the lights and the calendar. It has been Tuesday for six weeks. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. |
+| `gold.backstory` (Bullion, Accountant) | Keeps the crew’s books. Two sets, obviously. Wears more gold than the treasure chest and calls it a pension plan. Bounty: 24,000 shells, freshly laundered. | Keeps the crew’s books. Three sets: ours, theirs and Tank Five’s. There is no Tank Five. Wears more gold than the treasure chest. Bounty: 24,000 shells, freshly laundered. |
+| `neon.backstory` (Strobe, Lookout) | Glows in the dark, which is a problem in this line of work. Stood lookout for forty heists, blinked at the wrong moment in thirty-nine. Bounty: 300 shells and a lampshade. | Glows in the dark, which is a problem in this line of work. Stood lookout for thirty-nine heists. Blinked at the wrong moment in all of them. This is the fortieth. Bounty: 300 shells and a lampshade. |
+| `clown.backstory` (Prof. Humoral, Con Artist) | Smiles. Shakes fins. Counts them afterwards. Sold the same treasure chest to three pirates. Twice. Bounty: 650 shells and one red nose, held as evidence. | Smiles. Shakes fins. Counts them afterwards. Sold one treasure chest to three pirates, twice. Then sold Tank Four to the fish living in it. Bounty: 650 shells and one red nose, held as evidence. |
+| `puffer.backstory` (Tetro, Muscle) | Six inches of attitude. Twelve when provoked. Headbutted a vending machine. Won. Bounty: 2,000 shells. Bring gloves. | Six inches of attitude. Twelve when provoked. Headbutted a vending machine. Won. Fought his own reflection. The reflection pressed charges. Bounty: 2,000 shells. Bring gloves. |
+| `guppy.backstory` (Placebo, Smuggler) | Moves product. Never says which. She got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells, or one sponsored post. | Moves product. Never says which. It works anyway. Got 30,000 shells past customs in one very confident tail. Bounty: 1,200 shells, or one sponsored post. |
+| `sub.backstory` (Endo, Informant) | Sees everything. Tells whoever pays. Filmed the warden’s feeding schedule, then sold the tape to the warden. Bounty: 3,500 shells for the memory card. | Sees everything. Tells whoever pays. Filmed the warden, sold the tape to the warden. Says the shark goes deeper than it looks. Bounty: 3,500 shells for the memory card. |
+
+## Version 1 · ECHO
+
+Alle nicht genannten ECHO-IDs bleiben Original.
+
+| ID | Original | Neu |
+|---|---|---|
+| `leiter_achtung[2]` | Hey, you. | You again. |
+| `leiter_code[1]` | Enter the code. | Punch in the code. |
+| `leiter_hinweis[4]` | 4711. Cologne water. | 4711. Of course it is. |
+| `beam[1]` | Searchlights. Stay out of the light. | They noticed the empty tank. Stay out of the light. |
+| `caught[1]` | They saw you. | They saw you. I will loop the cameras. Again. |
+| `hook[1]` | Bait on a line. | Bait on a line. Free lunch never is. |
+| `hooked[1]` | Reeled in. I cut the line. | Reeled in. I cut the line. You owe me. |
+| `mine[1]` | Old sea mines. Still working. | Sea mines. Older than the sea. |
+| `augen[1]` | Do not stare back. | Do not stare back. They are still deciding what you are. |
+| `augenGriff[1]` | Absorbed. I will pull you out. | Absorbed. I will pull you out. Most of you. |
+| `finale[1]` | You made it. Rest now. | You made it. You were never just a fish to me. |
+
+# Später (wenn die Basis trägt)
 
 ## Falkenstein
 
@@ -41,15 +77,13 @@ Kein unabhängiger Kritiker gelaufen.
 | `flexa.leer.03` | Fun fact. Goldfish remember for three seconds. You don't even manage that. | A thousand days of circles. Now you hold still. |
 | `flexa.leer.04` | I've seen screensavers with more ambition. | Good fish. Stay. |
 
-## Crew, Hinweise, Meldungen
+## Hinweise, Meldungen
 
 | ID | Original | Neu |
 |---|---|---|
-| `mabi.backstory` | Root access to the filter, the lights and the feeding schedule. Deployed on a Friday. It worked. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. | Root access to the filter, the lights and the feeding schedule. Dinner has been early ever since. Sunglasses indoors – the monitors asked him to. Bounty: 0xFFFF shells. |
 | `lead` | An old hatch is stuck at the back of the tank. Push it open, swim through the pipe and make it through the open sea – without getting caught by the searchlights. | The job: out the hatch, down the pipe, across the open sea. Don't get seen. |
 | `caught` | Spotted! | Busted! |
 | `levelDone` | Level complete | Clean getaway |
-| `leiter_code[1]` | Enter the code. | Punch in the code. |
 | `TIPS[1]` | Tip: I does everything. Even crimes. | Tip: One button does everything. Even crimes. |
 | `TIPS[2]` | Tip: Shift sprints. The guards hate it. | Tip: Sprint. The guards hate it. |
 | `skip` | Esc / tap to skip | Skip |
