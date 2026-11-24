@@ -36,30 +36,33 @@ Blind Critic zu den verworfenen Runden, zwei unabhängige Läufe am 24.11. (8 = 
 | Ambivalenz verdient | | | | 4 |
 
 
-## Version 1 · ECHO · Runde 4
+## Version 1 · ECHO · Runde 5 (Polish)
 
-Die Runden 2 und 3 (eigene finstere Nachsätze) sind ersetzt. Fund im Bestand `aqua_texte_r1.rows.json`: Dort stehen Georgs Golden-Zeilen und die Hacker-Stimme vollständig; das Textbuch vom 24.11. hat sie auf Stummel gekürzt. Runde 4 setzt diese Zeilen in die aktuellen IDs zurück. Keine neue Zeile von mir. Noch nicht von Georg beurteilt.
-Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben wie im Textbuch.
+Grundlage bleibt Runde 4: Georgs Golden-Zeilen und die vollen Zeilen aus dem Bestand `aqua_texte_r1.rows.json`.
+Polish nach Georg 24.11.: ECHO als andere Entität spürbar machen (Hacker, unsichtbarer Beobachter, etwas Anonymous- und Q-Ecke), mit Anrede und kurzen Einwürfen, ohne die Zeilen lang zu machen. Bogen: Am Anfang ist der Fisch ein Werkzeug („little fish“, „You owe me“), ab Level 3 wird er „kiddo“. Vier Dog-Whistles, nicht mehr: „Wake up“, „Do your own research“, „There are no coincidences“, „Trust the current“.
+Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben wie im Textbuch. Noch nicht von Georg beurteilt.
 
-| Moment | ID | Textbuch 24.11. | Neu | Quelle |
+| Moment | ID | Textbuch 24.11. | Neu | Herkunft |
 |---|---|---|---|---|
-| erster Kontakt | `leiter_achtung[1]` | Psst. | Psst. Little fish. | Golden |
+| erster Kontakt | `leiter_achtung[1]` | Psst. | Psst. Wake up, little fish. | Golden + Polish |
 | | `leiter_achtung[2]` | Hey, you. | The hatch at the back. I loosened the bolts. | Golden |
 | Ziel zeigen | `leiter_bedienfeld[1]` | Find the control panel. | The hatch has a panel. Four digits. | Bestand |
-| am Bedienfeld | `leiter_code[1]` | Enter the code. | Four digits. I never write passwords down. Look around. | Bestand |
+| am Bedienfeld | `leiter_code[1]` | Enter the code. | Four digits. I never write passwords down. Do your own research. | Bestand + Polish |
 | Hinweise | `leiter_hinweis[1]` | Freedom smells like Cologne. | Somebody dropped a bottle on the sand. | Bestand |
 | | `leiter_hinweis[3]` | Cologne water. Four digits. | It smells of grandmother. Four digits. | Bestand |
-| | `leiter_hinweis[4]` | 4711. Cologne water. | 4711. Of course it is. | Golden |
+| | `leiter_hinweis[4]` | 4711. Cologne water. | 4711. There are no coincidences. | Polish (Golden wäre: 4711. Of course it is.) |
 | an der Flasche | `flasche[1]` | 4711. Cologne water. | No. 4711. People dab it behind the ears. We dab it into keypads. | Bestand |
 | trübes Wasser | `truebe3[1]` | You are coughing. The hatch. Now. | You are coughing. Fish should not cough. The hatch. Now. | Bestand |
 | Becken gekippt | `zuSpaet[1]` | Too late. The tank tipped. | Too late. The tank tipped. Again, from the top. | Bestand |
 | erster Köder | `hook[1]` | Bait on a line. | Bait on a line. Free lunch is never free. | Golden |
 | am Haken | `hooked[1]` | Reeled in. I cut the line. | Reeled in. I cut the line. You owe me. | Golden |
 | erste Mine | `mine[1]` | Old sea mines. Still working. | Old sea mines. Rusty, grumpy and still working. | Golden |
-| Suchscheinwerfer | `beam[1]` | Searchlights. Stay out of the light. | They noticed the empty tank. Stay out of the light. | Golden |
+| Suchscheinwerfer | `beam[1]` | Searchlights. Stay out of the light. | Wait. They noticed the empty tank. Stay out of the light. | Golden |
 | entdeckt | `caught[1]` | They saw you. | They saw you. I will loop the cameras. Again. | Golden |
+| Level 3 | `level3[1]` | More lights now. Trust the current. | More lights now. Trust the current, kiddo. | Polish |
 | Augen, gefasst | `augenGriff[1]` | Absorbed. I will pull you out. | Absorbed. I will pull you out. This time. | Bestand |
-| Ziel | `finale[1]` | You made it. Rest now. | You made it. You were never just a fish to me. | Golden |
+| gefressen | `eaten[1]` | You are not dead. You are inside. | You are not dead, kiddo. You are inside. | Polish |
+| Ziel | `finale[1]` | You made it. Rest now. | You made it, kiddo. You were never just a fish to me. | Golden + Polish |
 
 Im Bestand, aber nicht im Textbuch vom 24.11.: `echo.level4[1]` „One more stretch. Then I will show you why I needed you.“ und `echo.ring` „Checkpoint. I am saving your progress. · And a few other things.“ Beide tragen ECHOs Absicht.
 
