@@ -4,26 +4,37 @@
 Hier stehen nur die geänderten IDs. Alles andere bleibt Original: Golden-Sublines, Stärken, Flexa-Intro, Menü, Credits. Version 1 zeigt nur Crew und ECHO; die stehen oben.
 Kein unabhängiger Kritiker gelaufen.
 
-## Version 1 · Crew (Steckbriefe) · Runde 5
+## Version 1 · Crew (Steckbriefe) · Runde 6
 
-Blind Critic zu Runde 4 (24.11., ohne Herkunftsangabe, Maßstab Rick-and-Morty-Autorenraum): Punch 7, Figur 6, Absurdität 6, Satire 6, Formelfreiheit 4, übersteht Punch-up 5. Hauptbefund: ein Rhythmus für alle neun Karten (Fragment plus trockener Nachsatz), also ein Erzähler statt neun Figuren. ECHO: 6 / 5 / 5 / 2 / 4 / 3.
-Runde 5: jede Karte in einer anderen Textsorte. DocFish, FlexiFish und Prof. MaBi sind als Namen gesetzt. Bounty-Zahlen unverändert.
+Blind Critic, zwei unabhängige Läufe am 24.11. (ohne Herkunftsangabe, Maßstab Rick-and-Morty-Autorenraum, 8 = Ziel):
 
-| ID | Name | Anklage (`.rolle`) | Backstory |
-|---|---|---|---|
-| `crimson` | DocFish | Theft of a filter pump | “I’m a doctor. I needed the pump. Yes, the patient is still open on the table. He’s fine. They’re usually fine.” Statement on arrest. Bounty: 4,711 shells. |
-| `angel` | FlexiFish | Burglary, with corrections | Stole the castle. [borrowed] Kept the drawbridge. [it was loose] Caught when she came back to fix a typo in the ransom note. [two typos] Bounty: 900 shells. [1,900] |
-| `mabi` | Prof. MaBi | Tampering with dinner | Changed the password on the feeding schedule. The warden now has to ask him when dinner is. He is thinking about it. Wears sunglasses so the monitors cannot read his face. Bounty: 0xFFFF shells. |
-| `gold` | Ping-Pong Bullion | Counterfeiting. Painted gravel. | Has filed an objection to his own bounty: “I was won at a funfair with a ping-pong ball. I have been appreciating ever since. Twenty-four thousand is an insult.” Bounty: 24,000 shells. |
-| `neon` | Strobe™ | Unlicensed reproduction, 212 counts | “Dear Strobe, our client owns your glow. You have reproduced it 212 times without a licence. Kindly return the children.” He stands lookout anyway. Bounty: 300 shells. |
-| `clown` | Prof. Dr. Dr. Humoral | Bloodletting without a licence | Three titles. Nobody checked. Diagnosis: too much blood. Treatment: he keeps some. Follow-up: he keeps the rest. Bounty: 650 shells. |
-| `puffer` | Tetro “Party Favor” | Controlled substance | “We passed him around at parties. Great guy. Then he started headbutting. Kevin still can’t feel his face.” A dolphin, under oath. Bounty: 2,000 shells. Do not lick. |
-| `guppy` | Placebo Forte | Selling the tank its own water | PURE TANK WATER. Bottled at the source. You are the source. Her cleanse has sold out twice and the reviews are sincere. Bounty: 1,200 shells. |
-| `sub` | Endo, Internal Affairs | Unlawful entry, eight counts | Is a submarine. The crew has agreed not to bring it up. Has filmed every one of them from the inside and sells the tapes back. DocFish paid double. Bounty: 3,500 shells. |
+| Kategorie | Crew R4 | Crew R5 | ECHO R1 | ECHO R2 |
+|---|---|---|---|---|
+| Punch | 7 | 7 | 6 | 7 |
+| Eigene Figur / Stimme | 6 | 6 | 5 | 6 |
+| Absurdität, erfunden | 6 | 6 | 5 | 5 |
+| Satire | 6 | 5 | 2 | 2 |
+| Frei von Formel | 4 | 4 | 4 | 4 |
+| Übersteht Punch-up | 5 | 5 | 3 | 4 |
+| Onboarding | | | | 7 |
+| Ambivalenz verdient | | | | 4 |
 
-Offen: Bei Prof. MaBi ist „Deployed on a Friday. It worked.“ gestrichen (der Kritiker fand in der Karte keine Figur). Falls die Zeile ein Insider ist, kommt sie zurück.
+Befund beide Male: ein Rhythmus (Aussage plus kurzer trockener Nachsatz) für alles, „eine Stimme in neun Kostümen“. Runde 5 hat die Textsorte gewechselt, nicht die Stimme.
+Runde 6: kein Erzähler mehr. Jede Karte ist, was der Fisch bei der Festnahme selbst sagt. Bounty ohne Anhängsel. DocFish, FlexiFish und Prof. MaBi sind als Namen gesetzt. Noch nicht vom Kritiker geprüft.
 
-## Version 1 · ECHO · Runde 2
+| ID | Name | Anklage (`.rolle`) | Backstory | Bounty |
+|---|---|---|---|---|
+| `crimson` | DocFish | Theft of a filter pump | “Yes, I took the pump. I’m a doctor, I had a patient open on the table, and a filter pump is basically a heart if you don’t look at it. He’s fine. Is he asking for me?” | 4,711 shells |
+| `angel` | FlexiFish | Burglary, with corrections | “I returned the castle. The drawbridge is a separate matter. And I only came back because the ransom note had a typo. Two, now that I see your report.” | 900 shells |
+| `mabi` | Prof. MaBi | Tampering with dinner | “I changed one password. Dinner is when I say it is. The warden has asked nicely. I’m considering it.” | 0xFFFF shells |
+| `gold` | Ping-Pong Bullion | Counterfeiting. Painted gravel. | “That is not painted gravel. That is an asset class. I was won at a funfair with a ping-pong ball, and look at me now.” | 24,000 shells |
+| `neon` | Strobe™ | Unlicensed reproduction, 212 counts | “The lab says it owns the glow and wants all 212 children back. I said come and get them, they’re not hard to find. Now I’m the lookout. Same problem.” | 300 shells |
+| `clown` | Prof. Dr. Dr. Humoral | Practising medicine on a police officer | “Officer, you look pale. May I? It’s blood. You have far too much of it and I can take some off your hands today. No charge. I keep the blood.” | 650 shells |
+| `puffer` | Tetro “Party Favor” | Controlled substance | “Dolphins used to pass me around at parties. I was fun. Now I’m six inches and nobody laughs. Lick me. Go on.” | 2,000 shells |
+| `guppy` | Placebo Forte | Selling the tank its own water | “It’s not ‘just tank water’. It’s bottled at the source. You’re the source. That’s the beautiful part. You look tired, by the way.” | 1,200 shells |
+| `sub` | Endo, Internal Affairs | Unlawful entry | “I’m a fish. Ask the crew, they’ll tell you. I go in, I film, I come out. DocFish paid double for his tape. Ask him about that instead.” | 3,500 shells |
+
+## Version 1 · ECHO · Runde 3
 
 Georg 24.11.: ECHO ist eine Art Hacker mit unklarer eigener Agenda, zwischen freundlichem Helfer und Manipulator, weiß deutlich mehr, als er sagt. Die Zeilen folgen dem Weg des Spielers: gefangen im Becken, umsehen, dann überraschend die Stimme. „You again“ passt nicht zum ersten Kontakt, höchstens nach einem Tod.
 Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben Original.
@@ -42,22 +53,22 @@ Reihenfolge = Spielverlauf. Nicht genannte ECHO-IDs bleiben Original.
 | | `leiter_hinweis[3]` | Cologne water. Four digits. | The number on the label. All four digits. |
 | | `leiter_hinweis[4]` | 4711. Cologne water. | 4711. I was hoping you would manage alone. |
 | an der Flasche | `flasche[1]` | 4711. Cologne water. | 4711. It is printed right there. |
-| Code stimmt | `codeRight[1]` | Hold on to your fins. | It is open. Go. Do not thank me yet. |
+| Code stimmt | `codeRight[1]` | Hold on to your fins. | It is open. Go. |
 | Becken gekippt | `zuSpaet[1]` | Too late. The tank tipped. | Too late. Never mind. We go again. |
-| erster Köder | `hook[1]` | Bait on a line. | That is bait. Whoever holds the line is not your friend. I am. |
-| am Haken | `hooked[1]` | Reeled in. I cut the line. | I cut the line. Remember that later. |
+| erster Köder | `hook[1]` | Bait on a line. | That is bait. Whoever holds the line is not your friend. |
+| am Haken | `hooked[1]` | Reeled in. I cut the line. | I cut the line. I waited a little first. |
 | erste Mine | `mine[1]` | Old sea mines. Still working. | Mines. I did not put them there. I just did not remove them. |
-| Truhe | `chest[1]` | A gift. Do not ask. | For you. I hid it there a long time ago. |
+| Truhe | `chest[1]` | A gift. Do not ask. | *(bleibt)* |
 | Suchscheinwerfer | `beam[1]` | Searchlights. Stay out of the light. | They noticed the empty tank. Stay out of the light. |
 | entdeckt | `caught[1]` | They saw you. | They saw you. I will loop the cameras. Again. |
-| Level 3 | `level3[1]` | More lights now. Trust the current. | More lights now. Trust the current. Trust me more. |
+| Level 3 | `level3[1]` | More lights now. Trust the current. | *(bleibt)* |
 | Augen, gefasst | `augenGriff[1]` | Absorbed. I will pull you out. | Absorbed. I will pull you out. Most of you. |
 | im Blutstrom | `cells[1]` | Red cells. They carry oxygen, and now you. | Follow the red ones. I have never been this far in. |
-| Ziel | `finale[1]` | You made it. Rest now. | You made it. You were never just a fish to me. You were the way in. |
+| Ziel | `finale[1]` | You made it. Rest now. | You made it. You were never just a fish to me. |
 
 Neue Zeile, braucht einen Auslöser im Spiel (Neustart nach Tod oder gekipptem Becken): `leiter_achtung.retry` → Psst. You again.
 
-Offen: `finale[1]` legt ECHOs Absicht ein Stück offen (der Fisch war der Weg hinein). Das ist eine Setzung.
+Kritiker zu ECHO R2: Die Ambivalenz ist behauptet, nicht gezeigt; ECHO hilft immer und sagt danach etwas Finsteres. Fünf solche Nachsätze sind gestrichen. Gezeigt wird sie erst, wenn ECHO im Spiel etwas tut: eine Warnung zu spät geben, einen Gefallen einfordern. Das ist eine Spielentscheidung, kein Textproblem.
 
 # Später (wenn die Basis trägt)
 
