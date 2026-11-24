@@ -1,7 +1,7 @@
 # AquaCare II — Grand Theft Aqua · R3 full-game editorial candidate
 24.11.2026 · Existing Aqua text owner / WS0 intake · **FULL SET FOR REVIEW — NOT ACCEPTED, NOT RUNTIME**
 
-R3 is an original source-grounded editorial candidate requested after the GTA research. R2 #484 remains rejected/quarantined. 389 table IDs + seven accepted splash lines = 396 resolved texts. 175 changed rows; 214 original rows deliberately retained. `Neu` blank = original retained. No independent creative PASS. Existing video disabled/WIP status unchanged. The source is the exact extracted original embedded in the current R3 brief (not R2), with the existing Text and Notiz columns preserved. Proposal uses a police/nature-documentary framing for Flexa, practical complicity for ECHO and Falkenstein's scientific observation increasingly turned back on his own experiment. These are proposed readings of the existing characters, not approved new lore. Alternative reaction lines must stand alone; do not assume playback order. GTA references are mechanisms, not copied lines. All non-dialogue interface values and credits are preserved or changed only for clarity. No new triggers or game rules.
+R3 is an original source-grounded editorial candidate requested after the GTA research. R2 #484 remains rejected/quarantined. 389 table IDs + seven accepted splash lines = 396 resolved texts. 174 changed rows; 215 original rows deliberately retained. `Neu` blank = original retained. No independent creative PASS. Existing video disabled/WIP status unchanged. The source is the exact extracted original embedded in the current R3 brief (not R2), with the existing Text and Notiz columns preserved. Proposal uses a police/nature-documentary framing for Flexa, practical complicity for ECHO and Falkenstein's scientific observation increasingly turned back on his own experiment. These are proposed readings of the existing characters, not approved new lore. Alternative reaction lines must stand alone; do not assume playback order. GTA references are mechanisms, not copied lines. All non-dialogue interface values and credits are preserved or changed only for clarity. No new triggers or game rules.
 
 **References:** [complete briefing](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/AQUACARE_GTA_TEXTBOOK_R3_FRESH_CHAT_BRIEF_2026-11-24.md) · [GTA research](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/GTA_SATIRE_RESEARCH_R1_2026-11-24.md) · [Golden](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/GOLDEN_SAMPLES_AQUA_R1.md) · [Anti](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/ANTI_SAMPLES_R1.md).
 
@@ -67,7 +67,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `keys[4]` | Double-tap Space: barrel roll · double Shift: kick · I interact · V view · M sound · R checkpoint | nennt eine Taste (Regel: keine Tastennamen) |  |
 | `choose` | Choose your escapee |  | Choose your getaway fish |
 | `play` | Escape Now |  |  |
-| `go2` | Get fishy! |  | Back to the tank |
+| `go2` | Get fishy! |  | Let's go |
 | `swipe` | Drag to spin · ← → to choose |  |  |
 | `startSound` | Sound |  |  |
 
@@ -101,7 +101,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `clown.staerke` | Chests pay more. |  |  |
 | `puffer.name` | Tetro |  |  |
 | `puffer.rolle` | Muscle |  |  |
-| `puffer.backstory` | Six inches of attitude. Twelve when provoked. Headbutted a vending machine. Won. Bounty: 2,000 shells. Bring gloves. |  | Tetro headbutted a vending machine. It was still standing when he started to inflate. The arresting fish were advised to bring a second net. Bounty: 2,000 shells. |
+| `puffer.backstory` | Six inches of attitude. Twelve when provoked. Headbutted a vending machine. Won. Bounty: 2,000 shells. Bring gloves. |  | Six inches in the original description. Twelve in the description given by the fish who had to pull him off a vending machine. Bounty: 2,000 shells. |
 | `puffer.staerke` | Takes one extra hit per level. |  |  |
 | `guppy.name` | Placebo |  |  |
 | `guppy.rolle` | Smuggler |  |  |
@@ -136,7 +136,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `truebe2[1]` | Those are not plankton. Swim faster. |  | Look at the water. The filter's off. Hurry. |
 | `truebe3[1]` | You are coughing. The hatch. Now. |  | You're struggling to breathe. Get to the hatch. |
 | `zuSpaet[1]` | Too late. The tank tipped. |  |  |
-| `uboot[1]` | Unregistered vessel. Nobody will miss it. |  | Take the sub. You're taking the glass with you this time. |
+| `uboot[1]` | Unregistered vessel. Nobody will miss it. |  |  |
 | `augen[1]` | Do not stare back. |  | Don't stare back. |
 | `augenAlarm[1]` | They saw you. Swim. |  | Break eye contact. Swim. |
 | `augenGriff[1]` | Absorbed. I will pull you out. |  | It's got you. I'll pull you out. |
@@ -161,7 +161,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 |---|---|---|---|
 | `promptTake` | pick up stone |  | Pick up stone |
 | `promptHijack` | take over |  | Take over |
-| `promptPut` | put it down |  | Put down stone |
+| `promptPut` | put it down |  | Put it down |
 | `prompt` | Open hatch |  |  |
 | `hintTank` | The round hatch is at the back on the right. |  |  |
 | `hintTankTouch` | The round hatch is at the back on the right. |  |  |
@@ -186,7 +186,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `gameOver.big` | FLUSHED |  |  |
 | `gameOver.sub` | Grand Theft Aqua |  |  |
 | `gameOver.line` | Three tanks tipped. The filter sends its regards. |  | Three attempts. End of footage. |
-| `gameOver.again` | One more heist |  | Reconstruct the escape |
+| `gameOver.again` | One more heist |  | Try the escape again |
 | `where.tank` | In the tank |  |  |
 | `where.pipe` | In the pipe |  |  |
 | `where.sea` | In the open sea |  |  |
@@ -204,7 +204,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `levelGoal[1]` | Find a way out |  | Find a way out of Tank Four |
 | `levelGoal[2]` | Follow the rings through the kelp |  |  |
 | `levelGoal[3]` | Swim the reef tunnel |  |  |
-| `levelGoal[4]` | Do not let them look too long |  | Break eye contact before they catch you |
+| `levelGoal[4]` | Do not let them look too long |  | Don't stay in the eyes' gaze. |
 | `levelGoal[5]` | Slip past the lights |  |  |
 | `levelGoal[6]` | Go with the flow |  | Follow the bloodstream |
 | `eaten` | … |  |  |
@@ -349,19 +349,19 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `flexa.combo.01` | Shells. How very capitalist of you. | zur Zeit aus | If you've found shells in your child's aquarium, we'd like to hear from you. |
 | `flexa.combo.02` | A combo. Your reward is nothing. It has always been nothing. | zur Zeit aus | Notice how the fish barely looks at the shells now. |
 | `flexa.combo.03` | Perfect. I'll deduct it from your sentence. I won't. | zur Zeit aus | We have a clear view of the shells. Less clear is where the fish is putting them. |
-| `flexa.combo.04` | Keep collecting. They'll look nice on your headstone. | zur Zeit aus | Please keep the fish in the picture. |
+| `flexa.combo.04` | Keep collecting. They'll look nice on your headstone. | zur Zeit aus | The fish doesn't even slow down for the money any more. |
 | `flexa.truhe.01` | Who left a chest in my tank? | zur Zeit aus | Who put a treasure chest in there? |
-| `flexa.truhe.02` | A perk. Temporary. Like you. | zur Zeit aus | That chest was closed when the fish arrived. |
+| `flexa.truhe.02` | A perk. Temporary. Like you. | zur Zeit aus | A treasure chest. It was closed when the fish arrived. |
 | `flexa.truhe.03` | Turbo. Now you can die faster. | zur Zeit aus | The fish has suddenly picked up speed. |
 | `flexa.truhe.04` | Invisible? I can still see your file. | zur Zeit aus | The suspect is no longer visible to the searchlights. |
 | `flexa.licht.01` | Found you. | zur Zeit aus | That's the fish. |
-| `flexa.licht.02` | Smile. You're on camera. Forever. | zur Zeit aus | There's our suspect. Notice the eyes. |
+| `flexa.licht.02` | Smile. You're on camera. Forever. | zur Zeit aus | There. That's the fish we've been talking about. |
 | `flexa.licht.03` | The light suits you. Very evidence-like. | zur Zeit aus | We finally have a clear picture. |
 | `flexa.licht.04` | Hiding behind kelp. Bold strategy. Wrong, but bold. | zur Zeit aus | You can see the fish through the kelp. |
 | `flexa.haken.01` | Free burger. No strings attached. One string attached. | zur Zeit aus | Notice that the bait is attached to something outside the picture. |
 | `flexa.haken.02` | Hungry? Oldest trick in the ocean. | zur Zeit aus | It has seen the food. Watch the line. |
 | `flexa.haken.03` | Reeled in. Customer retention at its finest. | zur Zeit aus | The fish has taken the bait. |
-| `flexa.haken.04` | Bon appétit. For somebody. | zur Zeit aus | If you're eating fish while watching this, I'd give it a minute. |
+| `flexa.haken.04` | Bon appétit. For somebody. | zur Zeit aus | You can see the line. You can't see who's holding it. |
 | `flexa.mine.01` | That was a mine. You were the pin. | zur Zeit aus | We won't be using that shot in the aquarium brochure. |
 | `flexa.mine.02` | Ouch. Was that in your terms and conditions? It was in mine. | zur Zeit aus | The fish made contact with a mine. |
 | `flexa.mine.03` | Boom. Filed under self-inflicted. | zur Zeit aus | Can we see the fish? |
@@ -380,7 +380,7 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `flexa.over.03` | I'll keep your tank warm. I won't. | zur Zeit aus | We will return to Tank Four. |
 | `flexa.level.01` | You finished a level. A level. | zur Zeit aus | The fish has reached the next section. |
 | `flexa.level.02` | Congratulations. That was the easy part. They're all the easy part. | zur Zeit aus | If you've just joined us, this started in a very small aquarium. |
-| `flexa.level.03` | Progress. I'll make the next one worse. | zur Zeit aus | We're still following the fish. |
+| `flexa.level.03` | Progress. I'll make the next one worse. | zur Zeit aus | We've lost the view of the last section. Follow the fish. |
 | `flexa.uboot.01` | Who gave the fish a submarine? | zur Zeit aus |  |
 | `flexa.uboot.02` | Unregistered vessel. Uninsured driver. Perfect. | zur Zeit aus | The vessel appears to have been built for a fish. |
 | `flexa.uboot.03` | Parking fines start now. | zur Zeit aus | It got out of one aquarium and climbed into a smaller one. |
@@ -408,10 +408,10 @@ Die Sublines unter dem Startbild-Titel. Jeder andere Text soll so klingen.
 | `falkenstein.augen.01` | I gave the reef eyes. Every one of them hates you. They tell me everything. They tell me you are smug. Stop being smug. | WIP, zur Zeit aus | I wanted a view from each of the eyes. I now have an excellent view of the other eyes. Where is the fish? |
 | `falkenstein.augen.02` | Who taught you to swim like that? Was it her? It was her. She is fired. Again. | WIP, zur Zeit aus | It seems the fish has been looking at the eyes all this time. I had rather assumed it was the other way round. |
 | `falkenstein.hai.01` | I blamed my assistant. I blamed the pipe. I blamed the moon. It was you. It was always you. | WIP, zur Zeit aus | At last, an animal that knows what fish are for. I wish you'd stop cheering for the little one. |
-| `falkenstein.hai.02` | Fine. You want to play. Release the shark. No, the big one. The one with the tax problems. | WIP, zur Zeit aus | Look at the size of that shark. You've been following the small fish for so long that you've forgotten which of these is the predator. |
+| `falkenstein.hai.02` | Fine. You want to play. Release the shark. No, the big one. The one with the tax problems. | WIP, zur Zeit aus | That is a great white. In the cinema, the music would have told you about it several seconds ago. |
 | `falkenstein.blut.01` | Inside the system. Inside my system. That is my bloodstream, you wet little felony. Get out of my bloodstream. | WIP, zur Zeit aus | Those are erythrocytes. I know what they are. What I would like to know is why I am looking at them from the inside. Is that my blood? |
-| `falkenstein.blut.02` | No. No, this is fine. I have a doctorate. I have a pension plan. I have sharks. | WIP, zur Zeit aus | You see those red discs? Those are red blood cells. I would prefer you left them where you found them. |
-| `falkenstein.frei.01` | Sightseeing? Take your time. Every minute you waste, I bill to your family. | WIP, zur Zeit aus | Could you at least look at the fish? I have miles and miles of very interesting seaweed in front of me. |
+| `falkenstein.blut.02` | No. No, this is fine. I have a doctorate. I have a pension plan. I have sharks. | WIP, zur Zeit aus | Those red discs are erythrocytes. For God's sake, don't start collecting them. I'm using them. |
+| `falkenstein.frei.01` | Sightseeing? Take your time. Every minute you waste, I bill to your family. | WIP, zur Zeit aus | Could you at least turn the camera towards the fish? I'm getting a very comprehensive education in seaweed. |
 | `falkenstein.frei.02` | Stop admiring the coral. The coral is evidence. | WIP, zur Zeit aus | I used to be able to see this animal by walking up to the glass. I'm now asking a fish to turn round so I can see the coral. |
 | `falkenstein.over.01` | And back to the tank. Do not worry. You will not remember this. You never do. | WIP, zur Zeit aus | There. Tank Four. The little castle is still there. Let's see whether the fish has learned anything about the castle. |
 | `falkenstein.over.02` | Back in the tank. Back where you belong. Somebody write this down. I won. I always win. | WIP, zur Zeit aus | I should like to see the beginning again. Pay particular attention to the fish that's done this before. |
