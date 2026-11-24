@@ -12,9 +12,9 @@
 
 ---
 
-## 2026-11-24 · AQUACARE GTA R3 · RESEARCH / FRESH CHAT
+## 2026-11-24 · AQUACARE GTA R4 · CURRENT CREATIVE WRITER BRIEF
 
-**RESEARCH / DOCS ONLY.** Georg rejected R2 explicitly (“AI SLOP GALORE!!”); [PR #484](https://github.com/georg-doc/kayfabizarro/pull/484) CLOSED / NOT MERGED. Do not import its 240 replacements. WS0/Aqua text owner: use the new [complete R3 fresh-chat briefing](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/AQUACARE_GTA_TEXTBOOK_R3_FRESH_CHAT_BRIEF_2026-11-24.md) with original 389-ID table, seven Golden splash lines, exact negative examples and postmortem, [15-case GTA research](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/GTA_SATIRE_RESEARCH_R1_2026-11-24.md) and copy-ready prompt. No new R3 text, voice, runtime, Stage or Live. Next: fresh writer produces a small source-backed sample and separate critic reviews it before selective expansion. Actual Aquarium runtime source remains unresolved.
+**R2 #484 and R3 #485: EXTREME FAIL, closed/unmerged, all proposed replacements quarantined.** No reuse, import or voice rendering. Georg explicitly requests a fresh complete English text set: short, precise, natural, genuine wit; evil mastermind, gangster fish, KFB meets GTA; no forced jokes or stop cascades. [R4 Writer Brief — complete self-contained packet](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/AQUACARE_GTA_R4_WRITER_BRIEF_2026-11-24.md) supersedes all R3 writing instructions. [R3 Postmortem](https://github.com/georg-doc/kayfabizarro/blob/docs/kfb-decisions-register-2026-10-11/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_TEXTE/POSTMORTEM_AQUA_R3_EXTREME_FAIL_2026-11-24.md). Original 389 IDs and seven Golden lines remain the source. GTA research is background, not approved transfer hypotheses. Existing WS0/Aqua text owner; no new runtime or Stage. Next: fresh writer delivers the complete new candidate, no mandatory intermediate human gates. Runtime source remains unresolved.
 
 ---
 
