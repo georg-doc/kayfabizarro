@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-24.2",
-  "updatedAt": "2026-11-24T04:11:00Z",
+  "revision": "2026-11-25.1",
+  "updatedAt": "2026-11-25T03:59:19Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -181,6 +181,16 @@
       "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/156",
       "executor": "WS0 · existing KFB-Stunt-Car-Race gameplay integrator",
       "nextExecutor": "S0: isolate real Friendlies background/source plus original character and soccer clip; then one reversible existing-wall HNK material skin and S1 player animation proof under same game owner."
+    },
+    {
+      "id": "deck-lauf-r0-wsa-ws0-2026-11-25",
+      "title": "Deck-Lauf R0 · Übergabe an WS0",
+      "summary": "Inventur und zwei geprüfte Module für Kartenrunden und Monster-Daten. Georg entscheidet über den Quellenmerge. Danach kann WS0 die erste belegte Einzelkarte mit den vorhandenen Kreaturen anschließen.",
+      "badge": "MODULE GEPRÜFT · MERGE BEI GEORG",
+      "action": "Arena-PR öffnen",
+      "url": "https://github.com/georg-doc/KFB-Combat-Arena/pull/30",
+      "executor": "WSA · Combat Arena",
+      "nextExecutor": "Georg entscheidet den Quellenmerge. Danach WS0 · Integration-R2."
     }
   ],
   "briefings": [

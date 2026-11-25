@@ -12,6 +12,12 @@
 
 ---
 
+## 2026-11-25 · WSA → WS0 · DECK-LAUF R0
+
+**Geprüfte Bausteine · Merge bei Georg.** [Arena PR #30](https://github.com/georg-doc/KFB-Combat-Arena/pull/30), `wsa/deck-lauf-r0 @ 5c4af56a38f2f514c2f699ef3eb7bded3aa63f83`. [Return](https://github.com/georg-doc/KFB-Combat-Arena/blob/5c4af56a38f2f514c2f699ef3eb7bded3aa63f83/RETURN_DECK_LAUF_R0.md): Inventur A/B gegen den Stamm, Mentalmodell und zwei eigenständige ES-Module für Rundenablauf und Original-Monstermessung. 12/12 isoliert, 72/72 Arena. Als erster Einzelkartenfall für WS0 ist `help_i_am_a_human/3` mit `mensch-symbiose` belegt. `/1` beginnt das vollständige Deck und hat noch keine Einzelsaat. Georg entscheidet den separaten Quellenmerge mit `[CF-Pages-Skip]`. WS0 übernimmt später in `game/integration-r2` links vom MiB-Turm. Keine Stage-Abnahme. Die früher automatisch ausgelösten Branch-Previews sind im Return dokumentiert.
+
+---
+
 ## 2026-11-24 · WS0 INTAKE · CARD WORLDS R0 / WORLD EVERY DAY
 
 **SOURCE-CHECKED · DOCS ONLY · PROPOSED.** Active game owner WS0/Integration-R2: [Issue #158](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/158) contains full donor audit, seed/recipe design, InfiniteRooms portal integration, daily/standalone/main-world scenarios, 18 NOT_RUN checks and Return/additive changelog. Production snapshot `game/integration-r2 @ e75112a99ab6ef9fa6177ca3de58a2b1d3954359`; refetch before building. Upstream [World Every Day @ 1ce9ce7](https://github.com/acher249/world-every-day/tree/1ce9ce7adc95aa5d7cb2e3eb329200a82695d4ea): semantic JSON → art direction → panorama → Marble SPZ → landmark mapping. Native deterministic KFB recipe first; optional SPZ visual backend only with rights/budget/renderer/physics proof. Existing card registry, InfiniteRooms host and tuerPortal owners retained; relates to #127 and #155 without superseding their gates. No runtime changes, no paid calls, no tests, no Stage/Live. Next: one actual card recipe through native portal, safe return + reload. Hub active worklist is the owner issue; no public mirror needed for docs.
