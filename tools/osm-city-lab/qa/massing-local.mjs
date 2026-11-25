@@ -42,7 +42,7 @@ const expected={
 const reports=[];
 let browser;
 
-async function runCase(browser,{city,look,labels=false,nature=false,suffix=''}) {
+async function runCase(browser,{city,look,labels=false,nature=false,furniture=false,suffix=''}) {
   const context=await browser.newContext({viewport:{width:1440,height:900}});
   const page=await context.newPage();
   const errors=[];
@@ -51,6 +51,7 @@ async function runCase(browser,{city,look,labels=false,nature=false,suffix=''}) 
   const qs=new URLSearchParams({city,look});
   if(labels)qs.set('labels','1');
   if(nature)qs.set('nature','1');
+  if(furniture)qs.set('furniture','1');
   const url=`http://127.0.0.1:4173/tools/osm-city-lab/?${qs}`;
   await page.goto(url,{waitUntil:'networkidle',timeout:120000});
   await page.waitForFunction(()=>window.KFBCityLab?.report,{},{timeout:120000});
@@ -89,10 +90,49 @@ async function runCase(browser,{city,look,labels=false,nature=false,suffix=''}) 
     assert.equal(report.natureInstances,0);
   }
 
+  if(furniture){
+    assert.ok(report.cityFurnitureInstances>0,'city furniture should place exact source-backed props');
+    assert.ok(report.cityFurnitureAssets.length>=4,'city furniture should load multiple KayKit donor assets');
+    assert.ok(report.cityFurnitureByType.streetlight>0,'streetlights should be present');
+    const signals=(report.cityFurnitureByType.trafficlight_A||0)+(report.cityFurnitureByType.trafficlight_B||0)+(report.cityFurnitureByType.trafficlight_C||0);
+    assert.ok(report.trafficSignalJunctions>0,'expected topology-selected teaching/demo signal junctions');
+    assert.ok(signals>0,'selected signal junctions should render KayKit traffic lights');
+    assert.equal(report.trafficPlanStatus,'PROPOSAL_SEAM_NO_RULE_RUNTIME');
+  }else{
+    assert.equal(report.cityFurnitureInstances,0);
+    assert.equal(report.trafficSignalJunctions,0);
+  }
+
   assert.deepEqual(errors,[]);
-  const id=[city,look,labels?'labels':null,nature?'nature':null,suffix||null].filter(Boolean).join('-');
+  const id=[city,look,labels?'labels':null,nature?'nature':null,furniture?'furniture':null,suffix||null].filter(Boolean).join('-');
   await page.screenshot({path:`${OUT}/${id}.png`});
   reports.push({url,report,errors});
+  await context.close();
+}
+
+
+async function runSourceProof(browser){
+  const manifest=JSON.parse(fs.readFileSync('tools/osm-city-lab/source-proof/city-furniture-r0/SOURCE.json','utf8'));
+  const context=await browser.newContext({viewport:{width:1280,height:800}});
+  const page=await context.newPage();
+  const errors=[];
+  page.on('pageerror',e=>errors.push(String(e)));
+  page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+  const donorReports=[];
+  for(const donor of manifest.donors){
+    const url='http://127.0.0.1:4173/tools/osm-city-lab/source-proof/city-furniture-r0/?asset='+encodeURIComponent(donor.id);
+    await page.goto(url,{waitUntil:'networkidle',timeout:120000});
+    await page.waitForFunction(()=>window.KFBCityFurnitureSourceProof?.report()?.loaded===true,{},{timeout:120000});
+    const report=await page.evaluate(()=>window.KFBCityFurnitureSourceProof.report());
+    assert.equal(report.id,donor.id);
+    assert.equal(report.path,donor.path);
+    assert.ok(report.rawBounds.size.every(v=>Number.isFinite(v)&&v>0),'source object must have non-zero raw bounds');
+    assert.ok(report.meshNames.length>0,'source object must expose at least one mesh');
+    donorReports.push(report);
+    await page.screenshot({path:`${OUT}/source-${donor.id}.png`});
+  }
+  assert.deepEqual(errors,[]);
+  reports.push({url:'source-proof',sourceProof:donorReports,errors});
   await context.close();
 }
 
@@ -103,19 +143,23 @@ try{
     await runCase(browser,{city,look:'cartoon',labels:true,suffix:'signs'});
   }
   await runCase(browser,{city:'huerth-v0',look:'cartoon',nature:true,suffix:'forest'});
+  await runCase(browser,{city:'ehrenfeld-v0',look:'cartoon',labels:true,furniture:true,suffix:'city-furniture-r0'});
+  await runSourceProof(browser);
 
   fs.writeFileSync(OUT+'/report.json',JSON.stringify({status:'PASS',reports},null,2)+'\n');
   console.log(JSON.stringify({
     status:'PASS',
-    cases:reports.map(x=>({
+    cases:reports.map(x=>x.report?({
       city:x.report.cityId,
       look:x.report.look,
       signs:x.report.streetSigns,
       trees:x.report.natureInstances,
+      furniture:x.report.cityFurnitureInstances,
+      signalJunctions:x.report.trafficSignalJunctions,
       roadJunctions:x.report.roadJunctionPatches,
       paths:x.report.pathMeshes,
       windows:x.report.windowInstances
-    }))
+    }):({sourceProof:x.sourceProof?.length||0}))
   },null,2));
 }finally{
   await browser?.close();
