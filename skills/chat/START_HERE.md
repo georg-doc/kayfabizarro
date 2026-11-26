@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-26 · WS0 / WSA AUDIO · BUBBLE FM REACTIVE MUSIC / RUBBER RUSH + RPG RACER
+
+**SOURCE_CHECKED · PRODUCT DIRECTION / DOCS ONLY.** [Additive racer owner brief #167](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/167#issuecomment-7203374002), [WSA Audio cross-reference #168](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/168#issuecomment-7203376187). Existing Suno Bubble Mixer, one audio host/pulse, ride songkarte and motion telemetry retained. Manual/reactive/opt-in guided ride proposed, one active musical clock, real telemetry drives stem arrangement; audio drives visual presentation only. Music-skill v0.9.3 game layer export verified in docs, optional offline candidate, rejected synth mixer not revived, existing Atlas-first policy unchanged. First gate: actual existing stem load in receiving owner, active mixer pulse to existing HUD and one world visual, manual mode preserved. Current game `game/integration-r2 @ 94c87df1b1e566335fca86e48020a4095860e1ef`. 18 checks NOT_RUN, no new runtime/assets/Stage/Live/merge.
+
+---
+
+
 ## 2026-11-26 · WS0 / WSA AUDIO RESEARCH INTAKE · SFX-SKILL R0
 
 **SOURCE_CHECKED · PROPOSAL ONLY.** [Existing game/audio owner issue #168](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/168) contains donor audit, Atlas-first transfer candidates, provenance requirements and additive Return/changelog. Upstream `owoevan-dev/sfx-skill @ 56d2136d2f794402feefa82786bc94a0e02bf73f`, v0.3.0, MIT code/docs, upstream CI 7/7 jobs successful. Editable offline sound layers and reproducible variants, measured loops and per-source exports; optional music-skill/Surge XT. Preserve existing WSA Audio ownership and V-1989/V-448 production constraints; no new synthesis approval implied. Next: one rights-cleared Atlas recording, original versus four edited variants, isolated technical and listening comparison before any policy-compatible native cue integration. No installation, downloads, assets, runtime changes, KFB tests, Stage/Live or merge.
