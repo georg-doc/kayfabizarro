@@ -1,3 +1,6 @@
+## 2026-11-26 · WSA r10 correction · existing private Site v5 LIVE
+Replaced r7f by exact r10 in layout/loader/private deployment; original Orb_r6c and game idle portal/rim setup reused. Fixed partial scene publication during async pawn/marker load and concurrent card-texture updates. Narrow independent14checks PASS; delayed-load local and actual live A/B smoke checked. Source317661989524b64b7777f73c7085f9b5c556dbed, build0454e4908174. Regenerated private close-up/A/B/video evidence; engine and prior replay/simulation evidence unchanged. [Return and proof](RETURN.md); no new Site, audience change, game-stem merge or Cloudflare.
+
 ## 2026-11-26 · R27 WSA private Rule Lab candidate saved v4
 A/B and experimental D1a/D1b/D2 built in existing Site; original R24 isolated missing:[],33/33 packet checksums. Current2137 assertions, browser/headless A/B hash parity, captioned52.9s B video, independent critic8.0. Source e1e38fe5de86f0b88c324dbd3718747077a82612 (Site main), stored private archive and version4 verified. Two private deploy attempts FAILED Unable to authenticate request; no deployed revision claim, no new Site/Cloudflare/merge. Exact recovery details and one next gate in [RETURN.md](RETURN.md): restore provider authentication and deploy already-saved v4. Topology censoring and human/voice/physical-print limits explicit.
 
