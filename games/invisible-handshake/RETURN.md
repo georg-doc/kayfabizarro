@@ -1,3 +1,15 @@
+## R27 WSA recovery Return · 26 November 2026
+
+**Result: SITE_SOURCE_RECOVERED; R24_SOURCE_ISOLATION_BLOCKED.** Existing Site identity verified through Sites: `appgprj_6afc38fcfc5c8191beb9ffc978208e6c`, The Invisible Handshake, active version 3, owner-only custom access. Platform reports https://the-invisible-handshake.frizzlebob.chatgpt.site ; exact live browser revision NOT_VERIFIED. Existing source opened with the Sites workflow helper at source head `475642c78625d404a3add0b0be77abaebbbcc7b0`, branch main. Tracked hosting manifest matches this project. Existing dist includes engine, board, cards, learn-state/learn and research; no source changes, push, saved version or deployment.
+
+**Recovery evidence:** R27/R27.1 brief read at owner branch head b7ede2119b9c80b74f8d3444195ebfb8595f218a. R24 handover and private-fetch script read through GitHub connector at f65b69a74c9894726cb1ba6e52783fa3367f041c. Exact entry buildBoardgameScene and B.at/update/event/anchors confirmed from handover, not rendered. Private branch metadata accessible via connector at d94d5844d3a94443d7260ba59dd6a5b1bd71f558. Local central mirror fetch of claude/boardgame-scene-r24 and game/integration-r2 failed: Git could not read Username for https://github.com (Device not configured); gh unavailable. Lazy blob read also failed. Therefore fetch-private-r24.sh cannot retrieve exact B40 r7f/Orb_r6c and bot assets in this executor. Search across local .codex/.chatgpt-projects and /private/tmp found only other r10 tower builds, no required r7f or eyes_rest; no substitution made.
+
+**Scope preserved:** one Site, one builder; no second Site, replacement tower, new models, private asset publication, paid calls, game-stem merge or Cloudflare work. No invented card text. R27 A/B implementation, narrated tutorial, replay video, simulation and print remain NOT_RUN / NOT_BUILT. No independent scene acceptance or gameplay PASS. Recovery checks are not game tests.
+
+**One next gate (WS0):** restore authenticated Git transport for the existing central KFB-Stunt-Car-Race mirror, or supply the exact R24 assembled private scene package through an authorized private channel. WSA then isolates the original R24 scene before implementing A Quick Claim and B Tower Circuit with shared legal replay/headless parity; D1a/D1b then D2 follow. No new product decision or new Site required.
+
+---
+
 ## R25 Return · Dice-Sum CLAIM + 50-card collection economy · 22 November 2026
 
 **Current user-directed game direction:** capture of the die-free central FOCUS through a probability roll against **S = visible HATE+FEAR+HOPE faces (3..18)**; early claims difficult, later claims easier, but another human can claim first. Georg prefers **collecting trophy cards** over emptying three-card hands. Public narrative cards on six constant faction seats should turn over regularly, especially after a capture. R23 spoken accusation-as-MOVE+TURN survives; no automatic role-based reward.
