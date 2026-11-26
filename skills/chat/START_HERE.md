@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-26 · WS0 INTAKE · INVISIBLE HANDSHAKE R27 / RULE LAB GPT SITE
+
+**PROPOSAL · DOCS ONLY.** [R27 build brief + additive return](https://github.com/georg-doc/kayfabizarro/blob/9537a8d953efac9e5e1b67504e51993fb38ebcf8/games/invisible-handshake/R27_RULE_LAB_SITE_BUILD_BRIEF_2026-11-26.md) · [existing draft #475](https://github.com/georg-doc/kayfabizarro/pull/475). Georg proposes reusable narrated boardgame laboratory: A Quick Claim / B Tower Circuit rotating spoke access / later C hybrid, one R24 table, play/learn/demo/settings/headless compare/print, EN then DE. Existing R07 Site project `appgprj_6afc38fcfc5c8191beb9ffc978208e6c` located; current deployment/URL unverified, recover before publishing, preserve legacy. No duplicate runtime/Site, no new game tests (16 NOT_RUN), no Stage/Live. WS0 next: recover Site and exact R24 source, A/B legal replay + sim parity, then playable comparison. Meta later. Existing #166 is receiving intake.
+
+---
+
+
 ## 2026-11-26 · WS0 INTAKE · INVISIBLE HANDSHAKE R26 / CUT & PLAY QUICK CLAIM
 
 **PROPOSAL · DOCS ONLY.** [12 concept slides + additive Return/changelog](https://github.com/georg-doc/kayfabizarro/blob/e84c3e64439002235d0f7dc2038d48a701150dd1/games/invisible-handshake/R26_CUT_PLAY_QUICK_CLAIM_CONCEPT_SLIDES_2026-11-26.md), [existing Draft PR #475](https://github.com/georg-doc/kayfabizarro/pull/475). R23/R25 source recovered, R24 scene donor [handover](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/f65b69a74c9894726cb1ba6e52783fa3367f041c/table-diorama/HANDOVER_WS0_R24.md); six seats, center card, deliberate three-die move+turn, optional claim, card-centered paper-first, 1–6 humans/bots proposal. Preserve original Freestyle, R19, R24 and R25; no new runtime. WS0 receives via existing #166; next existing real-card R25 trial then R24 bridge; 12 NOT_RUN, no Stage/Live; meta progression deferred. Exact dice appearance/naming and balancing open.
