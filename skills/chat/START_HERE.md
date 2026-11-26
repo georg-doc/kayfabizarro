@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-26 · WS0 INTAKE · INVISIBLE HANDSHAKE R26 / CUT & PLAY QUICK CLAIM
+
+**PROPOSAL · DOCS ONLY.** [12 concept slides + additive Return/changelog](https://github.com/georg-doc/kayfabizarro/blob/e84c3e64439002235d0f7dc2038d48a701150dd1/games/invisible-handshake/R26_CUT_PLAY_QUICK_CLAIM_CONCEPT_SLIDES_2026-11-26.md), [existing Draft PR #475](https://github.com/georg-doc/kayfabizarro/pull/475). R23/R25 source recovered, R24 scene donor [handover](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/f65b69a74c9894726cb1ba6e52783fa3367f041c/table-diorama/HANDOVER_WS0_R24.md); six seats, center card, deliberate three-die move+turn, optional claim, card-centered paper-first, 1–6 humans/bots proposal. Preserve original Freestyle, R19, R24 and R25; no new runtime. WS0 receives via existing #166; next existing real-card R25 trial then R24 bridge; 12 NOT_RUN, no Stage/Live; meta progression deferred. Exact dice appearance/naming and balancing open.
+
+---
+
+
 ## 2026-11-26 · WS0 INTAKE · LUDOWALA R0 / BOARD-GAME META
 
 **DOCS ONLY · SOURCE-CHECKED · PROPOSAL.** [Owner Issue #166](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/166) holds the research, additive changelog and Return: Ludo/Snakes rules, show versus actual rule effects, progression, daily rewards, private rooms/rejoin and scene separation. Source snapshot `game/integration-r2 @ 94c87df1b1e566335fca86e48020a4095860e1ef`; refetch before implementation. Extends [#165 Schacharena](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/165), Kicker/Kickoff and #158; no new runtime owner, no code/assets copied, no game tests (16 NOT_RUN), no Stage/Live. Next WS0: one legal capture/goal through shared existing arena show adapters with rule-neutral replay; no new human gate. Public documentation conflicts on defaults/monetization noted; live play unverified. Owner issue is the Hub active worklist.
