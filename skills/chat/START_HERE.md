@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-26 · WS0 · CYMATIC DICE / BUBBLE FM DIEGETIC STEM COCKPIT
+
+**PROPOSAL · DOCS ONLY.** [Racer owner #167 addendum](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/167#issuecomment-7203455934) combines verified Thorn source controls (InstaLanding #486) with existing Bubble FM mixerControls, one audio host and shared racing physics. One expanded cockpit, same radio state: local gameplay pauses while music audition continues, style mix, actual stem selection and safe sphere/die morph are separate axes. No new style authority, no second engine, no multiplayer pause, no live terrain-collider changes. Existing stem load/pulse and car/sphere gates retained; then one original isolated Thorn control → actual mix → safe body handoff/resume. 12 proposed NOT_RUN, no implementation or Stage/Live. Game snapshot `game/integration-r2 @ 94c87df1b1e566335fca86e48020a4095860e1ef`.
+
+---
+
+
 ## 2026-11-26 · WS0 / WSA AUDIO · BUBBLE FM REACTIVE MUSIC / RUBBER RUSH + RPG RACER
 
 **SOURCE_CHECKED · PRODUCT DIRECTION / DOCS ONLY.** [Additive racer owner brief #167](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/167#issuecomment-7203374002), [WSA Audio cross-reference #168](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/168#issuecomment-7203376187). Existing Suno Bubble Mixer, one audio host/pulse, ride songkarte and motion telemetry retained. Manual/reactive/opt-in guided ride proposed, one active musical clock, real telemetry drives stem arrangement; audio drives visual presentation only. Music-skill v0.9.3 game layer export verified in docs, optional offline candidate, rejected synth mixer not revived, existing Atlas-first policy unchanged. First gate: actual existing stem load in receiving owner, active mixer pulse to existing HUD and one world visual, manual mode preserved. Current game `game/integration-r2 @ 94c87df1b1e566335fca86e48020a4095860e1ef`. 18 checks NOT_RUN, no new runtime/assets/Stage/Live/merge.
