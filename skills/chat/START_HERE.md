@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-26 · WS0 · CLEAN HUD / THORN HARDWARE MIXER DESIGN CORRECTION
+
+**GEORG DESIGN DIRECTION · DOCS ONLY.** [Racer #167 correction](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/167#issuecomment-7203508206), [existing HUD owner #130](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/130#issuecomment-7203510368). No Aquarium/Submarine requirement for Bubble FM; clean, theme-flexible HUD; realistic original Thorn hardware as mixer target, responsive structural layout rather than scaled raster panels. Keep existing controller/state/audio owner and prior functional cockpit/pause/morph contracts. Thorn original controls isolated before import; no full demo or second context. First proof compact radio + real expanded control at desktop/mobile, existing stem-load/pulse gate retained. Proposed checks NOT_RUN, no runtime/Stage/Live/merge. Earlier AquaCare aesthetic suggestion superseded for this slice; historical accepted assets preserved.
+
+---
+
+
 ## 2026-11-26 · WS0 · CYMATIC DICE / BUBBLE FM DIEGETIC STEM COCKPIT
 
 **PROPOSAL · DOCS ONLY.** [Racer owner #167 addendum](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/167#issuecomment-7203455934) combines verified Thorn source controls (InstaLanding #486) with existing Bubble FM mixerControls, one audio host and shared racing physics. One expanded cockpit, same radio state: local gameplay pauses while music audition continues, style mix, actual stem selection and safe sphere/die morph are separate axes. No new style authority, no second engine, no multiplayer pause, no live terrain-collider changes. Existing stem load/pulse and car/sphere gates retained; then one original isolated Thorn control → actual mix → safe body handoff/resume. 12 proposed NOT_RUN, no implementation or Stage/Live. Game snapshot `game/integration-r2 @ 94c87df1b1e566335fca86e48020a4095860e1ef`.
