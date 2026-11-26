@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-26 · WS0 · CLEAN HUD R2 / ICON-FIRST GAMEPLAY
+
+**GEORG DESIGN DIRECTION · DOCS ONLY.** [Existing HUD owner #130 addendum](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/130#issuecomment-7203566972). Normal HUD uses clean icons/buttons, Primary/Secondary + contextual interaction; no permanent weapon/car/option 3D hero shots. Portrait and selected expressive elements optional. Real hero previews in flyouts, Thorn hardware in expanded mixer. Keep createHudV6, loadout/hostKeys/audio ownership and existing assets; responsive layout, no stretched raster chrome. Earlier hero-in-default-HUD direction superseded, no historical acceptance rewritten. Next existing owner: actual action cluster + weapon/vehicle flyout, desktop/mobile, existing Thorn seam unchanged. 10 proposed NOT_RUN, no runtime/Stage/Live/merge. Game snapshot `game/integration-r2 @ 94c87df1b1e566335fca86e48020a4095860e1ef`.
+
+---
+
+
 ## 2026-11-26 · WS0 · CLEAN HUD / THORN HARDWARE MIXER DESIGN CORRECTION
 
 **GEORG DESIGN DIRECTION · DOCS ONLY.** [Racer #167 correction](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/167#issuecomment-7203508206), [existing HUD owner #130](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/130#issuecomment-7203510368). No Aquarium/Submarine requirement for Bubble FM; clean, theme-flexible HUD; realistic original Thorn hardware as mixer target, responsive structural layout rather than scaled raster panels. Keep existing controller/state/audio owner and prior functional cockpit/pause/morph contracts. Thorn original controls isolated before import; no full demo or second context. First proof compact radio + real expanded control at desktop/mobile, existing stem-load/pulse gate retained. Proposed checks NOT_RUN, no runtime/Stage/Live/merge. Earlier AquaCare aesthetic suggestion superseded for this slice; historical accepted assets preserved.
