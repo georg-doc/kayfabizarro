@@ -13,9 +13,9 @@
 ---
 
 
-## 2026-11-26 · WS0 INTAKE · INVISIBLE HANDSHAKE R27 / RULE LAB GPT SITE
+## 2026-11-26 · WS0 INTAKE · INVISIBLE HANDSHAKE R27.1 / RULE LAB GPT SITE
 
-**PROPOSAL · DOCS ONLY.** [R27 build brief + additive return](https://github.com/georg-doc/kayfabizarro/blob/9537a8d953efac9e5e1b67504e51993fb38ebcf8/games/invisible-handshake/R27_RULE_LAB_SITE_BUILD_BRIEF_2026-11-26.md) · [existing draft #475](https://github.com/georg-doc/kayfabizarro/pull/475). Georg proposes reusable narrated boardgame laboratory: A Quick Claim / B Tower Circuit rotating spoke access / later C hybrid, one R24 table, play/learn/demo/settings/headless compare/print, EN then DE. Existing R07 Site project `appgprj_6afc38fcfc5c8191beb9ffc978208e6c` located; current deployment/URL unverified, recover before publishing, preserve legacy. No duplicate runtime/Site, no new game tests (16 NOT_RUN), no Stage/Live. WS0 next: recover Site and exact R24 source, A/B legal replay + sim parity, then playable comparison. Meta later. Existing #166 is receiving intake.
+**GEORG PROCEED ON LAB DIRECTION · DOCS ONLY.** [R27 build brief + additive return](https://github.com/georg-doc/kayfabizarro/blob/b7ede2119b9c80b74f8d3444195ebfb8595f218a/games/invisible-handshake/R27_RULE_LAB_SITE_BUILD_BRIEF_2026-11-26.md) · [existing draft #475](https://github.com/georg-doc/kayfabizarro/pull/475). WSA implements next in coordination with WS0; Georg proposes reusable narrated boardgame laboratory: A Quick Claim / B Tower Circuit rotating spoke access / later C hybrid, one R24 table, play/learn/demo/settings/headless compare/print, EN then DE. Existing R07 Site project `appgprj_6afc38fcfc5c8191beb9ffc978208e6c` located; current deployment/URL unverified, recover before publishing, preserve legacy. No duplicate runtime/Site, no new game tests (16 NOT_RUN), no Stage/Live. WS0 next: recover Site and exact R24 source, A/B legal replay + sim parity, then playable comparison. R27.1 adds D1 mobile die obstacles (hard bypass vs fourth-D6 challenge) and D2 optional 0–3 intermediate fields, separately testable after A/B; 10 additional checks NOT_RUN. No new preliminary gate. Meta later. Existing #166 is receiving intake.
 
 ---
 
