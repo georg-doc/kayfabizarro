@@ -1,3 +1,12 @@
+## WS0 – private Site version 4 live check · 26 November 2026
+
+Sites confirmed publication of saved v4 on the existing private project. Source commit `e1e38fe5de86f0b88c324dbd3718747077a82612`. The previous authentication failure was cleared by retrying the same saved version. [Live Rule Lab](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/).
+
+- Quick Claim: in Play, placed HATE on The Manufactured Crisis. Pressure increased to 1 and the turn advanced to Seat 2. Repeated with the 3D table loaded. [Quick Claim image](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/evidence/IH-A-table.png).
+- Tower Circuit: moved one field clockwise, saw the visit recorded and the turn advance. After the bot's turn, the open spokes rotated from 1/4 to 2/5. [Tower Circuit image](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/evidence/IH-B-table.png).
+- The live Source Proof panel displayed build `e75f30b0ceac`, original scene `f65b69a7`, `missing: []`, Alpha/Omega, eye loaded, six card anchors and 33/33 checksums for private packet `d94d5844`. The table and tower were visible in both variants.
+- A console TypeError occurred during scene loading while switching variants. The scene later loaded and both variants accepted moves. This was a live smoke test, with manual opening moves rather than full live matches. Published images are the existing private evidence files.
+
 ## R27 WSA implementation Return · 26 November 2026 · SAVED V4 / PUBLICATION BLOCKED
 
 **Built and tested, not deployed.** Existing private Site `appgprj_6afc38fcfc5c8191beb9ffc978208e6c` retained. Saved **version 4**, exact source **`e1e38fe5de86f0b88c324dbd3718747077a82612`**, Site source repository branch `main`; remotely fetched back and engine/version files checked. Expected build `e75f30b0ceac`; engine SHA256 `2932087f9889308f807cdbb8bc9d1375b027d2a07de2d0453af2fa5224e241d8`. Existing game-design owner remains this branch / Draft PR #475. No game-stem merge or Cloudflare work.
