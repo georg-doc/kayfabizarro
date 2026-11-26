@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-26 · WS0 / WSA AUDIO RESEARCH INTAKE · SFX-SKILL R0
+
+**SOURCE_CHECKED · PROPOSAL ONLY.** [Existing game/audio owner issue #168](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/168) contains donor audit, Atlas-first transfer candidates, provenance requirements and additive Return/changelog. Upstream `owoevan-dev/sfx-skill @ 56d2136d2f794402feefa82786bc94a0e02bf73f`, v0.3.0, MIT code/docs, upstream CI 7/7 jobs successful. Editable offline sound layers and reproducible variants, measured loops and per-source exports; optional music-skill/Surge XT. Preserve existing WSA Audio ownership and V-1989/V-448 production constraints; no new synthesis approval implied. Next: one rights-cleared Atlas recording, original versus four edited variants, isolated technical and listening comparison before any policy-compatible native cue integration. No installation, downloads, assets, runtime changes, KFB tests, Stage/Live or merge.
+
+---
+
+
 ## 2026-11-26 · WS0 RESEARCH INTAKE · INSTALANDING R0 / KFB + DOCCHECK
 
 **SOURCE_CHECKED · PROPOSAL ONLY.** [Hub owner issue #486](https://github.com/georg-doc/kayfabizarro/issues/486) contains ranked UI/motion/learning donors, license/dependency findings, additive Return/changelog and next gate. Upstream `RayVelez27/instalanding.ai @ 011a0defe0c189d9cbed82999bed13024f9ea76a` (MIT root, individual third-party rights pending). Prioritize Jelly Squeeze, Thorn hardware controls, Driving UI, Coverflow and Medura anatomy interaction; preserve existing KFB and DocCheck owners/skins/data. No asset or runtime import, 0 runtime tests, no Site/Stage/Live. Next existing owner: isolate one donor, verify rights, compare against existing module and measure native integration. No new runtime owner or human pre-gate.
