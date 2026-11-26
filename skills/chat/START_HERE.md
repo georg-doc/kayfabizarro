@@ -12,6 +12,13 @@
 
 ---
 
+
+## 2026-11-26 · WS0 INTAKE · LUDOWALA R0 / BOARD-GAME META
+
+**DOCS ONLY · SOURCE-CHECKED · PROPOSAL.** [Owner Issue #166](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/166) holds the research, additive changelog and Return: Ludo/Snakes rules, show versus actual rule effects, progression, daily rewards, private rooms/rejoin and scene separation. Source snapshot `game/integration-r2 @ 94c87df1b1e566335fca86e48020a4095860e1ef`; refetch before implementation. Extends [#165 Schacharena](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/165), Kicker/Kickoff and #158; no new runtime owner, no code/assets copied, no game tests (16 NOT_RUN), no Stage/Live. Next WS0: one legal capture/goal through shared existing arena show adapters with rule-neutral replay; no new human gate. Public documentation conflicts on defaults/monetization noted; live play unverified. Owner issue is the Hub active worklist.
+
+---
+
 ## 2026-11-25 · WSA → WS0 · DECK-LAUF R0
 
 **Geprüfte Bausteine · Merge bei Georg.** [Arena PR #30](https://github.com/georg-doc/KFB-Combat-Arena/pull/30), `wsa/deck-lauf-r0 @ 5c4af56a38f2f514c2f699ef3eb7bded3aa63f83`. [Return](https://github.com/georg-doc/KFB-Combat-Arena/blob/5c4af56a38f2f514c2f699ef3eb7bded3aa63f83/RETURN_DECK_LAUF_R0.md): Inventur A/B gegen den Stamm, Mentalmodell und zwei eigenständige ES-Module für Rundenablauf und Original-Monstermessung. 12/12 isoliert, 72/72 Arena. Als erster Einzelkartenfall für WS0 ist `help_i_am_a_human/3` mit `mensch-symbiose` belegt. `/1` beginnt das vollständige Deck und hat noch keine Einzelsaat. Georg entscheidet den separaten Quellenmerge mit `[CF-Pages-Skip]`. WS0 übernimmt später in `game/integration-r2` links vom MiB-Turm. Keine Stage-Abnahme. Die früher automatisch ausgelösten Branch-Previews sind im Return dokumentiert.
