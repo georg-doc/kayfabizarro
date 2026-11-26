@@ -1,3 +1,25 @@
+## R10 correction · WSA Return · private Site v5 LIVE · 26 November 2026
+
+**Published and exact-host checked:** [Rule Lab](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/) on the same owner-private project `appgprj_6afc38fcfc5c8191beb9ffc978208e6c`. Version **5**, Site source branch `main`, exact source **`317661989524b64b7777f73c7085f9b5c556dbed`**, build **`0454e4908174`**. Source fetched back after push; exact live DOM build and source proof match. Source owner design branch / Draft PR #475 retained; no game-stem merge, new Site, Cloudflare or access change.
+
+**Tower correction:** supplied `KFB_R24_turm_r10.zip` passed3/3 checksum entries. Exact r10 SHA256 `dddc8e541566be6525f241112a4f97c2d1c1adac65924a6ce3afe6d4ebaa83d3`;5 required anchors and6 embedded image textures verified. `layout.r24.json:tower.url` is now the authority read by the loader. Fresh deployment private/r24 contains r10 and3 Orb_r6c eye files only; no r7f model. Existing Orb mounting retained. Material setup reuses current game `src/npc/mibEvent.js` idle state: portal black and rim emission0, preventing bright frame/back-plane glare. Tower-front proof uses original rest-eye rotation0; ordinary eye tracking remains unchanged. Private model bytes remain ignored and untracked.
+
+**Load correction:** app scene is assigned only after meeple, marker and all6 pawn objects exist; the newest legal state is rendered when ready. Card textures preload and commit7 together with request-generation protection. This removes the reported undefined.visible race, without changing the rule core. Image export also snapshots its filename before asynchronous capture, avoiding mislabelled A/B images during a switch.
+
+**Actual checks:** independent narrow10check suite PASS (actual initializer with deferred mount/meeple/marker,5A/Bswitches,2legal moves and latest-state preservation), plus separate4concurrent-card-request checks PASS. Local Chrome server delayed meeple12s: Play entered while Loading, repeated A/B switches and legal moves before readiness, then latest state rendered; no undefined.visible TypeError. Extension-style message-channel errors appeared in the local tab and are not represented as an empty-console PASS.
+
+**Live v5 smoke:** opened exact /lab/ while loading; Play→B→A→B while the loading caption remained visible; waited for complete scene readiness; B legal clockwise1 move recorded a visit/advanced seat. Switched to A after loading and legally SET HATE at1 on The Manufactured Crisis; pressure1/seat2 observed and bot continued FEAR. Live-origin error-log filter empty in bounded check. Actual DOM proof: build0454e4908174,missing:[],Alpha/Omega,eye loaded,6anchors,base33/33+r10 3/3. Live front camera shows the corrected door and pupil. This is a smoke check, not a new full human-match or balance claim.
+
+**Visible evidence:** [r10 tower front close-up](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/evidence/IH-r10-front.png), [Quick Claim](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/evidence/IH-A-table.png), [Tower Circuit](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/evidence/IH-B-table.png), [complete B seed42 replay video, regenerated with r10](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/evidence/IH-B-seed42.webm). New images/video replace the prior r7f evidence in v5; historical v4/archive remain historical. Independent blind image critic PASS: complete tower/base/door/eye fit, original sculpted design recognizable, broad white glare absent; thin source blue accents remain and door detail is dark.
+
+**Changed source:** `lab/app.js`,`lab/scene-host.js`,`lab/index.html`,`donor/table-diorama/stage/boardgame/{layout.r24.json,scene.js}`,`build-lab.mjs`,`serve-preview.py` (test-only delay),`SOURCE.json`,`RETURN.md`,`tests/r10-loading-regression.mjs`,`tests/{R10_LOADING_RESULT.json,R10_CORRECTION_REPORT.md}` and rebuilt lab output. `lab/engine.js` unchanged SHA2562932087f9889308f807cdbb8bc9d1375b027d2a07de2d0453af2fa5224e241d8. Earlier23groups/2137assertions, A/B replay parity and separately attributed simulation reports retained, not rerun/claimed as new.
+
+**Publication:** saved version `appgprj_6afc38fcfc5c8191beb9ffc978208e6c~appgver_fe563a91512c8191b83fd900977a4bda`; deployment `appgdep_6b08625aa6488191be2c0f7c3e6340db` SUCCEEDED. Native private archive40,898,560bytes/124files, hash3ab74b5115dfe1b2cff6cd8ed7c76778b351fe25af458d8cf331a1f42fa485e3; local `invisible-handshake-r27/r27-r10-private-release.tar.gz`. No remaining publication blocker.
+
+**One next gate:** WS0 reviews this corrected live r10 front and A/B interaction; prior experimental-topology censoring and human balance limits remain unchanged. No new build or source collection is required from Georg.
+
+---
+
 ## WS0 – private Site version 4 live check · 26 November 2026
 
 Sites confirmed publication of saved v4 on the existing private project. Source commit `e1e38fe5de86f0b88c324dbd3718747077a82612`. The previous authentication failure was cleared by retrying the same saved version. [Live Rule Lab](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/).
