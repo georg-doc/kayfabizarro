@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-27 · GEORG → WS0 → WS1 · CYMATIC DICE RUSH / SHARED RACING SYSTEMS
+
+**IMPLEMENTATION REQUESTED · CONSOLIDATED INTAKE · NOT BUILT.** [Complete WS0 handoff and WS1 execution sequence](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/167#issuecomment-7222692233) in the existing active racer issue #167. WS0 schedules WS1 via the existing WS0-only dispatch channel and remains sole stem integrator; HUD #130 / WSA Audio #168 keep their seams. Resolve connector stem `game/integration-r2 @94c87df1b1e566335fca86e48020a4095860e1ef` vs comms N-325 mention of @3683fa95 before branching; do not interrupt current Kicker/Aquarium work. A: existing car + elastic sphere on one shared high-speed course; B: procedural cymatic/polyhedral biomes, existing Sky/Atmosphere and FX; C: actual Bubble FM stems, W6/W20, safe control/morph; D: clean HUD + original Thorn expanded cockpit, DJ Freeze; E: later card-deck racer/softbodies/expanded track modules. No second runtime/clock/audio owner, no new human pre-gate, no automatic merge/Live. Source index retains all earlier decisions and tests. 0 code changes, 0 new runtime tests, no deployment. Next: WS0 resolves branch and dispatches A to WS1; WS1 returns actual playable evidence.
+
+---
+
+
 ## 2026-11-26 · WS0 · CLEAN HUD R2 / ICON-FIRST GAMEPLAY
 
 **GEORG DESIGN DIRECTION · DOCS ONLY.** [Existing HUD owner #130 addendum](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/130#issuecomment-7203566972). Normal HUD uses clean icons/buttons, Primary/Secondary + contextual interaction; no permanent weapon/car/option 3D hero shots. Portrait and selected expressive elements optional. Real hero previews in flyouts, Thorn hardware in expanded mixer. Keep createHudV6, loadout/hostKeys/audio ownership and existing assets; responsive layout, no stretched raster chrome. Earlier hero-in-default-HUD direction superseded, no historical acceptance rewritten. Next existing owner: actual action cluster + weapon/vehicle flyout, desktop/mobile, existing Thorn seam unchanged. 10 proposed NOT_RUN, no runtime/Stage/Live/merge. Game snapshot `game/integration-r2 @ 94c87df1b1e566335fca86e48020a4095860e1ef`.
