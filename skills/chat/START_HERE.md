@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-28 · GEORG PROCEED · KFB WORK ART DIRECTION STUDIO R0
+
+**PLANNING APPROVED · EXECUTION PENDING · DOCS ONLY.** [Existing Visual Studio #479](https://github.com/georg-doc/kayfabizarro/issues/479#issuecomment-7243731176) / [Draft PR #480](https://github.com/georg-doc/kayfabizarro/pull/480) · [Plan](https://github.com/georg-doc/kayfabizarro/blob/93626d6e88f12e688443191d1f80695013e7ada7/skills/chat/workflows/KFB_VISUAL_CRITIC_EVIDENCE_MATRIX_R1_2026-11-22/WORK_ART_DIRECTION_STUDIO_R0.md) · [Work start prompt](https://github.com/georg-doc/kayfabizarro/blob/93626d6e88f12e688443191d1f80695013e7ada7/skills/chat/workflows/KFB_VISUAL_CRITIC_EVIDENCE_MATRIX_R1_2026-11-22/WORK_ART_DIRECTION_START_R0.md) · [WS0 receiving intake #153](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/153#issuecomment-7243731824). Work leads visual authoring and actual ImageGen where available, bounded specialist subagents, independent critique; native Webchat fallback, Georg creative authority, WS0 sole technical integration coordinator. Open World Art Pass R0: one real pinned game view → target → actionable existing-owner brief and private media/readback; no new runtime, plugin or Site prerequisite, no additional human setup gate. Existing replay/priority contracts preserved. 5/5 planning file readbacks, 7 checks NOT_RUN, no Work launch/game tests/Stage/Live/merge. Next: start one Work chat from prompt; WS0 receipt acknowledgement pending.
+
+---
+
+
 ## 2026-11-28 · WSA KICKOFF → WS0 · ARENA-REZEPT R1
 
 **KANDIDAT · RENDER-ABNAHME OFFEN.** [Kickoff Draft PR #172](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/172). Drei Rezeptvarianten auf dem Originalstadion. Der Direktstart ist zusätzlich als [isolierter V14-Hotfix](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/b2a00ca698baa22859117d0c76cdf52546349788/docs/kickoff/RETURN.md) vorbereitet. Die private Site führt weiter V14 mit Aufrufparameter. Nächster Schritt im vorhandenen Owner-Lauf ist der Bildsatz mit zwei Kameras pro Rezept aus einem Build mit dem verifizierten Medienbestand. Anschließend erstellt WS0 die Abnahmekarte. Kein Stage-Eintrag ohne geprüften Spielbuild.
