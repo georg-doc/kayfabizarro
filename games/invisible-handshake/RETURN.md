@@ -1,3 +1,11 @@
+## r10b tower and tabletop lighting · 28 November 2026
+
+[Private Rule Lab](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/) version 6 published and checked live. Site source `0a3ec2b96b1fc3bb8c02aa4050ddd09ef4b44f86`, build `e771cba55070`. R24 source proof reported `missing: []`. Quick Claim accepted a HATE placement and Tower Circuit accepted a one-step move. Story Night and Focus light were exercised live. The Day and Golden Hour looks were checked in preview. All 2,137 existing engine assertions passed. Visual review is the next acceptance step.
+
+The exact WS0 r10b GLB matches SHA256 `bafcfdfc7b5c98c2214e93ecb45e2308a1b1b17de5e7f86db3b99a39d15b8dcf`. The private runtime archive contains r10b and the three Orb_r6c eye files. Its model directory has no prior tower revisions. Both close-ups were exported from the checked R24 preview. [Front](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/evidence/IH-r10b-front.png) · [Angle](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/evidence/IH-r10b-oblique.png).
+
+Stands reduced from 1.15 to 0.76 m with matte darkened seat colours. Spell lines use a contrast pass against printed paper. Crystals use tinted transmission on the donor geometry. Day, Golden Hour and Story Night reuse the KFB LIGHT_ANCHORS values from `src/stageLight.js` at `94c87df1`, with a tabletop-only focus spotlight. Prior A/B screenshots and replay are historical. Rules and linked replay data are unchanged.
+
 ## R10 correction · WSA Return · private Site v5 LIVE · 26 November 2026
 
 **Published and exact-host checked:** [Rule Lab](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/) on the same owner-private project `appgprj_6afc38fcfc5c8191beb9ffc978208e6c`. Version **5**, Site source branch `main`, exact source **`317661989524b64b7777f73c7085f9b5c556dbed`**, build **`0454e4908174`**. Source fetched back after push; exact live DOM build and source proof match. Source owner design branch / Draft PR #475 retained; no game-stem merge, new Site, Cloudflare or access change.
