@@ -1,7 +1,7 @@
 {
   "schema": "kfb.surface-board/2",
-  "revision": "2026-11-25.1",
-  "updatedAt": "2026-11-25T03:59:19Z",
+  "revision": "2026-11-28.1",
+  "updatedAt": "2026-11-28T13:20:06.791Z",
   "owner": "KFB Production Control",
   "syncMode": "LIVE_GITHUB_MAIN",
   "liveSource": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/kfb-hub/current-board.json",
@@ -102,6 +102,16 @@
     }
   ],
   "parallel": [
+    {
+      "id": "kickoff-arena-rezept-r1",
+      "title": "Kickoff · Arena-Rezept R1",
+      "summary": "Tag, Abend und Regennacht auf der Original-Arena. Der Kandidat liegt im privaten Owner-Repo. Der Direktstart ins Spielmenü ist im selben Kandidaten. V14 ist der aktuelle Site-Stand. Die sechs Spielbilder und die Renderabnahme stehen aus.",
+      "badge": "KANDIDAT · RENDER-ABNAHME OFFEN",
+      "action": "Owner-Handoff öffnen",
+      "url": "https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/172",
+      "executor": "WSA Kickoff",
+      "nextExecutor": "WSA Kickoff · Build mit verifiziertem Medienbestand und Bildpaar je Rezept"
+    },
     {
       "id": "claude-design-ufo-event-lab",
       "title": "PASS/TUNE · UFO Tractor Beam Event Lab · donor ready",

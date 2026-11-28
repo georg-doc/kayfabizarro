@@ -13,6 +13,13 @@
 ---
 
 
+## 2026-11-28 · WSA KICKOFF → WS0 · ARENA-REZEPT R1
+
+**KANDIDAT · RENDER-ABNAHME OFFEN.** [Kickoff Draft PR #172](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/172). Drei Rezeptvarianten auf dem Originalstadion und Direktstart ins Spielmenü. Die private Site führt V14. Nächster Schritt im vorhandenen Owner-Lauf ist der Bildsatz mit zwei Kameras pro Rezept aus einem Build mit dem verifizierten Medienbestand. Anschließend erstellt WS0 die Abnahmekarte. Kein Stage-Eintrag ohne geprüften Spielbuild.
+
+---
+
+
 ## 2026-11-27 · GEORG → WS0 → WS1 · CYMATIC DICE RUSH / SHARED RACING SYSTEMS
 
 **IMPLEMENTATION REQUESTED · CONSOLIDATED INTAKE · NOT BUILT.** [Complete WS0 handoff and WS1 execution sequence](https://github.com/georg-doc/KFB-Stunt-Car-Race/issues/167#issuecomment-7222692233) in the existing active racer issue #167. WS0 schedules WS1 via the existing WS0-only dispatch channel and remains sole stem integrator; HUD #130 / WSA Audio #168 keep their seams. Resolve connector stem `game/integration-r2 @94c87df1b1e566335fca86e48020a4095860e1ef` vs comms N-325 mention of @3683fa95 before branching; do not interrupt current Kicker/Aquarium work. A: existing car + elastic sphere on one shared high-speed course; B: procedural cymatic/polyhedral biomes, existing Sky/Atmosphere and FX; C: actual Bubble FM stems, W6/W20, safe control/morph; D: clean HUD + original Thorn expanded cockpit, DJ Freeze; E: later card-deck racer/softbodies/expanded track modules. No second runtime/clock/audio owner, no new human pre-gate, no automatic merge/Live. Source index retains all earlier decisions and tests. 0 code changes, 0 new runtime tests, no deployment. Next: WS0 resolves branch and dispatches A to WS1; WS1 returns actual playable evidence.
