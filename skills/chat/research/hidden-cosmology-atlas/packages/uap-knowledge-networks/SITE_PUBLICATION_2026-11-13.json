@@ -1,0 +1,80 @@
+{
+  "checked": "2026-11-13",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "draft_pr": 394,
+  "base_head": "3ba867dd62f86e7426a89d2f07d3f181ea5afee5",
+  "content_head": "163f36db8e3de680f278a9ab574b789d8eb80ff2",
+  "exact_content_readback": {
+    "passed": 33,
+    "failed": 0,
+    "files": [
+      "authors/burkhard-heim.md",
+      "packages/uap-knowledge-networks/burkhard-heim.md",
+      "authors/tom-delonge.md",
+      "packages/uap-knowledge-networks/tom-delonge.md",
+      "authors/michael-hayden.md",
+      "packages/uap-knowledge-networks/michael-hayden.md",
+      "authors/timothy-taylor.md",
+      "packages/uap-knowledge-networks/timothy-taylor.md",
+      "packages/uap-knowledge-networks/README.md",
+      "packages/uap-knowledge-networks/SOURCES.md",
+      "packages/uap-knowledge-networks/sources.json",
+      "packages/uap-knowledge-networks/claims-and-relations.json",
+      "packages/uap-knowledge-networks/COMPARISONS.md",
+      "packages/uap-knowledge-networks/TIMOTHY_TAYLOR.md",
+      "packages/uap-knowledge-networks/RETURN.md",
+      "site/uap-networks.html",
+      "site/data/uap-networks/burkhard-heim.md",
+      "site/data/uap-networks/tom-delonge.md",
+      "site/data/uap-networks/michael-hayden.md",
+      "site/data/uap-networks/timothy-taylor.md",
+      "site/data/uap-networks/README.md",
+      "site/data/uap-networks/SOURCES.md",
+      "site/data/uap-networks/sources.json",
+      "site/data/uap-networks/claims-and-relations.json",
+      "site/data/uap-networks/COMPARISONS.md",
+      "site/data/uap-networks/TIMOTHY_TAYLOR.md",
+      "site/data/uap-networks/RETURN.md",
+      "site/index.html",
+      "site/vallee.html",
+      "site/authors.json",
+      "authors/README.md",
+      "sources/jesse-michels-american-alchemy.md",
+      "RETURN.md"
+    ]
+  },
+  "site": {
+    "project_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc",
+    "version_number": 22,
+    "source_commit": "b75f166e67d439a138e35257975d586f5e161362",
+    "deployment_id": "appgdep_6af667a37d24819187c6f96bc8c6be5f",
+    "status": "succeeded",
+    "url": "https://kfb-research-atlas.frizzlebob.chatgpt.site/uap-networks.html",
+    "audience": "existing owner-only unchanged",
+    "verification": "Native deployment succeeded; local browser navigation checked; no authenticated live-host visual verification claimed"
+  },
+  "counts": {
+    "authors": 4,
+    "themes": 28,
+    "sources": 31,
+    "relations": 16,
+    "comparisons": 12,
+    "taylor_chains": 8
+  },
+  "tests": [
+    "Unique HTML IDs and valid local href/fragment targets",
+    "JSON parsing and source ID resolution",
+    "Relation endpoints exist; no sameAs identity edge",
+    "Author register unique IDs",
+    "Local browser source-details opening and back-route",
+    "33 GitHub files exact content match at content_head"
+  ],
+  "limits": [
+    "Selected passages, not complete works or audio",
+    "Vatican original returned404; indexed lead only",
+    "Ponder preview only",
+    "Taylor/Tyler and Nolan/James attribution unresolved in inspected originals"
+  ],
+  "next_gate": "Georg reviews breadth package; choose one author corpus for subsequent expansion. No autonomous follow-up."
+}

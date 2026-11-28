@@ -1,0 +1,161 @@
+{
+  "schema": "kfb.research-atlas.entity-registry-view/1",
+  "date": "2026-10-31",
+  "status": "BRANCH_PROPOSAL_READ_ONLY_VIEW",
+  "repository": "georg-doc/kayfabizarro",
+  "owner": "Hidden Cosmology Atlas Editorial Research",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "draft_pr": 394,
+  "purpose": "Stable pointer and status index for existing research entities, not an independent author/claim/source truth database.",
+  "projection_rule": "Derived from referenced existing Markdown source owners; source and claim truth remain in original GitHub ledgers. Private Google Docs and private NIE records are never embedded here.",
+  "entries": [
+    {
+      "id": "kurt-metzger",
+      "name": "Kurt Metzger",
+      "kind": "author",
+      "status": "EXISTING_AUTHOR_DOSSIER_SOURCE_COVERAGE_PARTIAL",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/authors/kurt-metzger.md",
+      "next_action": "SOURCE_PASSAGES_WHERE_MISSING"
+    },
+    {
+      "id": "david-icke",
+      "name": "David Icke",
+      "kind": "author",
+      "status": "EXISTING_AUTHOR_DOSSIER_SOURCE_COVERAGE_PARTIAL",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/authors/david-icke.md",
+      "next_action": "SOURCE_PASSAGES_WHERE_MISSING"
+    },
+    {
+      "id": "daniel-liszt",
+      "name": "Daniel Liszt / Dark Journalist",
+      "kind": "author",
+      "status": "EXISTING_AUTHOR_DOSSIER_SOURCE_COVERAGE_PARTIAL",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/authors/daniel-liszt.md",
+      "next_action": "SOURCE_PASSAGES_WHERE_MISSING"
+    },
+    {
+      "id": "william-bramley",
+      "name": "William Bramley",
+      "kind": "author",
+      "status": "EXISTING_AUTHOR_DOSSIER_SOURCE_COVERAGE_PARTIAL",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/authors/william-bramley.md",
+      "next_action": "SOURCE_PASSAGES_WHERE_MISSING"
+    },
+    {
+      "id": "joseph-farrell",
+      "name": "Joseph P. Farrell",
+      "kind": "author",
+      "status": "EXISTING_AUTHOR_DOSSIER_SOURCE_COVERAGE_PARTIAL",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/authors/joseph-farrell.md",
+      "next_action": "SOURCE_PASSAGES_WHERE_MISSING"
+    },
+    {
+      "id": "catherine-austin-fitts",
+      "name": "Catherine Austin Fitts",
+      "kind": "author",
+      "status": "EXISTING_AUTHOR_DOSSIER_SOURCE_COVERAGE_PARTIAL",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/authors/catherine-austin-fitts.md",
+      "next_action": "SOURCE_PASSAGES_WHERE_MISSING"
+    },
+    {
+      "id": "jason-reza-jorjani",
+      "name": "Jason Reza Jorjani",
+      "kind": "author",
+      "status": "EXISTING_AUTHOR_DOSSIER_SOURCE_COVERAGE_PARTIAL",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/authors/jason-reza-jorjani.md",
+      "next_action": "SOURCE_PASSAGES_WHERE_MISSING"
+    },
+    {
+      "id": "michael-wann",
+      "name": "Michael Wann",
+      "kind": "author",
+      "status": "EXISTING_AUTHOR_DOSSIER_SOURCE_COVERAGE_PARTIAL",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/authors/michael-wann.md",
+      "next_action": "SOURCE_PASSAGES_WHERE_MISSING"
+    },
+    {
+      "id": "jesse-michels-american-alchemy",
+      "name": "Jesse Michels / American Alchemy",
+      "kind": "host_publisher",
+      "status": "EXISTING_SOURCE_DISCOVERY_REGISTER",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/sources/jesse-michels-american-alchemy.md",
+      "next_action": "SEPARATE_OWN_SPEECH_FROM_GUEST_CLAIMS"
+    },
+    {
+      "id": "andrija-puharich",
+      "name": "Andrija Puharich",
+      "kind": "research_subject_proposed_author",
+      "status": "SOURCE_TOPIC_EXISTS_AUTHOR_MASTER_NOT_CREATED",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/PUHARICH_1984_PRIMARY_SOURCE_RECOVERY_R2.md",
+      "related_topic_ids": [
+        "jorjani-michels-trilogy-2025-2026"
+      ],
+      "next_action": "PUHARICH_1984_AUDIO_AND_REMAINDER_ABDUCTION_CLAIM"
+    },
+    {
+      "id": "ingo-swann",
+      "name": "Ingo Swann",
+      "kind": "research_subject_proposed_author",
+      "status": "DOSSIER_INTAKE_BACKLOG",
+      "source_owner_path": null,
+      "next_action": "IDENTIFY_ORIGINAL_SRI_RECORDS_BEFORE_MASTER"
+    },
+    {
+      "id": "thomas-townsend-brown",
+      "name": "Thomas Townsend Brown",
+      "kind": "research_subject_proposed_author",
+      "status": "DOSSIER_INTAKE_BACKLOG",
+      "source_owner_path": null,
+      "next_action": "PATENT_AND_ARCHIVE_PASSAGES_FIRST"
+    },
+    {
+      "id": "nikola-tesla",
+      "name": "Nikola Tesla",
+      "kind": "research_subject_proposed_author",
+      "status": "DOSSIER_INTAKE_BACKLOG",
+      "source_owner_path": null,
+      "next_action": "ORIGINAL_PATENTS_NOTEBOOKS_VS_LATER_ATTRIBUTIONS"
+    },
+    {
+      "id": "world-commerce-corporation",
+      "name": "World Commerce Corporation",
+      "kind": "institution",
+      "status": "EXISTING_TOPIC_NOT_AUTHOR_DOSSIER",
+      "source_owner_path": "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/RETURN.md",
+      "related_topic_ids": [
+        "wcc-samosa-network-2026-10-29"
+      ],
+      "next_action": "FOLLOW_EXISTING_WCC_R4_MONEYREX_ARCHIVE_GATE"
+    }
+  ],
+  "topics": [
+    {
+      "id": "wcc-samosa-network-2026-10-29",
+      "kind": "topic",
+      "return_path": "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/RETURN.md",
+      "last_verified_state": "R4_LEDGER_46_SOURCES_50_CLAIMS",
+      "status": "EXISTING_ACTIVE_TOPIC"
+    },
+    {
+      "id": "jorjani-michels-trilogy-2025-2026",
+      "kind": "topic",
+      "return_path": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/RETURN.md",
+      "last_verified_state": "R2_21_SOURCES_26_CLAIMS",
+      "status": "EXISTING_ACTIVE_TOPIC"
+    }
+  ],
+  "downstream_owner_refs": {
+    "research_site": "PROPOSED_SPECIALIST_GPT_SITE_NOT_PUBLISHED",
+    "nie": "PRIVATE_NIE_SOURCE_OWNER_READ_ONLY_REQUEST_ADAPTER_PENDING",
+    "game_chatterbox": "overworld/docs/NIE_ADAPTER_HOOK.md",
+    "kfb_cards": "skills/chat/workflows/KFB_PLAYABLE_MVP_CONSOLIDATION_V1_2026-09-21/DECK_WORLD_SEED_CARD_PIPELINE_2026-10-04.md"
+  },
+  "privacy": "Private Dropbox NIE full manifest/content and private Google Doc IDs excluded.",
+  "runtime_assertions": {
+    "site_published": false,
+    "live_graph": false,
+    "dropbox_site_access_verified": false,
+    "work_job_api_integrated": false
+  }
+}
+

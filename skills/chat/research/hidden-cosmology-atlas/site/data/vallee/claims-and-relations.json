@@ -1,0 +1,968 @@
+{
+  "schema": "kfb.atlas.claims-relations.v1",
+  "date": "2026-11-13",
+  "owner": "jacques-vallee",
+  "identityWarnings": [
+    {
+      "distinctEntities": [
+        "sizun-jiang",
+        "jiang-xueqin"
+      ],
+      "reason": "Different people; do not merge by surname."
+    }
+  ],
+  "rules": [
+    "Conceptual edges are not historical contact evidence.",
+    "A source family is not independent corroboration.",
+    "No numerical truth score inferred from citation count.",
+    "Event date, publication date and later recollection must remain distinct."
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Vallées Kontrollsystem-Diskussion1990 lässt mehrere Ursprungsarten offen.",
+      "status": "author_position",
+      "sourceIds": [
+        "V04"
+      ],
+      "locator": "printed115 / PDF13",
+      "limit": "Keine Herkunftsbestätigung."
+    },
+    {
+      "id": "C02",
+      "statement": "Das Papier2003 unterscheidet sechs Beobachtungs-/Deutungsebenen.",
+      "status": "published_model",
+      "sourceIds": [
+        "V05"
+      ],
+      "locator": "pp7–10",
+      "limit": "Modell, nicht bestätigte Physik."
+    },
+    {
+      "id": "C03",
+      "statement": "Dolan und Vallée stehen auf derselben Preprint-Autorenliste2025.",
+      "status": "bibliographically_verified",
+      "sourceIds": [
+        "V10"
+      ],
+      "locator": "author list",
+      "limit": "Keine Ableitung gemeinsamer Breakaway-These."
+    },
+    {
+      "id": "C04",
+      "statement": "Jorjani berichtet ein Treffen mit Vallée zu einem Technikvorschlag.",
+      "status": "one_party_testimony",
+      "sourceIds": [
+        "V14"
+      ],
+      "locator": "45:30–46:44",
+      "limit": "Kein Audioabgleich oder unabhängiger Kontakt-/Finanzierungsbeleg."
+    },
+    {
+      "id": "C05",
+      "statement": "Vallée schildert2018 Zusammenarbeit mit Swann und weiteren PSI-Forschern.",
+      "status": "retrospective_testimony",
+      "sourceIds": [
+        "V09"
+      ],
+      "locator": "slides21,24–27",
+      "limit": "Zeitgenössische Unterlagen noch nicht separat geprüft."
+    },
+    {
+      "id": "C06",
+      "statement": "Das Polizeidokument1953 nennt Apodacas abgeschlossene zweijährige Probezeit.",
+      "status": "document_reproduction_read",
+      "sourceIds": [
+        "V19"
+      ],
+      "locator": "memo11August1953",
+      "limit": "Archivbeschaffung unabhängig vom Kritiker fehlt."
+    },
+    {
+      "id": "C07",
+      "statement": "Das Militärdokument nennt Apodacas Rückkehr in die USA am9November1945.",
+      "status": "document_reproduction_read",
+      "sourceIds": [
+        "V20"
+      ],
+      "locator": "box36",
+      "limit": "Identitätsbezug und Überlieferungsweg nicht durch Archivbestellung nachgeprüft."
+    },
+    {
+      "id": "C08",
+      "statement": "Baca nennt im veröffentlichten Interviewtranskript1946.",
+      "status": "transcript_statement",
+      "sourceIds": [
+        "V22"
+      ],
+      "locator": "11:08",
+      "limit": "Aufnahme und Datierung noch nicht unabhängig geprüft."
+    },
+    {
+      "id": "C09",
+      "statement": "Vallées Antwort2023 behandelt das Metallteil nicht als gesichertes außerirdisches Artefakt.",
+      "status": "author_response",
+      "sourceIds": [
+        "V21"
+      ],
+      "locator": "PDF6",
+      "limit": "Keine Aussage über die materielle Natur sonstiger UFO-Proben."
+    },
+    {
+      "id": "C10",
+      "statement": "Rice MS0672 hat nach Serien unterschiedliche Sperrfristen.",
+      "status": "finding_aid_verified",
+      "sourceIds": [
+        "V15"
+      ],
+      "locator": "access restrictions",
+      "limit": "Findbuchkenntnis, keine Akteneinsicht."
+    },
+    {
+      "id": "C11",
+      "statement": "NASA beschreibt geplante75MillionenDollar und frühes Ende von Red Planet Capital.",
+      "status": "institutional_report",
+      "sourceIds": [
+        "V13"
+      ],
+      "locator": "AppendixB printed26",
+      "limit": "Geplantes Volumen ist keine tatsächlich verausgabte Summe."
+    },
+    {
+      "id": "C12",
+      "statement": "Das Galloway-Papier diskutiert Modellunsicherheit und fehlende Eingangsgrößen.",
+      "status": "original_text_selected",
+      "sourceIds": [
+        "V12"
+      ],
+      "locator": "sections4–7",
+      "limit": "Keine unabhängige Energie- oder Herkunftsmessung daraus abgeleitet."
+    },
+    {
+      "id": "C13",
+      "statement": "Der Verlagskatalog führt Forbidden Science7 mit Tagebuchzeitraum2020–2025.",
+      "status": "publisher_metadata",
+      "sourceIds": [
+        "V27"
+      ],
+      "locator": "catalog",
+      "limit": "Band nicht vollständig gelesen."
+    },
+    {
+      "id": "C14",
+      "statement": "Vallée organisiert Fallberichte als vergleichbare Daten. Ein ungeklärter Bericht ist zunächst eine Untersuchungskategorie; Klassifikation und Erklärung sind verschiedene Arbeitsschritte.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V02",
+        "V08"
+      ],
+      "themeId": "observation",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C15",
+      "statement": "Seine fünf Argumente richten sich gegen ein einfaches Besuchermodell: Häufigkeit, menschenähnliche Erscheinungen, berichtete Entführungsabläufe, historische Kontinuität und physikalisch widersprüchlich wirkendes Verhalten passen für ihn nicht gut dazu.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V04"
+      ],
+      "themeId": "eth",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C16",
+      "statement": "Vallée vergleicht moderne UFO-Erzählungen mit älteren Begegnungsmotiven. Die kulturelle Verpackung verändert sich, während gewisse Erzählstrukturen wiederkehren.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V02",
+        "V07"
+      ],
+      "themeId": "magonia",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C17",
+      "statement": "Er behandelt religiöse Deutungen als Teil der Wirkung ungewöhnlicher Erfahrungen. Erscheinung, Interpretation und spätere Glaubensgemeinschaft lassen sich getrennt betrachten.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V02",
+        "V07",
+        "V33",
+        "V32"
+      ],
+      "themeId": "religion",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C18",
+      "statement": "Die Kontrollsystem-Hypothese verschiebt die Frage von der Herkunft eines Objekts zur Wirkung wiederkehrender Erfahrungen auf Überzeugungen. Vallée lässt mehrere mögliche Ursprünge offen.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V04",
+        "V07",
+        "V33"
+      ],
+      "themeId": "control",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C19",
+      "statement": "Vallée verwendet unregelmäßige Verstärkung als Analogie: sporadische, irritierende Erfahrungen könnten Verhalten und Erwartungen längerfristig prägen.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V07",
+        "V33"
+      ],
+      "themeId": "reinforcement",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C20",
+      "statement": "Vallée und Davis schlagen vor, Berichte nicht allein mit einem gewöhnlichen Flugkörpermodell zu lesen. Ungewöhnliche Raum-, Zeit- und Wahrnehmungsangaben gehören in die Beschreibung.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V04",
+        "V05"
+      ],
+      "themeId": "dimensions",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C21",
+      "statement": "Das Modell mit Eric Davis trennt physische, anti-physische, psychologische, physiologische, psychische und kulturelle Ebenen. So können widersprüchliche Berichtsmerkmale sichtbar bleiben.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V05"
+      ],
+      "themeId": "sixlayers",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C22",
+      "statement": "Bewusstsein erscheint bei Vallée sowohl als Teil des beobachteten Erlebnisses als auch als Gegenstand weitergehender Informationsmodelle. Beides ist vom materiellen Spurenbefund zu unterscheiden.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V05",
+        "V09"
+      ],
+      "themeId": "consciousness",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C23",
+      "statement": "In seinem Rückblick von 2018 beschreibt Vallée ein Umfeld aus Kommunikationsforschung und PSI-Experimenten, darunter Zusammenarbeit mit Ingo Swann.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V09"
+      ],
+      "themeId": "psi",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C24",
+      "statement": "Vallée untersucht, wie Täuschungen und mediale Inszenierung die UFO-Forschung prägen können. Ein manipuliertes Narrativ und ein möglicherweise ungeklärtes Ausgangsphänomen sind dabei verschiedene Fragen.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V06",
+        "V02",
+        "V34"
+      ],
+      "themeId": "deception",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C25",
+      "statement": "Kontaktberichte können zu Gruppenidentität, Autorität und politischen oder religiösen Programmen werden. Vallées Werk behandelt diese gesellschaftlichen Folgen als eigenen Untersuchungsgegenstand.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V02",
+        "V06",
+        "V33"
+      ],
+      "themeId": "groups",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C26",
+      "statement": "Materialuntersuchungen bilden einen empirisch anders gelagerten Werkstrang als historische Motive und Bewusstseinsmodelle. Analytische Verfahren sollen Eigenschaften von Proben bestimmen.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V11",
+        "V12"
+      ],
+      "themeId": "materials",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C27",
+      "statement": "Vallées berufliches Werk umfasst Informationssysteme, Computerkommunikation und vernetzte Zusammenarbeit. Diese Laufbahn steht neben seiner Anomalienforschung und erklärt sein Interesse an Datenorganisation.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V03"
+      ],
+      "themeId": "computing",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C28",
+      "statement": "Sein CAIPAN-Beitrag stellt die Zusammenführung heterogener Fallbestände als Forschungsaufgabe dar: Kategorien, Datenqualität und Vergleichbarkeit müssen vor großen Erklärungen geklärt werden.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V08"
+      ],
+      "themeId": "databases",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C29",
+      "statement": "Vallée bewegt sich in mehreren institutionellen Kontexten: wissenschaftliche Workshops, private Forschung, Publikationsnetzwerke und ein heute archivierter persönlicher Nachlass.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V08",
+        "V09",
+        "V10",
+        "V15",
+        "V16"
+      ],
+      "themeId": "institutions",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C30",
+      "statement": "Unternehmertum und Risikokapital gehören zu Vallées öffentlicher Biografie. Der NASA-Bericht zu Red Planet Capital bietet einen konkreten institutionellen Bezug zur Raumfahrtfinanzierung.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V01",
+        "V03",
+        "V13"
+      ],
+      "themeId": "capital",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C31",
+      "statement": "Forbidden Science bietet eine über Jahrzehnte geführte persönliche Chronik seiner Forschung und Begegnungen. Damit lässt sich die Entwicklung von Fragen und Einschätzungen untersuchen.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V25",
+        "V26",
+        "V27"
+      ],
+      "themeId": "diaries",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C32",
+      "statement": "Vallées Korpus überschreitet moderne US-Berichte: historische Sammlungen, europäische Überlieferungen und UFO Chronicles of the Soviet Union erweitern den Vergleichsraum.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V02"
+      ],
+      "themeId": "geography",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C33",
+      "statement": "Die Vermittlung reicht von Fachbeiträgen und Büchern über öffentliche Vorträge bis zu langen Podcasts. Spätere Autoren greifen einzelne Elemente dieses vielfältigen Werks auf.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V06",
+        "V07",
+        "V14",
+        "V28",
+        "V29",
+        "V30",
+        "V31",
+        "V37"
+      ],
+      "themeId": "media",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C34",
+      "statement": "Vallée behandelt Information als möglichen Zugang zur Wirklichkeit und verbindet die Frage nach Bewusstsein mit der nach den Grenzen formaler Beschreibungen.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V09",
+        "V36"
+      ],
+      "themeId": "information",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C35",
+      "statement": "Nolan, Vallée und Faggin schlagen 2016 vor, die Suche nach Intelligenz über vertraute biologische Voraussetzungen und Signalannahmen hinaus zu erweitern. Der Vorschlag umfasst auch konventionelle elektromagnetische Suche.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V35"
+      ],
+      "themeId": "seti",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C36",
+      "statement": "Vallées Chaitin-Rezension zeigt sein Interesse an algorithmischer Information, Zufall und Grenzen formaler Erkenntnis. Daraus ergibt sich eine zusätzliche Lesart seines Widerstands gegen vorschnell geschlossene Erklärungen.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V36"
+      ],
+      "themeId": "epistemology",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C37",
+      "statement": "Vallées offizielle Romanübersicht führt unter anderem Alintel, Fastwalker und Stratagem. Die Werkbeschreibungen verbinden verdeckte Projekte, Begegnungen, Technologie und gesellschaftliche Interessen.",
+      "status": "attributed_thematic_synthesis",
+      "sourceIds": [
+        "V38"
+      ],
+      "themeId": "fiction",
+      "limit": "Lesetiefe je Quelle; Werkbeschreibung und Autorenthese sind keine unabhängige Bestätigung."
+    },
+    {
+      "id": "C38",
+      "statement": "Farrell erklärt im Vorwort, Dolan und Vallée durch eine mögliche Nazi-Komponente ergänzen zu wollen.",
+      "sourceIds": [
+        "V43"
+      ],
+      "locator": "Vorwort, Schlussabsätze",
+      "status": "author_programmatic_statement",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C39",
+      "statement": "Farrell zitiert Revelations mit Seitenangabe 96.",
+      "sourceIds": [
+        "V43"
+      ],
+      "locator": "Auftakt Teil I",
+      "status": "citation_in_preview",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C40",
+      "statement": "Jorjani nennt Wonders in the Sky als Quelle einer historischen Erzählung.",
+      "sourceIds": [
+        "V44"
+      ],
+      "locator": "1:48:40–1:49:09",
+      "status": "publisher_transcript_statement",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C41",
+      "statement": "Jorjani beschreibt philosophische Begriffsbildung als Zweck seiner Nutzung empirischer Forschungssammlungen.",
+      "sourceIds": [
+        "V44"
+      ],
+      "locator": "1:49:36–1:50:07",
+      "status": "method_self_description",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C42",
+      "statement": "Liszt kündigt Farrell als Gast der Orphic-Circle-Sendung an.",
+      "sourceIds": [
+        "V46"
+      ],
+      "locator": "Titel und Beschreibung",
+      "status": "publication_relationship",
+      "limit": "Belegt Aussage oder Publikationsbeziehung; keine Bestätigung des behaupteten historischen Mechanismus."
+    },
+    {
+      "id": "C43",
+      "statement": "Fitts richtet ihr Solari-Briefing auf Governance und finanzpolitische Reform aus.",
+      "sourceIds": [
+        "V48"
+      ],
+      "status": "author_policy_position",
+      "locator": "Einleitung; keine Prüfung aller finanziellen Schlussfolgerungen.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C44",
+      "statement": "Swanns Rede unterscheidet gesellschaftliche PSI-Abwehr, psychische Beeinflussung und militärische Nutzung.",
+      "sourceIds": [
+        "V50"
+      ],
+      "status": "author_framework",
+      "locator": "Ausgewählte Textpassagen, keine Wirksamkeitsbestätigung.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C45",
+      "statement": "Puharich vertritt in Uri eine konkrete Deutung als Kommunikation mit überlegenen Wesen.",
+      "sourceIds": [
+        "V53"
+      ],
+      "status": "author_interpretation",
+      "locator": "Vorwort; fremd gehostete Textreproduktion.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C46",
+      "statement": "Puharich erklärt, genannte Personen müssten seine Interpretationen und Schlussfolgerungen nicht teilen.",
+      "sourceIds": [
+        "V53"
+      ],
+      "status": "author_self_qualification",
+      "locator": "Schluss des Vorworts.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C47",
+      "statement": "Die neue Einleitung der Ausgabe Beyond Telepathy von 2026 stammt von Mitch Horowitz.",
+      "sourceIds": [
+        "V51"
+      ],
+      "status": "editorial_attribution",
+      "locator": "Verlagsauszug; nicht als Puharich-Aussage verwenden.",
+      "limit": "Belegt die zugeschriebene Aussage oder Textfunktion, nicht die behauptete Wirkung."
+    },
+    {
+      "id": "C48",
+      "statement": "Bramley nennt Vallées Passport to Magonia als Sammlung älterer UFO-Berichte.",
+      "sourceIds": [
+        "V54"
+      ],
+      "status": "explicit_source_reference",
+      "locator": "S. 12 Fußnote laut OCR-Text.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C49",
+      "statement": "Bramleys Bibliografie führt The Invisible College und Passport to Magonia.",
+      "sourceIds": [
+        "V54"
+      ],
+      "status": "bibliographic_reference",
+      "locator": "Bibliografie, Eintrag Vallee.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C50",
+      "statement": "Bramley formuliert eine außerirdische Besitz- und Konflikthypothese.",
+      "sourceIds": [
+        "V54"
+      ],
+      "status": "author_hypothesis",
+      "locator": "S. 33–35 laut OCR-Text.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C51",
+      "statement": "Icke beschreibt drei Arbeitsfelder: politische Netzwerke, nichtmenschliche Einwirkung und Natur der Realität.",
+      "sourceIds": [
+        "V56"
+      ],
+      "status": "method_self_description",
+      "locator": "08:11–12:49, Transkript.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C52",
+      "statement": "Icke erklärt, ungewöhnliche Einzelberichte nicht sofort zu verwerfen oder allein aufgrund ihrer Mitteilung zu glauben.",
+      "sourceIds": [
+        "V56"
+      ],
+      "status": "author_self_qualification",
+      "locator": "41:17–42:05, Transkript; Durchführung seiner Gegenprüfungen nicht auditiert.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C53",
+      "statement": "Wann unterscheidet Basisrealität, menschliche Matrix und größere Wirklichkeit.",
+      "sourceIds": [
+        "V57"
+      ],
+      "status": "author_model",
+      "locator": "41:45–45:57, Transkript.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C54",
+      "statement": "Wann verbindet den Begriff Simulation ausdrücklich nicht zwingend mit einer Computersimulation.",
+      "sourceIds": [
+        "V57"
+      ],
+      "status": "author_self_qualification",
+      "locator": "41:45–42:33, Transkript.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    },
+    {
+      "id": "C55",
+      "statement": "Wann interpretiert Hesses Glasperlenspiel als verwandte Praxis zum Synchromystizismus.",
+      "sourceIds": [
+        "V57"
+      ],
+      "status": "explicit_literary_comparison",
+      "locator": "31:02–33:36, Transkript.",
+      "limit": "Belegt zugeschriebene Position oder Verweis, nicht die behauptete Realität; Lesetiefe im Quellenregister."
+    }
+  ],
+  "relations": [
+    {
+      "id": "R01",
+      "from": "jacques-vallee",
+      "to": "j-allen-hynek",
+      "type": "coauthored_book",
+      "sourceIds": [
+        "V02"
+      ],
+      "status": "bibliographic",
+      "causalClaim": false
+    },
+    {
+      "id": "R02",
+      "from": "jacques-vallee",
+      "to": "chris-aubeck",
+      "type": "coauthored_book",
+      "sourceIds": [
+        "V02"
+      ],
+      "status": "bibliographic",
+      "causalClaim": false
+    },
+    {
+      "id": "R03",
+      "from": "jacques-vallee",
+      "to": "eric-w-davis",
+      "type": "coauthored_paper",
+      "sourceIds": [
+        "V05"
+      ],
+      "status": "documented",
+      "causalClaim": false
+    },
+    {
+      "id": "R04",
+      "from": "jacques-vallee",
+      "to": "richard-dolan",
+      "type": "coauthor_list_2025",
+      "sourceIds": [
+        "V10"
+      ],
+      "status": "documented",
+      "causalClaim": false
+    },
+    {
+      "id": "R05",
+      "from": "jacques-vallee",
+      "to": "ingo-swann",
+      "type": "retrospectively_reported_collaboration",
+      "sourceIds": [
+        "V09"
+      ],
+      "status": "one_author_account",
+      "causalClaim": false
+    },
+    {
+      "id": "R06",
+      "from": "jason-reza-jorjani",
+      "to": "jacques-vallee",
+      "type": "reports_meeting",
+      "sourceIds": [
+        "V14"
+      ],
+      "status": "one_party_testimony",
+      "causalClaim": false
+    },
+    {
+      "id": "R07",
+      "from": "jason-reza-jorjani",
+      "to": "messengers-of-deception",
+      "type": "explicit_reference",
+      "sourceIds": [
+        "V14"
+      ],
+      "status": "transcript_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R08",
+      "from": "jacques-vallee",
+      "to": "rice-ms0672",
+      "type": "archival_collection",
+      "sourceIds": [
+        "V15"
+      ],
+      "status": "finding_aid_only",
+      "causalClaim": false
+    },
+    {
+      "id": "R09",
+      "from": "jacques-vallee",
+      "to": "joseph-farrell",
+      "type": "conceptual_comparison",
+      "sourceIds": [],
+      "status": "research_question",
+      "causalClaim": false
+    },
+    {
+      "id": "R10",
+      "from": "jacques-vallee",
+      "to": "daniel-liszt",
+      "type": "conceptual_comparison",
+      "sourceIds": [],
+      "status": "research_question",
+      "causalClaim": false
+    },
+    {
+      "id": "R11",
+      "from": "jacques-vallee",
+      "to": "catherine-austin-fitts",
+      "type": "finance_research_comparison",
+      "sourceIds": [],
+      "status": "research_question",
+      "causalClaim": false
+    },
+    {
+      "id": "R12",
+      "from": "jacques-vallee",
+      "to": "andrija-puharich",
+      "type": "psi_context_comparison",
+      "sourceIds": [],
+      "status": "research_question",
+      "causalClaim": false
+    },
+    {
+      "id": "R13",
+      "from": "jacques-vallee",
+      "to": "farrell",
+      "type": "explicit_reference_and_comparison",
+      "sourceIds": [
+        "V39",
+        "V04",
+        "V09"
+      ],
+      "status": "attributed_source",
+      "causalClaim": false,
+      "comparisonId": "farrell"
+    },
+    {
+      "id": "R14",
+      "from": "jacques-vallee",
+      "to": "liszt",
+      "type": "editorial_comparison",
+      "sourceIds": [
+        "V40",
+        "V05",
+        "V34"
+      ],
+      "status": "editorial_comparison",
+      "causalClaim": false,
+      "comparisonId": "liszt"
+    },
+    {
+      "id": "R15",
+      "from": "jacques-vallee",
+      "to": "fitts",
+      "type": "editorial_comparison_with_documented_publication_network",
+      "sourceIds": [
+        "V41",
+        "V42",
+        "V13"
+      ],
+      "status": "editorial_comparison",
+      "causalClaim": false,
+      "comparisonId": "fitts"
+    },
+    {
+      "id": "R16",
+      "from": "jacques-vallee",
+      "to": "jorjani",
+      "type": "explicit_reference_and_one_party_meeting_account",
+      "sourceIds": [
+        "V14",
+        "V05",
+        "V34"
+      ],
+      "status": "attributed_source",
+      "causalClaim": false,
+      "comparisonId": "jorjani"
+    },
+    {
+      "id": "R17",
+      "from": "jacques-vallee",
+      "to": "swann",
+      "type": "retrospective_collaboration",
+      "sourceIds": [
+        "V09"
+      ],
+      "status": "attributed_source",
+      "causalClaim": false,
+      "comparisonId": "swann"
+    },
+    {
+      "id": "R18",
+      "from": "jacques-vallee",
+      "to": "puharich",
+      "type": "editorial_comparison",
+      "sourceIds": [
+        "V09",
+        "V33"
+      ],
+      "status": "editorial_comparison",
+      "causalClaim": false,
+      "comparisonId": "puharich"
+    },
+    {
+      "id": "R19",
+      "from": "jacques-vallee",
+      "to": "journalism",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V34",
+        "V08"
+      ],
+      "status": "editorial_comparison",
+      "causalClaim": false,
+      "comparisonId": "journalism"
+    },
+    {
+      "id": "R20",
+      "from": "jacques-vallee",
+      "to": "motifs",
+      "type": "editorial_question",
+      "sourceIds": [
+        "V02",
+        "V33"
+      ],
+      "status": "editorial_comparison",
+      "causalClaim": false,
+      "comparisonId": "motifs"
+    },
+    {
+      "id": "R21",
+      "from": "joseph-farrell",
+      "to": "jacques-vallee",
+      "type": "explicit_programmatic_reception",
+      "sourceIds": [
+        "V43"
+      ],
+      "rationale": "Farrell erklärt Ergänzungsabsicht und zitiert Revelations.",
+      "whatWouldChange": "Editionsabgleich könnte die genaue Zitierform präzisieren; keine Einflussrichtung über diesen Text hinaus abgeleitet.",
+      "status": "source_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R22",
+      "from": "jason-reza-jorjani",
+      "to": "wonders-in-the-sky",
+      "type": "explicit_source_acknowledgement",
+      "sourceIds": [
+        "V44"
+      ],
+      "rationale": "Jorjani benennt Vallée/Aubeck als Quelle.",
+      "whatWouldChange": "Audioabgleich könnte Transkriptfehler korrigieren; die historische Erzählung ist damit nicht verifiziert.",
+      "status": "source_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R23",
+      "from": "daniel-liszt",
+      "to": "joseph-farrell",
+      "type": "announced_interview",
+      "sourceIds": [
+        "V46"
+      ],
+      "rationale": "Offizielle Episodenseite benennt Gast.",
+      "whatWouldChange": "Aufnahme würde tatsächliche Beiträge zuordnen; Ankündigung allein genügt dafür nicht.",
+      "status": "source_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R24",
+      "from": "jacques-vallee",
+      "to": "catherine-austin-fitts",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V04",
+        "V48"
+      ],
+      "rationale": "Kontrollmodell und finanzielle Governance betreffen verschiedene Fragen.",
+      "status": "editorial_comparison",
+      "causalClaim": false
+    },
+    {
+      "id": "R25",
+      "from": "jacques-vallee",
+      "to": "andrija-puharich",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V04",
+        "V53"
+      ],
+      "rationale": "Offene Urheberfrage neben konkreter Kontaktdeutung; kein persönlicher Kontakt abgeleitet.",
+      "status": "editorial_comparison",
+      "causalClaim": false
+    },
+    {
+      "id": "R26",
+      "from": "william-bramley",
+      "to": "passport-to-magonia",
+      "type": "explicit_source_reference",
+      "sourceIds": [
+        "V54"
+      ],
+      "rationale": "Fußnote und Bibliografie benennen das Werk.",
+      "whatWouldChange": "Abgleich am Originaldruck könnte OCR-Fehler korrigieren.",
+      "status": "source_text_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R27",
+      "from": "william-bramley",
+      "to": "the-invisible-college",
+      "type": "bibliographic_reference",
+      "sourceIds": [
+        "V54"
+      ],
+      "rationale": "Bibliografie nennt Vallées Werk; keine pauschale inhaltliche Zustimmung ableitbar.",
+      "whatWouldChange": "Passagenprüfung könnte Umfang der Rezeption präzisieren.",
+      "status": "source_text_read",
+      "causalClaim": false
+    },
+    {
+      "id": "R28",
+      "from": "jacques-vallee",
+      "to": "david-icke",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V04",
+        "V56"
+      ],
+      "rationale": "Offenes Ursprungsmodell neben umfassender Kontroll- und Simulationsdeutung.",
+      "whatWouldChange": "Ein belegtes Direktzitat würde zusätzlich eine Rezeptionskante erlauben.",
+      "status": "editorial_comparison",
+      "causalClaim": false
+    },
+    {
+      "id": "R29",
+      "from": "jacques-vallee",
+      "to": "michael-wann",
+      "type": "editorial_method_comparison",
+      "sourceIds": [
+        "V02",
+        "V57"
+      ],
+      "rationale": "Motivvergleich und symbolische Bedeutungsarbeit als unterschiedliche Arbeitsweisen.",
+      "whatWouldChange": "Direkte Werkrezeption oder Kontaktquelle könnte den Beziehungstyp erweitern.",
+      "status": "editorial_comparison",
+      "causalClaim": false
+    },
+    {
+      "id": "R30",
+      "from": "michael-wann",
+      "to": "hermann-hesse-glass-bead-game",
+      "type": "explicit_literary_comparison",
+      "sourceIds": [
+        "V57"
+      ],
+      "rationale": "Wann stellt selbst den Vergleich zum Glasperlenspiel her.",
+      "whatWouldChange": "Audioabgleich würde die Transkriptzuordnung absichern.",
+      "status": "source_text_read",
+      "causalClaim": false
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-14",
+  "content_commit": "2ca7114db93d693498ce0226813928ba3c18fcb0",
+  "branch": "research/hidden-cosmology-atlas-2026-10-13",
+  "pr": 394,
+  "verified_files": [
+    "skills/chat/research/hidden-cosmology-atlas/RETURN.md",
+    "skills/chat/research/hidden-cosmology-atlas/CHANGELOG.md",
+    "skills/chat/research/hidden-cosmology-atlas/packages/author-lenses-november/RETURN.md",
+    "skills/chat/research/hidden-cosmology-atlas/packages/author-lenses-november/README.md",
+    "skills/chat/research/hidden-cosmology-atlas/packages/author-lenses-november/dossiers.json",
+    "skills/chat/research/hidden-cosmology-atlas/packages/author-lenses-november/NOTEBOOKLM_READER.md",
+    "skills/chat/research/hidden-cosmology-atlas/site/data/author-lenses/RETURN.md",
+    "skills/chat/research/hidden-cosmology-atlas/site/data/author-lenses/README.md",
+    "skills/chat/research/hidden-cosmology-atlas/site/data/author-lenses/dossiers.json",
+    "skills/chat/research/hidden-cosmology-atlas/site/data/author-lenses/NOTEBOOKLM_READER.md",
+    "skills/chat/research/hidden-cosmology-atlas/authors/david-grusch.md",
+    "skills/chat/research/hidden-cosmology-atlas/authors/wolfgang-effenberger.md",
+    "skills/chat/research/hidden-cosmology-atlas/authors/michael-grandt.md",
+    "skills/chat/research/hidden-cosmology-atlas/authors/wolfgang-eggert.md",
+    "skills/chat/research/hidden-cosmology-atlas/site/author-lenses.html",
+    "skills/chat/research/hidden-cosmology-atlas/site/authors.json",
+    "skills/chat/research/hidden-cosmology-atlas/site/reader.js",
+    "skills/chat/research/hidden-cosmology-atlas/site/index.html",
+    "skills/chat/research/hidden-cosmology-atlas/site/uap-networks.html"
+  ],
+  "readback": "19/19 exact remote files",
+  "site_version": 26,
+  "site_source_commit": "28fbdc19efa7e4972ab5f8fb5170d7fe13075e7b",
+  "deployment": {
+    "id": "appgdep_6af89008435081919967712c8e5db609",
+    "project_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc",
+    "title": "KFB Research Atlas",
+    "version_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc~appgver_f9e005d5813881919420aa91968af07b",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://kfb-research-atlas.frizzlebob.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae66f5da80c8191b5b130f20a47c2bc",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-14T16:45:12.020839+00:00"
+  },
+  "version": {
+    "id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc~appgver_f9e005d5813881919420aa91968af07b",
+    "project_id": "appgprj_6ae66f5da80c8191b5b130f20a47c2bc",
+    "version_number": 26,
+    "source": {
+      "commit_sha": "28fbdc19efa7e4972ab5f8fb5170d7fe13075e7b"
+    },
+    "archive_storage": {
+      "archive_format": "tar",
+      "sediment_file_id": "file_00000000ad708210b08c4682eba139ea",
+      "content_hash": "sha256:c50d3b1955e3dcf33bd03d6e6997ab5a05737ce416c8d2ec19503784e0d680e5",
+      "size_bytes": 16322560,
+      "file_count": 168
+    },
+    "screenshot_url": null,
+    "deployment_id": "appgdep_6af89008435081919967712c8e5db609"
+  },
+  "checks": [
+    "JSON source IDs and comparison targets resolve",
+    "HTML source anchors resolve",
+    "Authors register has no duplicate IDs",
+    "reader.js syntax check passed",
+    "Local browser: source detail opens and return reaches Grusch dossier",
+    "Current GitHub Knapp/Lacatski Site files included"
+  ],
+  "limits": [
+    "Live browser reaches owner login; rendered production page not independently inspected",
+    "No full video or book review; per-source reading scopes persisted"
+  ],
+  "next_gate": "Georg reviews breadth and comparative lenses; no new rabbit-hole run"
+}

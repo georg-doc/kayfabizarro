@@ -1,0 +1,190 @@
+{
+  "id": "NB01-JP01",
+  "title": "Game Theory #6: The World's Bank",
+  "date": "2026-11-01",
+  "sources": [
+    {
+      "id": "JP-S01",
+      "title": "Game Theory #6: The World's Bank",
+      "author": "Jiang Xueqin / Predictive History",
+      "url": "https://www.youtube.com/watch?v=CbamEcNuDXo",
+      "date": "2026-01-22",
+      "kind": "Original lecture; automatic English captions",
+      "readScope": "Caption selections: 00:00–01:39, 14:35–24:41, 35:05–44:47; keyword matches elsewhere. 0 audio minutes verified.",
+      "limits": "Caption transcription errors remain. Publisher reports the lecture date. Original author testimony is not independent proof of historical claims.",
+      "root": "Predictive History",
+      "dateKind": "YouTube publication date; same lecture date stated by publisher"
+    },
+    {
+      "id": "JP-S02",
+      "title": "Predictive History — About",
+      "author": "Jiang Xueqin",
+      "url": "https://www.patreon.com/PredictiveHistory/about",
+      "kind": "Author self-description",
+      "readScope": "Public self-identification and channel mission.",
+      "limits": "Self-description; no academic appointment verified.",
+      "root": "Predictive History"
+    },
+    {
+      "id": "JP-S03",
+      "title": "Who owns the Bank of England?",
+      "author": "Bank of England",
+      "url": "https://www.bankofengland.co.uk/explainers/who-owns-the-bank-of-england",
+      "kind": "Institutional historical explanation",
+      "readScope": "Founding, initial loan and ownership sections; embedded transcript text, not video.",
+      "limits": "Institutional account, not inspection of the 1694 Charter or subscription ledger.",
+      "root": "Bank of England"
+    },
+    {
+      "id": "JP-S04",
+      "title": "Index to original subscribers to Bank Stock 1694",
+      "author": "Bank of England Archive",
+      "url": "https://www.bankofengland.co.uk/archive/index-to-original-subscribers-to-bank-stock-1694",
+      "kind": "Archive catalogue / finding aid",
+      "readScope": "Catalogue description only.",
+      "limits": "Linked 11 MB index PDF exceeded reader limit; PDF and original ledger not read. Same institutional root as JP-S03.",
+      "root": "Bank of England"
+    },
+    {
+      "id": "JP-S05",
+      "title": "2023 Section 702 oversight report",
+      "author": "Privacy and Civil Liberties Oversight Board",
+      "url": "https://documents.pclob.gov/prod/Documents/OversightReport/e9e72454-4156-49b9-961a-855706216063/2023%20PCLOB%20702%20Report%20(002).pdf",
+      "date": "2023-09-28",
+      "kind": "Official oversight report",
+      "readScope": "Printed pages 64–65, downstream collection, read as extracted text; 0 page images inspected.",
+      "limits": "Used only to qualify incoming PRISM infographic. No claim about current 2026 law or every surveillance program.",
+      "root": "PCLOB"
+    }
+  ],
+  "claims": [
+    {
+      "id": "JP-C01",
+      "statement": "Jiang explains the 1688 settlement as a strategy to protect Dutch capital by moving wealth to England under parliamentary power.",
+      "locator": "14:35–17:25",
+      "sourceIds": [
+        "JP-S01"
+      ],
+      "status": "Attributed explanatory model; magnitude of wealth transfer unverified",
+      "nextTest": "Compare Dutch and English financial records; test the claim that most wealth or all gold moved."
+    },
+    {
+      "id": "JP-C02",
+      "statement": "Jiang presents the 1694 bank and parliamentary backing as shifting lending risk from an individual king to an enduring nation.",
+      "locator": "17:29–19:22",
+      "sourceIds": [
+        "JP-S01"
+      ],
+      "status": "Attributed institutional interpretation",
+      "nextTest": "Read the 1694 Charter and loan legislation; distinguish contractual liability from modern sovereign-debt language."
+    },
+    {
+      "id": "JP-C03",
+      "statement": "Jiang links geographic security and the navy with trade, intermarriage, religion and Freemasonry as mechanisms of trust.",
+      "locator": "19:24–20:20",
+      "sourceIds": [
+        "JP-S01"
+      ],
+      "status": "Attributed connections; particular networks undocumented here",
+      "nextTest": "Identify named actors, dates and records for each proposed historical relationship."
+    },
+    {
+      "id": "JP-C04",
+      "statement": "Jiang associates property protection and contract law with England becoming a financial refuge, then compares modern financial centres.",
+      "locator": "20:26–22:57",
+      "sourceIds": [
+        "JP-S01"
+      ],
+      "status": "Author analogy; chronology and legal causation not established",
+      "nextTest": "Locate specific legal texts and dated capital-flow evidence; avoid treating the Locke caption error as a verified name quotation."
+    },
+    {
+      "id": "JP-C05",
+      "statement": "Jiang argues that inward capital and financialization can produce inequality, corruption and eventual social decline.",
+      "locator": "37:07–40:02",
+      "sourceIds": [
+        "JP-S01"
+      ],
+      "status": "Author causal model; not an empirical finding of this packet",
+      "nextTest": "Test country-specific capital-flow and distribution data against competing explanations."
+    },
+    {
+      "id": "JP-C06",
+      "statement": "In answering a student, Jiang contrasts family and community values with competitive pressures that make states adopt strategies he considers destructive over time.",
+      "locator": "40:30–44:47; student question 40:13",
+      "sourceIds": [
+        "JP-S01"
+      ],
+      "status": "Author normative/game-theoretic framework",
+      "nextTest": "Separate the student question from Jiang’s answer; identify explicit model assumptions and falsifiable predictions."
+    },
+    {
+      "id": "JP-C07",
+      "statement": "The Bank of England describes its 1694 founding and an initial £1.2 million government loan for war with France.",
+      "locator": "JP-S03 founding section; JP-S04 catalogue introduction",
+      "sourceIds": [
+        "JP-S03",
+        "JP-S04"
+      ],
+      "status": "Narrow institutional corroboration; not proof of JP-C01–06",
+      "nextTest": "Inspect original Charter, loan legislation and subscriber records."
+    }
+  ],
+  "relations": [
+    {
+      "id": "JP-R01",
+      "fromId": "JP-C02",
+      "toId": "JP-C07",
+      "type": "partial factual overlap",
+      "layer": "evidence comparison",
+      "causal": false,
+      "sourceIds": [
+        "JP-S01",
+        "JP-S03",
+        "JP-S04"
+      ],
+      "note": "Shared year and government finance; broader transfer-of-capital thesis remains open."
+    },
+    {
+      "id": "JP-R02",
+      "fromId": "JP-C05",
+      "toId": "webb-goodwin-pair",
+      "type": "thematic comparison",
+      "layer": "editorial",
+      "causal": false,
+      "sourceIds": [
+        "JP-S01"
+      ],
+      "note": "Atlas navigation proposal: finance and power. No demonstrated citation, contact or influence."
+    },
+    {
+      "id": "JP-R03",
+      "fromId": "JP-C06",
+      "toId": "NB01-M2",
+      "type": "thematic comparison",
+      "layer": "editorial",
+      "causal": false,
+      "sourceIds": [
+        "JP-S01"
+      ],
+      "note": "Similar competition/decline themes; map provenance does not establish that Jiang supplied each node."
+    }
+  ],
+  "completion": "Bounded original-caption pilot; original historical documents and audio alignment pending",
+  "externalRefs": [
+    {
+      "id": "webb-goodwin-pair",
+      "label": "Whitney Webb / Mark Goodwin",
+      "memberIds": [
+        "whitney-webb",
+        "mark-goodwin"
+      ],
+      "kind": "editorial comparison group; not a historical entity"
+    },
+    {
+      "id": "NB01-M2",
+      "label": "Societal Life Cycle mindmap",
+      "manifest": "intake.json"
+    }
+  ]
+}

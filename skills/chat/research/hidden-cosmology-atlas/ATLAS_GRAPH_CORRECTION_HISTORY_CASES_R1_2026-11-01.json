@@ -1,0 +1,91 @@
+{
+  "schema": "kfb.hca.graph-correction-history-case-seeds/1",
+  "date": "2026-11-01",
+  "status": "DERIVED_HISTORICAL_CORRECTION_FIXTURES_NOT_NEW_AGENT_RUNS",
+  "sourceAuthority": "Exact existing GitHub WCC R3 and JM R2 ledgers; do not treat this view as a second live edge master.",
+  "events": [
+    {
+      "caseId": "HCA-QA-EX01",
+      "recordedCorrectionDate": "2026-10-29",
+      "caseType": "WRONG_IDENTITY_CORRECTED",
+      "affectedClaimIds": [
+        "WC-C32"
+      ],
+      "edgeIds": [
+        "WC-H21",
+        "WC-H22",
+        "WC-H23"
+      ],
+      "initialAssertion": "Jocelyn Olaf Hambro was son of Sir Charles Jocelyn Hambro.",
+      "correctedStatement": "Jocelyn Olaf Hambro was son of Ronald Olaf Hambro. Charles Eric Alexander Hambro was son of Sir Charles Jocelyn Hambro. Do not infer personal post-1963 action by Sir Charles.",
+      "sourceEvidenceIds": [
+        "WC-S33",
+        "WC-S34",
+        "WC-S35"
+      ],
+      "sourceOwnerPath": "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/SOURCES_AND_CLAIMS_R3.md",
+      "sourceType": "CORRECTED_PERSON_GENEALOGY_IN_EXISTING_R3",
+      "causality": false,
+      "originalAttribution": "Updated prior private editorial dossier reported via WC-S29",
+      "agentModelIdentity": "UNAVAILABLE_NOT_INFERRED",
+      "independentReviewerThisTurn": "NOT_RUN",
+      "nextPrimarySource": "Actual dated board/share transfers if person-level bank authority is being claimed"
+    },
+    {
+      "caseId": "HCA-QA-EX02",
+      "recordedCorrectionDate": "2026-10-29",
+      "caseType": "SOURCE_MISATTRIBUTION_AND_ENTITY_SPLIT",
+      "affectedClaimIds": [
+        "WC-C36"
+      ],
+      "edgeIds": [],
+      "initialAssertion": "Hambros had a 25% stake in Moneyrex and disposed of it in 1972.",
+      "correctedStatement": "The cited 25%-and-1972 passage is in the BPF chapter; Moneyrex equity not established by that passage. Separate BPF vs Moneyrex corporations; do not assert Moneyrex stake impossible.",
+      "sourceEvidenceIds": [
+        "WC-S29",
+        "WC-S31"
+      ],
+      "sourceOwnerPath": "skills/chat/research/hidden-cosmology-atlas/topics/wcc-samosa-network-2026-10-29/SOURCES_AND_CLAIMS_R3.md",
+      "sourceType": "SOURCE_SCOPE_CORRECTED_IN_EXISTING_R3",
+      "causality": false,
+      "originalAttribution": "Updated prior donor editorial dossier WC-S29",
+      "agentModelIdentity": "UNAVAILABLE_NOT_INFERRED",
+      "independentReviewerThisTurn": "NOT_RUN",
+      "nextPrimarySource": "Moneyrex original 1964-72 share transfer register and 1981 Bank of Italy letter"
+    },
+    {
+      "caseId": "HCA-QA-EX03",
+      "recordedCorrectionDate": "2026-10-31",
+      "caseType": "CLAIM_SCOPE_SPLIT_ORIGINAL_MISSING",
+      "affectedClaimIds": [
+        "JM-C19",
+        "JM-C21",
+        "JM-C22"
+      ],
+      "edgeIds": [
+        "JM-W10"
+      ],
+      "initialAssertion": "Jorjani 2026 wording treated as a single verbatim Puharich 1984 90% US-saucers/half staged-abductions quote.",
+      "correctedStatement": "Publisher-attributed 1984: approximate 90% all UFO sightings man-made; Jorjani 2026: close encounters US fleet; half staged-abductions original not found in inspected publisher text.",
+      "sourceEvidenceIds": [
+        "JM-S16",
+        "JM-S17",
+        "JM-S19"
+      ],
+      "sourceOwnerPath": "skills/chat/research/hidden-cosmology-atlas/topics/jorjani-michels-trilogy-2025-2026/PUHARICH_1984_PRIMARY_SOURCE_RECOVERY_R2.md",
+      "sourceType": "SCOPE_CORRECTION_FROM_R2_PUBLISHER_INDEXED_TEXT",
+      "causality": false,
+      "originalAttribution": "2026 interview guest Jorjani; 1984 publisher transcript Puharich claim",
+      "agentModelIdentity": "UNAVAILABLE_NOT_INFERRED",
+      "independentReviewerThisTurn": "NOT_RUN",
+      "nextPrimarySource": "1984 published lecture audio timecodes and remaining tapes"
+    }
+  ],
+  "summary": {
+    "cases": 3,
+    "newHistoricalClaimsCreated": 0,
+    "newDocumentaryEdgesCreated": 0,
+    "newAgentRunsAudited": 0,
+    "privateSourceIdsIncluded": false
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "kfb-notebook-inventory/1.0"
+    },
+    "export_kind": {
+      "const": "sanitized_handoff"
+    },
+    "exported_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "access_scope": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "complete_account_inventory": {
+      "type": "boolean"
+    },
+    "external_search_used": {
+      "const": false
+    },
+    "notebooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "notebook_alias": {
+            "type": "string"
+          },
+          "topic_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "access_level": {
+            "type": "string"
+          },
+          "observed_source_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "exported_source_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "inventory_complete": {
+            "type": "boolean"
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "notebook_alias",
+          "topic_tags",
+          "access_level",
+          "observed_source_count",
+          "exported_source_count",
+          "inventory_complete",
+          "limitations"
+        ]
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "publication_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "edition": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "public_original_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "doi": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "isbn": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "existing_atlas_source_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "record_id": {
+            "type": "string"
+          },
+          "notebook_alias": {
+            "type": "string"
+          },
+          "source_alias": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "visibility": {
+            "type": "string"
+          },
+          "export_permission": {
+            "type": "string"
+          },
+          "metadata_basis": {
+            "type": "string"
+          },
+          "membership_evidence": {
+            "type": "string"
+          },
+          "read_status": {
+            "type": "string"
+          },
+          "metadata_withheld": {
+            "type": "boolean"
+          },
+          "creators": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "topic_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uncertainties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "title",
+          "publication_date",
+          "edition",
+          "language",
+          "public_original_url",
+          "doi",
+          "isbn",
+          "existing_atlas_source_id",
+          "record_id",
+          "notebook_alias",
+          "source_alias",
+          "source_type",
+          "visibility",
+          "export_permission",
+          "metadata_basis",
+          "membership_evidence",
+          "read_status",
+          "metadata_withheld",
+          "creators",
+          "topic_tags",
+          "uncertainties"
+        ]
+      }
+    },
+    "cited_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "public_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "visible_title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "locator_in_parent": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "link_id": {
+            "type": "string"
+          },
+          "parent_source_alias": {
+            "type": "string"
+          },
+          "retrieval_status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "public_url",
+          "visible_title",
+          "locator_in_parent",
+          "link_id",
+          "parent_source_alias",
+          "retrieval_status"
+        ]
+      }
+    },
+    "duplicate_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": [
+          "object",
+          "string"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "export_kind",
+    "exported_at",
+    "access_scope",
+    "complete_account_inventory",
+    "external_search_used",
+    "notebooks",
+    "sources",
+    "cited_links",
+    "duplicate_candidates",
+    "gaps"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sanitized Notebook source inventory; validation does not prove access, completeness or disclosure permission"
+}
