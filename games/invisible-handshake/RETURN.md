@@ -1,3 +1,11 @@
+## 2026-11-28 · Regellabor v8 · Playable walking fields and clearer board
+
+- Owner-private release on the existing Site. Site source `5b92b0d693473a4cb3c1e82183c2d4695cfad88c`, build `b1c53368f8c0`. [Tower Circuit live replay](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/?moment=spoke) opens just before the first move inward. Step forward from 13/104 to 14/104.
+- Tower Circuit defaults to two intermediate fields on each of six ring edges and each of six spokes. Ring and spoke settings independently support three. The same board configuration drives legal moves, simulation, replay and print. The existing two-card visit and open-gate requirements still apply.
+- Six card positions have more space, the tower trophy is in the side panel during traversal, and translucent diamonds are brighter. Idle spell overlays are removed, with bloom confined to the active effect.
+- Verification: 2,137 rule assertions passed. Seed 42 finished with the trophy in 104 commands with two fields and in 125 with three. Checked a live replay step onto a spoke and a local move that stops on an intermediate field without adding a card visit.
+- Next gate: review readability of the card positions, pawn positions and routes on the published board.
+
 ## Control room selected · 28 November 2026
 
 Published and verified privately on the existing Site, version 7. Site source `cd57fe2c12735ff43e30039829dc2c49c47641c3` and live build `77ebdf07ff37`. [The live HATE move](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/?moment=hate) opens the same legal Quick Claim replay as the matched A/B still, seed 42 step 5, and offers Replay this move. [Default route](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/) selects Tower Circuit B and Control room lighting.
