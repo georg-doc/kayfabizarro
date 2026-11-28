@@ -15,7 +15,7 @@
 
 ## 2026-11-28 · WSA KICKOFF → WS0 · ARENA-REZEPT R1
 
-**KANDIDAT · RENDER-ABNAHME OFFEN.** [Kickoff Draft PR #172](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/172). Drei Rezeptvarianten auf dem Originalstadion und Direktstart ins Spielmenü. Die private Site führt V14. Nächster Schritt im vorhandenen Owner-Lauf ist der Bildsatz mit zwei Kameras pro Rezept aus einem Build mit dem verifizierten Medienbestand. Anschließend erstellt WS0 die Abnahmekarte. Kein Stage-Eintrag ohne geprüften Spielbuild.
+**KANDIDAT · RENDER-ABNAHME OFFEN.** [Kickoff Draft PR #172](https://github.com/georg-doc/KFB-Stunt-Car-Race/pull/172). Drei Rezeptvarianten auf dem Originalstadion. Der Direktstart ist zusätzlich als [isolierter V14-Hotfix](https://github.com/georg-doc/KFB-Stunt-Car-Race/blob/b2a00ca698baa22859117d0c76cdf52546349788/docs/kickoff/RETURN.md) vorbereitet. Die private Site führt weiter V14 mit Aufrufparameter. Nächster Schritt im vorhandenen Owner-Lauf ist der Bildsatz mit zwei Kameras pro Rezept aus einem Build mit dem verifizierten Medienbestand. Anschließend erstellt WS0 die Abnahmekarte. Kein Stage-Eintrag ohne geprüften Spielbuild.
 
 ---
 
