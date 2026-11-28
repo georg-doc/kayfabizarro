@@ -1,0 +1,46 @@
+{
+  "schema": "kfb.visual-critic-source/0.1",
+  "reviewed_at_utc": "2026-11-22",
+  "coordination": {
+    "repo": "georg-doc/kayfabizarro",
+    "baseline_branch": "main",
+    "baseline_head": "a9143605b1463df36c0e57d7092d5253d7e7b721",
+    "issue": "https://github.com/georg-doc/kayfabizarro/issues/479",
+    "scenes_issue": "https://github.com/georg-doc/kayfabizarro/issues/478"
+  },
+  "receiving": {
+    "repo": "georg-doc/KFB-Stunt-Car-Race",
+    "branch": "game/integration-r2",
+    "observed_head": "616c2d6f50d5ec6ae51f06e03445433342de7997",
+    "head_may_change": true,
+    "read_files": [
+      {
+        "path": "src/flags.js",
+        "blob_sha": "da27a2b7ef504d3b7675ec9cc9b45657dc215e22"
+      },
+      {
+        "path": "src/siteHash.js",
+        "blob_sha": "90a5343ddf519d0a798f20f7f3007d4753103842"
+      },
+      {
+        "path": "test/criticShots.mjs",
+        "blob_sha": "73caecee46f02468742c3e0148838de903d97184"
+      },
+      {
+        "path": "scripts/ir2/profil-fahrt.mjs",
+        "blob_sha": "a241943e12b385642e5e8df13c6b90e106c829ab"
+      },
+      {
+        "path": "test/_kfb-raw-mitschnitt.mjs",
+        "blob_sha": "a135ee505e364569366b945d3db4b50b637114a7"
+      }
+    ]
+  },
+  "status": {
+    "aquarium_ideal_path_source": "UNVERIFIED",
+    "aquarium_runtime_build": "UNVERIFIED",
+    "image_generation_tested": false,
+    "video_capture_tested": false,
+    "stage_route": null
+  }
+}

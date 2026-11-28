@@ -1,0 +1,380 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KFB Webchat Visual Review Session R1",
+  "description": "Proposal only. A review UI session is not a tested product and never implies Game runtime approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "session_id",
+    "session_revision",
+    "source",
+    "actor",
+    "findings",
+    "choices",
+    "handoff",
+    "audit_events"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.visual-session/0.1"
+    },
+    "status": {
+      "enum": [
+        "EXAMPLE_NOT_A_TEST",
+        "CHECKIN_OPEN",
+        "REVIEWING",
+        "DECISION_READY",
+        "GEORG_APPROVED",
+        "PACKET_COMMITTING",
+        "HANDOFF_COMMITTED",
+        "RETEST_PENDING",
+        "INDEPENDENT_REVIEWED",
+        "QUARANTINED"
+      ]
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "session_revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "review_manifest_ref",
+        "repo",
+        "branch",
+        "head",
+        "privacy",
+        "actual_media_ids"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "review_manifest_ref": {
+          "type": "string"
+        },
+        "repo": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "head": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            {
+              "const": "UNVERIFIED"
+            }
+          ]
+        },
+        "privacy": {
+          "enum": [
+            "PRIVATE",
+            "PUBLIC_SANITIZED"
+          ]
+        },
+        "actual_media_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "identity_status",
+        "approval_actor_ref"
+      ],
+      "properties": {
+        "identity_status": {
+          "enum": [
+            "UNVERIFIED",
+            "AUTHENTICATED"
+          ]
+        },
+        "approval_actor_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "finding_id",
+          "priority",
+          "evidence_ids",
+          "description",
+          "owner_seam",
+          "confidence",
+          "status",
+          "chosen_variant_id"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "priority": {
+            "enum": [
+              "P0",
+              "P1",
+              "P2",
+              "P3"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "owner_seam": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "status": {
+            "enum": [
+              "OPEN",
+              "REGENERATE_REQUESTED",
+              "OPTION_SELECTED",
+              "KEEP_ORIGINAL",
+              "NO_FIX",
+              "APPROVED",
+              "COMMITTED",
+              "REPAIRING",
+              "RETESTED"
+            ]
+          },
+          "chosen_variant_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "choices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "variant_id",
+          "finding_id",
+          "parent_variant_id",
+          "media_id",
+          "media_sha256",
+          "kind",
+          "artifact_status",
+          "human_decision"
+        ],
+        "properties": {
+          "variant_id": {
+            "type": "string"
+          },
+          "finding_id": {
+            "type": "string"
+          },
+          "parent_variant_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "media_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "media_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "kind": {
+            "enum": [
+              "ORIGINAL",
+              "GENERATED_TARGET",
+              "VFX_REFERENCE",
+              "SOUND_CUE_PROPOSAL",
+              "ANNOTATION"
+            ]
+          },
+          "artifact_status": {
+            "enum": [
+              "REQUESTED",
+              "GENERATED_NOT_PERSISTED",
+              "BYTE_VERIFIED",
+              "REJECTED"
+            ]
+          },
+          "human_decision": {
+            "enum": [
+              "NONE",
+              "APPROVE",
+              "REGENERATE",
+              "KEEP_ORIGINAL",
+              "NO_FIX"
+            ]
+          }
+        }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "selected_finding_ids",
+        "expected_session_revision",
+        "expected_head",
+        "commit_sha",
+        "verified_readback",
+        "destination_repo",
+        "destination_branch"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "NOT_REQUESTED",
+            "PREVIEW_ONLY",
+            "APPROVAL_REQUIRED",
+            "PACKET_COMMITTING",
+            "UNKNOWN",
+            "HANDOFF_COMMITTED"
+          ]
+        },
+        "selected_finding_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_session_revision": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "expected_head": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commit_sha": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_readback": {
+          "type": "boolean"
+        },
+        "destination_repo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "destination_branch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "audit_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "type",
+          "created_utc",
+          "actor_auth",
+          "finding_id",
+          "from_revision",
+          "to_revision"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "created_utc": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "actor_auth": {
+            "enum": [
+              "UNVERIFIED",
+              "AUTHENTICATED",
+              "SYSTEM"
+            ]
+          },
+          "finding_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "from_revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "to_revision": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "kfb.game-job/0.1",
+  "job_id": "EXAMPLE-JOB-NO-ACTIVE-TASK",
+  "status": "EXAMPLE_NOT_A_TEST",
+  "submitted_at_utc": null,
+  "origin": {
+    "review_session_id": null,
+    "user_request_ref": null,
+    "source_chat": "WEBCHAT"
+  },
+  "intent": {
+    "type": "CASCADE_CONNECTOR",
+    "user_summary": "EXAMPLE ONLY: combine three existing visual effect fragments into one transition",
+    "expected_experience": "One coherent player-visible effect chain",
+    "proposed_scope": "Source lookup then chain/trigger proposal; no code executed",
+    "requested_variant": null
+  },
+  "readiness": "IDEA_ONLY",
+  "source": {
+    "project": "KFB example",
+    "repo": null,
+    "branch": null,
+    "head": null,
+    "scene_or_module_ref": null,
+    "linked_case_ref": null,
+    "source_confidence": "UNVERIFIED"
+  },
+  "evidence": {
+    "privacy": "PRIVATE",
+    "review_manifest_ref": null,
+    "media_ids": [],
+    "target_asset_sha256": null,
+    "actual_capture_verified": false
+  },
+  "approval": {
+    "queue_permission": "UNCONFIRMED",
+    "design_approval": "NOT_REQUESTED",
+    "requester_verified": false
+  },
+  "routing": {
+    "triage_owner": "WS0",
+    "receiving_owner": null,
+    "priority": "UNTRIAGED",
+    "estimated_effort": "UNKNOWN",
+    "decision": "UNROUTED"
+  },
+  "dispatch": {
+    "mode": "NONE",
+    "event_delivery_id": null,
+    "idempotency_key": null,
+    "github_issue_url": null,
+    "github_readback_verified": false,
+    "ws0_delivery_status": "NOT_DELIVERED",
+    "executor_started": false
+  }
+}

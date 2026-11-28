@@ -1,0 +1,379 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KFB Webchat Game Job Intake R1",
+  "description": "Proposed GitHub job envelope for Webchat-to-WS0 event routing. Does not implement MCP push or grant production write authorization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "job_id",
+    "status",
+    "submitted_at_utc",
+    "origin",
+    "intent",
+    "readiness",
+    "source",
+    "evidence",
+    "approval",
+    "routing",
+    "dispatch"
+  ],
+  "properties": {
+    "schema": {
+      "const": "kfb.game-job/0.1"
+    },
+    "job_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "EXAMPLE_NOT_A_TEST",
+        "DRAFT_IN_CHAT",
+        "USER_APPROVED_FOR_QUEUE",
+        "QUEUED_GITHUB_VERIFIED",
+        "WS0_TRIAGED",
+        "OWNER_ASSIGNED",
+        "IMPLEMENTING",
+        "EVIDENCE_READY",
+        "INDEPENDENT_CRITIC",
+        "REPAIR",
+        "DEFER",
+        "CLOSED"
+      ]
+    },
+    "submitted_at_utc": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_session_id",
+        "user_request_ref",
+        "source_chat"
+      ],
+      "properties": {
+        "review_session_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "user_request_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_chat": {
+          "enum": [
+            "WEBCHAT",
+            "WORK",
+            "UNKNOWN"
+          ]
+        }
+      }
+    },
+    "intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "user_summary",
+        "expected_experience",
+        "proposed_scope",
+        "requested_variant"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "LOOP_COMPOSITION",
+            "CASCADE_CONNECTOR",
+            "VFX_REPAIR",
+            "SOUND_DESIGN",
+            "ART_DIRECTION",
+            "GAMEPLAY_REPAIR",
+            "VISUAL_REVIEW"
+          ]
+        },
+        "user_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_experience": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "proposed_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "requested_variant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "readiness": {
+      "enum": [
+        "IDEA_ONLY",
+        "OWNER_UNRESOLVED",
+        "SOURCE_BACKED_FRAGMENT",
+        "PLAYABLE_UNCAPTURED",
+        "CAPTURED",
+        "VERIFIED"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project",
+        "repo",
+        "branch",
+        "head",
+        "scene_or_module_ref",
+        "linked_case_ref",
+        "source_confidence"
+      ],
+      "properties": {
+        "project": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "branch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "head": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "scene_or_module_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linked_case_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_confidence": {
+          "enum": [
+            "UNVERIFIED",
+            "DOCUMENTED",
+            "CODE_INSPECTED",
+            "RUNTIME_OBSERVED"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "privacy",
+        "review_manifest_ref",
+        "media_ids",
+        "target_asset_sha256",
+        "actual_capture_verified"
+      ],
+      "properties": {
+        "privacy": {
+          "enum": [
+            "PRIVATE",
+            "PUBLIC_SANITIZED"
+          ]
+        },
+        "review_manifest_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "media_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target_asset_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual_capture_verified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "queue_permission",
+        "design_approval",
+        "requester_verified"
+      ],
+      "properties": {
+        "queue_permission": {
+          "enum": [
+            "UNCONFIRMED",
+            "AUTHORIZED"
+          ]
+        },
+        "design_approval": {
+          "enum": [
+            "NOT_REQUESTED",
+            "PENDING",
+            "PASS",
+            "FAIL",
+            "TUNE"
+          ]
+        },
+        "requester_verified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "triage_owner",
+        "receiving_owner",
+        "priority",
+        "estimated_effort",
+        "decision"
+      ],
+      "properties": {
+        "triage_owner": {
+          "const": "WS0"
+        },
+        "receiving_owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "UNTRIAGED"
+          ]
+        },
+        "estimated_effort": {
+          "enum": [
+            "UNKNOWN",
+            "XS",
+            "S",
+            "M",
+            "L"
+          ]
+        },
+        "decision": {
+          "enum": [
+            "UNROUTED",
+            "TRIAGE_REQUIRED",
+            "READY_FOR_TRIAGE",
+            "ASSIGNED",
+            "QUARANTINED"
+          ]
+        }
+      }
+    },
+    "dispatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "event_delivery_id",
+        "idempotency_key",
+        "github_issue_url",
+        "github_readback_verified",
+        "ws0_delivery_status",
+        "executor_started"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "GITHUB_QUEUE_ONLY",
+            "GITHUB_WEBHOOK",
+            "MCP_EVENT_SUBSCRIBED",
+            "NONE"
+          ]
+        },
+        "event_delivery_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "idempotency_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "github_issue_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "github_readback_verified": {
+          "type": "boolean"
+        },
+        "ws0_delivery_status": {
+          "enum": [
+            "NOT_DELIVERED",
+            "GITHUB_QUEUED",
+            "WORK_EVENT_DELIVERED",
+            "WS0_READBACK_VERIFIED",
+            "UNKNOWN"
+          ]
+        },
+        "executor_started": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
