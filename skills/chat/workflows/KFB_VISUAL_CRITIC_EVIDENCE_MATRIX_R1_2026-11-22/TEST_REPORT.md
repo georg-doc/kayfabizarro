@@ -38,3 +38,7 @@ Race: `src/flags.js`, `src/siteHash.js`, `test/criticShots.mjs`, `scripts/ir2/pr
 - Earlier 8/8 replay, 9/9 review session, 11/11 job intake remain recorded; across the four limited suites **39/39 PASS**. This is not full JSON Schema compliance or an operational plugin test.
 - **0** actual Webchat buttons/plugin UI tests, **0** cross-chat priority readback tests, **0** live WS0 queue dispatch/automation, **0** real scene review/visual scores and **0** public deployments. The JSON example is not an actual user approval.
 - UX decision: P0 critical red, P1 high amber, P2 scheduled blue/neutral, P3 later gray, UNTRIAGED neutral; workflow state is orthogonal. Queue sort records human user priority vs WS0 effective schedule with rationale.
+
+
+## 2026-11-28 · R1d Work pilot evidence status
+Planning only. C1 capture, C2 actual subagents, C3 native image edit, C4 binary export/readback, C5 independent critic, C6 WS0 receipt/ack, C7 later real after/regression: **7 NOT_RUN**. 0 runtime/browser/image/subagent tests; no new schema tests. Prior 39/39 limited structural checks not rerun. Planning file exact readback is verified separately after branch commit; not operational proof.

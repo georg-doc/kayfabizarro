@@ -30,3 +30,9 @@
 - Separate `priority`, `readiness`, `work status`, `technical severity`, and `design approval`. A P0 can be blocked on a source; P3 can still be a quick win without turning green into "done".
 - GitHub Issue/PR remains the shared SSOT across chats; WS0 receives an explicit issue and then must still acknowledge/triage it before a runtime builder is considered started. No duplicate runtime owner or new standing model poller.
 - **11/11 limited structural checks PASS** (cumulative 39/39 across four proposals); zero operational queue/UI/Stage tests. Single technical gate `KFB_WEBCHAT_PRIORITY_ROUNDTRIP_01` incorporates the earlier job push check.
+
+
+## 2026-11-28 · R1d · Work Art Direction Studio (Georg PROCEED)
+- Added WORK_ART_DIRECTION_STUDIO_R0.md and WORK_ART_DIRECTION_START_R0.md to existing draft #480. Work-led native image production and bounded subagents preferred for pilot; Webchat fallback; prior plugin/priority contracts preserved. No new runtime or style authority.
+- Pilot Open World Art Pass R0: actual pinned gameplay capture → target → actionable owner brief, private evidence, independent critique and WS0 queue receipt. No additional human setup gate; Georg still decides real visual direction.
+- Docs only; 7 proposed checks NOT_RUN, no Work launch, runtime code/tests, generated media, deployment or merge. Next: execute pilot in Work.
