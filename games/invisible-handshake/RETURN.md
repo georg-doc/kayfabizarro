@@ -1,3 +1,9 @@
+## Control room selected · 28 November 2026
+
+Published and verified privately on the existing Site, version 7. Site source `cd57fe2c12735ff43e30039829dc2c49c47641c3` and live build `77ebdf07ff37`. [The live HATE move](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/?moment=hate) opens the same legal Quick Claim replay as the matched A/B still, seed 42 step 5, and offers Replay this move. [Default route](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/) selects Tower Circuit B and Control room lighting.
+
+Blue steel room and table from the B study. Warm spotlight on the r10b front, the same reduced-contrast printed board in both rule variants, no stationary die halos. Only the current eye-to-die arc contributes bloom. Alpha/Omega are positioned using their posed feet relative to the room floor. Rules and replay data are unchanged. All 2,137 existing engine assertions passed. Checked both bots in the wide preview, the live default selector, live R24 source proof `missing: []`, replay step and bloom. On a narrow window the camera crops the outer edges of the table. Wider game layout remains the better view for reviewing both bots together.
+
 ## r10b tower and tabletop lighting · 28 November 2026
 
 [Private Rule Lab](https://the-invisible-handshake.frizzlebob.chatgpt.site/lab/) version 6 published and checked live. Site source `0a3ec2b96b1fc3bb8c02aa4050ddd09ef4b44f86`, build `e771cba55070`. R24 source proof reported `missing: []`. Quick Claim accepted a HATE placement and Tower Circuit accepted a one-step move. Story Night and Focus light were exercised live. The Day and Golden Hour looks were checked in preview. All 2,137 existing engine assertions passed. Visual review is the next acceptance step.
